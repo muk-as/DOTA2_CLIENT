@@ -1,0 +1,39 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/showcase/showcase_shared.css" />
+		<include src="file://{resources}/styles/showcase/mini_showcase.css" />
+	</styles>
+
+	<DOTAMiniShowcase>
+        <Panel class="ShowcaseHeaderContainer">
+			<Panel class="Header">
+                <Panel id="UserDetailsContainer" class="LeftRightFlow">
+                    <DOTAAvatarImage id="AvatarImage" />
+                    <Panel class="UserDetails">
+                        <DOTAUserName id="UserName" />
+                        <DOTAUserRichPresence id="RichPresence" />
+                        <Panel id="GiftingLabel" onmouseover="DOTAMiniShowcaseShowTitleTooltip();" onmouseout="UIHideTextTooltip();">
+                            <Panel id="BPIcon" />
+                            <Label id="UserTitle" text="{s:player_title}"/>
+                        </Panel>
+                    </Panel>
+                </Panel>
+			</Panel>
+            <DOTARankBadge id="RankTierContainer" />
+        </Panel>
+
+		<AsyncDataPanel class="ShowcaseData" state="{d:showcase_state}" loading-text="#DOTA_Showcase_Loading" error-text="#DOTA_Showcase_LoadFailed" defaultfocus="ShowcaseContents">
+			<Panel class="AsyncSuccessContainer ShowcaseMain">
+				<DOTAShowcaseContents id="ShowcaseContents" />
+                <Panel id="ReportControls">
+                    <Button id="ReportButton" class="ButtonPrimary DarkGrey" onactivate="DOTAReportMiniShowcase()" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Report_MiniProfile' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/flag.svg" />
+                    </Button>
+                </Panel>
+                <Label id="PendingApprovalLabel" text="#DOTA_Showcase_PendingApproval" onmouseover="UIShowTextTooltip( #DOTA_Showcase_PendingApproval_Tooltip )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+		</AsyncDataPanel>
+
+	</DOTAMiniShowcase>
+</root>

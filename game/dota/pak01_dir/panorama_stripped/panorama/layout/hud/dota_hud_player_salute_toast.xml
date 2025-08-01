@@ -1,0 +1,75 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_player_salute_toast.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="ti11_silver_foreground">
+			<Panel class="TI11_Foreground TI11_SilverBorder TI11_Border">
+			</Panel>
+		</snippet>
+
+		<snippet name="ti11_silver_background">
+			<Panel/>
+		</snippet>
+
+		<snippet name="ti11_gold_foreground">
+			<Panel class="TI11_Foreground TI11_SilverBorder TI11_Border">
+			</Panel>
+		</snippet>
+
+		<snippet name="ti11_gold_background">
+			<Panel/>
+		</snippet>
+
+		<snippet name="muerta2023_foreground">
+				<Panel class="TI11_Foreground TI11_SilverBorder TI11_Border">
+					<Panel>
+					<DOTAParticleScenePanel class="BlingParticles0" hittest="false" particleName="particles/ui/tips/muerta_tips_fg_lvl0.vpcf" particleonly="true" startActive="true" cameraOrigin="13 250 37" lookAt="13 0 37" fov="60" squarePixels="true" />
+					<DOTAParticleScenePanel class="BlingParticles1" hittest="false" particleName="particles/ui/tips/muerta_tips_fg_lvl1.vpcf" particleonly="true" startActive="true" cameraOrigin="13 250 37" lookAt="13 0 37" fov="60" squarePixels="true" />
+					<DOTAParticleScenePanel class="BlingParticles2" hittest="false" particleName="particles/ui/tips/muerta_tips_fg_lvl2.vpcf" particleonly="true" startActive="true" cameraOrigin="13 250 37" lookAt="13 0 37" fov="60" squarePixels="true" />
+					<DOTAParticleScenePanel class="BlingParticles3" hittest="false" particleName="particles/ui/tips/muerta_tips_fg_lvl3.vpcf" particleonly="true" startActive="true" cameraOrigin="13 250 37" lookAt="13 0 37" fov="60" squarePixels="true" />
+					</Panel>
+				</Panel>								
+		</snippet>
+
+		<snippet name="muerta2023_background">
+				<Panel class="TI11_Background TI11_SilverBorder TI11_Border">
+					<DOTAParticleScenePanel class="BlingParticlesBG" hittest="false" particleName="particles/ui/tips/muerta_fog_tips_bg.vpcf" particleonly="true" startActive="true" cameraOrigin="0 0 35" lookAt="0 0 0" fov="60" squarePixels="true" />
+				</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAPlayerSaluteToast hittest="false" hittestchildren="false" toast_duration_override="8s">
+
+		<Panel id="BackgroundContainer"/>
+
+		<Panel id="MainContainer">
+			<Panel id="SourcePlayer" class="ToastPlayer">
+				<DOTAHeroImage id="SourceHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-x-preserve-aspect" />
+				<Label text="{g:dota_player_name:nh:source_player_id}" html="true" class="ToastPlayerName" />
+			</Panel>
+			
+			<Panel id="TargetPlayer" class="ToastPlayer">
+				<DOTAHeroImage id="TargetHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-x-preserve-aspect" />
+				<Label text="{g:dota_player_name:nh:target_player_id}" html="true" class="ToastPlayerName" />
+			</Panel>	
+		</Panel>
+
+		<Panel id="ForegroundContainer"/>
+		<Panel id="SaluteAction">
+			<Label id="SaluteText" text="{s:tip_notification}" />
+			<Panel id="TipAmount">
+				<Panel id="TipIcon" />
+				<Label id="TipValue" text="{d:tip_amount}" />
+			</Panel>
+		</Panel>
+
+	</DOTAPlayerSaluteToast>
+</root>
+
+

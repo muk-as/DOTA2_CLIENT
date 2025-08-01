@@ -1,0 +1,123 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/frontpage_shared.css" />
+		<include src="file://{resources}/styles/events/frostivus2023_frontpage.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="EmoticonReward">
+			<Panel class="Reward EmoticonReward">
+				<DOTAEmoticon id="Emoticon" class="EmoticonReward_Emoticon" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EconItemReward">
+			<Panel class="Reward EconItemReward">
+				<DOTAEconItem id="EconItem" class="EconItemReward_Image" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelRewardMessage">
+			<Panel class="ChatwheelRewardMessage">
+				<Image id="SprayWheelImage" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelReward">
+			<Panel class="Reward ChatwheelReward">
+				<Panel id="ChatWheelScaleContainer">
+					<Panel id="ChatWheelMessages" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAFrontpageFrostivus2023 hittest="true" onactivate="">
+		<Panel class="TileBackground">
+			<Panel class="BottomSnowOverlay"/>
+			<DOTAScenePanel id="PreviewRays2" class="MainPreviewRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+			<DOTAScenePanel id="PreviewRays" class="MainPreviewRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+			<DOTAParticleScenePanel class="SnowParticles Background" hittest="false" particleName="particles/ui/ui_generic_snow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 -200" fov="60" />
+			<DOTAParticleScenePanel class="SnowParticles Foreground" hittest="false" particleName="particles/ui/ui_generic_snow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="400 0 0" lookAt="0 0 -200" fov="60" />
+			<Image class="BottomBorderPattern" src="file://{images}/events/frostivus/2023/event_tile_background_border.png" scaling="stretch-to-fit-preserve-aspect" />
+			<Label class="DateLabel" text="#DOTA_Frostivus_2023_EventTile_ActiveTime" />
+		</Panel>
+
+		<Panel class="EventTile" hittest="false">
+			<Label class="Title" text="#DOTA_Frostivus_2023_EventTile_Title" />
+			<AsyncDataPanel class="AsyncPanel" state="{d:async_state}" loading-text="#DOTA_Event_Loading" error-text="#DOTA_Event_LoadFailed" hittest="false" >
+				<Panel class="AsyncSuccessContainer" hittest="false">
+					<Panel id="ProgressPanel">
+						<Label class="EventDescription BodyMedium HideIfEventOver" text="#DOTA_Frostivus_2023_EventTile_ProgressionTitle" />
+						<Label class="EventDescription BodyMedium ShowIfEventOver" text="#DOTA_Frostivus_2023_EventTile_FinalRewards" />
+						<ProgressBar id="TreasureProgress" />
+						<Panel class="ProgressionLabelContainer">
+							<Label class="TreasureProgressLabel LabelLarge CurrentPoints" text="{d:point_progress}" />
+							<Label class="TreasureProgressLabel LabelLarge" text="/" />
+							<Label class="TreasureProgressLabel LabelLarge" text="{d:point_required}" />
+						</Panel>
+						<DotaPeriodicResourceCountdown id="DailyRewardCountdown" class="BonusProgress HideIfEventOver" periodic-resource="frostivus_daily_bonus"
+													   onmouseover="UIShowTextTooltip( #DOTA_Frostivus_2023_EventTile_BonusProgressTooltip )" onmouseout="UIHideTextTooltip()">
+							<Label class="BonusProgressLabel Available" html="true" text="#DOTA_Frostivus_2023_EventTile_BonusProgressAvailable" />
+							<Label class="BonusProgressLabel Half" html="true" text="#DOTA_Frostivus_2023_EventTile_BonusProgressHalf" />
+							<Label class="BonusProgressLabel Exhausted" html="true" text="#DOTA_Frostivus_2023_EventTile_BonusProgressExhausted" />
+						</DotaPeriodicResourceCountdown>
+					</Panel>
+
+					<Panel id="RewardsPanel">
+						<Panel class="TitleContainer">
+							<Panel class="Dash Left"/>
+							<Label class="PanelLabel LabelMedium" text="#DOTA_Frostivus_2023_EventTile_RewardsTitle" />
+							<Panel class="Dash Right"/>
+						</Panel>
+						<Panel class="RewardsList">
+							<Panel class="TreasureRewardContainer">
+								<DOTAScenePanel class="BackgroundParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+								<Panel class="TreasureReward"
+									onmouseover="DOTAShowEconItemTooltip( 23685, -1, -1 )"
+									onmouseout="DOTAHideEconItemTooltip()"
+									onactivate="DOTAShowItemDefPage( 23685 )" />
+							</Panel>
+							<Panel class="StockingStufferContainer">
+								<DotaRewardCell id="RewardCell" class="RewardCell" />
+							</Panel>
+						</Panel>
+						<Button id="ClaimButton" class="ClaimRewardsButton ButtonPrimary Large" onactivate="DOTAFrostivus2023ClaimReward()">
+							<Label class="ClaimRewardsLabel" text="#DOTA_Frostivus_2023_Frontpage_ClaimRewards" />
+						</Button>
+						<Panel class="ViewInfoLinkButton" onmouseover="DOTAShowFrostivus2023Tooltip()" onmouseout="DOTAHideFrostivus2023Tooltip()">
+							<Panel class="LeftRightFlow HorizontalCenter">
+								<Label id="ViewInfoLink" class="LabelMedium" text="#DOTA_Rewards_Info" />
+								<Image src="file://{images}/control_icons/24px/info.svg" />
+							</Panel>
+						</Panel>
+					</Panel>
+
+					<Panel id="NiceRewardPanel" class="TopBottomFlow">
+						<Label class="NiceRewardDescription BodyMedium" text="#DOTA_Frostivus_2023_EventTile_GiftInformation" />
+						<Panel id="NiceRewardContainer">
+							<Panel class="NiceRewardBackground"/>
+							<DOTAParticleScenePanel class="NiceRewardBackgroundParticles" hittest="false" particleName="particles/items5_fx/essence_ring_circle.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 340" lookAt="0 0 0" fov="60" />
+							<DOTAScenePanel class="BackgroundParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+							<Panel class="NiceRewardImage"/>
+						</Panel>
+						<Button id="NiceRewardButton" class="ClaimRewardsButton ButtonPrimary Large" onactivate="DOTAFrostivus2023ClaimNiceReward()">
+							<Label class="ClaimRewardsLabel" text="#DOTA_Frostivus_2023_EventTile_OpenGiftAction" />
+						</Button>
+					</Panel>
+				</Panel>
+			</AsyncDataPanel>
+		</Panel>
+
+		<Panel class="DebugUI">
+			<Button class="DebugButton" onactivate="DOTAFrostivus2023DebugState()">
+				<Label class="DebugButtonState" text="{s:debug_state}" />
+			</Button>
+			<Panel class="ShowIfDebugActive LeftRightFlow">
+				<Label class="DebugLabel" text="Level: " unlocalized="true" />
+				<NumberEntry id="DebugLevelSelect" class="DebugLevel" min="0" max="100" value="0" />
+			</Panel>
+		</Panel>
+	</DOTAFrontpageFrostivus2023>
+</root>

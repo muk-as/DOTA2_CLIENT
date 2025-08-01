@@ -1,0 +1,129 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/ui_overworld_inventory.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="InventoryItem">
+			<Panel class="InventoryItem">
+				<Panel class="ItemContent">
+					<DOTACrownfallToken id="CrownfallToken" />
+					<Label class="ItemName" text="{s:token_name}"/>
+					<Panel class="DebugActions" id="TokenDebugActions" Compiler.If="EnableCrownfallDebug" >
+						<Label class="DebugButton" text="+1" onactivate="DOTAOverworldInventoryGrantTokens( 2 )" />
+						<Label class="DebugButton" text="-1" onactivate="DOTAOverworldInventoryGrantTokens( -2 )" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardToken">
+			<Panel>
+				<DOTACrownfallToken id="CrownfallToken" />
+			</Panel>
+		</snippet>
+
+		                                         
+		<snippet name="HeroOption">
+			<Panel class="HeroOptions" >
+				<Panel class="SectionHeader" >
+					<Panel class="Divider Flip" />
+					<Panel id="TokenContainer" >
+						                              
+					</Panel>
+					<Panel class="Divider" />
+				</Panel>
+				<Panel id="HeroBlock">
+					                              
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAOverworldInventory hittest="false">
+		<Panel class="OverworldDebug" hittest="false">
+			<Panel id="DebugPanel_Playtest" class="DebugPanel Collapsed"  hittest="true">
+				<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_Playtest, Collapsed ); ToggleStyle( DOTACrownfallOverworldPage, PlaytestOpen )" />
+				<Label class="DebugHeader" text="Playtest Menu" unlocalized="true" />
+				<Panel class="DebugPanelContainer">
+					<Panel id="DebugHeroRow" class="DebugOptionRow">
+						<Label text="Hero: " unlocalized="true" />
+						<DOTAHeroImage id="DebugHeroImage" heroimagestyle="icon" onactivate="DOTAOverworldInventoryShowHeroPicker()" />
+						<Panel id="ToggleTokenButton" onactivate="ToggleStyle( DebugHeroRow, ShowDebugTokens )" >
+							<Label class="ToggleLabel CollapseLabel" text="-" />
+							<Label class="ToggleLabel ExpandLabel" text="+" />
+						</Panel>
+						<Panel id="DebugHeroTokenContainer" >
+							                              
+						</Panel>
+					</Panel>
+					<Panel class="DebugOptionRow">
+						<Label text="Play: " unlocalized="true" />
+						<TextButton class="Short" text="Random" unlocalized="true" onactivate="DOTAOverworldInventoryGrantRandomWinLoss()" />
+						<TextButton class="Short" text="Win" unlocalized="true" onactivate="DOTAOverworldInventoryGrantWin()" />
+						<TextButton class="Short" text="Lose" unlocalized="true" onactivate="DOTAOverworldInventoryGrantLoss()" />
+					</Panel>
+
+					<Label class="DebugMatches" text="Record: {d:debug_wins} - {d:debug_losses}" unlocalized="true" />
+					<Label class="DebugTimeSpent" text="Time Spent: {d:debug_hours_played}h {d:debug_minutes_played}m" unlocalized="true" />
+				</Panel>
+			</Panel>
+		</Panel>
+
+		                                                                                               
+		<Panel id="HeroTray" hittest="true" onactivate="">
+			<Panel class="TrayContainer">
+				<Label id="HeroTrayHeading" class="Instructions BodyMedium LighterGreyText" html="true" />
+				<Label class="NoHeroesLabel BodyMedium LighterGreyText" text="{s:no_heroes_description}" html="true"/>
+				<DOTACrownfallButton id="NoHeroesViewInStoreButton" text="#DOTA_Crownfall_ActPassButtonLabel_Embed" class="Secondary Blue GlowButton" />
+				<Panel id="HeroOptionContainer">
+					                              
+				</Panel>
+			</Panel>			
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="DOTAOverworldInventoryClearTokenSelection()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+			</Panel>
+			<Panel class="TopGoldDash" />
+		</Panel>
+		
+		<Panel class="InventoryWrapper">
+			<Panel class="TokensShadowContainer">
+				<Image class="TokensShadow" src="file://{images}/events/crownfall/overworld/tokens_bg_shadow.png" />
+			</Panel>
+			<Panel class="InventoryBackground">
+				<Panel class="TokenGifting" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_GiftedTokensTooltip )" onmouseout="UIHideTextTooltip()" onactivate="DOTAOverworldOpenReceivedGiftTokens()">
+					<Label class="TokenGiftCount LabelMedium" text="{d:gift_tokens_received}"/>
+					<DOTAParticleScenePanel class="TokenGiftParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<Image class="TokenGiftIcon" src="file://{images}/events/crownfall/overworld/token_gift_icon.png" />
+				</Panel>		
+				<Panel class="BgEdge Left"/>
+				<Panel class="BgFill"/>
+				<Panel class="BgEdge Right"/>
+				<Panel class="CloseButton" onactivate="DOTAOverworldInventoryClearTokenSelection()" />
+			</Panel>
+			<AsyncDataPanel id="InventoryContainer" hittest="false" state="{d:inventory_loading_state}" loading-text="#DOTA_Crownfall_Overworld_Inventory_Loading" error-text="#DOTA_Crownfall_Overworld_Inventory_FailedToLoad" >
+				<Panel class="OverworldInventory AsyncSuccessContainer" hittest="false">
+					<Panel class="TitleContainer" >
+						<Label class="LabelSmall TokensTitle LighterGreyText ActLabel" text="{s:act_number}"></Label>
+						<Label class="TitleSmall TokensTitle LightestGreyText" text="#DOTA_Crownfall_OverworldInventory_Inventory"></Label>
+					</Panel>
+					<Panel id="ItemList">
+						                              
+					</Panel>
+					<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( '#DOTA_Crownfall_OverworldInventory_MultiselectInfo' )" onmouseout="UIHideTextTooltip()"/>
+				</Panel>
+			</AsyncDataPanel>
+		</Panel>
+
+		<Panel class="InfoContainer">
+			<Image class="Icon" src="file://{images}/control_icons/24px/info.svg" />
+			<Label class="BodySmall" text="#DOTA_Crownfall_Overworld_InventoryHint" />
+		</Panel>
+
+	</DOTAOverworldInventory>
+</root>

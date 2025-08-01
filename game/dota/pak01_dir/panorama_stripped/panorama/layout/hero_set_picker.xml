@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hero_set_picker.css" />
+	</styles>
+
+	<DOTAHeroSetPicker>
+		<Panel id="Header">
+			<Label id="PickerSetCount" text="{d:full_set_count}" />
+			<Label id="PickerTitle" text="#DOTA_HeroLoadout_FullSets" />
+			<Panel class="FillWidth" />
+			<ToggleButton id="ShuffleButton" onmouseover="UIShowTextTooltip( #DOTA_HeroSetShuffle_Info )" onmouseout="UIHideTextTooltip()" />
+		</Panel>
+
+		<Panel id="CurrentSetContainer" onactivate="DOTAShowHeroSetPickerContextMenu(); DOTAHeroSetPickerActivated(); RecordClientMetric( LoadoutSlot/FullSet )">
+			<DOTAHeroSetPickerSet id="CurrentSetPanel"/>
+			<Panel id="MenuArrowContainer">
+				<Panel id="MenuArrow" />
+			</Panel>
+		</Panel>
+		
+		<TextButton id="SaveSetButton" class="ButtonBevel" text="#DOTA_SavedSets_SaveAsCustomSet" onactivate="DOTASaveEquippedAsCustomSet()" />
+	</DOTAHeroSetPicker>
+</root>

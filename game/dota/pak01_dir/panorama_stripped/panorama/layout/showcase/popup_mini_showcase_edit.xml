@@ -1,0 +1,110 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/dotastyles.css" />
+        <include src="file://{resources}/styles/popups/popups_shared.css" />
+        <include src="file://{resources}/styles/showcase/showcase_shared.css" />
+        <include src="file://{resources}/styles/showcase/popup_mini_showcase_edit.css" />
+    </styles>
+
+    <DOTAPopupMiniShowcaseEdit class="PopupPanel Hidden" popupbackground="" defaultfocus="MiniShowcase" >
+        <Panel id="MiniShowcaseContainer">
+            <DOTAShowcaseContents id="ShowcaseContents">
+                
+            </DOTAShowcaseContents>
+            <Panel class="SaveInProgressIndicator">
+                <Panel class="Spinner" />
+                <Label text="#DOTA_Showcase_Saving" />
+            </Panel>
+            <Panel id="ItemEditControls">
+
+                <Button id="LayerButton" onactivate="DOTAShowcaseShowLayerList()">
+                    <Panel id="LayerButtonIcon" />
+                    <Label text="{s:showcase_item_case_name}" />
+                    <Label id="LayerButtonItemName" text=" - {s:showcase_item_name}" />
+                </Button>
+
+                <Panel class="ControlsContainer">
+                    <Button id="DeleteItemButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemDelete( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_ContextMenu_DeleteItem' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/trash.svg" />
+                    </Button>
+
+                    <Button id="FlipHorizontallyButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemFlipHorizontally( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Flip_Horizontally' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/mirror_horizontal.svg" />
+                    </Button>
+
+                    <Button id="SendToBackButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemSendToBack( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Send_Back' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/send_to_back.svg" />
+                    </Button>
+
+                    <Button id="MoveBackwardButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemMoveBackward( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Move_Back' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/send_backwards.svg" />
+                    </Button>
+
+                    <Button id="MoveForwardButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemMoveForward( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Move_Forward' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/send_forwards.svg" />
+                    </Button>
+
+                    <Button id="SendToFrontButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemSendToFront( ShowcaseContents )" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Send_Front' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/send_to_front.svg" />
+                    </Button>
+
+                    <Button id="MoreOptionsButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseShowMoreOptions()" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_More_Options' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/other.svg" />
+                    </Button>
+
+                    <Panel class="SliderContainer ShowIfNothingSelected" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Blur' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/blur.svg" />
+                        <Slider id="BackgroundBlurSlider" class="HorizontalSlider" direction="horizontal" />
+                    </Panel>
+
+                    <Panel class="SliderContainer ShowIfNothingSelected" onmouseover="UIShowTextTooltip( '#DOTA_Showcase_Tooltip_Darken' )" onmouseout="UIHideTextTooltip()">
+                        <Image src="file://{images}/control_icons/24px/brightness.svg" />
+                        <Slider id="BackgroundDimSlider" class="HorizontalSlider" direction="horizontal" />
+                    </Panel>
+                </Panel>
+
+                <Panel class="ControlsContainer">
+                    <Button id="CustomizeAppearanceButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemCustomizeAppearance( ShowcaseContents )">
+                        <Label text="#DOTA_Showcase_Customize_Label"/>
+                    </Button>                    
+                </Panel>    
+
+            </Panel>
+            
+        </Panel>
+
+        <Panel id="MainEditControls" acceptsfocus="false">
+            <Label id="EditMiniShowcaseTitle" class="LabelLarge LightestGreyText" text="#DOTA_Showcase_EditMiniShowcase_Title" />
+            <DOTAShowcaseBudgetProgressBar id="ShowcaseBudgetProgressBar" class="ShowIfEditing ShowcaseType_MiniProfile" />
+
+            <Button id="AddItemButton" class="ButtonPrimary LightGrey" onactivate="DOTAShowcaseAddNewItem()">
+                <Panel class="ButtonDescription">
+                    <Label text="#DOTA_Showcase_AddItem_Label" />
+                                                                                                           
+                </Panel>
+            </Button>
+
+            <Button id="ChooseBackgroundButton" acceptsfocus="false" class="ButtonPrimary LightGrey" onactivate="DOTAShowcaseChooseBackground()">
+                <Panel class="ButtonDescription">
+                    <Label text="#DOTA_Showcase_Background_Title" />
+                                                                                                                      
+                </Panel>
+            </Button>            
+            
+            <Button id="ClearAllButton" class="ButtonPrimary LightGrey" onactivate="DOTAShowcaseClearAll()">
+                <Panel class="ButtonDescription">
+                    <Label text="#DOTA_Showcase_ClearAll_Title" />
+                                                                                                             
+                </Panel>
+            </Button>
+            
+            <Panel id="SaveCancelButtonRow" class="ButtonRow">
+                <TextButton class="SaveChangesButton ButtonPrimary Blue" text="#DOTA_Showcase_Save" onactivate="DOTAShowcaseStopEditing( true )" />
+                <TextButton class="CancelButton ButtonPrimary DarkGrey" text="#DOTA_Showcase_Cancel" onactivate="DOTAShowcaseStopEditing( false )" />
+            </Panel>
+        </Panel>
+        
+    </DOTAPopupMiniShowcaseEdit>
+
+
+</root>

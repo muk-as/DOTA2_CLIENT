@@ -1,0 +1,1299 @@
+DOTABPInternational2023FantasyPeriod
+{
+	width: 100%;
+	height: 100%;
+}
+
+.MainView
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+	vertical-align: center;
+	                        
+}
+
+#CraftingPanel,
+#ResultsPanel,
+#LockedPanel,
+#StarterPanel
+{
+	visibility: collapse;
+}
+
+#CraftingPanel
+{
+	width: 100%;
+	height: 100%;
+
+	.FailureContainer {
+		height: fit-children;
+		vertical-align: center;
+		flow-children: down;
+		margin-top: -60px;
+		.LockedHeader {
+			horizontal-align: center;
+			vertical-align: middle;
+			font-size: 28px;
+			font-family: titleFont;
+			font-weight: semi-bold;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: LightestGrey;
+			margin: -48px 0px 8px;
+			color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor1 ), to( primaryColor2 ) );
+		}
+
+		.LockIconContainer {
+			horizontal-align: center;
+			padding: 32px;
+			border: 1px solid white;
+			border-brush: gradient( linear, 0% 0%, 70% 70%, from( primaryColor3 ), to( primaryColor4&00 ) );
+			margin: 40px;
+			transform: rotateZ( 45deg );
+
+			.LockIcon {
+				transform: rotateZ( -45deg );		
+			}
+		}
+
+		Label {
+			horizontal-align: center;
+			text-transform: none;
+			color: LighterGrey;
+			letter-spacing: 0px;
+			font-size: 18px;
+		}
+	}
+}
+
+.ShowCrafting #CraftingPanel,
+.ShowResults #ResultsPanel,
+.ShowLocked #LockedPanel,
+.ShowStarter #StarterPanel
+{
+	visibility: visible;
+}
+
+#CraftingTabletList
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+
+	DOTABPInternational2023FantasyCraftTablet {
+		width: fill-parent-flow( 1.0 );
+		height: 100%;
+		
+		&#tablet_1 {
+			margin-right: 16px;
+		}
+
+		&#tablet_2 {
+			margin: 0px 8px;
+		}
+
+		&#tablet_3 {
+			margin-left: 16px;
+		}
+
+		&.Selected {
+			                                     
+		}
+	}
+}
+
+#StarterPanel {
+	padding: 24px 0px;
+}
+
+.CraftingFooter {
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	margin-top: 16px;
+	height: 142px;
+
+	.CraftingTitleContainer {
+		flow-children: right;
+		margin-bottom: 8px;
+		horizontal-align: center;
+
+		.CraftingTitle {
+			                          
+			                
+			                      
+			                                                                                     
+
+			color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor1 ), to( primaryColor2 ) );
+			text-shadow: textShadowSmall;
+		}
+
+		.CraftPlayerName {
+			color: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LighterGrey ) ); 
+		}
+
+		#CraftingHelpButton {
+			margin-left: 12px;
+			margin-top: 4px;
+		}
+	}
+
+	.OperationsHolderContainer {
+		flow-children: down;
+		horizontal-align: center;		
+
+		#OperationsHolder {
+			flow-children: right;
+			margin-left: 8px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+			border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&00 ), color-stop( 0.2, primaryColor4), color-stop( 0.8, primaryColor4), to( primaryColor4&00 ) );
+			padding-bottom: 12px;
+			margin-bottom: 4px;
+
+			.FantasyOperationButton {
+				margin: 0px 4px;
+				max-width: 260px;
+				height: 52px;
+
+				&.OperationUnavailable {
+					brightness: 0.4;
+					saturation: 1;
+					opacity: 1;
+				}
+				
+				Label {
+					line-height: 1.1;
+					margin: 0px;
+				}
+			}
+		}
+	}	
+
+	.CraftingStatus {
+		padding: 0px 8px;
+		flow-children: right;
+		vertical-align: center;
+		horizontal-align: center;
+		margin-top: 8px;
+
+		.RerollIcon {
+			margin-right: 8px;
+			margin-top: 1px;
+			wash-color: LightestGrey;
+		}
+
+		.RerollButton {
+			margin-right: 12px;
+		}
+	}
+}
+
+.CraftingHelpButton {
+	flow-children: right;
+	vertical-align: center;
+
+	Label {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #999;
+	}
+
+	&:hover Label {
+		text-decoration: underline;
+	}
+}
+
+.FantasyOperation {
+	.PopupButton {
+		width: 300px;
+		height: 100px;
+		ui-scale: 80%;
+		margin: 0px 8px;
+		Label {
+			text-align: center;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+.Header
+{
+	font-size: 32px;
+	font-family: titleFont;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	color: white;
+	margin-bottom: 12px;
+}
+
+.BodyText
+{
+	font-size: 16px;
+	horizontal-align: left;
+	margin-left: 8px;
+}
+
+#NoOperationsText
+{
+	visibility: collapse;
+
+	                   
+	                          
+	                    
+	             
+	                           
+}
+
+.NoRollsAvailable #NoOperationsText
+{
+	visibility: visible;
+}
+
+.NoRollsAvailable #OperationsHolder,
+.NoRollsAvailable #TokensAvailableText,
+.NoRollsAvailable .RerollButton
+{
+	visibility: collapse;
+}
+
+#TokensAvailableText
+{
+	                   
+	                          
+	                    
+	             
+	                        
+	                          
+}
+
+.PeriodResultsRow
+{
+	flow-children: right;
+}
+
+.PeriodResultLabel
+{
+	text-transform: uppercase;
+	color: bluegreyTextReg;
+	letter-spacing: 1px;
+	font-size: 20px;
+}
+
+.PeriodResultRule
+{
+	vertical-align: middle;
+	width: 30px;
+	height: 1px;
+	background-color: bluegreyTextReg;
+	margin: 0 6px;
+}
+
+.PeriodResultValue
+{
+	color: white;
+	letter-spacing: 1px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+#PeriodInfo
+{
+	width: fit-children;
+	flow-children: down;
+}
+
+#ResultsTabletDisplay
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+}
+
+
+#SelectedPeriodLockCountdown
+{
+	margin-top: 24px;
+}
+
+#SelectedPeriodLockCountdown .LockUpcoming
+{
+	color: #A3BCEF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#SelectedPeriodLockCountdown.CountdownAfterEnd .LockUpcoming
+{
+	visibility: collapse;
+}
+
+#SelectedPeriodLockCountdown .Locked
+{
+	color: #ccc;
+	padding: 2px 8px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #79242Bff;
+
+	visibility: collapse;
+}
+
+#SelectedPeriodLockCountdown.CountdownAfterEnd .Locked
+{
+	visibility: visible;
+}
+
+.ResultsTablet
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+	flow-children: up;
+}
+
+.TabletPeriodScoreHolder
+{
+	width: fit-children;
+	horizontal-align: center;
+	flow-children: right;
+
+	Label {
+		margin-left: 2px;
+		margin-right: 2px;
+		font-family: titleFont;
+		font-size: 24px;
+		color: LightestGrey;
+	}
+
+	.ScoreLabel {
+		color: LightGrey;
+	}
+}
+
+.TabletPeriodSeriesHolder
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	flow-children: right;
+	visibility: collapse;
+	padding-left: 16px;
+	margin-left: 16px;
+	border-left: 1px solid rgba(255, 255, 255, 0.352);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( secondaryColor1&00 ), color-stop( 0.3, secondaryColor1 ), color-stop( 0.7, secondaryColor1 ), to( secondaryColor1&00 ) );
+
+	Label {
+		color: LightGrey;
+		vertical-align: center;
+	}
+
+	.ResultsTeamLogo {
+		height: 32px;
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+}
+
+.HasBestSeries .TabletPeriodSeriesHolder
+{
+	visibility: visible;
+}
+
+.ResultsBottom
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: left;
+	horizontal-align: center;
+	margin-top: -2px;
+}
+
+.PeriodPercentileReward
+{
+	width: fill-parent-flow( 1.0 );
+	height: fit-children;
+	margin: 4px;
+	background-color: #0006;
+	border: 1px solid transparent;
+}
+
+.Top1Percentile #Top1Reward,
+.Top10Percentile #Top10Reward,
+.Top25Percentile #Top25Reward,
+.Top50Percentile #Top50Reward,
+.Top75Percentile #Top75Reward,
+.Bottom25Percentile #Bottom25Reward
+{
+	border: 1px solid bluegreyTextReg;
+}
+
+
+.PeriodPercentileRewardContents
+{
+	flow-children: down;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+.PeriodPercentileReward Label
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.PeriodPercentileRewardAmount
+{
+	color: white;
+	font-size: 22px;
+}
+
+.PeriodPercentileRewardLabel
+{
+	color: #666;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.PeriodPercentileRewardCondition
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #999;
+	font-size: 16px;
+	max-height: 21px;
+	text-overflow: shrink;
+}
+
+.PeriodRewardsColumn
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	flow-children: down;
+}
+
+.PeriodRewards
+{
+	width: 100%;
+	height: 100%;
+	padding: 4px 20px;
+	padding-bottom: 10px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor6 ), to( primaryColor7&00 ) );
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&22 ), color-stop( 0.5, primaryColor3 ), to( primaryColor4&22 ) );
+}
+
+.PeriodRewardsLabel
+{
+	text-transform: uppercase;
+	font-size: 14px;
+	color: LightGrey;
+	width: 100%;
+	text-align: center;
+	letter-spacing: 2px;
+	padding: 4px 4px 8px 4px;
+}
+
+.PeriodRewardsList
+{
+	width: 100%;
+	flow-children: down;
+
+	.ScoreContainer	{
+		width: 100%;
+		flow-children: right;
+		vertical-align: center;
+		padding: 6px 0px;
+		border-top: 1px solid primaryColor5;
+
+		Label {
+			vertical-align: center;
+			width: fill-parent-flow( 1.0 );
+			font-size: 20px;
+		}
+
+		.ScoreLabel {
+			vertical-align: center;
+			text-align: left;
+			color: LighterGrey;
+			font-family: titleFont;
+		}
+
+		.Value {
+			vertical-align: center;
+			text-align: right;
+			font-size: 24px;
+			color: white;
+			height: 28px;
+		}
+	}
+}
+
+.LeaderboardContainer
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	padding: 8px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 40%, 0% 100%, from( primaryColor6 ), to( primaryColor7&00 ) );
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&22 ), color-stop( 0.5, primaryColor3 ), to( primaryColor4&22 ) );
+}
+
+#LeaderboardContainerGlobal
+{
+	margin: 0px 8px;	
+}
+
+.LeaderList {
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	overflow: squish scroll;
+}
+
+.LeaderListHeader {
+	width: 100%;
+	margin-bottom: 8px;
+
+	Label {
+		text-transform: uppercase;
+		font-size: 14px;
+		color: LightGrey;
+		letter-spacing: 2px;
+	}
+
+	.TotalScore	{
+		horizontal-align: right;
+		text-align: right;
+	}
+}
+
+
+
+.LeaderboardRow {
+	width: 100%;
+	margin-bottom: 4px;
+	background-color: primaryColor5;
+	flow-children: right;
+	padding-right: 4px;
+
+	#LeaderListAvatar {
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+		background-color: rgba( 0, 0, 0, 0.5 );
+		margin-right: 6px;
+	}
+
+	.LeaderListName	{
+		color: LightestGrey;
+		vertical-align: center;
+	}
+
+	.LeaderListName .PersonaName {
+		color: #bbbbbb;
+	}
+
+	.LeaderListValue {
+		horizontal-align: right;
+		text-align: right;
+		color: LightestGrey;
+		vertical-align: center;
+		margin-right: 12px;
+	}
+}
+
+.ResultContentRow
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+	margin-bottom: 24px;
+}
+
+.ResultContentRow.Leaderboard
+{
+	height: 180px;
+	margin-bottom: 0px;
+}
+
+#ProgressLevelPanel
+{
+	                                                                                                                                                      
+	flow-children: right;
+	horizontal-align: right;
+	margin-right: 16px;
+}
+
+.ProgressBarContainer
+{
+	width: 100%;
+}
+
+#FantasyLevelProgressBar
+{
+	width: 100%;
+	height: 12px;
+	border: 1px solid hsv-transform( bluegreyTextReg, 0, 0.3, 0.3 );
+	flow-children: right;
+	border-radius: 6px;
+}
+
+.FantasyLevelProgressBarTick
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	border-right: 1px solid hsv-transform( bluegreyTextReg, 0, 0.3, 0.3 );
+}
+
+.FantasyLevelProgressBarTick:selected
+{
+	background-color: bluegreyTextReg;
+}
+
+#FantasyLevelProgressBarTick3
+{
+	border-right: 0px solid hsv-transform( bluegreyTextReg, 0, 0.3, 0.3 );
+}
+
+.RewardTileContainer
+{
+	flow-children: right;
+}
+
+.ProgressPanel
+{
+	flow-children: down;
+	margin-top: 1px;
+	margin-left: 8px;
+	width: 400px;
+}
+
+.RewardTile
+{
+	width: fill-parent-flow( 1.0 );
+	height: 48px;
+}
+
+.RewardTileValue
+{
+	height: 100%;
+	horizontal-align: center;
+	tooltip-position: top;
+	
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.RewardTileValue.ShardReward
+{
+	width: 24px;
+	background-image: dotaPlusCurrencySmallIcon;
+	background-img-opacity: 0.8;
+}
+
+.RewardTileValue
+{
+	width: 24px;
+}
+
+.RewardTileValue .BPReward
+{
+	height:  100%;
+	wash-color: accentColorBright;
+	width: 24px;
+	background-image: bp_total_points;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.RewardTileValue .ShardRewardLabel,
+.RewardTileValue .BPRewardLabel
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	text-align: center;
+	font-weight: bold;
+	color: dotaPlusLightGold;
+	font-size: 15px;
+	margin-bottom: 6px;
+	text-shadow: 0px 0px 4px dotaPlusGold;
+}
+
+#FantasyLevelContainer
+{
+	flow-children: down;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.FantasyLevelLabel
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: bluegreyTextReg;
+	text-align: center;
+	horizontal-align: center;
+	margin-top: 8px;
+}
+
+.FantasyLevelValue
+{
+	vertical-align: center;
+	font-size: 28px;
+	text-align: center;
+	horizontal-align: center;
+	background-color: #000000;
+	color: white;
+	padding: 2px 24px;
+	border-radius: 4px;
+	font-weight: bold;
+	font-family: defaultFont;
+	border: 1px solid bluegreyTextReg;
+}
+
+#LockedPanel
+{
+	height: fit-children;
+	width: fit-children;
+	vertical-align: center;
+	horizontal-align: center;
+	flow-children: down;
+		margin-top: -60px;
+
+	.LockedHeader {
+		horizontal-align: center;
+		vertical-align: middle;
+		font-size: 28px;
+		font-family: titleFont;
+		font-weight: semi-bold;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: LightestGrey;
+		margin: -48px 0px 8px;
+		color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor1 ), to( primaryColor2 ) );
+	}
+
+	.LockIconContainer {
+		horizontal-align: center;
+		padding: 32px;
+		border: 1px solid white;
+		border-brush: gradient( linear, 0% 0%, 70% 70%, from( primaryColor3 ), to( primaryColor4&00 ) );
+		margin: 40px;
+		transform: rotateZ( 45deg );
+
+		.LockIcon {
+			transform: rotateZ( -45deg );				
+		}
+	}
+}
+
+#StarterPanel {
+	.SubTitleContainer {
+		horizontal-align: center;
+		width: 40%;
+		flow-children: right;
+		margin-bottom: 24px;
+
+		.Dash {
+			width: fill-parent-flow(1);
+			height: 1px;
+			background-color: white;
+			vertical-align: center;
+
+			&.Left { background-color: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&00 ), to( primaryColor4 ) ); }
+			&.Right { background-color: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4 ), to( primaryColor4&00 ) ); }
+		}
+
+		.SubTitle {	
+			margin: 0px 16px;		
+			color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor1 ), to( primaryColor2 ) );
+			text-shadow: textShadowSmall;
+			margin-bottom: 4px;
+		}
+	}
+
+	.Title {
+		horizontal-align: center;
+		                        
+		margin-bottom: 16px;
+		width: 70%;
+		text-align: center;
+
+		font-family: titleFont;
+		font-size: 36px;
+		letter-spacing: 0.2px;
+		color: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LighterGrey ) );
+		                                  
+		border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&00 ), color-stop( 0.2, primaryColor4 ), color-stop( 0.8, primaryColor4 ), to( primaryColor4&00 ) );
+
+		                   
+		                       
+		                    
+		                          
+		                
+	}
+
+	.StartFootnote {
+		horizontal-align: center;
+		margin-bottom: 16px;
+	}
+}
+
+#PlayerSelectContainer {
+	width: fit-children;
+	height: fit-children;
+	flow-children: right;
+	horizontal-align: center;
+	margin-bottom: 16px;
+
+	.FantasyPlayerTitle {
+		margin-bottom: 8px;
+		margin-top: 16px;
+	}
+
+	.PlayerChoice {
+		flow-children: down;
+		margin-left: 12px;
+		margin-right: 12px;
+		box-shadow: 0px 8px 48px -1px rgba( 0, 0, 0, 0.5 );
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #000D19 ), to( primaryColor6&66 ) );
+		vertical-align: center;
+
+		#PlayerTitle {
+			horizontal-align: center;
+		}
+
+		#DraftPlayerButton {
+			ignore-parent-flow: true;
+			vertical-align: bottom;
+			horizontal-align: center;
+			width: 100%;
+			margin: 20px;
+		}
+
+		.ChoiceBorder {
+			width: 100%;
+			height: 100%;
+			border: 2px solid primaryColor3&11;
+			ignore-parent-flow: true;
+
+			animation-name: GlowChoiceBorder;
+			animation-duration: 0.6s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+			animation-direction: alternate;
+		}
+
+		&.InitialRosterHasPlayer {
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor3 ), to( primaryColor5 ) );
+
+			.ChoiceBorder {	
+				animation-name: none;
+				border: 2px solid primaryColor2&44;
+			}
+		}
+	}
+
+	.PlayerImages {
+		horizontal-align: center;
+	}
+
+	#PlayerImage
+	{
+		width: 260px;
+		height: 260px;
+		horizontal-align: center;
+	}
+
+	#TeamLogo
+	{
+		width: 64px;
+		height: 64px;
+		vertical-align: top;
+		horizontal-align: right;
+	}
+}
+
+@keyframes 'GlowChoiceBorder' {
+	0% {
+		                    
+		border: 2px solid primaryColor3;
+	}
+	
+	100% {
+		                      
+		border: 2px solid white;
+	}
+}
+
+
+#CreateTabletButton
+{
+	horizontal-align: center;
+	margin-top: 24px;
+	padding-left: 56px;
+	padding-right: 56px;
+
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	transition-delay: 1s;
+
+	opacity: 1;
+	transform: none;
+
+	animation-name: GlowPrimaryButton;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+
+	&:disabled {
+		opacity: 0;
+		transform: translateY( 16px );
+	}
+}
+
+
+
+.UpgradeFlow
+{
+	visibility: collapse;
+
+}
+
+.NoUpgradeFlow
+{
+	visibility: visible;
+}
+
+.UpgradeAvailable .NoUpgradeFlow
+{
+	visibility: collapse;
+}
+
+.UpgradeAvailable .UpgradeFlow
+{
+	visibility: visible;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.RewardsButton
+{
+	margin-top: 12px;
+	width: 100%;
+	horizontal-align: left;
+	
+	animation-name: GlowUnclaimedRewardsBadge;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+	visibility: collapse;
+
+	&.Center {
+		horizontal-align: center;
+	}
+}
+
+.HasUnclaimedRewards .RewardsButton
+{
+	visibility: visible;
+}
+
+.ClaimingInProgress .RewardsButton 
+{
+	brightness: 0.4;
+	saturation: 1;
+	opacity: 1;
+}
+
+.Tutorial_ViewTablet #tablet_1:not(.Selected),
+.Tutorial_ViewTablet #tablet_2:not(.Selected),
+.Tutorial_ViewTablet #tablet_3:not(.Selected),
+.Tutorial_Emblems #tablet_1:not(.Selected),
+.Tutorial_Emblems #tablet_2:not(.Selected),
+.Tutorial_Emblems #tablet_3:not(.Selected),
+.Tutorial_Operations #tablet_1,
+.Tutorial_Operations #tablet_2,
+.Tutorial_Operations #tablet_3,
+.Tutorial_ForgotTokens #tablet_1,
+.Tutorial_ForgotTokens #tablet_2,
+.Tutorial_ForgotTokens #tablet_3
+.Tutorial_ShowRoster #tablet_1,
+.Tutorial_ShowRoster #tablet_2,
+.Tutorial_ShowRoster #tablet_3
+{
+	opacity: .1;
+}
+
+.Tutorial_ViewTablet .CraftingFooter,
+.Tutorial_Emblems .CraftingFooter
+{
+	opacity: 0.05;
+}
+
+.TutorialOnly
+{
+	visibility: collapse;
+	width: 100%;
+	height: 100%;	
+}
+
+.TutorialButton
+{
+	margin-top: 24px;
+	horizontal-align: left;
+
+	&.Center {
+		horizontal-align: center;
+	}
+
+	animation-name: GlowPrimaryButton;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.Show_InitialRoster,
+.Show_UpgradeRoster,
+.Show_ViewTablet,
+.Show_Emblems,
+.Show_Operations,
+.Show_TutorialLocked,
+.Show_TutorialResults,
+.Show_ForgotTokens,
+.Show_ShowRoster
+{
+	visibility: collapse;
+	width: 100%;
+	height: 100%;	
+}
+
+.Tutorial_ChooseRoster .TutorialOnly,
+.Tutorial_ChooseRoster .Show_InitialRoster,
+.Tutorial_UpgradeRoster .TutorialOnly,
+.Tutorial_UpgradeRoster .Show_UpgradeRoster,
+.Tutorial_ViewTablet .TutorialOnly,
+.Tutorial_ViewTablet .Show_ViewTablet,
+.Tutorial_Emblems .TutorialOnly,
+.Tutorial_Emblems .Show_Emblems,
+.Tutorial_Operations .TutorialOnly,
+.Tutorial_Operations .Show_Operations,
+.Tutorial_Results .TutorialOnly,
+.Tutorial_Results .Show_TutorialResults,
+.Tutorial_Locked .TutorialOnly,
+.Tutorial_Locked .Show_TutorialLocked,
+.Tutorial_ForgotTokens .Show_ForgotTokens,
+.Tutorial_ForgotTokens .TutorialOnly,
+.Tutorial_ShowRoster .Show_ShowRoster,
+.Tutorial_ShowRoster .TutorialOnly
+{
+	visibility: visible;
+}
+
+.TutorialTitle
+{
+	font-size: 32px;
+	font-family: titleFont;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	color: white;
+	margin-bottom: 12px;
+	horizontal-align: center;
+} 
+
+.TutorialText
+{
+	margin: 8px 0px;
+	color: LighterGrey;
+	line-height: 1.2;
+
+	&.Center {
+		text-align: center;
+	}
+}
+
+.TutorialListText
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+	color: LighterGrey;
+}
+
+.Show_InitialRoster
+{
+	                              
+}
+
+.InitialRosterMid
+{
+	height: fit-children;
+	width: 75%;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.ViewTabletLeft
+{
+	height: fit-children;
+	width: 30%;
+	horizontal-align: left;
+	flow-children: down;
+	padding: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0000 ), color-stop( 0.01, #000a  ), color-stop( 0.6, #000a), to( #0000 ) );
+}
+
+.EmblemRight
+{
+	height: fit-children;
+	width: 30%;
+	horizontal-align: right;
+	flow-children: down;
+	padding-top: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0000 ), color-stop( 0.01, #000a  ), color-stop( 0.6, #000a), to( #0000 ) );
+}
+
+.OperationsMid,
+.UpgradeMid
+{
+	height: fit-children;
+	width: 40%;
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 240px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0000 ), color-stop( 0.01, #000a  ), color-stop( 0.6, #000a), to( #0000 ) );
+
+	.TutorialText {
+		text-align: center;
+	}
+
+	.TutorialButton {
+		horizontal-align: center;
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+}
+
+.ShowRosterMid
+{
+	height: fit-children;
+	width: 40%;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-bottom: 240px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0000 ), color-stop( 0.01, #000a  ), color-stop( 0.8, #000a), to( #0000 ) );
+
+	.TitleTutorialInitial {
+		text-align: center;
+		horizontal-align: center;
+	}
+
+
+	.TutorialText {
+		text-align: center;
+		margin-bottom: 32px;
+	}
+
+	.TutorialButton {
+		horizontal-align: center;
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+}
+
+
+.Show_TutorialResults
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0000 ), color-stop( 0.01, #000a  ), color-stop( 0.6, #000a), to( #0000 ) );
+}
+
+.ResultsMid
+{
+	height: fit-children;
+	width: 60%;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Tutorial_Locked #LockedPanel
+{
+	visibility: collapse;
+}
+
+.LockedMid,
+.ResultsMid
+{
+	height: fit-children;
+	width: 30%;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.TutorialStat,
+.TutorialQuality,
+.TutorialTrait
+{
+	visibility: collapse;
+}
+
+.TitleTutorial_Stat .TutorialStat,
+.TitleTutorial_Quality .TutorialStat,
+.TitleTutorial_Trait .TutorialStat,
+.TitleTutorial_Quality .TutorialQuality,
+.TitleTutorial_Trait .TutorialQuality,
+.TitleTutorial_Trait .TutorialTrait,
+.TitleTutorial_Stat .EmblemTutorialInitial,
+.TitleTutorial_Quality .EmblemTutorialInitial,
+.TitleTutorial_Trait .EmblemTutorialInitial
+{
+	visibility: visible;
+	color: #555555;
+}
+
+.TitleTutorial_Stat .TutorialStat,
+.TitleTutorial_Quality .TutorialQuality,
+.TitleTutorial_Trait .TutorialTrait
+{
+	color: #aaaaaa;
+}
+
+.TutorialViewTitle
+{
+	visibility: collapse;
+}
+
+.TitleTutorial_Details .TutorialViewTitle
+{
+	visibility: visible;
+}
+
+.TitleTutorial_Details .TitleTutorialInitial
+{
+	opacity: 0.3;
+	                          
+}
+
+.PerformingOperation .ButtonPrimary 
+{	
+	opacity: 0.2;
+}
+
+.LoadingSpinnerPanel
+{
+	horizontal-align: center;
+	vertical-align: center;	
+}

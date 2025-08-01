@@ -1,0 +1,71 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_accomplishments_debug.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="AccoladeRow">
+			<Panel class="AccoladeRow">
+				<DOTAHudVersusSceneAccolade id="Accolade" class="AccoladeColumn" />
+				<Label class="ScoreColumn" text="{s:score}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTAAccomplishmentsDebugPage class="DashboardPage SafeDashboardPage">
+
+		<Panel id="Header">
+			<DOTAAvatarImage id="AvatarImage" accountid="local"  />
+			<DOTAUserName id="UserName" accountid="local" />
+			<Panel class="FillWidth" />
+			<TextButton class="PopupButton" text="Change Account" unlocalized="true" onactivate="DOTAAccomplishmentsDebugShowAccountPicker()" />
+		</Panel>
+
+		<Panel id="Contents">
+			<Panel id="PlayerAccomplishments" class="AccomplishmentsSection">
+				<Label class="AccomplishmentsTitle" text="Player Accomplishments" unlocalized="true" />
+
+				<Panel class="AccomplishmentsContents">
+
+					<Panel class="AccoladesTable">
+						<Panel class="AccoladesTableHeader">
+							<Label class="AccoladeColumn" text="Accolade" unlocalized="true" />
+							<Label class="ScoreColumn" text="Score" unlocalized="true" />
+						</Panel>
+						<Panel id="PlayerAccoladesList" class="AccoladesList" />
+					</Panel>
+
+					<Label id="PlayerAccomplishmentsDebugText" class="AccomplishmentsDebugText" text="{s:player_accomplishments_debug_text}" />
+
+				</Panel>
+
+			</Panel>
+			<Panel id="PlayerHeroAccomplishments" class="AccomplishmentsSection">
+				<Label class="AccomplishmentsTitle" text="Hero Accomplishments" unlocalized="true" />
+				<Panel id="HeroPicker" onactivate="DOTAAccomplishmentsDebugShowHeroPicker()">
+					<DOTAHeroImage id="HeroImage" />
+					<Label id="HeroName" text="{g:dota_hero_name:featured_hero_id}" />
+					<Panel class="FillWidth" />
+					<Panel id="HeroPickerDropdownArrow" />
+				</Panel>
+
+				<Panel class="AccomplishmentsContents">
+
+					<Panel class="AccoladesTable">
+						<Panel class="AccoladesTableHeader">
+							<Label class="AccoladeColumn" text="Accolade" unlocalized="true" />
+							<Label class="ScoreColumn" text="Score" unlocalized="true" />
+						</Panel>
+						<Panel id="PlayerHeroAccoladesList" class="AccoladesList" />
+					</Panel>
+
+					<Label id="PlayerHeroAccomplishmentsDebugText" class="AccomplishmentsDebugText" text="{s:hero_accomplishments_debug_text}" />
+				</Panel>
+			
+			</Panel>
+		</Panel>
+
+	</DOTAAccomplishmentsDebugPage>
+</root>

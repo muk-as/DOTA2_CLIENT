@@ -1,0 +1,212 @@
+                                              
+.PopupPanel.Simon {
+	flow-children: none;
+	background-color: none;
+	animation: none;
+	border: 0px solid transparent;
+	padding: 0px;
+	box-shadow: none;
+	width: 100%;
+	height: 100%;
+}
+
+.MainContents {
+	flow-children: down;
+	background-color: #0009;
+	border: 2px solid #222;
+	padding: 16px 0px 16px 16px;
+	margin-left: 200px;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+.Header {
+	flow-children: right;
+	width: 100%;
+
+	.Title {
+		font-family: titleFont;
+		font-size: 48px;
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 4px;
+	}
+}
+
+.Body {
+	flow-children: right;
+
+	.MainGameContainer {
+		width: 720px;
+		height: 720px;
+		background-color: #222;
+		flow-children: down;
+
+		#Menu {
+			width: 100%;
+			flow-children: down;
+
+			.StartGameButton,
+			.TryAgainButton {
+				horizontal-align: center;
+				visibility: collapse;
+			}
+
+			.GameStateStart & .StartGameButton,
+			.GameStateGameOver & .TryAgainButton {
+				visibility: visible;
+			}
+		}
+
+		#MainGame {
+			overflow: clip;
+			flow-children: down;
+			width: 100%;
+			height: fit-children;
+
+			&.ShowingPrompt {
+				.AbilityButton {
+					animation-name: Pulse;
+					animation-duration: 0.3s;
+					animation-iteration-count: 1;
+					animation-timing-function: ease-out;
+				}
+			}
+
+			.ScoreText
+			{
+				font-size: 24px;
+				horizontal-align: center;
+			}
+
+			.TurnContainer
+			{
+				width: 100%;
+				height: 40px;
+			}
+
+			.MyTurnText,
+			.YourTurnText {
+				font-size: 36px;
+				horizontal-align: center;
+				vertical-align: center;
+				visibility: collapse;
+			}
+
+			.GameStateDemoing & .MyTurnText,
+			.GameStatePlaying & .YourTurnText {
+				visibility: visible;
+			}
+
+			#AbilityButtons {
+				flow-children: right;
+				vertical-align: bottom;
+				horizontal-align: center;
+				padding: 10px;
+
+				.AbilityButton {
+					width: 128px;
+					height: 128px;
+					margin: 10px;
+					brightness: 0.8;
+
+					&.Demonstrating {
+						border: 4px solid yellow;
+					}
+					&.Incorrect {
+						border: 4px solid red;
+					}
+					&.Correct {
+						border: 4px solid green;
+					}
+					&.Neutral {
+						border: 4px solid blue;
+					}
+				}
+			}
+		}
+	}
+
+	.RightColumn {
+		flow-children: down;
+		width: 250px;
+		margin-left: 16px;
+
+		.ScoreSection {
+			flow-children: down;
+			width: 100%;
+
+			.ScoreLabel {
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				color: #999;
+			}
+			.ScoreValue {
+				font-family: titleFont;
+				font-size: 48px;
+				letter-spacing: 4px;
+				color: white;
+			}
+		}
+
+		.RewardsSection {
+			margin-top: 16px;
+			flow-children: down;
+			width: 100%;
+
+			.RewardsLabel {
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				color: #999;
+			}
+
+			.RewardRow {
+				flow-children: right;
+
+				.RewardScore {
+					width: 60px;
+					vertical-align: middle;
+					text-align: right;
+					margin-right: 8px;
+				}
+
+				.RewardValue {
+					flow-children: right;
+					width: 60px;
+					vertical-align: middle;
+
+					.InfoIcon {
+						margin: 0px 2px 0px 0px;
+					}
+				}
+			}
+		}
+
+		.LeaderboardSection {
+			margin-top: 48px;
+			.LeaderboardLabel {
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				color: #999;
+			}
+		}
+	}
+}
+
+.CloseButton {
+	horizontal-align: right;
+}
+
+@keyframes 'Pulse'
+{
+	0%
+	{
+		brightness: 1.2;
+	}
+
+	100%
+	{
+		brightness: 0.8;
+	}
+}

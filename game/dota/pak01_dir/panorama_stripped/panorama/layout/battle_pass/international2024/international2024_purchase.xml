@@ -1,0 +1,132 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_purchase.css" />
+	</styles>
+
+	<DOTABPInternational2024PurchasePopup class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()" >
+		<Panel class="BrightGlow"/>
+		<DOTAParticleScenePanel class="CompediumBackgroundParticles" hittest="false" particleName="particles/ui/compendium/ui_compendium_2024_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+		<DOTAParticleScenePanel class="CompediumBackgroundParticles2" hittest="false" particleName="particles/ui/compendium/ui_compendium_2024_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+		<Image class="AegisPattern" src="file://{images}/compendium/international2024/aegis_pattern_alt.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+		<DOTAScenePanel class="TopRightGodRays" map="scenes/international_2024/international_2024_dashboard_background" camera="camera_dashboard" hittest="false" renderdeferred="false" particleonly="false"/>
+		<Panel class="PopupBorder" hittest="false"/>
+		
+		<Panel class="LogoContainer">
+			<Image class="LogoSmall" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/compendium/international2024/ti_logo_2024.png" />
+			<Label class="Title" text="#FrontPage_Compendium_Points_Header" />
+			<Panel id="StarsContainer">
+				<Panel class="CompendiumStar"/>
+				<Panel class="CompendiumStar"/>
+				<Panel class="CompendiumStar"/>
+				<Panel class="CompendiumStar"/>
+				<Panel class="CompendiumStar"/>
+			</Panel>
+		</Panel>
+		
+		<Panel id="GiftingCounter">
+			<Label class="GiftingTitle" text="#DOTA_Compendium_GiftRewardInfo" />
+			<Panel id="ProgressBar">
+				<Panel class="Rewards">
+					<Panel id="Reward1">
+						<Label class="RewardTitle" text="#DOTA_PlayerTitle4"/>
+						<Panel class="XPCircle">
+							<Label text="2,000" class="AchievementReward"/>
+							<Panel class="PTS"/>
+						</Panel>
+						<Panel class="DownArrow"/>
+					</Panel>
+					<Panel id="Reward2">
+						<Label class="RewardTitle" text="#DOTA_PlayerTitle5"/>
+						<Panel class="XPCircle">
+							<Label text="4,000" class="AchievementReward"/>
+							<Panel class="PTS"/>
+						</Panel>
+						<Panel class="DownArrow"/>
+					</Panel>
+					<Panel id="Reward3">
+						<Label class="RewardTitle" text="#DOTA_PlayerTitle6"/>
+						<Panel class="XPCircle">
+							<Label text="10,000" class="AchievementReward"/>
+							<Panel class="PTS"/>
+						</Panel>
+						<Panel class="DownArrow"/>
+					</Panel>
+				</Panel>
+				<Panel id="GiftProgressBar">
+					<Panel class="Notch" id="Notch1"/>
+					<Panel class="Notch" id="Notch2"/>
+					<Panel class="Notch" id="Notch3"/>
+					<Panel class="Notch" id="Notch4"/>
+					<Panel class="Notch" id="Notch5"/>
+				</Panel>
+			</Panel>
+		</Panel>
+		
+		<Panel id="TierContainer">
+			<Panel id="Tier1" class="Tier" itemdef="30237" giftitemdef="30236">
+				<Panel class="TopBorder"/>
+				<Panel class="TierContainer">
+					<Label class="TierName TitleMedium WhiteText" text="#DOTA_Compendium2024_Standard" />
+					<Panel class="TierIncludes">
+						<Panel class="IncludesTitle">
+							<Panel class="Dash Left"/>
+							<Label class="LabelMedium LighterGreyText" text="#DOTA_Compendium2024_Includes" />
+							<Panel class="Dash Right"/>
+						</Panel>
+						<Label class="IncludesLevels" text="#DOTA_Compendium2024_CompendiumLevelAmount" />
+						<Label class="IncludesBoosters" text="#DOTA_Compendium2024_CompendiumBoosterAmount" />
+					</Panel>
+					<Panel class="TierButtons">
+						<DOTAInternational2024Button class="PurchaseOptionButton PurchaseOptionActivate LightGreen" text="#DOTA_PurchaseBattlePass_Price" onactivate="DOTAPurchaseBattlePassInternational2024( 30237 )" />
+						<DOTAInternational2024Button class="PurchaseOptionButton PurchaseOptionGift DarkGreen" text="#DOTA_PurchaseBattlePassAsGift_Price" onactivate="DOTAPurchaseItemAsGift( 30236, BattlePass_Gift )" />
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel id="Tier2" class="Tier" itemdef="30240" giftitemdef="30240">
+				<DOTAScenePanel id="UpgradedParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+				<Panel class="TopBorder"/>
+				<Panel class="TierContainer">
+					<Label class="TierName TitleMedium WhiteText" text="#DOTA_Compendium2024_Upgraded" />
+					<Panel class="TierIncludes">
+						<Panel class="IncludesTitle">
+							<Panel class="Dash Left"/>
+							<Label class="LabelMedium LighterGreyText" text="#DOTA_Compendium2024_Includes" />
+							<Panel class="Dash Right"/>
+						</Panel>
+						<Label class="IncludesLevels" text="#DOTA_Compendium2024_CompendiumLevelAmount" />
+						<Label class="IncludesBoosters" text="#DOTA_Compendium2024_CompendiumBoosterAmount" />
+					</Panel>
+					<Panel class="TierButtons">
+						<DOTAInternational2024Button class="PurchaseOptionButton PurchaseOptionActivate LightGreen" text="#DOTA_PurchaseBattlePass_Price" onactivate="DOTAPurchaseBattlePassInternational2024( 30240 )" />
+						<DOTAInternational2024Button class="PurchaseOptionButton PurchaseOptionGift LightGreen" text="#DOTA_PurchaseBattlePassAsGift_Price" onactivate="DOTAPurchaseItemAsGift( 30240, BattlePass_Gift )" />
+					</Panel>
+					<Label class="DiscountText" text="#Fall2021_BP_Buy_Discount" />
+				</Panel>
+			</Panel>			
+		</Panel>
+
+		                                   
+			                          
+			                    
+			                           
+		            
+		
+		<Panel id="FooterInfo">
+			<Label id="PurchasePoolContribution" text="#DOTA_Compendium2024_PrizePoolContribution" />
+			<Panel id="InfoButtons">
+				<DOTAInternational2024Button class="TextOnly" text="#dota_ti12_purchase_preview" onactivate="UIPopupButtonClicked(); DOTAShowBPInternational2024RewardsPage()" />
+				<DOTAInternational2024Button class="TextOnly" text="#dota_ti8_purchase_learn_more" onactivate="ExternalBrowserGoToDOTAURL( 'international2024' )" />
+			</Panel>
+		</Panel>
+
+		<Button id="CancelButton" class="ButtonPrimary TI24Green" onactivate="UIPopupButtonClicked();" >
+			<Image src="file://{images}/control_icons/24px/x_close.svg" scaling="stretch-to-fit-preserve-aspect" />
+		</Button>
+
+	</DOTABPInternational2024PurchasePopup>
+
+</root>

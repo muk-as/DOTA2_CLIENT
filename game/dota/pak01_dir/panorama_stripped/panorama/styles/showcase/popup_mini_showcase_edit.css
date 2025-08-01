@@ -1,0 +1,340 @@
+                                                                           
+
+@keyframes 'popup_appear' {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#MiniShowcaseContainer {
+	flow-children: down;
+}
+
+DOTAPopupMiniShowcaseEdit.PopupPanel
+{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	flow-children: none;
+	border: 0px solid black;
+	background-color: #000000f6;
+	animation-name: none;
+	box-shadow: none;
+	transition-property: background-color;
+	transition-duration: 0s;
+
+	animation-name: popup_appear; 
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+
+	DOTAShowcaseContents {
+		background-image: url( "file://{images}/textures/miniprofile_rock.psd" );
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+}
+
+@keyframes 'show_main_edit_controls' {
+	0% {
+		transform: translateX( -24px );
+	}
+
+	100% {
+		transform: translateY( 0px );
+	}
+}
+
+#MainEditControls {
+	flow-children: down;
+	background-image: url( "file://{images}/textures/miniprofile_rock.psd" );
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	padding: 16px;
+	border: 1px solid LighterGrey&08;
+	width: 320px;
+	position: 420px 160px 0px;
+
+	animation-name: show_main_edit_controls; 
+	animation-duration: 0.2s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+
+	.SaveInProgress & {
+		visibility: collapse;
+	}
+
+	DOTAShowcaseBudgetProgressBar {
+		horizontal-align: center;
+		width: 100%;
+	}
+
+	#EditMiniShowcaseTitle {
+		horizontal-align: center;
+		margin-bottom: 4px;
+	}
+
+	Button,
+	TextButton {
+		tooltip-position: bottom;
+		width: fill-parent-flow( 1.0 );
+		margin-bottom: 6px;
+	}
+
+	Button {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	.ButtonDescription {
+		flow-children: right;
+		horizontal-align: center;
+		vertical-align: center;
+	}
+
+	.ButtonIcon {
+		                        
+	}
+
+	.ButtonRow {
+		flow-children: right;
+		                       
+	}	
+
+	#SaveCancelButtonRow {
+		padding-top: 14px;
+		margin-top: 8px;
+		border-top: 1px solid rgba(255, 255, 255, 0.02);
+		                                                                                                                                                  
+
+		.SaveChangesButton {
+			margin-right: 3px;
+		}
+
+		.CancelButton {
+			margin-left: 3px;
+		}
+	}
+}
+
+#ItemEditControls {	
+	flow-children: down;
+	background-color: black;
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	padding: 12px;
+	width: 100%;
+	context-menu-position: top;
+	context-menu-body-position: 0% 0%;
+	margin: 0px 1px 1px 1px;
+
+	.SaveInProgress & {
+		visibility: collapse;
+	}
+
+	.ControlsContainer {
+		flow-children: right;
+		margin-top: 8px;
+		width: 100%;
+	}
+
+	Button,
+	TextButton {
+		tooltip-position: bottom;
+		box-shadow: none;
+
+		&:hover {
+			z-index: 1;
+		}
+	}
+
+	.SliderContainer {
+		vertical-align: center;
+		flow-children: right;
+		tooltip-position: top;
+		padding: 2px 8px;
+
+		width: fill-parent-flow(1);
+
+		Slider {
+			vertical-align: center;
+			margin: 0px;
+			width: fill-parent-flow(1);
+		}
+
+		Image {
+			vertical-align: center;
+			margin-right: 6px;
+			width: 20px;
+			height: width-percentage( 100% );
+			wash-color: LightestGrey;
+		}
+	}
+
+	                             
+	#SendToBackButton { border-radius: 3px 0px 0px 3px; }
+	#MoveBackwardButton { border-radius: 0px; }
+	#MoveForwardButton { border-radius: 0px; }
+	#SendToFrontButton { border-radius: 0px 3px 3px 0px; }
+
+	#SendToBackButton,
+	#MoveBackwardButton,
+	#MoveForwardButton {
+		margin-right: -1px;
+	}
+
+	Slider {
+		margin-bottom: 0px;
+	}
+
+	#FlipHorizontallyButton,
+	#DeleteItemButton {
+		margin-right: 6px;
+	}
+
+	#FlipHorizontallyButton {
+		visibility: collapse;
+		.AllowFlipHorizontally & {
+			visibility: visible;
+		}
+	}
+
+	#CustomizeAppearanceButton {
+		                        
+		visibility: collapse;
+		                         
+		                          
+		width: 100%;
+
+		.AllowCustomizeAppearance & {
+			visibility: visible;
+		}
+	}
+
+	#MoreOptionsButton {
+		margin-left: 6px;
+	}
+
+	Button {
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+
+	Slider {
+		margin-right: 10px;
+		width: 150px;
+	}
+}
+
+#LayerButton {
+	flow-children: right;
+	vertical-align: center;
+	horizontal-align: center;
+	context-menu-position: bottom;
+	context-menu-body-position: 0% 0%;
+	width: 100%;
+	                   
+	padding: 5px;
+	padding: 4px 16px 6px 12px;
+	border-radius: 3px;
+	background-color: DarkerGrey&00;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0);
+
+	opacity: 0.5;
+	transition-property: opacity, background-color, box-shadow;
+	transition-duration: 0.1s;
+
+	&:hover {
+		opacity: 1.0;
+		background-color: DarkerGrey&44;
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	}
+
+	Label,
+	Panel {
+		vertical-align: center;
+	}
+
+	Label {
+		color: white;
+		height: 21px;
+	}
+
+	#LayerButtonItemName {
+		text-overflow: ellipsis;
+		                                 
+	}
+
+	#LayerButtonIcon {
+		width: 12px;
+		height: 12px;
+		margin-bottom: -2px;
+
+		margin-right: 8px;
+		vertical-align: middle;
+
+		background-image: url( "file://{images}/control_icons/arrow_solid_right.png" );
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		transition-property: transform;
+		transition-duration: 0.1s;
+
+		.ShowcaseLayerListOpen & {
+			
+		}
+	}
+
+	&.MissingShowcaseItemName {
+		#LayerButtonItemName {
+			visibility: collapse;	
+		}
+	}
+}
+
+.ShowIfItemSelected {
+	visibility:collapse;
+
+	.IsItemSelected & {
+		visibility: visible;
+	}
+}
+
+.ShowIfNothingSelected {
+	visibility:collapse;
+
+	.IsNothingSelected & {
+		visibility: visible;
+	}
+}
+
+.SaveInProgressIndicator {
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+	margin: 10px;
+
+	visibility: collapse;
+
+	.SaveInProgress & {
+		visibility: visible;
+	}
+
+	.Spinner {
+		wash-color: winnerGreen;
+	}
+
+	Label {
+		margin-left: 8px;
+		vertical-align: middle;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: winnerGreen;
+	}
+}

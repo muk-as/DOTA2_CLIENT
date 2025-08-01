@@ -1,0 +1,76 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_fantasytitle_popup.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="TitleChoice">
+			<Panel class="TitleChoice">
+				<Panel class="TitleChoiceInfoContainer">
+					<Label id="PlayerTitle" class="FantasyPlayerTitle BodyLarge LightestGreyText" text="#DOTA_FantasyCraft_Player" html="true"/>
+					<Label class="FantasyPlayerTitle LighterGreyText" text="#DOTA_FantasyCraft_TitleTooltip" html="true" />
+				</Panel>
+				<Panel class="TitleChoiceBorder" hittest="false"/>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<International2024PopupFantasyCraftTitle class="FantasyCraftChoice" popupbackground="blur">
+		<Panel class="BackgroundImage"/>		
+		<Panel class="Header">
+			<Label class="PlayerChoiceTitle TitleMedium" text="#DOTA_FantasyCraft_SelectTitles" />
+			<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+				<Image src="file://{images}/control_icons/24px/x_close.svg" />
+			</Button>
+		</Panel>
+		<Panel class="Body">			
+			<Panel class="BodyColumn">
+				<Panel class="NoTitles">
+					<Label class="TokenSpendDescription BodyLarge" text="#DOTA_FantasyCraft_GenerateTitlesExplainer" />
+					<Panel class="LeftRightFlow HorizontalCenter">
+						<Image class="RerollIcon" src="file://{images}/compendium/international2024/fantasy_crafting_rolls_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+						<Label id="TokensLabel" class="LabelLarge LightestGreyText" text="#DOTA_FantasyCraft_TokensAvailable" />
+					</Panel>
+					<DOTAInternational2024Button id="GenerateNoOptions" class="LightGreen Wide" text="#DOTA_FantasyCraft_GenerateTitles" onactivate="Fantasy2024GenerateTitles()" />
+				</Panel>
+				<Panel class="HasTitles">
+					<Panel id="ChoiceHolder">									
+						<Panel id="Choices">
+							                                                 		
+						</Panel>
+					</Panel>
+					<DOTAInternational2024Button id="ConfirmChoice" class="LightGreen Wide" text="#DOTA_Confirm" onactivate="Fantasy2024ConfirmTitle() UIPopupButtonClicked()" />
+					<Panel class="ControlButtons">
+						<Panel class="ControlButtonsContainer">
+							<DOTAInternational2024Button id="GenerateHasOptions" class="NoOutline DarkGreen Small Wide" text="#DOTA_FantasyCraft_RerollTitles" onactivate="Fantasy2024GenerateTitles()" />
+							<Image class="RerollIcon" src="file://{images}/compendium/international2024/fantasy_crafting_rolls_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Label id="TokensLabel" class="LabelLarge LightestGreyText" text="#DOTA_FantasyCraft_TokensAvailable" />
+						</Panel>	
+					</Panel>
+				</Panel>				
+				
+			</Panel>
+			<Panel class="PlayerColumn">
+				<Panel class="PlayerAndImages">
+					<Panel class="PlayerImages">
+						<Image id="TeamLogo" scaling="contain" />
+						<DOTAPlayerImage id="Headshot" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="RoleAndName">
+						<Panel class="PlayerNameAndTitle">
+							<Label id="PlayerTitleLabel" class="BodyExtraLarge" text="#DOTA_FantasyCraft_Player" html="true" onmouseout="DOTAHideFantasyCraftPlayerTooltip()"/>
+							<Label class="BodyMedium" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Prefix" />
+							<Label class="BodyMedium" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Suffix" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="TopDash" hittest="false"/>
+		<Panel class="TopDash Bottom" hittest="false"/>
+		<Panel class="PopupBorder" hittest="false"/>
+	</International2024PopupFantasyCraftTitle>
+</root>

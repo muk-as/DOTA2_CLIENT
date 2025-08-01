@@ -1,0 +1,50 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_watch_dpc_standings.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="RegionStandings">
+			<Panel class="RegionStandings">
+				<Label class="RegionName" text="{s:region_name}" />
+				<Panel id="RegionStandingsList" />
+			</Panel>
+		</snippet>
+
+		<snippet name="TeamStandings">
+			<Panel class="TeamStandings">
+				<Label class="TeamMissing" text="--" />
+				<DOTATeamImage id="TeamImage" teamimagestyle="squaresmall" />
+				<Panel class="TeamNameContainer">
+					<Label class="TeamName" text="{g:dota_team_name:team_id}" />
+					<Panel class="FavoriteStar DPCFavoriteStar" />
+				</Panel>
+				<Label class="TeamRecord" text="{d:wins} - {d:losses}" />
+				<Label class="TeamPoints" text="{d:points}" />
+				<Image id="QualifiedImage" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAWatchDPCStandings class="DashboardPage SafeDashboardPage">
+		<Panel class="Header">
+			<Panel id="LeftHeader">
+				<Image id="DPCLogo" src="file://{images}/dpc/dpc_logo_text.svg" texturewidth="124" textureheight="42" />
+			</Panel>
+			<Panel id="CenterHeader">
+				<Button class="SpoilerRefresh" onactivate="DotaDPCRefreshSpoilerStandings()" />
+				<Label id="SpoilerUpdateTime" class="SpoilerLastUpdated" text="#DOTA_DPCSchedule_SpoilerLastUpdated" />
+			</Panel>
+			<Panel id="RightHeader" class="DivisionSelector">
+				<RadioButton id="Division1" group="DivisionsGroup" text="#DOTA_DPC_Division_1_Long" onactivate="DOTADPCStandingsDivisionSelected()" selected="true" />
+				<RadioButton id="Division2" group="DivisionsGroup" text="#DOTA_DPC_Division_2_Long" onactivate="DOTADPCStandingsDivisionSelected()" />
+			</Panel>
+		</Panel>
+		<AsyncDataPanel id="RegionsDataPanel" state="{d:standings_loading_state}">
+			<Panel id="RegionsList" class="AsyncSuccessContainer" />
+		</AsyncDataPanel>
+
+	</DOTAWatchDPCStandings>
+</root>

@@ -1,0 +1,151 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/ui_dota_plus_hero_page_v2.css" />
+		<include src="file://{resources}/styles/ui_dota_plus_hero_challenge.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="NextHeroLevelTierReward">
+			<Panel class="NextHeroLevelReward NextHeroLevelTierReward PlusHeroBadgeIconSmall" />
+		</snippet>
+
+		<snippet name="NextHeroLevelChatWheelReward">
+			<Panel class="NextHeroLevelReward NextHeroLevelChatWheelReward" />
+		</snippet>
+
+		<snippet name="NextHeroLevelCurrencyReward">
+			<Panel class="NextHeroLevelReward NextHeroLevelCurrencyReward" />
+		</snippet>
+
+	</snippets>
+
+	<DOTAPlusHeroPageV2 class="TopBottomFlow">
+		<Panel class="HeroLevelProgressionContainer">
+			<DOTAHeroBadge id="HeroBadgeProgression" badgestyle="model" />
+			<Panel id="HeroLevelBarContainer" class="">
+				<Panel class="HeroLevelBarLockIcon" onmouseover="UIShowTextTooltip( '#DOTA_Plus_HeroBadgeInfo' )" onmouseout="UIHideTextTooltip()" />
+				<Panel class="HeroLevelBarMain">
+					<Panel id="LevelProgressContainer">
+						<Label class="SectionTitle LabelExtraLarge WhiteText VerticalCenter" text="#DOTA_Plus_LevelProgress" />
+						                                                                                                       
+						<Label class="CurrentLevelXPLabel LabelExtraLarge VerticalCenter TierName" text="#DOTA_Plus_CurrentLevelXP" />
+						<Label class="NextLevelXPLabel LabelExtraLarge VerticalCenter LighterGreyText Opacity_80" text="/" />
+						<Label class="NextLevelXPLabel LabelExtraLarge VerticalCenter LighterGreyText Opacity_80" text="#DOTA_Plus_ToNextLevelXP" />
+						<Panel class="FillWidth" />
+						<Panel id="NextHeroLevelRewards" class="VerticalCenter">
+							<Label class="MaxHeroLevelRewardsLabel VerticalCenter" text="#DOTA_Plus_MaximumLevel" />
+							<Button id="NextHeroLevelRewardsButton" class="ButtonPrimary DarkGrey" onactivate="DOTAPlusHeroPageShowRewardsV2()">
+								<Label text="#DOTA_Plus_NextRewards" />
+								<Image src="file://{images}/control_icons/24px/arrow_top_right.svg" />
+								                                       
+							</Button>
+							<Panel id="NextHeroLevelRewardsList">
+								                                                       
+							</Panel>
+						</Panel>
+					</Panel>
+					<ProgressBar id="HeroLevelProgress" />
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="ChallengeGemColumns">
+			<Panel id="ChallengesContainer" class="">
+				<Panel id="ChallengesUpsell" class="DotaPlusUpsell DotaPlusContainer">
+					<Label class="DotaPlusUpsellTitle" text="#DOTA_PlusUpsell_Title" />
+					<Panel class="DotaPlusUpsellFeatures">
+						<Panel class="DotaPlusUpsellFeature">
+							<Label class="DotaPlusUpsellFeatureTitle" text="#DOTA_PlusUpsell_HeroLeveling_Title" />
+							<Image class="DotaPlusUpsellFeatureImage" src="file://{images}/dota_plus/feature_preview_hero_leveling.psd" scaling="stretch-to-cover-preserve-aspect" />
+							<Label class="DotaPlusUpsellFeatureDescription" text="#DOTA_PlusUpsell_HeroLeveling_Description" />
+						</Panel>
+					</Panel>
+					<TextButton class="DotaPlusSubscribeButton DotaPlusBrightButton" text="#DOTA_PlusUpsell_Subscribe" onactivate="DOTAPlusSubscribe()" />
+					<Button class="DotaPlusLearnMoreButton" onactivate="DOTAShowPlusPurchasePage()">
+						<Label text="#DOTA_PlusUpsell_LearnMore" />
+						<Panel class="PopoutArrow" />
+					</Button>
+				</Panel>
+				
+				<Panel id="ChallengesMain" class="DarkGreyPanel">
+					<Panel id="TitleSection" class="LeftRightFlow">
+						<Label class="LabelLarge LightestGreyText" text="#DOTA_HeroChallenges_Title" />
+						<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_HUD_PlusHeroChallengeHelp )" onmouseout="UIHideTextTooltip()"/>
+					</Panel>
+					<Panel id="ChallengesControl" class="TopBottomFlow">
+						<DOTAPlusHeroChallenge id="Challenge1" class="SideQuestBox Ranked MultiGame FullWidth Large"/>
+						<DOTAPlusHeroChallenge id="Challenge2" class="SideQuestBox Ranked MultiGame FullWidth Large"/>
+						<DOTAPlusHeroChallenge id="Challenge3" class="SideQuestBox Ranked MultiGame FullWidth Large"/>
+					</Panel>					
+					<Panel id="ChallengeInfoHeader" class="TopBottomFlow">
+						<Panel id="ChallengeTimer" class="LeftRightFlow">
+							<Label id="ChallengeRefreshNote" text="#DOTA_Plus_NewChallengesIn"/>
+							<Panel class="UnitOfTime Days RefreshTimer">
+								<Label text="{d:hero_reset_days}" class="ChallengeRefreshText"/>
+								<Label text="#UI_days" class="UnitOfTimeText"/>
+							</Panel>
+							<Panel class="UnitOfTime RefreshTimer">
+								<Label text="{d:hero_reset_hours}" class="ChallengeRefreshText"/>
+								<Label text="#UI_hours" class="UnitOfTimeText"/>
+							</Panel>
+							<Panel class="UnitOfTime RefreshTimer">
+								<Label text="{d:hero_reset_minutes}" class="ChallengeRefreshText"/>
+								<Label text="#UI_minutes" class="UnitOfTimeText"/>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="ChallengeRefreshControl">
+					<Panel class="ChallengeRefreshContent TopBottomFlow">
+						<Panel id="RefreshImage"/>
+						<Label text="#DOTA_HUD_PlusChallenge" class="RefreshHeader TitleMedium LightestGreyText"/>
+						<Label text="#DOTA_HUD_PlusHeroChallengeHelp" class="RefreshBody BodyMedium LighterGreyText" html="true" />
+						<Panel class="GoldDash"/>
+						<Panel class="ExtraXPLabelContainer">
+							<Label text="+250" class="ExtraXPLabel TitleLarge" html="true" />
+							<Label text="xp" class="ExtraXPLabelUnits TitleMedium" html="true" />
+						</Panel>
+						<TextButton id="RefreshButton" class="ButtonPrimary LightGrey Large" text="#DOTA_Refresh_Challenges"/>
+					</Panel>	
+				</Panel>
+
+			</Panel>
+
+			<Panel id="RelicsContainer" class="DarkGreyPanel">
+				<Panel class="RelicsTitleContainer">
+					<Panel class="LeftRightFlow">
+						<Label class="RelicsTitle LabelLarge LightestGreyText" text="#DOTA_HeroRelicsTitle" />
+						<Label class="LabelLarge LightestGreyText" text="{d:owned_relic_count} / {d:total_relic_count}" />
+						<Panel class="InfoIcon" onmouseover="DOTAShowAboutHeroRelicsTooltip()" onmouseout="DOTAHideAboutHeroRelicsTooltip()"/>
+					</Panel>
+					<Label class="RelicHelpText BodySmall LightGreyText" text="#DOTA_HeroRelics_HoldAltForStats" />
+				</Panel>
+				<DOTAHeroRelicSummary id="HeroRelics" hittest="false" />
+				<Panel class="RelicPurchaseButtons">
+					<Panel class="FillWidth" />
+					<Button id="PurchaseCommonRelicButton" class="RelicPurchaseButton" onactivate="DOTAHeroRelicsPurchaseRandomRelic( HERO_RELIC_RARITY_COMMON )">
+						<Label class="RelicPurchaseButtonTitle" text="#DOTA_HeroRelicRarity_Common" />
+						<Panel class="RelicPurchaseButtonPrice">
+							<Panel class="RelicsCurrencyIcon DotaPlusCurrencyIcon" />
+							<Label class="RelicShardPrice" text="{d:hero_relic_random_common_price}" />
+						</Panel>
+					</Button>
+					<Panel class="FillWidth" />
+					<Button id="PurchaseRareRelicButton" class="RelicPurchaseButton" onactivate="DOTAHeroRelicsPurchaseRandomRelic( HERO_RELIC_RARITY_RARE )">
+						<Label class="RelicPurchaseButtonTitle" text="#DOTA_HeroRelicRarity_Rare" />
+						<Panel class="RelicPurchaseButtonPrice">
+							<Panel class="RelicsCurrencyIcon DotaPlusCurrencyIcon" />
+							<Label class="RelicShardPrice" text="{d:hero_relic_random_rare_price}" />
+						</Panel>
+					</Button>
+					<Panel class="FillWidth" />
+				</Panel>
+
+			</Panel>
+		</Panel>
+
+	</DOTAPlusHeroPageV2>
+</root>

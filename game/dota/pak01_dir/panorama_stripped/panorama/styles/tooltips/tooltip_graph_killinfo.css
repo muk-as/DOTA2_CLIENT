@@ -1,0 +1,166 @@
+.Content {
+	flow-children: down;
+	background-color: #262c31;
+}
+
+#VictimImage,
+#VictimPlayerName {
+	visibility: collapse;
+
+	.PlayerKill & {
+		visibility: visible;
+	}
+}
+
+#KillerImage,
+#KillerPlayerName {
+	visibility: collapse;
+
+	.KilledByPlayer & {
+		visibility: visible;
+	}
+}
+
+#KillerTeamName {
+	visibility: visible;
+	vertical-align: middle;
+
+	.KilledByPlayer & {
+		visibility: collapse;
+	}
+}
+
+#VictimStructureIcon {
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+	.BarracksKill.RadiantEvent & {
+		background-image: url( "file://{images}/spectator_graph/barracks_kill_dire.png" );
+	}
+	.BarracksKill.DireEvent & {
+		background-image: url( "file://{images}/spectator_graph/barracks_kill_radiant.png" );
+	}
+	.PlayerKill & {
+		visibility: collapse;
+	}
+	.TowerKill.DireEvent & {
+		background-image: url( "file://{images}/spectator_graph/tower_kill_radiant.psd" );
+	}
+	.TowerKill.RadiantEvent &{
+		background-image: url( "file://{images}/spectator_graph/tower_kill_dire.psd" );
+	}
+	.RoshanKill & {
+		background-image: url( "file://{images}/control_icons/24px/roashan.svg" );
+	}
+	.MinibossKill & {
+		background-image: url( "file://{images}/control_icons/24px/tormentor.png" );
+	}
+
+	.DireEvent.BarracksKill &,
+	.DireEvent.TowerKill & {
+
+		wash-color: radiantColor;                                         
+	}
+	.RadiantEvent.BarracksKill &,
+	.RadiantEvent.TowerKill & {
+			wash-color: direColor;                                         
+	}	
+
+}
+
+#KillDetails {
+	flow-children: right;
+	padding: 10px;
+
+	DOTAHeroImage {
+		vertical-align: middle;
+		width: 28px;
+		height: 28px;
+		texture-sampling: point;
+	}
+
+	DOTAUserName {
+		margin-left: 4px;
+		vertical-align: middle;
+
+		Label {
+			text-shadow: 0px 1px 6px black;
+		}
+	}
+}
+
+#JumpLabel {
+	horizontal-align: center;
+	text-transform: uppercase;
+}
+
+#Bounty
+{
+    color: #E7BA01;
+	text-shadow: 0px 1px 6px black;
+	vertical-align: center;
+	margin-left: 8px;
+	margin-right: 1px;
+}
+
+#GoldIcon
+{
+    background-image: url( "file://{images}/hud/reborn/gold_small.psd" );
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    margin: 0px 2px;
+	brightness: 0.7;
+}
+
+#SwordIcon {
+	width: 24px;
+	height: 24px;
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-top: 1px;
+	background-image: url( "file://{images}/control_icons/24px/attack_damage.svg" );
+	background-size: 76%;
+	background-position: center;
+	background-repeat: no-repeat;
+	img-shadow: 0px 2px 8px black;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LightGrey ) );
+}
+
+.JumpRow {
+	width: 100%;
+	margin: 0px 8px;
+	border-top: 1px solid rgba(220, 239, 255, 0.1);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #d7ecff07 ), to( #ffffff00 ) );
+	
+	visibility: collapse;
+
+	Label {
+		letter-spacing: 1.5px;
+		font-size: 14px;
+		font-weight: semi-bold;
+		padding: 8px 0px 10px;
+		text-shadow: 0px 1px 8px black;
+		color: rgb(152, 192, 239);
+	}
+
+	.ArrowIcon {
+		width: 16px;
+		vertical-align: center;
+		margin-top: -2px;
+		wash-color: rgb(152, 192, 239);
+		img-shadow: 0px 1px 8px black;
+		margin-left: 2px;
+	}
+
+	.ShowJumpPrompt & {
+		visibility: visible;
+	}
+}

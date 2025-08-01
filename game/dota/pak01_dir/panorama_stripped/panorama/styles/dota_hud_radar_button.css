@@ -1,0 +1,186 @@
+DOTARadarButton
+{
+	tooltip-position: left;
+	visibility: collapse;
+}
+
+DOTARadarButton.ShowRadar
+{
+	visibility: visible;
+}
+
+#RadarIcon
+{
+	background-image: url( "file://{images}/hud/reborn/icon_scan_on.psd" );
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+
+	transition-property: brightness;
+	transition-duration: 0.25s;
+}
+
+#DireRadarIcon,
+#RadiantRadarIcon
+{
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 44px;
+	height: 100%;
+
+	transition-property: brightness;
+	transition-duration: 0.25s;
+}
+
+#NormalRoot
+{
+	width: 100%;
+	height: 100%;
+}
+
+.IsLocalPlayerSpectatingAllTeams #NormalRoot
+{
+	visibility: collapse;
+}
+
+#RadiantRadarIcon
+{
+	background-image: url( "file://{images}/hud/reborn/icon_scan_on_radiant.psd" );
+}
+
+#DireRadarIcon
+{
+	background-image: url( "file://{images}/hud/reborn/icon_scan_on_dire.psd" );
+}
+
+#SpectatorDivider
+{
+	background-color: black;
+	horizontal-align: center;
+	width: 2px;
+	height: 96%;
+	visibility: collapse;
+}
+
+.IsLocalPlayerSpectatingAllTeams #SpectatorDivider
+{
+	visibility: visible;
+}
+
+
+#RadiantRadarRoot,
+#DireRadarRoot
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 50%;
+	height: 100%;
+	overflow: clip;
+	visibility: collapse;
+}
+
+#DireRadarRoot
+{
+	margin-left: 50%;
+	transform: scaleX(-1);
+}
+
+.IsLocalPlayerSpectatingAllTeams #RadarIcon
+{
+	visibility: collapse;
+}
+
+.IsLocalPlayerSpectatingAllTeams #RadiantRadarRoot,
+.IsLocalPlayerSpectatingAllTeams #DireRadarRoot
+{
+	visibility: visible;
+}
+
+
+.CoolingDown #RadiantRadarIcon,
+.CoolingDown #DireRadarIcon,
+.CoolingDown #RadarIcon
+{
+	background-image: url( "file://{images}/hud/reborn/icon_scan_off.psd" );
+}
+
+DOTARadarButton:hover #RadarIcon
+{
+	brightness: 1.7;
+}
+
+DOTARadarButton.CoolingDown:hover #RadarIcon
+{
+	brightness: 1.0;
+}
+
+
+DOTARadarButton:active #RadarIcon
+{
+	brightness: 1.0;
+}
+
+#CooldownCover
+{
+	width: 39px;
+	height: 39px;
+	background-color: #000000dd;
+	background-size: 100% 100%;
+	border-radius: 50%;
+	visibility: collapse;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+#RadiantCooldownCover,
+#DireCooldownCover
+{
+	border-radius: 50%;
+	background-color: #000000dd;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 44px;
+	height: 100%;
+
+	transition-property: brightness;
+	transition-duration: 0.25s;
+	visibility: collapse;
+
+}
+
+.CoolingDown #CooldownCover,
+.MissingCharges #CooldownCover,
+.CoolingDown #RadiantCooldownCover,
+.CoolingDown #DireCooldownCover
+{
+	visibility: visible;
+}
+
+#ChargeCount
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-bottom: 2px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #444 ), to( black ) );
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	box-shadow: fill 2px 2px 4px black;
+
+	Label {
+		horizontal-align: center;
+		vertical-align: center;
+	}
+}
+
+
+.NoCharges #ChargeCount
+{
+	visibility: collapse;
+}

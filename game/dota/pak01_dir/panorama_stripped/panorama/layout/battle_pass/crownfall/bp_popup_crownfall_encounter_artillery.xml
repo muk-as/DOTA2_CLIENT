@@ -1,0 +1,454 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_artillery.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="AimArrow">
+			<Panel class="AimArrow" ></Panel>
+		</snippet>
+
+		<snippet name="AimPowerBar">
+			<Panel class="AimPowerBar">
+				<Panel class="BarContainer">
+					<ProgressBarWithMiddle id="ProgressBar" ></ProgressBarWithMiddle>
+					<Panel class="PowerChevrons" />
+					<Panel id="CurrentPowerMarker" />
+					<Panel id="LastPowerMarker" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+    <snippet name="WeaponIcon">
+      <Panel class="WeaponIconContainer">
+        <Image id="WeaponIcon"/>
+      </Panel>
+    </snippet>
+
+		<snippet name="ShotPathPip">
+			<Panel class="ShotPathPip" ></Panel>
+		</snippet>
+
+
+		<snippet name="EntityDebugInfo">
+			<Panel class="EntityDebugInfo" >
+				<Label class="Index" text="[{d:debug_index}]"/>
+				<Label class="Name" text="'{s:debug_name}'"/>
+				<Label class="ObjectType" text="'{s:debug_object}'"/>
+				<Label class="Position" text="({f:1:debug_x}, {f:1:debug_y})"/>
+				<Panel class="PositionIndicator" />
+			</Panel>
+		</snippet>
+
+		<snippet name="Weapon">
+			<Panel class="Weapon">
+				<Panel class="WeaponImageContainer">
+					<Panel class="WeaponImageActiveGlow" />
+					<Panel class="WeaponImageBackground" />
+					<Panel class="WeaponImageActiveBorder" />
+					<Image id="WeaponImage" />
+					<Panel class="WeaponImageShimmer" />
+					<Panel class="WeaponStrikeThru" />
+				</Panel>
+				<Label class="NewViolator" text="#DOTA_ViolatorNew" />
+				<Panel class="HotkeyContainer">
+					<Label text="{s:hotkey}" />
+				</Panel>
+				<Panel class="ChargesContainer">
+					<Label html="true" text="#DOTA_Crownfall_Artillery_Weapons_Charges" />
+				</Panel>
+			</Panel>
+		</snippet>
+		
+		<snippet name="LevelWonPointsRow">
+			<Panel class="LevelWonPointsRow">
+				<Label class="PointsSource" text="{s:points_source}" />
+				<Label class="PointsValue" text="{d:points_amount}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="LevelWonStar">
+			<Panel class="LevelWonStar">
+				<Panel class="StarImage" />
+				<Label class="StarValue" text="{d:star_threshold}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="LevelSelectLevel">
+			<Panel class="LevelSelectLevel">
+				<Panel class="Contents">
+					<Image id="LevelBackgroundImage" />
+					<Image id="LevelImage" />
+					<Image id="LevelForegroundImage" />
+					<Label class="LevelName" text="{d:level_number}. {s:level_name}" />
+					<Panel id="LevelSelectStars">
+						                                 
+					</Panel>
+					<Label class="LevelScore" text="#DOTA_Crownfall_Artillery_LevelScore" />
+					<Panel class="LockIcon" />
+					<Panel class="LockedPattern" hittest="false" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="LevelSelectLevelsRow">
+			<Panel class="LevelSelectLevelsRow">
+				                                  
+			</Panel>
+		</snippet>
+
+		<snippet name="LevelSelectStar">
+			<Panel class="LevelSelectStar">
+				<Panel class="StarImage" />
+			</Panel>
+		</snippet>
+
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Panel class="RewardScore">
+					<Panel class="StarIcon" />
+					<Label class="RewardScore" text="x{d:reward_score_required}" />
+				</Panel>
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<Panel class="PopupPanel Artillery Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTAArtilleryOnCancel()">
+
+		<Panel class="MainContentsWrapper">
+			<Panel class="MainContents">
+				<Panel id="GameBoard">
+					<DOTAScenePanel id="BackgroundScene" map="scenes/events/crownfall/artillery_background.vpk" camera="main_camera" />
+					<Panel id="LevelBackground" />
+					<DOTAParticleScenePanel class="BackgroundParticles" hittest="false" particleName="particles/events/crownfall/artillery/ui_background.vpcf" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="100 -100 -200" lookAt="100 0 -200" fov="90" />
+					
+					<Panel id ="TerrainContainer" class="CameraLayer">
+						<DOTACrownfallArtilleryTerrain id="GameTerrain" class="Terrain" />
+						<Panel id="ShotTrailPipsContainer" hittest="false">
+							                         
+						</Panel>
+						<Panel id="WeaponAimPipsContainer" hittest="false">
+							                         
+						</Panel>
+					</Panel>
+					                                                                   
+					<DOTAArtilleryScenePanel id="GameScene" class="GameScene" renderdeferred="true" antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_artillery.vmat" require-composition-layer="true" />
+					<Panel id="TerrainForegroundContainer" class="CameraLayer">
+						<Panel id="ArtilleryTerrainForeground">
+							                         
+						</Panel>
+						<UICanvas id="DebugCanvas" hittest="false"/>
+						<Panel id="DebugEntityInfoContainer" hittest="false" >
+							                         
+						</Panel>
+					</Panel>
+					
+					<Panel class="GameBoardHUD" hittest="false">
+						<Label class="LevelTitle" text="{d:level}. {s:level_name}" />
+
+						<Panel class="TutorialContainer">
+							
+							<Panel class="TutorialScreen Aim">
+								<Label class="TutorialTitle" text="#DOTA_Crownfall_Artillery_Aim" />
+								<Label class="TutorialDesc" text="#DOTA_Crownfall_Artillery_AimDesc" />
+								<Panel class="TutorialControls">
+									<Panel class="ControlKey"><Label class="KeyText" text="W" /></Panel>
+									<Panel class="KeysRow">
+										<Panel class="ControlKey"><Label class="KeyText" text="A" /></Panel>
+										<Panel class="ControlKey"><Label class="KeyText" text="S" /></Panel>
+										<Panel class="ControlKey"><Label class="KeyText" text="D" /></Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							
+							<Panel class="TutorialScreen Shoot">
+								<Label class="TutorialTitle" text="#DOTA_Crownfall_Artillery_Shoot" />
+								<Label class="TutorialDesc" text="#DOTA_Crownfall_Artillery_ShootDesc" />
+								<Panel class="TutorialControls">
+									<Panel class="ControlKey SpaceKey">
+										<Label class="KeyText Space" />
+									</Panel>
+								</Panel>
+							</Panel>
+							
+						</Panel>
+					</Panel>
+				</Panel>
+	
+				<Panel class="SetupScreen">
+	
+					<Image class="EncounterSplashArt" src="file://{images}/events/crownfall/artillery/artillery_splash.psd" scaling="stretch-to-fit-preserve-aspect" />
+					<DOTAParticleScenePanel class="SplashParticles" hittest="false" particleName="particles/econ/events/ti8/compendium_points_ti8_ambient_shine.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="120" squarePixels="true" />
+
+					<Image class="MinigameLogoEn" src="file://{images}/events/crownfall/artillery/artillery_logo.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="MinigameLogoCn" src="file://{images}/events/crownfall/artillery/artillery_logo_cn.png" scaling="stretch-to-fit-preserve-aspect" />
+
+					<Panel class="SetupScreenMenu">
+
+						<Panel class="DifficultySelectTabs">
+							<Panel class="DifficultySelectTabsBackground"/>
+							<Panel class="TabsContainer">
+								<Panel id="NormalModeTab" class="TabItem" onactivate="DOTAArtilleryModeNormal()">
+									<Panel class="TabItemBg"/>
+									<Label text="#DOTA_Crownfall_Artillery_DifficultyNormal"/>
+								</Panel>
+								<Panel id="HardModeTab" class="TabItem" onactivate="DOTAArtilleryModeHard()" onmouseover="UIShowTextTooltip( '#DOTA_Crownfall_Artillery_ModeLocked' )" onmouseout="UIHideTextTooltip()">
+									<Panel class="TabItemBg"/>
+									<Label text="#DOTA_Crownfall_Artillery_DifficultyHard"/>
+								</Panel>
+							</Panel>
+						</Panel>
+
+						<Panel class="SetupScreenContents">
+							<Panel class="TopGoldDash Top"/>
+							<Panel class="TopGoldDash Bottom"/>
+							<Panel class="SetupScreenContentsBorder" hittest="false"/>
+	
+							<Panel class="PregameSection">
+								<Label class="GameIntroDescription DisplayMedium" text="#DOTA_Crownfall_EncounterDesc_Artillery"/>
+								<Panel class="PlaySectionContent">
+									<Panel class="PlaySectionCol Left">
+										<Panel class="HowToPlaySection" >
+											<Label class="GoldHeader PlaySectionHeader" text="#DOTA_Crownfall_Fishing_HowToPlay"/>
+											<Panel class="DescriptionContainer">
+												<Label class="SubHeader BodyMedium" text="#DOTA_Crownfall_Artillery_Aim"/>
+												<Label class="Details BodySmall" text="#DOTA_Crownfall_Artillery_AimDesc"/>
+											</Panel>
+											<Panel class="ControlDescriptionBlock">
+												<Panel class="KeysColumn">
+													<Panel class="ControlKey"><Label class="KeyText" text="W" /></Panel>
+													<Panel class="KeysRow">
+														<Panel class="ControlKey"><Label class="KeyText" text="A" /></Panel>
+														<Panel class="ControlKey"><Label class="KeyText" text="S" /></Panel>
+														<Panel class="ControlKey"><Label class="KeyText" text="D" /></Panel>
+													</Panel>
+												</Panel>
+												<Label class="OrSeparator BodyMedium" text="#or"/>
+												<Panel class="KeysColumn">
+													<Panel class="ControlKey"><Panel class="KeyText Up" /></Panel>
+													<Panel class="KeysRow">
+														<Panel class="ControlKey"><Panel class="KeyText Back" /></Panel>
+														<Panel class="ControlKey"><Panel class="KeyText Down" /></Panel>
+														<Panel class="ControlKey"><Panel class="KeyText Forward" /></Panel>
+													</Panel>
+												</Panel>
+											</Panel>
+											<Panel class="DescriptionContainer ShootDescription">
+												<Label class="SubHeader BodyMedium" text="#DOTA_Crownfall_Artillery_FineControl"/>
+												<Label class="Details BodySmall" text="#DOTA_Crownfall_Artillery_FineControlDesc"/>
+											</Panel>
+											<Panel class="ControlDescriptionBlock">
+												<Panel class="ControlKey ShiftKey">
+													<Label class="KeyText Shift" text="#DOTA_Keybind_SHIFT" />
+												</Panel>
+											</Panel>
+											<Panel class="DescriptionContainer ShootDescription">
+												<Label class="SubHeader BodyMedium" text="#DOTA_Crownfall_Artillery_Shoot"/>
+												<Label class="Details BodySmall" text="#DOTA_Crownfall_Artillery_ShootDesc"/>
+											</Panel>
+											<Panel class="ControlDescriptionBlock">
+												<Panel class="ControlKey SpaceKey">
+													<Label class="KeyText Space" />
+												</Panel>
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="PlaySectionCol Right">
+										<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+											<Panel class="LeaderListHeader">
+												<Label class="LeaderListHeaderLabel LabelMedium" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+												<Label class="LeaderListHeaderScore LabelMedium" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+											</Panel>
+											<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							
+							<Panel class="LevelSelectSection">
+								<Panel id="LevelSelectLevelsList">
+									                                  
+								</Panel>
+								<Panel class="LevelSelectFooter">
+									<Panel class="LevelSelectTotals">
+										<Label class="GoldHeader StarsEarnedHeader" text="#DOTA_Crownfall_Artillery_TotalStarsEarned" />
+										<Panel class="StarsEarnedContainer">
+											<Panel class="StarIcon" />
+											<Label text="{d:total_stars_earned} / {d:total_stars_available}" />
+										</Panel>
+										<Label class="GoldHeader LeaderboardScoreHeader" text="#DOTA_Crownfall_Artillery_TotalScore" />
+										<Label class="LeaderboardScore" text="{d:total_score}" />
+									</Panel>
+									<Panel class="RewardsSection" >
+										<Label class="GoldHeader RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards" />
+										<Panel id="RewardsList" class="RewardsSection" >
+											                            
+										</Panel>
+									</Panel>
+								</Panel>
+								
+							</Panel>
+						</Panel>
+	
+						<Panel class="BottomButtons">
+							<Panel class="Loading">
+								<Panel class="Spinner" />
+								<Label text="#DOTA_LoadingPlayerLoading" />
+							</Panel>
+							<DOTACrownfallButton class="LevelSelectButton GlowButton" text="#DOTA_Crownfall_Artillery_LevelSelect" onactivate="DOTAEncounterMinigameStart()" />
+              				                                                                                                                                                     
+							<DOTACrownfallButton class="StartGameButton GlowButton" text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterMinigameStart()" />
+						</Panel>
+					</Panel>
+	
+					                                                                                                                                           
+				</Panel>
+	
+				<Panel class="LevelIntroScreen GameStateScreen">
+					<Label class="ScreenTitle" text="#DOTA_Crownfall_Artillery_LevelNumber" />
+					<Label class="LevelName" text="{s:level_name}" />
+					<Panel id="LevelIntroWeapons">
+						                        
+					</Panel>
+					<DOTACrownfallButton class="PrimaryButton" text="#DOTA_Crownfall_Artillery_Start" onactivate="DOTAEncounterMinigameStart()" />
+				</Panel>
+	
+				<Panel class="LevelWonScreen GameStateScreen">
+					<Label class="ScreenTitle" text="#DOTA_Crownfall_Artillery_LevelComplete" />
+	
+					<Panel class="PointsWonTable">
+						<Panel id="LevelWonPointsRows">
+							                                   
+						</Panel>
+						<Panel class="TotalRow">
+							<Label class="TotalLabel" text="#DOTA_Crownfall_Artillery_LevelScoreLabel" />
+							<Label class="TotalValue" text="{d:level_score}" />
+						</Panel>
+					</Panel>
+	
+					<Panel id="LevelWonStars">
+						                              
+					</Panel>
+
+					<DOTACrownfallButton class="NextLevelButton PrimaryButton" text="#DOTA_Crownfall_Artillery_NextLevel" onactivate="DOTAArtilleryNextLevel()" />
+					<DOTACrownfallButton class="MainMenuButton PrimaryButton" text="#DOTA_Crownfall_Artillery_ReturnToMainMenu" onactivate="DOTAEncounterMinigameExit()" />
+					<Panel class="SecondaryButtons">
+						<DOTACrownfallButton class="Secondary" text="#DOTA_Crownfall_Artillery_RetryLevel" onactivate="DOTAEncounterMinigameStart()" />
+						<DOTACrownfallButton class="Secondary" text="#DOTA_Crownfall_Artillery_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+					</Panel>
+				</Panel>
+	
+				<Panel class="LevelLostScreen GameStateScreen">
+					<Label class="ScreenTitle" text="{s:level_lost_reason}" />
+					<DOTACrownfallButton class="PrimaryButton" text="#DOTA_Crownfall_Artillery_RetryLevel" onactivate="DOTAEncounterMinigameStart()" />
+					<Panel class="SecondaryButtons">
+						<DOTACrownfallButton class="Secondary" text="#DOTA_Crownfall_Artillery_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+					</Panel>
+				</Panel>
+	
+				<Panel class="PauseScreen GameStateScreen">
+					<Label class="ScreenTitle" text="#DOTA_Crownfall_Artillery_Paused" />
+					<DOTACrownfallButton class="PrimaryButton" text="#DOTA_Crownfall_Artillery_Resume" onactivate="DOTAArtilleryTogglePaused()" />
+					<Panel class="SecondaryButtons">
+						<DOTACrownfallButton class="Secondary" text="#DOTA_Crownfall_Artillery_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+					</Panel>
+				</Panel>
+	
+				<Panel id="CloseButtonContainer">
+					<Panel class="CloseButtonBackground" onactivate="DOTAArtilleryOnCancel()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+					<Panel class="CloseButtonBackgroundHover" hittest="false" />
+					<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+					<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+				</Panel>
+	
+			</Panel>
+
+			<Panel class="TimerContainer">
+				<Image class="ScoreBackground" src="file://{images}/events/crownfall/match3/score_container_background.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="ScoreBorder" src="file://{images}/events/crownfall/match3/score_container_border.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="TimerLabelsContainer">
+					<Label class="TimerLabel LabelSmall" text="#DOTA_Crownfall_Artillery_Timer"/>
+					<Label class="TimerHUD TitleMedium" text="{s:level_time}"/>
+				</Panel>
+			</Panel>
+
+		</Panel>
+
+		<Panel class="LowerHUD">
+			<Panel class="HudBackgroundContainer">
+				<Panel class="HudBackground"/>
+				<Panel class="HudBorder"/>
+			</Panel>
+			<Panel class="HudContents">
+				<Panel class="Portrait">
+					<DOTAHeroImage heroname="snapfire" heroimagestyle="landscape" />
+					                                   			    
+				</Panel>
+				
+				<Panel id="Weapons">
+					                        
+				</Panel>
+
+				<Panel class="ResetLevelButton" onactivate="DOTAEncounterMinigameStart()" onmouseover="UIShowTextTooltip( '#DOTA_Crownfall_Artillery_RestartLevel' )" onmouseout="UIHideTextTooltip()">
+					<Image class="ResetIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+				</Panel>
+			</Panel>			
+		</Panel>
+
+    <Panel class="OutOfAmmoIndicator">
+      <Label class="OutOfAmmoTitle" text="#DOTA_Crownfall_Artillery_OutOfAmmo" />
+      <Label class="OutOfAmmoDesc" text="#DOTA_Crownfall_Artillery_SwitchWeapons" />
+    </Panel>
+
+                                                                                                                                                               
+
+		<Panel class="DebugControls">
+			                            
+				                                            
+				                                                               
+			           
+
+			<Panel class="Category">
+				<Label class="CategoryLabel" text="Level:" />
+				<TextButton class="DebugButton" text="&lt;" onactivate="DOTAArtilleryDebugPrevLevel()" onmouseover="UIShowTextTooltip( 'Previous Level' )" onmouseout="UIHideTextTooltip()" />
+				<TextButton class="DebugButton" text="R" onactivate="DOTAArtilleryDebugResetLevel()" onmouseover="UIShowTextTooltip( 'Reset Level' )" onmouseout="UIHideTextTooltip()" />
+				<TextButton class="DebugButton" text="&gt;" onactivate="DOTAArtilleryDebugNextLevel()" onmouseover="UIShowTextTooltip( 'Next Level' )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+
+			<Panel class="Category">
+				<Label class="CategoryLabel" text="Weapons:" />
+				<TextButton class="DebugButton" text="All" onactivate="DOTAArtilleryDebugAllWeapons()" onmouseover="UIShowTextTooltip( 'Grant the player all weapons' )" onmouseout="UIHideTextTooltip()" />
+				<TextButton class="DebugButton" text="Refill" onactivate="DOTAArtilleryDebugRefillAmmo()" onmouseover="UIShowTextTooltip( 'Refill ammo for all weapons' )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+
+			<Panel class="Category">
+				<Label class="CategoryLabel" text="Health:" />
+				<TextButton class="DebugButton" text="Full" onactivate="DOTAArtilleryDebugRestoreHealth()" onmouseover="UIShowTextTooltip( 'Restore the player to full health' )" onmouseout="UIHideTextTooltip()" />
+				<TextButton class="DebugButton" text="Die" onactivate="DOTAArtilleryDebugPlayerDeath()" onmouseover="UIShowTextTooltip( 'Simulate the player dying' )" onmouseout="UIHideTextTooltip()" />
+				<ToggleButton id="InvulnerableToggle" class="DebugToggle" text="Invuln" />
+			</Panel>
+
+			<Panel class="Category">
+				<Label class="CategoryLabel" text="Enemies:" />
+				<TextButton class="DebugButton" text="Kill All" onactivate="DOTAArtilleryDebugKillAllEnemies()" onmouseover="UIShowTextTooltip( 'Kill all enemies in this level' )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+
+		</Panel>
+
+	</Panel>
+</root>

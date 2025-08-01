@@ -1,0 +1,332 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/ability_details_v2.css" />
+	</styles>
+
+	<snippets>
+    <snippet name="DetailsChunkContainerSnippet">
+      <Panel class="DetailsChunkAttributeGroupContainer">
+                                                            
+      </Panel>
+    </snippet>
+    
+		<snippet name="StatsContainerCommon">
+			<Panel class="StatsContainer Common">
+				                                          
+			</Panel>
+		</snippet>
+
+		<snippet name="StatsContainerSpecific">
+			<Panel class="StatsContainer Specific">
+				<Label class="StatsGroupTitle" text="{s:group_title}" />
+				<Label class="StatsGroupDesc" text="{s:group_desc}" />
+					                                          
+			</Panel>
+		</snippet>
+
+		<snippet name="StatsContainerFacet">
+			<Panel class="StatsContainer Facet">
+        <Panel class="FacetBackground" />
+				<Panel class="FacetContainer">
+					<Panel class="FacetTitleContainer">
+						<Panel class="FacetIconContainer">
+							<Panel class="FacetBackground" />
+							<Panel id="FacetIcon"/>
+						</Panel>
+						<Label class="FacetTitle" text="{s:facet_name}" />
+					</Panel>
+					<Label html="true" class="FacetDescription" text="{s:facet_description}" />
+					                                          
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="StatsContainerCallouts">
+			<Panel class="StatsContainer Callouts">
+				                                          
+			</Panel>
+		</snippet>
+
+		<snippet name="StatsContainerRow">
+			<Panel class="StatRow FirstRow">
+				<Label class="StatLabel" text="{s:stat_name}" />
+				<Panel class="FillWidth"/>
+				<Label class="StatValue" text="{s:stat_value}" html="true" />
+				<Image class="AbilityCostIcon Cooldown" src="file://{images}/status_icons/ability_cooldown_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="AbilityCostIcon ManaCost" src="file://{images}/status_icons/ability_manacost_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="AbilityCostIcon CastRange" src="file://{images}/status_icons/ability_castrange_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="AbilityCostIcon AOE" src="file://{images}/status_icons/ability_aoe_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTAAbilityDetails>
+
+		<Panel id="HeaderContainer">
+			<Panel class="HeaderBackgound">
+				<Image class="HeaderBackgoundTexture" src="file://{images}/hud/facets/ripple_texture.png" scaling="cover" />
+			</Panel>
+			<Panel id="TextHeaderContainer">
+				<Label id="AbilityName" text="{s:ability_name}" />
+				<Label id="AbilityCategory" text="{s:ability_category}" />
+			</Panel>
+			<Panel id="CurrentAbilityCostsContainer">
+				<Panel class="CurrentAbilityCostContainer ManaCostContainer">
+					<Label id="CurrentAbilityManaCost" class="ManaCost CurrentAbilityCostLabel" text="{s:current_manacost}" html="true"/>
+					<Image class="AbilityCostIcon ManaIcon" src="file://{images}/status_icons/ability_manacost_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="CurrentAbilityCostContainer HealthCostContainer">
+					<Label id="CurrentAbilityHealthCost" class="HealthCost CurrentAbilityCostLabel" text="{s:current_healthcost}" html="true"/>
+					<Image class="AbilityCostIcon HealthIcon" src="file://{images}/status_icons/ability_healthcost_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="CurrentAbilityCostContainer CooldownContainer">
+					<Label id="CurrentAbilityCooldown" class="Cooldown CurrentAbilityCostLabel" text="{s:current_cooldown}" html="true"/>
+					<Image class="AbilityCostIcon CooldownIcon" src="file://{images}/status_icons/ability_cooldown_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+			</Panel>
+			<Panel class="LevelContainer">
+				<Label id="CurrentLevel" text="{s:current_ability_level}" />
+			</Panel>
+		</Panel>
+
+		<Panel id="SimpleDescriptionContainer">
+			<Label id="SimpleDescription" class="SimpleDescriptionText" html="true" text="{s:simple_description}" />
+      <Label id="SimpleDescriptionLevelUp" class="SimpleDescriptionText" html="true" text="{s:simple_description_level_up}" />
+			<Panel id="SimpleDescriptionContainerDynamic">
+						                                                                                
+			</Panel>
+		</Panel>
+
+		<Panel id="DetailsContainer">
+
+		</Panel>
+		
+		<Panel class="TEMP_DetailsContainer">
+
+			                      
+			<Panel class="StatsContainer Callouts">
+				<Panel class="CalloutRow Physical">
+					<Label html="true" text="Damage type:" />
+					<Label html="true" class="Physical" text="Physical" />
+				</Panel>
+				<Panel class="CalloutRow Pure">
+					<Label html="true" text="Damage type:" />
+					<Label html="true" class="Pure" text="Pure" />
+				</Panel>
+				                               
+					                                                     
+					                                              
+				        
+				                          
+					                                         
+					                                           
+				            
+			</Panel>
+
+			                            
+			                                   
+				                                                  
+					                                 
+					                                                     
+						                                 
+						                       
+					        
+					                                                                
+					                          
+					                                                  
+				        
+			            
+
+			                       
+			<Panel class="StatsContainer Modifiers">
+				<Label class="LabelSmall StatsContainerTitle" text="Modifiers" />
+				<Panel class="ModifierRow TalentTree">
+					<Label html="true" class="TalentTree" text="+20 Chaotic Offering Golems Armor" />
+					<Panel class="FillWidth"/>
+					<Panel class="TalentTreeLevelContainer">
+						<Label class="LabelSmall" text="15" />
+						<Image class="TalentTreeIcon" src="file://{images}/tooltips/talent_tree_icon.png" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+				</Panel>
+				<Panel class="ModifierRow Aghanims Shard Off">
+					<Label html="true" class="Aghanims" text="<b>Shard</b> specific stuff" />
+					<Panel class="FillWidth"/>
+					<Image class="AghanimsIcon" />
+				</Panel>
+				<Panel class="ModifierRow Aghanims Shard On">
+					<Label html="true" class="Aghanims" text="<b>Shard</b> specific stuff" />
+					<Panel class="FillWidth"/>
+					<Image class="AghanimsIcon" />
+				</Panel>
+				<Panel class="ModifierRow Aghanims Scepter Off">
+					<Label html="true" class="Aghanims" text="<b>Scepter</b> specific stuff" />
+					<Panel class="FillWidth"/>
+					<Image class="AghanimsIcon" />
+				</Panel>
+				<Panel class="ModifierRow Aghanims Scepter On">
+					<Label html="true" class="Aghanims" text="<b>Scepter</b> specific stuff" />
+					<Panel class="FillWidth"/>
+					<Image class="AghanimsIcon" />
+				</Panel>
+			</Panel>
+
+		</Panel>
+
+		<Panel class="AltDetailsIndicatorContainer">
+			<Image class="AltKeyIcon" src="file://{images}/control_icons/alt_key.png" scaling="stretch-to-fit-preserve-aspect" />
+			<Label html="true" text="#DOTA_More_Details" />
+		</Panel>
+
+	</DOTAAbilityDetails>
+</root>
+      
+		    
+                       
+			                                
+
+			                         
+				                          
+					                                                                                         
+					                                                                         
+				        
+				                                                    
+					                         
+					                
+						                                                                                 
+					        
+				        
+				                             
+					                                                    
+
+					                                                                 
+						                                                   
+					        
+					                                                                 
+						                                                   
+					        
+					                                                                   
+						                                                     
+					        
+					                             
+						                                                                       
+						                             
+							                     
+								                           
+								                                                 
+								                                                              
+							        
+							                           
+								                                                        
+								                                                            
+							        
+						        
+					        	
+				        
+				                                                                 
+			        
+		        
+
+		                          
+			                             	                                                     
+			                                   
+				                                                                               
+				                                
+					                                                                                             
+					                                                                                                   
+					                                                                                             
+				        
+			        
+                                            
+                                                                                           
+                                         
+                                                                                                          
+                
+              
+			                                                                                   
+			                                                                                                  
+			                                                                                    
+			                                                                                  
+		        
+		                                   
+			                                                                  
+			                           
+				                                       
+				                                                     				
+			        
+			                                                                      
+
+		        
+		                               
+			                                                                                   
+			                                             
+				                             
+					                                                                   
+					                                                                  
+					                                                                      
+                                                                             
+				        
+				                                          
+			        
+			                                               
+				                                 
+					                                              
+					                                                                                            
+				        
+				                                                                                           
+			        
+
+                                                   
+                                                 
+                                           
+                                                                                                      
+                
+		                                                 
+			                                                                                                    
+		        
+		                                               
+			                                                                                                  
+		        
+		                                                                                              
+              
+      
+			                                                                                               
+			                                                     
+			                                                   
+			                                                                                    
+			                                                                             
+			                         
+				                                                                                                 
+				                                                                                                
+				                                                                                                      
+                                                                                                           
+			        
+			                                   
+				                         
+			        			
+			                                                                       
+
+			                                                                                       
+
+			                                                            
+			                                                                                       
+
+			                                                                 
+
+			                                                                      
+			                                                                               
+			                                                                         
+			                                                                                  
+			                                                                          
+		        
+		
+		                                                                                  
+
+		                                                                 
+		                                                                                                                           
+		                              
+			                                                                                                                     
+			                                               
+		        
+       
+	

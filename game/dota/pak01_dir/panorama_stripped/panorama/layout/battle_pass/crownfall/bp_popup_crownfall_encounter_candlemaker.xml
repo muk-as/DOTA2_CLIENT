@@ -1,0 +1,48 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_candlemaker.css" />
+	</styles>
+
+	<Panel class="PopupPanel Encounter Candlemaker Hidden" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">	
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="BodyContainer">
+					<Panel class="Tokens">
+						<DOTACrownfallToken id="TempToken" class="TokenUnowned LargeToken" overworld_id="1" token_id="21" tooltipstyle="nameonly"  />
+						<DOTACrownfallToken id="RealToken" class="LargeToken" overworld_id="1" token_id="21" tooltipstyle="nameonly"  />
+					</Panel>
+
+					<AsyncDataPanel class="Actions" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<DOTACrownfallButton class="TakeTokensButton GlowButton" text="#DOTA_Crownfall_Encounter_TakeCandle" onactivate="DOTACrownfallEncounterClaimReward( 0 )" />
+							<DOTACrownfallButton text="#DOTA_Crownfall_Encounter_ComeBackLater" class="ComeBackLaterButton GlowButton" onactivate="UIPopupButtonClicked()" />
+							<Label class="AlreadyClaimedLabel" text="#DOTA_Crownfall_Encounter_AlreadyClaimed" />
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+		
+	</Panel>
+</root>

@@ -1,0 +1,224 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_overworld_map.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="Node">
+			<Panel class="Node" hittest="false">
+				<Panel id="NodeBackground" />
+				<Panel id="NodeBackgroundInner" hittest="false" />
+				<Panel id="NodeContents" hittest="false" />
+				<Panel class="NodeIcon Shadow" hittest="false" />
+				<Panel class="NodeIcon" hittest="false" />
+				<Panel id="TokenContainer" hittest="false" >
+					                                                           
+				</Panel>
+				<Panel id="DialogButton">
+					<Image src="file://{images}/control_icons/24px/comic.png" />
+				</Panel>
+				<Label class="NodeDebugInfo" text="{d:node_id}: {s:node_debug_name}" />
+				                                                         
+				<Label id="NodeLabel" class="NodeLabel TitleMedium"/>
+				<Panel id="ArtilleryEncounterAlert" class="NodeAlert" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Artillery_HardModeTooltip );">
+					<Panel class="NodeAlertGlow" />
+					<Panel class="NodeAlertBackground" />
+					<Panel class="NodeAlertInner" />
+					<Image class="NodeAlertIcon" src="file://{images}/events/crownfall/overworld/info_icon.svg" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="ModelReward">
+			<Panel class="ModelReward" hittest="false" hittestchildren="false">
+				<AnimatedImageStrip class="PremiumGlow" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_glow_small.png" framewidth="130px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip id="AnimatedImage" hittest="false" src="file://{images}/emoticons/crownfall/props/prop_reward_chest_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip class="PremiumSparkle" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_sparkle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<DOTAUIEconSetPreview id="ModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EconItemReward">
+			<Panel class="EconItemReward" hittest="false" hittestchildren="false">
+				<AnimatedImageStrip class="PremiumGlowSmall" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_glow_small.png" framewidth="130px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip id="AnimatedImage" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip class="PremiumSparkle" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_sparkle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<EconItemImage id="ItemImage" scaling="contain" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ImageReward">
+			<Panel class="ImageReward" hittest="false" hittestchildren="false">
+				<AnimatedImageStrip class="PremiumGlowSmall" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_glow_small.png" framewidth="130px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip id="AnimatedImage" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip class="PremiumSparkle" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_sparkle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<Image id="ItemImage" scaling="cover" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EmoticonReward">
+			<Panel class="EmoticonReward" hittest="false" hittestchildren="false">
+				<AnimatedImageStrip class="PremiumGlowSmall" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_glow_small.png" framewidth="130px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip id="AnimatedImage" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<AnimatedImageStrip class="PremiumSparkle" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_sparkle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+				<DOTAEmoticon id="Emoticon"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="ActionListReward">
+			<Panel class="ActionListReward" hittest="false">
+				<DOTAActionListReward id="ActionList" item_scale="0.6"  hittest="false" />
+			</Panel>
+		</snippet>
+
+		<snippet name="Path">
+			<Panel class="Path" hittest="false">
+				<Panel class="ActiveGlow" />
+				<DOTAScenePanel class="CompletedParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+				<Panel class="TokensUnlockContainer" hittest="false">
+					<Panel class="TokenContainer" id="TokenContainer" />
+					<Label class="UnlockLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Unlock" hittest="false" />
+				</Panel>
+				<Panel id="PathDebugArrow" hittest="false" Compiler.If="MainBranch"/>
+				<Label class="PathDebugInfo" text="{d:path_id}: cost {d:path_cost}" unlocalized="true" hittest="false" Compiler.If="MainBranch" />
+				<Panel class="HitTestBlocker" hittest="true" onactivate=""/>
+			</Panel>
+		</snippet>
+
+		<snippet name="AnimatedCharacter">
+			<Panel class="Character" hittest="false">
+				<AnimatedImageStrip class="CharacterIcon" id="CharacterIcon" framewidth="54px" frametime="100ms" defaultframe="1" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+			</Panel>
+		</snippet>
+		
+	</snippets>
+
+	<DOTAOverworldMap class="Overworld">
+		<Panel id="OverworldMapRef" class="OverworldMap">
+
+			<DragZoom class="OverworldZoom" id="DragZoom" startzoomed="1" mousewheeltickcount="1" minscale="0.5" maxscale="1.0" strictclamptranslation="1" dragclickzone="30" disabledoubleclick="1" >
+				<Panel id="MapBackgroundLayers" class="MapLayers" hittest="false" />
+
+				<DOTAScenePanel class="OverworldEffects" id="Effects" deferredalpha="true" camera="shot_camera" map="scenes/crownfall/overworld_map_fx" hittest="false" particleonly="true" require-composition-layer="true" />
+
+				<Panel id="OverworldContent" hittest="false">
+					<Panel class="OverworldContentMap" id="Map" hittest="false">
+						                                                                         
+						                                                                                                         	
+					</Panel>
+					<Panel id="EditModeContainer" hittest="false" />
+				</Panel>
+
+				<Panel id="MapForegroundLayers" class="MapLayers" hittest="false" />
+				
+				<Panel class="TutorialContainer" hittest="false">
+					                                     
+					                                   
+					            
+
+					<Image class="TutorialBackground" src="file://{images}/events/crownfall/overworld/tutorial/tutorial_background.png" scaling="stretch-to-fit-y-preserve-aspect"/>
+
+					<Panel class="TutorialContent">
+						<Panel class="HowToPlay" >
+							<Label class="SectionTitle LabelMedium" text="#DOTA_Crownfall_Overworld_EarnTokens" />
+							<Image class="HeroesDiagram" src="file://{images}/events/crownfall/overworld/tutorial/tutorial_heroes.png" scaling="stretch-to-fit-y-preserve-aspect"/>
+							<Label class="TutorialText LightestGreyText" text="#DOTA_Crownfall_Overworld_Tutorial1"/>
+							                            
+								                    
+									                                                                                                                              
+									                         
+								        
+								                                
+								                     
+									                                                                                                                              
+									                           
+								        
+							            
+							<DOTACrownfallButton class="ContinueButton Blue GlowButton" text="#DOTA_Crownfall_Overworld_Continue" onactivate="UIPopupButtonClicked(); DOTANextOverworldIntro();"/>
+						</Panel>
+						<Panel class="FreeToken" >
+							<Panel class="TutorialTokenContainer" hittestchildren="false">
+								<DOTAScenePanel class="TutorialTokenContainerParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+								<DOTACrownfallToken id="IntroTutorialFreeToken" overworld_id="1" token_id="16" class="LargeToken" tooltipstyle="nameonly" />
+							</Panel>
+							<Label id="IntroTutorialFreeTokenLabel" html="true" class="TutorialText BodyLarge LightestGreyText" text="#DOTA_Crownfall_Overworld_Tutorial2"/>
+							<DOTACrownfallButton class="ContinueButton Blue GlowButton" text="#DOTA_Crownfall_Overworld_ClaimToken" onactivate="UIPopupButtonClicked(); DOTANextOverworldIntro();"/>
+						</Panel>
+					</Panel>
+				</Panel>
+				
+			</DragZoom>
+		</Panel>
+
+		<Panel class="OverworldDebug" hittest="false" >
+			<Panel id="DebugPanel_Main" class="DebugPanel" hittest="true">
+				<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_Main, Collapsed )" />
+				<Label class="DebugHeader" text="Debug Menu" unlocalized="true" />
+				<Panel class="DebugPanelContainer">
+					<TextButton text="Toggle Edit Mode" unlocalized="true" onactivate="DotaOverworldMapDebugEditMode()" Compiler.If="MainBranch"/>
+					<ToggleButton id="DebugPurchases" class="HideInEditMode" onactivate="DotaOverworldMapDebugToggle()">
+						<Label text="Debug Purchases" unlocalized="true" />
+					</ToggleButton>
+					<ToggleButton id="DebugNodeInfo" onactivate="DotaOverworldMapDebugToggle()">
+						<Label text="Show Node Info" unlocalized="true" />
+					</ToggleButton>
+				
+					<Panel id="DebugPanel_ExtraOptions" class="DebugPanel Collapsed" >
+						<Label class="DebugHeader" text="Extra Options" unlocalized="true" />
+						<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_ExtraOptions, Collapsed )" />
+						<Panel class="DebugPanelContainer">
+							<TextButton text="Complete Map" unlocalized="true" onactivate="DotaOverworldMapDebugCompleteAllPaths()" />
+							<Panel class="LeftRightFlow">
+								<TextButton class="Short" text="Reset Event" unlocalized="true" onactivate="DotaOverworldMapDebugResetAll()" />
+								<TextButton class="Short" text="Reset Intro" unlocalized="true" onactivate="DOTAOverworldMapDebugResetIntro()" />
+							</Panel>
+							<Panel class="LeftRightFlow">
+								<TextButton class="Short" text="Fill Inventory" unlocalized="true" onactivate="DotaOverworldMapDebugGrantAllTokens()" />
+								<TextButton class="Short" text="Clear Inventory" unlocalized="true" onactivate="DotaOverworldMapDebugClearInventory()" />
+							</Panel>
+							<ToggleButton id="DebugPaths" onactivate="DotaOverworldMapDebugToggle()">
+								<Label text="Show All Quests" unlocalized="true" />
+							</ToggleButton>
+							<ToggleButton id="DebugClickables" onactivate="ToggleStyle( OverworldMapRef, DebugShowClickables )">
+								<Label text="Highlight Clickables" unlocalized="true" />
+							</ToggleButton>
+							<ToggleButton id="DisableCameraEvents" onactivate="DotaOverworldMapDebugToggle()">
+								<Label text="Disable Camera Events" unlocalized="true" />
+							</ToggleButton>
+						</Panel>
+					</Panel>
+
+					<Panel id="DebugPanel_EditMode" class="DebugPanel" Compiler.If="MainBranch">
+						<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_EditMode, Collapsed )" />
+						<Label class="DebugHeader" text="Edit Mode" unlocalized="true" />
+						<Panel class="DebugPanelContainer">
+							<TextButton text="Save" unlocalized="true" onactivate="DotaOverworldMapDebugEditSave()" />
+							<Panel class="DebugOptionRow">
+								<Label text="Grid Size:" unlocalized="true" />
+								<TextEntry id="EditModeGridSize" class="DebugTextEntry" textmode="numeric" maxchars="4" text="64" unlocalized="true" oninputsubmit="DotaOverworldMapDebugEditOption()" />
+							</Panel>
+							<Panel class="DebugOptionRow">
+								<Label text="Map Width:" unlocalized="true" />
+								<TextEntry id="EditModeMapWidth" class="DebugTextEntry" textmode="numeric" maxchars="5" text="64" unlocalized="true" oninputsubmit="DotaOverworldMapDebugEditOption()" />
+							</Panel>
+							<Panel class="DebugOptionRow">
+								<Label text="Map Height:" unlocalized="true" />
+								<TextEntry id="EditModeMapHeight" class="DebugTextEntry" textmode="numeric" maxchars="5" text="64" unlocalized="true" oninputsubmit="DotaOverworldMapDebugEditOption()" />
+							</Panel>
+							<ToggleButton id="EditModeAspectRatio" selected="true" onactivate="DotaOverworldMapDebugEditOption()">
+								<Label text="Keep Aspect Ratio" unlocalized="true" />
+							</ToggleButton>
+							<Label id="DebugLabel" text="" unlocalized="true" />
+						</Panel>
+					</Panel>
+					
+					
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Label id="EditModeWarning" text="" hittest="false" unlocalized="true" />
+	</DOTAOverworldMap>
+</root>

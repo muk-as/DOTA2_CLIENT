@@ -1,0 +1,61 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/frontpage_shared.css" />
+		<include src="file://{resources}/styles/events/frostivus2024/frostivus2024_frontpage.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="InventoryComponent">
+			<Panel class="InventoryComponent">
+				<Image id="ComponentImage" scaling="contain"/>
+				<Panel class="ComponentAmount">
+					<Label text="{d:component_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAFrostivus2024FrontPageCell hittest="true" onactivate="">
+		<Panel class="CellBackground">
+			                                                                                                                                                           
+			                                                                                                                                                          
+			                                                                                                                                                                                                                                                     
+			<DOTAParticleScenePanel class="SnowParticles Foreground" hittest="false" particleName="particles/ui/ui_generic_snow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
+
+			<Panel class="Title">
+				<Image class="cn" src="file://{images}/front_page/frostivus_2024_cn_small.psd" scaling="cover" />
+				<Image class="en" src="file://{images}/front_page/frostivus_2024_en_small.psd" scaling="cover" />
+			</Panel>
+		</Panel>
+
+		<Panel class="CellContents" hittest="false">
+			<Panel class="StoryDescription">
+				<Label text="#DOTA_Frostivus2024_ReadAboutTheStory"/>
+			</Panel>
+			<Panel class="StoryButtonContainer">
+				<Panel class="Left Filigree"/>
+				<TextButton class="PopupButton StoryButton" text="#DOTA_Frostivus2024_Story" onactivate="DOTAFrostivus2024ShowStoryPopup()"/>
+				<Panel class="Right Filigree"/>
+			</Panel>
+			<Panel class="Divider"/>
+			<Panel class="HowToPlay">
+				<Label text="#DOTA_Frostivus2024_HowToPlay"/>
+			</Panel>
+			<AsyncDataPanel id="AsyncInventory" state="{d:inventory_state}">
+				<Panel id="Inventory" class="AsyncSuccessContainer">
+					                                    
+				</Panel>
+			</AsyncDataPanel>
+
+			<Panel class="CraftworksButtonContainer" onactivate="DOTAShowFrostivus2024Page()">
+				<Panel class="RewardClaimableBadge" >
+					<Label text="#DOTA_Frostivus2024_RewardCraftable" />
+				</Panel>
+				<TextButton hittest="false" hittestchildren="false" class="PopupButton CraftworksButton" text="#DOTA_Frostivus2024_FrostivusForge"/>
+			</Panel>
+		</Panel>
+		
+	</DOTAFrostivus2024FrontPageCell>
+</root>

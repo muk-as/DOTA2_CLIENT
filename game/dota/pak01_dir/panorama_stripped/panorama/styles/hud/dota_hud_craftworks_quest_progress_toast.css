@@ -1,0 +1,121 @@
+DOTACraftworksQuestProgressToast.ToastPanel
+{
+	margin-bottom: 8px;
+	horizontal-align: right;
+	flow-children: right;
+	width: 240px;
+	background-image: url( "file://{images}/hud/reborn/item_purchase_bg.psd" );
+	background-size: cover;
+	padding: 0px;
+	tooltip-position: left;
+
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+DOTACraftworksQuestProgressToast:hover
+{
+	brightness: 2.0;
+}
+
+
+#QuestDetails {
+	flow-children: right;
+
+	.ImageContainer {
+		vertical-align: center;
+		transition-property: transform;
+		transition-duration: 0.1s;
+		#ComponentImage {
+			width: 40px;
+			height: 40px;
+			animation-name: ComponentAnim;
+			animation-direction: alternate-reverse;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+		.CheckMark {
+			width: 20px;
+			height: 20px;
+			horizontal-align: right;
+			vertical-align: top;
+			wash-color: #4cff00;
+			border-radius:10px;
+			background-image: url("file://{images}/control_icons/24px/check.svg");
+			background-size: contain;
+			visibility: collapse;
+			opacity: 0;
+
+			.ReachedMaximum & {
+				visibility: visible;
+				animation-name: CheckAnim;
+				animation-duration: 0.2s;
+				animation-fill-mode: forwards;
+				animation-delay: 0.2s;
+			}
+
+		}
+		.Updated & {
+			transform: scale3d(1.1, 1.1, 1.0 );
+		}
+	}
+	.TextContainer {
+		flow-children: down;
+		vertical-align: center;
+		transition-property: transform;
+		transition-duration: 0.05s;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		.Row {
+			vertical-align: center;
+			flow-children: down;
+			#QuestName
+			{
+				font-size: 16px;
+				color: #dedede;
+				text-shadow: 2px 2px 4px black;
+				vertical-align: center;
+				.ReachedMaximum & {
+					color: #87d484;
+				}
+			}
+			.QuestMax {
+				font-size: 16px;
+				color: #808080;
+				text-shadow: 2px 2px 4px black;
+				vertical-align: center;
+				font-style: italic;
+				visibility: collapse;
+				.HasMaximum & {
+					visibility: visible;
+				}
+			}
+		}
+		.Updated & {
+			transform: translateY( -2px );
+			transition-duration: 0.25s;
+		}
+	}
+}
+
+@keyframes 'ComponentAnim'
+{
+	0% {
+		transform: none;
+	}
+	100% {
+		transform: rotateZ(10deg) scale3d(1.1, 1.1, 1.0);
+	}
+}
+
+@keyframes 'CheckAnim'
+{
+	0% {
+		transform: translateY( -30px );
+		opacity: 0;
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}

@@ -1,0 +1,208 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/current_battle_pass.css" />
+		<include src="file://{resources}/styles/settings/ui_ability_bar_settings.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="AbilityHotkeyBind">
+			<Panel class="Ability">
+				<Panel class="AbilityGroup">
+					<Panel class="AbilityContainer">
+						<Panel class="AbilityImageContainer">
+							<DOTAAbilityImage class="AbilityImage" id="AbilityImage" scaling="stretch-to-fit-preserve-aspect"/>
+							<Label class="AbilityDefaultText" text="{s:ability_text}"/>
+						</Panel>
+					</Panel>
+					<Label class="AbilityHotkey" text="{s:key}"/>
+					<Label class="AbilityHotkey Alt" text="Alt"/>
+				</Panel>
+				<Panel class="QuickCastCheckBoxContainer">
+					<DropDown class="QuickCastControl AbilityControl CheckBox" id="QuickcastDropdown">
+						<Panel id="Normal" acceptsfocus="true" class="QuickCastDropdownItem">
+							<Panel class="QuickCastTickBox Normal"/>
+							<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_Normal"/>
+						</Panel>
+						<Panel id="KeyDown" acceptsfocus="true" class="QuickCastDropdownItem">
+							<Panel class="QuickCastTickBox KeyDown"/>
+							<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyDown"/>
+						</Panel>
+						<Panel id="KeyUp" acceptsfocus="true" class="QuickCastDropdownItem">
+							<Panel class="QuickCastTickBox KeyUp"/>
+							<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyUp"/>
+						</Panel>
+					</DropDown>
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="ItemSpecificBindEntry">
+			<Panel class="ItemSpecificBindContainer">
+				<DOTAShopItem id="ItemSpecificBindShopItem" />
+				<DropDown class="QuickCastControl CheckBox" id="ItemSpecificQuickcastCycle">
+					<Panel id="Normal" acceptsfocus="true" class="QuickCastDropdownItem">
+						<Panel class="QuickCastTickBox Normal"/>
+						<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_Normal"/>
+					</Panel>
+					<Panel id="KeyDown" acceptsfocus="true" class="QuickCastDropdownItem">
+						<Panel class="QuickCastTickBox KeyDown"/>
+						<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyDown"/>
+					</Panel>
+					<Panel id="KeyUp" acceptsfocus="true" class="QuickCastDropdownItem">
+						<Panel class="QuickCastTickBox KeyUp"/>
+						<Label class="QuickCastDescription" text="#DOTA_Hotkeys_Tooltip_QuickcastToggle_OnKeyUp"/>
+					</Panel>
+				</DropDown>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAAbilityBarSettings>
+		<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_abilities_and_items">
+		<Panel id="AbilitiesHotkeysSection">
+			<Panel class="AbilityHotkeysBackground"/>
+			<Panel class="HotkeyUnitSelectorButtonsContainer">
+				<Label class="SettingsSectionSubtitle" text="#dota_settings_abilities_and_items"/>
+				<Panel id="HotkeyUnitSelectorButtons" class="HotkeyUnitSelectorButtons">
+					<RadioButton class="SettingsTabButton" text="#dota_settings_abilitybar_default" group="hotkey_unit" onactivate="DOTASettingsSetUnitTypeHotkeySelector( 0 )" />
+					<RadioButton class="SettingsTabButton" text="#dota_settings_abilitybar_heroes"  group="hotkey_unit" onactivate="DOTASettingsSetUnitTypeHotkeySelector( 1 )" />
+					<RadioButton class="SettingsTabButton" text="#dota_settings_abilitybar_courier" group="hotkey_unit" onactivate="DOTASettingsSetUnitTypeHotkeySelector( 2 )" />
+					<RadioButton class="SettingsTabButton" text="#dota_settings_abilitybar_neutrals" group="hotkey_unit" onactivate="DOTASettingsSetUnitTypeHotkeySelector( 3 )" />
+				</Panel>
+				<ToggleButton class="CheckBox" id="DirectCastBindingCheckBox" text="#dota_settings_direct_cast_bindings" onactivate="DOTASettingsToggleDirectCastBindings()" onmouseover="UIShowTextTooltip( #dota_settings_direct_cast_bindings_tooltip )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+			<Panel id="AbilityBar">
+				<Image class="left_flare" src="file://{images}/hud/reborn/side_flare_tall.psd" scaling="stretch-to-fit-y-preserve-aspect"/>
+				<Panel id="PortraitContainer">
+					<DOTAScenePanel id="PortraitHUD" />
+					<MoviePanel id="PortraitMovie" hittest="false" controls="none" autoplay="onload" repeat="true" scaling="stretch-to-cover-preserve-aspect" src="file://{resources}/videos/dota_logo_portrait.webm"  />
+					<Panel class="PortraitGradient"/>
+					<Panel class="AbilityBarHeroSelectorContainer" id="AbilityBarHeroSelectorContainer" onactivate="DOTAShowSettingsHeroPicker();" onmouseover="$('#PortraitHUD').AddClass('HoverPortrait');" onmouseout="$('#PortraitHUD').RemoveClass('HoverPortrait');">
+						<Button id="AbilityBarHeroSelector" >
+							<Label class="AbilityBarHeroSelectorLabel" text="{s:selected_hero}" />
+							<Image class="AbilityBindingsHeroSelectorArrow" src="file://{images}/control_icons/24px/caret_down.svg" scaling="stretch-to-fit-preserve-aspect"/>
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="Abilities" class="TopBottomFlow">
+					<Panel class="AbilitiesEdgeShadow Left"/>
+					<Panel class="AbilitiesEdgeShadow Right"/>
+					<Panel class="LeftRightFlow AbilitiesContainer" id="AbilitiesContainer" hittest="false">
+						                       
+					</Panel>
+					<Panel class="AbilitiesContainerDash"/>
+					<Panel class="HeroAbilityActionsContainer">
+						<Panel class="UnitAbilityQuickcastButton LeftRightFlow">
+							<ToggleButton class="CheckBox" id="DefaultAbilityQuickcastCheckBox" text="#dota_settings_enable_quickcast_abilities" onactivate="DOTASetDefaultAbilityQuickCast();" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_Quickcast )" onmouseout="UIHideTextTooltip()" />
+						</Panel>
+						<Panel class="DirectCastSelectorButtons LeftRightFlow" id="DirectCastSelectorButtons">
+							<RadioButton class="" text="#dota_settings_cast" group="cast" onactivate="DOTASettingsSetAbilityDirectCastSelector( 0 )" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_AbilityCast )" onmouseout="UIHideTextTooltip()" />
+							<RadioButton class="" text="#dota_settings_quickcast" group="cast" onactivate="DOTASettingsSetAbilityDirectCastSelector( 1 )" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_AbilityQuickcast )" onmouseout="UIHideTextTooltip()" />
+							<RadioButton class="" text="#dota_settings_autocast" group="cast" onactivate="DOTASettingsSetAbilityDirectCastSelector( 2 )" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_Autocast )" onmouseout="UIHideTextTooltip()" />
+						</Panel>
+						<Button id="ClearHeroAbilityBindings" class="ButtonPrimary DarkGrey Small" onactivate="DOTASettingsClearUnitSpecificHotkeys();" onmouseover="UIShowTextTooltip( #dota_settings_itemspecificbinds_reset )" onmouseout="UIHideTextTooltip()">
+							<Label text="#DOTA_ClearHeroAbilityBindings" />
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="Inventory">
+					<Panel class="InventoryRow" hittest="false">
+						<Panel class="Item" id="Inventory1" onactivate="DOTASettingsOpenKeybinder('Inventory1')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+						<Panel class="Item" id="Inventory2" onactivate="DOTASettingsOpenKeybinder('Inventory2')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+						<Panel class="Item" id="Inventory3" onactivate="DOTASettingsOpenKeybinder('Inventory3')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+					</Panel>
+					<Panel class="InventoryRow" hittest="false">
+						<Panel class="Item" id="Inventory4" onactivate="DOTASettingsOpenKeybinder('Inventory4')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+						<Panel class="Item" id="Inventory5" onactivate="DOTASettingsOpenKeybinder('Inventory5')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+						<Panel class="Item" id="Inventory6" onactivate="DOTASettingsOpenKeybinder('Inventory6')">
+							<Panel class="ItemContainer"/>
+							<Label class="AbilityHotkey" text="{s:key}"/>
+							<Label class="AbilityHotkey Alt" text="Alt"/>
+						</Panel>
+					</Panel>
+					<Panel class="ItemQuickcastContainer">
+						                                            
+							<Panel class="DefaultItemQuickcastCheckBoxContainer">
+								<ToggleButton class="CheckBox" id="DefaultItemQuickcastCheckBox" text="#dota_settings_enable_quickcast_items" onactivate="DOTASetDefaultItemQuickCast();" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_Quickcast_Items )" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+
+							<Panel class="ItemDirectCastButtons" id="ItemDirectCastButtons">
+								<RadioButton class="" text="#dota_settings_cast" group="itemcast" onactivate="DOTASettingsSetItemDirectCastSelector( 0 )" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_AbilityCast )" onmouseout="UIHideTextTooltip()" />
+								<RadioButton class="" text="#dota_settings_quickcast" group="itemcast" onactivate="DOTASettingsSetItemDirectCastSelector( 1 )" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_AbilityQuickcast )" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+						                 
+					</Panel>
+				</Panel>
+				<Panel id="TeleportAndNeutralSlot">
+					<Image class="right_flare" src="file://{images}/hud/reborn/right_flare_bg_wide.psd" scaling="stretch-to-fit-y-preserve-aspect"/>
+					<Panel id="InventoryNeutral" onactivate="DOTASettingsOpenKeybinder('InventoryNeutral')">
+						<Panel class="TeleportAndNeutralSlotContainer"/>
+						<Label class="AbilityHotkey" text="{s:key}"/>
+						<Label class="AbilityHotkey Alt" text="Alt"/>
+					</Panel>
+					<Panel id="InventoryTP" onactivate="DOTASettingsOpenKeybinder('InventoryTP')">
+						<Panel class="TeleportAndNeutralSlotContainer"/>
+						<Label class="AbilityHotkey" text="{s:key}"/>
+						<Label class="AbilityHotkey Alt" text="Alt"/>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel class="ItemSpecificBindsContainer">
+			<Panel class="LeftRightFlow HorizontalCenter">
+				<Label class="ItemSpecificBindsDescription" text="#dota_settings_itemspecificbinds_button_tooltip" />
+				<Button id="ItemSpecificBindsButton" class="ItemSpecificBindsButton ButtonPrimary Small"
+					onactivate="DOTASettingsShowItemSpecificBindsPage();" >
+					<Label text="#dota_settings_itemspecificbinds_button_label_alt" />
+				</Button>
+			</Panel>
+		</Panel>
+
+		<Panel id="ItemSpecificBindsPanel">
+			<Panel class="ItemSpecificBinds_Group">
+				<Label text="#dota_settings_itemspecificbinds_grouplabel_consumables" class="ItemSpecificBinds_GroupTitle"/>
+				<Panel id="ItemSpecificBinds_Consumables" class="ItemSpecificBindsItemList"/>
+				                           
+			</Panel>
+			<Panel class="ItemSpecificBinds_Group">
+				<Label text="#dota_settings_itemspecificbinds_grouplabel_basic" class="ItemSpecificBinds_GroupTitle"/>
+				<Panel id="ItemSpecificBinds_Basic" class="ItemSpecificBindsItemList"/>
+				                           
+			</Panel>
+			<Panel class="ItemSpecificBinds_Group">
+				<Label text="#dota_settings_itemspecificbinds_grouplabel_advanced" class="ItemSpecificBinds_GroupTitle"/>
+				<Panel id="ItemSpecificBinds_Advanced" class="ItemSpecificBindsItemList"/>
+				                           
+			</Panel>
+			<Panel class="ItemSpecificBinds_Group LastChild">
+				<Label text="#dota_settings_itemspecificbinds_grouplabel_neutrals" class="ItemSpecificBinds_GroupTitle"/>
+				<Panel id="ItemSpecificBinds_Neutrals" class="ItemSpecificBindsItemList"/>
+				                           
+			</Panel>
+		</Panel>
+
+	</Panel>
+	</DOTAAbilityBarSettings>
+</root>

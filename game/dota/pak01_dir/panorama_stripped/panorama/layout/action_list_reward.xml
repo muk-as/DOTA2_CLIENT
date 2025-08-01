@@ -1,0 +1,96 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/action_list_reward.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="ActionListItem">
+			<Panel class="ActionListItem">
+				<Panel id="RewardContainer">
+					                                          
+				</Panel>
+				<Panel class="ActionListItemClaimedIcon" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EmoticonReward">
+			<Panel class="EmoticonReward" hittest="false" >
+				<DOTAEmoticon id="Emoticon" class="RewardLineIcon"/>
+				<Image id="EmoticonRef" class="RewardLineIconRef" hittest="false" />
+				<Image id="EmoticonShadow" class="RewardLineIconShadow" hittest="false" />
+			</Panel>
+		</snippet>
+		
+		                                                                   
+
+		<snippet name="EconItemReward">
+			<Panel class="EconItemReward">
+				<EconItemImage id="EconItemRef" scaling="stretch-to-fit-preserve-aspect" class="RewardLineEconIconRef" hittest="false"/>
+				<Label text="x{d:reward_quantity}" hittest="false" />
+				<Panel class="RewardLineIconShadow" hittest="false"/>
+				<Panel id="EconItemHitBox">
+					<DOTAEconItem id="EconItem" class="DisableInspect RewardLineEconIcon" hittest="false"/>
+				</Panel>
+				<Panel class="GrantIfNotOwnedInfo InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_GrantIfNotOwned )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EconItemModelReward">
+			<Panel class="EconItemModelReward" hittest="false">
+				<DOTAUIEconSetPreview id="EconItemModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" />
+				<Panel id="EconItemModelHitTest" />
+				<Panel id="EconModelGroundPlaneContainer" hittest="false" >
+					<Image id="EconItemModelRef" class="RewardLineModelRef" hittest="false" />
+					<Image id="EconItemModelShadow" class="RewardLineModelShadow" hittest="false" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="VideoReward">
+			<Panel class="EconItemRewardVideo" hittest="false">
+				<MoviePanel id="ItemVideo" repeat="true" autoplay="onload"/>
+				<Panel class="LevelActiveHighlight" />
+				<Image id="ItemImage" scaling="stretch-to-fit-preserve-aspect"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelRewardMessage">
+			<Panel class="ChatWheelMessage">
+				<Panel class="ChatWheelMessageIcon" />
+				<Panel id="SprayWheelImageContainer">
+					<Image class="SprayWheelImage" id="SprayWheelImage" />
+					<Image class="SprayWheelImage SprayShadow" id="SprayWheelImageShadow"/>
+				</Panel>
+				<Button id="ChatWheelMessageSoundButton" />
+				<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelReward">
+			<Panel class="ChatWheelReward">
+				<Panel id="ChatWheelMessages">
+					                                                      
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="ShardsReward">
+			<Panel class="ShardsReward DotaPlusCurrencyIcon" onmouseover="UIShowTextTooltip( #DOTA_HeroLevelReward_Currency )" onmouseout="UIHideTextTooltip()">
+				<Label text="{d:currency_amount}" />
+			</Panel>
+		</snippet>
+		
+	</snippets>
+
+	<DOTAActionListReward hittest="false" >
+		<Panel class="ActionListRewardHeader" hittest="false" >
+			<Panel id="ActionListIcon"  hittest="false" />
+			<Label class="ActionListTitle" text="#DOTA_BattlePass_RandomReward" hittest="false" />
+			<Panel id="ActionListInfoIcon" class="InfoIcon" onmouseover="UIShowTextTooltip( '#DOTA_BattlePass_RandomReward_Info' )" onmouseout="UIHideTextTooltip()"/>
+		</Panel>
+		<Panel id="ActionListItems" hittest="false">
+			                                
+		</Panel>
+	</DOTAActionListReward>
+</root>

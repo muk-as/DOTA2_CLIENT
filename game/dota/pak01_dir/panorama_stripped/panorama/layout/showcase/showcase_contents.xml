@@ -1,0 +1,39 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/showcase/showcase_shared.css" />
+		<include src="file://{resources}/styles/showcase/showcase_contents.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="ShowcaseItemWidget">
+			<Panel class="ShowcaseItemWidget" draggable="true" >
+				<DOTAShowcaseItem id="ShowcaseItem" />
+				<Panel id="Resize" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAShowcaseContents oncancel="DOTAShowcaseSetSelectedItem( 0 )" oncontextmenu="DOTAShowcaseContextMenu()">
+		<Image id="ShowcaseBackground" />
+		<Panel id="ShowcaseForeground" onactivate="DOTAShowcaseSetSelectedItem( 0 )">
+            <DOTAGridlines id="ShowcaseGridLines" />
+            <Panel id="ShowcaseForegroundItemContainer">
+                                                    
+            </Panel>
+			<Panel class="HeaderTopShadow" hittest="false" />
+            <Panel id="ShowcaseCanvas" hittest="false" />
+		</Panel>
+        <Panel id="ShowcaseGizmos" hittest="false">
+            <Panel id="ShowcaseMoveGizmo" draggable="true" />
+            <Panel id="ShowcaseRotationResizeGizmoParent" >
+                <Panel id="ShowcaseRotationGizmo" draggable="true" />
+                <Panel id="ShowcaseResizeGizmo_TopLeft" class="ShowcaseResizeGizmo" draggable="true" />
+                <Panel id="ShowcaseResizeGizmo_TopRight" class="ShowcaseResizeGizmo" draggable="true" />
+                <Panel id="ShowcaseResizeGizmo_BottomRight" class="ShowcaseResizeGizmo"  draggable="true" />
+                <Panel id="ShowcaseResizeGizmo_BottomLeft" class="ShowcaseResizeGizmo" draggable="true" />
+            </Panel>
+        </Panel>
+		<Image class="MiniShowcaseBorder" hittest="false" />
+	</DOTAShowcaseContents>
+</root>

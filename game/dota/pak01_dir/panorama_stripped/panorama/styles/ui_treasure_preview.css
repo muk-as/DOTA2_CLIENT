@@ -1,0 +1,117 @@
+@define TreasureItemRevealAnimationDuration: 6.5s;
+@define TreasureItemRevealDelay: 2.1s;
+
+DOTATreasurePreview {
+    width: 100%;
+    height: 100%;
+    margin-top: 62px;
+    overflow: noclip;
+    transform: translateX( -20px ) translateY(-40px);
+}
+
+#TreasurePreviewPanel {
+    width: 100%;
+    height: 100%;
+
+                                                                             
+}
+
+#TreasurePreviewForeground {
+    width: 100%;
+    vertical-align: bottom;
+    margin-bottom: 120px;
+    flow-children: down;
+
+
+    .TreasureLabelContainer {
+        width: 500px;
+        padding: 4px 12px;
+        horizontal-align: center;
+        flow-children: right;
+
+        Label {
+            margin: 0px 12px;
+        }
+
+        .Dash {
+            width: fill-parent-flow(1);
+            height: 1px;
+            horizontal-align: center;
+            margin: 8px 0px 4px;
+            opacity: 0.05;
+
+            &.Left {
+                background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), to( #FFFFFF ) );
+            }
+
+            &.Right {
+                background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF ), to( #FFFFFF00 ) );
+            }
+        }	
+    }
+
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.IsFirstLoad #TreasurePreviewForeground {
+    opacity: 0;
+}
+
+
+.TreasurePreviewContainer {
+    horizontal-align: center;
+    vertical-align: center;
+
+    .FloorShadow {
+        width: 70%;
+        height: 8%;
+        margin-bottom: 10%;
+        background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgb(0, 0, 0), to( rgba(0, 0, 0, 0) ) );
+        horizontal-align: center;
+        vertical-align: bottom;
+        blur: gaussian(4px);
+        opacity: 0.5;
+    }
+}
+
+#PreviewContainer1 {
+    z-index: 3;
+    transform: translateX( 0px ) translateY( 0px );
+    width: 640px;
+    height: 640px;
+}
+
+#PreviewContainer2 {
+    z-index: 2;
+    transform: translateX( -220px ) translateY( -20px );
+    width: 320px;
+    height: 320px;
+    brightness: 0.8;
+}
+
+#PreviewContainer3 {
+    transform: translateX( 220px ) translateY( -20px );
+    width: 320px;
+    height: 320px;
+    brightness: 0.8;
+}
+
+.TreasurePreview {
+    width: 100%;
+    height: 100%; 
+    opacity-mask: url( "file://{images}/masks/softedge_box.png" );
+}
+
+.CurrentTreasureTitle {
+    margin: 4px 0px;
+    color: white;
+    opacity: 0.8;
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+}

@@ -1,0 +1,115 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_styles.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_kez.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="ModelSnippet">
+			<Panel class="ModelSnippet">
+				<DOTAScenePanel id="ModelBackground" map="backgrounds/hero_showcase_kez" camera="herocamera" light="light_hero" renderdeferred="true" renderwaterreflections="true" rotateonmousemove="true" antialias="true" particleonly="false"/>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	                                                                                                                                                      
+	<DOTAReferencePage class="DashboardPage"
+					   onnavigatedto="AsyncEvent( 0.0, QueuePulseInput('MainContainer','StartDebut') )"
+					   onnavigatedaway="QueuePulseInput('MainContainer','EndDebut')"
+					   oncancel="DOTASetCurrentDashboardPageFullscreen( false )">
+
+		<PulsePanel id="MainContainer" graph="pulse/leaf_pages/dashboard_page_debut_kez.vpulse" >
+			<Panel id="ModelContainer">
+				<DOTAScenePanel id="ModelBackground" map="backgrounds/hero_showcase_kez" camera="herocamera" light="light_hero" renderdeferred="true" renderwaterreflections="true" rotateonmousemove="true" antialias="true" particleonly="false"/>
+			</Panel>
+
+			<Panel id="DebutInformation" hittest="false">
+				<Panel id="InformationBodyBackground">
+					<Panel class="InformationBodyBackgroundImage" />
+					<Image class="CardTopImage" />
+					<Image class="CardBottomImage" />
+				</Panel>
+
+				<Panel id="InformationBody" class="TopBottomFlow">
+					<Panel id="TitleContainer">
+						<Panel class="Title" />
+						                                                                     
+					</Panel>
+					<Panel id="ScrollPanel" class="TopBottomFlow">
+						<Panel id="HeroSubtitle">
+							<Label class="RoleLabel" id="Melee" text="#DOTA_AttackCapability_Melee"/>
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Carry" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Carry )" onmouseout="UIHideTextTooltip()"/>
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Escape" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Escape )" onmouseout="UIHideTextTooltip()"/>
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Disabler" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Disabler )" onmouseout="UIHideTextTooltip()"/>
+						</Panel>
+						<Panel class="AttributeComplexityContainer">
+							<Panel class="Dash Left"/>
+							<Image class="PrimaryAttribute" src="file://{images}/control_icons/24px/attribute_agility.svg" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="HeroComplexity">
+								<Image class="HeroComplexityPip" src="file://{images}/control_icons/24px/hero_complexity_full.svg" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="HeroComplexityPip" src="file://{images}/control_icons/24px/hero_complexity_full.svg" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="HeroComplexityPip" src="file://{images}/control_icons/24px/hero_complexity_full.svg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel class="Dash Right"/>
+						</Panel>
+						<Panel id="AbilityIcons">
+							<Panel class="SwapAbilitiesContainer">
+								<Image class="Divider Top" src="file://{images}/leaf_pages/debut_kestrel/divider.png" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="SwapAbilityImageContainer">
+									<DOTAAbilityImage abilityname="kez_switch_weapons" showtooltip="true"/>
+									<Image class="InnateIcon" src="file://{images}/hud/facets/innate_icon.png" scaling="stretch-to-fit-preserve-aspect" ommouseover="DOTAInnateContextMenu()" />
+								</Panel>
+								<Image class="Divider Bottom" src="file://{images}/leaf_pages/debut_kestrel/divider.png" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel class="AbilityGroupsContainer">
+								<Label class="AbilityGroupLabel LabelMedium" text="#DOTA_HUD_KezWeapon_Katana"/>
+								<Panel class="AbilitiesContainer">
+									<DOTAAbilityImage abilityname="kez_echo_slash" showtooltip="true" />
+									<DOTAAbilityImage abilityname="kez_grappling_claw" showtooltip="true"/>
+									<DOTAAbilityImage abilityname="kez_kazurai_katana" showtooltip="true"/>
+									<DOTAAbilityImage abilityname="kez_raptor_dance" showtooltip="true"/>
+								</Panel>
+								<Label class="AbilityGroupLabel LabelMedium" text="#DOTA_HUD_KezWeapon_Sai"/>
+								<Panel class="AbilitiesContainer">
+									<DOTAAbilityImage abilityname="kez_falcon_rush" showtooltip="true" />
+									<DOTAAbilityImage abilityname="kez_talon_toss" showtooltip="true"/>
+									<DOTAAbilityImage abilityname="kez_shodo_sai" showtooltip="true"/>
+									<DOTAAbilityImage abilityname="kez_ravens_veil" showtooltip="true"/>
+								</Panel>
+							</Panel>
+							<Panel class="ShardScepterContainer">
+								<Panel id="Talent"  class="StatBranch" onmouseover="DOTAHUDShowHeroStatBranchTooltip( 145, 0 )" onmouseout="DOTAHUDHideStatBranchTooltip()"/>
+								<Panel id="ScepterDetails" class="ScepterDetails" onmouseover="DOTAHUDShowAghsStatusTooltip( 145, 0 )" onmouseout="DOTAHUDHideAghsStatusTooltip()"/>
+							</Panel>
+						</Panel>
+
+						<Label id="ItemLore" text="#Debut_Kez_Lore"/>
+					</Panel>
+
+					<Panel id="HeroButtons">
+						<Panel id="DemoButtons">
+							<DemoModeButton id="DemoHeroButton" category="#npc_dota_hero_kez" onactivate="DOTADemoHero( npc_dota_hero_kez, 0 )" />
+							<TextButton class="ButtonPrimary Green" onactivate="DOTAGoToHeroPage( 145 );" text="#DOTA_HeroDemo_Button_ToLoadout" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+
+			                                                                                                                        		
+				                                                                      
+			         
+			                                                                                                                   
+				                                                                     
+			             
+
+			                                                                                                                                                    
+			                                                                                                                                                       
+
+			<Button class="CloseButton" onactivate="DOTAShowHomePage()"/>
+
+		</PulsePanel>
+		                                    
+	</DOTAReferencePage>
+</root>

@@ -1,0 +1,72 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_sticker_vendor.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="StickerReward">
+			<Panel class="StickerReward">
+				<Panel class="ActInfoContainer">
+					<Panel class="PathfinderPack">
+						<Image id="PathfinderIcon"/>
+					</Panel>
+					<Label id="ActName" />
+					<Label class="Unowned LabelSmall" text="#DOTA_Diretide2020_Cosmetics_Not_Owned" />
+				</Panel>
+				<Panel class="RewardPreview">
+					<DOTAUIEconSetPreview activity-modifier="front_page" id="CapsuleModel" pin-fov="vertical" drawbackground="false" displaymode="loadout_small" itemdef="32633"  onmouseover="DOTAShowEconItemTooltip( 32633, 0, 0 );" onmouseout="DOTAHideEconItemTooltip();" onactivate="DOTAShowItemDefPage( 32633 )" />
+					<Panel hittest="false" class="ItemCountContainer">
+						<Label class="ItemCount" text="x8"/>
+					</Panel>
+				</Panel>
+				<Panel class="ClaimedState">
+					<Panel class="ClaimedStateMessage">
+						<Panel class="Checkmark"/>
+						<Label class="ClaimedLabel LabelMedium" text="#DOTA_Crownfall_Encounter_AlreadyClaimed" />
+					</Panel>
+					<DOTACrownfallButton id ="ClaimRewardButton" text="#DOTA_Crownfall_Encounter_StickerVendor_CollectRewards" class="ClaimItemButton GlowButton" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel Encounter StickerVendor Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="BodyContainer">
+					<AsyncDataPanel class="Actions" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<Panel id="RewardsContainer">
+								                            
+							</Panel>
+							
+							<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+							
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>	
+			</Panel>
+		</Panel>
+		
+		<Panel id="VisualNovelContainer" hittest="false">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+		
+	</Panel>
+</root>

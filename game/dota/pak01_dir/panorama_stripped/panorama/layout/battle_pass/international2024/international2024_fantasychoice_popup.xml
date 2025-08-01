@@ -1,0 +1,43 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_fantasychoice_popup.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="PlayerChoice">
+			<Panel class="PlayerChoice">
+				<Panel class="PlayerBackgroundTexture"/>
+				<Label id="PlayerTitle" class="FantasyPlayerTitle" text="{s:tablet_player}" html="true"/>
+				<Panel class="PlayerImages">
+					<Image id="TeamLogo"/>
+					<DOTAPlayerImage id="PlayerImage" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="ChoiceBorder" hittest="false"/>
+			</Panel>
+		</snippet>		
+	</snippets>
+
+	<International2024PopupFantasyCraftChoice class="FantasyCraftChoice" popupbackground="blur">
+		<Panel class="BackgroundImage"/>
+		<Panel class="TopDash"/>
+		<Panel class="TopDash Bottom"/>
+		<Panel class="PopupBorder" hittest="false"/>
+		<Panel class="Header">
+			<Label class="PlayerChoiceTitle TitleMedium" text="{s:popup_header}" />
+			<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+				<Image src="file://{images}/control_icons/24px/x_close.svg" />
+			</Button>
+		</Panel>
+		<Panel id="ChoiceHolder">
+			<Panel id="Choices">
+				                              
+			</Panel>
+		</Panel>
+		<Panel id="Options">
+			<DOTAInternational2024Button id="SubmitButton" class="LightGreen Wide" text="#DOTA_UI_Submit" onactivate="FantasyCraft2024ConfirmChoice()" />
+		</Panel>
+	</International2024PopupFantasyCraftChoice>
+</root>

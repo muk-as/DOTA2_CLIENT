@@ -1,0 +1,75 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_tournament_details.css" />
+	</styles>
+
+	<PopupTournamentDetails class="PopupPanel Hidden" popupbackground="blur" acceptsfocus="true">
+
+		<Panel id="Header">
+
+			<Panel id="LogoAndWords">
+				<DOTALeagueImage id="Logo"/>
+			
+				<Panel id="HeaderWords">
+					<Label id="TournamentName" text="{g:dota_league_name:league_id}"/>
+					<Label id="TournamentDetails" text ="{g:dota_league_description:league_id}"/>
+				</Panel>
+				<Button id="CloseButton" class="CloseButton" onactivate="UIPopupButtonClicked()"/>
+			</Panel>
+
+			<Panel id="BottomContainer">
+				<Panel id="BottomRight">
+					<Panel id="PrizePoolPanel">
+						<Label id="PrizePoolValue" text="{s:prize_pool_amount}"/>
+						<Label id="PrizePoolLabel" text="#DOTA_WatchTournaments_PrizePoolLabel"/>
+					</Panel>
+					<Button id="Purchase" class="PopupButton Green PurchaseButton" onactivate="DOTAWatchTournamentDetailsPurchase()">
+						<Label text="#DOTA_WatchTournaments_PrizePoolTicketPrice"/>
+					</Button>
+					<Button id="Activate" class="PopupButton Blue ActivateButton" onactivate="DOTAWatchTournamentDetailsActivate()">
+						<Label text="#DOTA_WatchTournaments_PrizePoolActivate"/>
+					</Button>
+				</Panel>
+			</Panel>			
+		</Panel>
+
+		<Panel id="LiveGames">
+			<Label id="LiveGamesLabel" text="#DOTA_WatchTournament_Live"/>
+
+
+			<Panel id="LiveGamesList">
+				                                                            
+			</Panel>
+		</Panel>
+
+		<Panel id="RecentGames">
+			<Label id="RecentGamesLabel" text="#DOTA_WatchTournament_Recent"/>
+
+			<Panel id="RecentGamesList">
+				                                                            
+			</Panel>
+
+			<Panel id="RecentGamesFooter">
+				<Button id="TournamentWebsiteButton" onactivate="DOTAWatchTournamentDetailsWebsite()">
+					<Image id="TournamentWebsitePopout" class="ExternalIcon"/>
+					<Label id="TournamentWebsiteLabel" text="#DOTA_WatchTournament_Website"/>
+				</Button>
+
+				<Panel class="TransportControls">
+					<Panel id="TransportControlsPage">
+						<Label id="Page" text="#DOTA_WatchTournament_Page"/>
+					</Panel>
+					<Panel id="TransportControlsPageButtons">
+						<Button id="Left" class="PaginationArrow Left" onactivate="DOTAWatchTournamentDetailsPage(-1)"/>
+						<Button id="Right" class="PaginationArrow " onactivate="DOTAWatchTournamentDetailsPage(1)"/>
+					</Panel>
+
+				</Panel>
+			</Panel>
+			
+		</Panel>
+		
+	</PopupTournamentDetails>
+</root>

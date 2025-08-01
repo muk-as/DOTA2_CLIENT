@@ -1,0 +1,58 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_its_dangerous.css" />
+	</styles>
+
+	<Panel class="PopupPanel Encounter ItsDangerous Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="BodyContainer">
+					<Panel class="Tokens">
+						<Panel class="TokenContainer" id="Token1">
+							<DOTAScenePanel class="TokenParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+							<DOTACrownfallToken class="LargeToken" overworld_id="1" token_id="1" tooltipstyle="nameonly" />
+						</Panel>
+						<Panel class="TokenContainer" id="Token2">
+							<DOTAScenePanel class="TokenParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+							<DOTACrownfallToken class="LargeToken" overworld_id="1" token_id="3" tooltipstyle="nameonly" />
+						</Panel>
+						<Panel class="TokenContainer" id="Token3">
+							<DOTAScenePanel class="TokenParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+							<DOTACrownfallToken class="LargeToken" overworld_id="1" token_id="4" tooltipstyle="nameonly" />
+						</Panel>
+					</Panel>	
+					<AsyncDataPanel class="Actions" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<DOTACrownfallButton text="#DOTA_Crownfall_Encounter_TakeTokens" class="TakeTokensButton GlowButton" onactivate="DOTACrownfallEncounterClaimReward( 0 )" />
+							<Label class="AlreadyClaimedLabel" text="#DOTA_Crownfall_Encounter_AlreadyClaimed" />
+							<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>	
+			</Panel>
+		</Panel>
+		
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+		
+	</Panel>
+</root>

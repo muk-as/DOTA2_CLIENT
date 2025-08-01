@@ -1,0 +1,296 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_abilitydraft.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/hud/dota_hud_abilitydraft.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="ADFacetSnippet">
+			<Panel class="FacetHolder">
+				<DOTAFacetIcon id="FacetIcon" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="PerAbilityFacetsContainer">
+			<Panel id="PerAbilityFacetsContainer" class="FacetsContainer">
+				                                     
+			</Panel>
+		</snippet>
+
+		<snippet name="DraftedAbilityContainer">
+			<Panel class="DraftedAbilityContainer">
+				<DOTAAbilityImage id="AbilityImage" class="HeroAbility" abilityid="">
+					<Panel class="ScepterMarker" />
+					<Panel class="ShardMarker" />
+				</DOTAAbilityImage>
+			</Panel>
+		</snippet>
+
+		<snippet name="DraftOrderEntry">
+			<Panel class="DraftEntryContainer" hittest="false">
+				<Panel id="DraftOrderRoundMarker" class="HeroImage StripHeroImage" hittest="false">
+					<Label class="RoundNumber R0" text="{d:phase_time}" hittest="false"/>
+					<Label class="RoundNumber R1" text="2" hittest="false"/>
+					<Label class="RoundNumber R2" text="3" hittest="false"/>
+					<Label class="RoundNumber R3" text="4" hittest="false"/>
+					<Label class="RoundNumber R4" text="5" hittest="false"/>
+				</Panel>
+				<Panel id="HeroCard">
+					<Panel id="NoImageBackground"/>
+					<DOTAHeroImage id="DraftOrderHeroImage" class="HeroImage StripHeroImage" heroimagestyle="portrait" hittest="false"/>
+					<DOTAAvatarImage id="PlayerAvatarImage" class="AvatarImage StripAvatarImage"/>
+					<Panel id="DisconnectedIcon"/>
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="Player">
+			<Panel class="HeroContainer">				
+				<Panel class="PanelBackground"/>
+				<Panel class="HeroBackground"/>
+				                                                                                                                                                                    
+				<DOTAHeroMovie id="PlayerHeroImage" class="HeroImage" heroname="" heroimagestyle="portrait" hittest="false" />
+				<Panel class="NoHeroPickedStub"></Panel>
+				<Panel id="MainDisconnectedIcon"/>
+				<Panel class="NameContainer">
+					<Label id="PlayerHeroName" class="HeroName" text="{s:hero_name}"/>
+					<Panel class="PlayerNameAvatar LeftRightFlow">
+						<DOTAAvatarImage id="PlayerAvatarImage" class="AvatarImage"/>
+						<Label id="PlayerName" class="PlayerName" text="{g:dota_filtered_string:player_name}"/>
+						<Label id="GuildTag" class="PlayerName" text="{g:dota_filtered_string:guild_tag}"/>
+					</Panel>
+				</Panel>
+				<Panel class="HeroAbilityContainerOuter">
+					<Panel id="FacetsContainer" class="FacetsContainer"> 
+						                                     
+					</Panel>	
+					<Panel id="HeroAbilityContainer" class="HeroAbilityContainer">
+						                                     
+					</Panel>
+				</Panel>
+				<Panel id="HeroStrAgiIntIcon"/>
+				<Panel id="StatIcon" class="StatBranch"/>
+				<DOTAInnateIcon id="InnateIcon" show-tooltips="true" hittest="true" />
+				<DOTAUIHeroFacetDropdown id="ADFacetPicker" />
+			</Panel>
+		</snippet>
+		<snippet name="SelectableHero">
+			<DOTAHeroImage id="" class="HeroImage" heroname="" heroimagestyle="portrait" hittest="false" />
+		</snippet>
+	</snippets>
+
+	<DOTAAbilityDraft hittest="true" acceptsfocus="true">
+		<Panel id="MainContainer" onload="AsyncEvent( 0.1, RemoveStyle( AbilitiesScene, Dark ) ); AsyncEvent( 0.1, AddStyle( UIElements, MakeVisible ) );">	
+			<DOTAScenePanel id="AbilitiesScene" class="Dark" map="scenes/hud/ability_draft_picker" camera="camera_0" light="ad_light" particleonly="false" antialias="true" hittest="false" renderdeferred="true" panoramasurfacexml="file://{resources}/layout/hud/dota_hud_ad_texture_sheet.xml" panoramasurfacewidth="1024" panoramasurfaceheight="1024" pin-fov="vertical"/>
+			<Panel id="AbilityDraftUltimatesHitbox" class="DraftingHitbox">
+				<Panel class="AbilitiesSet TopLeftSet">
+					<Panel class="Row LeftRightFlow"> 
+						<Panel class="Ability" id="AbilityContainer_36" block="block00_ult" onmouseover="OnHoverButton('block00_ult', 'ability_id_36', true);" onmouseout="OnMouseOut( 'block00_ult', 'ability_id_36' );" onactivate="OnActivateUltimate('block00_ult', 'ability_id_36', 36);"><DOTAAbilityImage id="ability_id_36"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_37" block="block01_ult" onmouseover="OnHoverButton('block01_ult', 'ability_id_37', true);" onmouseout="OnMouseOut( 'block01_ult', 'ability_id_37' );" onactivate="OnActivateUltimate('block01_ult', 'ability_id_37', 37);"><DOTAAbilityImage id="ability_id_37"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_38" block="block02_ult" onmouseover="OnHoverButton('block02_ult', 'ability_id_38', true);" onmouseout="OnMouseOut( 'block02_ult', 'ability_id_38' );" onactivate="OnActivateUltimate('block02_ult', 'ability_id_38', 38);"><DOTAAbilityImage id="ability_id_38"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_44" block="block03_ult" onmouseover="OnHoverButton('block03_ult', 'ability_id_44', true);" onmouseout="OnMouseOut( 'block03_ult', 'ability_id_44' );" onactivate="OnActivateUltimate('block03_ult', 'ability_id_44', 44);"><DOTAAbilityImage id="ability_id_44"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_43" block="block04_ult" onmouseover="OnHoverButton('block04_ult', 'ability_id_43', true);" onmouseout="OnMouseOut( 'block04_ult', 'ability_id_43' );" onactivate="OnActivateUltimate('block04_ult', 'ability_id_43', 43);"><DOTAAbilityImage id="ability_id_43"/></Panel>							
+						<Panel class="Ability" id="AbilityContainer_42" block="block05_ult" onmouseover="OnHoverButton('block05_ult', 'ability_id_42', true);" onmouseout="OnMouseOut( 'block05_ult', 'ability_id_42' );" onactivate="OnActivateUltimate('block05_ult', 'ability_id_42', 42);"><DOTAAbilityImage id="ability_id_42"/></Panel>							
+					</Panel>                                                                                                                                                                                                                                                                            
+					<Panel class="Row LeftRightFlow">                                                                                                                                                                                                                                                   
+						<Panel class="Ability" id="AbilityContainer_39" block="block06_ult" onmouseover="OnHoverButton('block06_ult', 'ability_id_39', true);" onmouseout="OnMouseOut( 'block06_ult', 'ability_id_39' );" onactivate="OnActivateUltimate('block06_ult', 'ability_id_39', 39);"><DOTAAbilityImage id="ability_id_39"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_40" block="block07_ult" onmouseover="OnHoverButton('block07_ult', 'ability_id_40', true);" onmouseout="OnMouseOut( 'block07_ult', 'ability_id_40' );" onactivate="OnActivateUltimate('block07_ult', 'ability_id_40', 40);"><DOTAAbilityImage id="ability_id_40"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_41" block="block08_ult" onmouseover="OnHoverButton('block08_ult', 'ability_id_41', true);" onmouseout="OnMouseOut( 'block08_ult', 'ability_id_41' );" onactivate="OnActivateUltimate('block08_ult', 'ability_id_41', 41);"><DOTAAbilityImage id="ability_id_41"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_47" block="block09_ult" onmouseover="OnHoverButton('block09_ult', 'ability_id_47', true);" onmouseout="OnMouseOut( 'block09_ult', 'ability_id_47' );" onactivate="OnActivateUltimate('block09_ult', 'ability_id_47', 47);"><DOTAAbilityImage id="ability_id_47"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_46" block="block10_ult" onmouseover="OnHoverButton('block10_ult', 'ability_id_46', true);" onmouseout="OnMouseOut( 'block10_ult', 'ability_id_46' );" onactivate="OnActivateUltimate('block10_ult', 'ability_id_46', 46);"><DOTAAbilityImage id="ability_id_46"/></Panel>
+						<Panel class="Ability" id="AbilityContainer_45" block="block11_ult" onmouseover="OnHoverButton('block11_ult', 'ability_id_45', true);" onmouseout="OnMouseOut( 'block11_ult', 'ability_id_45' );" onactivate="OnActivateUltimate('block11_ult', 'ability_id_45', 45);"><DOTAAbilityImage id="ability_id_45"/></Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+
+
+			
+			<Panel id="AbilityDraftAbilitiesHitbox" class="DraftingHitbox" hittest="false">
+				<Panel id="CenterBlock">
+					<Panel class="AbilitiesSet TopLeftSet">	
+						<Panel class="Row LeftRightFlow"> 
+							<Panel class="Ability" id="AbilityContainer_0" block="block00_a0" onmouseover="OnHoverButton('block00_a0', 'ability_id_00', false);" onmouseout="OnMouseOut( 'block00_a0', 'ability_id_00' );" onactivate="OnActivateAbility('block00_a0', 'ability_id_00', 0 );"><DOTAAbilityImage id="ability_id_00"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_1" block="block00_a1" onmouseover="OnHoverButton('block00_a1', 'ability_id_01', false);" onmouseout="OnMouseOut( 'block00_a1', 'ability_id_01' );" onactivate="OnActivateAbility('block00_a1', 'ability_id_01', 1 );"><DOTAAbilityImage id="ability_id_01"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_2" block="block00_a2" onmouseover="OnHoverButton('block00_a2', 'ability_id_02', false);" onmouseout="OnMouseOut( 'block00_a2', 'ability_id_02' );" onactivate="OnActivateAbility('block00_a2', 'ability_id_02', 2 );"><DOTAAbilityImage id="ability_id_02"/></Panel>
+						</Panel>																																													   
+						<Panel class="Row LeftRightFlow"> 																																							   
+							<Panel class="Ability" id="AbilityContainer_6" block="block02_a0" onmouseover="OnHoverButton('block02_a0', 'ability_id_03', false);" onmouseout="OnMouseOut( 'block02_a0', 'ability_id_03' );" onactivate="OnActivateAbility('block02_a0', 'ability_id_03', 3 );"><DOTAAbilityImage id="ability_id_03"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_7" block="block02_a1" onmouseover="OnHoverButton('block02_a1', 'ability_id_04', false);" onmouseout="OnMouseOut( 'block02_a1', 'ability_id_04' );" onactivate="OnActivateAbility('block02_a1', 'ability_id_04', 4 );"><DOTAAbilityImage id="ability_id_04"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_8" block="block02_a2" onmouseover="OnHoverButton('block02_a2', 'ability_id_05', false);" onmouseout="OnMouseOut( 'block02_a2', 'ability_id_05' );" onactivate="OnActivateAbility('block02_a2', 'ability_id_05', 5 );"><DOTAAbilityImage id="ability_id_05"/></Panel>
+						</Panel>
+						<Panel class="Row LeftRightFlow">
+							<Panel class="Ability" id="AbilityContainer_12" block="block04_a0" onmouseover="OnHoverButton('block04_a0', 'ability_id_06', false);" onmouseout="OnMouseOut( 'block04_a0', 'ability_id_06' );" onactivate="OnActivateAbility('block04_a0', 'ability_id_06', 6 );"><DOTAAbilityImage id="ability_id_06"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_13" block="block04_a1" onmouseover="OnHoverButton('block04_a1', 'ability_id_07', false);" onmouseout="OnMouseOut( 'block04_a1', 'ability_id_07' );" onactivate="OnActivateAbility('block04_a1', 'ability_id_07', 7 );"><DOTAAbilityImage id="ability_id_07"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_14" block="block04_a2" onmouseover="OnHoverButton('block04_a2', 'ability_id_08', false);" onmouseout="OnMouseOut( 'block04_a2', 'ability_id_08' );" onactivate="OnActivateAbility('block04_a2', 'ability_id_08', 8 );"><DOTAAbilityImage id="ability_id_08"/></Panel>
+						</Panel> 
+					</Panel> 
+					<Panel class="AbilitiesSet TopRightSet">
+						<Panel class="Row LeftRightFlow">
+							<Panel class="Ability" id="AbilityContainer_3" block="block01_a0" onmouseover="OnHoverButton('block01_a0', 'ability_id_18', false);" onmouseout="OnMouseOut( 'block01_a0', 'ability_id_18' );" onactivate="OnActivateAbility('block01_a0', 'ability_id_18', 18 );"><DOTAAbilityImage id="ability_id_18"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_4" block="block01_a1" onmouseover="OnHoverButton('block01_a1', 'ability_id_19', false);" onmouseout="OnMouseOut( 'block01_a1', 'ability_id_19' );" onactivate="OnActivateAbility('block01_a1', 'ability_id_19', 19 );"><DOTAAbilityImage id="ability_id_19"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_5" block="block01_a2" onmouseover="OnHoverButton('block01_a2', 'ability_id_20', false);" onmouseout="OnMouseOut( 'block01_a2', 'ability_id_20' );" onactivate="OnActivateAbility('block01_a2', 'ability_id_20', 20 );"><DOTAAbilityImage id="ability_id_20"/></Panel>
+						</Panel>
+						<Panel class="Row LeftRightFlow"> 
+							<Panel class="Ability" id="AbilityContainer_9"  block="block03_a0" onmouseover="OnHoverButton('block03_a0', 'ability_id_21', false);" onmouseout="OnMouseOut( 'block03_a0', 'ability_id_21' );" onactivate="OnActivateAbility('block03_a0', 'ability_id_21', 21 );"><DOTAAbilityImage id="ability_id_21"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_10" block="block03_a1" onmouseover="OnHoverButton('block03_a1', 'ability_id_22', false);" onmouseout="OnMouseOut( 'block03_a1', 'ability_id_22' );" onactivate="OnActivateAbility('block03_a1', 'ability_id_22', 22 );"><DOTAAbilityImage id="ability_id_22"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_11" block="block03_a2" onmouseover="OnHoverButton('block03_a2', 'ability_id_23', false);" onmouseout="OnMouseOut( 'block03_a2', 'ability_id_23' );" onactivate="OnActivateAbility('block03_a2', 'ability_id_23', 23 );"><DOTAAbilityImage id="ability_id_23"/></Panel>
+						</Panel>																																													    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_15" block="block05_a0" onmouseover="OnHoverButton('block05_a0', 'ability_id_24', false);" onmouseout="OnMouseOut( 'block05_a0', 'ability_id_24' );" onactivate="OnActivateAbility('block05_a0', 'ability_id_24', 24 );"><DOTAAbilityImage id="ability_id_24"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_16" block="block05_a1" onmouseover="OnHoverButton('block05_a1', 'ability_id_25', false);" onmouseout="OnMouseOut( 'block05_a1', 'ability_id_25' );" onactivate="OnActivateAbility('block05_a1', 'ability_id_25', 25 );"><DOTAAbilityImage id="ability_id_25"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_17" block="block05_a2" onmouseover="OnHoverButton('block05_a2', 'ability_id_26', false);" onmouseout="OnMouseOut( 'block05_a2', 'ability_id_26' );" onactivate="OnActivateAbility('block05_a2', 'ability_id_26', 26 );"><DOTAAbilityImage id="ability_id_26"/></Panel>
+						</Panel>																																													    
+					</Panel>																																														    
+					<Panel class="AbilitiesSet BottomLeftSet">																																						    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_18" block="block06_a0" onmouseover="OnHoverButton('block06_a0', 'ability_id_09', false);" onmouseout="OnMouseOut( 'block06_a0', 'ability_id_09' );" onactivate="OnActivateAbility('block06_a0', 'ability_id_09', 9 );"><DOTAAbilityImage id="ability_id_09"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_19" block="block06_a1" onmouseover="OnHoverButton('block06_a1', 'ability_id_10', false);" onmouseout="OnMouseOut( 'block06_a1', 'ability_id_10' );" onactivate="OnActivateAbility('block06_a1', 'ability_id_10', 10 );"><DOTAAbilityImage id="ability_id_10"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_20" block="block06_a2" onmouseover="OnHoverButton('block06_a2', 'ability_id_11', false);" onmouseout="OnMouseOut( 'block06_a2', 'ability_id_11' );" onactivate="OnActivateAbility('block06_a2', 'ability_id_11', 11 );"><DOTAAbilityImage id="ability_id_11"/></Panel>
+						</Panel>																																													    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_24" block="block08_a0" onmouseover="OnHoverButton('block08_a0', 'ability_id_12', false);" onmouseout="OnMouseOut( 'block08_a0', 'ability_id_12' );" onactivate="OnActivateAbility('block08_a0', 'ability_id_12', 12 );"><DOTAAbilityImage id="ability_id_12"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_25" block="block08_a1" onmouseover="OnHoverButton('block08_a1', 'ability_id_13', false);" onmouseout="OnMouseOut( 'block08_a1', 'ability_id_13' );" onactivate="OnActivateAbility('block08_a1', 'ability_id_13', 13 );"><DOTAAbilityImage id="ability_id_13"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_26" block="block08_a2" onmouseover="OnHoverButton('block08_a2', 'ability_id_14', false);" onmouseout="OnMouseOut( 'block08_a2', 'ability_id_14' );" onactivate="OnActivateAbility('block08_a2', 'ability_id_14', 14 );"><DOTAAbilityImage id="ability_id_14"/></Panel>
+						</Panel>																																													    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_30" block="block10_a0" onmouseover="OnHoverButton('block10_a0', 'ability_id_15', false);" onmouseout="OnMouseOut( 'block10_a0', 'ability_id_15' );" onactivate="OnActivateAbility('block10_a0', 'ability_id_15', 15 );"><DOTAAbilityImage id="ability_id_15"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_31" block="block10_a1" onmouseover="OnHoverButton('block10_a1', 'ability_id_16', false);" onmouseout="OnMouseOut( 'block10_a1', 'ability_id_16' );" onactivate="OnActivateAbility('block10_a1', 'ability_id_16', 16 );"><DOTAAbilityImage id="ability_id_16"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_32" block="block10_a2" onmouseover="OnHoverButton('block10_a2', 'ability_id_17', false);" onmouseout="OnMouseOut( 'block10_a2', 'ability_id_17' );" onactivate="OnActivateAbility('block10_a2', 'ability_id_17', 17 );"><DOTAAbilityImage id="ability_id_17"/></Panel>
+						</Panel>																																													    
+					</Panel>																																														    
+					<Panel class="AbilitiesSet BottomRightSet">																																						    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_21" block="block07_a0" onmouseover="OnHoverButton('block07_a0', 'ability_id_27', false);" onmouseout="OnMouseOut( 'block07_a0', 'ability_id_27' );" onactivate="OnActivateAbility('block07_a0', 'ability_id_27', 27 );"><DOTAAbilityImage id="ability_id_27"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_22" block="block07_a1" onmouseover="OnHoverButton('block07_a1', 'ability_id_28', false);" onmouseout="OnMouseOut( 'block07_a1', 'ability_id_28' );" onactivate="OnActivateAbility('block07_a1', 'ability_id_28', 28 );"><DOTAAbilityImage id="ability_id_28"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_23" block="block07_a2" onmouseover="OnHoverButton('block07_a2', 'ability_id_29', false);" onmouseout="OnMouseOut( 'block07_a2', 'ability_id_29' );" onactivate="OnActivateAbility('block07_a2', 'ability_id_29', 29 );"><DOTAAbilityImage id="ability_id_29"/></Panel>
+						</Panel>																																													    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_27" block="block09_a0" onmouseover="OnHoverButton('block09_a0', 'ability_id_30', false);" onmouseout="OnMouseOut( 'block09_a0', 'ability_id_30' );" onactivate="OnActivateAbility('block09_a0', 'ability_id_30', 30 );"><DOTAAbilityImage id="ability_id_30"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_28" block="block09_a1" onmouseover="OnHoverButton('block09_a1', 'ability_id_31', false);" onmouseout="OnMouseOut( 'block09_a1', 'ability_id_31' );" onactivate="OnActivateAbility('block09_a1', 'ability_id_31', 31 );"><DOTAAbilityImage id="ability_id_31"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_29" block="block09_a2" onmouseover="OnHoverButton('block09_a2', 'ability_id_32', false);" onmouseout="OnMouseOut( 'block09_a2', 'ability_id_32' );" onactivate="OnActivateAbility('block09_a2', 'ability_id_32', 32 );"><DOTAAbilityImage id="ability_id_32"/></Panel>
+						</Panel>																																													    
+						<Panel class="Row LeftRightFlow">																																							    
+							<Panel class="Ability" id="AbilityContainer_33" block="block11_a0" onmouseover="OnHoverButton('block11_a0', 'ability_id_33', false);" onmouseout="OnMouseOut( 'block11_a0', 'ability_id_33' );" onactivate="OnActivateAbility('block11_a0', 'ability_id_33', 33 );"><DOTAAbilityImage id="ability_id_33"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_34" block="block11_a1" onmouseover="OnHoverButton('block11_a1', 'ability_id_34', false);" onmouseout="OnMouseOut( 'block11_a1', 'ability_id_34' );" onactivate="OnActivateAbility('block11_a1', 'ability_id_34', 34 );"><DOTAAbilityImage id="ability_id_34"/></Panel>
+							<Panel class="Ability" id="AbilityContainer_35" block="block11_a2" onmouseover="OnHoverButton('block11_a2', 'ability_id_35', false);" onmouseout="OnMouseOut( 'block11_a2', 'ability_id_35' );" onactivate="OnActivateAbility('block11_a2', 'ability_id_35', 35 );"><DOTAAbilityImage id="ability_id_35"/></Panel>
+						</Panel>
+					</Panel>			
+				</Panel>
+			</Panel>
+
+			<Panel id="AbilityDraftHeroesHitbox" class="DraftingHitbox" hittest="false">
+				<Panel id="TopLeftHeroes" class="Column TopBottomFlow"> 
+					<Panel class="Hero" id="HeroContainer_0" block="block00_hero"	onmouseover="OnHoverButtonHero('block00_hero', 'hero_id_0');"	onmouseout="OnMouseOutHero( 'block00_hero', 'hero_id_0' );" onactivate="OnActivateHero('block00_hero', 'hero_id_0', 0 );"><DOTAHeroImage id="hero_id_0"/></Panel>
+					<Panel class="Hero" id="HeroContainer_1" block="block01_hero"	onmouseover="OnHoverButtonHero('block01_hero', 'hero_id_1');"	onmouseout="OnMouseOutHero( 'block01_hero', 'hero_id_1' );" onactivate="OnActivateHero('block01_hero', 'hero_id_1', 1 );"><DOTAHeroImage id="hero_id_1"/></Panel>
+					<Panel class="Hero" id="HeroContainer_2" block="block02_hero"	onmouseover="OnHoverButtonHero('block02_hero', 'hero_id_2');"	onmouseout="OnMouseOutHero( 'block02_hero', 'hero_id_2' );" onactivate="OnActivateHero('block02_hero', 'hero_id_2', 2 );"><DOTAHeroImage id="hero_id_2"/></Panel>
+				</Panel>
+				<Panel id="BottomLeftHeroes" class="Column TopBottomFlow">
+					<Panel class="Hero" id="HeroContainer_3" block="block03_hero"	onmouseover="OnHoverButtonHero('block03_hero', 'hero_id_3');"	onmouseout="OnMouseOutHero( 'block03_hero', 'hero_id_3' );" onactivate="OnActivateHero('block03_hero', 'hero_id_3', 3 );"><DOTAHeroImage id="hero_id_3"/></Panel>
+					<Panel class="Hero" id="HeroContainer_4" block="block04_hero"	onmouseover="OnHoverButtonHero('block04_hero', 'hero_id_4');"	onmouseout="OnMouseOutHero( 'block04_hero', 'hero_id_4' );" onactivate="OnActivateHero('block04_hero', 'hero_id_4', 4 );"><DOTAHeroImage id="hero_id_4"/></Panel>
+					<Panel class="Hero" id="HeroContainer_5" block="block05_hero"	onmouseover="OnHoverButtonHero('block05_hero', 'hero_id_5');"	onmouseout="OnMouseOutHero( 'block05_hero', 'hero_id_5' );" onactivate="OnActivateHero('block05_hero', 'hero_id_5', 5 );"><DOTAHeroImage id="hero_id_5"/></Panel>
+				</Panel>
+				<Panel id="TopRightHeroes" class="Column TopBottomFlow">
+					<Panel class="Hero" id="HeroContainer_6" block="block06_hero"	onmouseover="OnHoverButtonHero('block06_hero', 'hero_id_6');"	onmouseout="OnMouseOutHero( 'block06_hero', 'hero_id_6' );" onactivate="OnActivateHero('block06_hero', 'hero_id_6', 6 );"><DOTAHeroImage id="hero_id_6"/></Panel>
+					<Panel class="Hero" id="HeroContainer_7" block="block07_hero"	onmouseover="OnHoverButtonHero('block07_hero', 'hero_id_7');"	onmouseout="OnMouseOutHero( 'block07_hero', 'hero_id_7' );" onactivate="OnActivateHero('block07_hero', 'hero_id_7', 7 );"><DOTAHeroImage id="hero_id_7"/></Panel>
+					<Panel class="Hero" id="HeroContainer_8" block="block08_hero"	onmouseover="OnHoverButtonHero('block08_hero', 'hero_id_8');"	onmouseout="OnMouseOutHero( 'block08_hero', 'hero_id_8' );" onactivate="OnActivateHero('block08_hero', 'hero_id_8', 8 );"><DOTAHeroImage id="hero_id_8"/></Panel>
+				</Panel>
+				<Panel id="BottomRightHeroes" class="Column TopBottomFlow">
+					<Panel class="Hero" id="HeroContainer_9" block="block09_hero"	onmouseover="OnHoverButtonHero('block09_hero', 'hero_id_9');"	onmouseout="OnMouseOutHero( 'block09_hero', 'hero_id_9' );" onactivate="OnActivateHero('block09_hero', 'hero_id_9', 9 );"><DOTAHeroImage id="hero_id_9"/></Panel>
+					<Panel class="Hero" id="HeroContainer_10" block="block10_hero"	onmouseover="OnHoverButtonHero('block10_hero', 'hero_id_10');"	onmouseout="OnMouseOutHero( 'block10_hero', 'hero_id_10' );" onactivate="OnActivateHero('block10_hero', 'hero_id_10', 10 );"><DOTAHeroImage id="hero_id_10"/></Panel>
+					<Panel class="Hero" id="HeroContainer_11" block="block11_hero"	onmouseover="OnHoverButtonHero('block11_hero', 'hero_id_11');"	onmouseout="OnMouseOutHero( 'block11_hero', 'hero_id_11' );" onactivate="OnActivateHero('block11_hero', 'hero_id_11', 11 );"><DOTAHeroImage id="hero_id_11"/></Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel id="AbilityCorners" class="ContainerCorners" hittest="false">
+				<Panel id="TopLeftCorner" class="Corners" hittest="false"/>
+				<Panel id="TopRightCorner" class="Corners" hittest="false"/>
+				<Panel id="AbilityLabelContainer" class="LeftRightFlow" hittest="false">
+					<Label id="AbilityLabel" class="TypeLabel" text="#DOTAAbilityDraft_Standard_Label"/><Panel class="InfoIcon" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTAAbilityDraft_Standard);" />
+				</Panel>				
+				<Panel id="BottomLeftCorner" class="Corners" hittest="false"/>
+				<Panel id="BottomRightCorner" class="Corners" hittest="false"/>
+			</Panel>
+			<Panel id="UltimateCorners" class="ContainerCorners" hittest="false">
+				<Panel id="TopLeftCorner" class="Corners" hittest="false"/>
+				<Panel id="TopRightCorner" class="Corners" hittest="false"/>
+				<Panel id="UltLabelContainer" class="LeftRightFlow" hittest="false">
+					<Label id="UltLabel" class="TypeLabel" text="#DOTAAbilityDraft_Ultimates_Label"/><Panel class="InfoIcon" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTAAbilityDraft_Ultimates );" />
+				</Panel>				
+				<Panel id="BottomLeftCorner" class="Corners" hittest="false"/>
+				<Panel id="BottomRightCorner" class="Corners" hittest="false"/>
+			</Panel>			
+			<Panel id="UIElements" hittest="false">
+				<Panel id="PickingGlowContainer" hittest="false">
+					<Panel id="PickingGlow" hittest="false"/>
+				</Panel>
+				<Panel id="RadiantHeroes" class="TeamContainer">
+				</Panel>
+				<Panel id="DireHeroes" class="TeamContainer">
+				</Panel>
+    				                 
+					                              
+				            
+			</Panel>			
+			<Panel id="Header" hittest="false">
+			
+				<Panel id="TimerContainer" hittest="false">
+					<Label id="TimerLabel" text="{s:phase_timer_desc}" hittest="false"/>
+					<Label id="Timer" class="MonoNumbersFont" text="{d:phase_time}" hittest="false"/>
+				</Panel>
+				<Panel id="HeroStripContainer" hittest="false">
+					<Panel id="HeroStripClipPanel" hittest="false">
+						<Panel id="HeroStrip" class="LeftRightFlow" hittest="false">
+							                                                            
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="TopRightContainer" class="TopBottomFlow">
+				<Label id="ADTitle" text="#DOTA_GameMode_AbilityDraft"  onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_AbilityDraft_Explanation );"/>			
+				<Panel id="ADLogButtonContainer" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_GameMode_AbilityDraft_ChangeLog_Tooltip );" >
+					<Panel id="ADLogPing">
+						<Panel class="PingNotice"/>
+						<Panel id="ADLogPingCircle" class="PingNotice"/>
+					</Panel>
+					<Label id="ADLog" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Title" onactivate="DOTAAbilityDraftShowChangeLog()"/>		
+				</Panel>
+				<Panel id="ADCtrlAltTip" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Chat_Ability_Draft_Start );"><Panel class="InfoIcon"/><Label text="#DOTA_MoreInformation"/></Panel>
+			</Panel>
+		</Panel>
+		<Panel id="LoadingContainer" class="TopBottomFlow">
+			<Label id="ADLoadingTitle" text="#DOTA_GameMode_AbilityDraft" />
+			<Panel class="SpinnerContainer LeftRightFlow CenterAlign"><Label id="ADLoading" text="#DOTA_LoadingPlayerLoading" /><Panel class="Spinner"/></Panel>
+		</Panel>
+		<Panel id="ChangeLogContainer">
+			<Panel class="Layout">
+			    <Panel class="AbilityDraftUpgradeHeader">
+          			<Panel class="AbilityDraftIcon"/>
+          			<Label class="ChangeLogTitle" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Title"/>
+        		</Panel>
+				<Panel id="ChangelogDetails">
+					<Panel id="ChangelogDetailsScroll">
+						<Panel class="PingNotice"/>
+						<Panel class="TopBottomFlow">
+							<Label class="ChangeLogText Latest" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_June_18_2025" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_22_2025" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_31_2024" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Jun_01_2022" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Mar_02_2022" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Nov_08_2021" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog" />
+						</Panel>	
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="CloseButton" onactivate="ToggleStyle(ChangeLogContainer, Show)"/>
+		</Panel>
+	</DOTAAbilityDraft>
+</root>

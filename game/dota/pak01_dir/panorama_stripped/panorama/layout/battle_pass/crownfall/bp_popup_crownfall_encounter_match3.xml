@@ -1,0 +1,239 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_match3.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="Modifier">
+			<Panel class="Modifier">
+				<Image id="ModifierImage" scaling="cover" />
+				<Panel id="ModifierBorder" />
+				<Label class="ModifierNumber" text="{d:modifier_number}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="OpponentAction">
+			<Panel class="OpponentAction">
+				<Image id="ActionImage" scaling="cover" />
+				<Panel id="CooldownOverlay" />
+				<Label class="CooldownTime" text="{d:action_cooldown}" />
+				<Label class="InterruptedOverlay" text="--" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="ScoreEvent">
+			<Panel class="ScoreEvent">
+				<Panel class="Contents">
+					<Label class="EventTitle" text="{s:event_title}" />
+					<Label class="ScoreAmount" text="+{d:score_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="DefaultDamageEvent">
+			<Panel class="DefaultDamageEvent DamageEvent">
+				<Label class="DamageAmount" text="{d:damage_amount}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="CritDamageEvent">
+			<Panel class="CritDamageEvent DamageEvent">
+				<Panel class="Contents">
+					<Panel class="Icon" />
+					<Label class="DamageAmount" text="{d:damage_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="MagicDamageEvent">
+			<Panel class="MagicDamageEvent DamageEvent">
+				<Panel class="Contents">
+					<Panel class="Icon" />
+					<Label class="DamageAmount" text="{d:damage_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<Panel class="PopupPanel Match3 Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterMinigameExit()">
+		<Panel class="MainContentsWrapper">
+			<Panel class="MainContents">
+				<Image id="GameBackground" scaling="cover" />
+				<DOTAMatch3OpponentScenePanel id="OpponentScene" />
+				<Panel class="Body">
+					<Panel class="LeftColumn">	
+						<Panel class="GameBoardContainer">
+							<Panel id="GameBoard" draggable="true" />
+							<DOTAMatch3ScenePanel id="GameBoardScene" hittest="false" particleonly="false" map="maps/scenes/crownfall/match3_board.vpk" camera="board_camera" renderdeferred="true" deferredalpha="true" />
+
+							<Panel class="GameBoardOverlay" hittest="false">
+								<Panel class="GameOverlays" hittest="false">
+									<Panel class="StunnedOverlay StatusOverlay" hittest="false" hittestchildren="false">
+										<Label class="Title" text="#DOTA_HealthBar_Status_Stunned" />
+										<Label class="Desc" text="#DOTA_Match3_Status_Stunned_Desc" />
+									</Panel>
+									<Panel class="OutOfMovesOverlay StatusOverlay" hittest="false" hittestchildren="false">
+										<Label class="Title" text="#DOTA_Match3_OutOfMoves" />
+										<Label class="Desc" text="#DOTA_Match3_OutOfMoves_Desc" />
+									</Panel>
+								</Panel>
+								<Panel class="PauseScreen">
+									<Label class="PauseText" text="#DOTA_Match3_Paused" />
+									<DOTACrownfallButton text="#DOTA_Match3_Resume" onactivate="DOTAMatch3TogglePaused()" />
+									<DOTACrownfallButton text="#DOTA_Match3_ViewAbilities" onactivate="DOTAMatch3ShowHelpPopup()" />
+									<DOTACrownfallButton text="#DOTA_Match3_LeaveGame" onactivate="DOTAEncounterMinigameStart()" />
+								</Panel>
+							</Panel>
+						</Panel>
+						
+						<Panel class="Player">
+							<Panel id="PlayerModifiers" class="ModifierList">
+								                          
+							</Panel>
+							<Panel class="PlayerHealthContainer">
+								<ProgressBar id="PlayerHealthProgressBar" />
+								<Label text="{d:player_health} / {d:player_max_health}" />
+							</Panel>
+						</Panel>
+					</Panel>
+	
+					<Panel class="RightColumn">	
+						<Panel class="OpponentHeader">
+							<Panel class="LevelContainer">
+								<Panel class="Dash Left"/>
+								<Label class="OpponentLevel LabelMedium" text="{s:level_name}" />
+								<Panel class="Dash Right"/>
+							</Panel>
+							<Label class="OpponentName TitleMedium" text="{s:opponent_name}" />
+							<Label class="OpponentFlavor" text="{s:opponent_flavor}" />
+							<Panel class="DashDotDivider">
+								<Panel class="Dash Left"/>
+								<Panel class="Dot"/>
+								<Panel class="Dash Right"/>
+							</Panel>
+						</Panel>
+
+						<Panel id="OpponentActionQueue">
+							                                
+						</Panel>
+
+						<Panel class="StageIntroContainer">
+							<Label class="LevelName" text="{s:level_name}" />
+							<Label class="OpponentName" text="{s:opponent_name}" />
+							<Label class="BossBattle" text="#DOTA_Match3_BossBattle" />
+						</Panel>
+
+						<Panel class="OpponentFooter">
+							<Panel id="OpponentModifiers" class="ModifierList">
+								                          
+							</Panel>
+							<Panel class="HealthContainer">
+								<ProgressBar id="OpponentHealthProgressBar" min="0" max="100" value="35" />
+								<Label text="{d:opponent_health} / {d:opponent_max_health}" />
+							</Panel>
+						</Panel>
+	
+					</Panel>
+				</Panel>
+
+				<DOTAMatch3ScenePanel id="ForegroundScene" hittest="false" particleonly="false" map="maps/scenes/crownfall/match3_fx.vpk" camera="fx_camera" />
+				<Panel id="EventsOverlay" hittest="false" hittestchildren="false" />
+			</Panel>
+
+			<Panel class="Score">
+				<Image class="ScoreBackground" src="file://{images}/events/crownfall/match3/score_container_background.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="ScoreBorder" src="file://{images}/events/crownfall/match3/score_container_border.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="ScoreData">
+					<Label class="LabelMedium ScoreLabel" text="#DOTA_Crownfall_Fishing_Leaderboard_Score" />
+					<Label class="TitleLarge ScoreValue" text="{d:current_score}" />
+				</Panel>
+			</Panel>
+
+			<Panel class="SetupScreen">
+				<Panel class="Header">
+					<Image class="EncounterGraphic" src="file://{images}/events/crownfall/fishing/hed_graphic_minigame.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="Title" text="#DOTA_Crownfall_EncounterName_Match3" />
+				</Panel>
+
+				<Panel class="ColumnContainer">
+					<Panel class="Column1">
+						<Panel class="HowToPlaySection" >
+							<Label class="HowToPlayTitle" text="#DOTA_Crownfall_Fishing_HowToPlay"/>
+							<Label class="HowToPlayDescription" html="true" text="#DOTA_Match3_HowToPlay"/>
+						</Panel>
+						<Label class="RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards"/>
+						<Panel id="RewardsList" class="RewardsSection">
+							                            
+						</Panel>
+					</Panel>
+					<Panel class="Column2">
+						<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+							<Panel class="LeaderListHeader">
+								<Label class="ScoreBoardType" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+								<Label class="Score" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+							</Panel>
+							<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<Panel class="Loading">
+						<Panel class="Spinner" />
+						<Label text="#DOTA_LoadingPlayerLoading" />
+					</Panel>
+					<DOTACrownfallButton class="StartGameButton GlowButton" text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterMinigameStart()" />
+					<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterMinigameExit()" />
+				</Panel>
+			</Panel>
+
+			<Panel class="StartingScreen">
+				<Label text="{s:starting_countdown}" />
+			</Panel>
+			
+			<Panel class="FinishedScreen">
+				<Label class="Title" text="{s:match_outcome_title}" />
+				<Label class="FinalScore" text="#DOTA_Match3_FinalScore" html="true" />
+				<Label class="CheatWarning" text="#DOTA_Match3_CheatWarning" />
+				<DOTACrownfallButton class="PlayAgainButton" text="#DOTA_Match3_PlayAgain" onactivate="DOTAEncounterMinigameStart()" />
+			</Panel>
+
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+				<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+			</Panel>
+
+		</Panel>
+
+		<Panel class="PauseHint" onactivate="DOTAMatch3TogglePaused()">
+			<Panel class="PauseLabelContainer" hittest="false">
+				<Label text="#DOTA_Match3_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+				<Label text="#DOTA_FightingGame_HUD_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+			</Panel>
+			<Panel class="ControlKey"><Label class="KeyText" text="F9" /></Panel>
+		</Panel>		
+		
+	</Panel>
+</root>

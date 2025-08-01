@@ -1,0 +1,76 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_supporters_club.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="Team">
+			<Panel class="Team">
+				<Panel class="NewBadge" >
+					<Label id="NewTeams" text="#DOTA_TeamFanContent_New" />
+					<Panel id="NewTeamsEdge" />
+				</Panel>
+				<Panel class="TeamLogoContainer">
+					<DOTATeamImage id="TeamLogo" teamimagestyle="squarelarge" />
+				</Panel>
+				<Label class="TeamName" text="{g:dota_team_name:team_id}"/>
+				
+				<Panel class="LeftRightFlow">					
+					<Button id="FavoriteButton" class="DPCFavoriteStar" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_DPCTeams_SetFavorite );"/>
+				</Panel>
+    				                         
+					                                                      
+					                                                      
+				            
+			</Panel>
+		</snippet>		
+		<snippet name="OwnedTeam">
+			<Panel class="LeftRightFlow OwnedTeam">
+				<DOTATeamImage id="TeamLogo" teamimagestyle="squaremedium" />
+				<Panel class="OwnedTeamInfo TopBottomFlow">
+					<Label class="OwnedTeamName" text="{g:dota_team_name:team_id}"/>
+					<Label class="OwnedTeamTier" text="{s:owned_tier}"/>								  
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTABPInternational2023SupportersClub class="DashboardPage FullDashboardPage" dashboardclass="International2023BattlePassPage">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="PageContents BPSharedPageContainer">
+			<Panel class="BPSharedHeaderContainer Thin TopBottomFlow">
+				<Label class="BPTitle" text="#DOTA_DPCFanContent_SupportClubsTitle" />
+				<Label class="BPPageDescription" html="true" text="#DOTA_DPCFanContent_SupportClubsDesc" />
+			</Panel>
+
+			<Panel class="Body">
+				<Panel class="BodyColumn">
+					<Panel id="CenterHeader">				
+						<Label id="Title" text="#DOTA_DPCFanContent_SupportClubs" />
+						<Label class="Subtitle" html="true" text="#DOTA_Compendium2023_SupportersClub_Description" />
+					</Panel>
+					<Panel id="BottomHeader" class="TopBottomFlow">
+						<Label class="OwnedTitle" text="#DOTA_DPCFanContent_FeaturedTeam" />
+						<Label class="OwnedSubtitle" text="#DOTA_DPCFanContent_FeaturedTeamDesc" />
+						<Panel id="OwnedTeams" class="TopBottomFlow">
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="BodyColumn">
+					<AsyncDataPanel id="AsyncContainer" state="{d:fancontent_state}">
+						<Panel class="AsyncSuccessContainer TopBottomFlow">
+						<Label class="Instructions" text="#DOTA_DPCFanContent_Instructions" />
+							<Panel id="Teams">
+						
+							</Panel>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTABPInternational2023SupportersClub>
+</root>

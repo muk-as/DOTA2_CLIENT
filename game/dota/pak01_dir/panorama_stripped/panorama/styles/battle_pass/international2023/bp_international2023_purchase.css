@@ -1,0 +1,700 @@
+
+DOTABPInternational2023PurchasePopup.PopupPanel
+{
+	padding: 0px;
+	width: 1200px;
+	height: 800px;
+
+	&.PurchaseAsGift {
+		height: 800px;
+	}
+
+    background-image: url( "file://{images}/compendium/international2023/ti23_popup_background.png" );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.CompediumBackgroundParticles {
+	width: 100%;
+	height: 400px;
+	ignore-parent-flow: true;
+	transform: scaleY( -1 );
+}
+
+.CompediumBackgroundParticles2 {
+	width: 100%;
+	height: 300px;
+	ignore-parent-flow: true;
+	transform: scaleY( -1 );
+}
+
+#UpgradedParticles {
+	width: 100%;
+	height: 800px;
+	transform: translateY(-550px);
+	hue-rotation: 80deg;
+	saturation: 2;
+	opacity-mask: url( "file://{images}/masks/softedge_box.png" );
+	overflow: noclip;
+}
+
+.LogoContainer {
+	flow-children: down;
+	margin-bottom: 24px;
+	width: 100%;
+
+	.PurchaseAsGift & {
+		ui-scale: 60%;
+		margin-bottom: 12px;
+	}
+
+	.TopRightGodRays {
+		ignore-parent-flow: true;
+		horizontal-align: center;
+		opacity-mask: url( "file://{images}/masks/preview_rays_mask.psd" );
+		width: 50%;
+		height: 100%;
+	}
+
+	.Logo {
+		width: 300px;
+		horizontal-align: center;
+		margin-top: 64px;
+	}
+
+	.Title {
+		width: 100%;
+		font-size: 64px;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: semi-bold;
+		letter-spacing: 8px;
+		color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor2 ), to( primaryColor1 ) );
+		text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+	}
+
+	#StarsContainer {
+		flow-children: right;
+		horizontal-align: center;
+
+		.PurchaseAsGift & {
+			visibility: collapse;
+		}
+
+		.CompendiumStar {
+			width: 16px;
+			height: 16px;
+			background-image: url("file://{images}/control_icons/24px/star.svg");
+			background-size: cover;
+			background-position: center;
+			wash-color: loserRed;
+			margin: 0px 4px;
+		}
+	}
+}
+
+#CancelButton
+{
+	width: 50px;
+	height: 50px;	
+	background-size: 50%;
+	wash-color: accentColorBright;
+	img-shadow: 2px 2px 4px 2.0 #000000;
+	ignore-parent-flow: true;
+
+	transition-property: brightness, wash-color, transform, img-shadow;
+	transition-timing-function: ease;
+	transition-duration: 0.2s;
+
+	&:hover {
+		brightness: 2.0;
+		wash-color: accentColorBright;
+		transform: translateY( -2px );
+		img-shadow: darkColor&66 0px 0px 30px 0px;
+	}
+}
+
+#TierContainer {
+	width: 1200px;
+	height: fit-children;
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	
+	.Tier {
+		width: fill-parent-flow( 1.0 );
+		height: 300px;
+		
+		.PurchaseAsGift & {
+			height: 280px;
+		}
+
+		.TierContainer {
+			width: 100%;
+			height: 100%;
+			flow-children: down;
+			padding: 24px;
+			padding-top: 36px;
+			border: 1px solid primaryColor3&22;
+
+			.PurchaseAsGift & {
+				padding: 16px;
+				padding-top: 24px;
+			}
+		}
+
+		.TopBorder {
+			width: 100%;
+			height: 4px;
+			ignore-parent-flow: true;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+		}
+		
+		.TierName {
+			horizontal-align: center;
+			text-align: center;
+			text-shadow: textShadowMedium;
+			margin-bottom: 4px;
+
+			.PurchaseAsGift & {
+				                      
+			}
+		}
+
+		.TierIncludes {
+			width: 100%;
+			flow-children: down;
+			margin-bottom: 16px;
+
+			Label {
+				horizontal-align: center;
+				text-align: center;
+				text-shadow: 0px 2px 6px black;
+			}
+
+			.IncludesTitle {
+				width: 80%;
+				flow-children: right;
+				horizontal-align: center;
+				margin-bottom: 8px;
+
+				Label {
+					margin: 0px 8px;
+				}
+
+				.Dash {
+					width: fill-parent-flow(1);
+					height: 1px;
+					vertical-align: center;
+					margin: 8px 0px 4px;
+				}
+			}
+
+			.IncludesLevels {
+				font-size: 20px;
+				color: primaryColor1;
+			}
+
+			.IncludesBoosters {
+				font-size: 20px;
+				color: primaryColor2;
+			}
+		}
+
+		.DiscountText {
+			font-size: 14px;
+			color: ultraBrightColor;
+			text-shadow: 0px 0px 10px accentColor&80;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-weight: semi-bold;
+			text-align: center;
+			horizontal-align: center;
+			max-height: 20px;
+			text-overflow: shrink;
+
+			visibility: collapse;
+		}
+
+		&.ShowDiscount .DiscountText {
+			visibility: visible;
+		}
+		
+		.TierButtons {
+			width: 100%;
+			margin-bottom: 16px;
+			horizontal-align: center;
+		}
+	}
+}
+
+#Tier1 {
+	background-color: gradient( linear, 0% 0%, 30% 120%, from( primaryColor6&ee ), to( primaryColor7&dd ) );
+	background-size: 100%;
+	box-shadow: 0px 12px 64px -4px #00000088;
+	margin-left: 48px;
+	margin-right: 8px;
+
+	.TopBorder {
+		background-color: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4 ), color-stop( 0.5, primaryColor2 ), to( primaryColor4 ) );
+		brightness: 0.6;
+	}
+
+	.Dash {
+		opacity: 0.5;
+
+		&.Left {
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&00 ), to( primaryColor4 ) );
+		}
+
+		&.Right {
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4 ), to( primaryColor4&00 ) );
+		}
+	}
+}
+
+
+#Tier2 {
+	background-color: gradient( linear, 0% 0%, 30% 120%, from( primaryColor3&ee ), to( primaryColor5&dd ) );
+	background-size: 100%;
+	box-shadow: 0px 12px 64px -4px #00000088;
+	margin-left: 8px;
+	margin-right: 48px;
+
+	.TopBorder {
+		background-color: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor3 ), color-stop( 0.5, secondaryColor1 ), to( secondaryColor3 ) );
+	}
+
+	.Dash {
+		opacity: 0.1;
+
+		&.Left {
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), to( white ) );
+		}
+
+		&.Right {
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+		}
+	}
+}
+
+
+#FooterInfo {
+	width: 100%;
+	height: 100px;
+	flow-children: down;
+	margin-bottom: 20px;
+	vertical-align: bottom;
+}
+
+#GiftingCounter {
+	width: 1000px; 
+	margin-bottom: 24px;
+	flow-children: down;
+	text-align: center;
+	horizontal-align: center;
+	padding-top: 16px;
+	border-top: 1px solid rgba(255, 255, 255, 0.251);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor1&00 ), color-stop( 0.5, primaryColor2), to( secondaryColor1&00 ) );
+
+	visibility: collapse;
+}
+
+.PurchaseAsGift #GiftingCounter {
+	visibility: visible;
+}
+
+.GiftingTitle {
+	font-size: 40px;
+	margin-bottom: 8px;
+	font-family: titleFont;
+	horizontal-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LighterGrey ) );
+	text-shadow: 0px 4px 24px #000000aa;
+	width: 100%;
+	text-align: center;
+	text-overflow: shrink;
+	letter-spacing: -0.2px;
+}
+
+#ProgressBar {
+	
+	ui-scale: 80%;
+	height: 90px;
+	horizontal-align: center;
+	flow-children:down;
+}
+
+#PurchasePoolContribution
+{
+	horizontal-align: center;
+	margin-bottom: 0px;
+	color: LighterGrey;
+	font-size: 18px;
+	text-align: center;
+	width: 100%;
+}
+
+#InfoButtons {
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 16px;
+}
+
+#InfoButtons TextButton {
+	margin-right: 10px;
+}
+
+
+.BattlePassBrightButton {
+	padding: 10px 18px 6px 18px;
+}
+
+.DiscountText {
+	horizontal-align: center;
+	text-align: center;
+	                          
+}
+
+.BuyBtn:hover {
+	                                                                                                  
+	                          
+	                         
+	                                           
+}
+
+
+.PurchaseOptionButton
+{
+	width: 320px
+	min-width: 270px;
+	margin-bottom: 0px;
+	horizontal-align: center;
+}
+
+
+.PurchaseOptionActivate
+{
+	visibility: visible;
+}
+
+.PurchaseOptionGift
+{
+	visibility: collapse;
+}
+
+.PurchaseAsGift .PurchaseOptionActivate
+{
+	visibility: collapse;
+}
+
+.PurchaseAsGift .PurchaseOptionGift
+{
+	visibility: visible;
+}
+
+#CancelButton
+{
+	horizontal-align: right;
+	vertical-align: top;
+}
+
+.LevelBadge
+{
+	width: 82px;
+	height: 82px;
+	border-radius: 50%;
+	flow-children: down;
+	margin-top: -13px;
+	box-shadow: #00000088 0px 0px 6px 0px ;
+}
+
+#LevelCircle
+{
+	width: 40px;
+	height: 40px;
+
+	vertical-align: top;
+	margin-top: 14px;
+	margin-left: -1px;
+	horizontal-align: center;
+
+	wash-color: white;
+}
+
+#LevelCircle #LevelNumber
+{
+	font-size: 30px;
+	margin-left: 0px;
+	horizontal-align: center;
+	text-align: center;
+}
+
+
+#BasicLevelBadge
+{
+	background-color: darkColor;
+	border: 1px solid #ffffff09;
+	 
+}
+
+#LevelBadgeLabel
+{
+	color: white;
+	font-size: 14px;
+	margin-top: 2px;
+	horizontal-align: center;
+	margin-left: 1px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.BundleOption #BasicLevelBadge
+{
+	background-color: darkColor;
+}
+
+#CourierPreview
+{
+	width: 500px;
+	height: 300px;
+
+	horizontal-align: left;
+	vertical-align: top;
+
+	background-color: none;
+	
+	visibility: collapse;
+}
+
+#Hermes
+{
+	width: 900px;
+	height: 900px;
+	
+	horizontal-align: center;
+	                         
+
+	background-color: none;
+	
+	opacity-mask: url( "file://{images}/masks/softedge_circle.png" ) 1.0;
+	transform: translateY(284px) translateX(-660px) scaleX(-1);
+	              
+	
+	                       
+}
+
+.BundleOption .PurchaseOptionSubheader
+{
+	color: textAccentColorBright;
+}
+
+#ButtonFooter
+{
+	width: 100%;
+	height: 100px;
+	flow-children: down;
+	vertical-align: bottom;
+	margin-bottom: 94px;
+}
+
+
+#ButtonFooterContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+
+	flow-children: right;
+}
+
+#ButtonFooterContainer TextButton
+{
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: none;
+	border: 1px solid accentColor;
+	min-width: 250px;
+	transition-property: brightness, background-color;
+	transition-duration: .1s;
+	
+}
+
+#ButtonFooterContainer .PopupButton Label
+{
+	font-size: 16px;
+	text-transform: uppercase;
+	color: textAccentColorBright;
+	margin-top: 2px;
+	letter-spacing: 1.2px;
+}
+
+#ButtonFooterContainer TextButton:Hover
+{
+	brightness: 2;
+	background-color: secondaryDarkColor;
+}
+
+.Rewards
+{
+	flow-children:right;
+}
+#Reward1
+{
+	flow-children: down;
+	margin-left:110px;
+	width: 180px;
+}
+
+#Reward2
+{
+	flow-children: down;
+	margin-left:25px;
+	width: 180px;
+}
+
+#Reward3
+{
+	flow-children: down;
+	margin-left:25px;
+	width: 180px;
+}
+
+.RewardTitle
+{
+	color: primaryColor1;
+	text-transform:uppercase;
+	horizontal-align:center;
+	font-size: 15px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 10px 0px #000000;
+}
+
+.DownArrow
+{
+	horizontal-align: center;
+	height: 7px;
+	width: 14px;
+	
+	background-image: url( "file://{images}/tooltips/tooltip_arrow_bottom.png" );
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	margin-left: 6px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+
+	wash-color: accentColorBright;
+}
+
+#GiftProgressBar
+{
+	flow-children:right;
+}
+
+.Notch
+{
+	width:100px;
+	height:25px;
+	margin-right:3px;
+
+	box-shadow: inset #0000007c 0px 1px 3px;
+	background-color: shadeColor;
+}
+
+#Notch1
+{
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+
+	margin-left: 100px;
+}
+
+#Notch1.Reached
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( ultraBrightColor ), to( accentColorBright ) );
+}
+
+#Notch2
+{
+}
+
+#Notch2.Reached
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( accentColorBright ), to( accentColor ) );
+}
+
+#Notch3
+{
+}
+
+#Notch3.Reached
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( accentColor ), to( defaultColor ) );
+}
+
+#Notch4
+{
+}
+
+#Notch4.Reached
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( defaultColor ), to( shadeColor ) );
+}
+
+#Notch5
+{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+#Notch5.Reached
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( shadeColor ), to( darkColor ) );
+}
+
+.XPCircle
+{
+	margin: 0px;
+	padding: 0px;
+	horizontal-align: center;
+	flow-children: right;
+	                        
+	transition-property: brightness, pre-transform-scale2d;
+	transition-duration: .25s;
+	horizontal-align:center;
+	width: fit-children;
+}
+
+.PTS
+{
+	background-image: bp_total_points;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	horizontal-align: center;
+	hue-rotation: 170deg;
+}
+
+.AchievementReward
+{
+	color: white;
+	text-shadow: 0px 1px 8px #000000bb;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	horizontal-align: center;
+	margin-right: 4px;
+	vertical-align: middle;
+}
+

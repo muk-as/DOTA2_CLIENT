@@ -1,0 +1,297 @@
+
+@define PageTopMargin: 120px;
+@define PageEdgeMargin: 100px;
+@define brightTeal: #33ffbb;
+
+                                  
+@define fullPreviewTransitionDuration: 1s;
+@define openTreasureRotationSpeed: 40.0;
+@define openTreasureRotationAcceleration: 5.0;
+@define openTreasureEliminationDelay: 3.0s;
+
+                                        
+@define openTreasureSpinUpDuration: 5.0s;
+@define openTreasureBrightnessModelDelay: 4.0s;
+
+                                            
+@define openTreasureAnimateContentsDuration: 0.3s;
+
+                                      
+@define openTreasureFocusIntervalSlow: 0.05s;
+@define openTreasureFocusIntervalFast: 0.05s;
+
+                     
+@define bronzeTextColor: #cd8f68;
+@define bronzeGlowColor: #cd8f68;
+@define bronzeHueRotation: 155deg;
+@define bronzeSaturation: 1.0;
+
+@define silverTextColor: #ededed;
+@define silverGlowColor: #ededed;
+@define silverHueRotation: 0deg;
+@define silverSaturation: 0;
+
+@define goldTextColor: #ebcb6c;
+@define goldGlowColor: #ebd79c;
+@define goldHueRotation: 185deg;
+@define goldSaturation: 1.0;
+
+                      
+@define infusedTextColor: #a149d4;
+@define infusedGlowColor: #a149d4;
+@define infusedHueRotation: 30deg;
+@define infusedSaturation: 1.0;
+
+                  
+@define uncommonTextColor: #4cc2de;
+@define uncommonGlowColor: #4bafde;
+@define uncommonEscalatingChanceIconColor: #4bafde;
+@define uncommonHueRotation: 240deg;
+@define uncommonSaturation: 1.0;
+
+@define rareTextColor: #9ede4c;
+@define rareGlowColor: #afde4b;
+@define rareEscalatingChanceIconColor: #afde4b;
+@define rareHueRotation: 240deg;
+@define rareSaturation: 1.0;
+
+@define veryRareTextColor: #fd9d55;
+@define veryRareGlowColor: #fdc194;
+@define veryRareEscalatingChanceIconColor: #fd9d55;
+@define veryRareHueRotation: 150deg;
+@define veryRareSaturation: 1.0;
+
+@define extremelyRareTextColor: #fddb87;
+@define extremelyRareGlowColor: #fdca4a;
+@define extremelyRareEscalatingChanceIconColor: #fdca4a;
+@define extremelyRareHueRotation: 170deg;
+@define extremelyRareSaturation: 1.0;
+
+@define ultraRareChanceTextColor: #fddb87;
+@define ultraRareChanceGlowColor: #fdca4a;
+@define ultraRareEscalatingChanceIconColor: #fdca4a;
+@define ultraRareChanceHueRotation: 170deg;
+@define ultraRareChanceSaturation: 1.0;
+
+@define cosmicallyRareChanceTextColor: #b759f3;
+@define cosmicallyRareChanceGlowColor: #9400f3;
+@define cosmicallyRareEscalatingChanceIconColor: #9400f3;
+@define cosmicallyRareChanceHueRotation: 70deg;
+@define cosmicallyRareChanceSaturation: 1.0;
+
+@define CrateTierOne_bgcolor: #749C95;
+@define CrateTierTwo_bgcolor: #00AD6F;
+@define CrateTierThree_bgcolor: #0EA1F3;
+@define CrateTierFour_bgcolor: #A378FF;
+@define CrateTierFive_bgcolor: #FC782D;
+
+@define CrateTierZero_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #F1FA90 ), to( #FCC22D ) );
+@define CrateTierOne_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #C7EAE3 ), to( #749C95 ) );
+@define CrateTierTwo_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #86EA63 ), to( #00AD6F ) );
+@define CrateTierThree_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #70E5FF ), to( #0EA1F3 ) );
+@define CrateTierFour_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #D39AFF ), to( #A378FF ) );
+@define CrateTierFive_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #FFC062 ), to( #FC782D ) );
+
+@define HasArcanaGrant_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #86EA63 ), to( #00AD6F ) );
+@define HasPersonaGrant_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #70E5FF ), to( #0EA1F3 ) );
+
+@define offCenterRightPadding: 0px;
+
+.PageTitleContainer {
+	width: 500px;
+	flow-children: down;
+	margin-bottom: 16px;
+}
+
+.PageLabel {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 0px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #FFECAA ), to( #B68E56 ) );
+	color: rgba(255, 255, 255, 0.5);
+	text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+#TreasureLogo {
+	vertical-align: top;
+	horizontal-align: right;
+	visibility: collapse;	
+
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	transition-delay: 0.1s;
+
+	opacity: 0;
+	transform: translateY( -32px );
+
+	.TreasureHexFocused & {
+		opacity: 1;
+		transform: none;
+		transition-delay: 0s;
+		transition-duration: 0.1s;
+		transition-timing-function: ease;
+	}
+
+	.OpeningInProgress & {
+		opacity: 0;
+		transform: translateY( -32px );
+	}
+}
+
+#TreasureExtraInfo {
+	width: 100%;
+	min-width: 1920px;
+	height: 100%;
+	horizontal-align: center;
+}
+
+#TreasureRarityFilterButtons,
+#TreasureRarityFilterButtonsTradeUp
+{
+	flow-children: right;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 80px;
+	padding: 4px 0px;
+	box-shadow: inset 0px 2px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+.TreasureRarityFilterButton {
+	padding: 5px 6px;
+	margin: 0px 4px;
+	border-radius: 80px;
+	box-shadow: 0px 0px 0px -2px #00000000;
+	background-size: cover;
+	background-img-opacity: 0.3;
+	border: 1px solid #FFFFFF00;
+	width: 128px;
+	height: 38px;
+
+	transition-property: box-shadow, background-color, border, transform;
+	transition-duration: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+	transform: none;
+
+	.RadioBox { visibility: collapse; }
+
+	&:hover {
+		background-color: #ffffff02;
+
+		.TreasureRarityFilterName {
+			color: white;
+		}
+	}
+
+	.TreasureRarityFilterName {
+		margin: 0px;
+		width: 100%;
+		vertical-align: center;
+		horizontal-align: center;
+		color: CrateTierOne_textcolor;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: 1;
+		font-size: 17px;
+		text-shadow: 0px 2px 6px black;
+		transition-property: color, text-shadow;
+		transition-duration: 0.1s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+		text-overflow: shrink;
+		text-align: center;
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+
+	&.Rarity__Crate_Tier2 {
+		.TreasureRarityFilterName {
+			color: CrateTierTwo_textcolor;
+		}
+
+		&:selected {
+			background-color: CrateTierTwo_textcolor;
+		}
+	}
+
+	&.Rarity__Crate_Tier3 {
+		.TreasureRarityFilterName {
+			color: CrateTierThree_textcolor;
+		}
+
+		&:selected {
+			background-color: CrateTierThree_textcolor;
+		}
+	}
+
+	&.Rarity__Crate_Tier4 {
+		.TreasureRarityFilterName {
+			color: CrateTierFour_textcolor;
+		}
+
+		&:selected {
+			background-color: CrateTierFour_textcolor;
+		}
+	}
+
+	&.Rarity__rare {
+		.TreasureRarityFilterName {
+			color: rareTextColor;
+		}
+
+		&:selected {
+			background-color: rareTextColor;
+		}
+	}
+
+	&.Rarity__very_rare {
+		.TreasureRarityFilterName {
+			color: veryRareTextColor;
+		}
+
+		&:selected {
+			background-color: veryRareTextColor;
+		}
+	}
+
+	&.Rarity__extremely_rare {
+		.TreasureRarityFilterName {
+			color: extremelyRareTextColor;
+		}
+
+		&:selected {
+			background-color: extremelyRareTextColor;
+		}
+	}
+
+	&.Rarity__ultra_rare {
+		.TreasureRarityFilterName {
+			color: ultraRareChanceTextColor;
+		}
+
+		&:selected {
+			background-color: ultraRareChanceTextColor;
+		}
+	}
+
+	&.Rarity__cosmically_rare {
+		.TreasureRarityFilterName {
+			color: cosmicallyRareChanceTextColor;
+		}
+
+		&:selected {
+			background-color: cosmicallyRareChanceTextColor;
+		}
+	}
+
+	&:selected {
+		background-color: CrateTierOne_textcolor;
+		box-shadow: 0px 4px 16px -2px #000000DD;
+		border: 1px solid #FFFFFF22;
+	
+		.TreasureRarityFilterName {
+			color: white;
+		}
+	}
+}

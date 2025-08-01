@@ -1,0 +1,40 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_teams.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="TeamPanel">
+			<Panel class="TeamPanel">
+				<DOTAUGCImage id="TeamLogo" />
+				<Label class="TeamName" text="{s:team_name}" />
+				<TextButton id="TeamEditButton" text="#DOTA_Edit" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTATeamsPage class="DashboardPage">
+
+		<Panel class="MainContent">
+
+			<Panel id="OfficialTeamInfo" class="TeamsPageSection">
+				<Label class="TeamsSectionHeader" text="#DOTA_OfficialTeamInfo" />
+				<Panel class="ProNameContainer">
+					<Label id="ProName" text="{s:pro_name}" />
+					<Button id="EditProInfoButton" onactivate="DOTAEditOfficialInfoClicked()" />
+				</Panel>
+			</Panel>
+
+			<Panel id="MyTeams" class="TeamsPageSection">
+				<Label class="TeamsSectionHeader" text="#DOTA_TeamsMyTeams" />
+				<Panel id="MyTeamsList">
+				</Panel>
+				<TextButton id="CreateNewTeamButton" class="ButtonBevel" text="#DOTA_TeamCreateNewTeam" onactivate="DOTAEditTeamInfoClicked( 0 )" />
+			</Panel>
+
+		</Panel>
+
+	</DOTATeamsPage>
+</root>

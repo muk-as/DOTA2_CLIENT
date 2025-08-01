@@ -1,0 +1,317 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_community_content.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+	</scripts>
+
+	<snippets>
+		                            
+		<snippet name="DefaultScenario">
+			<Panel class="Scenario">
+				<Panel class="Scenario_BackgroundWorld">
+					<DOTALargeModelPreview id="PreviewModel" class="Scenario_PreviewModel" />
+					<Label class="Scenario_CurrentScenario" text="{s:scenario_name}" />
+				</Panel>
+				<Label class="Scenario_CurrentScenarioInfo" html="true" text="#DOTA_ScenarioTile_Duration" />
+				<Button class="Scenario_StartButton" onactivate="DotaNewPlayerHomeStartScenario()">
+					<Label class="Scenario_StartButtonLabel" text="#DOTA_NPH_StartScenario" />
+				</Button>
+			</Panel>
+		</snippet>
+
+		<snippet name="ExampleCustomScenario">
+			<Panel class="Example">
+				<Label class="Example_Name" text="{s:scenario_name}" />
+				<Label id="override_this" class="Example_Label" />
+				<Label id="id_can_be_anything" html="true" class="Example_Label" />
+				<Image id="another_override" class="Example_Image" />
+				                                                                                         
+				                                                                                                     
+				                                         
+			</Panel>
+		</snippet>
+
+		<snippet name="ScenePanelPreviewScenario">
+			<Panel class="Scenario">
+				<Panel class="Scenario_BackgroundWorld">
+					<DOTAScenePanel id="PreviewMap" class="Scenario_PreviewMap" deferredalpha="true" renderdeferred="false" particleonly="false" hittest="false" antialias="true"/>
+					<Label class="Scenario_CurrentScenario" text="{s:scenario_name}" />
+				</Panel>
+				<Label class="Scenario_CurrentScenarioInfo" html="true" text="#DOTA_ScenarioTile_Duration" />
+				<Button class="Scenario_StartButton" onactivate="DotaNewPlayerHomeStartScenario()">
+					<Label class="Scenario_StartButtonLabel" text="#DOTA_NPH_StartScenario" />
+				</Button>
+			</Panel>
+		</snippet>
+
+		<snippet name="TierDescription">
+			<Panel class="TierDescription">
+				<Panel class="TierDescription_TipContainer">
+					<Label id="WizardTip" html="true" class="TierDescription_Tip" />
+				</Panel>
+				<Image id="Wizard" class="TierDescription_Wizard" />
+				<Label id="Title" class="TierDescription_Desc" />
+			</Panel>
+		</snippet>
+
+		<snippet name="Feature">
+			<Panel class="GameFeature">
+				<Panel class="GameFeature_Contents">
+					<Panel class="GameFeature_WizardContents">
+						<Image id="Wizard" class="GameFeature_Wizard" />
+						<Label id="WizardTip" html="true" class="GameFeature_Tip" />
+					</Panel>
+					<Label class="GameFeature_CurrentScenario" text="{s:scenario_name}" />
+				</Panel>
+				<Label class="Scenario_CurrentScenarioInfo" html="true" text="#DOTA_ScenarioTile_Duration" />
+				<Button class="Scenario_StartButton" onactivate="DotaNewPlayerHomeStartScenario()">
+					<Label class="Scenario_StartButtonLabel" text="#DOTA_NPH_StartScenario" />
+				</Button>
+			</Panel>
+		</snippet>
+	</snippets>
+
+
+	<DOTANewPlayerHomePage class="DashboardPage ComContent" play-button="hide">
+
+
+
+		<Panel class="ComContent_Main">
+			<Panel class="ComContent_Header">
+				<Label class="Headline1" html="true" text="Community Content" />
+				<Panel class="ComContent_Buttons">
+					<TextButton id="button_basic" class="ButtonGold"
+								onactivate="
+								$('#ComContent_001').RemoveClass('Deactivate');
+								$('#ComContent_002').AddClass('Deactivate');
+								$('#ComContent_003').AddClass('Deactivate');
+								$('#ComContent_004').RemoveClass('Deactivate');
+								$('#ComContent_005').AddClass('Deactivate');
+								$('#ComContent_006').AddClass('Deactivate');
+								$('#ComContent_007').AddClass('Deactivate');
+								$('#ComContent_008').AddClass('Deactivate');
+								$('#ComContent_009').AddClass('Deactivate');
+								$('#ComContent_010').AddClass('Deactivate');
+								$('#ComContent_011').AddClass('Deactivate');
+								$('#button_basic').AddClass('Selected');
+								$('#button_laning').RemoveClass('Selected');
+								$('#button_clear').RemoveClass('Selected')"
+								text="basics"/>
+					<TextButton id="button_laning" class="ButtonGold"
+								onactivate="								
+								$('#ComContent_001').AddClass('Deactivate');
+								$('#ComContent_002').RemoveClass('Deactivate');
+								$('#ComContent_003').RemoveClass('Deactivate');
+								$('#ComContent_004').AddClass('Deactivate');
+								$('#ComContent_005').AddClass('Deactivate');
+								$('#ComContent_006').AddClass('Deactivate');
+								$('#ComContent_007').RemoveClass('Deactivate');
+								$('#ComContent_008').RemoveClass('Deactivate');
+								$('#ComContent_009').AddClass('Deactivate');
+								$('#ComContent_010').AddClass('Deactivate');
+								$('#ComContent_011').AddClass('Deactivate');
+								$('#button_basic').RemoveClass('Selected');
+								$('#button_laning').AddClass('Selected');
+								$('#button_clear').RemoveClass('Selected')"
+								text="Laning Phase"/>
+					<TextButton id="button_clear" class="ButtonGold"
+								onactivate="
+								$('#ComContent_001').RemoveClass('Deactivate');
+								$('#ComContent_002').RemoveClass('Deactivate');
+								$('#ComContent_003').RemoveClass('Deactivate');
+								$('#ComContent_004').RemoveClass('Deactivate');
+								$('#ComContent_005').RemoveClass('Deactivate');
+								$('#ComContent_006').RemoveClass('Deactivate');
+								$('#ComContent_007').RemoveClass('Deactivate');
+								$('#ComContent_008').RemoveClass('Deactivate');
+								$('#ComContent_009').RemoveClass('Deactivate');
+								$('#ComContent_010').RemoveClass('Deactivate');
+								$('#ComContent_011').RemoveClass('Deactivate');
+								$('#button_basic').RemoveClass('Selected');
+								$('#button_laning').RemoveClass('Selected');
+								$('#button_clear').RemoveClass('Selected')"
+								text="Clear Filters"/>
+
+				</Panel>
+
+			</Panel>
+
+			                                  
+
+
+				                                                 
+					                      
+						                           
+							                                                                                                                                                                                                                                                      
+						        
+						        
+						                           
+							                                                
+						        
+						                                                                                                                                                                                                                                                      
+						        
+					        
+				        
+			           
+
+
+			<Panel id="ComContent_Grid" class="ComContent_Grid">
+				<Panel id="ComContent_scrollable" class="ComContent_Scrollable">
+
+					                
+					<Panel id="ComContent_001" class="ComContentTile" >
+						<Image id="" class="ComContentTile_Image" src="file://{images}/communitycontent/001_testvideo.psd" scaling="stretch-to-fit-preserve-aspect" 
+							    onactivate="
+							   $( '#ComContentFocus_Exit' ).AddClass('Initialize');
+							   $( '#ComContentFocus_001' ).AddClass('Initialize');
+							   $( '#ComContentFocus_002' ).RemoveClass('Initialize')"/>
+						<Panel class="ComContentTile_TextContainer">
+							<Label class="ComContentTile_Title" text="New Nulls are OP - Purge plays Skywrath Mage 7.31"/>
+							<Label class="ComContentTile_Name" text="Purge"/>
+						</Panel>
+					</Panel>
+					                
+					<Panel id="ComContent_002" class="ComContentTile">
+						<Image id="" class="ComContentTile_Image" src="file://{images}/communitycontent/002_testvideo.psd" scaling="stretch-to-fit-preserve-aspect"
+							    onactivate="
+							   $( '#ComContentFocus_Exit' ).AddClass('Initialize');
+							   $( '#ComContentFocus_002' ).AddClass('Initialize');
+							   $( '#ComContentFocus_001' ).RemoveClass('Initialize')"/>
+						<Panel class="ComContentTile_TextContainer">
+							<Label class="ComContentTile_Title" text="Dota 2 Beginners Guide [Episode #1: How to play Dota 2]"/>
+
+						</Panel>
+					</Panel>
+					                
+					<Panel id="ComContent_003" class="ComContentTile">
+						<Image id="" class="ComContentTile_Image" src="file://{images}/communitycontent/003_testvideo.psd" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					                
+					<Panel id="ComContent_004" class="ComContentTile">
+						<Image id="" class="ComContentTile_Image" src="file://{images}/communitycontent/004_testvideo.psd" scaling="stretch-to-fit-preserve-aspect"/>
+					</Panel>
+					                
+					<Panel id="ComContent_005" class="ComContentTile">
+						<Image id="" class="ComContentTile_Image" src="file://{images}/communitycontent/005_testvideo.psd" scaling="stretch-to-fit-preserve-aspect"/>
+						<Panel class="ComContentTile_TextContainer">
+							<Panel class="ComContentTile_NameBox">
+								<Label class="ComContentTile_Name" text="basic"/>
+							</Panel>
+							<Panel class="ComContentTile_NameBox">
+								<Label class="ComContentTile_Name" text="Laning Phase"/>
+							</Panel>
+						</Panel>
+					</Panel>
+					                
+					<Panel id="ComContent_006" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_regen" />
+					</Panel>
+					                
+					<Panel id="ComContent_007" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_ui_demo_hero" />
+					</Panel>
+					                
+					<Panel id="ComContent_008" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_009" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_010" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_011" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_012" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_013" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_014" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+					                
+					<Panel id="ComContent_015" class="ComContentTile">
+						<DotaScenarioTile scenario="npx_match_new_player_mode" />
+					</Panel>
+				</Panel>
+
+
+
+
+			</Panel>
+		</Panel>
+
+
+
+
+		<Panel id="ComContentFocus_Exit" class="ComContentFocus_Exit">
+			<Panel id="" class="ComContentFocus_Reset" onactivate="$( '#ComContentFocus_Exit' ).RemoveClass('Initialize')"/>
+			<Panel id="ComContentFocus_Container" class="ComContentFocus_Container">
+				<Panel id="ComContentFocus_001" class="ComContentFocus" onactivate="ExternalBrowserGoToURL( https://www.youtube.com/watch?v=aE9z8BtLDIk )" >
+					<Panel id="ComContentFocus_Description" class="ComContentFocus_Description">
+						<Panel id="ComContentFocus_DescriptionTitle" class="ComContentFocus_DescriptionTitle">
+							<Label class="ComContentFocus_DescriptionTitleText" text="New Nulls are OP - Purge plays Skywrath Mage 7.31" />
+						</Panel>
+						<Label class="ComContentFocus_DescriptionText" text="Patreon: https://www.patreon.com/purgegamers&#xA;
+							Stream: https://twitch.tv/purgegamers &#xA;
+							&#xA;
+							Twitter: http://www.twitter.com/PurgeGamers &#xA;
+							Facebook: http://www.facebook.com/PurgeGamers &#xA;
+							Instagram: https://www.instagram.com/purge.gamers/ &#xA;
+							&#xA;
+							Coaching: https://coaching.purgegamers.com/ &#xA;
+							Website: https://purgegamers.true.io/ &#xA;
+							Merch: https://teespring.com/stores/purge-ga... &#xA;
+							&#xA;
+							00:00 Game Start &#xA;
+							02:33 Bounty Runes &#xA;
+							02:45 Laning &#xA;
+							09:17 Teamfight &#xA;
+							12:40 Teamfight &#xA;
+							18:40 Aghs Purchase &#xA;
+							25:44 Teamfight &#xA;
+							36:29 Teamfight &#xA;
+							36:39 Shiva's Guard Purchase &#xA;
+							38:35 Teamfight &#xA;
+							40:43 Scythe of Vyse Purchase &#xA;
+							43:28 Teamfight &#xA;
+							45:10 Linken Purchase &#xA;
+							56:16 End and Analysis &#xA;
+							47:30 Ethereal Purchase &#xA;
+							56:16 End and Analysis" />
+					</Panel>
+					<Panel id="ComContentFocus_preview" class="ComContentFocus_Preview">
+						<Image id="" class="" src="file://{images}/communitycontent/001_testvideo.psd"/>
+					</Panel>
+				</Panel>
+				<Panel id="ComContentFocus_002" class="ComContentFocus" onactivate="ExternalBrowserGoToURL( https://www.youtube.com/watch?v=mcu3Pp6ZASM )">
+					<Panel id="ComContentFocus_Description" class="ComContentFocus_Description">
+						<Panel id="ComContentFocus_DescriptionTitle" class="ComContentFocus_DescriptionTitle">
+							<Label class="ComContentFocus_DescriptionTitleText" text="Dota 2 Beginners Guide [Episode #1: How to play Dota 2]" />
+						</Panel>
+						<Label class="ComContentFocus_DescriptionText" text="In this Dota 2 Beginners Guide, Alex guides you through the basics of how to play Dota 2. Learn everything you need to know in this ultimate guide to Dota 2!" />
+					</Panel>
+					<Panel id="ComContentFocus_preview" class="ComContentFocus_Preview">
+						<Image id="" class="" src="file://{images}/communitycontent/002_testvideo.psd"/>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTANewPlayerHomePage>
+
+</root>

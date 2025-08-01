@@ -1,0 +1,52 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_background_compendium.css" />
+		<include src="file://{resources}/styles/dashboard_search_results.css" />
+		<include src="file://{resources}/styles/compendiums/compendium_styles.css" />
+		<include src="file://{resources}/styles/battle_pass/spring2016/bp_spring2016.css" />		
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/battle_pass/spring2016/bp_spring2016_background.js" />
+	</scripts>
+
+	<Panel>
+		<Panel id="CompendiumBG" class="FullScreenBackground"/>
+		<DOTAScenePanel id="CompendiumBackgroundScene" hittest="false" camera="camera_1" map="scenes/battlepass_ti6_header" particleonly="true"/>
+
+		<DOTAScenePanel id="TierMax" hittest="false" camera="camera_1" map="scenes/ui_tier_max" particleonly="true"/>
+		<Panel id="TierGlow"/>
+		<Label id="PreviewModeMessage" text="#Battle_Passs_preview_mode"/>
+		<Label id="ActivationRequired" text="#DOTA_ActivateBattlePass_NotActivated"/>
+		<Panel id="SlantGraphic">
+			<DOTAScenePanel id="flag1" map="scenes/battlepass_ti6/singleflag1" camera="camera_1" antialias="true" particleonly="false"/>
+		</Panel>
+
+		<Panel class="CompendiumHeader">
+			<Button class="CompendiumHeaderTitle">
+				<Panel id="CompendiumID" class="BattlePassTitle"/>
+				<Button id="CompendiumVersion" class="BattlePassTitle" onmouseover="ToggleStyle( BackToBattleHome, Hovered )" onmouseout="ToggleStyle( BackToBattleHome, Hovered )" onactivate="DOTAShowBPSpring2016()"/>
+				<Button id="BackToBattleHome" class="Arrow Left" onmouseover="ToggleStyle( CompendiumVersion, Hovered )" onmouseout="ToggleStyle( CompendiumVersion, Hovered )" onactivate="DOTAShowBPSpring2016()"/>
+				<Panel id="DefaultVersion" class="BattlePassTitle"/>
+				<Label id="CompendiumTitleText" text="#compendium_available_title_2015" hittest="false"/>
+			</Button>
+			<Panel class="CompendiumHeaderTitleNotOwned LeftRightFlow">
+				<Panel class="TopBottomFlow">
+					<Label id="WinterCompendium" text="#DOTA_WinterBattlePass"/>
+					<Label id="PreviewMode" text="#DOTA_WinterBattlePassPreview"/>
+				</Panel>
+				<Panel id="PurchaseCompendium">
+					<Button id="PurchaseCompendiumButton" onactivate="DOTAPurchaseItem( 16808, takeover )" >
+						<Label text="#DOTA_WinterBattlePassPurchase" />
+					</Button>
+					<Button id="ActivateCompendiumButton" >
+						<Label text="#DOTA_WinterBattlePassActivate" onactivate="DOTAConsumeEconItemByDef( 16808 )" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel class="CompendiumDashboardBody"/>
+	</Panel>
+</root>

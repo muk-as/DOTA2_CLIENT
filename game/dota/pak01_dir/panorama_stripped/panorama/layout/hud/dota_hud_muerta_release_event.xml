@@ -1,0 +1,56 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_muerta_release_event.css" />
+	</styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/util.ts" />
+        <include src="file://{resources}/scripts/sequence_actions.ts" />
+        <include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+        <include src="file://{resources}/scripts/hud/dota_hud_muerta_release_event.ts" />
+    </scripts>
+    
+    <DOTAHUDMuertaReleaseEvent hittest="false">
+        <Panel id="DescriptionPanel">
+            <Panel id="DescriptionContent" hittest="false" >
+                <Panel id="EventLogoContainer">
+                                                                                                                                                                              
+                    <Movie id="EventLogo" src="file://{resources}/videos/events/muerta/dead_reckoning_logo_2_english.webm" repeat="true" autoplay="onload"  />  
+                </Panel>
+                <Panel id="EventDescriptionDivider" />
+                <Panel id="EventDescriptionContainer">
+                    <Panel class="BackgroundMask" />
+                    <Image id="OrnamentLeft" class="Ornament" src="file://{images}/hud/muerta/muerta_corner_ornamtent.psd" scaling="stretch-to-cover-preserve-aspect" />
+                    <Image id="OrnamentRight" class="Ornament" src="file://{images}/hud/muerta/muerta_corner_ornamtent.psd" scaling="stretch-to-cover-preserve-aspect" />
+                    <Panel id="EventDescriptionPanel">
+                        <Label id="TargetPopupDescription" class="DescriptionLabel" html="true" text="#DOTA_MuertaReleaseEvent_Minigame_Description"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel id="VersusHeroPanelsContainer">
+                <Image id="VersusHero1Frame" class="VersusHeroFrame" src="file://{images}/events/muerta/versus_screen/portrait_frame_top.png">
+                    <Panel class="VersusHeroImageContainer">
+                        <DOTAHeroImage id="Hero1Image" class="VersusHeroImage" heroimagestyle="portrait" scaling="stretch"/>
+                        <DOTAHeroPortrait id="Hero1Portrait" class="HeroPortrait" camera-offset="0" environment="default" />
+                    </Panel>
+                </Image>
+
+                <Image id="VersusImage" src="file://{images}/events/muerta/versus_screen/target_vs_english.png" />
+
+                <Image id="VersusHero2Frame" class="VersusHeroFrame" src="file://{images}/events/muerta/versus_screen/portrait_frame_top.png">
+                    <Panel class="VersusHeroImageContainer">
+                        <DOTAHeroImage id="Hero2Image" class="VersusHeroImage" heroimagestyle="portrait" scaling="stretch"/>
+                        <DOTAHeroPortrait id="Hero2Portrait" class="HeroPortrait" camera-offset="0" environment="default" />
+                    </Panel>
+                </Image>
+            </Panel>
+            <Button class="CloseButton" onactivate="ToggleDesriptionPanel()" hittest="true"/>
+            <DOTASettingsCheckbox 
+                id="NeverShowAgainCheckbox"
+                convar="dota_muerta_release_dont_show_ingame_event_description" 
+                text="#DOTA_MuertaReleaseEvent_NeverShowInGameEventDescriptionAgain" />
+        </Panel>
+	</DOTAHUDMuertaReleaseEvent>
+</root>

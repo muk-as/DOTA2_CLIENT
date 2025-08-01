@@ -1,0 +1,180 @@
+DOTAShowcaseAdminReportRollupsPage {
+	width: 100%;
+	height: 100%;
+	padding-top: 140px;
+	padding-bottom: 140px;
+}
+
+.PageContents {
+	flow-children: down;
+	horizontal-align: center;
+	width: 1600px;
+	
+	.PageTitle {
+		font-size: 32px;
+		color: white;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+}
+
+#RollupsContainer {
+	flow-children: right;
+
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+
+	> .AsyncSuccessContainer {
+		flow-children: right;
+	}
+
+	#RollupList {
+		width: 350px;
+		height: 100%;
+		flow-children: down;
+		overflow: squish scroll;
+	}
+}
+
+.RollupInfo {
+	flow-children: down;
+	background-color: #ffffff04;
+	margin-bottom: 8px;
+	padding: 4px 8px;
+	width: 100%;
+	border: 2px solid transparent;
+
+	&:hover {
+		brightness: 2.0;
+	}
+	&:active {
+		brightness: 1.5;
+	}
+	&:selected {
+		border: 2px solid #666;
+	}
+
+	.RollupID {
+		text-transform: uppercase;
+		color: #ccc;
+		letter-spacing: 2px;
+	}
+
+	.RollupStart, .RollupEnd {
+		font-size: 16px;
+		color: #666;
+	}
+}
+
+
+
+.RollupContents {
+	width: fill-parent-flow( 1.0 );
+	margin-left: 8px;
+	height: 100%;
+}
+
+.NoRollupSelected {
+	.HasSelectedRollup & {
+		visibility: collapse;
+	}
+}
+
+.RollupEntriesContainer {
+	width: 100%;
+	height: 100%;
+
+	visibility: collapse;
+
+	.HasSelectedRollup & {
+		visibility: visible;
+	}
+
+}
+
+
+.NoEntriesLabel {
+	.HasRollupEntries & { 
+		visibility: collapse;
+	}
+}
+
+
+.EntriesTable {
+	flow-children: down;
+	width: 100%;
+	visibility: collapse;
+
+	.HasRollupEntries & {
+		visibility: visible;
+	}
+
+	.RollupEntriesHeader {
+		flow-children: right;
+
+		Label {
+			color: #999;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			padding-left: 8px;
+		}
+	}
+
+	.NameColumn {
+		width: 200px;
+	}
+	.TypeColumn {
+		width: 200px;
+	}
+	.ReportCountColumn {
+		width: 200px;
+	}
+	.ReviewColumn {
+		               
+	}
+
+	#RollupEntriesList {
+		flow-children: down;
+		overflow: squish scroll;
+	}
+}
+
+
+.RollupEntry {
+	flow-children: right;
+	background-color: #ffffff03;
+	margin-bottom: 8px;
+	height: 46px;
+
+	.Column {
+		height: 100%;
+	}
+
+	.EntryData {
+		vertical-align: middle;
+		padding-left: 8px;
+	}
+
+	.NameColumn {
+		flow-children: right;
+		padding-left: 8px;
+
+		#AvatarImage {
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+		}
+	}
+
+	#ReviewButton {
+		ui-scale: 90%;
+		padding: 2px 8px;
+		min-width: 0px;
+		vertical-align: middle;
+
+		Label {
+		  text-align: center;
+		}
+	}
+}

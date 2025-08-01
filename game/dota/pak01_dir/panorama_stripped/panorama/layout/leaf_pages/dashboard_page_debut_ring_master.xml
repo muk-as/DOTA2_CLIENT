@@ -1,0 +1,88 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_styles.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_ring_master.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/common/async.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/leaf_pages/dashboard_page_debut_ring_master.ts" />
+	</scripts>
+
+	<snippets>
+		<snippet name="ModelSnippet">
+			<Panel>
+				<DOTAScenePanel id="ModelBackground" class= "Initialize" map="backgrounds/hero_showcase_ringmaster" camera="hero_camera" light="hero_light" renderdeferred="true" rotateonhover="true" rotateonmousemove="true" yawmin="0" yawmax="0" pitchmin="0" pitchmax="0" antialias="true" particleonly="false" hittest="false"/>
+    				                                                                                                                                                                                                                                                                                                                                                    
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAReferencePage class="DashboardPage" onnavigatedto="StartRingmasterDebut()" onnavigatedaway="EndRingmasterDebut()" oncancel="DOTAShowHomePage()" onload="LoadRingmasterLogo()">
+
+
+		<Panel id="MainContainer" hittest="false"  >
+			<Panel id="ModelContainer" hittest="false"/>
+			<Panel id="ControlButtonsContainer">
+			                                                                                                                 
+			</Panel>
+			<Panel id="BottomGradient" hittest="false"/>
+			<Panel id="DebutInformation" hittest="false">
+				<Panel id="InformationBody" class="TopBottomFlow" hittest="false">
+					<Panel id="TitleContainer" hittest="false">
+						<Panel class="Title" hittest="false" />
+					</Panel>
+					
+					
+					<Panel id="ScrollPanel" class="TopBottomFlow">
+					<Panel id="HeroSubtitle">
+						<Label class="RoleLabel" id="Ranged" text="#DOTA_AttackCapability_Ranged"/>
+						<Label class="RoleLabel" text="#DOTA_HeroRole_Support" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Support )" onmouseout="UIHideTextTooltip()"/>
+						<Label class="RoleLabel" text="#DOTA_HeroRole_Disabler" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Disabler )" onmouseout="UIHideTextTooltip()"/>
+						<Label class="RoleLabel" text="#DOTA_HeroRole_Escape" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Escape )" onmouseout="UIHideTextTooltip()"/>
+					</Panel>
+					<Panel id="AbilityIcons">
+						<DOTAAbilityImage abilityname="ringmaster_dark_carnival_souvenirs" showtooltip="true" />
+						<DOTAAbilityImage abilityname="ringmaster_tame_the_beasts" showtooltip="true" />
+						<DOTAAbilityImage abilityname="ringmaster_the_box" showtooltip="true"/>
+						<DOTAAbilityImage abilityname="ringmaster_impalement" showtooltip="true"/>
+						<DOTAAbilityImage abilityname="ringmaster_wheel" showtooltip="true"/>
+						<Panel id="Talent"  class="StatBranch" onmouseover="DOTAHUDShowHeroStatBranchTooltip( 131, 0 )" onmouseout="DOTAHUDHideStatBranchTooltip()"/>
+						<Panel id="ScepterDetails"  class="ScepterDetails" onmouseover="DOTAHUDShowAghsStatusTooltip( 131, 0 )" onmouseout="DOTAHUDHideAghsStatusTooltip()"/>
+					</Panel>
+					<Panel id="SouvenirHeader">
+						<Label class="SouvenirLabel" text="#Debut_Ringmaster_SouvenirHeader"/>
+					</Panel>
+					<Panel id="SouvenirAbilityIcons">
+						<DOTAAbilityImage abilityname="ringmaster_funhouse_mirror" showtooltip="true" />
+						<DOTAAbilityImage abilityname="ringmaster_strongman_tonic" showtooltip="true"/>
+						<DOTAAbilityImage abilityname="ringmaster_whoopee_cushion" showtooltip="true"/>
+					</Panel>
+						
+					<Label id="HeroLore" text="#Debut_ring_master_Lore" hittest="false"/>
+					
+
+					</Panel>
+					<Panel id="HeroButtons">
+						<Panel id="DemoButtons">
+							<DemoModeButton id="DemoHeroButton" category="#npc_dota_hero_ringmaster" onactivate="DOTADemoHero( npc_dota_hero_ringmaster, 0)" />
+							<TextButton class="DefaultButton FixedSize" onactivate="DOTAGoToHeroPage( 131 );" text="#DOTA_HeroDemo_Button_ToLoadout" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="LogoFull" hittest="none" />
+				                                  
+				          
+
+			</Panel>
+			<Button class="CloseButton" onactivate="DOTAShowHomePage()"/>
+		</Panel>
+
+	</DOTAReferencePage>
+</root>

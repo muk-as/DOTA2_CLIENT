@@ -1,0 +1,361 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_rewards.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="ChatWheelRewardMessage">
+			<Panel class="ChatWheelMessage">
+				<Button id="ChatWheelMessageSoundButton" >
+					<Panel class="ChatWheelMessageSoundIcon"/>
+					<Label class="ChatWheelMessageAll" text="#dota_all_chat_label" />
+					<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+				</Button>
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelReward">
+			<Panel class="ChatWheelReward">
+				<Panel id="ChatWheelMessages">
+					                                                      
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTABPInternational2024RewardsPage class="DashboardPage FullDashboardPage" dashboardclass="International2024BattlePassPage" onactivate="DOTAInternational2024RewardsBackgroundClick()">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="BPSharedPageContainer" >
+			<Image class="CircusBackground" src="file://{images}/compendium/international2024/rewards/circus_background_green.png" scaling="stretch-to-fit-preserve-aspect" />
+			<DOTAScenePanel class="SpotlightParticles" map="scenes/international_2024/international_2024_dashboard_background" camera="camera_dashboard" hittest="false" renderdeferred="false" particleonly="false"/>
+			<Panel class="TopContainer">
+				<Panel class="DescriptionContainer">
+					<Label class="BPTitle" text="#DOTA_International2024_Rewards_Title"/>
+					<Label class="RewardsDescription" text="#DOTA_International2024_Rewards_Introduction"/>
+				</Panel>
+			</Panel>
+
+			<Panel class="RewardsContainer2024">
+				<DOTAParticleScenePanel class="SmokeParticles" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Image class="RewardsPlatform" src="file://{images}/compendium/international2024/rewards/rewards_platform.png" scaling="stretch-to-fit-preserve-aspect" hittest="false "/>
+
+				<Panel class="RewardsList" hittest="false">
+
+					<Panel class="RewardsLeft" hittest="false">
+
+						<Panel class="RewardsRow Top">
+
+							                             
+							<Panel id="Reward_fantasy_and_bingo" class="RewardSmall RewardItem Small" onactivate="" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_FantasyBingo_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>											
+								<Image id="FantasyBingoRewardImage" class="RewardImage" src="file://{images}/compendium/international2024/fantasy_bingo_tokens_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2024_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(fantasy_and_bingo, 0)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_fantasy_and_bingo" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_fantasy_and_bingo_reward_progress}/{d:total_fantasy_and_bingo_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(fantasy_and_bingo, 0)" />
+							</Panel>
+
+							                             
+							<Panel id="Reward_teamloadingscreen" class="RewardMedium RewardItem Medium HasPreview" onactivate="DOTAShowTreasurePage( 32139 )" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_TeamLoadingScreen_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<DOTAUIEconSetPreview itemdef="32139" id="RewardTeamLoadScreens" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+								<Panel class="RewardCount">
+									<Label text="{d:current_redemption_teamloadingscreen}/{d:max_redemption_teamloadingscreen}"/>
+								</Panel>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(teamloadingscreen, 25597)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_teamloadingscreen" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_teamloadingscreen_reward_progress}/{d:total_teamloadingscreen_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(teamloadingscreen, 25597)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+							                                    
+							<Panel id="Reward_legacychatwheel" class="RewardLarge RewardItem Large" onactivate="" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_ChatLine_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<Image class="RewardImage" src="file://{images}/compendium/international2024/rewards/chat_perma.psd" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_legacychatwheel_reward_progress}/{d:total_legacychatwheel_reward_progress}"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_legacychatwheel" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel id="ChatWheelLinesContainer">
+									                              
+								</Panel>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(legacychatwheel, 0)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )" >
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(legacychatwheel, 0)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+						</Panel>
+
+						<Panel class="RewardsRow Bottom" hittest="false">
+
+							                                   
+							<Panel id="Reward_tiloadingscreen" class="RewardMedium RewardItem Medium HasPreview" onactivate="DOTAShowTreasurePage( 32042 )" itemstyles="0" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_CompendiumLoadingScreen_Tooltip )" onmouseout="UIHideTextTooltip()" >
+								<Panel class="RewardShadow" hittest="false"/>
+								<DOTAUIEconSetPreview itemdef="32042" id="RewardTILoadScreens" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+								<Panel class="RewardCount">
+									<Label text="{d:current_redemption_tiloadingscreen}/{d:max_redemption_tiloadingscreen}"/>
+								</Panel>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(tiloadingscreen, 32042)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_tiloadingscreen" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_tiloadingscreen_reward_progress}/{d:total_tiloadingscreen_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(tiloadingscreen, 32042)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+							              
+							<Panel id="Reward_tpfx" class="RewardLarge RewardItem Large" onactivate="" hittest="false" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_TPFX_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<Carousel id="TPfxCarousel" hittest="false" hittestchildren="false">
+									<Panel class="TPfxCarouselItem" >
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_1" map="scenes/compendium/teleport_fx_ti13_lvl_1" hittest="false" particleonly="false" />
+									</Panel>
+									<Panel class="TPfxCarouselItem" >
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_2" map="scenes/compendium/teleport_fx_ti13_lvl_2" hittest="false" particleonly="false" />
+									</Panel>
+									<Panel class="TPfxCarouselItem" >
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_3" map="scenes/compendium/teleport_fx_ti13_lvl_3" hittest="false" particleonly="false" />
+									</Panel>
+								</Carousel>
+								<Panel class="HoverHitbox" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_TPFX_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+									
+								</Panel>
+								<Panel class="RewardCount">
+									<Label text="{d:current_redemption_tpfx}/{d:max_redemption_tpfx}"/>
+								</Panel>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(tpfx, 0)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_tpfx" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_tpfx_reward_progress}/{d:total_tpfx_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<CarouselNav id="TPfxCarouselNav" class="RewardCarouselNav" carouselid="TPfxCarousel" />
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(tpfx, 0)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+						</Panel>
+
+					</Panel>
+
+					              
+					<Panel id="Reward_aegis" class="RewardBiggest RewardItem HasPreview" onactivate="DOTAShowItemDefPage(32138)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_AegisReplica_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+						<Panel class="RewardShadow" hittest="false"/>
+						<DOTAScenePanel id="Aegis" class="RewardModelPreview" map="scenes/battlepass_ti13/aegis_rotate" camera="camera_1" hittest="false" antialias="true" particleonly="false"/>
+						<Panel id="CenterBoostMessage" class="ApplyBoosterImage AegisBoosterImage" hittest="false" hittestchildren="false">
+							<Panel class="ApplyBoosterImageIcon" hittest="false" hittestchildren="false"/>
+							<Label html="true" class="ApplyBoosterLabel" hittest="false" text="#DOTA_International2024_Rewards_CenterBooster_Tip"/>
+						</Panel>
+						<Panel class="ProgressBar">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_aegis" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_aegis_reward_progress}/{d:total_aegis_reward_progress}"/>
+						</Panel>
+						<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+						<DOTAInternational2024Button class="RegisterButton DarkGreen Small" text="#DOTA_TI10BP_Lvl1000_Register" onactivate="ExternalBrowserGoToURL( https://dota2.cmdvault.com/oauth/login/ )" />
+						<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<DOTAInternational2024Button class="ClaimButton Gold Wide" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(aegis, 32138)" />
+						<Panel class="HitBlocker" hittest="true"/>
+					</Panel>
+
+					<Panel class="RewardsRight" hittest="false">
+						
+						<Panel class="RewardsRow Top">
+
+							            
+							<Panel id="Reward_hud" class="RewardLarge RewardItem Large HasPreview" onactivate="DOTAShowItemDefPage(30324)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_HUD_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<Image class="RewardImage" src="file://{images}/compendium/international2024/rewards/hud_icon.psd" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(hud, 30324)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_hud" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_hud_reward_progress}/{d:total_hud_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(hud, 30324)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+							                        
+							<Panel id="Reward_teamsticker" class="RewardMedium RewardItem Medium HasPreview" onactivate="DOTAShowTreasurePage(31603)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_TeamSticker_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<DOTAUIEconSetPreview itemdef="31603" id="RewardTeamSticker" class="RewardModelPreview" drawbackground="false" activity-modifier="front_page" displaymode="loadout_small" require-composition-layer="true" suppress-intro-effects="true" hittestchildren="false" />	
+								<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2024_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(teamsticker, 31603)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_teamsticker" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_teamsticker_reward_progress}/{d:total_teamsticker_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(teamsticker, 31603)" />
+								<Panel class="HitBlocker" hittest="true"/>
+							</Panel>
+
+							                          
+							<Panel id="Reward_playersticker" class="RewardMedium RewardItem Small HasPreview" onactivate="DOTAShowTreasurePage(31611)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_PlayerSticker_TooltipDescription )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<DOTAUIEconSetPreview itemdef="31611" id="RewardPlayerSticker" class="RewardModelPreview" drawbackground="false" activity-modifier="front_page" rotation="-22" displaymode="loadout_small" suppress-intro-effects="true"  />
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(playersticker, 31611)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+									<Panel class="ProgressBarBase"/>
+									<Panel id="ProgressBar_playersticker" class="ProgressBarProgress"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_playersticker_reward_progress}/{d:total_playersticker_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(playersticker, 31611)" />
+							</Panel>
+
+						</Panel>
+
+						<Panel class="RewardsRow Bottom" hittest="false">
+
+							                      
+							<Panel id="Reward_versusscreen" class="RewardLarge RewardItem Large HasPreview" hittest="false">
+								<Panel class="RewardShadow" hittest="false"/>
+								<Image class="RewardImage" src="file://{images}/compendium/international2024/rewards/versus_screen_2024_preview.png" scaling="stretch-to-fit-preserve-aspect" hittest="false"/>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_versusscreen_reward_progress}/{d:total_versusscreen_reward_progress}"/>
+								</Panel>
+								<Panel class="MouseHitbox" onactivate="DOTAShowItemDefPage(30323)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_VersusScreen_TooltipDescription )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(versusscreen, 30323)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(versusscreen, 30323)" />
+							</Panel>
+
+							                     
+							<Panel id="Reward_effigy" class="RewardSmall RewardItem Medium HasPreview" onactivate="DOTAShowItemDefPage(32114)" onmouseover="UIShowTextTooltip( #DOTA_Compendium2024_EffigyBlock_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Panel class="RewardShadow" hittest="false"/>
+								<Image class="RewardImage" src="file://{images}/compendium/international2024/rewards/effigy_2024_preview.png" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2024_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+								<Panel class="ApplyBoosterImage" onactivate="DOTAInternational2024RewardsClaimReward(effigy, 32114)" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+									<Panel class="ApplyBoosterImageIcon"/>
+								</Panel>
+								<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+									<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+									<Label class="ProgressNumber" text="{s:current_effigy_reward_progress}/{d:total_effigy_reward_progress}"/>
+								</Panel>
+								<Label class="AllClaimedContainer" text="#DOTA_Compendium_Rewards_All_Claimed"/>
+								<DOTAParticleScenePanel class="ClaimParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 200" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<DOTAInternational2024Button class="ClaimButton Gold Small" text="{s:claim_button_text}" onactivate="DOTAInternational2024RewardsClaimReward(effigy, 32114)" />
+							</Panel>
+
+						</Panel>
+					</Panel>
+				</Panel>				
+			</Panel>
+
+			<Panel class="BottomContainer" hittest="false">
+				<Label class="BodySmall PurchaseEndDateNote" text="#DOTA_Compendium_EndDate_Purchase"/>
+				<Panel id="RewardsButtons" hittest="false">
+					<Panel id="PurchaseLevelsButton" class="ItemContainer" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2024, BattlePass )">
+						<Button id="ItemPurchaseImage" class="ItemImage" >
+						</Button>
+						<Label class="RewardButtonLabel" text="#DOTA_International2024_Rewards_PurchaseLevels"/>
+					</Panel>
+					<Panel id="ApplyLevelsButton" class="ItemContainer" onactivate="DOTAInternational2024RewardsClaimLevels()" onmouseover="UIShowTextTooltip( #DOTA_International2024_Rewards_ApplyLevels_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemLevelsImage" class="ItemImage" >
+						</Button>
+						<Label class="RewardButtonLabel" text="#DOTA_International2024_Rewards_ApplyLevels"/>
+						<Label class="ItemCount" text="{d:available_levels}" />
+					</Panel>
+					<Panel id="ApplyBoostersButton" class="ItemContainer" onactivate="DOTAInternational2024RewardsApplyBoosters()" onmouseover="UIShowTextTooltip( #DOTA_International2024_Rewards_ApplyBoosters_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemBoosterImage" class="ItemImage" >
+						</Button>
+						<Label class="RewardButtonLabel" text="#DOTA_International2024_Rewards_ApplyBoosters"/>
+						<Label class="ItemCount" text="{d:available_boosters}" />
+					</Panel>
+				</Panel>
+				<Panel class="HowItWorksContainer">
+					<Panel class="DashDotDivider HowItWorksTitleContainer">
+						<Panel class="Dash Left"/>
+						<Label class="HowItWorksTitle TitleSmall" text="#DOTA_HowItWorks"/>
+						<Panel class="Dash Right"/>
+					</Panel>
+					<Label class="HowItWorksDescription" text="#DOTA_International2024_Rewards_Description"/>
+					<DOTAInternational2024Button class="LearnMoreButton DarkGreen Small" text="#DOTA_LearnMore" onactivate="UIShowCustomLayoutPopup( International2024RewardsHelp, 'file://{resources}/layout/battle_pass/international2024/international2024_rewards_help.xml' )" />
+				</Panel>
+			</Panel>
+
+			<Panel class="Curtains" hittest="false" hittestchildren="false">
+				<Image class="Curtain Left" src="file://{images}/compendium/international2024/rewards/curtain.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Image class="Curtain Right" src="file://{images}/compendium/international2024/rewards/curtain.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+			</Panel>
+		</Panel>
+	</DOTABPInternational2024RewardsPage>
+</root>

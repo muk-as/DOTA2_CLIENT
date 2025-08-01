@@ -1,0 +1,192 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_bingo.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="EmptySquare">
+			<Panel class="EmptySquare" />
+		</snippet>
+
+		<snippet name="BingoSquare">
+			<Panel class="BingoSquare">
+				<Panel class="BingoSquareContainer" id="BingoSquareContainer" >
+					<DOTAScenePanel class="ClaimableFX" hittest="false" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+					<Panel class="LevelPips">
+						<Panel class="Pip Pip1"/>
+						<Panel class="Pip Pip2"/>
+						<Panel class="Pip Pip3"/>
+					</Panel>
+					<Panel class="DebugStat">
+						<Label class="DebugID" text="{d:debug_stat_id}"/>
+						<Label class="DebugName" text="{s:debug_stat_name}"/>
+					</Panel>
+					<Label class="Desc" text="{s:stat_name}" />
+					<Panel class="StatusContainer">
+						<Panel class="StatusContents">
+							<Label class="Status" text="{d:cur_value}"/>
+							<Label class ="ValueDivider" text="/" />
+							<Label class="Status MaxValue" text="{d:max_value}" />
+						</Panel>
+					</Panel>
+					<Image class="CompletedCheckIcon" src="file://{images}/control_icons/24px/check_corner_topright.svg" />
+				</Panel>
+				<Panel class="CompletedBorder" hittest="false" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardSquare">
+			<Panel class="RewardSquare">
+				<Panel class="RewardContainer" id="RewardContainer">
+					<Panel class="DescContainer">
+						                                            
+						<Panel class="Reward">
+							<Panel class="PointIcon" />
+							<Label class="RewardPoints PointsValueLabel" text="{d:point_value}" />
+							<Panel class="RewardClaimedIcon" />
+						</Panel>
+					</Panel>
+					<Panel class="ClaimArea" >
+						<Panel class="ClaimBingoTextContainer" >
+							<Label class="ClaimBingoText" text="#DOTA_Bingo_ClaimBingoTitle" />
+						</Panel>
+						<Button class="ClaimButton" id="ClaimRowButton">
+							<Label class="ClaimText" text="#DOTA_Bingo_ClaimBingoText" />
+							<Label class="PointsLine">
+								<Panel class="PointIcon" />
+								<Label class="RewardPoints" text="{d:point_value}" />
+							</Label>
+						</Button>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTABPInternational2024BingoPage class="DashboardPage FullDashboardPage" dashboardclass="International2024BattlePassPage">
+		                                                                                                                                                           
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="BPSharedPageContainer" >
+			<Panel class="BingoOuter" >
+				<Panel class="BPSharedHeaderContainer">
+					<Label class="BPTitle" text="#DOTA_Bingo_Title"/>					
+					<Panel class="StageTabsContainer">
+						<TabButton id="GroupStageTab" class="StageTab FixedWidth" group="bingo_tabs" text="" selected="true" onactivate="DOTABingo2024ShowTab(0)">
+							<Panel class="TabContents">
+								<Panel class="TabBorder"/>
+								<Panel class="StageTabLeft">
+									<Label class="StageName" text="#DOTA_International2024_GroupStage" />
+									<DOTACountdown id="AvailableCountdown" class="LeftRightFlow" server-time="true">
+										<Label class="StageLock" text="#DOTA_BingoAvailableCountdown" />
+									</DOTACountdown>
+								</Panel>
+								<Panel class="StageTabRight">
+								</Panel>
+							</Panel>
+						</TabButton>
+						<TabButton id="PlayoffsTab" class="StageTab FixedWidth" group="bingo_tabs" onactivate="DOTABingo2024ShowTab(1)">
+							<Panel class="TabContents">
+								<Panel class="TabBorder"/>
+								<Panel class="StageTabLeft">
+									<Label class="StageName" text="#DOTA_International2024_Playoffs" />
+									<DOTACountdown id="AvailableCountdown" class="LeftRightFlow" server-time="true">
+										<Label class="StageLock" text="#DOTA_BingoAvailableCountdown" />
+									</DOTACountdown>
+								</Panel>
+								<Panel class="StageTabRight">
+								</Panel>
+							</Panel>
+						</TabButton>
+						<TabButton id="MainEventTab" class="StageTab FixedWidth" group="bingo_tabs" onactivate="DOTABingo2024ShowTab(2)">
+							<Panel class="TabContents">
+								<Panel class="TabBorder"/>
+								<Panel class="StageTabLeft">
+									<Label class="StageName" text="#DOTA_International2024_MainEvent" />
+									<DOTACountdown id="AvailableCountdown" class="LeftRightFlow" server-time="true">
+										<Label class="StageLock" text="#DOTA_BingoAvailableCountdown" />
+									</DOTACountdown>
+								</Panel>
+								<Panel class="StageTabRight">
+								</Panel>
+							</Panel>
+						</TabButton>
+					</Panel>
+					<TextButton id="DebugButton" class="PopupButton Red" text="Debug" unlocalized="true" onactivate="DOTABingo2024ShowDebugContextMenu()" />
+					<Panel id="TotalWinnings" >
+						<Label class="WinningsText LabelMedium LighterGreyText" text="#DOTA_Bingo_TotalWinnings" />
+						<Panel class="PointsArea">
+							<Panel class="PointIcon" />
+							<Label class="PointsValue LabelExtraLarge PointsValueLabel" text="{s:total_winnings}" />
+							<DOTAScenePanel id="PointsParticlesOverlay" camera="shot_camera" map="scenes/dota_plus_card_fx" hittest="false" particleonly="true"/>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="MainContents">
+					<Image class="BingoBackground" src="file://{images}/compendium/international2024/bingo_background.png" scaling="stretch-to-fit-preserve-aspect" />
+					                                                                                                                                                                                                                                                                                              
+					<Panel class="LeftSide">
+						<Panel class="Instructions">
+							<Label class="HowToPlayDescription" text="#DOTA_Bingo_HowToPlay_Line1" />
+							<Label class="HowToPlayDescription" text="#DOTA_Bingo_HowToPlay_Line2" />
+							<Label class="HowToPlayDescription" text="#DOTA_Bingo_HowToPlay_Line3" />
+						</Panel>
+						<Panel class="ActionsContainer">
+							<Panel class="Ornament Top" />
+							<Panel class="Actions">					
+								                                                                                                                             
+								<Panel class="DashDotDivider HowItWorksTitleContainer">
+									<Panel class="Dash Left"/>
+									<Label class="TitleSmall TokensTitle" text="#DOTA_Bingo_Tokens"/>
+									<Panel class="Dash Right"/>
+								</Panel>
+								<Panel id="TokenCountContainer" class="TokenCountContainer">
+									<Image class="TokenImage" src="file://{images}/compendium/international2024/bingo_tokens_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="Count" text="#DOTA_Bingo_TokenCount" />
+								</Panel>
+								<Label text="#DOTA_Bingo_HowToPlay_Line4" class="TokensExplaination" />
+								<Panel class="ActionRow">
+									<Button id="ShuffleCardButton" class="TokenActionButton ButtonPrimary TI24LightGreen" onactivate="DOTAInternational2024BingoShuffleCard()" onmouseover="UIShowTextTooltip( '#DOTA_Bingo_Action_Shuffle_Description' )" onmouseout="UIHideTextTooltip()">
+										<Label text="#DOTA_Bingo_Action_Shuffle"/>
+									</Button>
+									<Image class="TokenImage" src="file://{images}/compendium/international2024/bingo_tokens_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="TokenCost BodyMedium" text="#DOTA_Bingo_Action_Shuffle_Cost"/>
+									                                                                                                                                                           
+								</Panel>
+								<Panel class="ActionRow">
+									<Button id="RerollSquareButton" class="TokenActionButton ButtonPrimary TI24LightGreen" onactivate="DOTAInternational2024BingoRerollSquare()" onmouseover="UIShowTextTooltip( '#DOTA_Bingo_Action_RerollSquare_Description' )" onmouseout="UIHideTextTooltip()">
+										<Label class="MainText" text="#DOTA_Bingo_Action_RerollSquare"/>
+										<Label class="CancelText" text="#DOTA_Bingo_Action_Cancel"/>
+									</Button>
+									<Image class="TokenImage" src="file://{images}/compendium/international2024/bingo_tokens_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="TokenCost BodyMedium" text="#DOTA_Bingo_Action_RerollSquare_Cost"/>
+									                                                                                                                                                                
+								</Panel>
+								<Panel class="ActionRow">
+									<Button id="UpgradeSquareButton" class="TokenActionButton ButtonPrimary TI24LightGreen" onactivate="DOTAInternational2024BingoUpgradeSquare()" onmouseover="UIShowTextTooltip( '#DOTA_Bingo_Action_UpgradeSquare_Description' )" onmouseout="UIHideTextTooltip()">
+										<Label class="MainText" text="#DOTA_Bingo_Action_UpgradeSquare"/>
+										<Label class="CancelText" text="#DOTA_Bingo_Action_Cancel"/>
+									</Button>
+									<Image class="TokenImage" src="file://{images}/compendium/international2024/bingo_tokens_group.psd" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="TokenCost BodyMedium" text="#DOTA_Bingo_Action_UpgradeSquare_Cost"/>
+									                                                                                                                                                                 
+								</Panel>
+							</Panel>
+							<Panel class="Ornament Bottom" />
+						</Panel>
+					</Panel>
+					<Panel id="BingoCard" >
+						                
+					</Panel>
+					<Panel class ="MissingDataSpinnerContainer" hittest="false">
+						<Panel class="Spinner MissingDataSpinner" hittest="false" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTABPInternational2024BingoPage>
+</root>

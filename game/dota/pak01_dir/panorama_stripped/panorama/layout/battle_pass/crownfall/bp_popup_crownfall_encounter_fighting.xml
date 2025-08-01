@@ -1,0 +1,38 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_fighting.css" />
+	</styles>
+
+	<Panel class="PopupPanel FightingGame Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterFightingExit()">
+		<Panel class="MainContents">
+			<Panel id="FightingGamePanelContainer">
+				<DOTAFightingGamePanel id="FightingGamePanel" />
+			</Panel>
+			<DOTAFightingGameMenu id="FightingGameMenu" hittest="false" />
+			<Panel class="VisualNovelOuterContainer">
+				<Panel class="VisualNovelBackground"/>
+				<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+					<DOTACrownfallVisualNovel id="VisualNovel" />
+				</Panel>
+			</Panel>
+			<Panel class = "MissingDataSpinnerContainer" hittest="false">
+				<Panel class="Spinner MissingDataSpinner" hittest="false" />
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="DOTAEncounterFightingExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+			<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+		</Panel>
+		<Panel id="ResizeButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="DOTAEncounterFightingResize()" onmouseover="AddStyle( ResizeButtonContainer, Hovered );" onmouseout="RemoveStyle( ResizeButtonContainer, Hovered );"/>
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/full_screen.svg" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

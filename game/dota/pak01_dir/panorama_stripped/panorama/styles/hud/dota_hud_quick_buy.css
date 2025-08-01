@@ -1,0 +1,956 @@
+DOTAQuickBuy
+{
+	context-menu-position: top;
+}
+
+.potential_drop_target #QuickBuyRows
+{
+	                                                   
+}
+
+.GoldActive #GoldLabel
+{
+  	               
+}
+
+.AspectRatio4x3 .Legacy #GoldIcon
+{
+	width: 26px;
+	height: 26px;
+	margin-left: 3px;
+}
+
+.DropTarget {
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(0, 183, 255, 0.6);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	border-style: dashed;
+	border-radius: 4px;
+	margin: 4px;
+	width: 178px;
+	background-color: rgba(0, 183, 255, 0.02);
+
+	transition-property: opacity;
+	transition-duration: 0.1s;
+
+	opacity: 0;
+
+	.HUDFlipped & {
+		margin-left: 55px;
+	}
+
+	.ShowHint & {
+		width: 230px;
+	}
+
+	.potential_drop_target & {
+		opacity: 1;
+		transition-duration: 0s;	
+	}
+}
+
+.QuickBuySlot {
+	.QuickBuySlotBg {
+		width: 38px;
+		height: 28px;
+		horizontal-align: center;
+		border: 1px solid rgba(0, 183, 255, 0.4);
+		box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+		border-radius: 3px;
+
+		visibility: collapse;
+	}
+
+	.QuickBuySlotDropTarget {
+		width: 32px;
+		height: 22px;
+		horizontal-align: center;
+		vertical-align: center;
+		                     
+		padding: 5px;
+		background-color: rgba(0, 0, 0, 0.1);
+		                                             
+		brightness: 0.6;
+		img-shadow: 0px 1px 6px black;
+		border: 1px solid rgba(0, 183, 255, 0.6);
+		box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+		border-style: dashed;
+		border-radius: 4px;
+
+		transition-duration: 0.1s;
+		transition-property: background-color, border, brightness;
+
+		visibility: collapse;
+
+		&.HasItem {
+			.QuickBuyItemDragging & {
+				visibility: visible;
+			}
+		}
+
+		&.QuickBuyDraggingOver {
+			width: 38px;
+			height: 28px;
+		}
+	}
+}
+
+.CtrlPressed.potential_drop_target .QuickBuySlotBg {
+	visibility: visible;
+}
+
+.AspectRatio4x3 .Legacy #GoldLabel
+{
+	font-size: 16px;
+	min-width: 48px;
+	margin-top: 3px;
+}
+
+#QuickBuyRowsBuybackOverlay {
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	
+	border: 1.5px solid rgba(255, 255, 255, 1);
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 2px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #a86700 ), color-stop( 0.5, #ffd932 ), to( #a86700 ) );
+	box-shadow: inset 0px 0.5px 1px #ffe55538;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #ffaa000b ), to( #a8670000 ) );
+
+	visibility: collapse;
+
+	.CanAffordBuybackAndQuickbuy & {
+		visibility: visible;
+	}
+}
+
+#ShopButtonBuybackOverlay {
+	width: 100%;
+	height: 42px;
+	vertical-align: center;
+	z-index: -1;
+
+	border: 1.5px solid rgba(255, 255, 255, 1);
+	border-radius: 3px;
+	border-left: 0px;
+	border-right: 0px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #a86700 ), color-stop( 0.5, #ffd932 ), to( #a86700 ) );
+	box-shadow: inset 0px 0.5px 1px #ffe55538;
+	background-color: black;
+
+	visibility: collapse;
+}
+
+DOTAQuickBuy:not(.BuybackDisabled) #ShopButtonBuybackOverlay
+{
+	visibility: visible;
+}
+
+.ShopButtonContainer {
+	vertical-align: center;
+	margin-left: 8px;
+	height: fit-children;
+
+	&.HUDFlipped & {
+	}
+}
+
+#ShopButton
+{
+	background-image: url( "file://{images}/hud/hudv2_shopbutton.png" );
+	background-size: 100% 100%;
+	width: 100px;
+	height: 36px;
+	vertical-align: center;
+	horizontal-align: left;
+}
+
+.ShopInRange #ShopButton
+{
+	background-image: url( "file://{images}/hud/hudv2_shopbutton_lit.png" );
+}
+
+#ShopButton:hover
+{
+	brightness: 2.0;
+}
+
+#ShopButton #GoldLabel
+{
+	
+}
+
+#GoldIcon
+{
+	background-image: url( "file://{images}/hud/reborn/gold_small.psd" );
+	background-size: 100% 100%;
+	width: 26px;
+	height: 26px;
+	horizontal-align: right;
+	margin-right: 8px;
+	vertical-align: center;
+	margin-bottom: 2px;
+}
+
+#GoldLabel
+{
+	
+}
+
+#ShopHotkey
+{
+	background-color: #000000CF;
+	white-space: nowrap;
+	vertical-align: top;
+	horizontal-align: left;
+	padding: 1px 2px 0px 2px;
+}
+
+#ShopHotkeyLabel
+{
+	font-size: 14px;
+	horizontal-align: center;
+	text-align: center;
+	margin: 0px 0px -2px 0px;
+	font-weight: normal;
+	color: white;
+	text-shadow: 1px 1px 2px 2 #000000;
+	letter-spacing: 1px;
+}
+
+.AspectRatio4x3 .Legacy #ShopButton Label
+{
+	font-size: 17px;
+	margin-top: 3px;
+}
+
+.AspectRatio4x3 .Legacy #ShopButton
+{
+	width: 80px;
+	height: 26px;
+	margin-left: 0px;
+	margin-top: 31px;
+}
+
+.HUDFlipped .Legacy #ShopButton
+{
+	margin-left: 0px;
+}
+
+.AspectRatio4x3.HUDFlipped .Legacy #ShopButton
+{
+	margin-left: 187px;
+}
+
+#courier
+{
+	vertical-align: center;
+	width: 100%;
+	height: 60px;
+	margin-left: 114px;
+}
+
+#QuickBuyRows
+{
+	margin-bottom: 60px;
+	width: 100%;
+	min-height: 44px;
+	max-height: 88px;
+	background-color: #252627ac;
+	background-img-opacity: 0.5;
+	box-shadow: inset 0px -1px 4px -1px rgba(0, 0, 0, 0.5);
+
+	margin-left: 1px;
+	margin-right: 0px;
+
+	.HUDFlipped & {
+		margin-left: 0px;
+		margin-right: 1px;
+	}
+}
+
+                                    
+.HIDE_INVENTORY_QUICKBUY #QuickBuyRows
+{
+	visibility: collapse;
+}
+
+.HIDE_INVENTORY_COURIER #courier
+{
+	visibility: collapse;
+}
+
+.HIDE_INVENTORY_GOLD #GoldLabel,
+.HIDE_INVENTORY_GOLD #GoldIcon
+{
+	visibility: collapse;
+}
+
+.AspectRatio4x3 .Legacy #QuickBuyRows
+{
+	margin-top: 10px;
+	horizontal-align: right;
+	margin-right: 9px;
+}
+
+.AspectRatio4x3.HUDFlipped .Legacy #QuickBuyRows
+{
+	margin-right: 0px;
+	margin-left: 22px;
+	horizontal-align: left;
+}
+
+.CanHideRow .QuickBuyRow.Empty
+{
+	                                                                           
+	                                                 
+	visibility: collapse;
+}
+
+.ShowHint .QuickBuyRow
+{
+	visibility: collapse;
+}
+
+
+#Hint
+{
+	font-size: 13px;
+	color: #ffffffad;
+	text-shadow: 0px 1px 8px black;
+	                   
+	width: fill-parent-flow(1);
+	vertical-align: middle;
+	margin-left: 8px;
+    margin-right: 85px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	opacity: 0;
+    line-height: 15px;
+}
+
+.HasSuggestedItem #Hint {
+	padding-left: 0px;
+	padding-right: 50px;
+}
+
+.HUDFlipped #Hint
+{
+                               
+	                 
+	                    
+	margin-right: 24px;
+    margin-left: 64px;
+}
+
+.HUDFlipped .HasSuggestedItem #Hint {
+	padding-left: 38px;
+	padding-right: 0px;
+}
+
+.ShowHint:not(.ShowingQueryUnit) #Hint
+{
+	opacity: 1;
+}
+
+.ShowHint #ClearQuickBuy, .ShowHint #RemoveItemDropTarget {
+	visibility: collapse;
+}
+
+.ShowingQueryUnit #ClearQuickBuy, .ShowingQueryUnit #BuybackProtection, .ShowingQueryUnit #RemoveItemDropTarget {
+	visibility: collapse;
+}
+
+.AspectRatio4x3 .Legacy #Hint
+{
+	font-size: 12px;
+	font-weight: thin;
+	margin-top: 6px;
+	width: 120px;
+}
+
+DOTAShopItem
+{
+	width: 37px;
+	height: 29px;
+	margin-right: 3px;
+	&.PurchaseInFlight {
+		brightness: 0.4;
+		transform: translateY( 1px );
+	}
+}
+
+DOTAItemImage
+{
+	width: 37px;
+	height: 29px;
+	margin-right: 3px;
+	visibility: collapse;
+}
+
+.AltPressed DOTAItemImage
+{
+	visibility: visible;
+}
+
+.AltPressed DOTAItemImage.Hidden
+{
+	visibility: collapse;
+}
+
+.AspectRatio4x3 .Legacy DOTAShopItem
+{
+	width: 28px;
+	height: 22px;
+	margin-right: 3px;
+}
+
+.AspectRatio4x3 .Legacy #Row1
+{
+	margin-top: 20px;
+}
+
+.QuickBuyActionsContainer {
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: 56px;
+
+	#ClearQuickBuy {
+		width: 24px;
+		height: 24px;
+		vertical-align: center;
+		border-radius: 50%;
+		padding: 5px;
+		background-color: rgba(0, 0, 0, 0.4);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		brightness: 0.6;
+		img-shadow: 0px 1px 6px black;
+
+		transition-duration: 0.1s;
+		transition-property: background-color, border, brightness;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+			border: 1px solid rgba(255, 255, 255, 0.4);
+			brightness: 1;
+		}
+
+		.QuickBuyItemDragging & {
+			visibility: collapse;
+		}
+	}
+
+	#RemoveItemDropTarget {
+		width: 24px;
+		height: 24px;
+		vertical-align: center;
+		                     
+		padding: 5px;
+		background-color: rgba(0, 0, 0, 0.4);
+		                                             
+		brightness: 0.6;
+		img-shadow: 0px 1px 6px black;
+		border: 1px solid rgba(0, 183, 255, 0.6);
+		box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+		border-style: dashed;
+		border-radius: 4px;
+
+		transition-duration: 0.1s;
+		transition-property: background-color, border, brightness;
+
+
+
+		visibility: collapse;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+			border: 1px solid rgba(255, 255, 255, 0.4);
+			brightness: 1;
+		}
+
+		.QuickBuyItemDragging & {
+			visibility: visible;
+		}
+	}
+	
+	#BuybackProtection {
+		width: 30px;
+		height: 30px;
+		vertical-align: center;
+		tooltip-position: top;
+
+		background-image: url( "file://{images}/hud/buyback_protection_off.png" );
+		background-size: cover;
+		background-position: center;
+
+		transition-duration: 0.05s;
+		transition-property: transform, brightness;
+
+		&:hover {
+			brightness: 1.5;
+		}
+
+		&:active {
+			transform: translateY(1px);
+			brightness: 0.6;
+		}
+	
+		.BuybackProtectionEnabled & {
+			background-image: url( "file://{images}/hud/buyback_protection_on.png" );
+		}
+
+		.HasSuggestedItem.ShowHint & {
+			margin-right: 46px;
+		}
+	}
+
+	.HUDFlipped & {
+		margin-right: 4px;
+	}
+}
+
+.HUDFlipped .HasSuggestedItem.ShowHint #BuybackProtection {
+	margin-right: 0px;
+}
+
+
+#SuggestItems {
+	vertical-align: middle;
+	width: 38px;
+	height: 28px;
+	horizontal-align: right;
+	margin-right: 61px;
+	context-menu-position: top;
+	context-menu-body-position: 50%;
+	tooltip-position: top;
+	tooltip-body-position: 50%;
+	opacity: 0;
+	visibility: collapse;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+.ShowHint.HasSuggestedItem:not(.ShowingQueryUnit) #SuggestItems {
+	opacity: 1;
+}
+
+.HUDFlipped #SuggestItems
+{
+	horizontal-align: left;
+	margin-left: 58px;
+}
+
+.ShowHint.HasSuggestedItem #SuggestItems {
+	visibility: visible;
+}
+
+#SuggestItems:hover
+{
+	brightness: 2.0;
+}
+
+#SuggestItems:active
+{
+	brightness: 1.5;
+}
+
+.HUDFlipped #ClearQuickBuy, .HUDFlipped #BuybackProtection, .HUDFlipped #RemoveItemDropTarget {
+	                         
+}
+
+.AspectRatio4x3 .Legacy #ClearQuickBuy, .AspectRatio4x3 .Legacy #BuybackProtection, .AspectRatio4x3 .Legacy #RemoveItemDropTarget {
+	                  
+	                   
+}
+
+#Row0
+{
+	padding-left: 4px;
+	padding-top: 8px;
+    flow-children: right;
+}
+
+#Row1
+{
+    margin-top: 30px;
+	padding-left: 4px;
+	padding-top: 10px;
+	padding-bottom: 8px;
+    flow-children: right;
+
+}
+
+.HUDFlipped #Row0
+{
+    margin-left: 52px;
+}
+
+.HUDFlipped #Row1
+{
+    margin-left: 52px;
+}
+#OverflowIndicator
+{
+	border-radius: 3px;
+	border: 1px solid black;
+	background-color: #212726;
+	box-shadow: fill #0000007f 1px 1px 6px -1px;
+	x: 170px;
+	y: 58px;
+	min-width: 16px;
+	min-height: 16px;
+	padding:1px;
+	&.Hidden {
+		visibility: collapse;
+	}
+	Label {
+		color: #c2bea3;
+		font-size: 11px;
+		text-align: center;
+		vertical-align: center;
+		horizontal-align: center;
+	}
+	&.Updated Label {
+		animation-name: UpdateFade;
+		animation-duration: 0.1s;
+		animation-fill-mode: forwards;
+	}
+
+	.HIDE_INVENTORY_QUICKBUY & {
+		visibility: collapse;
+	}
+}
+.HUDFlipped #OverflowIndicator {
+	x: 218px;
+}
+@keyframes 'UpdateFade' {
+	0% {
+		brightness: 2;
+		transform: translateY( -1px );
+	}
+	100% {
+		brightness: 1;
+	}
+}
+
+#StickyItemSlotContainer
+{
+	horizontal-align: right;
+	width: 53px;
+	background-color: #0000006F;
+	height: 100%;
+
+	&.ShopItemBeingDragged {
+		.StickyDropTarget {
+			opacity: 1;
+			transition-duration: 0s;	
+		}
+	}
+	.StickyDropTarget {
+		width: 100%;
+		height: 100%;
+		border: 1px solid rgba(0, 183, 255, 0.6);
+		box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+		margin: 4px;
+		border-style: dashed;
+		border-radius: 4px;
+		width: 178px;
+		background-color: rgba(0, 183, 255, 0.02);
+
+		transition-property: opacity;
+		transition-duration: 0.1s;
+
+		opacity: 0;
+	}
+}
+
+.HUDFlipped #StickyItemSlotContainer
+{
+    horizontal-align: left;
+}
+
+#StickySlot
+{
+    vertical-align: center;
+    horizontal-align: center;
+    margin-right: 0px;
+}
+
+
+                                                                        
+             
+
+.Reborn #ShopButton {
+	height: 36px;
+	background-image: url( "file://{images}/hud/reborn/shop_launcher_button.psd" );
+	brightness: 1.0;
+	z-index: -1;
+	box-shadow: #00000055 0px 0px 2px 2px;
+	                         
+	                        
+	transition-property: background-image;
+	transition-duration: .18s;
+	transition-timing-function: ease-in-out;
+	tooltip-position: top;
+	context-menu-position: top;
+}
+
+.Reborn #ShopButton Label
+{
+    text-shadow: 0px 1px 0px 2.0 #00000077;
+	transition-property: color;
+	transition-duration: .1811s;
+	transition-timing-function: ease-in-out;	
+}
+
+.Reborn #ShopButton:hover
+{
+	background-image: url( "file://{images}/hud/reborn/shop_launcher_button_hover.psd" );
+}
+
+.Reborn .ShopInRange #ShopButton
+{
+	background-image: url( "file://{images}/hud/reborn/shop_launcher_button_inrange.psd" );
+}
+
+
+.Reborn .ShopInRange .ShopButtonValueLabel
+{
+	color: white;
+}
+
+.Reborn .ShopInRange #ShopButton:hover
+{
+	background-image: url( "file://{images}/hud/reborn/shop_launcher_button_inrange_hover.psd" );
+}
+
+.Reborn #GoldLabel
+{
+}
+
+.Reborn #QuickBuyRows
+{
+    background-image: url( "file://{images}/hud/reborn/quickbuy_bg.psd" );
+}
+
+.Reborn DOTAShopItem
+{
+	width: 38px;
+	height: 28px;
+	margin-left: 3px;
+}
+
+.Reborn DOTAItemImage
+{
+	width: 38px;
+	height: 28px;
+	margin-left: 3px;
+	visibility: collapse;
+}
+
+.Reborn .AltPressed DOTAItemImage
+{
+	visibility: visible;
+}
+
+.Reborn .AltPressed DOTAItemImage.Hidden 
+{
+	visibility: collapse;
+}
+
+
+.Reborn #ShopCourierControls
+{
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.HUDFlipped #courier
+{
+	margin-left: 116px;
+}
+
+.HUDFlipped #ShopButton
+{
+	                       
+}
+
+.ShopButtonValueLabel
+{
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffcc33;
+	text-align: right;
+	horizontal-align: right;
+	min-width: 60px;
+	vertical-align: center;
+	margin-right: 40px;
+	width: 100%;
+	letter-spacing: 1px;
+	text-shadow: 0px 1px 2px 3.0 #00000066;
+	text-overflow: shrink;
+	opacity: 0;
+	text-shadow: 0px 0px 1px 2.0 #000000;
+    color: #ffcc33;
+
+}
+
+#GoldLabel.ShopButtonValueLabel 
+{
+	opacity: 1;
+}
+
+#BuybackDelta
+{
+	opacity: 1;
+	horizontal-align: center;
+	wash-color: #af2;
+	text-align: center;
+	margin-top: -3px;
+	margin-bottom: 2px;
+}
+
+.BuybackDisabled #BuybackDelta
+{
+	wash-color: #f41;
+}
+
+#BuybackDelta Label
+{
+	margin-top: 1px;
+}
+
+.BuybackDisabled.ShopInRange #BuybackDelta
+{
+	wash-color: #f62;
+}
+
+#Plus
+{
+	font-size: 12px;
+
+	font-weight: normal;
+	color: white;
+	text-align: right;
+	horizontal-align: right;
+	vertical-align: center;	
+}
+
+.BuybackDisabled #Plus
+{
+	visibility: collapse;
+}
+
+.BuybackValueFont
+{
+	opacity: 1;
+	color: white;
+	height: 14px;
+	font-size: 12px;
+}
+
+#BuybackGoldSurplus
+{
+	margin-right: 2px;
+}
+
+.HasBuybackCooldown #Plus,
+.HasBuybackCooldown #NoPlus,
+.HasBuybackCooldown #BuybackGoldSurplus
+{
+	visibility: collapse;
+}
+
+#BuybackCooldown
+{
+	visibility: collapse;
+}
+
+.HasBuybackCooldown #BuybackCooldown
+{
+	visibility: visible;
+}
+
+#NoPlus
+{
+	visibility: collapse;
+}
+
+.BuybackDisabled.HasBuybackCost:not(.HasBuybackCooldown) #NoPlus
+{
+	visibility: visible;
+}
+
+DOTAQuickBuy.UnitDead.BuybackDisabled.HasBuybackCost:not(.HasBuybackCooldown) #BuybackCost
+{
+	visibility: visible;
+}
+
+#BuybackHeader
+{
+	background-image: none;
+	background-size: 100% 100%;
+	background-position: 50% 90%;
+	
+	background-repeat: no-repeat;
+
+	margin-top: -22px;	
+	horizontal-align: center;	
+	background-color: #4C5059;
+	box-shadow: #000f 0px 0px 4px 0px ;
+	transition-property: opacity, pre-transform-scale2d;
+	transition-duration: .12s;
+	transition-timing-function: ease-in-out;	
+	opacity: 0;		
+	pre-transform-scale2d: 0;
+}
+
+DOTAQuickBuy:not(.BuybackDisabled) #BuybackHeader
+{
+	background-image: url( "file://{images}/hud/reborn/buyback_header.psd" );
+}
+
+#BuybackCost,
+#NoBuybackLabel,
+#BuybackLabel
+{
+	text-transform: uppercase;
+	font-size: 12px;
+
+	color: #a6aBb1;
+	text-align: center;
+
+	padding: 1px 4px;
+}
+
+.BuybackDisabled #BuybackLabel,
+#NoBuybackLabel
+{
+	visibility: collapse;
+}
+
+
+.BuybackDisabled #NoBuybackLabel
+{
+	visibility: visible;
+}
+
+.BuybackDisabled #BuybackDelta
+{
+	wash-color: red;
+}
+
+DOTAQuickBuy:not(.BuybackDisabled) #BuybackHeader Label
+{
+	color: #FFCC33;
+}
+
+.AltPressed #BuybackHeader
+{
+	opacity: 1;
+	pre-transform-scale2d: 1;
+}

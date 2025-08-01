@@ -1,0 +1,52 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_broadcaster_toast_shared.css"/>
+		<include src="file://{resources}/styles/popups/popup_broadcaster_toasts_imageselection.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="SearchResultEntry">
+			<Panel class="SearchResultEntry TopBottomFlow">
+				<Label class="SearchResultLabel" text="{s:entry_text}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTABroadcasterImageSelection class="PopupPanel Hidden" popupbackground="dim" oncancel="DOTABroadcasterImageSelectionCancel()">
+		<Panel id="ImageFilterSection" class="TopBottomFlow">
+			<Panel id="ItemSearch" class="SelectionPanel TopBottomFlow">
+				<Panel class="SearchOptionsContainer LeftRightFlow">
+					<Panel class="SearchOptionsTitle">
+						<Label text="#DOTA_Broadcaster_ImagePicker_Items" class="SearchOptionsLabel"/>
+					</Panel>
+
+					<Panel class="SearchContainer">
+						<Panel class="SearchBox">
+							<TextEntry id="ItemSearchTextEntry" class="SearchTextEntry" placeholder="#DOTA_StoreBrowse_Search_Placeholder"/>
+							<Button class="ClearSearchButton CloseButton" onactivate="$( '#ItemSearchTextEntry' ).text = '';" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="ChampionImages" class="BroadcastImageGroup TopBottomFlow">
+				<Panel id="DireHeroes" class="LeftRightFlow"/>
+				<Panel id="RadiantHeroes" class="LeftRightFlow"/>
+			</Panel>
+			<Panel id="PlayerImages" class="BroadcastImageGroup TopBottomFlow">
+				<Panel id="DirePlayers" class="LeftRightFlow"/>
+				<Panel id="RadiantPlayers" class="LeftRightFlow"/>
+			</Panel> 
+			<Panel id="TeamImages" class="BroadcastImageGroup LeftRightFlow"/>
+
+			                                                                                                                  
+			<Panel class="BroadcastImageGroup TopDownFlow">
+				<DOTABroadcasterGenericImageRow id="GeneralImages1" class="LeftRightFlow" startIndex="7" iconCount="5"/>
+				                                                                                                                 
+			</Panel>
+
+		</Panel>
+		<Panel id="SearchResults"/>
+	</DOTABroadcasterImageSelection>
+</root>

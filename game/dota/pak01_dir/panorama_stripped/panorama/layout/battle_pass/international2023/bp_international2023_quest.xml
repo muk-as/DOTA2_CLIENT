@@ -1,0 +1,105 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_quests.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_quest.css" />
+	</styles>
+
+	<snippets>
+		
+		<snippet name="TeamQuestSnippet">
+			<Panel class="QuestDetailsContainer">
+				<Panel class="MatchDetails" onmouseover="UIShowTextTooltip( {s:featured_team} )" onmouseout="UIHideTextTooltip()">
+					<Image id="TeamLogo" scaling="contain" />
+					                                                                                           
+				</Panel>
+				<Panel id="MatchDescription">
+					<Label id="MatchDate" class="LabelMedium LightGreyText Opacity_60" text="{s:match_date}" />
+					<Label id="MatchOutcome" class="BodyLarge LighterGreyText" text="#DOTA_International2023_Quests_MatchOutcome" />
+					<Label id="MatchLeague" class="BodyMedium LightGreyText" text="{s:league_name}" />
+					<Label id="MatchNumber" class="BodyMedium LightGreyText" text="#DOTA_International2023_Quests_MatchGameNumber" />
+					                                                                                                                     
+					<Button id="MatchDetailsButton" class="ButtonPrimary Small DarkGrey" onactivate="DOTAShowTreasurePage( 24613 );">
+						<Label text="#DOTA_International2023_Quests_ViewMatchDetails" />
+					</Button>
+				</Panel>
+				<Panel class="MatchDetails OpposingTeam" onmouseover="UIShowTextTooltip( {s:opposing_team} )" onmouseout="UIHideTextTooltip()">
+					<Image id="OpposingTeamLogo" scaling="contain" />
+					                                                                                                   
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="PlayerQuestSnippet">
+			<Panel class="QuestDetailsContainer">
+				<Panel class="PlayerTeamDetails" onmouseover="UIShowTextTooltip( {s:featured_team} )" onmouseout="UIHideTextTooltip()">
+					                                                         
+					<Image id="TeamLogo" scaling="contain" />
+				</Panel>
+				<Panel id="PlayerImageContainer">
+					<DOTAPlayerImage id="PlayerImage" scaling="contain" />
+					<DOTAAvatarImage id="AvatarImage" class="Hide" scaling="contain" />
+				</Panel>
+				<Panel id="PlayerDescription">
+					<Label id="PlayerName" class="BodyExtraLarge" html="true" text="{s:featured_player_name}" />
+					<Label id="PlayerRole" class="LabelMedium" text="{s:featured_player_role}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="HeroSnippet">
+			<Panel class="QuestHero">
+				<DOTAHeroMovie id="HeroMovie" />
+				<DOTAHeroImage id="HeroImage" class="Hide" />
+				<Panel class="QuestCompleteBorder" hittest="false"/>
+				<Image class="CompletedCheckIcon" src="file://{images}/control_icons/24px/check_corner_topright.svg" />
+				<Image class="HalfCompletedCheckIcon" src="file://{images}/control_icons/24px/check_circle_half.svg" onmouseover="UIShowTextTooltip( #DOTA_International2023_Quests_Description_Details )" onmouseout="UIHideTextTooltip()" />
+				<DOTAScenePanel class="CompletedFX" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+				<DOTAScenePanel class="CompletedFXParticles" map="scenes/10th_anniversary/10th_anniversary_dashboard_highlight" hittest="false" particleonly="true" />
+				                                                                                                                          
+				<Panel id="CompletedIconContainer">
+					<Panel id="CompletedPip1" />
+					<Panel id="CompletedPip2" />
+					                                                                                                                                        
+					<Label id="HalfCompleteLabel" class="CompletionStatus LabelMedium" text="#DOTA_International2023_QuestsClaimStatus_HalfComplete" />
+					<Label id="CompleteLabel" class="CompletionStatus LabelMedium" text="#DOTA_International2023_QuestsClaimStatus_Complete" />
+				</Panel>
+				<Panel id="HeroPlayerDetails">
+					<Label class="HeroPlayerName" text="{s:player_name}" />
+					<Label class="HeroPlayerStats" text="{d:player_kills} / {d:player_deaths} / {d:player_assists}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAInternational2023_Quest class="DOTARoadToTIQuest">
+		<Panel id="QuestHeader">
+			<Label class="SubTitle HorizontalCenter LabelLarge" text="{s:challenge_type}" />
+			<Label class="QuestMatchInstructions" text="#DOTA_International2023_Quests_FeaturedMatch_Description" />
+			<Label class="QuestPlayerInstructions" html="true" text="#DOTA_International2023_Quests_FeaturedPlayer_Description" />
+		</Panel>
+		<Panel id="QuestInstructions">
+		</Panel>
+		<Panel id="QuestDetails">
+			                              
+		</Panel>
+		<Panel id="QuestHeroesList" class="QuestHeroesList">
+			                              
+		</Panel>
+		<Panel id="QuestFooter">
+			<Label class="QuestExtraInstructions" html="true" text="#DOTA_International2023_Quests_Description_Details" />
+		</Panel>
+		<Panel id="QuestDifficulty">
+			<Label class="LabelMedium" text="#DOTA_International2023_Quests_Difficulty_Label" />
+			<Label class="LabelMedium DifficultyLabel" text="#DOTA_International2023_Quests_Difficulty" />
+		</Panel>
+		<Panel id="QuestRewards">
+			<Label class="LabelMedium" text="#DOTA_International2023_Quests_Rewards_Label" />
+			<Panel class="PointIcon" />
+			<Label class="LabelMedium RewardsLabel PointsValueLabel" text="{d:quest_rewards}" />
+			<Panel class="TrophyIcon" />
+		</Panel>
+	</DOTAInternational2023_Quest>
+</root>

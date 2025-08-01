@@ -1,0 +1,359 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_fighting.css" />
+	</styles>
+
+	<DOTAFightingGamePanel>
+		<DOTAScenePanel id="BackgroundScene" map="maps/scenes/crownfall/arena.vpk" squarePixels="true" renderdeferred="true" camera="cam_main" particleonly="false" antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_bg.vmat" sound_mode="PORTRAIT_SOUND_MODE_NO_SOUNDS"/>
+
+		<Panel id="BackgroundUILayer">
+			<Panel class="HUDContainer">
+				<Image class="HUDBackground" src="file://{images}/events/crownfall/fight/hud/hud_background.png" scaling="stretch-to-fit-preserve-aspect" />
+
+				<Panel class="RedGlow Left"/>
+				<Panel class="RedGlow Right"/>
+
+				<Panel class="HUDHeroContainer Left">
+					<Panel class="PortraitAndSheildContainer">
+						<Panel class="HeroPortraitContainer">
+							<DOTAHeroImage id="HeroPortraitLeft" class="HeroPortrait" scaling="stretch-to-fit-preserve-aspect"/>
+						</Panel>
+						<Panel class="ShieldContainer">
+							<Panel class="ShieldIconContainer">
+								<Image class="ShieldIcon" src="file://{images}/events/crownfall/fight/hud/shield_icon.png" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image class="ShieldIconBroken" src="file://{images}/events/crownfall/fight/hud/shield_icon_broken.png" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect"/>
+							</Panel>
+							<Panel class="ShieldBarContainer">
+								<Panel class="ShieldBarBackground"/>
+								<Panel class="ShieldBar" id="ShieldBarLeft"/>
+							</Panel>
+						</Panel>
+						<Panel class="ScoreContainer">
+							<Label text="#DOTA_FightingGame_HUD_Score" class="ScoreLabel LabelMedium" />
+							<Panel class="LeftRightFlow">
+								<Label text="{d:player_1_score}" class="ScoreValue TitleLarge" />
+								<Label text="#DOTA_FightingGame_HUD_PTS_Label" class="ScorePTS TitleSmall" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="HPBarInfoContainer">
+						<Panel id="LeftHeroStatusContainer">
+							<Panel id="HPBarBG"/>
+							<Panel id="HPBarMID"/>
+							<Panel id="HPBarFG">
+								<DOTAScenePanel class="HPParticles" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+							</Panel>
+						</Panel>
+						<Panel class="HeroNameContainer">
+							<Label id="HeroName" text="{s:Left_Hero_Name}"/>
+							<Panel class="FillWidth" />
+							<Panel id="RoundPips">
+								<Panel id="RoundPip1" class="RoundPipIcon"/>
+								<Panel id="RoundPip2" class="RoundPipIcon"/>
+							</Panel>
+						</Panel>
+						
+						<Panel id="SingleUseActionContainerLeft" class="SingleUseActionContainer">
+							<Image id="SingleUseActionImage" class="AbilityImage" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+					</Panel>
+				</Panel>
+									
+				<Panel id="CountdownContainer">
+					<Image class="TimerShadow" src="file://{images}/events/crownfall/fight/hud/timer_shadow.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="TimerBackgroundImage" src="file://{images}/events/crownfall/fight/hud/timer_background_image.png" scaling="stretch-to-fit-preserve-aspect" />
+					<DOTAParticleScenePanel class="TimerParticles" hittest="false" particleName="particles/econ/courier/courier_hermit_crab/hermit_crab_lotus_ambient_smoke.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="50 0 0" lookAt="0 0 40" fov="60" />
+					<Image class="TimerBorder" src="file://{images}/events/crownfall/fight/hud/timer_border.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="RoundTimerContainer">
+						<Label id="RoundCounter" class="LabelLarge" text="#DOTA_FightingGame_HUD_RoundCounter" />
+						<Label id="TimeCountdown" text="{d:round_time_remaining}" />
+					</Panel>
+				</Panel>
+
+				<Panel class="HUDHeroContainer Right">
+					<Panel class="PortraitAndSheildContainer">
+						<Panel class="HeroPortraitContainer">
+							<DOTAHeroImage id="HeroPortraitRight" class="HeroPortrait" scaling="stretch-to-fit-preserve-aspect"/>
+						</Panel>
+						<Panel class="ShieldContainer">
+							<Panel class="ShieldIconContainer">
+								<Image class="ShieldIcon" src="file://{images}/events/crownfall/fight/hud/shield_icon.png" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image class="ShieldIconBroken" src="file://{images}/events/crownfall/fight/hud/shield_icon_broken.png" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect"/>
+							</Panel>
+							<Panel class="ShieldBarContainer">
+								<Panel class="ShieldBarBackground"/>
+								<Panel class="ShieldBar" id="ShieldBarRight"/>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="HPBarInfoContainer">
+						<Panel id="RightHeroStatusContainer">
+							<Panel id="HPBarBG"/>
+							<Panel id="HPBarMID"/>
+							<Panel id="HPBarFG">
+								<DOTAScenePanel class="HPParticles" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+							</Panel>
+						</Panel>
+						<Panel class="HeroNameContainer">
+							<Label id="HeroName" text="{s:Right_Hero_Name}"/>
+							<Panel class="FillWidth" />
+							<Panel id="RoundPips">
+								<Panel id="RoundPip1" class="RoundPipIcon"/>
+								<Panel id="RoundPip2" class="RoundPipIcon"/>
+							</Panel>
+						</Panel>
+						                                                                                                                                                                                                                                                      
+						<Panel id="SingleUseActionContainerRight" class="SingleUseActionContainer">
+							<Image id="SingleUseActionImage" class="AbilityImage" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+					</Panel>
+				</Panel>				
+			</Panel>
+			
+		</Panel>
+
+			
+
+		<Image id="RightHeroShadow" class="HeroLayer HeroShadow"/>
+		<Image id="LeftHeroShadow" class="HeroLayer HeroShadow"/>
+		<DOTAFightingHeroScenePanel id="RightHero" class="HeroLayer" renderdeferred="true"  antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_hero.vmat" require-composition-layer="true" />
+		<DOTAFightingHeroScenePanel id="LeftHero" class="HeroLayer" renderdeferred="true"  antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_hero.vmat" require-composition-layer="true" />
+		<DOTAFightingEffectsScenePanel hittest="false" id="EffectsPanel" map="maps/scenes/crownfall/fg_effects_layer.vpk" particleonly="false" renderdeferred="true" deferredalpha="true" antialias="true" require-composition-layer="true"/>
+		<DOTAScenePanel hittest="false" id="ForegroundScene" map="maps/scenes/crownfall/arena_fg.vpk" squarePixels="true" deferredalpha="true" renderdeferred="true" camera="cam_main" particleonly="false" antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_fg.vmat"/> 
+		<Image hittest="false" class="ForegroundSceneBlur Blur0" id="ForegroundBlur1" src="panel://ForegroundScene"/> 
+		<Image hittest="false" class="ForegroundSceneBlur Blur1" id="ForegroundBlur2" src="panel://ForegroundScene"/> 
+
+		<Panel id="ForegroundUILayer" hittest="false">
+
+			<Panel class="ScoreAnnouncementContainer Left" >
+				<Panel class="ComboCounter ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Label class="ComboCount" text="#DOTA_FightingGame_HUD_P1ComboCounter" />
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_ComboCounterHits" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="FirstBlood ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/blood.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_FirstBloodLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_FirstBloodPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+				<Panel class="CounterHit ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/ricochet.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_CounterHitLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_CounterHitPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+				<Panel class="PunishCounter ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/fist.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_PunishCounterLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_PunishCounterPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+			</Panel>
+
+			<Panel class="ScoreAnnouncementContainer Right" >
+				<Panel class="ComboCounter ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Label class="ComboCount" text="#DOTA_FightingGame_HUD_P2ComboCounter" />
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_ComboCounterHits" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="FirstBlood ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/blood.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_FirstBloodLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_FirstBloodPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+				<Panel class="CounterHit ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/ricochet.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_CounterHitLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_CounterHitPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+				<Panel class="PunishCounter ScoreAnnouncement">
+					<Panel class="ScoreGlow"/>
+					<Panel class="ScoreAnnouncementBackground"/>
+					<Panel class="ScoreAnnouncementIconBackground"/>
+					<Panel class="ScoreAnnouncementShimmer"/>
+					<Panel class="ScoreAnnouncementInfoContainer">
+						<Image class="ScoreAnnouncementIcon" src="file://{images}/events/crownfall/fight/hud/fist.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48" textureheight="48"/>
+						<Panel class="ScoreDataContainer">
+							<Label class="ScoreAnnouncementLabel LabelLarge" text="#DOTA_FightingGame_HUD_PunishCounterLabel" />
+							<Label class="ScoreAnnouncementPoints LabelMedium" text="#DOTA_FightingGame_HUD_PunishCounterPoints" />
+						</Panel>
+					</Panel>	
+				</Panel>
+			</Panel>
+
+			<Panel id="NetworkStats">
+				<Label text="Ping: {d:ping_ms}ms" />
+				<Label text="Delay: {d:delay_frames}f" />
+				<Label text="Rollback: {d:rollback_frames}f" />
+			</Panel>
+			
+			<Panel id="ScoreBreakdownContainer" class="TopBottomFlow"  hittest="false">
+				<Panel class="ScoreHeadingContainer">
+					<Image class="ScoreBackground" src="file://{images}/events/crownfall/fight/score_background.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="ScoreHeading TitleMedium" text="#DOTA_FightingGame_HUD_Score" />
+				</Panel>
+				<Panel class="ScoreBreakdownRow Time">
+					<Label class="ScoreText LabelMedium" text="#DOTA_FightingGame_HUD_Time" />
+					<Label class="ScoreValue LabelMedium" text="{d:time_score}" />
+				</Panel>
+				<Panel class="ScoreBreakdownRow Health">
+					<Label class="ScoreText LabelMedium" text="#DOTA_FightingGame_HUD_Health" />
+					<Label class="ScoreValue LabelMedium" text="{d:health_score}" />
+				</Panel>
+				<Panel class="ScoreBreakdownRow SpecialMoveFinish">
+					<Label class="ScoreText LabelMedium" text="#DOTA_FightingGame_HUD_SpecialMoveFinish" />
+					<Label class="ScoreValue LabelMedium" text="{d:special_move_finish}" />
+				</Panel>
+				<Panel class="ScoreBreakdownRow Subtotal">
+					<Label class="ScoreText LabelMedium" text="#DDOTA_FightingGame_HUD_Subtotal" />
+					<Label class="ScoreValue LabelMedium" text="{d:subtotal}" />
+				</Panel>
+				<Panel class="ScoreBreakdownRow Total">
+					<Label class="ScoreText LabelMedium" text="#DOTA_FightingGame_HUD_Total" />
+					<Label class="ScoreValue TitleExtraLarge" text="{d:total}" />
+				</Panel>
+			</Panel>
+
+			<Panel id="AnnouncementContainer" hittest="false">
+				<Panel class="IntroTextContainer">
+					<Label class="HeroName1Label" text="{s:Left_Hero_Name}" />
+					<Label class="VSLabel" text="#DOTA_FightingGame_Announcements_VS" />
+					<Label class="HeroName2Label" text="{s:Right_Hero_Name}" />
+					<Panel class="Spattering"/>
+				</Panel>
+				<Label class="Announcement MatchEndText LeftHeroWins" html="true" text="#DOTA_FightingGame_Announcements_LeftHeroWins" />
+				<Label class="Announcement MatchEndText RightHeroWins" html="true" text="#DOTA_FightingGame_Announcements_RightHeroWins" />
+				<Label class="Announcement MatchEndText Draw" text="#DOTA_FightingGame_Announcements_Draw" />
+				<Label class="Announcement TimeOutText" text="#DOTA_FightingGame_Announcements_Timeout" />
+			</Panel>
+
+			<MoviePanel id="Round1Movie" class="RoundIntroMovie" repeat="false" autoplay="off" disableaudio="true" hittest="false" />
+			<MoviePanel id="Round2Movie" class="RoundIntroMovie" repeat="false" autoplay="off" disableaudio="true" hittest="false" />
+			<MoviePanel id="Round3Movie" class="RoundIntroMovie" repeat="false" autoplay="off" disableaudio="true" hittest="false" />
+			<MoviePanel id="KOMovie" repeat="false" autoplay="off" disableaudio="true" hittest="false" src="file://{resources}/videos/crownfall/fight_text_ko.webm"  />
+			<MoviePanel id="PerfectMovie" repeat="false" autoplay="off" disableaudio="true" hittest="false" />
+		</Panel>
+
+		<Panel id="PauseContainer" hittest="false">
+			<Panel id="PauseTextContainer" >
+				<Image class="PauseIcon" src="file://{images}/control_icons/24px/pause.svg" scaling="stretch-to-fit-preserve-aspect" texturewidth="96" textureheight="96" />
+				<Label id="PauseText" class="LabelLarge" text="#DOTA_Notification_Paused_Title" />
+			</Panel>			
+			<DOTAFightingGameMoveListPanel id="MoveListPanel" hittest="false" />
+		</Panel>
+
+		<Panel class="PauseHint" hittest="false">
+			<Panel class="PauseLabelContainer" hittest="false">
+				<Label text="#DOTA_FightingGame_HUD_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+				<Label text="#DOTA_FightingGame_HUD_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+			</Panel>
+			<Panel class="ControlKey"><Label class="KeyText" text="F9" /></Panel>
+		</Panel>
+
+		<Panel id="ControlsDisplay" hittest="false">
+			<Panel class="Row">
+				<Panel class="Column">
+					<Panel class="ControlKey"><Label text="W" class="KeyText" /></Panel>
+					<Panel class="Row">
+						<Panel class="ControlKey"><Label text="A" class="KeyText" /></Panel>
+						<Panel class="ControlKey"><Label text="S" class="KeyText" /></Panel>
+						<Panel class="ControlKey"><Label text="D" class="KeyText" /></Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer"/>
+				<Label class="VerticalCenter OrText" text="or" />
+				<Panel class="ColumnSpacer"/>
+				<Panel class="Column">
+					<Panel class="ControlKey">
+						<Panel class="KeyText Up" />
+					</Panel>
+					<Panel class="Row">
+						<Panel class="ControlKey">
+							<Panel class="KeyText Back" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Panel class="KeyText Down" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Panel class="KeyText Forward" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer"/>
+				<Panel class="Column">
+					<Panel class="Row">
+						<Panel class="ControlKey"><Label text="Alt" class="KeyText Medium" /></Panel>
+						<Panel class="ControlKey"><Label text="Space" class="KeyText ExtraLarge" /></Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			                                                                                     
+		</Panel>
+		
+		<UICanvas id="DebugCanvas" hittest="false">
+			<Panel id="DebugHeroLeftContainer" class="DebugHeroContainer">
+				<Label class="DebugHeroState" text="{s:state_name}"/>
+				<Label class="DebugHeroPosition" text="X = {d:x_position}"/>
+			</Panel>
+			<Panel id="DebugHeroRightContainer" class="DebugHeroContainer">
+				<Label class="DebugHeroState" text="{s:state_name}"/>
+				<Label class="DebugHeroPosition" text="X = {d:x_position}"/>
+			</Panel>
+		</UICanvas>
+	</DOTAFightingGamePanel>
+</root>

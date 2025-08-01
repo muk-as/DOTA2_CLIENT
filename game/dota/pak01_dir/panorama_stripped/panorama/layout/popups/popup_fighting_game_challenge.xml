@@ -1,0 +1,30 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_fighting_game_challenge.css" />
+
+	</styles>
+
+	<DOTAPopupFightingGameChallenge class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked( DOTAPopupFightingGameChallengeClosed( Cancel ) )">
+		<Image class="PopupBackground" hitest="false" src="file://{images}/events/crownfall/fight/accept_fight_popup_background.png" scaling="cover" />
+		<Panel id="MainContents">
+			<Image class="TitleLogo en" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen.psd" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="TitleLogo cn" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+			<Panel class="InviteContainer">
+				<DOTAAvatarImage class="Avatar" id="ChallengerAvatar" />
+				<Label class="Inviter DisplaySmall" text="#DOTA_Crownfall_Fighter_AcceptFightPopup_Invite" html="true" />
+			</Panel>
+			<DOTACrownfallButton class="GlowButton" text="#DOTA_Crownfall_Fighter_AcceptFightPopup_AcceptButton" onactivate="UIPopupButtonClicked( DOTAPopupFightingGameChallengeClosed( AcceptChallenge ) )" />
+			<Panel class="FooterContainer">
+				<DOTACrownfallButton class="Secondary" text="#DOTA_Crownfall_Fighter_AcceptFightPopup_DeclineButton" onactivate="UIPopupButtonClicked( DOTAPopupFightingGameChallengeClosed( DeclineChallenge ) )" />
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+	</DOTAPopupFightingGameChallenge>
+</root>

@@ -1,0 +1,82 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/dashboard.css" />
+
+
+		<include src="file://{resources}/styles/ui_econ_set_preview.css" />
+		<include src="file://{resources}/styles/ui_econ_set_loadout_preview.css" />
+		
+		<include src="file://{resources}/styles/popups/popup_item_received.css" />
+
+		<include src="file://{resources}/styles/battle_pass/current_battle_pass.css" />
+		<include src="file://{resources}/styles/battle_pass/popup_mystery_box.css" />
+		
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/popup_mystery_box.js" />
+	</scripts>
+
+	<snippets>
+
+		<snippet name="BattlePointReward">
+			<Panel class="BattlePointReward RewardContainer">
+				<DOTAScenePanel class="BattlePointRewardScene" hittest="false" antialias="true" deferredalpha="true" renderdeferred="true" particleonly="false" map="scenes/dota_ui_mystery_box_reward" />
+				<Label class="BattlePointLabel RewardLabel" html="true" text="#DOTA_Fall2021_MysteryBox_RewardLabel"/>
+			</Panel>
+		</snippet>
+
+	</snippets>
+		
+	<DOTAMysteryBoxPopup class="PopupPanel SpinWheelBackground" popupbackground="blur">
+		<Panel id="MainContainer">
+
+			                           
+			<Panel id="RewardsContainer" class="RewardsContainer"/>
+
+			<DOTAScenePanel id="Model" antialias="true" deferredalpha="true" renderdeferred="true" particleonly="false" camera="hero_camera" light="hero_light" map="scenes/events/mystery_box" >
+				
+				<Panel class="ModelFocusContainer" onactivate="DOTAMysteryBoxAttempt()"
+					 onmouseover="mysteryBoxMouseOver()"
+					 onmouseout="mysteryBoxMouseOut()"
+					>
+					<Panel class="ModelFocusLeft" onmouseover="$( '#Model' ).SetAnimgraphParameterOnEntityInt( 'box_character', 'MysteryBoxStateExternal', 1 )" />
+					<Panel class="ModelFocusRight" onmouseover="$( '#Model' ).SetAnimgraphParameterOnEntityInt( 'box_character', 'MysteryBoxStateExternal', 2 )"/>
+					<Panel class="ModelFocusBotLeft" onmouseover="$( '#Model' ).SetAnimgraphParameterOnEntityInt( 'box_character', 'MysteryBoxStateExternal', 4 )"/>
+					<Panel class="ModelFocusBotRight" onmouseover="$( '#Model' ).SetAnimgraphParameterOnEntityInt( 'box_character', 'MysteryBoxStateExternal', 5 )"/>
+					<Panel class="ModelFocusCenter" onmouseover="$( '#Model' ).SetAnimgraphParameterOnEntityInt( 'box_character', 'MysteryBoxStateExternal', 0 )"/>
+				</Panel>
+				<Image id="SceneBlur" src="panel://Model" hittest="false"/>
+			</DOTAScenePanel>
+			
+			<Button id="ReloadPageButton" class="DebugButton" onactivate="DOTAReloadCurrentPage()" />
+
+			<Label class="BoxesRemainingLabel" text="#DOTA_Fall2021_MysteryBox_BoxesRemaining" hittest="false" html="true"/>
+			<Label class="Instructions" text="#DOTA_Fall2021_MysteryBox_Instructions" hittest="false" html="true"/>			
+		</Panel>
+		<Label class="TitleLabel" text="#DOTA_Fall2021_MysteryBox_Title" />	
+		<Label class="TitleLabel Glow" text="#DOTA_Fall2021_MysteryBox_Title" />	
+		<Button class="NextButton PopupButton" onactivate="DOTAMysteryBoxNext()">
+			<Label class="NextButtonLabel" text="#DOTA_Fall2021_MysteryBox_OpenAnother"/>
+		</Button>
+
+		<Panel class="ErrorContainer" hittest="true">
+			<Label class="ErrorLabel" html="true" text="#DOTA_Fall2021_MysteryBox_ErrorOpening"/>
+		</Panel>
+
+		<Panel class="WaitingForResultsContainer" hittest="true">
+			<Panel class="WaitingForResultsSpinner Spinner"/>
+		</Panel>
+
+		<Button id="CloseButton" class="CloseButton" onactivate="UIPopupButtonClicked()">
+		</Button>
+
+
+	</DOTAMysteryBoxPopup>
+
+</root>

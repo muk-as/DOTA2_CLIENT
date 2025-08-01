@@ -1,0 +1,928 @@
+@define MapTopOffset: 28px;
+
+.MapUpdateBackground
+{
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+}
+
+.MapImage {
+	background-repeat: no-repeat;
+	background-position: center MapTopOffset;
+	background-color: none;
+	background-image: url( "file://{images}/events/map_update/dashboard_map_room.psd" );
+	background-size: auto 100%;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.0;
+
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.ShowMapImage .MapImage {
+	opacity: 1.0;
+}
+
+#IntroMovie {
+	margin-top: MapTopOffset;
+	width: height-percentage( 177.77% );
+	height: 100%;
+	horizontal-align: center;
+
+	opacity: 0.0;
+
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.AspectRatio21x9 #IntroMovie {
+	opacity-mask: url( "file://{images}/masks/softedge_horizontal.png" );
+}
+
+.ShowMovie #IntroMovie { 
+	opacity: 1.0;
+}
+
+.MapUpdateVignette {
+	width: 100%;
+	height: 100%;
+
+	background-color: #000e;
+
+	transition-property: background-color;
+	transition-duration: 0.2s;
+}
+
+.OnHomePage .MapUpdateVignette {
+	background-color: #0000;
+}
+
+
+.MainContents {
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.0;
+
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.OnHomePage .MainContents
+{
+	opacity: 1.0;
+	transform: none;
+}
+
+.CenterContents
+{
+	margin-top: 100px;
+	flow-children: down;
+	horizontal-align: center;
+	width: 900px;
+
+	opacity: 0.0;
+	transform: translateY( 20px );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+}
+
+.ShowCenterContents .CenterContents {
+	opacity: 1.0;
+	transform: none;
+}
+
+.Subtitle
+{
+	font-size: 20px;
+	font-family: titleFont;
+	color: #d4c6b1;
+	horizontal-align: center;
+	text-align: center;
+	text-shadow: 0px 3px 6px #00000055;
+	opacity: 0.8;
+	                        
+}
+
+.Title
+{
+	font-size: 56px;
+	font-family: titleFont;
+	color: white;
+	horizontal-align: center;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 0px 8px 32px #0000007b;
+	letter-spacing: 2px;
+	color: gradient( linear, 0% 40%, 0% 100%, from( #FFFFFF ), to( #b5ad9c ) );
+	opacity: 0.8;
+}
+
+.Buttons {
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 8px;
+
+	.PopupButton {
+		ui-scale: 80%;
+	}
+}
+
+#MapFeatures {
+	width: 100%;
+	height: 100%;
+	margin-top: MapTopOffset;
+}
+
+
+@keyframes 'featureAppear'
+{
+    0%
+    {
+		pre-transform-scale2d: 1.5;
+	 	brightness: 2;
+   }
+
+    100%
+    {
+		pre-transform-scale2d: 1.0;
+		brightness: 1;
+    }
+}
+
+
+.TooltipTarget
+{
+	horizontal-align: center;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	opacity: 0.0;
+
+	transition-property: opacity, pre-transform-scale2d, brightness, img-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-delay: .1s;
+
+	&.ShowFeature {
+		opacity: 1.0;
+
+		animation-name: featureAppear;
+		animation-duration: 0.3s;
+
+		&.CreepCamp1,
+		&.Gate1 {
+			opacity:.4;
+		}
+	}
+
+	&.Highlighted{
+		pre-transform-scale2d: 1.1;
+		brightness: 1.9;
+		img-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	&.Highlighted.CreepCamp1{
+		pre-transform-scale2d: 1;
+		brightness: 3;
+		img-shadow: 0px 0px 2px rgba(255, 196, 67, 0.171);
+	}
+	
+	&.Watcher1
+	{
+		width: 40px;
+		height: 60px;
+
+		transform: translate3d(421px, 688px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher_icon.psd');
+
+	}
+
+	&.Watcher2 
+	{
+		width: 38px;
+		height: 53px;
+
+		transform: translate3d(-16px, 637px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher2_icon.psd');
+
+	}
+
+	&.Watcher3
+	{
+		width: 36px;
+		height: 50px;
+
+		transform: translate3d(-162px, 465px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher3_icon.psd');
+
+	}
+
+	&.Watcher4 
+	{
+		width: 36px;
+		height: 50px;
+
+		transform: translate3d(-306px, 471px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher3_icon.psd');
+
+	}
+
+	&.Watcher5
+	{
+		width: 43px;
+		height: 50px;
+
+		transform: translate3d( 162px, 469px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher5_icon.psd');
+
+	}	
+
+	&.Watcher6
+	{
+		width: 43px;
+		height: 47px;
+
+		transform: translate3d( 390px, 418px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher6_icon.psd');
+
+	}	
+	
+	&.Watcher7
+	{
+		width: 40px;
+		height: 43px;
+
+		transform: translate3d( -163px, 284px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher7_icon.psd');
+	}
+	
+	&.Watcher8
+	{
+		width: 40px;
+		height: 43px;
+
+		transform: translate3d( -310px, 268px, 0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_watcher8_icon.psd');
+	}	
+
+	&.Sentinel1
+	{
+		width: 45px;
+		height: 55px;
+
+		margin-top: 47%;
+		transform: translate3d(-343px,-3px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_sentinel_icon.psd');
+	}
+
+	&.Sentinel2
+	{
+		width: 43px;
+		height: 45px;
+
+		margin-top: 47%;
+		transform: translate3d(437px,-115px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_sentinel2_icon.psd');
+	}
+
+	&.Roshan
+	{
+		width: 143px;
+		height: 120px;
+
+		transform: translate3d(500px, 725px,0 );
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_roshan_icon.psd');
+	}
+
+	&.RoshanDire
+	{
+		width: 95px;
+		height: 90px;
+
+		transform: translate3d(-357px, 182px,0 );
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_roshan2_icon.psd');
+	}
+
+	&.Tree1
+	{
+		width: 45px;
+		height: 63px;
+
+		transform: translate3d(454px,616px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_orchard_icon.psd');
+	}
+
+	&.Tree2
+	{
+		width: 40px;
+		height: 45px;
+
+		transform: translate3d(-358px,292px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_orchard2_icon.psd');
+
+	}
+
+	&.WisdomRune1
+	{
+		width: 36px;
+		height: 36px;
+
+		transform: translate3d(-358px,450px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_wisdom_rune_icon.psd');
+	}
+
+	&.WisdomRune2
+	{
+		width: 36px;
+		height: 36px;
+
+		transform: translate3d(470px,435px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_wisdom_rune2_icon.psd');
+	}
+	
+	&.Gate
+	{
+		width: 60px;
+		height: 33px;
+
+		transform: translate3d(-305px,575px,0);
+	}
+
+	&.Portal1
+	{
+		width: 70px;
+		height: 87px;
+
+		transform: translate3d(368px,760px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_portal_icon.psd');
+	}
+
+	&.Portal2
+	{
+		width: 60px;
+		height: 60px;
+
+		transform: translate3d(-262px,207px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_portal2_icon.psd');
+	}
+	
+	&.Outpost1
+	{
+		width: 50px;
+		height: 70px;
+
+		transform: translate3d(252px,770px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_outpost_icon.psd');
+	}
+
+	&.Outpost2
+	{
+		width: 45px;
+		height: 70px;
+
+		transform: translate3d(119px,575px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_outpost2_icon.psd');
+	}
+	
+	&.Outpost3
+	{
+		width: 45px;
+		height: 60px;
+
+		transform: translate3d(-55px, 320px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_outpost3_icon.psd');
+	}
+
+	&.Outpost4
+	{
+		width: 50px;
+		height: 60px;
+
+		transform: translate3d(-215px, 182px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_outpost4_icon.psd');
+	}
+
+	&.ShieldRune1
+	{
+		width: 36px;
+		height: 36px;
+
+		transform: translate3d(-30px,425px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_shield_rune_icon.psd');
+	}
+
+	&.ShieldRune2
+	{
+		width: 36px;
+		height: 36px;
+
+
+		transform: translate3d(120px,500px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_shield_rune2_icon.psd');
+	}
+	
+	&.Gate1
+	{
+		width: 36px;
+		height: 36px;
+
+		transform: translate3d(-389px,595px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_gate_icon.psd');
+	}
+
+	&.Gate2
+	{
+		width: 40px;
+		height: 40px;
+
+		transform: translate3d(410px,345px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_gate_icon_2.psd');
+	}
+
+	&.CreepCamp1
+	{
+		width: 1010px;
+		height: 950px;
+
+		transform: translate3d(105px, 90px,0);
+		background-image: url('file://{images}/events/map_update/dashboard_map_room_creep_camp_icon.psd');
+	}
+} 
+
+.UpdateInfo {
+	flow-children: down;
+	width: 388px;
+	padding-right: 12px;
+	horizontal-align: right;
+	margin-top: 100px;
+
+	.AspectRatio16x10 & {
+		margin-top: 80px;
+	}
+
+	opacity: 0.0;
+	transform: translateX( 20px );
+
+	transition-property: transform, opacity;
+	transition-duration: 0.5s;
+}
+
+.ShowRightContents .UpdateInfo {
+	opacity: 1.0;
+	transform: none;
+}
+
+.PatchNotesHeader{
+	flow-children: right;
+	width: 100%;
+}
+
+
+.PatchNotesHeaderContents {
+	flow-children: down;
+	width: 100%;
+	                          
+	margin-bottom: 6px;
+}
+
+.PatchNotesHeaderTitle
+{
+	font-size: 18px;
+	font-family: "Reaver";
+	color: rgb(237, 237, 237);
+	horizontal-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	horizontal-align: center;
+	letter-spacing: 2px;
+
+	text-shadow: 0px 3px 6px 1 #140404;
+	margin-top: 8px;
+
+}
+.PatchNotesHeaderCopy
+{
+	font-size: 12px;
+	font-family: "Reaver";
+	color: rgb(161, 161, 182);
+	horizontal-align: right;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-shadow: 0px 3px 6px 1 #140404;
+	margin: 0px 0px 8px;
+	horizontal-align: center;
+	padding: 2px 4px;
+	border-radius: 3px;
+
+	&:hover {
+		brightness: 5.0;
+		background-color: rgba(75, 75, 75, 0.089); 
+		border-radius:1px;
+		opacity:.6;
+		text-shadow: 0px 0px 10px rgba(235, 176, 66, 0.13);
+
+		.BackgroundImage {
+			transform: scale3d( 1.03, 1.03, 1.0 );
+		}
+	}
+}
+
+#MapSection {
+	margin-bottom: 12px;
+	border-left: 2px solid #d1b97bac;
+	box-shadow: 0px 12px 48px -4px rgba(0, 0, 0, 0.5);
+}
+
+.UpdateSection {
+	background-color: #000c;
+	width: 100%;
+	background-size: cover;
+
+	transition-property: brightness;
+	transition-duration: 0.2s;
+
+	&:hover {
+		brightness: 2.0;
+
+		.BackgroundImage {
+			transform: scale3d( 1.03, 1.03, 1.0 );
+		}
+	}
+
+	&:active {
+		brightness: 1.5;
+	}
+
+	.BackgroundImage {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		transition-property: transform;
+		transition-duration: 0.2s;
+	}
+
+	.TopBorder
+	{
+		width: 100%;
+		height: 4px;
+		vertical-align: top;
+		background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFE6A6 ), color-stop( 0.5, #4B4431 ), to( #998A63 ) );
+		box-shadow: 0px 0px 2px black;
+	}
+	.BottomBorder
+	{
+		width: 100%;
+		height: 1px;
+		vertical-align: bottom;
+		background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFE6A6 ), color-stop( 0.5, #4B4431 ), to( #998A63 ) );
+		box-shadow: 0px 0px 2px black;
+	}
+
+	.UpdateSectionContents {
+		flow-children: down;
+		width: 100%;		
+
+		.UpdateSectionHeader {
+			width: 100%;
+			padding: 12px 10px 0px;
+			flow-children: right;
+			
+
+			.UpdateSectionTitle {
+				width: 70%;
+				text-transform: uppercase;
+				font-size: 18px;
+				                             
+				                                                                              
+				color: gradient( linear, 0% 0%, 100% 0%, from( #FFE6A6 ), to( #998A63 ) );
+				color: rgba(255, 255, 255, 0.92);
+				font-weight: semi-bold;
+				letter-spacing: 2px;
+				margin: 5px;
+				text-shadow: 0px 2px 6px 2 rgba(0, 0, 0, 0.6);
+			}
+
+			.ExpandIcon {
+				width: 16px;
+				height: 16px;
+				wash-color: #999;
+				vertical-align: middle;
+				background-image: url( "file://{images}/control_icons/arrow_popout.png" );
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+
+		.UpdateSectionBody {
+			flow-children: down;
+			padding: 0px 4px 4px;
+			width: 90%;
+			                                                                                   
+
+			.UpdateNote {
+				font-size: 16px;
+				color: rgba(233, 235, 215, 0.6);
+				padding-left: 0px;
+				text-shadow: 0px 1px 4px rgba(0, 0, 0, 1.0);
+				line-height: 1.2;
+				                          
+				                            
+				                                                                                   
+				background-repeat: no-repeat;
+				background-position: 0px 50%;
+				margin: 0px 0px 0px 10px;
+			}
+		}
+		.UpdateSectionNav {
+			flow-children: down;
+			padding: 2px 10px 10px;
+			width: 100%;
+			                                                                                       
+
+			.UpdateNoteNav {
+				font-size: 13px;
+				color: #C0C0C0;
+				padding: 3px 3px 3px 6px;
+				text-shadow: 0px 2px 4px rgba(0, 0, 0, 1.0);
+				line-height: 1.5;
+				letter-spacing: 1.2px;
+				text-transform: uppercase;
+				vertical-align: center;
+				background-repeat: no-repeat;
+				background-size: 150px;
+				background-position: 0px 50%;
+				width: 250px;
+
+				.AspectRatio16x10 & {
+					line-height: 1;
+				}
+
+				&:hover {
+					brightness: 5.0;
+					background-color: rgba(41, 41, 41, 0.5); 
+					border-radius:2px;
+					opacity:.6;
+					text-shadow: 0px 0px 10px rgba(235, 176, 66, 0.13);
+
+					.BackgroundImage {
+						transform: scale3d( 1.03, 1.03, 1.0 );
+					}
+				}
+				&:active {
+					brightness: 5;
+				}
+
+			}
+		}
+	}
+
+}
+
+.SectionsCarouselContainer {
+	width: 100%;
+	margin-bottom: 12px;
+	box-shadow: 0px 12px 48px -4px rgba(0, 0, 0, 0.5);
+
+	#SectionsCarousel {
+		width: 100%;
+		border-left: 2px solid #d1b97bac;
+
+		.UpdateSection {
+			height: 248px;
+
+			.AspectRatio16x10 & {
+				height: 232px;
+			}
+
+			transition-property: opacity, transform;
+
+			opacity: 0.0;
+
+			&.Focused {
+				opacity: 1.0;
+			}
+		}
+	}
+
+	#SectionsCarouselNav {
+		horizontal-align: right;
+		margin-top: 12px;
+	}
+
+	
+}
+
+#ViewWebsiteButton {
+	vertical-align: bottom;
+	horizontal-align: left;
+	                   
+	margin-top: 12px;
+	width: 100%;
+}
+
+#MapSection .BackgroundImage { 
+	background-image: url( "file://{images}/front_page/map_update_2023_map.psd" ); 
+}
+
+#MajorGameplaySection .BackgroundImage 
+{
+	background-image: url( "file://{images}/front_page/map_update_2023_gameplay.psd" ); 
+}
+
+#MatchmakingSection .BackgroundImage 
+{ 
+	background-image: url( "file://{images}/front_page/map_update_2023_matchmaking.psd" ); 
+}
+
+#UserInterfaceSection .BackgroundImage 
+{ 
+	background-image: url( "file://{images}/front_page/map_update_2023_interface.psd" );
+}
+
+.TrailerCell {
+	width: 100%;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #2B2636 ), to( #16121A ) );
+	box-shadow: 0px 12px 48px -4px rgba(0, 0, 0, 0.5);
+	padding: 12px;
+	flow-children: right;
+	border-left: 2px solid #d1b97bac;
+
+	transition-property: brightness;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+	&:hover {
+		brightness: 1.3;
+
+		.PreviewThumbnail {
+			transform: scale3d( 1.1, 1.1, 1 );
+		}
+
+		.PlayIcon {
+			background-color: rgba(0, 0, 0, 1);
+		}
+	}
+
+	.PreviewThumbnailContainer {
+		width: 120px;
+		height: width-percentage( 52% );
+		box-shadow: 0px 4px 12px #00000066;
+	}
+
+	.PlayIcon {
+		horizontal-align: center;
+		vertical-align: center;
+		border-radius: 80px;
+		padding: 12px;
+		background-color: rgba(0, 0, 0, 0.9);
+
+		transition-property: background-color;
+		transition-duration: 0.2s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+		Image {
+			width: 16px;
+			height: 16px;
+			horizontal-align: center;
+			vertical-align: center;
+		}
+	}
+
+	.PreviewThumbnail {
+		width: 100%;
+		height: 100%;
+		background-image: url( "file://{images}/events/map_update/trailer_preview_thumbnail.png" );
+		background-size: cover;
+
+		transition-property: transform;
+		transition-duration: 0.3s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	}
+
+	Label {
+		text-transform: uppercase;
+		color: white;
+		opacity: 0.9;
+		letter-spacing: 2px;
+		font-weight: bold;
+		font-size: 18px;
+		vertical-align: center;
+		margin-left: 16px;
+		text-shadow: 0px 2px 6px 2 rgba(0, 0, 0, 0.8);
+	}
+}
+
+.MapButtonPrimary,
+.MapButtonSecondary
+{
+	border-radius: 3px;
+	padding: 10px 28px;
+	box-shadow: 0px 4px 32px -2px rgba(0, 0, 0, 0.6);
+
+	transition-property: background-color, border, transform, opacity;
+	transition-duration: 0.1s;
+	transition-timing-function: ease;
+
+	Label {
+		color: white;
+		font-size: 20px;
+		font-weight: semi-bold;
+		horizontal-align: center;
+		vertical-align: middle;
+	
+		text-transform: uppercase;
+		text-overflow: shrink;
+		text-shadow: 0px 1px 4px #000000;
+		letter-spacing: 1px;
+
+		transition-property: transform, color;
+		transition-duration: 0.05s;
+		transition-timing-function: ease;
+	}
+
+	&.Small {
+		padding: 6px 16px;
+		min-width: 0px;
+
+		Label {
+			font-size: 16px;
+			font-weight: normal;
+		}
+	}
+
+	&.Disabled,
+	&:disabled {
+		saturation: 0;
+		opacity: 0.15;
+
+		Label {
+			opacity: 0.6;
+		}
+	}	
+}
+
+.MapButtonPrimary
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #387d69 ), to( #225a49 ) );
+	border: 1px solid #ffffff10;
+
+	&:hover:enabled:not(.Disabled) {
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #51B093 ), to( #307C64 ) );
+
+		Label {
+			color: white;
+		}
+	}
+
+	&:active:enabled:not(.Disabled) {
+		sound: "ui_generic_button_click";
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #1D463A ), to( #35705E ) );
+
+		Label {
+			transform: translateY( 1px );
+		}
+	}
+}
+
+.MapButtonSecondary
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #21272A ), to( #121719 ) );
+	border: 1px solid white;
+    border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0.02) ), to( rgba(255, 255, 255, 0.01) ) );
+
+	Label {
+		color: baseText;
+	}
+
+	&:hover:enabled:not(.Disabled) {
+		border: 1px solid #8bffd8;
+        background-color: gradient( linear, 0% 0%, 0% 100%, from( #434e53 ), to( #272d2f ) );
+
+		Label {
+			color: #FFFFFF;
+		}        
+
+        &:active {
+            background-color: gradient( linear, 0% 0%, 0% 100%, from( #272d2f ), to( #434e53 ) );
+        }
+	}
+
+	&:active:enabled:not(.Disabled) {
+		sound: "ui_generic_button_click";
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #121719 ), to( #21272A ) );
+
+		Label {
+			transform: translateY( 1px );
+		}
+	}
+}

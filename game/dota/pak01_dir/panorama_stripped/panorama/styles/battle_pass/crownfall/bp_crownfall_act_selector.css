@@ -1,0 +1,124 @@
+
+DOTACrownfallActSelector {
+	flow-children: down;
+	width: 300px;
+	background-color: DarkestGrey;
+	padding: 2px;
+    padding-bottom: 4px;
+
+	.SelectActLabel {
+		horizontal-align: center;
+		margin: 8px;
+		color: LighterGrey;
+		text-shadow: 0px 2px 8px black;
+	}
+
+	.ActList {
+		width: 100%;
+		min-height: 200px;
+
+		.AsyncSuccessContainer {
+			flow-children: down;
+			height: fit-children;
+		}
+	}
+
+    .ChapterNavItem {
+        width: 100%;
+        flow-children: down;
+        padding: 8px 12px;
+        background-color: gradient( linear, 0% 30%, 0% 100%, from( #1b2532 ), to( #161c25 ) );
+        box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.02);
+        margin: 2px;
+        margin-bottom: 0px;
+        border-right: 3px solid transparent;
+
+        transition-duration: 0.1s;
+        transition-property: background-color, brightness;
+
+        &.Inactive {
+            brightness: 0.6;
+            opacity: 0.2;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0);
+            background-color: none;
+        }
+
+        .ActTitle {
+            font-family: titleFont;
+            color: LighterGrey;
+        }
+
+        Label {
+            transition-duration: 0.2s;
+            transition-property: brightness;
+            vertical-align: center;
+            text-shadow: 0px 2px 8px black;
+        } 
+
+        .CurrentlyActiveLabel {
+            visibility: collapse;
+            ignore-parent-flow: true;
+            horizontal-align: right;
+            vertical-align: top;
+            color: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+        }
+
+        .UnlockDate {
+            ignore-parent-flow: true;
+            horizontal-align: right;
+            vertical-align: top;
+            text-overflow: shrink;
+            max-width: 240px;
+            max-height: 26px;
+        }
+
+        &:hover:not(.Inactive) {
+            brightness: 1.5;
+
+            Label {
+                color: whitesmoke;
+            }
+        }
+
+        &.Selected {
+            background-color: gradient( linear, 0% 30%, 0% 100%, from( #495d75 ), to( #2e3947 ) );
+
+            .ActLabel,
+            .ActTitle {
+                color: white;
+            }
+
+            &:not(.Active) {
+                .ActivateButton {
+                    visibility: visible;
+
+                    .ActLocked & {
+                        visibility: collapse;
+                    }
+                }
+            }
+        }
+
+        &.Active {
+                                  
+                                                                                                                                                          
+
+
+            .CurrentlyActiveLabel {
+                                      
+            }
+
+            .ActiveBorder {
+                                      
+            }
+        }
+
+        &.Locked {
+            opacity: 0.1;
+            background-color: none;
+            border: 0px;
+            box-shadow: none;
+        }
+    }
+}
+

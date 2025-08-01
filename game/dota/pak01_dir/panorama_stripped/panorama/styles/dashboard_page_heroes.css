@@ -1,0 +1,203 @@
+DOTAHeroesPage
+{
+    margin-top: 120px;
+    width: 100%;
+    height: 100%;
+}
+
+#HeroGrid
+{
+    horizontal-align: center;
+	ui-scale: 115%;
+    margin-top: 52px;
+}
+
+#DefaultTipAttachment
+{
+    width: 1px;
+    height: 1px;
+    margin-top: 675px;
+    margin-left: 55px;
+}
+
+
+#BanDisplayContainer {
+    width: 1390px;
+    horizontal-align: center;
+    z-index: 2;
+}
+
+#BanDisplay
+{
+    z-index: 10;
+    horizontal-align: right;
+    flow-children: right;
+
+    Label
+    {
+        vertical-align: center;
+        text-transform: uppercase;
+        font-weight: semi-bold;
+        letter-spacing: 2px;
+        color: #808fa6;
+        margin-top: 8px;
+        margin-right: 10px;
+        text-shadow: 0px 2px 8px black;
+    }
+
+    .InfoIcon {
+        tooltip-position: top;
+        margin-top: 8px;
+        margin-right: 12px;
+        wash-color: #808fa6;
+    }
+
+    .BanEntry
+    {
+                       
+        margin-left: 2px;
+        overflow: noclip;
+        padding-top: 6px;
+        padding-right: 6px;
+
+        &:hover
+        {
+            z-index: 1;
+            .ClearButton {
+                opacity: 1;
+                pre-transform-scale2d: 1;
+            }
+
+            DOTAHeroImage {
+                brightness: 1.2;
+                wash-color: #fff;
+                brightness: 1;
+                saturation: 1;
+            }
+        }
+
+        .BanOverlay {
+            width: 20px;
+            height: 20px;
+            horizontal-align: center;
+            border-radius: 50%;
+            margin-top: 10px;
+
+            border: 2px solid white;
+            wash-color: #3F474D;
+
+            transform: rotateZ(45deg);
+            img-shadow: 2px 2px 6px black;            
+            transition-property: opacity-brush, opacity, pre-transform-scale2d, transform;
+            transition-timing-function: ease-in-out;
+            transition-duration: .1s;
+
+            visibility: collapse;
+
+            .Strikethrough {
+                width: 24px;
+                height: 2px;
+                horizontal-align: center;
+                vertical-align: center;
+                background-color: white;
+            }
+        }
+
+        &.Empty
+        {
+            .ClearButton
+            {
+                visibility: collapse;
+            }   
+
+            .BanOverlay {
+                visibility: visible;
+            }
+
+            DOTAHeroImage {
+                border: 1px solid #3F474D;
+                wash-color: #fff;
+                saturation: 1;
+                box-shadow: 0px 3px 16px -2px #0008;
+                background-color: rgba(16, 25, 37, 0.8);
+            }
+
+            DOTAHeroImage:hover {
+                border: 1px solid rgba(128, 143, 166, 0.858);
+                wash-color: #fff;
+                saturation: 1;
+                background-color: rgb(4, 7, 12);
+                
+                .BanOverlay {
+                    visibility: visible;
+                    pre-transform-scale2d: 1.5;
+                    transform: rotateZ(0deg);
+                }
+            }
+        }
+
+        .ClearButton
+        {
+            z-index: 1;
+            border-radius: 50%;
+            opacity: 0;
+            pre-transform-scale2d: 0;
+            horizontal-align: right;
+            vertical-align: top;
+            margin-top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+
+            transform: translateX(6px) translateY(4px);
+            
+            transition-property: opacity, transform, wash-color, pre-transform-scale2d;
+            transition-timing-function: ease-in-out;
+            transition-duration: .16s;
+
+            .ClearX {
+                width: 18px;
+                height: 18px;
+                background-image: url( "file://{images}/control_icons/x_close_filled.png" );
+                background-repeat: no-repeat;
+                background-size: 18px;
+                background-position: center;
+                wash-color: #8B989E;
+                horizontal-align: center;
+                vertical-align: center;
+            }
+
+            &:hover
+            {
+                .ClearX {
+                    wash-color: #fff;
+                }
+                
+            }
+
+            .ClearLabel {
+                text-align: center;
+                text-overflow: shrink;
+                horizontal-align: center;
+                color: #333;
+                
+            }
+        }
+
+        DOTAHeroImage {
+            width: 70px;
+            height: 40px;
+            vertical-align: top;
+            wash-color: #f008;
+            saturation: .5;
+            brightness: .6;
+
+
+            border: 1px solid #808fa600;
+            box-shadow: 2px 2px 12px #0008;
+            transition-property: opacity, pre-transform-scale2d, brightness, border, wash-color, saturation, brightness, background-color;
+            transition-timing-function: ease-in-out;
+            transition-duration: .16s;
+        }
+    }
+}

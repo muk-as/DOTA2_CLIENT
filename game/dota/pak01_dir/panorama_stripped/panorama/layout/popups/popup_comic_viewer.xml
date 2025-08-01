@@ -1,0 +1,33 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_comic_viewer.css" />
+	</styles>
+
+	<ComicViewerPopup class="PopupPanel Hidden" popupbackground="blur" oncancel="ComicViewerConditionallyClose(Book)" acceptsfocus="true">
+		<ComicViewerBook id="Book" />
+		<Panel class="BookBorder" hittest="false"/>
+		<Panel class="Controls">
+			<Panel class="Pagination">
+				<Button id="PreviousPageButton" class="NavButton ButtonPrimary LightGrey" onactivate="ComicViewerControlsGoDirection( Book, -1 )" >
+					<Image hittest="false" src="file://{images}/control_icons/24px/chevron_left.svg" />
+				</Button>
+				<Panel id="PageNumberButton" class="LabelIconButton" onactivate="ComicViewerControlsShowThumbnailBrowser( Book )">
+					<Label class="LabelMedium LightestGrey" text="{d:current_page} / {d:total_pages}" />
+					<Image class="Icon" src="file://{images}/control_icons/24px/grid_medium.svg" />
+				</Panel>
+				<Button id="NextPageButton" class="NavButton ButtonPrimary LightGrey" onactivate="ComicViewerControlsGoDirection( Book, 1 )" >
+					<Image hittest="false" src="file://{images}/control_icons/24px/chevron_right.svg" />
+				</Button>
+			</Panel>
+			<Panel id="HideThumbnailsButton" class="LabelIconButton" onactivate="ComicViewerConditionallyClose(Book)">
+				<Label class="LabelMedium LightestGrey" text="#DOTA_Comic_Viewer_Hide_Thumbnails" />
+				<Image class="Icon" src="file://{images}/control_icons/24px/x_close.svg" />
+			</Panel>
+		</Panel>
+		<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="ComicViewerConditionallyClose(Book)" >
+			<Image src="file://{images}/control_icons/24px/x_close.svg" />
+		</Button>
+	</ComicViewerPopup>
+</root>

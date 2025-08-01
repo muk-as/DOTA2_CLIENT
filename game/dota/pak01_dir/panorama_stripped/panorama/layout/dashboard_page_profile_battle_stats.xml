@@ -1,0 +1,334 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_profile.css" />
+		<include src="file://{resources}/styles/battle_report/battle_report_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_profile_battle_stats.css" />
+		<include src="file://{resources}/styles/dashboard_page_profile_stats_shared.css" />
+	</styles>
+	
+	<snippets>
+
+		<snippet name="ColumnHeader">
+			<Panel class="ColumnHeader" onmouseover="UIShowTextTooltip( {s:column_name} )" onmouseout="UIHideTextTooltip()">
+				<Label text="{s:column_name_abbreviation}" />
+				<Panel class="SortIcon" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ColumnData">
+			<Panel class="ColumnData">
+			</Panel>
+		</snippet>
+
+		<snippet name="HeroColumnData">
+			<Panel class="ColumnData HeroColumnData">
+				<Panel id="ExpandCollapseIcon" />
+				<DOTAHeroImage id="HeroImage" heroimagestyle="landscape" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RoleColumnData">
+			<Panel class="ColumnData RoleColumnData">
+				<Panel id="ExpandCollapseIcon" />
+				<Panel class="RoleIcon" onmouseover="UIShowTextTooltip( {s:role_name} )" onmouseout="UIHideTextTooltip()"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="ItemColumnData">
+			<Panel class="ColumnData ItemColumnData">
+				<DOTAItemImage id="ItemIcon0" class="ItemIcon" />
+				<DOTAItemImage id="ItemIcon1" class="ItemIcon" />
+				<DOTAItemImage id="ItemIcon2" class="ItemIcon" />
+				<DOTAItemImage id="ItemIcon3" class="ItemIcon" />
+				<DOTAItemImage id="ItemIcon4" class="ItemIcon" />
+				<DOTAItemImage id="ItemIcon5" class="ItemIcon" />
+			</Panel>
+		</snippet>
+
+		<snippet name="AghsColumnData">
+			<Panel class="ColumnData AghsColumnData">
+				<Panel class="AghsIcon"/>
+				<Panel class="ShardIcon" />
+			</Panel>
+		</snippet>
+
+		<snippet name="LabelColumnData">
+			<Panel class="ColumnData LabelColumnData">
+				<Label id="StatValue" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ProgressBarColumnData">
+			<Panel class="ColumnData ProgressBarColumnData">
+				<ProgressBar id="StatProgressBar" />
+			</Panel>
+		</snippet>
+
+		<snippet name="HeroImageColumnData">
+			<Panel class="ColumnData HeroImageColumnData">
+				<DOTAHeroImage id="HeroImage" heroimagestyle="landscape" />
+				<DOTAFacetIcon id="HeroFacet" />
+			</Panel>
+		</snippet>
+
+		                 
+
+		<snippet name="HeroRow">
+			<Panel class="AnalysisTableRow HeroRow">
+				<Panel id="HeroColumns" class="AnalysisColumns" />
+				<Panel id="RoleSubRows" class="AnalysisSubRows">
+					                            
+				</Panel>
+			</Panel>
+		</snippet>
+		
+		<snippet name="RoleSubRow">
+			<Panel class="AnalysisTableSubRow RoleSubRow">
+				<Panel id="RoleColumns" class="AnalysisColumns" />
+			</Panel>
+		</snippet>
+
+		                 
+
+		<snippet name="RoleRow">
+			<Panel class="AnalysisTableRow RoleRow">
+				<Panel id="RoleColumns" class="AnalysisColumns" />
+				<Panel id="HeroSubRows" class="AnalysisSubRows">
+					                            
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="HeroSubRow">
+			<Panel class="AnalysisTableSubRow HeroSubRow">
+				<Panel id="HeroColumns" class="AnalysisColumns" />
+			</Panel>
+		</snippet>
+
+		                  
+
+		<snippet name="MatchRow">
+			<Panel class="AnalysisTableRow MatchRow">
+				
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+
+	<DOTAProfileBattleStatsPage class="DashboardPage">
+
+		                                         
+                                                                                                 
+        <Panel id="ShowcaseBackgroundContainer" hittest="false">
+            <DOTAShowcaseBackground id="ShowcaseBackground" hittest="false" />
+        </Panel>
+		<Panel class="TopGradient" hittest="false"/>
+
+		<Panel id="ProfileContainer" class="ProfileTopLevel">
+
+			<Panel id="ProfileInteractable">
+
+				<Panel id="Header">
+					<Panel class="HeaderNameContainer LeftRightFlow">
+						<DOTARankBadge id="RankBadge" class="RankBadge"/>
+						<DOTAAvatarImage id="AvatarImage" />
+						<Panel class="TopBottomFlow">
+							<Panel class="LeftRightFlow">
+								<DOTABattleCupVictoryIcon id="BattleCupVictoryIcon" class="BattleCupVictoryIconLarge"/>
+								<DOTAUserName id="ProfileName" />
+								<DOTAUserName id="ProfileNickname" class="ProfileNickname"/>
+							</Panel>
+							<DOTAUserRichPresence id="UserRichPresence" class="ProfileUserRichPresence" />
+						</Panel>
+					</Panel>
+
+					<Panel class="LeftRightFlow HorizontalCenter VerticalCenter">
+						<Panel class="TabGroupContainer">
+							<TabButton id="TimeRangeWeek" class="TabItem" group="TimeRangeTab" onactivate="DOTABattleReportDBTimeRangeChanged();" >
+								<Label text="#DOTA_BattleReport_TimeRangeToggleItemLabel_Week" />
+							</TabButton>
+							<TabButton id="TimeRangeMonth" class="TabItem" group="TimeRangeTab" onactivate="DOTABattleReportDBTimeRangeChanged();" >
+								<Label text="#DOTA_BattleReport_TimeRangeToggleItemLabel_Month" />
+							</TabButton>
+							<TabButton id="TimeRangeThreeMonth" class="TabItem" group="TimeRangeTab" onactivate="DOTABattleReportDBTimeRangeChanged();" >
+								<Label text="#DOTA_BattleReport_TimeRangeToggleItemLabel_ThreeMonth" />
+							</TabButton>
+							<TabButton id="TimeRangeYear" class="TabItem" group="TimeRangeTab" selected="true" onactivate="DOTABattleReportDBTimeRangeChanged();" >
+								<Label text="#DOTA_BattleReport_TimeRangeToggleItemLabel_Year" />
+							</TabButton>
+						</Panel>
+						<Panel class="TabGroupContainer">
+							<TabButton id="TimeRangeAllTime" class="TabItem" group="TimeRangeTab" onactivate="DOTABattleReportDBTimeRangeChanged();" >
+								<Label text="#DOTA_BattleReport_TimeRangeToggleItemLabel_AllTime" />
+							</TabButton>
+						</Panel>
+					</Panel>
+					
+					<Panel id="MMRContainer" class="TopBottomFlow">
+						<Panel class="MMRValueContainer TopBottomFlow">
+							<Panel class="MMRNumberContainer">
+								<Label id="MMRTBD" class="MMRTBD MMRValue" text="#ranked_mmr_tbd"/>
+								<Label id="MMRNumber" class="MMRValue"  text="#ranked_mmr_value"/>
+								<Label id="MMRCalibrating" class="MMRValue" text="#ranked_mmr_calibrating"/>
+								<Label id="MMRNoData" class="MMRValue" text="#ranked_mmr_core_no_data"/>
+							</Panel>
+							<Label id="MMRLabel" text="#ranked_mmr_label"/>
+						</Panel>
+
+						<Panel id="RankConfidenceContainer">
+							<Panel class="RankConfidenceProgressBarContainer TopBottomFlow">
+								<ProgressBar id="RankConfidenceProgressBar" onmouseover="UIShowTextTooltip( #ranked_mmr_confidence_tooltip )" onmouseout="UIHideTextTooltip()"> 
+									<Panel id="RankConfidenceCalibrationThreshold"/>
+									<Label id="RankConfidenceProgressBarValue" text="#ranked_mmr_confidence_value" />
+								</ProgressBar>
+								<Label id="RankConfidenceProgressBarLabel" text="#ranked_mmr_confidence_label" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="BattleReportStats">
+				
+					<Panel id="TableHeaderSpacer"/>
+					
+					<Panel id="AllTimeNoFilterMessage">
+						<Image class="AllTimeMessageIcon" src="file://{images}/control_icons/restore.png" />
+						<Label class="AllTimeMessage" text="#DOTA_BattleReport_NoDataAllTime_Message"/>
+					</Panel>
+
+					<Panel id="ProfileBattleReportFilters" class="Filters">
+
+						<Panel class="FiltersSection">		
+							                                                                                    
+							<RadioButton id="HeroTabButton" class="GroupingToggle LargeToggle" onactivate="DOTABattleReportDBPageFilterChanged()" group="MatchGrouping" selected="true">
+								<Label text="#DOTA_BattleReport_Heroes" />
+							</RadioButton>
+							<RadioButton id="RoleTabButton" class="GroupingToggle LargeToggle" onactivate="DOTABattleReportDBPageFilterChanged()" group="MatchGrouping">
+								<Label text="#DOTA_BattleReport_Roles" />
+							</RadioButton>
+							<RadioButton id="MatchTabButton" class="GroupingToggle LargeToggle" onactivate="DOTABattleReportDBPageFilterChanged()" group="MatchGrouping">
+								<Label text="#DOTA_BattleReport_Matches" />
+							</RadioButton>
+						</Panel>
+
+						<Panel id="StatGroupsToggle" class="FiltersSection">
+							<Label class="FiltersSectionTitle" text="#DOTA_BattleReport_PresetsLabel" />
+							<Panel id="FilterPresets" class="FiltersSectionTitle FilterSectionBody" text="Presets" >
+								                            
+							</Panel>
+						</Panel>
+
+						<Panel id="FiltersContainer">							
+							<Label class="FilterSectionDividerLabel" text="#DOTA_BattleReport_FilterLabel" />
+
+							<Panel class="FiltersSection">
+								<Label class="FiltersSectionTitle" text="#DOTA_BattleReport_Outcome" />
+								<RadioButton id="BothRadioButton" group="MatchOutcomeGrouping" onactivate="DOTABattleReportDBPageFilterChanged()" selected="true">
+									<Label text="#dota_profile_recent_game_result_both" />
+								</RadioButton>
+								<RadioButton id="WinRadioButton" group="MatchOutcomeGrouping" onactivate="DOTABattleReportDBPageFilterChanged()" >
+									<Label text="#dota_profile_recent_game_result_win" />
+								</RadioButton>
+								<RadioButton id="LossRadioButton" group="MatchOutcomeGrouping" onactivate="DOTABattleReportDBPageFilterChanged()" >
+									<Label text="#dota_profile_recent_game_result_loss" />
+								</RadioButton>
+							</Panel>
+
+							<Panel class="FiltersSection">
+								<Label class="FiltersSectionTitle" text="#DOTA_BattleReport_Heroes" />
+								<DOTAMultipleHeroPicker id="MultipleHeroPicker" />
+							</Panel>
+
+							<Panel class="FiltersSection">
+								<Label class="FiltersSectionTitle" text="#DOTA_BattleReport_Roles" />
+								<ToggleButton id="SafeLaneRoleCheckbox" text="#DOTA_BattleReport_Role_SafeLane" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="MidLaneRoleCheckbox" text="#DOTA_BattleReport_Role_MidLane" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="OffLaneRoleCheckbox" text="#DOTA_BattleReport_Role_OffLane" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="SoftSupportRoleCheckbox" text="#DOTA_BattleReport_Role_SoftSupport" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="HardSupportRoleCheckbox" text="#DOTA_BattleReport_Role_HardSupport" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+							</Panel>
+
+							<Panel class="FiltersSection">
+								<Label class="FiltersSectionTitle" text="#DOTA_BattleReport_GameType" />
+								<ToggleButton id="UnrankedCheckbox" text="#DOTA_lobby_type_name_unranked" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="RankedCheckbox" text="#DOTA_lobby_type_name_ranked" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="TurboCheckbox" text="#DOTA_GameMode_Turbo" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+								<ToggleButton id="AbilityDraftCheckbox" text="#DOTA_GameMode_AbilityDraft" selected="true" onactivate="DOTABattleReportDBPageFilterChanged()" />
+							</Panel>
+						</Panel>						
+						
+					</Panel>
+
+					<Panel id="TablesContainer">
+
+						<Panel id="NoStatsMessage">
+							<Image class="NoStatsMessageIcon" src="file://{images}/control_icons/stats_icon.png" />
+							<Label class="NoStatsMessage" text="#DOTA_BattleReport_NoStats_Message"/>
+						</Panel>
+					
+						<AsyncDataPanel id="HeroesTable" class="AnalysisTable" state="{d:table_data_status}">
+							<Panel id="HeroTableData" class="AsyncSuccessContainer">
+								<Panel id="HeroesTableHeader" class="AnalysisTableHeader">
+									<Panel id="HeroesFirstColumnHeader" class="AnalysisFirstColumnHeader" />
+									<Panel id="HeroesColumnsHeader" class="AnalysisColumnsHeader" />
+								</Panel>
+								<Panel id="HeroesTableRows" class="AnalysisTableRows">
+									<Panel id="HeroesFirstColumn" class="AnalysisTableFirstColumn" />
+									<Panel id="HeroesList" class="AnalysisTableRowContents">
+										                         
+									</Panel>
+								</Panel>
+							</Panel>
+						</AsyncDataPanel>
+
+						<AsyncDataPanel id="RolesTable" class="AnalysisTable" state="{d:table_data_status}">
+							<Panel id="RolesTableData" class="AsyncSuccessContainer">
+								<Panel id="RolesTableHeader" class="AnalysisTableHeader">
+									<Panel id="RolesFirstColumnHeader" class="AnalysisFirstColumnHeader" />
+									<Panel id="RolesColumnsHeader" class="AnalysisColumnsHeader" />
+								</Panel>
+								<Panel id="RolesTableRows" class="AnalysisTableRows">
+									<Panel id="RolesFirstColumn" class="AnalysisTableFirstColumn" />
+									<Panel id="RolesList" class="AnalysisTableRowContents">
+										                         
+									</Panel>
+								</Panel>
+							</Panel>
+						</AsyncDataPanel>
+
+						<AsyncDataPanel id="MatchesTable" class="AnalysisTable" state="{d:table_data_status}">
+							<Panel id="MatchesTableData" class="AsyncSuccessContainer">
+								<Panel id="MatchesTableHeader" class="AnalysisTableHeader">
+									<Panel id="MatchesColumnsHeader" class="AnalysisColumnsHeader" />
+								</Panel>
+								<Panel id="MatchesTableRows" class="AnalysisTableRows">
+									<Panel id="MatchesList" class="AnalysisTableRowContents">
+										                         
+									</Panel>
+								</Panel>
+							</Panel>
+						</AsyncDataPanel>
+
+					</Panel>
+
+					<Panel id="InfrequentHeroesControl">
+						<Label class="HideHeroesSliderTitle" text="#DOTA_BattleReport_HideHeroesSliderLabel" />
+						<SlottedSlider id="HideHeroesSlider" notches="10" direction="horizontal" class="HorizontalSlider"/>
+						<Label class="HideHeroesSliderTitle NumberOfGames" text="#DOTA_BattleReport_HideHeroesSliderCount" />
+					</Panel>
+
+				</Panel>				
+
+			</Panel>
+
+			<Panel id="CustomizeColumns" onactivate="DOTABattleReportDBPageChangeColumns()" onmouseover="UIShowTextTooltip( #DOTA_BattleReport_ChooseColumns )" onmouseout="UIHideTextTooltip()">
+				<Button class="ChangeColumnsButton" />
+			</Panel>
+
+		</Panel>
+
+	</DOTAProfileBattleStatsPage>
+</root>

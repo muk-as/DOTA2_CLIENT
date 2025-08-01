@@ -1,0 +1,157 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_intro.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/battle_pass/crownfall/bp_popup_crownfall_intro.js" />
+	</scripts>
+
+	<Panel class="PopupPanel CrownfallIntro Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+    <Panel class="WelcomeTitleContainer">
+		<Label class="WelcomeTitle" text="#DOTA_Crownfall_Guide_Header"/>
+		<Label class="EventExpired BodyMedium" text="#DOTA_Crownfall_Guide_Header_EventExpired"/>
+		</Panel>
+		<Panel class="ShowTokens" id="MainBody">
+			<Panel class="LeftNavigation">
+				<Label class="SectionName" text="Progression"/>
+				<TextButton id="NavTokens" class="SectionButton" text="Tokens" onactivate="NavigationSelect( 0 );" />
+				<TextButton id="NavStory" class="SectionButton" text="Story" onactivate="NavigationSelect( 1 );"/>
+				<Label class="SectionName" text="Rewards"/>
+				<TextButton id="NavCoins" class="SectionButton" text="Coins" onactivate="NavigationSelect( 2 );" />
+				<TextButton id="NavCandy" class="SectionButton" text="Candy" onactivate="NavigationSelect( 3 );" />
+				<TextButton id="NavTreasures" class="SectionButton" text="Treasures" onactivate="NavigationSelect( 4 );" />
+				<TextButton id="NavTrinkets" class="SectionButton" text="Trinkets" onactivate="NavigationSelect( 5 );" />
+				<Label class="SectionName" text="The Event"/>
+				<TextButton id="NavStore" class="SectionButton" text="The Store" onactivate="NavigationSelect( 6 );" />
+				<TextButton id="NavSchedule" class="SectionButton" text="Schedule" onactivate="NavigationSelect( 7 );" />
+			</Panel>
+			<Panel class="MainContainer">
+				<Panel class="Content MainTokens">
+					<Panel class="ImageColumn" id="ExploreImageContainer">
+						<Image src="file://{images}/events/crownfall/overworld/nodes/bg_explorethemap.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="Node" hittest="false">
+							<Panel id="NodeBackground" />
+							<Panel id="NodeBackgroundInner" hittest="false" />
+							<Panel id="NodeContents" hittest="false">
+								<AnimatedImageStrip id="AnimatedImage" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+								<AnimatedImageStrip class="PremiumSparkle" src="file://{images}/emoticons/crownfall/props/prop_reward_premium_sparkle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+								<EconItemImage id="ItemImage" scaling="contain" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="TextColumn">
+						<Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_Paths" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Paths_1" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Paths_2" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Paths_3" />
+					</Panel>
+				</Panel>
+        
+				<Panel class="Content MainTokens">
+					<Panel class="ImageColumn" id="TokensImageContainer">
+						<Panel class="ImageShadow"/>
+						<DOTAScenePanel class="TokenParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+						<Panel class="TokensContainer">
+							<DOTACrownfallToken id="1" overworld_id="1" token_id="2" class="LargeToken" tooltipstyle="none" />
+							<DOTACrownfallToken id="2" overworld_id="1" token_id="14" class="LargeToken" tooltipstyle="none" />
+							<DOTACrownfallToken id="3" overworld_id="1" token_id="15" class="LargeToken" tooltipstyle="none" />
+						</Panel>
+						<Panel class="HeroAxeIcon"></Panel>
+						                                                                                                                                       
+					</Panel>
+					<Panel class="TextColumn">
+						<Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_Tokens" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Tokens_1" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Tokens_2" onmouseover="UIShowTextTooltip( '#DOTA_Crownfall_Guide_Tokens_2_Tooltip' )" onmouseout="UIHideTextTooltip()" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Tokens_3" onmouseover="UIShowTextTooltip( '#DOTA_Crownfall_Guide_Tokens_3_Tooltip' )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+				</Panel>
+
+        <Panel class="Content MainScrap">
+          <Panel class="ImageColumn" id="ScrapImageContainer">
+			<Image src="file://{images}/events/crownfall/overworld/nodes/bg_scraps.png" scaling="stretch-to-fit-preserve-aspect" />
+                                                 
+                                              
+                                                   
+                                              
+                                                                   
+                                                                                                                                                                                                     
+                        
+          </Panel>
+          <Panel class="TextColumn">
+            <Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_Scrap" />
+            <Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Scrap_1" />
+            <Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Scrap_2" />
+            <Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Scrap_3" />
+          </Panel>
+        </Panel>
+
+        <Panel class="Content MainCoins">
+					<Panel class="ImageColumn" id="CoinsImageContainer">
+						<Panel class="ImageShadow"/>
+						                                                                                                                              
+						<Panel class="CoinContainer">
+							<Panel class="NodeBackground Back" />
+							<Panel class="NodeBackground" />
+							<Panel class="NodeBackgroundInner" hittest="false" />
+							<AnimatedImageStrip class="CoinImage" src="file://{images}/emoticons/crownfall/props/prop_reward_coin_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+						</Panel>
+					</Panel>
+          <DOTACrownfallStorePropertiesPanel class="TextColumn">
+						<Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_Coins" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Coins_1" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Coins_2" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Coins_3" />
+          </DOTACrownfallStorePropertiesPanel>
+				</Panel>
+				<Panel class="Content MainCandy">
+					<Panel class="ImageColumn" id="CandyImageContainer">
+						<Panel class="ImageShadow"/>
+						<Panel class="CandyContainer">
+							<Panel class="NodeBackground Back" />
+							<Panel class="NodeBackground" />
+							<Panel class="NodeBackgroundInner" hittest="false" />
+							<AnimatedImageStrip class="CandyImage" src="file://{images}/emoticons/crownfall/props/prop_reward_candy_sack_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+						</Panel>
+					</Panel>
+					<Panel class="TextColumn">
+						<Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_Candy" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Candy_1" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Candy_2" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_Candy_3" />
+					</Panel>
+				</Panel>
+				<Panel class="Content MainTreasures">
+					<Panel class="ImageColumn" id="TrinketsImageContainer">
+						<Panel class="ImageShadow"/>
+						<Panel class="TricketsContainer">
+							<AnimatedImageStrip class="Trinket FinalChest" src="file://{images}/emoticons/crownfall/props/prop_reward_large_chest_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+							<AnimatedImageStrip class="Trinket Treasure" src="file://{images}/emoticons/crownfall/props/prop_reward_chest_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+							<AnimatedImageStrip class="Trinket Gift" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="60ms" defaultframe="1" scaling="cover" />
+						</Panel>
+					</Panel>
+					<Panel class="TextColumn">
+						<Label class="Header" text="#DOTA_Crownfall_Guide_SubHeader_OtherRewards"/>
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_OtherRewards_1" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_OtherRewards_2" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_OtherRewards_3" />
+						<Label html="true" class="Bullet" text="#DOTA_Crownfall_Guide_OtherRewards_4" />
+					</Panel>
+				</Panel>
+				<Panel class="Characters">
+					<AnimatedImageStrip class="CharacterIcon" src="file://{images}/emoticons/crownfall/p_sky_arcana_idle.psd" framewidth="54px" frametime="100ms" defaultframe="1" scaling="contain" hittest="false" />
+					<AnimatedImageStrip class="CharacterIcon" src="file://{images}/emoticons/crownfall/p_venge_arcana_alt_idle.psd" framewidth="57px" frametime="100ms" defaultframe="1" scaling="contain" hittest="false" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+		<Panel class="TopGoldDash"/>
+	</Panel>
+</root>

@@ -1,0 +1,134 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/dota_ui_crownfall_visual_novel.css" />
+	</styles>
+	<snippets>
+		
+		<snippet name="PortraitContainerLayered">
+			<Panel class="PortraitContainerLayered">
+				<Panel class="ActorShadow"/>
+				<Panel class="ActorBackground"/>
+				<Panel class="ActorBorder Under"/>
+				<Panel class="PictureMask" >
+					<Panel id="AnimationContainer" class="AnimationContainer">
+						<Image id="ActorPicture" class="ActorPicture" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+				</Panel>
+				<Panel class="ActorBorder Over"/>
+				<Panel class="ActorEffectOverlay"/>
+				<Panel class="ActorNameContainer">
+					<Panel class="ActorNameBackground">
+						<Panel class="Edge Left"/>
+						<Panel class="Fill"/>
+						<Panel class="Middle"/>
+						<Panel class="Fill"/>
+						<Panel class="Edge Right"/>
+					</Panel>
+					<Label class="ActorName LabelLarge" text="{s:name_actor}"/>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="NavButton">
+			<Panel class="NavButton">
+				<Panel class="NavButtonBackground" />
+				<Image class="NavButtonIcon Comic" src="file://{images}/control_icons/24px/comic.png" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="NavButtonIcon Lock" src="file://{images}/control_icons/24px/lock.svg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="ComicViewer">
+			<Panel class="ComicViewer" acceptsfocus="true">
+				<ComicViewerBook id="Book" remember_last_page="false" minimum_page_time="0.3" />
+				                                                                                         
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<Panel class="VisualNovel" >
+
+		                                                                                                                                          
+		
+		<Panel id="ChapterNavigation" >
+			                                         
+		</Panel>		
+		
+		<Panel class="MainContentsWrapper">
+			<Panel class="MainContents" onactivate="DOTAVisualNovelNextStep()">
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="EncounterBackground"/>
+
+				<Panel class="CustomHeading">
+					<Panel class="DashDotDivider">
+						<Panel class="Dash Left"/>
+						<Label class="HeadingText TitleLarge" text="{s:custom_heading_text}"/>
+						<Panel class="Dash Right"/>
+					</Panel>
+				</Panel>
+				
+				<Panel class="Heading">					
+					<Label class="ChapterName LabelMedium" text="{s:chapter_name}"/>
+					<Panel class="DashDotDivider">
+						<Panel class="Dash Left"/>
+						<Label class="ChapterIndex TitleLarge" text="{d:chapter_index}"/>
+						<Panel class="Dash Right"/>
+					</Panel>
+					                                                                         
+				</Panel>
+
+				<Panel id="StoryPanel" class="NovelContainer" hittest="false">
+					<Panel class="GroupContainer Top" id="GroupContainer1">
+						<Panel class="PortraitGroup" id="PortraitGroup1">
+							                                   
+						</Panel>
+						<Panel class="ActorTextContainer">
+							<DOTATypewriterText id="ActorText1" class="Crownfall ActorText" cursorimage="file://{images}/emoticons/crownfall/props/prop_donkey_prompt.psd" />
+							<Panel class="MoreIndicator"></Panel>
+						</Panel>
+					</Panel>
+					
+					<Panel class="GroupContainer Bottom" id="GroupContainer2">
+						<Panel class="PortraitGroup" id="PortraitGroup2" >
+							                                   
+						</Panel>
+						<Panel class="ActorTextContainer">
+							<DOTATypewriterText id="ActorText2" class="Crownfall ActorText" cursorimage="file://{images}/emoticons/crownfall/props/prop_donkey_prompt.psd" />
+							<Panel class="MoreIndicator"></Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel class="InstructionTextContainer">
+					<Label class="InstructionText" text="#DOTA_Crownfall_VisualNovel_ClickToContinue"></Label>
+				</Panel>
+
+				<Panel id="PopupContainer">
+					<Image class="SoundEffectBackground Hit" src="file://{images}/events/crownfall/visual_novel/sound_effect_background.png" />
+					<Image class="SoundEffectBackground Wet" src="file://{images}/events/crownfall/visual_novel/wet_effect_background.png" />
+					<Label id="PopupText" text="{s:text_popup}" />
+				</Panel>
+				<Panel id="ComicContainer">
+					                                                          
+				</Panel>
+				<Panel class="ComicBlocker" onactivate="" />
+				<Panel id="ComicExternalContainer">
+					<Image id="ExternalComicBackgroundPage" />
+					<DOTACrownfallButton id="ShowExternalComicButton" text="#DOTA_Crownfall_StoryRecap_Act1_ViewComicButton" onactivate="DOTAVisualNovelShowExternalComic()"/>
+				</Panel>
+			</Panel>
+
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+			</Panel>
+		</Panel>
+
+		<Image id="PreloadActorPicture" />
+		
+		                                  
+			                               
+		            
+
+	</Panel>
+</root>

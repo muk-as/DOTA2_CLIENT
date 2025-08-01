@@ -1,0 +1,74 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_page_crownfall_credits.css" />
+	</styles>
+	<snippets>
+		<snippet name="Character">
+			<Panel class="Character">
+				<AnimatedImageStrip id="CharacterImage" frametime="100ms" loop="true" />
+				<Label class="CharacterName" text="{s:character_name}"/>
+				<Label class="CharacterTitle" text="{s:character_title}"/>
+			</Panel>
+		</snippet>
+		<snippet name="Animateable">
+			<Panel class="Animateable" hittest="false">
+				<AnimatedImageStrip id="AnimImage" frametime="100ms" defaultframe="0" animating="false" loop="false" />
+			</Panel>
+		</snippet>
+		<snippet name="CreditsBlock">
+			<Panel class="CreditsBlock">
+				<Panel id="CharactersContainer">
+					                             
+				</Panel>
+				<Panel id="SceneContainer" >
+					<Image id="SceneImage" scaling="none" />
+					<Panel id="AnimationContainer">
+						                             
+					</Panel>
+				</Panel>
+				<Panel class="SpecialThanksContainer">
+					<Label class="SpecialThanksText" text="#DOTA_Crownfall_Credits_SpecialThanks" />
+					<Panel class="PlayerContainer">
+						<DOTAAvatarImage id="PlayerAvatar" />
+						<Label class="PlayerPersona" html="true" text="{g:dota_persona:nl:nt:nc:account_id}" />
+					</Panel>
+				</Panel>
+				<Panel class="JustTextContainer">
+					<Label text="{s:just_text}"/>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPCrownfallCreditsPage class="DashboardPage" onload="DOTACrownfallCreditsOnPageLoad()">
+		<Panel class="CreditsContents" hittest="false">
+			<Panel id="ScrollingRegion">
+				                            
+			</Panel>
+			<AnimatedImageStrip id="ValveHeadAnim" src="file://{images}/events/crownfall/end_credits/valve_head_pixelated.psd" framewidth="56" frameheight="48" framecount="67" frametime="100ms" defaultframe="0" animating="false" loop="false" />
+			<Image src="file://{images}/events/crownfall/end_credits/curtains.psd" class="Curtains" scaling="cover"/>
+		</Panel>
+		<Panel class="DebugContainer">
+			<Panel class="Row">
+				<TextButton onactivate="DOTACrownfallCreditsReset()" text="Reset" />
+				<Label text="{d:time}s" />
+				<TextButton class="PauseButton" onactivate="DOTACrownfallCreditsPauseToggle()" text="Pause" />
+				<TextButton class="UnpauseButton" onactivate="DOTACrownfallCreditsPauseToggle()" text="Unpause" />
+
+
+				<ToggleButton id="ZoomButton" onactivate="DOTACrownfallCreditsZoomToggle()">
+					<Label unlocalized="true" text="Preview"  />
+				</ToggleButton>
+				<ToggleButton id="OutlineButton" onactivate="DOTACrownfallCreditsOutlineToggle()">
+					<Label unlocalized="true" text="Outlines"  />
+				</ToggleButton>
+			</Panel>
+			<Panel class="SliderContainer">
+				<Slider id="TimelineSlider" class="HorizontalSlider" direction="horizontal" unlocalized="true" text="Timeline" />
+			</Panel>
+		</Panel>
+
+	</DOTABPCrownfallCreditsPage>
+</root>

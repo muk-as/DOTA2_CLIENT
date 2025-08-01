@@ -1,0 +1,72 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/showcase/showcase_shared.css" />
+		<include src="file://{resources}/styles/showcase/dashboard_page_showcase_admin_report_rollups.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="RollupInfo">
+			<Panel class="RollupInfo">
+				<Label class="RollupID" text="Rollup {d:rollup_id}" />
+				<Label class="RollupStart" text="Start: {t:start_timestamp}" />
+				<Label class="RollupEnd" text="End: {t:end_timestamp}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RollupEntry">
+			<Panel class="RollupEntry">
+				<Panel class="Column NameColumn">
+					<DOTAAvatarImage id="AvatarImage" />
+					<Label class="EntryData" text="{g:dota_persona:account_id}" html="true" />
+				</Panel>
+				<Panel class="Column TypeColumn">
+					<Label class="EntryData" text="{s:showcase_type}" />
+				</Panel>
+				<Panel class="Column ReportCountColumn">
+					<Label class="EntryData" text="{d:report_count}" />
+				</Panel>
+				<Panel class="Column ReviewColumn">
+					<TextButton id="ReviewButton" class="PopupButton" text="Review" />
+				</Panel>
+			</Panel>
+		</snippet>
+		
+	</snippets>
+
+	<DOTAShowcaseAdminReportRollupsPage class="DashboardPage">
+		<Panel class="PageContents">
+			<Label class="PageTitle" text="Admin: Review Showcase Reports" />
+
+			<AsyncDataPanel id="RollupsContainer" state="{d:rollups_state}">
+				<Panel class="AsyncSuccessContainer">
+					<Panel id="RollupList">
+						                            
+					</Panel>
+
+					<Panel class="RollupContents">
+						<Label class="NoRollupSelected" text="Select a rollup on the left to view its entries" />
+
+						<AsyncDataPanel class="RollupEntriesContainer" state="{d:rollup_entries_state}">
+							<Panel class="AsyncSuccessContainer">
+								<Label class="NoEntriesLabel" text="No entries found" />
+								<Panel class="EntriesTable">
+									<Panel class="RollupEntriesHeader">
+										<Label class="NameColumn" text="Name" />
+										<Label class="TypeColumn" text="Type" />
+										<Label class="ReportCountColumn" text="Report Count" />
+										<Panel class="ReviewColumn" />
+									</Panel>
+									<DelayLoadList id="RollupEntriesList" itemwidth="800px" itemheight="46px" />
+								</Panel>
+							</Panel>
+						</AsyncDataPanel>
+					</Panel>
+
+				</Panel>
+			</AsyncDataPanel>
+		</Panel>
+
+	</DOTAShowcaseAdminReportRollupsPage>
+</root>

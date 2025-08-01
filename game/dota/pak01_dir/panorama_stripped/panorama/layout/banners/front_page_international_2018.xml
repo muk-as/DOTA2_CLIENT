@@ -1,0 +1,73 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/frontpage_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2018/bp_international2018_shared.css" />
+		<include src="file://{resources}/styles/banners/front_page_international_2018.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/banners/front_page_international_2018.js" />
+	</scripts>
+
+	<Panel class="FrontpageTakeover GrimstrokeVisible">
+		<Panel id="MainContents">
+			<Panel id="Header">
+				<Panel class="Title" />
+				<Panel class="FillWidth" />
+				<Countdown id="Countdown" start-time="1534347000">
+					<Label class="CountdownHeader" text="#DOTA_International2017_GroupStageBegins" />
+					<Label class="CountdownTime MonoNumbersFont" text="{t:d:t:countdown_time}" />
+				</Countdown>
+			</Panel>
+
+			<Panel id="Contents">
+
+				<DOTAFrontpageContents id="FrontpageContents" />
+			
+				<Panel id="EventDetails">
+					<Label class="EventDetailsTitle" text="#DOTA_CompendiumRecap_MainEvent" />
+					<Label class="EventDetailsText" text="#DOTA_TI8_MainEventDates" />
+					<Label class="EventDetailsText" text="#DOTA_TI8_MainEventVenue" />
+					<Label class="EventDetailsText" text="#DOTA_TI8_MainEventLocation" />
+
+					<Label class="EventDetailsTitle" text="#DOTATournamentBracketGroupPhase" />
+					<Label class="EventDetailsText" text="#DOTA_TI8_GroupStageDates" />
+				</Panel>
+				
+			</Panel>
+		</Panel>
+
+		<Panel id="Overlay" hittest="false">
+			<DOTAScenePanel id="Aegis" map="scenes/battlepass_ti8/aegis_rotate" camera="camera_1" antialias="true" particleonly="false" hittest="false" />
+
+			<Movie id="GrimstrokeBackground" 
+						 src="file://{resources}/videos/promo/grimstrok_bg_small.webm" 
+						 controls="none" repeat="true" autoplay="onload" 
+						 hittest="false" />
+			<Button id="GrimstrokeHitTarget" 
+							onmouseover="SetGrimstrokeHighlighted( true )"
+							onmouseout="SetGrimstrokeHighlighted( false )"
+							onactivate="DOTAShowReferencePage( file://{resources}/layout/leaf_pages/dashboard_page_debut_grimstroke.xml )"/>
+			<DOTAScenePanel id="GrimstrokeModel" 
+											anti-alias="true" 
+											map="backgrounds/hero_frontpage_grimstroke" 
+											light="hero_light" 
+											renderdeferred="true" 
+											deferredalpha="true" 
+											camera="hero_camera" 
+											antialias="true" 
+											particleonly="false" 
+											hittest="false" />
+			<Panel id="GrimstrokeTitle" hittest="false" />
+			
+			<Panel id="CarouselDots">
+				<Button id="GrimstrokeCarouselDot" class="CarouselDot" onactivate="SetGrimstrokeVisible( true )" />
+				<Button id="NormalCarouselDot" class="CarouselDot" onactivate="SetGrimstrokeVisible( false )" />
+			</Panel>
+			
+		</Panel>
+
+	</Panel>
+
+</root>

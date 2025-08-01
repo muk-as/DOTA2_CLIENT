@@ -1,0 +1,64 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_team_fan_content_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_talent_content.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="TalentStatus">
+			<Panel class="TalentStatus" scrollparenttofitwhenfocused="false">
+				<Panel class="NameRow">
+					<Label class="NameLabel" text="{s:talent_name}" unlocalized="true" />
+					<Label class="NameLabel" text="{s:talent_nickname}" unlocalized="true" />
+					<Label class="NameLabel" text="{s:broadcast_language}" unlocalized="true" />
+					<Label class="NameLabel" text="{s:approval_status}" unlocalized="true" />
+					<Button id="EvaluateButton" class="PopupButton">
+						<Label text="Evaluate Talent" unlocalized="true" />
+					</Button>
+				</Panel>				
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTATalentContentPage class="DashboardPage">
+		<Label class="Title" text="Talent Content Evaluator" unlocalized="true" />
+		<Panel class="ControlsRow">
+			<Label class="SortingLabel" text="Language:" unlocalized="true" />
+			<ToggleButton class="CheckBox" id="Language_English" text="English" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+			<ToggleButton class="CheckBox" id="Language_Chinese" text="Chinese" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+			<ToggleButton class="CheckBox" id="Language_Spanish" text="Spanish" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+			<ToggleButton class="CheckBox" id="Language_Russian" text="Russian" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+			<Label class="SortingLabel" text="Status:" unlocalized="true" />
+			<ToggleButton class="CheckBox" id="Status_Invalid" text="Invalid" unlocalized="true" selected="false" onactivate="DOTATalentApplyFilters()" />
+			<ToggleButton class="CheckBox" id="Status_Pending" text="Pending" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+			<ToggleButton class="CheckBox" id="Status_Evaluated" text="Evaluated" unlocalized="true" selected="true" onactivate="DOTATalentApplyFilters()" />
+		</Panel>
+
+		<Panel class="LoadingTeams" >
+			<Label text="Loading Talent Status..." unlocalized="true" />
+		</Panel>
+
+		<Panel class="HeaderRow">
+			<Label class="NameLabel" text="Name" unlocalized="true" />
+			<Label class="NameLabel" text="Nickname" unlocalized="true" />
+			<Label class="NameLabel" text="Language" unlocalized="true" />
+			<Label class="NameLabel" text="Status" unlocalized="true" />
+		</Panel>
+		<Panel id="TalentStatusList">
+			                                             
+		</Panel>
+
+		<Panel class="ControlsRow">
+			<Button id="ImportButton" class="PopupButton" onactivate="DOTATalentImportAssets()" >
+				<Label text="Import Assets" unlocalized="true" />
+			</Button>
+			<Button id="ExportLocButton" class="PopupButton" onactivate="DOTATalentExportForLocalization()" >
+				<Label text="Export Voicelines for Localization" unlocalized="true" />
+			</Button>
+		</Panel>
+			
+	</DOTATalentContentPage>
+	
+</root>

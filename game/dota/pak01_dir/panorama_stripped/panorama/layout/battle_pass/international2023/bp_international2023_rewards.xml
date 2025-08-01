@@ -1,0 +1,344 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_rewards.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="ChatWheelRewardMessage">
+			<Panel class="ChatWheelMessage">
+				<Button id="ChatWheelMessageSoundButton" >
+					<Panel class="ChatWheelMessageSoundIcon"/>
+					<Label class="ChatWheelMessageAll" text="#dota_all_chat_label" />
+					<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+				</Button>
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheelReward">
+			<Panel class="ChatWheelReward">
+				<Panel id="ChatWheelMessages">
+					                                                      
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTABPInternational2023RewardsPage class="DashboardPage FullDashboardPage" dashboardclass="International2023BattlePassPage" onactivate="DOTAInternational2023RewardsBackgroundClick()">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="BPSharedPageContainer" >
+			<Panel class="TopContainer">
+				<Panel class="DescriptionContainer">
+					<Panel class="LeftRightFlow">
+						<Label class="RewardsTitle" text="#DOTA_International2023_Rewards_Title"/>
+						<TextButton class="LearnMoreButton ButtonPrimary TI23Blue" text="#DOTA_LearnMore" onactivate="UIShowCustomLayoutPopup( International2023RewardsHelp, 'file://{resources}/layout/battle_pass/international2023/bp_international2023_rewards_help.xml' )" />
+					</Panel>
+					<Label class="RewardsDescription" text="#DOTA_International2023_Rewards_Description"/>
+				</Panel>
+				<Panel class="Spacer"/>
+				<Panel id="RewardsButtons" hittest="false">
+					<Panel id="PurchaseLevelsButton" class="ItemContainer" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2023, BattlePass )">
+						<Button id="ItemPurchaseImage" class="ItemImage" >
+						</Button>
+						<Label text="#DOTA_International2023_Rewards_PurchaseLevels"/>
+					</Panel>
+					<Panel id="ApplyLevelsButton" class="ItemContainer" onactivate="DOTAInternational2023RewardsClaimLevels()" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_ApplyLevels_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemLevelsImage" class="ItemImage" >
+						</Button>
+						<Label class="ItemCount" text="{d:available_levels}" />
+						<Label text="#DOTA_International2023_Rewards_ApplyLevels"/>
+					</Panel>
+					<Panel id="ApplyBoostersButton" class="ItemContainer" onactivate="DOTAInternational2023RewardsApplyBoosters()" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_ApplyBoosters_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemBoosterImage" class="ItemImage" >
+						</Button>
+						<Label class="ItemCount" text="{d:available_boosters}" />
+						<Label text="#DOTA_International2023_Rewards_ApplyBoosters"/>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="BottomContainer">
+				<Panel class="LeftRewardColumn">
+					<Panel id="Reward_playersticker" class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(0, 29299)" onmouseover="DOTAShowEconItemTooltip( 29299, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()">
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockCapsuleShadow"/>
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<DOTAUIEconSetPreview itemdef="29299" id="RewardPlayerSticker" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+							<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_playersticker" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_playersticker_reward_progress}/{d:total_playersticker_reward_progress}"/>
+						</Panel>
+					</Panel>
+					<Panel id="Reward_fantasy" class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(1, 0)">
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>												
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<Image id="FantasyRewardImage" class="FantasyRewardImage"/>
+							<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_fantasy" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_fantasy_reward_progress}/{d:total_fantasy_reward_progress}"/>
+						</Panel>
+					</Panel>
+					<Panel id="Reward_roadtoti" class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(2, 0)" onmouseover="UIShowTextTooltip( #DOTA_International2023_Quests_RewardTile )" onmouseout="UIHideTextTooltip()" >
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<Panel class="RoadToTIRewardImage"/>
+							<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_roadtoti" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_roadtoti_reward_progress}/{d:total_roadtoti_reward_progress}"/>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="MiddleRewardColumn">
+					<Panel class="BiggestRewardContainer">
+						<Panel id="Reward_hud" class="BiggestReward" onactivate="DOTAInternational2023RewardsClaimReward(3, 29351)" onmouseover="DOTAShowEconItemTooltip( 29351, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()">
+							<Panel class="RewardBlock">
+								<Panel class="RewardBlockOuter"/>
+								<Panel class="RewardBlockInner"/>
+								<Panel class="HUDPreview"/>
+							</Panel>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<Panel class="HUDPreviewText BiggestRewardDescription">
+								<Label class="AegisTitle BodyLarge LightestGreyText" text="#DOTA_International2023_Rewards_HUDReward_Title" />
+								<Label class="AegisDesc BodyMedium LighterGreyText Opacity_80" text="#DOTA_International2023_Rewards_HUDReward_Desc" />
+							</Panel>
+							<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+								<Panel class="ApplyBoosterImageIcon"/>
+							</Panel>
+							<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+								<Panel class="ProgressBarBase"/>
+								<Panel id="ProgressBar_hud" class="ProgressBarProgress"/>
+							</Panel>
+							<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+								<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+								<Label class="ProgressNumber" text="{s:current_hud_reward_progress}/{d:total_hud_reward_progress}"/>
+							</Panel>
+							<Panel class="HitBlocker" hittest="true"/>
+						</Panel>
+						<Panel id="Reward_legacychatwheel" class="BiggestReward" onactivate="DOTAInternational2023RewardsClaimReward(4, 0)">
+							<DOTAParticleScenePanel class="ClaimEffects" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40" onactivate="DOTAInternational2023RewardsClaimReward(4, 0)"/>
+							<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )" onactivate="DOTAInternational2023RewardsClaimReward(4, 0)">
+								<Panel class="ApplyBoosterImageIcon"/>
+							</Panel>
+							<Panel class="RewardBlock">
+								<Panel class="RewardBlockOuter"/>
+								<Panel class="RewardBlockInner"/>
+								<Panel class="RewardLegacyImage"/>
+							</Panel>
+							<Panel class="Aegis BiggestRewardDescription">
+								<Label class="AegisTitle BodyLarge LightestGreyText" text="#DOTA_International2023_Rewards_ChatLineReward_Title" />
+								<Label class="AegisDesc BodyMedium LighterGreyText Opacity_80" text="#DOTA_International2023_Rewards_ChatLineReward_Desc" />
+							</Panel>
+							<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+								<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+								<Label class="ProgressNumber" text="{s:current_legacychatwheel_reward_progress}/{d:total_legacychatwheel_reward_progress}"/>
+							</Panel>
+							<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+								<Panel class="ProgressBarBase"/>
+								<Panel id="ProgressBar_legacychatwheel" class="ProgressBarProgress"/>
+							</Panel>
+							<Panel class="HitBlocker" hittest="true"/>
+						</Panel>
+						<Panel id="Reward_aegis" class="BiggestReward" onactivate="DOTAInternational2023RewardsClaimReward(5, 27559)" onmouseover="DOTAShowEconItemTooltip( 27559, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()">
+							<Panel class="RewardBlock">
+								<Panel class="RewardBlockOuter"/>
+								<Panel class="RewardBlockInner"/>
+							</Panel>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<DOTAScenePanel id="Aegis" map="scenes/battlepass_ti12/aegis_rotate" camera="camera_1" hittest="false" antialias="true" particleonly="false"/>
+							<Panel class="Aegis BiggestRewardDescription">
+								<TextButton class="RegisterButton ButtonPrimary TI23Blue" text="#DOTA_TI10BP_Lvl1000_Register" onactivate="ExternalBrowserGoToURL( https://dota2.cmdvault.com/oauth/login/ )" />
+								<Label class="AegisTitle BodyLarge LightestGreyText" text="#DOTA_UpcomingRewards_TI10_CollectibleAegis_Name" />
+								<Label class="AegisDesc BodyMedium LighterGreyText Opacity_80" text="#DOTA_AegisReplica" />
+							</Panel>
+							<Panel id="CenterBoostMessage" class="ApplyBoosterImage" hittest="false" hittestchildren="false">
+								<Panel class="ApplyBoosterImageIcon" hittest="false" hittestchildren="false"/>
+								<Label html="true" class="ApplyBoosterLabel" hittest="false" text="#DOTA_International2023_Rewards_CenterBooster_Tip"/>
+							</Panel>
+							<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+								<Panel class="ProgressBarBase"/>
+								<Panel id="ProgressBar_aegis" class="ProgressBarProgress"/>
+							</Panel>
+							<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+								<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+								<Label class="ProgressNumber" text="{s:current_aegis_reward_progress}/{d:total_aegis_reward_progress}"/>
+							</Panel>
+							<Panel class="HitBlocker" hittest="true"/>
+						</Panel>
+
+					</Panel>
+					<Panel class="MiddleBottomReward">
+						<Panel id="Reward_voiceline" class="BigReward" onactivate="DOTAInternational2023RewardsClaimReward(6, 0)" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_ChatWheelReward_Tooltip )" onmouseout="UIHideTextTooltip()">
+							<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )" onactivate="DOTAInternational2023RewardsClaimReward(6, 0)">
+								<Panel class="ApplyBoosterImageIcon"/>
+							</Panel>
+							<DOTAParticleScenePanel class="ClaimEffects" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40" onactivate="DOTAInternational2023RewardsClaimReward(6, 0)" />
+							<Panel class="RewardBlock">
+								<Carousel id="VoiceLineCarousel" panels-visible="1"/>
+								<CarouselNav id="VoiceLineCarouselNav" carouselid="VoiceLineCarousel"/>
+								<Panel class="RewardBlockOuter"/>
+								<Panel class="RewardBlockInner"/>
+								<Panel class="RewardVoicelineImage"/>
+								<Panel class="RewardCount">
+									<Label text="{d:current_redemption_voiceline}/{d:max_redemption_voiceline}" />
+								</Panel>
+							</Panel>
+							<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+								<Panel class="ProgressBarBase"/>
+								<Panel id="ProgressBar_voiceline" class="ProgressBarProgress"/>
+							</Panel>
+							<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+								<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+								<Label class="ProgressNumber" text="{s:current_voiceline_reward_progress}/{d:total_voiceline_reward_progress}"/>
+							</Panel>
+							<Panel class="HitBlocker" hittest="true"/>
+						</Panel>
+						<Panel id="Reward_tpfx" class="BigReward RightReward" onactivate="DOTAInternational2023RewardsClaimReward(7, 0)">
+							<DOTAParticleScenePanel class="ClaimEffects" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<Panel class="RewardBlock">
+								<Panel class="RewardBlockOuter"/>
+								<Panel class="RewardBlockInner"/>
+
+								<Carousel id="TPfxCarousel">
+									<Panel class="TPfxCarouselItem">
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_1" map="scenes/compendium/teleport_fx_ti12_lvl_1" hittest="false" particleonly="false" />
+									</Panel>
+									<Panel class="TPfxCarouselItem">
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_2" map="scenes/compendium/teleport_fx_ti12_lvl_2" hittest="false" particleonly="false" />
+									</Panel>
+									<Panel class="TPfxCarouselItem">
+										<DOTAScenePanel class="RewardModelPreview" id="TeleportFXScene_3" map="scenes/compendium/teleport_fx_ti12_lvl_3" hittest="false" particleonly="false" />
+									</Panel>
+								</Carousel>
+
+								<Panel class="RewardCount">
+									<Label text="{d:current_redemption_tpfx}/{d:max_redemption_tpfx}"/>
+								</Panel>
+								<Panel class="BigRewardDescription">
+									<CarouselNav id="TPfxCarouselNav" carouselid="TPfxCarousel" />
+									<Label class="BodyLarge LightestGreyText" text="#DOTA_International2023_Rewards_TPFX1_Title" />
+									<Label id="TPfxLevel3Info" class="BodyMedium LighterGreyText Opacity_80" text="#DOTA_International2023_Rewards_TPFX1_Desc" />
+								</Panel>
+							</Panel>
+							<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+								<Panel class="ApplyBoosterImageIcon"/>
+							</Panel>
+							<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+								<Panel class="ProgressBarBase"/>
+								<Panel id="ProgressBar_tpfx" class="ProgressBarProgress"/>
+							</Panel>
+							<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+								<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+								<Label class="ProgressNumber" text="{s:current_tpfx_reward_progress}/{d:total_tpfx_reward_progress}"/>
+							</Panel>
+							<Panel class="HitBlocker" hittest="true"/>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="RightRewardColumn">
+					<Panel id="Reward_teamsticker"  class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(8, 29297)"  onmouseover="DOTAShowEconItemTooltip( 29297, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()">
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockCapsuleShadow"/>
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<DOTAUIEconSetPreview itemdef="29297" id="RewardTeamSticker" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+							<Panel class="RewardCount Infinity" onmouseover="UIShowTextTooltip( #DOTA_International2023_Rewards_Infinity_Tooltip )" onmouseout="UIHideTextTooltip()"/>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_teamsticker" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_teamsticker_reward_progress}/{d:total_teamsticker_reward_progress}"/>
+						</Panel>
+						<Panel class="HitBlocker" hittest="true"/>
+					</Panel>
+					<Panel id="Reward_teamloadingscreen"  class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(9, 25597)" onmouseover="DOTAShowEconItemTooltip( 25597, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()">
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<DOTAUIEconSetPreview itemdef="25597" id="RewardTeamLoadScreens" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+							<Panel class="RewardCount">
+								<Label text="{d:current_redemption_teamloadingscreen}/{d:max_redemption_teamloadingscreen}"/>
+							</Panel>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_teamloadingscreen" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_teamloadingscreen_reward_progress}/{d:total_teamloadingscreen_reward_progress}"/>
+						</Panel>
+						<Panel class="HitBlocker" hittest="true"/>
+					</Panel>
+					<Panel id="Reward_tiloadingscreen"  class="SmallReward" onactivate="DOTAInternational2023RewardsClaimReward(10, 29565)" onmouseover="DOTAShowEconItemTooltip( 29565, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()" >
+						<Panel class="RewardBlock">
+							<Panel class="RewardBlockOuter"/>
+							<Panel class="RewardBlockInner"/>
+							<DOTAParticleScenePanel class="ClaimEffects" hittest="false" particleName="particles/ui/hud/ui_ti2023_reward_frame_wide.vpcf" particleonly="true" cameraOrigin="0 0 250" lookAt="0 0 0" fov="40"/>
+							<DOTAUIEconSetPreview itemdef="29565" id="RewardTILoadScreens" class="RewardModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true"  />	
+							<Panel class="RewardCount">
+								<Label text="{d:current_redemption_tiloadingscreen}/{d:max_redemption_tiloadingscreen}"/>
+							</Panel>
+						</Panel>
+						<Panel class="ApplyBoosterImage" onmouseover="AddStyle( CenterBoostMessage, Highlight )" onmouseout="RemoveStyle( CenterBoostMessage, Highlight )">
+							<Panel class="ApplyBoosterImageIcon"/>
+						</Panel>
+						<Panel class="ProgressBar" hittest="false" hittestchildren="false">
+							<Panel class="ProgressBarBase"/>
+							<Panel id="ProgressBar_tiloadingscreen" class="ProgressBarProgress"/>
+						</Panel>
+						<Panel class="ProgressLevelContainer" hittest="false" hittestchildren="false">
+							<Label class="LevelLabel" text="#DOTA_Level_LVL"/>
+							<Label class="ProgressNumber" text="{s:current_tiloadingscreen_reward_progress}/{d:total_tiloadingscreen_reward_progress}"/>
+						</Panel>
+						<Panel class="HitBlocker" hittest="true"/>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTABPInternational2023RewardsPage>
+</root>

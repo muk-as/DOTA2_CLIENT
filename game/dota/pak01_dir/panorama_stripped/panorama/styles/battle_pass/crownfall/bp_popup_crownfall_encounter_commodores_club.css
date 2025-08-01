@@ -1,0 +1,169 @@
+
+
+.Title {
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 48px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	letter-spacing: 4px;
+}
+
+.Center {
+	flow-children: right;
+	margin-top: 48px;
+
+	.OldManIcon {
+		width: 128px;
+		height: 128px;
+		texture-sampling: point;
+		margin: 0px 48px;
+		vertical-align: middle;
+	}
+
+	.FireImage {
+		width: 96px;
+		height: 96px;
+		texture-sampling: point;
+		vertical-align: middle;
+	}
+}
+
+.Tokens {
+	horizontal-align: center;
+	flow-children: right;
+	vertical-align: center;
+	margin-top: 20px;
+	.AlreadyClaimed &
+	{
+		brightness: 0.2;
+	}
+	
+	.TokenContainer {
+		.TokenParticles {
+			overflow: noclip;
+			horizontal-align: center;
+			vertical-align: center;
+			width: 180%;
+			height: 230%;
+			opacity-mask: url( "file://{images}/masks/sun_burst.png" );
+			brightness: 2;
+			hue-rotation: 100deg;
+			.AlreadyClaimed &
+			{
+				visibility: collapse;
+			}
+		}
+
+		DOTACrownfallToken {
+			ui-scale: 300%;
+			margin: -4px;
+			width: 44px;
+		}
+	}
+}
+
+.BodyContainer {
+	vertical-align: center;
+
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	.DialogueComplete & {
+		opacity: 1;
+	}
+}
+
+.ClaimItemButton {
+	horizontal-align: center;
+	.NotAllowed & {
+		visibility: collapse;
+	}
+	.AlreadyClaimed & {
+		visibility: collapse;
+	}
+}
+.PopupPanel.CommodoresClub {
+	&.NotAllowed {
+		.ComeBackLaterButton {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.LeaveButton {
+		horizontal-align: center;
+		vertical-align: center;
+	}
+}
+.ComeBackLaterButton {
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.RewardContainer
+{
+	width: 630px;
+	height: 240px;
+	#ItemImage {
+		height: 70%;
+		horizontal-align: center;
+		vertical-align: center;
+		transition-property: transform;
+		transition-duration: 0.25s;
+		&:hover {
+			transform: scale3d( 1.03, 1.03, 1.0 );
+		}
+	}
+	.ItemParticles {
+		horizontal-align: center;
+		vertical-align: center;
+		width: 400px;
+		height: 200px;
+		opacity-mask: url( "file://{images}/masks/softedge_box_irregular.png" );
+	}
+}
+.Reward {
+	horizontal-align: center;
+	flow-children: right;
+	vertical-align: center;
+	margin-top: 20px;
+	
+	.AlreadyClaimedLabel {
+		vertical-align: center;
+	}
+	.NotAllowed &
+	{
+		saturation: 0.3;
+		brightness: 0.7;
+		.ItemParticles {
+			visibility: collapse;
+		}
+		#ItemImage {
+			opacity-mask: url("file://{images}/masks/softedge_box.png"); 
+			opacity: 0.3;
+			&:hover {
+				transform: none;
+			}
+		}
+	}
+	
+	.AlreadyClaimed &
+	{
+		saturation: 0.7;
+		brightness: 0.7;
+		
+		.ItemParticles {
+			visibility: collapse;
+		}
+		#ItemImage {
+			opacity: 0.2;
+			&:hover {
+				transform: none;
+			}
+		}
+		.AlreadyClaimedLabel {
+			visibility: visible;
+		}
+	}
+}

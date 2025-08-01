@@ -1,0 +1,56 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_shared.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_interactive.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/hud/versus/dota_hud_versus_scene_shared.ts" />
+		<include src="file://{resources}/scripts/hud/versus/dota_hud_versus_scene_interactive.ts" />
+	</scripts>
+
+	<snippets>
+
+		<snippet name="VersusHeroInfo" >
+			<Panel class="VersusHeroInfo" >
+				<Panel class="HeroPlayerDetails">
+					<DOTAHeroBadge id="HeroBadge" />
+					<DOTAEventLevelShield id="BPLevel" />
+					<Label class="HeroPlayerName" text="{s:player_name}" />
+				</Panel>
+				<Label class="HeroName" text="{g:dota_hero_name:hero_id}" />					
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAHudVersusScene hero-info-snippet="VersusHeroInfo" >
+		<DOTAScenePanel id="VersusScene" map="scenes/versus/versus_interactive" camera="versus_camera" light="versus_light" deferredalpha ="false" renderdeferred="true" particleonly="false" />
+		<Panel id="FooterPanel" hittest="false" />
+					 
+		<DOTAHudVersusSceneFeaturedHeroInfo id="FeaturedHeroInfo" class="Minimal" />
+
+		<DOTAHudVersusSceneTeamInfo id="TeamInfo" />
+
+		<DOTAHudVersusSceneInteractiveControls id="InteractiveControls" />
+	
+		<Panel id="BlackOverlay" hittest="false" />
+
+		<Panel id="LoadingState">
+			<Panel class="Spinner" />
+			<Label text="#DOTA_VersusScreen_Loading" />
+		</Panel>
+
+		<Panel id="DebugButtons">
+			<TextButton class="ButtonBevel" onactivate="PlayScene()" text="Play Scene" unlocalized="true" />
+			<ToggleButton id="ToggleFadeOut" text="Fade Out When Complete" unlocalized="true" onactivate="ToggleFadeOutEnabled()" selected="true" />
+		</Panel>
+
+	</DOTAHudVersusScene>
+
+</root>

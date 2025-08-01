@@ -1,0 +1,71 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_token_trader.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="TradeContainer">
+			<Panel id="SixScrapToOneContainer" class="TradeContainer RecipeActive">
+				<Label id="TradeTitle" class="EncounterTitle LabelLarge" html="true"/>
+				<Label id="TradeDescription" class="EncounterTitle LabelSmall NoTextTransform" html="true"/>
+				<Panel id="TokenTrade" class="TokenTrade">
+					                           
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="TradeArrow">
+			<Panel class="TradeArrow">
+				<Image src="file://{images}/control_icons/24px/arrow_right.svg" />
+			</Panel>
+		</snippet>
+
+		<snippet name="TradeDivider">		
+			<Panel class="DashDotDivider">
+				<Panel class="Dash Left"/>
+				<Panel class="Dot"/>
+				<Panel class="Dash Right"/>
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<Panel class="PopupPanel Encounter TokenTrader Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<Panel id="BodyContainer" class='BodyContainer'>
+					                           
+				</Panel>
+				<Panel class="ResetContainer">
+					<Panel class="ResetButton" onactivate="DOTACrownfallEncounterTokenTraderResetTrade(-1)">
+						<Label class="LabelMedium" text="#DOTA_Crownfall_Encounter_TokenTrader_Reset"/>
+						<Image src="file://{images}/control_icons/24px/undo.svg" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+		
+		                                                                   
+
+		<Panel class="PickerContainer" acceptsfocus="true" >	
+			<DOTAUIOverworldInventoryPicker id="InventoryPicker">	
+			</DOTAUIOverworldInventoryPicker>
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>		
+	
+	</Panel>
+</root>

@@ -1,0 +1,134 @@
+<root>
+	<styles>		
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_tier_treasure_shared.css" />
+        <include src="file://{resources}/styles/dashboard_page_tier_treasure_tradeup.css" />
+	</styles>
+
+	<snippets>
+        <snippet name="FilterButton">
+            <RadioButton class="TreasureRarityFilterButton" group="TierFilter">
+                <Label class="TreasureRarityFilterName RarityHexText" text="{s:tier_label} ({d:tier_numitems})"/>
+            </RadioButton>
+        </snippet>
+
+        <snippet name="RecyclableItem">
+			<Panel class="RecyclableItem">
+				<Panel class="RecyclableItemContent">
+					<DOTAUIEconSetPreview id="ItemImage"/>
+					<Panel class="ItemDescription">
+						<Panel class="ItemDetailsLeft" >
+							<Panel class="ItemDescriptionTop">
+								<Label class="ItemName" text="{s:item_name}"/>
+							</Panel>
+							<Panel class="ItemDescriptionBottom">
+								<Label class="HeroName" text="{s:hero_name}"/>
+								<Label class="ItemSlot" text="{s:slot_name}"/>
+							</Panel>
+							<Button id="ItemDetailsButton" class="TextButton Small" scrollparenttofitwhenfocused="false">
+								<Label id="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel"/>
+								<Image src="file://{images}/control_icons/chevron_right.png" />
+							</Button>
+						</Panel>
+						<Panel class="ItemRecycleStatus">
+							<Panel class="ItemAddedState">
+								<Label text="#DOTA_CrateRecycle_AllAddedShort"/>
+							</Panel>
+							<Panel class="ItemAvailableState">
+								
+								                                                                                 
+										                                                                            
+										                      
+								<Button id="AddToListButton" class="ButtonPrimary DarkGrey" scrollparenttofitwhenfocused="false">
+									<Label text="#DOTA_CrateRecycle_AddToTrade"/>
+								</Button>
+								<Label id="AddToListOwnedCount" class="Owned" text="#DOTA_CrateRecycle_NumOwned"/>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		
+		<snippet name="RecyclingItem">
+			                                                           
+			<Panel class="RecyclingItemContainer">
+				<Panel class="EmptyContainer">
+					<Label text="#DOTA_CrateRecycle_EmptySlotLabel"/>
+				</Panel>
+				<Panel class="ActiveContainer">
+					<Panel class="ActiveContainerBackground"/>
+					<Panel class="RecyclingItemHex">
+						<DOTAUIEconSetPreview id="ItemIcon" class="SellableItemImage HideRarityHex" />
+					</Panel>
+					<Panel class="RecyclingItemInfo">
+						<Label class="RecyclingItemName" text="{s:item_name}"/>
+						<Panel class="RecyclingItemDetails">
+							<Label class="HeroName" text="{s:hero_name}"/>
+							<Label class="ItemSlot" text="{s:slot_name}"/>
+						</Panel>
+					</Panel>
+					<Button id="RemoveItem" class="RemoveRecyclingItem" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+    <DOTATierTreasureTradeUp class="DashboardPage">
+
+		<Panel id="TreasureExtraInfo">
+			                                                                               
+		</Panel>
+
+		<Panel class="HeroContainer">
+			<Panel class="HeroShadow" />
+			<DOTALargeModelPreview id="TreasureItemPreview" hittest="false" hittestchildren="false" />
+		</Panel>
+
+		                                                                                                                                                                                                                                                   
+		                                                                                                                                                                                                              
+		                                                     
+
+		<Panel class="PageContentContainer LeftRightFlow" >
+			<Panel class="ContainerTopBorder"/>
+		
+			<Panel class="LeftContainer ContainerColumn">
+				<Panel class="Title">
+					<Label class="OwnedText" text="#DOTA_CrateRecycle_Owned"/>
+				</Panel>				
+				<Panel class="TierSelector">
+					<Panel class="TierSelectorTextContainer">
+                        <Panel id="TreasureRarityFilterButtonsTradeUp">
+                                                       
+                        </Panel>
+					</Panel>
+				</Panel>
+				<Panel id="NoItemsMessageContainer">
+					<Label text="#DOTA_ProfileCard_NoItems"/>
+				</Panel>
+				<Panel id="RecyclableItemList" require-composition-layer="true">
+					                       
+				</Panel>
+			</Panel>
+			
+			<Panel class="RightContainer ContainerColumn">
+				<Panel class="Title">
+					<Label class="OwnedText" text="#DOTA_CrateRecycle_TradeUp" />
+				</Panel>
+				<Panel class="Description">
+					<Label class="DescriptionText" text="#DOTA_CrateRecycle_Description"/>				
+				</Panel>				
+				<Panel id="RecyclingItemList" class="RecyclingList">
+					                                             
+				</Panel>				
+				<Panel class="RecycleButtonContainer">
+					<Button id="RecycleButton" class="ButtonPrimary Large" onactivate="DOTATierTreasureRecycle()">
+						<Label class="RecycleButtonLabel" text="#DOTA_CrateTradeUpButton"/>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTATierTreasureTradeUp>
+	
+</root>

@@ -1,0 +1,2526 @@
+@define HeroCustomiseSlideDuration: 0.5s;
+@define Loadout_Heroes_SetTile_Width: 246px;
+@define Loadout_Heroes_SetTile_Height: 373px;
+@define Loadout_Heroes_ItemTile_Width: 185px;
+@define Loadout_Heroes_ItemTile_Height: 232px;
+
+DOTAHeroPageNewV2
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+}
+
+#HeroSceneGroup {
+	width: 100%;
+	height: 100%;
+	max-width: 1920px;
+	horizontal-align: center;
+	vertical-align: center;
+
+	opacity-mask: url( "file://{images}/masks/hero_model_preview_mask_loadout.psd" );
+
+	overflow: noclip;
+
+	transition-property: blur, opacity, transform;
+	transition-duration: 0.3s, 0.3s, HeroCustomiseSlideDuration;
+	transition-timing-function: ease-out, ease-out, cubic-bezier(0, 1, 0, 1);
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		blur: gaussian( 12px );
+		opacity: 0.05;
+	}
+
+	.EnableHeroCustomize & {
+		transform: translateX( -500px ) translateY( -40px );
+	}
+
+	.FootRuler {
+		width: 100%;
+		height: 2px;
+		                                              
+		vertical-align: bottom;
+		margin-bottom: 170px;
+	}
+}
+
+#HeroSceneBody {
+	width: 100%;
+	height: 1020px;	
+	horizontal-align: center;
+	margin-top: 60px;
+
+	transition-property: transform;
+	transition-duration: HeroCustomiseSlideDuration;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+	.FullscreenPage & {
+		transform: scale3d( 1.2, 1.2, 1 );
+	}
+
+	
+
+	.Status_Unavailable & {
+		opacity: 0.8;
+	}
+}
+
+#FocusedHeroSetPreviewOverlay {
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-right: 68px;
+	margin-bottom: 20px;
+
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents &,
+	.EnableHeroCustomize &,
+	.FullscreenPage & {
+		transform: scale3d( 0.95, 0.95, 1) translateY( -4px );
+		opacity: 0;
+		transition-duration: 0.5s;
+		transition-delay: 0.3s;
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	}
+}
+
+#FocusedHeroSetPreview {
+	height: 100%;
+	width: 100%;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	transition-property: transform;
+	transition-duration: HeroCustomiseSlideDuration;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);	
+
+	.Status_Unavailable & {
+		brightness: 0.3;
+		saturation: 0.8;
+	}
+}
+
+.CurrentSetInfoContainer {
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: bottom;
+
+	opacity: 0;
+	transform: translateY( 16px );
+	
+	transition-property: transform, opacity;
+	transition-duration: 0.3s;
+	transition-delay: 0.5s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+	.EnableHeroCustomize & {
+		opacity: 1;
+		transform: none;
+		
+		transition-duration: 0s;
+		transition-delay: 0s;
+	}
+
+	.CurrentSetTitle {
+		margin: 4px 0px;
+	}
+
+	Label {
+		horizontal-align: center;
+		margin-bottom: 2px;
+		color: white;
+	}
+
+	.EnableHeroCustomize & {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+#SaveSetButton {
+	visibility: collapse;
+	horizontal-align: center;
+	margin-top: 8px;
+}
+
+.EnableSaveAsCustomSet #SaveSetButton {
+	visibility: visible;
+	opacity: 1;
+}
+
+.BackgroundShadow {
+	width: 80%;
+	height: 100%;	
+
+	horizontal-align: center;
+	vertical-align: bottom;
+	
+	ignore-parent-flow: true;
+	blur: gaussian( 12px );
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgba(0, 0, 0, 0.7) ), color-stop(0.6, rgba(0, 0, 0, 0.5)), to( rgba(0, 0, 0, 0) ) );
+
+	&.Short {
+		height: 300px;
+		margin-bottom: 36px;
+	}
+}
+
+.EnableHeroCustomize #HeroSceneGroup {
+	#HeroSetsCarousel {
+		.CarouselItem {
+			opacity: 0;
+		}
+	}
+}
+
+#HeroPageContent {
+    width: 100%;
+    height: 100%;
+	max-width: 1920px;
+	horizontal-align: center;
+
+	transition-property: blur, opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		blur: gaussian( 12px );
+		opacity: 0.05;
+	}
+}
+
+#LeftColumn,
+#RightColumn,
+#HeroName {	
+	transition-property: transform, opacity, blur;
+	transition-duration: 0.2s;	
+	transition-timing-function: ease-in;
+	margin-top: 212px;
+
+	.EnableHeroCustomize & {
+		opacity: 0;
+		transform: translateX( -60px );
+
+		transition-duration: 0.4s;	
+		transition-delay: 0.2s;
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	}
+}
+
+#HeroName {	
+	margin-left: 90px;
+	width: 660px;
+	flow-children: right;
+
+	Label {
+		text-overflow: shrink;
+		color: white;
+		height: 75px;
+	}
+
+	                         
+	           
+	                    
+	          
+	                       
+		                
+		                       
+		                 
+		             
+	    
+
+	transition-duration: 0.15s;	
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+
+	opacity: 1;
+	transform: none;
+
+	.FullscreenPage & {
+		opacity: 0;
+		transform: translateX( -48px );
+
+		transition-duration: 0.4s;	
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	}
+
+	.AspectRatio21x9 & {
+		margin-left: 0px;
+	}
+
+	.AspectRatio16x10 & {
+		margin-left: 60px;
+	}
+
+	.TitleExtraLarge
+	{
+		max-width: 95%;
+	}
+}
+
+#LeftColumn {
+	padding-top: 75px;
+	flow-children: down;
+	margin-left: 90px;
+	horizontal-align: left;
+	width: 540px;
+	height: 100%;
+	margin-bottom: 150px;
+
+	transition-duration: 0.15s;	
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+
+	opacity: 1;
+	transform: none;
+
+	.AspectRatio21x9 & {
+		margin-left: 0px;
+	}
+
+	.AspectRatio16x10 & {
+		margin-left: 60px;
+	}
+
+	.FullscreenPage & {
+		opacity: 0;
+		transform: translateX( -48px );
+
+		transition-duration: 0.4s;	
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	}
+}
+
+#RightColumn {
+	flow-children: down;
+	margin-right: 90px;
+	horizontal-align: right;
+	width: 422px;
+	padding-top: 12px;	
+
+	transition-duration: 0.15s;	
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+
+	opacity: 1;
+	transform: none;
+
+	.AspectRatio21x9 & {
+		margin-right: 0px;
+	}
+
+	.AspectRatio16x10 & {
+		margin-right: 60px;
+	}
+
+	.FullscreenPage & {
+		opacity: 0;
+		transform: translateX( 48px );
+
+		transition-duration: 0.4s;	
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	}
+}
+
+#MiddleColumn {
+	height: 100%;
+	horizontal-align: center;
+
+	opacity: 1;
+	transform: none;
+
+	transition-property: transform, opacity;
+	transition-duration: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0.8, 0, 1, 0.2);
+
+	.EnableHeroCustomize & {
+		opacity: 0;
+		transform: translateY( 16px );
+		
+		transition-duration: 0.3s;
+		transition-delay: 0.4s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	}
+}
+
+#NewSetArrivalCapsuleContainer {
+	width: 320px;	
+	vertical-align: bottom;
+	flow-children: down;
+
+	visibility: collapse;
+
+	.NewSetArrivalCapsule {
+		width: 100%;
+		height: 140px;
+
+		&:hover {
+			.NewSetArrivalCapsuleContent {
+				background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( #282f3a ), to( #0d1017 ) );
+
+				.NewSetArrivalSetName {
+					color: white;
+				}
+			}
+		}
+
+		.NewSetArrivalCapsuleContent {
+			width: 100%;
+			height: 100px;
+			vertical-align: bottom;
+			background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( #1f252e ), to( #050609 ) );
+			box-shadow: inset 0px 0px 1px 0.5px rgba(255, 255, 255, 0.03);
+
+			transition-duration: 0.1s;
+			transition-property: background-color;			
+	
+			.NewSetArrivalSetName {
+				margin-left: 16px;
+				vertical-align: center;
+				width: 60%;
+				max-height: 44px;
+				margin-top: 12px;
+				line-height: 1.2;
+
+				transition-duration: 0.1s;
+				transition-property: color;	
+			}	
+
+			.NewArrivalBadge {
+				flow-children: right;
+				padding-right: 6px;
+
+				Label {
+					color: LightestGrey;
+					font-weight: semi-bold;
+					background-color: gradient( linear, 0% 0%, 0% 100%, from( #893CAD ), to( #431172 ) );
+					padding: 3px 12px 4px 16px;
+					text-shadow: 0px 1px 6px black;
+					box-shadow: inset 0px -1px 0px rgba(0,0,0,0.6);
+				}
+
+				.NewArrivalBadgeEdge {
+					width: 12px;
+					height: 100%;
+					background-color: gradient( linear, 0% 0%, 0% 100%, from( #893CAD ), to( #431172 ) );
+					transform: skew( -15deg );
+					margin-left: -9px;
+					z-index: -1;
+				}
+			}
+		}
+	
+		.NewSetArrivalModelContainer {
+			width: 50%;
+			height: 160px;
+			horizontal-align: right;
+
+			.NewSetArrivalModel {
+				width: 100%;
+				height: 140px;
+				background-color: rgba(255, 0, 255, 0.1);                                        
+			}
+		}
+	}
+
+	.NewSetArrivalTreasureName {
+		margin-top: 8px;
+	}
+}
+
+#ChangeModelTabsContainer {
+	flow-children: down;
+	width: 100%;
+
+	#ChangeModelTabs {
+		margin-left: 8px;
+	}
+
+	visibility: collapse;
+
+	.HasMultipleModels & {
+		visibility: visible;
+	}
+}
+
+#HeroBadge {
+	margin-top: -220px;
+	margin-left: -304px;
+	margin-bottom: -210px;
+	margin-right: -190px;
+	overflow: noclip;
+	ignore-parent-flow: true;
+	                                          
+
+	.GrandmasterTier & {
+		                           
+		margin-left: -330px;
+	}
+}
+
+.MaxHeroLevelWithoutSubscription #HeroBadge {
+	saturation: 0.0;
+	wash-color: #999;
+}
+
+#HeroBadge.NoTier {
+	visibility: collapse;
+}
+
+#AttributeAndName
+{
+	margin-top: 100px;
+	margin-left: 10px;
+	flow-children: right;
+	vertical-align: center;
+}
+
+#HeroDescription
+{
+    flow-children: right;
+	margin-top: 4px;
+	margin-bottom: 2px;
+}
+
+
+#HeroComplexity {
+	                  
+	height: 100%;
+	margin-right: 8px;
+	flow-children: right;
+	tooltip-position: bottom;
+	vertical-align: center;
+}
+
+.HeroComplexityPip {
+	width: 20px;
+	height: 20px;
+	background-image: url( "file://{images}/hero_complexity_empty.png" );
+	background-size: 90%;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 2px;
+	wash-color: #dedede;
+	vertical-align: center;
+}
+
+#HeroComplexityPip1,
+.Complexity2 #HeroComplexityPip2,
+.Complexity3 #HeroComplexityPip2,
+.Complexity3 #HeroComplexityPip3 {
+	background-image: url( "file://{images}/hero_complexity_full.png" );
+}
+
+
+
+.AttackTypeContainer {
+	vertical-align: center;
+	flow-children: right;
+	margin-right: 16px;
+
+	Label {
+		vertical-align: center;
+	}
+
+	#HeroAttackType {
+		                       
+	}
+
+	#HeroAttackTypeIcon {
+		                       
+		width: 30px;
+		height: 30px;
+		margin-right: -2px;
+		wash-color: LightGrey;
+
+		tooltip-position: top;
+		tooltip-body-position: 50% 50%;
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		transition-property: wash-color;
+		transition-duration: 0.1s;
+
+		&.Melee {
+			background-image: url( "file://{images}/control_icons/filter_melee.png" );
+		}
+
+		&.Ranged {
+			background-image: url( "file://{images}/control_icons/filter_ranges.png" );
+		}
+
+		&:hover {
+			wash-color: LighterGrey;
+		}
+	}
+}
+
+.HeroRolesContainer {
+	vertical-align: center;
+	flow-children: right;
+
+	Label {
+		vertical-align: center;
+	}
+
+	#HeroRoles {
+		vertical-align: center;
+		flow-children: right;
+		                       
+
+		.HeroRole {
+			width: 30px;
+			height: 30px;
+			margin-right: -2px;
+			wash-color: LightGrey;
+		
+			tooltip-position: top;
+			tooltip-body-position: 50% 50%;
+		
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		
+			transition-property: wash-color;
+			transition-duration: 0.1s;
+		
+			&:hover {
+				wash-color: LighterGrey;
+			}
+		
+			&.Carry				{ background-image: url( "file://{images}/control_icons/filter_carry.png" ); }
+			&.Durable			{ background-image: url( "file://{images}/control_icons/filter_durable.png" ); }
+			&.Disabler			{ background-image: url( "file://{images}/control_icons/filter_disabler.png" ); }
+			&.Pusher			{ background-image: url( "file://{images}/control_icons/filter_pusher.png" ); }
+			&.Escape			{ background-image: url( "file://{images}/control_icons/filter_escape.png" ); }
+			&.Nuker				{ background-image: url( "file://{images}/control_icons/filter_nuker.png" ); }
+			&.Initiator			{ background-image: url( "file://{images}/control_icons/filter_initiator.png" ); }
+			&.Support			{ background-image: url( "file://{images}/control_icons/filter_support.png" ); }
+		}
+	}
+}
+
+#MeleeButton
+{
+	background-image: url( "file://{images}/control_icons/filter_melee.png" );
+}
+
+#RangedButton
+{
+	background-image: url( "file://{images}/control_icons/filter_ranges.png" );
+}
+
+#HeroHeader {
+    flow-children: down;
+}
+
+.HeroInfo  {
+	width: 100%;
+    flow-children: down;
+	margin-bottom: 12px;
+}
+
+.HeroTitleContainer {
+	flow-children: right;
+}
+
+.FacetInfo {
+	width: 100%;
+	                           
+	flow-children: down;
+	tooltip-position: right;
+	margin-top: 4px;
+
+	#SelectionChoice {
+		                               
+		margin-bottom: -4px;
+
+		visibility: collapse;
+	}
+
+	DOTAUIHeroFacetPicker {
+		margin-left: -2px;
+	}
+
+	                   
+	                 
+	                            
+	                                                                                         
+}
+
+.HeroActions {
+    margin-top: -5px;
+    flow-children: none;
+}
+
+.FakeItemAbilitiesContainer {
+	visibility: collapse;
+
+	.ringmaster & {
+		visibility: visible;
+	}
+	
+	.FakeItemsContainerBackground {
+		width: 246px;
+		opacity: 0.6;
+	}
+
+	#FakeItemAbilities{
+		padding-top: 20px;
+
+		DOTAAbilityImage {
+			margin-right: 8px;
+			border-radius: 50%;
+			transition-property: transform;
+
+			&:hover {
+				transform: translateY( -2px );
+			}
+		}
+	}
+}
+
+#HeroFacetDropdown
+{
+	vertical-align: top;
+	horizontal-align: left;
+	margin-top: 12px;
+	z-index: 2;
+}
+
+#HeroAbilities {
+    flow-children: right-wrap;
+	margin: 12px 0px 0px;
+	horizontal-align: left;
+
+	                                                                           
+	.meepo & {
+		width: 460px;
+	}
+}
+
+#FakeItemAbilities
+{
+    flow-children: right-wrap;
+	margin: 0px 0px 0px;
+	horizontal-align: left;
+}
+
+#HeroAbilities > DOTAAbilityImage,
+#HeroAbilities > .StatBranch,
+#HeroAbilities > .ScepterDetails,
+#HeroAbilities > .InnateAbility {
+    margin-right: 8px;
+	margin-bottom: 8px;
+    width: 52px;
+    height: 52px;
+	img-shadow: 0px 4px 8px black;
+    tooltip-position: bottom;
+}
+
+#HeroAbilities > .InnateAbility {
+	img-shadow: none;
+}
+
+
+DOTAAbilityImage {
+    width: 52px;
+    height: 52px;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    tooltip-position: bottom;
+
+	transition-property: brightness;
+	transition-duration: 0.1s;
+
+	&:hover {
+		brightness: 1.6;
+	}
+}
+
+.AbilityIconContainer {
+	width: 52px;
+	height: 76px;
+	margin-right: 8px;
+	context-menu-position: bottom;
+}
+
+.AbilityIconContainer.HasItems
+{
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+.AbilityIconContainer.HasItems:hover
+{
+	brightness: 1.5;
+}
+
+.AbilityIconContainer #dropdown
+{
+	width: 100%;
+	height: 16px;	
+	vertical-align: top;
+	margin-top: 52px;
+	background-color: gradient( linear, 100% 0%, 0% 0%, from( #000 ), color-stop( .4, #282a29 ), color-stop( .5, #282a29 ), color-stop( .6, #282a29 ), to( #000 ) );
+	visibility: collapse;
+}
+
+.AbilityIconContainer.HasItems #dropdown
+{
+	                                
+    animation-duration: 1.0s;
+	animation-iteration-count: infinite;
+	opacity: 1;
+	visibility: visible;
+}
+
+.AbilityIconContainer #dropdown #arrow
+{
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 16px 11px;
+	background-image: url( "file://{images}/control_icons/arrow_solid_down.png" );
+	wash-color: #777;
+	horizontal-align: center;
+}
+
+#PrimaryAttribute
+{
+	vertical-align: center;
+	height: 32px;
+	width: 32px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	vertical-align: center;
+	horizontal-align: right;
+	margin-right: 12px;
+}
+
+DOTAHeroPageNewV2.Strength      #PrimaryAttribute { background-image: url( "file://{images}/primary_attribute_icons/primary_attribute_icon_strength.psd" );}
+DOTAHeroPageNewV2.Agility       #PrimaryAttribute { background-image: url( "file://{images}/primary_attribute_icons/primary_attribute_icon_agility.psd" ); }
+.ColorBlindModeEnabled DOTAHeroPageNewV2.Agility       #PrimaryAttribute { background-image: url( "file://{images}/primary_attribute_icons/primary_attribute_icon_agility_colorblind.psd" ); }
+DOTAHeroPageNewV2.Intelligence  #PrimaryAttribute { background-image: url( "file://{images}/primary_attribute_icons/primary_attribute_icon_intelligence.psd" ); }
+DOTAHeroPageNewV2.Universal  #PrimaryAttribute { background-image: url( "file://{images}/primary_attribute_icons/primary_attribute_icon_all.psd" ); }
+
+.FadedDash {
+	width: 90%;
+	height: 1px;
+	margin: 24px 0px;
+
+	&.FadeRight {
+		background-color: gradient( linear, 50% 0%, 100% 0%, from( #FFFFFF06 ), to( #FFFFFF00 ) );
+	}
+
+	&.FadeLeft {
+		background-color: gradient( linear, 0% 0%, 50% 0%, from( #FFFFFF00 ), to( #FFFFFF06 ) );
+	}
+}
+
+.SummaryHeroRolesContainer {
+	padding: 6px 0px 12px;
+	border-bottom: 1px solid white;
+	border-brush: gradient( linear, 50% 0%, 100% 0%, from( #FFFFFF08 ), to( #FFFFFF00 ) );
+	width: 100%;
+
+	visibility: collapse;
+
+	.NoTier & {
+		                          
+	}
+
+	DOTAHeroRoles {
+		margin-bottom: 0px;
+	}
+}
+
+#HeroStatsSummaryContainer {
+	                        
+	margin: 8px 0px;
+	flow-children: right;
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 50% 0%, 100% 0%, from( #FFFFFF06 ), to( #FFFFFF00 ) );
+	width: 100%;
+	width: 500px;
+
+	.HeroStatsLeftCol {
+		flow-children: down;
+		border-right: 1px solid #FFFFFF05;
+		padding: 16px 0px;
+		width: 128px;
+
+		.HeroStatsIcon {
+			width: 20px;
+			height: 20px;
+		}
+	
+		.AttributeContainer {
+			flow-children: down;
+			margin-bottom: 8px;		
+	
+			.AttributeTitle {
+				margin-bottom: 2px;
+			}
+
+			.AttributeValue {
+				letter-spacing: 0.8px;
+			}
+		}
+	}
+
+	.HeroStatsRightCol {
+		flow-children: down;
+
+		.DerivedStatsContainer {
+			flow-children: right;
+			margin-top: 16px;
+			margin-left: 16px;
+			padding-right: 64px;
+	
+			.DerivedStat {
+				flow-children: down;
+				width: fill-parent-flow( 1.0 );
+				tooltip-position: top;
+				
+				Label {
+					horizontal-align: center;
+					color: LightestGrey;
+					opacity: 0.8;
+					margin-top: 2px;
+					font-size: 16px;
+					height: 18px;
+				}
+		
+				.HeroStatsIcon {
+					horizontal-align: center;
+					margin: 0px;
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+
+		.HealthManaContainer {
+			flow-children: down;
+			width: 100%;
+			margin-left: 16px;
+			margin-top: 8px;
+			margin-right: 160px;
+
+			.HeroResourceRow {
+				margin: 2px 0px 4px;
+			}
+		}
+	}
+
+	
+
+	
+}
+
+.StatHeader {
+	width: 100%;
+	text-align: center;
+}
+
+.StatBody {
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+
+	Label {
+		text-align: center;
+	}
+}
+
+#ViewArmoryButton {
+	horizontal-align: right;
+	                        
+	margin-right: 60px;
+	margin-top: 137px;
+
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-delay: 0s;
+
+	.FullscreenPage &,
+	.EnableHeroCustomize &,
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		opacity: 0;
+		transition-delay: 0.4s;
+		transition-duration: 0.3s;
+	}
+}
+
+
+#DemoHeroButton {
+	margin-right: 8px;
+	max-width: 320px;
+	max-height: 34px;
+}
+
+.ActionButtonsContainer {
+	flow-children: right;
+	                               
+	margin-top: 24px;
+	height: fit-children;
+
+	#HeroVariantPicker {
+		background-color: #222222;
+	}
+}
+
+.DemoContainer {
+	flow-children: down;
+	height: fit-children;
+	width: fit-children;
+}
+
+#SetPanel {
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: down;
+	margin-bottom: 150px;
+	visibility: collapse;
+}
+
+#NotPublicLabel {
+	                               
+	                             
+	visibility: collapse;
+	margin-top: 16px;
+	opacity: 0.5;
+	                  
+
+	&.NotPublic {
+		visibility: visible;
+	}
+}
+
+.SetInfoDivider {
+	width: 600px;
+	height: 1px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.3, #ffffff ), color-stop( 0.7, #ffffff ), to( #FFFFFF00 ) );
+	opacity: 0.1;
+	margin: 24px 0px;
+}
+
+.EquippedLabel {
+	                            
+	                         
+	                                    
+	                                       
+	                                          
+}
+
+@keyframes 'GlowText'
+{
+	0%
+	{
+		brightness: 1;
+		text-shadow: 0px 0px 8px #FFFFFF22;
+	}
+	
+	100%
+	{
+		brightness: 2;
+		text-shadow: 0px 0px 12px #FFFFFF55;
+	}
+}
+
+#EquippedSetSlotsContainer {
+	flow-children: right-wrap;
+	margin-top: 16px;
+	margin-bottom: -8px;
+
+	.SetPreviewSlot {
+		width: 76px;
+		height: 76px;
+		margin: 0px;
+		margin-right: 8px;
+		margin-bottom: 8px;
+		box-shadow: 0px 0px 0px #00000000;
+	}
+}
+
+.EquippedLabel {
+	                   
+	                                                         
+}
+
+#StylesPanel {
+	flow-children: right;
+	margin: 16px 0px 8px;
+	opacity: 0;
+	visibility: collapse;
+
+	Label {
+		margin-right: 4px;
+		vertical-align: center;
+	}
+
+	.HasMultipleStyles & {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.Status_SavedSet & {
+		opacity: 0;
+		visibility: collapse;
+	}
+
+	#StyleSelectorRadioButton {
+		margin-right: 8px;
+	}
+}
+
+#SetName {
+	                         
+	                             
+}
+
+.SetRarityLabel {
+	font-weight: semi-bold;
+	brightness: 1.2;
+
+	                          
+	.Status_SavedSet & {
+		visibility: collapse;
+	}
+
+	.Rarity_common & {
+		color: rarity_color_common;
+	}
+
+	.Rarity_uncommon & {
+		color: rarity_color_uncommon;
+	}
+
+	.Rarity_rare & {
+		color: rarity_color_rare;
+	}
+
+	.Rarity_mythical & {
+		color: rarity_color_mythical;
+	}
+
+	.Rarity_legendary & {
+		color: rarity_color_legendary;
+	}
+
+	.Rarity_ancient & {
+		color: rarity_color_ancient;
+	}
+
+	.Rarity_immortal & {
+		color: rarity_color_immortal;
+	}
+
+	.Rarity_arcana & {
+		color: rarity_color_arcana;
+	}
+
+	.Rarity_seasonal & {
+		color: rarity_color_seasonal;
+	}
+}
+
+.Status_SavedSet .SetRarityLabel,
+.Status_Customized .SetRarityLabel {
+	visibility: collapse;
+}
+
+.SetRarityStrip {
+	width: 2px;
+	height: 100%;
+	ignore-parent-flow: true;
+	.Status_SavedSet & {
+		visibility: collapse;
+	}
+
+	.Rarity_common & {
+		background-color: rarity_color_common;
+	}
+
+	.Rarity_uncommon & {
+		background-color: rarity_color_uncommon;
+	}
+
+	.Rarity_rare & {
+		background-color: rarity_color_rare;
+	}
+
+	.Rarity_mythical & {
+		background-color: rarity_color_mythical;
+	}
+
+	.Rarity_legendary & {
+		background-color: rarity_color_legendary;
+	}
+
+	.Rarity_ancient & {
+		background-color: rarity_color_ancient;
+	}
+
+	.Rarity_immortal & {
+		background-color: rarity_color_immortal;
+	}
+
+	.Rarity_arcana & {
+		background-color: rarity_color_arcana;
+	}
+
+	.Rarity_seasonal & {
+		background-color: rarity_color_seasonal;
+	}
+}
+
+.SetNumberContainer {
+	margin-bottom: 4px;
+	width: 100%;
+}
+
+.SetNameContainer {
+	width: 100%;
+}
+
+#HeroLevelBarContainer {
+	width: 100%;
+	flow-children: right;
+	padding-bottom: 24px;
+	margin-bottom: 20px;
+	margin-right: 12px;
+	                          
+
+	.NoTier & {
+		visibility: collapse;
+	}
+}
+
+.HeroLevelBarLockIcon
+{
+	width: 25px;
+	height: 25px;
+	background-image: url("file://{images}/dota_plus/hero_progress_locked.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+	tooltip-position: left;
+	margin-right: 5px;
+	img-shadow: 0px 0px 15px 3.0 #000000;
+
+	visibility: collapse;
+}
+
+.MaxHeroLevelWithoutSubscription .HeroLevelBarLockIcon
+{
+	visibility: visible;
+}
+
+.HeroLevelBarMain {
+	width: 100%;
+	flow-children: down;
+	                         
+	                           
+	overflow: clip;
+
+	transition-property: brightness;
+	transition-duration: 0.1s;
+
+	&:hover {
+		brightness: 1.5;
+
+		.SectionTitleArrow {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+#LevelProgressContainer {
+	flow-children: right;
+}
+
+.BrowseSetsLabel {
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	margin-bottom: 8px;
+}
+
+.SetGroupTitleContainer {
+	horizontal-align: center;
+}
+
+#HeroLevelBarContainer .SectionTitle {
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.SectionTitleArrow {
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	margin-left: 2px;
+	opacity: 0;
+	transform: translateX( -4px );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.1s;
+}
+
+.SectionTitleGold {
+	color: #dccd83;
+}
+
+.LevelProgressXPValuesContainer {
+	width: 100%;
+	flow-children: right;
+
+	.CurrentLevelXPLabel {
+		                     
+		font-weight: semi-bold;
+	}
+
+	.NextLevelXPLabel {
+		                             
+		margin-left: 4px;
+	}
+}
+
+#NextHeroLevelRewards
+{
+	flow-children: right;
+}
+
+#NextHeroLevelRewardsButton
+{
+	flow-children: right;
+	min-height: 21px;
+}
+
+#NextHeroLevelRewardsButton:hover > Label
+{
+	color: white;
+}
+
+#NextHeroLevelRewardsButton:active > Label
+{
+	color: #ddd;
+}
+
+#NextRewardsIcon
+{
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+	margin-right: 6px;
+	transform: translateY( -2px );
+	wash-color: #ccc;
+
+	background-image: url( "file://{images}/control_icons/arrow_popout.png" );
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#NextHeroLevelRewardsButton:hover #NextRewardsIcon
+{
+	wash-color: white;
+}
+
+#NextHeroLevelRewardsButton:active #NextRewardsIcon
+{
+	wash-color: #ddd;
+}
+
+#HeroLevelProgress
+{
+	width: 100%;
+	height: 6px;
+	border: 0px;
+	border-radius: 0px;
+	background-color: #ddf2ff08;
+	margin: 8px 0px;
+}
+
+#HeroLevelProgress .ProgressBarLeft
+{
+	                                                                                           
+}
+
+#ChallengesMain
+{
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+}
+
+.ChallengeRefreshRequired #TitleSection
+{
+	visibility: collapse;
+}
+
+#ChallengesContainer
+{
+	height: 537px;
+	width: 100%;
+}
+
+
+#ChallengesUpsell
+{
+	margin-top: 0px;
+	padding-top: 12px;
+
+	visibility: collapse;
+}
+
+.MaxHeroLevelWithoutSubscription #ChallengesUpsell
+{
+	visibility: visible;
+}
+
+
+#ChallengesControl
+{
+	width: 100%;
+	margin-top: 0px;
+
+	DOTAPlusHeroChallenge {
+		margin-bottom: 12px;
+	}
+}
+
+#ChallengeRefreshControl {
+	height: 100%;
+	width: 100%;
+	background-image: url( "file://{images}/dota_plus/challenge_bountyxp.png");
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#RefreshImage {
+	width: 399px;
+	height: 197px;
+	background-image: url( "file://{images}/dota_plus/challenge_stars.png");
+	background-size: 100%;
+
+	horizontal-align: center;
+	margin-top: -10px;
+}
+
+#RefreshButton {
+	height: 35px;
+	width: 220px;
+	horizontal-align: center;
+	margin: 25px;
+	opacity: 0;
+}
+
+#RefreshButton Label {
+	font-size: 14px;
+	color: #fff;
+	horizontal-align: center;
+	letter-spacing: 1px;
+	font-weight: bold;
+	vertical-align: center;
+	text-overflow: shrink;
+	height: 22px;
+}
+
+#ChallengeInfoHeader {
+	width: 100%;
+	height: 100%;
+}
+
+#ChallengeTimer {
+	width: 100%;
+	height: 50px;
+
+	vertical-align: bottom;
+	margin-bottom: 10px;
+}
+
+#ChallengeRefreshNote {
+	width: 160px;
+	font-size: 16px;
+	line-height: 18px;
+	vertical-align: bottom;
+	text-overflow: shrink;
+	margin-left: 20px;
+	margin-bottom: 4px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: #B78946;
+}
+
+.MaxHeroLevel #NextHeroLevelRewardsButton > Label,
+.MaxHeroLevel #NextHeroLevelRewardsList,
+.MaxHeroLevelRewardsLabel
+{
+	visibility: collapse;
+}
+
+.MaxHeroLevel .MaxHeroLevelRewardsLabel
+{
+	visibility: visible;
+}
+
+.ExitFullScreenLabel {
+	horizontal-align: center;
+	margin-top: 20px;
+	opacity: 0;
+
+	.FullscreenPage & {
+		animation-name: ShowExitFullFullScreenLabel;
+		animation-duration: 2.5s;
+		animation-delay: 0.5s;
+		animation-timing-function: ease;
+	}
+}
+
+@keyframes 'ShowExitFullFullScreenLabel' {
+	0% {
+		opacity: 0;
+		transform: translateY( -10px );
+	}
+
+	20% {
+		opacity: 1;
+		transform: translateY( 0px );
+	}
+
+	90% {
+		opacity: 1;
+		transform: translateY( 0px );
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY( -10px );
+	}
+}
+
+#HeroLoadoutBackgroundImageContainer {
+	transition-property: transform, brightness;
+	transition-duration: 1.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+	transform: scale3d( 1.04, 1.04, 1 );	
+
+	.FullscreenPage & {
+		transform: scale3d( 1, 1, 1 );
+	}
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		brightness: 0.5;
+	}
+}
+
+#HeroLoadoutBackgroundImage {
+	transition-property: transform, opacity, brightness, background-color;
+	transition-duration: HeroCustomiseSlideDuration, 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+	opacity: 0.3;
+
+	.EnableHeroCustomize & {
+		opacity: 0.05;
+		transform: translateX( -60px );
+	}
+
+	.broodmother & {
+		opacity: 0;
+	}
+}
+
+#HeroLoadoutBackground,
+#HeroLoadoutBackground2 {
+	visibility: collapse;
+	
+	width: 100%;
+	height: 100%;
+
+	transition-property: transform, opacity, brightness;
+	transition-duration: HeroCustomiseSlideDuration, 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+	blur: gaussian(4px);
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		brightness: 0.5;
+	}
+
+	&.FadeIn {
+		opacity: 1;
+	}
+
+	&.FadeOut {
+		opacity: 0;
+	}
+
+	.EnableHeroCustomize & {
+		opacity: 0.1;
+		transform: translateX( -60px );
+	}
+}
+
+.Wrapper {
+	width: 100%;
+	flow-children: down;
+}
+
+#EquippedSetDetailsContainer {
+	width: 100%;
+	flow-children: down;	
+}
+
+.EquippedArmoryIcon {
+	ignore-parent-flow: true;
+	wash-color: LightestGrey;
+	margin-left: -72px;
+	margin-top: -38px;
+	padding: 40px;
+}
+
+.EquippedBackgroundShard {
+	horizontal-align: center;
+	width: 800px;
+	height: 300px;
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 10% 60%, from( #FFFFFF ), to( #FFFFFF00 ) );
+	background-color: gradient( linear, 0% 0%, 16% 60%, from( #ffffff27 ), to( #FFFFFF00 ) );
+	opacity: 0.05;
+	transform: skewX( -16deg ) translateX( 750px ) translateY( 314px );
+
+	.AspectRatio16x10 & {
+		transform: skewX( -16deg ) translateX( 700px ) translateY( 314px );
+	}
+
+	.NoTier & {
+		transform: skewX( -16deg ) translateX( 750px ) translateY( 196px );
+
+		.AspectRatio16x10 & {
+			transform: skewX( -16deg ) translateX( 700px ) translateY( 196px );
+		}
+	}
+
+	transition-property: opacity, transform;
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents &,
+	.EnableHeroCustomize &,
+	.FullscreenPage & {
+		opacity: 0;
+		transition-duration: 0.2s;
+		transition-delay: 0.4s;
+	}
+}
+
+#ViewSetsButtonContainer {
+	margin-top: 24px;
+	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.4);
+	
+	#ViewSetsButton {
+		padding: 0px 48px;
+		height: 56px;
+		transition-property: brightness;
+		animation-name: PulseButton;
+		animation-duration: 1s;
+		animation-delay: 0s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		&:hover {
+			animation-name: none;
+			brightness: 3;
+			transition-duration: 0.3s;
+		}
+	}
+}
+
+@keyframes 'PulseButton' {
+	0% {
+		brightness: 1;
+		box-shadow: inset 0px 0px 0px #FFFFFF00;
+	}
+
+	100% {
+		brightness: 3;
+		box-shadow: inset 0px 0px 4px #C2D8FF22;
+	}
+}
+
+#RoleSymbol {
+	width: 32px;
+	height: 32px;
+}
+
+#EquippedSetName {
+	font-family: titleFont;
+	font-size: 24px;
+	margin: 6px 0px 0px;
+	opacity: 0.9;
+}
+
+#HeroCustomize {
+	height: 100%;
+	horizontal-align: center;
+	flow-children: down;
+	margin-left: 824px;
+	opacity: 0;
+	margin-top: 62px;
+
+	.AspectRatio16x10 & {
+		margin-left: 630px;
+	}
+
+	                       
+		                    
+	    
+
+	transform: translateX( 120px ) scale3d(1.1, 1.1, 1);
+
+	transition-property: transform, opacity;
+	transition-duration: HeroCustomiseSlideDuration;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+	.EnableHeroCustomize & {
+		opacity: 1;
+		transform: none;
+		transition-delay: 0s;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in;
+	}
+
+	.HeroCustomizeEnter & {
+		sound: "ui_loadout_slide_in";
+	}
+
+	.HeroCustomizeExit & {
+		sound: "ui_loadout_slide_out";
+	}
+}
+
+#PersonaToggleContainer {
+	horizontal-align: left;
+	margin-bottom: 32px;
+	margin-left: -8px;
+	margin-top: -4px;
+
+	visibility: collapse;
+
+	.HasMultiplePersonas & {
+		visibility: visible;
+	}
+}
+
+.HeroPageNavigation {
+	margin-top: 140px;
+	margin-left: 32px;
+	flow-children: right;
+
+	transition-property: opacity;
+	transition-duration: 0.2s;
+
+	.ButtonSeparator {
+		width: 1px;
+		height: 16px;
+		background-color: rgba(255,255,255,0.03);
+		vertical-align: center;
+		margin: 0px 16px;
+		margin-top: 1px;
+	}
+
+	.FullscreenPage & {
+		opacity: 0;
+	}
+
+	.AspectRatio21x9 & {
+		                        
+		margin-left: 0px;
+	}
+
+	.EnableHeroCustomize & {
+		opacity: 0;
+	}
+
+	#NextHero {
+		                        
+	}
+}
+
+.DoneCustomizingButton {
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 36px;
+	                       
+}
+
+#CosmeticPicker {
+	flow-children: right-wrap;
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	width: 974px;
+	margin: 28px 0px 90px;
+
+	&:hover {
+        VerticalScrollBar {
+            opacity: 1;
+        }
+    }
+
+    VerticalScrollBar {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.1s;
+    }
+}
+
+#HeroSlots {
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: -1px;
+}
+
+.HighestRelicsContainer {
+	flow-children: down;
+	margin-right: 60px;
+	margin-top: 8px;
+}
+
+.HighestRelicsList {
+	margin-top: 12px;
+	margin-left: -8px;	
+}
+
+.HighestHeroRelic
+{
+	width: fill-parent-flow(1);
+	height: 100px;
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+	flow-children: down;
+
+	#RelicImage {
+		ui-scale: 44%;
+		horizontal-align: center;
+		vertical-align: middle;
+	}
+
+	.HeroRelicLevel {
+		horizontal-align: center;
+		margin-top: 2px;
+	}
+}
+
+.TabGroupContainer {
+	horizontal-align: center;
+}
+
+.DividerDash {
+	width: 100%;
+	height: 1px;
+	margin-bottom: 16px;
+	background-color: rgba(255, 255, 255, 0.01);	
+
+	&.Shorter {
+		margin-right: 24px;
+	}
+}
+
+.Dash {
+	width: 600px;
+	height: 1px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.2, #ffffff ), color-stop( 0.8, #ffffff ), to( #FFFFFF00 ) );
+	margin-top: 16px;
+	opacity: 0.08;
+}
+
+
+
+
+
+                                                                              
+#TabContents {
+	padding-top: 172px;
+	width: 100%;
+	height: 100%;
+
+	vertical-align: top;
+	horizontal-align: center;
+	flow-children: down;
+
+	transform: scale3d( 0.96, 0.96, 1);
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+
+	.SubTabProgressionTabContents &,
+	.SubTabStatsTabContents &,
+	.SubTabGuidesTabContents &,
+	.SubTabGlobalStatsContents &,
+	.SubTabAboutTabContents &,
+	.SubTabChangesTabContents & {
+		transform: none;
+		opacity: 1;
+		transition-duration: 0.15s;
+		transition-timing-function: ease-in;
+	}
+
+	.TabContentsContainer {
+		width: 1400px;
+		padding: 0px 20px;
+		height: 640px;
+		horizontal-align: center;
+	}
+}
+
+.TabContentsHeaderContainer {
+	horizontal-align: center;
+	flow-children: down;
+	margin-bottom: 16px;
+
+	.TabContentsHeroName {
+		horizontal-align: center;
+	}
+
+	.TabContentsHeader {
+		color: white;
+		horizontal-align: center;
+	}
+}
+
+                          
+
+#ProgressionTabContents,
+#StatsTabContents,
+#GlobalStatsContents,
+#GuidesTabContents,
+#AboutTabContents,
+#ChangesTabContents {
+	opacity: 0;
+	animation-duration: 0.4s;
+	&.AnimateLeftOut {
+		animation-name: AnimateLeftOut;
+	}
+
+	&.AnimateRightOut {
+		animation-name: AnimateRightOut;
+	}
+
+	&.AnimateLeftIn {
+		animation-name: AnimateLeftIn;
+		opacity: 1;
+	}
+
+	&.AnimateRightIn {
+		animation-name: AnimateRightIn;
+		opacity: 1;
+	}
+}
+
+@keyframes 'AnimateLeftOut' {
+	0% {
+		transform: translateX( 0px );
+		opacity: 1;
+	}
+	
+	30% {
+		transform: translateX( -10px );
+		opacity: 0;
+	}
+
+	30.1% {
+		transform: translateX( 20px );
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX( 0px );
+		opacity: 0;
+	}
+}
+
+@keyframes 'AnimateLeftIn' {
+	0% {
+		transform: translateX( 0px );
+		opacity: 0;
+	}
+	
+	30% {
+		transform: translateX( -10px );
+		opacity: 0;
+	}
+
+	30.1% {
+		transform: translateX( 20px );
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX( 0px );
+		opacity: 1;
+	}
+}
+
+@keyframes 'AnimateRightOut' {
+	0% {
+		transform: translateX( 0px );
+		opacity: 1;
+	}
+	
+	30% {
+		transform: translateX( 10px );
+		opacity: 0;
+	}
+
+	30.1% {
+		transform: translateX( -20px );
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX( 0px );
+		opacity: 0;
+	}
+}
+
+@keyframes 'AnimateRightIn' {
+	0% {
+		transform: translateX( 0px );
+		opacity: 0;
+	}
+	
+	30% {
+		transform: translateX( 10px );
+		opacity: 0;
+	}
+
+	30.1% {
+		transform: translateX( -20px );
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX( 0px );
+		opacity: 1;
+	}
+}
+
+
+                                                                              
+
+#ProgressionTabContents {
+	                           
+	margin-bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.SubTabProgressionTabContents #ProgressionTabContents {
+	                          
+}
+
+
+                                                                        
+
+#StatsTabContents {
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+	                           
+}
+
+.SubTabStatsTabContents #StatsTabContents {
+	                          
+}
+
+
+                                                                         
+
+#GlobalStatsContents {
+	width: 100%;
+	height: 100%;
+	                           
+}
+
+.SubTabGlobalStatsContents #GlobalStatsContents {
+	                          
+}
+
+
+                                                                         
+
+#GuidesTabContents {
+	                           
+	flow-children: down;
+}
+
+.SubTabGuidesTabContents #GuidesTabContents {
+	                          
+}
+
+#GuideBrowser {
+}
+
+#GuidesButtonsContainer {
+	margin-top: 24px;
+	flow-children: right;
+	horizontal-align: right;
+}
+.GoToBuideBuilderButton {
+	margin-left: 8px;
+	margin-right: 8px;
+	flow-children: right;
+
+	Image {
+		width: 24px;
+		height: 24px;		
+		margin: 0px 4px;
+	}
+}
+
+                                                                        
+
+#AboutTabContents {
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+	                        
+
+	horizontal-align: center;
+	vertical-align: top;
+	flow-children: right;
+	                           
+}
+
+.HeroPortraitContainer {
+	width: 460px;
+	height: 100%;
+	overflow: clip;
+	
+	#HeroBackgroundImage {
+		width: 100%;
+		height: 100%;
+		wash-color: rgba(0, 0, 0, 0.85);
+
+		background-size: cover;
+		background-position: center;
+	}
+
+	.BaseModelHeroShadow {
+		width: 90%;
+		height: 70px;
+		horizontal-align: center;
+		vertical-align: bottom;
+		margin-bottom: 20px;
+		background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgb(0, 0, 0), to( rgba(0, 0, 0, 0) ) );
+		blur: gaussian( 24px );
+		opacity: 0.5;
+	}
+
+	.HeroBackgroundImageOverlay {
+		width: 100%;
+		height: 100%;
+		background-color: gradient( linear, 0% 30%, 0% 90%, from( #00000000 ), to( #000000b3 ) );
+	}
+
+	#AboutHeroScenePanel {
+		width: 140%;
+		height: 140%;
+		margin-left: -20%;
+		margin-top: -15%;
+		overflow: noclip;
+	}
+}
+
+.SubTabAboutTabContents #AboutTabContents {
+	                          
+}
+
+.InfoColumn {
+	width: 420px;
+	flow-children: down;
+	overflow: squish scroll;
+	padding: 40px 0px 100px 40px;
+
+	opacity-mask: url( "file://{images}/masks/scrolling_side_nav_mask.psd" );
+
+	VerticalScrollBar {
+		opacity: 0;
+	}
+}
+
+#HeroStats {
+	width: fill-parent-flow( 1.0 );
+	flow-children: right;
+	padding: 40px 32px;
+}
+
+.HeroStatsColumn {
+	width: 50%;
+	flow-children: down;
+}
+
+.AboutContentBlock {
+	margin-bottom: 16px;
+}
+
+.HeroRoleDetails {
+	width: 100%;
+}
+
+.HeroStatsSection {
+	flow-children: down;
+	margin-bottom: 8px;
+	width: 100%;
+
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+}
+
+.HeroStatsHeader {
+	margin-bottom: 8px;
+	color: #6b7da5;
+}
+
+.HeroStatsRow {
+	flow-children: down;
+	margin-bottom: 8px;
+}
+
+.HeroAttributeStatsRow {
+	flow-children: right;
+	margin-bottom: 8px;
+	
+	Label {
+		vertical-align: center;
+	}
+}
+
+.HeroStatsValueRow {
+	flow-children: right;
+
+	Label {
+		color: LightestGrey;
+	}
+}
+
+.StatValueLabel {
+	color: LightGrey;
+}
+
+.HeroStatsIcon {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+	vertical-align: center;
+	wash-color: LightestGrey;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#HeroOverview {
+	margin-bottom: 24px;
+	letter-spacing: -0.3px;
+}
+
+.HeroResourceRow {
+	width: 100%;
+	margin: 4px 0px 12px;
+	background-color: white;
+	border-radius: 3px;
+
+	.MaxResource {
+		vertical-align: center;
+		horizontal-align: center;
+		color: white;
+		text-shadow: 0px 2px 5px 1 black;
+		vertical-align: center;
+	}
+
+	.ResourceRegen {
+		vertical-align: center;
+		horizontal-align: right;
+		color: rgba(255, 255, 255, 0.8);
+		text-shadow: 0px 1px 5px 1 black;
+		font-weight: semi-bold;
+		margin: -1px 0px 1px;
+		margin-right: 8px;
+	}
+
+	&.Health {
+		background-color: GreenGradientBackgroundColor;
+	}
+
+	&.Mana {
+		background-color: BlueGradientBackgroundColor;
+	}
+}
+
+                                                                          
+
+#ChangesTabContents {
+	flow-children: down;
+	
+	height: 100%;
+	width: 100%;
+	                                           
+	                       
+}
+
+                                                                               
+
+#HeroQuickSearch {
+}
+
+                                                                     
+#PersonaSelector {
+	margin-top: 72px;
+	transform: translateY( -12px );
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-delay: 0.7s;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.EnableHeroCustomize #PersonaSelector.HasMultiplePersonas {
+	transform: none;
+	opacity: 1;
+
+	transition-delay: 0s;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+#PersonaSelector2 {
+	margin-bottom: 20px;
+	margin-left: -8px;
+	horizontal-align: left;
+}
+
+#LargeModelPreviewControls {
+	width: 100%;
+	flow-children: right;
+	margin-top: 24px;
+}
+
+#FullscreenButton,
+#DebutToolButton {
+	margin-right: 8px;
+	tooltip-position: top;
+}
+
+#DebutToolButton {
+	visibility: collapse;
+}
+
+                      
+	            
+	             
+	                                                                    
+	                             
+	                         
+	                            
+	                            
+	                 
+ 
+
+                         
+	                 
+	                        
+	                                                  
+	                         
+ 
+
+                          
+	                 
+    
+
+                     
+	            
+	             
+	                                                                 
+	                             
+	                         
+	                            
+	                            
+	                 
+	                     
+    
+
+.MainBranch #DebutToolButton {
+	visibility: visible;
+}
+
+                           
+	                 
+	                        
+	                                                  
+	                         
+ 
+
+                         
+	                 
+    
+
+
+
+#AssignedSticker
+{
+	width: 96px;
+	height: 96px;
+	margin-top: -13px;
+	margin-bottom: -6px;
+	margin-left: -10px;
+	visibility: collapse;
+}
+
+.StickerVisible #AssignedSticker
+{
+	visibility: visible;
+}
+
+.StickerVisible .StickerOutline
+{
+	visibility: collapse;
+}
+
+.StickerOutline
+{
+	width: 56px;
+	height: 56px;
+	background-image: url("file://{images}/stickers/sticker_outline.psd");
+	background-repeat: no-repeat;
+    background-size: contain;
+
+
+	transition-property: opacity, pre-transform-scale2d;
+	transition-duration: .21s;
+	transition-timing-function: ease-in-out;
+	opacity: .05;
+}
+
+.AssignStickerButton
+{
+	vertical-align: middle;
+	margin-left: 6px;
+	margin-top: -1px;
+	                               
+}
+
+.AssignStickerButton:hover .StickerOutline
+{
+	opacity: 1;
+}
+
+#EditButton
+{
+	background-image: url("file://{images}/control_icons/edit.png");
+	height: 30px;
+	width: 30px;
+	background-size: 70%;
+	background-repeat:no-repeat;
+	background-position: 50% 50%;
+	margin-left: 70px;
+	margin-top: -10px;
+	z-index: 10000;
+	wash-color: #8c8;
+	opacity:0;
+	transition-property:opacity;
+	transition-duration:0.3s;
+	border-radius:8px;
+	background-color:#00000088;
+}
+
+.StickerVisible .ShowEdit #EditButton
+{
+	opacity:1;
+}
+
+#FullscreenCloseButton {
+	horizontal-align: right;
+	width: 48px;
+	height: 48px;
+	margin-top: 24px;
+	margin-right: 24px;
+	wash-color: #fff;
+	background-color: #00000000;
+	background-size: 50%;
+	width: 32px;
+	height: 32px;
+	background-image: url("file://{images}/leaf_pages/debut_arcana_wraith_king/close.png");
+	background-size: 32px;
+	transform: translateX( 100px );
+	transition-property: transform;
+	transition-duration: 0.2s;
+
+	&.Show {
+		transform: translateX( 0px );
+	}
+}
+
+.LeftHitArea {
+	height: 100%;
+	width: 15%;
+	horizontal-align: right;
+	visibility: collapse;
+}
+
+.FullscreenPage .LeftHitArea {
+	visibility: visible;
+}

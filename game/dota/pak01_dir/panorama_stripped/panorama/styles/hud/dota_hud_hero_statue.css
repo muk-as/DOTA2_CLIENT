@@ -1,0 +1,160 @@
+DOTAHeroStatue {
+	visibility: collapse;
+
+	&.Visible {
+		visibility: visible;
+	}
+}
+
+.MainBody {
+	width: 600px;
+	height: 400px;
+	padding: 16px;
+	flow-children: down;
+	vertical-align: middle;
+
+	background-image: url( "file://{images}/hud/international_bg.png" );
+	background-size: cover;
+	box-shadow: fill #000000d8 2px 2px 8px 0px ;
+}
+
+#Tournament {
+	flow-children: down;
+	width: 300px;
+
+	visibility: collapse;
+
+	.TournamentStatue.HasTournamentMatchData & {
+		visibility: visible;
+	}
+
+	#TournamentLogo	{
+		width: 260px;
+		height: 100px;
+		box-shadow: #000000aa 0px 0px 6px 0px ;
+	}
+
+	
+	.TeamLogos {
+		flow-children: right;
+		width: 260px;
+		margin-top: 12px;
+
+		> Label {
+			vertical-align: middle;
+			text-align: center;
+			margin: 0px 12px;
+			width: fill-parent-flow( 1.0 );
+		}
+		
+		.TeamLogo {
+			width: 120px;
+			height: 72px;
+			ui-scale: 75%;
+			vertical-align: center;
+		}
+
+	}
+
+	
+	#TournamentEvent {
+		width: 260px;
+		margin-top: 12px;
+		font-weight: bold;
+		color: white;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	#TournamentEventDetails {
+		width: 260px;
+		color: #999;
+		font-size: 16px;
+	}
+}
+
+
+#Normal {
+	flow-children: down;
+	width: 300px;
+
+	visibility: visible;
+
+	.TournamentStatue & {
+		visibility: collapse;
+	}
+	
+	#EffigyTypeHeader {
+		font-family: titleFont;
+		color: whitesmoke;
+	}
+
+	#Inscription {
+		color: tan;
+		font-style: italic;
+	}
+
+	#NoInscription {
+		font-style: italic;
+		color: #666;
+		visibility: visible;
+
+		.HasInscription & {
+			visibility: collapse;
+		}
+	}
+
+	#CreatedByHeader {
+		margin-top: 16px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 16px;
+		color: #999;
+	}
+	#CreatedBy {
+		color: white;
+	}
+}
+
+#LikeButton {
+	width: 32px;
+	height: 32px;
+	background-color: black;
+	wash-color: #7595B5;
+
+	background-image: url( "file://{images}/icon_thumbs_up.png" );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 70%;
+
+	visibility: visible;
+
+	.LikeHidden & {
+		visibility: collapse;
+	}
+
+	&:hover {
+		wash-color: #FFFFFF;
+	}
+
+	.Liked & {
+		background-image: url( "file://{images}/control_icons/check.png" );
+	}
+
+	.Liked &:hover {
+		wash-color: #7595B5;
+	}
+}
+
+#LikesLabel {
+	color: #999;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#HeroStatuePreview {
+	width: 600px;
+	height: 600px;
+	transform: translateX( 100px );
+	horizontal-align: right;
+}

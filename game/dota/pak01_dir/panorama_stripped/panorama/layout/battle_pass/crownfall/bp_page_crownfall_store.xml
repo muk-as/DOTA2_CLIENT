@@ -1,0 +1,1686 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_page_crownfall_store.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/battle_pass/crownfall/bp_page_crownfall_store.ts" />
+
+	</scripts>
+
+	<DOTABPCrownfallStorePage class="DashboardPage" onload="OnPageLoad()">
+		<DOTAScenePanel id="DiscountModePageFX" hittest="false" antialias="true" camera="camera" light="light" renderdeferred="false" particleonly="false" map="scenes/events/crownfall/discount_fx_background"/>
+		<Panel class="Header">
+			
+			
+			<Panel class="TitleContainer">
+				<Label class="Title" text="#DOTA_Crownfall_Store_Title" />
+				<Label class="Description" text="#DOTA_Crownfall_Store_Description" />
+			</Panel>
+			                                    
+			<Panel class="CoinsSection" onmouseover="UIShowTextTooltip( #DOTA_CrownfallStore_CoinsInfo )" onmouseout="UIHideTextTooltip()">
+				<Panel class="CoinMeter" />
+				<Panel class="CoinText">
+					<Panel class="CoinTextCenter">
+						<Label class="CurrentCoins" text="{d:coin_quantity}" />
+						<Label class="CoinsThreshold" text="/{d:coin_threshold}" />
+					</Panel>
+				</Panel>
+				<DOTAParticleScenePanel id="DiscountModeActivateFX" hittest="false" particleName="particles/ui/events/discountmode_button.vpcf" squarePixels="true" particleonly="true" startActive="true" cameraOrigin="0 0 310" lookAt="0 0 0" fov="40"/>
+				<Panel class="ActivateContainer">
+					<DOTACrownfallButton class="activateButton" text="#DOTA_CrownfallStore_ActivateDiscount" onactivate="DOTACrownfallStoreToggleDiscountActive() " />
+					<DOTACrownfallButton class="deactivateButton" text="#DOTA_CrownfallStore_DeactivateDiscount" onactivate="DOTACrownfallStoreToggleDiscountActive()" />
+				</Panel>
+				<Panel class="CoinsIconContainer">
+					<AnimatedImageStrip id="CoinsIcon" src="file://{images}/emoticons/crownfall/props/prop_reward_coin_idle.png" />
+					<Label class="TotalCoinCount LabelLarge TextShadowMedium WhiteText" text="#DOTA_Crownfall_Store_CoinsCount"/>
+				</Panel>
+			</Panel>
+			<Panel id="CancelTransactionErrorMessage">
+				<Image class="ErrorIcon" src="file://{images}/control_icons/24px/warning.svg" scaling="stretch-to-fit-preserve-aspect" />
+				<Label class="ErrorTextLabel BodySmall LightGreyText" text="#DOTA_ImmediatePurchase_CanCancelMessage" />
+				<Button id="CancelButton" class="ButtonPrimary DarkGrey" onactivate="DOTACrownfallStoreCancelInFlightTransactions()" >
+					<Label text="#DOTA_UI_Cancel" />
+				</Button>
+			</Panel>
+			<Panel id="TransactionErrorMessage">
+				<Image class="ErrorIcon" src="file://{images}/control_icons/24px/warning.svg" scaling="stretch-to-fit-preserve-aspect" />
+				<Label class="ErrorTextLabel BodySmall LightGreyText" text="#DOTA_ImmediatePurchase_CantCancelMessage" />
+			</Panel>
+		</Panel>
+
+		<Panel class="StoreContents" hittest="false">
+			<Carousel id="StoreCarousel" focus="center" hittest="false">
+
+				<Panel id="StoreItemOverview" class="StoreItem StoreItemOverview" hittest="false" acceptsfocus="true">
+
+					<Panel class="StoreItemMain">
+
+						<Panel class="StoreCells">
+							
+							<Panel class="StoreCell ArcanaCell Venge" itemdef="22722" onactivate="DOTAShowBPCrownfallStoreItem( 22722 )">
+								<Image class="CellBackground" src="file://{images}/events/crownfall/store/venge_cell_background.png" scaling="cover" />
+								<DOTAUIEconSetPreview class="ArcanaModel" activity-modifier="takeover" itemdef="22722" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+								<DOTAScenePanel class="ArcanaParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+								<Panel class="CellInfo CellBottom">
+									<Label class="CellTitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Name" />
+									<Label class="CellSubtitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle" />
+									<Panel class="Dash"/>
+									<Panel class="CellPrices">
+										<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+										<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+									</Panel>
+								</Panel>
+								<Panel class="ArcanaRarityStrip" hittest="false">
+									<Panel class="ArcanaRarityOverlay" hittest="false"/>
+								</Panel>								
+								<Panel class="CellBorder" hittest="false"/>
+							</Panel>							
+
+							<Panel class="StoreCellColumn">
+
+								<Panel class="StoreCellRow Top">
+
+									<Panel class="StoreCell TreasureCell CollectorsCacheCell" itemdef="32609" onactivate="DOTAShowBPCrownfallStoreItem( 32609 )">
+										<Panel class="FloorShadow"/>
+										<Image class="CellBackground" src="file://{images}/events/crownfall/store/collectorscache_store_topcell_background.psd" scaling="cover" />
+										<DOTAParticleScenePanel class="StoreCellSnowParticles" hittest="false" particleName="particles/ui/ui_snow_fullscreen.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="70" />
+										                                                                                                                                  
+										                                                                                           
+										                                                                                                                                                                                            
+										                                                                                                                                                                                                                  
+										<Panel class="CellInfo">
+											                                                
+												                                                                     
+											           
+											<Label class="CellTitle2" text="#DOTA_Winter2024_HeroesHoard_Title" />
+											<Label class="CellSubtitle2" text="#DOTA_Winter2024_HeroesHoard_Cell_Description" />										
+										</Panel>
+
+
+										<Panel class="PricesContainer">
+											<Panel class="LeftRightFlow HorizontalCenter">
+												<Panel class="TreasurePrice" itemdef="32609">
+													<Panel class="TreasureAmount">
+														<Label text="1" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+												<Panel class="TreasurePrice" itemdef="32649">
+													<Panel class="TreasureAmount">
+														<Label text="13" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>
+
+										<Panel class="CellBorder" hittest="false"/>
+									</Panel>
+
+									                                                                                                                 
+										                                                                                                                            
+										                                                                                                                                                                                                                                  
+										                                                                                                                                                        
+										                        
+											                                            
+												                                                                  
+											        
+											                                                                     
+											                                                                        
+										        
+										                               
+											                          
+												                                                                 
+												                                                                   
+											        
+										        
+										                                           
+									            
+
+								</Panel>
+
+								<Panel class="StoreCellRow">
+									
+									<Panel class="StoreCell TreasureCell Treasure1Cell" onactivate="DOTAShowBPCrownfallStoreItem( 29639 )">
+										<Panel class="FloorShadow"/>
+										<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+										<DOTAUIEconSetPreview class="TreasureModel" pin-fov="vertical" itemdef="29639" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+										<Panel class="CellInfo">
+											<Label class="CellTitle" text="#DOTA_CrownfallStore_CollectorsCache1" />
+										</Panel>
+										<Panel class="PricesContainer">
+											<Panel class="LeftRightFlow HorizontalCenter">
+												<Panel class="TreasurePrice" itemdef="29639">
+													<Panel class="TreasureAmount">
+														<Label text="1" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+												<Panel class="TreasurePrice" itemdef="30235">
+													<Panel class="TreasureAmount">
+														<Label text="13" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>										
+										<Panel class="CellBorder" hittest="false"/>
+									</Panel>
+									
+									<Panel class="StoreCell TreasureCell Treasure2Cell" onactivate="DOTAShowBPCrownfallStoreItem( 30279 )">
+										<Panel class="FloorShadow"/>
+										<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+										<DOTAUIEconSetPreview class="TreasureModel" pin-fov="vertical" itemdef="30279" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+										<Panel class="CellInfo">
+											<Label class="CellTitle" text="#DOTA_CrownfallStore_CollectorsCache2" />
+										</Panel>
+										<Panel class="PricesContainer">
+											<Panel class="LeftRightFlow HorizontalCenter">
+												<Panel class="TreasurePrice" itemdef="30279">
+													<Panel class="TreasureAmount">
+														<Label text="1" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+												<Panel class="TreasurePrice" itemdef="32621">
+													<Panel class="TreasureAmount">
+														<Label text="13" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>
+										<Panel class="CellBorder" hittest="false"/>
+									</Panel>
+
+									                                                                                                            
+										                                                                                                                        
+										                            
+										                                                                                                                                                                                                         
+										                        
+											                                                                    
+										        
+										                               
+											                                              
+												                                             
+													                              
+														                  
+														                              
+													        
+													                          
+														                                                                 
+														                                                                   
+													        
+												        
+												                                             
+													                              
+														                  
+														                              
+													        
+													                          
+														                                                                 
+														                                                                   
+													        
+												        
+											        
+										        
+										                                           
+									            
+
+								</Panel>
+
+								                                   
+
+									                                                                                                            
+										                                    
+										                                             
+										                                                                                                                                       
+										                                                                                                                                  
+										                        
+											                                                                     
+											                                                                        
+										        
+										                                            
+											                          
+												                                                                 
+												                                                                   
+											        
+										        
+										                                                                                                                                                                                    
+										                                                                                                                                                                                      
+										                                           
+									           
+									     
+									                                                                                                              
+										                                                                                                                                   
+										                        
+											                                                                          
+											                                                                             
+										        
+										                               
+											                          
+												                                                                 
+												                                                                   
+											        
+										        
+										                                                                                                                                                    
+										                                           
+									        
+									   
+
+									                                                                                                             
+										                                                                                                                       
+										                        
+											                                                                     
+											                                                                        
+										        
+										                               
+											                          
+												                                                                 
+												                                                                   
+											        
+										        
+										                                                                                                                                                        
+										                                           
+									            
+
+									                                                                                                              
+										                                                                                                                       
+										                        
+											                                                                        
+											                                                                           
+										        
+										                               
+											                          
+												                                                                 
+												                                                                   
+											        
+										        
+										                                                                                                                                                  
+										                                           
+									        
+									    
+								               
+							</Panel>
+
+							<Panel class="StoreCell ArcanaCell Skywrath" itemdef="22277" onactivate="DOTAShowBPCrownfallStoreItem( 22277 )">
+								<Image class="CellBackground" src="file://{images}/events/crownfall/store/skywrath_cell_background.png" scaling="cover" />
+
+								<DOTAUIEconSetPreview class="ArcanaModel" activity-modifier="takeover" itemdef="22277" cameraOrigin="0 0 0" rotation="-40" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+								<DOTAScenePanel class="ArcanaParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+								<Panel class="CellInfo CellBottom">
+									<Label class="CellTitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Name" />
+									<Label class="CellSubtitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle" />
+									<Panel class="Dash"/>
+									<Panel class="CellPrices">
+										<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+										<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+									</Panel>
+								</Panel>
+								<Panel class="ArcanaRarityStrip" hittest="false">
+									<Panel class="ArcanaRarityOverlay" hittest="false"/>
+								</Panel>	
+								<Panel class="CellBorder" hittest="false"/>
+							</Panel>
+
+						</Panel>
+					</Panel>
+
+				</Panel>
+
+				                                                                                                                
+					                             
+						                           
+						                          
+							                                                                     
+							                                                                        
+						        
+
+						                           
+							                        
+							                            
+								                                  
+								                             
+								                                
+							        
+							                                           
+							                                                                                 
+
+							                                                                                  
+								                                                                                                                                                                                                               
+								                                                                                                                                                                                                                  
+							           
+
+							                                                                                                                                                                                                                                   
+								                                
+								                                                                                                                                                    
+								                                        
+								                         
+									                                                                       
+									                        
+										                          
+										                                                               
+										                           
+									        
+									                                                                                        
+								        
+							        
+							                            
+								                                                                             
+								                                                                                
+									                                                                                                  
+								        
+								
+								                                                                      
+							        
+						        
+
+						                         
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                          
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                            
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+							        
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                         
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+								
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                              
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                        
+										                            
+										                                                                                                                                                                                    
+									        
+								        
+
+							        
+
+
+						        
+
+						                             
+							                                       
+								                              
+									                         
+									                                                               
+								        
+								                                                                                      
+								                            
+									                           
+									                                                          
+								        
+								                                                                                                                                                        
+								                                                                                                  
+							        
+
+							                                                                                                          
+								                                    
+								                                                      
+							         
+							
+						         
+					        
+				           
+
+				                                                                                                                
+					                             
+						                           
+						                          
+							                                                                     
+							                                                                        
+						        
+
+						                           
+							                        
+
+							                            
+								                                
+								                                
+							        
+							
+							                                           
+							                                                                                 
+							                                                                                                                                                                   
+
+							                                                                                                                                                                                                                                   
+								                                
+								                                                                                                                                                    
+								                                        
+								                         
+									                                                                       
+									                        
+										                          
+										                                                               
+										                           
+									        
+									                                                                                        
+								        
+							        
+							                            
+								                                                                             
+								                                                                                
+									                                                                                                  
+								        
+								                                                                         
+							        
+						        
+
+						                         
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                             
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                              
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+							        
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                             
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                       
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                        
+										                            
+										                                                                                                                                                                                    
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+
+							        
+
+						        
+
+						                             
+							                                       
+								                              
+									                         
+									                                                               
+								        
+								                                                                                      
+								                            
+									                           
+									                                                          
+								        
+								                                                                                                                                                        
+								                                                                                                  
+							        
+
+							                                                                                                          
+								                                    
+								                                                      
+							         
+
+						        
+					        
+				           
+
+				                                                                                                                
+					                             
+						                           
+						                          
+							                                                                     
+							                                                                        
+						        
+
+						                           
+							                        
+
+							                            
+								                                
+								                                
+							        
+
+							                                           
+							                                                                                 
+							                                                                                                                                                                                                                                                                                                                             
+
+							                                                                                                                                                                                                                                   
+								                                
+								                                                                                                                                                    
+								                                        
+								                         
+									                                                                       
+									                        
+										                          
+										                                                               
+										                           
+									        
+									                                                                                        
+								        
+							        
+							                            
+								                                                                             
+								                                                                                
+									                                                                                                  
+								        
+								                                                              
+							        
+						        
+
+						                         
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                               
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                              
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+							        
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                            
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+								        
+
+								                            
+									                                                                                                                                                                        
+										                            
+										                                                                                                                                                                                    
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+
+							        
+
+						        
+
+						                             
+							                                       
+								                              
+									                         
+									                                                               
+								        
+								                                                                                      
+								                            
+									                           
+									                                                          
+								        
+								                                                                                                                                                        
+								                                                                                                  
+							        
+
+							                                                                                                          
+								                                    
+								                                                      
+							         
+
+						        
+					        
+				           
+
+				                                                                                                                
+					                             
+						                           
+						                          
+							                                                                     
+							                                                                        
+						        
+
+						                           
+							                        
+
+							                                           
+							                                                                                 
+							                                                                                                                                                                                                                                                                                                                              
+							                                                                                                                                                                                                                                                                                                                           
+							
+							                                                                                                                                                                                                                                   
+								                                
+								                                                                                                                                                    
+								                                        
+								                         
+									                                                                       
+									                        
+										                          
+										                                                               
+										                           
+									        
+									                                                                                        
+								        
+							        
+							                            
+								                                                                             
+								                                                                                
+									                                                                                                  
+								        
+								                                                                      
+							        
+						        
+
+						                         
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                          
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+									                                                                                                                                                                                              
+										                                              
+											                                
+											                                                     
+											                                                 
+											                                          
+										        
+									        
+								        
+
+								                            
+									                                                                                                                                                                                 
+										                            
+										                                                                                                                                                                                    
+									        
+									                                                          
+										                            
+										                                                                                                                                                                                                       
+										                                    
+									        
+									                                                          
+										                            
+										                                                                               
+										                                                                                                                                                                                                       
+										                                    
+									        
+								        
+							        
+
+							                            
+								                           
+									                                                                                                                                                                                       
+										                                                                               
+									        
+									                                                                                                                  
+									                                  
+										                                                                  
+										                                                                           
+									        
+								        
+
+								                              
+									                          
+									                    
+									                           
+								        
+
+								                                                                                                                                            
+									                                                  
+									                          
+								        
+
+								                            
+									                           
+										                                                                                                                                                                                                 
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                        
+										                                     
+									        
+									                           
+										                                                                                                                                                                                                   
+										                                    
+									        
+									                           
+										                                                                                                                                                                                                         
+										                                    
+									        
+								        
+
+								                            
+									                                                                                                                                                                                            
+										                            
+										                                                                                                                                                                                     
+									        
+									                                                                                                                                                                                      
+										                            
+										                                                               
+										                                    
+									        
+								        
+
+							        
+
+						        
+
+						                             
+							                                       
+								                              
+									                         
+									                                                               
+								        
+								                                                                                      
+								                            
+									                           
+									                                                          
+								        
+								                                                                                                                                                        
+								                                                                                                  
+							        
+
+							                                                                                                          
+								                                    
+								                                                      
+							         
+
+						        
+					        
+				           
+				
+				
+				<Panel class="StoreItem StoreItemArcana StoreItemVengeArcana" hittest="false" itemdef="22722" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<DOTAScenePanel id="VengefulSpiritSceneBackground" class="ArcanaScene" hittest="false" pin-fov="horizontal" map="backgrounds/hero_showcase_venge_arcana_env_only" camera="herocamera" light="light_hero" renderdeferred="true" deferredalpha="true" renderwaterreflections="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false"/>
+						<Panel class="TopBorder" />
+					</Panel>
+					<DOTAScenePanel id="VengefulSpiritScene" class="ArcanaScene" pin-fov="horizontal" map="backgrounds/hero_showcase_venge_arcana_hero_only" camera="herocamera" light="light_hero" hittest="false" renderdeferred="false" deferredalpha="true"  rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false"/>
+					<Panel class="StoreItemMain">
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Name" />
+							<Label class="ItemSubtitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle" />
+						</Panel>
+						<Panel class="ItemDetails">
+							<Label class="ItemLore" text="#Debut_Arcana_Venge_Lore" />
+
+							<MoviePanel class="GameplayVideo" src="file://{resources}/videos/promo/venge_arcana.webm" repeat="true" autoplay="onload"  />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_1_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_1_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_2_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_2_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_3_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_3_Desc" />
+
+							<Panel class="HeroImages">
+								<Panel class="HeroPortrait" />
+								<Panel class="HeroIcons" />
+								<Panel class="HeroAbilities" />
+							</Panel>
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_4_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_4_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_5_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_5_Desc" />
+						</Panel>
+
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton class="ActionButton" itemdef="22722" />
+							<Button class="GiftButton ButtonPrimary Green" onactivate="DOTACrownfallStorePurchaseItemAsGift( 22722 )">
+								<Label text="#DOTA_Treasure_Gift" />
+								<Image src="file://{images}/control_icons/gift.png" />
+							</Button>
+							<DemoModeButton id="DemoHeroButton" category="#Rarity_Arcana" onactivate="DOTADemoHero( npc_dota_hero_vengefulspirit, 22722 )" />
+							                                                                                   
+							<Button class="InspectButton ButtonPrimary LightGrey" onactivate="DOTAShowItemDefPage( 22722 )" >
+								<Image src="file://{images}/control_icons/24px/info_ghost.svg" />
+							</Button>
+						</Panel>
+
+						<Panel class="BackgroundShadow"/>
+
+						<Panel class="ArcanaStyleButtons">
+							
+							<RadioButton id="VengeStyleSelect0" group="venge_style_buttons" selected="true" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 0 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style0" />
+								</Panel>
+							</RadioButton>
+							<RadioButton id="VengeStyleSelect1" group="venge_style_buttons" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 1 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style1" />
+									                                                                                    
+									<Label class="StyleUnlockUnavailable" text="#DOTA_CrownfallStore_StyleUnlockUnavailable" />
+								</Panel>
+							</RadioButton>
+							<RadioButton id="VengeStyleSelect2" group="venge_style_buttons" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 2 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style2" />
+									                                                                                    
+									<Label class="StyleUnlockUnavailable" text="#DOTA_CrownfallStore_StyleUnlockUnavailable" />
+								</Panel>
+							</RadioButton>
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel class="StoreItem StoreItemArcana StoreItemSkywrathArcana" hittest="false" itemdef="22277" acceptsfocus="true">
+						<Panel class="StoreItemMain">
+							<DOTAScenePanel id="SkywrathMageSceneBackground" class="ArcanaScene" hittest="false" pin-fov="horizontal" map="backgrounds/hero_showcase_skywrath_arcana_env_only" camera="herocamera" light="light_hero" renderdeferred="true" deferredalpha="true" renderwaterreflections="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false"/>
+							<Panel class="TopBorder" />
+						</Panel>
+						<DOTAScenePanel id="SkywrathMageScene" class="ArcanaScene" pin-fov="horizontal" map="backgrounds/hero_showcase_skywrath_arcana_hero_only" camera="herocamera" light="light_hero" hittest="false" renderdeferred="false" deferredalpha="true"  rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false"/>
+					<Panel class="StoreItemMain">
+						                                                                                                                                                                                                                                                                                                                                                                                                                                
+						                                    
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Name" />
+							<Label class="ItemSubtitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle" />
+						</Panel>
+						<Panel class="ItemDetails">
+							<Label class="ItemLore" text="#Debut_Arcana_Skywrath_Lore" />
+
+							<MoviePanel class="GameplayVideo" src="file://{resources}/videos/promo/skywrath_arcana.webm" repeat="true" autoplay="onload"  />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_1_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_1_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_2_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_2_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_3_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_3_Desc" />
+
+							<Panel class="HeroImages">
+								<Panel class="HeroPortrait" />
+								<Panel class="HeroIcons" />
+								<Panel class="HeroAbilities" />
+							</Panel>
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_4_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_4_Desc" />
+
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_5_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_5_Desc" />
+						</Panel>
+						
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton itemdef="22277" />
+							<Button class="GiftButton ButtonPrimary Green" onactivate="DOTACrownfallStorePurchaseItemAsGift( 22277 )">
+								<Label text="#DOTA_Treasure_Gift" />
+								<Image src="file://{images}/control_icons/gift.png" />
+							</Button>
+							<DemoModeButton id="DemoHeroButton" category="#Rarity_Arcana" onactivate="DOTADemoHero( npc_dota_hero_skywrath_mage, 22277 )" />
+							                                                                                   
+							<Button class="InspectButton ButtonPrimary LightGrey" onactivate="DOTAShowItemDefPage( 22277 )" >
+								<Image src="file://{images}/control_icons/24px/info_ghost.svg" />
+							</Button>
+						</Panel>
+
+						<Panel class="BackgroundShadow"/>
+						
+						<Panel class="ArcanaStyleButtons">
+							<RadioButton id="SkywrathStyleSelect0" group="skywrath_style_buttons" selected="true" onactivate="DOTACrownfallStoreSetSkywrathMageArcanaStyle( 0 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Skywrath_Mage_Arcana_Style0" />
+								</Panel>
+							</RadioButton>
+							<RadioButton id="SkywrathStyleSelect1" group="skywrath_style_buttons" onactivate="DOTACrownfallStoreSetSkywrathMageArcanaStyle( 1 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Skywrath_Mage_Arcana_Style1" />
+									                                                                                    
+									<Label class="StyleUnlockUnavailable" text="#DOTA_CrownfallStore_StyleUnlockUnavailable" />
+								</Panel>
+							</RadioButton>
+						</Panel>
+
+					</Panel>
+
+				</Panel>
+
+				<Panel class="StoreItem StoreItemTreasure" hittest="false" itemdef="30937" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="FloorShadow" />
+						<DOTAUIEconSetPreview id="TreasureModel" pin-fov="vertical" drawbackground="false" itemdef="30937" hittest="false" hittestchildren="false" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_Item_Crownfall_Treasure_I" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<DOTAScenePanel id="TreasurePreview_I" class="TreasurePreview" onload="SetupTreasurePreview_I()" hittest="false" pin-fov="vertical" map="maps/backgrounds/dashboard_background_loadout_treasure_crownfall_i" light="hero_light" camera="hero_camera" particleonly="false"  />
+						
+
+						<Panel class="ActionButtons">
+							<Panel class="SaleInfo">
+							</Panel>		
+									
+									
+						
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30937" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="31121" text="#DOTA_Purchase_Nine" consumeafterpurchase="true" />
+							</Panel>
+							
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30937 )" />
+						</Panel>
+					</Panel>
+
+				</Panel>
+
+				<Panel class="StoreItem StoreItemTreasure" hittest="false" itemdef="30938" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="FloorShadow" />
+						<DOTAUIEconSetPreview id="TreasureModel" pin-fov="vertical" drawbackground="false" itemdef="30938" hittest="false" hittestchildren="false" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_Item_Crownfall_Treasure_II" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<DOTAScenePanel id="TreasurePreview_II" class="TreasurePreview" onload="SetupTreasurePreview_II()" hittest="false" pin-fov="vertical" map="maps/backgrounds/dashboard_background_loadout_treasure_crownfall_ii" light="hero_light" camera="hero_camera" particleonly="false"  />
+
+						<Panel class="ActionButtons">
+							<Panel class="SaleInfo">
+							</Panel>		
+									
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30938" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="31122" text="#DOTA_Purchase_Nine" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30938 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel class="StoreItem StoreItemTreasure" hittest="false" itemdef="30939" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="FloorShadow" />
+						<DOTAUIEconSetPreview id="TreasureModel" pin-fov="vertical" drawbackground="false" itemdef="30939" hittest="false" hittestchildren="false" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_Item_Crownfall_Treasure_III" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<DOTAScenePanel id="TreasurePreview_III" class="TreasurePreview" onload="SetupTreasurePreview_III()" hittest="false" pin-fov="vertical" map="maps/backgrounds/dashboard_background_loadout_treasure_crownfall_iii" light="hero_light" camera="hero_camera" particleonly="false"  />
+
+						<Panel class="ActionButtons">
+							<Panel class="SaleInfo">
+							</Panel>		
+									
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30939" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="29637" text="#DOTA_Purchase_Nine" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30939 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="StoreItem StoreItemTreasure CollectorsCache" hittest="false" itemdef="29639" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<Panel class="TreasurePreview CollectorsCacheScene">
+							<DOTAUIEconSetPreview id="Meepo" class="CollectorsCacheModel" itemstyle="0" itemdef="28277" cameraOrigin="0 0 0" rotation="10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Luna" class="CollectorsCacheModel" itemstyle="0" itemdef="28275" cameraOrigin="0 0 0" rotation="-60" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Muerta" class="CollectorsCacheModel" itemstyle="0" itemdef="31072" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Jugg" class="CollectorsCacheModel" itemstyle="0" itemdef="28271" cameraOrigin="0 0 0" rotation="-20" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAParticleScenePanel class="SmokeFX" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+						</Panel>
+						<DOTAUIEconSetPreview id="TreasureModel" drawbackground="false" itemdef="29639" />
+						<Panel class="ItemHeader">
+							<Image class="CrownfallLogo en" src="file://{images}/events/crownfall/logos/crownfall_logo_en.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="CrownfallLogo cn" src="file://{images}/events/crownfall/logos/crownfall_logo_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="ItemTitle" html="true" text="#DOTA_CollectorsCache_Title_Wrapped" />
+							<Label class="ItemSubtitle" text="#DOTA_Collectors_2024_Cell_Description" />
+						</Panel>
+						<Panel class="ActionButtons">
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="29639" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="30235" text="#DOTA_Purchase_CC_Bundle" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 29639 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="StoreItem StoreItemTreasure CollectorsCache2" hittest="false" itemdef="30279" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<Panel class="TreasurePreview CollectorsCacheScene">
+							<DOTAUIEconSetPreview id="Invoker" class="CollectorsCacheModel" itemstyle="0" itemdef="30575" cameraOrigin="0 0 0" rotation="15" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Spiritbreaker" class="CollectorsCacheModel" itemstyle="0" itemdef="30452" cameraOrigin="0 0 0" rotation="-60" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Undying" class="CollectorsCacheModel" itemstyle="0" itemdef="28276" cameraOrigin="0 0 0" rotation="-55" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="Rubick" class="CollectorsCacheModel" itemstyle="0" itemdef="29096" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAParticleScenePanel class="SmokeFX" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+						</Panel>
+						<DOTAUIEconSetPreview id="TreasureModel" drawbackground="false" itemdef="30279" />
+						<Panel class="ItemHeader">
+							<Image class="CrownfallLogo en" src="file://{images}/events/crownfall/logos/crownfall_logo_en.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="CrownfallLogo cn" src="file://{images}/events/crownfall/logos/crownfall_logo_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="ItemTitle" html="true" text="#DOTA_CollectorsCache_Title_2_Wrapped" />
+							<Label class="ItemSubtitle" text="#DOTA_Collectors_2024_Cell_Description" />
+						</Panel>
+						<Panel class="ActionButtons">
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30279" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="32621" text="#DOTA_Purchase_CC_Bundle" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30279 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel class="StoreItem StoreItemTreasure CollectorsCache3" hittest="false" itemdef="32609" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+						<DOTAParticleScenePanel class="SnowParticles Background" hittest="false" particleName="particles/ui/ui_snow_fullscreen.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="100" />
+						<DOTAParticleScenePanel class="SnowParticles" hittest="false" particleName="particles/ui/ui_snow_fullscreen.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="70" />
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<Panel class="TreasurePreview CollectorsCacheScene">
+							<DOTAUIEconSetPreview id="ShadowDemon" class="CollectorsCacheModel" itemstyle="0" itemdef="21717" cameraOrigin="0 0 0" rotation="-50" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="DarkWillow" class="CollectorsCacheModel" itemstyle="0" itemdef="29155" cameraOrigin="0 0 0" rotation="20" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />							
+							<DOTAUIEconSetPreview id="Venomancer" class="CollectorsCacheModel" itemstyle="0" itemdef="31295" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAUIEconSetPreview id="WindRanger" class="CollectorsCacheModel" itemstyle="0" itemdef="21840" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+							<DOTAParticleScenePanel class="SmokeFX" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+							<Image class="TitleLogoBackgroundImage" src="file://materials/models/ui/loadout/collectorscache_2024_image_standlone.psd" scaling="stretch-to-fit-preserve-aspect" />						
+						</Panel>
+						<DOTAUIEconSetPreview id="TreasureModel" drawbackground="false" itemdef="32609" />
+						<Panel class="ItemHeader">
+							<Image class="CrownfallLogo en" src="file://{images}/events/crownfall/logos/crownfall_logo_en.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="CrownfallLogo cn" src="file://{images}/events/crownfall/logos/crownfall_logo_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="ItemTitle" html="true" text="#DOTA_Winter2024_HeroesHoard_Title" />
+							<Label class="ItemSubtitle" text="#DOTA_Winter2024_HeroesHoard_Cell_Description" />
+
+						</Panel>
+						<Panel class="ActionButtons">
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="32609" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="32649" text="#DOTA_Purchase_CC_Bundle" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 32609 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				                                                                                                  
+					                             
+						                           
+						                          
+							                                                                        
+							                                      
+						        
+
+						                                     
+							                           
+								                             
+									                                  
+										                                           
+										                                                                                                                                                                                                 
+									        
+									                                 
+										                                     
+										                                                                                
+										                                                                                 
+									        
+								        								
+								                             
+									                                  
+										                                    
+										                                                                                                                                            
+									        
+									                                 
+										                                     
+										                                                                                  
+										                                                                                   
+									        
+								        
+								                             
+									                                  
+										                                                                                                                                                  
+										                                           
+									        
+									                                 
+										                                     
+										                                                                                      
+										                                                                                       
+									        
+								        
+							        
+						        
+
+						                                     
+							                        
+							                                                                                                                                                   
+							                             
+						        
+						
+						                             
+							                                                                           
+						        
+					        
+				            
+
+
+				<Panel class="StoreItem StoreItemBundle" hittest="false" itemdef="32700" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_ArchiveBundle_Name" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+
+						<Panel class="ItemDetailsContainer" >
+							<Panel class="ItemDetails">
+								<Panel class="BundleFeature">
+									<Panel class="BundleFeatureImage">
+										                                          
+										<AnimatedImageStrip class="CandySackIcon" src="file://{images}/emoticons/crownfall/props/prop_reward_candy_sack_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+									</Panel>
+									<Panel class="BundleFeatureText">
+										<Label class="Quantity" text="x30" />
+										<Label class="BundleFeatureTitle" text="#DOTA_CrownfallStore_CandySacks_Name" />
+										<Label class="BundleFeatureDetail" text="#DOTA_CrownfallStore_CandySacks_Desc" />
+									</Panel>
+								</Panel>
+								<Panel class="BundleFeature">
+									<Panel class="BundleFeatureImage">
+										                                   
+										<Image class="RollIcon" src="file://{images}/events/crownfall/store/bunlde_item_reroll_dice.png" scaling="stretch-to-fit-preserve-aspect" />
+									</Panel>
+									<Panel class="BundleFeatureText">
+										<Label class="Quantity" text="x10" />
+										<Label class="BundleFeatureTitle" text="#DOTA_CrownfallStore_CandyRerolls_Name" />
+										<Label class="BundleFeatureDetail" text="#DOTA_CrownfallStore_CandyRerolls_Desc" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+
+						<Panel class="BundleImageContainer" >
+							<Panel class="BgGlow" />
+							<Image class="BundleImage" src="file://{images}/events/crownfall/store/store_overview_archive_bundle.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="FloorShadow" />
+						</Panel>
+
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton itemdef="32700" consumeafterpurchase="true" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+			</Carousel>
+
+			<Panel id="StoreNav" class="StoreNav">
+				
+				<Panel class="StoreNavCategory Overview">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( '#DOTA_CrownfallStore_Category_Overview' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 0 )">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/overview.png"  />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Overview" />
+				</Panel>
+
+				                                          
+					                                
+						                                                                                                                                                                                                        
+							                          
+							                                                                                
+						        
+						                                                                                                                                                                                                        
+							                          
+							                                                                                      
+						        
+						                                                                                                                                                                                                        
+							                          
+							                                                                                    
+						        
+						                                                                                                                                                                                                        
+							                          
+							                                                                                         
+						        
+					        
+					                                                                          
+				           
+
+				<Panel class="StoreNavCategory Arcanas">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem Vengeful" onmouseover="UIShowTextTooltip( '#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 22722 )" itemdef="22722">
+							<Panel class="NavItemBg"/>
+						</Panel>
+						<Panel class="StoreNavItem Skywrath" onmouseover="UIShowTextTooltip( '#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 22277 )" itemdef="22277">
+							<Panel class="NavItemBg"/>
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Arcana" />
+				</Panel>
+
+				<Panel class="StoreNavCategory Treasures">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem Treasure1" onmouseover="UIShowTextTooltip( '#DOTA_Item_Crownfall_Treasure_I' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30937 )" itemdef="30937">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/treasure_1.png"  />
+						</Panel>
+						<Panel class="StoreNavItem Treasure2" onmouseover="UIShowTextTooltip( '#DOTA_Item_Crownfall_Treasure_II' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30938 )" itemdef="30938">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/treasure_2.png"  />
+						</Panel>
+						<Panel class="StoreNavItem Treasure3" onmouseover="UIShowTextTooltip( '#DOTA_Item_Crownfall_Treasure_III' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30939 )" itemdef="30939">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/treasure_3.png"  />
+						</Panel>
+						<Panel class="StoreNavItem CollectorsCache" onmouseover="UIShowTextTooltip( '#DOTA_Item_Crownfall_2024_Collectors_Cache' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 29639 )" itemdef="29639">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/collectors_cache.png"  />
+							<Label class="CCNumber" text="#DOTA_Crownfall_Overworld_I" />
+						</Panel>
+						<Panel class="StoreNavItem CollectorsCache2" onmouseover="UIShowTextTooltip( '#DOTA_Item_Crownfall_2024_Collectors_Cache_II' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30279 )" itemdef="30279">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/collectors_cache_2.png"  />
+							<Label class="CCNumber" text="#DOTA_Crownfall_Overworld_II" />		
+						</Panel>
+						<Panel class="StoreNavItem CollectorsCache3" onmouseover="UIShowTextTooltip( '#DOTA_Winter2024_HeroesHoard_Title' )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 32609 )" itemdef="32609">
+							<Panel class="NavItemBg"/>
+							<Image src="file://{images}/events/crownfall/store/carousel_icons/collectors_cache_3.png"  />
+							                                                                        
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Treasures" />
+				</Panel>
+
+				     
+				                                        
+					                                
+						                                                                                                                                                                                                             
+							                          
+							                                                                                        
+						        
+					        
+					                                                                            
+				        
+				    
+			</Panel>
+
+			<Panel class="DashDotDivider">
+				<Panel class="Dash Left"/>
+				<Panel class="Dot"/>
+				<Panel class="Dash Right"/>
+			</Panel>
+		</Panel>
+		<DOTAScenePanel id="DiscountModePageFXForeground" deferredalpha="true" antialias="true" hittest="false" camera="camera" light="light" renderdeferred="true" particleonly="false" map="scenes/events/crownfall/discount_fx_foreground"/>
+		<Panel class="DiscountActiveContainer">
+			<Label text="#DOTA_DiscountActive" />
+		</Panel>
+	
+		
+
+	</DOTABPCrownfallStorePage>
+</root>

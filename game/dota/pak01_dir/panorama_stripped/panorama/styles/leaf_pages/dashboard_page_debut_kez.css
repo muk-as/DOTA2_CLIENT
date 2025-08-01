@@ -1,0 +1,502 @@
+#DOTAPudgePersonaDebutPage
+{
+    width: 100%;
+    height: 100%;
+}
+
+#ModelContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+#ModelBackground,
+#ModelBackgroundAlt
+{
+	transform: scaleX(1);
+	width: 100%;
+	height: 100%;
+	                 
+	pre-transform-scale2d: 1;
+	vertical-align: middle;
+	horizontal-align: center;
+    saturation: 0;
+    contrast: 1.03;
+	
+	transition-property: opacity, wash-color, saturation, contrast;
+	transition-duration: 0.9s; 
+	transition-timing-function: ease-in;	
+	
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;	
+}
+
+#ModelBackground.Initialize,
+#ModelBackgroundAlt.Initialize {
+    saturation: 1;
+    contrast: 1;
+	transition-duration: 0.9s;
+}
+
+#ModelBackgroundAlt {
+	opacity: 0.001;
+}
+
+#DebutInformation {
+	width: 660px;
+	height: 940px;
+	margin: 0px 90px 0px 0px;
+	horizontal-align: right;
+	vertical-align: middle;
+	
+	opacity: 0;
+
+    transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;	
+
+	#InformationBodyBackground {
+		width: 100%;
+		height: 100%;
+
+		.InformationBodyBackgroundImage {
+			background-image: url('file://{images}/leaf_pages/debut_kestrel/kez_debut_background.png');
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			height: 100%;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+			box-shadow: 0px 12px 120px -4px #0000009a;
+			margin: 30px 10px;
+			opacity: 0.95;
+		}
+
+		.CardTopImage {
+			horizontal-align: center;
+			width: 100%;
+			height: width-percentage( 5% );
+			background-image: url('file://{images}/hud/kez/kez_popup_top_edge.png');
+			background-size: cover;
+		}
+		
+		.CardBottomImage {
+			horizontal-align: center;
+			vertical-align: bottom;
+			width: 100%;
+			height: width-percentage( 5% );
+			background-image: url('file://{images}/hud/kez/kez_popup_bottom_edge.png');
+			background-size: cover;
+		}
+	}
+
+	#TitleContainer {
+		opacity: 0;
+		transform: scale3d( 0.9, 0.9, 1 );
+
+		transition-property: opacity, transform;
+		transition-duration: 0.4s;
+		transition-delay: 0.4s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	}
+
+	#HeroSubtitle,
+	.AttributeComplexityContainer,
+	#AbilityIcons,
+	#ItemLore {
+		opacity: 0;
+		transform: translateY( 20px );
+
+		transition-property: opacity, transform;
+		transition-duration: 0.4s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	}
+
+	#HeroSubtitle {
+		transition-delay: 0.7s;
+	}
+
+	.AttributeComplexityContainer {
+		transition-delay: 0.75s;
+	}
+
+	#AbilityIcons {
+		transition-delay: 0.8s;
+	}
+
+	#ItemLore {
+		transition-delay: 0.85s;
+	}
+
+	&.Initialize {
+		opacity: 1;
+
+		#TitleContainer {
+			opacity: 1;
+			transform: none;
+		}
+
+		#HeroSubtitle,
+		.AttributeComplexityContainer,
+		#AbilityIcons,
+		#ItemLore {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+#ScrollPanel {
+	width: 100%;
+	overflow: clip scroll;
+	horizontal-align: center;
+	opacity-mask: url( "file://{images}/masks/softedge_vertical_vscroll_wide.psd" );
+	vertical-align: top;
+	height: fill-parent-flow(1);
+	padding: 0px 40px 24px;
+}
+
+#InformationBody {
+	margin: 30px 11px;
+	horizontal-align: left;
+    width: 100%;
+	height: fill-parent-flow(1);
+	flow-children: down;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.AttributeComplexityContainer {
+	flow-children: right;
+	horizontal-align: center;
+	width: 100%;
+
+	.Dash {
+		width: fill-parent-flow(1);
+		height: 1px;
+		background-color: gradient( linear, 0% 0%, 100% 0%, from( #ffffff ), to( #ffffff00 ) );
+		vertical-align: center;
+		margin: 0px 12px;
+		opacity: 0.1;
+
+		&.Left {
+			transform: scaleX( -1 );
+		}
+	}
+
+	.PrimaryAttribute {
+		vertical-align: center;
+		margin-right: 10px;
+	}
+
+	.HeroComplexity {
+		flow-children: right;
+		vertical-align: center;
+
+		.HeroComplexityPip {
+			width: 20px;
+			height: 20px;
+			margin-right: 3px;
+			vertical-align: center;
+			wash-color: rgb(239, 240, 241);
+		}
+	}
+}
+
+#ItemName
+{
+	font-size: 80px;
+	letter-spacing: 3px;
+	text-overflow: shrink;
+	text-align: left;
+	vertical-align: bottom;
+	horizontal-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #EFAEF0 ), to( #fff ) );
+	text-shadow: 1px 1px 12px 3.0 #B507DC;
+	opacity: 0;
+	margin-top: 0px;
+	letter-spacing: 6px;
+	width: 100%;
+}
+
+#ItemName,
+#InnerPanel
+{
+    opacity: 0;
+    margin-top: 36px;
+    transition-property: opacity;
+	transition-duration: 0.0s;
+	transition-timing-function: ease-in-out;	
+}
+
+.CloseButton
+{
+	horizontal-align: right;
+	width: 48px;	
+	height: 48px;
+	margin-top: 64px;
+	margin-right: 32px;
+	wash-color: #fff;
+	background-color: #00000000;
+	background-size: 50%;
+	width: 48px;
+	height: 48px;
+
+	background-image: url("file://{images}/leaf_pages/debut_arcana_wraith_king/close.png");
+	background-size: 32px;
+
+	transition-property: background-size, transform;
+	transition-duration: 1.0s;
+	transition-timing-function: ease-in-out;	
+}
+
+.FullscreenPage .CloseButton 
+{
+	transform: translateY( -32px );
+}
+
+.CloseButton:hover {
+	background-size: 36px;
+}
+
+#ItemLore
+{
+	color: #c9e6f1cb;
+	font-size: 16px;
+	line-height: 1.5;
+	font-style: normal;
+	margin-top: 16px;
+	margin-bottom: 20px;
+	font-weight: normal;
+	text-shadow: 0px 1px 6px #000000a9;
+	horizontal-align: center;
+	text-align: center;
+	font-family: titleFont;
+}
+
+                        
+                       
+                      
+               
+	                        
+    
+
+#TitleContainer {
+	width: 100%;
+	horizontal-align: center;
+	transition-property: hue-rotation, wash-color, saturation;
+	transition-duration: .1s;
+	transition-timing-function: ease-in-out;
+	flow-children: down;
+}
+
+#HeroSubtitle {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#AttackType {
+	color: #ccc;
+	margin-right: 12px;
+	text-transform: uppercase;
+}
+
+.RolesContainer {
+	width: 400px;
+	height: 54px;
+	flow-children: right;
+}
+
+.RoleLabel {
+	font-size: 16px;
+	font-family: titleFont;
+	font-weight: semi-bold;
+	margin: 0px 6px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #ABFDFF;
+
+	tooltip-position: top;
+}
+
+#AbilityIcons {
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: 16px;
+	margin-left: -16px;
+
+	.SwapAbilitiesContainer {
+		flow-children: down;
+		vertical-align: center;
+		margin-top: 24px;
+		margin-right: -8px;
+		
+		.SwapAbilityImageContainer {
+			padding-left: 12px;
+			
+			.InnateIcon {
+				width: 32px;
+				height: width-percentage( 100% );
+				vertical-align: center;
+				background-color: rgb(13, 14, 16);
+				padding: 2px;
+				border-radius: 50%;
+				box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+				margin-left: -12px;
+				margin-bottom: -12px;
+			}
+		}
+
+		.Divider {
+			height: 40px;
+			margin-left: 36px;
+
+			&.Top {
+				margin-bottom: -12px;
+			}
+
+			&.Bottom {
+				transform: scaleY( -1 );
+				margin-top: -12px;
+			}
+		}
+	}
+
+	.AbilityGroupsContainer {
+		flow-children: down;
+
+		.AbilityGroupLabel {
+			horizontal-align: center;
+			margin-top: 4px;
+			color: rgb(157, 213, 235);
+			font-weight: semi-bold;
+			text-shadow: 0px 2px 12px black;
+		}
+
+		.AbilitiesContainer {
+			flow-children: right;
+		}
+	}
+
+	.ShardScepterContainer {
+		flow-children: down;
+		vertical-align: center;
+		margin-left: 16px;
+		margin-top: 24px;
+		padding: 8px;
+	}
+
+	DOTAAbilityImage {
+		width: 60px;
+		height: width-percentage( 100% );
+		margin: 6px;
+		box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.3);
+
+		tooltip-position: top;
+
+		transition-property: brightness, transform;
+		transition-duration: 0.15s;
+		transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+		&:hover {
+			brightness: 1.5;
+			transform: scale3d( 1.07, 1.07, 1 );
+		}
+	}
+}
+
+#Talent {
+	horizontal-align: center;
+	width: 56px;
+	height: width-percentage( 100% );
+	
+	tooltip-position: top;
+	background-size: cover;
+	background-position: center;
+	img-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+	margin-bottom: 16px;
+}
+
+#ScepterDetails {
+	horizontal-align: center;
+	width: 64px;
+	height: width-percentage( 100% );
+
+	tooltip-position: bottom;
+	tooltip-body-position: 100%;
+	transition-property: wash-color;
+	transition-duration: .15s;
+	transition-timing-function: ease-in-out;
+	
+	                                                                             
+	background-size: cover;
+	background-position: center;
+	img-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+#MainContainer {
+	width: 100%;
+	height: 100%;
+    wash-color: #000;
+
+    transition-property: wash-color;
+	transition-duration: 1.0s; 
+	transition-timing-function: ease-in;
+}
+
+#MainContainer.Initialize {
+    wash-color: #fff;
+	transition-duration: 0.1s; 
+}
+
+#Intro {
+	color: #d9e8e7;
+	font-weight: bold;
+	font-size: 18px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	horizontal-align: center;
+	font-family: titleFont;
+	margin: 15px 0px 10px 0px;
+}
+
+#HeroButtons {
+	flow-children: down;
+	horizontal-align: center;
+	padding: 20px;
+	width: 100%;
+
+	background-color: gradient( radial, 50% 0%, 0% 0%, 70% 200%, from( #030810c9 ), color-stop( 0.5, #03080f8b ), to( #09111D00 ) );
+	border-top: 1px solid rgba(205, 234, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+
+	#DemoButtons {
+		flow-children: right;
+		horizontal-align: center;
+	
+		DemoModeButton {
+			margin-right: 16px;
+		}
+	}
+}
+
+.Title {
+	background-image: url( "file://{images}/leaf_pages/debut_kestrel/kestrel_logo_en.psd");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 350px;
+	ui-scale: 90%;
+	horizontal-align: center;
+	margin: 0px 0px -20px;
+}
+
+.Language_schinese .Title,
+.Language_tchinese .Title {
+	background-image: url( "file://{images}/leaf_pages/debut_kestrel/kestrel_logo_cn.psd");
+}

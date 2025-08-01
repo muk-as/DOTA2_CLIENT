@@ -1,0 +1,62 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_choose_hero_act3.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="HeroChoice">
+			<Panel class="HeroChoice">
+				<Panel id="RewardTokensContainer"/>
+				<Panel class="HeroVisualContainer">
+					<Panel class="HeroVisualBackground"/>
+					<Panel class="HeroVisualBackgroundLock"/>
+					<Panel class="HeroVisualBackgroundHands"/>
+					<DOTAHeroImage id="HeroVisual" class="HeroVisual" heroimagestyle="icon" />
+				</Panel>
+				<DOTACrownfallButton id="ClaimRewardButton" text="#DOTA_Crownfall_Encounter_SaveHero" class="TakeTokensButton" onactivate="DOTACrownfallEncounterTokenTraderExecuteTrade(4)" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<Panel class="PopupPanel Encounter ChooseHero Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<DOTAParticleScenePanel class="BodyContainerSnow" hittest="false" particleName="particles/ui/ui_generic_snow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 200 -100" lookAt="0 0 -100" fov="80"/>
+				<DOTAParticleScenePanel class="BodyContainerFog" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="80 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Panel class="BodyContainer">
+					<AsyncDataPanel class="" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							                              
+							<Panel class="Test"/>
+							<Panel class="HeroList" id="HeroList"/>
+							<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+
+	</Panel>
+</root>

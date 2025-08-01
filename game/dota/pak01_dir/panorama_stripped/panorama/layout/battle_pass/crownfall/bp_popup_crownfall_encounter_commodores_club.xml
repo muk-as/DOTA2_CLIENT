@@ -1,0 +1,51 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_commodores_club.css" />
+	</styles>
+
+	<Panel class="PopupPanel Encounter CommodoresClub Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="BodyContainer">
+					<Panel class="Reward">
+						<Panel class="RewardContainer">
+							<DOTAScenePanel class="ItemParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+							<EconItemImage id="ItemImage" scaling="stretch-to-fit-preserve-aspect" itemdef="29467"  onmouseover="DOTAShowEconItemTooltip( 29467, 0, 0 );" onmouseout="DOTAHideEconItemTooltip();" />
+							<Label class="AlreadyClaimedLabel" text="#DOTA_Crownfall_Encounter_AlreadyClaimed" />
+						</Panel>
+					</Panel>	
+					<AsyncDataPanel class="Actions" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<DOTACrownfallButton text="#DOTA_Crownfall_Encounter_RikiCommonBlade_CollectReward" class="ClaimItemButton GlowButton" onactivate="DOTACrownfallEncounterClaimReward( 0 )" />
+							<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+							<DOTACrownfallButton class="ComeBackLaterButton GlowButton" text="#DOTA_Crownfall_Encounter_ComeBackLater" onactivate="UIPopupButtonClicked()" />
+
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner"/>
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>	
+			</Panel>
+		</Panel>
+		
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+		
+	</Panel>
+</root>

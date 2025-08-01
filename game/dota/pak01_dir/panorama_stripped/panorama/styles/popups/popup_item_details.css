@@ -1,0 +1,151 @@
+@import url( "file://{resources}/styles/collection_shared.css" );
+
+
+#ItemDetails {
+	background-color: #00000000;
+}
+
+.PopupPanel.Hidden
+{
+	opacity: 0.0;
+	pre-transform-scale2d: 0.85;
+
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	transition-duration: 0.2s;
+}
+
+.PopupPanel
+{
+	border: 0px;
+	box-shadow: 0px 24px 80px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: none;
+
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in;
+
+	.PopupHeader {
+		width: 100%;
+		ignore-parent-flow: true;
+		margin: 24px;
+		overflow: noclip;
+	}
+
+	#CloseButton
+	{
+		background-position: center;
+		horizontal-align: right;
+		vertical-align: top;
+		ignore-parent-flow: true;
+
+		margin-top: -12px;
+		margin-right: 32px;
+	}
+
+	&.PopupPanel {
+		min-width: 0px;
+		padding: 0px 0px 0px 0px;
+		animation-name: none; 
+	}
+
+	&.Hidden {
+		sound: "";
+	}
+
+	#Title {
+		horizontal-align: center;
+		margin-top: 20px;
+		margin-bottom: 4px;
+		font-size: 24px;
+		font-weight: lighter;
+	}
+
+	#PageContainer {
+		width: 1560px;
+		height: width-percentage( 56.25% );
+		border: 1px solid #5e6869;
+
+		margin: 24px;
+	}
+
+	#PageStack {
+		visibility: collapse;
+	}
+
+	#Page {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		margin-top: 0px;
+		pre-transform-scale2d: 1.0;
+		wash-color: #ffffff;
+		transition-property: opacity;
+		transition-duration: 0.3s; 
+	}
+
+	#Page:not(.OnStack) {
+		opacity: 1.0;
+	}
+
+	#Page.Opened {
+		animation-name: PageFadeIn;
+		                        
+		animation-duration: 0.3s;
+		animation-timing-function: ease-in-out;
+	}
+
+	&.PageOpened {
+		animation-name: PageOpenedAnimation;
+		animation-duration: 0.3s;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes 'PageOpenedAnimation'
+{
+	0%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 );
+		brightness: 1;
+	}
+
+	30%
+	{
+		transform: scale3d( 0.98, 0.98, 1.0 ); 
+		brightness: 0.2;
+	}
+
+	100%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 );
+		brightness: 1;
+	}
+}
+
+@keyframes 'PageFadeIn'
+{
+	0%
+	{
+		opacity: 0;
+	}
+
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+#NavigationControls
+{
+	margin: 16px;
+	flow-children: right;
+	vertical-align: middle;
+}
+
+#NavigateBackButton
+{
+	visibility: collapse;
+
+	.HasHistory & {
+		visibility: visible;
+	}
+}

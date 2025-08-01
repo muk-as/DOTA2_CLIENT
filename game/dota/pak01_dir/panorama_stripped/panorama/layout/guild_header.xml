@@ -1,0 +1,34 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/current_battle_pass.css" />
+		<include src="file://{resources}/styles/dashboard_page_guild_shared.css" />
+		<include src="file://{resources}/styles/guild_header.css" />
+	</styles>
+
+	<DOTAGuildHeader>
+		<Panel id="GuildHeaderContainer">
+			<Panel class="GuildLogoContainer" >
+				<DOTAGuildImage id="GuildLogo" />
+				<Panel id="GuildLogoGleam" />
+				<Panel id="GuildLogoFrame" />
+			</Panel>
+			<Panel id="GuildHeaderText">
+				<Panel class="NameRow">
+					<Label id="GuildName" text="{g:dota_filtered_string:guild_name}"/>
+					<Button id="ReportButton" onactivate="DOTAGuildHeaderReport()" onmouseover="UIShowTextTooltip( #DOTA_Guilds_Tooltip_ReportGuild )" onmouseout="UIHideTextTooltip()"/>
+				</Panel>
+				<Panel class="LeftRightFlow">
+					<Label id="GuildTag" class="GuildTierColorAdjusted" text="[{g:dota_filtered_string:guild_tag}]" />
+					<Label id="GuildSubtitle" text="{g:dota_filtered_string:guild_motd}" />
+					<TextEntry id="MotDTextEntry" class="GuildPropertyValue OnlyWhenEditingMotD" oninputsubmit="DOTAGuildHeaderModifyMotD()" />
+					<Button id="EditMotDButton" class="SectionHeaderIconButton" onactivate="DOTAGuildHeaderModifyMotD()"/>
+					<Button id="CancelMotDButton" class="SectionHeaderIconButton" onactivate="DOTAGuildHeaderCancelMotD()"/>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTAGuildHeader>
+
+</root>

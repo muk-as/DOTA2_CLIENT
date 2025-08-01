@@ -1,0 +1,96 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_event_debug.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="EventActionRow">
+			<Panel class="EventActionRow">
+				<Label class="EventActionID" text="{d:action_id}" />
+				<Label class="EventActionName" text="{s:action_name}" />
+				<Label class="EventActionValue" text="{d:action_value}" />
+				<Button class="ResetEventAction" id="ResetEventActionButton" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAEventDebugPage class="DashboardPage SafeDashboardPage">
+		<DropDown id="EventDropDown" />
+
+		<Panel id="EventLoading">
+			<Panel class="Spinner" />
+			<Label text="Loading data..." unlocalized="true" />
+		</Panel>
+		
+		<Panel id="EventLoaded">
+			<Panel id="EventSummary">
+				<Panel id="EventSummaryTable">
+					<Panel class="EventSummaryRow">
+						<Label class="EventSummaryLabel" text="Owns Event:" unlocalized="true" />
+						<Label class="EventSummaryValue" text="{s:event_ownership}" />
+					</Panel>
+					<Panel class="EventSummaryRow">
+						<Label class="EventSummaryLabel" text="Event Points:" unlocalized="true" />
+						<Label class="EventSummaryValue" text="{d:event_points}" />
+					</Panel>
+					<Panel class="EventSummaryRow">
+						<Label class="EventSummaryLabel" text="Premium Points:" unlocalized="true" />
+						<Label class="EventSummaryValue" text="{d:premium_points}" />
+					</Panel>
+				</Panel>
+
+				<Panel id="GrantEventPoints" class="GrantSection">
+					<Label class="GrantTitle" text="Grant Event Points" unlocalized="true" />
+					<Panel class="GrantControlsRow">
+						<NumberEntry id="GrantEventPointsNumberEntry" class="GrantNumberEntry" increment="1000" />
+						<TextButton id="GrantEventPointsButton" class="GrantButton" text="#DOTA_Grant" onactivate="DOTAEventDebugGrantEventPoints(GrantEventPointsNumberEntry,0)" />
+						<Panel class="Spinner" />
+					</Panel>
+					<Panel class="GrantControlsRow">
+						<NumberEntry id="GrantEventPremiumPointsNumberEntry" class="GrantNumberEntry" increment="1000" />
+						<TextButton id="GrantEventPremiumPointsButton" class="GrantButton" text="#DOTA_GrantPremium" onactivate="DOTAEventDebugGrantEventPoints(GrantEventPremiumPointsNumberEntry,1)" />
+						<Panel class="Spinner" />
+					</Panel>
+				</Panel>
+				
+				<Panel id="GrantEventAction" class="GrantSection">
+					<Label class="GrantTitle" text="Grant Event Action" unlocalized="true" />
+					<TextEntry id="GrantSearch" class="GrantSearch" placeholder="Filter Actions..." unlocalized="true" />
+					<DropDown id="GrantEventActionDropDown" />
+					<Panel id="CustomActionIDRow" class="GrantControlsRow">
+						<Label text="Custom Action ID:" unlocalized="true" />
+						<NumberEntry id="GrantEventActionActionIDNumberEntry" />
+					</Panel>
+					<Panel class="GrantControlsRow">
+						<NumberEntry id="GrantEventActionNumberEntry" class="GrantNumberEntry" increment="1" value="1" />
+						<TextButton id="GrantEventActionButton" class="GrantButton" text="#DOTA_Grant" onactivate="DOTAEventDebugGrantEventAction()" />
+						<Panel class="Spinner" />
+					</Panel>
+				</Panel>				
+			</Panel>
+			
+			<Panel id="EventActions">
+				<Panel id="EventActionsHeader" class="EventActionRow">
+					<Label class="EventActionID" text="Action ID" unlocalized="true" />
+					<Label class="EventActionName" text="Action Name" unlocalized="true" />
+					<Label class="EventActionValue" text="Action Value" unlocalized="true" />
+					<Panel class="ResetEventAction" />
+				</Panel>
+				<Panel id="EventActionsList" />
+				
+			</Panel>
+			
+			<Panel id="EventLinks">
+				<Label class="EventLinksTitle" text="Event Links" unlocalized="true" />
+				<Panel id="EventLinksList" />
+			</Panel>
+			
+		</Panel>
+
+		                                               
+		
+	</DOTAEventDebugPage>
+
+</root>

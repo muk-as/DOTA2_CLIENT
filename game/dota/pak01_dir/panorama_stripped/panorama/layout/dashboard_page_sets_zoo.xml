@@ -1,0 +1,119 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_sets_zoo.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="SetInfoRow">
+			<Panel class="SetInfoRow">
+				<Label class="SetInfoHeroName" text="{s:hero_name}"/>
+				<Panel class="SetInfoSetName" id="SetInfoSetName">
+					<Label text="{s:hero_set_name}"/>
+					<Panel class="WarningIcon" />
+				</Panel>
+				<Label class="SetInfoSetRarity" text="{s:hero_set_rarity}"/>
+				<Label class="SetInfoSetStatus" text="{s:hero_set_status}"/>
+				<Label class="SetInfoSetCreationDate" text="{s:hero_set_create_date}"/>
+				<Label class="SetInfoSetEvent" text="{s:hero_set_event}"/>
+				<Panel class="SetInfoSetAnnotation" id="SetInfoSetAnnotation">
+					<Panel id="SetInfoSetAnnotationTags" class="TabGroupContainer">
+						<TabButton id="SetInfoSetAnnotationTagNone" class="TabItem">
+							<Label text="-"></Label>
+						</TabButton>
+						<TabButton id="SetInfoSetAnnotationTagYes" class="TabItem">
+							<Label text="Y"></Label>
+						</TabButton>
+						<TabButton id="SetInfoSetAnnotationTagNo" class="TabItem">
+							<Label text="N"></Label>
+						</TabButton>
+						<TabButton id="SetInfoSetAnnotationTagMaybe" class="TabItem">
+							<Label text="?"></Label>
+						</TabButton>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTASetsZooPage class="DashboardPage">
+
+		<Label id="SetsTitle" class="TitleLarge" text="All Sets"></Label>
+		<Panel id="SetsFilters" class="TitleMedium">
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Heroes:"></Label>
+				<DropDown id="SetsHerosFilterDropdown" oninputsubmit="DOTAZooSetsUpdateFilters()">
+					                             
+				</DropDown>
+			</Panel>
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Rarities:"></Label>
+				<Panel id="SetsRarityFilterContainer">
+					                             
+				</Panel>
+			</Panel>
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Status:"></Label>
+				<Panel id="SetsStatusFilterContainer">
+					                             
+				</Panel>
+			</Panel>
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Create Date:"></Label>
+				<RangeSlider id="SetsCreateDateSlider" class="HorizontalSlider RangeSlider" direction="horizontal" />
+				<Label class="LabelMedium" text="{s:sets_filter_create_start_date} - {s:sets_filter_create_end_date}"></Label>
+			</Panel>
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Tag:"></Label>
+				<Panel id="SetsTagFilterContainer">
+					<ToggleButton id="SetTagsFilter_none" text="-" selected="true" onactivate="DOTAZooSetsUpdateFilters()" />
+					<ToggleButton id="SetTagsFilter_yes" text="Y" selected="true" onactivate="DOTAZooSetsUpdateFilters()"/>
+					<ToggleButton id="SetTagsFilter_no" text="N" selected="true" onactivate="DOTAZooSetsUpdateFilters()"/>
+					<ToggleButton id="SetTagsFilter_maybe" text="?" selected="true" onactivate="DOTAZooSetsUpdateFilters()"/>
+				</Panel>
+			</Panel>
+			<Panel class="SetsFilterRow">
+				<Label class="LabelMedium" text="Sort by:"></Label>
+				<DropDown id="SetsSortOptionDropdown" oninputsubmit="DOTAZooSetsUpdateSort()">
+					<Label id="0" text="Hero"/>
+					<Label id="1" text="Rarity"/>
+					<Label id="3" text="Creation Date"/>
+				</DropDown>
+				<Label class="LabelMedium" text="Order:"></Label>
+				<DropDown id="SetsSortOrderDropdown" oninputsubmit="DOTAZooSetsUpdateSort()">
+					<Label id="1" text="Asc"/>
+					<Label id="2" text="Desc"/>
+				</DropDown>
+			</Panel>
+		</Panel>
+		<Panel id="SetsHideShowFilter">
+			<Button id="SetsHideFiltersButton" class="FlatButton" onactivate="DOTAZooSetsShowFilters(false)">
+				<Label text="Hide Filters"/>
+			</Button>
+			<Button id="SetsShowFiltersButton" class="FlatButton" onactivate="DOTAZooSetsShowFilters(true)">
+				<Label text="Show Filters"/>
+			</Button>
+		</Panel>
+		<Panel id="SetsContainer">
+			<Panel id="SetsTableContainer">
+				<Label id="SetsCount" class="LabelSmall" text="Count: {d:sets_count} ({d:sets_hidden_count} hidden)"></Label>
+				<Panel id="SetsTableHeader" class="TitleSmall">
+					<Label class="SetInfoHeroName" text="Hero"/>
+					<Label class="SetInfoSetName" text="Set"/>
+					<Label class="SetInfoSetRarity" text="Rarity"/>
+					<Label class="SetInfoSetStatus" text="Status"/>
+					<Label class="SetInfoSetCreationDate" text="Creation Date"/>
+					<Label class="SetInfoSetEvent" text="Event"/>
+					<Label class="SetInfoSetAnnotations" text=""/>
+				</Panel>
+				<Panel id="SetsTable">
+					                              
+				</Panel>
+			</Panel>
+			<DOTALargeModelPreview id="SetPreview" />
+		</Panel>
+
+	</DOTASetsZooPage>
+
+</root>

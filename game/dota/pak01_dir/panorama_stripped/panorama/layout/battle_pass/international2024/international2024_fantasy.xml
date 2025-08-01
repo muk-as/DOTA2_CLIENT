@@ -1,0 +1,57 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_fantasy.css" />
+	</styles>
+
+	<snippets>		
+		<snippet name="PeriodTab">
+			<TabButton class="StageTab FixedWidth">
+				<Panel class="TabContents">
+					<Panel class="TabBorder"/>
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="{s:stage_name}" />
+						<DOTACountdown id="LockCountdown" class="LeftRightFlow" server-time="true">
+							<Label class="StageLock LockUpcoming" text="#DOTA_FantasyRosterLockCountdown" />
+							<Label class="StageLock Locked" text="#DOTA_FantasyRosterLocked" />
+						</DOTACountdown>
+					</Panel>
+					<Panel class="StageTabRight">
+					</Panel>
+				</Panel>
+				<Panel id="TabUnclaimedRewardsBadge" class="UnclaimedRewardsBadge">
+					<Label text="#DOTA_International2024_Quests_UnclaimedRewards" />
+				</Panel>
+			</TabButton>
+		</snippet>
+	</snippets>
+
+	<DOTABPInternational2024FantasyPage class="DashboardPage FullDashboardPage" dashboardclass="International2024BattlePassPage">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="PageContents BPSharedPageContainer">
+			<Panel class="BPSharedHeaderContainer">				
+				<Label class="BPTitle" text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" />
+				<Panel id="PeriodHeaderRow" class="StageTabsContainer">
+					                                         
+				</Panel>
+				<Panel id="HelpPanel">
+					<DOTAInternational2024Button id="CraftingHelpButton" class="TextOnly" text="#DOTA_HowToPlay" onactivate="Fantasy2024ToggleHelp()" />
+					<DOTAInternational2024Button id="CraftingResetButton" class="TextOnly" text="#DOTA_FantasyCraft_ResetTutorial" onactivate="Fantasy2024ResetTutorial()" />
+				</Panel>
+			</Panel>
+			<Panel id="PeriodBodyRow" class="Body">
+				                                         
+			</Panel>
+			<Panel class="NoCompendiumView">
+				<Panel class="LockIconContainer">
+					<Image class="LockIcon" src="file://{images}/control_icons/24px/lock.svg" />
+				</Panel>
+				<Label class="LockedHeader" text="#DOTA_FantasyCraft_NoCompendium_Title" />
+				<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_FantasyCraft_NoCompendium" />
+			</Panel>
+		</Panel>		
+	</DOTABPInternational2024FantasyPage>
+</root>

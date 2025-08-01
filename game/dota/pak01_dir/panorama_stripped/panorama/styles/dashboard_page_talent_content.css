@@ -1,0 +1,260 @@
+DOTATalentContentPage
+{
+	flow-children: down;
+
+	margin-top: 80px;
+
+	background-color: #222;
+	border: 3px solid #black;
+	margin: 130px 10px 130px 10px;
+	width:  100%;
+	height:  100%;
+}
+
+.Title
+{
+	margin-left: 3px;
+	vertical-align: top;
+	horizontal-align: center;
+	text-transform: uppercase;
+	font-family: titleFont;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	font-size: 48px;
+    color: baseText;
+}
+
+.ControlsRow
+{
+	height: fit-children;
+	width: fit-children;
+	margin-left: 30px;
+	margin-right: 30px;
+	flow-children: right;
+	horizontal-align: center;
+
+	.SortingLabel {
+		vertical-align: center;
+		margin-right: 8px;
+		margin-left: 4px;
+	}
+}
+
+.LoadingTeams
+{
+	visibility: collapse;
+	width: 100%
+	height: fill-parent-flow(1.0);
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	Label {
+		vertical-align: center;
+		horizontal-align: center;
+		text-transform: uppercase;
+		font-family: titleFont;
+		font-weight: semi-bold;
+		letter-spacing: 1px;
+		font-size: 48px;
+    	color: baseText;
+	}
+}
+
+.TalentStatus_Pending .LoadingTeams
+{
+	visibility: visible;
+}
+
+#TalentStatusList
+{
+	visibility: collapse;
+	width: 100%;
+	height: fill-parent-flow(1.0);
+	margin-bottom: 10px;
+	overflow: squish scroll;
+	flow-children: down;
+}
+
+.TalentStatus_Loaded #TalentStatusList
+{
+	visibility: visible;
+}
+
+.TalentStatus
+{
+	width: 80%;
+	height: fit-children;
+	margin-bottom: 8px;
+	background-color: #444;
+	border: 2px solid black;
+	flow-children: down;
+	horizontal-align: center;
+
+	&.TALENT_CONTENT_STATUS_EVALUATED
+	{
+		background-color: #242;
+	}
+
+	&.TALENT_CONTENT_STATUS_PENDING
+	{
+		background-color: #224;
+	}
+
+	&.TALENT_CONTENT_STATUS_INVALID
+	{
+		background-color: #422;
+	}
+}
+
+.HeaderRow
+{
+	width: 58%;
+	height: fit-children;
+	flow-children: right;
+	margin-left: 13%;
+	margin-top: 12px;
+
+	horizontal-align: left;
+	vertical-align: center;
+
+	.NameLabel {
+		margin-left: 16px;
+		margin-right: 16px;
+		vertical-align: center;
+		width: fill-parent-flow(1.0);
+		font-family: titleFont;
+		font-size: 32px;
+		text-overflow: shrink;
+	}
+
+}
+
+.NameRow
+{
+	width: 95%;
+	height: fit-children;
+	flow-children: right;
+
+	margin-left: 32px;
+	horizontal-align: left;
+	vertical-align: center;
+
+	.NameLabel {
+		margin-left: 16px;
+		margin-right: 16px;
+		vertical-align: center;
+		width: fill-parent-flow(1.0);
+		text-overflow: shrink;
+	}
+
+	.PopupButton {
+		horizontal-align: right;
+	}
+}
+
+.ContentRow
+{
+	height: fit-children;
+	width: fit-children;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#TalentPhoto
+{
+	width: 248px;
+	height: 248px;
+}
+
+#TalentAutograph
+{
+	width: 512px;
+	height: 248px;
+}
+
+.ContentImageContainer
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	flow-children: down;
+	border: 1px solid white;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 4px;
+}
+
+.ContentLabel
+{
+	horizontal-align: center;
+}
+
+.ApprovalRow
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.ApprovalCheck
+{
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#VoicelinesContainer
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+
+.VoicelineContent
+{
+	width: fit-children;
+	height: fit-children;
+	margin-left: 8px;
+	margin-right: 8px;
+	flow-children: down;
+
+	Label 
+	{
+		horizontal-align: center;
+	}
+}
+
+.VoicelineButton
+{
+	width: 60px;
+	height: 60px;
+	background-image: url( "file://{images}/control_icons/play_sound.png" );
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	horizontal-align: center;
+
+	transition-property: background-color, wash-color;
+	transition-delay: 0.0s;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
+}
+
+.VoicelineButton:enabled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #58636e ), to( #53626e ) );
+}
+
+.Hide_English .English,
+.Hide_Chinese .Simplified_Chinese,
+.Hide_Spanish .Spanish,
+.Hide_Russian .Russian,
+.Hide_Invalid .TALENT_CONTENT_STATUS_INVALID,
+.Hide_Pending .TALENT_CONTENT_STATUS_PENDING,
+.Hide_Evaluated .TALENT_CONTENT_STATUS_EVALUATED
+{
+	visibility: collapse;
+}

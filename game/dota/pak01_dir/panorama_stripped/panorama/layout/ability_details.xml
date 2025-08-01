@@ -1,0 +1,206 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/ability_details.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="VersionedNote" >
+			<Panel class="VersionedNoteContainer" >
+				<Label class="Version" text="{g:dota_gameplay_version:version}:" />
+				<Label class="NoteLine" text="{s:note}" html="true" />
+			</Panel>
+		</snippet>
+
+		<snippet name="FacetDescription" >
+			<Panel class="FacetDescriptionContainer">
+				<Panel class="FacetHeader">
+					<Label id="FacetHeaderDesc" text="#DOTA_FacetAbilityDesc_Title"/>
+					<Panel class="HorizontalRule" />
+					<Label id="FacetHeaderName" text="{s:facet_name}" />
+					<Panel class="FacetContainer">
+						<Panel class="FacetBackground" hittest="false"/>
+						<Panel class="FacetBackgroundTexture" hittest="false"/>
+						<Panel class="FacetShine" hittest="false"/>
+						<Panel id="FacetIcon" />
+					</Panel>
+				</Panel>
+				<Panel class="FacetDescriptionBody">
+					<Label id="FacetDescriptionLabel" text="{s:facet_desc}" html="true" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+	
+	<DOTAAbilityDetails>
+		<Panel id="Header">
+			<DOTAItemImage id="ItemImage" />
+
+			<Panel id="HeaderLabels">
+				<Panel id="AbilityHeader">
+					<Label id="AbilityName" class="TitleFont" text="#DOTA_AbilityTooltip_Name" html="true" />
+					<Label id="AbilityLevel" text="#DOTA_AbilityTooltip_Level" html="true" />
+				</Panel>
+				<Panel id="AbilityVideoContainer"  hittest="false" >
+					<Panel class="Spinner" />
+					<Panel class="">
+						<Movie id="AbilityPreviewMovie" controls="none" autoplay="onload" repeat="true"/>
+					</Panel>
+				</Panel>
+				<Panel id="AbilitySubHeader">
+					<Label id="ItemSubtitle" text="{s:item_subtitle}" />
+
+					<Panel id="ItemAvailibilityMainShop" class="ItemAvailabilityRow">
+						<Panel class="ItemAvailabilityIcon MainShopIcon" />
+					</Panel>
+					<Panel id="ItemAvailibilitySideShop" class="ItemAvailabilityRow">
+						<Panel class="ItemAvailabilityIcon SideShopIcon" />
+					</Panel>
+					<Panel id="ItemAvailibilitySecretShop" class="ItemAvailabilityRow">
+						<Panel class="ItemAvailabilityIcon SecretShopIcon" />
+					</Panel>
+					<Panel class="TopBottomFlow">
+						<Label id="NeutralItemTier" html="true" text="#DOTA_NeutralItemTier" />
+						<Panel class="LeftRightFlow">
+							<Panel id="ItemCost">
+								<Panel id="ItemCostIcon" />
+								<Label id="BuyCostLabel" text="{d:r:buy_cost}" />
+								<Label id="BuyCostDeficit" text="(-{d:r:buy_cost_deficit})" />
+							</Panel>
+							<Panel id="StockContainer">
+								<Label id="RestockTime" text="#DOTA_HUD_Shop_Restock" />
+								<Label id="StockAmount" text="#DOTA_HUD_Shop_StockAmount" />
+							</Panel>
+						</Panel>
+					</Panel>	
+				</Panel>
+				<Label id="CostToComplete" text="#DOTA_HUD_Shop_Item_Complete" />
+			</Panel>
+		</Panel>
+
+		<Panel id="AbilityTarget">
+			<Label id="AbilityDependency"	text="#DOTA_AbilityTooltip_Dependency" html="true" />
+			<Panel id="AbilityTopRowContainer">
+				<Label id="AbilityCastType" text="#DOTA_AbilityTooltip_CastType" html="true" />
+				<Panel id="CurrentAbilityCosts">
+					<Label id="CurrentAbilityManaCost" class="ManaCost" text="{s:current_manacost}" html="true"/>
+					<Label id="CurrentAbilityHealthCost" class="HealthCost" text="{s:current_healthcost}" html="true"/>
+					<Label id="CurrentAbilityCooldown" class="Cooldown" text="{s:current_cooldown}" html="true"/>
+				</Panel>
+			</Panel>
+      <Panel id="AbilitySecondRowContainer">
+        <Label id="AbilityTargetType" text="#DOTA_AbilityTooltip_TargetType" html="true" />
+        <Panel id="CurrentAbilityCosts2">
+          <Label id="CurrentAbilityCastRange" class="CastRange" text="{s:current_castrange}" html="true"/>
+        </Panel>
+      </Panel>
+			<Label id="AbilityDamageType" text="#DOTA_AbilityTooltip_DamageType" html="true" />
+			<Label id="AbilitySpellImmunityType" text="#DOTA_AbilityTooltip_SpellImmunityType" html="true"  />
+			<Label id="AbilityDispelType" text="#DOTA_AbilityTooltip_DispelType" html="true"  />
+			<Label id="AbilityBreakable" text="#DOTA_AbilityTooltip_Breakable" html="true"  />
+		</Panel>
+		<Panel id="AbilityUpgradeProgress">
+			<Label class="UpgradeDescription" text="{s:upgrade_description}"/>
+			<Panel class="BarContents">
+				<ProgressBar id="UpgradeProgressBar" />
+				<Label text="{d:upgrade_progress}/{d:upgrade_goal}"/>				
+			</Panel>
+			<Label class="UpgradeBonuses" html="true" text="{s:upgrade_bonuses}"/>
+
+		</Panel>
+		<Panel id="AbilityCoreDetails">
+			<Label id="AbilityAttributes" text="#DOTA_AbilityTooltip_Attributes" html="true" />
+			<Panel id="AbilityDescriptionOuterContainer">
+				<Panel id="CurrentItemCosts">
+					<Label class="Cooldown" text="{s:current_cooldown}" html="true"  />
+					<Label class="ManaCost" text="{s:current_manacost}" html="true" />
+					<Label class="HealthCost" text="{s:current_healthcost}" html="true" />
+          <Label class="CastRange" text="{s:current_castrange}" html="true"/>
+				</Panel>
+				<Panel id="AbilityDescriptionContainer" />
+			</Panel>
+			<Panel id="AbilityScepterDescriptionContainer">
+				<Panel id="ScepterUpgradeHeader">
+					<Panel class="ScepterSpecialAbilityDataIcon"/>
+					<Label class="ScepterUpgradeHeaderLabel" text="#DOTA_AbilityTooltip_ScepterUpgrade_Header"/>
+				</Panel>
+				<Label class="ScepterUpgradeBodyLabel" text="{s:scepter_upgrade_description}" html="true"/>
+			</Panel>
+
+      <Panel id="AbilityDraftDescriptionContainer">
+        <Panel class="AbilityDraftUpgradeHeader">
+          <Panel class="AbilityDraftIcon"/>
+          <Label class="AbilityDraftHeaderLabel" text="#DOTA_AbilityTooltip_AbilityDraftNote_Header"/>
+        </Panel>
+		<Panel id="ScepterDesc" class="AghsDescriptions">
+			<Panel class="AghsIcon"/><Label class="AghsBodyLabel" text="{s:ability_draft_scepter}" html="true"/>
+		</Panel>
+		<Panel id="ShardDesc" class="AghsDescriptions">
+			<Panel class="AghsIcon"/><Label class="AghsBodyLabel" text="{s:ability_draft_shard}" html="true"/>
+		</Panel>
+		<Panel id="NormalDesc" class="AghsDescriptions">
+			                                <Label class="AghsBodyLabel" text="{s:ability_draft_normal}" html="true"/>
+		</Panel>
+		<Label id="ADNote" class="ScepterUpgradeBodyLabel" text="{s:ability_draft_note}" html="true"/>
+      </Panel>
+      
+			<Label id="AbilityExtraDescription" text="#DOTA_AbilityTooltip_ExtraDescription" html="true" />
+			<DOTAAghsDescription id="ScepterUpgradeDescription"/>
+			<DOTAAghsDescription id="ShardUpgradeDescription"/>
+			<Label id="AbilityCharges" text="#DOTA_AbilityTooltip_AbilityCharges" html="true" />
+			<Label id="AbilityExtraAttributes" text="{s:extra_attributes}" html="true" />
+			<Panel id="AbilityCosts">
+				<Label id="AbilityCooldown" class="Cooldown" text="#DOTA_AbilityTooltip_Cooldown" html="true"  />
+				<Label id="AbilityManaCost" class="ManaCost" text="#DOTA_AbilityTooltip_ManaCost" html="true" />
+				<Label id="AbilityHealthCost" class="HealthCost" text="#DOTA_AbilityTooltip_HealthCost" html="true" />
+        <Label id="AbilityCastRange" class="CastRange" text="#DOTA_AbilityTooltip_CastRange" html="true" />
+			</Panel>
+			<Panel id="AbilityGameplayChanges">
+				                              
+			</Panel>			
+			<Label id="AbilityLore" text="#DOTA_AbilityTooltip_Lore" html="true" />
+
+			<Label id="AbilityUpgradeLevel" text="#DOTA_AbilityTooltip_UpgradeLevel" html="true" />
+
+			<Label class="AbilityBuildHeader" text="{s:guide_header}" />
+			<Label id="AbilityBuildComment" text="#DOTA_AbilityTooltip_BuildComment" html="true" />
+
+			<Label id="OwnedBy" text="#DOTA_HUD_Item_Owned_By" html="true" />
+
+			<Label id="SellPriceLabel" text="#DOTA_HUD_Item_Tooltip_Sell_Price" />
+			<Label id="SellPriceTimeLabel" text="#DOTA_HUD_Item_Tooltip_Sell_Price_Time" />
+			<Label id="DisassembleLabel" text="#DOTA_HUD_Item_Tooltip_Disassemble" />
+			<Label id="DisassembleTimeLabel" text="#DOTA_HUD_Item_Tooltip_Disassemble_Time" />
+			<Label id="NotEnoughGoldLabel" text="#DOTA_Shop_Item_Error_Cant_Afford" />
+		</Panel>
+		
+		<Label id="ConsumableAbilityInfo" text="#DOTA_HUD_Item_Tooltip_Consumable_Info" />
+
+		<Label class="AbilityBuildHeader Edit" text="{s:guide_header}" />
+		<TextEntry id="AbilityBuildCommentEdit" html="true" multiline="true" placeholder="#DOTA_AbilityGuide_PlaceholderComment" />
+		<Panel class="AltDetailsHelp">
+			<Image class="AltKeyIcon" src="file://{images}/control_icons/alt_key.png" scaling="stretch-to-fit-preserve-aspect" />
+			<Label html="true" text="#DOTA_More_Details" />
+		</Panel>
+
+		<Panel class="ParentComponent">
+			<Panel class="FacetBackgroundTexture" hittest="false"/>
+			<Panel class="ParentItemImageContainer">
+				<DOTAItemImage id="ParentItemImage" />
+				<Image class="DotaPlusLogo" src="file://{images}/dotaplus_logo.png" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel class="ParentComponentInfo">
+				<Label class="ParentComponentTitle LabelSmall" text="#Tooltip_Items_ComponentOf"/>
+				<Panel class="ParentComponentItemInfo">
+					<Label class="ParentItemName" text="{s:parent_item_name}"/>
+					<Panel id="ItemCostIcon"/>
+					<Label id="ParentBuyCostLabel" text="{d:r:parent_buy_cost}"/>
+					<Label id="ParentBuyCostDeficit" text="(-{d:r:parent_buy_cost_deficit})"/>
+				</Panel>
+			</Panel>
+		</Panel>
+
+	</DOTAAbilityDetails>
+</root>

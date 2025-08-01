@@ -1,0 +1,540 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_predictions.css" />
+	</styles>
+
+	<DOTABPInternational2023PredictionsPage class="DashboardPage FullDashboardPage" dashboardclass="International2023BattlePassPage">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+		<Panel class="MainContents BPSharedPageContainer">
+			<Panel class="Header BPSharedHeaderContainer">
+				<Label class="BPTitle" text="#DOTA_OraclesChallenge_OraclesChallenge" />
+				<Panel class="StageTabs">
+					<TabButton id="GroupStageTab" class="StageTab" selected="true">
+						<Panel class="TabContents LeftRightFlow">
+							<Panel class="StageTabLeft">
+								<Label class="StageName" text="#DOTA_OraclesChallenge_GroupStage" />
+								<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+									<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+								</DOTACountdown>							
+							</Panel>
+							<Panel class="StageTabRight">
+								<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_GroupStage" />
+								<Panel class="StageReward">
+									<Panel class="PointsIcon" />
+									<Label text="#DOTA_OraclesChallenge_PointsValue_GroupStage" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</TabButton>
+					<TabButton id="PlayoffsTab" class="StageTab">
+						<Panel class="TabContents LeftRightFlow">
+							<Panel class="StageTabLeft">
+								<Label class="StageName" text="#DOTA_OraclesChallenge_Playoffs" />
+								<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+									<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+								</DOTACountdown>
+							</Panel>
+							<Panel class="StageTabRight">
+								<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_Playoffs" />
+								<Panel class="StageReward">
+									<Panel class="PointsIcon" />
+									<Label text="#DOTA_OraclesChallenge_PointsValue_Playoffs" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</TabButton>
+					<TabButton id="MainEventTab" class="StageTab">
+						<Panel class="TabContents LeftRightFlow">
+							<Panel class="StageTabLeft">
+								<Label class="StageName" text="#DOTA_OraclesChallenge_MainEvent" />
+								<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+									<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+								</DOTACountdown>
+							</Panel>
+							<Panel class="StageTabRight">
+								<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_MainEvent" />
+								<Panel class="StageReward">
+									<Panel class="PointsIcon" />
+									<Label text="#DOTA_OraclesChallenge_PointsValue_MainEvent" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</TabButton>
+				</Panel>				
+			</Panel>
+
+			<Panel class="BodyContainer">
+				<Panel class="PredictionsBackgroundImage">
+					<DOTAParticleScenePanel class="CompediumBackgroundParticles" hittest="false" particleName="particles/ui/compendium/ui_compendium_2023_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				</Panel>
+				<Panel class="Body">
+					<Panel class="UnavailableContainer" >
+						<Panel class="LockIconContainer">
+							<Image class="LockIcon" src="file://{images}/control_icons/24px/lock.svg" />
+						</Panel>
+						<Label class="LockedHeader" text="#DOTA_OraclesChallenge_PredictionsUnavailable" />
+						<Label id="LockedReasonLabel" class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_OraclesChallenge_PredictionsUnavailableBody" />
+					</Panel>
+					<TabContents id="GroupStageTabContents" tabid="GroupStageTab" class="Stage" selected="true">
+						<Panel class="StageStats">
+							<Panel class="StageDetails">
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_HowToPlay" class="RewardsHeading" />
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_GroupStage" class="RewardsContent" html="true" />
+
+								<Panel class="RewardDetails">
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_1_4" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_1_4_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_5_8" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_5_8_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_9_12" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_9_12_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_13_16" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_13_16_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_17_20" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_17_20_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_21" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoGroup_21_Reward" />
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard FriendsLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_FriendsLeaderboard" />
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard GlobalLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_GlobalLeaderboard" />
+							</Panel>
+						</Panel>
+
+						<Panel class="StageRows">
+
+							<Panel class="Row">
+
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_ABRoundRobin" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate" text="#DOTA_OraclesChallenge_Oct12" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<Label class="GroupName LabelLarge" text="#DOTA_OraclesChallenge_GroupA" />
+										<International2023PredictionGroup id="Group0" />
+
+										<Label class="GroupName LabelLarge" text="#DOTA_OraclesChallenge_GroupB" />
+										<International2023PredictionGroup id="Group1" />
+									</Panel>
+								</Panel>
+
+								<Panel class="ForkContainer Height_60">
+									<Panel class="Fork2"/>
+									<Panel class="Fork1"/>
+								</Panel>
+
+								<Panel class="DayContainer" id="SeedRound0">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_ABSeeding" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate Hide" text="#DOTA_OraclesChallenge_Oct14" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<International2023PredictionSeries class="TI2023" id="SeedSeries0" series_num="0" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries1" series_num="1" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries2" series_num="2" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries3" series_num="3" />                         
+									</Panel>
+								</Panel>
+
+
+
+							</Panel>
+
+							<Panel class="Row">
+
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_CDRoundRobin" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate" text="#DOTA_OraclesChallenge_Oct13" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<Label class="GroupName LabelLarge" text="#DOTA_OraclesChallenge_GroupC" />
+										<International2023PredictionGroup id="Group2" />
+
+										<Label class="GroupName LabelLarge" text="#DOTA_OraclesChallenge_GroupD" />
+										<International2023PredictionGroup id="Group3" />
+									</Panel>
+								</Panel>
+
+								<Panel class="ForkContainer Height_60">
+									<Panel class="Fork2"/>
+									<Panel class="Fork1"/>
+								</Panel>
+								
+								<Panel class="DayContainer" id="SeedRound1">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_CDSeeding" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate Hide" text="#DOTA_OraclesChallenge_Oct15" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<International2023PredictionSeries class="TI2023" id="SeedSeries4" series_num="4" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries5" series_num="5" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries6" series_num="6" />                         
+										<International2023PredictionSeries class="TI2023" id="SeedSeries7" series_num="7" />                         
+									</Panel>
+								</Panel>
+
+							</Panel>
+						</Panel>
+
+						
+					</TabContents>
+
+					<TabContents id="PlayoffsTabContents" tabid="PlayoffsTab" class="Stage">
+
+						<Panel class="StageStats">
+							<Panel class="StageDetails">
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_HowToPlay" class="RewardsHeading" />
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_Playoffs" class="RewardsContent" html="true" />
+
+								<Panel class="RewardDetails">
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_1_2" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_1_2_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_3_4" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_3_4_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_5_6" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_5_6_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_7_9" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_7_9_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_10" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoPlayoff_10_Reward" />
+									</Panel>
+								</Panel>
+
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard FriendsLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_FriendsLeaderboard" />
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard GlobalLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_GlobalLeaderboard" />
+							</Panel>
+						</Panel>
+
+						<Panel class="StageColumns">
+							<Panel class="Column" id="PlayoffsColumn1" >
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_WinnersRound" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate" text="#DOTA_OraclesChallenge_Oct20" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<BracketPrediction class="TI2023" id="BracketSeries0" />             
+										<BracketPrediction class="TI2023" id="BracketSeries1" />             
+										<BracketPrediction class="TI2023" id="BracketSeries2" />             
+										<BracketPrediction class="TI2023" id="BracketSeries3" />             
+									</Panel>
+								</Panel>
+
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_EliminationDay1" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate" text="#DOTA_OraclesChallenge_Oct21" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<BracketPrediction class="TI2023" id="BracketSeries8" />                 									
+										<BracketPrediction class="TI2023" id="BracketSeries9" />                 
+										<BracketPrediction class="TI2023" id="BracketSeries10" />                 
+										<BracketPrediction class="TI2023" id="BracketSeries11" />                 
+									</Panel>
+								</Panel>
+							</Panel>
+
+							<Panel id="PlayoffsLinesColumn1">
+								<Panel class="LeftRightLinesContainer"/>
+								<Panel class="TopLeftBottomRightLinesContainer">
+									<Panel class="LeftLine"/>
+									<Panel class="RightLine"/>
+								</Panel>
+								<Panel class="LeftRightLinesContainer"/>
+							</Panel>
+
+							<Panel class="Column" id="PlayoffsColumn2">
+								<Panel class="EmptyDay">
+									<Panel class="LeftRightLinesContainer"/>
+								</Panel>
+
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_EliminationDay2" />
+										<Panel class="FillWidth" />
+										<Label class="DayDate" text="#DOTA_OraclesChallenge_Oct22" />
+									</Panel>
+
+									<Panel class="DayContents">
+										<BracketPrediction class="TI2023" id="BracketSeries12" />                 
+										<BracketPrediction class="TI2023" id="BracketSeries13" />                 
+										<BracketPrediction class="TI2023" id="BracketSeries14" />                 
+										<BracketPrediction class="TI2023" id="BracketSeries15" />                 
+									</Panel>
+								</Panel>
+							</Panel>
+
+							<Panel id="PlayoffsLinesColumn2">
+								<Panel class="LeftRightLinesContainer"/>
+								<Panel class="BottomLeftTopRightLinesContainer">
+									<Panel class="LeftLine"/>
+									<Panel class="RightLine"/>
+								</Panel>
+							</Panel>
+							
+							<Panel class="Column" id="PlayoffsColumn3">
+								<Panel class="DayContainer">
+									<Panel class="DayHeader">
+										<Label class="DayName" text="#DOTA_OraclesChallenge_AdvancingToMainEvent" />
+										<Panel class="FillWidth" />
+										                                                                    
+									</Panel>
+
+									<Panel class="DayContents">
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner0" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner1" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner2" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner3" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner4" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner5" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner6" />                     
+										<BracketPrediction class="TI2023 ShowOneTeamOnly" id="PlayoffWinner7" />                     
+									</Panel>
+								</Panel>
+
+							</Panel>						
+						</Panel>
+						
+					</TabContents>
+
+					<TabContents id="MainEventTabContents" tabid="MainEventTab" class="Stage">
+
+						<Panel class="StageStats">
+							<Panel class="StageDetails">
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_HowToPlay" class="RewardsHeading" />
+								<Label text="#DOTA_OraclesChallenge_RewardInfo_MainEvent" class="RewardsContent" html="true" />
+
+								<Panel class="RewardDetails">
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_1_2" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_1_2_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_3_4" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_3_4_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_5_6" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_5_6_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_7_9" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_7_9_Reward" />
+									</Panel>
+									<Panel class="RewardCellLine">
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_10" />
+										<Panel class="DotDotDot"/>
+										<Label class="InfoRewards" html="true" text="#DOTA_OraclesChallenge_RewardInfoMainEvent_10_Reward" />
+									</Panel>
+								</Panel>
+
+
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard FriendsLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_FriendsLeaderboard" />
+							</Panel>
+							<Panel class="PlaceholderSection Leaderboard GlobalLeaderboard VisibilityCollapsed">
+								<Label text="#DOTA_OraclesChallenge_GlobalLeaderboard" />
+							</Panel>
+						</Panel>
+
+						<Panel class="StageColumns MainEvent">
+
+
+						
+
+							<Panel id="" class="Column New">
+
+								<Panel id="FinalsUB" class="FinalsRow">
+
+									<Panel id="FinalsUB_AB_Container">
+										<Panel class="DoubleLinesContainer Height_30" />
+										<Label id="GroupLabelA" class="GroupLabel LabelLarge" text="#DOTA_Bracket_GameA_Label"/>
+										<Label id="GroupLabelB" class="GroupLabel LabelLarge" text="#DOTA_Bracket_GameB_Label"/>
+									</Panel>
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_UpperBracketRound1" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023" id="BracketSeries4" />                 
+											<BracketPrediction class="TI2023" id="BracketSeries5" />                 
+										</Panel>
+									</Panel>
+
+									<Panel id="FinalsUB_C_Container">
+										<Panel class="ForkContainer Height_30">
+											<Panel class="Fork2"/>
+											<Panel class="Fork1"/>
+										</Panel>
+										<Label id="GroupLabelC" class="GroupLabel LabelLarge" text="#DOTA_Bracket_GameC_Label"/>
+									</Panel>
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_UpperBracketFinals" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023" id="BracketSeries6" />                  
+										</Panel>
+									</Panel>
+
+								</Panel>	
+
+								<Panel id="FinalsLB" class="FinalsRow">
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_LowerBracketRound1" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023" id="BracketSeries16" />                 
+											<BracketPrediction class="TI2023" id="BracketSeries17" />                 
+										</Panel>
+									</Panel>
+
+									<Panel class="DoubleLinesContainer Height_30" />
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_LowerBracketRound2" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023 LoserMatch" id="BracketSeries18" no_team_1_text="#DOTA_Bracket_LoserGameA" />                 
+											<BracketPrediction class="TI2023 LoserMatch" id="BracketSeries19" no_team_1_text="#DOTA_Bracket_LoserGameB" />                 
+										</Panel>
+									</Panel>
+
+									<Panel class="ForkContainer Height_30">
+										<Panel class="Fork2"/>
+										<Panel class="Fork1"/>
+									</Panel>
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_LowerBracketRound3" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023" id="BracketSeries20" />                 
+										</Panel>
+									</Panel>
+
+									<Panel class="SingleLine" />
+
+									<Panel class="DayContainer">
+										<Panel class="DayHeader">
+											<Label class="DayName" text="#DOTA_Bracket_LowerBracketFinals" />
+											<Panel class="FillWidth" />
+										</Panel>
+										<Panel class="DayContents">
+											<BracketPrediction class="TI2023 LoserMatch" id="BracketSeries21" no_team_1_text="#DOTA_Bracket_LoserGameC" />                  
+										</Panel>
+									</Panel>								
+
+								</Panel>						
+
+							</Panel>
+
+							<Panel class="ForkContainer Height_50">
+								<Panel class="Fork2"/>
+								<Panel class="Fork1"/>
+							</Panel>
+
+							<Panel class="DayContainer">
+								<Panel class="DayHeader">
+									<Label class="DayName" text="#DOTA_Bracket_GrandFinals" />
+									<Panel class="FillWidth" />
+								</Panel>
+								<Panel class="DayContents">
+									<BracketPrediction class="TI2023" id="BracketSeries7" />                     
+								</Panel>
+							</Panel>
+
+							<Panel class="SingleLine" />
+
+							<Panel class="DayContainer">
+								<Panel class="DayHeader">
+									<Label class="DayName" text="#DOTA_Bracket_Winner" />
+									<Panel class="FillWidth" />
+								</Panel>
+								<Panel class="DayContents">
+									<BracketPrediction class="TI2023 ShowOneTeamOnly" id="Winner"  />             
+								</Panel>
+							</Panel>
+							
+						</Panel>
+
+					</TabContents>
+
+				</Panel>
+			</Panel>
+		</Panel>
+		
+	</DOTABPInternational2023PredictionsPage>
+</root>

@@ -1,0 +1,425 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_background.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="RoadToTIQuestHeroSnippet">
+			<Panel class="QuestHero">
+				<DOTAHeroImage id="QuestHeroMovie" heroimagestyle="icon" />
+				<Panel class="Check" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTABPBackgroundInternational2024 class="TournamentFinished">
+
+		<Panel class="CompediumBackgroundImageDark"/>
+		<Panel class="CompediumBackgroundImage"/>
+
+		<Panel id="CompediumBackground">
+			<Image class="BackgroundFloor" src="file://{images}/compendium/international2024/background_floor.png" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="CircusBackground" src="file://{images}/compendium/international2024/circus_bg.png" scaling="stretch-to-fit-preserve-aspect" />
+			<DOTAScenePanel class="TopRightGodRays Small" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>
+			<Image class="Aegis2024_Large" src="file://{images}/compendium/international2024/logos/aegis2024_large.png" scaling="stretch-to-fit-preserve-aspect" />
+			<DOTAParticleScenePanel class="SmokeFX" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+			<DOTAScenePanel class="SpotlightParticles" map="scenes/international_2024/international_2024_dashboard_background" camera="camera_dashboard" hittest="false" renderdeferred="false" particleonly="false"/>
+			
+			<Carousel class="ChampionsImageSequenceContainer" panels-visible="1" autoscroll-delay="5.0s" hittest="false" hittestchildren="false">
+				                                                                                                                                     
+				<Image class="ChampionPhoto" src="file://{images}/compendium/international2024/champions_team_photo2.jpg" scaling="cover" />
+				                                                                                                                                     
+			</Carousel> 
+			
+			<Panel class="RingmasterButtonsDarkness" />
+			<DOTAUIEconSetPreview id="RingmasterModel" pin-fov= "horizontal" itemdef="812" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+			<DOTAParticleScenePanel class="SmokeFXFront" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" pin-fov="horizontal" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+
+			<Panel class="RingmasterButtons" >
+				<Panel class="FillWidth" />
+				<Panel class="FillWidth" />
+				<DOTAInternational2024Button id="ShowRingmasterComicButton" class="TextOnly" text="#DOTA_International_2024_View_Ringmaster_Comic" onactivate="ShowComicPopup( ringmaster )" />
+				<Panel class="FillWidth" />
+				<Label class="IntroducingRMTitle LabelSmall" text="#DOTA_International_2024_IntrducingRingmaster" onactivate="DOTAGoToHeroPage( 131 )"/>
+				<Panel class="FillWidth" />
+				<DOTAInternational2024Button id="ShowRingmasterDebut" class="TextOnly" text="#DOTA_International_2024_View_Ringmaster_Debut" onactivate="DOTAShowReferencePage(file://{resources}/layout/leaf_pages/dashboard_page_debut_ring_master.xml )" />
+				<Panel class="FillWidth" />
+				<Panel class="FillWidth" />
+			</Panel>
+
+			<Panel class="Curtains" hittest="false" hittestchildren="false">
+				<Image class="Curtain Left" src="file://{images}/compendium/international2024/rewards/curtain.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Image class="Curtain Right" src="file://{images}/compendium/international2024/rewards/curtain.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+			</Panel>
+		</Panel>
+		
+		
+		<Panel class="MainContents">
+
+			<Panel id="VideoPlayer">
+
+				<Panel id="GroupStageHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel class="RoadToInternationalContainer">
+						<Label class="TitleSmall TitleCenter" html="true" text="#DOTA_Compendium2024_BGTitle_GroupStage" />
+					</Panel>
+					<Panel id="GroupStageDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2024_GroupStage" />
+						<Panel class="DateLocationContainer">
+							<Label class="Dates LabelMedium" text="#DOTA_International2024_GroupStage_Dates" />
+							<Label class="Location LabelMedium" text="#DOTA_International2024_GroupStage_Location" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="PlayoffsHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel class="RoadToInternationalContainer">
+						<Label class="TitleSmall TitleCenter" html="true" text="#DOTA_Compendium2024_BGTitle_GroupStage" />
+					</Panel>
+					<Panel id="PlayoffsDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2024_Playoffs" />
+						<Panel class="DateLocationContainer">
+							<Label class="Dates LabelMedium" text="#DOTA_International2024_Playoffs_Dates" />
+							<Label class="Location LabelMedium" text="#DOTA_International2024_Playoffs_Location" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="MainEventHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel id="MainEventLogoContainer">
+						<Image class="TILogo" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/logos/ti_logo_light.svg" />
+						<Panel id="StarsContainerSmall">
+							<Panel class="CompendiumStarSmall"/>
+							<Panel class="CompendiumStarSmall"/>
+							<Panel class="CompendiumStarSmall"/>
+							<Panel class="CompendiumStarSmall"/>
+							<Panel class="CompendiumStarSmall"/>
+						</Panel>
+					</Panel>
+					<Panel id="MainEventDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2024_MainEvent" />
+						<Panel class="DateLocationContainer">
+							<Label class="Dates LabelMedium" text="#DOTA_International2024_MainEvent_Dates" />
+							<Label class="Location LabelMedium" text="#DOTA_International2024_MainEvent_Location" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="VideoPlayerContainer">
+					<Panel class="FootageContainer">
+						<Panel class="LiveContainer">
+							<DOTALiveStream id="LiveStream" />
+							<Panel class="OverlayPanel" hittest="false">
+								<Button id="ExternalBrowserButton" class="BrowserButton OverlayButton" onactivate="DOTAInternational2024ExternalWatchStream()"/>
+								<Button id="HideButton" class="HideButton OverlayButton" onactivate="DOTAInternational2024ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+						<Panel class="NotLiveContainer" />
+						<Panel class="LiveBlockedContainer">
+							<Panel class="LiveBlockedCenter">
+								<Label class="LiveBlockedDay LabelLarge WhiteText" text="{s:broadcast_day}" />
+								<TextButton class="ButtonPrimary Large TI24Green" text="#DOTATournamentMatchListWatchLive" onactivate="DOTAInternational2024ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<DOTACountdown id="LiveStreamCountdown" class="LiveFeedCountdownContainer">
+						<Label class="LabelLarge WhiteText" text="{s:broadcast_day}" />
+						<Label class="CountDownActiveText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartsIn" />
+						<Label class="CountDownCompleteText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartingSoon" />
+					</DOTACountdown>
+				</Panel>
+			</Panel>
+
+			<Panel id="EventChampionsContainer">
+				<Panel class="EventChampionsContent">
+					<Image class="LogoSmall" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/compendium/international2024/ti_logo_2024.png" />
+					<Image class="LogoStars" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/logos/ti_logo_stars.png" />
+					<Label class="ChampionsTitle LightestGreyText" text="#DOTA_International2024_EventFinished_Dashboard_Title"/>
+					<Label class="ChampionsDescription" text="#DOTA_International2024_EventFinished_Dashboard_Description"/>
+					<Panel class="Dash"/>
+					<Panel class="ChampionsActionsContainer">
+						<DOTAInternational2024Button id="WatchReplayButton" class="PurchaseButton LightGreen" text="#DOTA_TI9_FrontPage_Watch_Label" onactivate="DOTAShowTournamentDetailsPopup( 16935 )" />
+						<DOTAInternational2024Button id="ViewResultsButton" class="PurchaseButton LightGreen" text="#DOTA_ViewFinalResults" onactivate="ExternalBrowserGoToDOTAURL( 'esports/ti13/standings/playoff' )" />
+					</Panel>
+					<Label class="BodySmall PurchaseEndDateNote" text="#DOTA_Compendium_EndDate_Purchase"/>
+					<Panel class="TalentActionsContainer">
+						<Panel class="TalentActions">
+							<DOTAInternational2024Button class="PurchaseButton TextOnly" text="#DOTA_International2023_LastChancePopup_TalentSection_Title" onactivate="DOTAShowBPInternational2024TalentPage()" />
+							<DOTAInternational2024Button class="PurchaseButton TextOnly" text="#DOTA_International2023_LastChancePopup_TeamsSection_Title" onactivate="DOTAShowBPInternational2024SupportersClub()" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<Panel class="Header">
+				<Image class="TILogoText" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/compendium/international2024/logos/the_international_text.png" />
+				<Label class="Title" text="#FrontPage_Compendium_Points_Header" />
+				<Panel id="StarsContainer">
+					<Panel class="CompendiumStar"/>
+					<Panel class="CompendiumStar"/>
+					<Panel class="CompendiumStar"/>
+					<Panel class="CompendiumStar"/>
+					<Panel class="CompendiumStar"/>
+				</Panel>
+			</Panel>
+
+			<Panel class="DashDotDivider">
+				<Panel class="Dash Left"/>
+				<Panel class="Dot"/>
+				<Panel class="Dash Right"/>
+			</Panel>
+
+			<Panel class="ScheduleSection" hittest="false">
+				                                  
+					                             
+						                          
+						                                                                
+						                           
+					        
+					                                     
+						                                                                       
+						                                                                             
+					        
+				        
+				                             
+					                             
+						                          
+						                                                              
+						                           
+					        
+					                                     
+						                                                                     
+						                                                                           
+					        
+				            
+				<Panel class="ScheduleEntry">
+					<Label class="Name" text="#DOTA_International2024_RoadToTI" />
+					<Label class="Dates" text="#DOTA_International2024_RoadToTI_Dates" />
+					<Label class="Location" text="#DOTA_International2024_RoadToTI_Location" />
+				</Panel>
+				<Panel class="FillWidth"/>
+				<Panel class="ScheduleEntry">
+					<Label class="Name" text="#DOTA_International2024_MainEvent" />
+					<Label class="Dates" text="#DOTA_International2024_MainEvent_Dates" />
+					<Label class="Location" text="#DOTA_International2024_MainEvent_Location" />
+				</Panel>
+			</Panel>
+
+			<Panel class="PurchaseSection">
+				<DOTAInternational2024Button id="PurchaseBattlePassButton" class="PurchaseButton LightGreen" onactivate="DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2024, false )" text="#DOTA_Compendium2024_Purchase" />
+				<DOTAInternational2024Button id="ActivateBattlePassButton" class="PurchaseButton LightGreen" onactivate="DOTAActivateEventFromArmory( EVENT_ID_INTERNATIONAL_2024 )" text="#DOTA_Compendium2024_Activate" />
+				<Panel class="PurchaseDetails">
+					<DOTAInternational2024Button id="PreviewButton" class="DarkGreen Wide NoOutline Small" text="#DOTA_Compendium2024_Preview" onactivate="DOTAShowBPInternational2024RewardsPage()" />
+					<DOTAInternational2024Button id="LearnMoreButton" class="DarkGreen Wide NoOutline Small" text="#DOTA_Compendium2024_LearnMore" onactivate="ExternalBrowserGoToDOTAURL( 'international2024' )" />
+				</Panel>
+			</Panel>
+
+			<Panel class="PointsSection" hittest="false">
+				<Panel class="PointsSectionContainer" onactivate="DOTAShowBPInternational2024RewardsPage()">
+					<Panel class="PointsBackgroundTexture"/>
+					<Panel class="ProgressContainer">
+						<Label class="CompendiumLevelLabel LabelExtraLarge WhiteText" text="#DOTA_CompendiumLevel" />
+						<Panel class="PointsAndLogContainer">
+							<Panel class="PointIcon" />
+							<Label class="PointsLabel LabelLarge VerticalCenter LightestGreyText Opacity_80" html="true" text="&lt;b&gt;{d:current_level_progress}&lt;/b&gt; / {d:max_level_progress}" />
+							<DOTAInternational2024Button id="PointsLogButton" class="DarkGreen Tiny" text="#DOTA_BattlePassLog_Title_Short" onactivate="DOTAShowBattlePassLog( EVENT_ID_INTERNATIONAL_2024 )" />
+							<DOTAInternational2024Button id="PurchaseLevelsButton" class="LightGreen Tiny" text="#DOTA_ProfileCard_Event_BuyLevels" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2024, BattlePass )" />
+						</Panel>
+						<ProgressBar id="CurrentLevelProgressBar" />
+					</Panel>
+					<Panel id="UnappliedActionsContainer">
+						<Panel class="UnappliedAction UnappliedRewards">							
+							<Panel class="Text">
+								                               
+								<Label class="NumberValue" text="{d:unclaimed_rewards}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_rewards_text}" />
+						</Panel>
+						<Panel class="UnappliedAction UnappliedLevels">
+							<Panel class="Text">
+								<Panel class="Icon" />
+								<Label class="NumberValue" text="{d:unclaimed_levels}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_levels_text}" />
+						</Panel>
+						<Panel class="UnappliedAction UnappliedBoosters">
+							<Panel class="Text">
+								<Panel class="Icon" />
+								<Label class="NumberValue" text="{d:unclaimed_boosters}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_boosters_text}" />
+						</Panel>
+					</Panel>
+					<Panel class="PointsSectionBorder" hittest="false"/>
+				</Panel>
+				
+				<Panel class="CurrentLevelShieldContainer">
+					<DOTAParticleScenePanel class="EventLevelParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<DOTAEventLevelShield id="EventLevelShield" onactivate="DOTAShowBPInternational2024RewardsPage()" />
+				</Panel>
+			</Panel>
+
+			<Panel class="ActionSection">
+				                                                                                                                                                                                   
+				                                   
+				<Panel class="FillWidth"/>
+				<DOTAInternational2024Button id="ViewCompendiumButton" class="LightGreen" text="#DOTA_ViewCompendium" onactivate="DOTAShowBPInternational2024RewardsPage()" />
+				<Panel class="FillWidth"/>
+				                                    
+				                                                                                                                                                                                                                                                   
+			</Panel>
+
+			<Panel class="ActivitiesSection">
+
+				<Panel id="WeeklyChallengeSection" class="ActivitySection" onmouseover="UIShowCustomLayoutTooltip( International2024WeeklyChallengeTooltip, 'file://{resources}/layout/battle_pass/international2024/international2024_weekly_challenge_tooltip.xml' )" onmouseout="UIHideCustomLayoutTooltip( International2024WeeklyChallengeTooltip )" onactivate="DOTAOpenPlayMenu()">
+					<Panel class="ActivityContainer">
+						<Label text="#DOTA_Compendium2024_WeeklyChallenge" class="ActivityTitle LabelLarge" />
+						<Label text="#DOTA_Compendium2024_WeeklyChallenge_WeekNumber" class="PhaseLabel LabelSmall" />
+
+						<AsyncDataPanel class="ActivitySummaryContainer" state="{d:weekly_challenge_state}">
+							<Panel class="AsyncSuccessContainer">
+								<Panel class="ActivitySummaryCenter">
+									<Panel class="WeeklyProgress">
+										<ProgressBar id="WeeklyChallengeProgressBar" />
+										<Label html="true" text="#DOTA_Compendium2024_WeeklyChallenge_Points" />
+									</Panel>
+									<DOTACountdown id="WeeklyChallengeWeeklyCountdown" server-time="true">
+										<Label class="CooldownText" text="#DOTA_Compendium2024_WeeklyChallenge_WeeklyResetTime" />
+									</DOTACountdown>
+									<Panel class="DailyBonusContainer">
+										<Panel class="DailyBonusContents">
+											<Label class="DailyBonusLabel" text="#DOTA_Compendium2024_WeeklyChallenge_DailyBonus" />
+											<Label class="DailyBonusClaimed" text="#DOTA_Compendium2024_WeeklyChallenge_Claimed" />
+											<Label class="DailyBonusReady" text="#DOTA_Compendium2024_WeeklyChallenge_DailyBonusAvailable" html="true" />
+											<DOTACountdown id="WeeklyChallengeDailyCountdown" server-time="true">
+												<Label class="CooldownText" text="#DOTA_Compendium2024_WeeklyChallenge_DailyResetTime" />
+											</DOTACountdown>
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+						</AsyncDataPanel>
+							
+						<Label class="ActivityAction LabelMedium" text="#DOTA_Compendium2024_WeeklyChallenge_Action" />
+					</Panel>
+					<Panel class="ActivityBorder" hittest="false"/>
+				</Panel>
+
+				<Panel id="FantasyTile" class="FantasySection ActivitySection" onactivate="DOTAShowBPInternational2024FantasyPage()">
+					<Panel class="ActivityContainer">
+						<Label text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" class="ActivityTitle LabelLarge" />
+						<Label text="{s:fantasy_period_name}" class="PhaseLabel LabelSmall" />
+						<Panel class="ActivitySummaryContainer">
+							<Panel class="ActivitySummaryCenter">
+								<Panel class="FantasyPlayers">
+									<DOTAPlayerImage class="FantasyPlayer" id="PlayerImage1" />
+									<DOTAPlayerImage class="FantasyPlayer" id="PlayerImage2" />
+									<DOTAPlayerImage class="FantasyPlayer" id="PlayerImage3" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Label text="{s:fantasy_call_to_action}" class="ActivityAction LabelMedium" />
+					</Panel>
+					<Panel class="ActivityBorder" hittest="false"/>
+					<Panel class="UnclaimedRewardsBadge">
+						<Label text="#DOTA_International2024_Quests_UnclaimedRewards" />
+					</Panel>
+				</Panel>
+
+				<Panel id="PredictionsSection" class="PredictionsSection ActivitySection" onactivate="DOTAShowBPInternational2024PredictionsPage()">
+					<Panel class="ActivityContainer">
+						<Label text="#DOTA_OraclesChallenge_OraclesChallenge" class="ActivityTitle LabelLarge" />
+						<Label text="{s:predictions_period_name}" class="PhaseLabel LabelSmall" />
+						<Panel class="ActivitySummaryContainer">
+							<Panel class="ActivitySummaryCenter">
+								<Panel class="PredictionBracketShadow"/>
+								<Panel id="PredictionBrackets">
+									<Image class="PredictionInfographic GroupStageInfographic" src="file://{images}/compendium/international2024/bracket_infographic_groupstage.png" />
+									<Image class="PredictionInfographic PlayoffsInfographic" src="file://{images}/compendium/international2024/bracket_infographic_groupstage.png" />
+									<Image class="PredictionInfographic MainEventInfographic" src="file://{images}/compendium/international2024/bracket_infographic_groupstage.png" />
+									<DOTACountdown id="PredictionCountdown" class="LeftRightFlow" server-time="true">
+										<Label class="StageLock" id="PredictionCountdownLabel" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+									</DOTACountdown>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Label text="{s:prediction_action}" id="PredictionsActionLabel" class="ActivityAction LabelMedium" />
+					</Panel>
+					<Panel class="ActivityBorder" hittest="false"/>
+				</Panel>
+
+				<Panel id="BingoSection" class="BingoSection ActivitySection" onactivate="DOTAShowBPInternational2024BingoPage()">
+					<Panel class="ActivityContainer">
+						<Label text="#DOTA_Bingo_Title" class="ActivityTitle LabelLarge" />
+						<Label text="{s:phase_name}" class="PhaseLabel LabelSmall" />
+						<Panel class="ActivitySummaryContainer">
+							<Panel class="ActivitySummaryCenter">
+								<Panel id="BingoGrid" class="BingoGrid">
+									<Panel class="BingoRow">
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+									</Panel>
+									<Panel class="BingoRow">
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+									</Panel>
+									<Panel class="BingoRow">
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+									</Panel>
+									<Panel class="BingoRow">
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+									</Panel>
+									<Panel class="BingoRow">
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+										<Panel class="BingoSquare" />
+									</Panel>
+								</Panel>
+
+								<Panel class="BingoStats">
+									<Label class="BingoStatLabel" text="#DOTA_Bingo_Squares" />
+									<Label class="BingoStatValue" text="{d:squares_completed} / 25" />
+									<Label class="BingoStatLabel" text="#DOTA_Bingo_Lines" />
+									<Label class="BingoStatValue" text="{d:rows_completed} / 12" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Label text="#DOTA_Bingo_View" class="ActivityAction LabelMedium" />
+					</Panel>
+					<Panel class="ActivityBorder" hittest="false"/>
+					<Panel id="BingoUnclaimedRewards" class="UnclaimedRewardsBadge">
+						<Label text="#DOTA_Bingo_UnclaimedRewards" />
+					</Panel>
+				</Panel>
+
+			</Panel>
+
+			
+
+		</Panel>
+
+	</DOTABPBackgroundInternational2024>
+
+
+</root>

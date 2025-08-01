@@ -1,0 +1,63 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_token_treasure.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="TokenTreasureOption">
+			<Panel class="Chest">
+				<Image class="ChestShadow" src="file://{images}/events/crownfall/encounters/box_shadow.png" scaling="stretch-to-fit-preserve-aspect"/>
+				<Panel class="ChestImage">
+					<Image class="ChestBack" src="file://{images}/events/crownfall/encounters/box_back.png" scaling="stretch-to-fit-preserve-aspect"/>
+					<Panel class="ChestParticlesContainer">
+						<DOTAScenePanel class="ChestParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+					</Panel>
+					<Image class="ChestFront" src="file://{images}/events/crownfall/encounters/box_front.png" scaling="stretch-to-fit-preserve-aspect"/>
+				</Panel>
+				<Panel id="RewardTokensContainer"/>
+				<Panel class="ChestCost">
+					<Panel id="CostTokensContainer" class="HideExtrude"/>
+					<DOTACrownfallButton id="ClaimRewardOptionButton" class="OpenChestButton" text="{s:spend_tokens_text}" />
+				</Panel>
+				<Label class="ChestMessage LabelSmall" text="{s:needed_tokens_text}"/>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<Panel class="PopupPanel Encounter TokenTreasure Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+	
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground"/>
+				<Panel class="BodyContainer">
+					                                                                                                                               
+					<Panel class="Center">
+						<Panel id="TokenTreasureOptionsContainer"/>
+					</Panel>
+					<Label class="ChooseOneLabel" text="#DOTA_Crownfall_Encounter_ChooseOne" />
+					<AsyncDataPanel class="Actions" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+
+							<Label class="AlreadyClaimedLabel" text="#DOTA_Crownfall_Encounter_AlreadyClaimed" />
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>			
+			</Panel>
+		</Panel>
+
+		<Panel id="VisualNovelContainer">
+			                           
+		</Panel>
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+
+	</Panel>
+</root>

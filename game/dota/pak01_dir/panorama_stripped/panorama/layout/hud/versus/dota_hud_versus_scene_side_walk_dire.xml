@@ -1,0 +1,43 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_shared.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_default.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_side_walk.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/hud/versus/dota_hud_versus_scene_shared.ts" />
+		<include src="file://{resources}/scripts/hud/versus/dota_hud_versus_scene_side_walk_dire.ts" />
+	</scripts>
+
+	<DOTAHudVersusScene>
+		<DOTAScenePanel id="VersusScene" map="scenes/versus/versus_side_walk_dire" camera="versus_camera" light="versus_light" deferredalpha ="true" pin-fov="horizontal" renderdeferred="true" particleonly="false" />
+		<Panel id="FooterPanel" hittest="false" />
+					 
+		<DOTAHudVersusSceneFeaturedHeroInfo id="FeaturedHeroInfo" />
+
+		<DOTAHudVersusSceneTeamInfo id="TeamInfo" />
+	
+		<Panel id="BlackOverlay" hittest="false" />
+
+		<Panel id="LoadingState">
+			<Panel class="Spinner" />
+			<Label text="#DOTA_VersusScreen_Loading" />
+		</Panel>
+
+		<Panel id="DebugButtons">
+			<TextButton class="ButtonBevel" onactivate="PlayScene()" text="Play Scene" unlocalized="true" />
+			<ToggleButton id="ToggleFadeOut" text="Fade Out When Complete" unlocalized="true" onactivate="ToggleFadeOutEnabled()" selected="true" />
+			<Button id="ReloadPageButton" class="DebugButton" onactivate="DOTAReloadCurrentPage()" />
+
+		
+		</Panel>
+
+	</DOTAHudVersusScene>
+
+</root>

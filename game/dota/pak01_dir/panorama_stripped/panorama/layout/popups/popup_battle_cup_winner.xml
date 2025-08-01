@@ -1,0 +1,47 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_battle_cup_winner.css" />
+		<include src="file://{resources}/styles/dashboard_page_weekendtourney.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/popups/popup_battle_cup_winner.js" />
+	</scripts>
+
+	<DOTAPopupBattleCupWinner class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()" >
+		
+		<DOTAScenePanel id="ExplosionsLong" map="scenes/battle_cup/battle_cup_background_particle" camera="camera_1" particleonly="true" />
+		<DOTAScenePanel id="Explosions" map="scenes/treasure_opened_generic" camera="shot_cam" particleonly="true" />
+		<DOTAScenePanel id="BattleCupTrophy" map="scenes/battle_cup/battle_cup_rotate_winter" camera="camera_1" particleonly="false"/>
+
+		<Panel id="LabelContainer">
+			<Label id="ChampionTitle" text="#dota_popup_battle_cup_winners_title" />
+			<Panel id="SubtitleContainer">
+				<Label id="Division" text="#dota_popup_battle_cup_winners_division" />
+				<Label id="Tier" text="#dota_popup_battle_cup_winners_tier" />
+				<Label id="Date" text="#dota_popup_battle_cup_winners_win_date" />
+			</Panel>
+
+			<Panel id="TeamContainer">
+				<DOTAUGCImage id="BattleCupTeamLogo" class="TeamLogo" scaling="stretch-to-fit-preserve-aspect" />
+				<Label id="BattleCupTeamName" text="#dota_profile_card_battle_cup_team_name" />
+			</Panel>
+		</Panel>
+
+		<Panel id="Footer" class="LeftRightFlow">
+			<Button class="PopupButton" onactivate="UIPopupButtonClicked()">
+				<Label text="#DOTA_Continue"/>
+			</Button>
+			<Button id="Button0EffectsTest" class="ButtonBevel" onactivate="EventDOTAPopupBattleCupWinnerAnimate()">
+				<Label text="start" unlocalized="true" />
+			</Button>
+			<Button id="Button1EffectsTest" class="ButtonBevel" onactivate="ResetAnim()">
+				<Label text="reset" unlocalized="true" />
+			</Button>
+		</Panel>
+
+	</DOTAPopupBattleCupWinner>
+
+</root>

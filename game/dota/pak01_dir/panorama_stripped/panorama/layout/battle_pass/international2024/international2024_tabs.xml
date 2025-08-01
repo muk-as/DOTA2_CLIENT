@@ -1,0 +1,116 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_tabs.css" />
+	</styles>
+
+	<DOTAInternational2024Tabs class="SecondaryTabSet">
+
+		                                                                                                                                           
+
+		                                                                                              
+		<Panel class="LogoContainerSmall" onactivate="DOTAShowHomePage()">
+			<Image class="LogoSmall" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/compendium/international2024/ti_logo_2024.png" />
+			<Label class="TitleSmall" text="#FrontPage_Compendium_Points_Header" />
+			<Panel id="StarsContainerSmall">
+				<Panel class="CompendiumStarSmall"/>
+				<Panel class="CompendiumStarSmall"/>
+				<Panel class="CompendiumStarSmall"/>
+				<Panel class="CompendiumStarSmall"/>
+				<Panel class="CompendiumStarSmall"/>
+			</Panel>
+		</Panel>
+
+		<Panel class="DashDotDivider">
+			<Panel class="Dash Left"/>
+			<Panel class="Dot"/>
+			<Panel class="Dash Right"/>
+		</Panel>
+
+		<Panel class="SecondaryTabsContainer">
+
+			<Label class="SectionHeader" text="#DOTA_Compendium2024_Participate" />			
+			<RadioButton id="International2024Rewards" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium_Rewards_Header" onactivate="DOTAShowBPInternational2024RewardsPage()" />
+			<RadioButton id="International2024Fantasy" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" onactivate="DOTAShowBPInternational2024FantasyPage()" />
+			<RadioButton id="International2024Predictions" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_OraclesChallenge_OraclesChallenge" onactivate="DOTAShowBPInternational2024PredictionsPage()" />
+			<RadioButton id="International2024Bingo" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Bingo_Title" onactivate="DOTAShowBPInternational2024BingoPage()" />
+			
+			<Label class="SectionHeader Hidden" text="#DOTA_Compendium2024_TheEvent" />
+			<RadioButton id="International2024Talent" class="SecondaryTabButton Hidden" group="SecondaryTabGroup" text="#DOTA_Compendium_SecondaryTabHeader_Casters" onactivate="DOTAShowBPInternational2024TalentPage()" />
+			<RadioButton id="International2024SupportersClubs" class="SecondaryTabButton Hidden" group="SecondaryTabGroup" text="#DOTA_DPCFanContent_SupportersClubs" onactivate="DOTAShowBPInternational2024SupportersClub()" />
+
+			<Button class="SecondaryTabButton Hidden" onactivate="DOTAShowItemDefPage( 32614 )">
+				<Panel class="ButtonContents">
+					<Label text="#DOTA_International2024_Champion_Sticker_Header" />
+					<Image src="file://{images}/control_icons/24px/arrow_top_right.svg" />
+				</Panel>
+			</Button>
+			
+			<Button class="SecondaryTabButton Hidden" onactivate="ExternalBrowserGoToURL( 'https://dota2.com/esports/ti13/' )">
+				<Panel class="ButtonContents">
+					<Label text="#DOTA_CompendiumTeam_Game_Watch" />
+					<Image src="file://{images}/control_icons/24px/arrow_top_right.svg" />
+				</Panel>
+			</Button>
+
+			                                                                                                                                                       
+				                              
+					                                               
+					                                                                      
+				        
+			            
+		</Panel>
+
+		<Panel id="LeftPanel" hittest="false">
+
+			<Panel id="BPLevelEntry" onactivate="DOTAShowBPInternational2024RewardsPage()">
+				<Panel class="LevelDetailsContainer">
+					<Panel class="PointsBackgroundTexture"/>
+					<Panel class="PointsSectionBorder" hittest="false"/>
+					<Panel id="LevelDetails">
+						<Panel id="LevelButtons" class="TopBottomFlow">
+							<TextButton id="PurchaseBattlePassButton" class="BattlePassBrightButton" onactivate="DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2024, false )" text="#DOTA_TI6_BattlePass_Purchase" />
+							<TextButton id="PurchaseLevelsButton" class="BattlePassBrightButton Small" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2024, BattlePass )"  text="#DOTA_TI6_BattlePass_PurchaseLevels" />
+							<TextButton id="ActivateBattlePassButton" class="BattlePassBrightButton" onactivate="DOTAActivateEventFromArmory( EVENT_ID_INTERNATIONAL_2024 )" text="#DOTA_ActivateBattlePass" />
+						</Panel>
+						<Panel id="EventEnded">
+							<Label class="EndedTitle" text="#DOTA_Nemestice2021_Ended" />
+							<Label class="EndedDate" text="{t:l:event_end_date}" />
+						</Panel>						
+						<ProgressBar id="LevelProgressBar" >
+							<DOTAParticleScenePanel id="ProgressBurner" hittest="false" particleName="particles/ui/ui_progressbar_burner.vpcf" particleonly="true" cameraOrigin="-350 0 0" lookAt="0 -350 0" fov="90" squarePixels="true"/>
+						</ProgressBar>
+						<Panel class="PointsLogContainer">
+							<Panel class="PointIcon" />
+							<Label id="PointsNeeded" class="" html="true" text="&lt;b&gt;{d:level_progress}&lt;/b&gt; / {d:points_per_level}"/>
+							<DOTAInternational2024Button id="PointsInfo" class="DarkGreen Tiny" text="#DOTA_BattlePassLog_Title_Short" onactivate="DOTAShowBattlePassLog( EVENT_ID_INTERNATIONAL_2024 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="LevelShieldContainer">
+					<DOTAParticleScenePanel class="EventLevelParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<DOTAEventLevelShield id="LevelShield" class="Season_International2024 LargeStack" />
+				</Panel>
+			</Panel>
+
+			<Panel id="GiftEntry">
+				<DOTAInternational2024Button id="GiftBattlePassButton" class="DarkGreen Tiny" text="#DOTA_GiftACompendium" onactivate="DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2024, true )" />
+				<Panel id="GiftProgressBar" onmouseover="UIShowTextTooltip( '#DOTA_Compendium_GiftRewardInfo' )" onmouseout="UIHideTextTooltip()">
+					<Panel class="FillWidth" />
+					<Panel class="GiftsIcon" id="Level1"/>
+					<Panel class="GiftsIcon" id="Level2"/>
+					<Panel class="GiftsIcon" id="Level3"/>
+					<Panel class="GiftsIcon" id="Level4"/>
+					<Panel class="GiftsIcon" id="Level5"/>
+				</Panel>
+			</Panel>
+
+			<Panel id="FriendsEntry">
+				<DOTAEventLeaderboard id="FriendsLeaderboard" class="Slanted FadedBottom" eventid="EVENT_ID_INTERNATIONAL_2024" showlevel="true" pointsheader="#DOTA_SeasonPass_Friends_Leaderboard_Level" />
+			</Panel>
+
+		</Panel>
+	</DOTAInternational2024Tabs>
+</root>

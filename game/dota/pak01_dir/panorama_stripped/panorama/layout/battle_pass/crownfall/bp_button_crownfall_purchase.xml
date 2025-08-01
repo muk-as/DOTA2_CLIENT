@@ -1,0 +1,44 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_button_crownfall_purchase.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/battle_pass/crownfall/bp_button_crownfall_purchase.ts" />
+	</scripts>
+
+	<DOTACrownfallPurchaseButton>
+		<Panel id="PriceInfoID" class="PriceInfo">
+			
+			<Panel class="DefaultPriceContainer">
+				<Label class="DefaultPrice" text="{s:default_price}" />
+			</Panel>
+			
+			<Panel class="DiscountPriceContainer">
+				<Panel id="DefaultPriceCutContainer">
+					<Panel class="LabelContainer PriceTop">
+						<Label class="DefaultPrice" text="{s:default_price}" />
+					</Panel>
+					<Panel class="LabelContainer PriceBottom">
+						<Label class="DefaultPrice" text="{s:default_price}" />
+					</Panel>
+				</Panel>	
+				<Panel id="DiscountPriceCutContainer" class="DiscountInfo">
+					<Panel id="DiscountPriceLabelsContainer">
+						<Label class="DiscountPrice" text="{s:discount_price}" />
+						<Label class="DefaultPrice" text="{s:default_price}" />
+					</Panel>
+					<Label class="DiscountLabel" text="#DOTA_DiscountPriceValue" />
+				</Panel>
+			</Panel>
+			
+		</Panel>
+		<TextButton class="PurchaseButton ButtonPrimary Large Blue" text="{s:button_text}" onactivate="DOTACrownfallPurchaseButtonActivated()" />
+		<DOTAParticleScenePanel id="PurchaseSlashFX" hittest="false" particleName="particles/ui/events/discount_slash_counter_slash.vpcf" squarePixels="true" particleonly="true" startActive="true" cameraOrigin="0 500 30" lookAt="0 0 30" fov="40"/>
+	</DOTACrownfallPurchaseButton>
+</root>

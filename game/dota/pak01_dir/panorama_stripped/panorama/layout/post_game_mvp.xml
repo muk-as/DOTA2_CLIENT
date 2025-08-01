@@ -1,0 +1,130 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/dotastyles.css" />
+    <include src="file://{resources}/styles/post_game_mvp.css" />
+		<include src="file://{resources}/styles/hud/versus/dota_hud_versus_scene_default_hero_scale.css" />
+  
+  </styles>
+
+  <scripts>
+    <include src="file://{resources}/scripts/util.ts" />
+    <include src="file://{resources}/scripts/sequence_actions.ts" />
+    <include src="file://{resources}/scripts/mvp_accolade_type_map.ts" />
+    <include src="file://{resources}/scripts/post_game_mvp.ts" />
+  </scripts>
+
+  <snippets>
+
+    <snippet name="HonorableMention">
+      <Panel class="HonorableMention">
+        <Panel class="HeroCenterContent" hittest="false">
+          <Panel id="HeroBackground" hittest="false">
+            <Panel class="HeroBackgroundImage"/>
+            <Panel class="HeroSelectGlow"/>
+            <Panel class="Accolades" id="Accolades"/>
+            <DOTAScenePanel id="HonorableMentionModel" onload="DOTAPostGameHonorableMentionSpawnedHero()" class="OverviewHeroRender" unit="npc_dota_hero_rubick" environment="full_body_loadout" drawbackground="0"  antialias="true" activity-modifier="PostGameIdle" particleonly="false" />
+            <Panel class="HeroImageOverlay" hittest="false"/>
+          </Panel>
+          <Label id="PlayerName"	class="OverviewHeroPlayerName" hittest="false" html="true" text="{g:dota_persona:ng:pro:user_account_id}"/>
+          <Label id="BotPlayerName" class="OverviewHeroPlayerName" hittest="false" text="{s:bot_player_name}"/>
+          <Label class="Guildname" hittest="false" html="true" text="{g:dota_guild_name:user_guild_id}"/>
+          <DOTAHeroImage id="MainHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+		  <Image id="EventLogo" scaling="cover" hittest="false"/>
+			    
+		                                                                                                                             
+		     
+		  <DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="false" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
+        </Panel>
+      </Panel>
+    </snippet>
+
+    <snippet name="MVPAccolade">
+      <Panel class="Accolade MVPAccolade">
+        <Panel class="gradient" id="gradient"/>
+        <Panel class="icon" id="icon"/>
+        <DOTAAbilityImage class="ability_icon" id="ability_icon"/>
+        <Label class="title" text="{s:title}"/>
+        <Label class="details" id="details" text="{s:details}" html="true"/>
+		<Image id="EventLogo" scaling="cover" hittest="false" />
+		<DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
+      </Panel>
+    </snippet>
+
+    <snippet name="MVP2MapRadiant">
+      <Panel>
+        <DOTAScenePanel
+          id="MVPMap"
+          map="scenes/mvp/mvp_ti10_radiant"
+          light="versus_light"
+          deferredalpha ="false"
+          renderdeferred="true"
+          particleonly="false"
+          pin-fov="vertical"
+          activity-modifier="mvp_screen"
+						/>
+      </Panel>
+    </snippet>
+    <snippet name="MVP2MapDire">
+      <Panel>
+        <DOTAScenePanel
+          id="MVPMap"
+          map="scenes/mvp/mvp_ti10_dire"
+          light="versus_light"
+          deferredalpha ="false"
+          renderdeferred="true"
+          particleonly="false"
+          pin-fov="vertical"
+          activity-modifier="mvp_screen"
+						/>
+      </Panel>
+    </snippet>
+
+  </snippets>
+
+  <DOTAPostGameMVP hittest="false">
+    <Panel id="DetailsMVPInner">
+      <Panel id="MVPMapContainer" />
+      <DOTAScenePanel id="MVPModel" particleonly="false" antialias="true"/>
+
+      <Panel id="MVPDetails">
+        <Panel id="MatchMVPCrown" />
+        <Label class="MatchMVPText" text="#DOTAMVPVote_Title"/>
+        <Label class="Username"		hittest="false" html="true" text="{g:dota_persona:ng:pro:user_account_id}"/>
+        <Panel id="GuildDetails" class="GuildDetails">
+          <DOTAGuildImage id="GuildImage" class="GuildImage" />
+          <Label class="Guildtag"		hittest="false" html="true" text="[{g:dota_guild_tag:user_guild_id}]"/>
+          <Label class="Guildname"	hittest="false" html="true" text="{g:dota_guild_name:user_guild_id}"/>
+        </Panel>
+        <Panel class="HeroAndSticker">
+          <Label class="Hero" text="{s:hero}"/>
+          <DOTAUIEconSetPreview 
+              id="StickerItem" 
+              class="HideStickerbacks" 
+              itemdef="0" 
+              stickeranim="stock_idle" 
+              renderdeferred="true" 
+              deferredalpha="true" 
+              antialias="false" 
+              particleonly="false" 
+              map="scenes/stickers/sticker_basic" 
+              camera="sticker_camera_tight" 
+              light="stickerlight"  
+              rotateonmousemove="true" 
+              rotationlimits="1.5 -1.5 1.5 -1.5" 
+              yawaxis="pitch" 
+              pitchaxis="roll" 
+              stickermap="scenes/stickers/sticker_basic_locked"
+              />
+        </Panel>
+        <Panel class="Accolades" id="Accolades"/>
+      </Panel>
+
+      <Panel id="HonorableMentionsContainer">
+		<Panel id="EventHonorableMentions"/>
+        <Label text="#DOTA_MVP_HonorableMentions" />
+        <Panel id="HonorableMentions"/>
+      </Panel>
+    </Panel>
+  </DOTAPostGameMVP>
+
+</root>

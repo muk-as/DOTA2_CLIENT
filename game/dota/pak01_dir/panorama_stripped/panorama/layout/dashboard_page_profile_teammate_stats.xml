@@ -1,0 +1,71 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_profile.css" />
+        <include src="file://{resources}/styles/dashboard_page_profile_stats_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_profile_teammate_stats.css" />
+	</styles>
+
+  <snippets>
+    <snippet name="TeammateStatsRow">
+      <Panel class="TeammateStatsRow">
+        <DOTAAvatarImage id="TeammateAvatarImage" />
+        <Label id="TeammatePersonaName" class="Teammate" text="{g:dota_persona:teammate_account_id}" html="true" />
+        <Label class="GamesCount" text="{d:teammate_games}" />
+        <Label class="WinsLosses" text="&lt;i&gt;{s:teammate_wins_minus_losses}&lt;/i&gt;" html="true" />
+        <Label class="WinRate" text="{s:teammate_win_rate}" />
+        <ProgressBar id="RatingProgressBar" min="0.0" max="1.0" value="0.7" />
+        <Label id="MostRecentMatchButton" class="MostRecentMatch" text="{T:s:teammate_recent_match_timestamp} {T:t:teammate_recent_match_timestamp}" />
+      </Panel>
+    </snippet>
+  </snippets>
+
+  <DOTAProfileTeammateStatsPage class="DashboardPage">
+                                                                                               
+      <Panel id="ShowcaseBackgroundContainer">
+          <DOTAShowcaseBackground id="ShowcaseBackground" />
+      </Panel>
+    <Panel class="TopGradient" hittest="false"/>
+    <Panel id="FrostedContainer" class="FrostedContainer" hittest="false">
+      <Panel id="UserProfileBackgroundFrosted" class="UserCustomBackground" hittest="false"/>
+    </Panel>
+    <Panel id="ProfileContainer" class="ProfileTopLevel">
+      <Panel id="Background" />
+      <Panel id="ProfileInteractable" >
+				<Panel id="Header">
+					<Panel class="HeaderNameContainer LeftRightFlow">
+						<DOTARankBadge id="RankBadge" class="RankBadge"/>
+						<DOTAAvatarImage id="AvatarImage" />
+						<Panel class="TopBottomFlow">
+							<Panel class="LeftRightFlow">
+								<DOTABattleCupVictoryIcon id="BattleCupVictoryIcon" class="BattleCupVictoryIconLarge"/>
+								<DOTAUserName id="ProfileName" />
+								<DOTAUserName id="ProfileNickname" class="ProfileNickname"/>
+							</Panel>
+							<DOTAUserRichPresence id="UserRichPresence" class="ProfileUserRichPresence" />
+						</Panel>
+					</Panel>
+				
+				</Panel>
+
+        <Panel id="TeammateStats">
+          <Panel class="TeammateStatsHeader">
+            <DOTASortHeader class="Teammate" sortby="PersonaName" text="#dota_profile_teammate_stats_header_teammate" group="TeammateStatsColumns" />
+            <DOTASortHeader class="GamesCount" sortby="GamesCount" text="#dota_profile_teammate_stats_header_games" group="TeammateStatsColumns" />
+            <DOTASortHeader class="WinsLosses" sortby="WinsLosses" text="#dota_profile_teammate_stats_header_wins_losses" group="TeammateStatsColumns" />
+            <DOTASortHeader class="WinRate" sortby="WinRate" text="#dota_profile_teammate_stats_header_win_rate" group="TeammateStatsColumns" />
+            <DOTASortHeader class="Rating" sortby="Rating" text="#dota_profile_teammate_stats_header_rating" group="TeammateStatsColumns" />
+            <DOTASortHeader class="MostRecentMatch" sortby="MostRecentMatch" text="#dota_profile_teammate_stats_header_most_recent_match" group="TeammateStatsColumns" />
+          </Panel>
+          <Panel class="LoadingSpinnerPanel">
+            <Panel class="Spinner" />
+          </Panel>
+          <Panel id="TeammateStatsTable">
+                                                      
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+	</DOTAProfileTeammateStatsPage>
+</root>

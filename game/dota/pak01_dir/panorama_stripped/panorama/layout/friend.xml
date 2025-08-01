@@ -1,0 +1,69 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/friend.css" />
+	</styles>
+
+	<DOTAFriend>
+
+		<Panel id="FavoriteStatus" class="" onactivate="DOTAFriendToggleFavorite()">
+			<Panel id="FavoriteFilled" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_RemoveFromFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+			<Panel id="FavoriteOutline" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_AddToFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+		</Panel>
+
+		<Panel id="FriendImagePanel">
+
+			<Panel id="FriendImage">
+				<Panel id="EmptyPanel" />
+				<DOTAAvatarImage id="FriendAvatarImage" lazy="true" />
+			</Panel>
+
+			<Panel id="PartyLeaderOverlay" hittest="false" />
+			<Panel id="CoachOverlay" hittest="false" />
+		</Panel>
+
+		<Panel id="FriendDetails">
+			<Panel id="FriendNameContainer">
+				<Panel id="LobbyLeaderIcon" />
+				                                                              
+				<DOTAEventCrestImage id="BPEventLevelIcon" />
+				<DOTAUserName id="FriendName"/>
+			</Panel>
+			
+			<Panel class="LeftRightFlow" hittest="false" hittestchildren="false">
+				<DOTAUserRichPresence id="FriendRichPresence" />
+			</Panel>
+			
+			<Panel id="InviteButtonContainer">
+				<Button id="PartyWithFriendButton" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Friend_Invite_To_Party );" />
+				<Panel id="PendingInvitesRadialSweepContainer" hittest="false">
+					<Panel id="PendingInvitesRadialSweep" class="RadialSweep" hittest="false" />
+				</Panel>
+			</Panel>
+
+			<Panel id="DPCBadge" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_DPC_TeamSupportLevelPopupText );">
+				<Panel id="BannerBG" />
+				<Panel class="TeamBadge">
+					<DOTAEventCrestImage id="EventLevelIcon" />
+				</Panel>
+				<Panel id="BadgeGleamContainer">
+					<Panel id="BadgeGleam" />
+				</Panel>
+			</Panel>
+
+			<Panel id="PendingFriendActions">
+				<Button class="SimpleIconButton" id="ActionAcceptFriendRequest" onactivate="DOTAAcceptFriendRequest();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_AcceptFriendRequest );">
+					<Image src="file://{images}/control_icons/check.png" />
+				</Button>
+				<Button class="SimpleIconButton" id="ActionIgnoreFriendRequest" onactivate="DOTAIgnoreFriendRequest();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_IgnoreFriendRequest );">
+					<Image src="file://{images}/control_icons/close.png" />
+				</Button>
+			</Panel>
+
+			                             
+		</Panel>
+
+		
+	</DOTAFriend>
+
+</root>

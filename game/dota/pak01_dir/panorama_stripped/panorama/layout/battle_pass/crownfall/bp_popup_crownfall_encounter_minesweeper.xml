@@ -1,0 +1,240 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minesweeper.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="MinesweeperCell">
+			<Button class="MinesweeperCell" onmouseover="ToggleStyle(CellHovered);" onmouseout="ToggleStyle(CellHovered);">
+				<Panel class="ActiveState"></Panel>
+				<Label class="MinesweeperMineCount" text="{d:adjacent_mine_count}" />
+				<Panel class="RewardTypeIconContainer">
+					<AnimatedImageStrip class="CellFlagIcon " src="file://{images}/events/crownfall/minesweeper/cellflagicon.psd" framewidth="36px" frametime="75ms" defaultframe="1" scaling="cover" />
+					<AnimatedImageStrip class="ManaPotIcon" src="file://{images}/events/crownfall/minesweeper/item_mana_icon.psd" framewidth="36px" frametime="150ms" defaultframe="3" loop="true" scaling="cover" />
+					<AnimatedImageStrip class="TimerIncreaseIcon" src="file://{images}/events/crownfall/minesweeper/item_timer_icon.psd" framewidth="36px" frametime="100ms" defaultframe="6" loop="true" loopcount="0" scaling="cover" />
+				</Panel>
+				<Panel class="ItemDropRemainingClickCountBacker" >		
+					<Label class="ItemDropRemainingClickCount" text="{d:remaining_click_count}" />		
+				</Panel>
+
+			</Button>
+		</snippet>
+
+	</snippets>
+
+	<DOTACrownfallEncounterMinesweeperPopup class="PopupPanel Minesweeper Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAMinesweeperTogglePaused()">
+		<Panel class="MainContentsWrapper">
+
+			<Panel class="MainContents">
+				<Panel class="TopGoldDash"/>
+
+				<DOTAScenePanel id="TechiesScene" unit="npc_dota_hero_techies" allowrotation="false" drawbackground="false" hittest="false" particleonly="false"/>
+				<Panel class="InnerContents">
+					<Panel class="Body">
+						<Panel class="Scene">
+							<Panel class="BoardContainer">
+								<Panel id="MinesweeperBoardBorder">
+								<Panel id="MinesweeperBoard">
+									                          
+								</Panel>
+								</Panel>
+								<Panel class="PausedScreen">
+									<Label class="PausedText MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_Paused"/>
+									<DOTACrownfallButton class="LeaveGameButton" text="#DOTA_Match3_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+								</Panel>
+								<Panel class="CooldownScreen">
+									<Label class="CooldownText MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_OnCooldown"/>
+								</Panel>
+							</Panel>
+							<Panel class="StageRow">
+								<Panel class="Dash Left"/>
+								<Label class="StageHUD MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_StageText"/>
+								<Panel class="Dash Right"/>
+							</Panel>
+							<Panel class="HUDIconsRow">
+								<Panel class="FlaggedContainer">
+									<Image class="FlaggedIcon" src="file://{images}/events/crownfall/minesweeper/flaggedicon.psd" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+									<Label class="FlaggedHUD MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_FlaggedText"/>
+								</Panel>
+								<Panel class="TimerContainer">
+									<Image class="TimerIcon" src="file://{images}/events/crownfall/minesweeper/timericon.psd" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+									<Label class="TimerHUD MonoNumbersFont" text="{s:time_elapsed}"/>
+								</Panel>
+								<Panel class="LogoContainer">
+									<Image class="LogoIcon" src="file://{images}/events/crownfall/minesweeper/dota_logo_minesweeper.psd" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+								</Panel>
+						</Panel>
+
+
+							<Panel class="AbilityRow">
+								<Button class="Ability" onactivate="DOTAMinesweeperToggleScapegoatMode()" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Minesweeper_UseIllusion )" onmouseout="UIHideTextTooltip()">
+									<Image class="Icon" src="file://{images}/events/crownfall/minesweeper/echo_slash.png" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+									<Label class="ManaCost MonoNumbersFont" text="50"/>
+									<Label class="Shortkey MonoNumbersFont" text="1"/>
+								</Button>
+								<Panel id="ManaContainer" hittest="false" >
+									<ProgressBar id="ManaProgress" >
+										<Panel id="ManaProgress_Left" class="ProgressBarLeft">
+											<Panel class="DotaSceneContainer">
+												<DOTAScenePanel id="ManaBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+											</Panel>
+										</Panel>
+									</ProgressBar>
+									<Label id="ManaLabel" class="MonoNumbersFont" hittest="false" text="{d:current_mana} / {d:total_mana}"/>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="OverlayHUD" hittest="false" >
+							<Panel class="TopBarHUD" hittest="false">
+								<Button class="PrintBoardButton" onactivate="DOTAPrintDebugBoard()">
+									<Label text="Debug Print Board" />
+								</Button>
+								<Label class="DebugCellsRevealed" text="{d:cells_revealed}"/>
+							</Panel>
+							<Panel class="CenterHUD" hittest="false">
+								<Panel class="CenterHUDBody" hittest="false">
+									<Label class="MessageHUD MonoNumbersFont" text="{s:stage_message_text}"/>
+									<Panel class="ScoringPanel">
+										<Panel class="ScoringLine">
+											<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_ScoringCellsRevealed"/>
+											<Label class="ScoringValue MonoNumbersFont" text="{d:cells_revealed_score}"/>
+										</Panel>
+										<Panel class="ScoringLine">
+											<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_ScoringStagesCleared"/>
+											<Label class="ScoringValue MonoNumbersFont" text="{d:stages_cleared_score}"/>
+										</Panel>
+										<Panel class="ScoringLine TimeRemainingScore">
+											<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_ScoringTimeRemaining"/>
+											<Label class="ScoringValue MonoNumbersFont" text="{d:time_remaining_score}"/>
+										</Panel>
+										<Panel class="ScoringLine FinalScore">
+											<Label class="ScoringTitle FinalScore MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_ScoringTotal"/>
+											<Label class="ScoringValue FinalScore MonoNumbersFont" text="{d:total_score}"/>
+										</Panel>
+									</Panel>
+								</Panel>
+								<DOTACrownfallButton class="ContinueButton" text="#DOTA_Crownfall_Minesweeper_Continue" onactivate="DOTAMinesweeperStageStart()" />
+								<DOTACrownfallButton class="MainMenuButton" text="#DOTA_Crownfall_Minesweeper_PlayAgain" onactivate="DOTAMinesweeperShowMainMenuScreen()" />
+							</Panel>
+							<Panel class="HelpHUD" hittest="false">
+								<Panel class="HelpHUDBody" hittest="false">
+									<Panel class="Column1">
+										<DOTACrownfallEncounterMinesweeperHelp class="HowToPlaySection"/>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+
+						<Panel class="MainMenu">
+							<Panel class="Header">
+								<Label class="Subtitle" text="#DOTA_Crownfall_Minesweeper_GameDesc" />
+							</Panel>
+
+							<Panel class="ColumnContainer">
+								<Panel class="Column1">
+									<DOTACrownfallEncounterMinesweeperHelp class="HowToPlaySection"/>
+								</Panel>
+								<Panel class="Column2">
+									<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+										<Panel class="LeaderListHeader">
+											<Label class="ScoreBoardType" text="#DOTA_Crownfall_Minesweeper_Leaderboard_HeaderFriends"/>
+											<Label class="Score" text="#DOTA_Crownfall_Minesweeper_Leaderboard_Score"/>
+										</Panel>
+										<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+									</Panel>
+									<Panel class="ScoringSection" >
+										<Label class="LabelLarge GoldText TextShadowLarge" text="#DOTA_Crownfall_Minesweeper_Scoring"/>
+										<Panel id="ScoreList" class="ScoringSection">
+											<Panel class="ScoringLine">
+												<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_StageClear"/>
+												<Label class="ScoringValue MonoNumbersFont" text="{d:score_per_stages_cleared}"/>
+											</Panel>
+											<Panel class="ScoringLine">
+												<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_CellReveal"/>
+												<Label class="ScoringValue MonoNumbersFont" text="{d:score_per_cell_revealed}"/>
+											</Panel>
+											<Panel class="ScoringLine TimeRemainingScore">
+												<Label class="ScoringTitle MonoNumbersFont" text="#DOTA_Crownfall_Minesweeper_SecondsRemaining"/>
+												<Label class="ScoringValue MonoNumbersFont" text="{d:score_per_seconds_remaining}"/>
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="RewardsSection" >
+										<Label class="LabelLarge GoldText TextShadowLarge" text="#DOTA_Crownfall_Minesweeper_Rewards"/>
+										<Panel id="RewardsList" class="RewardsSection">
+											                            
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="BottomButtons">
+								<DOTACrownfallButton class="StartGameButton " text="#DOTA_Crownfall_Minesweeper_Play" onactivate="DOTAEncounterMinigameStart()" />
+								<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterMinigameExit()" />
+							</Panel>
+
+						</Panel>
+						<Image class="EncounterGraphic English" src="file://{images}/events/crownfall/minesweeper/ss_logo_en.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="EncounterGraphic Chinese" src="file://{images}/events/crownfall/minesweeper/ss_logo_cn.png" scaling="stretch-to-fit-preserve-aspect" />
+
+						<Panel class ="MissingDataSpinnerContainer" hittest="false">
+							<Panel class="Spinner MissingDataSpinner" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+				
+				<Panel class="VisualNovelOuterContainer">
+					<Panel class="VisualNovelBackground"/>
+					<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+						<DOTACrownfallVisualNovel id="VisualNovel" />
+					</Panel>
+				</Panel>
+
+				<Panel id="CloseButtonContainer">
+					<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+					<Panel class="CloseButtonBackgroundHover" hittest="false" />
+					<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+					<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+				</Panel>
+				<DOTAMinesweeperScenePanel id="FXScenePanel" hittest="false" particleonly="false" map="maps/scenes/crownfall/minesweeper_fx.vpk" camera="fx_camera" />
+			</Panel>
+
+			<Panel class="PauseHint" onactivate="DOTAMinesweeperTogglePaused()">
+				<Panel class="PauseLabelContainer" hittest="false">
+					<Label text="#DOTA_Crownfall_Minesweeper_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+					<Label text="#DOTA_Crownfall_Minesweeper_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlKey">
+					<Label class="KeyText" text="F9" />
+				</Panel>
+			</Panel>
+
+			<Panel class="HelpHint" onactivate="DOTAMinesweeperToggleHelpPopup();">
+				<Panel class="HelpLabelContainer" hittest="false">
+					<Label text="#DOTA_Crownfall_Minesweeper_Help" class="PauseLabel LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlKey">
+					<Label class="KeyText" text="F1" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTACrownfallEncounterMinesweeperPopup>
+</root>

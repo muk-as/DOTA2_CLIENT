@@ -1,0 +1,355 @@
+                                     
+@define innerDiameter: 70px;
+@define optionDistanceFromCenter: 120px;
+@define smallOptionDistanceFromCenter: 125px;
+
+                                                                       
+@define minimapInnerDiameter: 80px;
+@define minimapOptionDistanceFromCenter: 117px;
+@define minimapSmallOptionDistanceFromCenter: 125px;
+
+@define outerDiameter: 200px;
+@define textOffset: 310px;
+
+@define minimapScale: 50%;
+@define mouseLineMaxDiameter: 400px;
+
+DOTAPingWheel
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	                                                             
+	                                                                  
+	                       
+	  
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-delay: 0.05s;
+	&.Hidden {
+		visibility: visible;
+		opacity: 0;
+		transition-duration: 0s;
+		transition-delay: 0s;
+		                       
+		.BackgroundLayers {
+			visibility: collapse;
+		}
+		.PingWheelOption {
+			visibility: collapse;
+		}
+		.PingWheelOption.Highlighted {
+			visibility: visible;
+		}
+		#MouseLineCanvas {
+			visibility: collapse;
+		}
+	}
+	&.Hidden.SomethingHighlighted {
+		visibility: visible;
+		opacity: 0;
+		transition-duration: 0s;
+		#Root .NameContainer {
+			visibility: collapse;
+			opacity: 0;
+		}
+	}
+	&.MiniMap {
+		ui-scale: minimapScale;
+		.PingWheelOption
+		{
+			width: 45px;
+			height: 45px;
+			                                                                   
+			opacity: 0.6;
+			saturation: 0.8;
+		}
+		.Double .PingWheelOption {
+			width: 32px;
+			height: 32px;
+		}
+		.NameContainer {
+			ui-scale: 150%;
+		}
+	  
+		                   
+			                                                                                       
+		 
+		         
+			                                                                                      
+		 
+		               
+			                                                                                        
+		 
+		              
+			                                                                                            
+		 
+		            
+			                                                                                            
+		 
+		           
+			                                                                                         
+		 
+		                  
+			                                                                                                 
+		 
+		          
+			                                                                              
+		 
+		              
+		       
+			                     
+		 
+	  
+	}
+	.BackgroundLayers {
+		background-color: none;
+		.Image {
+			width: 100%;
+			height: 100%;
+		}
+		.Direction {
+			.ThinSliceBG.Left {
+				transform: rotateZ( -45deg );
+			}
+			.ThickSliceBG, .ThinSliceBG, .Separator {
+				visibility: collapse;
+			}
+			&.DoubleOption {
+				.Separator {
+					visibility: visible;
+				}
+			}
+			&.SingleOption.Highlighted {
+				.ThickSliceBG {
+					visibility: visible;
+					opacity: 0.9;
+				}
+			}
+			&.DoubleOption.ThinLeftHighlighted {
+				.ThinSliceBG.Left {
+					visibility: visible;
+					opacity: 0.9;
+				}
+			}
+			&.DoubleOption.ThinRightHighlighted {
+				.ThinSliceBG.Right {
+					visibility: visible;
+					opacity: 0.9;
+				}
+			}
+		}
+		.Direction.Top {
+			transform: rotateZ( -90deg );
+		}
+		.Direction.Left {
+			transform: rotateZ( 180deg );
+		}
+		.Direction.Bottom {
+			transform: rotateZ( 90deg );
+			                                                                                                     
+			clip: radial( 50% 50%, 46deg, 88deg);
+		}
+	}
+	&.TopHighlighted .Direction.Top {
+		visibility: visible;
+	}
+	&.LeftHighlighted .Direction.Left {
+		visibility: visible;
+	}
+	&.RightHighlighted .Direction.Right {
+		visibility: visible;
+	}
+	&.BottomHighlighted .Direction.Bottom {
+		visibility: visible;
+	}
+	.PingWheelOption.Default {
+		visibility: collapse;
+	}
+	&.SomethingHighlighted {
+		.Image.CenterBGPressed {
+			opacity: 0;
+		}
+		.Image.CenterBG {
+			visibility: visible;
+		}
+	}
+}
+
+.Image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+.Edge {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_edge.png" );
+	opacity: 0.5;
+}
+.ThickSliceBG {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_slice_hover.png" );
+}
+.ThinSliceBG {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_slicethin_hover.png" );
+}
+.CircleBackground {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_background.png" );
+	opacity: 0.4;
+}
+.CircleBottom {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_background_bottomlayer.png" );
+	opacity: 0.7;
+}
+.CenterBG {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_middlebutton.png" );
+	opacity: 0.5;
+}
+.CenterBGPressed {
+	opacity: 0.9;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_middlebutton_pressed.png" );
+}
+.CenterX {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_x.png" );
+}
+.LinesX {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_backlines.png" );
+	opacity: 0.3;
+}
+.Separator {
+	background-image: url( "file://{images}/hud/ping_wheel/large/minimap_wheel_backline_single.png" );
+	opacity: 0.6;
+}
+
+
+#MouseLineCanvas {
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-mask: url( "file://{images}/masks/softedge_circle.png" );
+}
+
+#Root
+{
+	horizontal-align: center;
+	vertical-align: center;
+	overflow:noclip;
+	width: mouseLineMaxDiameter;
+	height: mouseLineMaxDiameter;
+	.CircleContainer {
+		horizontal-align: center;
+		vertical-align: center;
+		width: outerDiameter;
+		height: outerDiameter;
+		border-radius: 50%;
+	} 
+	
+	.NameContainer {
+		margin-top: textOffset;
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 0.1s;
+		transition-delay: 0.1s;
+		horizontal-align: center;
+		height: 50px;
+		.PingName {
+			ignore-parent-flow: true;
+			vertical-align: top;
+			horizontal-align: center;
+			color: white;
+			font-weight: bold;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: 3px 3px 3px black;
+			text-overflow: shrink;
+		}
+	}
+}
+.SomethingHighlighted #Root .NameContainer {
+	opacity: 1;
+}
+
+.BackgroundLayers {
+	width: 100%;
+	height: 100%;
+   	background-color: gradient( radial, 50% 50%, 0% 0%, outerDiameter outerDiameter, from( #000000ff ), to( #aaa0 ) ); 
+	Image {
+		visibility: collapse;
+	}
+	.Direction {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.DirectionContainer {
+	width: 100%;
+	height: 100%;
+	flow-children: none;
+}
+.PingWheelOption {
+	ignore-parent-flow: true;
+	width: 40px;
+	height: 40px;
+	vertical-align: center;
+	horizontal-align: center;
+	opacity: 0.5;
+	saturation: 0.7;
+	z-index: 2;
+	&.Highlighted {
+		opacity: 1;
+		saturation: 1;
+	}
+	&.Default {
+		width: innerDiameter;
+		height: innerDiameter;
+		border-radius: 50%;
+		vertical-align: center;
+		horizontal-align: center;
+	
+		#IconImage {
+			horizontal-align: center;
+			vertical-align: center;
+		}
+	}
+}
+.Double .PingWheelOption {
+	width: 35px;
+	height: 35px;
+}
+
+.PingWheelOption.Highlighted
+{
+	opacity: 1;
+	saturation: 1;
+}
+
+  
+                 
+ 
+	                                                                                                    
+ 
+                   
+ 
+	                                                                                                    
+ 
+                
+ 
+	                                                                                                    
+ 
+                  
+ 
+	                                                                                                    
+ 
+                        
+ 
+   	                                                                                                     
+   

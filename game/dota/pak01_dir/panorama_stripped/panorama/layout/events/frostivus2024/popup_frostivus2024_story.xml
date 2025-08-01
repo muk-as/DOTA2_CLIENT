@@ -1,0 +1,56 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/frontpage_shared.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/events/frostivus2024/frostivus2024_story.css" />
+	</styles>
+
+	<PopupFrostivus2024Story class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Image class="BookBackground" src="file://{images}/events/frostivus/2024/open_book.psd" scaling="contain" onactivate="DOTAFrostivus2024StoryTurnPage()"/>
+
+		<Panel class="MainContents">
+
+			<Panel class="NonMovingPages">
+				<Panel class="Page PageA" >
+					<Image class="PageBackground" src="file://{images}/events/frostivus/2024/page_left.psd" scaling="contain" />
+					<Panel class="TopOfPage">
+						<Panel class="Left Dash"/>
+						<Label text="{d:curr_page}"/>
+						<Panel class="Right Dash"/>
+					</Panel>
+					<Panel class="TextContainer" id="MainTextContainer">
+						<DOTATypewriterText class="Frostivus2024" id="PageAText" characterdelay="0.03" text="Page A" />
+					</Panel>
+					<Label class="TheEnd" text="#DOTA_Frostivus2024_Story_TheEnd" />
+					<TextButton class="LastPageCloseButton" text="#UI_CLOSE" onactivate="UIPopupButtonClicked()"/>
+				</Panel>
+				<Panel class="Page PageD">
+					<Image class="PageBackground" src="file://{images}/events/frostivus/2024/page_right.psd" scaling="contain" />
+					<Panel class="TopOfPage">
+						<Label text="#DOTA_Frostivus2024_Story_MaidensFable"/>
+					</Panel>
+					<Image id="PageDImage" class="StoryImage" scaling="contain" />
+				</Panel>
+			</Panel>
+			<Panel class="Page PageB" >
+				<Image class="PageBackground" src="file://{images}/events/frostivus/2024/page_right.psd" scaling="contain" />
+				<Panel class="TopOfPage">
+					<Label text="#DOTA_Frostivus2024_Story_MaidensFable"/>
+				</Panel>
+				<Image id="PageBImage" class="StoryImage"  scaling="contain" />
+			</Panel>
+			<Panel class="Page PageC" >
+				<Image class="PageBackground" src="file://{images}/events/frostivus/2024/page_left.psd" scaling="contain" />
+				<Panel class="TopOfPage">
+					<Panel class="Left Dash"/>
+					<Label text="{d:next_page}"/>
+					<Panel class="Right Dash"/>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="DebugContents">
+			<TextButton text="Restart Text" onactivate="DOTAFrostivus2024DebugRestart()" />
+		</Panel>
+	</PopupFrostivus2024Story>
+</root>

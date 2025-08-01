@@ -1,0 +1,29 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_dotalabs_feedback.css" />
+	</styles>
+
+	<Panel class="PopupPanel Hidden LabsFeedback" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+    <Panel class="WelcomeTitleContainer">
+			<Label class="WelcomeTitle" text="#DOTA_Labs_Feedback_Header"/>
+		</Panel>
+		<Panel id="MainBody">
+			<Panel class="MainContainer">
+				<Panel class="Content">
+					<Label html="true" text="#DOTA_Labs_Feedback_Description" />
+					<TextEntry id="FeedbackTextEntry" html="true" multiline="true" placeholder="#DOTA_Labs_Feedback_Placeholder" />
+					<Button class="ButtonBevel" id="FeedbackSubmitButton" onactivate="UIPopupButtonClicked( DOTALabsFeedbackPopupSubmit(0) )" >
+						<Label text="#DOTA_Labs_Feedback_Submit"/>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

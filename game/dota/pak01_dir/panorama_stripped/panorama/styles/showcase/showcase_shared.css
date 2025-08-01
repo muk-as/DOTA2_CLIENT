@@ -1,0 +1,213 @@
+                                
+
+
+
+.EditButton {
+	width: 36px;
+	height: 36px;
+	margin-right: 8px;
+	vertical-align: middle;
+
+	background-image: none;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	tooltip-position: top;
+
+	transition-property: brightness;
+	transition-duration: 0.2s;
+
+	wash-color: #ccc;
+
+	&:hover {
+		brightness: 2.0;
+	}
+	&:active {
+		brightness: 1.5;
+	}
+
+	&:disabled {
+		brightness: 0.2;
+	}
+
+	Label {
+		color: white;
+		vertical-align: middle;
+		horizontal-align: center;
+		text-align: center;
+		width: 100%;
+		font-size: 20px;
+		padding: 0px 2px;
+		text-overflow: shrink;
+	}
+}
+
+#Contents.ShowcaseItemMoreOptionsPopupContents
+{
+	flow-children: down;
+	background-color: #080A0C;
+	min-width: 200px;
+	max-height: 420px;
+	border-radius: 3px; 
+	padding: 2px;
+	width: 320px;
+	opacity: 0.95;
+
+	.MoreOptionsLabel {
+		padding-bottom: 8px;
+	}
+
+	.Dash {
+		width: 100%;
+		height: 1px;
+		background-color: white;
+		opacity: 0.04;
+		margin: 10px 0px;
+	}
+
+	.RotationSliderContainer,
+	.ZoomSliderContainer {
+		flow-children: right;
+	}
+
+	.RotationSliderContainer,
+	.ZoomSliderContainer  {
+		margin-top: 4px;
+	}
+
+	.AnimationPickerContainer {
+		flow-children: down;
+		margin-top: 4px;
+		
+		DropDown {
+			margin-top: 4px;
+		}
+	}
+
+	.OptionContainer {
+		width: 100%;
+	}
+	
+	.OptionIcon {
+		margin-right: 8px;
+		vertical-align: center;
+		wash-color: LightGrey;
+	}
+
+	#ContextMenuBody.BottomArrowVisible & {
+		margin-bottom: 5px;
+	}
+}
+
+#ShowcaseItemMoreOptions {
+	flow-children: down;
+	width: 100%;
+	overflow: squish scroll;
+	padding: 8px;
+
+	#RotationSlider,
+	#ZoomSlider {
+		margin-bottom: 0px;
+	}
+}
+
+#LayerItemImage {
+    vertical-align: center;
+    width: 20px;
+    height: 20px;
+	margin-top: 2px;
+    wash-color: LighterGrey;
+    img-shadow: 0px 1px 4px black;
+
+    transition-property: wash-color;
+    transition-duration: 0.1s;
+	margin-right: 6px;
+}
+
+#ReportControls {
+	                    
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 140px;
+	margin-right: 60px;
+	flow-children: right;
+	visibility: collapse;
+
+	.ViewingOther & {
+		visibility: visible;
+	}
+
+	Button,
+	TextButton {
+		margin-left: 6px;
+		tooltip-position: bottom;
+	}
+
+	Button {
+		                          
+		                         
+	}
+
+	#ReportButton {
+		Image {
+			wash-color: loserRed;
+		}
+	}
+}
+
+@keyframes 'UnsavedChangesGlow' {
+    0% {
+		brightness: 1.0;
+    }
+    100% {
+		brightness: 3.0;
+    }
+}
+
+.SaveChangesButton {
+	wash-color: #808080;
+
+	.ShowcaseModified & {
+		wash-color: #FFFFFF;
+		brightness: 2.0;
+		                                     
+		                           
+		                                      
+		                                 
+	}
+}
+
+#UndoButton {
+	visibility: collapse;
+}
+
+.IsEditing.CanUndo #UndoButton {
+	visibility: visible;
+}
+
+@keyframes 'PendingApprovalLabelGlow' {
+    0% {
+		brightness: 1.0;
+    }
+    100% {
+		brightness: 3.0;
+    }
+}
+
+#PendingApprovalLabel {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #d1a353;
+	animation-name: PendingApprovalLabelGlow;
+	animation-duration: 1.0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	visibility: collapse;
+
+	.PendingApproval.ViewingSelf:not(.IsEditing) & {
+		.IsSteamChina & {
+			visibility: visible;
+		}
+	}
+}

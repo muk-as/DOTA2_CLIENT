@@ -1,0 +1,198 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_fishing.css" />
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/battle_pass/crownfall/bp_popup_crownfall_encounter_fishing.js" />
+	</scripts>
+	
+	<snippets>
+		<snippet name="CatchHistoryRow">
+			<Panel class="CatchHistoryRow">
+				
+			</Panel>
+		</snippet>
+
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+
+		<snippet name = "FishCatchScoreRow">
+			<Panel class="FishCatchScoreRow">
+				<Label class="ScoreName" text="{s:score_row_name}:" />
+				<Label class="BonusLabel" text="#DOTA_Crownfall_Fishing_Hud_Score_Bonus" />
+				<Label class="ScoreDesc" text="{s:score_row_desc}" />
+				
+				<Label class="ScoreValue" text="{s:score_row_value} "/>
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow"> 
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel FishingGame Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterMinigameExit()">
+		<Panel class="MainContents">
+			<Panel class="TopGoldDash"/>
+			
+			<Panel class="InnerContents">
+				<Panel class="Body">
+					<Panel class="Scene">
+						<DOTAScenePanel id="FishingScene" camera="side_character_camera" light="global_light" live-mode="on" renderdeferred="true" renderwaterreflections="true" deferredalpha="true" antialias="true" particleonly="false"/>
+						<Panel class ="OverlayHUD" hittest="false" >
+							<Panel class="LureCount" hittest="false" hittestchildren="false">
+								<Image class="LureIcon" src="file://{images}/events/crownfall/fishing/icon_lurecount.png" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="LureCountText" text="{d:lure_count}" />
+							</Panel>
+							<Panel class="OuterBar BarCast" hittest="false" hittestchildren="false" >
+								<Panel id ="FishCastStrength" class="ProgressBar" >
+									<Panel id="FishCastStrengthProgress"></Panel>
+								</Panel>
+								<Image class="Icon" src="file://{images}/events/crownfall/fishing/icon_rodcast.png" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+
+							<Panel class="OuterBar BarReel" hittest="false" hittestchildren="false">
+								<Panel id="FishBarBackground" class="ProgressBar">
+									<Panel id="FishCatchBar" ></Panel>
+									<Image id="Fish" src="file://{images}/events/crownfall/fishing/icon_fishhold.png" scaling="stretch-to-fit-preserve-aspect"></Image>
+								</Panel>
+								<Image class="Icon" src="file://{images}/events/crownfall/fishing/icon_fishhook.png" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							
+							<Panel class="ProgressMeterContainer" hittest="false" hittestchildren="false">
+								<Panel class="RadialContainer">
+									<Panel id="ProgressMeterRadial" />
+								</Panel>
+								                                                                                                                                      
+							</Panel>
+
+							<Panel class="TipContainer" hittest="false" hittestchildren="false">
+								<Panel class="TipIconContainer" >
+									<Image class="HoldButtonIcon" src="file://{images}/events/crownfall/fishing/icon_mousehold.png" scaling="stretch-to-fit-preserve-aspect" />
+									<Image class="ClickButtonIcon" src="file://{images}/events/crownfall/fishing/icon_mouseclick.png" scaling="stretch-to-fit-preserve-aspect" />
+								</Panel>
+								<Panel class="TipTextContainer">
+									<Label class="ChargeTipText"	text="#DOTA_Crownfall_Fishing_Hud_Tip_Charge" />
+									<Label class="AimTipText"	text="#DOTA_Crownfall_Fishing_Hud_Tip_Aim" />
+									<Label class="ReelTipText"	text="#DOTA_Crownfall_Fishing_Hud_Tip_Reel" />
+								</Panel>
+							</Panel>
+							<Panel class="ScoreSection">
+								<Panel class="Header" hittestchildren="false">
+									<Label class="Title" text="{s:game_title}" />
+									<Image class="DividerGraphic" src="file://{images}/events/crownfall/fishing/divider_graphic_minigame.png" scaling="stretch-to-fit-preserve-aspect" />
+								</Panel>
+								<Panel class="Main" hittestchildren="false">
+									<Label class="ScoreLabel" text="#DOTA_Crownfall_Fishing_Hud_CurrentScore"/>
+									<Panel class="CurrentScoreValueContainer">
+										<Label class="ScoreValue" text="{d:current_score}" />
+										<Label class="RemainingScore" text="+{d:remaining_score}" />
+									</Panel>
+									<Panel class="ScoreSeparator" />
+									<Label class="HighScoreLabelContainer">
+										<Label class="HighScoreLabel" text="#DOTA_Crownfall_Fishing_Hud_HighScore"/>
+										<Label class="HighScoreNewLabel" text="#DOTA_Crownfall_Fishing_Hud_HighScoreNew"/>
+									</Label>
+									<Panel class="HighScoreValueContainer">
+										<Label class="HighScoreValue" text="{d:high_score}"/>
+									</Panel>
+									<Panel class="NextRewardContainer">
+										<Label class="NextRewardLabel" text="#DOTA_Crownfall_Fishing_Hud_NextReward" />
+										<Panel class="NextRewardTokens">
+											<DOTACrownfallToken tooltipstyle="nameonly" class="Hidden" id="NextRewardToken0" />
+											<DOTACrownfallToken tooltipstyle="nameonly" class="Hidden" id="NextRewardToken1" />
+											<DOTACrownfallToken tooltipstyle="nameonly" class="Hidden" id="NextRewardToken2" />
+											<DOTACrownfallToken tooltipstyle="nameonly" class="Hidden" id="NextRewardToken3" />
+											<DOTACrownfallToken tooltipstyle="nameonly" class="Hidden" id="NextRewardToken4" />
+											<Label class="NextRewardScore" text="{d:next_reward_points}"/>
+										</Panel>
+									</Panel>
+								</Panel>
+								                                      
+									                                                                                                                                                    
+								           
+							</Panel>
+							<Panel class="RewardClaimedToast">
+								<Label class="RewardClaimedToastText" text="#DOTA_Crownfall_Fishing_Hud_RewardEarned" />
+							</Panel>
+							<Panel id="FishCatchStats" class="FishCatchStats" hittest="false" hittestchildren="false">
+								<Label class="FishName" text="{s:fish_name}" />
+								<Panel id="FishCatchScoreRows" class="FishCatchScoreRows">
+									                            
+								</Panel>
+								<Panel id ="FishCatchFinalScoreRow" class="FishCatchScoreTotalContainer">
+									<Label class="TotalText" text="#DOTA_Crownfall_Fishing_Hud_Score_Total" />
+									<Panel class="TotalFishScoreContainer ScoreContainer">
+										<Label class="TotalFishScore" text="{d:total_fish_score}"/>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="VisualNovelOuterContainer">
+						<Panel class="VisualNovelBackground"/>
+						<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+							<DOTACrownfallVisualNovel id="VisualNovel" />
+						</Panel>
+					</Panel>
+					<Panel class="MainMenu">
+						<Panel class="Header">
+							<Image class="EncounterGraphic" src="file://{images}/events/crownfall/fishing/hed_graphic_minigame.png" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="Title" text="{s:game_title}" />
+						</Panel>
+
+						<Panel class="ColumnContainer">
+							<Panel class="Column1">
+								<Panel class="HowToPlaySection" >
+									<Label class="HowToPlayTitle" text="#DOTA_Crownfall_Fishing_HowToPlay"/>
+									<Label class="HowToPlayDescription" html="true" text="{s:how_to_play}"/>
+								</Panel>
+								<Label class="RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards"/>
+								<Panel id="RewardsList" class="RewardsSection">
+									                             
+								</Panel>
+							</Panel>
+							<Panel class="Column2">
+								<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+									<Panel class="LeaderListHeader">
+										<Label class="ScoreBoardType" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+										<Label class="Score" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+									</Panel>
+									<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="BottomButtons">
+						<DOTACrownfallButton class="StartGameButton " text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterMinigameStart()" />
+						<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterMinigameExit()" />
+						</Panel>
+
+					</Panel>
+					<Panel class ="MissingDataSpinnerContainer" hittest="false">
+						<Panel class="Spinner MissingDataSpinner" hittest="false" />
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+				<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+			</Panel>
+		</Panel>
+
+		                                                                                                                                                                                                                                         
+
+	</Panel>
+</root>

@@ -1,0 +1,94 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_fantasycraft_tablet.css" />
+		<include src="file://{resources}/styles/battle_pass/international2023/bp_international2023_shared.css" />
+	</styles>
+
+	<snippets>
+		
+		<snippet name="GemSnippet">
+			<Panel class="FantasyGem">
+
+				<Panel class="GemStatIcon" />
+
+				<Panel class="GemContents">
+					<Panel class="Background" />
+					<Panel class="Details">
+						<Panel class="Header">
+							<Label id="GemStatLabel" class="GemStat" text="{s:gem_stat}" onmouseout="DOTAHideTextTooltip()" />
+							<Label class="GemTotal" text="{d:total_stat_value}%" onmouseover="DOTAShowTextTooltip( #DOTA_FantasyCraft_TotalStatBonusDesc )" onmouseout="DOTAHideTextTooltip()" />
+						</Panel>
+						<Panel class="Body">
+							<Panel id="GemQuality" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" text="{s:gem_quality}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" text="+{d:quality_quality_amount}%" />
+							</Panel>
+							<Panel id="GemShape" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" id="GemShapeName" text="{s:gem_shape}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" id="GemShapeAmount" text="{s:shape_quality_amount}" />
+							</Panel>
+							<Panel id="Score" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemScore" text="{s:gem_score}"/>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+			</Panel>
+		</snippet>
+		
+		<snippet name="FantasyOperationSnippet">
+			<Panel class="FantasyOperation">
+				<TextButton class="PopupButton FantasyOperationButton" id="FantasyOperationButton" text="{s:operation_text}" onmouseout="FantasyCraftRemoveOperationHighlights()"/>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTABPInternational2023FantasyCraftTablet>
+		<AsyncDataPanel class="TabletDetails" state="{d:tablet_state}" loading-text="" error-text="">
+			<Panel class="AsyncSuccessContainer">	
+				<Panel class="Ornament Top" />
+				<Panel class="FantasyTablet">
+					<Panel class="PlayerAndImages">
+						<Panel class="PlayerImages">
+							<Image id="TeamLogo" scaling="contain" />
+							<DOTAPlayerImage id="Headshot" scaling="stretch-to-fit-preserve-aspect">
+								<Panel hittest="true" id="InvalidPlayerAlert" onmouseover="$( '#InvalidPlayerAlert' ).AddClass( 'ViewedAlert' );">
+									<Panel class="InfoIcon Shadow" />
+									<Panel class="InfoIcon" onmouseover="DOTAShowTextTooltip(#DOTA_FantasyCraft_InvalidPlayer)" onmouseout="DOTAHideTextTooltip()" />
+									<Panel id="IconPulse" class="HeroGameplayUpdatePulse" />
+								</Panel>
+							</DOTAPlayerImage>
+						</Panel>
+						<Panel class="RoleAndName">
+							<Label class="RoleName" text="{s:tablet_role}" />
+							<Panel class="PlayerNameAndTitle">
+								<Label id="PlayerNameAndTitleLabel" text="#DOTA_FantasyCraft_Player" html="true" onmouseout="DOTAHideFantasyCraftPlayerTooltip()" />
+							</Panel>							
+							<Button id="SelectTitleButton" class="CraftingOnly ButtonPrimary Purple">
+								<Label text="#DOTA_FantasyCraft_SelectTitles" />
+							</Button>
+						</Panel>
+						<Button id="SelectPlayerButton" class="CraftingOnly ButtonPrimary Purple">
+							<Label text="#DOTA_FantasyCraft_SelectPlayer" />
+						</Button>
+					</Panel>
+					
+					<Panel class="TabletBorder" hittest="false" />
+				</Panel>
+				<Panel class="Ornament Bottom" />
+				<Panel class="FantasyGemHolderContainer">
+					<Panel class="WarbannerBackground"/>
+					<Panel class="WarbannerBorder"/>
+					<Panel id="FantasyGemHolder">
+						                              
+					</Panel>
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+	</DOTABPInternational2023FantasyCraftTablet>
+</root>

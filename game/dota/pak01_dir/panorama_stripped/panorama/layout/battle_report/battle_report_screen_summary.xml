@@ -1,0 +1,134 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_report/battle_report_shared.css" />
+		<include src="file://{resources}/styles/battle_report/battle_report_screen_summary.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="SingleMedal">
+			<Panel class="SingleMedal" />
+		</snippet>
+
+		<snippet name="RoleHero">
+			<Panel class="RoleHero">
+				<DOTAHeroImage id="HeroImage" />
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<DOTABattleReportScreenSummary>
+
+		<Panel class="ReportScreenTitleContainer">
+			<Label class="ReportScreenName" text="#DOTA_BattleReport_FinalResults" />
+			<Label class="ReportScreenTitle" text="#DOTA_BattleReport_Summary" />
+			<Label class="ReportDates" text="{s:report_date}" />
+		</Panel>
+
+		<Panel class="HighlightsSummary">
+			
+			<Panel id="HeroSummary" class="HighlightSummary">
+				<Panel class="HighlightSummaryLeft">
+					<DOTAUIEconSetPreview id="HeroModel" />
+				</Panel>
+				<Panel class="HighlightSummaryDetails">
+					<Label class="HighlightSummaryTitle" text="#DOTA_BattleReport_BestPerformingHero" />
+					<Label class="HighlightSummaryName" text="{s:featured_hero_name}" />
+					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
+					<Panel id="HeroMedals" class="MedalCounts">
+						<Panel class="SingleMedal Bronze">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Silver">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:silver_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Gold">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel id="RoleSummary" class="HighlightSummary">
+				<Panel class="HighlightSummaryLeft">
+					<Panel class="RoleBackground">
+						<Panel class="RoleIcon" />
+					</Panel>
+					<Panel id="RoleHeroesList" />
+				</Panel>
+				<Panel class="HighlightSummaryDetails">
+					<Label class="HighlightSummaryTitle" text="#DOTA_BattleReport_BestPerformingRole" />
+					<Label class="HighlightSummaryName" text="{s:featured_role_name}" />
+					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
+					<Panel id="RoleMedals" class="MedalCounts">
+						<Panel class="SingleMedal Bronze">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Silver">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:silver_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Gold">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel id="GeneralSummary" class="HighlightSummary">
+				<Panel class="HighlightSummaryLeft">
+					<DOTAAvatarImage id="GeneralAvatarImage" />
+				</Panel>
+				<Panel class="HighlightSummaryDetails">
+					<Label class="HighlightSummaryTitle" text="#DOTA_BattleReportNav_General" />
+					<Label class="HighlightSummaryName" text="#DOTA_BattleReport_OverallPerformance" />
+					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
+					<Panel id="GeneralMedals" class="MedalCounts">
+						<Panel class="SingleMedal Bronze">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Silver">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:silver_medal_count}" />
+						</Panel>
+						<Panel class="SingleMedal Gold">
+							<Panel class="MedalImage" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			
+		</Panel>
+
+		<Panel class="ShardsEarned">
+			<Panel class="ShardsEarnedTitle">
+				<Panel class="Dash DashLeft" />
+				<Label class="ShardsEarnedLabel" text="#DOTA_BattleReport_ShardsEarned" />
+				<Panel class="Dash DashRight" />
+			</Panel>
+			<Panel class="ShardsEarnedDetails">
+				<Panel class="ShardsIcon" />
+				<Label class="ShardsEarnedValue" text="{d:total_shards_earned}" />
+			</Panel>
+		</Panel>
+
+		<Panel id="BattleAnalysisBanner">
+			<Panel class="Content">
+				<Image id="BattleReportScreenGrab" src="file://{images}/battle_report/battlestats_screengrab_1.png" scaling="stretch-to-fit-preserve-aspect" />
+				<Label class="Description VerticalCenter" html="true" text="#DOTA_BattleReport_AnalysisBannerDescription" />
+				<TextButton id="AnalysisButton" class="GoldGlassButton NavButton PopupButton VerticalCenter" text="#DOTA_BattleReport_AnalysisBannerButtonLabel" onactivate="DOTAShowProfileBattleStatsPage() DOTABattleReportFinished()" />
+			</Panel>
+			<Panel class="BorderAnimation" />
+		</Panel>
+		
+	</DOTABattleReportScreenSummary>
+
+</root>

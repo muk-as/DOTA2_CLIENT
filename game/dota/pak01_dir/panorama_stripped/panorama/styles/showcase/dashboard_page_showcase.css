@@ -1,0 +1,750 @@
+@define colorBehaviorBad: #b7493a;
+@define colorBehaviorWarning: #B78C3A;
+@define colorBehaviorGood: #5bb73a;
+@define statusLabelsGap: 12px;
+
+Label
+{
+	color: LighterGrey;
+	font-size: 16px;
+}
+
+DOTAShowcasePage
+{
+	width: 100%;
+	height: 100%;
+	max-width: 1920px;
+	horizontal-align: center;
+}
+
+.PageContents {
+	flow-children: down;
+	width: 100%;
+	margin-top: 180px;
+	horizontal-align: center; 
+}
+
+#MainEditControls {
+	                    
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 150px;
+	margin-right: 60px;
+	flow-children: right;
+	visibility: collapse;
+
+	.ViewingSelf:not(.SaveInProgress) & {
+		visibility: visible;
+	}
+
+	Button,
+	TextButton {
+		margin-left: 6px;
+		tooltip-position: bottom;
+	}
+
+	Button {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.ControlDivider {
+		width: 1px;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.04);
+		margin-left: 12px;
+		margin-right: 6px;
+	}
+}
+
+#ItemEditControls {
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 120px;
+	flow-children: right;
+	background-color: #000000f5;
+	border-radius: 6px;
+	padding: 6px;
+	context-menu-position: top;
+	context-menu-body-position: 0% 0%;
+	box-shadow: inset 0px 0px 0px 1px black;
+
+	opacity: 0;
+	transform: translateY( 12px );
+	
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+	.AspectRatio16x10 & {
+		margin-bottom: 160px;
+	}
+	
+	.IsEditing & {
+		opacity: 1;
+		transform: none;
+		transition-duration: 0.1s;
+		transition-timing-function: ease-in;
+	}
+
+	Button,
+	TextButton {
+		tooltip-position: top;
+		padding-left: 12px;
+		padding-right: 12px;
+		vertical-align: center;
+		box-shadow: none;
+		context-menu-position: top;
+		context-menu-body-position: 0% 0%;
+
+		&:hover {
+			z-index: 1;
+		}
+	}
+
+	.SliderContainer {
+		vertical-align: center;
+		flow-children: right;
+		                         
+		tooltip-position: top;
+		padding: 2px 12px;
+
+		Slider {
+			vertical-align: center;
+			margin: 0px;
+			width: 160px;
+		}
+
+		Image {
+			vertical-align: center;
+			margin-right: 12px;
+			width: 20px;
+			height: width-percentage( 100% );
+			wash-color: LightestGrey;
+		}
+	}
+
+	                             
+	#SendToBackButton { border-radius: 3px 0px 0px 3px; }
+	#MoveBackwardButton { border-radius: 0px; }
+	#MoveForwardButton { border-radius: 0px; }
+	#SendToFrontButton { border-radius: 0px 3px 3px 0px; }
+
+	#SendToBackButton,
+	#MoveBackwardButton,
+	#MoveForwardButton {
+		margin-right: -1px;
+	}
+
+	#FlipHorizontallyButton,
+	#DeleteItemButton,
+	#LayerButton {
+		margin-right: 6px;
+	}
+
+	#CustomizeAppearanceButton {
+		margin-left: 6px;
+		visibility: collapse;
+
+		.AllowCustomizeAppearance & {
+			visibility: visible;
+		}
+	}
+
+	#MoreOptionsButton {
+		margin-left: 6px;
+		visibility: collapse;
+
+		.AllowCustomizeAppearance & {
+			visibility: visible;
+		}
+	}
+
+	#FlipHorizontallyButton {
+		visibility: collapse;
+		.AllowFlipHorizontally & {
+			visibility: visible;
+		}
+	}
+
+	#LayerButton {
+		flow-children: right;
+		vertical-align: center;
+		context-menu-position: top;
+		width: fit-children;
+		padding: 4px 16px 6px 12px;
+		border-radius: 3px;
+		background-color: DarkerGrey&00;
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0);
+
+		opacity: 0.5;
+
+		transition-property: opacity, background-color, box-shadow;
+		transition-duration: 0.1s;		
+
+		Label,
+		Panel {
+			vertical-align: center;
+		}
+		
+		Label {
+			color: white;
+		}
+
+		&:hover {
+			opacity: 1.0;
+			background-color: DarkerGrey&44;
+			box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+		}
+
+		#LayerButtonIcon {
+			width: 12px;
+			height: 12px;
+			margin-bottom: -2px;
+
+			margin-right: 8px;
+			vertical-align: middle;
+
+			background-image: url( "file://{images}/control_icons/arrow_solid_right.png" );
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			transition-property: transform;
+			transition-duration: 0.1s;
+
+			.ShowcaseLayerListOpen & {
+				
+			}
+		}
+
+		&.MissingShowcaseItemName {
+			#LayerButtonItemName {
+				visibility: collapse;	
+			}
+		}
+	}
+
+	Slider {
+		margin-right: 10px;
+		width: 150px;
+	}
+}
+
+#ShowcaseBudgetProgressBar {
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 118px;
+	width: 400px;
+	margin-left: 1360px;
+	padding: 12px;
+
+	opacity: 0;
+	transform: translateY( 12px );
+	
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+	.IsEditing & {
+		opacity: 1;
+		transform: none;
+		transition-duration: 0.1s;
+		transition-timing-function: ease-in;
+	}
+
+	.AspectRatio16x10 & {
+		margin-bottom: 160px;
+		margin-left: 1200px;
+	}
+}
+
+#HeaderNameContainer {
+	margin-top: 140px;
+	horizontal-align: center;
+
+	width: 1392px;
+	height: 146px;
+
+	#AvatarImage {
+		height: 100%;
+		width: height-percentage( 100% );
+
+		transition-property: border;
+		transition-duration: .2s;
+		transition-timing-function: ease-in-out;
+
+		border-radius: 4px;
+		width: 136px;
+		height: 136px;
+
+		box-shadow: 0px 4px 32px -6px rgba(0, 0, 0, 0.8);
+
+		.ViewingPlusSubscriber & {
+			                            
+			                      
+			                                     
+		}
+	}
+
+	.RankBadge
+	{
+		width: 100px;
+		height: 100px;
+		margin-top: -10px;
+		z-index: 2;
+	}
+
+	#ProfileMainCorner {
+		width: 100%;
+
+		#UserRichPresence {
+			                         
+		}
+
+		.MainNameLine {
+			z-index: 2;
+			margin-bottom: -12px;
+			margin-top:-5px;
+
+			#FavoriteTeam {
+				width: 32px;
+				height: 32px;
+				visibility: collapse;
+				vertical-align:center;
+				margin-left:5px;
+
+				&.HasTeamCrest {
+					visibility: visible;
+				}
+			}
+
+			#ProfileName {
+				width: fit-children;
+				vertical-align: middle;
+				white-space: nowrap;
+				height: 48px;
+				margin-bottom: 10px;
+
+				Label {
+					max-width: 800px;
+					font-size: 40px;
+					font-weight: normal;
+					white-space: nowrap;
+					text-overflow: shrink;
+					max-height: 64px;
+					text-shadow: 0px 2px 8px #000000;
+				} 
+			}
+
+			#ProfileNickname {
+				width: fit-children;
+				margin-left: 10px;
+				margin-bottom: 12px;
+				vertical-align: bottom;
+
+				Label {
+					font-size: 20px;
+					white-space: nowrap;
+					text-shadow: 0px 2px 8px #000000;
+
+					.PersonaName {
+						color: #ccc;
+						text-shadow: 0px 2px 8px #000000;
+					}
+				}
+			}
+		}
+
+		.StatusLine {
+			margin-top: 4px;
+
+			Panel {
+				vertical-align: center;
+			}
+
+			Label {
+				vertical-align: center;
+				text-shadow: 0px 1px 5px  #000000;
+			}
+
+			#UserRichPresence {
+				margin-right: statusLabelsGap;
+
+				&.ProfileUserRichPresence {
+					Label {
+						text-transform: uppercase;
+						font-size: 16px;
+						brightness: 2;						
+					}
+				}
+			}
+
+			#SteamFriends {
+				flow-children: right;
+				margin-right: statusLabelsGap;
+
+				#FriendsIDLabel {
+					font-size: 16px;
+					horizontal-align: left;
+					color: LighterGrey;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+					
+				#FriendsID {
+					font-size: 16px;
+					horizontal-align: left;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					color: LighterGrey;
+				}
+			}
+
+			#PlusStatus {
+				flow-children: right;
+				margin-right: statusLabelsGap;
+
+				Image {
+					width: 16px;
+					height: 18px;
+					margin-right: 4px;
+				}
+
+				#PlusStatusLabel {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+
+			#MemberSince {
+				flow-children: right;
+				margin-right: statusLabelsGap;
+
+				.MemberSince {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					color: dotaPlusGold;
+					brightness: 1.5;
+				}
+					
+				.MemberDate {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}			
+		}
+	}
+
+	#ProfileActionButtons {
+		flow-children: right;
+		margin-top: -6px;
+		margin-left: 16px;
+		width: fit-children;
+
+		Button {
+			tooltip-position: top;
+			tooltip-body-position: 50% 50%;
+
+			visibility: collapse;
+
+			&.Visible {
+				visibility: visible;
+			}
+
+			&:hover {
+				wash-color: #ffffffff;
+			}
+		}
+	}
+
+	#PendingApprovalLabel {
+		ignore-parent-flow: true;
+		margin-top: 90px;
+		margin-left: 150px;
+	}
+}
+
+#BehaviorStatus {
+	flow-children: down;
+	vertical-align: center;
+	padding-right: 24px;
+	margin-right: 24px;
+	border-right: 1px solid rgba(255, 255, 255, 0.02);
+	visibility: collapse;
+
+	.BehaviorScoreAvailable.IsViewing:not(.BehaviorScoreLoading) & {
+		visibility: visible;
+	}
+
+	transition-property: brightness;
+	transition-duration: 0.1s;
+
+	&:hover {
+		brightness: 1.5;
+	}
+	
+	#ScoresContainer {
+		flow-children: right;
+	}
+
+	#CommunicationScoreSection {
+		margin-right: 10px;
+	}
+
+	#CommunicationScoreSection,
+	#BehaviorScoreSection {
+		flow-children: right;
+		horizontal-align: right;
+		tooltip-position: bottom;
+
+		#BehaviorScoreImage,
+		#CommunicationScoreImage {
+			width: 24px;
+			height: 24px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin-right: 4px;
+			vertical-align: center;
+		}
+
+		#BehaviorScoreLabel,
+		#CommunicationScoreLabel {
+			vertical-align: center;
+		}
+	}
+}
+
+#PlusStatus,
+#MemberSince {
+	visibility: collapse;
+
+	.ViewingPlusSubscriber & {
+		visibility: visible;
+	}
+}
+
+.ViewingPlusSubscriber #PlusStatus,
+.ViewingPlusSubscriber #MemberSince {
+	visibility: visible;
+}
+
+.ShowIfItemSelected {
+	visibility:collapse;
+
+	.IsItemSelected & {
+		visibility: visible;
+	}
+}
+
+.ShowIfNothingSelected {
+	visibility:collapse;
+
+	.IsNothingSelected & {
+		visibility: visible;
+	}
+}
+
+.ShowIfViewingOther {
+	visibility: collapse;
+
+	.ViewingOther & {
+		visibility: visible;
+	}
+}
+
+.ShowIfEditing {
+	visibility: collapse;
+
+	.IsEditing & {
+		visibility: visible;
+	}
+}
+
+.HideIfEditing {
+	visibility:collapse;
+
+	.IsViewing & {
+		visibility: visible;
+	}
+}
+
+.ShowcaseData {
+	width: 100%;
+	height: 100%;
+		
+	                                                                               
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	opacity-mask: url( "file://{images}/masks/showcase_fade.psd" );
+
+	.ShowcaseMain {
+		width: 100%;
+		height: 100%;
+
+		#ShowcaseContents {
+			width: 1920px;
+			height: 1080px;
+			vertical-align: center;
+			horizontal-align: center;
+			overflow: noclip;
+		}
+	}
+}
+
+	
+.SaveInProgressIndicator {
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 150px;
+	margin-right: 60px;
+
+	visibility: collapse;
+
+	.SaveInProgress & {
+		visibility: visible;
+	}
+
+	.Spinner {
+		wash-color: winnerGreen;
+	}
+
+	Label {
+		margin-left: 8px;
+		vertical-align: middle;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: winnerGreen;
+	}
+}
+
+.InviteIconButton {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    margin-top: 4px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 60% 60%;
+    background-color: gradient( linear, 0% 100%, 0% 0%, from( #3E4B51 ), to( #5C9C68 ) );
+    wash-color: #ABEAA8;
+    border-radius: 3px;
+
+    transition-property: wash-color;
+    transition-duration: 0.2s;
+
+	&:hover {
+		wash-color: #ffffff;
+	}
+}
+
+#ActionInviteToParty {
+    background-image: url( "file://{images}/control_icons/plus.png" );
+}
+
+#ActionViewGuild {
+    background-size: 100% 100%;
+	background-color: none;
+	background-image: url( "file://{images}/guilds/guild_view_icon.psd" );
+	wash-color: #888888ff;
+	margin-top: 3px;
+}
+
+Button.SimpleIconButton {
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 28px;
+	width: 28px;
+	wash-color: #888888ff;
+	margin-right: 8px;
+
+	&:hover {
+		wash-color: #ffffffff;
+	}
+
+	Image {
+		height: 100%;
+		width: height-percentage( 100% );
+	}
+}
+
+Button.SimpleIconButtonPending
+{
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 28px;
+	width: 28px;
+	wash-color: #eeee82ff;
+	margin-right: 8px;
+
+	&:hover {
+		wash-color: #ffffffff;
+	}
+}
+
+Button.SimpleIconButtonSteam
+{
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 20px;
+	margin-right: 4px;
+	visibility: visible;
+	margin-left: -1px;
+	tooltip-position: left;
+
+	&:hover {
+		wash-color: #ffffff;
+		color: #ffffff;
+	}
+
+	Image {
+		width: 20px;
+		margin-right: 4px;
+	}
+}
+
+#BehaviorScoreLabel,
+#CommunicationScoreLabel {
+	.Score_Good & {
+		color: colorBehaviorGood;
+	}
+
+	.Score_Warning & {
+		color: colorBehaviorWarning;
+	}
+
+	.Score_Bad & {
+		color: colorBehaviorBad;
+	}
+}
+
+#BehaviorScoreImage,
+#CommunicationScoreImage {
+	.Score_Good & {
+		wash-color: colorBehaviorGood;
+		background-image: url( "file://{images}/conduct/behavior_normal.png" );
+	}
+
+	.Score_Warning & {
+		wash-color: colorBehaviorWarning;
+		background-image: url( "file://{images}/conduct/behavior_neutral.png" );
+	}
+
+	.Score_Bad & {
+		wash-color: colorBehaviorBad;
+		background-image: url( "file://{images}/conduct/behavior_bad.png" );
+	}
+}
+
+#GridSnapButton {
+	.GridSnap & {
+	background-color: LightGreyGradientBackgroundColor_Inverted;
+	brightness: 0.8;
+	transition-duration: 0.05s;
+	}
+}

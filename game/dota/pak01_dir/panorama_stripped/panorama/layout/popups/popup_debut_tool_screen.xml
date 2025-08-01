@@ -1,0 +1,201 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_debut_tool_screen.css" />
+	</styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/util.ts" />
+        <include src="file://{resources}/scripts/sequence_actions.ts" />
+        <include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+        <include src="file://{resources}/scripts/popups/popup_debut_tool_screen.ts" />
+    </scripts>
+
+    <snippets>
+        <snippet name="AuxLight">
+            <Panel class="DebutToolControlsGroup">
+                <Panel class="DebutToolControlsGroupHeader">
+                    <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('#LightsControlsGroup')"/>
+                    <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" id="Name" text="Lights" />
+                </Panel>
+                <Panel class="DebutToolControlsGroupContent">
+                    <DOTAColorPicker class="ColorPicker DebutToolControl" id="ColorPicker" />
+                    <DOTASettingsSlider class="DebutToolControl" id="IntensitySlider" min="0.0" max="20.0" displayprecision="1" text="Intensity" unlocalized="true" />
+                    <DOTASettingsSlider class="DebutToolControl" id="RadiusSlider" min="0.0" max="1000.0" displayprecision="0" text="Radius" unlocalized="true" />
+                    <DOTASettingsSlider class="DebutToolControl" id="LongitudeSlider" min="-180.0" max="180.0" displayprecision="0" text="Longitude" unlocalized="true" />
+                    <DOTASettingsSlider class="DebutToolControl" id="LatitudeSlider" min="-90.0" max="90.0" displayprecision="0" text="Latitude" unlocalized="true" />
+                    <DOTASettingsSlider class="DebutToolControl" id="SpotFovSlider" min="0.0" max="50.0" displayprecision="0" text="Spot FOV" unlocalized="true" />
+                    <DOTASettingsSlider class="DebutToolControl" id="AnimatedNoiseFrequencySlider" min="0.0" max="20.0" displayprecision="1" text="Noise Frequency" unlocalized="true" />
+                    <DOTASettingsCheckbox class="DebutToolControl" text="Show Gizmos" unlocalized="true" id="ShowGizmosCheckbox" />
+                    <DOTASettingsCheckbox class="DebutToolControl" text="Enable Shadows" unlocalized="true" id="EnableShadowsCheckbox" />
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+
+	<DOTAPopupDebutToolScreen class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()" >
+        <Panel class="OverrideBackground" id="Background"/>
+            
+                                                                  
+                                                                   
+                                                                   
+           
+
+        <DOTAScenePanel id="ScenePanel" antialias="false" particleonly="false"/>
+
+        <Panel id="RecordingViewportPreview" hittest="false" />
+        
+        <Label hittest="false" id="RecordingLabel" unlocalized="true" text="Recording..." />
+
+        <Panel id="ToolPanel" hittest="false" style="width: 100%; height: 100%;" >
+            <Panel id="StudioLights" class="DebutToolLeftPanel TopBottomFlow">
+
+            </Panel>
+
+            <Panel class="DebutToolRightPanel TopBottomFlow">
+                <Panel class="DebutToolControlsGroup" >
+                    <TextButton class="PopupButton Black DebutToolControl" onactivate="DOTADebutToolResetTool()" >
+                        <Label unlocalized="true" text="Reset Tool"/>
+                    </TextButton>
+                </Panel>
+                <Panel class="DebutToolControlsGroup" >
+                    <DOTASettingsEnumDropDown id="PresetsDropdown" />
+                    <TextEntry class="DebutToolControl" unlocalized="true" id="PresetName" placeholder="Enter Preset Name ..." maxchars="1024" />
+                    <TextButton class="PopupButton Black DebutToolControl" onactivate="DOTADebutToolSavePreset()" >
+                        <Label unlocalized="true" text="Save"/>
+                    </TextButton>
+                    <TextButton class="PopupButton Black DebutToolControl" onactivate="DOTADebutToolReset()" >
+                        <Label unlocalized="true" text="Reset"/>
+                    </TextButton>
+                    <TextButton class="PopupButton Black DebutToolControl" onactivate="DOTADebutToolReload()" >
+                        <Label unlocalized="true" text="Reload"/>
+                    </TextButton>
+                </Panel>
+                
+                <Panel id="RecordingControlsGroup" class="DebutToolControlsGroup">
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('RecordingControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Recording" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Use Recording Viewport" unlocalized="true" id="UseRecordingViewportCheckbox" convar="dota_debut_tool_use_recording_viewport" />
+                        <Panel id="RecordingViewport" class="LeftRightFlow FullWidth">
+                            <TextEntry unlocalized="true" id="RecordingViewportWidth" maxchars="4" textmode="numeric" />
+                            <TextEntry unlocalized="true" id="RecordingViewportHeight" maxchars="4" textmode="numeric" />
+                        </Panel>
+                        <DOTASettingsEnumDropDown id="RecordingFormatDropdown" convar="dota_debut_tool_recording_format">
+						    <Label unlocalized="true" text="MP4" id="mp4" value="0"/>
+						    <Label unlocalized="true" text="TGA" id="tga" value="1" />
+						    <Label unlocalized="true" text="JPEG" id="jpeg" value="2" />
+                            <Label unlocalized="true" text="PNG" id="png" value="3" />
+					    </DOTASettingsEnumDropDown>
+                        <TextButton class="PopupButton" onactivate="DOTADebutToolToggleRecording();">
+                            <Label id="RecordingButtonLabel" unlocalized="true" text="Start Recording"/>
+                        </TextButton>
+
+                        <TextButton class="PopupButton" onactivate="DOTADebutToolRecordAnimation();">
+                            <Label id="RecordingButtonLabel" unlocalized="true" text="Record Animation"/>
+                        </TextButton>
+                    </Panel>
+                </Panel>
+                
+                <Panel id="BackgroundColorControlsGroup" class="DebutToolControlsGroup" >    
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('BackgroundColorControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Background" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Use Background Color" unlocalized="true" id="UseBackgroundColorCheckbox" convar="dota_debut_tool_use_background_color" />
+                        <DOTAColorPicker id="BackgroundColorPicker" class="ColorPicker DebutToolControl" />
+                    </Panel>
+                </Panel>
+                
+                <Panel id="SceneCameraControlsGroup" class="DebutToolControlsGroup" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('SceneCameraControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Scene and Camera" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <TextEntry class="DebutToolControl" unlocalized="true" id="MapName" placeholder="Map Name ..." maxchars="1024" />
+                        <TextButton class="PopupButton Black DebutToolControl" onactivate="DOTADebutToolLoadMap()" >
+                            <Label unlocalized="true" text="Load Map"/>
+                        </TextButton>
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Studio Lights" unlocalized="true" id="StudioLightsCheckbox" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Show Pedestal" unlocalized="true" id="PedestalCheckbox" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Show Summons" unlocalized="true" id="SummonsCheckbox" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Base Loadout" unlocalized="true" id="BaseLoadoutCheckbox" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="No Loadout" unlocalized="true" id="NoLoadoutCheckbox" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Dolly Zoom" unlocalized="true" id="DollyZoomCheckbox" convar="dota_debut_tool_dolly_zoom" />
+                        <DOTASettingsSlider class="DebutToolSlider DebutToolControl" id="ModelScaleSlider" convar="dota_debut_tool_model_scale" min="0.5" max="2.0" displayprecision="2" text="Model Scale" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolSlider DebutToolControl" id="CameraFovSlider" convar="dota_debut_tool_camera_fov" min="10" max="120" text="Camera FOV" unlocalized="true" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="TurnTableControlsGroup" class="DebutToolControlsGroup" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('TurnTableControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Turn Table" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Turn Table" unlocalized="true" id="TurnTableCheckbox" convar="dota_debut_tool_turn_table" />
+                        <DOTASettingsSlider class="DebutToolSlider DebutToolControl" convar="dota_debut_tool_turn_table_cycle_count" min="-5" max="5" displayprecision="0" text="Turns Per Anim Cycle" unlocalized="true" />
+                    </Panel>
+                </Panel>
+                
+                <Panel id="AnimationControlsGroup" class="DebutToolControlsGroup TopBottomFlow" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('AnimationControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Animation" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <TextEntry class="DebutToolControl" unlocalized="true" id="AnimationSequence" placeholder="Animation Sequence Name ..." maxchars="1024" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Play" unlocalized="true" id="PlayAnimationCheckbox" convar="dota_debut_tool_play_animation" />
+                        <DOTASettingsSlider class="DebutToolControl" id="AnimationPlaybackSpeedSlider" convar="dota_debut_tool_animation_playback_speed" min="0.0" max="2.0" displayprecision="2" text="Playback Rate" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolControl" id="AnimationNormalizedTimeSlider" convar="dota_debut_tool_animation_normalized_time" min="0.0" max="1.0" displayprecision="2" text="Normalized Time" unlocalized="true" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Local Space Cloth" unlocalized="true" id="LocalSpaceClothSimCheckbox" convar="dota_debut_tool_local_space_cloth_sim" />
+                    </Panel>
+                </Panel>
+                
+                <Panel id="PostprocessControlsGroup" class="DebutToolControlsGroup" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('PostprocessControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Postprocess" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsCheckbox class="DebutToolControl" text="DOF" unlocalized="true" id="DofCheckbox" convar="dota_debut_tool_dof" />
+                        <DOTASettingsSlider class="DebutToolControl" id="DofCrispRangeSlider" convar="dota_debut_tool_dof_crisp_range" min="0.0" max="200.0" displayprecision="0" text="DOF Crisp Range" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolControl" id="DofBlurRangeSlider" convar="dota_debut_tool_dof_blur_range" min="0.0" max="10000.0" displayprecision="0" text="DOF Blur Range" unlocalized="true" />
+                    </Panel>
+                </Panel>
+                
+                <Panel id="ShadowsControlsGroup" class="DebutToolControlsGroup" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('ShadowsControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Shadows" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Shadows" unlocalized="true" id="ShadowsCheckbox" convar="dota_debut_tool_shadows" />
+                        <DOTASettingsCheckbox class="DebutToolControl" text="High Quality" unlocalized="true" id="HighQualityShadowsCheckbox" /> 
+                        <DOTASettingsCheckbox class="DebutToolControl" text="Use Custom Shadow Frustum Extents" unlocalized="true" id="ShadowFrustumExtentsCheckbox" convar="dota_debut_tool_shadow_frustum" />
+                        <DOTASettingsSlider class="DebutToolControl" id="ShadowFrustumExtentsSlider" convar="dota_debut_tool_shadow_frustum_extents" min="50.0" max="2000.0" displayprecision="0" text="Shadow Frustum Extents" unlocalized="true" />
+                    </Panel>
+                </Panel>
+                
+                <Panel id="DissolveTestControlsGroup" class="DebutToolControlsGroup" >
+                    <Panel class="DebutToolControlsGroupHeader">
+                        <Button id="ControlGroupToggleButton" class="PaginationArrow" onactivate="ToggleDebutToolControlsGroup('DissolveTestControlsGroup')"/>
+                        <Label class="DebutToolControlsGroupHeaderLabel" unlocalized="true" text="Dissolve Test" />
+                    </Panel>
+                    <Panel class="DebutToolControlsGroupContent">
+                        <DOTASettingsSlider class="DebutToolControl" convar="dota_debut_tool_dissolve" min="0.0" max="1.0" displayprecision="2" text="Amount" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolControl" convar="dota_debut_tool_dissolve_edgewidth" min="0.0" max="1.0" displayprecision="2" text="Edge Width" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolControl" convar="dota_debut_tool_dissolve_scale" min="1.0" max="1000.0" displayprecision="2" text="Scale" unlocalized="true" />
+                        <DOTASettingsSlider class="DebutToolControl" convar="dota_debut_tool_dissolve_intensity" min="0.0" max="10.0" displayprecision="2" text="Intensity" unlocalized="true" />
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+	</DOTAPopupDebutToolScreen>
+
+</root>

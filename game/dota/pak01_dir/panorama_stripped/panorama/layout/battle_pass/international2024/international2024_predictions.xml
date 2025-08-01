@@ -1,0 +1,520 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/international2024/international2024_predictions.css" />
+	</styles>
+
+	<DOTABPInternational2024PredictionsPage class="DashboardPage FullDashboardPage ShowLBR2Error" dashboardclass="International2024BattlePassPage">
+
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false"/>	
+
+
+		                                                              
+		<Panel class="StageTabs">
+			<TabButton id="GroupStageTab" class="StageTab" selected="true">
+				<Panel class="TabContents LeftRightFlow">
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="#DOTA_OraclesChallenge_GroupStage" />
+						<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+							<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+						</DOTACountdown>
+					</Panel>
+					<Panel class="StageTabRight">
+						<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_GroupStage" />
+						<Panel class="StageReward">
+							<Panel class="PointsIcon" />
+							<Label text="#DOTA_OraclesChallenge_PointsValue_GroupStage" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</TabButton>
+			<TabButton id="PlayoffsTab" class="StageTab">
+				<Panel class="TabContents LeftRightFlow">
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="#DOTA_OraclesChallenge_Playoffs" />
+						<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+							<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+						</DOTACountdown>
+					</Panel>
+					<Panel class="StageTabRight">
+						<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_Playoffs" />
+						<Panel class="StageReward">
+							<Panel class="PointsIcon" />
+							<Label text="#DOTA_OraclesChallenge_PointsValue_Playoffs" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</TabButton>
+			<TabButton id="MainEventTab" class="StageTab">
+				<Panel class="TabContents LeftRightFlow">
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="#DOTA_OraclesChallenge_MainEvent" />
+						<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+							<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+						</DOTACountdown>
+					</Panel>
+					<Panel class="StageTabRight">
+						<Label class="StagePredict" text="#DOTA_OraclesChallenge_Predicted_MainEvent" />
+						<Panel class="StageReward">
+							<Panel class="PointsIcon" />
+							<Label text="#DOTA_OraclesChallenge_PointsValue_MainEvent" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</TabButton>
+		</Panel>
+
+
+
+
+		
+
+
+
+		<Image class="OrcaleBackground" src="file://{images}/compendium/international2024/predictions_background.png" scaling="stretch-to-fit-preserve-aspect" />
+
+		                                                                                          
+
+		<Panel class="MainContents BPSharedPageContainer NewPredictions" hittest="false">
+
+			<Panel class="Header BPSharedHeaderContainer">
+				<Label class="BPTitle" text="#DOTA_OraclesChallenge_OraclesChallenge" />
+				<Label class="BPPageDescription" text="#DOTA_International2024_Predictions_Description"/>
+				<DOTAInternational2024Button class="HowToPlayButton TextOnly" text="#DOTA_HowToPlay" onactivate="DOTAPredictions2024ToggleHelp()" />
+			</Panel>
+
+			<Panel class="UnavailableContainer" >
+				<Panel class="LockIconContainer">
+					<Image class="LockIcon" src="file://{images}/control_icons/24px/lock.svg" />
+				</Panel>
+				<Label class="LockedHeader" text="#DOTA_OraclesChallenge_PredictionsUnavailable" />
+				<Label id="LockedReasonLabel" class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_OraclesChallenge_PredictionsUnavailableBody" />
+			</Panel>
+
+			<Panel class="FullBracketContainer">
+
+				                                 
+				<Panel id="PlayoffsContainer" class="StageContainer PlayoffsContainer">
+					<Panel class="StageTitleContainer">
+						<Panel class="TitleTexture"/>
+						<Label class="StageName WhiteText" text="#DOTA_International2024_RoadToTI" />
+						<Panel class="CountdownContainer">
+							<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+								<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+							</DOTACountdown>
+							<Panel id="RoadToTIStageResults" class="StageResultsContainer">
+								<Image class="CheckIcon" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/control_icons/24px/check.svg" />
+								<Label class="CorrectPredictionsCount" text="#DOTA_OraclesChallenge_Predicted_RoadToTI" />
+								<Label class="PointsEarnedValue" text="#DOTA_OraclesChallenge_PointsValue_RoadToTI" />
+								<Panel class="PointsEarnedIcon" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="LeftRightFlow StageMainContainer">
+						<Panel class="StageColumnsContainer">
+							<Panel class="ForksContainer"/>
+							<Panel class="StageColumn">
+								<Label class="RoundTitle" text="#DOTA_OraclesChallenge_ABRoundRobin" />
+								<Panel class="MatchContainer">
+									<Label class="DayDate" text="#DOTA_International2024_Predictions_GroupA_Dates" />
+									<International2024PredictionGroup id="Group0" />
+									<Label class="DayDate" text="#DOTA_International2024_Predictions_GroupB_Dates" />
+									<International2024PredictionGroup id="Group1" />
+								</Panel>
+								<Label class="RoundTitle" text="#DOTA_OraclesChallenge_CDRoundRobin" />
+								<Panel class="MatchContainer">
+									<Label class="DayDate" text="#DOTA_International2024_Predictions_GroupC_Dates" />
+									<International2024PredictionGroup id="Group2" />
+									<Label class="DayDate" text="#DOTA_International2024_Predictions_GroupD_Dates" />
+									<International2024PredictionGroup id="Group3" />
+								</Panel>
+								<Panel style="height: 360px;" />
+							</Panel>
+							<Panel class="ForksContainer"/>
+						</Panel>
+						<Panel class="TopBottomFlow">
+							<Panel class="StageColumnsContainer UpperBracket">
+								<Panel class="ForksContainer"/>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_International2024_Predictions_SeedingDecider" />
+									<Panel class="MatchContainer" id="SeedRound0">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep6" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries0" series_num="0" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound0">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep6" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries1" series_num="1" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound0">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep6" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries2" series_num="2" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound0">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep6" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries3" series_num="3" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound1">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep7" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries4" series_num="4" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound1">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep7" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries5" series_num="5" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound1">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep7" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries6" series_num="6" />                         
+									</Panel>
+									<Panel class="MatchContainer" id="SeedRound1">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep7" />
+										<International2024PredictionSeries class="TI2024" id="SeedSeries7" series_num="7" />                         
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 72px;" />
+									<Panel class="Fork" style="height: 75px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+									<Panel style="height: 72px;" />
+									<Panel class="Fork" style="height: 75px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+									<Panel style="height: 71px;" />
+									<Panel class="Fork" style="height: 75px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+									<Panel style="height: 71px;" />
+									<Panel class="Fork" style="height: 75px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_UpperBracketRound1" />
+									<Panel style="height: 36px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep8" />
+										<BracketPrediction class="TI2024" id="BracketSeries0" />             
+									</Panel>
+									<Panel style="height: 72px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep8" />
+										<BracketPrediction class="TI2024" id="BracketSeries1" />             
+									</Panel>
+									<Panel style="height: 73px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep8" />
+										<BracketPrediction class="TI2024" id="BracketSeries2" />             
+									</Panel>
+									<Panel style="height: 73px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep8" />
+										<BracketPrediction class="TI2024" id="BracketSeries3" />             
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 108px;" />
+									<Panel class="Fork" style="height: 147px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+									<Panel style="height: 145px;" />
+									<Panel class="Fork" style="height: 147px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Label class="BracketTitle Lower" text="#DOTA_International2024_Predictions_LowerBracket" />
+							<Panel class="StageColumnsContainer LowerBracket">
+								<Panel class="ForksContainer"/>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound1" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep9" />
+										<BracketPrediction class="TI2024" id="BracketSeries8" />                 									
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep9" />
+										<BracketPrediction class="TI2024" id="BracketSeries9" />                 
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep10" />
+										<BracketPrediction class="TI2024" id="BracketSeries10" />                 
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep10" />
+										<BracketPrediction class="TI2024" id="BracketSeries11" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 73px;" />
+									<Panel class="Line" />
+									<Panel style="height: 72px;" />
+									<Panel class="Line" />
+									<Panel style="height: 72px;" />
+									<Panel class="Line" />
+									<Panel style="height: 72px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn" id="LowerBracketRound2">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound2" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep9" />
+										<BracketPrediction class="TI2024" id="BracketSeries12" />                 
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep9" />
+										<BracketPrediction class="TI2024" id="BracketSeries13" />                 
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep10" />
+										<BracketPrediction class="TI2024" id="BracketSeries14" />                 
+									</Panel>
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep10" />
+										<BracketPrediction class="TI2024" id="BracketSeries15" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 72px;" />
+									<Panel class="Fork" style="height: 75px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+									<Panel style="height: 73px;" />
+									<Panel class="Fork" style="height: 74px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="LockedPanel"></Panel>
+					<Panel id="LowerBracketRound2ErrorMessage">
+						<Image class="ErrorMessageImage" src="file://{images}/compendium/international2024/oracle_prayer.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Label class="ErrorMessageTitle" text="#DOTA_OraclesChallenge_LBR2ErrorTitle"/>
+						<Label class="ErrorMessageDescription" html="true" text="#DOTA_OraclesChallenge_LBR2ErrorDescription"/>
+						<Label class="LabelLink" text="#DOTA_OraclesChallenge_LBR2ErrorLearnMore" onmouseover="UIShowTextTooltip( #DOTA_OraclesChallenge_LBR2ErrorTooltip )" onmouseout="UIHideTextTooltip()"/>
+					</Panel>
+				</Panel>
+
+				                          
+				<Panel id="FinalsContainer" class="StageContainer FinalsContainer">
+					<Panel class="StageTitleContainer">
+						<Panel class="TitleTexture"/>
+						<Label class="StageName WhiteText" text="#DOTA_OraclesChallenge_MainEvent" />
+						<Panel class="CountdownContainer">
+							<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+								<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+							</DOTACountdown>
+							<Panel id="MainEventStageResults" class="StageResultsContainer">
+								<Image class="CheckIcon" scaling="stretch-to-fit-preserve-aspect" src="file://{images}/control_icons/24px/check.svg" />
+								<Label class="CorrectPredictionsCount" text="#DOTA_OraclesChallenge_Predicted_MainEvent" />
+								<Label class="PointsEarnedValue" text="#DOTA_OraclesChallenge_PointsValue_MainEvent" />
+								<Panel class="PointsEarnedIcon" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="LeftRightFlow StageMainContainer">
+						<Panel class="TopBottomFlow">
+							<Panel class="StageColumnsContainer UpperBracket">
+								<Panel class="ForksContainer">
+									<Panel style="height: 180px;" />
+									<Panel class="Line" />
+									<Panel style="height: 291px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn">
+									<Panel class="ForksContainer FullWidth">
+										<Panel style="height: 180px;" />
+										<Panel class="Line" />
+										<Panel style="height: 291px;" />
+										<Panel class="Line" />
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 180px;" />
+									<Panel class="Line" />
+									<Panel style="height: 291px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_UpperBracketRound2" />
+									<Panel style="height: 107px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep13" />
+										<BracketPrediction class="TI2024" id="BracketSeries4" />                 
+									</Panel>
+									<Panel style="height: 218px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep13" />
+										<BracketPrediction class="TI2024" id="BracketSeries5" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 180px;" />
+									<Panel class="Fork" style="height: 292px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+								</Panel>
+								<Panel class="StageColumn">
+									<Panel class="ForksContainer FullWidth">
+										<Panel style="height: 325px;" />
+										<Panel class="Line" />
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 325px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_UpperBracketFinals" />
+									<Panel style="height: 252px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep14" />
+										<BracketPrediction class="TI2024" id="BracketSeries6" />                  
+									</Panel>
+								</Panel>								
+							</Panel>
+							<Label class="BracketTitle Lower" text="#DOTA_International2024_Predictions_LowerBracket" />
+							<Panel class="StageColumnsContainer LowerBracket">
+								<Panel class="ForksContainer">
+									<Panel style="height: 109px;" />
+									<Panel class="Line" />
+									<Panel style="height: 146px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound3" />
+									<Panel style="height: 36px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep13" />
+										<BracketPrediction class="TI2024" id="BracketSeries16" />                 
+									</Panel>
+									<Panel style="height: 74px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep13" />
+										<BracketPrediction class="TI2024" id="BracketSeries17" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 109px;" />
+									<Panel class="Line" />
+									<Panel style="height: 146px;" />
+									<Panel class="Line" />
+								</Panel>						
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound4" />
+									<Panel style="height: 36px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep14" />
+										<BracketPrediction class="TI2024 LoserMatch" id="BracketSeries18" />                 
+									</Panel>
+									<Panel style="height: 74px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep14" />
+										<BracketPrediction class="TI2024 LoserMatch" id="BracketSeries19" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 108px;" />
+									<Panel class="Fork" style="height: 149px;">
+										<Panel class="ForkLeft"/>
+										<Panel class="ForkRight"/>
+									</Panel>
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound5" />
+									<Panel style="height: 109px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep14" />
+										<BracketPrediction class="TI2024" id="BracketSeries20" />                 
+									</Panel>
+								</Panel>
+								<Panel class="ForksContainer">
+									<Panel style="height: 181px;" />
+									<Panel class="Line" />
+								</Panel>
+								<Panel class="StageColumn">
+									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketFinals" />
+									<Panel style="height: 109px;" />
+									<Panel class="MatchContainer">
+										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep15" />
+										<BracketPrediction class="TI2024 LoserMatch" id="BracketSeries21" />                  
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="ForksContainer">
+							<Panel style="height: 324px;" />
+							<Panel class="Fork" style="height: 538px;">
+								<Panel class="ForkLeft"/>
+								<Panel class="ForkRight"/>
+							</Panel>
+						</Panel>
+						<Panel class="StageColumnsContainer">
+							<Panel class="StageColumn">
+								<Label class="RoundTitle" text="#DOTA_Bracket_GrandFinals" />
+								<Panel style="height: 365px;" />
+								<Image class="WinnersAegis" src="file://{images}/compendium/international2024/aegis2024.png" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="MatchContainer">
+									<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep15" />
+									<BracketPrediction class="TI2024" id="BracketSeries7" />                     
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="ForksContainer" />
+					</Panel>
+					<Panel class="LockedPanel"></Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+
+		<Panel class="ResultsPopupContainer">
+			<Panel class="ResultsPopupDarkness"/>
+			<Panel class="ResultsPopup">
+				<Panel class="ResultsPopupBackground"/>
+				<Panel class="ResultsPopupContents">
+					<Label class="LabelLarge GoldText ResultsSubHeader RTTI" text="#DOTA_International2024_RoadToTI" />
+					<Label class="LabelLarge GoldText ResultsSubHeader MainEvent" text="#DOTA_International2024_MainEvent" />
+					<Label class="TitleLarge GoldText ResultsTitle" text="#DOTA_OraclesChallenge_YourPredictionsLabel" />
+					<Panel class="ResultsContainer">
+						<Panel class="CorrectResultsContainer">
+							<Label class="BodyMedium ResultStatLabel" text="#DOTA_OraclesChallenge_CorrectPredictions" />
+							<Panel class="ResultsStatsContainer">
+								<Label class="TitleLarge ResultStatValue RTTI" text="{d:road_to_ti_correct}" />
+								<Label class="TitleLarge ResultStatValue MainEvent" text="{d:main_event_correct}" />
+								<Image class="ResultStatIcon" src="file://{images}/control_icons/24px/check.svg" texturewidth="48px" textureheight="48px" />
+							</Panel>
+						</Panel>
+						<Panel class="IncorrectResultsContainer">
+							<Label class="BodyMedium ResultStatLabel" text="#DOTA_OraclesChallenge_IncorrectPredictions" />
+							<Panel class="ResultsStatsContainer">
+								<Label class="TitleLarge ResultStatValue RTTI" text="{d:road_to_ti_incorrect}" />
+								<Label class="TitleLarge ResultStatValue MainEvent" text="{d:main_event_incorrect}" />
+								<Image class="ResultStatIcon" src="file://{images}/control_icons/24px/x_close.svg" texturewidth="48px" textureheight="48px" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Label class="LabelLarge ResultsPointsEarnedLabel" text="#DOTA_International2023_Quests_Postgame_Reward_Label" />
+					<Panel class="ResultsPointsContainer">
+						<Label class="TitleExtraLarge ResultsPointsEarnedValue RTTI" text="+{d:road_to_ti_points}" />
+						<Label class="TitleExtraLarge ResultsPointsEarnedValue MainEvent" text="+{d:main_event_points}" />
+						<Panel class="ResultsPointsEarnedIcon" />
+					</Panel>
+				</Panel>
+				<DOTAInternational2024Button class="DoneButton LightGreen Wide" text="#DOTA_GotIt" onactivate="DOTAPredictions2024DismissResults()" />
+			</Panel>
+		</Panel>
+
+	</DOTABPInternational2024PredictionsPage>
+</root>

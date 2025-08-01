@@ -1,0 +1,376 @@
+DOTAUIHeroPatchNotesHistory
+{
+	width: 100%;
+	height: 100%;
+}
+
+.NoNotesLabel {
+	vertical-align: middle;
+	horizontal-align: center;
+	text-align: center;
+	padding: 0px 24px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #666;
+
+	visibility: collapse;
+}
+.NoNotes .NoNotesLabel {
+	visibility: visible;
+}
+
+
+#PatchNotesContainer {
+	width: 100%;
+	height: 100%;
+	padding: 40px 220px 40px 120px;
+	flow-children: down;
+	overflow: squish scroll;
+
+	.SinglePatchNotes {
+		width: 100%;
+		flow-children: right;
+		margin-bottom: 24px;
+		padding-bottom: 24px;
+		border-bottom: 1px solid white;
+		border-brush: gradient( linear, 50% 0%, 100% 0%, from( #FFFFFF08 ), to( #FFFFFF00 ) );
+
+		.NotesLabel {
+			flow-children: down;
+		}
+
+		.NotesDetails {
+			flow-children: down;
+			width: fill-parent-flow( 1.0 );
+			height: fit-children;
+		}
+
+		.PatchNumber {
+			color: LightGrey;
+			width: 220px;
+			font-weight: normal;
+		}
+
+		.PatchDate {
+			margin-top: -4px;
+		}
+	}
+}
+
+.PatchNoteLine
+{
+	flow-children: right;
+	width: fill-parent-flow( 1.0 );
+	height: fit-children;
+
+	.Dot {
+		width: 6px;
+		height: 6px;
+		vertical-align: top;
+		margin: 8px 10px 0px 8px;
+		border-radius: 50%;
+		background-color: LighterGrey;
+		opacity: 0.4;
+	}
+	
+	& .NoDot .Dot {
+		background-color: #00000000;
+	}
+
+	& .Indent1:not(.NoDot) .Dot {
+		background-color: gradient( radial, 50% 50%, 0% 0%, 10% 10%, from( #000000 ), to( #000000 ) );
+		border: 1px solid #aaa;
+	}
+
+	& .Indent2:not(.NoDot) .Dot {
+		border-radius: 1px;
+	}
+
+	& .Indent3:not(.NoDot) .Dot {
+		border-radius: 1px;
+		background-color: gradient( radial, 50% 50%, 0% 0%, 10% 10%, from( #000000 ), to( #000000 ) );
+		border: 1px solid #aaa;
+	}
+
+	& .Indent4:not(.NoDot) .Dot {
+		border-radius: 50%;
+		width: 4px;
+		height: 4px;
+		margin: 8px 8px 6px 2px;
+	}
+
+	& .NoIndent .Indent {
+		width: 0px;
+	}
+
+	& .Indent1 .Indent {
+		width: 14px;
+	}
+
+	& .Indent2 .Indent {
+		width: 28px;
+	}
+
+	& .Indent3 .Indent {
+		width: 42px;
+	}
+
+	& .Indent4 .Indent {
+		width: 56px;
+	}
+
+
+	.NoteText {
+		color: LighterGrey;
+		opacity: 0.8;
+	}
+
+	#PatchNoteInfo {
+		opacity: 0.0;
+		margin: 0px;
+		vertical-align: middle;
+		transform: translateY( -3px );
+
+		&.InfoIcon {
+			height: 12px;
+			width: 12px;
+			vertical-align: top;
+		}
+	}
+
+	&.HasInfo #PatchNoteInfo {
+		opacity: 1.0;
+	}
+}
+
+.NotesContents
+{
+	flow-children: down;
+	margin-left: 8px;
+	width: fill-parent-flow( 1.0 );
+}
+
+#HeroNotesContainer {
+	flow-children: down;
+	width: 100%;
+	margin-bottom: 4px;
+	visibility: collapse;
+}
+#HeroNotesContainer.HasHeroNotes {
+	visibility: visible;
+}
+
+#AbilityNotesContainer {
+	flow-children: down;
+
+	.AbilityNotes {
+		flow-children: right;
+		margin: 6px 0px;		
+
+		#AbilityImage {
+			width: 64px;
+			height: 64px;
+			box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.4);
+			margin-right: 8px;
+
+			&.UsingDefaultImage {
+				box-shadow: none;
+			}
+
+			&.UseInnateIcon {
+				box-shadow: none;
+			}
+		}
+
+		.AbilityName {
+			margin-bottom: 4px;
+			text-shadow: 0px 1px 4px black;
+		}
+	}
+}
+
+
+.TalentNotes
+{
+	flow-children: right;
+	visibility: collapse;
+	margin: 6px 0px;
+
+	.TalentTreeImage {
+		width: 64px;
+		height: 64px;
+		margin-right: 8px;
+
+		background-image: url( "file://{images}/spellicons/statbranch.psd" );
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		wash-color: #aaa;
+	}
+
+	#TalentNotesContainer {
+		flow-children: down;
+	}
+
+	.TalentsName {
+		margin-bottom: 4px;
+	}
+}
+
+	.HasTalentNotes.TalentNotes {
+		visibility: visible;
+	}
+
+#HeroSubsections
+{
+	flow-children: down;
+	visibility: collapse;
+}
+
+.HasSubsections #HeroSubsections {
+	visibility: visible;
+}
+
+.HeroSubsection {
+	flow-children: down;
+	margin-bottom: 24px;
+}
+
+.hero_facet
+{
+	flow-children: down;
+	width: fill-parent-flow(1);
+}
+
+.FacetHeader
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: right;
+
+	.FacetBackground {
+		width: 100%;
+		height: 100%;
+		ignore-parent-flow: true;
+	}
+
+	.FacetBackgroundTexture {
+		width: 100%;
+		height: 100%;
+		ignore-parent-flow: true;
+		background-image: url( "file://{images}/hud/facets/ripple_texture.png" );
+		background-size: cover;
+		background-position: center;
+		-s2-mix-blend-mode: screen;
+		opacity: 0.5;
+	}	
+}
+
+.FacetIconContainer {
+	vertical-align: center;
+	margin-right: 8px;
+
+	.FacetIconContainerShard {
+		width: 100%;
+		height: 100%;
+ 		background-color: rgba(0, 0, 0, 0.4);
+		border-right: 1px solid rgba(0, 0, 0, 0.03);
+	}
+
+	#FacetIcon {
+		width: 24px;
+		height: 24px;
+		background-size: cover;
+		margin: 12px 20px;
+		img-shadow: 0px 2px 8px black;
+
+		.children_count_5 &,
+		.children_count_3 & {
+			margin-left: 12px;
+			margin-right: 12px;
+		}
+	}
+}
+
+.FacetHeaderText
+{
+	width: fill-parent-flow( 1.0 );
+	height: fit-children;
+	vertical-align: middle;
+	horizontal-align: left;
+	padding: 6px;
+	flow-children: right;
+
+	Label
+	{
+		horizontal-align: left;
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	}
+
+	.FacetName {
+		color: white;
+		letter-spacing: 1px;
+		height: 26px;
+		text-overflow: shrink;
+		font-size: 18px;
+		font-weight: semi-bold;
+		horizontal-align: left;
+		vertical-align: center;
+		width: fill-parent-flow(1.0);
+	}
+
+	
+}
+
+.SubsectionNotesMain {
+	flow-children: down;
+	width: fill-parent-flow( 1.0 );
+	height: fit-children;
+	padding: 16px;
+}
+
+.InnateSubsection
+{
+	height: fit-children;
+	flow-children: down;
+	margin-bottom: 12px;
+	width: 100%;
+
+	.InnateSubsectionTop
+	{
+		flow-children: down;
+
+		.HeroSubsectionName
+		{
+			text-transform: uppercase;
+			font-size: 16px;
+			font-family: 'Radiance';
+			color: LightestGrey;
+			margin-bottom: 8px;
+			letter-spacing: 2px;
+		}
+	}
+
+	.InnateSubsectionMain
+	{		
+		padding: 16px;
+		flow-children: down;
+		background-color: #3D6B9411;
+		background-color: gradient( radial, 0% 0%, 0% 0%, 80% 100%, from( #3d6b941f ), to( #3d6b9400 ) );
+		width: 100%;
+		border: 1px solid white;
+		border-brush: gradient( radial, 0% 0%, 0% 0%, 80% 100%, from( #3d6b942e ), to( #3d6b9400 ) );
+	}
+
+	#TalentNotes
+	{
+		visibility: collapse;
+	}
+}
+
+.FacetBackground.Faded {
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+}

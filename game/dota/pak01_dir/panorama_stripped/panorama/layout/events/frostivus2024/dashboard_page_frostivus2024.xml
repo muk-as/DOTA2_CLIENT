@@ -1,0 +1,148 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/events/frostivus2024/dashboard_page_frostivus2024.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="InventoryComponent">
+			<Panel class="InventoryComponent">
+				<Panel id="ComponentImageContainer" class="ComponentImageContainer">
+					<Image id="ComponentImage" scaling="contain"/>
+					<Panel class="ComponentAmount">
+						<Label text="{d:component_amount}" />
+					</Panel>
+				</Panel>
+				<Panel class="ComponentDetails">
+					<Label class="ComponentName" text="{s:component_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="Recipe">
+			<Panel class="Recipe">
+				<Panel class="RecipeShadow"/>
+				<Panel class="RecipeOutput">
+					<DOTAFrostivus2024Reward id="Reward" />
+				</Panel>
+				<Panel class="SeasonalDetails" onmouseover="UIShowTextTooltip( '#DOTA_Frostivus2024_SeasonalReward_Tooltip' )" onmouseout="UIHideTextTooltip()">
+					<Label text="#DOTA_Frostivus2024_SeasonalReward" />
+					<Panel class="InfoIcon" />
+				</Panel>
+				<Panel id="RecipeComponents">
+					                                 
+				</Panel>
+				<Label class="RecipeStatus" text="#DOTA_Craftworks_Recipes_ClaimedAmount" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RecipeTier">
+			<Panel class="RecipeTier">
+				<Panel id="TierHeader">
+					<Panel class="TierTitle">
+						<Panel class="LockIcon" />
+						<Label class="TierName" text="{s:tier_name}" />
+					</Panel>
+					<Label class="LockStatus" text="{s:tier_lock_status}" />
+				</Panel>
+				<Panel id="RecipesList">
+					                        
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="RecipeComponent">
+			<Panel class="RecipeComponent">
+				<Image id="ComponentImage" scaling="contain"/>
+				<Panel class="ComponentAmount">
+					<Label text="{d:component_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="AnimatingComponent">
+			<Panel class="AnimatingComponent">
+				<Image id="ComponentImage" scaling="contain" />
+			</Panel>
+		</snippet>
+
+	</snippets>
+
+	<DOTAFrostivus2024Page class="DashboardPage" hidebackground="true" require-composition-layer="true">
+
+		                                                                                                                                                                                                         
+		<Panel class="BackgroundImage" />
+		<DOTAParticleScenePanel class="NorthernLights" hittest="false" particleName="particles/ui/ui_northern_lights.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="30" />
+		<DOTAParticleScenePanel class="SnowParticles Background" hittest="false" particleName="particles/ui/ui_snow_fullscreen_soft.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="40" />
+		<DOTAParticleScenePanel class="SnowParticles" hittest="false" particleName="particles/ui/ui_snow_fullscreen_soft.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="70" />
+
+		<AsyncDataPanel class="AsyncContents" state="{d:page_state}">
+
+			<Panel class="MainContents AsyncSuccessContainer" >
+
+				<Panel class="LeftColumn">
+					<Panel class="PageHeader">
+						<Panel class="FrostivusLogo" />
+					</Panel>
+
+					<Panel class="InventoryAndRecipesWrapper">
+						<Panel class="InventoryAndRecipes">
+							<Panel class="InventorySection">
+								<Panel class="FrostivusTexture"/>
+								<Panel class="InventoryBorder"/>
+								<Label class="InventoryDesc" text="#DOTA_Frostivus2024_Craftworks_InventoryDesc" />
+
+								<Panel id="InventoryContents">
+									                                    
+								</Panel>
+							</Panel>
+
+							<Panel class="RecipesSection">
+								<Panel id="RecipeTiersList">
+									                            
+								</Panel>
+							</Panel>
+
+							<Panel class="InventoryBorderOuter" hittest="false"/>
+							<Panel class="InventoryBorderInner" hittest="false"/>
+						</Panel>
+
+						<Image class="FrostyBorder" hittest="false" src="file://{images}/events/frostivus/2024/frosty_border.png" />
+					</Panel>
+
+				</Panel>
+
+				<Panel class="CraftingSection">
+					<Label class="SelectedRecipeTitle" text="#DOTA_Craftworks_SelectedReward" />
+					<Panel class="SelectedRecipe">
+						<Panel class="SelectedRecipeOutput">
+							<DOTAFrostivus2024Reward id="SelectedRecipeReward" />
+						</Panel>
+						<Label class="NoSelectedRecipeLabel" text="#DOTA_Craftworks_NoRecipeSelected" />
+						<Panel class="SelectedRecipeDetails">
+							<Label class="SelectedRecipeName" text="{s:selected_recipe_name}" />
+							<Panel id="SelectedRecipeComponents">
+								                                 
+							</Panel>
+						</Panel>
+					</Panel>
+					<TextButton id="CraftButton" class="ButtonPrimary Large Blue" text="#DOTA_Craftworks_Craft" onactivate="DOTAFrostivus2024CraftSelectedRecipe()" />
+					<Label class="SelectedRecipeLockedReason" text="{s:selected_recipe_locked_reason}" />
+				</Panel>
+				<Panel class="CraftingHat">
+					<DOTAScenePanel id="CraftingScene" map="maps/scenes/frostivus2024/frostivus2024_crafting_hat.vmap" antialias="true" camera="hat_camera" renderdeferred="true" deferredalpha="true" particleonly="false" />
+				</Panel>
+
+			</Panel>		
+			
+			
+		</AsyncDataPanel>
+	
+		<TextButton class="DebugButton PopupButton Red MainBranchOnly" text="Debug" onactivate="CraftworksShowDebugContextMenu( 1 )" />
+
+		<Panel id="AnimatingComponents" hittest="false" hittestchildren="false" />
+		
+	</DOTAFrostivus2024Page>
+	
+</root>

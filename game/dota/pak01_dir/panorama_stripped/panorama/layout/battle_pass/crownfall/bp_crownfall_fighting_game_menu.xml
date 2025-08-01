@@ -1,0 +1,290 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_fighting_game_menu.css" />
+	</styles>
+	<snippets>
+		<snippet name="PeerRow">
+			<Panel class="PeerRow">
+				<DOTAAvatarImage id="PeerAvatar" />
+				<Panel class="RowLeft">
+					<Label class="PeerName" text="{s:peer_name}" />
+					<Label class="PeerState" text="{s:peer_state}" />
+				</Panel>
+				<Panel class="RowMiddle">
+					<Panel class="Spinner"/>
+				</Panel>
+				<TextButton class="ButtonPrimary LightGrey" text="#DOTA_FightingGame_Menu_Challenge" id="ConnectButton" />
+			</Panel>
+		</snippet>
+		<snippet name="CharacterSelectButton">
+			<Panel class="CharacterSelectButton">
+				<Panel class="CharacterBackground"/>
+				<DOTAHeroMovie id="HeroMovie" />
+				<DOTAHeroPortrait class="Portrait" id="HeroPortrait" />
+				<Panel class="SelectedShimmer" hittest="false"/>
+				<Panel class="SelectedBorder" hitest="false"/>
+				                                                        
+				<Panel class="P1Label">
+					<DOTAAvatarImage id="P1Avatar" />
+				</Panel>
+
+				<Panel class="P2Label">
+					<DOTAAvatarImage id="P2Avatar" />
+				</Panel>
+			</Panel>
+		</snippet>
+		
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore LightestGreyText HighScore TextShadowLarge" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="ArcadeMapDestination">
+			<Panel class="ArcadeMapDestination">
+				<Panel class="HeroPortraitContainer">
+					                    
+					                                                                           
+
+					                                                                  
+					                                        
+					<DOTAHeroPortrait class="Portrait" id="HeroPortrait" />
+					
+					<Panel class="HeroBorder"/>
+				</Panel>
+				<Label class="HeroName LabelMedium" text="{s:hero_name}" />
+				<Image class="Strikethrough" id="Strikethrough" src="file://{images}/events/crownfall/fight/tavern_map/slash.png" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+
+		<snippet name="Footprint">
+			<Image class="Footprint" hitest="false" src="file://{images}/events/crownfall/fight/tavern_map/footprint.png" />
+		</snippet>		
+	</snippets>
+
+	<DOTAFightingGameMenu class="NewHighScoreEarned">
+		<DOTAScenePanel id="MenuBackgroundScene" map="maps/scenes/crownfall/arena.vpk" squarePixels="true" renderdeferred="true" camera="cam_main" particleonly="false" antialias="true" post-process-material="materials/dev/deferred_post_process_crownfall_bg.vmat"/>
+		<Panel class="Contents">
+			<Image class="KeyArt" hitest="false" src="file://{images}/events/crownfall/fight/sleetfighter_titlescreen_art.png" scaling="stretch-to-fit-preserve-aspect" />
+			
+			                                                                               
+			<Panel class="Row">
+				    
+				                                                                                                                          
+				                                                                                                                             
+
+				                            
+					                                         
+					                                           
+					                                 
+				        
+				   
+			</Panel>
+			
+			<Panel class="FrontPageContents" >
+
+				<Image class="IntroLogo en" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="IntroLogo cn" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+
+				<Panel class="FightingGameTabs">
+					<Panel class="FightingGameTabsBackground"/>
+					<Panel class="TabsContainer">
+						<Panel id="OfflineTab" class="TabItem" onactivate="DOTAFightingGameMenuSelectTab(0)">
+							<Panel class="TabItemBg"/>
+							<Label text="#DOTA_FightingGame_Menu_StoryMode"/>
+						</Panel>
+						<Panel id="OnlineTab" class="TabItem" text="#DOTA_FightingGame_Menu_Multiplayer" onactivate="DOTAFightingGameMenuSelectTab(1)">
+							<Panel class="TabItemBg"/>
+							<Label text="#DOTA_FightingGame_Menu_Multiplayer"/>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="FrontPageSectionsContainer">					
+					<Panel class="PlayOfflineSection">
+						<Label html="true" class="IntroText DisplayMedium WhiteText TextShadowLarge" text="#DOTA_FightingGame_Menu_Title" />
+						<Panel class="Columns">
+							<Panel class="ColumnLeft">
+								<Label text="#DOTA_FightingGame_Menu_Controls" class="LabelLarge GoldText TextShadowLarge"/>
+								<Label text="#DOTA_FightingGame_Menu_Controls_Text" class="BodyMedium LightestGreyText" />
+								<Label text="#DOTA_FightingGame_Menu_Rewards" class="LabelLarge GoldText DescriptionHeader TextShadowLarge RewardsHeading"/>
+								<Panel id ="RewardsList" class="RewardsSection">
+									                            
+								</Panel>
+							</Panel>
+							<Panel class="ColumnRight">
+								<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+									<Panel class="LeaderListHeader">
+										<Label class="ScoreBoardType" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+										<Label class="Score" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+									</Panel>
+									<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="MyHighScore">
+							<Panel class="TitleContainer">
+								<Panel class="Dash Left"/>
+								<Label class="LabelLarge GoldText TextShadowLarge" text="#DOTA_FightingGame_Menu_MyHighScore"/>
+								<Panel class="Dash Right"/>
+							</Panel>		
+							<Label class="HighScore WhiteText TitleLarge" text="{d:high_score}"/>
+						</Panel>
+					</Panel>	
+					<Panel class="PlayOnlineSection">
+						                                                          
+						<Label class="ChallengeFriendsLabel WhiteText DisplayMedium TextShadowLarge" text="#DOTA_FightingGame_Menu_ChallengeText"/>
+						<Panel class="ChallengeListContainer">
+							<Panel class="ChallengeContainer">
+								<Label html="true" class="ChallengingText" text="#DOTA_FightingGame_Menu_Challenging"/>
+							</Panel>
+							<Panel id="PeerList">
+								                            
+							</Panel>
+							<Label class="NoPeersLabel" text="#DOTA_FightingGame_Menu_NoPeers" />
+						</Panel>
+						<DOTACrownfallButton class="Primary PlayLocalMultiplayer" text="#DOTA_FightingGame_Menu_LocalMultiplayer" onactivate="DOTAFightingGameMenuPlay( true );" />
+					</Panel>
+					<Panel class="TopGoldDash Top"/>
+					<Panel class="TopGoldDash Bottom"/>
+				</Panel>
+
+				<DOTACrownfallButton class="PlayButton Primary" text="#DOTA_FightingGame_Menu_Fight" onactivate="DOTAFightingGameMenuPlay( false);" />
+			</Panel>		
+
+			<Panel class ="CharacterSelectContents">
+				<Panel class="Background">
+					<Panel class="Left HeroPreview">
+						<DOTAScenePanel class="HeroParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+						<DOTAScenePanel class="LargeHeroPreview" id="LeftHeroPreview"/>
+						<Label id="LeftHeroName" />
+					</Panel>
+					<Panel class="Right HeroPreview">
+						<DOTAScenePanel class="HeroParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+						<DOTAScenePanel class="LargeHeroPreview" id="RightHeroPreview"/>
+						<Label id="RightHeroName" />
+					</Panel>
+					<DOTAParticleScenePanel class="SmokeFX" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<Panel class="Left StyleSelector">
+						<Label class="LabelExtraLarge GoldText StyleSelectorTitle TextShadowLarge" text="#DOTA_FightingGame_Menu_StyleSelect" />
+						<Panel class="RadioGroupContainer">
+							<RadioButton id="LeftStyle0" group="LeftStyles" selected="true" text="" onactivate="DOTAFightingGameMenuSelectStyle( true, 0 )" />
+							<RadioButton id="LeftStyle1" group="LeftStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( true, 1 )" />
+							<RadioButton id="LeftStyle2" group="LeftStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( true, 2 )" />
+							<RadioButton id="LeftStyle3" group="LeftStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( true, 3 )" />
+						</Panel>
+						<Label id="LeftStyleName" class="DisplaySmall" html="true" text="{s:left_style_name}" />
+					</Panel>
+					<Panel class="Right StyleSelector">
+						<Label class="LabelExtraLarge GoldText StyleSelectorTitle TextShadowLarge" text="#DOTA_FightingGame_Menu_StyleSelect" />
+						<Panel class="RadioGroupContainer">
+							<RadioButton id="RightStyle0" group="RightStyles" selected="true" text="" onactivate="DOTAFightingGameMenuSelectStyle( false, 0 )" />
+							<RadioButton id="RightStyle1" group="RightStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( false, 1 )" />
+							<RadioButton id="RightStyle2" group="RightStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( false, 2 )" />
+							<RadioButton id="RightStyle3" group="RightStyles" text="" onactivate="DOTAFightingGameMenuSelectStyle( false, 3 )" />
+						</Panel>
+						<Label id="RightStyleName" class="DisplaySmall" html="true" text="{s:right_style_name}" />
+					</Panel>
+				</Panel>
+				<Image class="TitleLogo en" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="TitleLogo cn" hitest="false" src="file://{images}/events/crownfall/fight/crownfall_fighting_title_screen_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="Top">
+					<Image class="TimerBackground" hitest="false" src="file://{images}/events/crownfall/fight/timer_background.png" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="TopTextContainer">
+						<Label class="ChooseFighterText" text="#DOTA_FightingGame_Menu_ChooseYourFighter"/>
+						                                                               
+						                                                          
+						                                              
+					</Panel>
+				</Panel>
+				<Panel id="CharacterSelectList">
+					                            
+				</Panel>
+				<Panel class="Bottom">
+					<Panel class="BackArrowButton" onactivate="DOTAFightingGameMenuBack()">
+						<Image id="BackButton" src="file://{images}/control_icons/24px/arrow_left.svg" texturewidth="48" textureheight="48" />
+					</Panel>
+					<Panel class="ConfirmCharacterButtonContainer" >
+						                                                               
+						<DOTACrownfallButton id="ConfirmCharacterButton" class="Primary GlowButton" text="#DOTA_FightingGame_Menu_ConfirmHero" onactivate = "DOTAFightingGameMenuConfirmCharacter( true, true )" />
+						<DOTACrownfallButton id="ConfirmStyleButton" class="Primary GlowButton" text="#DOTA_FightingGame_Menu_ConfirmStyle" onactivate ="DOTAFightingGameMenuConfirmCharacter( true, false )" />
+						<Label class="LockedInText1" text="#DOTA_FightingGame_WaitingOpponent" />
+					</Panel>
+					<Panel class="ConfirmCharacterButtonContainer LocalPlayer2" >
+						                                                               
+						<DOTACrownfallButton id="ConfirmCharacterButton" class="Primary GlowButton" text="#DOTA_FightingGame_Menu_ConfirmHero" onactivate = "DOTAFightingGameMenuConfirmCharacter( false, true )" />
+						<DOTACrownfallButton id="ConfirmStyleButton" class="Primary GlowButton" text="#DOTA_FightingGame_Menu_ConfirmStyle" onactivate ="DOTAFightingGameMenuConfirmCharacter( false, false )" />
+						<Label class="LockedInText2" text="#DOTA_FightingGame_WaitingOpponent" />
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel class="FightingContents">
+				<DOTACrownfallButton class="QuitButton Primary" text="#DOTA_FightingGame_Menu_Quit" onactivate="DOTAFightingGameMenuQuit();"/>
+			</Panel>
+
+		</Panel>
+
+		<TextButton class="CollapseButton MainBranchOnly" text="Debug toggle menu" onactivate="DOTAFightingGameMenuToggleVisible()" />
+
+		
+		<Panel id="ArcadeMap" class="ArcadeMap" >
+			<Image class="FloorplanImage" hitest="false" src="file://{images}/events/crownfall/fight/tavern_map/tavern_floorplan.png" scaling="stretch-to-fit-preserve-aspect" />
+			                                                                                         			    
+			<Label class="ArcadeMapTitle" text="#DOTA_FightingGame_Arcade_NextOpponent" />
+		</Panel>
+
+		<Panel class="ArcadeContinueOptions" >
+			<Label class="ArcadeOutcomeLabel TitleLarge" text="#DOTA_FightingGame_Arcade_Continue" />
+			<Panel class="ArcadeContinueOptionButtons">
+				<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_Quit" onactivate="DOTAFightingGameMenuArcadeQuit();"/>
+				<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_Continue" class="GlowButton" onactivate="DOTAFightingGameMenuArcadeContinue();"/>
+			</Panel>
+			<Label class="RemainingCredits TitleMedium" text="#DOTA_FightingGame_Arcade_Credits" />
+		</Panel>
+		
+		<Panel id="ArcadeGameOverOptions" class="ArcadeGameOverOptions" >
+			<Label class="ArcadeOutcomeLabel TitleLarge" text="#DOTA_FightingGame_Arcade_GameOver" />
+			<Label class="ArcadeOutcomeText TitleMedium NewHighScore" text="#DOTA_FightingGame_Arcade_NewHighScore" />
+			<Panel class="ArcadeOutcomeRow">
+				<Label class="ArcadeOutcomeText LabelLarge" text="#DOTA_FightingGame_Arcade_FinalScore" />
+				<Label class="ArcadeOutcomeValue LabelLarge" text="{d:final_score}" />
+			</Panel>
+			<Panel class="ButtonRow">
+				<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_AcceptLoss" class="GlowButton" onactivate="DOTAFightingGameMenuArcadeAcceptLoss();"/>
+			</Panel>
+		</Panel>
+
+		<Panel id="ArcadeVictoryOptions" class="ArcadeVictoryOptions" >
+			<Label class="ArcadeOutcomeLabel TitleLarge" text="#DOTA_FightingGame_Arcade_Victory" />
+			<Panel class="TitleContainer">
+				<Panel class="Dash Left"/>
+				<Label class="LabelLarge WhiteText TextShadowLarge" text="#DOTA_FightingGame_Arcade_FinalScore"/>
+				<Panel class="Dash Right"/>
+			</Panel>		
+			<Label class="HighScore GoldText TitleLarge TextShadowLarge" text="{d:final_score}"/>
+			<Label class="ArcadeOutcomeText TitleMedium NewHighScore TextShadowLarge" text="#DOTA_FightingGame_Arcade_NewHighScore" />
+			<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_AcceptVictory" class="GlowButton" onactivate="DOTAFightingGameMenuArcadeAcceptWin();"/>
+		</Panel>
+
+		<Panel class="OnlineRematchOptions" >
+			<Panel class="ButtonRow">
+				<DOTACrownfallButton text="#DOTA_FightingGame_Online_Quit" onactivate="DOTAFightingGameMenuOnlineQuit();"/>
+				<DOTACrownfallButton text="#DOTA_FightingGame_Online_Rematch" class="GlowButton" onactivate="DOTAFightingGameMenuOnlineRematch();"/>
+			</Panel>
+		</Panel>
+		
+	</DOTAFightingGameMenu>
+
+</root>

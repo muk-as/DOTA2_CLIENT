@@ -1,0 +1,25 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/current_battle_pass.css" />
+		<include src="file://{resources}/styles/dashboard_page_guild_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_guild_base.css" />
+	</styles>
+
+	<Panel class="DashboardPage GuildPage" require-composition-layer="true" hidebackground="true">
+		<DOTAScenePanel id="BackgroundMap" hittest="false" camera="shot_camera" map="backgrounds/guilds_background" light="bp_light" renderdeferred="true" deferredalpha="false" particleonly="false" live-mode="high_end_only"/>
+		<Panel id="BackgroundVignette" />
+
+		<DOTAGuildBanner id="GuildBannerPreview" />
+
+		<AsyncDataPanel id="MainContents" state="{d:guild_page_state}" loading-text="#DOTA_Guilds_LoadingData" error-text="#DOTA_Guilds_FailedToLoadData">
+			<Panel class="AsyncSuccessContainer">
+				<DOTAGuildHeader id="GuildHeader" />
+				<Panel id="PageContents" />
+			</Panel>
+		</AsyncDataPanel>
+
+	</Panel>
+
+</root>

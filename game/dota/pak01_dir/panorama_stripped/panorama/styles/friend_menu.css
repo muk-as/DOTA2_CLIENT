@@ -1,0 +1,742 @@
+                                   
+
+DOTAFriendMenu
+{
+	width: 366px;
+	height: 100%;
+
+	vertical-align: bottom;
+	
+	transition-property: opacity, transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.35s;
+}
+
+.LeftRailContain
+{
+	box-shadow: fill #00000033 0px 0px 24px 0px ;
+	background-color: #000000fe;
+	flow-children: down;
+	width: 100%;
+	height: 890px;
+	vertical-align: bottom;
+
+	margin-top: 10px;                                                         
+	overflow: noclip;
+}
+
+.OnHomePage .LeftRailContain
+{
+	background-color: #000000ee;
+}
+
+
+#ProfileCard
+{
+	z-index: 1;
+	
+	.ShowMiniShowcase & {
+		visibility: collapse;
+	}
+}
+
+.MiniShowcaseContainer {
+	z-index: 1;
+
+	visibility: collapse;
+	
+	.ShowMiniShowcase & {
+		visibility: visible;
+	}
+
+	#MiniShowcase {
+
+	}
+	
+	#EditShowcaseButton {
+		horizontal-align: right;
+		margin-top: 88px;
+		margin-right: 8px;
+
+		opacity: 0;
+		transform: translateX( 12px );
+
+		&:disabled {
+			wash-color: #888888;
+		}
+
+		#EditShowcaseLockedImage {
+			vertical-align: center;
+			height: 16px;
+			tooltip-position: bottom;
+
+			.CanEditShowcase & {
+				visibility: collapse;
+			}
+		}
+
+		                                              
+		                                
+	}
+
+	&:hover #EditShowcaseButton {
+		opacity: 1.0;
+		transform: none;
+	}
+}
+
+.IsEditingMiniShowcase #EditShowcaseButton {
+	visibility: collapse;
+}
+
+
+DOTAFriendMenu.Hidden
+{
+	opacity: 0.0;
+	transform: translateY( 300px );
+}
+
+#FriendPanelFriendsList
+{
+	opacity: 1;
+	                                               
+	width: 100%;
+	height: fill-parent-flow(1.0);
+	overflow: squish scroll;
+	flow-children: down;
+
+	transition-property: height, opacity, transform, height;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.35s, 0.35s, 0.35s, 0.0s;
+	transition-delay: 0.0s, 0.0s, 0.0s, 1s;
+}
+
+VerticalScrollBar, HTMLVerticalScrollBar
+{
+	background-color: #00000000;
+	box-shadow: none; 
+}
+
+VerticalScrollBar .ScrollThumb
+{
+	box-shadow: fill #000000aa 0px 0px 6px 0px ;
+}
+
+#FriendsPanelHeader
+{
+	width: 100%;
+	flow-children: right;
+	background-color: black;
+	padding: 6px;
+	font-weight: light;
+}
+
+#FriendsPanelWindowTitleFriends
+{
+	color: #949494;
+	color: #ffffff90;
+	font-size: 18px;
+	letter-spacing: 2px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+}
+
+#FriendsInParties
+{
+	flow-children: down;
+	width: 100%;
+	padding: 10px 10px 0px 10px;
+	background-color: #2d363b;
+	border-top: 1px solid black;
+}
+
+#FriendsInParties.Collapsed #PartyList
+{
+	visibility: collapse;
+}
+
+#PartyList
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.FriendPartyContainer
+{
+	flow-children: right;
+	margin-bottom: 15px;
+	margin-left: 3px;
+}
+
+.FriendPartyContainer DOTAFriend
+{
+	margin-right: 5px;
+}
+
+.FriendPartyContainer .FriendPartyStatus
+{
+	color: #929ba0;
+	text-transform: uppercase;
+	vertical-align: middle;
+	margin-left: 5px;
+	font-size: 14px;
+	margin-bottom: 14px;
+
+}
+
+.FriendsCategory
+{
+	flow-children: down;
+	                              
+	                              
+	width: 100%;
+	height: fit-children;
+
+	
+	transition-property: height, opacity;
+	transition-duration: .35s;
+	transition-delay: 0.4s, 0.0s;
+	transition-timing-function: ease-in-out;
+}
+
+.FriendsCategory.Collapsed
+{
+	               
+	                       
+}
+
+.FriendsCategory #FriendsHeader
+{
+	transition-property: height, opacity;
+	transition-duration: 0.35s;
+}
+
+.FriendsCategory.Collapsed #FriendList, .FriendsCategory.Empty.HideWhenEmpty #FriendList, .TeamsCategory.Collapsed #MyTeamsList, .TeamsCategory.Empty.HideWhenEmpty #MyTeamsList
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#FriendsOnline
+{
+	background-color: #1b2023;
+}
+
+#FriendMenu #FriendsOnline,
+#FriendMenu #FriendsOffline,
+#FriendMenu #FriendsPending
+{
+	background-color: transparent;   
+}
+
+#FriendsOpenParties
+{
+	background-color: #313e3c;
+}
+
+#FriendsOpenParties #FriendsHeader
+{
+	background-image: url( "file://{images}/status_icons/opengames.psd" );
+	background-position: 32px 50%;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+
+#FriendsOpenParties #FriendsHeader Label
+{
+	margin-left: 38px;
+}
+
+.FriendButton
+{
+	width: 24px;
+	height: 24px;
+	background-position: 50% 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	margin-right: 8px;
+
+	wash-color: #666;
+
+	tooltip-position: top;
+	tooltip-body-position: 50%;
+}
+
+.FriendButton:hover
+{
+	wash-color: white;
+}
+
+.FriendButton:active
+{
+	wash-color: #ccc;
+}
+
+#AddFriend
+{
+	background-image: url( "file://{images}/control_icons/addfriend.png" );
+}
+
+#FilterToggleButton
+{
+	transform: translateY( -1px );
+	background-image: url( "file://{images}/control_icons/ghostfriend_inactive.psd" );
+}
+#FilterToggleButton:selected
+{
+	background-image: url( "file://{images}/control_icons/ghostfriend.png" );
+}
+#FilterToggleButton .TickBox
+{
+	visibility: collapse;
+}
+
+
+#FriendsOffline, #FriendsPending
+{
+	background-color: black;
+}
+
+#FriendsHeader
+{
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 8px;
+	
+	             
+	height: 38px;
+
+	font-size: 18px;
+	font-weight: bold;
+	color: #929ba0;
+	background-color: none;
+	opacity: 1;
+
+	flow-children: right;
+	
+	transition-property: height, opacity;
+	transition-duration: 0.2s;
+	
+}
+#FriendsHeader .TickBox
+{
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+	background-image: url( "file://{images}/control_icons/expand_collapse.png" );
+	background-size: contain;
+	background-color: none;
+	background-repeat: no-repeat;
+	box-shadow: none; 
+	border: 0px solid transparent;
+	wash-color: #888888;
+
+	transition-property: transform,wash-color;
+	transition-duration: 0.2s;	
+}
+#FriendsHeader Label
+{
+	color: #999999;
+	margin: 0px 0px 0px 8px;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+
+#FriendsHeader:hover Label
+{
+	color: #ffffff;
+}
+
+#FriendsHeader:hover .TickBox
+{
+	wash-color: #ffffff;
+
+}
+
+.Empty #FriendsHeader
+{
+	height: 0px;
+	opacity: 0;
+	background-size: 5px 5px;
+
+}
+
+.Collapsed #FriendsHeader .TickBox
+{
+	transform: rotateZ( -90deg );
+}
+
+#FriendList
+{
+	width: 100%;
+	flow-children: down;
+	padding-left: 16px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	
+	transition-property: height;
+	transition-duration: 1s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-in-out;
+}
+
+#MyTeamsList
+{
+	width: 100%;
+	flow-children: down;
+	padding-left: 25px;
+	padding-bottom: 16px;
+  	                  
+	
+	transition-property: height;
+	transition-duration: 1s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-in-out;
+}
+
+#FriendsOpenParties #FriendList
+{
+}
+
+#PartyPanel
+{
+	flow-children: down;
+	vertical-align: bottom;
+	margin-left: 10px;
+	border: 1px solid #2b3236;
+	padding: 2px 3px 2px 0px;
+}
+
+#PartyPanel #PartyMembersPanel
+{
+	flow-children: right;
+}
+
+.FriendMenuItem
+{
+	opacity: 0.0;
+	height: 0px;
+	                        
+	width: 0px;
+	transition-property: opacity, height, width;
+	transition-duration: 0.3s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-in-out;
+
+}
+
+#FriendsHeader.Activated .FriendMenuItem
+{
+	height: 0px;
+}
+
+
+#CurrentUserStatus .FriendMenuItem.Visible
+{
+	opacity: 1.0;
+	width: 100%;
+	height: 96px;
+}
+#PartyList .FriendMenuItem.Visible
+{
+	opacity: 1.0;
+	width: 100%;
+	height: 108px;
+	padding: 0px;
+
+	border-bottom: 2px solid #00000033;
+}
+#PartyList .FriendMenuItem.AvatarRows2.Visible
+{
+	height: 180px;
+}
+#PartyList .FriendMenuItem.AvatarRows3.Visible
+{
+	height: 268px;
+}
+#PartyList .FriendMenuItem.AvatarRows4.Visible
+{
+	height: 348px;
+}
+#PartyList .FriendMenuItem.AvatarRows5.Visible
+{
+	height: 428px;
+}
+
+#FriendsOpenParties.Collapsed .FriendMenuItem.AvatarRows2,
+#FriendsOpenParties.Collapsed .FriendMenuItem.AvatarRows3,
+#FriendsOpenParties.Collapsed .FriendMenuItem.AvatarRows4,
+#FriendsOpenParties.Collapsed .FriendMenuItem.AvatarRows5
+
+{
+	height: 0px;
+}
+
+
+#FriendList .FriendMenuItem.Visible
+{
+	opacity: 1.0;
+	height: 64px;
+	width: 292px;
+}
+
+#FriendsOpenParties.Collapsed .FriendMenuItem, 
+#FriendsPlayingDota.Collapsed .FriendMenuItem, 
+#GuildMembersOnline.Collapsed .FriendMenuItem,
+#FriendsOnline.Collapsed .FriendMenuItem, 
+#FriendsOffline.Collapsed .FriendMenuItem, 
+#FriendsPending.Collapsed .FriendMenuItem
+{
+	height: 0px;
+	opacity: 0;
+}
+
+.FriendDivider
+{
+	width: 100%;
+	height: 1px;
+	background-color: red;
+}
+
+#FriendListEmptyMessage
+{
+	margin-top: 48px;
+	margin-bottom: 48px;
+	padding-top: 8px;
+	padding-bottom: 6px;
+	width: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 2px;
+	background-color: #00000055;
+}
+
+#FriendMenu.FriendsFilterEnabled DOTAFriendElementContainer:not(.RecentPlayTime)
+{
+	visibility: collapse;
+}
+
+               
+#FriendsPanelOverwatchNotification
+{
+	width: 100%;
+	height: 30px;
+	flow-children: right;
+	                            
+	background-image: url( "file://{images}/conduct/ovw-bar-bg.png" );
+	background-size: 100% 100%;
+	padding: 2px;
+	font-weight: semi-bold;
+	padding-top: 1px;
+}
+
+.HideOverwatch #FriendsPanelOverwatchNotification
+{
+	visibility: collapse;
+}
+
+#OverwatchButtons
+{
+	flow-children: right;
+	horizontal-align: right;
+}
+
+.OverwatchDismiss {
+	width: 18px;
+	height: 18px;
+	background-image: url( "file://{images}/control_icons/x_close_grey.psd" ); 
+	background-size: contain;
+	vertical-align: middle;
+	margin: 2px 5px 0px 10px;
+}
+
+.OverwatchDismiss:hover {
+	brightness: 2;
+}
+
+.OverwatchLogoIcon {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-left: 8px;
+	background-image: url( "file://{images}/conduct/ovw-icon.png" );
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation-name: pulseglow;
+	animation-duration: 3.0s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 10;
+	transition-property: opacity;
+	transition-duration: .3s;
+	overflow: noclip;
+}
+
+@keyframes 'pulseglow'
+{
+    0%
+    {
+
+		img-shadow: 0px 0px 10px #0056f5aa;
+		brightness: 1;
+    }
+    
+    50%
+    {
+		img-shadow: 0px 0px 20px #ABEBFF;
+		brightness: 1.8;
+
+    }
+    100%
+    {
+		img-shadow: 0px 0px 10px #0056f5aa;
+		brightness: 1;
+    }
+}
+
+
+.OverwatchTitle {
+	color: #fefefe;
+	font-weight: semi-bold;
+	vertical-align: middle;
+	margin-left: 8px;
+	letter-spacing: 2px;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+#OverwatchDismiss, #OverwatchReview
+{
+	vertical-align: middle;
+
+}
+
+#OverwatchReview
+{
+	background-color: #000000aa;
+	color: #ffffff;
+	border-radius: 2px;
+	font-size: 15px;
+	font-weight: semi-bold;
+	padding: 3px 8px 3px 10px;
+	vertical-align: middle;
+	margin-top: 1px;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	                                                                                                
+	border: 1px solid #000000;
+}
+
+#OverwatchReview Label {
+	                   
+}
+
+#OverwatchReview:hover {
+	background-color: #000000d2;
+	color: #ffffffee;
+	box-shadow: 0px 0px 10px #00000090;
+}
+
+#OverwatchDismiss
+{
+	text-decoration: underline;
+}
+
+#FriendSearch
+{
+	width: fill-parent-flow( 1.0 );
+	margin-right: 8px;
+
+	TextEntry {
+		width: 100%;
+		background-color: black;
+		border-radius: 3px;
+		border-color: baseBorder;
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #11111100 ), to( #22222200 ) );
+		height: fit-children;
+		padding: 4px 7px;
+
+		transition-property: border, background-color;
+		transition-duration: 0.15s;
+
+		Label {
+			font-weight: normal;
+			margin-top: 1px;
+
+			transition-property: color;
+			transition-duration: 0.1s;
+		}
+
+		&:hover {
+			border-color: #555555;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111FF ), to( #222222FF ) );
+
+			Label {
+				color: #888888;
+			}
+		}
+	}
+
+	#SearchButton {
+		visibility: visible;
+
+		background-image: url( "file://{images}/control_icons/icon_search.png" );
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+		margin: 0px 8px;
+		margin-left: 2px;
+		horizontal-align: right;
+		opacity: 0.2;
+	}
+
+	#ClearButton {
+		visibility: collapse;
+
+		background-image: url( "file://{images}/control_icons/x_close_filled.png" );
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+		margin: 0px 8px;
+		margin-left: 2px;
+		horizontal-align: right;
+		opacity: 0.2;
+
+		transition-property: opacity, transform;
+		transition-duration: 0.1s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:active {
+			transform: scale3d(0.9, 0.9, 1);
+			opacity: 0.6;
+		}
+	}
+
+	&.IsSearching {
+		#SearchButton {
+			visibility: collapse;
+		}
+
+		#ClearButton {
+			visibility: visible;
+		}
+
+		TextEntry {
+			border-color: #555555;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111FF ), to( #222222FF ) );
+		}
+	}
+}

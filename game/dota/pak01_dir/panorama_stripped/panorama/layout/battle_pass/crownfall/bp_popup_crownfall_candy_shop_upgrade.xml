@@ -1,0 +1,64 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_candy_shop_upgrade.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/common/async.ts" />
+		<include src="file://{resources}/scripts/battle_pass/crownfall/bp_popup_crownfall_candy_shop_upgrade.ts" />
+	</scripts>
+
+	<PopupCrownfallCandyShopUpgrade class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()" onload="StartStampAnimation()">
+
+		<Panel class="Contents">
+			<Panel class="LeftSide">
+				<Label class="LabelExtraLarge Title" text="#DOTA_CandyShop_Crownfall_Visit_Title" />
+				<Label class="LabelMedium Description" html="true" text="#DOTA_CandyShop_Crownfall_Visit_Description" />
+				<Panel class="UpgradeTable">
+					<Panel class="UpgradeRow UpgradeRow1">
+						<Panel class="UpgradeLeft" />
+						<Label class="UpgradeRight" html="true" text="#DOTA_CandyShop_Crownfall_Visit_Upgrade_1" />
+					</Panel>
+					<Panel class="UpgradeRow UpgradeRow2">
+						<Panel class="UpgradeLeft" />
+						<Label class="UpgradeRight" html="true" text="#DOTA_CandyShop_Crownfall_Visit_Upgrade_2" />
+					</Panel>
+					<Panel class="UpgradeRow UpgradeRow3">
+						<Panel class="UpgradeLeft" />
+						<Label class="UpgradeRight" html="true" text="#DOTA_CandyShop_Crownfall_Visit_Upgrade_3" />
+					</Panel>
+					<Panel class="UpgradeRow UpgradeRow4">
+						<Panel class="UpgradeLeft" />
+						<Label class="UpgradeRight" html="true" text="#DOTA_CandyShop_Crownfall_Visit_Upgrade_4" />
+					</Panel>
+				</Panel>
+				<Panel class="FillHeight" />
+				<TextButton class="EnterCandyShop PopupButton" text="#DOTA_CandyShop_Crownfall_Entry" onactivate="UIPopupButtonClicked()" />
+			</Panel>
+			<Panel class="RightSide">
+				<Panel class="StampContainer Stamp1" />
+				<Panel class="StampContainer Stamp2" />
+				<Panel class="StampContainer Stamp3" />
+				<Panel class="StampContainer Stamp4" />
+				<Panel class="SithilHandShadow" />
+				<Panel class="SithilHand">
+					<Panel class="SithilHandStamp" />
+				</Panel>
+				<Panel class="SithilHandTop" />
+				<Panel class="RightSideVignette" />
+			</Panel>
+		</Panel>
+
+		<TextButton id="DebugButton" class="PopupButton Red" text="Restart Anim" unlocalized="true" onactivate="StartStampAnimation()" Compiler.If="MainBranch" />
+
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+		</Panel>
+
+	</PopupCrownfallCandyShopUpgrade>
+</root>

@@ -1,0 +1,36 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_styles.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_skywrath_vengeful_arcana.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/leaf_pages/dashboard_page_debut_skywrath_vengeful_arcana.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="ModelSnippet">
+			<Panel>
+				<DOTAScenePanel id="ModelBackground" map="backgrounds/hero_showcase_skywrath_vengeful_arcana" camera="herocamera" light="light_hero" renderdeferred="true" renderwaterreflections="true" rotateonmousemove="true" antialias="true" particleonly="false"/>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAReferencePage class="DashboardPage SkyVengeDebut" hidebackground="true" onnavigatedto="RunPageAnimation()" onnavigatedaway="OnLeavePage()" oncancel="DOTASetCurrentDashboardPageFullscreen( false )">
+
+		<Panel id="MainContainer"  >
+			<Panel id="ModelContainer" />
+
+			<Panel class="BottomControls">
+				<Movie id="CrownfallLogo" controls="none" autoplay="onload" repeat="true" disableactivatepause="true" />
+				<DOTACrownfallButton id="ContinueButton" text="#DOTA_Continue" onactivate="DOTAShowHomePage()" />
+			</Panel>
+
+		</Panel>
+	</DOTAReferencePage>
+</root>

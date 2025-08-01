@@ -1,0 +1,78 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_team_fan_content_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_talent_content.css" />
+	</styles>
+
+	<DOTAPopupTalentContent class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="TalentStatus">
+			<Panel class="NameRow">
+				<Label class="NameLabel" text="Name: {s:talent_name}" unlocalized="true" />
+				<Label class="NameLabel" text="Nickname: {s:talent_nickname}" unlocalized="true" />
+				<Label class="NameLabel" text="Language: {s:broadcast_language}" unlocalized="true" />
+				<Label class="NameLabel" text="Status: {s:approval_status}" unlocalized="true" />
+			</Panel>
+		</Panel>
+
+		<Panel id="LoadingZipfile" class="TalentStatus LoadingBox">
+			<Label text="Loading Content Zipfile..." unlocalized="true" />
+		</Panel>
+
+		<Panel class="TalentStatus LoadedBox">
+			<Panel class="ContentRow">
+				<Panel class="ContentImageContainer">
+					<Image id="TalentPhoto" class="ContentImage" />
+					<Label class="ContentLabel" text="Photo" unlocalized="true" />
+					<Panel class="ApprovalRow">
+						<RadioButton id="PhotoApprove" group="PhotoApprove" class="ApprovalCheck" text="Approve" unlocalized="true" />
+						<RadioButton id="PhotoReject" group="PhotoApprove" class="ApprovalCheck" text="Reject" unlocalized="true" />
+					</Panel>
+				</Panel>
+				<Panel class="ContentImageContainer">
+					<Image id="TalentAutograph" class="ContentImage" />
+					<Label class="ContentLabel" text="Autograph" unlocalized="true" />
+					<Panel class="ApprovalRow">
+						<RadioButton id="AutoApprove" group="AutographApprove" class="ApprovalCheck" text="Approve" unlocalized="true" />
+						<RadioButton id="AutoReject" group="AutographApprove" class="ApprovalCheck" text="Reject" unlocalized="true" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="VoicelinesContainer">
+				<Panel class="VoicelineContent" id="voiceline_1">
+					<Button id="PlayVoicelineButton" class="VoicelineButton" />
+					<Label text="Voiceline 1" unlocalized="true" />
+					<Panel class="ApprovalRow">
+						<RadioButton id="VoiceApprove" group="VoicelineApprove1" class="ApprovalCheck" text="Approve" unlocalized="true" />
+						<RadioButton id="VoiceReject" group="VoicelineApprove1" class="ApprovalCheck" text="Reject" unlocalized="true" />
+					</Panel>
+				</Panel>
+				<Panel class="VoicelineContent" id="voiceline_2">
+					<Button id="PlayVoicelineButton" class="VoicelineButton" />
+					<Label text="Voiceline 2" unlocalized="true" />
+					<Panel class="ApprovalRow">
+						<RadioButton id="VoiceApprove" group="VoicelineApprove2" class="ApprovalCheck" text="Approve" unlocalized="true" />
+						<RadioButton id="VoiceReject" group="VoicelineApprove2" class="ApprovalCheck" text="Reject" unlocalized="true" />
+					</Panel>
+				</Panel>
+				<Panel class="VoicelineContent" id="voiceline_3">
+					<Button id="PlayVoicelineButton" class="VoicelineButton" />
+					<Label text="Voiceline 3" unlocalized="true" />
+					<Panel class="ApprovalRow">
+						<RadioButton id="VoiceApprove" group="VoicelineApprove3" class="ApprovalCheck" text="Approve" unlocalized="true" />
+						<RadioButton id="VoiceReject" group="VoicelineApprove3" class="ApprovalCheck" text="Reject" unlocalized="true" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="TalentStatus LoadedBox">
+			<Panel class="ContentRow">
+				<TextButton class="PopupButton" text="Update Status" unlocalized="true" onactivate="DOTATalentContentUpdateStatus()" />
+				<TextButton class="PopupButton" text="Send Status Email to Talent" unlocalized="true" onactivate="DOTATalentShowEmailPopup()" />
+				<TextButton class="PopupButton" text="Close" unlocalized="true" onactivate="UIPopupButtonClicked()" />
+			</Panel>
+		</Panel>
+	</DOTAPopupTalentContent>
+</root>

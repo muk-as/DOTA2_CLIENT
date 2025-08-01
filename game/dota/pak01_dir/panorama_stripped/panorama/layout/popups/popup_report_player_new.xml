@@ -1,0 +1,187 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_report_player_new.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/popups/popup_report_player_new.js" />
+	</scripts>
+
+	    
+		        
+			                                          
+			                                         
+		
+			                                                       
+			                                                         
+				                                                
+		
+			                            
+				                                                                              
+		
+		                 
+			                                                                              
+			
+		                                                                    
+	   
+
+	<PopupReportPlayerNew class="Report PopupPanel Hidden Report_Negative" popupbackground="dim" oncancel="UIPopupButtonClicked()" onload="SetupPopup();">
+		<Panel class="Report_Title">
+			<Panel class="Report_Title_Left">
+				<Panel class="Report_Title_Icon"/>
+				<Label class="Report_Title_Label Report_Title_Label_Negative" text="#dota_popup_report_player_title" />
+				<Label class="Report_Title_Label Report_Title_Label_Positive" text="#dota_popup_commend_player_title" />
+			</Panel>
+			
+			<Panel class="Report_Title_Right">	
+			</Panel>
+		</Panel>
+		
+		<Panel class="Report_Player">
+			<DOTAFriend id="ReportPlayer" class="Report_Player_Info SoloFriend NoPartyInvite" />
+			<Button id="AvoidButton" class="ReasonButton_Negative ReasonButton_Avoid" onactivate="PlayerReportSubmitAvoidRequest()">
+				<Panel class="AvoidButton_Layout">
+					<Panel class="AvoidButton_Icon" />
+					<Label id="AvoidRequest" class="AvoidButton_Title" text="#report_avoid" />
+					<Label id="AvoidPending" class="AvoidButton_Title" text="#report_avoid_pending" />
+					<Label id="AvoidCompleted" class="AvoidButton_Title" text="#report_avoid_completed" />
+					<Label id="AvoidFailed" class="AvoidButton_Title" text="#report_avoid_failed" />
+				</Panel>
+				<Panel class="ReasonButton_Required">
+					                                                      
+					<Panel class="ReasonButton_Required_Glow" />
+				</Panel>
+			</Button>
+			<Button id="AvoidPlusNeeded" class="" onactivate="DOTAPlusShowDefaultPage()">
+				<Panel class="PlusLogo" />
+				<Label class="PlusNeeded" text="#report_avoid_player_plus_needed" />
+			</Button>
+		</Panel>
+
+		<Label class="ReportSectionHeading Report_CategoryLabel" text="#dota_popup_report_player_select_category" />
+
+		<Panel class="Report_Options">
+
+			<Panel class="ReasonRow Positive">
+				<ToggleButton id="GoodCommunicationButton" class="ReasonButton ReasonButton_Positive ReasonButton_GoodCommunication" onactivate="PlayerReportCategoryToggled(11)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_GoodCommunication_Tooltip )" onmouseout="UIHideTextTooltip()">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_GoodCommunication_Title" />
+					</Panel>
+				</ToggleButton>
+
+				<ToggleButton id="GoodAttitudeButton" class="ReasonButton ReasonButton_Positive ReasonButton_GoodAttitude" onactivate="PlayerReportCategoryToggled(12)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_GoodAttitude_Tooltip )" onmouseout="UIHideTextTooltip()">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_GoodAttitude_Title" />
+					</Panel>
+				</ToggleButton>	
+
+				<ToggleButton id="GoodTeamworkButton" class="ReasonButton ReasonButton_Positive ReasonButton_GoodTeamwork" onactivate="PlayerReportCategoryToggled(13)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_GoodTeamwork_Tooltip )" onmouseout="UIHideTextTooltip()">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_GoodTeamwork_Title" />
+					</Panel>
+				</ToggleButton>	
+			</Panel>
+
+			<Panel class="ReasonRow Negative">
+				<ToggleButton id="ToxicTextButton" class="ReasonButton ReasonButton_Negative ReasonButton_ToxicText" onactivate="PlayerReportCategoryToggled(2)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_ToxicText_Tooltip )" onmouseout="UIHideTextTooltip()" reason="2" >
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_ToxicText_Title" />
+					</Panel>
+				</ToggleButton>
+
+				<ToggleButton id="ToxicVoiceButton" class="ReasonButton ReasonButton_Negative ReasonButton_ToxicVoice" onactivate="PlayerReportCategoryToggled(3)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_ToxicVoice_Tooltip )" onmouseout="UIHideTextTooltip()" reason="3">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_ToxicVoice_Title" />
+					</Panel>
+				</ToggleButton>	
+
+				<ToggleButton id="EnemySmurfingButton" class="ReasonButton ReasonButton_Negative ReasonButton_Smurfing" onactivate="PlayerReportCategoryToggled(4)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_Smurfing_Tooltip )" onmouseout="UIHideTextTooltip()" reason="4">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_Smurfing_Title" />
+					</Panel>
+				</ToggleButton>	
+			</Panel>
+
+			<Panel class="ReasonRow Negative">
+				<ToggleButton id="GriefingButton" class="ReasonButton ReasonButton_Negative ReasonButton_Griefing" onactivate="PlayerReportCategoryToggled(5)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_Griefing_Tooltip )" onmouseout="UIHideTextTooltip()" reason="5">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_Griefing_Title" />
+					</Panel>
+				</ToggleButton>	
+
+				<ToggleButton id="EnemyCheatingButton" class="ReasonButton ReasonButton_Negative ReasonButton_Cheating" onactivate="PlayerReportCategoryToggled(6)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_Cheating_Tooltip )" onmouseout="UIHideTextTooltip()" reason="6">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_Cheating_Title" />
+					</Panel>
+				</ToggleButton>	
+
+				<ToggleButton id="DidNotPlayRoleButton" class="ReasonButton ReasonButton_Negative ReasonButton_DidNotPlayRole" onactivate="PlayerReportCategoryToggled(7)"
+					onmouseover="UIShowTextTooltip( #DOTA_PlayerReportPopup_DidNotPlayRole_Tooltip )" onmouseout="UIHideTextTooltip()" reason="7">
+					<Panel class="ReasonButton_Layout">
+						<Panel class="ReasonButton_Icon" />
+						<Label class="ReasonButton_Label" text="#DOTA_PlayerReportPopup_DidNotPlayRole_Title" />
+					</Panel>
+				</ToggleButton>
+
+			</Panel>
+
+			<Panel class="ReasonRow Negative">
+
+			</Panel>
+
+		</Panel>
+
+		<Panel class="OverwatchSection">
+			<ToggleButton id="OverwatchReportToggle" class="TickBox" checked="true" text="#DOTA_PlayerReportPopup_SendOverwatchReport" />
+			<Panel class='TimeAgoSection'>
+				<Panel id="TimeAgos" class="RadioButtonContainer">
+					<Panel class="ReportTimeAgo" selectionpos="0">
+						<RadioButton id="TimeAgo1" class="HorizontalRadioButton TimeAgoButton" group="ReportTimeAgo" onactivate="DOTASetReportTimeAgo(0)" selected="true">
+							<Label text="#DOTA_Overwatch_Report_ReportTimeAgo_1"/>
+						</RadioButton>
+					</Panel>
+					<Panel class="ReportTimeAgo">
+						<RadioButton id="TimeAgo2" class="HorizontalRadioButton TimeAgoButton" group="ReportTimeAgo" onactivate="DOTASetReportTimeAgo(60)">
+							<Label text="#DOTA_Overwatch_Report_ReportTimeAgo_2"/>
+						</RadioButton>
+					</Panel>
+					<Panel class="ReportTimeAgo">
+						<RadioButton id="TimeAgo3" class="HorizontalRadioButton TimeAgoButton" group="ReportTimeAgo" onactivate="DOTASetReportTimeAgo(300)">
+							<Label text="#DOTA_Overwatch_Report_ReportTimeAgo_3"/>
+						</RadioButton>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel class="Report_Bottom">
+			
+			<Panel class="Report_Bottom_Buttons">
+				<Button class="ReportButton PopupButton" onactivate="UIPopupButtonClicked()">
+					<Label text="#DOTA_Cancel" />
+				</Button>
+				<Button class="ReportButton PopupButton" id="SubmitButton" onactivate="SubmitPlayerReportNew()">
+					<Label text="#DOTA_Workshop_Submit" />
+				</Button>
+			</Panel>
+		</Panel>
+	</PopupReportPlayerNew>
+</root>

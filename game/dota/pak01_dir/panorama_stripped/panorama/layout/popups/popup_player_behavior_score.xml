@@ -1,0 +1,174 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_player_behavior_score.css" />
+	</styles>
+
+    <snippets>
+        <snippet name="SuccessfulReportSnippet">
+            <Panel class="SuccessfulReport">
+                <DOTAHeroImage id="SuccessfulReportHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+                <Panel id="SuccessfulReportInfo">
+                    <Label id="SuccessfulReportDate" class="LabelSmall LightGreyText" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_Date" />
+                    <Label id="SuccessfulReportReason" class="BodyMedium LightestGreyText" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_Reason" />
+                    <Panel class="ActionTakenContainer">
+                        <Image class="ActionTakenCheckIcon" src="file://{images}/control_icons/24px/check.svg" />
+                        <Label id="SuccessfulReportActionTaken" class="LabelMedium LightGreyText" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_ActionTaken" />
+                    </Panel>
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+
+	<PopupPlayerBehaviorScore class="PopupPanel Hidden" popupbackground="dim">
+        <Panel class="Header">
+            <Panel class="HeaderLeft">
+                                                             
+                <DOTAAvatarImage id="AvatarImage" />
+                <Panel class="TitleContainer">
+                    <Label class="Title" text="#DOTA_PlayerBehaviorSummary_Popup_Title" />
+                    <Panel id="Subtitle" class="LeftRightFlow">
+                        <Label class="TimePeriod SubtitleLabel" text="#DOTA_PlayerBehaviorSummary_Popup_LastUpdated" />
+                        <Label class="TimePeriod" text="{s:conduct_summary_date}"/>
+                                                                                                                             
+                                                                                                                   
+                    </Panel>
+                    <Panel id="ProfileInfoContainer">
+                        <DOTAUserName id="ProfileName" hittestchildren="false"/>
+                        <Label id="FriendsID" text="#DOTA_ConductScorecard_FriendID" acceptsfocus="true" allowtextselection="true" />
+                    </Panel>
+                </Panel>
+            </Panel>            
+
+            <Panel class="HeaderRight">
+                                                          
+				                                        
+				        
+				                                     
+							                                                   
+							                                                                 
+							           
+                
+                                                                                          
+                <Button class="ButtonPrimary Large DarkGrey" onactivate="UIPopupButtonClicked()">
+                    <Image src="file://{images}/control_icons/24px/x_close.svg" />
+                </Button>
+            </Panel> 
+
+        </Panel>
+
+		<Panel id="MainArea" class="TopBottomFlow">
+
+            <Panel id="MainBehaviorSection">
+                <Panel class="Spinner" />
+                <Panel id="BehaviorSection" class="ProgressSection">
+                    <Panel class="Ribbon"/>
+                    <Panel class="ProgressSectionContent">
+                        <Panel class="ProgressSectionValueLabelContainer">
+                            <Panel id="BehaviorImage" class="CategoryImage" />
+                            <Label text="{d:behavior_score_current}" class="ProgressSectionValueLabel" />
+                        </Panel>
+                        <Panel class="ProgressSectionLabelContainer" >
+                            <Label text="#DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreTitle" class="ProgressSectionLabel"/>
+                            <Panel id="InfoIcon" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreInfo );" />
+                        </Panel>
+
+                        <Panel class="DisabledFeaturesContainer">
+                            <Label class="DisabledFeaturesLabel" text="#DOTA_PlayerBehaviorFeature_DisabledLabel" />
+                            <Label class="DisabledFeaturesLabel" text="{s:disabled_features}" />
+                        </Panel>
+                    
+                        <Panel class="ProgressSectionInner">
+
+                            <ProgressBar id="BehaviorScoreProgressBar" class="BehaviorProgressBar"/>
+                            <Panel id="BehaviorPips" class="ProgressPipContainer">
+                                <Panel id="BehaviorPip_3000" class="PipContainer" score="3000" onmouseover="UIShowCustomLayoutTooltip( BehaviorScoreInfo_3000, file://{resources}/layout/tooltips/tooltip_behavior_score_3000.xml )" onmouseout="UIHideCustomLayoutTooltip( BehaviorScoreInfo_3000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="BehaviorPip_5000" class="PipContainer" score="5000" onmouseover="UIShowCustomLayoutTooltip( BehaviorScoreInfo_5000, file://{resources}/layout/tooltips/tooltip_behavior_score_5000.xml )" onmouseout="UIHideCustomLayoutTooltip( BehaviorScoreInfo_5000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="BehaviorPip_7000" class="PipContainer" score="7000" onmouseover="UIShowCustomLayoutTooltip( BehaviorScoreInfo_7000, file://{resources}/layout/tooltips/tooltip_behavior_score_7000.xml )" onmouseout="UIHideCustomLayoutTooltip( BehaviorScoreInfo_7000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="BehaviorPip_10000" class="PipContainer" score="10000" onmouseover="UIShowCustomLayoutTooltip( BehaviorScoreInfo_10000, file://{resources}/layout/tooltips/tooltip_behavior_score_10000.xml )" onmouseout="UIHideCustomLayoutTooltip( BehaviorScoreInfo_10000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                            </Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            
+			    <Panel id="CommunicationSection" class="ProgressSection">
+                    <Panel class="Ribbon"/>
+                    <Panel class="ProgressSectionContent">
+                        <Panel class="ProgressSectionValueLabelContainer">
+                            <Panel id="BehaviorImage" class="CategoryImage" />
+                            <Label text="{d:communication_score_current}" class="ProgressSectionValueLabel" />
+                        </Panel>
+                        <Panel class="ProgressSectionLabelContainer" >
+                            <Label text="#DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreTitle" class="ProgressSectionLabel"/>
+                            <Panel id="InfoIcon" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreInfo );" />
+                        </Panel>
+                        <Panel class="DisabledFeaturesContainer">
+                            <Label class="DisabledFeaturesLabel" text="#DOTA_PlayerBehaviorFeature_DisabledLabel" />
+                            <Label class="DisabledFeaturesLabel" text="{s:disabled_features}" />
+                        </Panel>
+                        <Panel class="ProgressSectionInner">
+    						<ProgressBarWithMiddle id="CommunicationScoreProgressBar" class="BehaviorProgressBar"/>
+						    <Panel id="CommunicationPips" class="ProgressPipContainer" hittest="false">
+							    <Panel id="CommunicationPip_3000" class="PipContainer" score="3000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_3000, file://{resources}/layout/tooltips/tooltip_communication_score_3000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_3000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                              <Panel id="CommunicationPip_5000" class="PipContainer" score="5000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_5000, file://{resources}/layout/tooltips/tooltip_communication_score_5000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_5000 )">
+                                <Panel class="ProgressPip"/>
+                                <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                              </Panel>
+                                <Panel id="CommunicationPip_6000" class="PipContainer" score="6000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_6000, file://{resources}/layout/tooltips/tooltip_communication_score_6000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_6000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="CommunicationPip_7000" class="PipContainer" score="7000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_7000, file://{resources}/layout/tooltips/tooltip_communication_score_7000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_7000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="CommunicationPip_8000" class="PipContainer" score="8000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_8000, file://{resources}/layout/tooltips/tooltip_communication_score_8000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_8000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+                                <Panel id="CommunicationPip_10000" class="PipContainer" score="10000" onmouseover="UIShowCustomLayoutTooltip( CommunicationScoreInfo_10000, file://{resources}/layout/tooltips/tooltip_communication_score_10000.xml )" onmouseout="UIHideCustomLayoutTooltip( CommunicationScoreInfo_10000 )">
+                                    <Panel class="ProgressPip"/>
+                                    <Label class="BehaviorPipValue" text="{d:pip_score}" />
+                                </Panel>
+						    </Panel>
+					    </Panel>
+                    </Panel>
+			    </Panel>
+            </Panel>
+
+            <Panel id="SuccessfulReportsSection">
+                <Label id="SuccessfulReportsTitle" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_SectionTitle" />
+                <Label id="SuccessfulReportsSubTitle" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_SectionSubTitle" />
+                <Panel id="SuccessfullReports">
+                    <Panel id="NoSuccessfulReportsContainer">
+                        <Label id="NoSuccessfulReports" text="#DOTA_PlayerBehaviorSummary_Popup_SuccessfulReport_NoActions" />
+                    </Panel>
+                    <Panel id="SuccessfulReportsList">
+                        
+                    </Panel>
+                </Panel>
+            </Panel>
+		</Panel>
+
+		<Panel id="Footer" class="LeftRightFlow">
+            <TextButton id="OKButton" class="NavButton ButtonPrimary LightGrey Large" text="#DOTA_Ok" onactivate="UIPopupButtonClicked()" />
+		</Panel>
+
+	</PopupPlayerBehaviorScore>
+</root>

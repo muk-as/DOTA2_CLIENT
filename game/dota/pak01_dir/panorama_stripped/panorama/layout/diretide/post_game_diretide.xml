@@ -1,0 +1,63 @@
+<root>
+	<styles>	
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_styles.css" />
+		<include src="file://{resources}/styles/diretide/diretide.css" />
+
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/events/post_game_diretide.js" />
+	
+	</scripts>
+
+	<snippets>
+		<snippet name="DiretideHeroEntry">
+			<Panel class="HeroSlot">
+			<DOTAScenePanel id="BurstFX" camera="shot_camera" map="scenes/diretide/diretide_postgame_burst" hittest="false" particleonly="true"/>
+				<DOTAScenePanel id="LocalHeroSlotEffect" class="PreviewRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="true"/>
+				<DOTAScenePanel class="HeroScene" id="HeroScene" map="scenes/diretide/diretide_hero" activity-modifier="PostGameIdle" camera="hero_camera" light="light_hero" renderdeferred="true" deferredalpha="true" antialias="true" particleonly="false" />
+				<Panel id="HeroBucket" class="HeroBucket" />
+				<Panel id="CandyStack" class="CandyStack" />
+				
+				<Label class="PlayerName" text="{s:player_name}" />
+				<Label class="Candy100" text="/100" />
+				<Label class="CandyCount" text="{d:event_points}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="DiretideAwardKicker">
+			<Panel class="DiretideAwardKicker">
+				<Label class="AwardAmount Wobbler" text="+{d:award_amount}" />
+				<Label class="AwardName Wobbler" text="{s:award_name}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="DiretideItemKicker">
+			<Panel class="DiretideItemKicker">
+				<DOTAEconItem id="ItemIcon" class="DisableInspect DisableEquipped Wobbler" />
+				<Image id="ItemImage" class="Wobbler"/>
+				<Label class="ItemName Wobbler" text="#DOTA_Diretide2020_PostGame_ItemAwarded" />				
+			</Panel>
+		</snippet>
+	</snippets>
+
+
+
+	<DOTAReferencePage class="DashboardPage" >
+		<Panel id="PostGameContainer">
+			<Panel id="PostGameBackground"/>
+			<Panel id="DiretideLogo"/>
+			<DOTAScenePanel id="PostGameBG" map="scenes/diretide/diretide_postgame" camera="camera_1" light="light_hero" renderdeferred="false" antialias="true" particleonly="false" post-process-material="materials/dev/deferred_post_process_graphic_ui.vmat"/>
+			<Panel id="DiretideHeroGroup">
+			<Panel id="FeatureLogo" >
+				<DOTAScenePanel id="FeatureLogoFX" camera="shot_cameraA" map="scenes/battlepass_ti10/aghslogofx" particleonly="true"/>
+			</Panel>
+			</Panel>
+		</Panel>
+	</DOTAReferencePage>
+</root>

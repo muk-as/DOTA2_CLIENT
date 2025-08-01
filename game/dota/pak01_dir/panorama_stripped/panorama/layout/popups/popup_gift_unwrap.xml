@@ -1,0 +1,32 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_gift_unwrap.css" />
+	</styles>
+
+	<PopupGiftUnwrap class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+
+		<Label id="GiftHeader" text="#dota_gift_received_title" />
+
+		<DOTAUserName id="SenderUserName" />
+		
+		<Image id="GiftImage" src="file://{images}/received_gift.png" />
+
+
+		<Panel id="GiftDedication">
+			<Label id="DedicationHeader" text="#dota_gift_received_note" />
+			<Label id="DedicationText" text="{g:dota_filtered_string:gift_dedication}" />
+		</Panel>
+		 
+		<Panel class="PopupButtonRow">
+			<Button id="AcceptButton" class="PopupButton" onactivate="UIPopupButtonClicked( DOTAAcceptGiftUwrap() )">
+				<Label text="#dota_gift_received_accept" />
+			</Button>
+			<Button class="PopupButton" onactivate="UIPopupButtonClicked()">
+				<Label text="#DOTA_Cancel" />
+			</Button>
+		</Panel>
+		
+	</PopupGiftUnwrap>
+</root>

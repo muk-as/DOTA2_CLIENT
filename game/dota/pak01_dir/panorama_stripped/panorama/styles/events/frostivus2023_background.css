@@ -1,0 +1,224 @@
+.FrostivusBackground {
+    width: 100%;
+    height: 100%;    
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #00102300 ), to( #001023 ) );
+}
+
+.FrostivusBackgroundImage {
+    width: 100%;
+    height: 100%;
+    horizontal-align: center;
+
+    opacity: 0.03;
+	blur: gaussian( 12px );
+    horizontal-align: center;
+
+    transition-duration: 0.4s;
+    transition-property: opacity, blur;
+    transition-delay: 0s;
+
+    .AspectRatio21x9 & {
+        max-width: 2100px;
+        opacity-mask: url( "file://{images}/masks/profile_background_mask.psd" );
+    }
+
+    #RandomBackgroundImage {
+        width: 1920px;
+        height: 1080px;
+        horizontal-align: center;
+        vertical-align: center;
+        overflow: noclip;
+    }
+
+    .FrostivusBackgroundImageVignette {
+        width: 100%;
+        height: 100%;
+        vertical-align: bottom;
+        background-color: gradient( linear, 0% 0%, 0% 100%, from( #00102300 ), color-stop( 0.7, #001023ec ), to( #001023 ) );
+    }
+
+    .OnHomePage & {
+		opacity: 1;
+		blur: gaussian( 0px );
+	}
+}
+
+#MagicParticles {
+    overflow: noclip;
+    width: 800px;
+    height: 800px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    transform: translateY( -100px );
+    opacity-mask: url( "file://{images}/masks/softedge_box.png" );
+    brightness: 0.5;
+    hue-rotation: 10deg;
+}
+
+.FrostivusBackgroundFlavorTextContainer {
+    horizontal-align: center;
+    vertical-align: bottom;
+    flow-children: down;
+    margin-bottom: 100px;
+    max-width: 860px;
+
+    transition-duration: 0.4s;
+    transition-property: opacity, blur, transform;
+    transition-delay: 0s;
+
+    transform: translateY( 20px );
+    opacity: 0.0;
+    blur: gaussian( 12px );
+
+    .OnHomePage & {
+        transform: translateY( 0px );
+        opacity: 1;
+        blur: gaussian( 0px );
+    }
+}
+
+.Frostivus2023Logo {
+    width: 640px;
+    horizontal-align: center;
+    wash-color: rgba(0, 170, 255, 0.2);
+	brightness: 1.2;
+    pre-transform-scale2d: 0.99999;                                                                          
+
+    transition-property: brightness, pre-transform-scale2d;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+    &:hover {
+        pre-transform-scale2d: 1.03;
+        brightness: 1.8;
+    }
+
+    visibility: collapse;
+
+    &.en {
+        visibility: visible;
+    }
+
+    .Language_schinese &,
+    .Language_tchinese & {
+        &.cn {
+            visibility: visible;
+        } 
+        
+        &.en {
+            visibility: collapse;
+        }
+    }
+}
+
+.FrostivusBackgroundFlavorText,
+.FrostivusBackgroundFlavorText2,
+.FrostivusBackgroundFlavorText3,
+.FrostivusBackgroundFlavorText4 {
+    visibility: collapse;
+    horizontal-align: center;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+
+    &.Poem {
+        font-family: titleFont;
+    }
+
+    &.Footnote {
+        color: #B2A375;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+        line-height: 1.2;
+        margin-top: 6px;
+    }
+}
+
+.EmblemContainerFull {
+    width: 660px;
+    horizontal-align: center;
+    wash-color: #D4C288;
+    height: 6px;
+    margin: -40px 0px 20px;
+    z-index: -1;
+}
+
+.EmblemContainer {
+    width: 660px;
+    horizontal-align: center;
+    flow-children: right;
+
+    .Dash {
+        width: fill-parent-flow( 1 );
+        vertical-align: center;
+        wash-color: #D4C288;
+        height: 6px;
+
+        &.Right {
+            transform: scaleX( -1 );
+        }
+    }
+
+    .SnowflakeComtainer {
+        width: 48px;
+        height: 48px;
+
+        .Snowflake {
+            width: 100%;
+            height: 100%;
+        }
+    
+        #SnowflakeParticles {
+            width: 100%;
+            height: 100%;
+            vertical-align: center;
+            horizontal-align: center;
+            hue-rotation: -80deg;
+                                  
+            opacity-mask: url( "file://{images}/masks/softedge_box.png" );
+            brightness: 0.15;
+            -s2-mix-blend-mode: screen;
+            transform: rotateZ( 90deg ) scale3d( 1, 1, 1);
+        }
+    }    
+}
+
+.BackgroundVariant1 .FrostivusBackgroundFlavorText
+{
+    visibility: visible;
+}
+
+.BackgroundVariant2 .FrostivusBackgroundFlavorText2
+{
+    visibility: visible;
+}
+
+.BackgroundVariant3 .FrostivusBackgroundFlavorText3
+{
+    visibility: visible;
+}
+
+.BackgroundVariant4 .FrostivusBackgroundFlavorText4
+{
+    visibility: visible;
+}
+
+           
+.DebugButton
+{
+    background-image: url( 'file://{images}/topbar/bug.png' );
+    background-size: contain;
+    
+    width: 25px;
+    height: 25px;
+
+    vertical-align: top;
+    horizontal-align: center;
+    margin-top: 75px;
+
+    visibility: collapse;
+    .MainBranch & { visibility: visible; }
+}

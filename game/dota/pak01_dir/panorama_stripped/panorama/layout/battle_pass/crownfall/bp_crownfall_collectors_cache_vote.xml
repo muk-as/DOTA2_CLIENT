@@ -1,0 +1,127 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_collectors_cache_vote.css" />
+		<include src="file://{resources}/styles/hero_loadout_background_images.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="Creator">
+			<Panel class="Creator">
+				<DOTAAvatarImage id="CreatorAvatarImage" />
+				<DOTAUserName id="CreatorName" />
+			</Panel>
+		</snippet>
+		<snippet name="IncludedItem">
+			<Panel class="IncludedItem">
+				<DOTAUIEconSetPreview id="SetPreview" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTABPCrownfallCollectorsCacheVotePage class="DashboardPage BattlePassPage">
+
+		<Panel id="CompendiumBody" class="CompendiumBody">			
+
+			<Panel id="VotesLoading">
+				<Panel class="Spinner" />
+				<Label id="VotesLoadingLabel" text="#DOTA_Collectors_Cache_Vote_Loading" />
+			</Panel>
+
+			<DOTACountdown id="VotingTimeCountdown" server-time="true">
+				<Label id="VotingTimeRemaining" class="MonoNumbersFont" text="#DOTA_Collectors_Cache_Vote_TimeRemaining" />
+				<Label id="VotingFinished" text="#DOTA_Collectors_Cache_Vote_Finished" />
+			</DOTACountdown>
+				
+			<DOTALargeModelPreview id="LargeModelPreview" environment="full_body_loadout" />
+
+			<Panel id="MainContents" hittest="false">
+
+				<Panel id="ModelControls">
+					<Label id="status-liked" class="status" text="#DOTA_Collectors_Cache_Vote_Upvoted" />
+					<Label id="status-disliked" class="status" text="#DOTA_Collectors_Cache_Vote_Downvoted" />
+					<Panel id="ButtonsContainer">
+						<Button id="PreviousButton" class="NavigateButton" onactivate="DOTABPCrownfallTreasureVotingIncrementSelectedItem( -1 )" />
+						<Button id="DownvoteButton" class="VoteButton" onactivate="DOTABPCrownfallTreasureVotingVoteForSelectedItem( -1 )" />
+						<Button id="UpvoteButton" class="VoteButton" onactivate="DOTABPCrownfallTreasureVotingVoteForSelectedItem( 1 )" />
+						<Button id="NoBpButton" class="DefaultButton" onactivate="DOTAMakeEventPurchase( EVENT_ID_INTERNATIONAL_2022 )">
+							<Panel class="bp-shield-container" >
+								<Panel class="bp-shield" />
+							</Panel>
+							<Panel class="bp-text">
+								<Label class="needs-battle-pass" text="#DOTA_Collectors_Cache_Vote_NeedsBattlePass" />
+								<Label class="buy-battle-pass-link" text="#DOTA_FrontPage_International2020_Buy" />
+							</Panel>
+						</Button>
+						<Button id="NextButton" class="NavigateButton" onactivate="DOTABPCrownfallTreasureVotingIncrementSelectedItem( 1 )" />
+					</Panel>
+					<Label id="ItemNumber" text="#DOTA_Collectors_Cache_Vote_SetNumber" />
+				</Panel>				
+
+				<Panel id="RightPanel" hittest="false">
+					<Panel class="TitleContainer">
+						<Image class="TitleLogoBackgroundImage" src="file://materials/models/ui/loadout/collectorscache_2023_image_standlone.psd" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="LogoShadow"/>
+						<Panel class="TitleTextContainer">
+							<Image class="CrownfallLogo" src="file://{images}/events/crownfall/logos/crownfall_logo_en.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="CrownfallLogoCN" src="file://{images}/events/crownfall/logos/crownfall_logo_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="ContestTitle TitleExtraLarge" text="#DOTA_CollectorsCacheVoting_Title" />
+							<Label class="ContestDescription" text="#DOTA_Collectors_Cache_Vote_Desc" />
+						</Panel>
+					</Panel>
+
+					<Panel class="DashDotDivider">
+						<Panel class="Dash Left"/>
+						<Panel class="Dot"/>
+						<Panel class="Dash Right"/>
+					</Panel>
+
+					<Panel id="HeroInfo">
+						<DOTAHeroImage id="HeroImage" />
+						<Label class="TitleMedium" id="HeroName" text="{g:dota_hero_name:hero_id}" />
+					</Panel>
+
+					<Panel class="CreatorsItemsContainer">
+						<Panel id="CreatorsSection" class="InfoSection">
+							<Panel class="InfoSectionHeader">
+								<Label class="InfoSectionLabel" text="#DOTA_Collectors_Cache_Vote_CreatorsTitle" />
+							</Panel>
+							<Panel id="CreatorsContainer">
+								<Panel id="CreatorsList" class="CreatorsState" />
+								<Panel id="CreatorsLoading" class="CreatorsState">
+									<Panel class="Spinner" />
+								</Panel>
+								<Panel id="CreatorsFailedToLoad" class="CreatorsState">
+									<Label text="#DOTA_Collectors_Cache_Vote_CreatorsFailedToLoad" />
+								</Panel>
+							</Panel>
+						</Panel>
+
+						<Panel id="IncludedItemsSection" class="InfoSection">
+							<Panel class="InfoSectionHeader">
+								<Label class="InfoSectionLabel" text="#DOTA_store_item_details_included" />
+							</Panel>
+							<Panel id="IncludedItemsList" />
+						</Panel>
+					</Panel>						
+
+					<Panel id="InGamePreviewSection" class="InfoSection">
+						<Panel class="InfoSectionHeader">
+							<Label class="InfoSectionLabel" text="#DOTA_Collectors_Cache_Vote_InGamePreview" />
+							<Panel class="FillWidth" />
+							<DemoModeButton id="DemoButton" class="BattlePassTextDemoButton" onactivate="DOTABPCrownfallTreasureVotingDemoSelectedItem()" />
+						</Panel>
+						<DOTAScenePanel id="InGamePreviewScene" map="backgrounds/workshop_vote_treadmil" camera="hero_camera" light="hero_light" renderdeferred="false" hittest="false" antialias="true" particleonly="false" />
+
+					</Panel>
+
+				</Panel>
+
+			</Panel>
+
+		</Panel>
+	</DOTABPCrownfallCollectorsCacheVotePage>
+
+</root>

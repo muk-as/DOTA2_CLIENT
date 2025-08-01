@@ -1,0 +1,101 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_quick_buy.css" />
+	</styles>
+	<DOTAQuickBuy>
+		<Panel id="QuickBuyRows" onactivate="DOTAHUDQuickBuyBackgroundClicked()">
+			<Panel id="StickyItemSlotContainer">
+				<DOTAShopItem id="StickySlot"/>
+				<Panel class="StickyDropTarget" hittest="false" />
+			</Panel>
+			<Panel id="QuickBuyRowsBuybackOverlay" hittest="false" />			
+			<Label id="Hint" text="#DOTA_Quick_Buy_Hint" />
+			<Panel id="Row0" class="QuickBuyRow">
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot0"/>
+					<DOTAItemImage id="QuickBuyInset0" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget0" class="QuickBuySlotDropTarget" hittest="false" />
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot1"/>
+					<DOTAItemImage id="QuickBuyInset1" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget1" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot2"/>
+					<DOTAItemImage id="QuickBuyInset2" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget2" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot3"/>
+					<DOTAItemImage id="QuickBuyInset3" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget3" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+			</Panel>
+			<Panel id="Row1" class="QuickBuyRow">
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot4"/>
+					<DOTAItemImage id="QuickBuyInset4" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget4" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot5"/>
+					<DOTAItemImage id="QuickBuyInset5" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget5" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot6"/>
+					<DOTAItemImage id="QuickBuyInset6" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget6" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+				<Panel class="QuickBuySlot">
+					<Panel class="QuickBuySlotBg"/>
+					<DOTAShopItem id="QuickBuySlot7"/>
+					<DOTAItemImage id="QuickBuyInset7" hittest="false"/>
+					<Panel id="QuickBuySlotDropTarget7" class="QuickBuySlotDropTarget" hittest="false"/>
+				</Panel>
+			</Panel>
+			<Panel class="DropTarget" hittest="false" />
+			<DOTAShopItem id="SuggestItems" acceptsjoyfocus="true" />
+			<Panel class="QuickBuyActionsContainer">
+				<Button id="BuybackProtection" onactivate="DOTAHUDToggleBuybackProtection()" acceptsjoyfocus="true" onmouseover="UIShowTextTooltip('#DOTA_Buyback_Protection')" onmouseout="UIHideTextTooltip()"/>
+				<Image id="ClearQuickBuy" onactivate="DOTAHUDClearQuickBuy()" src="file://{images}/control_icons/24px/x_close.svg" scaling="stretch-to-fit-preserve-aspect" acceptsjoyfocus="true" />
+				<Image id="RemoveItemDropTarget" src="file://{images}/control_icons/24px/trash.svg" scaling="stretch-to-fit-preserve-aspect" acceptsjoyfocus="true" />
+			</Panel>
+		</Panel>
+
+		<Panel id="ShopCourierControls">
+			<Panel class="ShopButtonContainer">
+				<Panel id="ShopButtonBuybackOverlay" hittest="false" />
+				<Button id="ShopButton" onmouseover="DOTAHUDShowGoldTooltip()" onmouseout="DOTAHUDHideGoldTooltip()" onactivate="DOTAHUDToggleShop();" oncontextmenu="DOTAHUDShopButtonRightClick(); DOTAHUDHideGoldTooltip();" acceptsjoyfocus="true" >
+					                                                                          
+					<Label id="GoldLabel" hittest="false" class="MonoNumbersFont ShopButtonValueLabel" text="{u:gold}" />
+					<Panel id="GoldIcon" hittest="false" />
+					<Panel id="BuybackHeader" class="TopBottomFlow">
+						<Label id="BuybackLabel" text="#DOTA_Hud_BuybackLabel"/>
+						<Label id="NoBuybackLabel" text="#DOTA_Hud_NoBuybackLabel"/>
+						<Panel id="BuybackDelta" class="LeftRightFlow">
+							<Label id="Plus" class="MonoNumbersFont" text="(+"/>
+							<Label id="NoPlus" class="MonoNumbersFont BuybackValueFont" text="("/>
+							<Label id="BuybackGoldSurplus" class="MonoNumbersFont BuybackValueFont" text="{d:r:buyback_gold_surplus})" />
+							<Label id="BuybackCooldown" class="MonoNumbersFont BuybackValueFont" hittest="false" text="({s:buyback_cooldown})" />
+						</Panel>
+					</Panel>
+				</Button>
+			</Panel>
+			<DOTACourier id="courier" />
+		</Panel>
+		<Panel id="OverflowIndicator" hittest="false">
+			<Label text="+{d:overflow_amount}" />
+		</Panel>
+	</DOTAQuickBuy>
+</root>

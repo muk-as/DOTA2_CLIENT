@@ -1,0 +1,1053 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_survivors.css" />
+	</styles>
+
+	<snippets>
+
+		<snippet name="ScoreEvent">
+			<Panel class="ScoreEvent">
+				<Panel class="Contents">
+					<Label class="EventTitle" text="{s:event_title}" />
+					<Label class="ScoreAmount" text="+{d:score_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="DefaultDamageEvent">
+			<Panel class="DefaultDamageEvent DamageEvent">
+				<Label class="DamageAmount" text="{d:damage_amount}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="CritDamageEvent">
+			<Panel class="CritDamageEvent DamageEvent">
+				<Panel class="Contents">
+					<Panel class="Icon" />
+					<Label class="DamageAmount" text="{d:damage_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="MagicDamageEvent">
+			<Panel class="MagicDamageEvent DamageEvent">
+				<Panel class="Contents">
+					<Panel class="Icon" />
+					<Label class="DamageAmount" text="{d:damage_amount}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="PlayerInventorySlot">
+			<Panel class="PlayerInventorySlot">
+				<Panel class="PowerUpImageContainer">
+					<Image id="PowerUpImage" />
+					<Panel class="PowerUpCooldownContainer">
+						<Panel id="PowerUpCooldownProgress"/>
+						<Label class="PowerupCooldownLabel" text="{s:cooldown_remaining}" />		
+					</Panel>
+					<Panel class="PowerUpImageBorder" hittest="false"/>
+					<Panel class="HighlightTarget" />
+				</Panel>
+				<Panel class="ShardScepterImageContainer">
+					<Panel class="ShardScepterBackground"/>
+					<Panel class="AbilityShardScepterImage"/>
+				</Panel>
+				<Label class="PowerUpLevel" html="true" text="#DOTA_Survivors_PowerUpLevel" />
+			</Panel>
+		</snippet>
+
+		<snippet name="TooltipVariableLine">
+			<Panel class="TooltipVariableLine">
+				<Label class="TooltipVariable" text="{s:tooltip_description}: {s:tooltip_value}{s:tooltip_suffix}" html="true"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="AttributeDescriptionLine">
+			<Panel class="AttributeDescriptionLine">
+				                                                                                                                         
+				<Label id="AttributeDetails" class="AttributeDescription Details" text="{s:attribute_description}" html="true"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="PowerUpChoice">
+			<Panel class="PowerUpChoice">
+				<Panel class="HeroImageContainer">
+					<Image class="ActorShadow" src="file://{images}/events/crownfall/visual_novel/shadow.png" scaling="stretch-to-cover-preserve-aspect" />
+					<Panel class="ActorBackground"/>
+					<Image class="ActorBorderUnder" src="file://{images}/events/crownfall/visual_novel/border_under_simple.png" scaling="stretch-to-cover-preserve-aspect" />
+					<Image id="HeroImage"/>
+					<Image class="ActorBorderOver" src="file://{images}/events/crownfall/visual_novel/border_over_simple.png" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				                                               
+					                                       
+					                                                                                                                                                                                                                                                                         
+					                                         
+				            
+				<Panel class="PowerUpContainer">
+					<Panel class="PowerUpBackground" />
+					<Label class="PowerupLabel LabelSmall" text="{s:powerup_type}"/>
+					<Label class="ScepterLabel LabelMedium" text="#DOTA_AbilityTooltip_Aghs_Scepter"/>
+					<Label class="ShardLabel LabelMedium" text="#DOTA_AbilityTooltip_Aghs_Shard"/>
+					<Image class="PowerupTexture" hittest="false" src="file://{images}/events/crownfall/survivors/powerup_texture.png" scaling="stretch-to-cover-preserve-aspect" />
+					<Label class="HeroName" text="{s:hero_name}" />
+					<Panel class="ShardScepterImageContainer">
+						<Panel class="ShardScepterBackground"/>
+						<DOTAParticleScenePanel class="ShardScepterParticles" hittest="false" particleName="particles/ui/hud/aghs_status_active_scepter.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<Panel class="AbilityShardScepterImage"/>
+					</Panel>
+					<Panel class="AbilityImageContainer">
+						<Image id="AbilityImage" />
+						<Panel class="AbilityImageShine"/>
+					</Panel>
+					<Label class="AbilityName" text="{s:ability_name}" />
+					<Label class="MajorUpgrade" text="#DOTA_Survivors_MajorUpgrade" />
+					<Panel id="AbilityCombinationItemsContainer">
+						<Label class="LabelSmall" text="#DOTA_Survivors_CombinedItemTooltip" />
+						<Panel id="AbilityCombinationItems">
+							                         
+						</Panel>
+					</Panel>
+					<Panel id="TooltipVariableLines">
+						                         
+					</Panel>
+					<Panel id="AttributeDescriptionLines">
+						                         
+					</Panel>
+					<Label class="PowerUpDescription" html="true" text="{s:powerup_desc}" />
+					<Panel id="ItemAffectedAbilitiesOuter">
+						<Panel class="ItemAffectedHolder">
+							<Label class="BodySmall" text="{s:synergy_tooltip}" />
+							<Panel id="ItemAffectedAbilities">
+								                         
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="NewPowerup">
+						<Image class="NewPowerupBadge" src="file://{images}/events/crownfall/survivors/new_badge_container.png" scaling="stretch-to-cover-preserve-aspect" />
+						<Label class="NewPowerupLabel LabelMedium" text="#DOTA_Survivors_NewPowerup" />
+					</Panel>
+					<Label class="LevelUpgradeInfo" text="#DOTA_Survivors_LevelUpgradeInfo" html="true"/>
+					<Panel class="ControlKey Small"><Label class="KeyText" text="{d:powerup_key}" /></Panel>
+				</Panel>
+				<Panel class="PowerUpContainerBorder" hittest="false"/>
+				<DOTACrownfallButton id="ChooseButton" text="#DOTA_Survivors_ChoosePowerup" />
+			</Panel>
+		</snippet>
+
+		<snippet name="PlayerAttribute">
+			<Panel class="PlayerAttribute">
+				<Panel class="LeftSide">
+					<Image id="AttributeIcon" class="AttributeIcon" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="AttributeName" text="{s:attribute_name}" />
+					<Label class="AttributeValue" text="{s:attribute_base_value}" />
+				</Panel>
+				<Panel class="ItemContainer">
+					<Image id="ItemIcon" class="ItemIcon" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="AttributeBuffContainer">
+					<Label class="AttributeBuffValue" text="{s:attribute_bonus_value}" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="MetaUpgradeAttributePip">
+			<Panel class="MetaUpgradeAttributePip Pip">
+				
+			</Panel>
+		</snippet>
+
+		<snippet name="UpgradePip">
+			<Panel class="UpgradePipOuter">
+				<Panel class="UpgradePip"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="MetaUpgradeAttribute">
+			<Panel class="MetaUpgradeAttribute" >
+				<Panel class="MetaUpgradeAttributeContainer">
+					<Label class="AttributeName" text="{s:attribute_name}" />
+					                                                
+					<Panel id="UpgradePipsContainer">
+						<Panel class="UpgradePipOuter">
+							<Panel class="UpgradePip"/>
+						</Panel>
+						<Panel class="UpgradePipOuter">
+							<Panel class="UpgradePip"/>
+						</Panel>
+						<Panel class="UpgradePipOuter">
+							<Panel class="UpgradePip"/>
+						</Panel>
+						<Panel class="UpgradePipOuter">
+							<Panel class="UpgradePip"/>
+						</Panel>
+						<Panel class="UpgradePipOuter">
+							<Panel class="UpgradePip"/>
+						</Panel>
+					</Panel>
+					<Label class="AttributeValue AddedValue" html="true" text="{s:attribute_value}" />
+					<Panel class="CostLabelContainer">
+						<Panel class="LineBreak" />
+						<Label class="CostLabel LabelSmall" text="#DOTA_Survivors_Cost" />
+						<Panel class="LineBreak Right" />
+					</Panel>
+					<Panel class="CostContainer">
+						<Panel id="TokensContainer" class="TokenCost" >
+						</Panel>
+						<Label class="CurrencyPlus LabelMedium" text="+" />
+						<Label class="CurrencyCost LabelLarge GoldText" text="{s:currency_cost}" />
+						<Image class="GoldIcon" src="file://{images}/events/crownfall/survivors/gold_coins.svg" texturewidth="24" textureheight="24" />
+					</Panel>
+					<DOTACrownfallButton id="UpgradeButton" class="UpgradeButton Secondary" text="#DOTA_Survivors_Upgrade" />
+					<Panel id="FilterTokenIcon" onmouseover="UIShowTextTooltip( #DOTA_Survivors_ToggleFilterTokenTooltip )" onmouseout="UIHideTextTooltip()">
+						<Label class="FilterLabel LabelSmall" text="#DOTA_Survivors_ToggleTokenFilter" />
+						<Panel class="Checkbox">
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="SelectedDifficultyBorder" hittest="false" />
+			</Panel>
+		</snippet>
+
+		<snippet name="MetaUpgradeAttributeRow">
+			<Panel class="MetaUpgradeAttributeRow">
+			</Panel>
+		</snippet>
+
+		<snippet name="AbilityStats">
+			<Panel class="AbilityStats">
+				<Panel class="AbilityImageContainer" onmouseover="UIShowTextTooltip( {s:ability_name} )" onmouseout="UIHideTextTooltip()">
+					<Image id="AbilityImage"/>
+				</Panel>
+				<Label text="{s:ability_name}" class="AbilityStatLabel AbilityName"></Label>
+				<Panel class="FillWidth"/>
+				<Panel id="AbilityShardScepterImage" class="AbilityShardScepterImage Empty"/>
+				<Panel class="AbilityLevelContainer">
+					<Label text="{d:ability_level}" class=""></Label>
+				</Panel>
+				<Label text="{d:ability_damage}" class="AbilityStatLabel AbilityDamage"></Label>
+				<Label text="{s:ability_time}" class="AbilityStatLabel AbilityTimeHeld"></Label>
+				<Label text="{f:1:ability_dps}" class="AbilityStatLabel AbilityDPS"></Label>
+			</Panel>
+		</snippet>
+
+		<snippet name="ItemStats">
+			<Panel class="ItemStats">
+				<Image id="ItemImage" />
+				<Label text="{s:item_name}" class="ItemName"></Label>
+				<Panel class="AbilityLevelContainer">
+					<Label text="{d:item_level}" class=""></Label>
+				</Panel>
+				<Label text="{s:item_time}" class="ItemTimeHeld"></Label>
+			</Panel>
+		</snippet>
+
+		<snippet name="EnemyStats">
+			<Panel class="EnemyStats">
+				<Panel class="EnemyStatImageContainer" onmouseover="UIShowTextTooltip( {s:enemy_name} )" onmouseout="UIHideTextTooltip()">
+					<Image id="EnemyStatImage" class="EnemyStatImage" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Label text="{d:enemy_killed}" class="EnemyKilled"></Label>
+			</Panel>
+		</snippet>
+
+		<snippet name="MinimapPlayerIcon">
+			<Panel class="MinimapPlayerIcon">
+				<Panel class="MinimapPlayerIconGlow"/>
+				<Panel id="MinimapPlayerIconCompassContainer">
+					<Panel class="MinimapPlayerIconCompass"/>
+				</Panel>	
+				<Panel class="MinimapPlayerIconImage"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="MinimapSmallMinibossIcon">
+			<Panel class="MinimapSmallMinibossIcon">
+				<Panel class="MinimapSmallMinibossPin"/>
+				<Panel class="MinimapSmallMinibossImage"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="MinimapLargeMinibossIcon">
+			<Panel class="MinimapLargeMinibossIcon">
+			</Panel>
+		</snippet>
+
+		<snippet name="MinimapTreasureIcon">
+			<Panel class="MinimapTreasureIcon">
+				<Panel class="MinimapTreasureGlow"/>
+				<Panel class="MinimapTreasureIconImage"/>
+				<Panel class="MinimapTreasureIconAlert"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="MinimapMagnetIcon">
+			<Panel class="MinimapMagnetIcon">
+				<Panel class="MinimapMagnetIconImage"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="ChooseHeroButton">
+			<Panel class="ChooseHeroButton">
+				<Panel class="ChooseHeroBackground"/>
+				<Panel class="ChooseHeroCustomBackground"/>
+				<Image class="ChooseHeroTexture" src="file://{images}/events/crownfall/survivors/powerup_texture.png" scaling="stretch-to-cover-preserve-aspect" />
+
+				<DOTALargeModelPreview id="HeroModel"></DOTALargeModelPreview>
+
+				                                                                                                                                                                                                                                                 
+				                                                                                                                                                                                                                                                 
+				                                                                                                                                                                                                                               
+
+				<Panel class="HeroDetails">
+					<Label class="HeroName TitleMedium" text="{s:choose_hero_name}" />
+					<Label class="StartingAbilityLabel LabelSmall" text="#DOTA_Survivors_StartingAbilityLabel" />
+					<Panel class="LeftRightFlow">
+						<Panel class="InnateImageContainer">
+							<Image id="InnateImage" />
+						</Panel>
+						<Panel class="AbilityImageContainer">
+							<Image id="AbilityImage" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ChooseHeroBorder" hittest="false"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="HealthBar">
+			<Panel class="HealthBar">
+				<Panel class="PlayerHealthBarExpContainer">
+					<Panel class="PlayerExpProgressCircle"/>
+					<Panel id="PlayerExpProgressCircleFilled"/>
+					<Label class="GoldText TempLevelLabel" text="{d:player_level}" />
+				</Panel>
+				<Panel class="HealthBarContainer">
+					<ProgressBar id="HealthBar" />
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="ChatWheel">
+			<Panel class="ChatWheelMessage">
+				<Button id="ChatWheelMessageSoundButton" >
+					<Panel class="ChatWheelMessageContainer">
+						<Panel class="ChatWheelMessageSoundIcon"/>
+						<Label class="ChatWheelMessageAll" text="#dota_all_chat_label" />
+					</Panel>
+					<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+				</Button>
+			</Panel>
+		</snippet>
+
+		<snippet name="ItemReward">
+			<Panel class="ItemReward" >
+				<EconItemImage id="ItemImage" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+
+		<snippet name="EmoticonReward">
+			<Panel class="EmoticonReward" >
+				<DOTAEmoticon id="Emoticon"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="DifficultyLevel">
+			<Panel class="DifficultyLevelItem" >
+				<Panel class="DifficultyLevelItemContent" >
+					<Panel class="EchelonContainer" >
+						<Panel class="EchelonBadge" />
+						<Panel class="EchelonContent" >
+							<Label class="LabelSmall RankLabel" html="true" text="#DOTA_Survivors_DifficultyEchelon" />
+							<Label class="RankValue" html="true" text="#DOTA_Survivors_DifficultyEchelonRank" />
+						</Panel>
+					</Panel>
+					<Panel class="VerticalDivider" />
+					<Panel class="DifficultyDescriptionContainer" >
+						<Label class="DifficultyName" text="{s:difficulty_name}" />
+						<Panel class="LeftRightFlow">
+							<Image class="LockIcon" src="file://{images}/control_icons/24px/lock.svg" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+							<Label class="DifficultyDescription" html="true" text="{s:difficulty_description}" />
+						</Panel>
+					</Panel>
+					<Panel class="RewardContainer" hittest="false">
+						<Panel id="RewardSnippetContainer">
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="LockedPattern" hittest="false" />
+				<Panel class="DifficultyBorder" hittest="false" />
+				<Panel class="SelectedDifficultyBorder" hittest="false" />
+			</Panel>
+		</snippet>
+
+		<snippet name="Objective">
+			<Panel class="Objective">
+				<Image id="ObjectiveImage" class="ObjectiveImage" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Panel class="ObjectiveTextContainer">
+					<Label id="ObjectiveLabel" class="ObjectiveName Optional BodySmall" text="{s:miniboss_name}" />
+					<Label class="LabelSmall ObjectiveStatusLabel" text="Available" />
+				</Panel>
+				<Image class="ObjectiveRewardIcon" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+			</Panel>
+		</snippet>
+
+
+	</snippets>
+
+	<Panel class="PopupPanel Survivors Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTASurvivorsOnCancel()">
+
+		<Panel class="MainContentsWrapperContainer">
+
+			<Panel class="MainContentsWrapper">
+				<Panel class="MainContents">
+					<Panel id="ArenaSceneContainer">
+						                                                                              
+					</Panel>
+
+					<Panel class="FadeCover">
+						
+					</Panel>
+
+					<Panel class="GameUI">
+						<Panel id="EventsOverlay" hittest="false" hittestchildren="false" />	
+						
+						<Panel class="PlayerDamageContainer" hittest="false" hittestchildren="false" />	
+
+						<Panel class="TimelineBackground" hittest="false"/>
+
+						<Panel class="BossHealthContainer">
+							<Label class="BossLabel" text="#DOTA_Survivors_BossName" />
+							<ProgressBar id="BossHealthProgressBar" />
+							<Label class="ProgressBarLabel" text="{d:boss_health} / {d:boss_max_health}" />
+						</Panel>
+
+						<Panel class="TimelineContainer">
+							<Label class="TimerHUD TitleSmall" text="{s:timer}"/>
+							<Panel class="Timeline">
+								<ProgressBar id="TimelineBar" />
+								<Panel id="TimelineMiniboss1" class="MinibossTimelineIcon"></Panel>
+								<Panel id="TimelineMiniboss2" class="MinibossTimelineIcon"></Panel>
+								<Panel id="TimelineMiniboss3" class="MinibossTimelineIcon"></Panel>
+								<Panel id="TimelinBoss" class="BossTimelineIcon"></Panel>
+							</Panel>
+							                                                           
+						</Panel>
+
+						<Panel class="MinibossWarningAlertContainer">
+							<Panel class="WarningDarkness"/>
+							<Panel class="WarningContainer">
+								<Image class="Emblem Left" src="file://{images}/events/crownfall/survivors/label_emblem.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+								<Panel class="WarningBadge">
+									<Panel class="WarningBadgeBackground"/>
+									<Label class="LabelMedium WarningLabel" text="#DOTA_Survivors_MiniBossWarningLabel" />
+									<Panel class="WarningRed"/>
+								</Panel>
+								<Image class="Emblem Right" src="file://{images}/events/crownfall/survivors/label_emblem.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+							</Panel>
+							<Panel class="WarningTitleContainer">
+								<Image class="MultiDash Left" src="file://{images}/events/crownfall/survivors/multi_dash.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+								<Label class="WarningTitle TitleSmall" text="#DOTA_Survivors_MiniBossWarninTitle"/>
+								<Image class="MultiDash Right" src="file://{images}/events/crownfall/survivors/multi_dash.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+							</Panel>
+							<Image class="BottomEmblem" src="file://{images}/events/crownfall/survivors/label_emblem_bottom.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+						</Panel>
+
+						<Panel class="ObjectivesLogShadow"/>
+
+						<Panel class="ObjectivesLogContainer">
+							<Label id="DefeatImperiaLabel" class="Objective Mandatory" text="#DOTA_Survivors_DefeatImperia" />
+							<Panel class="ObjectivesTitleContainer">
+								<Label class="ObjectivesHeading LabelMedium" text="#DOTA_Survivors_OptionalBossFights" />
+								<Label class="ObjectivesDescription" text="#DOTA_Survivors_OptionalBossFightsDescription" />
+							</Panel>
+							<Panel id="OptionalObjectivesContainer">
+								                           
+							</Panel>
+							<Image class="Emblem" src="file://{images}/events/crownfall/buttons/emblem_2.png" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						
+						<Panel id="ChatterContainer" hittest="false" hittestchildren="false">
+							                                            
+						</Panel>						
+						
+						<Panel id="HealthBarsContainer" hittest="false">
+							                                        
+						</Panel>
+
+						<Panel class="ObjectivesIntroContainer" hittest="false">
+							<Label id="SurviveTitle" text="#DOTA_Survivors_Survive" />
+							<Label id="DefeatImperiaTitle" text="#DOTA_Survivors_DefeatImperia" />
+						</Panel>
+
+						<Panel class="MinibossIntroContainer" hittest="false">
+							<Label id="MinibossArrivedTitle" text="#DOTA_Survivors_MinibossArrived" />
+						</Panel>
+						
+						<Panel class="PlayerHudContainer">
+
+							<Panel class="PlayerExp">
+								<Panel class="PlayerExpContainer">
+									<ProgressBar id="PlayerExpProgressBar" />
+									<Panel class="PlayerExpProgressCircle"/>
+									<Panel id="PlayerExpProgressCircleFilled"/>
+									<Panel class="PlayerExpLevelLabelsContainer">
+										<Label class="TitleSmall GoldText LevelText" text="{d:player_level}" />
+										<Panel class="GemCounter">
+											<Label class="LabelSmall ExpText" text="{d:player_exp} / {d:exp_requirement}" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="GemImage"/>
+							</Panel>
+
+							<Image class="HudEndCapImage" src="file://{images}/events/crownfall/survivors/side_flare_tall.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+
+							<Panel class="PlayerHeroPortraitContainer">
+								<DOTAHeroPortrait id="HeroPortrait" />
+							</Panel>
+
+							<Panel class="PlayerAbilitiesContainer">
+								<Panel class="PlayerAbilitiesBackground"/>
+								<Panel class="EdgeShadow"/>
+								<Panel class="PlayerInnatesAndActiveContainer">
+									<Panel id="PlayerInnateContainer">
+										                          
+									</Panel>
+									<Panel id="PlayerActiveContainer">
+										                          
+									</Panel>
+								</Panel>
+								<Panel class="PlayerHealthContainer">
+									<ProgressBar id="PlayerHealthProgressBar">
+										<Panel id="PlayerHealthProgressBar_Left" class="ProgressBarLeft">
+											<Panel class="DotaSceneContainer">
+												<DOTAScenePanel id="HealthBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+											</Panel>
+										</Panel>
+									</ProgressBar>
+									<Label class="PlayerHealth" text="{d:player_health} / {d:player_max_health}" />
+									<Label class="PlayerHealthRegen" text="+{s:player_health_regen}" />
+								</Panel>
+							</Panel>
+
+							<Panel class="PlayerItemsContainer">
+								<Panel class="EdgeShadow"/>
+								<Panel id="PlayerPassiveContainer">
+									                          
+								</Panel>
+							</Panel>
+
+							<Image class="HudEndCapImage Right" src="file://{images}/events/crownfall/survivors/side_flare_tall.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />					
+						</Panel>
+
+						<Panel class="PlayerLevelUpChoiceWrapper">
+							<Label class="LevelUpTitle DisplayLarge" text="#DOTA_Survivors_PowerupPopupDescription"/>
+
+							<Panel id="PlayerLevelUpChoiceContainer">
+								                          
+							</Panel>
+							
+							<Panel id="PlayerLevelUpActionsContainer" >
+								<DOTACrownfallButton id="RerollButton" class="Secondary Wide RerollButton" text="#DOTA_Survivors_Reroll" onactivate="DOTASurvivorsRerollLevelUpChoices( false )"/>
+							</Panel>
+						</Panel>
+
+						<Panel class="PlayerAttributesGroup" >
+							<Panel class="AttributesShadow" />
+							<Panel id="PlayerAttributesContainer" >
+								                          
+							</Panel>
+						</Panel>
+
+						<Panel class="MinimapWrapper" >
+							<DOTASurvivorsMinimap id="ActualMinimap" class="MinimapBackgroundNight" hittest="false" hittestchildren="false" stickyradius="120" stickyfadeoutdistance="0" maptexture="materials/models/events/crownfall/survivors/survivors_minimap.vtex" mapscale="2"/>
+							<Panel class="MinimapBorderShadow" hittest="false" />
+							<Panel class="MinimapBorder" hittest="false" />
+							<Panel class="MinimapBorderShine" hittest="false" />
+							<Panel class="MinimapContainer" >
+								<Panel id="Minimap" >
+									                                           
+									                          
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="KeyArtContainer">
+					<Image class="KeyArtImage" src="file://{images}/events/crownfall/survivors/survivors_keyart.psd" hittest="false" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+
+				<Panel class="SetupScreen">
+					<Panel id="T" class="PatchNotesMenu">
+						<Label class="GoldHeader" text="#DOTA_Survivors_PatchNotes"/>
+						<Label class="LabelLarge" text="1.1"></Label>
+						<Label class="LabelMedium" text="#DOTA_Survivors_PatchNotes_Items"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Items_001" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Items_002" html="true"></Label>
+						<Label class="LabelMedium" text="#DOTA_Survivors_PatchNotes_Abilities"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_001" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_002" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_003" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_004" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_005" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_006" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_007" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_008" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_009" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_010" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_011" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_012" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_013" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_014" html="true"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Abilities_015" html="true"></Label>
+						<Label class="LabelMedium" text="#DOTA_Survivors_PatchNotes_Other"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_001"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_002"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_003"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_004"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_005"></Label>
+						<Label class="LabelSmall" text="#DOTA_Survivors_PatchNotes_1_1_Other_006"></Label>
+					</Panel>
+					
+					<Panel class="SetupScreenMenu">						
+						<Image class="MinigameLogoEn" src="file://{images}/events/crownfall/survivors/logo_en.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="MinigameLogoCn" src="file://{images}/events/crownfall/survivors/logo_cn.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="PlaySectionContent">
+							<Panel class="PlaySectionCol Left">
+								<Panel class="HowToPlaySection" >
+									<Label class="GoldHeader PlaySectionHeader" text="#DOTA_Crownfall_Fishing_HowToPlay"/>
+									<Panel class="DescriptionContainer">
+										<Label class="SubHeader BodyMedium" text="#DOTA_Crownfall_Controls_Move"/>
+										<Label class="Details BodySmall" text="#DOTA_Crownfall_Controls_MoveDescription"/>
+									</Panel>
+									<Panel class="ControlDescriptionBlock">
+										<Panel class="ControlMouse">
+											<Panel class="MouseButton MOUSE1" />
+										</Panel>
+										<Label class="OrSeparator BodyMedium" text="#or"/>
+										<Panel class="KeysColumn">
+											<Panel class="ControlKey"><Panel class="KeyText Up" /></Panel>
+											<Panel class="KeysRow">
+												<Panel class="ControlKey"><Panel class="KeyText Back" /></Panel>
+												<Panel class="ControlKey"><Panel class="KeyText Down" /></Panel>
+												<Panel class="ControlKey"><Panel class="KeyText Forward" /></Panel>
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="GamepadContainer">
+										<Image class="GamepadIcon" src="file://{images}/control_icons/24px/controller.svg" />
+										<Label class="GamepadLabel BodySmall" text="#DOTA_UI_Supported"/>
+									</Panel>
+									<Panel class="PatchNotesButtonContainer">
+										<Button class="PatchNotesButton PopupButton" onactivate="DOTASurvivorsTogglePatchNotes()">
+											<Label class="PatchNotesButtonLabel" text="#DOTA_Survivors_ViewPatchNotes" />
+										</Button>
+									</Panel>
+
+									<DOTASettingsCheckbox id="dota_survivors_disable_dialogue" convar="dota_survivors_disable_dialogue" text="#DOTA_Survivors_DisableDialogue" />
+								</Panel>
+								<Panel class="RewardsSection" >
+									<Label class="GoldHeader PlaySectionHeader RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards" />
+									<Panel id="RewardsList" class="RewardsSection" >
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="PlaySectionCol Right">
+								<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+									<Panel class="LeaderListHeader">
+										<Label class="LeaderListHeaderLabel LabelMedium" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+										<Label class="LeaderListHeaderScore LabelMedium" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+									</Panel>
+									<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+								</Panel>
+							</Panel>									
+						</Panel>
+
+					</Panel>
+
+					<Panel class="BottomButtons">
+						<Panel class="Loading">
+							<Panel class="Spinner" />
+							<Label text="#DOTA_LoadingPlayerLoading" />
+						</Panel>
+						<DOTACrownfallButton class="StartGameButton GlowButton" text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTASurvivorsGameMenuHeroScreen(true)" />
+					</Panel>
+					
+					                                                                                                                                          
+				</Panel>
+
+				<Panel class="HeroSelectScreen">
+					<Label text="#DOTA_Survivors_ChooseHeroTitle" class="TitleExtraLarge ChooseHeroTitle" />
+					<Panel id="HeroSelect">
+						                          
+					</Panel>
+					<Panel class="HeroSelectActions">
+						<Panel class="BackArrowButton" onactivate="DOTASurvivorsGameMenuHeroScreen(false)">
+							<Image id="BackButton" src="file://{images}/control_icons/24px/arrow_left.svg" texturewidth="48" textureheight="48" />
+						</Panel>
+						<DOTACrownfallButton class="FinishHeroSelectButton GlowButton" text="#DOTA_Survivors_Next" onactivate="DOTASurvivorsGameMenuDifficultyScreen(true)" />
+
+						<Panel class="HeroSelectFirstTimeIntroButtons">
+							<Panel class="Loading">
+								<Panel class="Spinner" />
+								<Label text="#DOTA_LoadingPlayerLoading" />
+							</Panel>
+							<DOTACrownfallButton id="HeroSelectPlayButtonFirstTimeIntro" class="FinishHeroSelectButton GlowButton" text="#DOTA_START" onactivate="DOTAEncounterMinigameStart()" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="DifficultySelectScreen">
+					<Panel class="Container">
+
+						<Panel class="MetaProgressionSelection">							
+							<Label class="UpgradesTitle TitleLarge" text="#DOTA_Survivors_UpgradesTitle"/>
+							<Label class="DifficultyIntroDescription" text="#DOTA_Survivors_UpgradesDescription"/>
+							<Panel class="UpgradesSection">
+								<Panel id="MetaUpgradesContainer" class="MetaUpgradesSection" >
+									                          
+								</Panel>
+								<Panel class="TopGoldDash Top"/>
+								<Panel class="TopGoldDash Bottom"/>
+								<Panel class="ResourceContainer">
+									                                          
+										                                                                         
+									            
+									<Panel class="TotalGoldContainer">
+										<Label class="LabelMedium GoldText TotalGoldLabel" text="#DOTA_Survivors_TotalGold" />
+										<Panel class="LeftRightFlow HorizontalCenter">
+											<Label class="TitleLarge GoldText TotalGoldValue" text="{d:currency_available}" />
+											<Image class="GoldIcon" src="file://{images}/events/crownfall/survivors/gold_bag.svg" texturewidth="48" textureheight="48" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="DebugButtons">
+									<TextButton class="DebugButton" onactivate="DOTASurvivorsMetaDevResetUpgrades()" text="(DEV) Reset Upgrades" />
+									<TextButton class="DebugButton" onactivate="DOTASurvivorsMetaDevGivePoints()" text="(DEV) Give Max Points" />
+									<TextButton class="DebugButton" onactivate="DOTASurvivorsMetaDevGiveSessionAmountOfPoints()" text="(DEV) Give Sesssion Worth of Points" />
+									<TextButton class="DebugButton" onactivate="DOTASurvivorsMetaDevUnlockDifficulty()" text="(DEV) Unlock Next Difficulty" />				
+								</Panel>
+								<Panel class="SetupScreenInnerBorder" hittest="false"/>
+							</Panel>	
+						</Panel>
+
+						<Panel class="DifficultySelectionContainer">
+							<Label class="DifficultyTitle TitleLarge" text="#DOTA_Survivors_DifficultyTitle"/>
+							<Label class="DifficultyIntroDescription" html="true" text="#DOTA_Survivors_DifficultyDescription"/>
+							<Panel class="ParentDifficultyLevelsContainer">
+								<Panel id="DifficultyLevelsContainer" class="DifficultyLevelsContainer" >
+								</Panel>
+								<Panel class="TableHeader">
+									                                                                                       
+									                                                                                          
+								</Panel>
+								<Panel class="TopGoldDash Top"/>
+								<Panel class="TopGoldDash Bottom"/>
+								<Panel class="SetupScreenInnerBorder" hittest="false"/>
+							</Panel>	
+						</Panel>
+
+					</Panel>
+
+					<Panel class="HeroSelectActions">
+						<Panel class="BackArrowButton" onactivate="DOTASurvivorsGameMenuDifficultyScreen(false)">
+							<Image id="BackButton" src="file://{images}/control_icons/24px/arrow_left.svg" texturewidth="48" textureheight="48" />
+						</Panel>
+						                                                                                                                                          
+						<DOTACrownfallButton class="FinishHeroSelectButton GlowButton" text="#DOTA_START" onactivate="DOTAEncounterMinigameStart()" />
+					</Panel>
+				</Panel>
+
+				<Panel class="PauseScreen">
+					<Panel class="PauseScreenContent">
+						<Label class="PauseText" text="#DOTA_Survivors_Paused" />
+						<DOTACrownfallButton class="ResumeButton" text="#DOTA_Survivors_Resume" onactivate="DOTASurvivorsTogglePaused()" />
+					</Panel>
+					<DOTACrownfallButton class="LeaveButton Secondary" text="#DOTA_Survivors_LeaveGame" onactivate="DOTAEncounterMinigameStart()" />
+				</Panel>
+				
+				<Panel id="PostGameScreen" class="FinishedScreen">
+
+					<Panel class="FinalScreenBackground"/>
+
+					<Label class="Title" text="{s:game_outcome_title}" />					
+					
+					<Panel class="FinalMainContainer">
+						<Panel class="FinalHeroContainer">
+							<Panel class="FinalHeroBackground"/>
+							<Panel class="FinalHeroBorder Under"/>
+							<DOTALargeModelPreview id="PostGameHeroModel" class="FinalHeroModel" />
+							<Panel class="FinalHeroBorder Over"/>
+						</Panel>
+
+						<Panel class="FinalAbilitiesContainer">
+							<Panel class="AbilitiesStatsHeading">
+								<Label text="#DOTA_Survivors_StatsAbilityName" class="HeaderLabel LabelSmall AbilityName"></Label>
+								<Label text="#DOTA_Survivors_StatsAbilityLevel" class="HeaderLabel LabelSmall AbilityLevel"></Label>
+								<Label text="#DOTA_Survivors_StatsAbilityTotalDamage" class="HeaderLabel LabelSmall AbilityDamage"></Label>
+								<Label text="#DOTA_Survivors_StatsAbilityTimeHeld" class="HeaderLabel LabelSmall AbilityTimeHeld"></Label>
+								<Label text="#DOTA_Survivors_StatsAbilityDPS" class="HeaderLabel LabelSmall AbilityDPS"></Label>
+							</Panel>
+							<Panel id="AbilitiesStatsContainer">
+								                        
+							</Panel>
+						</Panel>
+	
+						<Panel class="FinalItemsContainer">
+							<Panel class="ItemsStatsHeading">
+								<Label text="#DOTA_Survivors_StatsItemName" class="HeaderLabel LabelSmall ItemName"></Label>
+								<Label text="#DOTA_Survivors_StatsAbilityLevel" class="HeaderLabel LabelSmall ItemLevel"></Label>
+								<Label text="#DOTA_Survivors_StatsItemTimeHeld" class="HeaderLabel LabelSmall ItemTimeHeld"></Label>
+							</Panel>
+							<Panel id="ItemsStatsContainer">
+								                        
+							</Panel>
+						</Panel>
+					</Panel>					
+
+					<Panel class="FinalEnemyStatsContainer">
+						<Label text="#DOTA_Survivors_EnemiesDefeated" class="LabelSmall EnemiesDefeatedTitle" />
+						<Panel id="EnemiesStatsContainer">
+							                        
+						</Panel>
+					</Panel>
+
+					<Panel class="FinalStatsContainer">
+						<Panel class="DashDotDivider">
+							<Panel class="Dash Left"/>
+							<Label class="FinalScoreLabel TitleSmall" text="#DOTA_Survivors_FinalScore" />
+							<Panel class="Dash Right"/>
+						</Panel>
+						<Panel class="FinalStats">
+							<Panel class="FinalStatBlock">
+								<Label class="FinalStatLabel LabelSmall" text="#DOTA_Survivors_TimeSurvived" />
+								<Label class="FinalStatValue" text="{s:survived_time}" />
+							</Panel>
+							<Panel class="VerticalDash"/>
+							<Panel class="FinalStatBlock">
+								<Label class="FinalStatLabel LabelSmall" text="#DOTA_Survivors_GameStatsPlayerLevel" />
+								<Label class="FinalStatValue" text="{d:player_level}" />
+							</Panel>
+							<Panel class="VerticalDash"/>
+							<Panel class="FinalStatBlock FinalScoreBlock">
+								<Label class="FinalStatValue" text="#DOTA_Survivors_FinalScoreValue" />
+							</Panel>
+							<Panel class="VerticalDash"/>
+							<Panel class="FinalStatBlock">
+								<Label class="FinalStatLabel LabelSmall" text="#DOTA_Survivors_GoldEarned" />
+								<Label class="FinalStatValue FinalStatGold" text="{f:0:postgame_gold_earned}" />
+							</Panel>
+							<Panel class="VerticalDash"/>
+							<Panel class="FinalStatBlock">
+								<Label class="FinalStatLabel LabelSmall" text="#DOTA_Survivors_TotalGold"/>
+								<Label class="FinalStatValue FinalStatGold" text="{d:total_gold}"/>								
+							</Panel>
+						</Panel>
+						<Panel class="DashDotDivider">
+							<Panel class="Dash Left"/>
+							                             
+							<Panel class="DifficultyContainer">
+								<Image class="EchelonBadge" src="file://{images}/events/crownfall/survivors/echelon_badge_container.png" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="DifficultyText LabelSmall" html="true" text="#DOTA_Survivors_DifficultyRank" />
+							</Panel>
+							<Panel class="Dash Right"/>
+						</Panel>
+					</Panel>
+					
+					<Panel class="PostGameDifficultyContainer">
+						<Label class="DifficultyUnlockedLabel" text="#DOTA_Survivors_NewDifficultyUnlocked"></Label>
+						<Label class="UpgradesAvailableLabel" text="#DOTA_Survivors_UpgradesAvailable"></Label>
+					</Panel>
+
+					<Panel class="FinalTimeRangeContainer">
+						<Label class="DebugOnly" text="Time Range (debug only):"></Label>
+						<RangeSlider id="StatsTimeRangeSlider" class="HorizontalSlider RangeSlider DebugOnly" direction="horizontal" />
+						<Label class="DebugOnly" text="{s:stats_time_range}"></Label>
+					</Panel>
+
+					<Panel class="PostGameButtonsContainer">
+						<DOTACrownfallButton id="HeroSelectButton" class="Secondary HeroSelectButton" text="#DOTA_Survivors_HeroSelectButton" onactivate="DOTASurvivorsGoToHeroSelect()" />
+						<DOTACrownfallButton id="UpgradesButton" class="Secondary UpgradesButton" text="#DOTA_Survivors_UpgradesDifficultyButton" onactivate="DOTASurvivorsGoToDifficultySelect()" />
+					</Panel>
+					
+					<Panel class="PlayButtonContainer">
+						<DOTACrownfallButton id="PlayAgainButton" class="PlayAgainButton" text="{s:play_again_text}" onactivate="DOTASurvivorsRestartGame()" />
+					</Panel>
+					
+				</Panel>
+
+				<Panel class="VisualNovelOuterContainer">
+					<Panel class="VisualNovelBackground"/>
+					<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+					</Panel>
+				</Panel>
+				
+				<Panel id="CloseButtonContainer">
+					<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+					<Panel class="CloseButtonBackgroundHover" hittest="false" />
+					<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+					<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+				</Panel>
+
+				<Panel id="ResizeButtonContainer">
+					<Panel class="CloseButtonBackground" onactivate="DOTASurvivorsResize()" onmouseover="AddStyle( ResizeButtonContainer, Hovered );" onmouseout="RemoveStyle( ResizeButtonContainer, Hovered );"/>
+					<Panel class="CloseButtonBackgroundHover" hittest="false" />
+					<Image class="CloseIcon" src="file://{images}/control_icons/24px/full_screen.svg" hittest="false" />
+				</Panel>
+
+				<Panel class="TimerContainer">
+					<Image class="ScoreBackground" src="file://{images}/events/crownfall/survivors/score_container_background_wide.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="ScoreBorder" src="file://{images}/events/crownfall/survivors/score_container_border_wide.png" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="TimerInfoContainer">
+						<Panel class="ScoreData">
+							<Label class="ScoreLabel LabelSmall" text="#DOTA_Crownfall_Fishing_Leaderboard_Score" />
+							<Label class="ScoreHUD ScoreValue TitleMedium" text="{d:current_score}" />
+						</Panel>
+						<Panel class="Dash"/>
+						<Panel class="GoldData">
+							<Label class="GoldLabel LabelSmall" text="Gold"/>
+							<Panel class="GoldDataContainer">
+								<Label class="GoldHUD TitleMedium GoldText" text="{d:gold_earned}"/>
+								<Image class="GoldIcon" src="file://{images}/events/crownfall/survivors/gold_bag.svg" texturewidth="24" textureheight="24" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="DifficultyContainer">
+						<Image class="EchelonBadge" src="file://{images}/events/crownfall/survivors/echelon_badge_container.png" scaling="stretch-to-fit-preserve-aspect" />
+						<Label class="DifficultyText LabelSmall" html="true" text="#DOTA_Survivors_DifficultyRank"/>
+					</Panel>
+				</Panel>				
+			</Panel>			
+
+			<Panel class="PauseHint" onactivate="DOTASurvivorsTogglePaused()">
+				<Panel class="PauseLabelContainer" hittest="false">
+					<Label text="#DOTA_Survivors_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+					<Label text="#DOTA_Survivors_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlKey"><Label class="KeyText" text="F9" /></Panel>
+			</Panel>
+		</Panel>
+		
+		<Panel class="DebugContainer">
+			<Panel class="DebugColumn DebugSection">
+				<Label id="TotalEnemiesDebugLabel" text="Enemy Info"></Label>
+			</Panel>
+			<Panel class="DebugColumn DebugSection">
+				<Label id="TotalSpawnersDebugLabel" text="Spawner Info"></Label>
+			</Panel>
+			<Panel class="DebugColumn">
+				<Panel class="DebugRow DebugSection">
+					<Button onactivate="DOTASurvivorsCheatsLevelUp()">
+						<Label text="Lvl Up" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsGrantItem()">
+						<Label text="Grant Item" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsGetShard()">
+						<Label text="+Shard" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsGetScepter()">
+						<Label text="+Scepter" />
+					</Button>
+					<Button onactivate="DOTASurvivorsRerollLevelUpChoices( true )">
+						<Label text="Reroll" />
+					</Button>
+				</Panel>
+				<Panel class="DebugRow DebugSection">
+					<Button onactivate="DOTASurvivorsCheatsBossStage()">
+						<Label text="Boss" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsKillBoss()">
+						<Label text="Kill Boss" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsEliteRoom(0)">
+						<Label text="Miniboss 1" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsEliteRoom(1)">
+						<Label text="Miniboss 2" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsEliteRoom(2)">
+						<Label text="Miniboss 3" />
+					</Button>
+				</Panel>
+				<Panel class="DebugRow DebugSection">
+					<Button onactivate="DOTASurvivorsCheatsShowStats()">
+						<Label text="Post game screen" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsBossPlaytest()">
+						<Label text="Boss Playtest" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsKillPlayer()">
+						<Label text="Kill Player" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsWinGame()">
+						<Label text="Win Game" />
+					</Button>
+					<Button onactivate="DOTASurvivorsCheatsLoseGame()">
+						<Label text="Lose Game" />
+					</Button>
+					<DOTASettingsCheckbox convar="dota_survivors_godmode" text="Invincible" />
+					<DOTASettingsCheckbox convar="dota_survivors_fastmode" text="Run Fast" />
+				</Panel>
+				<Panel class="DebugColumn DebugSection">
+					<DropDown id="DebugPowerUpsDropdown" oninputsubmit="DOTASurvivorsUpdatePowerUpCheatsMenu()"/>
+					<DropDown id="DebugMinorUpgradesDropdown" />
+					<Button onactivate="DOTASurvivorsCheatsLevelUpPowerUp()">
+						<Label text="Lvl Up PowerUp" />
+					</Button>
+				</Panel>
+				<Panel class="DebugColumn DebugSection">
+					<DropDown id="DebugEventsDropdown"/>
+					<Button onactivate="DOTASurvivorsCheatsSpawnEvent()">
+						<Label text="Jump to Event Time" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel class="DebugTimelineControlsContainer" Compiler.If="MainBranch" hittest="false">
+			<Panel class="Row">
+				<Panel class="RowLeft">
+					<TextButton unlocalized="true" text="Create Snapshot" class="DebugButton" onactivate="DOTASurvivorsDebugCreateSnapshot()" />
+				</Panel>
+				<Panel class="RowRight">
+					<DropDown id="DebugSnapshotsDropDown"/>
+					<TextButton unlocalized="true" text="Load Snapshot" class="DebugButton" onactivate="DOTASurvivorsDebugLoadSnapshot()" />
+				</Panel>
+			</Panel>
+			<Panel class="TimelineContainer">
+				<Slider id="TimelineSlider" class="HorizontalSlider" direction="horizontal" unlocalized="true" text="Timeline" min="0" max="600"/>
+				<Panel id="TimelineMarker" />
+			</Panel>
+		</Panel>
+
+		<Panel id="VideoContainer" hittest="false">
+			<Button class="CloseVideoButton ButtonPrimary" onactivate="DOTASurvivorsStopVideo()" >
+				<Image src="file://{images}/control_icons/24px/x_close.svg" scaling="stretch-to-fit-preserve-aspect" />
+			</Button>
+		</Panel>
+		
+	</Panel>
+</root>

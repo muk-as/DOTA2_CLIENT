@@ -1,0 +1,46 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/frontpage_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/front_page_crownfall.css" />
+	</styles>
+
+	<CustomLayoutPanel class="CrownfallCell">
+		                                          
+
+		<Panel id="BackgroundImageContainer">
+			<Panel class="BackgroundImage Act1"/>
+			<Panel class="BackgroundImage Act2"/>
+			<Panel class="BackgroundImage Act3"/>
+			<Panel class="BackgroundImage Act4"/>
+
+			<DOTAParticleScenePanel class="SnowParticles" hittest="false" particleName="particles/ui/ui_generic_snow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="400 0 0" lookAt="-800 0 -600" fov="100" />
+
+			<Panel class="ModelsContainer">
+				<DOTAUIEconSetPreview hittest="false" hittestchildren="false" id="PremiumReward_Skywrath" activity-modifier="takeover" itemstyle="0" class="PremiumReward" itemdef="22277" cameraOrigin="0 0 0" rotation="-44" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+				<DOTAUIEconSetPreview hittest="false" hittestchildren="false" id="PremiumReward_Vengeful" activity-modifier="takeover" itemstyle="0" class="PremiumReward" itemdef="22722" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+			</Panel>
+		</Panel>
+
+		<Panel class="CellBorder" hittest="false"/>
+		<Panel class="LogoShadow" hittest="false"/>
+		<Panel class="HitState" onactivate="DOTACrownfallFrontpageShowOverworld()" onmouseover="$('#BackgroundImageContainer').AddClass('Hovered');" onmouseout="$('#BackgroundImageContainer').RemoveClass('Hovered');"/>
+
+		                                   
+		<MoviePanel id="LogoMovie" repeat="true" autoplay="onload" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+		<MoviePanel id="LogoMovieFrosted" repeat="true" autoplay="onload" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+
+		<AsyncDataPanel class="CurrentState" state="{d:event_state}" >
+			<Panel class="AsyncSuccessContainer">
+				<Panel class="CurrentActContainer" onmouseover="DOTACrownfallFrontpageShowActSelector()" onmouseout="DOTACrownfallFrontpageHideActSelector()">
+					<Label class="ActNumber LabelSmall" text="{s:active_act_number}"/>
+					<Label class="ActName" text="{s:active_act_title}"/>
+					<Image class="Caret" src="file://{images}/control_icons/24px/caret_down.svg" scaling="stretch-to-fit-y-preserve-aspect" />
+				</Panel>
+				<DOTACrownfallButton text="#DOTA_Crownfall_ViewOverworld" class="PlayNowButton Secondary" onactivate="DOTACrownfallFrontpageShowOverworld()" />
+			</Panel>
+		</AsyncDataPanel>
+		
+	</CustomLayoutPanel>
+</root>

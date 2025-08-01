@@ -1,0 +1,258 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_debut_styles.css" />
+		<include src="file://{resources}/styles/leaf_pages/dashboard_page_ui_candyworks.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_page_crownfall_candy_shop.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/leaf_pages/dashboard_page_ui_candyworks.js" />
+	</scripts>
+
+	<snippets>
+
+		<snippet name="ModelSnippet">
+			<Panel>
+				<DOTAScenePanel id="ModelBackground" map="backgrounds/dashboard_background_candyworks_crownfall" camera="hero_camera" light="hero_light" renderdeferred="true" rotateonhover="true" rotateonmousemove="true" yawmin="0" yawmax="0" pitchmin="0" pitchmax="0" antialias="true" particleonly="false" hittest="false"/>
+    				                                                                                                                                                                                                                                                                                                                                                   
+			</Panel>
+		</snippet>
+
+		<snippet name="CandyInventoryRow">
+			<Panel class="CandyInventoryRow">
+				                                    
+			</Panel>
+		</snippet>
+		
+		<snippet name="CandyInventorySlot">
+			<Panel class="CandyInventorySlot">
+				<Image class="LockedIcon" src="file://{images}/control_icons/24px/lock.svg" onmouseover="UIShowTextTooltip( '#DOTA_CandyShop_InventorySlotInfo_Crownfall' )" onmouseout="UIHideTextTooltip()" />
+				<DOTACandyImage id="CandyImage" />
+			</Panel>
+		</snippet>
+
+		<snippet name="CandyRewardDetail_EconItem">
+			<Panel class="EconItemDetail">
+				<Image id="ItemShadow" />
+				<Image id="ItemReflection" />
+				<DOTAUIEconSetPreview id="ItemSetPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" pin-fov="vertical" />
+				<Panel class="DiretideTag" />
+				                                                    
+			</Panel>
+		</snippet>
+
+		<snippet name="CandyRewardDetail_EventAction">
+			<Panel class="EventActionDetail">
+				<DOTAScenePanel class="EventActionCoinScene" camera="hero_camera" light="hero_light" map="maps/scenes/crownfall/coin_reward.vmap"  particleonly="false" renderdeferred="true" deferredalpha="true" />
+				<Label class="EventActionCoinQty" text="x{d:quantity}" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="CandyRewardDetail_EventPoints">
+			<Panel class="EventPointsDetail">
+				<Image id="ItemShadow" />
+				<Image id="ItemReflection" />
+				<DOTAUIEconSetPreview id="ItemSetPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" pin-fov="vertical" itemdef="23634" />
+				<Label class="EventPointsAmount" text="{d:event_points}" />
+			</Panel>
+		</snippet>
+
+		<snippet name="CandyReward">
+			<Panel class="CandyReward">
+				<Panel class="CandyRewardFront">
+					<Panel class="CandyRewardName">
+						<Label text="{s:reward_name}" />
+					</Panel>
+					<Panel class="CandyRewardPrice">
+						<Panel id="CandyRewardPriceCandies">
+						</Panel>
+					</Panel>
+					<Panel class="TopDash"/>
+				</Panel>
+
+				<Panel class="CandyRewardTop">
+					<Panel class="CandyRewardShelf" />
+
+					<Panel id="CandyRewardDetail">
+						                                                  
+					</Panel>
+				</Panel>
+
+				<DOTACrownfallButton id="PurchaseButton" text="#DOTA_CandyShop_Purchase" class="" />
+			</Panel>
+		</snippet>
+
+		<snippet name="ExchangeRecipeCandysList">
+			<Panel class="ExchangeRecipeCandysList" acceptsfocus="true">
+				                                
+			</Panel>
+		</snippet>
+
+		<snippet name="ExchangeRecipe">
+			<Panel class="ExchangeRecipe">
+				<Panel class="ExchangeInputs">
+					<Panel class="ExchangeRecipeCandysList" id="ExhangeRecipeInputDetail" acceptsfocus="true">
+						                                
+					</Panel>
+				</Panel>
+				<Panel id="ExchangeButton" class="ExchangeButton">
+					<Image class="ExchangeArrow" src="file://{images}/control_icons/24px/caret_right.svg" />
+				</Panel>
+				<Panel class="ExchangeOutputs">
+					<Panel class="ExchangeRecipeCandysList" id="ExhangeRecipeOutputDetail" acceptsfocus="true">
+						                                
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="RerollIconRow">
+			<Panel class="RerollIconRow">
+				                            
+			</Panel>
+		</snippet>
+
+		<snippet name="RerollIcon">
+			<Panel class="RerollIcon" />
+		</snippet>
+
+	</snippets>
+
+	<DOTABPCrownfallCandyShopPage class="DashboardPage FullDashboardPage" dashboardclass="CrownfallBattlePassPage CrownfallBPHome" onnavigatedto="RunPageAnimation()" onnavigatedaway="EndPageAnimation()" oncancel="DOTANavigateBack()">
+
+		<Panel id="MainContainer" hittest="false"  >
+			                                                                    
+		</Panel>
+
+		<Panel class="MainContents">
+			<Panel id="ModelContainer" hittest="false"/>
+			<Panel class="BPNavShade" />
+			<Panel class="ShadeTop" />
+			<Panel class="ShadeRight" />
+			<Panel class="ShadeBottom" />
+
+			<Panel class="PageTitleContainer">
+				<Label class="PageTitle" text="#DOTA_CandyShop_Crownfall_Title" />
+				<Panel id="HelpText">
+					<Label class="HelpText" text="#DOTA_CandyShop_HelpText" />
+					<Panel id="TextLink" onactivate="UIShowCustomLayoutPopup( CandyShopHelp, file://{resources}/layout/battle_pass/crownfall/bp_crownfall_candy_shop_help_popup.xml )" >
+						<Panel class="InfoIcon" />
+						<Label class="TextLink" text="#DOTA_LearnMore" />
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<AsyncDataPanel class="AsyncContents" state="{d:candy_shop_state}">
+				<Panel class="AsyncSuccessContainer">
+					<Panel class="LeftSection">
+						<Panel id="CandyRewards">
+							                             
+						</Panel>
+
+						<Panel class="RerollRow">
+							<Panel class="RerollShadow"/>
+							<Panel class="LeftRightFlow">
+								<Panel class="RerollDash Left"/>
+								<Panel class="TopBottomFlow">
+									<Panel id="RerollIcons" class="RerollIcons">
+										                                    
+									</Panel>
+									                                                                                                                      
+								</Panel>
+								<Label class="AdditionalRerolls" text="#DOTA_CandyShop_AdditionalRerolls" />
+								<DOTACrownfallButton id="RerollButton" text="#DOTA_CandyShop_RerollItems" class="Secondary MinWidth" onactivate="DOTACrownfallCandyShopRerollRewards()" />
+								<Panel class="RerollDash Right"/>
+							</Panel>
+							<Panel class="RerollMessagesContainer">
+								<Label id="OutOfRollsMessage" class="RerollMessages BodySmall LightGreyText" text="#DOTA_CandyShop_OutOfRolls" />
+								<Label id="EarnRollsMessage" class="RerollMessages BodySmall LightGreyText" text="#DOTA_CandyShop_WeeklyRerolls" />
+								<DOTACountdown id="RerollCountdown" server-time="true">
+									<Label class="RerollMessages BodySmall LightGreyText" html="true" text="#DOTA_CandyShop_EarnedAll" />
+								</DOTACountdown>
+								<Label id="MaxRerollsReachedMessage" html="true" class="RerollMessages BodySmall LightGreyText" text="#DOTA_CandyShop_AtMaxRerolls" />
+							</Panel>
+						</Panel>
+					</Panel>
+
+					<Panel class="RightSection">
+						<Panel class="RightSectionGroup TopBottomFlow">
+							<Panel class="CandyPacks">
+								<Panel class="CandyPacksMain">
+									<Panel class="CandyCount TopBottomFlow">
+										<Label class="CandyPacksCount" text="{d:bag_count}" />
+										<Label class="CandyPacksLabel LabelMedium" text="#DOTA_CandyShop_Candies" />
+									</Panel>
+									<Panel class="OpenCandyBtn">
+										<DOTACrownfallButton id="OpenCandyPackButton" text="#DOTA_CandyShop_FillSlots" class="MinWidth" onactivate="DOTACrownfallCandyShopOpenBag(0)" />
+										<Label id="SlotsFullLabel" class="LabelMedium" text="#DOTA_CandyShop_SlotsFull" />
+									</Panel>
+								</Panel>
+							</Panel>
+
+							<Panel class="CandyOwned">
+								<Panel class="SubSectionTitle">
+									<Panel class="Rule" />
+									<Label class="LabelExtraLarge" text="#DOTA_CandyShop_YourCandy" />
+									<Panel class="Rule" />
+								</Panel>
+
+								<Panel id="CandyInventory">
+									                                   
+								</Panel>
+							</Panel>
+
+							<Panel class="CandyExchange">
+								<Panel class="SubSectionTitle">
+									<Panel class="Rule" />
+									<Label class="LabelLarge" text="#DOTA_CandyShop_Exchange" />
+									<Panel class="Rule" />
+								</Panel>
+
+								<Label class="SubTitle" text="#DOTA_CandyShop_ExchangeRecipeRefreshTimer" />
+
+								<Panel class="ExchangeSection" id="FixedExchangeRecipes">
+									                                
+								</Panel>
+								<Label class="SubTitle" text="#DOTA_CandyShop_Custom" />
+
+								<Panel class="VariableExchangeSection LeftRightFlow">
+									<Panel class="ExchangeInputs">
+										<DropDown id="VariableExchangeInput" />
+									</Panel>
+									<Panel class="ExchangeRecipe" id ="VariableExchangeRecipe" onactivate="DOTACrownfallCandyShopRunVariableExchange()">
+										<Panel class="ExchangeButton">
+											<Image class="ExchangeArrow" src="file://{images}/control_icons/24px/caret_right.svg" />
+										</Panel>
+									</Panel>
+									<Panel class="ExchangeOutputs">
+										<DropDown id="VariableExchangeOutput" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+
+						<DOTAScenePanel hittest="false" id="BackgroundFXWindow"  map="scenes/ui_generic_rays" camera="shot_camera" particleonly="true"/>
+						<Panel class="CandyPacksImage" onmouseover="UIShowTextTooltip( '#DOTA_CandyShop_CandySackInfo_Crownfall' )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+				</Panel>
+			</AsyncDataPanel>
+
+			<Panel class="PageActionsContainer">
+				                       
+				<TextButton id="DebugButton" class="PopupButton Red" text="Debug" unlocalized="true" onactivate="DOTACandyShopShowDebugContextMenu( 2 )" />
+				                       
+	
+				<Button id="CloseButton" class="ButtonPrimary Large DarkGrey" onactivate="DOTANavigateBack()">
+					<Image src="file://{images}/control_icons/24px/x_close.svg" />
+				</Button>
+			</Panel>
+
+		</Panel>
+	</DOTABPCrownfallCandyShopPage>
+</root>

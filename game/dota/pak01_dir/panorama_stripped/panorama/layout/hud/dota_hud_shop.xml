@@ -1,0 +1,394 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_shop.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/hud/dota_hud_shop.js" />
+	</scripts>
+	<snippets>
+		
+		<snippet name="ShopItemsLayout">
+			<Panel class="ShopItemRowContainer">
+				<Label id="ShopItemsHeader" text="{s:shop_row_title}" />
+				<Panel id="ShopItemsContainer" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="NewPlayerShopItem">
+			<Panel class="NewPlayerShopItem LeftRightFlow">
+				<DOTAShopItem id="NewShopItem" class="NewShopItem" abilityid="194" />
+				<Panel class="NewPlayerItemInfo TopBottomFlow" >
+					<Label class="NewPlayerItemName" text="{s:new_item_name}"/>
+					<Label class="NewPlayerItemDescription" text="{s:new_item_description}"/>
+				</Panel>
+				<Panel class="NewPlayerPurchased">
+					<Label text="#DOTA_NewPlayerShop_Purchased"/> 
+				</Panel>
+				<Panel class="NewPlayerGoldCost " >
+					<Label text="{d:new_item_cost}"/> 
+					<Panel class="GoldIcon"/>
+				</Panel>
+				
+			</Panel>
+		</snippet>
+
+		<snippet name="NewPlayerShopItemCombine">
+			<Panel class="NewPlayerShopItemCombine TopBottomFlow">
+				<DOTAShopItem id="NewShopItem" class="NewShopItem" abilityid="194" />
+				<Panel class="NewPlayerGoldCost LeftRightFlow" >
+					<Panel class="GoldIcon"/>
+					<Label text="{d:new_item_cost}"/> 
+				</Panel>
+			</Panel>
+		</snippet>
+
+		<snippet name="NeutralItemsTier">
+			<Panel class="NeutralItemsTier">
+				<Panel class="NeutralItemsTierHeader">
+					<Label class="NeutralItemsTierName" text="#DOTA_Shop_NeutralTier" />
+					                                    
+					<Label class="NeutralItemsTierTimes" text="{s:tier_times}" />
+				</Panel>
+				<Panel id="NeutralItemsList" />
+				                                         
+				<Panel id="NeutralEnhancementsList" />
+			</Panel>
+		</snippet>
+
+		<snippet name="HeroMadstoneTimeline">
+			<Panel class="HeroMadstoneTimeline">
+				<DOTAHeroImage id="HeroImage" heroimagestyle="icon" />
+				<Panel class="TimelineHolder">
+					<Panel class="TimelineUpper">
+						<Panel class="TimelineUpperPip" id="TimelineUpper1" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper3" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper4" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper5" />
+					</Panel>
+					<Panel class="TimelineLower">
+						<Panel class="TimelineBackground NeutralTier1">
+							<ProgressBar class="Timeline" id="TimelineProgress1"/>
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier1" id="TimelinePip1">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+
+						<Panel class="TimelineBackground NeutralTier2">
+							<ProgressBar class="Timeline" id="TimelineProgress2"/>
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier2" id="TimelinePip2">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+
+						<Panel class="TimelineBackground NeutralTier3">
+							<ProgressBar class="Timeline" id="TimelineProgress3"/>
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier3" id="TimelinePip3">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+
+						<Panel class="TimelineBackground NeutralTier4">
+							<ProgressBar class="Timeline" id="TimelineProgress4"/>
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier4" id="TimelinePip4">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+
+						<Panel class="TimelineBackground NeutralTier5">
+							<ProgressBar class="Timeline" id="TimelineProgress5"/>
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier5" id="TimelinePip5">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAHUDShop acceptfocus="true" onfocus="DropInputFocus()" oncancel="DOTAShopHideShop()" require-composition-layer="true" always-cache-composition-layer="true" hittest="false">
+	
+		<Button id="GuidesButton" class="GuidesButton" onactivate="ToggleStyle( 'GuideFlyout', 'HideGuide' ); ToggleStyle( 'GuidesButton', 'HideGuide' )">
+			<Panel class="GuidesButtonIcon"/>
+		</Button>
+
+		<Panel id="GuideFlyout" hittest="false">
+			<Panel id="GuideFlyoutContainer" hittest="false"/>
+			<Panel id="ItemsArea" hittest="false">
+				<Panel id="ItemBuildContainer" hittest="false">
+					<DOTAHUDItemBuild id="ItemBuild" draggableShopItems="true" require-composition-layer="true" always-cache-composition-layer="true"/>
+					<DOTAHUDPlusGuide id="ItemPlusGuide" require-composition-layer="true" always-cache-composition-layer="true"/>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="Main" hittest="true" acceptsinput="true">
+
+			<Panel id="ItemCombinesAndBasicItemsContainer" require-composition-layer="true" always-cache-composition-layer="true">
+				<Panel id="ItemListContainer" >
+					<DOTAHUDCommonItems id="CommonItems" />
+					<DOTAHUDTeamItems class="PinnedOnly" id="TeamItems" />
+				</Panel>
+				<Panel id="NewPlayerShopConsumables" class="TopBottomFlow">
+					<Label class="NewPlayerShopConsumablesTitle" text="#DOTA_NPEDesc_DOTA_Item_Build_Consumables" />
+					<Panel id="NewPlayerShopConsumablesList">
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_tpscroll" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_tango" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_flask" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_clarity" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_ward_observer" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_ward_sentry" />
+						<DOTAShopItem class="NewShopItem" abilityid="194" itemname="item_dust" />
+					</Panel>
+				</Panel>
+				<DOTAShopItemCombines id="ItemCombines" showpurchasestate="true" itemsdraggable="true" />
+			</Panel>
+
+			<Panel id="HeightLimiter" >
+				<Panel id="HeightLimiterContainer"/>
+				<Panel id="titles">
+					<Label id="main_shop_title" text="#DOTA_SHOP_NAME_BASIC" hittest="false" />
+					<Label id="secret_title" text="#DOTA_SHOP_NAME_SECRET" hittest="false" />
+					<Label id="side_title" text="#DOTA_SHOP_NAME_SIDE" hittest="false" />
+					<Label id="custom_title" text="{s:custom_shop_name}" hittest="false" />
+					<Panel id="ShopTabs">
+						<Button id="MainShopButton" onactivate="DOTAShopShowMainShopTab();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_SHOP_NAME_BASIC );" />
+						<Button id="SecretShopButton" onactivate="DOTAShopShowSecretShopTab();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_SHOP_NAME_SECRET );" />
+						<Button id="SideShopButton" onactivate="DOTAShopShowSideShopTab();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_SHOP_NAME_SIDE );" />
+					</Panel>
+				</Panel>
+
+				<Panel id="GridMainShop">
+					<Panel id="SearchAndButtonsContainer">
+						<Button id="GuidesButtonV2" class="GuidesButton" onactivate="ToggleStyle( 'GuideFlyout', 'HideGuide' ); ToggleStyle( 'GuidesButtonV2', 'HideGuide' )">
+							<Panel class="GuidesButtonIcon"/>
+						</Button>
+						<Panel id="SearchContainer" acceptsfocus="true" onfocus="DropInputFocus()">
+							<Panel id="SearchBox">
+								<Panel id="ShopSearchIcon" onactivate="SetSearchFocus();" />
+								<DOTAHUDShopTextEntry id="SearchTextEntry" placeholder="#DOTA_Search" />
+								<Button id="ClearSearchButton" class="CloseButton" onactivate="ClearSearch();" />
+							</Panel>
+						</Panel>
+						<Button id="RequestSuggestion" class="HeaderButton" onactivate="DOTAShopRequestSuggestion()" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Shop_Tip_RequestSuggestion );" onload="DOTAAttachHelpTip( 'suggested_items' )" >
+							<Panel id="RequestSuggestionIcon" />
+							<DOTAHeroImage id="RequestSuggestionHeroImage" heroimagestyle="icon" />
+						</Button>
+						<Button id="PopularItems" class="HeaderButton" onactivate="DOTAShopToggleShowPopularItems();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Shop_Tip_Popular );">
+							<Panel id="PopularItemsIcon"/>
+						</Button>
+						<Panel id="ToggleMinimalShop" class="HeaderButton" onactivate="DOTAShopToggleMinimalShop()" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Hud_Shop_Toggle );" />
+						<Panel id="ToggleShopFilter" class="HeaderButton" onactivate="DOTAShopToggleShopFilter()" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Hud_Shop_Filter_Toggle );" />
+						<Button id="ToggleAdvancedShop" class="HeaderButton" onactivate="DOTAShopToggleAdvancedShop();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Shop_Toggle_Advanced_Shop );" onload="DOTAAttachHelpTip( 'advanced_shop' )">
+							<Panel id="SimpleShopIcon"/>
+						</Button>
+						<Button id="BuybackProtection" class="HeaderButton" onactivate="DOTAShopToggleBuybackProtection()" onmouseover="UIShowTextTooltip('#DOTA_Buyback_Protection')" onmouseout="UIHideTextTooltip()"/>
+					</Panel>
+					<Panel id="GridHeaderAndMainContent">
+						<Panel id="GridMainContent">
+							<Panel id="GridShopHeaders" hittest="false">
+								<Panel id="GridMainTabs" hittest="false" >
+									<TabButton id="GridBasicsTab" class="ShopItemsTab" group="ShopGridTab" onactivate="SwitchStyle( 'GridMainShop', 'selected_shop_tab', 'ShowBasicItemsTab' )" text="#DOTA_Shop_Category_Basics" selected="true"/>
+									<TabButton id="GridNewShopTab" class="ShopItemsTab" group="ShopGridTab" onactivate="SwitchStyle( 'GridMainShop', 'selected_shop_tab', 'ShowNewShopTab' )" text="#DOTA_Shop_Category_Shop"/>
+									<TabButton id="GridUpgradesTab" class="ShopItemsTab" group="ShopGridTab" onactivate="SwitchStyle( 'GridMainShop', 'selected_shop_tab', 'ShowUpgradeItemsTab' )" text="#DOTA_Shop_Category_Upgrades"/>
+									<Panel class="GridNeutralsTabContainer">
+										<TabButton id="GridNeutralsTab" class="ShopItemsTab" group="ShopGridTab" onactivate="SwitchStyle( 'GridMainShop', 'selected_shop_tab', 'ShowNeutralItemsTab' )" text="#npc_dota_neutral_default"/>
+										<Panel class="GridNeutralsTabNewItems" />
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel id="MainShopBasicHotkeys" hittest="false" hittestchildren="false">
+								<DOTAHotkey id="HotkeyConsumables" keybind="ShopTabConsumables" />
+								<DOTAHotkey id="HotkeyAttributes" keybind="ShopTabAttributes" />
+								<DOTAHotkey id="HotkeyArmaments" keybind="ShopTabArmaments" />
+								<DOTAHotkey id="HotkeyArcane" keybind="ShopTabArcane" />
+								<DOTAHotkey id="HotkeySecret" keybind="ShopTabSecret" />
+							</Panel>
+							<Panel id="MainShopUpgradesHotkeys" hittest="false" hittestchildren="false">
+								<DOTAHotkey id="HotkeyBasics" keybind="ShopTabBasics" />
+								<DOTAHotkey id="HotkeySupport" keybind="ShopTabSupport" />
+								<DOTAHotkey id="HotkeyCaster" keybind="ShopTabCaster" />
+								<DOTAHotkey id="HotkeyArmor" keybind="ShopTabArmor" />
+								<DOTAHotkey id="HotkeyWeapons" keybind="ShopTabWeapons" />
+								<DOTAHotkey id="HotkeyArtifacts" keybind="ShopTabArtifacts" />
+							</Panel>
+							<Panel id="MainShopContentsVersionContainer">
+								<Panel id="FilterContainer">
+									<Label class="FilterLabel" text="#DOTA_Shop_Category_Filters" />
+									<Panel id="ShopFilters" />
+									<DOTAHUDTeamItems class="TeamItemOnly" id="TeamItems2" />
+								</Panel>
+								<DOTAHUDShopSearchResults id="ShopFilterResults"/>
+								<Panel id="GridMainShopContents" hittest="false" >
+									<TabContents id="GridNewShopCategory" group="ShopGridTab" tabid="GridNewShopTab" class="ShopItemsCategory">
+										<Panel id="NewPlayerShopItemContainer" class="WideContainer">
+											<Label class="NewShopCategoryName" text="{s:new_shop_category}"/>
+											<Label class="NewShopCategoryDesc"	html="true" text="{s:new_shop_desc}"/>
+										
+											<Panel id="NewPlayerShopItemContainerItems">
+											
+											</Panel>
+											<Panel id="NewPlayerShopSkipButton" onactivate="DOTANewPlayerShopSkip()" onmouseover="UIShowTextTooltip( '#DOTA_NewPlayerShop_SkipWarning' );" onmouseout="UIHideTextTooltip();" >
+												<Label html="true" text="#DOTA_NewPlayerShop_Skip"/>
+											</Panel>
+										</Panel>
+										<Panel id="NewPlayerShopItemCombinerContainer" class="WideContainer TopBottomFlow">
+											<Label class="NewShopCategoryName" text="#DOTA_NewPlayerShop_Building"/>
+											<Label class="NewShopCategoryDesc" html="true" text="#DOTA_NewPlayerShop_BuildingDesc"/>
+											
+											
+											<Panel id="NewShopCombiningItem" class="NewPlayerShopItem LeftRightFlow">
+												<DOTAShopItem id="NewShopItemBuilding" class="NewShopItem" abilityid="194" />
+												<Panel class="NewPlayerItemInfo TopBottomFlow" >
+													<Label class="NewPlayerItemName" text="{s:new_item_name}"/>
+													<Label class="NewPlayerItemDescription" text="{s:new_item_description}"/>
+												</Panel>
+											
+											</Panel>
+											<DOTAShopItem id="NewShopItemComplete" class="NewShopItem" abilityid="194" />
+
+											<Panel id="NewShopItemComponents" >																
+											</Panel>
+
+											<Button id="NewPlayerBackButton" onactivate="DOTANewPlayerShopBack()">
+												<Label class="NewPlayerBackButtonLabel" text="#DOTA_NewPlayerShop_Back"/>
+											</Button>
+											
+										</Panel>
+									</TabContents>
+									<TabContents id="GridBasicItemsCategory" group="ShopGridTab" tabid="GridBasicsTab" class="ShopItemsCategory" selected="true" require-composition-layer="true" always-cache-composition-layer="true">
+										<Panel id="GridBasicItems" class="ShopItemsRows" />
+									</TabContents>
+
+									<TabContents id="GridUpgradesCategory" group="ShopGridTab" tabid="GridUpgradesTab" class="ShopItemsCategory" require-composition-layer="true" always-cache-composition-layer="true">
+										<Panel id="GridUpgradeItems" class="ShopItemsRows" />
+									</TabContents>
+
+									<TabContents id="GridNeutralsCategory" group="ShopGridTab" tabid="GridNeutralsTab" class="ShopItemsCategory" require-composition-layer="true" always-cache-composition-layer="true">
+										<Panel id="TeamNeutralItems" class="TeamNeutralItems">
+											<Label class="NeutralChoiceTitle" text="#DOTA_Shop_CraftingStatus"/>
+											<Panel class="CraftingStatusTimeline">
+												<Panel class="NeutralTierTimingLabelsContainer Tier1">
+													<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier1"/>
+													<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_1}"/>
+												</Panel>
+												<Panel class="NeutralTierTimingLabelsContainer Tier2">
+													<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier2"/>
+													<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_2}"/>
+												</Panel>
+												<Panel class="NeutralTierTimingLabelsContainer Tier3">
+													<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier3"/>
+													<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_3}"/>
+												</Panel>
+												<Panel class="NeutralTierTimingLabelsContainer Tier4">
+													<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier4"/>
+													<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_4}"/>
+												</Panel>
+												<Panel class="NeutralTierTimingLabelsContainer Tier5">
+													<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier5"/>
+													<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_5}"/>
+												</Panel>
+											</Panel>
+											<Panel id="CraftingStatusHolder">
+												<Panel class="CraftingTeam Radiant">
+													<Label class="TeamNameLabel" text="#DOTA_GoodGuys" />
+													<Panel id="Team0TimelineHolder" class="TeamTimelineHolder"/>
+												</Panel>
+												<Panel class="CraftingTeam Dire">
+													<Label class="TeamNameLabel" text="#DOTA_BadGuys" />
+													<Panel id="Team1TimelineHolder" class="TeamTimelineHolder" />
+												</Panel>
+												<TextButton id="ViewAllButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewAll" html="true" onactivate="AddStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true"/>
+												<Panel class="MadstoneExplainationContainer">
+													<Panel class="MadstoneExplainationTitleContainer">
+														<Image class="MadstoneIcon" src="file://{images}/hud/neutral_currency_icon.png" scaling="stretch-to-fit-preserve-aspect"/>
+														<Label class="MadstoneTitle LabelMedium" text="#DOTA_NeutralCurrencyName" />
+														<Panel class="Dash"/>
+														<Image class="MadstoneInfoIcon" src="file://{images}/control_icons/24px/help.svg" scaling="stretch-to-fit-preserve-aspect"/>
+													</Panel>
+													<Panel class="MadstoneDescriptionContainer">
+														<Panel class="ScrollPanelWrapper">
+															<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_1" />
+															<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_2" />
+															<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_3" />
+														</Panel>
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>
+
+										<Panel class="AllNeutralItems">
+											<Panel class="NeutralItemsHeader">
+												<Label class="NeutralItemsHeaderLabel LabelSmall" text="#DOTA_NeutralCraft_TrinketHeader" />
+												<Label class="NeutralItemsHeaderLabel LabelSmall Right" text="#DOTA_NeutralCraft_EnhancementHeader" />
+											</Panel>
+											<Panel id="GridNeutralItems" />
+											<TextButton id="ViewTeamButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewCrafting" onactivate="RemoveStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true"/>
+										</Panel>
+
+									</TabContents>
+
+									<Panel class="ItemContextMenuInstructionsContainer">
+										<Image src="file://{images}/control_icons/24px/help.svg" scaling="stretch-to-fit-preserve-aspect" />
+										<Label text="#dota_shop_context_menu_intructions" />
+									</Panel>
+									
+								</Panel>
+								<Panel id="GridMainShopContentsV2" hittest="false" >
+									<Panel id="GridBasicItemsContainerV2" class="ItemContainerV2">
+										<Label class="ItemContainerLabel" text="#DOTA_Shop_Category_Basics" />
+										<Panel id="GridBasicItemsV2" class="ShopItemsRows" />
+									</Panel>
+									<Panel id="GridUpgradeItemsContainerV2" class="ItemContainerV2">
+										<Label class="ItemContainerLabel" text="#DOTA_Shop_Category_Upgrades" />
+										<Panel id="GridUpgradeItemsV2" class="ShopItemsRows" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="SideShopHotkeys" hittest="false" hittestchildren="false">
+					<DOTAHotkey id="HotkeySide1" keybind="ShopTabSidePage1" />
+					<DOTAHotkey id="HotkeySide2" keybind="ShopTabSidePage2" />
+				</Panel>
+				<Panel id="GridSideShop">
+					<Panel id="GridSideShopItems" class="ShopItemsColumns" />
+				</Panel>
+				<Panel id="SecretShopHotkeys" hittest="false" hittestchildren="false">
+					<DOTAHotkey id="HotkeySecret" keybind="ShopTabSecret" />
+				</Panel>
+				<Panel id="GridSecretShop">
+					<Panel id="GridSecretShopItems" class="ShopItemsColumns" />
+				</Panel>
+				<Panel id="GridCustomShop">
+					<Label id="CustomShopTitle" text="{s:custom_shop_name}"/>
+					<Panel id="GridCustomShopItems" class="ShopItemsColumns" />
+				</Panel>
+
+				<DOTAHUDShopSearchResults id="SearchResults" />
+
+				<Panel id="GridRowHotkeys" hittest="false" hittestchildren="false">
+					<DOTAHotkey keybind="ShopSlot1" />
+					<DOTAHotkey keybind="ShopSlot2" />
+					<DOTAHotkey keybind="ShopSlot3" />
+					<DOTAHotkey keybind="ShopSlot4" />
+					<DOTAHotkey keybind="ShopSlot5" />
+					<DOTAHotkey keybind="ShopSlot6" />
+					<DOTAHotkey keybind="ShopSlot7" />
+					<DOTAHotkey keybind="ShopSlot8" />
+					<DOTAHotkey keybind="ShopSlot9" />
+					<DOTAHotkey keybind="ShopSlot10" />
+					<DOTAHotkey keybind="ShopSlot11" />
+					<DOTAHotkey keybind="ShopSlot12" />
+					<DOTAHotkey id="ShopSlot13" keybind="ShopSlot13" />
+					<DOTAHotkey id="ShopSlot14" keybind="ShopSlot14" />
+				</Panel>
+			</Panel>
+
+		</Panel>
+	</DOTAHUDShop>
+</root>

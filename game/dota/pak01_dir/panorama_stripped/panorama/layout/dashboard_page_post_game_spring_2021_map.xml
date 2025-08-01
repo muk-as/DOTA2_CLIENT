@@ -1,0 +1,59 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/graph_personalstat.css"/>
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dashboard_page_post_game.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/custom_game/post_game_nemestice_tower_replay.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="TowerAlive">	
+			<Panel class="TowerAlive">
+				<DOTAParticleScenePanel id="SurvivingTowerFX" class="SurvivingTowerFX" cameraOrigin="200 0 0" lookAt="0 0 0" fov="45" particleName="particles/ui/ui_rank_tier_ambient.vpcf" hittest="false" startActive="false"/>
+				<Panel id="TowerAliveImage"/>
+			</Panel>	
+		</snippet>
+
+		<snippet name="TowerDestruction">
+			<Panel class="TowerDestruction">
+				<Panel id="TimeContainer">
+					<Label id="TowerTime" text="{t:d:time_destroyed}"/>
+				</Panel>
+				<Panel id="TowerTakenImage" />
+				<DOTAParticleScenePanel id="DestroyTowerFX" class="DestroyTowerFX" cameraOrigin="-150 0 0" lookAt="0 0 0" fov="70" particleName="particles/ui/ui_generic_burst.vpcf" hittest="false" startActive="false"/>
+				<Panel id="TowerHero">
+					<DOTAHeroImage id="HeroKillIcon" heroimagestyle="icon" heroname="creep"/>
+					<Panel id="SwordIcon"/>
+				</Panel>
+			</Panel>
+		</snippet>
+
+	</snippets>
+	
+	<DOTAPostGameNemesticeMap>
+		<Panel id="minimap_block">
+			<Image id="minimap" src="file://{images}/post_game/nemestice_post_game_map.png"/>
+			<Panel id="NemesticeTowerReplayOverlay"/>
+		</Panel>
+		<Panel id="RadiantMeteorScore" >
+			<Panel id="MeteorScoreNumber">
+				<Label id="RadiantMeteorScoreLabel" class="TeamMeteorScore" text="0"/>
+				<Panel id="MeteorIcon"/>
+			</Panel>
+			<Label class="MeteorScoreLabel" text="#dota_page_overview_nemestice_team_total" />
+		</Panel>
+		<Panel id="DireMeteorScore" >
+			<Panel id="MeteorScoreNumber">
+				<Label id="DireMeteorScoreLabel" class="TeamMeteorScore" text="0"/>
+				<Panel id="MeteorIcon"/>
+			</Panel>
+			<Label class="MeteorScoreLabel" text="#dota_page_overview_nemestice_team_total" />
+		</Panel>
+	</DOTAPostGameNemesticeMap>
+</root>

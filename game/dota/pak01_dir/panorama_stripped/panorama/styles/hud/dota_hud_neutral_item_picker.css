@@ -1,0 +1,532 @@
+DOTANeutralItemPicker {
+	flow-children: down;	
+	horizontal-align: center;
+	vertical-align: middle;
+	margin-left: 780px;
+	margin-top: 360px;
+	padding: 48px;
+
+	opacity: 0.0;
+	transform: translateY( 28px ) scale3d( 0.96, 0.96, 1 );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+	transition-delay: 0s;
+}
+
+DOTANeutralItemPicker.ShowPicker {
+	opacity: 1.0;
+	transform: none;
+	transition-delay: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.TooltipContents {
+	width: 560px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #13171a ), to( #0b0f11 ) );
+	border: 2px solid black;
+	box-shadow: 0px 8px 40px -2px rgba(0, 0, 0, 0.6);
+}
+
+.Header {
+	width: 100%;
+	flow-children: right;
+
+	.HeaderBackgroundTexture {
+		width: 100%;
+		height: 100%;
+		ignore-parent-flow: true;
+		background-image: url( "file://{images}/hud/facets/ripple_texture.png" );
+		background-size: cover;
+		background-position: center;
+		-s2-mix-blend-mode: screen;
+		opacity: 0.4;
+		opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+	}
+
+	.HeaderText {
+		flow-children: right;
+		width: fill-parent-flow( 1.0 );
+		vertical-align: center;
+		padding: 10px 4px 8px 12px;
+
+		Label {
+			font-size: 16px;
+			text-shadow: 0px 1px 6px black;
+		}
+
+		.TierNumber {
+			width: fill-parent-flow(1.0);
+			vertical-align: middle;
+			text-align: right;
+			font-weight: semi-bold;
+		}
+
+		.Subtitle {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: white;
+		}
+	}
+
+	#CloseButton {
+		horizontal-align: right;
+		vertical-align: center;
+		height: 32px;
+		width: 32px;
+		border-radius: 50%;
+		margin-right: 6px;
+		border: 1px solid rgba(255, 255, 255, 0);
+
+		transition-property: background-color, border;
+		transition-duration: 0.1s;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.6);
+			border: 1px solid rgba(255, 255, 255, 0.06);
+
+			.CloseIcon {
+				opacity: 1;
+			}
+		}
+
+		.CloseIcon {
+			margin: 0px;
+			height: 16px;
+			width: 16px;
+			horizontal-align: center;
+			vertical-align: center;
+			opacity: 0.5;
+
+			transition-property: opacity;
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+.HeaderDash {
+	width: 100%;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.15);
+	box-shadow: 0px -1px 0px rgba(255, 255, 255, 0.01);
+}
+
+.NeutralItemTier1 .NeutralItemTier { color: NeutralTier1; }
+.NeutralItemTier2 .NeutralItemTier { color: NeutralTier2; }
+.NeutralItemTier3 .NeutralItemTier { color: NeutralTier3; }
+.NeutralItemTier4 .NeutralItemTier { color: NeutralTier4; }
+.NeutralItemTier5 .NeutralItemTier { color: NeutralTier5; }
+
+.NeutralItemTier1 .Header { background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier1&55 ), to( NeutralTier1&05 ) ); }
+.NeutralItemTier2 .Header { background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier2&55 ), to( NeutralTier2&05 ) ); }
+.NeutralItemTier3 .Header { background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier3&55 ), to( NeutralTier3&05 ) ); }
+.NeutralItemTier4 .Header { background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier4&55 ), to( NeutralTier4&05 ) ); }
+.NeutralItemTier5 .Header { background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier5&55 ), to( NeutralTier5&05 ) ); }
+
+.NeutralItemTier1 .Body { background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier1&09 ), to( NeutralTier1&00 ) ); }
+.NeutralItemTier2 .Body { background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier2&09 ), to( NeutralTier2&00 ) ); }
+.NeutralItemTier3 .Body { background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier3&09 ), to( NeutralTier3&00 ) ); }
+.NeutralItemTier4 .Body { background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier4&09 ), to( NeutralTier4&00 ) ); }
+.NeutralItemTier5 .Body { background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier5&09 ), to( NeutralTier5&00 ) ); }
+
+.NeutralItemTier1 .HeaderBackgroundTexture { wash-color: NeutralTier1; }
+.NeutralItemTier2 .HeaderBackgroundTexture { wash-color: NeutralTier2; }
+.NeutralItemTier3 .HeaderBackgroundTexture { wash-color: NeutralTier3; }
+.NeutralItemTier4 .HeaderBackgroundTexture { wash-color: NeutralTier4; }
+.NeutralItemTier5 .HeaderBackgroundTexture { wash-color: NeutralTier5; }
+
+
+.Body {
+	flow-children: right;
+	width: 100%;
+	padding: 10px 12px 8px;
+}
+
+.BottomArrow {
+	width: 36px;
+	height: width-percentage( 50% );
+    background-image: url( "file://{images}/tooltips/tooltip_arrow.svg" );
+	background-texture-size: 72px 36px;
+	background-size: cover;
+	wash-color: #12181C;
+	margin-top: -2px;
+	horizontal-align: center;
+	z-index: 1;
+
+	visibility: collapse;
+}
+
+.TrinketsContainer,
+.EnhancementsContainer {
+	flow-children: down;
+	width: fill-parent-flow( 1 );
+}
+
+@define OptionHeight: 54px;
+
+#NeutralCraftTrinketList {
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+
+	.NeutralItemOption {
+		horizontal-align: center;
+		flow-children: right;
+		width: 100%;
+		height: OptionHeight;
+		margin-bottom: 4px;
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.04) ), to( rgba(233, 250, 255, 0.02) ) );
+		overflow: noclip;
+
+		tooltip-position: top;
+
+		transition-property: transform, brightness, background-color, border;
+		transition-duration: 0.05s, 0.1s;
+
+		&:hover:not(.CraftingOptionSelected) {
+			brightness: 2.0;
+		}
+
+		&:active {
+			brightness: 1.5;
+			transform: scale3d( 0.99, 0.99, 1 );
+		}
+
+		&.IsHighestDotaPlusSuggestion {
+			.DOTAPlusBorder {
+				visibility: visible;
+			}
+
+			.DOTAPlusIcon {
+				visibility: visible;
+			}
+		}
+
+		&.CraftingOptionSelected {
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.2) ), to( rgba(233, 250, 255, 0.1) ) );
+
+			.OptionBorder {
+				                 
+				border: 1px solid rgba(255, 255, 255, 1);
+			}
+
+			#OptionImage {
+				brightness: 2.0;
+			}
+
+			.ItemName,
+			.CombinedItemName {
+				color: whitesmoke;
+			}
+		}
+
+		#OptionImage {
+			width: height-percentage( 133% );
+			height: OptionHeight;
+			border: 1px solid black;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+			transition-property: brightness;
+			transition-duration: 0.2s;
+		}
+
+		.OptionBorder {
+			width: 100%;
+			height: 100%;
+			ignore-parent-flow: true;
+			border: 1px solid rgba(255, 255, 255, 0.03);
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.6) ) );
+
+			transition-property: border;
+			transition-duration: 0.2s;
+		}
+
+		.ItemName,
+		.CombinedItemName {
+			font-family: titleFont;
+			font-size: 14px;
+			line-height: 1.2;
+			color: #e1e1e1;
+			width: fill-parent-flow( 1.0 );
+			vertical-align: middle;
+			padding: 0px 8px;
+			text-overflow: shrink;
+			letter-spacing: 0.5px;
+			text-shadow: 0px 1px 4px #00000090;
+			text-transform: uppercase;
+			font-weight: semi-bold;
+			max-height: 48px;
+			vertical-align: center;
+		}
+
+		.EnhancementStats {
+			visibility: collapse;
+		}
+	}
+}
+
+#NeutralCraftEnhancementList {
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+
+	.NeutralItemOption {
+		horizontal-align: center;
+		flow-children: right;
+		width: 100%;
+		height: OptionHeight;
+		margin-bottom: 4px;
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.04) ), to( rgba(233, 250, 255, 0.02) ) );
+
+		tooltip-position: top;
+
+		transition-property: transform, brightness, background-color, border;
+		transition-duration: 0.05s, 0.1s;
+
+		&:hover:not(.CraftingOptionSelected) {
+			brightness: 2.0;
+		}
+
+		&:active {
+			brightness: 1.5;
+			transform: scale3d( 0.98, 0.98, 1 );
+		}
+
+		&.IsHighestDotaPlusSuggestion {
+			.DOTAPlusBorder {
+				visibility: visible;
+			}
+
+			.DOTAPlusIcon {
+				visibility: visible;
+			}
+		}
+
+		&.CraftingOptionSelected {
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.2) ), to( rgba(233, 250, 255, 0.1) ) );
+
+			.OptionBorder {
+				z-index: 1;
+				border: 1px solid rgba(255, 255, 255, 1);
+			}
+
+			#OptionImage {
+				brightness: 2.0;
+			}
+
+			.ItemName,
+			.CombinedItemName {
+				color: whitesmoke;
+			}
+		}
+
+		#OptionImage {
+			width: 32px;
+			height: width-percentage( 100% );
+			margin: 4px 16px;
+			border-radius: 50%;
+			border: 1px solid black;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+			transition-property: brightness;
+			transition-duration: 0.2s;
+		}
+
+		.OptionBorder {
+			width: 100%;
+			height: 100%;
+			ignore-parent-flow: true;
+			border: 1px solid rgba(255, 255, 255, 0.03);
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.6) ) );
+
+			transition-property: border;
+			transition-duration: 0.2s;
+		}
+
+		.EnhancementStats {
+			vertical-align: center;
+			font-size: 15px;
+			color: LighterGrey;
+			line-height: 1.1;
+			text-shadow: 0px 1px 4px #00000090;
+			margin-right: 8px;
+			width: fill-parent-flow( 1 );
+			max-height: 96%;
+			text-overflow: shrink;
+			margin-left: -2px;
+		}
+
+		.GameplayVariable {
+			font-weight: bold;
+			color: white;
+		}
+
+		.GameplayValues {
+			font-weight: bold;
+			color: white;
+		}
+
+		.ItemName,
+		.CombinedItemName {
+			vertical-align: bottom;
+			margin: 3px 3px;
+			width: 58px;
+			max-height: 24px;
+
+			font-family: titleFont;
+			ignore-parent-flow: true;
+			text-overflow: shrink;
+			font-size: 11px;
+			color: LighterGrey;
+			text-align: center;
+			text-overflow: shrink;
+			text-shadow: 0px 1px 4px #00000090;
+		}
+	}
+}
+
+
+
+.DOTAPlusRecommendationContainer {
+	flow-children: right;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	margin: 3px 4px;
+
+	.DOTAPlusSuggestion {
+		font-size: 13px;
+		color: #d1af58;
+		vertical-align: center;
+		text-shadow: 0px 1px 4px black;
+		color: gradient( linear, 0% 20%, 0% 90%, from( #ffe091 ), color-stop(0.5, #f3cd6c ), to( #b59546 ) );
+	}
+	
+	.DOTAPlusIcon {
+		width: 13px;
+		margin: 0px 4px;
+		vertical-align: center;
+		img-shadow: 0px 1px 6px black;
+
+		visibility: collapse;
+	}
+}
+
+.DOTAPlusBorder {
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffe9b0 ), color-stop(0.5, #f3cd6c ), to( #b59e63 ) );
+
+	visibility: collapse;
+}
+
+
+.HideDotaPlus .DOTAPlusSuggestion
+{
+	visibility: collapse;
+}
+
+
+
+
+
+.NeutralChoiceHolder
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+.SoloName .CombinedItemName,
+.SoloName #PassiveItemImage,
+.CombinedName .ItemName
+{
+	visibility: collapse;
+}
+
+.RerollButton {
+	margin-bottom: 4px;
+
+	width: 100%;
+	height: 54px;
+	horizontal-align: center;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #253646 ), to( #253646 ) );
+	box-shadow: 1px 3px 3px #000;
+	border-top: 1px solid #485677;
+	
+	transition-property: brightness;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+
+	Label {
+		vertical-align: middle;
+		horizontal-align: middle;
+		letter-spacing: 0.5px;
+		text-shadow: 2px 2px 0px 1.0 #00000090;
+		text-transform: uppercase;
+	}
+}
+
+.RerollButton:hover
+{
+	brightness: 1.8;
+}
+
+.RerollButton:active
+{
+	border-top: 1px solid #05070c;
+	brightness: 0.8;
+}
+
+.NoRollsAvailable .RerollButton
+{
+	visibility: collapse;
+}
+
+.HideReroll
+{
+	visibility: collapse;
+}
+
+.NeutralSeperator {
+	height: 100%;
+	flow-children: down;
+	margin: 14px 4px 0px;
+
+	.HorizontalRule {
+		width: 1px;
+		height: fill-parent-flow( 1.0 );
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #808f9700 ), to( #808f97 ) );
+		horizontal-align: center;
+		opacity: 0.2;
+
+		&.Right {
+			transform: scaleY( -1 );
+		}
+	}
+
+	.PlusIcon {
+		width: 14px;
+		height: width-percentage(100%);
+		margin: 4px 0px;
+		wash-color: #808f97;
+		img-shadow: 0px 1px 4px black;
+	}
+}
+
+.SubheaderLabel {
+	font-family: defaultFont;
+	text-transform: uppercase; 
+	letter-spacing: 1.5px;
+	font-size: 14px;
+	vertical-align: center;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 4px;
+	color: LighterGrey;
+	text-shadow: 0px 2px 6px black;
+}

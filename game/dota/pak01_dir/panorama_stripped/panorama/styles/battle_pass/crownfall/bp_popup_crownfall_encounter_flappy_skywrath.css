@@ -1,0 +1,279 @@
+
+#FlappyMainMenu.MainMenu {
+    width: 700px;
+    
+	.ColumnContainer
+	{
+		.Column1 
+		{
+            width: 100%;
+            horizontal-align: center;
+            margin-left: 100px;
+            margin-right: 100px;
+
+            .EndlessMode &
+            {
+			    width: 45%;
+                padding-right: 10px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+		}
+		.Column2
+		{
+			width: 55%;
+            visibility: collapse;
+            .EndlessMode &
+            {
+                visibility: visible;
+            }
+		}
+	}
+    .Header
+    {
+        .TitleContainer 
+        {
+            width: 100%;
+            flow-children: down;
+            .Title
+            {
+                margin-top: 4px;
+                margin-bottom: 0;
+                .EndlessMode &
+                {
+                    font-size: 24px;
+                }
+            }
+            .Subtitle
+            {
+				width: 100%;
+				horizontal-align: center;
+				text-align: center;
+				font-family: titleFont;
+				font-size: 14px;
+				letter-spacing: 5px;
+				                   
+				text-transform: uppercase;
+				color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+				text-shadow: 2px 6px 8px black;
+                margin-top: -5px;
+				margin-bottom: 15px;
+
+                horizontal-align: center;
+                visibility: collapse;
+                .EndlessMode &
+                {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .RewardsLabel
+    {
+        margin-top: 35px;
+		visibility: collapse;
+    }
+}
+ 
+.CircleMask
+{
+	width: 100%;
+	height: 100%;
+    
+    .AnimateOut &
+    {
+	    opacity-mask: url( "file://{images}/events/crownfall/flappy/circle_mask.png" );
+        animation-name: ShrinkCircle;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        background-color: black;
+    }
+    .AnimateIn &
+    {
+        opacity-mask: none;
+        animation-name: FadeIn;
+        animation-duration: 1.3s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        background-color: black;
+    }
+}
+.Scene
+{
+    visibility: collapse;
+    .SceneLoaded & {
+        visibility: visible;
+                           
+                              
+                          
+    }
+}
+@keyframes 'ShrinkCircle'
+{
+    0%
+    {
+        transform:scale3d( 52.0, 52.0, 1.0 );
+        opacity: 0;
+        
+    }
+    50%
+    {
+        transform:scale3d( 52.0, 52.0, 1.0 );
+        opacity: 1;
+    }
+    94%
+    {
+        transform:scale3d( 1.0, 1.0, 1.0 );
+    }
+    100%
+    {
+                                                  
+        opacity-mask-scale: 100%;
+    }
+}
+@keyframes 'FadeIn'
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+#BigRaceBarContainer
+{
+    horizontal-align: center;
+    margin-top: 16px;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+    opacity: 0;
+    visibility: collapse;
+    .HideScore &
+    {
+        visibility: visible;
+    }
+}
+
+
+.Running #BigRaceBarContainer
+{
+    opacity: 1.0;
+}
+
+#RaceBar
+{
+    width: 700px;
+    horizontal-align: center;
+    vertical-align: top;
+    flow-children: down;
+	transition-property: width;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+}
+.Running #RaceBar
+{
+    width: 800px;
+}
+
+#BarLabel
+{
+    font-size: 24px;
+    vertical-align: center;
+    horizontal-align: center;
+    letter-spacing: 3px;
+    padding: 0px 24px 0px 48px;
+    margin-right: -20px;
+    margin-top: 15px;
+    color: #FDFAEE;
+    font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+    text-shadow: 1px 2px 2px #000;
+    text-transform: uppercase;
+}
+
+.BarHolder
+{
+    width: 100%;
+    height: 100%;
+}
+
+#RaceProgressBar
+{
+    width: 100%;
+    border-radius: 4px;
+    border: 3px solid #444;
+    background-color: black;
+    height: 24px;
+    margin-top: -5px;
+    vertical-align: center;
+    horizontal-align: center;
+    ignore-parent-flow: true;
+}
+
+#RaceProgressBar_Left
+{
+    background-image: url( "file://{images}/hud/bar_black.psd" );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 2px;
+                                                                                                                                                          
+}
+
+
+#RaceProgressBar_Right
+{
+    background-image: url( "file://{images}/hud/bar_black.psd" );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: #000000cc;
+    border-radius: 0px 4px 4px 0px;
+    box-shadow: inset #000000 0px 1px 0px 1px;
+}
+
+#ProgressBarContainer
+{
+    vertical-align: bottom;
+    height: 40px;
+    width: 100%;
+}
+
+#SkywrathProgressBar
+{
+    opacity: 0;
+}
+#BatriderProgressBar
+{
+    opacity: 0;
+}
+
+#RaceBarContainer
+{
+    vertical-align: bottom;
+    width: 100%;
+    height: 76px;
+}
+
+.FinishIcon
+{
+    horizontal-align: right;
+    vertical-align: center;
+}
+.HeroIcon
+{
+    ignore-parent-flow: true;
+}
+#SkywrathIcon
+{
+    transform: translateY( 5px );
+}
+#BatriderIcon
+{
+    transform: translateY( 30px );
+}

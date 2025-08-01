@@ -1,0 +1,47 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_muerta_dashboard_calavera.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/util.ts" />
+		<include src="file://{resources}/scripts/sequence_actions.ts" />
+		<include src="file://{resources}/scripts/dota_sequence_actions.ts" />
+		<include src="file://{resources}/scripts/popups/popup_muerta_dashboard_calavera.ts" />
+	</scripts>
+
+	<snippets>
+		<snippet name="ParticleFX">
+			<Panel>
+				<DOTAParticleScenePanel id="CalaveraFX" class="CalaveraFX" hittest="false" particleName="particles/events/muerta_ofrenda/muerta_calavera_screen_effect_town.vpcf" particleonly="true" startActive="true" cameraOrigin="0 0 1000" lookAt="0 1 0" fov="18" squarePixels="true" />
+			</Panel>
+		</snippet>
+		<snippet name="ParticleFXWide">
+			<Panel>
+				<DOTAParticleScenePanel id="CalaveraFX" class="CalaveraFX" hittest="false" particleName="particles/events/muerta_ofrenda/muerta_calavera_screen_effect_town.vpcf" particleonly="true" startActive="true" cameraOrigin="0 0 1000" lookAt="0 1 0" fov="25" squarePixels="true" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTAPopupMuertaCalavera class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+
+		<Panel class="Contents">
+			<Button id="LeftArrow" onactivate="DOTANavigateMuertaCalaveraBackward()">
+				<Image class="ArrowImage Left" src="file://{images}/control_icons/arrow_chevron_gradient.png" />
+			</Button>
+			<Panel id="CalaveraImageContainer">
+				<Panel id="CalaveraImageGlow" class="FlameReveal"></Panel>
+				<Panel id="CalaveraImage" class="FlameReveal"></Panel>
+			</Panel>
+			<Button id="RightArrow" onactivate="DOTANavigateMuertaCalaveraForward()">
+				<Image class="ArrowImage" src="file://{images}/control_icons/arrow_chevron_gradient.png" />
+			</Button>
+		</Panel>
+		<Panel id="ParticleFXContainer" hittest="false"></Panel>
+
+		<Button class="CloseButton" onactivate="UIPopupButtonClicked()"/>
+
+	</DOTAPopupMuertaCalavera>
+</root>

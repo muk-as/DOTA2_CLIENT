@@ -1,0 +1,50 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css" />
+		<include src="file://{resources}/styles/hud/dota_hud_spectator_game_stats.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="PlayerRow">
+			<DOTASpectatorGameStatsPlayerRow hittest="false">
+				<Panel class="HeroImageOverlay">
+					<DOTAHeroImage id="HeroImage" onactivate="DOTASpectatorGameStatsHeroClicked()" onmouseover="DOTASpectatorGameStatsHeroIconHovered( true )" onmouseout="DOTASpectatorGameStatsHeroIconHovered( false )" />
+					<Panel class="BuybackStatus" />
+				</Panel>	
+				<Panel class="Contents" onmouseover="DOTASpectatorGameStatsPlayerRowHovered( true )" onmouseout="DOTASpectatorGameStatsPlayerRowHovered( false )" >
+					<Panel id="StatValueBar">
+						<Panel id="StatValueBarContents" />
+						<Panel id="StatValueBarEnd">
+							<Panel id="StatValueBarEndCenter" />
+						</Panel>
+                    </Panel>
+                    <Label id="StatValue" text="{s:stat_value}" html="true" />
+					<Label id="PlayerName" text="{g:dota_player_name:nh:player_id}" html="true" />
+				</Panel>
+			</DOTASpectatorGameStatsPlayerRow>
+		</snippet>
+	</snippets>
+
+	<DOTASpectatorGameStats>
+		<Panel id="Header">
+			<DropDown id="StatsDropDown" onfocus="DropInputFocus()" />
+			
+			<Button id="StatSortingButton" class="SpectatorMenuButton" onactivate="DOTASpectatorGameStatsCycleSortMethod()" onmouseover="UIShowTextTooltip( #DOTA_SpectatorNavTooltipSort)" onmouseout="UIHideTextTooltip()">
+				<Panel class="SortingIcon" />
+			</Button>
+
+			<Button id="SpectatorGraphButton" class="SpectatorMenuButton"  onactivate="DOTAHUDToggleSpectatorGraph() DOTAPlusCompleteWelcomeQuest( 'welcome_use_spectator_win_probability' )" onmouseover="UIShowTextTooltip( #DOTA_SpectatorNavTooltipGraphs)" onmouseout="UIHideTextTooltip()">
+				<Panel id="SpectatorGraphIcon" class="SpectatorMenuIcon"/>
+			</Button>
+			
+			<Button id="SpectatorItemsButton" class="SpectatorMenuButton" onactivate="DOTAHUDToggleSpectatorItems()" onmouseover="UIShowTextTooltip( #DOTA_SpectatorNavTooltipItems)" onmouseout="UIHideTextTooltip()">
+				<Panel id="SpectatorItemsIcon" class="SpectatorMenuIcon"/>
+			</Button>
+			
+		</Panel>
+		<Panel id="PlayerRows" hittest="false" />
+	</DOTASpectatorGameStats>
+</root>
+
+

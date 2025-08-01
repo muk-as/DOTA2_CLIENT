@@ -1,0 +1,94 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/dota_ui_mm_simulation.css" />
+	</styles>
+
+	<snippets>
+		
+		<snippet name="PlayerSnippet">
+			<Panel class="PlayerSnippet">
+				<Label class="GraphLabel Center" text="{d:mmr_center}" />
+				<UICanvas id="MMRGraph" />
+				<Label class="GraphLabel Min" text="{d:mmr_min}" />
+				<Label class="GraphLabel Max" text="{d:mmr_max}" />
+			</Panel>
+		</snippet>
+		
+	</snippets>
+	
+	<DOTAUIMatchmakingSimulation>
+		
+		<Panel class="MMSimContainer">
+			
+			<Panel class="GraphContainer">
+				<Panel class="PopulationGraphContainer">
+					<Panel class="LeftColumn">
+						<Label class="GraphLabel ComputedMax" text="{d:actual_mmr_max}" />
+						<Label class="GraphLabel ComputedMin" text="{d:actual_mmr_min}" />
+					</Panel>
+					<Panel class="RightColumn">
+						<UICanvas id="PopulationGraph" />
+						<Panel class="BottomRow">
+							<Label class="GraphLabel ActualMin" text="{d:computed_mmr_min}" />
+							<Label class="GraphLabel GameCount" unlocalized="true" text="# of Games: {d:game_count}" />
+							<Label class="GraphLabel ActualMax" text="{d:computed_mmr_max}" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="PlayerList" />
+			</Panel>
+
+			<Panel class="ControlsBar">
+				<Panel class="PlayerStatContainer">
+					<Label class="ControlLabel" text="Count:" unlocalized="true" />
+					<TextEntry id="PlayerCount" text="100000"/>
+				</Panel>
+				<Panel class="PlayerStatContainer">
+					<Label class="ControlLabel" text="Ave:" unlocalized="true" />
+					<TextEntry id="MMRCenter" text="2150"/>
+				</Panel>
+				<Panel class="PlayerStatContainer">
+					<Label class="ControlLabel" text="Std:" unlocalized="true" />
+					<TextEntry id="MMRStdDev" text="2000"/>
+				</Panel>
+				<Panel class="PlayerStatContainer">
+					<Label class="ControlLabel" text="K:" unlocalized="true" />
+					<TextEntry id="MMRWinIncrement" text="50"/>
+				</Panel>
+				<Panel class="AlgorithmContainer">
+					<Label class="ControlLabel" text="Init:" unlocalized="true" />
+					<DropDown id="InitMethod">
+						<Label text="Mid" unlocalized="true" id="0"/>
+						<Label text="Actual" unlocalized="true" id="1"/>
+						<Label text="Act X 3" unlocalized="true" id="2"/>
+						<Label text="Act+Add" unlocalized="true" id="3"/>
+						<Label text="Act+Rpl" unlocalized="true" id="4"/>
+					</DropDown>
+				</Panel>
+				<Panel class="AlgorithmContainer">
+					<Label class="ControlLabel" text="Match:" unlocalized="true" />
+					<DropDown id="MatchType">
+						<Label text="Rnd+Ngbr" unlocalized="true" id="0"/>
+						<Label text="Rnd2+Ngbr" unlocalized="true" id="1"/>
+						<Label text="Neighbor" unlocalized="true" id="2"/>
+						<Label text="Random" unlocalized="true" id="3"/>
+					</DropDown>
+				</Panel>				
+				<Panel class="AlgorithmContainer">
+					<Label class="ControlLabel" text="Alg:" unlocalized="true" />
+					<DropDown id="Algorithm">
+						<Label text="ELO" unlocalized="true" id="0"/>
+						<Label text="ELO+Clamp" unlocalized="true" id="1"/>
+						<Label text="ELO+Round" unlocalized="true" id="2"/>
+						<Label text="ELO+Streak" unlocalized="true" id="3"/>
+					</DropDown>
+				</Panel>
+				<TextButton class="PopupButton Blue" text="Start" unlocalized="true" onactivate="DOTAMMSimulationStart()" />
+				<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="DOTAMMSimulationReset()" />
+			</Panel>
+		</Panel>
+		
+	</DOTAUIMatchmakingSimulation>
+</root>

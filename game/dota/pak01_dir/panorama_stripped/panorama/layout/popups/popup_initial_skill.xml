@@ -1,0 +1,48 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_initial_skill.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/popups/popup_initial_skill.js" />
+	</scripts>
+	
+	<PopupInitialSkill class="PopupPanel Hidden" dimbackground="true" onload="OnLoad()" onactivate="SkipWizardTip();">
+		<Panel id="Background"/>
+		<Panel id="IntroBackgroundTint">
+			<Image id="DotaLogo" src="file://{images}/dota_logo_and_text.png" />
+			<Label id="WelcomeToDota" text="#DOTA_NewPlayerQuestion_Title" class="Hidden" />
+			                      
+			<Panel id="Questionnaire">
+				<Panel id="QuestionnaireContent">
+					<Label text="#DOTA_PlayerOriginQuestion_Question" class="DialogText" html="true" />
+
+					<Panel id="SkillOptionsContainer">
+						<Panel id="NonMOBAPanel" class="SkillOptions">
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 100 )" text="#DOTA_PlayerOriginQuestion_BeginnerButton" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 101 )" text="#DOTA_PlayerOriginQuestion_RTSButton" />
+							<TextButton class="SkillSelection" onactivate="$.GetContextPanel().AddClass( 'ShowMOBAPanel' )" text="#DOTA_PlayerOriginQuestion_MOBAButton" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 102 )" text="#DOTA_PlayerOriginQuestion_Dota2Button" />
+						</Panel>
+
+						<Panel id="MOBAPanel" class="SkillOptions">
+							<Label id="MOBAText" text="#DOTA_PlayerOriginQuestion_MOBAExplanation" />
+
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 103 )" text="#DOTA_OtherGames_LOL" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 106 )" text="#DOTA_OtherGames_DOTA" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 104 )" text="#DOTA_OtherGames_HON" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 105 )" text="#DOTA_OtherGames_Smite" />
+							<TextButton class="SkillSelection" onactivate="DOTAInitialSkillSelected( 107 )" text="#DOTA_OtherGames_Other" />
+							<TextButton class="SkillSelection" onactivate="$.GetContextPanel().RemoveClass( 'ShowMOBAPanel' )" text="#UI_BACK" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel id="WizardTip" onload="DOTAAttachHelpTip( 'dota_tip_new_user_intro_wizard_speech_4' ); DOTAAttachHelpTip( 'dota_tip_new_user_intro_wizard_speech_3' ); DOTAAttachHelpTip( 'dota_tip_new_user_intro_wizard_speech_2' );DOTAAttachHelpTip( 'dota_tip_new_user_intro_wizard_speech_1' ) ">
+			</Panel>
+		</Panel>
+	</PopupInitialSkill>
+</root>

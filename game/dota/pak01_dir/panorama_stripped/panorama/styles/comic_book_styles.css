@@ -1,0 +1,202 @@
+  
+                                                                                                                      
+
+                                                             
+  
+
+                                                                                   
+ComicViewerScenePanelCell DOTAScenePanel
+{
+    width: 100%;
+    height: 100%;
+}
+                                                                                       
+
+
+ComicViewerBook,
+ComicViewerPage
+{
+    width: 1920px;
+    height: 1080px;
+}
+
+ComicViewerBook
+{
+    background-color: black;
+}
+
+                                             
+ComicViewerPage.wrap
+{
+    flow-children: right-wrap;
+}
+
+                
+ComicViewerPage.rows
+{
+    flow-children: down;
+}
+
+.row
+{
+    width: 100%;
+    height: fill-parent-flow(1.0);
+    flow-children: right;
+}
+
+.row .Cell
+{
+    width: fill-parent-flow(1.0);
+}
+
+.Cell
+{
+    width: 100%;
+    height: 100%;
+                                                        
+    background-size: contain;                                           
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Cell
+{
+    opacity: 0;
+}
+
+.Cell.HasBeenFocused,
+.Cell.Focused
+{
+    opacity: 1;
+}
+
+               
+
+.Debug .Cell
+{
+    border: 1px solid yellow;
+}
+
+.Debug .Cell.Focused
+{
+    border: 1px solid green;
+}
+
+.Debug .Cell
+{
+    opacity: 0.5;
+}
+
+#DebugPanel
+{
+    width: fit-children;
+    height: fit-children;
+    margin: 100px;
+    font-size: 20px;
+}
+
+MoviePanel
+{
+    width: 100%;
+    height: 100%;
+}
+
+Panel
+{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.Thumbnail.Activated {
+    border: 1px solid white;
+    box-shadow: 0px 0px 48px rgba(255, 255, 255, 0.01);
+    z-index: 1;
+
+    animation-name: GlowActiveThumbnail;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+    .ThumbnailLabel {
+        color: #fff;
+    }
+}
+
+.TitleContainer {
+    width: 100%;
+    flow-children: down;
+    height: fit-children;
+    margin-bottom: 8px;
+
+    Label {
+        horizontal-align: center;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0px 2px 12px black;
+        letter-spacing: 2px;
+    }
+
+    .HeaderTitle {        
+        color: rgba(245, 245, 245, 1);
+        font-weight: semi-bold;
+    }
+    
+    .SubTitle {
+        font-size: 14px;
+        color: rgba(245, 245, 245, 0.6);
+        letter-spacing: 3px;
+    }
+}
+
+.Thumbnail {
+    margin: 6px;
+    border: 1px solid rgba(255, 255, 255, 0);
+
+    transition-property: transform, border, transform;
+    transition-duration: 0.05s, 0.1s;
+
+    &:hover:not(.Activated) {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        Image {
+            brightness: 1.8;
+        }
+    }
+
+    &:active {
+        transform: scale3d( 0.98, 0.98, 1 );
+    }
+
+    Image {
+        transition-property: box-shadow, brightness;
+        transition-duration: 0.1s;
+        width: 218px;
+        height: width-percentage( 56.25% );
+    }
+
+    .ThumbnailLabel {
+        background-color: #000000;
+        horizontal-align: right;
+        vertical-align: bottom;
+        padding: 1px 6px;
+        border-radius: 24px;
+        margin: 6px;
+        font-size: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.02);
+        color: rgba(220, 241, 255, 0.4);
+        text-shadow: 0px 1px 6px black;
+        letter-spacing: 0.5px;
+    }
+}
+
+@keyframes 'GlowActiveThumbnail'
+{
+    0% {
+        box-shadow: 0px 0px 48px rgba(255, 255, 255, 0.01);
+    }
+    100% {
+        box-shadow: 0px 0px 64px rgba(255, 255, 255, 0.06);
+    }
+}

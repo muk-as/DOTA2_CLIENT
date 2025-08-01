@@ -1,0 +1,391 @@
+DOTABPCrownfallCreditsPage {
+	width: 100%;
+	height: 100%;
+	background-color: #111;
+	&.Loaded {
+		.Curtains {
+			opacity: 1;
+		}
+	}
+	&.FadeToBlack {
+		animation-name: FadeBlack;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+	}
+}
+@keyframes 'FadeBlack'
+{
+	0% {
+		brightness: 1;
+	}
+	100% {
+		brightness: 0;
+	}
+}
+
+.CreditsContents {
+	width: 100%;
+	height: 100%;
+	background-color: #111;
+	#ScrollingRegion {
+		horizontal-align: center;
+		vertical-align: center;
+		background-color: black;
+		ui-scale: 200%;
+		  
+		                                                                  
+		  
+	}
+	
+	.ZoomedIn & {
+		#ScrollingRegion {
+			ui-scale: 300%;
+		}
+		.Curtains { 
+			ui-scale: 300%;
+		}
+		#ValveHeadAnim {
+			ui-scale: 300%;
+		}
+	}
+
+	.Curtains {
+		horizontal-align: center;
+		vertical-align: center;
+		ui-scale: 200%;
+		width: 640px;
+		height: 360px;
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 1.5s;
+	}
+	#ValveHeadAnim {
+		width: 48px;
+		height: 40px;
+		horizontal-align: center;
+		vertical-align: center;
+		ui-scale: 200%;
+		visibility: collapse;
+		transform: translateY( 80px);
+	}
+	.ShowValveHead & {
+		#ValveHeadAnim {
+			visibility: visible;
+		}
+	}
+}
+
+#CharacterContainer,
+#SceneContainer,
+#AnimationContainer {
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+.Animateable {
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+.CreditsBlock {
+	min-height: 10px;
+	width: 100%;
+	transition-property: opacity;
+	transition-duration: 1s;
+	.FadeOutLogo & {
+		opacity: 0;
+	}
+	.JustTextContainer {
+		visibility: collapse;
+		horizontal-align:center;
+		Label {
+			font-family: Reaver;
+			font-size: 11px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+	}
+	&.CastBlock,
+	&.ActTitleBlock {
+		.JustTextContainer {
+			visibility: visible;
+		}
+	}
+
+	.Character {
+		width: 120px;
+		flow-children: down;
+		#CharacterImage {
+			horizontal-align: center;
+		}
+		.CharacterName {
+			margin-top: 6px;
+			horizontal-align: center;
+			font-family: Reaver;
+			font-size: 8px;
+			font-weight: medium;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: #c0c6beff;
+		}
+		.CharacterTitle {
+			margin-top: 1px;
+			font-size: 6px;
+			font-family: Reaver;
+			horizontal-align: center;
+			                     
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 1px;
+			color: rgb(108, 112, 106);
+		}
+
+		&.Clicked {
+			#CharacterImage {
+				animation-name: CharacterShake;
+				animation-duration: 0.3s;
+			}
+			.CharacterName,
+			.CharacterTitle {
+				animation-name: CharacterClicked;
+				animation-duration: 0.5s;
+				color: #dcd9a0ff;
+			}
+			&.Nudge {
+					transform: translateY( -1px);
+				#CharacterImage {
+					brightness: 1.5;
+				}
+				.CharacterName {
+					brightness: 1.5;
+				}
+				.CharacterTitle {
+					opacity: 0.2;
+				}
+			}
+		}
+	}
+	#SceneContainer,
+	.Character {
+		opacity: 0;
+	}
+	#SceneContainer {
+		animation-delay: 1.4s;
+	}
+	.Character {
+		animation-delay: 0.6s;
+	}
+	.Character.OnScreen,
+	#SceneContainer.OnScreen {
+		animation-name: FadeIn;
+		animation-duration: 1.6s;
+		animation-fill-mode: forwards;
+	}
+	&.DotaLogo {
+		#SceneContainer {
+			animation-delay: 0s;
+		}
+	}
+	&.CrownfallLogo {
+		#SceneContainer {
+			animation-delay: 0s;
+			animation-duration: 3s;
+			animation-name: none;
+		}
+	}
+}
+.CreditsBlock.CrownfallLogo #SceneContainer {
+	transition-property: opacity;
+	transition-duration: 4s;
+}
+.Stopped .CreditsBlock.CrownfallLogo {
+	#SceneContainer {
+		opacity: 1;
+	}
+	.SpecialThanksContainer {
+		animation-name: FadeIn;
+		animation-duration: 1.6s;
+		animation-fill-mode: forwards;
+		animation-delay: 4s;
+	}
+}
+
+.SpecialThanksContainer {
+	width: 200px;
+	height: 100px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: down;
+	opacity: 0;
+	visibility: collapse;
+	.CrownfallLogo & {
+		visibility: visible;
+	}
+	.SpecialThanksText {
+		horizontal-align: center;
+		font-family: Reaver;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 7px;
+		color: #c0c6beff;
+		margin-bottom: 5px;
+	}
+	.PlayerContainer {
+		flow-children: right;
+		horizontal-align: center;
+		#PlayerAvatar {
+			width: 18px;
+			height: 18px;
+		}
+		.PlayerPersona {
+			font-family: Reaver;
+			font-size: 9px;
+			margin-left: 5px;
+			vertical-align: center;
+			color: #c0c6beff;
+		}
+	}
+}
+
+Image {
+	texture-sampling: point;
+}
+AnimatedImageStrip {
+	texture-sampling: point;
+}
+
+@keyframes 'CharacterClicked' {
+	0% {
+		brightness: 1;
+	}
+	60% {
+		brightness: 4;
+	}
+	100% {
+		brightness: 1;
+	}
+}
+@keyframes 'CharacterShake' {
+	0% {
+		transform: none;
+		brightness: 4.0;
+	}
+	10% {
+		transform: translateX( 4px );
+		transform: translateY( 4px );
+		brightness: 13.0;
+	}
+	20% {
+		transform: translateY( -4px );		
+		transform: none;
+		brightness: 2.0;
+	}
+	30% {
+		transform: translateX( -4px );
+		brightness: 1.0;
+	}
+	40% {
+		transform: none;
+	}
+	50% {
+		transform: translateX( 4px );
+	}
+	60% {
+		transform: none;
+	}
+	100% {
+	}
+}
+
+@keyframes 'FadeIn' {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.DebugShowOutlines {
+	.CreditsBlock {
+		border: 1px solid #f008;
+	}
+	.Character,
+	.SceneContainer {
+		border: 1px solid #0f08;
+	}
+	#ScrollingRegion {
+		border: 1px solid pink;
+	}
+	.Animateable {
+		opacity: 0.5;
+		wash-color: red;
+		animation-name: DebugFlash;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+}
+
+@keyframes 'DebugFlash'
+{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.DebugContainer {
+	opacity: 0.01;
+	height: 100px;
+	background-color: purple;
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 100px;
+	flow-children: down;
+	visibility: collapse;
+	.ShowDebug & {
+		visibility: visible;
+	}
+	&:hover {
+		opacity: 0.5;
+	}
+	TextButton {
+		background-color: #222;
+		border: 1px solid white;
+		padding: 5px;
+		margin: 5px;
+		&:hover {
+			brightness: 1.5;
+		}
+		&:active {
+			brightness: 0.5;
+			transform: translateY( 1px );
+		}
+		
+	}
+	.Row {
+		flow-children: right;
+	}
+	.SliderContainer {
+		width: 1300px;
+		height: 50px;
+		.HorizontalSlider {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.UnpauseButton {
+		visibility: collapse;
+	}
+	.Paused & {
+		.UnpauseButton {
+			visibility: visible;
+		}
+		.PauseButton {
+			visibility: collapse;
+		}
+	}
+}

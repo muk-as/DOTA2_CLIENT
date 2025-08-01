@@ -1,0 +1,482 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_techiemen.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore LightestGreyText HighScore TextShadowLarge" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue"> </Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	
+	<Panel class="PopupPanel Techiemen Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTATechiemenCancelPressed()">
+		
+		<Panel class="MainContents">
+			
+			<Panel class="Body">
+				<DOTACrownfallTechiemenGamePanel id="gamePanel" class="GameBoardContainer">
+					<Panel class="PlayField">
+						<DOTACrownfallTechiemenRenderer class="TechiemenRenderer DimmedWhenPaused MonoNumbersFont"
+							id="techiemenRenderer"
+							
+							blocksImage="file://{images}/events/crownfall/techiemen/blocks.png"
+							blocks2Image="file://{images}/events/crownfall/techiemen/blocks_02.png"
+							blocks3Image="file://{images}/events/crownfall/techiemen/blocks_03.png"
+							
+							backgroundImage="file://{images}/events/crownfall/techiemen/mapbackground_frame.psd"
+							backgroundImageWidth = "680"
+							backgroundImageHeight = "488"
+							
+							background2Image="file://{images}/events/crownfall/techiemen/mapbackground_frame_02.psd"
+							background2ImageWidth = "680"
+							background2ImageHeight = "488"
+							
+							background3Image="file://{images}/events/crownfall/techiemen/mapbackground_frame_03.psd"
+							background3ImageWidth = "680"
+							background3ImageHeight = "488"
+							
+							foregroundImage="file://{images}/events/crownfall/techiemen/mapforeground_frame.psd"
+							foregroundImageWidth = "680"
+							foregroundImageHeight = "488"
+							
+							foreground2Image="file://{images}/events/crownfall/techiemen/mapforeground_frame_02.psd"
+							foreground2ImageWidth = "680"
+							foreground2ImageHeight = "488"
+							
+							foreground3Image="file://{images}/events/crownfall/techiemen/mapforeground_frame_03.psd"
+							foreground3ImageWidth = "680"
+							foreground3ImageHeight = "488"
+							
+							bombsImage="file://{images}/events/crownfall/techiemen/bomb.psd"
+							spikyBombsImage="file://{images}/events/crownfall/techiemen/bomb_sticky.psd"
+							remoteBombsImage="file://{images}/events/crownfall/techiemen/bomb_remote.png"
+							enemyBombsImage="file://{images}/events/crownfall/techiemen/bomb_enemy.psd"
+							
+							explosionsImage="file://{images}/events/crownfall/techiemen/explosion_standard.png"
+							
+							techieImage="file://{images}/events/crownfall/techiemen/walk.psd"
+							techieImageHeight="64"
+							
+							techieHighlightMaskImage="file://{images}/events/crownfall/techiemen/walk_highlight_mask.psd"
+							techieHighlightMaskImageHeight="64"
+							
+							creepImage="file://{images}/events/crownfall/techiemen/creep.psd"
+							creepImageHeight="64"
+							
+							chargerImage="file://{images}/events/crownfall/techiemen/creep_charger.psd"
+							chargerImageWidth="64"
+							chargerImageHeight="64"
+							
+							dropperImage="file://{images}/events/crownfall/techiemen/creep_flying.psd"
+							dropperImageWidth="96"
+							dropperImageHeight="64"
+							
+							dropperTargetImage="file://{images}/events/crownfall/techiemen/dropper_target.png"
+							
+														
+							keyholeImage="file://{images}/events/crownfall/techiemen/key_hole_mask.png"
+							keyholeImageWidth="256"
+							keyHoleImageHeight="256"
+														
+							bombCountPowerupImage="file://{images}/events/crownfall/techiemen/bomb_count_powerup.png"
+							bombSizePowerupImage="file://{images}/events/crownfall/techiemen/bomb_size_powerup.png"
+							walkSpeedPowerupImage="file://{images}/events/crownfall/techiemen/walk_speed_powerup.png"
+							bombKickPowerupImage="file://{images}/events/crownfall/techiemen/bomb_kick_powerup.png"
+							spikyBombPowerupImage="file://{images}/events/crownfall/techiemen/spiky_bomb_powerup.png"
+							remoteBombPowerupImage="file://{images}/events/crownfall/techiemen/bomb_remote_powerup.png"
+							
+							debugNumbersImage="file://{images}/events/crownfall/techiemen/debug_numbers.png"
+
+							redKeyHeldImage="file://{images}/events/crownfall/techiemen/red_key_held.png"
+							redKeyHeldImageWidth="12"
+							redKeyHeldImageHeight="24"
+								
+							greenKeyHeldImage="file://{images}/events/crownfall/techiemen/green_key_held.png"
+							greenKeyHeldImageWidth="12"
+							greenKeyHeldImageHeight="24"
+
+							blueKeyHeldImage="file://{images}/events/crownfall/techiemen/blue_key_held.png"
+							blueKeyHeldImageWidth="12"
+							blueKeyHeldImageHeight="24"
+
+							redKeyImage="file://{images}/events/crownfall/techiemen/red_key.png"
+							redLockImage="file://{images}/events/crownfall/techiemen/red_lock.png"
+							
+							greenKeyImage="file://{images}/events/crownfall/techiemen/green_key.png"
+							greenLockImage="file://{images}/events/crownfall/techiemen/green_lock.png"
+							
+							blueKeyImage="file://{images}/events/crownfall/techiemen/blue_key.png"
+							blueLockImage="file://{images}/events/crownfall/techiemen/blue_lock.png"
+							
+							flyingPowerupImage="file://{images}/events/crownfall/techiemen/flying_powerup.png"
+														
+														
+							remoteBombHintImage="file://{images}/control_icons/alt_key.png"
+							
+						/>
+
+						<Panel class="HeaderStats DimmedWhenPaused">
+							<Panel class="TopRowIcons">
+								<Panel class="PickUpStats">
+									<Image class="BombCountIcon" src="file://{images}/events/crownfall/techiemen/bomb_count_icon.psd" />
+									<Image class="BombCountIconKick" src="file://{images}/events/crownfall/techiemen/bomb_count_icon_kick.psd" />
+									<Image class="BombCountIconSpiky" src="file://{images}/events/crownfall/techiemen/bomb_count_icon_spiky.psd" />
+
+									<Panel class="BombCountIconRemoteContainer">
+										<Image class="BombCountIconRemote"  src="file://{images}/events/crownfall/techiemen/bomb_count_icon_remote.psd"/>
+										<Panel class="ControlKey RemoteBombHint">
+											<Panel class="KeyText Alt" />
+										</Panel>
+									</Panel>
+
+
+									<Label class="AbilityLabel" id="BombCountLabel" text="1" />
+									<Image class="BombSizeIcon" src="file://{images}/events/crownfall/techiemen/bomb_size_icon.psd" />
+									<Label class="AbilityLabel" id="BombSizeLabel" text="1" />
+									<Image class="WalkSpeedIcon" src="file://{images}/events/crownfall/techiemen/walk_speed_icon.psd" />
+									<Label class="AbilityLabel" id="WalkSpeedLabel" text="1" />
+								</Panel>
+								<Panel class="LifeStats">
+
+
+
+									<AnimatedImageStrip class="LivesRemainingIcon " src="file://{images}/events/crownfall/techiemen/lives_remaining_icon.psd" framewidth="72px" frametime="90ms" defaultframe="1" />
+									<Label class="AbilityLabel" id="LivesRemainingLabel" text="3" />
+									<Label class="AbilityLabel" id="LevelNumberLabel" text="1" />
+
+									<Label id="ScoreLabel" class="ScoreLabel MonoNumbersFont" text="00000"/>
+									<Label id="ScoreTextLabel" class="ScoreTextLabel" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+
+								</Panel>
+							</Panel>
+
+							<Panel class="HeaderTimer">
+								<Image class="TimerIcon" src="file://{images}/events/crownfall/minesweeper/timericon.psd" hittest="false" scaling="stretch-to-fit-preserve-aspect"/>
+								<Label class="AbilityLabel MonoNumbersFont TimerLabel" id="TimerLabel" text="3:00" />
+							</Panel>
+
+							<Panel class="HeaderStage">
+								<Panel class="Dash Left"/>
+								<Label id="StageHUD" class="StageHUD MonoNumbersFont" text="#DOTA_Crownfall_Techiemen_Stage"/>
+								<Panel class="Dash Right"/>
+							</Panel>
+						</Panel>
+
+					</Panel>
+
+
+
+					<Label class="IntroLabel DimmedWhenPaused" id="IntroLabel" text="Get Ready!" />
+
+					
+					<Label class="IntroLabel DimmedWhenPaused CountInPulseAnim" id="CountInLabel3" text="#DOTA_Crownfall_Techiemen_CountIn3" />
+					<Label class="IntroLabel DimmedWhenPaused CountInPulseAnim" id="CountInLabel2" text="#DOTA_Crownfall_Techiemen_CountIn2" />
+					<Label class="IntroLabel DimmedWhenPaused CountInPulseAnim" id="CountInLabel1" text="#DOTA_Crownfall_Techiemen_CountIn1" />
+					<Label class="IntroLabel DimmedWhenPaused CountInPulseAnim" id="CountInLabel0" text="#DOTA_Crownfall_Techiemen_CountInGo" />
+					<Label class="IntroLabel GameOverLabel DimmedWhenPaused GameOverGrowAnim" id="GameOverLabel" text="#DOTA_Crownfall_Techiemen_GameOver" />
+
+
+					<Panel id="MainMenu">
+						<Image id="MainMenuBg" src="file://{images}/events/crownfall/techiemen/startscreen.psd" />
+						<Panel id="MainMenuBgLogoContainer">
+							<AnimatedImageStrip id="MainMenuBgLogo" class="MainMenuBgLogo en" src="file://{images}/events/crownfall/techiemen/startscreen_logo.psd" scaling="stretch-to-fit-preserve-aspect" framewidth="200px" frametime="60ms" defaultframe="1" />
+							<AnimatedImageStrip id="MainMenuBgLogoCn" class="MainMenuBgLogo cn" src="file://{images}/events/crownfall/techiemen/spoonman_logo_schinese.png" scaling="stretch-to-fit-preserve-aspect" framewidth="284px" frametime="60ms" defaultframe="1" />
+						</Panel>
+						<Panel id="MainMenuBgSpoonContainer">
+							<AnimatedImageStrip id="MainMenuBgSpoon" class="MainMenuBgSpoon" src="file://{images}/events/crownfall/techiemen/startscreen_spoon.psd" scaling="stretch-to-fit-preserve-aspect" framewidth="80px" frametime="100ms" defaultframe="1" />
+						</Panel>
+						                                                                
+						<Panel id="MainMenuBgPressStartRainbow">
+							<Panel id="MainMenuBgPressStartBG" />
+							<Panel id="MainMenuBgPressStart" >
+								<Image id="MainMenuBgPressStartLetter1" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_p.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter2" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_r.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter3" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_e.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter4" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_s.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter5" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_s.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter6" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_space.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter7" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_b.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter8" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_o.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter9" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_m.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter10" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_b.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter11" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_space.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter12" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_t.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter13" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_o.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter14" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_space.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter15" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_s.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter16" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_t.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter17" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_a.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter18" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_r.psd" scaling="stretch-to-fit-preserve-aspect"/>
+								<Image id="MainMenuBgPressStartLetter19" class="MainMenuBgPressStartLetter" src="file://{images}/events/crownfall/techiemen/startscreen_letter_t.psd" scaling="stretch-to-fit-preserve-aspect"/>
+							</Panel>
+						</Panel>
+
+						
+						<Panel class="SetupScreenMenu">
+							<Panel class="TechiemenGameTabs">
+								<Panel class="TechiemenTabsBackground"/>
+								<Panel class="TabsContainer">
+									<Panel id="HowToPlayTab" class="TabItem" onactivate="DOTATechiemenGameMenuSelectTab(1)">
+										<Panel class="TabItemBg"/>
+										<Label text="#DOTA_HowToPlay"/>
+									</Panel>
+									<Panel id="ScoresTab" class="TabItem" onactivate="DOTATechiemenGameMenuSelectTab(0)">
+										<Panel class="TabItemBg"/>
+										<Label text="#DOTA_Crownfall_Techiemen_ScoresTab"/>
+									</Panel>
+
+								</Panel>
+							</Panel>
+
+							<Panel class="SetupScreenContents">
+								<Panel class="TopGoldDash Top"/>
+								<Panel class="TopGoldDash Bottom"/>
+								<Panel class="SetupScreenContentsBorder" hittest="false"/>
+
+								<Panel class="ScoresSection">
+
+									                                                                                          
+
+									<Panel class="MyHighScore">
+										<Panel class="TitleContainer">
+											<Panel class="Dash Left"/>
+											<Label class="LabelLarge  TextShadowLarge" text="#DOTA_FightingGame_Menu_MyHighScore"/>
+											<Panel class="Dash Right"/>
+										</Panel>
+										<Label class="HighScore WhiteText TitleLarge" text="{d:high_score}"/>
+										<Label class="ArcadeOutcomeText TitleMedium NewHighScore" text="#DOTA_FightingGame_Arcade_NewHighScore" />
+									</Panel>
+									
+									<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+										<Panel class="LeaderListHeader">
+											<Label class="ScoreBoardType" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends"/>
+											<Label class="Score" text="#DOTA_Crownfall_Fishing_Leaderboard_Score"/>
+										</Panel>
+										<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+									</Panel>
+
+									
+
+									<Label class="GoldHeader RewardsLabel" text="#DOTA_FightingGame_Menu_Rewards" />
+
+									
+									<Panel id ="RewardsList" class="RewardsSection">
+										                            
+									</Panel>
+									
+									
+								</Panel>
+
+								<Panel class="HowToPlaySection">
+
+									<Label class="GoldHeader" text="#DOTA_Crownfall_Techiemen_Objective" />
+
+									<Panel class="ControlRow" >
+										<Panel class="ControlColumn">
+											<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/exit_closed.png" framewidth="32px" />
+										</Panel>
+										<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_FindTheExit" />
+									</Panel>
+
+									<Panel class="ControlRow" >
+										<Panel class="ControlColumn">
+											<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/exit_open.png" framewidth="32px" />
+										</Panel>
+										<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_OpenTheExit" />
+									</Panel>
+
+
+									<Panel class="ControlsHeaderContainer">
+										<Label class="GoldHeader" text="#DOTA_Crownfall_Techiemen_Controls" />
+
+										<Panel class="GamepadIconContainer">
+										<Image class="GamepadIcon" src="file://{images}/control_icons/24px/controller.svg" />
+										<Label class="SupportedLabel" text="#DOTA_UI_Supported" />
+										</Panel>
+									</Panel>
+
+									<Panel class="ControlRow" >
+										<Panel class="ControlColumn">
+											<Panel class="KeysColumn">
+												<Panel class="ControlKey">
+													<Panel class="KeyText Up" />
+												</Panel>
+												<Panel class="KeysRow">
+													<Panel class="ControlKey">
+														<Panel class="KeyText Back" />
+													</Panel>
+													<Panel class="ControlKey">
+														<Panel class="KeyText Down" />
+													</Panel>
+													<Panel class="ControlKey">
+														<Panel class="KeyText Forward" />
+													</Panel>
+												</Panel>
+											</Panel>
+
+										
+										</Panel>
+
+										<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_Move" />
+									</Panel>
+
+									<Panel class="ControlRow" >	
+										<Panel class="ControlColumn">
+											<Panel class="ControlKey">
+												<Panel class="KeyText Space" />
+											</Panel>
+										</Panel>
+										<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_DropBomb" />
+									</Panel>
+
+									<Panel class="ControlRow" >
+										<Panel class="ControlColumn">
+											<Panel class="ControlKey">
+												<Panel class="KeyText Alt" />
+											</Panel>
+										</Panel>
+										<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_PowerupAction" />
+									</Panel>
+
+									    
+									                           
+										                             
+											                             
+												                                                                                     
+											        
+										        
+										                                                              
+									        
+									   
+									
+									
+									<Label class="GoldHeader" text="#DOTA_Crownfall_Techiemen_Powerups" />
+
+									
+
+										<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/bomb_count_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_BombCount" />
+										</Panel>
+
+										<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/bomb_size_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_BombSize" />
+										</Panel> 
+
+										<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/walk_speed_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_WalkSpeed" />
+										</Panel>
+
+									<Label class="GoldHeader" text="#DOTA_Crownfall_Techiemen_SpecialPowerups" />
+
+
+									<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/bomb_kick_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_Kick" />
+										</Panel>
+
+										<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/spiky_bomb_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_StickyBomb" />
+										</Panel>
+
+										<Panel class="ControlRow" >
+											<Panel class="ControlColumn">
+												<AnimatedImageStrip class="HowToPlayPowerupIcon" src="file://{images}/events/crownfall/techiemen/bomb_remote_powerup.png" framewidth="32px" frametime="90ms" />
+											</Panel>
+											<Label class="ControlDescription" text="#DOTA_Crownfall_Techiemen_RemoteBomb" />
+										</Panel>
+										
+									
+
+								</Panel>
+
+								
+							</Panel>
+							<DOTACrownfallButton class="StartGameButton GlowButton" text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTATechiemenStartGame()" />
+
+						</Panel>
+
+					</Panel>
+
+
+					<Panel class="VisualNovelOuterContainer">
+						<Panel class="VisualNovelBackground"/>
+						<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+						</Panel>
+					</Panel>
+					
+					<Panel id="CloseButtonContainer" class="VisibleOnPauseOrMenu" >
+						<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+						<Panel class="CloseButtonBackgroundHover" hittest="false" />
+						<Image class="CloseIcon" src="file://{images}/control_icons/24px/x_close.svg" hittest="false" />
+						<Image class="ReturnIcon" src="file://{images}/control_icons/24px/reset.svg" hittest="false" />
+					</Panel>
+					
+					<TextButton class="ToggleDebugButton DebugButton MainBranchOnly" text="Toggle Debug Buttons" onactivate="DOTATechiemenToggleDebugButtons()" />
+
+					<Panel id="DebugButtons" class="DebugButtons" >
+						<TextButton class="DebugButton" text="+Bomb" onactivate="DOTATechiemenGivePlayerBomb()" />
+						<TextButton class="DebugButton" text="+Size" onactivate="DOTATechiemenGivePlayerBombSize()" />
+						<TextButton class="DebugButton" text="+Speed" onactivate="DOTATechiemenGivePlayerSpeed()" />
+						<TextButton class="DebugButton" text="+Kick" onactivate="DOTATechiemenGivePlayerKick()" />
+						<TextButton class="DebugButton" text="+Spiky" onactivate="DOTATechiemenGivePlayerSpikyBombs()" />
+						<TextButton class="DebugButton" text="+Remote" onactivate="DOTATechiemenGivePlayerRemoteBombs()" />
+						<TextButton class="DebugButton" text="Kill Player" onactivate="DOTATechiemenKillPlayer()" />
+						<TextButton class="DebugButton" text="Kill Enemies" onactivate="DOTATechiemenKillAllEnemies()" />
+						<TextButton class="DebugButton" text="Break All" onactivate="DOTATechiemenBreakAllBlocks()" />
+						<TextButton class="DebugButton" text="+Creep" onactivate="DOTATechiemenAddCreep()" />
+						<TextButton class="DebugButton" text="+Charger" onactivate="DOTATechiemenAddCharger()" />
+						<TextButton class="DebugButton" text="+Elite" onactivate="DOTATechiemenAddChargerElite()" />
+						<TextButton class="DebugButton" text="+Dropper" onactivate="DOTATechiemenAddDropper()" />
+						<TextButton class="DebugButton" text="ResetScore" onactivate="DOTATechiemenResetScoreOverride()" />
+						                                                                                                     
+						<TextButton class="DebugButton" text="Final Level" onactivate="DOTATechiemenTestFinalLevel()" />
+						<TextButton class="DebugButton" text="Next Level" onactivate="DOTATechiemenNextLevel()" />
+						<TextButton class="DebugButton" text="Timer11" onactivate="DOTATechiemenTimerToEleven()" />
+
+
+					</Panel>
+					<Panel id="PauseBG" class="PausedLabel" >
+						<Label class="PausedLabel" text="#DOTA_Crownfall_Techiemen_Paused" />
+					</Panel>
+
+					<Panel class="PauseButtonRow PausedLabel" >
+						<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_Continue" class="PauseButtonContainer" onactivate="DOTATechiemenTogglePause()" />
+						<DOTACrownfallButton text="#DOTA_FightingGame_Arcade_Quit" class="PauseButtonContainer" onactivate="DOTATechiemenEndGame()" />
+					</Panel>
+
+				</DOTACrownfallTechiemenGamePanel>
+
+
+			</Panel>
+		</Panel>
+
+	</Panel>
+</root>

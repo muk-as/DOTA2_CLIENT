@@ -1,0 +1,48 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/dotastyles.css" />
+        <include src="file://{resources}/styles/dashboard_page_shared.css" />
+        <include src="file://{resources}/styles/showcase/showcase_shared.css" />
+        <include src="file://{resources}/styles/showcase/dashboard_page_showcase_admin_moderation.css" />
+    </styles>
+
+    <snippets>
+        <snippet name="ModerationQueueEntry">
+            <Panel class="ModerationQueueEntry">
+                <Panel class="Column NameColumn">
+                    <DOTAAvatarImage id="AvatarImage" />
+                    <Label class="EntryData" text="{g:dota_persona:account_id}" html="true" />
+                </Panel>
+                <Panel class="Column TypeColumn">
+                    <Label class="EntryData" text="{s:showcase_type}" />
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+
+    <DOTAShowcaseAdminModeration class="DashboardPage">
+        <Label class="PageTitle" text="Admin: Showcase Moderation" />
+
+        <AsyncDataPanel id="QueueContainer" state="{d:queue_state}">
+            <Panel class="AsyncSuccessContainer">
+                <Label id="ModerationQueueEmptyLabel" text="The moderation queue is empty" />
+                <Panel id="Queue">
+                                                 
+                </Panel>
+            </Panel>
+        </AsyncDataPanel>
+
+        <Panel id="Contents">
+            <Panel class="ShowcaseContainer">
+                <DOTAShowcasePage id="ProfileShowcase" />
+                <DOTAMiniShowcase id="MiniShowcase" />
+            </Panel>
+            <Panel class="Footer">
+                <Panel class="Controls">
+                    <TextButton class="ButtonPrimary PopupButton Red" text="Reject" onactivate="DOTAShowcaseAdminModerationApplyModeration( false )" />
+                    <TextButton class="ButtonPrimary PopupButton Green" text="Approve" onactivate="DOTAShowcaseAdminModerationApplyModeration( true )" />
+                </Panel>
+            </Panel>
+        </Panel>
+    </DOTAShowcaseAdminModeration>
+</root>

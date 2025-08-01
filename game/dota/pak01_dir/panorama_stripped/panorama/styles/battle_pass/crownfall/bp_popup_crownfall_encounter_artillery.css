@@ -1,0 +1,2003 @@
+
+.PopupPanel.Artillery {
+	flow-children: none;
+	background-color: none;
+	animation: none;
+	border: 0px solid transparent;
+	box-shadow: none;
+}
+
+@define gameWidth: 1640px;
+@define gameHeight: 800px;
+
+.PopupPanel .MainContentsWrapper {
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.MainContents {
+	width: fit-children;
+	height: fit-children;
+}
+
+.CameraLayer {
+	width: 100%;
+	height: 100%;
+}
+
+.BackgroundParticles {
+	width: 100%;
+	height: 100%;
+}
+
+#GameBoard {
+	background-image: url( "file://{images}/events/crownfall/artillery/background.psd" );
+
+	width: gameWidth;
+	height: gameHeight;
+
+	brightness: 1;
+	blur: gaussian( 0px );
+	opacity: 1;
+
+	.GameState_Loading & {
+		opacity: 0;
+	}
+
+	.GameState_Pregame & {
+		opacity: 0;
+		transition-duration: 0.5s;
+	}
+
+	transition-property: opacity, brightness, blur;
+	transition-duration: 0.1s;
+
+	.GameState_Combat.IsPaused &,
+	.GameState_LevelWon &,
+	.GameState_LevelLost &,
+	.GameState_LevelIntro &,
+	.GameState_LevelSelect &,
+	.GameState_Pregame & {
+		brightness: 0.2;
+		blur: gaussian( 3px );
+
+		transition-duration: 0.5s;
+	}
+
+	#BackgroundScene {
+		width: 100%;
+		height: 100%;
+	}
+
+	#LevelBackground {
+		width: 2500px;
+		height: 1264px;
+		
+		ignore-parent-flow: true;
+		saturation: 0.8;
+		brightness: 1.0;
+		margin-top: -464px;
+		margin-right: -840px;
+		                                   
+	}
+
+	.Terrain {
+		width: 100%;
+		height: 100%;
+	}
+
+	#Particles {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.GameScene {
+	width: gameWidth;
+	height: gameHeight;
+	z-index: 0;
+}
+
+#ArtilleryTerrainForeground {
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+
+.PopupPanel .MainContentsWrapper #CloseButtonContainer {
+	margin: 0px;
+}
+
+.GameBoardHUD {
+	width: 100%;
+	height: 100%;
+
+	.LevelTitle {
+		margin: 12px 16px;
+		color: whitesmoke;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: titleFont;
+		font-weight: semi-bold;
+		text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.6);
+		letter-spacing: 1.5px;
+		font-size: 32px;
+
+		transition-property: opacity, transform;
+		transition-duration: 0.3s;
+		transition-delay: 0.2s;
+
+		opacity: 0;
+		transform: translateX( -12px );
+
+		.GameState_Combat & {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+.OutOfAmmoIndicator {
+	horizontal-align: center;
+	vertical-align: middle;
+	margin-top: 696px;
+	flow-children: down;
+
+	padding: 20px 160px 36px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(11, 12, 15, 0) ), 
+														color-stop( 0.1, rgba(11, 12, 15, 0.55),
+														color-stop( 0.2, rgba(11, 12, 15, 0.8),
+														color-stop( 0.5, rgba(11, 12, 15, 0.92),
+														color-stop( 0.8, rgba(11, 12, 15, 0.8),
+														color-stop( 0.9, rgba(11, 12, 15, 0.55),
+														to( rgba(11, 12, 15, 0) ) );
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 0, 0, 0) ), color-stop( 0.5, rgb(255, 37, 37) ), to( rgba(255, 0, 0, 0) ) );
+	
+	opacity: 0.0;
+	transform: translateY( 20px );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);                
+
+	.GameState_Combat.CurrentWeaponOutOfAmmo & {
+		opacity: 1.0;
+		transform: none;
+
+		transition-duration: 0.1s;
+		transition-timing-function:  ease-in;
+	}
+
+	.OutOfAmmoTitle {
+		font-size: 20px;
+		color: rgb(255, 59, 59);
+		text-shadow: 0px 2px 12px black;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		horizontal-align: center;
+		font-weight: semi-bold;
+		text-align: center;
+	}
+
+	.OutOfAmmoDesc {
+		horizontal-align: center;
+		text-align: center;
+		color: LighterGrey;
+		font-size: 16px;
+		margin-top: 3px;
+
+		.AllWeaponsOutOfAmmo & {
+			visibility: collapse;
+		}
+	}
+}
+
+
+.LowerHUD {
+	                              
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 35px;
+
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transition-delay: 0.5s;
+
+	opacity: 0;
+	transform: translateY( -12px );
+
+	.GameState_Combat &,
+	.GameState_LevelIntro & {
+		opacity: 1;
+		transform: none;
+		transition-delay: 0s;
+	}
+
+	.HudBackgroundContainer {
+		width: 100%;
+		opacity-brush: gradient( linear, 0% 5%, 0% 11%, from( rgba(255, 255, 255, 0) ), to( white ) );
+
+		.HudBackground,
+		.HudBorder {
+			width: 100%;
+			height: 76px;
+			border-width: 76px 106px 0px 106px;
+			border-image-slice: 100% 220px 0px 220px;
+		}
+		
+		.HudBackground {
+			border-image-source: url( "file://{images}/events/crownfall/artillery/hud_container_background_wide.png" );
+			wash-color: #564222;
+		}
+
+		.HudBorder {
+			border-image-source: url( "file://{images}/events/crownfall/artillery/hud_container_border_wide.png" );
+			wash-color: #896d47;
+		}
+	}
+
+	.HudContents {
+		flow-children: right;
+		horizontal-align: center;
+		margin: 4px 44px 0px 7px;
+
+		.Portrait {
+			opacity-mask: url( "file://{images}/events/crownfall/artillery/hero_mask.png" );
+			margin-top: 5px;
+			                         
+			margin-right: -12px;
+			
+			DOTAHeroImage {
+				height: 66px;
+				width: height-percentage( 177.7% );
+				border-top: 1px solid rgb(27, 21, 8);
+			}
+		}
+	
+		#Weapons {
+			flow-children: right;
+			vertical-align: center;
+			margin: 0px 16px 0px 4px;
+	
+			.Weapon {
+				margin-right: -12px;
+			}
+		}
+
+		.ResetLevelButton {
+			padding: 8px;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( #132450 ), to( #040A20 ) );
+			border-radius: 80px;
+			border: 1px solid white;
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ae9764 ), to( #665737 ) );
+			vertical-align: center;
+			tooltip-position: top;
+			box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5);
+
+			margin: 0px 16px 28px 12px;
+
+			transition-property: background-color, transform, brightness;
+			transition-duration: 0.1s, 0.05s;
+
+			.AllWeaponsOutOfAmmo & {
+				animation-name: GlowRestartButton;
+				animation-duration: 0.6s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+
+			&:hover {
+				background-color: gradient( linear, 0% 0%, 0% 100%, from( #254597 ), to( #0b163d ) );
+			}
+
+			&:active {
+				transform: scale3d( 0.94, 0.94, 1 );
+				brightness: 0.5;
+			}
+
+			.ResetIcon {
+				width: 18px;
+				height: 18px;
+				img-shadow: 0px 2px 12px black;
+				opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LighterGrey ) );
+			}
+		}
+	}	
+}
+
+@keyframes 'GlowRestartButton' {
+    0% {
+        box-shadow: 0px 0px 28px #ae976422;
+    }
+    100% {
+		brightness: 3;
+		transform: scale3d( 1.1, 1.1, 1 );
+		box-shadow: 0px 0px 28px #ae976499;
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ae9764 ), to( #665737 ) );
+    } 
+}
+
+
+.Weapon {
+	width: 100px;
+	height: width-percentage( 100% );
+	tooltip-position: top;
+
+	.WeaponImageContainer {
+		width: 100%;
+		height: width-percentage( 100% );
+
+		transition-property: transform;
+		transition-duration: 0.1s;
+		transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+		.WeaponImageActiveGlow {
+			width: 100%;
+			height: 100%;
+			border-radius: 16px;
+			margin: 12px;
+
+			transition-property: box-shadow;
+			transition-duration: 0.2s;
+			transition-timing-function: cubic-bezier(0, 1, 0, 1);
+		}
+
+		.WeaponImageBackground {
+			width: 100%;
+			height: 100%;
+			margin: 14px;
+			margin-bottom: 13px;
+			background-color: #141518de;
+			box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+		}
+
+		.WeaponImageActiveBorder {
+			width: 100%;
+			height: 100%;
+			margin: 12px;
+			border: 2px solid white;
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8aff9e ), to( #0e8b2e ) );
+
+			opacity: 0;
+			transform: scale3d( 0.96, 0.96, 1 );
+
+			transition-property: transform, opacity;
+			transition-duration: 0.2s;
+			transition-timing-function: cubic-bezier(0, 1, 0, 1);
+		}
+
+		#WeaponImage {
+			width: 100%;
+			height: 100%;
+			margin: 18px;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+
+			transition-property: brightness, opacity, transform;
+			transition-duration: 0.2s, 0.05s;
+		}
+
+		.WeaponImageShimmer {
+			width: 100%;
+			height: 100%;
+			margin: 18px;
+			-s2-mix-blend-mode: screen;
+			opacity: 0.6;
+		}
+
+		.WeaponStrikeThru {
+			width: 5.5px;
+			height: 80px;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( loserRed&00 ), color-stop( 0.2, loserRed ), color-stop( 0.8, loserRed ), to( loserRed&00 ) );
+			border: 1.5px solid black;
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0) ), color-stop( 0.2, black ), color-stop( 0.8, black ), to( rgba(0, 0, 0, 0) ) );
+			vertical-align: center;
+			horizontal-align: center;
+			transform: rotateZ( 45deg );
+
+			opacity: 0;
+		}
+	}
+
+	.NewViolator {
+		margin-top: 7px;
+		horizontal-align: right;
+		text-align: center;
+		font-size: 12px;
+		border: 1px solid white;
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8aff9e ), to( #0e8b2e ) );
+		background-color: #0e8b2e;
+		color: white;
+		padding: 1px 2px;
+
+		visibility: collapse;
+	}
+	&.IsNewWeapon .NewViolator {
+		visibility: visible;
+	}
+
+
+	.HotkeyContainer {
+		border-radius: 20%;
+		min-width: 20px;
+		height: 20px;
+		max-width: 70px;
+		white-space: nowrap;
+		margin: 10px;
+
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #44484c ), to( #24292e ) );
+		border: 1px solid #000000;
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+
+		visibility: collapse;
+
+		.HasMultipleWeapons & {
+			visibility: visible;
+		}
+
+		Label {
+			color: LightestGrey;
+ 			text-shadow: 0px 1px 4px 2 #000000;
+			font-size: 14px;
+			font-weight: normal;
+			text-align: center;
+			horizontal-align: center;
+			vertical-align: center;
+			margin: 0px 0px -2px 0px;
+			margin-top: -1px;
+		}
+	}
+
+	.ChargesContainer {
+		vertical-align: bottom;
+		horizontal-align: center;
+		margin: 0px 10px;
+
+		Label {
+			font-size: 24px;
+			vertical-align: middle;
+			text-align: center;
+			color: LighterGrey;
+			text-shadow: 0px 3px 12px 4 black;
+
+			& b {
+				color: whitesmoke;
+				font-weight: semi-bold;
+			}
+		}
+	}
+
+	&:hover {
+		.WeaponImageContainer {
+			transform: translateY( -2px );
+		}
+
+		#WeaponImage {
+			brightness: 2;
+		}
+	}
+
+	&:active {
+		#WeaponImage {
+			transform: translateY( 1px );
+			opacity: 0.5;
+		}
+	}
+
+	&:selected {
+		z-index: 1;
+		
+		.WeaponImageActiveBorder {
+			opacity: 1;
+			transform: none;
+		}
+
+		.WeaponImageActiveGlow {
+			box-shadow: 0px 0px 28px rgba(0, 255, 195, 0.03);
+
+			animation-name: GlowActiveWeapon;
+			animation-duration: 0.8s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		.WeaponImageShimmer {
+			animation-name: Shimmer;
+			animation-duration: 0.4s;
+			animation-timing-function: ease-out;
+		}
+
+		#WeaponImage {
+			brightness: 2;
+		}
+	}
+
+	&.OutOfAmmo {
+		#WeaponImage {
+			saturation: 0;
+			brightness: 0.2;
+		}
+
+		.WeaponImageActiveBorder {
+			border-brush: loserRed;
+			border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgb(255, 29, 29) ), to( rgb(183, 0, 0) ) );
+		}
+
+		.WeaponImageActiveGlow {
+			animation-name: none;
+		}
+
+		.WeaponStrikeThru {
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes 'GlowActiveWeapon' {
+    0% {
+        
+    }
+    100% {
+		box-shadow: 0px 0px 28px rgba(0, 255, 195, 0.15);
+    } 
+}
+
+@keyframes 'Shimmer' {
+	0% {
+		background-color: gradient( linear, -50% -50%, 0% 0%, from( #FFFFFF00 ), color-stop( 0.5, #FFFFFF ), to( #FFFFFF00 ) );
+	}
+	
+	100% {
+		background-color: gradient( linear, 100% 100%, 150% 150%, from( #FFFFFF00 ), color-stop( 0.5, #FFFFFF ), to( #FFFFFF00 ) );
+	}
+}
+
+
+.TimerContainer {
+	horizontal-align: center;
+	margin-top: -5.5px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 9%, from(rgba(255, 255, 255, 0) ), to( #ffffff ) );
+	
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);                
+
+	opacity: 0;
+
+	.GameState_Combat &,
+	.GameState_LevelIntro & {
+		opacity: 1;
+	}
+
+	.ScoreBackground,
+	.ScoreBorder {
+		width: 170px;
+		transform: scaleY( -1 );
+	}
+
+	.ScoreBackground {
+		wash-color: #685d47;
+	}
+
+	.ScoreBorder {
+		wash-color: #f0ce92;
+	}
+
+	.TimerLabelsContainer {
+		flow-children: down;
+		horizontal-align: center;
+		vertical-align: center;
+
+		.TimerLabel {
+			horizontal-align: center;
+			text-align: center;
+			color: rgba(255, 255, 255, 0.5);
+			text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+			margin-bottom: -4px;
+			margin-top: 6px;
+		}
+
+		.TimerHUD {
+			font-weight: bold;
+			color: white;
+			font-size: 22px;
+			text-shadow: 0px 0px 12px 0.5 #ffd05a31;
+			horizontal-align: center;
+			text-align: center;
+		}
+	}
+}
+
+#Lives {
+	flow-children: right;
+	vertical-align: bottom;
+	padding: 16px;
+
+	.LifeIcon {
+		width: 32px;
+		height: 32px;
+		margin-right: 4px;
+
+		background-image: url( "file://{images}/heroes/icons/npc_dota_hero_snapfire.png" );
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		opacity: 0.0;
+		saturation: 0.1;
+		brightness: 0.1;
+		transform: translateY( 10px );
+
+		transition-property: opacity, saturation, brightness, transform;
+		transition-duration: 0.5s;
+
+		&.HasLife {
+			opacity: 1.0;
+			saturation: 1.0;
+			brightness: 1.0;
+			transform: none;
+		}
+	}
+}
+
+
+.DebugControls {
+	horizontal-align: center;
+	margin-top: 20px;
+	background-color: #303;
+	border: 2px solid #606;
+	padding: 8px;
+	flow-children: right;
+
+	visibility: collapse;
+
+	.CheatsEnabled & {
+		visibility: visible;
+	}
+
+	.Category {
+		flow-children: right;
+		height: 32px;
+
+		.CategoryLabel {
+			vertical-align: middle;
+			font-size: 14px;
+			width: 75px;
+			text-align: right;
+			margin-right: 8px;
+		}
+		.DebugButton {
+			margin-right: 4px;
+			vertical-align: middle;
+			tooltip-position: bottom;
+		}
+	}
+
+	.StatusLabel {
+		font-size: 14px;
+		vertical-align: middle;
+	}
+
+	.DebugButton {
+		border: 2px solid black;
+		background-color: #333;
+		padding: 2px 8px;
+
+		Label {
+			font-size: 16px;
+			vertical-align: middle;
+			text-align: center;
+			horizontal-align: center;
+		}
+
+		&:hover {
+			brightness: 2.0;
+		}
+		&:active {
+			brightness: 1.5;
+		}
+
+	}
+
+	.DebugToggle {
+		margin: 0px 8px 0px 0px;
+		vertical-align: middle;
+
+		Label {
+			font-size: 16px;
+			transform: translateY( -2px );
+		}
+	}
+}
+
+
+#DebugEntityInfoContainer {
+	width: gameWidth;
+	height: gameHeight;
+	.EntityDebugInfo {
+		margin-left: -10px;
+
+		flow-children: down;
+		Label {
+			font-size: 12px;
+			&.Name {
+				margin-top: 19px;
+			}
+			
+			&.Index {
+				margin-left: 20px;
+				ignore-parent-flow: true;
+				font-weight: bold;
+			}
+		}
+		.PositionIndicator {
+			ignore-parent-flow: true;
+			width: 4px;
+			height: 4px;
+			margin-left: 10px;
+			background-color: red;
+		}
+	}
+}
+
+.DifficultySelectTabs {
+    horizontal-align: center;
+	margin-top: 2px;
+	ui-scale: 80%;
+
+    .DifficultySelectTabsBackground {
+        ignore-parent-flow: true;
+        width: 100%;
+        height: 56px;
+        border-width: 56px 56px 0px 56px;
+        border-image-slice: 100% 112px 0px 112px;
+        border-image-repeat: stretch;
+        border-image-source: url( "file://{images}/events/crownfall/buttons/tabs_background.png" );
+    }
+
+    .TabsContainer {
+        flow-children: right;
+        margin: 0px 9.5px;
+        vertical-align: center;
+
+        .TabItem {
+            min-width: 220px;
+            margin: 0px -4px;
+            height: 42px;
+
+            transition-property: brightness, transform;
+            transition-duration: 0.1s;
+
+            &:hover {
+                brightness: 2;
+            }
+
+            &:active {
+                transform: scale3d( 0.98, 0.98, 1 );
+                sound: "ui_generic_button_click";
+            }
+
+            Label {
+                text-transform: uppercase;
+                font-weight: normal;
+                letter-spacing: 1.5px;
+                text-align: center;
+                color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #B0BCC2 ) );
+                text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+                horizontal-align: center;
+                vertical-align: center;
+            }                
+
+            .TabItemBg {
+                width: 100%;
+                border-width: 42px 42px 0px 42px;
+                border-image-slice: 100% 84px 0px 84px;
+                border-image-repeat: stretch;
+                border-image-source: url( "file://{images}/events/crownfall/buttons/tab_background.png" );
+
+                opacity: 0;
+                transform: scale3d( 0.95, 0.95, 1 );
+
+                transition-property: opacity, transform;
+                transition-duration: 0.15s;
+                transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+            }
+        }
+    }  
+}
+
+.NormalMode #NormalModeTab
+{
+	.TabItemBg {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.HardMode #HardModeTab
+{
+	.TabItemBg {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.HardModeDisabled #HardModeTab
+{
+	opacity: 0.3;
+}
+
+.SetupScreen
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.0;
+	transform: none;
+	transition-property: transform, opacity;
+	transition-duration: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);               
+
+	.GameState_Pregame &, .GameState_LevelSelect &
+	{
+		opacity: 1.0;
+		transform: none;
+	}
+
+	.EncounterSplashArt {
+		width: 100%;
+		height: 100%;
+		blur: gaussian( 4 );
+		
+	}
+
+	.SplashParticles {
+		width: 1200px;
+		height: 1200px;
+		margin-left: -150px;
+		brightness: 2;
+		hue-rotation: -90deg;
+	}
+
+	.MinigameLogoEn,
+	.MinigameLogoCn {
+		width: 600px;
+		vertical-align: center;
+		margin-left: 130px;
+		margin-top: 10px;
+	}
+
+	.MinigameLogoEn {
+		.Language_schinese & {
+			visibility: collapse;
+		}
+	}
+
+	.MinigameLogoCn {
+		visibility: collapse;
+
+		.Language_schinese & {
+			visibility: visible;
+		}
+	}
+
+	.SetupScreenMenu {
+		margin-right: 70px;
+		vertical-align: middle;
+		horizontal-align: right;
+		width: 680px;
+		height: 740px;
+		margin-top: 20px;
+	
+		.SetupScreenContents {
+			width: 100%;
+			height: fill-parent-flow(1);
+			box-shadow: 0px 16px 140px -8px rgba(0, 0, 0, 0.6);
+	
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+			margin-top: 23px;
+			margin-bottom: 53px;
+			z-index: -1;
+			
+			.SetupScreenContentsBorder {
+				border: 1px solid rgba(255, 255, 255, 0.02);
+				width: 100%;
+				height: fill-parent-flow(1);
+			}
+	
+			.TopGoldDash {
+				width: 100%;
+				height: 2px;
+			}
+	
+			.TopGoldDash.Bottom {
+				vertical-align: bottom;
+			}
+	
+			.PregameSection {
+				width: 100%;
+				height: 100%;
+				flow-children: down;
+
+				visibility: collapse;
+
+				.GameState_Pregame & {
+					visibility: visible;
+				}
+			}
+
+			.LevelSelectSection {
+				width: 100%;
+				height: 100%;
+
+				visibility: collapse;
+
+				.GameState_LevelSelect & {
+					visibility: visible;
+				}
+			}
+		}
+	
+		.BottomButtons {
+			                    
+			flow-children: right;
+			horizontal-align: center;
+			vertical-align: bottom;
+
+			padding-bottom: 40px;
+	
+			.Loading {
+				flow-children: right;
+				vertical-align: bottom;
+				margin-bottom: 38px;
+				margin-right: 8px;
+				margin-left: 8px;
+	
+				visibility: collapse;
+	
+				.IsLoading & {
+					visibility: visible;
+				}
+	
+				.Spinner {
+					vertical-align: middle;
+					margin-right: 8px;
+				}
+	
+				> Label {
+					vertical-align: middle;
+					text-transform: uppercase;
+					color: white;
+					letter-spacing: 2px;
+					font-size: 20px;
+				}
+			}
+	
+			DOTACrownfallButton {
+				min-width: 300px;
+				margin-bottom: -40px;
+				visibility: collapse;
+			}
+
+			.GameState_Pregame:not(.IsLoading) & .LevelSelectButton {
+				visibility: visible;
+			}
+
+			.GameState_LevelSelect:not(.IsLoading) & .StartGameButton {
+				visibility: visible;
+			}
+			.GameState_LevelSelect:not(.IsLoading) & .HardModeButton {
+				visibility: visible;
+			}
+		}
+	}
+
+	.ExitButton {
+		visibility: collapse;
+
+		ignore-parent-flow: true;
+		horizontal-align: center;
+		vertical-align: bottom;
+		width: 260px;
+		margin-bottom: 28px;
+
+		.PlayedOnce & {
+			visibility: visible;
+		}
+	}
+}
+
+.GoldHeader {
+	text-transform: uppercase;
+	text-overflow: shrink;
+	letter-spacing: 2px;
+	color: gradient( linear, 0% 20%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+	margin-bottom: 4px;
+	font-weight: semi-bold;
+}
+
+.LevelSelectSection {
+	padding: 32px 32px 32px 32px;
+	flow-children: down;
+
+	#LevelSelectLevelsList {
+		flow-children: down;
+		horizontal-align: center;
+		width: 100%;
+		overflow: clip scroll;
+
+		.LevelSelectLevelsRow {
+			flow-children: right;
+			width: 100%;
+		}
+	}
+
+	.LevelSelectFooter {
+		flow-children: right;
+		padding: 8px 10px 0px 10px;
+
+		.LevelSelectTotals {
+			flow-children: down;
+			width: fill-parent-flow( 1.0 );
+
+			.StarsEarnedContainer {
+				flow-children: right;
+				margin-top: -4px;
+
+				.StarIcon {
+					width: 40px;
+					height: 40px;
+					margin: -4px;
+					background-image: url( "file://{images}/events/crownfall/artillery/star_filled.png" );
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				Label {
+					vertical-align: middle;
+					margin-left: 4px;
+					font-size: 24px;
+					color: LightestGrey;
+					text-shadow: 2px 2px 4px black;
+				}
+			}
+
+			.LeaderboardScoreHeader {
+				margin-top: 8px;
+			}
+
+			.LeaderboardScore {
+				font-size: 24px;
+				color: LightestGrey;
+				text-shadow: 2px 2px 4px black;
+			}
+
+		}
+	}
+}
+
+.LevelSelectLevel {
+	width: fill-parent-flow( 1.0 );
+	height: 136px;
+	margin: 6px;
+	border: 3px solid transparent;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2 ), color-stop( 0.5, gold1 ), to( gold2 ) );
+	box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.4);
+
+	transition-property: border, transform, brightness;
+	transition-duration: 0.2s, 0.1s, 0.05s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+	&:selected {
+		border: 3px solid white;
+	}
+
+	.Contents {
+		width: 100%;
+		height: 100%;
+		background-color: black;
+	}
+
+	#LevelBackgroundImage {
+		width: 100%;
+		height: 100%;
+	}
+
+	#LevelImage {
+		width: 100%;
+		height: 100%;
+	}
+
+	#LevelForegroundImage {
+		width: 100%;
+		height: 100%;
+	}
+
+	.LevelName {
+		padding: 12px;
+		color: white;
+		text-shadow: 0px 2px 12px black;
+	}
+
+	.LevelScore {
+		vertical-align: bottom;
+		padding: 12px;
+		color: white;
+		text-shadow: 2px 2px 4px black;
+
+		visibility: collapse;
+		opacity: 0.0;
+		
+		transition-property: opacity;
+		transition-duration: 0.2s;
+	}
+
+	&.HasScore {
+		.LevelScore {
+			visibility: visible;
+		}
+
+		#LevelSelectStars {
+			visibility: visible;
+		}
+	}
+
+	.LockIcon {
+		width: 36px;
+		height: 36px;
+		img-shadow: 0px 2px 16px black;
+		opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(138, 150, 163, 0.993) ) );
+		opacity: 0.6;
+
+		visibility: collapse;
+
+		horizontal-align: center;
+		vertical-align: middle;
+
+		background-image: url( "file://{images}/control_icons/24px/lock.svg" );
+		background-texture-size: 48px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.LockedPattern {
+		width: 100%;
+		height: 100%;
+		background-image: url( "file://{images}/events/crownfall/survivors/locked_pattern.png" );
+		background-size: 16px;
+		opacity: 0.02;
+		visibility: collapse;
+		wash-color: LightGrey;
+	}
+
+	&:hover:not(:disabled) {
+		transform: scale3d( 1.04, 1.04, 1 );
+
+		.LevelScore {
+			opacity: 1.0;
+		}
+
+		#LevelSelectStars {
+			opacity: 0.0;
+		}
+	}
+
+	&:active:not(:disabled) {
+		transform: scale3d( 1.04, 1.04, 1 ) translateY( 2px );
+		brightness: 0.5;
+	}
+
+	&:disabled {
+		box-shadow: 0px 2px 8px -4px rgba(0, 0, 0, 0.2);
+
+		.LevelName {
+			visibility: collapse;
+		}
+		#LevelSelectStars {
+			visibility: collapse;
+		}
+		.LevelScore {
+			visibility: collapse;
+		}
+		#LevelImage {
+			blur: gaussian( 4 );
+			brightness: 0.4;
+		}
+
+		.LockIcon {
+			visibility: visible;
+		}
+
+		.LockedPattern {
+			visibility: visible;
+		}
+	}
+
+	#LevelSelectStars {
+		flow-children: right;
+		vertical-align: bottom;
+		padding: 4px;
+
+		visibility: collapse;
+		
+		transition-property: opacity;
+		transition-duration: 0.2s;
+
+		.LevelSelectStar {
+			flow-children: down;
+			margin-right: 2px;
+
+			.StarImage {
+				width: 40px;
+				height: 40px;
+				margin-right: -12px;
+				margin-bottom: -4px;
+
+				background-image: url( "file://{images}/events/crownfall/artillery/star_empty.png" );
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			&.Achieved {
+				.StarImage {
+					background-image: url( "file://{images}/events/crownfall/artillery/star_filled.png" );
+				}
+			}
+		}
+	}
+}
+
+.PregameSection {
+	padding: 48px 32px 32px;
+
+	.GameIntroDescription {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 28px;
+		color: whitesmoke;
+		text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+		font-size: 22px;
+		max-height: 70px;
+		text-overflow: shrink;
+	}
+
+	.PlaySectionHeader {
+		width: 100%;
+		margin-bottom: 8px;
+		padding-top: 8px;
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+		border-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+	}
+
+	.PlaySectionContent {
+		flow-children: right;
+		width: 100%;
+
+		.PlaySectionCol {
+			width: fill-parent-flow( 1 );
+			flow-children: down;
+
+			&.Left {
+				margin-right: 12px;
+			}
+
+			&.Right {
+				margin-left: 12px;
+			}
+		}
+	}
+
+	.HowToPlaySection {
+		width: 100%;
+		flow-children: down;
+		margin-bottom: 12px;
+
+		.HowToPlayDescription {
+			font-size: 16px;
+			line-height: 1.2;
+
+			b {
+				font-weight: bold;
+				font-size: 16px;
+			}
+		}
+
+		.DescriptionContainer {
+			flow-children: down;
+			vertical-align: center;
+			margin-bottom: 8px;
+			padding-right: 16px;
+
+			.SubHeader {
+				color: LightestGrey;
+				text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+			}
+		
+			.Details {
+				color: LightGrey;
+				text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+
+	.LeaderboardContainer {
+		margin: 0px;
+
+		.LeaderListHeader {
+			flow-children: right;
+
+			.LeaderListHeaderLabel {
+				width: fill-parent-flow( 1 );
+			}
+
+			.LeaderListHeaderLabel,
+			.LeaderListHeaderScore {
+				color: rgba(241, 249, 255, 0.5);
+				text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+}
+
+
+.RewardsSection {
+	flow-children: down;
+	width: 210px;
+	overflow: scroll;
+	visibility: collapse;
+
+	.RewardRow {
+		flow-children: right;
+		width: 100%;
+		margin-bottom: 2px;
+		visibility: collapse;
+
+		&.HasReward
+		{
+			visibility: visible;
+		}
+
+		&.Unlocked {
+			brightness: 0.1;
+		}
+
+		.RewardScore {
+			width: 80px;
+			vertical-align: middle;
+			flow-children: right;
+
+			.StarIcon {
+				width: 32px;
+				height: width-percentage(100%);
+				margin-right: -2px;
+
+				background-image: url( "file://{images}/events/crownfall/artillery/star_filled.png" );
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			Label {
+				color: LightestGrey;
+			}
+		}
+
+		.RewardValue {
+			flow-children: right;
+			width: 100%;
+			vertical-align: middle;
+
+			DOTACrownfallToken {
+				width: 38px;
+				ui-scale: 64%;
+			}
+		}
+	}
+}
+
+
+.ControlKey {
+	horizontal-align: center;
+	margin: 3px;
+	animation-name: none;
+	ui-scale: 84%;
+	
+	                
+	.Up {
+		background-image: url("file://{images}/control_icons/24px/arrow_up.svg");
+	}
+	.Down {
+		background-image: url("file://{images}/control_icons/24px/arrow_down.svg");
+	}
+	.Forward {
+		background-image: url("file://{images}/control_icons/24px/arrow_right.svg");
+	}
+	.Back {
+		background-image: url("file://{images}/control_icons/24px/arrow_left.svg");
+	}
+	.Space {
+		background-image: url("file://{images}/control_icons/24px/space.svg");
+	}
+	.Shift {
+		background-image: url("file://{images}/control_icons/24px/arrow_up.svg");
+	}
+}
+
+.ControlDescriptionBlock {
+	width: 100%;
+	flow-children: right;
+	padding-right: 16px;
+
+	.OrSeparator {
+		vertical-align: center;
+		margin: 0px 12px;
+		color: LightGrey;
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	.SubHeader {
+		color: LightestGrey;
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	.Details {
+		color: LightGrey;
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	.KeysColumn {
+		flow-children: down;		
+	}
+
+	.KeysRow {
+		flow-children: right;		
+	}
+}
+
+
+.ShootDescription {
+	margin-top: 12px;
+}
+
+.SpaceKey {
+	horizontal-align: left;
+
+	.KeyText {
+		width: 200px;
+	}
+}
+
+.ShiftKey {
+	horizontal-align: left;
+	flow-children: right;
+
+	.KeyText {
+		width: 120px;
+		background-image: none;
+	}
+}
+
+.GameStateScreen {
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+
+	padding: 48px 160px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(11, 12, 15, 0) ), 
+														color-stop( 0.1, rgba(11, 12, 15, 0.4),
+														color-stop( 0.2, rgba(11, 12, 15, 0.7),
+														color-stop( 0.5, rgba(11, 12, 15, 0.9),
+														color-stop( 0.8, rgba(11, 12, 15, 0.7),
+														color-stop( 0.9, rgba(11, 12, 15, 0.4),
+														to( rgba(11, 12, 15, 0) ) );
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2&00 ), color-stop( 0.5, gold1 ), to( gold2&00 ) );
+
+	opacity: 0.0;
+	transform: scale3d( 1.3, 1.3, 1 );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);                
+
+	.ScreenTitle {
+		font-size: 32px;
+		font-family: titleFont;
+		color: gradient( linear, 0% 00%, 0% 100%, from( #c4c8c9 ), to( white ) );
+		text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.8);
+		font-weight: semi-bold;
+		text-transform: uppercase;
+		horizontal-align: center;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+
+	.PrimaryButton {
+		margin-top: 20px;
+		horizontal-align: center;
+		width: 320px;
+	}
+
+	.SecondaryButtons {
+		flow-children: right;
+		horizontal-align: center;
+		padding: 16px 32px 0px;
+		margin-top: 0px;
+		margin-bottom: -24px;
+		border-top: 1px solid rgba(255, 255, 255, 0.098);
+		border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( rgba(255, 255, 255, 0) ) );
+
+		DOTACrownfallButton {
+			width: 220px;
+		}
+	}
+}
+
+.LevelIntroScreen {
+	transition-delay: 0.3s;
+
+	.LevelName {
+		margin-bottom: 12px;
+		horizontal-align: center;
+
+		color: whitesmoke;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: titleFont;
+		font-weight: semi-bold;
+		text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+		letter-spacing: 1.5px;
+		font-size: 32px;
+	}
+
+	.ScreenTitle {
+		font-size: 20px;
+		color: LighterGrey;
+		letter-spacing: 2px;
+		font-family: defaultFont;
+		font-weight: normal;
+	}
+
+	#LevelIntroWeapons {
+		flow-children: right;
+		horizontal-align: center;
+		margin-bottom: 16px;
+	}
+
+	.GameState_LevelIntro & {
+		opacity: 1.0;
+		transform: none;
+
+		transition-duration: 0.15s;
+		transition-timing-function: cubic-bezier(1, 0, 1, 1);               
+		transition-delay: 0s;
+	}
+}
+
+.LevelWonScreen {
+	                                      
+	transition-delay: 0.4s;
+
+	.GameState_LevelWon & {
+		opacity: 1.0;
+		transform: none;
+
+		transition-duration: 0.15s;
+		transition-timing-function: cubic-bezier(1, 0, 1, 1);               
+		transition-delay: 0s;
+	}
+
+	.PointsWonTable {
+		horizontal-align: center;
+		flow-children: down;
+		margin: 16px 0px 8px;
+
+		#LevelWonPointsRows {
+			flow-children: down;
+
+			.LevelWonPointsRow {
+				padding: 4px 64px;
+				border-top: 1px solid rgba(255, 255, 255, 0.0201);
+				border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+				flow-children: right;
+
+				.PointsSource {
+					width: 220px;
+					color: LighterGrey;
+					margin-right: 8px;
+				}
+				
+				.PointsValue {
+					text-align: right;
+					width: 100px;
+					color: LighterGrey;
+					font-weight: semi-bold;
+				}
+			}
+		}
+	
+		.TotalRow {
+			width: 100%;
+			padding-top: 12px;
+			flow-children: down;
+			horizontal-align: center;
+			border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+
+			.TotalLabel {
+				horizontal-align: center;
+				color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+				margin-bottom: -10px;
+				font-weight: semi-bold;
+			}
+
+			.TotalValue {
+				horizontal-align: center;
+				color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+				font-weight: bold;
+				font-size: 52px;
+				font-family: titleFont;
+				font-weight: semi-bold;
+			}
+		}
+	}
+	
+	#LevelWonStars {
+		flow-children: right;
+		horizontal-align: center;
+		margin-top: -20px;
+		margin-bottom: -12px;
+
+		.LevelWonStar {
+			flow-children: down;
+			margin-right: -8px;
+
+			.StarImage {
+				width: 88px;
+				height: width-percentage(100%);
+				margin-bottom: -12px;
+
+				background-image: url( "file://{images}/events/crownfall/artillery/star_empty.png" );
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			.StarValue {
+				horizontal-align: center;
+				text-align: center;
+				letter-spacing: 1px;
+				font-size: 20px;
+				color: Grey;
+			}
+
+			&.Achieved {
+				.StarImage {
+					background-image: url( "file://{images}/events/crownfall/artillery/star_filled.png" );
+				}
+
+				.StarValue {
+					horizontal-align: center;
+					text-align: center;
+					letter-spacing: 1px;
+					font-weight: semi-bold;
+					color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+				}
+			}
+		}
+	}
+
+	.NextLevelButton {
+		.IsOnFinalLevel & {
+			visibility: collapse;
+		}
+	}
+
+	.MainMenuButton {
+		visibility: collapse;
+
+		.IsOnFinalLevel & {
+			visibility: visible;
+		}
+	}
+}
+
+.LevelLostScreen {
+	.GameState_LevelLost & {
+		opacity: 1.0;
+		transform: none;
+
+		transition-duration: 0.15s;
+		transition-timing-function: cubic-bezier(1, 0, 1, 1);               
+	}
+}
+
+.PauseScreen {
+	.GameState_Combat.IsPaused & {
+		opacity: 1.0;
+		transform: none;
+
+		transition-duration: 0.15s;
+		transition-timing-function: cubic-bezier(1, 0, 1, 1);               
+	}
+}
+
+.AimArrow {
+	width: 96px;
+	height: 8px;
+	background-image: url( "file://{images}/events/crownfall/artillery/playerarrow.psd" );
+	visibility: collapse;
+}
+
+.AimPowerBar {
+	                                                             
+	             
+	             
+	  
+	
+	.BarContainer {
+		width: 100%;
+		height: 100%;
+		                                                               
+		transform: rotate3d( 0, 1, 0, -30deg);
+		opacity-mask: url( "file://{images}/events/crownfall/artillery/power_bar_opacity_mask.psd" );
+		background-color: #0003;
+		padding-top:6px;
+		padding-bottom: 6px;
+		padding-left: 0px;
+	}
+	.PowerChevrons {
+		width: 300px;
+		height: 100%;
+		margin-right: -32px;
+		
+		background-image: url( "file://{images}/events/crownfall/artillery/directional_track.png" );
+		opacity: 0.2;
+		background-size: 20px 100%;
+		background-repeat: repeat-x;
+		animation-name: ChevronMove;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	#ProgressBar {
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 0s;
+		
+		.ProgressBarLeft
+		{
+			brightness: 2;
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( #a0a012 ), to( #c03232 ) );
+			                                                                
+		}
+		.ProgressBarMiddle
+		{
+			visibility: collapse;
+		}
+		.ProgressBarRight
+		{
+			background-color: red;
+			visibility: collapse;
+		}
+	}
+	#LastPowerMarker {
+		width: 3px;
+		margin-left: -3px;
+		height: 100%;
+		vertical-align: bottom;
+		background-color: #ffdb03aa;
+		
+		transition-property: opacity, brightness;
+		transition-duration: 0s, 0s;
+		opacity: 0;
+		brightness: 4;
+		&.Subtle {
+			                                               
+			visibility: collapse;
+		}
+	}
+	#CurrentPowerMarker
+	{
+		width: 3px;
+		margin-left: -3px;
+		height: 100%;
+		vertical-align: bottom;
+		background-color: #ffdb03aa;
+		transition-property: opacity, transform, background-color;
+		transition-duration: 0s;
+		transform: scale3d( 8.0, 8.0, 1.0 );
+		opacity: 0;
+	}
+	&.Charging {
+		#ProgressBar {
+			opacity: 1;
+			transition-duration: 0.3s;
+			transition-delay: 0.4s;
+		}
+		
+		#LastPowerMarker {
+			opacity: 1;
+			brightness: 1;
+			transition-duration: 0.3s;
+			transition-delay: 0.7s, 0.4s;
+		}
+		#CurrentPowerMarker
+		{
+			opacity: 1;
+			transition-duration: 0.2s;
+			transform: none;
+			background-color: #fffa;
+		}
+	}
+}
+
+@keyframes 'ChevronMove'
+{
+	0% {
+		transform: translateX( -20px);
+	}
+	100% { 
+		transform: translateX(0px);
+	}
+}
+
+
+
+.WeaponIconContainer {
+	                        
+	margin-left: 0px;
+	margin-top: 190px;
+	padding:10px;
+}
+#WeaponIcon
+{
+	width: 64px;
+	height: 64px;
+	
+	border-radius: 22px;
+	border: 2px solid #6e6e6e;
+	brightness: 2;
+	animation-name: WeaponIcon;
+	animation-duration:1.6s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+
+	transition-property: opacity;
+	transition-duration: 0s;
+	&.WeaponChanged {
+		opacity: 0;
+		transition-duration: 0.3s;
+	}
+	&.NoAmmo {
+		opacity: 0.1;
+	}
+}
+
+@keyframes 'WeaponIcon'
+{
+	0% {
+		brightness: 1.6;
+	}
+	100% {
+		brightness: 2.3;
+		transform:translateY( -2px);
+	}
+}
+
+.ShotPathPip {
+	width: 3px;
+	height: 3px;
+	border-radius: 1px;
+	background-color: #fff;
+		transform: rotateZ( 45deg );
+}
+
+#ShotTrailPipsContainer,
+#WeaponAimPipsContainer {
+	width: 100%;
+	height: 100%;
+	flow-children: none;
+}
+
+#ShotTrailPipsContainer {
+	.ShotPathPip {
+		background-color: #fff2;
+		width: 4px;
+		height: 4px;
+	}
+}
+
+#RetryButton
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 68px;
+	margin-left: 1496px;
+
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transition-delay: 0.5s;
+
+	opacity: 0;
+	transform: translateY( 12px );
+
+	.GameState_Combat & {
+		opacity: 1;
+		transform: none;
+		transition-delay: 0s;
+	}
+
+	.AllWeaponsOutOfAmmo &
+	{
+		animation-name: GlowButton;
+        animation-duration: 0.8s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+	}
+}
+
+
+.TutorialContainer {
+	width: 320px;
+	margin-left: 20px;
+	height: 400px;
+
+	.TutorialScreen {
+		min-width: 200px;
+		horizontal-align: center;
+		vertical-align: bottom;
+		flow-children: down;
+		background-color: #000c;
+		padding: 12px;
+
+		opacity: 0.0;
+		transform: translateY( 0px );
+
+		transition-property: opacity, transform;
+		transition-duration: 0.2s;
+
+		.TutorialTitle {
+			color: white;
+			horizontal-align: center;
+			text-align: center;
+		}
+
+		.TutorialDesc {
+			color: #999;
+			horizontal-align: center;
+			text-align: center;
+		}
+
+		.TutorialControls {
+			flow-children: down;
+			horizontal-align: center;
+			margin-top: 8px;
+
+			.ControlKey {
+				horizontal-align: center;
+			}
+
+			.KeysRow {
+				flow-children: right;
+			}
+		}
+
+		.TutorialState_Aim &.Aim,
+		.TutorialState_Shoot &.Shoot
+		{
+			opacity: 1.0;
+			transform: none;
+		}
+	}
+
+}

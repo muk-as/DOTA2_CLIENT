@@ -1,0 +1,35 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+		<include src="file://{resources}/styles/popups/popup_guild_welcome.css" />
+		<include src="file://{resources}/styles/dashboard_page_guild_shared.css" />
+	</styles>
+
+	<DOTAPopupGuildWelcome class="PopupPanel Hidden GuildWelcomePopup" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel id="WelcomeParticleContainer" hittest="false" hittestchildren="false">
+			<DOTAScenePanel id="ModelTestUIAccept" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true"/>
+		</Panel>
+
+		<Panel class="WelcomePopupContainer">
+			<Label class="PopupTitle" text="#DOTA_GuildWelcome_Title" />
+
+			<Label id="GuildName" text="{g:dota_guild_name:guild_id}" />
+			<Panel class="GuildLogoContainer" > 
+				<DOTAGuildImage id="GuildImage" />
+				<Panel id="GuildLogoGleam" />
+				<Panel id="GuildLogoFrame" />
+			</Panel> 
+			<Label id="GuildTag" class="GuildTierColorAdjusted" text="[{g:dota_guild_tag:guild_id}]" />
+
+			<Panel id="Controls">
+				<Panel id="LoadingContainer">
+					<Panel class="Spinner" />
+					<Label text="#DOTA_GuildWelcome_LoadingData" />
+				</Panel>
+				<TextButton id="ViewHomePageButton" class="PopupButton GuildPopupButton" text="#DOTA_GuildWelcome_ViewHomepage" onactivate="UIPopupButtonClicked( DOTAGuildWelcomeViewHomeActivated() )" />
+			</Panel>
+		</Panel> 
+
+	</DOTAPopupGuildWelcome>
+</root>

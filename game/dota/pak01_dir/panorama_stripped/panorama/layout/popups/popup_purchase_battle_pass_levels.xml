@@ -1,0 +1,110 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/popups/popups_shared.css" />
+        <include src="file://{resources}/styles/battle_pass/current_battle_pass.css" />
+		<include src="file://{resources}/styles/popups/popup_purchase_battle_pass_levels.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/popups/popup_purchase_battle_pass_levels.js" />
+	</scripts>
+	
+	<PopupPurchaseBattlePassLevels class="PopupPanel Hidden" popupbackground="dim" oncancel="DOTAPurchaseBattlePassLevelsClose()">
+
+		<Panel id="Header" >
+			                                                                                                                                           
+			                                                                                                                                          
+			<Panel id="HeaderTitleContainer">
+				<Label class="PopupTitle" text="{s:screen_title}" />
+				<Button class="ButtonPrimary DarkGrey" id="CancelButton" onactivate="DOTAPurchaseBattlePassLevelsClose()">
+					<Image src="file://{images}/control_icons/24px/x_close.svg" />
+				</Button>
+			</Panel>
+
+			<Panel id="ShieldBackgroundContainer">
+				<Panel class="FillWidth" />				
+				<Panel class="TopBottomFlow">
+					<Label id="CurrentLevelLabel" text="#DOTA_CurrentLevel" />
+					<DOTAEventLevelShield id="CurrentLevelShield" />
+				</Panel>						
+				<Panel id="EquationArrow"/>					
+				<Panel class="AfterPurchaseLevelsContainer">
+					<Panel class="ShieldBackground"/>
+					<Panel class="AfterPurchaseLevelsContents">
+						<Label id="AfterPurchaseLabel" text="#DOTA_AfterPurchase" />
+						<DOTAEventLevelShield id="AfterPurchaseLevelShield" />
+					</Panel>
+				</Panel>
+				<Panel class="FillWidth" />
+			</Panel>
+			
+		</Panel>
+
+		<Panel id="Screens">
+		
+			<Panel id="StartScreen" class="WizardScreen" screentitle="#DOTA_PurchaseCompendiumLevels">
+
+				<Panel class="WizardScreenContents" id="PurchaseScreenContents">
+				
+					<Label text="#DOTA_PurchaseBattlePassLevels_Question" class="SubHead BodyLarge LightestGreyText"/>
+					
+					<DOTAPurchaseEventLevelsTable id="LevelsTable" />
+					
+				</Panel>
+
+				<Panel class="WizardButtons">
+					                                                                                                                                                                                     
+					<DOTAInternational2024Button id="PurchaseButton" class="LightGreen Wide" text="#DOTA_Purchase_Popup_Purchase_Button" onactivate="DOTAPurchaseBattlePassLevelsMakePurchase()" />
+				</Panel>
+			</Panel>
+
+			<Panel id="PurchaseInProgressScreen" class="WizardScreen" disableclose="true" screentitle="#DOTA_PurchaseCompendiumLevels">
+				<Panel id="PurchaseInProgressContents">
+					<Label text="#DOTA_PurchaseInProgress_Title" />
+					<Panel class="Spinner" />
+				</Panel>
+			</Panel>
+
+			<Panel id="ApplyLevelsScreen" class="WizardScreen" screentitle="#DOTA_ActivateCompendiumLevels">
+				<Panel class="WizardScreenContents">
+					<Panel class="ApplyLevelsOptions">
+						<RadioButton id="ApplyLevelsButton" class="ApplyLevelsOption" group="apply_levels_radio_buttons" selected="true" onactivate="UpdateActivateLevelsNextButton()">
+							<Panel class="ApplyLevelOptionsContents">
+								<Label class="ApplyLevelOptionsTitle" text="#DOTA_ActivateLevelsImmediately_Title" />
+								<Label class="ApplyLevelOptionsDescription" text="#DOTA_ActivateCompendiumLevelsImmediately_Description" />
+							</Panel>
+						</RadioButton>
+						<RadioButton id="SaveForLaterButton" class="ApplyLevelsOption" group="apply_levels_radio_buttons" onactivate="UpdateActivateLevelsNextButton()">
+							<Panel class="ApplyLevelOptionsContents">
+								<Label class="ApplyLevelOptionsTitle" text="#DOTA_SaveForLater_Title" />
+								<Label class="ApplyLevelOptionsDescription" text="#DOTA_SaveForLater_Description" />
+							</Panel>
+						</RadioButton>
+					</Panel>
+					
+				</Panel>
+
+				<Panel class="WizardButtons">
+					<DOTAInternational2024Button id="ApplyLevelsNextButton" class="LightGreen" text="#DOTA_International_2024_View_Ringmaster_Comic" onactivate="OnActivateLevelsNextButton()" />
+				</Panel>
+			</Panel>
+
+			<Panel id="ApplyLevelsFailedScreen" class="WizardScreen" screentitle="#DOTA_ActivateCompendiumLevels">
+				<Panel class="WizardScreenContents" >
+					<Label text="#DOTA_ApplyLevelsFailedMessage" />
+				</Panel>
+
+				<Panel class="WizardButtons">
+					<DOTAInternational2024Button class="LightGreen" text="#DOTA_Done" onactivate="DOTAPurchaseBattlePassLevelsClose()" />
+				</Panel>
+			</Panel>
+			
+		</Panel>
+		<Label id="PurchaseEndsLabel" class="LightGreyText Opacity_60" text="#DOTA_Compendium_EndDate_Purchase"/>
+		    
+		                                                                                             
+		   
+		
+	</PopupPurchaseBattlePassLevels>
+</root>

@@ -1,0 +1,116 @@
+.HeroFacetDropdown
+{
+	width: 52px;
+	height: 52px;
+	box-shadow: 0px 8px 32px -4px rgba(0, 0, 0, 0.5);
+	overflow: clip;
+
+	&:hover {
+		.FacetBackground {
+			brightness: 2;
+		}
+
+		.Dropdown {
+			background-color: LightGreyGradientBackgroundColor;
+		}
+	}
+}
+
+.IsAbilityDraft .FacetBackground,
+.HeroFacetDropdown.ClickedOnce .FacetBackground
+{
+	animation-name: none;
+}
+
+.HeroFacetDropdown.NoVariants
+{
+	visibility: collapse;
+}
+
+.IsAbilityDraft .HeroFacetDropdown.NoVariants
+{
+	saturation: 0;
+	brightness: .2;
+	visibility: visible;
+}
+
+@keyframes 'BorderPulse'
+{
+	0%
+	{
+		box-shadow: 0px 0px 16px #c0b00f05;
+	}	
+
+	50%
+	{
+		box-shadow: 0px 0px 16px #c0b00f99;
+	}
+	
+	100%
+	{
+		box-shadow: 0px 0px 16px #c0b00f05;
+	}
+}
+
+.FacetBackground {
+	width: 100%;
+	height: 100%;
+
+	transition-property: brightness, saturation;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out;
+
+	animation-name: BorderPulse;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.FacetBackgroundTexture {
+	width: 150px;
+	height: 100%;
+	horizontal-align: right;
+	background-image: url( "file://{images}/hud/facets/ripple_texture.png" );
+	background-size: cover;
+	background-position: center;
+	-s2-mix-blend-mode: screen;
+}
+
+.Dropdown {
+	width: 100%;
+	vertical-align: bottom;
+	background-color: DarkGreyGradientBackgroundColor;
+	opacity: 0.96;
+	box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+
+	transition-property: background-color;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out;
+}
+
+.Chevron {
+	width: 14px;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 2px 8px black;
+	margin: 1px;
+}
+
+#FacetIcon {
+	width: 24px;
+	height: 24px;
+	margin-top: 6px;
+	horizontal-align: center;
+	background-size: cover;
+	img-shadow: 0px 2px 8px black;
+	
+	transition-property: transform, brightness;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out;
+	
+	.Small & {
+		width: 16px;
+		height: 16px;
+		margin-top: 4px;
+	}
+}

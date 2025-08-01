@@ -1,0 +1,1342 @@
+
+
+.PopupPanel.FishingGame {
+	background-color: none;
+	animation: none;
+	border: 0px solid transparent;
+	padding: 0px;
+	box-shadow: none;
+	width: 100%;
+	height: 100%;
+}
+
+.MainContents {
+	
+    border: 0px solid rgb(255, 255, 255);
+    border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 1244px;
+	height: 700px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+	                                        
+
+
+	#CloseButtonContainer {
+		ignore-parent-flow: true;
+	}
+
+	.TopGoldDash {
+		width: 100%;
+		height: 2px;
+		margin-bottom: 1px;
+	}
+
+	.EncounterGraphic {
+		margin-top: 2px;
+		horizontal-align: center;
+		height: 100px;
+	}
+
+    .InnerContents
+    {
+		ignore-parent-flow: true;
+		flow-children: down;
+        width: 100%;
+        height: 100%;
+		
+		.Header {
+			width: 100%;
+			                       
+		}
+		
+		.Body {
+			width: 100%;
+			height: 100%;
+			                      
+			.Scene
+			{
+				width: 100%;
+				height: width-percentage( 56.25% );
+
+				#FishingScene
+				{
+					border: 1px solid gold1;
+					horizontal-align: center;
+					width: 100%;
+					height: 100%;
+					opacity: 0.0;
+				
+					&.SceneLoaded
+					{
+						opacity: 1.0;
+					}
+					.ShowVisualNovel &
+					{
+						brightness: 0.8;
+					}
+				}
+			}
+
+			.MainMenu {
+				ignore-parent-flow: true;
+				horizontal-align: center;
+				vertical-align: middle;
+				                      
+				flow-children: down;
+				width: 800px;
+				height: 600px;
+				padding-left: 30px;
+				padding-right: 30px;
+				
+				border: 2px solid rgb(255, 255, 255);
+				border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+				background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+
+				opacity: 0.0;
+				transform: translateY( -20px );
+				transition-property: opacity, transform;
+				transition-duration: 0.2s;
+				transition-timing-function: ease-in-out;
+  				                  
+				 
+					                     
+				   
+				.IntroMenu.SceneLoaded:not(.ShowVisualNovel) &
+				{
+					opacity: 1.0;
+					transform: none;
+				}
+				
+				.HowToPlaySection
+				{
+					width: 100%;
+					flow-children: down;
+					padding:0px;
+					.HowToPlayTitle
+					{
+						text-transform: uppercase;
+						font-size: 20px;
+						letter-spacing: 2px;
+						color: gold1;
+						margin-bottom: 6px;
+					}
+					.HowToPlayDescription
+					{
+						font-size: 16px;
+						line-height: 1.2;
+						b
+						{
+							font-weight: bold;
+							font-size: 16px;
+						}
+					}
+				}
+
+				.Title {
+					width: 100%;
+					horizontal-align: center;
+					text-align: center;
+					font-family: titleFont;
+					font-size: 34px;
+					letter-spacing: 4px;
+					                   
+					text-transform: uppercase;
+					font-weight: bold;
+					color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+					text-shadow: 2px 6px 8px black;
+					margin-top: 8px;
+					margin-bottom: 15px;
+				}
+				.ColumnContainer
+				{
+					flow-children: right;
+					width: 100%;
+					height: 400px;
+					.Column1 
+					{
+						width: 50%;
+						height: 100%;
+						flow-children: down;
+						overflow: clip scroll;
+					}
+					.Column2
+					{
+						width: 50%;
+						height: 100%;
+						flow-children: down;
+					}
+				}
+				.RewardsLabel {
+					text-transform: uppercase;
+					font-size: 20px;
+					letter-spacing: 2px;
+					color: gold1;
+					margin-top: 12px;
+					visibility: collapse;
+				}
+				.RewardsSection {
+					margin-top: 12px;
+					flow-children: down;
+					width: 100%;
+					horizontal-align:left;
+					visibility: collapse;
+					                    
+
+
+					.RewardRow {
+						flow-children: right;
+						width: 100%;
+						margin-bottom: 2px;
+						visibility: collapse;
+
+						&.HasReward
+						{
+							visibility: visible;
+						}
+						&.Unlocked
+						{
+							brightness: 0.1;
+						}
+						.RewardScore {
+							width: 80px;
+							vertical-align: middle;
+							text-align: left;
+							font-weight: bold;
+						}
+
+						.RewardValue {
+							flow-children: right;
+							width: 100%;
+							vertical-align: middle;
+
+							DOTACrownfallToken {
+								width: 38px;
+								ui-scale: 64%;
+							}
+						}
+					}
+				}
+			}
+
+			.BottomButtons {
+				margin-top: 20px;
+				ui-scale: 90%;
+				flow-children: right;
+				horizontal-align: center;
+				vertical-align: bottom;
+				.ExitButton {
+					visibility: collapse;
+					.PlayedOnce & {
+						visibility: visible;
+					}
+				}
+			}
+			.MissingDataSpinnerContainer
+			{
+				horizontal-align: center;
+				vertical-align: middle;
+				visibility: visible;
+				ui-scale: 200%;
+				.SceneLoaded &
+				{
+					visibility: collapse;
+				}
+			}
+		}
+    }
+}
+
+.OverlayHUD
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+	.SceneLoaded &
+	{
+		visibility: visible;
+	}
+					
+	.ShowVisualNovel &
+	{
+		blur: gaussian( 2px );
+	}
+	.LureCount
+	{
+		vertical-align: bottom;
+		margin-left: 70px;
+		margin-bottom: 70px;
+		width: 120px;
+		height: 120px;
+		opacity: 1.0;
+		padding: 24px;
+		background-image: url( "file://{images}/events/crownfall/fishing/lurecount_container.png" );
+		background-size:contain;
+
+		transition-property: opacity, transform;
+		transition-duration: 0.4s;
+		.ShowLures &
+		{
+			opacity: 1;
+			animation-name: Bob;
+			animation-iteration-count: 1;
+			animation-duration: 0.4s;
+			animation-timing-function: ease-in-out;
+		}
+		.IntroMenu &,
+		.GameOver &
+		{
+			opacity: 0;
+			transform: translateY( 20px );
+		}
+		.LureIcon
+		{
+			height: 37px;
+			width: 30px;
+			vertical-align: center;
+			horizontal-align: center;
+			margin-right: 40px;
+		}
+		.LureCountText
+		{
+			font-size: 57px;
+			font-family: Radiance;
+			vertical-align: center;
+			horizontal-align: center;
+			margin-left: 20px;
+			
+			color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+			text-shadow: 1px 1px 8px black;
+		}
+	}
+	#FishCatchHistory
+	{
+		margin-top: 50px;
+		flow-children: down;
+		opacity: 0;
+		.FishCatchHistoryRow
+		{
+			width: 240px;
+			height: 30px;
+			border: 1px solid black;
+			opacity: 0;
+			background-color: #faaa;
+			flow-children: right;
+			&.Visible
+			{
+				opacity: 1.0;
+			}
+			&.Caught
+			{
+				background-color: #fff8;
+			}
+			Label
+			{
+				margin:2px;
+				color: black;
+				font-size: 20px;
+				font-weight: bold;
+				font-family: 'Reaver';
+			}
+			.FishWeightText
+			{
+				horizontal-align: right;
+			}
+		}
+	}
+	#FishCounter
+	{
+		font-family: radiance;
+		font-size: 30px;
+		padding: 10px;
+		color: black;
+		background-color: white;
+		opacity: 0.5;
+	}
+	.OuterBar
+	{
+		flow-children: down;
+		horizontal-align: right;
+		vertical-align: top;
+		                     
+		margin-right: 440px;
+		margin-top: 100px;
+		border-radius: 8px;
+		background-color: #000c;
+		padding: 10px;
+		opacity: 0;
+  		                    
+		                       
+		
+		transition-property: opacity;
+		transition-duration: 0.3s;
+		transition-timing-function: ease;
+
+		.Icon
+		{
+			margin-top: 10px;
+			height: 30px;
+			horizontal-align: center;
+			vertical-align: bottom;
+			.AlmostCaught &
+			{
+				brightness: 2.0;
+				animation-name: Shake;
+				animation-duration: 0.3s;
+				animation-iteration-count: infinite;
+			}
+		}
+		&.Right
+		{
+			margin-right: 240px;
+		}
+		
+		&.BarProgress {
+			.ReelingFish &
+			{
+				opacity: 1.0;		
+			}
+		}
+		&.BarReel {
+			.ReelingFish &
+			{
+				opacity: 1.0;
+			}
+		}
+		&.BarCast {
+			.PreCastStrengthRod &
+			{
+				opacity: 1;
+			}
+			.PreCastAimRod &
+			{
+				opacity: 0.4;
+			}
+			.CastingRod &
+			{
+				opacity: 0.9;
+			}
+		}
+		.ProgressBar
+		{
+			width: 30px;
+			height: 350px;
+			border: 2px solid gold2;
+			border-radius: 2px;
+			                                                                                                         
+		}
+	}
+	.ProgressMeterContainer 
+	{
+		horizontal-align: right;
+		vertical-align: top;
+		margin-right: 440px;
+		margin-top: 460px;
+		flow-children: down;
+		opacity: 0;
+		transition-property: brightness;
+		transition-duration: 0.1s;
+		.ReelingFish &
+		{
+			opacity: 1.0;
+		}
+		.AlmostCaught &
+		{
+			brightness: 2.0;
+		}
+		.RadialContainer
+		{
+			width: 50px;
+			height: 50px;
+
+			#ProgressMeterRadial
+			{
+				width: 100%;
+				height: 100%;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				                     
+				wash-color: #52ce1b;
+				
+				background-image: url( "file://{images}/events/crownfall/fishing/catch_progress_bg.png" );
+
+				transition-property: background-image, clip;
+				transition-duration: 0.05s;
+			}
+		}
+	}
+	#FishCastStrength 
+	{
+		#FishCastStrengthProgress
+		{
+			width:100%;
+			vertical-align: bottom;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+			transition-property: background-color;
+			transition-duration: 0.2s;
+			.ChargingStrength &
+			{
+				animation-name: ChargingStrengthThrob;
+				animation-duration: 0.5s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+	#FishBarBackground
+	{
+		.FishBarMovingUp & {
+			ignore-parent-flow: true;
+			background-image: url( "file://{images}/events/crownfall/fishing/icon_bar_accelerate.png" );
+			background-repeat: no-repeat;
+			background-position: bottom;
+		}
+			
+		#FishCatchBar
+		{
+			background-color: gold2;
+			width: 100%;
+			height: 24%;
+			vertical-align: bottom;
+			&.Upgrade1
+			{
+				height: 27%;
+			}
+			&.Upgrade2
+			{
+				height: 30%;
+			}
+			&.Upgrade3
+			{
+				height: 33%;
+			}
+			&.Upgrade4
+			{
+				height: 36%;
+			}
+			.FishWithinRange &
+			{
+				background-color: #52ce1b;
+			}
+		}	
+		#Fish
+		{
+			                                                                                    
+			height: 30px;
+			width: 100%;
+			horizontal-align: center;
+			transform: translateY( 15px );
+			border: 1px red;
+			overflow: noclip;
+			vertical-align: bottom;
+			
+			animation-name: FishIconJiggle;
+			animation-duration: 0.2s;
+			animation-iteration-count: 1;
+			animation-timing-function: ease-in-out;
+  
+			           
+			 
+				                
+			   
+			.FishWithinRange &
+			{
+				animation-name: none;
+			}
+			.BigFish &
+			{
+				ui-scale: 130%;
+			}
+			.SmallFish &
+			{
+				ui-scale:75%;
+			}
+		}
+	}
+
+	#FishCatchProgressBackground 
+	{
+		#FishCatchProgress
+		{
+			width: 30px;
+			background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+				
+			vertical-align: bottom;
+		}
+	}
+	.TipContainer 
+	{
+		background-color: #000a;
+		horizontal-align: center;
+		vertical-align: top;
+		margin-top: 200px;
+		flow-children: down;
+		border-radius: 8px;
+		padding: 14px;
+		width: 140px;
+		height: 140px;
+		
+		transition-property: opacity;
+		transition-duration: 0.1s;
+		transition-timing-function: ease;
+
+		opacity: 0;
+	
+		visibility: collapse;
+
+		.ShowTips &
+		{
+			visibility: visible;
+		}
+		.PreCastStrengthRod &
+		{
+			opacity: 1;
+			.TipTextContainer .ChargeTipText 
+			{
+				opacity: 1;
+			}
+		}
+		.ReelingFish.FishAboveCatchBar &
+		{
+			opacity: 1;
+			.TipTextContainer .ReelTipText 
+			{
+				opacity: 1;
+			}
+		}
+		
+		.TipTextContainer
+		{
+			margin-top: 5px;
+			horizontal-align: center;
+			Label
+			{
+				vertical-align: middle;
+				horizontal-align: center;
+				padding:5px;
+				color:white;
+				font-size: 13px;
+				font-family: Radiance;
+				text-align: center;
+				
+				text-overflow: shrink;
+				opacity: 0;
+			}
+		}
+		.TipIconContainer
+		{
+			width: 40px;
+			horizontal-align: center;
+			opacity: 0.8;
+					
+			visibility: collapse;
+			.ShowTips &
+			{
+				visibility: visible;
+			}
+			.ClickButtonIcon
+			{
+				transition-property: opacity;
+				transition-duration: 0.1s;
+				transition-timing-function: ease;
+				opacity: 0;
+				.AimingRod & 
+				{
+					opacity: 1;
+				}
+			}
+			.HoldButtonIcon
+			{
+				transition-property: opacity;
+				transition-duration: 0.1s;
+				transition-timing-function: ease;
+				opacity: 0;
+				.ReelingFish &,
+				.PreCastStrengthRod &
+				{
+					opacity: 1;
+				}
+			}
+					
+		}
+	}
+				
+	.ScoreSection {
+		horizontal-align: left;
+		flow-children: down;
+		margin-left: 20px;
+		margin-top: 20px;
+		width: 222px;
+		
+		transition-property: opacity, transform;
+		transition-duration: 0.3s;
+		
+		.IntroMenu &
+		{
+			transform: translateX( -40px );
+			opacity: 0;
+		}
+		.Header
+		{
+			flow-children: down;
+			horizontal-align: center;
+			background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(52, 66, 83, 1) ), to( rgba(12, 17, 28, 1) ) );
+			padding: 10px;
+			.Title
+			{
+				font-size: 22px;
+				horizontal-align: center;
+				font-family: Reaver;
+				text-transform: uppercase;
+				color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+			}
+		}
+		.Main
+		{
+			flow-children: down;
+			width: 100%;
+			height: fit-children;
+			padding: 10px;
+			transition-property: height;
+			transition-duration: 0.5s;
+			background-color: #000a;
+			border-bottom: 2px solid gold1;
+			.IntroMenu &
+			{
+				height: 2px;
+			}
+			.ScoreLabel {
+				horizontal-align: center;
+				text-transform: uppercase;
+				font-family: Radiance;
+				font-size: 13px;
+				letter-spacing: 1px;
+				color: gold1;
+				text-shadow: 1px 1px 4px black;
+			}
+			.CurrentScoreValueContainer
+			{
+				width: 100%;
+				horizontal-align: center;
+				margin-top: -8px;
+				min-height: 58px;
+
+				.RemainingScore 
+				{
+					font-family: Radiance;
+					font-size:20px;
+					letter-spacing: 2px;
+					color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold2 ) );
+					text-align: right;
+					text-shadow: 2px 2px 4px black;
+					horizontal-align: middle;
+					vertical-align: bottom;
+					visibility: collapse;
+							
+					.ShowRemainingScore &
+					{
+						visibility: visible;
+					}
+				}
+				.ScoreValue {
+					font-family: Radiance;
+					font-size: 48px;
+					letter-spacing: 2px;
+					color: gold1;
+					horizontal-align: center;
+					color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+					text-shadow: 1px 1px 8px black;
+						
+					transition-property: ui-scale;
+					transition-duration: 0.3s;
+					.ShowRemainingScore &
+					{
+						ui-scale: 77%;
+					}
+				}
+			}
+			.ScoreSeparator {
+				border: 1px solid #ccc1;
+				height: 1px;
+				width: 100%;
+			}
+			.HighScoreLabelContainer {
+				margin-top: 10px;
+				width: 100%;
+				height: 16px;
+				horizontal-align: center;
+				.HighScoreLabel {
+					horizontal-align: center;
+					text-transform: uppercase;
+					font-size: 14px;
+					font-family: Radiance;
+					text-shadow: 2px 2px 3px black;
+					color: gold1;
+				}
+				.HighScoreNewLabel {
+				
+					font-size: 14px;
+					font-family: Radiance;
+					color: gold1;
+					
+					text-shadow: 2px 2px 3px black;
+					
+					horizontal-align: right;
+					transition-property: opacity, transform;
+					transition-duration: 0.4s;
+					opacity: 0;
+					transform: translateY( -20px );
+					brightness: 0.0;
+					.NewHighScore &
+					{
+						opacity: 1;
+						brightness: 1.2;
+						transform: none;
+					}
+				}
+			}
+			
+			.HighScoreValueContainer {
+				height: 35px;
+				width: 100%;
+				vertical-align: middle;
+				flow-children: right;
+				margin-top: -2px;
+				margin-bottom: 10px;
+
+				.HighScoreValue {
+					horizontal-align: center;
+					font-family: titleFont;
+					font-size: 27px;
+					letter-spacing: 2px;
+					color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+				
+					text-shadow: 2px 2px 5px black;
+				}
+			}
+			.NextRewardLabel {
+				horizontal-align: center;
+				color:gold1;
+					text-transform: uppercase;
+					font-size: 14px;
+				text-shadow: 2px 2px 3px black;
+			}
+			.NextRewardContainer
+			{
+				horizontal-align: center;
+				flow-children: down;
+				visibility: collapse;
+				.ShowNextRewards &
+				{
+					visibility: visible;
+				}
+				.NextRewardTokens
+				{		
+					flow-children: right;
+							
+					.CanClaimReward &
+					{
+						animation-name: GlowText;
+						animation-duration: 0.6s;
+						animation-iteration-count: infinite;
+						animation-direction: alternate;
+					}
+					.NextRewardScore
+					{
+						margin-left: 5px;
+						color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+						font-size: 27px;
+						text-shadow: 2px 2px 3px black;
+					}
+					.Hidden
+					{
+						visibility: collapse;
+					}
+					DOTACrownfallToken
+					{
+						width: 38px;
+						height: 38px;
+						ui-scale: 60%;
+						margin-top: 4px;
+					}
+				}
+			}
+		}
+		.ClaimRewardSection {
+			margin-left: 10px;
+			margin-right: 10px;
+			horizontal-align: center;
+			width: 100%;
+			
+			transition-property: transform, opacity;
+			transition-duration: 0.5s;
+			transform: scaleY( 0.1 ) translateY( -30px);
+			opacity: 0;
+			.ReelingFish & {
+				transform: scaleY( 1 );
+				opacity: 1;
+			}
+			.ClaimRewardButton {
+				horizontal-align: center;
+				vertical-align: middle;
+			}
+		}
+	}
+	.RewardClaimedToast
+	{
+		margin-top: 300px;
+		background-color: gold1;
+		padding:5px 15px;
+		border: 1px solid white;
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+		transform: translateX( -200px );
+		transition-property: transform;
+		transition-duration: 1s;
+
+		.ShowRewardClaimedToast &
+		{
+			transform: none;
+		}
+		.RewardClaimedToastText
+		{
+			color: gold1;
+		}
+	}
+}
+ 
+                                      
+.FishCatchStats
+{
+	flow-children: down;
+	margin-top: 170px;
+	margin-left: 760px;
+	margin-right: 20px;
+	width: 100%;
+	visibility: collapse;
+	&.Variant1 .FishCatchScoreRows .FishCatchScoreRow.VariantScoreRow .ScoreDesc {
+		color: #b2e1ff;
+		font-weight: bold;
+		brightness: 1.5;
+		animation-name: GlowText;
+		animation-iteration-count: infinite;
+		animation-duration: 1.6s;
+		animation-direction: alternate;
+	}
+	&.Variant2 .FishCatchScoreRows .FishCatchScoreRow.VariantScoreRow .ScoreDesc {
+		color: #eba7ff;
+		font-weight: bold;
+		brightness: 1.5;
+		animation-name: GlowText;
+		animation-iteration-count: infinite;
+		animation-duration: 1.6s;
+		animation-direction: alternate;
+	}
+	&.Rare .FishCatchScoreRows .FishCatchScoreRow.RarityScoreRow .ScoreDesc {
+		color: #ff7575;
+		font-weight: bold;
+		brightness: 1.2;
+	}
+	&.UltraRare .FishCatchScoreRows .FishCatchScoreRow.RarityScoreRow .ScoreDesc {
+		color: #da9bff;
+		font-weight: bold;
+		brightness: 1.2;
+	}
+	.FishCatchScoreRows
+	{
+		margin-top: 20px;
+		flow-children: down;
+		.FishCatchScoreRow
+		{
+			opacity: 0; 
+			width: 350px;
+			flow-children: right;
+			&.Animating
+			{
+				animation-name: WarpIn;
+				animation-fill-mode: forwards;
+				animation-iteration-count:1;
+				animation-duration: 0.2s;
+			}
+			.ScoreName
+			{
+				                    
+				color: gold1;
+				text-shadow: 2px 2px 2px black;
+			}
+			
+			.ScoreDesc
+			{
+				margin-left: 3px;
+				color: white;
+				text-shadow: 2px 2px 2px black;
+			}
+			.ScoreValue
+			{
+				horizontal-align: right;
+				color: white;
+				text-shadow: 2px 2px 2px black;
+			}
+			.BonusLabel
+			{
+				             
+				visibility: collapse;
+				vertical-align: center;
+				text-shadow: 2px 2px 2px black;
+				margin-right: 10px;
+				color: #76f1ff;
+				font-weight: bold;
+				
+			}
+			&.Bonus
+			{
+				.ScoreName 
+				{
+					             
+					visibility: collapse;
+				}
+				.BonusLabel
+				{
+					              
+					animation-name: GlowText;
+					animation-iteration-count: infinite;
+					animation-duration: 1.6s;
+					animation-direction: alternate;
+					transition-timing-function: cubic-bezier(0, 1, 0, 1);
+					visibility: visible;
+				}
+			}
+			&.Bonus .BonusLabel
+			{
+			}
+			&.Percent .ScoreValue
+			{
+				color: gold1;
+				font-weight: bold;
+			}
+		}
+	}
+	.FishCatchScoreTotalContainer
+	{
+		margin-top: 20px;
+		width: 350px;
+		flow-children: right;
+
+		.TotalText
+		{
+			text-shadow: 2px 2px 2px black;
+			font-size: 30px;
+			color: gold1;
+			vertical-align: bottom;
+			opacity: 0;
+			transform: translateX( 300px );
+			transition-property: opacity, transform;
+			transition-duration: 0.4s;
+		}
+		.TotalFishScoreContainer 
+		{
+			width: 100%;
+			horizontal-align: right;
+			.TotalFishScore
+			{
+				text-shadow: 2px 2px 2px black;
+				font-size: 50px;
+				font-weight: bold;
+				color: gold1;
+				horizontal-align: right;
+			
+				animation-name: GlowText;
+				animation-duration: 0.7s;
+				animation-direction: alternate;
+				animation-iteration-count: infinite;
+			}
+		}
+		&.Animating .TotalText
+		{	
+			opacity: 1;
+			transform: none;
+			transition-duration: 0s;
+		}
+		&.Animating .TotalFishScoreContainer.ScoreContainer
+		{	
+			opacity: 0;
+			animation-name: StampIn;
+			animation-fill-mode: forwards;
+			animation-iteration-count:1;
+			animation-duration: 0.2s;
+			animation-delay: 0.7s;
+		}
+		&:not(.Animating) .TotalFishScoreContainer.ScoreContainer
+		{
+			opacity: 0;
+		}
+	}
+	.PostCatchShowScore &
+	{
+		visibility: visible;
+	}
+	.FishName
+	{
+		font-size: 35px;
+		font-family: Radiance;
+		text-shadow: 2px 2px 2px black;
+		color: gold1;
+		opacity: 0;
+		animation-duration: 0.2s;
+		animation-delay: 0s;
+		animation-name: WarpIn;
+		animation-fill-mode: forwards;
+		animation-iteration-count:1;
+		text-overflow: shrink;
+	}
+}
+
+
+.LeaderboardContainer
+{
+	margin-left: 10px;
+	width: 100%;
+	horizontal-align: right;
+	
+	flow-children: down;
+	
+	margin-top: 7px;
+	
+	.LeaderList {
+		width: 100%;
+		
+		flow-children: down;
+		overflow: clip scroll;
+		
+		                                                                                                                                               
+		
+	}
+
+	.LeaderListHeader {
+		width: 100%;
+		margin-bottom: 8px;
+		Label {
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 2px;
+		}
+
+		.Score	{
+			horizontal-align: right;
+			text-align: right;
+			margin-right: 6px;
+		}
+	}
+
+	
+	.LeaderboardRow {
+		ui-scale: 100%;
+		width: 100%;
+		margin-bottom: 2px;
+		                              
+		flow-children: right;
+		padding-right: 0px;
+		height: 24px;
+		&.OddRow
+		{
+			background-color: #0005;
+		}
+		#LeaderListAvatar {
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+			                                             
+			margin-right: 5px;
+		}
+
+		.LeaderListName	{
+			padding-top: 2px;
+			height: 24px;
+			color: LightestGrey;
+			vertical-align: center;
+		}
+
+		.LeaderListName .PersonaName {
+			color: #bbbbbb;
+		}
+
+		.LeaderListValue {
+			horizontal-align: right;
+			text-align: right;
+			color: LightestGrey;
+			vertical-align: center;
+			margin-right: 12px;
+		}
+	}
+}
+
+#CloseButtonContainer {
+    .ReturnIcon {
+        horizontal-align: right;
+        margin: 12px;
+        img-shadow: 0px 1px 8px rgba(0, 0, 0, 1);
+        wash-color: LighterGrey;
+        opacity: 0.6;
+
+        transition-property: wash-color, opacity;
+        transition-duration: 0.1s;
+    }
+
+    &.Hovered {
+		.ReturnIcon {
+            wash-color: white;
+            opacity: 1;
+        }
+    }
+	.CloseIcon
+	{
+		visibility: collapse;
+	}
+	.IntroMenu & .ReturnIcon
+	{
+		visibility: collapse;
+	}
+	.IntroMenu & .CloseIcon
+	{
+		visibility: visible;
+	}
+}
+
+.VisualNovelOuterContainer 
+{
+	width: 100%;
+	height: 100%;
+	background-image: url( "file://{images}/events/crownfall/fishing/fish_bg.png" );
+	background-repeat: repeat;
+	transition-property: opacity, blur;
+	transition-duration: 0.5s, 0.3s;
+	opacity: 0;
+	blur: gaussian(10px);
+	
+	.ShowVisualNovel &
+	{
+		opacity: 1;
+		blur: gaussian(0px);
+	}
+}
+#VisualNovelContainer
+{
+	width: 100%;
+	height: 100%;
+	                         
+	
+}
+.VisualNovelBackground 
+{
+    border: 1px solid rgb(255, 255, 255);
+    border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+	width: 100%;
+	height: 220px;
+	margin-top: 147px;
+}
+#VisualNovel
+{
+	vertical-align: center;
+	ignore-parent-flow: true;
+	height: 100%;
+}
+@keyframes 'ChargingStrengthThrob'
+{
+    0%
+    {
+    }
+	50%
+	{
+		brightness: 2.5;
+	}
+    100%
+    {
+    }
+}
+
+@keyFrames 'WarpIn'
+{
+    0%
+    { 
+		opacity: 0.5;
+		transform: skewX( -30deg) translateX( 300px ) scaleY( 0.5 );
+    }
+    100%
+    {
+		opacity: 1;
+        transform: none;
+    }
+}
+@keyFrames 'StampIn'
+{
+    0%
+    { 
+		opacity: 0.5; 
+		transform: scale3d( 4, 4, 1 );
+    }
+    100%
+    {
+		opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes 'GlowText'
+{
+    0% {
+        brightness: 1.0;
+		opacity:0.9;
+		transform: scale3d( 0.95, 0.95, 1 );
+    }
+    100% {
+        brightness: 1.3;
+    }
+}
+
+@keyframes 'FishIconJiggle'
+{
+	0% {
+		transform: translateY( 15px );
+	}
+	33% {
+		transform: translateX(-3px) translateY( 15px );
+	}
+	66% {
+		transform: translateX(3px) translateY( 15px );
+	}
+
+	100% {
+		transform: translateY( 15px );
+	}
+}
+
+@keyframes 'Bob'
+{
+	0% {
+	}
+	50% {
+		transform: translateY( -8px );
+	}
+	100% {
+	}
+}
+
+@keyframes 'Shake'
+{
+	0% {
+
+	}
+	33% {
+		transform:translateX(3px);
+	}
+	66% {
+		transform:translateX(-3px);
+	}
+	100% {
+		
+	}
+}

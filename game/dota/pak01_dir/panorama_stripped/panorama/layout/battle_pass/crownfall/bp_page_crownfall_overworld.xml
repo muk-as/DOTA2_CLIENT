@@ -1,0 +1,220 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_crownfall_shared.css" />
+		<include src="file://{resources}/styles/battle_pass/crownfall/bp_page_crownfall_overworld.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="NodeSnippet">
+			<Panel class="Node">
+				<Panel class="NodeImage" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="EncounterShortcut">
+			<Panel class="ShortcutContainer" onmouseover="UIShowTextTooltip( #DOTA_Overworld_EncounterShortcut_water_wheel )" onmouseout="UIHideTextTooltip()">
+				<Image class="ShortcutBackground" src="file://{images}/events/crownfall/overworld/nodes/node_background_encounter.png" />
+				<Image class="ShortcutBackgroundInner" src="file://{images}/events/crownfall/overworld/nodes/node_background_encounter_inner.png" />
+				<Panel class="ShortcutIcon" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<DOTACrownfallOverworldPage class="DashboardPage" overworld="crownfall_chapter2">
+		<DOTAOverworldMap id="Map" />
+		<DOTAOverworldInventory id="Inventory" />
+		<Panel class="BottomGradient" hittest="false" />
+		<Panel class="LeftGradient" hittest="false" />
+		<Panel class="RightGradient" hittest="false" />
+		<Panel class="TopRightButtonsContainer">
+			<Panel class="HowToPlayContainer" onactivate="UIShowCustomLayoutPopup( CrownfallIntro, file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_intro.xml ); DOTANextOverworldIntro();">
+				<Label text="#DOTA_Crownfall_Overworld_HowToPlay" />
+				<Image class="Icon" src="file://{images}/control_icons/question_mark_circle.psd"/>
+			</Panel>
+			<Label class="Separator" text="|" />
+			<TextButton class="FeedbackButton" text="#DOTA_Crownfall_Overworld_Feedback" onactivate="UIShowCustomLayoutPopup( CrownfallFeedback, file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_feedback.xml );" />
+		</Panel>
+
+		<DOTALeaderboard id="FriendsLeaderboard" minimumrows="0" />
+
+		<Panel Compiler.If="MainBranch" class="ActLockedPanel">
+			<Panel class="LockedMessageContainer">
+				<Label class="LockedMessage" text="#DOTA_Crownfall_Overworld_ActLockedMessage" />
+				<Label class="LockedCountdown" text="#DOTA_Crownfall_Overworld_ActLockedCountdown" />
+			</Panel>
+		</Panel>
+
+		<DOTACrownfallActSelector id="ActSelector" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );" />
+
+		<Panel id="RewardsPanel" hittest="false">
+			<Panel class="FlagBackgroundContainer" hittest="false" hittestchildren="false">
+				<Image class="FlagBackground" src="file://{images}/events/crownfall/overworld/chapter_selector/chapter_selector_flag.png"/>
+				<Image class="FlagBackgroundEdge" src="file://{images}/events/crownfall/overworld/chapter_selector/chapter_selector_flag_edge.png" scaling="stretch-to-fit-y-preserve-aspect"/>
+			</Panel>
+
+			<Panel class="ActInfo">
+				<Image class="LogoBackground" src="file://{images}/events/crownfall/overworld/chapter_selector/chapter_selector_gold_background.png" scaling="stretch-to-fit-y-preserve-aspect"/>
+				<Image class="CrownfallLogo" src="file://{images}/events/crownfall/logos/crownfall_logo_en.psd" scaling="stretch-to-fit-preserve-aspect" />
+        		<Image class="CrownfallLogoCN" src="file://{images}/events/crownfall/logos/crownfall_logo_cn.psd" scaling="stretch-to-fit-preserve-aspect" />
+
+				<Panel class="ActSelectorDropdown" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );">
+					<Label class="ActNumber LabelSmall" text="{s:active_act_number}"/>
+					<Panel class="TopBottomFlow HorizontalCenter">
+						<Label class="ActName BodyExtraLarge" text="{s:active_act_title}"/>
+						<Image class="Caret" src="file://{images}/control_icons/24px/caret_down.svg" scaling="stretch-to-fit-y-preserve-aspect" />
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<DOTACrownfallButton id="ActivateButton" text="#DOTA_Crownfall_Overworld_SetActive" class="Secondary" onactivate="DOTAActivateOverworld()" />
+
+			                                
+			<Panel class="RewardsContainer FullCompletion">
+				<Panel class="ProgressBarContainer" >
+					<Panel class="FlowRight HorizontalCenter">
+						<Panel id="FullProgressBarContainer" class="FlowDown">
+							<Label class="RewardsTitle LabelExtraLarge" text="{d:full_total_earned} / {d:full_total_max}" />
+							<Label class="CompleteLabel LabelSmall" text="#DOTA_Crownfall_Overworld_Complete" />
+						</Panel>
+						<Panel id="FullCompletionReward" class="RewardTypeIconContainer" >
+							<AnimatedImageStrip class="RewardTypeIcon StyleUnlock" src="file://{images}/emoticons/crownfall/props/prop_reward_style_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+						</Panel>
+					</Panel>
+					<ProgressBar id="FullProgressBar" class="ProgressBar" value="0.0" />
+				</Panel>
+			</Panel>
+			
+			<Panel class="RewardsContainer">
+				<Panel class="ProgressBarContainer Basic" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressBasic )" onmouseout="UIHideTextTooltip()" >
+					<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Free"/>
+					<ProgressBar id="BasicProgressBar" class="ProgressBar" value="0.0" />
+				</Panel>
+
+				<AsyncDataPanel class="RewardListStatus" state="{d:overworld_page_state}" loading-text="#DOTA_Crownfall_Overworld_Rewards_Loading" error-text="#DOTA_Crownfall_Overworld_Rewards_FailedToLoad">
+					<Panel class="AsyncSuccessContainer RewardsList">
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_StoreCoins )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Coin" src="file://{images}/emoticons/crownfall/props/prop_reward_coin_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:basic_storecoin_earned}" />
+							<Label class="RewardDescription" text="/{d:basic_storecoin_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CandySacks )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Candy" src="file://{images}/emoticons/crownfall/props/prop_reward_candy_sack_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:basic_candysack_earned}" />
+							<Label class="RewardDescription" text="/{d:basic_candysack_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_Treasures )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Chest" src="file://{images}/emoticons/crownfall/props/prop_reward_chest_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:basic_treasure_earned}" />
+							<Label class="RewardDescription" text="/{d:basic_treasure_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_Baubles )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Bauble" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:basic_bauble_earned}" />
+							<Label class="RewardDescription" text="/{d:basic_bauble_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_StyleUnlocks )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon StyleUnlock" src="file://{images}/emoticons/crownfall/props/prop_reward_style_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:basic_styleunlock_earned}" />
+							<Label class="RewardDescription" text="/{d:basic_styleunlock_max} " />
+						</Panel>
+					</Panel>
+				</AsyncDataPanel>
+			</Panel>
+			<Panel class="DashDotDivider">
+				<Panel class="Dash Left"/>
+				<Image class="Rope" src="file://{images}/events/crownfall/overworld/midgate/midgate_premium_rope.png" scaling="stretch-to-fit-y-preserve-aspect"/>
+				<Panel class="Dash Right"/>
+			</Panel>
+
+			<Panel class="RewardsContainer Premium">
+				<Panel class="ProgressBarContainer Premium" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressPremium )" onmouseout="UIHideTextTooltip()">
+					<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Paid" />
+					<ProgressBar id="PremiumProgressBar" class="ProgressBar" value="0.0" />
+				</Panel>
+
+				<AsyncDataPanel class="RewardListStatus" state="{d:overworld_page_state}" loading-text="#DOTA_Crownfall_Overworld_Rewards_Loading" error-text="#DOTA_Crownfall_Overworld_Rewards_FailedToLoad">
+					<Panel class="AsyncSuccessContainer RewardsList">
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_StoreCoins )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Coin" src="file://{images}/emoticons/crownfall/props/prop_reward_coin_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:premium_storecoin_earned}" />
+							<Label class="RewardDescription" text="/{d:premium_storecoin_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CandySacks )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Candy" src="file://{images}/emoticons/crownfall/props/prop_reward_candy_sack_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:premium_candysack_earned}" />
+							<Label class="RewardDescription" text="/{d:premium_candysack_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_Treasures )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Chest" src="file://{images}/emoticons/crownfall/props/prop_reward_chest_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:premium_treasure_earned}" />
+							<Label class="RewardDescription" text="/{d:premium_treasure_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_Baubles )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon Bauble" src="file://{images}/emoticons/crownfall/props/prop_reward_gift_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:premium_bauble_earned}" />
+							<Label class="RewardDescription" text="/{d:premium_bauble_max} " />
+						</Panel>
+						<Panel class="RewardTypeContainer" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_StyleUnlocks )" onmouseout="UIHideTextTooltip()">
+							<Panel class="RewardTypeIconContainer">
+								<AnimatedImageStrip class="RewardTypeIcon StyleUnlock" src="file://{images}/emoticons/crownfall/props/prop_reward_style_idle.png" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+							</Panel>
+							<Label class="RewardCount" text="{d:premium_styleunlock_earned}" />
+							<Label class="RewardDescription" text="/{d:premium_styleunlock_max} " />
+						</Panel>
+					</Panel>
+				</AsyncDataPanel>
+
+				<Panel class="ActPassContainer">
+					<Label class="ActPassDescription BodySmall" html="true" text="#DOTA_Crownfall_ActPassDescription" />
+					<DOTACrownfallButton id="ViewPassButton" text="#DOTA_Crownfall_ActPassButtonLabel" class="Secondary Blue GlowButton" />
+				</Panel>
+				<Panel class="OwnActPassContainer">
+					<DOTACrownfallButton id="ViewStoreButton" text="#DOTA_Crownfall_ViewStoreButtonLabel" class="Secondary Blue GlowButton" onactivate="DOTAShowBPCrownfallStorePage()" />
+				</Panel>
+			</Panel>
+
+			<Panel class="DashDotDivider ShortcutUI">
+				<Panel class="Dash Left"/>
+				<Panel class="Dot"/>
+				<Panel class="Dash Right"/>
+			</Panel>
+			
+			<Panel class="ShortcutsOuter ShortcutUI">
+				
+				<Label class="ShortcutsTitle LabelMedium" text="#DOTA_Overworld_EncounterShortcuts" />
+				<Panel id="EncounterShortcutContainer"/>
+			</Panel>
+
+			                                                                                            			
+			
+			<Panel class="FinalSetContainer">
+				<Panel class="CompletionSetContainer">
+					<EconItemImage id="CompletionSetImage" defaultsrc="" scaling="cover" />
+				</Panel>
+			</Panel>
+			
+			<Panel class="VerticalSpacer"/>
+		</Panel>
+
+	</DOTACrownfallOverworldPage>
+</root>

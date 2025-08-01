@@ -1,0 +1,49 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/dashboard_page_shared.css" />
+		<include src="file://{resources}/styles/context_menus/context_menu_candy_shop_debug.css" />
+	</styles>
+
+	<snippets>
+		<snippet name="CandyRow">
+			<Panel class="CandyRow">
+				<Label class="CandyID" text="{d:candy_type_id}:" />
+				<DOTACandyImage id="CandyImage" />
+				<NumberEntry id="NumberEntry" min="1" max="50" value="1" />
+				<TextButton id="GrantButton" class="PopupButton Blue" text="Grant" />
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<Panel class="CandyShopDebugContents">
+		<Label class="Title" text="Candy Shop Debug Tools" />
+		<Label class="ShopName" text="{s:shop_name}" />
+
+		<Panel class="CandyBagTools">
+			<EconItemImage id="CandyBagImage" />
+			<NumberEntry id="CandyBagNumberEntry" min="1" max="50" value="5" />
+			<TextButton id="GrantButton" class="PopupButton Blue" text="Grant" onactivate="DOTACandyShopDebugGrantCandyBags()" />
+		</Panel>
+
+		<Panel class="RerollTools">
+			<Panel id="RerollImage" />
+			<NumberEntry id="RerollChargesNumberEntry" min="1" max="50" value="5" />
+			<TextButton id="GrantButton" class="PopupButton Blue" text="Grant" onactivate="DOTACandyShopDebugGrantRerollCharges()" />
+		</Panel>
+
+		<Panel id="CandyRows">
+			                          
+		</Panel>
+
+		<TextButton id="ClearInventoryButton" class="DebugActionButton PopupButton" text="Clear Inventory" />
+		<TextButton id="ShuffleExchangeButton" class="DebugActionButton PopupButton" text="Shuffle Exchange" />
+
+		<Panel class="DebugSection DebugSection__Crownfall">
+			<Label class="DebugSectionTitle" text="Crownfall" />
+			<TextButton id="CrownfallResetButton" class="DebugActionButton PopupButton" text="Reset to Level 1" onactivate="DOTACandyShopDebugResetShop()" />
+			<TextButton id="CrownfallLevelUpButton" class="DebugActionButton PopupButton" text="Upgrade" onactivate="DOTACandyShopDebugUpgradeShop()" />
+		</Panel>
+	</Panel>
+	
+</root>
