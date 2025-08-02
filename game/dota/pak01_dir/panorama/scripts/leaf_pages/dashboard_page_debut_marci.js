@@ -1,20 +1,20 @@
-   
-                   
-                                         
-  
-   
+/**
+ * MARCI DEBUT PAGE
+ * file:    dashboard_page_debut_marci.js
+ *
+ */
 var animGuardAction;
 var debug_animation = false;
 
 
-   
-                                                                                 
-                        
-   
-                                                                       
-   
-                                                
-   
+/**
+ * Samples a camera dof value between two ranges at time t following an ease-in, 
+ * ease-out parametric: 
+ * 
+ * https://math.stackexchange.com/questions/121720/ease-in-out-function
+ * 
+ * If a is set to 1 the ramp function is linear.
+ */
 var get_dof_value = function(
         start_dof, end_dof, i_val, num_samples, a=2, dof_property='SetDOFFarBlurry', 
         msg_prefix='TEST', camera_name='hero_camera', model_id='#ModelForeground')
@@ -33,20 +33,20 @@ var get_dof_value = function(
     }
 }
 
-   
-                                               
-   
+/**
+ * Main function linked to triggering the debut
+ */
 
 var RunPageAnimation = function ()
 {
-                                                                                                   
+    // Kill any existing animation/sound -- we're about to tear down the entire page and rebuild it
     PlayAndTrackSoundAction.StopAllTrackedSounds();
 
     if ( animGuardAction != undefined )
         animGuardAction.TriggerFailure();
     $( '#ModelContainer' ).RemoveAndDeleteChildren();
 
-                                   
+    // Start the debut from scratch
     $( '#ModelContainer' ).BLoadLayoutSnippet( 'ModelSnippet' );
     $( '#MarciDebutMovie' ).RemoveClass( "MovieFinished" );
 
@@ -68,9 +68,9 @@ var RunPageAnimation = function ()
 
 
     if(debug_animation) {
-          
-                                                               
-          
+        //
+        // static, final-frame setup for portrait lighting work
+        //
         seq.actions.push( new RunFunctionAction( function() { $('#ModelForeground_FG').FireEntityInput( "marci", "SetAnimation", "marci_debut_anim_loop" ); }));
         seq.actions.push( new RunFunctionAction( function() { $('#ModelForeground_FG').FireEntityInput( "hero_camera_driver", "SetAnimation", "debut_camera_last_frame" ); }));
 
@@ -78,9 +78,9 @@ var RunPageAnimation = function ()
 
 
     } else {
-          
-                        
-          
+        //
+        // the real deal
+        //
 
         seq.actions.push( new RunFunctionAction( function() { $('#ModelForeground_FG').FireEntityInput( "hero_camera_driver", "SetAnimation", "debut_camera_anim" ); }));
         seq.actions.push( new RunFunctionAction( function() { $('#ModelForeground').FireEntityInput( "hero_camera_driver", "SetAnimation", "debut_camera_anim" ); }));
@@ -91,7 +91,7 @@ var RunPageAnimation = function ()
 
         seq.actions.push(new WaitAction(2.4));
 
-                                                                              
+        // animate rack focus transitioning to the middle sequence (hero shot)
         num_samples = 25;
         s_far_crisp = 2000;
         s_far_blurry = 4000;
@@ -109,14 +109,14 @@ var RunPageAnimation = function ()
             fn = get_dof_value( s_far_blurry, e_far_blurry, i, num_samples, a=2, dof_property="SetDOFFarBlurry" );
             seq.actions.push( new RunFunctionAction( fn ) );
         }
-                     
+        // (end rack)
 
-                              
+        // show the info panel
         seq.actions.push( new AddClassAction( $( '#DebutInformation' ), 'Initialize' ) );
         seq.actions.push( new AddClassAction( $( '#InformationBody' ), 'Initialize' ) );
 
-                                                                                   
-                                                
+        // enable mouse hover parallax (disable when blocking out camera animation)
+        //seq.actions.push(new WaitAction(0.5));
         seq.actions.push(new WaitAction(2.84));
 
         seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'ModelForeground', 'hero_camera_post', 4.0 );  } ) )
@@ -126,24 +126,24 @@ var RunPageAnimation = function ()
         seq.actions.push(new LerpRotateAction($('#ModelForeground'), 0, 0, 0, 0, -1.25, 1.25, -0.33, 0.33, 0.1));
         seq.actions.push(new LerpRotateAction($('#ModelForeground_FG'), 0, 0, 0, 0, -1.25, 1.25, -0.33, 0.33, 0.1));
 
-                                                 
+        // set marci's animation to her keepalive
         seq.actions.push( new RunFunctionAction( function() { $('#ModelForeground_FG').FireEntityInput( "marci", "SetAnimation", "marci_debut_anim_loop" ); }));
     }
 
-                                                            
+    // Squirrel away the guard so we can abort this sequence
     animGuardAction = new GuardedAction( seq );
 
-                          
+    // play the sequences!
     RunSingleAction( animGuardAction );
 }
 
 
-   
-                                                
-   
+/**
+ * post-callback assigned when leaving the debut
+ */
 var EndPageAnimation = function()
 {
-                                      
+    //$.Msg("Marci EndPageAnimation");
 
     PlayAndTrackSoundAction.StopAllTrackedSounds();
 
@@ -158,5 +158,5 @@ var EndPageAnimation = function()
         $('#InformationBody').RemoveClass('Initialize');
     }
 
-                                          
+    //$.DispatchEvent('DOTAShowHomePage');
 }

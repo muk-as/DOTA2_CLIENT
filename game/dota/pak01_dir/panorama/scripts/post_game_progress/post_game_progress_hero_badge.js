@@ -1,14 +1,14 @@
 
-                                                                               
-                            
-                                                                               
+// ----------------------------------------------------------------------------
+//   Hero Badge Level Screen
+// ----------------------------------------------------------------------------
 
 function GetXPIncreaseAnimationDurationOld( xpAmount )
 {
 	return RemapValClamped( xpAmount, 0, 500, 0.5, 1.0 );
 }
 
-                                             
+// Action to animate a hero badge xp increase
 class AnimateHeroBadgeXPIncreaseActionOld extends RunSequentialActions
 {
 	constructor( panel, progress, xpAmount, xpValueStart, xpEarnedStart, xpLevelStart, resumeFromPreviousRow )
@@ -90,7 +90,7 @@ class AnimateHeroBadgeXPIncreaseActionOld extends RunSequentialActions
 }
 
 
-                                              
+// Action to display victory prediction shards
 class AnimateShardRewardActionOld extends RunSequentialActions
 {
 	constructor( panel, label, shardAmount )
@@ -237,7 +237,7 @@ class AnimateHeroBadgeLevelScreenAction extends RunSequentialActions
 			xpLevelStart = xpLevelNext;
 		}
 
-		                                                    
+		// Create the screen and do a bunch of initial setup
 		var panel = StartNewScreen( 'HeroBadgeProgressScreen' );
 		panel.BLoadLayoutSnippet( "HeroBadgeProgress" );
 		panel.FindChildInLayoutFile( "HeroBadgeProgressHeroBadge" ).herolevel = heroLevelStart;
@@ -253,16 +253,16 @@ class AnimateHeroBadgeLevelScreenAction extends RunSequentialActions
 		var heroModel = panel.FindChildInLayoutFile( 'HeroBadgeHeroModel' );
 		if ( typeof this.data.player_slot !== 'undefined' )
 		{
-			                                             
+			// Use this normally when viewing the details
 			heroModel.SetScenePanelToPlayerHero( this.data.match_id, this.data.player_slot );
 		}
 		else
 		{
-			                                                              
+			// Use this for testing when we don't actually have match data
 			heroModel.SetScenePanelToLocalHero( this.data.hero_id );
 		}
 
-		                                                      
+		// Setup the sequence of actions to animate the screen
 		this.actions.push( new AddClassAction( panel, 'ShowScreen' ) );
 		this.actions.push( new ActionWithTimeout( new WaitForClassAction( heroModel, 'SceneLoaded' ), 3.0 ) );
 		this.actions.push( new WaitAction( 0.5 ) );
@@ -432,7 +432,7 @@ class AnimateHeroBadgeLevelScreenAction extends RunSequentialActions
 			this.actions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
 		}
 
-		                         
+		// Now animate the relics
 		if ( this.data.hero_relics_progress_old )
 		{
 			if ( this.data.hero_relics_progress_old.length > 0 )

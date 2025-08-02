@@ -26,7 +26,7 @@ Init();
 function OnThink()
 {
 	var host_time_scale = Game.GetConvarFloat( "host_timescale" );
-	                                                  
+	//$.Msg( "HOST TIME SCALE = " + host_time_scale );
 
 	var SpeedButton = $( '#SpeedResetButton' )    
 	if ( SpeedButton )
@@ -55,14 +55,14 @@ function ToggleHeroPicker( bMainHero )
 
 function EscapeHeroPickerSearch()
 {
-	                                                                                              
-	   
-	  	                                       
-	   
-	      
-	   
+	//if ( $( "#SelectHeroContainer" ).FindChildTraverse( "HeroSearchTextEntry" ).BHasKeyFocus() )
+	//{
+	//	$( "#SelectHeroContainer" ).SetFocus();
+	//}
+	//else
+	//{
 		SetHeroPickerVisible( false );
-	   
+	//}
 }
 
 function CloseHeroPicker()
@@ -190,7 +190,7 @@ GameEvents.Subscribe( "set_spawn_hero_id", OnSetSpawnHeroID );
 
 function ToggleCategoryVisibility( str )
 {
-                                                       
+    //$.Msg( "^^^ToggleCategoryVisibility() - " + str )
     $( str ).ToggleClass( 'CollapseCategory' )
 }
 
@@ -199,8 +199,8 @@ function OnAddNewHeroEntry( event_data )
 {
 	$.Msg( "OnAddNewHeroEntry: ", event_data );
 
-	                                                                     
-	                                                 
+	// disabling experiment to add the spawned hero to your selection set
+	//GameUI.SelectUnit( event_data.entindex, true );
 }
 GameEvents.Subscribe( "add_new_hero_entry", OnAddNewHeroEntry );
 
@@ -221,7 +221,7 @@ function RemoveSelectedHeroes()
 		if ( PlayerOwnerID == 0 && bIsRealHero )
 		{
 			$.Msg( 'Skipping ent! ' + entindex );
-			continue;	                           
+			continue;	// don't delete the player!
 		}
 
 		bDeletionAttempted = true;

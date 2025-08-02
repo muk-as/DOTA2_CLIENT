@@ -1,20 +1,20 @@
-   
-                         
-                                               
-  
-   
+/**
+ * DAWNBREAKER DEBUT PAGE
+ * file:    dashboard_page_debut_dawnbreaker.js
+ *
+ */
 var seq;
 var debug_animation = false;
 
 
-   
-                                                                                 
-                        
-   
-                                                                       
-   
-                                                
-   
+/**
+ * Samples a camera dof value between two ranges at time t following an ease-in, 
+ * ease-out parametric: 
+ * 
+ * https://math.stackexchange.com/questions/121720/ease-in-out-function
+ * 
+ * If a is set to 1 the ramp function is linear.
+ */
 var get_dof_value = function(
     start_dof, end_dof, i_val, num_samples, a = 2, dof_property = 'SetDOFFarBlurry',
     msg_prefix = 'TEST', camera_name = 'intro_camera', model_id = '#Model' )
@@ -30,15 +30,15 @@ var get_dof_value = function(
     return function()
     {
         $( '#ModelBackground' ).FireEntityInput( 'hero_camera', dof_property, sampled );
-                                                                          
-                                                                                                                                             
+        //$(model_id).FireEntityInput(camera_name, dof_property, sampled);
+        //$.Msg( msg_prefix + ": i = " + i_val.toString() + "/" + num_samples.toString() + ";" + dof_property + " = " + sampled.toString() );
     };
 };
 
 
-   
-                                               
-   
+/**
+ * Main function linked to triggering the debut
+ */
 var RunPageAnimation = function()
 {
     seq = new RunSequentialActions();
@@ -59,7 +59,7 @@ var RunPageAnimation = function()
 
     seq.actions.push( new RunFunctionAction( function() { $( '#ModelBackground' ).FireEntityInput( 'dawnbreaker_hammer_ambient_fx', "stop", '0' ); } ) );
 
-                                 
+    // play valora debut sequence
     seq.actions.push( new RunFunctionAction( function() { $( '#ModelBackground' ).FireEntityInput( 'dawnbreaker_debut_fx_model', "SetAnimation", 'dawnbreaker_debut_layout' ); } ) );
     if ( debug_animation )
     {
@@ -87,11 +87,11 @@ var RunPageAnimation = function()
     seq.actions.push( new WaitAction( 4.0 ) );
 
     seq.actions.push( new AddClassAction( $( '#DebutInformation' ), 'Initialize' ) );
-                                                                                      
+    //seq.actions.push( new AddClassAction( $( '#InformationBody' ), 'Initialize' ) );
 
-      
-                                                                      
-      
+    //
+    // animate rack focus transitioning from beginning to mid sequence
+    //
     num_samples = 8;
     s_near_blurry = 150;
     s_near_crisp = 500;
@@ -134,24 +134,24 @@ var RunPageAnimation = function()
         seq.actions.push( new RunFunctionAction( fn ) );
     }
 
-                                  
+    // enable mouse hover parallax
     seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 3.0 ); } ) );
     seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTAGlobalSceneSetRootEntity', 'ModelBackground', 'root_post' ); } ) );
     seq.actions.push( new LerpRotateAction( $( '#ModelBackground' ), 0, 0, 0, 0, -3, 6, 0, 0, 3.0 ) );
 
-                               
+    // queue the loopable idle 
     seq.actions.push( new WaitAction( 5.5 ) );
     seq.actions.push( new RunFunctionAction( function() { $( '#ModelBackground' ).FireEntityInput( 'valora', "SetAnimation", 'battlemaiden_debut_idle' ); } ) );
 
 
-                          
+    // play the sequences!
     RunSingleAction( seq );
 };
 
 
-   
-                                                
-   
+/**
+ * post-callback assigned when leaving the debut
+ */
 var EndPageAnimation = function()
 {
     if ( seq != undefined )
@@ -165,8 +165,8 @@ var EndPageAnimation = function()
     $( '#ModelBackground' ).RemoveClass( 'Initialize' );
 
     $( '#DebutInformation' ).RemoveClass( 'Initialize' );
-                                                      
+    //$('#InformationBody').RemoveClass('Initialize');
 
-                                          
+    //$.DispatchEvent('DOTAShowHomePage');
 };
 

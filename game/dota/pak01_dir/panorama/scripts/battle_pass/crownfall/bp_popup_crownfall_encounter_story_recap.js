@@ -1,12 +1,12 @@
 "use strict";
 
 var step = 0;
-                        
-                  
-                  
-                    
-                     
-         
+// 0 open, show column 1
+// 1 show column 2
+// 2 show column 3
+// 3 show story page
+// 4 go to comic page
+// 5 exit
 
 function SetStep(newStep) {
     let panel = $.GetContextPanel();

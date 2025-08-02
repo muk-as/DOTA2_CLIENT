@@ -60,7 +60,7 @@ function alternateStyle() {
 
 function originalStyle() {
     $.GetContextPanel().RemoveClass( 'ShowingAlternateStyle' );
-                         
+    // play blue blink fx
     CameraToggle();
     $( '#ModelBackground' ).FireEntityInput( 'qop_arcana_alt', 'SetActivityModifier', 'debut_alt_style' );
     $( '#ModelBackground' ).FireEntityInput( 'qop_arcana_alt', 'SetActivity', 'ACT_BARNACLE_CHEW' );

@@ -1,4 +1,4 @@
-                                                          
+// -------------------------------------------------------
 
 var DOTA_TEAM_GOODGUYS = 2;
 var DOTA_TEAM_BADGUYS = 3;
@@ -22,7 +22,7 @@ var testData = {
 	]
 };
 
-                                                          
+// -------------------------------------------------------
 
 class PlaySoundIfVisibleAction extends RunFunctionAction
 {
@@ -43,7 +43,7 @@ class PlaySoundIfVisibleAction extends RunFunctionAction
 	}
 }
 
-                                                          
+// -------------------------------------------------------
 
 class AnimateTowerSurvival extends RunSequentialActions
 {
@@ -69,7 +69,7 @@ class AnimateTowerSurvival extends RunSequentialActions
 }
 
 
-                                                          
+// -------------------------------------------------------
 
 class AnimateTowerDestroyed extends RunSequentialActions
 {
@@ -97,16 +97,16 @@ class AnimateTowerDestroyed extends RunSequentialActions
 				fxPanel.SetControlPoint( 15, 0xFF, 0xFF, 0xA0 );
 				fxPanel.StartParticles();
 			} ) );
-		this.seq.actions.push( new WaitAction( 0.1 ) );                                                                   
+		this.seq.actions.push( new WaitAction( 0.1 ) );  // let the particle system play briefly before showing the number
 		this.seq.actions.push( new AddClassAction( towerPanel, "FXCompleted" ) );
 
 		super.start();
 	}
 }
 
-                                                          
+// -------------------------------------------------------
 
-                  
+// called from c++
 function InitNemesticeTowerReplay( towersData )
 {
 	if ( typeof towersData === 'object' && towersData !== null && Array.isArray( towersData.towers ) )
@@ -116,9 +116,9 @@ function InitNemesticeTowerReplay( towersData )
 		minimapOverlay.RemoveClass( "FadeOff" );
 		minimapOverlay.RemoveAndDeleteChildren();
 		var seq = new RunSequentialActions();
-		seq.actions.push( new WaitAction( 0.5 ) );                                  
+		seq.actions.push( new WaitAction( 0.5 ) ); // extra delay before first tower
 
-		                                                      
+		// create all the towers, some which will be destroyed
 		vTowerPanels = [];
 		vTowersArray.forEach( function( towerData, index )
 		{
@@ -163,13 +163,13 @@ function InitNemesticeTowerReplay( towersData )
 				}
 				var bIsFinalDestruction = ( index + 1 < vTowersArray.length && vTowersArray[index + 1].time_destroyed < 0 );
 
-				seq.actions.push( new WaitAction( 0.35 ) );                        
+				seq.actions.push( new WaitAction( 0.35 ) ); // delay between towers
 				seq.actions.push( new AnimateTowerDestroyed( towerPanelName ) );
 				if ( bIsFinalDestruction )
 				{
-					seq.actions.push( new WaitAction( 1.0 ) );                                                                
+					seq.actions.push( new WaitAction( 1.0 ) ); // extra delay after final destruction before showing surviving
 
-					                                    
+					// make sound for the actual winners
 					var victorySound = "Nemestice.Victory";
 					seq.actions.push( new PlaySoundIfVisibleAction( victorySound ) );
 					seq.actions.push( new WaitAction( 0.05 ) );

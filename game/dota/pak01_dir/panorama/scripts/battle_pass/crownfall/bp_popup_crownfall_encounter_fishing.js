@@ -12,7 +12,7 @@ function PlayFinalSound(nScore) {
 function QueueScoreRowEffects( rowPanelID, flDelay, bFinalSound, nScore ) {
     let panel = $("#" + rowPanelID);
 
-                                                 
+    //$.Msg(flDelay + " DELAY -> " + rowPanelID);
     $.Schedule(flDelay, function () {
         if (bFinalSound) {
             PlayUISoundScript("crownfall.fishing.score.prefinal");

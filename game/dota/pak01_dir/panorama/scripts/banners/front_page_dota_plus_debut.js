@@ -1,2 +1,2 @@
-$.GetContextPanel().SetDialogVariableInt( 'one_month_subscription_item_def', 19999 );                                        
-$.GetContextPanel().SetDialogVariableInt( 'one_month_prepaid_item_def', 19998 );                                           
+$.GetContextPanel().SetDialogVariableInt( 'one_month_subscription_item_def', 19999 ); // k_ItemDefIndex_OneMonthPlusRecurring
+$.GetContextPanel().SetDialogVariableInt( 'one_month_prepaid_item_def', 19998 ); // k_ItemDefIndex_OneMonthPlusNonRecurring

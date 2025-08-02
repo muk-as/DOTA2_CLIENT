@@ -12,7 +12,7 @@ var sectionNames = [
 ]
 function NavigationSelect(sectionIndex) {
     if (sectionIndex < 0 || sectionIndex >= sectionNames.length) {
-                
+        // Error
         return;
     }
     var mainBodyPanel = $("#MainBody");

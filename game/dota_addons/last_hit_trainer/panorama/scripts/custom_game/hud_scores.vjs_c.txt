@@ -1,4 +1,4 @@
-                                                                  
+// Defaults for globals.  Will be overwritten by custom net tables
 gStats = {
 	"m_LastHitCount" : 0, 
 	"m_CurrentLastHitStreakCount": 0,
@@ -20,7 +20,7 @@ function SetText(name, value)
 
 function UpdateScores()
 {
-	                            
+	//$.Msg("Setting ", gStats);
 
 	SetText('#Score', "" + gStats["m_Score"]);
 	SetText('#CurrentLastHitStreak', gStats["m_CurrentLastHitStreakCount"]);
@@ -32,18 +32,18 @@ function UpdateScores()
 
 function OnLastHitTrainerStatsUpdated( tableName, key, data )
 {
-	                              
+	//$.Msg("STATS DATA RECEIVED")
 	gStats = data;
 
-	                                                       
+	//$.Msg( "data m_DenyCount: ", data[ "m_DenyCount" ] );
 
 	UpdateScores();
 }
 
 (function()
 {
-	                                                
+	//$.Msg("INITIALIZED PANORAMA JS: score panel");
 	CustomNetTables.SubscribeNetTableListener("last_hit_trainer_stats", OnLastHitTrainerStatsUpdated);
 
-	                 
+	//UpdateScores();
 })();

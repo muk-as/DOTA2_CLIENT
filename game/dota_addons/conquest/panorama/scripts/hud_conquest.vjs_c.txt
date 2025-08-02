@@ -24,7 +24,7 @@ function CPInfo( cp_num )
 
 function UpdateCPNew( data )
 {
-  	                               
+//	$.Msg( "UpdateCPNew: ", data );
 	var info =
 	{
 		"cp_number" : data.cp_number,
@@ -41,13 +41,13 @@ function UpdateCPNew( data )
 		"is_fortified" : ( data.is_fortified != 0 ),
 	}
 
-  	                                   
+//	$.Msg( "UpdateCPNew: --> ", info );
 	UpdateControlPointUI( info );
 }
 
 function UpdateControlPointUI( info )
 {
-	                          
+	//$.Msg( "info: ", info );
     var localPlayerDetails = Game.GetLocalPlayerInfo();
 
 	var localPlayerIsRadiant = localPlayerDetails ? localPlayerDetails.player_team_id == DOTATeam_t.DOTA_TEAM_GOODGUYS : false;
@@ -70,7 +70,7 @@ function UpdateControlPointUI( info )
 	    isAllyControlled = ( info.cp_owner === localPlayerDetails.player_team_id );
 	    isEnemyControlled = ( info.cp_owner === enemyTeam );
 	}
-	else                     
+	else // spectator default
 	{
 		isAllyAttacking = ( info.last_team_capturing === DOTATeam_t.DOTA_TEAM_GOODGUYS );
 	    isEnemyAttacking = ( info.last_team_capturing === DOTATeam_t.DOTA_TEAM_BADGUYS );
@@ -84,7 +84,7 @@ function UpdateControlPointUI( info )
 	var radiantCapturing = isBeingCaptured && info.radiant_capturing > 0 && ( info.cp_owner === DOTATeam_t.DOTA_TEAM_BADGUYS || ( info.cp_owner === DOTATeam_t.DOTA_TEAM_NOTEAM && info.dire_near === 0 ) );
 	var direCapturing = isBeingCaptured && info.dire_capturing > 0 && ( info.cp_owner === DOTATeam_t.DOTA_TEAM_GOODGUYS || ( info.cp_owner === DOTATeam_t.DOTA_TEAM_NOTEAM && info.radiant_near === 0 ) );
 
-	                                 
+	// update styles on the root node
 	var cpInfo = CPInfo( info.cp_number );
 	var cpRoot = $( cpInfo.node_id );
 	cpRoot.SetHasClass( "is_neutral", !isAllyControlled && !isEnemyControlled );
@@ -102,7 +102,7 @@ function UpdateControlPointUI( info )
 	cpRoot.SetHasClass( "dire_capturing", direCapturing );
 	cpRoot.SetHasClass( "being_fortified", isBeingFortified );
 
-	                          
+	// update the progress bar
 	var cpCaptureProgress = cpRoot.FindChildInLayoutFile( "cp_capture_progress_bar" );
 	var offset = info.percentage_cp * 1.45 - 150;
 	if ( isDireAttacking )
@@ -112,7 +112,7 @@ function UpdateControlPointUI( info )
 	var percentStr = offset + "%;";
 	cpCaptureProgress.style.x = percentStr;
 
-	                             
+	// update number of attackers
 	var cpNumberPro = cpRoot.FindChildInLayoutFile( "cp_pro_number" );
 	var cpNumberAnti = cpRoot.FindChildInLayoutFile( "cp_anti_number" );
 	if (radiantCapturing)
@@ -151,11 +151,11 @@ function UpdateSharedCPStyles()
     }
 
 	var all_points_captured = good + bad == 5;
-	SetContestable( "#CP1", true);                       
-	SetContestable( "#CP2", true);                       
-	SetContestable( "#CP3", true);                                     
-	SetContestable( "#CP4", true);                       
-	SetContestable( "#CP5", true);                       
+	SetContestable( "#CP1", true);//all_points_captured);
+	SetContestable( "#CP2", true);//all_points_captured);
+	SetContestable( "#CP3", true); //middle point is always contestable
+	SetContestable( "#CP4", true);//all_points_captured);
+	SetContestable( "#CP5", true);//all_points_captured);
 
 	if ( good == bad )
 	{
@@ -190,7 +190,7 @@ function SetContrib( panelName, val )
 
 function UpdateSharedCPStylesFromBias( bias )
 {
-  	                                                
+//	$.Msg( "UpdateSharedCPStylesFromBias: ", bias );
 	$( "#CapturePoints" ).SetHasClass( "cp_bias_m3", bias <= -3 );
 	$( "#CapturePoints" ).SetHasClass( "cp_bias_m2", bias == -2 );
 	$( "#CapturePoints" ).SetHasClass( "cp_bias_m1", bias == -1 );
@@ -199,13 +199,13 @@ function UpdateSharedCPStylesFromBias( bias )
 	$( "#CapturePoints" ).SetHasClass( "cp_bias_p2", bias == 2 );
 	$( "#CapturePoints" ).SetHasClass( "cp_bias_p3", bias >= 3 );
 
-	  
-	                                                       
-	                                                       
-	                                                                    
-	                                                       
-	                                                       
-	    
+	/*
+	SetContestable( "#CP1", ( bias == -3 || bias == -2 ) );
+	SetContestable( "#CP2", ( bias == -2 || bias == -1 ) );
+	SetContestable( "#CP3", ( bias == -1 || bias == 0 || bias ==  1 ) );
+	SetContestable( "#CP4", ( bias ==  1 || bias ==  2 ) );
+	SetContestable( "#CP5", ( bias ==  2 || bias ==  3 ) );
+	//*/
 
 	SetContrib( "#CP1", bias <= -3 );
 	SetContrib( "#CP2", bias <= -2 );
@@ -214,11 +214,11 @@ function UpdateSharedCPStylesFromBias( bias )
 	SetContrib( "#CP5", bias >=  3 );
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnCountdownTimer( data )
 {
-   	                                    
+// 	$.Msg( "OnCountdownTimer: ", data );
 	$.GetContextPanel().AddClass( "active_timer" );
     if ( ( data.timer_minute_01 < 1 ) && ( data.timer_minute_10 < 1 ) )
     {
@@ -235,15 +235,15 @@ function OnCountdownTimer( data )
 	timerText += ":";
 	timerText += data.timer_second_10;
 	timerText += data.timer_second_01;
-                                             
+//  $.Msg( "OnCountdownTimer: ", timerText );
 	$( "#timer_digits" ).text = timerText;
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnCPClicked( cp )
 {
-                                   
+//    $.Msg( "OnCPClicked: ", cp );
 	var cpInfo = CPInfo( cp );
 	Game.MoveLocalCameraToEntityByName( cpInfo.entity_name );
 }
@@ -255,15 +255,15 @@ function MakeCPClickedCallback( cp )
 
 function OnNetTableChanged( table, key, data )
 {
-  	                                                             
+//	$.Msg( "OnNetTableChanged: ", table, ", ", key, ", ", data );
 	UpdateCPNew( data );
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnGameStateChanged( table, key, data )
 {
-  	                                                              
+//	$.Msg( "OnGameStateChanged: ", table, ", ", key, ", ", data );
 	if ( key !== "game_state" )
 		return;
 	var countdown_timer = Math.floor( data.cp_game_timer );
@@ -288,8 +288,8 @@ function OnGameStateChanged( table, key, data )
 	}
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function FakeScore()
 {
 	var BASE = 1200;
@@ -306,7 +306,7 @@ function FakeScore()
 	var P_D = 5.5*SCALE;
 	var TCHUNK = 4.5*SCALE;
 	var t = time % P;
-  	                          
+//	t = 10.5 + ( time % 2.5 );
 
 	var CPS =
 	[
@@ -319,12 +319,12 @@ function FakeScore()
 
 	if ( t < P_R )
 	{
-		          
+		// nothing
 		UpdateSharedCPStylesFromBias( 0 );
 	}
 	else if ( t < P_D )
 	{
-		          
+		// radiant
 		var tt = ( t - P_R ) / TCHUNK;
 		var ttc = (tt % 0.3333 / 0.333);
 		score.radiant = BASE + Math.floor( tt * MAX );
@@ -345,7 +345,7 @@ function FakeScore()
 	}
 	else
 	{
-		       
+		// dire
 		var tt = ( t - P_D ) / TCHUNK;
 		var ttc = (tt % 0.3333 / 0.333);
 		score.dire = BASE + Math.floor( tt * MAX );
@@ -365,7 +365,7 @@ function FakeScore()
 		UpdateSharedCPStylesFromBias( 2 - capt.capture_points );
 	}
 	
-  	                                    
+//	$.Msg( "FakeScore: ", score, capt );
 	OnScoreChanged( score );
 	OnTeamGainingPoints( capt );
 	for ( var c of CPS )
@@ -377,11 +377,11 @@ function FakeScore()
 
 function OnScoreChanged( data )
 {
-  	                                     
+//	$.Msg( "DisplayTeamPoints: ", data );
 	var radiant_points = data.radiant;
 	var dire_points = data.dire;
-  	                                      
-  	                                
+//	$( "#Radiant" ).text = radiant_points;
+//	$( "#Dire" ).text = dire_points;
 
     var localPlayerDetails = Game.GetLocalPlayerInfo();
 
@@ -395,7 +395,7 @@ function OnScoreChanged( data )
 			enemyTeam = DOTATeam_t.DOTA_TEAM_BADGUYS;
 		}
 	}
-	                    
+	// spectator default
 	if ( localPlayerDetails == null )
 	{
 		enemyTeam = DOTATeam_t.DOTA_TEAM_BADGUYS;
@@ -409,7 +409,7 @@ function OnScoreChanged( data )
 	{
    		$.GetContextPanel().SetHasClass( "points_dire", true );
 	}
-	                          
+	// update the progress bar
 	var radiant_point_percentage = Math.floor(1000*data.radiant / 4000)*0.1
 	var dire_point_percentage = Math.floor(1000*data.dire / 4000)*0.1 
 	var radiant_percentStr = radiant_point_percentage + "%;";
@@ -418,11 +418,11 @@ function OnScoreChanged( data )
 	$( "#dire_progress_bar" ).style.width = dire_percentStr;
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnTeamGainingPoints( data )
 {
-  	                                  
+//	$.Msg( "Broadcast Team: ", data );
 	var team_number = data.team;
 	var team_capture_points = data.capture_points;
 
@@ -470,11 +470,11 @@ function OnTeamGainingPoints( data )
 	}
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnWaypointActive( data )
 {
-  	                                         
+//	$.Msg( "waypoint_notification: ", data );
 
 	$.GetContextPanel().SetHasClass( "waypoint_active", true );
 
@@ -482,13 +482,13 @@ function OnWaypointActive( data )
 
 	if ( data.team == 2 )
 	{
-  		                                                                 
+//		$( "#WaypointMessage" ).text = $.Localize( "#Radiant_Waypoint" );
 		GameUI.PingMinimapAtLocation( data.location );
 		GameUI.PingMinimapAtLocation( data.exit );
 	}
 	if ( data.team == 3 )
 	{
-  		                                                              
+//		$( "#WaypointMessage" ).text = $.Localize( "#Dire_Waypoint" );
 		GameUI.PingMinimapAtLocation( data.location );
 		GameUI.PingMinimapAtLocation( data.exit );
 	}
@@ -501,11 +501,11 @@ function ClearWaypointMessage()
 	$.GetContextPanel().SetHasClass( "waypoint_active", false );
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnGoalAchieved( data )
 {
-  	                                    
+//	$.Msg( "points_remaining: ", data );
 
 	$.GetContextPanel().SetHasClass( "points_achievement", true );
 
@@ -562,21 +562,21 @@ function OnGoalAchieved( data )
 		$.GetContextPanel().SetHasClass( "milestone_active", true );
 	}
 	
-	  
-	                                 
-	 
-		                                                                     	
-		                               
-		 
-			                                                                          
-		 	
-		    
-		 
-			                                                                       
-		 
-		                                                            
-	 
-	    
+	/*
+	if ( data.achieving_points == 4 )
+	{
+		$( "#PointMessage_Text" ).text = $.Localize( "#Achievement_Fourth" );	
+		if ( data.achieving_team == 2 )
+		{
+			$( "#PointMessage_Points" ).text = $.Localize( "#Reward_Fourth_Radiant" );
+		}	
+		else
+		{
+			$( "#PointMessage_Points" ).text = $.Localize( "#Reward_Fourth_Dire" );
+		}
+		$.GetContextPanel().SetHasClass( "milestone_active", true );
+	}
+	//*/
 
 	if ( data.achieving_points == 4 )
 	{
@@ -603,11 +603,11 @@ function ClearPointMessage()
 	$.GetContextPanel().SetHasClass( "dire_achievement", false );
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 function OnCountdownEnabled( data )
 {
-  	                             
+//	$.Msg( "Countdown: ", data );
 	var winningTeam = data.team;
 	var remainingText = data.score;
 	$.GetContextPanel().SetHasClass( "countdown_active", true );
@@ -624,8 +624,8 @@ function OnCountdownEnabled( data )
 	}
 }
 
-                                                                
-                                                                
+//==============================================================
+//==============================================================
 (function () {
 	var localPlayerInfo  = Game.GetLocalPlayerInfo();
 	var localPlayerIsRadiant = localPlayerInfo ? localPlayerInfo.player_team_id == DOTATeam_t.DOTA_TEAM_GOODGUYS : true;
@@ -633,7 +633,7 @@ function OnCountdownEnabled( data )
 	$( "#RadiantPoints" ).SetHasClass( "local_player_team", localPlayerIsRadiant );
 	$( "#DirePoints" ).SetHasClass( "local_player_team", !localPlayerIsRadiant );
 
-	                                       
+	// set up the UI for each control point
     for ( var cp of CONTROL_POINT_INFO )
     {
 		var cpRootNode = $( cp.node_id );
@@ -648,15 +648,15 @@ function OnCountdownEnabled( data )
 		}
 
 		cpRootNode.BLoadLayout( "file://{resources}/layout/custom_game/conquest_cp.xml", false, false );
-  		                                                                               
-  		                       
+//		cpRootNode.FindChildInLayoutFile( "label" ).text = $.Localize( cp.label_text );
+//		$.Msg( "BLoadLayout" );
     }
 
     for ( var cp_initial_state of CustomNetTables.GetAllTableValues( "control_points" ) )
     {
-  		                                                      
+//		$.Msg( "cp_initial_state: ", cp_initial_state.value );
 		UpdateCPNew( cp_initial_state.value );
-  		                       
+//		$.Msg( "Updating CP" );
     }
 
 	GameEvents.Subscribe( "team_points", OnScoreChanged );
@@ -666,7 +666,7 @@ function OnCountdownEnabled( data )
 	GameEvents.Subscribe( "waypoint_notification", OnWaypointActive );
 	CustomNetTables.SubscribeNetTableListener( "control_points", OnNetTableChanged );
 	CustomNetTables.SubscribeNetTableListener( "game_state", OnGameStateChanged );
-  	            
+//	FakeScore();
 })();
 
 

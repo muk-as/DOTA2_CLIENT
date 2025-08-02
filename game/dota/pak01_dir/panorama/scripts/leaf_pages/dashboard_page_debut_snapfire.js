@@ -1,6 +1,6 @@
 var OnPageSetupSuccess = function ()
 {
-	                                                 
+	// Disabling Fullscreen allows Menu UI to display
 	$.DispatchEvent('DOTASetCurrentDashboardPageFullscreen', true);
 }
 
@@ -21,7 +21,7 @@ var RunPageAnimation = function ()
 
     seq.actions.push( new WaitAction( 4.0 ) );
 	seq.actions.push( new AddClassAction( $( '#DebutInformation' ), 'Initialize' ) );
-                           
+// enabling camera movement
 	seq.actions.push( new RunFunctionAction( function() 
 	{
 	    $('#Model').SetRotateParams( -1, 0, -1, 0 );

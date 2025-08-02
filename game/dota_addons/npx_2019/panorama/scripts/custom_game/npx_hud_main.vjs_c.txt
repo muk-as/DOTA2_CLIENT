@@ -61,19 +61,19 @@ function OnWinButtonClicked()
 GameEvents.Subscribe( "task_start", OnTaskStart );
 function OnTaskStart( event )
 {
-	                        
-	                                               
-	    
-	   	                                                            
-	   	 
-	   		                                                
-	   		                                                                                                                                                   
-	   		 
-	   			                       
-	   			      
-	   		 
-	   	 
-	    
+	// var taskPanel = null;
+	// if ( event[ "task_parent" ] !== undefined  )
+	// {
+	// 	for ( var j = 0; j < $( '#TaskList' ).GetChildCount(); j++ )
+	// 	{
+	// 		var panelChild = $( '#TaskList' ).GetChild( j );
+	// 		if ( panelChild && panelChild.GetAttributeString( "task_parent", null ) == event[ "task_parent" ] && panelChild.BHasClass( "ObjectiveCompleted" ) )
+	// 		{
+	// 			taskPanel = panelChild;
+	// 			break;
+	// 		}
+	// 	}
+	// }
 
 	var taskPanel = $.CreatePanel( "Panel", $( '#TaskList' ), event[ "task_name" ] );
 	taskPanel.BLoadLayoutSnippet( "Task2" );
@@ -219,7 +219,7 @@ function DismissHint()
 }
 GameEvents.Subscribe( "hide_hint", DismissHint );
 
-     
+//new
 
 GameEvents.Subscribe( "start_world_text_hint", StartWorldTextHint );
 function StartWorldTextHint( event )
@@ -394,14 +394,14 @@ var g_flCameraYawSpeed = 0.2;
 GameEvents.Subscribe( "introduce_unit", IntroduceUnit );
 function IntroduceUnit( event )
 {
-	                                                    
-	                                                    
-	                                                       
-	                                                                       
+	//GameUI.SetCameraPitchMin( event["camera_pitch"] );
+	//GameUI.SetCameraPitchMax( event["camera_pitch"] );
+	//GameUI.SetCameraDistance( event["camera_distance"] );
+	//GameUI.SetCameraLookAtPositionHeightOffset( event["camera_height"] );
 	GameUI.SetCameraTarget( event["ent_index"] );
-	                                                     
+	//GameUI.SetCameraYaw( event["camera_initial_yaw"] );
 
-	                                                        
+	//g_flCameraYawSpeed = event["camera_yaw_rotate_speed"];
 
 	g_bInUnitIntroduction = true;
 }
@@ -409,13 +409,13 @@ function IntroduceUnit( event )
 GameEvents.Subscribe( "end_introduce_unit", EndIntroduceUnit );
 function EndIntroduceUnit( event )
 {
-	                                 
-	                                 
-	                                     
-	                                                  
+	//GameUI.SetCameraPitchMin( 38 );
+	//GameUI.SetCameraPitchMax( 60 );
+	//GameUI.SetCameraDistance( 1134.0 );
+	//GameUI.SetCameraLookAtPositionHeightOffset( 0 );
 	GameUI.SetCameraTarget( -1 );
-	                           
-	                           
+	//GameUI.SetCameraYaw( 0 );
+	//g_flCameraYawSpeed = 0.2;
 
 	g_bInUnitIntroduction = false;
 }
@@ -635,12 +635,12 @@ function HideUIHint( event )
 {
 	$( '#TutorialUIHint' ).RemoveClass( "Visible" );
 	$( '#TutorialUIHint' ).RemoveClass( "Nudge" );
-	                                   
+	//$.CancelScheduled( NudgeUIHint );
 
 	if ( g_szUITipDismissEvent != null )
 	{
-		                                                           
-		                                                                     
+		//$.Msg( "unregistering event: " + g_szUITipDismissEvent );
+		//$.UnregisterForUnhandledEvent( g_szUITipDismissEvent, HideUIHint );
 		g_szUITipDismissEvent = null;
 	}
 

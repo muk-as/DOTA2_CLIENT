@@ -13,7 +13,7 @@ function DismissSplashScreenInSoManySeconds( nSeconds )
 	{
 		$('#splash_screen_hide_button').SetDialogVariableInt('seconds', nSeconds);
 		
-		if(Game.GetState() == 7)           
+		if(Game.GetState() == 7) // Pregame
 		{
 			nSeconds = nSeconds - 1;
 		}

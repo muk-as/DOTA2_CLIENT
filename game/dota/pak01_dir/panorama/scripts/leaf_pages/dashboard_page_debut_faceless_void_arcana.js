@@ -1,6 +1,6 @@
-   
-             
-   
+/**
+ * DEBUT PAGE
+ */
 var seq;
 var debug_animation = false;
 
@@ -11,14 +11,14 @@ var n_chrono_map_particles = 5;
 var n_chrono_tent_entities = 9;
 
 
-   
-                                                                                 
-                        
-   
-                                                                       
-   
-                                                
-   
+/**
+ * Samples a camera dof value between two ranges at time t following an ease-in, 
+ * ease-out parametric: 
+ * 
+ * https://math.stackexchange.com/questions/121720/ease-in-out-function
+ * 
+ * If a is set to 1 the ramp function is linear.
+ */
 var get_dof_value = function (
     start_dof, end_dof, i_val, num_samples, a = 2, dof_property = 'SetDOFFarBlurry',
     msg_prefix = 'TEST', camera_name = 'intro_camera', model_id = '#Model') {
@@ -36,9 +36,9 @@ var get_dof_value = function (
 }
 
 
-   
-                                               
-   
+/**
+ * Main function linked to triggering the debut
+ */
 var RunPageAnimation = function () {
 
     if ($('#MainContainer')) { $('#MainContainer').RemoveClass('Initialize'); }
@@ -57,17 +57,17 @@ var RunPageAnimation = function () {
     seq.actions.push(new WaitForClassAction($('#ModelForeground'), 'SceneLoaded'));
     seq.actions.push(new WaitForClassAction($('#ModelBackground'), 'SceneLoaded'));
 
-                                                    
+    // initialize with the chrono environment hidden
     seq.actions.push(new RunFunctionAction(function () {
         for (var i = 0; i < n_chrono_map_entities; ++i) {
             $('#ModelBackground').FireEntityInput('chronoEntity' + i, 'Disable', '0');
-        }       
+        } // for
 
         for (var i = 0; i < n_chrono_tent_entities; i++) {
             $('#ModelBackground').FireEntityInput('tent' + i, 'Disable', '0');
-        }   
+        } //
 
-    }            
+    } // function
     ))
 
     seq.actions.push(new AddClassAction($('#MainContainer'), 'Initialize'));
@@ -83,23 +83,23 @@ var RunPageAnimation = function () {
     for (var i = 0; i < 45; i++) {
         seq.actions.push(new WaitOneFrameAction());
     }
-                                        
+    // Switch cameras to enable parallax
     seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 0.0); }))
     seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetRootEntity', 'ModelBackground', 'root_post'); }))
 
-                                                                               
-                                                                                                  
+    // enable mouse hover parallax (disable when blocking out camera animation)
+    //seq.actions.push(new LerpRotateAction($('#ModelForeground'), 0, 0, 0, 0, -1, 2, 1, 1, 0.0));
     seq.actions.push(new LerpRotateAction($('#ModelBackground'), 0, 0, 0, 0, -0.7, 0.7, -0.3, 0.3, 0.0));
 
     seq.actions.push(new AddClassAction($('#DebutInformation'), 'Initialize'));
 
-                          
+    // play the sequences!
     RunSingleAction(seq);
 }
 
-   
-                                                
-   
+/**
+ * post-callback assigned when leaving the debut
+ */
 var EndPageAnimation = function () {
     if (seq != undefined) {
         seq.finish();
@@ -115,11 +115,11 @@ var EndPageAnimation = function () {
     $('#InformationBody').RemoveClass('Initialize');
 }
 
-   
-                                                                                       
-   
+/**
+ * callback that displays the chronosphere environment (also, hide radiant environment)
+ */
 var display_chrono = function () {
-                                             
+    //$.Msg("# display CHRONO environment!");
     $('#ModelBackground').FireEntityInput('banner', 'Disable', '0');
     $('#ModelBackground').FireEntityInput('Ground', 'Disable', '0');
 
@@ -143,11 +143,11 @@ var display_chrono = function () {
     }
 }
 
-   
-                                                                                 
-   
+/**
+ * callback that displays the radiant environment (also, hide chrono environment)
+ */
 var display_radiant = function () {
-                                              
+    //$.Msg("# display RADIANT environment!");
 
     for (var i = 0; i < n_radiant_map_entities; ++i) {
         $('#ModelBackground').FireEntityInput('radiantEntity' + i, 'Enable', '0');

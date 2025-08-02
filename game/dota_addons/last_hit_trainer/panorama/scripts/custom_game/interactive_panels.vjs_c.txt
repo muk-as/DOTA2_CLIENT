@@ -43,13 +43,13 @@ function RoundEndNewHeroButtonPressed()
 
 function OnRoundEnded( roundEndData )
 {
-	                         
+	//$.Msg( "OnRoundEnded" )
 
 	$( "#RoundEndPanel" ).SetHasClass( "Visible", true );
 	$( "#ControlPanel" ).ToggleClass( "Minimized" );
-	                                 
-	                                   
-	                                            
+	//Game.EmitSound( "RoundStart" );
+	//$.Schedule( 5.0, HideModeStart );
+	//$.DispatchEvent( "DOTAHUDHideScoreboard" )
 
 	return true;
 }
@@ -67,7 +67,7 @@ function SwitchToNewHero( nHeroID )
 
 function HideModeStart()
 {
-	                             
+	//$.Msg( "HideModeStart()" );
 
 	$( "#ModeStartPanel" ).SetHasClass( "Visible", false );
 }
@@ -84,7 +84,7 @@ function SetText(name, value)
 
 function UpdateScores()
 {
-	                            
+	//$.Msg("Setting ", gStats);
 
 	SetText('#Score', "" + gStats['m_Score']);
 	SetText('#TopLastHitStreak', gStats["m_HighestLastHitStreakCount"]);
@@ -97,9 +97,9 @@ function UpdateScores()
 	SetText('#RangedCreepsDenied', gStats["m_nRangedCreepsDenied"]);
 	SetText('#GoldFromMeleeCreeps', gStats["m_nGoldFromMeleeCreeps"]);
 	SetText('#GoldFromRangedCreeps', gStats["m_nGoldFromRangedCreeps"]);
-	                                                                
+	//SetText('#CreepsOutOfZone', gStats["m_CreepsOutOfZoneCount"]);
 
-	                                            
+	// Figure out which tier they got score-wise
 	var nScore = gStats['m_Score'];
 
 	var nBronze = gGameInfo.m_nBronzeScoreReq;
@@ -137,7 +137,7 @@ function UpdateScores()
 
 function OnLastHitTrainerStatsUpdated( tableName, key, data )
 {
-	                              
+	//$.Msg("STATS DATA RECEIVED")
 	gStats = data;
 
 	UpdateScores();
@@ -145,7 +145,7 @@ function OnLastHitTrainerStatsUpdated( tableName, key, data )
 
 function OnLastHitTrainerGameInfoUpdated( tableName, key, data )
 {
-	                                                      
+	//$.Msg("round_end_panel.js - GAMEINFO DATA RECEIVED")
 	gGameInfo = data;
 
 	if ( gGameInfo.m_bHeroSpawned )
@@ -156,7 +156,7 @@ function OnLastHitTrainerGameInfoUpdated( tableName, key, data )
 
 (function()
 {
-	                                                    
+	//$.Msg("INITIALIZED PANORAMA JS: round end panel");
 
 	$( "#ControlPanel" ).ToggleClass( "Minimized" );
 
@@ -167,17 +167,17 @@ function OnLastHitTrainerGameInfoUpdated( tableName, key, data )
 
 	$.RegisterEventHandler('DOTAUIHeroPickerHeroSelected', $('#ControlPanel'), SwitchToNewHero );
 
-	                                                        
-	                                   
+	//$( "#RoundEndPanel" ).SetHasClass( "Visible", false );
+	//$.Schedule( 8.0, HideModeStart );
 })();
 
-  
-           
- 
-	                                                   
+/*
+(function()
+{
+	$.Msg("INITIALIZED PANORAMA JS: mode start panel");
 
-	                                                
+	$( "#ControlPanel" ).ToggleClass( "Minimized" );
 
-	                                                                 
-     
-  
+	//$( "#splash_screen_container" ).SetHasClass( "Visible", true );
+})();
+*/

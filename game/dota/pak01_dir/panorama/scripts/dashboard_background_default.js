@@ -35,7 +35,7 @@ var GetCameraName = function ( strPrimaryTabID )
             return tabCameras[i].camera_name;
     }
 
-              
+    // Default
     return "shot_cameraA";
 }
 

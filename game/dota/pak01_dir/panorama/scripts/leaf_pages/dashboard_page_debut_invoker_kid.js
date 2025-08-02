@@ -1,6 +1,6 @@
 var OnPageSetupSuccess = function ()
 {
-	                                                 
+	// Disabling Fullscreen allows Menu UI to display
 	$.DispatchEvent('DOTASetCurrentDashboardPageFullscreen', true);
 }
 
@@ -13,7 +13,7 @@ var RunPageAnimation = function ()
 	$('#DebutInformation').RemoveClass('Initialize');
 	$('#CloseButton').RemoveClass('Initialize');
 
-	                                                 
+	// Disabling Fullscreen allows Menu UI to display
 	$.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true );
 
 	seq.actions.push( new WaitForClassAction( $( '#Model' ), 'SceneLoaded' ) );
