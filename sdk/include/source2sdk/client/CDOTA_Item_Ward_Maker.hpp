@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x730
+        // Size: 0x738
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class CDOTA_Item_Ward_Maker : public source2sdk::client::C_DOTA_Item
         {
         public:
-            float sentry_refresh; // 0x720            
-            std::int32_t max_sentry_charges; // 0x724            
-            source2sdk::entity2::GameTime_t m_flLastThinkTime; // 0x728            
-            float m_flTimeAccumulator; // 0x72c            
+            float sentry_refresh; // 0x728            
+            std::int32_t max_sentry_charges; // 0x72c            
+            source2sdk::entity2::GameTime_t m_flLastThinkTime; // 0x730            
+            float m_flTimeAccumulator; // 0x734            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Ward_Maker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Item_Ward_Maker) == 0x730);
+        static_assert(sizeof(source2sdk::client::CDOTA_Item_Ward_Maker) == 0x738);
     };
 };

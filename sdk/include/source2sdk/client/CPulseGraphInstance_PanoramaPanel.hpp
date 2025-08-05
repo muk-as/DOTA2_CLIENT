@@ -17,11 +17,12 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: false
-        // Size: 0x130
+        // Size: 0x128
         // Has VTable
         // 
         // static metadata: MPulseInstanceDomainInfo
         // static metadata: MPulseDomainHookInfo
+        // static metadata: MPulseDomainScopeInfo
         // static metadata: MPulseLibraryBindings
         // static metadata: MPulseDomainOptInFeatureTag
         // static metadata: MPulseDomainOptInFeatureTag
@@ -32,11 +33,11 @@ namespace source2sdk
         class CPulseGraphInstance_PanoramaPanel : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {
         public:
-            uint8_t _pad0110[0x20];
+            uint8_t _pad0108[0x20];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CPulseGraphInstance_PanoramaPanel) == 0x130);
+        static_assert(sizeof(source2sdk::client::CPulseGraphInstance_PanoramaPanel) == 0x128);
     };
 };

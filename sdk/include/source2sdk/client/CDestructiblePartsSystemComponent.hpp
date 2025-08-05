@@ -37,6 +37,7 @@ namespace source2sdk
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x0            
             uint8_t _pad0028[0x20]; // 0x28
             // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnDamageLevelTakenByHitGroupChanged"
             // m_DamageLevelTakenByHitGroup has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<std::uint16_t> m_DamageLevelTakenByHitGroup;
             char m_DamageLevelTakenByHitGroup[0x18]; // 0x48            

@@ -56,7 +56,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x190
+        // Size: 0x198
         // Has VTable
         // Construct allowed
         // 
@@ -100,7 +100,7 @@ namespace source2sdk
             // m_OutputConnections has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::pulse_runtime_lib::CPulse_OutputConnection*> m_OutputConnections;
             char m_OutputConnections[0x18]; // 0x128            
-            uint8_t _pad0140[0x50];
+            uint8_t _pad0140[0x58];
         };
         #pragma pack(pop)
         
@@ -119,6 +119,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseGraphDef, m_BlackboardReferences) == 0x110);
         static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseGraphDef, m_OutputConnections) == 0x128);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseGraphDef) == 0x190);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseGraphDef) == 0x198);
     };
 };

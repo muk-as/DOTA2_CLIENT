@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class C_DOTA_Ability_Hoodwink_Sharpshooter : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float max_charge_time; // 0x680            
-            Vector m_vStartPos; // 0x684            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x690            
-            uint8_t _pad0694[0x14];
+            float max_charge_time; // 0x688            
+            Vector m_vStartPos; // 0x68c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x698            
+            uint8_t _pad069c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Hoodwink_Sharpshooter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_Sharpshooter) == 0x6a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_Sharpshooter) == 0x6b0);
     };
 };

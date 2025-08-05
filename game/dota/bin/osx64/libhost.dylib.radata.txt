@@ -471,8 +471,6 @@ CSVCMsg_GameEvent
 CSVCMsg_GameEvent.key_t
 CType
 CUtlLinkedList overflow! (exhausted index range)\n
-CUtlLinkedList overflow! (exhausted memory allocator)\n
-CUtlRBTree overflow with %u elements!\n
 CVar
 Call set methods to initialize MapKey
 Caller should provide us with *buffer_ when buffer is non-empty
@@ -737,8 +735,8 @@ Hex and octal numbers must be integers
 Host
 HostStateMgr001
 HostUtils001
-I CUtlRBTree<CDiffInfo, CLessFunc<&CDiffInfo::Less>>::Insert(const T &) [T = CDiffInfo, L = CLessFunc<&CDiffInfo::Less>, I = int, M = CUtlMemory<UtlRBTreeNode_t<CDiffInfo, int>, int, 0
-I CUtlRBTree<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, L = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, int>, int, 0
+I CUtlRBTree<CDiffInfo, CLessFunc<&CDiffInfo::Less>>::Insert(const T &) [T = CDiffInfo, L = CLessFunc<&CDiffInfo::Less>, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CDiffInfo, int
+I CUtlRBTree<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, L = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, int
 IDEMPOTENCY_UNKNOWN
 IGameSystem::Init( %-80s ) %8.3f msec
 IGameSystem::PostInit( %-80s ) %8.3f msec
@@ -746,7 +744,6 @@ INFO
 INVALID_CPPTYPE
 IPulseSystem_001
 I\n NETWORK_DISCONNECT_STEAM_DROPPED
-I\n$NETWORK_DISCONNECT_STEAM_VACBANSTATE
 I\n%NETWORK_DISCONNECT_REJECT_HIDDEN_GAME
 IdempotencyLevel
 If this is intended, set 'option allow_alias = true;' to the enum definition
@@ -809,6 +806,7 @@ M\n"NETWORK_DISCONNECT_SERVER_SHUTDOWN
 M\n"NETWORK_DISCONNECT_STEAM_DENY_MISC
 M\n"NETWORK_DISCONNECT_STEAM_OWNERSHIP
 M\n$NETWORK_DISCONNECT_REJECT_SERVERFULL
+M\n$NETWORK_DISCONNECT_STEAM_VACBANSTATE
 M\n&NETWORK_DISCONNECT_STEAM_AUTHCANCELLED
 M\n'NETWORK_DISCONNECT_REJECT_SINGLE_PLAYER
 M\n(NETWORK_DISCONNECT_SERVER_REQUIRES_STEAM
@@ -1295,6 +1293,7 @@ addons
 aggregate_value
 allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
 allowed in proto3
+allowed_from_client
 another member of oneof
 args were given.  Full format string was
 b"S\n\nCEntityMsg
@@ -1303,6 +1302,7 @@ b16777215"R\n\nCMsg_CVars
 bad
 because it is missing required fields
 begin
+blockpooloffset_t CUtlMemoryBlockAllocator<char>::Alloc(uint) [T = char, Alloc_t = CMemAllocAllocator
 bool
 bools
 but only
@@ -1542,6 +1542,7 @@ index < 10
 inf
 infinity
 inside block comment.  Block comments cannot be nested
+int CUtlMemoryBlockAllocator<char>::AddPage(uint) [T = char, Alloc_t = CMemAllocAllocator
 int CUtlSortVector<CAnimScriptRegistry::ScriptInfo_t, CAnimScriptRegistry::ScriptInfo_t>::Find(const TKey &) const [T = CAnimScriptRegistry::ScriptInfo_t, LessFunc = CAnimScriptRegistry::ScriptInfo_t, BaseVector = CUtlVector<CAnimScriptRegistry::ScriptInfo_t>, TKey = CAnimScriptRegistry::ScriptInfo_t
 int CUtlSortVector<CAnimScriptRegistry::ScriptInfo_t, CAnimScriptRegistry::ScriptInfo_t>::FindLessOrEqual(const TKey &, bool *) const [T = CAnimScriptRegistry::ScriptInfo_t, LessFunc = CAnimScriptRegistry::ScriptInfo_t, BaseVector = CUtlVector<CAnimScriptRegistry::ScriptInfo_t>, TKey = CAnimScriptRegistry::ScriptInfo_t
 int CUtlSortVector<CAnimScriptRegistry::ScriptInfo_t, CAnimScriptRegistry::ScriptInfo_t>::Insert(const T &) [T = CAnimScriptRegistry::ScriptInfo_t, LessFunc = CAnimScriptRegistry::ScriptInfo_t, BaseVector = CUtlVector<CAnimScriptRegistry::ScriptInfo_t
@@ -1576,7 +1577,6 @@ is_large
 is_loadsavegame
 is_multiplayer
 ishltv
-j\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 java_generate_equals_and_hash
 java_generic_services
 java_multiple_files
@@ -1717,6 +1717,7 @@ n\fsignon_state
 n\fstring_value
 n\fswift_prefix
 n\fworldgroupid
+n\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 n\nCMsgQAngle
 n\nIDEMPOTENT
 n\nTYPE_BYTES
@@ -1848,15 +1849,20 @@ resource_manifests
 resources
 runleft
 runright
+s allocation count overflow
+s allocation count overflow( %llu + %llu > %llu )\n
+s allocation count overflow( %llu > %llu )\n
 s:  IGameSystem::LoopActivateAllSystems {\n
 s:  IGameSystem::LoopDeactivateAllSystems {\n
 s:  IGameSystem::LoopInitAllSystems(finish
 s:  IGameSystem::LoopInitAllSystems(start
 s:  } IGameSystem::LoopActivateAllSystems done\n
 s:  } IGameSystem::LoopDeactivateAllSystems done\n
+s: allocation of %u too large, max %u\n
 s: invalid insert point %u (current count %u)\n
 s: max element overflow, cur count %u + %u\n
 s: member count overflow (%u)\n
+s: no space for allocation of %u\n
 savegamefilename
 scale
 schema_description
@@ -1974,6 +1980,8 @@ very_fast
 void CKeyValues3Array::EnsureElementCapacity(CKeyValues3Context *, int, bool, bool
 void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int
 void CKeyValues3Table::EnsureMemberCapacity(CKeyValues3Context *, int, bool, bool
+void CUtlLeanVectorBase<UtlLinkedListElem_t<CUtlKeyValuePair<WorldGroupId_t, CDotaMapUtils::DotaMapData_t *>, unsigned short>, unsigned short>::EnsureCapacity(CUtlLeanVectorBase::IndexIntType_t, CapacityBehavior_t) [T = UtlLinkedListElem_t<CUtlKeyValuePair<WorldGroupId_t, CDotaMapUtils::DotaMapData_t *>, unsigned short>, I = unsigned short, A = CMemAllocAllocator
+void CUtlLeanVectorImpl<CUtlLeanVectorBase<CUtlMemoryBlockAllocator<char>::MemPage_t>, CUtlMemoryBlockAllocator<char>::MemPage_t>::EnsureUnusedCapacity(CUtlLeanVectorImpl::IndexIntType_t, CUtlLeanVectorImpl::IndexIntType_t, CapacityBehavior_t) [B = CUtlLeanVectorBase<CUtlMemoryBlockAllocator<char>::MemPage_t>, T = CUtlMemoryBlockAllocator<char>::MemPage_t, I = int
 walkleft
 walkright
 was already set

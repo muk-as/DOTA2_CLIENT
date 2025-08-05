@@ -3,8 +3,8 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animationsystem/AnimParamButton_t.hpp"
-#include "source2sdk/animationsystem/AnimParamNetworkSetting.hpp"
+#include "source2sdk/animgraphlib/AnimParamButton_t.hpp"
+#include "source2sdk/animgraphlib/AnimParamNetworkSetting.hpp"
 #include "source2sdk/animgraphlib/CAnimParameterBase.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -25,14 +25,15 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CConcreteAnimParameter : public source2sdk::animgraphlib::CAnimParameterBase
         {
         public:
             // metadata: MPropertyFriendlyName "Preview Button"
-            source2sdk::animationsystem::AnimParamButton_t m_previewButton; // 0x70            
+            source2sdk::animgraphlib::AnimParamButton_t m_previewButton; // 0x70            
             // metadata: MPropertyFriendlyName "Network"
-            source2sdk::animationsystem::AnimParamNetworkSetting m_eNetworkSetting; // 0x74            
+            source2sdk::animgraphlib::AnimParamNetworkSetting m_eNetworkSetting; // 0x74            
             // metadata: MPropertyFriendlyName "Force Latest Value"
             bool m_bUseMostRecentValue; // 0x78            
             // metadata: MPropertyFriendlyName "Auto Reset"

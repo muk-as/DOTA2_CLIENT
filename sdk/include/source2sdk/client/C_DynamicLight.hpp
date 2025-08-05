@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x998
+        // Size: 0x9c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,32 +34,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint8_t m_Flags; // 0x970            
+            std::uint8_t m_Flags; // 0x998            
             // metadata: MNetworkEnable
-            std::uint8_t m_LightStyle; // 0x971            
-            uint8_t _pad0972[0x2]; // 0x972
+            std::uint8_t m_LightStyle; // 0x999            
+            uint8_t _pad099a[0x2]; // 0x99a
             // metadata: MNetworkEnable
-            float m_Radius; // 0x974            
+            float m_Radius; // 0x99c            
             // metadata: MNetworkEnable
-            std::int32_t m_Exponent; // 0x978            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkBitCount "8"
-            // metadata: MNetworkMinValue "0,000000"
-            // metadata: MNetworkMaxValue "360,000000"
-            float m_InnerAngle; // 0x97c            
+            std::int32_t m_Exponent; // 0x9a0            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "360,000000"
-            float m_OuterAngle; // 0x980            
+            float m_InnerAngle; // 0x9a4            
             // metadata: MNetworkEnable
-            float m_SpotRadius; // 0x984            
-            uint8_t _pad0988[0x10];
+            // metadata: MNetworkBitCount "8"
+            // metadata: MNetworkMinValue "0,000000"
+            // metadata: MNetworkMaxValue "360,000000"
+            float m_OuterAngle; // 0x9a8            
+            // metadata: MNetworkEnable
+            float m_SpotRadius; // 0x9ac            
+            uint8_t _pad09b0[0x10];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DynamicLight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DynamicLight) == 0x998);
+        static_assert(sizeof(source2sdk::client::C_DynamicLight) == 0x9c0);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a10
+        // Size: 0x1a28
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_BaseNPC_ShadowShaman_SerpentWard : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            QAngle m_angle; // 0x1a00            
-            std::int32_t m_iPoseParameterAim; // 0x1a0c            
+            QAngle m_angle; // 0x1a18            
+            std::int32_t m_iPoseParameterAim; // 0x1a24            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_ShadowShaman_SerpentWard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_ShadowShaman_SerpentWard) == 0x1a10);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_ShadowShaman_SerpentWard) == 0x1a28);
     };
 };

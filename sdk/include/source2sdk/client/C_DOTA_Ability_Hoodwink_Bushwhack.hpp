@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x8a0
+        // Size: 0x8a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class C_DOTA_Ability_Hoodwink_Bushwhack : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float trap_radius; // 0x680            
-            std::int32_t m_nProjectileHandle; // 0x684            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x688            
-            uint8_t _pad068c[0x214];
+            float trap_radius; // 0x688            
+            std::int32_t m_nProjectileHandle; // 0x68c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x690            
+            uint8_t _pad0694[0x214];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Hoodwink_Bushwhack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_Bushwhack) == 0x8a0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_Bushwhack) == 0x8a8);
     };
 };

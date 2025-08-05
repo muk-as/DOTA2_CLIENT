@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1e8
+        // Size: 0x240
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "ButtonBitMask_t m_nToggleButtonDownMask"
@@ -53,9 +53,10 @@ namespace source2sdk
             float m_flLeftMove; // 0x1b0            
             float m_flUpMove; // 0x1b4            
             Vector m_vecLastMovementImpulses; // 0x1b8            
-            QAngle m_vecLastFinishMoveViewAngles; // 0x1c4            
-            QAngle m_vecOldViewAngles; // 0x1d0            
-            uint8_t _pad01dc[0xc];
+            uint8_t _pad01c4[0x5c]; // 0x1c4
+            QAngle m_vecLastFinishTickViewAngles; // 0x220            
+            QAngle m_vecOldViewAngles; // 0x22c            
+            uint8_t _pad0238[0x8];
             
             // Datamap fields:
             // void m_pButtonPressedCmdNumber; // 0x80
@@ -64,6 +65,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CPlayer_MovementServices because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPlayer_MovementServices) == 0x1e8);
+        static_assert(sizeof(source2sdk::server::CPlayer_MovementServices) == 0x240);
     };
 };

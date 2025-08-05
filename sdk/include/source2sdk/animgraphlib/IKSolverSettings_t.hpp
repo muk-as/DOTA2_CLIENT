@@ -20,12 +20,14 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0xc
         // Has Trivial Destructor
+        // 
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         struct IKSolverSettings_t
         {
         public:
             // metadata: MPropertyFriendlyName "Solver Type"
-            // metadata: MPropertyAttrChangeCallback
+            // metadata: MPropertyAutoRebuildOnChange
             source2sdk::animgraphlib::IKSolverType m_SolverType; // 0x0            
             // metadata: MPropertyFriendlyName "Num Iterations "
             // metadata: MPropertyAttrStateCallback

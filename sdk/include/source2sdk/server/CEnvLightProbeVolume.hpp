@@ -23,6 +23,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube"
+        // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SDF"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_R"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_G"
@@ -47,11 +48,15 @@ namespace source2sdk
         class CEnvLightProbeVolume : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x1000]; // 0x4e0
+            uint8_t _pad04e0[0xff8]; // 0x4e0
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_AmbientCube has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_AmbientCube;
-            char m_Entity_hLightProbeTexture_AmbientCube[0x8]; // 0x14e0            
+            char m_Entity_hLightProbeTexture_AmbientCube[0x8]; // 0x14d8            
+            // metadata: MNetworkEnable
+            // m_Entity_hLightProbeTexture_SDF has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SDF;
+            char m_Entity_hLightProbeTexture_SDF[0x8]; // 0x14e0            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_DC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_DC;

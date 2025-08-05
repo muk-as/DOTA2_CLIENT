@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 108
+        // Enumerator count: 109
         // Alignment: 4
         // Size: 0x4
         enum class DOTASlotType_t : std::uint32_t
@@ -122,10 +122,11 @@ namespace source2sdk
             DOTA_LOADOUT_TYPE_ROSHAN = 0x62,
             DOTA_LOADOUT_TYPE_TORMENTOR = 0x63,
             DOTA_LOADOUT_TYPE_ANCIENT = 0x64,
+            DOTA_LOADOUT_TYPE_PET_EFFIGY = 0x65,
             DOTA_PLAYER_LOADOUT_START = 0x46,
-            DOTA_PLAYER_LOADOUT_END = 0x64,
-            DOTA_LOADOUT_TYPE_NONE = 0x65,
-            DOTA_LOADOUT_TYPE_COUNT = 0x66,
+            DOTA_PLAYER_LOADOUT_END = 0x65,
+            DOTA_LOADOUT_TYPE_NONE = 0x66,
+            DOTA_LOADOUT_TYPE_COUNT = 0x67,
         };
     };
 };

@@ -38,7 +38,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0xd8
         // Has VTable
         #pragma pack(push, 1)
         class CNewParticleEffect : public source2sdk::particleslib::IParticleEffect
@@ -61,10 +61,9 @@ namespace source2sdk
             uint16_t m_bForceNoDraw: 1;
             uint16_t m_bSuppressScreenSpaceEffect: 1;
             uint16_t m_bShouldSave: 1;
-            uint16_t m_bDisableAggregation: 1;
             uint16_t m_bShouldSimulateDuringGamePaused: 1;
             uint16_t m_bShouldCheckFoW: 1;
-            // end of bitfield block// 14 bits
+            // end of bitfield block// 13 bits
             uint8_t _pad0032[0xe]; // 0x32
             Vector m_vSortOrigin; // 0x40            
             float m_flScale; // 0x4c            
@@ -82,14 +81,14 @@ namespace source2sdk
             Vector m_LastMax; // 0x8c            
             CSplitScreenSlot m_nSplitScreenUser; // 0x98            
             Vector m_vecAggregationCenter; // 0x9c            
-            uint8_t _pad00a8[0x18]; // 0xa8
-            std::int32_t m_RefCount; // 0xc0            
-            uint8_t _pad00c4[0x4];
+            uint8_t _pad00a8[0x28]; // 0xa8
+            std::int32_t m_RefCount; // 0xd0            
+            uint8_t _pad00d4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNewParticleEffect because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particleslib::CNewParticleEffect) == 0xc8);
+        static_assert(sizeof(source2sdk::particleslib::CNewParticleEffect) == 0xd8);
     };
 };

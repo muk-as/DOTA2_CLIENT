@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animationsystem/AnimParamType_t.hpp"
+#include "source2sdk/animgraphlib/AnimParamType_t.hpp"
 #include "source2sdk/animgraphlib/CAnimParamHandle.hpp"
 #include "source2sdk/animgraphlib/ParamSpanSample_t.hpp"
 
@@ -31,7 +31,7 @@ namespace source2sdk
             // CUtlVector<source2sdk::animgraphlib::ParamSpanSample_t> m_samples;
             char m_samples[0x18]; // 0x0            
             source2sdk::animgraphlib::CAnimParamHandle m_hParam; // 0x18            
-            source2sdk::animationsystem::AnimParamType_t m_eParamType; // 0x1a            
+            source2sdk::animgraphlib::AnimParamType_t m_eParamType; // 0x1a            
             uint8_t _pad001b[0x1]; // 0x1b
             float m_flStartCycle; // 0x1c            
             float m_flEndCycle; // 0x20            

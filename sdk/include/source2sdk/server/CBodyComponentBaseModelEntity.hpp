@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x520
+        // Size: 0x510
         // Has VTable
         // Construct disallowed
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CBodyComponentBaseModelEntity) == 0x520);
+        static_assert(sizeof(source2sdk::server::CBodyComponentBaseModelEntity) == 0x510);
     };
 };

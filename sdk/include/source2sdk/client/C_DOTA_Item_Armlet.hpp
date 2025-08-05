@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x728
+        // Size: 0x730
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Item_Armlet : public source2sdk::client::C_DOTA_Item
         {
         public:
-            float toggle_cooldown; // 0x720            
-            uint8_t _pad0724[0x4];
+            float toggle_cooldown; // 0x728            
+            uint8_t _pad072c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Armlet because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Armlet) == 0x728);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Armlet) == 0x730);
     };
 };

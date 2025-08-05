@@ -17,17 +17,17 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7d8
+        // Size: 0x800
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CRevertSaved : public source2sdk::server::CModelPointEntity
         {
         public:
-            float m_loadTime; // 0x7c8            
-            float m_Duration; // 0x7cc            
-            float m_HoldTime; // 0x7d0            
-            uint8_t _pad07d4[0x4];
+            float m_loadTime; // 0x7f0            
+            float m_Duration; // 0x7f4            
+            float m_HoldTime; // 0x7f8            
+            uint8_t _pad07fc[0x4];
             
             // Datamap fields:
             // void InputReload; // 0x0
@@ -37,6 +37,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CRevertSaved because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CRevertSaved) == 0x7d8);
+        static_assert(sizeof(source2sdk::server::CRevertSaved) == 0x800);
     };
 };

@@ -10,7 +10,8 @@ var g_typeWriterEffect = {
     m_flBaseSoundDelay: 0,
     m_bDoPlaySounds: false,
     m_bSkipToEnd: false,
-    m_flCharacterDelay: 0.02
+    m_flCharacterDelay: 0.1,
+    m_flCharDelayMult: 1.0
 };
 
 function SkipToEnd() {
@@ -24,16 +25,19 @@ function SkipToEnd() {
 function SetFinished() {
     g_typeWriterEffect.m_bFinished = true;
     if (g_typeWriterEffect.m_strText.length != 0) {
-        g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText;// + "<child id='Cursor' replacechar=' '/>";
+        g_typeWriterEffect.m_panel.text = CleanEscapes( g_typeWriterEffect.m_strText );// + "<child id='Cursor' replacechar=' '/>";
     }
     g_typeWriterEffect.m_parentPanel.GetParent().SetHasClass("Animating", false);
     g_typeWriterEffect.m_parentPanel.SetHasClass( "AnimateCursor", false );
-    $.DispatchEvent( 'DOTATypeWriterTextComplete', g_typeWriterEffect.m_parentPanel );
+    var strText = g_typeWriterEffect.m_strText;
+    if ( strText.length == 1 && strText.charAt( 0 ) === ' ' )
+        strText = "";
+    $.DispatchEvent( 'DOTATypeWriterTextComplete', g_typeWriterEffect.m_parentPanel, strText.length > 0 );
     //$.Msg("Finished effects on ", g_typeWriterEffect.m_strText);
 }
 
 function UpdateSounds() {
-    if (g_typeWriterEffect.m_bDoPlaySounds) {
+    if ( g_typeWriterEffect.m_bDoPlaySounds && g_typeWriterEffect.m_strVoiceSound != "" ) {
         PlayUISoundScript(g_typeWriterEffect.m_strVoiceSound);
     }
     if (!g_typeWriterEffect.m_bFinished) {
@@ -134,6 +138,112 @@ function FixUpHtmlTags(strHtmlText) {
     return chunks.join('');
 }
 
+function CleanEscapes( strInput ) {
+    
+    strInput = strInput.replace( /\^[+-]?[0-9]+\.?[0-9]*/g, "");
+    strInput = strInput.replace( /\^([\!|\?|\.])/g, "$1" );
+    strInput = strInput.replace("\\", "");
+    return strInput;
+}
+
+function CleanInlinePanels( strInput )
+{
+    strInput = strInput.replace( /<img.*\/>/g, "X" ); // hero icons etc
+    strInput = strInput.replace( /<child.*\/>/g, "X" ); // emoticons etc
+    return strInput;
+}
+
+function AdvanceAndEatHTML( strInput, nIndex )
+{
+    var chCur = strInput.charAt( nIndex );
+    const nSafeIndex = nIndex + 1;
+    var bInTag = false;
+    if ( chCur === "<" )
+    {
+        // Html tag. Skip characters until we get to the end of the tag.
+        while ( nIndex < strInput.length - 1 )
+        {
+            nIndex++;
+            chCur = strInput.charAt( nIndex );
+            if ( chCur === ">" )
+            {
+                return nIndex + 1;
+            }
+        }
+    }
+
+    return nSafeIndex;
+}
+
+function FindEndOfMaybeFloatingPointNumber(strInput, nStartIndex)
+{
+    var m = strInput.substring(nStartIndex).match("^[+-]?[0-9]+\.?[0-9]*");
+    if (m === null)
+        return nStartIndex;
+    return m[0].length + nStartIndex;
+}
+
+function GetNextCharInfo( strInput, nSplitIndex, flOffset )
+{
+    var nIndex = nSplitIndex - 1;
+    const nLength = strInput.length;
+    var bEscaped = false;
+    var bAnimateCursor = true;
+    var bPlaySounds = true;
+    var flDelayMult = 1.0;
+
+    var chCur = strInput.charAt( nIndex );
+    if ( chCur === "\\" )
+    {
+        return GetNextCharInfo( strInput, nSplitIndex + 1, flOffset );
+    }
+    else if ( nIndex < nLength - 1 && chCur === "^" )
+    {
+        var chNext = strInput.charAt( nIndex + 1 )
+        if ( chNext === "?"
+            || chNext === "!"
+            || chNext === "." )
+        {
+            bEscaped = true;
+            nIndex++;
+            chCur = chNext;
+        }
+        else if ( ( chNext >= '0' && chNext <= '9' ) || chNext === '-' || chNext === '+' )
+        {
+            var flMult = 1.0;
+            const nStart = nIndex+1;
+            var nEnd = FindEndOfMaybeFloatingPointNumber( strInput, nStart );
+            flMult = parseFloat( strInput.substring( nStart, nEnd ) );
+            if ( chNext === '-' || chNext === '+' )
+                flOffset += flMult;
+            else
+                g_typeWriterEffect.m_flCharDelayMult = flMult;
+            return GetNextCharInfo( strInput, nEnd, flOffset );
+        }
+    }
+
+    if ( !bEscaped )
+    {
+        if ( chCur === "." ||
+			 chCur === "。" || chCur === "…" )	// sChinese
+        {
+            bAnimateCursor = false
+            bPlaySounds = false;
+            flDelayMult *= 15;
+        }
+        else if ( chCur === "!" || chCur === "?" ||
+				  chCur === "！" || chCur === "？" )	// sChinese
+        {
+            bAnimateCursor = false
+            bPlaySounds = false;
+            flDelayMult *= 20;
+        }
+    }
+    nSplitIndex = nIndex + 1;
+    flDelayMult *= g_typeWriterEffect.m_flCharDelayMult;
+    return { chCur, nSplitIndex, bAnimateCursor, bPlaySounds, flDelayMult, flOffset };
+}
+
 function UpdateEffects() {
     if (!g_typeWriterEffect.m_panel || g_typeWriterEffect.m_bFinished) {
         return;
@@ -152,41 +262,63 @@ function UpdateEffects() {
         }
     }
 
-    for (var i = 0; i < nCharIncrement; ++i) {
-        g_typeWriterEffect.m_nCharacterIndex += 1;
-        var startIndex = g_typeWriterEffect.m_nCharacterIndex;
-        var lastCharacter = g_typeWriterEffect.m_strText.charAt(g_typeWriterEffect.m_nCharacterIndex);
-        
-        while (lastCharacter === "<" ) {
-            var someHtmlTag = false;
-            if (lastCharacter === "<") {
-                someHtmlTag = true;
-            }
-                // Html tag. Skip characters until we get to the end of the tag.
-            while (someHtmlTag && lastCharacter !== ">") {
-                g_typeWriterEffect.m_nCharacterIndex++;
-                if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length)
-                    break;
-                lastCharacter = g_typeWriterEffect.m_strText.charAt(g_typeWriterEffect.m_nCharacterIndex);
-                //$.Msg(lastCharacter);
-            }
-            g_typeWriterEffect.m_nCharacterIndex++;
-            if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length)
-                break;
-            lastCharacter = g_typeWriterEffect.m_strText.charAt(g_typeWriterEffect.m_nCharacterIndex);
-        }
+    var charData = {
+        chCur: "",
+        nSplitIndex: -1,
+        bAnimateCursor: true,
+        bPlaySounds: true,
+        flDelayMult: 1.0,
+        flOffset: 0.0
+    };
+    for ( var i = 0; i < nCharIncrement; ++i )
+    {
+        g_typeWriterEffect.m_nCharacterIndex = AdvanceAndEatHTML( g_typeWriterEffect.m_strText, g_typeWriterEffect.m_nCharacterIndex );
+        charData = GetNextCharInfo( g_typeWriterEffect.m_strText, g_typeWriterEffect.m_nCharacterIndex, 0 );
     }
-    var firstLetterLast = g_typeWriterEffect.m_strText.charAt(g_typeWriterEffect.m_nCharacterIndex);
-    if (firstLetterLast === "\\") {
-        ++g_typeWriterEffect.m_nCharacterIndex;
-    }
-    if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length) {
+
+    g_typeWriterEffect.m_nCharacterIndex = charData.nSplitIndex;
+
+    if ( g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length ) {
         SetFinished();
         return;
     }
-    
-    var partialString = g_typeWriterEffect.m_strText.substring(0, g_typeWriterEffect.m_nCharacterIndex);
-    var endString = g_typeWriterEffect.m_strText.substring(g_typeWriterEffect.m_nCharacterIndex);
+
+    var partialString = g_typeWriterEffect.m_strText.substring( 0, g_typeWriterEffect.m_nCharacterIndex );
+    var endString = g_typeWriterEffect.m_strText.substring( g_typeWriterEffect.m_nCharacterIndex );
+
+    // Putting all spaces in tags prevents word wrapping from changing as the text is typed out.
+    // It doesn't seem to matter what kind of tags are used.
+    {
+        var fixed = "";
+
+        // Be careful not to insert tags inside existing tags, such as the <img> tags used for emoji.
+        var inTags = 0;
+
+        for ( let i = 0; i < endString.length; i++ )
+        {
+            var ch = endString[i];
+
+            if ( ch === "<" )
+            {
+                inTags += 1;
+            }
+            else if ( ch === ">" )
+            {
+                inTags -= 1;
+            }
+
+            if ( ch === " " && inTags === 0 )
+            {
+                fixed += "<b> </b>";
+            }
+            else
+            {
+                fixed += ch;
+            }
+        }
+
+        endString = fixed;
+    }
 
     // We want the cursor to act like the next character in the word so that it word breaks or wraps correctly.
     var replaceCharAttribute = "";
@@ -203,36 +335,24 @@ function UpdateEffects() {
     }
 
     var combinedString = partialString + "<child id='Cursor'" + replaceCharAttribute + "/>";
-
     if (endString.length > 0) {
+        // Now append the hidden string.
+        endString = endString.replaceAll("class=\"", "class=\"HideText ");
         combinedString = combinedString + "<span class='HideText'>" + endString + "</span>";
     }
+
+    // Handle escapes
+    combinedString = CleanEscapes( combinedString );
+
     //$.Msg("Before:\t" + combinedString);
     var fixedString = FixUpHtmlTags(combinedString);
     //$.Msg("After:\t" + fixedString);
     g_typeWriterEffect.m_panel.text = fixedString;
 
     // Vary the character delay depending on punctuation.
-    var flCharacterDelay = g_typeWriterEffect.m_flCharacterDelay;
-    var lastCharacter = partialString.charAt(partialString.length - 1);
-    var bAnimateCursor = false;
-    if (lastCharacter == '.') {
-        flCharacterDelay *= 15;
-        g_typeWriterEffect.m_bDoPlaySounds = false;
-    }
-    else if (lastCharacter == '!') {
-        flCharacterDelay *= 20;
-        g_typeWriterEffect.m_bDoPlaySounds = false;
-    }
-    else if (lastCharacter == '?') {
-        flCharacterDelay *= 20;
-        g_typeWriterEffect.m_bDoPlaySounds = false;
-    }
-    else {
-        bAnimateCursor = true;
-        g_typeWriterEffect.m_bDoPlaySounds = true;
-    }
-    g_typeWriterEffect.m_parentPanel.SetHasClass( "AnimateCursor", bAnimateCursor );
+    var flCharacterDelay = g_typeWriterEffect.m_flCharacterDelay * charData.flDelayMult;
+    g_typeWriterEffect.m_bDoPlaySounds = charData.bPlaySounds;
+    g_typeWriterEffect.m_parentPanel.SetHasClass( "AnimateCursor", charData.bAnimateCursor );
 
     if( g_typeWriterEffect.m_bSkipToEnd )
     {
@@ -253,11 +373,12 @@ function GoToNextStep() {
     return true;
 }
 
-function OnTextChanged(parentPanel, strText, strVoice, flDelay, flSoundDelay, bInstant, flCharacterDelay ) {
+function OnTextChanged(parentPanel, strText, strVoice, flDelay, flSoundDelay, bInstant, flCharacterDelay, flVODuration ) {
 
     var textLabel = parentPanel.FindChildInLayoutFile("TypewriterLabel");
     g_typeWriterEffect.m_nCharacterIndex = 0;
-    g_typeWriterEffect.m_strText = strText;
+    // Adding a space at the end keeps word-wrap stable for the last word of the sentence.
+    g_typeWriterEffect.m_strText = strText + " ";
 
     // $.Msg("OnTextChanged called: ", strText);
     g_typeWriterEffect.m_panel = textLabel;
@@ -277,11 +398,38 @@ function OnTextChanged(parentPanel, strText, strVoice, flDelay, flSoundDelay, bI
     }
     if (bInstant) {
         flDelay = 0.0;
-    }
-    if (bInstant) {
         GoToNextStep();
     }
     else {
+        // Calculate needed duration
+        if ( flVODuration > 0 )
+        {
+            var charData = {
+                chCur: "",
+                nSplitIndex: -1,
+                bAnimateCursor: true,
+                bPlaySounds: true,
+                flDelayMult: 1.0,
+                flOffset: 0.0
+            };
+            var nIndex = 0;
+            var flTotalRelative = 0.0;
+            const strInput = g_typeWriterEffect.m_strText;
+            const flOldMult = g_typeWriterEffect.m_flCharDelayMult;
+            while ( nIndex < strInput.length )
+            {
+                nIndex = AdvanceAndEatHTML( strInput, nIndex );
+                charData = GetNextCharInfo( strInput, nIndex, charData.flOffset );
+                nIndex = charData.nSplitIndex;
+                flTotalRelative += charData.flDelayMult;
+            }
+            g_typeWriterEffect.m_flCharacterDelay = ( flVODuration + charData.flOffset - flDelay ) / flTotalRelative;
+            if ( g_typeWriterEffect.m_flCharacterDelay < 0.01 )
+                g_typeWriterEffect.m_flCharacterDelay = 0.01;
+            g_typeWriterEffect.m_flCharDelayMult = flOldMult;
+            //$.Msg( "Total chars: ", strInput.length, ". Relative: ", flTotalRelative, ". VO: ", flVODuration, ". Entrance: ", flDelay, " so calc: ", g_typeWriterEffect.m_flCharacterDelay );
+        }
+
         $.Schedule(flDelay, UpdateEffects);
         $.Schedule(flSoundDelay, UpdateSounds);
     }

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,12 +34,12 @@ namespace source2sdk
         public:
             // hEntitiesToIgnore has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hEntitiesToIgnore;
-            char hEntitiesToIgnore[0x18]; // 0x680            
+            char hEntitiesToIgnore[0x18]; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Sand_King_Scorpion_Strike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Sand_King_Scorpion_Strike) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Sand_King_Scorpion_Strike) == 0x6a0);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6c8
+        // Size: 0x6d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,20 +34,20 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x680            
-            float duration; // 0x698            
-            std::int32_t speed; // 0x69c            
-            float damage; // 0x6a0            
-            float range; // 0x6a4            
-            float yaw_offset; // 0x6a8            
-            std::int32_t projectile_width; // 0x6ac            
-            float neutral_shared_cooldown; // 0x6b0            
-            uint8_t _pad06b4[0x14];
+            char hAlreadyHitList[0x18]; // 0x688            
+            float duration; // 0x6a0            
+            std::int32_t speed; // 0x6a4            
+            float damage; // 0x6a8            
+            float range; // 0x6ac            
+            float yaw_offset; // 0x6b0            
+            std::int32_t projectile_width; // 0x6b4            
+            float neutral_shared_cooldown; // 0x6b8            
+            uint8_t _pad06bc[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Frogmen_TendrilsOfTheDeep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Frogmen_TendrilsOfTheDeep) == 0x6c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Frogmen_TendrilsOfTheDeep) == 0x6d0);
     };
 };

@@ -31,7 +31,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9c0
+        // Size: 0x9e8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -40,12 +40,12 @@ namespace source2sdk
         public:
             // m_hSoundscape has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CEnvSoundscapeTriggerable> m_hSoundscape;
-            char m_hSoundscape[0x4]; // 0x998            
-            uint8_t _pad099c[0x4]; // 0x99c
-            CUtlSymbolLarge m_SoundscapeName; // 0x9a0            
+            char m_hSoundscape[0x4]; // 0x9c0            
+            uint8_t _pad09c4[0x4]; // 0x9c4
+            CUtlSymbolLarge m_SoundscapeName; // 0x9c8            
             // m_spectators has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBasePlayerPawn>> m_spectators;
-            char m_spectators[0x18]; // 0x9a8            
+            char m_spectators[0x18]; // 0x9d0            
             
             // Datamap fields:
             // void CTriggerSoundscapePlayerUpdateThink; // 0x0
@@ -54,6 +54,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CTriggerSoundscape because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerSoundscape) == 0x9c0);
+        static_assert(sizeof(source2sdk::server::CTriggerSoundscape) == 0x9e8);
     };
 };

@@ -29,7 +29,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa30
+        // Size: 0xa58
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -70,92 +70,92 @@ namespace source2sdk
             // metadata: MNetworkMinValue "-25,000000"
             // metadata: MNetworkMaxValue "25,000000"
             // metadata: MNetworkEncodeFlags "2"
-            float m_flFrameRate; // 0x970            
+            float m_flFrameRate; // 0x998            
             // metadata: MNetworkEnable
-            float m_flHDRColorScale; // 0x974            
-            source2sdk::entity2::GameTime_t m_flFireTime; // 0x978            
-            float m_flDamage; // 0x97c            
+            float m_flHDRColorScale; // 0x99c            
+            source2sdk::entity2::GameTime_t m_flFireTime; // 0x9a0            
+            float m_flDamage; // 0x9a4            
             // metadata: MNetworkEnable
-            std::uint8_t m_nNumBeamEnts; // 0x980            
-            uint8_t _pad0981[0x3]; // 0x981
-            std::int32_t m_queryHandleHalo; // 0x984            
-            uint8_t _pad0988[0x20]; // 0x988
+            std::uint8_t m_nNumBeamEnts; // 0x9a8            
+            uint8_t _pad09a9[0x3]; // 0x9a9
+            std::int32_t m_queryHandleHalo; // 0x9ac            
+            uint8_t _pad09b0[0x20]; // 0x9b0
             // metadata: MNetworkEnable
             // m_hBaseMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hBaseMaterial;
-            char m_hBaseMaterial[0x8]; // 0x9a8            
+            char m_hBaseMaterial[0x8]; // 0x9d0            
             // metadata: MNetworkEnable
             // m_nHaloIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_nHaloIndex;
-            char m_nHaloIndex[0x8]; // 0x9b0            
+            char m_nHaloIndex[0x8]; // 0x9d8            
             // metadata: MNetworkEnable
-            source2sdk::client::BeamType_t m_nBeamType; // 0x9b8            
+            source2sdk::client::BeamType_t m_nBeamType; // 0x9e0            
             // metadata: MNetworkEnable
-            std::uint32_t m_nBeamFlags; // 0x9bc            
+            std::uint32_t m_nBeamFlags; // 0x9e4            
             // metadata: MNetworkEnable
             // m_hAttachEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAttachEntity[10];
-            char m_hAttachEntity[0x28]; // 0x9c0            
+            char m_hAttachEntity[0x28]; // 0x9e8            
             // metadata: MNetworkEnable
-            source2sdk::modellib::AttachmentHandle_t m_nAttachIndex[10]; // 0x9e8            
-            uint8_t _pad09f2[0x2]; // 0x9f2
-            // metadata: MNetworkEnable
-            // metadata: MNetworkBitCount "10"
-            // metadata: MNetworkMinValue "0,000000"
-            // metadata: MNetworkMaxValue "102,300003"
-            // metadata: MNetworkEncodeFlags "2"
-            float m_fWidth; // 0x9f4            
+            source2sdk::modellib::AttachmentHandle_t m_nAttachIndex[10]; // 0xa10            
+            uint8_t _pad0a1a[0x2]; // 0xa1a
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "102,300003"
             // metadata: MNetworkEncodeFlags "2"
-            float m_fEndWidth; // 0x9f8            
+            float m_fWidth; // 0xa1c            
             // metadata: MNetworkEnable
-            float m_fFadeLength; // 0x9fc            
+            // metadata: MNetworkBitCount "10"
+            // metadata: MNetworkMinValue "0,000000"
+            // metadata: MNetworkMaxValue "102,300003"
+            // metadata: MNetworkEncodeFlags "2"
+            float m_fEndWidth; // 0xa20            
             // metadata: MNetworkEnable
-            float m_fHaloScale; // 0xa00            
+            float m_fFadeLength; // 0xa24            
+            // metadata: MNetworkEnable
+            float m_fHaloScale; // 0xa28            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "64,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_fAmplitude; // 0xa04            
+            float m_fAmplitude; // 0xa2c            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "256,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_fStartFrame; // 0xa08            
+            float m_fStartFrame; // 0xa30            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "100,000000"
-            float m_fSpeed; // 0xa0c            
+            float m_fSpeed; // 0xa34            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "20"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "256,000000"
             // metadata: MNetworkEncodeFlags "1"
             // metadata: MNetworkPriority "32"
-            float m_flFrame; // 0xa10            
+            float m_flFrame; // 0xa38            
             // metadata: MNetworkEnable
-            source2sdk::client::BeamClipStyle_t m_nClipStyle; // 0xa14            
+            source2sdk::client::BeamClipStyle_t m_nClipStyle; // 0xa3c            
             // metadata: MNetworkEnable
-            bool m_bTurnedOff; // 0xa18            
-            uint8_t _pad0a19[0x3]; // 0xa19
+            bool m_bTurnedOff; // 0xa40            
+            uint8_t _pad0a41[0x3]; // 0xa41
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_vecEndPos; // 0xa1c            
+            Vector m_vecEndPos; // 0xa44            
             // m_hEndEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEndEntity;
-            char m_hEndEntity[0x4]; // 0xa28            
-            uint8_t _pad0a2c[0x4];
+            char m_hEndEntity[0x4]; // 0xa50            
+            uint8_t _pad0a54[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_Beam because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_Beam) == 0xa30);
+        static_assert(sizeof(source2sdk::client::C_Beam) == 0xa58);
     };
 };

@@ -3,8 +3,8 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animationsystem/RagdollPoseControl.hpp"
 #include "source2sdk/animgraphlib/CUnaryUpdateNode.hpp"
+#include "source2sdk/animgraphlib/RagdollPoseControl.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animgraphlib
@@ -28,7 +28,7 @@ namespace source2sdk
         {
         public:
             std::int32_t m_nWeightListIndex; // 0x70            
-            source2sdk::animationsystem::RagdollPoseControl m_poseControlMethod; // 0x74            
+            source2sdk::animgraphlib::RagdollPoseControl m_poseControlMethod; // 0x74            
         };
         #pragma pack(pop)
         

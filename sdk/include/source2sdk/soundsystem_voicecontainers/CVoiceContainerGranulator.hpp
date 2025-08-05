@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x198
+        // Size: 0x190
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         class CVoiceContainerGranulator : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
         {
         public:
-            float m_flGrainLength; // 0xc0            
-            float m_flGrainCrossfadeAmount; // 0xc4            
-            float m_flStartJitter; // 0xc8            
-            float m_flPlaybackJitter; // 0xcc            
-            bool m_bShouldWraparound; // 0xd0            
-            uint8_t _pad00d1[0x7]; // 0xd1
+            float m_flGrainLength; // 0xb8            
+            float m_flGrainCrossfadeAmount; // 0xbc            
+            float m_flStartJitter; // 0xc0            
+            float m_flPlaybackJitter; // 0xc4            
+            bool m_bShouldWraparound; // 0xc8            
+            uint8_t _pad00c9[0x7]; // 0xc9
             // m_sourceAudio has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCVoiceContainerBase> m_sourceAudio;
-            char m_sourceAudio[0x8]; // 0xd8            
-            uint8_t _pad00e0[0xb8];
+            char m_sourceAudio[0x8]; // 0xd0            
+            uint8_t _pad00d8[0xb8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerGranulator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerGranulator) == 0x198);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerGranulator) == 0x190);
     };
 };

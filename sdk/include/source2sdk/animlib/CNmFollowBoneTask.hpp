@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x70
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CNmFollowBoneTask : public source2sdk::animlib::CNmPoseTask
         {
         public:
-            uint8_t _pad0030[0x18];
+            uint8_t _pad0050[0x20];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animlib::CNmFollowBoneTask) == 0x48);
+        static_assert(sizeof(source2sdk::animlib::CNmFollowBoneTask) == 0x70);
     };
 };

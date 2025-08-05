@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x38
         // Has VTable
         // Construct allowed
         // 
@@ -31,13 +31,13 @@ namespace source2sdk
             // CUtlVector<source2sdk::worldrenderer::EntityIOConnectionData_t> m_connections;
             char m_connections[0x18]; // 0x8            
             CUtlBinaryBlock m_keyValuesData; // 0x20            
-            uint8_t _pad0038[0x8];
+            uint8_t _pad0030[0x8];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::worldrenderer::EntityKeyValueData_t, m_connections) == 0x8);
         static_assert(offsetof(source2sdk::worldrenderer::EntityKeyValueData_t, m_keyValuesData) == 0x20);
         
-        static_assert(sizeof(source2sdk::worldrenderer::EntityKeyValueData_t) == 0x40);
+        static_assert(sizeof(source2sdk::worldrenderer::EntityKeyValueData_t) == 0x38);
     };
 };

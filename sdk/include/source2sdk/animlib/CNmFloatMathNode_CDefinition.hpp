@@ -30,8 +30,9 @@ namespace source2sdk
             std::int16_t m_nInputValueNodeIdxA; // 0x10            
             std::int16_t m_nInputValueNodeIdxB; // 0x12            
             bool m_bReturnAbsoluteResult; // 0x14            
-            source2sdk::animlib::CNmFloatMathNode_Operator_t m_operator; // 0x15            
-            uint8_t _pad0016[0x2]; // 0x16
+            bool m_bReturnNegatedResult; // 0x15            
+            source2sdk::animlib::CNmFloatMathNode_Operator_t m_operator; // 0x16            
+            uint8_t _pad0017[0x1]; // 0x17
             float m_flValueB; // 0x18            
             uint8_t _pad001c[0x4];
         };

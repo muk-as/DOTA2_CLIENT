@@ -37,15 +37,16 @@ namespace source2sdk
             CUtlBinaryBlock m_compressedPoseData; // 0x10            
             // m_trackCompressionSettings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animlib::NmCompressionSettings_t> m_trackCompressionSettings;
-            char m_trackCompressionSettings[0x18]; // 0x28            
+            char m_trackCompressionSettings[0x18]; // 0x20            
             // m_compressedPoseOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_compressedPoseOffsets;
-            char m_compressedPoseOffsets[0x18]; // 0x40            
-            uint8_t _pad0058[0x28]; // 0x58
+            char m_compressedPoseOffsets[0x18]; // 0x38            
+            uint8_t _pad0050[0x28]; // 0x50
             // m_secondaryAnimations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<source2sdk::animlib::CNmClip*,1> m_secondaryAnimations;
-            char m_secondaryAnimations[0x20]; // 0x80            
-            source2sdk::animlib::CNmSyncTrack m_syncTrack; // 0xa0            
+            char m_secondaryAnimations[0x20]; // 0x78            
+            source2sdk::animlib::CNmSyncTrack m_syncTrack; // 0x98            
+            uint8_t _pad0148[0x8]; // 0x148
             source2sdk::animlib::CNmRootMotionData m_rootMotion; // 0x150            
             bool m_bIsAdditive; // 0x1a0            
             uint8_t _pad01a1[0x7]; // 0x1a1
@@ -63,10 +64,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_nNumFrames) == 0x8);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_flDuration) == 0xc);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseData) == 0x10);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_trackCompressionSettings) == 0x28);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseOffsets) == 0x40);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_secondaryAnimations) == 0x80);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0xa0);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_trackCompressionSettings) == 0x20);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseOffsets) == 0x38);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_secondaryAnimations) == 0x78);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0x98);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_rootMotion) == 0x150);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_bIsAdditive) == 0x1a0);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceSamplingChain) == 0x1a8);

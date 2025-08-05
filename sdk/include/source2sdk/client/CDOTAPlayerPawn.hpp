@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xd98
+        // Size: 0xdc0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -45,17 +45,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0xd90            
-            uint8_t _pad0d94[0x4];
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0xdb8            
+            uint8_t _pad0dbc[0x4];
             
             // Datamap fields:
-            // CDOTAPlayer_CameraServices m_pCameraServices; // 0xc58
-            // CDOTAPlayer_MovementServices m_pMovementServices; // 0xc60
+            // CDOTAPlayer_CameraServices m_pCameraServices; // 0xc80
+            // CDOTAPlayer_MovementServices m_pMovementServices; // 0xc88
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0xd98);
+        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0xdc0);
     };
 };

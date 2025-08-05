@@ -20,7 +20,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xa8
+        // Size: 0xd8
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,19 +31,19 @@ namespace source2sdk
             source2sdk::worldrenderer::WorldBuilderParams_t m_builderParams; // 0x0            
             // m_worldNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::worldrenderer::NodeData_t> m_worldNodes;
-            char m_worldNodes[0x18]; // 0x48            
-            source2sdk::worldrenderer::BakedLightingInfo_t m_worldLightingInfo; // 0x60            
+            char m_worldNodes[0x18]; // 0x60            
+            source2sdk::worldrenderer::BakedLightingInfo_t m_worldLightingInfo; // 0x78            
             // m_entityLumps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CStrongHandleCopyable<source2sdk::resourcesystem::InfoForResourceTypeCEntityLump>> m_entityLumps;
-            char m_entityLumps[0x18]; // 0x90            
+            char m_entityLumps[0x18]; // 0xc0            
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::worldrenderer::World_t, m_builderParams) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_worldNodes) == 0x48);
-        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_worldLightingInfo) == 0x60);
-        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_entityLumps) == 0x90);
+        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_worldNodes) == 0x60);
+        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_worldLightingInfo) == 0x78);
+        static_assert(offsetof(source2sdk::worldrenderer::World_t, m_entityLumps) == 0xc0);
         
-        static_assert(sizeof(source2sdk::worldrenderer::World_t) == 0xa8);
+        static_assert(sizeof(source2sdk::worldrenderer::World_t) == 0xd8);
     };
 };

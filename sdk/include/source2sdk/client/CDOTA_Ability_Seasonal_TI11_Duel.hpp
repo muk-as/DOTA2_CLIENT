@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_Seasonal_TI11_Duel : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float model_scale; // 0x680            
-            uint8_t _pad0684[0x4];
+            float model_scale; // 0x688            
+            uint8_t _pad068c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Seasonal_TI11_Duel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Seasonal_TI11_Duel) == 0x688);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Seasonal_TI11_Duel) == 0x690);
     };
 };

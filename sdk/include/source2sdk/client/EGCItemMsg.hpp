@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 132
+        // Enumerator count: 133
         // Alignment: 4
         // Size: 0x4
         enum class EGCItemMsg : std::uint32_t
@@ -95,6 +95,7 @@ namespace source2sdk
             k_EMsgGCToGCRefreshSOCache = 0x9f5,
             k_EMsgGCToGCGrantAccountRolledItems = 0x9fa,
             k_EMsgGCToGCGrantSelfMadeItemToAccount = 0x9fb,
+            k_EMsgGCToGCUnlockCrate = 0x9fc,
             k_EMsgGCStatueCraft = 0xa01,
             k_EMsgGCRedeemCode = 0xa02,
             k_EMsgGCRedeemCodeResponse = 0xa03,

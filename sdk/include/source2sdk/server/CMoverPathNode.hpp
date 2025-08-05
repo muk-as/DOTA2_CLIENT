@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x10
+        // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -44,12 +44,16 @@ namespace source2sdk
             // m_hMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CPathMover> m_hMover;
             char m_hMover[0x4]; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            uint8_t _pad05d4[0xc]; // 0x5d4
+            CTransform m_xWSPrevParent; // 0x5e0            
+            
+            // Datamap fields:
+            // void CMoverPathNodeParentedMoveThink; // 0x0
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMoverPathNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMoverPathNode) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CMoverPathNode) == 0x600);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xa0
+        // Size: 0xa8
         // Has VTable
         #pragma pack(push, 1)
         class CSoundPatch
@@ -46,10 +46,10 @@ namespace source2sdk
             Vector m_soundOrigin; // 0x58            
             std::int32_t m_isPlaying; // 0x64            
             source2sdk::client::CCopyRecipientFilter m_Filter; // 0x68            
-            float m_flCloseCaptionDuration; // 0x90            
-            bool m_bUpdatedSoundOrigin; // 0x94            
-            uint8_t _pad0095[0x3]; // 0x95
-            CUtlSymbolLarge m_iszClassName; // 0x98            
+            float m_flCloseCaptionDuration; // 0x98            
+            bool m_bUpdatedSoundOrigin; // 0x9c            
+            uint8_t _pad009d[0x3]; // 0x9d
+            CUtlSymbolLarge m_iszClassName; // 0xa0            
             
             // Datamap fields:
             // void m_guid; // 0x28
@@ -66,10 +66,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CSoundPatch, m_soundOrigin) == 0x58);
         static_assert(offsetof(source2sdk::client::CSoundPatch, m_isPlaying) == 0x64);
         static_assert(offsetof(source2sdk::client::CSoundPatch, m_Filter) == 0x68);
-        static_assert(offsetof(source2sdk::client::CSoundPatch, m_flCloseCaptionDuration) == 0x90);
-        static_assert(offsetof(source2sdk::client::CSoundPatch, m_bUpdatedSoundOrigin) == 0x94);
-        static_assert(offsetof(source2sdk::client::CSoundPatch, m_iszClassName) == 0x98);
+        static_assert(offsetof(source2sdk::client::CSoundPatch, m_flCloseCaptionDuration) == 0x98);
+        static_assert(offsetof(source2sdk::client::CSoundPatch, m_bUpdatedSoundOrigin) == 0x9c);
+        static_assert(offsetof(source2sdk::client::CSoundPatch, m_iszClassName) == 0xa0);
         
-        static_assert(sizeof(source2sdk::client::CSoundPatch) == 0xa0);
+        static_assert(sizeof(source2sdk::client::CSoundPatch) == 0xa8);
     };
 };

@@ -21,6 +21,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         struct IKDemoCaptureSettings_t
         {
@@ -29,7 +30,7 @@ namespace source2sdk
             // metadata: MPropertyAttributeChoiceName "Bone"
             CUtlString m_parentBoneName; // 0x0            
             // metadata: MPropertyFriendlyName "Solver Mode"
-            // metadata: MPropertyAttrChangeCallback
+            // metadata: MPropertyAutoRebuildOnChange
             source2sdk::animgraphlib::IKChannelMode m_eMode; // 0x8            
             uint8_t _pad000c[0x4]; // 0xc
             // metadata: MPropertyFriendlyName "IK Chain"

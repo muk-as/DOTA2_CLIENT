@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,13 +34,13 @@ namespace source2sdk
         public:
             // m_hOtherPortal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOtherPortal;
-            char m_hOtherPortal[0x4]; // 0x1898            
-            uint8_t _pad189c[0x4];
+            char m_hOtherPortal[0x4]; // 0x18b8            
+            uint8_t _pad18bc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Aghsfort_Aziyog_Underlord_Portal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Aghsfort_Aziyog_Underlord_Portal) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Aghsfort_Aziyog_Underlord_Portal) == 0x18c0);
     };
 };

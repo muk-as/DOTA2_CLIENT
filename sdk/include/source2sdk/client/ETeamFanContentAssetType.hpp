@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 9
+        // Enumerator count: 11
         // Alignment: 4
         // Size: 0x4
         enum class ETeamFanContentAssetType : std::uint32_t
@@ -27,6 +27,8 @@ namespace source2sdk
             k_eFanContentAssetType_Emoticons = 0x7,
             k_eFanContentAssetType_VoiceLines = 0x8,
             k_eFanContentAssetType_Localization = 0x9,
+            k_eFanContentAssetType_Banner = 0xa,
+            k_eFanContentAssetType_BaseLogo = 0xb,
         };
     };
 };

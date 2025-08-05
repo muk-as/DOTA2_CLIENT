@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/server/ELanguage.hpp"
+#include "source2sdk/client/ELanguage.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -47,11 +47,11 @@ namespace source2sdk
             CUtlString m_ImageFileExtension; // 0x40            
             // metadata: MPropertyDescription "Allowed languages for this comic book.  Anything not specified here will default to English."
             // m_AllowedLanguages has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<source2sdk::server::ELanguage> m_AllowedLanguages;
+            // CUtlVector<source2sdk::client::ELanguage> m_AllowedLanguages;
             char m_AllowedLanguages[0x18]; // 0x48            
             // metadata: MPropertyDescription "Language mapping for overrides. This is used when we don't have content like tchinese but have schinese and want to map one to the other."
             // m_LanguageOverrideMap has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlOrderedMap<source2sdk::server::ELanguage,source2sdk::server::ELanguage> m_LanguageOverrideMap;
+            // CUtlOrderedMap<source2sdk::client::ELanguage,source2sdk::client::ELanguage> m_LanguageOverrideMap;
             char m_LanguageOverrideMap[0x28]; // 0x60            
             // metadata: MPropertyDescription "Indices of pages that are new pages to the user.  Useful if you have a series of images which are full screen but reveal new cells. If not specified, each page is a start page. Try setting the comic_viewer_popup_show_internal_page convar to help set this up."
             // m_StartPages has a template type with potentially unknown template parameters. You can try uncommenting the field below.

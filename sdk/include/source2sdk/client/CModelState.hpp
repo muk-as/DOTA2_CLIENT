@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x310
+        // Size: 0x300
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "HModelStrong m_hModel"
@@ -39,23 +39,23 @@ namespace source2sdk
             uint8_t _pad00e0[0xc9]; // 0xe0
             // metadata: MNetworkEnable
             bool m_bClientClothCreationSuppressed; // 0x1a9            
-            uint8_t _pad01aa[0xb6]; // 0x1aa
+            uint8_t _pad01aa[0xa6]; // 0x1aa
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "skeletonMeshGroupMaskChanged"
-            std::uint64_t m_MeshGroupMask; // 0x260            
-            uint8_t _pad0268[0x48]; // 0x268
+            std::uint64_t m_MeshGroupMask; // 0x250            
+            uint8_t _pad0258[0x48]; // 0x258
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "bodyGroupChoiceChanged"
             // m_nBodyGroupChoices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<std::int32_t> m_nBodyGroupChoices;
-            char m_nBodyGroupChoices[0x18]; // 0x2b0            
-            uint8_t _pad02c8[0x32]; // 0x2c8
+            char m_nBodyGroupChoices[0x18]; // 0x2a0            
+            uint8_t _pad02b8[0x32]; // 0x2b8
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "skeletonMotionTypeChanged"
-            std::int8_t m_nIdealMotionType; // 0x2fa            
-            std::int8_t m_nForceLOD; // 0x2fb            
-            std::int8_t m_nClothUpdateFlags; // 0x2fc            
-            uint8_t _pad02fd[0x13];
+            std::int8_t m_nIdealMotionType; // 0x2ea            
+            std::int8_t m_nForceLOD; // 0x2eb            
+            std::int8_t m_nClothUpdateFlags; // 0x2ec            
+            uint8_t _pad02ed[0x13];
             
             // Datamap fields:
             // void m_pVPhysicsAggregate; // 0x110
@@ -65,12 +65,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CModelState, m_hModel) == 0xd0);
         static_assert(offsetof(source2sdk::client::CModelState, m_ModelName) == 0xd8);
         static_assert(offsetof(source2sdk::client::CModelState, m_bClientClothCreationSuppressed) == 0x1a9);
-        static_assert(offsetof(source2sdk::client::CModelState, m_MeshGroupMask) == 0x260);
-        static_assert(offsetof(source2sdk::client::CModelState, m_nBodyGroupChoices) == 0x2b0);
-        static_assert(offsetof(source2sdk::client::CModelState, m_nIdealMotionType) == 0x2fa);
-        static_assert(offsetof(source2sdk::client::CModelState, m_nForceLOD) == 0x2fb);
-        static_assert(offsetof(source2sdk::client::CModelState, m_nClothUpdateFlags) == 0x2fc);
+        static_assert(offsetof(source2sdk::client::CModelState, m_MeshGroupMask) == 0x250);
+        static_assert(offsetof(source2sdk::client::CModelState, m_nBodyGroupChoices) == 0x2a0);
+        static_assert(offsetof(source2sdk::client::CModelState, m_nIdealMotionType) == 0x2ea);
+        static_assert(offsetof(source2sdk::client::CModelState, m_nForceLOD) == 0x2eb);
+        static_assert(offsetof(source2sdk::client::CModelState, m_nClothUpdateFlags) == 0x2ec);
         
-        static_assert(sizeof(source2sdk::client::CModelState) == 0x310);
+        static_assert(sizeof(source2sdk::client::CModelState) == 0x300);
     };
 };

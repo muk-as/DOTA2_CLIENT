@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9c8
+        // Size: 0x9e8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,16 +27,16 @@ namespace source2sdk
         class NextBotCombatCharacter : public source2sdk::server::CBaseCombatCharacter
         {
         public:
-            uint8_t _pad0938[0x88]; // 0x938
+            uint8_t _pad0958[0x88]; // 0x958
             // metadata: MNetworkEnable
-            std::uint8_t m_nLod; // 0x9c0            
-            bool m_didModelChange; // 0x9c1            
-            uint8_t _pad09c2[0x6];
+            std::uint8_t m_nLod; // 0x9e0            
+            bool m_didModelChange; // 0x9e1            
+            uint8_t _pad09e2[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in NextBotCombatCharacter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::NextBotCombatCharacter) == 0x9c8);
+        static_assert(sizeof(source2sdk::server::NextBotCombatCharacter) == 0x9e8);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x520
+        // Size: 0x510
         // Has VTable
         // MClassHasEntityLimitedDataDesc
         // 
@@ -35,20 +35,20 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::client::CModelState m_modelState; // 0x170            
             // metadata: MNetworkEnable
-            bool m_bIsAnimationEnabled; // 0x480            
+            bool m_bIsAnimationEnabled; // 0x470            
             // metadata: MNetworkEnable
-            bool m_bUseParentRenderBounds; // 0x481            
-            bool m_bDisableSolidCollisionsForHierarchy; // 0x482            
+            bool m_bUseParentRenderBounds; // 0x471            
+            bool m_bDisableSolidCollisionsForHierarchy; // 0x472            
             // start of bitfield block
             uint8_t m_bDirtyMotionType: 1;
             uint8_t m_bIsGeneratingLatchedParentSpaceState: 1;
             // end of bitfield block// 2 bits
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "skeletonMaterialGroupChanged"
-            CUtlStringToken m_materialGroup; // 0x484            
+            CUtlStringToken m_materialGroup; // 0x474            
             // metadata: MNetworkEnable
-            std::uint8_t m_nHitboxSet; // 0x488            
-            uint8_t _pad0489[0x97];
+            std::uint8_t m_nHitboxSet; // 0x478            
+            uint8_t _pad0479[0x97];
             
             // Datamap fields:
             // Vector velocity; // 0x7fffffff
@@ -59,6 +59,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CSkeletonInstance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSkeletonInstance) == 0x520);
+        static_assert(sizeof(source2sdk::client::CSkeletonInstance) == 0x510);
     };
 };

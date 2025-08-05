@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xab0
+        // Size: 0xad8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTAAmbientCreatureParticleZone : public source2sdk::client::C_FuncBrush
         {
         public:
-            char m_szModelName[64]; // 0x970            
-            char m_szAreaName[256]; // 0x9b0            
+            char m_szModelName[64]; // 0x998            
+            char m_szAreaName[256]; // 0x9d8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAAmbientCreatureParticleZone because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAAmbientCreatureParticleZone) == 0xab0);
+        static_assert(sizeof(source2sdk::client::C_DOTAAmbientCreatureParticleZone) == 0xad8);
     };
 };

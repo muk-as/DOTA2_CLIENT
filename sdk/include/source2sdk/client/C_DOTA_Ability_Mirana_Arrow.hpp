@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x700
+        // Size: 0x708
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,23 +33,23 @@ namespace source2sdk
         class C_DOTA_Ability_Mirana_Arrow : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float scepter_radius; // 0x680            
-            Vector m_vStartPos; // 0x684            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x690            
-            uint8_t _pad0694[0x4]; // 0x694
+            float scepter_radius; // 0x688            
+            Vector m_vStartPos; // 0x68c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x698            
+            uint8_t _pad069c[0x4]; // 0x69c
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList[2];
-            char hAlreadyHitList[0x30]; // 0x698            
+            char hAlreadyHitList[0x30]; // 0x6a0            
             // hStarfallList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hStarfallList[2];
-            char hStarfallList[0x30]; // 0x6c8            
-            std::int32_t m_nActiveArrow; // 0x6f8            
-            uint8_t _pad06fc[0x4];
+            char hStarfallList[0x30]; // 0x6d0            
+            std::int32_t m_nActiveArrow; // 0x700            
+            uint8_t _pad0704[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Mirana_Arrow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Mirana_Arrow) == 0x700);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Mirana_Arrow) == 0x708);
     };
 };

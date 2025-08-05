@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0xc0
         // Has VTable
         // Construct allowed
         // 
@@ -30,15 +30,15 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Frequency (Hz)"
             // metadata: MPropertyDescription "The frequency of this sine tone."
-            float m_flFrequency; // 0xc0            
+            float m_flFrequency; // 0xb8            
             // metadata: MPropertyFriendlyName "Decay Time (Seconds)"
             // metadata: MPropertyDescription "The frequency of this sine tone."
-            float m_flDecayTime; // 0xc4            
+            float m_flDecayTime; // 0xbc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerDecayingSineWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerDecayingSineWave) == 0xc8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerDecayingSineWave) == 0xc0);
     };
 };

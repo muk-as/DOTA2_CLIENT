@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x18d0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_ShodoSai_Parry : public source2sdk::client::CDOTA_Buff
@@ -43,17 +43,18 @@ namespace source2sdk
             Vector m_vFacing; // 0x18a8            
             float m_flFacingTarget; // 0x18b4            
             float m_flLastOverheadTime; // 0x18b8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18bc            
+            float m_flOldPitch; // 0x18bc            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18c0            
             // m_hVulnAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hVulnAttackTarget;
-            char m_hVulnAttackTarget[0x4]; // 0x18c0            
-            bool m_bAttackingVuln; // 0x18c4            
-            uint8_t _pad18c5[0x3];
+            char m_hVulnAttackTarget[0x4]; // 0x18c4            
+            bool m_bAttackingVuln; // 0x18c8            
+            uint8_t _pad18c9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_ShodoSai_Parry because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_ShodoSai_Parry) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_ShodoSai_Parry) == 0x18d0);
     };
 };

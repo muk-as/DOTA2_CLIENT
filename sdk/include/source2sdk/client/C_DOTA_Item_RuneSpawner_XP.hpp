@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9a8
+        // Size: 0x9d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,18 +29,18 @@ namespace source2sdk
         class C_DOTA_Item_RuneSpawner_XP : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            source2sdk::client::DOTA_RUNES m_nRuneType; // 0x998            
+            source2sdk::client::DOTA_RUNES m_nRuneType; // 0x9c0            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnXPLastSpawnTimeChanged"
-            float m_flLastSpawnTime; // 0x99c            
+            float m_flLastSpawnTime; // 0x9c4            
             // metadata: MNetworkEnable
-            float m_flNextSpawnTime; // 0x9a0            
-            uint8_t _pad09a4[0x4];
+            float m_flNextSpawnTime; // 0x9c8            
+            uint8_t _pad09cc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_RuneSpawner_XP because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_RuneSpawner_XP) == 0x9a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_RuneSpawner_XP) == 0x9d0);
     };
 };

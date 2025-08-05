@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x3d0
+        // Size: 0x410
         // Has VTable
         // Construct allowed
         // 
@@ -31,16 +31,16 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyStartGroup "+Trace Direction"
-            CSmartPropAttributeVector m_vTraceDirection; // 0x310            
+            CSmartPropAttributeVector m_vTraceDirection; // 0x350            
             // metadata: MPropertyDescription "Specifies the coordinate space the trace direction vector is specified in."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_DirectionSpace; // 0x350            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_DirectionSpace; // 0x390            
             // metadata: MPropertyDescription "Maximum length of the trace. Surfaces beyond this distance will not be hit."
-            CSmartPropAttributeFloat m_flTraceLength; // 0x390            
+            CSmartPropAttributeFloat m_flTraceLength; // 0x3d0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_TraceInDirection because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_TraceInDirection) == 0x3d0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_TraceInDirection) == 0x410);
     };
 };

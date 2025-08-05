@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,13 +28,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bSai; // 0x680            
-            uint8_t _pad0681[0x7];
+            bool m_bSai; // 0x688            
+            uint8_t _pad0689[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Kez_SwitchWeapons because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Kez_SwitchWeapons) == 0x688);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Kez_SwitchWeapons) == 0x690);
     };
 };

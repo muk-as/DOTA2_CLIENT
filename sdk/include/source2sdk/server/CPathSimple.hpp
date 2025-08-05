@@ -38,7 +38,8 @@ namespace source2sdk
             uint8_t _pad0590[0x50]; // 0x590
             // metadata: MNetworkEnable
             CUtlString m_pathString; // 0x5e0            
-            uint8_t _pad05e8[0x8];
+            bool m_bClosedLoop; // 0x5e8            
+            uint8_t _pad05e9[0x7];
         };
         #pragma pack(pop)
         

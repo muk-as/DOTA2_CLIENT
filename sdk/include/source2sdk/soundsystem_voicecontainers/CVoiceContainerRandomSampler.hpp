@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1e8
+        // Size: 0x1e0
         // Has VTable
         // Construct allowed
         // 
@@ -29,21 +29,21 @@ namespace source2sdk
         class CVoiceContainerRandomSampler : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
         {
         public:
-            float m_flAmplitude; // 0xc0            
-            float m_flAmplitudeJitter; // 0xc4            
-            float m_flTimeJitter; // 0xc8            
-            float m_flMaxLength; // 0xcc            
-            std::int32_t m_nNumDelayVariations; // 0xd0            
-            uint8_t _pad00d4[0x4]; // 0xd4
+            float m_flAmplitude; // 0xb8            
+            float m_flAmplitudeJitter; // 0xbc            
+            float m_flTimeJitter; // 0xc0            
+            float m_flMaxLength; // 0xc4            
+            std::int32_t m_nNumDelayVariations; // 0xc8            
+            uint8_t _pad00cc[0x4]; // 0xcc
             // m_grainResources has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCVoiceContainerBase>> m_grainResources;
-            char m_grainResources[0x18]; // 0xd8            
-            uint8_t _pad00f0[0xf8];
+            char m_grainResources[0x18]; // 0xd0            
+            uint8_t _pad00e8[0xf8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerRandomSampler because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerRandomSampler) == 0x1e8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerRandomSampler) == 0x1e0);
     };
 };

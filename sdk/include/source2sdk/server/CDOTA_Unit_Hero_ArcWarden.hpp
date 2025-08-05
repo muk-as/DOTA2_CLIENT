@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ee0
+        // Size: 0x1f00
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class CDOTA_Unit_Hero_ArcWarden : public source2sdk::server::CDOTA_BaseNPC_Hero
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nTalkFXIndex; // 0x1ed0            
-            source2sdk::client::ParticleIndex_t m_nFXDeath; // 0x1ed4            
-            source2sdk::client::ParticleIndex_t m_nTempestFX; // 0x1ed8            
-            uint8_t _pad1edc[0x4];
+            source2sdk::client::ParticleIndex_t m_nTalkFXIndex; // 0x1ef0            
+            source2sdk::client::ParticleIndex_t m_nFXDeath; // 0x1ef4            
+            source2sdk::client::ParticleIndex_t m_nTempestFX; // 0x1ef8            
+            uint8_t _pad1efc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_ArcWarden because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_ArcWarden) == 0x1ee0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_ArcWarden) == 0x1f00);
     };
 };

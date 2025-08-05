@@ -21,13 +21,14 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Quaternion Parameter"
         #pragma pack(push, 1)
         class CQuaternionAnimParameter : public source2sdk::animgraphlib::CConcreteAnimParameter
         {
         public:
-            // metadata: MPropertyFriendlyName "Default Value"
+            // metadata: MPropertySuppressField
             Quaternion m_defaultValue; // 0x80            
             // metadata: MPropertyFriendlyName "Interpolate"
             bool m_bInterpolate; // 0x90            

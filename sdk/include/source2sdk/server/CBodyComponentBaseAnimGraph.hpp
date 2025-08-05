@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x8a0
+        // Size: 0x910
         // Has VTable
         // Construct disallowed
         // 
@@ -28,12 +28,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::server::CBaseAnimGraphController m_animationController; // 0x520            
+            source2sdk::server::CBaseAnimGraphController m_animationController; // 0x510            
+            uint8_t _pad0908[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBodyComponentBaseAnimGraph because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBodyComponentBaseAnimGraph) == 0x8a0);
+        static_assert(sizeof(source2sdk::server::CBodyComponentBaseAnimGraph) == 0x910);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1900
+        // Size: 0x18f8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_GrapplingClaw_Movement : public source2sdk::client::CDOTA_Buff
@@ -50,23 +50,21 @@ namespace source2sdk
             std::int32_t grapple_speed; // 0x18d4            
             std::int32_t impact_damage; // 0x18d8            
             std::int32_t land_distance; // 0x18dc            
-            std::int32_t bonus_flat_lifesteal; // 0x18e0            
-            std::int32_t lifesteal_pct; // 0x18e4            
-            std::int32_t creep_lifesteal_reduction_pct; // 0x18e8            
-            std::int32_t max_distance_break; // 0x18ec            
+            std::int32_t max_distance_break; // 0x18e0            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x18f0            
-            bool m_bDidAttack; // 0x18f4            
-            bool m_bStartedAnimation; // 0x18f5            
-            uint8_t _pad18f6[0x2]; // 0x18f6
-            source2sdk::client::GameActivity_t m_Activity; // 0x18f8            
-            float m_flTimeLeftForActivity; // 0x18fc            
+            char m_hTarget[0x4]; // 0x18e4            
+            bool m_bDidAttack; // 0x18e8            
+            bool m_bStartedAnimation; // 0x18e9            
+            uint8_t _pad18ea[0x2]; // 0x18ea
+            source2sdk::client::GameActivity_t m_Activity; // 0x18ec            
+            float m_flTimeLeftForActivity; // 0x18f0            
+            uint8_t _pad18f4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_GrapplingClaw_Movement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_GrapplingClaw_Movement) == 0x1900);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_GrapplingClaw_Movement) == 0x18f8);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1960
+        // Size: 0x1948
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Lua_Motion_Both : public source2sdk::server::CDOTA_Modifier_Lua
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lua_Motion_Both) == 0x1960);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lua_Motion_Both) == 0x1948);
     };
 };

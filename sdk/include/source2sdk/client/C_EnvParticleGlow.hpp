@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xf38
+        // Size: 0xf60
         // Has VTable
         // Construct allowed
         // 
@@ -32,17 +32,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flAlphaScale; // 0xf20            
+            float m_flAlphaScale; // 0xf48            
             // metadata: MNetworkEnable
-            float m_flRadiusScale; // 0xf24            
+            float m_flRadiusScale; // 0xf4c            
             // metadata: MNetworkEnable
-            float m_flSelfIllumScale; // 0xf28            
+            float m_flSelfIllumScale; // 0xf50            
             // metadata: MNetworkEnable
-            Color m_ColorTint; // 0xf2c            
+            Color m_ColorTint; // 0xf54            
             // metadata: MNetworkEnable
             // m_hTextureOverride has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hTextureOverride;
-            char m_hTextureOverride[0x8]; // 0xf30            
+            char m_hTextureOverride[0x8]; // 0xf58            
             
             // Datamap fields:
             // float InputSetScale; // 0x0
@@ -53,6 +53,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_EnvParticleGlow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EnvParticleGlow) == 0xf38);
+        static_assert(sizeof(source2sdk::client::C_EnvParticleGlow) == 0xf60);
     };
 };

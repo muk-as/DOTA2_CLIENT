@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x728
+        // Size: 0x730
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_Arcanist_Potion : public source2sdk::client::C_DOTA_Item
         {
         public:
-            std::int32_t cooldown_reduction_pct; // 0x720            
-            std::int32_t manacost_reduction_pct; // 0x724            
+            std::int32_t cooldown_reduction_pct; // 0x728            
+            std::int32_t manacost_reduction_pct; // 0x72c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_Arcanist_Potion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Arcanist_Potion) == 0x728);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Arcanist_Potion) == 0x730);
     };
 };

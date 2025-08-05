@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6b8
+        // Size: 0x6c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,19 +32,19 @@ namespace source2sdk
         class C_DOTA_Ability_Windrunner_Shackleshot : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t shackle_count; // 0x680            
-            Vector m_vArrowAvgPos; // 0x684            
-            Vector m_vArrowStartPos; // 0x690            
-            Vector m_vArrowStartPos2; // 0x69c            
-            Vector m_vArrowStartPos3; // 0x6a8            
+            std::int32_t shackle_count; // 0x688            
+            Vector m_vArrowAvgPos; // 0x68c            
+            Vector m_vArrowStartPos; // 0x698            
+            Vector m_vArrowStartPos2; // 0x6a4            
+            Vector m_vArrowStartPos3; // 0x6b0            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x6b4            
+            char m_hTarget[0x4]; // 0x6bc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Windrunner_Shackleshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Windrunner_Shackleshot) == 0x6b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Windrunner_Shackleshot) == 0x6c0);
     };
 };

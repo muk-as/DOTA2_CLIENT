@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7e0
+        // Size: 0x808
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CConstraintAnchor : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            float m_massScale; // 0x7d8            
-            uint8_t _pad07dc[0x4];
+            float m_massScale; // 0x800            
+            uint8_t _pad0804[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CConstraintAnchor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CConstraintAnchor) == 0x7e0);
+        static_assert(sizeof(source2sdk::server::CConstraintAnchor) == 0x808);
     };
 };

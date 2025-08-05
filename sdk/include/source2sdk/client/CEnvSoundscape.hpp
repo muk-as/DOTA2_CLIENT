@@ -18,31 +18,31 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x680
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CEnvSoundscape : public source2sdk::client::C_BaseEntity
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OnPlay; // 0x5e0            
-            float m_flRadius; // 0x608            
-            uint8_t _pad060c[0x4]; // 0x60c
-            CUtlSymbolLarge m_soundEventName; // 0x610            
-            bool m_bOverrideWithEvent; // 0x618            
-            uint8_t _pad0619[0x3]; // 0x619
-            std::int32_t m_soundscapeIndex; // 0x61c            
-            std::int32_t m_soundscapeEntityListId; // 0x620            
-            uint8_t _pad0624[0x4]; // 0x624
-            CUtlSymbolLarge m_positionNames[8]; // 0x628            
+            source2sdk::entity2::CEntityIOOutput m_OnPlay; // 0x5e8            
+            float m_flRadius; // 0x610            
+            uint8_t _pad0614[0x4]; // 0x614
+            CUtlSymbolLarge m_soundEventName; // 0x618            
+            bool m_bOverrideWithEvent; // 0x620            
+            uint8_t _pad0621[0x3]; // 0x621
+            std::int32_t m_soundscapeIndex; // 0x624            
+            std::int32_t m_soundscapeEntityListId; // 0x628            
+            uint8_t _pad062c[0x4]; // 0x62c
+            CUtlSymbolLarge m_positionNames[8]; // 0x630            
             // m_hProxySoundscape has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CEnvSoundscape> m_hProxySoundscape;
-            char m_hProxySoundscape[0x4]; // 0x668            
-            bool m_bDisabled; // 0x66c            
-            uint8_t _pad066d[0x3]; // 0x66d
-            CUtlSymbolLarge m_soundscapeName; // 0x670            
-            std::uint32_t m_soundEventHash; // 0x678            
-            uint8_t _pad067c[0x4];
+            char m_hProxySoundscape[0x4]; // 0x670            
+            bool m_bDisabled; // 0x674            
+            uint8_t _pad0675[0x3]; // 0x675
+            CUtlSymbolLarge m_soundscapeName; // 0x678            
+            std::uint32_t m_soundEventHash; // 0x680            
+            uint8_t _pad0684[0x4];
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -53,6 +53,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CEnvSoundscape because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CEnvSoundscape) == 0x680);
+        static_assert(sizeof(source2sdk::client::CEnvSoundscape) == 0x688);
     };
 };

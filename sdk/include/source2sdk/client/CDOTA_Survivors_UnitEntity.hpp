@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x1ea0
+        // Size: 0x1eb0
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class CDOTA_Survivors_UnitEntity : public source2sdk::client::C_PortraitWorldUnit
         {
         public:
-            uint8_t _pad1e50[0x50];
+            uint8_t _pad1e60[0x50];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Survivors_UnitEntity) == 0x1ea0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Survivors_UnitEntity) == 0x1eb0);
     };
 };

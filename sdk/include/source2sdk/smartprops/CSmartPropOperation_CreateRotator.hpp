@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x2a0
+        // Size: 0x320
         // Has VTable
         // Construct allowed
         // 
@@ -33,37 +33,41 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertyDescription "Name used to identify the rotator. Must be unique within the parent element."
             CUtlString m_Name; // 0x50            
+            // metadata: MPropertyDescription "Offset of the rotator relative to the current transform. This allows the rotator to be created at an offset location without applying that offset to the current transform."
+            CSmartPropAttributeVector m_vOffset; // 0x58            
             // metadata: MPropertyDescription "Axis around which the rotation will occur"
-            CSmartPropAttributeVector m_vRotationAxis; // 0x58            
+            CSmartPropAttributeVector m_vRotationAxis; // 0x98            
             // metadata: MPropertyDescription "Coordinate space the axis of rotation is specified in."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpace; // 0x98            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpace; // 0xd8            
             // metadata: MPropertyDescription "Radius at which the rotator handle should be displayed."
-            CSmartPropAttributeFloat m_flDisplayRadius; // 0xd8            
+            CSmartPropAttributeFloat m_flDisplayRadius; // 0x118            
             // metadata: MPropertyDescription "Color to display the rotator handle with."
-            CSmartPropAttributeColor m_DisplayColor; // 0x118            
+            CSmartPropAttributeColor m_DisplayColor; // 0x158            
             // metadata: MPropertyDescription "Should the rotation be applied to the current transform."
-            CSmartPropAttributeBool m_bApplyToCurrentTransform; // 0x158            
+            CSmartPropAttributeBool m_bApplyToCurrentTransform; // 0x198            
             // metadata: MPropertyDescription "Specifies the number of degrees the rotation should snap to. If set to 0, then the rotation snapping will be controlled by the rotation snapping in Hammer."
-            CSmartPropAttributeFloat m_flSnappingIncrement; // 0x198            
+            CSmartPropAttributeFloat m_flSnappingIncrement; // 0x1d8            
+            // metadata: MPropertyDescription "Specifies the angle the rotator should be set to initially."
+            CSmartPropAttributeFloat m_flInitialAngle; // 0x218            
             // metadata: MPropertyFriendlyName "Enforce Limits"
             // metadata: MPropertyDescription "If enabled, the minimum and maximum rotation angles will be used to limit the range of the rotation."
-            CSmartPropAttributeBool m_bEnforceLimits; // 0x1d8            
+            CSmartPropAttributeBool m_bEnforceLimits; // 0x258            
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyFriendlyName "Minimum Angle"
             // metadata: MPropertyDescription "Specifies the minimum angle limit in degrees"
-            CSmartPropAttributeFloat m_flMinAngle; // 0x218            
+            CSmartPropAttributeFloat m_flMinAngle; // 0x298            
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyFriendlyName "Maximum Angle"
             // metadata: MPropertyDescription "Specifies the minimum angle limit in degrees"
-            CSmartPropAttributeFloat m_flMaxAngle; // 0x258            
+            CSmartPropAttributeFloat m_flMaxAngle; // 0x2d8            
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
             // metadata: MPropertyDescription "Specifies a float variable to which the rotation value should be output. The variable only receives the rotation around the axis, the axis of rotation does not affect this output."
-            CUtlString m_OutputVariable; // 0x298            
+            CUtlString m_OutputVariable; // 0x318            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_CreateRotator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_CreateRotator) == 0x2a0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_CreateRotator) == 0x320);
     };
 };

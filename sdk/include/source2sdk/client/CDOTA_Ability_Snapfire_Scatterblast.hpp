@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_Ability_Snapfire_Scatterblast : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t damage; // 0x680            
-            float debuff_duration; // 0x684            
-            std::int32_t point_blank_range; // 0x688            
-            float point_blank_dmg_bonus_pct; // 0x68c            
-            float blast_width_end; // 0x690            
-            uint8_t _pad0694[0x4];
+            std::int32_t damage; // 0x688            
+            float debuff_duration; // 0x68c            
+            std::int32_t point_blank_range; // 0x690            
+            float point_blank_dmg_bonus_pct; // 0x694            
+            float blast_width_end; // 0x698            
+            uint8_t _pad069c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Snapfire_Scatterblast because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_Scatterblast) == 0x698);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_Scatterblast) == 0x6a0);
     };
 };

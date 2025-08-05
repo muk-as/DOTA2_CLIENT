@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,13 +34,13 @@ namespace source2sdk
         public:
             // m_hStolenTree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hStolenTree;
-            char m_hStolenTree[0x4]; // 0x680            
-            uint8_t _pad0684[0x4];
+            char m_hStolenTree[0x4]; // 0x688            
+            uint8_t _pad068c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Tiny_Tree_Grab because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tiny_Tree_Grab) == 0x688);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tiny_Tree_Grab) == 0x690);
     };
 };

@@ -266,12 +266,13 @@ namespace source2sdk
             bool m_bGravityDisabled; // 0x408            
             // metadata: MNetworkEnable
             bool m_bAnimatedEveryTick; // 0x409            
-            bool m_bGravityActuallyDisabled; // 0x40a            
-            bool m_bDisableLowViolence; // 0x40b            
-            std::uint8_t m_nWaterType; // 0x40c            
-            uint8_t _pad040d[0x3]; // 0x40d
-            std::int32_t m_iEFlags; // 0x410            
-            uint8_t _pad0414[0x4]; // 0x414
+            uint8_t _pad040a[0x2]; // 0x40a
+            float m_flActualGravityScale; // 0x40c            
+            bool m_bGravityActuallyDisabled; // 0x410            
+            bool m_bDisableLowViolence; // 0x411            
+            std::uint8_t m_nWaterType; // 0x412            
+            uint8_t _pad0413[0x1]; // 0x413
+            std::int32_t m_iEFlags; // 0x414            
             source2sdk::entity2::CEntityIOOutput m_OnUser1; // 0x418            
             source2sdk::entity2::CEntityIOOutput m_OnUser2; // 0x440            
             source2sdk::entity2::CEntityIOOutput m_OnUser3; // 0x468            
@@ -330,6 +331,8 @@ namespace source2sdk
             // CUtlSymbolLarge InputChangeSubclass; // 0x0
             // void InputPlatformEnable; // 0x0
             // void InputPlatformDisable; // 0x0
+            // void InputPlatformFollowYaw; // 0x0
+            // void InputPlatformIgnoreYaw; // 0x0
             // void CBaseEntitySUB_Remove; // 0x0
             // void CBaseEntitySUB_RemoveIfUncarried; // 0x0
             // void CBaseEntitySUB_DoNothing; // 0x0

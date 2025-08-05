@@ -23,6 +23,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Status Tag"
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CTaskStatusAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {

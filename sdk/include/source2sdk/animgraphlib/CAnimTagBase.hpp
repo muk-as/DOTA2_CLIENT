@@ -22,6 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CAnimTagBase
         {
@@ -34,12 +35,12 @@ namespace source2sdk
             // metadata: MPropertyAttributeEditor "TextBlock()"
             // metadata: MPropertySortPriority "-100"
             CUtlString m_sComment; // 0x20            
-            // metadata: MPropertyHideField
+            // metadata: MPropertySuppressField
             CGlobalSymbol m_group; // 0x28            
-            // metadata: MPropertyHideField
+            // metadata: MPropertySuppressField
             source2sdk::modellib::AnimTagID m_tagID; // 0x30            
             uint8_t _pad0034[0x14]; // 0x34
-            // metadata: MPropertyHideField
+            // metadata: MPropertySuppressField
             bool m_bIsReferenced; // 0x48            
             uint8_t _pad0049[0x7];
         };

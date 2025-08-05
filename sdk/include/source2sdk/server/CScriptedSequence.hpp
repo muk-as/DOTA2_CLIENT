@@ -4,11 +4,11 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/ForcedCrouchState_t.hpp"
-#include "source2sdk/client/ScriptedHeldWeaponBehavior_t.hpp"
-#include "source2sdk/client/ScriptedMoveTo_t.hpp"
 #include "source2sdk/client/ScriptedOnDeath_t.hpp"
 #include "source2sdk/entity2/CEntityIOOutput.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
+#include "source2sdk/modellib/ScriptedHeldWeaponBehavior_t.hpp"
+#include "source2sdk/modellib/ScriptedMoveTo_t.hpp"
 #include "source2sdk/modellib/SharedMovementGait_t.hpp"
 #include "source2sdk/server/CBaseEntity.hpp"
 #include "source2sdk/server/ScriptedConflictResponse_t.hpp"
@@ -54,10 +54,10 @@ namespace source2sdk
             CUtlSymbolLarge m_iszNextScript; // 0x508            
             CUtlSymbolLarge m_iszEntity; // 0x510            
             CUtlSymbolLarge m_iszSyncGroup; // 0x518            
-            source2sdk::client::ScriptedMoveTo_t m_nMoveTo; // 0x520            
+            source2sdk::modellib::ScriptedMoveTo_t m_nMoveTo; // 0x520            
             source2sdk::modellib::SharedMovementGait_t m_nMoveToGait; // 0x524            
             uint8_t _pad0525[0x3]; // 0x525
-            source2sdk::client::ScriptedHeldWeaponBehavior_t m_nHeldWeaponBehavior; // 0x528            
+            source2sdk::modellib::ScriptedHeldWeaponBehavior_t m_nHeldWeaponBehavior; // 0x528            
             source2sdk::client::ForcedCrouchState_t m_nForcedCrouchState; // 0x52c            
             bool m_bIsPlayingPreIdle; // 0x530            
             bool m_bIsPlayingEntry; // 0x531            
@@ -135,7 +135,8 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBaseEntity> m_hInteractionMainEntity;
             char m_hInteractionMainEntity[0x4]; // 0x7f0            
             std::int32_t m_iPlayerDeathBehavior; // 0x7f4            
-            uint8_t _pad07f8[0x8];
+            bool m_bSkipFadeIn; // 0x7f8            
+            uint8_t _pad07f9[0x7];
             
             // Datamap fields:
             // void CScriptedSequenceScriptThink; // 0x0

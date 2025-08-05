@@ -24,23 +24,23 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a18
+        // Size: 0x1a30
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_NPC_Observer_Ward : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            std::int32_t m_iDuration; // 0x1a00            
-            uint8_t _pad1a04[0x4]; // 0x1a04
-            source2sdk::particleslib::CNewParticleEffect* m_pVisionRangeFX; // 0x1a08            
-            std::int32_t m_nPreviewViewer; // 0x1a10            
-            uint8_t _pad1a14[0x4];
+            std::int32_t m_iDuration; // 0x1a18            
+            uint8_t _pad1a1c[0x4]; // 0x1a1c
+            source2sdk::particleslib::CNewParticleEffect* m_pVisionRangeFX; // 0x1a20            
+            std::int32_t m_nPreviewViewer; // 0x1a28            
+            uint8_t _pad1a2c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_NPC_Observer_Ward because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_NPC_Observer_Ward) == 0x1a18);
+        static_assert(sizeof(source2sdk::client::CDOTA_NPC_Observer_Ward) == 0x1a30);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7f0
+        // Size: 0x818
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,21 +36,21 @@ namespace source2sdk
         class CDOTA_Item_Physical : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            std::int32_t m_nFlags; // 0x7d8            
-            std::int32_t m_nRevealedInFoWForTeam; // 0x7dc            
-            source2sdk::entity2::GameTime_t m_fCreationTime; // 0x7e0            
+            std::int32_t m_nFlags; // 0x800            
+            std::int32_t m_nRevealedInFoWForTeam; // 0x804            
+            source2sdk::entity2::GameTime_t m_fCreationTime; // 0x808            
             // metadata: MNetworkEnable
             // m_hItem has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_Item> m_hItem;
-            char m_hItem[0x4]; // 0x7e4            
+            char m_hItem[0x4]; // 0x80c            
             // metadata: MNetworkEnable
-            bool m_bIsLowPriorityHoverItem; // 0x7e8            
-            uint8_t _pad07e9[0x7];
+            bool m_bIsLowPriorityHoverItem; // 0x810            
+            uint8_t _pad0811[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Physical because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Physical) == 0x7f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Physical) == 0x818);
     };
 };

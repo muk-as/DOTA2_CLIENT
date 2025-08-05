@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // 
@@ -32,16 +32,16 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flAutoExposureMin; // 0x5e0            
+            float m_flAutoExposureMin; // 0x5e8            
             // metadata: MNetworkEnable
-            float m_flAutoExposureMax; // 0x5e4            
+            float m_flAutoExposureMax; // 0x5ec            
             // metadata: MNetworkEnable
-            float m_flExposureAdaptationSpeedUp; // 0x5e8            
+            float m_flExposureAdaptationSpeedUp; // 0x5f0            
             // metadata: MNetworkEnable
-            float m_flExposureAdaptationSpeedDown; // 0x5ec            
+            float m_flExposureAdaptationSpeedDown; // 0x5f4            
             // metadata: MNetworkEnable
-            float m_flTonemapEVSmoothingRange; // 0x5f0            
-            uint8_t _pad05f4[0x4];
+            float m_flTonemapEVSmoothingRange; // 0x5f8            
+            uint8_t _pad05fc[0x4];
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -55,6 +55,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_TonemapController2 because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_TonemapController2) == 0x5f8);
+        static_assert(sizeof(source2sdk::client::C_TonemapController2) == 0x600);
     };
 };

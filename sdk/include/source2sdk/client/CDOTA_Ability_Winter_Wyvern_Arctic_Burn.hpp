@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,12 +27,12 @@ namespace source2sdk
         public:
             // m_BurnedTargets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityIndex> m_BurnedTargets;
-            char m_BurnedTargets[0x18]; // 0x680            
+            char m_BurnedTargets[0x18]; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Winter_Wyvern_Arctic_Burn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Winter_Wyvern_Arctic_Burn) == 0x698);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Winter_Wyvern_Arctic_Burn) == 0x6a0);
     };
 };

@@ -31,7 +31,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x790
+        // Size: 0x798
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -43,21 +43,21 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_ActivityModifier[256]; // 0x680            
+            char m_ActivityModifier[256]; // 0x688            
             // metadata: MNetworkEnable
-            float m_fStolenCastPoint; // 0x780            
+            float m_fStolenCastPoint; // 0x788            
             // m_hStealTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hStealTarget;
-            char m_hStealTarget[0x4]; // 0x784            
+            char m_hStealTarget[0x4]; // 0x78c            
             // m_hStealAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> m_hStealAbility;
-            char m_hStealAbility[0x4]; // 0x788            
-            uint8_t _pad078c[0x4];
+            char m_hStealAbility[0x4]; // 0x790            
+            uint8_t _pad0794[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Rubick_SpellSteal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rubick_SpellSteal) == 0x790);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rubick_SpellSteal) == 0x798);
     };
 };

@@ -34,7 +34,7 @@ namespace source2sdk
             float m_flDefaultMorphCtrlWeight; // 0x40            
             uint8_t _pad0044[0x4]; // 0x44
             // m_morphCtrlWeightArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlPair<CBufferString,float>> m_morphCtrlWeightArray;
+            // CUtlVector<std_pair<CBufferString,float>> m_morphCtrlWeightArray;
             char m_morphCtrlWeightArray[0x18]; // 0x48            
         };
         #pragma pack(pop)

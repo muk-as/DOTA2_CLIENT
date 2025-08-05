@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6b0
+        // Size: 0x6b8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,20 +32,20 @@ namespace source2sdk
         class CDOTA_Ability_Centaur_Stampede : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float duration; // 0x680            
-            std::int32_t base_damage; // 0x684            
-            float strength_damage; // 0x688            
-            float slow_duration; // 0x68c            
-            float scepter_bonus_duration; // 0x690            
-            uint8_t _pad0694[0x4]; // 0x694
+            float duration; // 0x688            
+            std::int32_t base_damage; // 0x68c            
+            float strength_damage; // 0x690            
+            float slow_duration; // 0x694            
+            float scepter_bonus_duration; // 0x698            
+            uint8_t _pad069c[0x4]; // 0x69c
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x698            
+            char m_hHitEntities[0x18]; // 0x6a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Centaur_Stampede because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Centaur_Stampede) == 0x6b0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Centaur_Stampede) == 0x6b8);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,17 +29,17 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPineConeAcornTreePlanted"
-            std::uint32_t m_nAcornTree; // 0x680            
-            float projectile_speed; // 0x684            
-            float bounce_delay; // 0x688            
-            std::int32_t bounce_range; // 0x68c            
-            std::int32_t bounce_count; // 0x690            
-            uint8_t _pad0694[0x4];
+            std::uint32_t m_nAcornTree; // 0x688            
+            float projectile_speed; // 0x68c            
+            float bounce_delay; // 0x690            
+            std::int32_t bounce_range; // 0x694            
+            std::int32_t bounce_count; // 0x698            
+            uint8_t _pad069c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_PineCone_AcornShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PineCone_AcornShot) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PineCone_AcornShot) == 0x6a0);
     };
 };

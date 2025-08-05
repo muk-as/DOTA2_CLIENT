@@ -21,12 +21,14 @@ namespace source2sdk
         // Alignment: 0x8
         // Standard-layout class: true
         // Size: 0x28
+        // 
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         struct IKTargetSettings_t
         {
         public:
             // metadata: MPropertyFriendlyName "Target Source"
-            // metadata: MPropertyAttrChangeCallback
+            // metadata: MPropertyAutoRebuildOnChange
             source2sdk::animgraphlib::IKTargetSource m_TargetSource; // 0x0            
             uint8_t _pad0004[0x4]; // 0x4
             // metadata: MPropertyFriendlyName "Bone"

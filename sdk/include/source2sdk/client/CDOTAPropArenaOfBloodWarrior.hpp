@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x10
+        // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0xc78
+        // Size: 0xca0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTAPropArenaOfBloodWarrior : public source2sdk::client::C_DynamicProp
         {
         public:
-            bool m_bDying; // 0xc70            
-            uint8_t _pad0c71[0x7];
+            bool m_bDying; // 0xc90            
+            uint8_t _pad0c91[0xf];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPropArenaOfBloodWarrior because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPropArenaOfBloodWarrior) == 0xc78);
+        static_assert(sizeof(source2sdk::client::CDOTAPropArenaOfBloodWarrior) == 0xca0);
     };
 };

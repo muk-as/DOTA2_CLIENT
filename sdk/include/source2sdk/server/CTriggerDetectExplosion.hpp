@@ -18,20 +18,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9e0
+        // Size: 0xa08
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CTriggerDetectExplosion : public source2sdk::server::CBaseTrigger
         {
         public:
-            uint8_t _pad0998[0x20]; // 0x998
-            source2sdk::entity2::CEntityIOOutput m_OnDetectedExplosion; // 0x9b8            
+            uint8_t _pad09c0[0x20]; // 0x9c0
+            source2sdk::entity2::CEntityIOOutput m_OnDetectedExplosion; // 0x9e0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerDetectExplosion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerDetectExplosion) == 0x9e0);
+        static_assert(sizeof(source2sdk::server::CTriggerDetectExplosion) == 0xa08);
     };
 };

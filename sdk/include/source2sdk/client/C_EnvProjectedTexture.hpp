@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xc58
+        // Size: 0xc80
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,12 +25,12 @@ namespace source2sdk
         class C_EnvProjectedTexture : public source2sdk::client::C_ModelPointEntity
         {
         public:
-            uint8_t _pad0970[0x2e8];
+            uint8_t _pad0998[0x2e8];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_EnvProjectedTexture) == 0xc58);
+        static_assert(sizeof(source2sdk::client::C_EnvProjectedTexture) == 0xc80);
     };
 };

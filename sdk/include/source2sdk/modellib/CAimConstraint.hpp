@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x80
         // Has VTable
         // Construct allowed
         // 
@@ -26,15 +26,14 @@ namespace source2sdk
         class CAimConstraint : public source2sdk::modellib::CBaseConstraint
         {
         public:
-            uint8_t _pad0068[0x8]; // 0x68
-            Quaternion m_qAimOffset; // 0x70            
-            std::uint32_t m_nUpType; // 0x80            
-            uint8_t _pad0084[0xc];
+            Quaternion m_qAimOffset; // 0x60            
+            std::uint32_t m_nUpType; // 0x70            
+            uint8_t _pad0074[0xc];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAimConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CAimConstraint) == 0x90);
+        static_assert(sizeof(source2sdk::modellib::CAimConstraint) == 0x80);
     };
 };

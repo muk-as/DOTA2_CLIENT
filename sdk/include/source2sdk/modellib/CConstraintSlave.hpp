@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x50
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -30,7 +30,7 @@ namespace source2sdk
             float m_flWeight; // 0x20            
             uint8_t _pad0024[0x4]; // 0x24
             CUtlString m_sName; // 0x28            
-            uint8_t _pad0030[0x30];
+            uint8_t _pad0030[0x20];
         };
         #pragma pack(pop)
         
@@ -40,6 +40,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_flWeight) == 0x20);
         static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_sName) == 0x28);
         
-        static_assert(sizeof(source2sdk::modellib::CConstraintSlave) == 0x60);
+        static_assert(sizeof(source2sdk::modellib::CConstraintSlave) == 0x50);
     };
 };

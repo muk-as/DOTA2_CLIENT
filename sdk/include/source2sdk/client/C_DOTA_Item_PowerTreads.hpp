@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x728
+        // Size: 0x730
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,13 +30,13 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPowerTreadsStatChanged"
-            std::int32_t m_iStat; // 0x720            
-            source2sdk::client::ParticleIndex_t nFXIndexTreads; // 0x724            
+            std::int32_t m_iStat; // 0x728            
+            source2sdk::client::ParticleIndex_t nFXIndexTreads; // 0x72c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_PowerTreads because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_PowerTreads) == 0x728);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_PowerTreads) == 0x730);
     };
 };

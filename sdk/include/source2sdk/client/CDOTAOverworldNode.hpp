@@ -32,19 +32,18 @@ namespace source2sdk
             source2sdk::client::OverworldNodeID_t m_unID; // 0x0            
             uint8_t _pad0002[0x2]; // 0x2
             Vector2D m_vPos; // 0x4            
-            uint8_t _pad000c[0x4]; // 0xc
-            // metadata: MPropertyDescription "A css class to be applied to the node."
-            CUtlString m_sCustomClass; // 0x10            
+            source2sdk::client::EOverworldNodeFlags m_eNodeFlags; // 0xc            
             // metadata: MPropertyDescription "Name/Key used to look up which Visual Novel dialogue to use."
-            CUtlString m_sDialogueName; // 0x18            
-            CUtlString m_sRewardEventAction; // 0x20            
+            CUtlString m_sDialogueName; // 0x10            
+            CUtlString m_sRewardEventAction; // 0x18            
+            bool m_bSkipGrantingRewardOnUnlock; // 0x20            
+            uint8_t _pad0021[0x7]; // 0x21
             // metadata: MPropertyDescription "If defined, this node and the path to it are invisible and unreachable to players unless they own a specific event action."
             CUtlString m_sHiddenWithoutEventAction; // 0x28            
             CUtlString m_sJSEvent; // 0x30            
-            float m_flUnlockDelay; // 0x38            
-            bool m_bSkipGrantingRewardOnUnlock; // 0x3c            
-            uint8_t _pad003d[0x3]; // 0x3d
-            source2sdk::client::EOverworldNodeFlags m_eNodeFlags; // 0x40            
+            // metadata: MPropertyDescription "A css class to be applied to the node."
+            CUtlString m_sCustomClass; // 0x38            
+            float m_flUnlockDelay; // 0x40            
             uint8_t _pad0044[0x4]; // 0x44
             CUtlString m_sEncounterName; // 0x48            
             uint8_t _pad0050[0x8]; // 0x50
@@ -62,14 +61,14 @@ namespace source2sdk
         
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_unID) == 0x0);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_vPos) == 0x4);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sCustomClass) == 0x10);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sDialogueName) == 0x18);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sRewardEventAction) == 0x20);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_eNodeFlags) == 0xc);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sDialogueName) == 0x10);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sRewardEventAction) == 0x18);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_bSkipGrantingRewardOnUnlock) == 0x20);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sHiddenWithoutEventAction) == 0x28);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sJSEvent) == 0x30);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_flUnlockDelay) == 0x38);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_bSkipGrantingRewardOnUnlock) == 0x3c);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_eNodeFlags) == 0x40);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sCustomClass) == 0x38);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_flUnlockDelay) == 0x40);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_sEncounterName) == 0x48);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_vecUnlockMapClasses) == 0x58);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldNode, m_vecVisitMapClasses) == 0x70);

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace panorama_content
     {
-        // Enumerator count: 16
+        // Enumerator count: 17
         // Alignment: 4
         // Size: 0x4
         enum class EStyleNodeType : std::uint32_t
@@ -33,7 +33,8 @@ namespace source2sdk
             REFERENCE_CONTENT = 0xc,
             REFERENCE_COMPILED = 0xd,
             REFERENCE_PASSTHROUGH = 0xe,
-            COMPILER_CONDITIONAL = 0xf,
+            REFERENCE_PANEL = 0xf,
+            COMPILER_CONDITIONAL = 0x10,
         };
     };
 };

@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/server/CBaseEntity.hpp"
+#include "source2sdk/server/CEnvWindShared.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -17,54 +18,54 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x518
+        // Size: 0x658
         // Has VTable
         // Construct allowed
         // 
-        // static metadata: MNetworkVarNames "Vector m_vDirection"
+        // static metadata: MNetworkVarNames "CEnvWindShared m_EnvWindShared"
         // static metadata: MNetworkVarNames "float m_fDirectionVariation"
-        // static metadata: MNetworkVarNames "float m_fSpeed"
         // static metadata: MNetworkVarNames "float m_fSpeedVariation"
         // static metadata: MNetworkVarNames "float m_fTurbulence"
-        // static metadata: MNetworkVarNames "float m_fVolumeSizeXY"
-        // static metadata: MNetworkVarNames "float m_fVolumeSizeZ"
-        // static metadata: MNetworkVarNames "float m_fVolumeMinSpacing"
+        // static metadata: MNetworkVarNames "float m_fVolumeHalfExtentXY"
+        // static metadata: MNetworkVarNames "float m_fVolumeHalfExtentZ"
         // static metadata: MNetworkVarNames "int m_nVolumeResolutionXY"
         // static metadata: MNetworkVarNames "int m_nVolumeResolutionZ"
+        // static metadata: MNetworkVarNames "int m_nClipmapLevels"
         // static metadata: MNetworkVarNames "bool m_bIsMaster"
         #pragma pack(push, 1)
         class CEnvWindController : public source2sdk::server::CBaseEntity
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vDirection; // 0x4e0            
+            source2sdk::server::CEnvWindShared m_EnvWindShared; // 0x4e0            
             // metadata: MNetworkEnable
-            float m_fDirectionVariation; // 0x4ec            
+            float m_fDirectionVariation; // 0x630            
             // metadata: MNetworkEnable
-            float m_fSpeed; // 0x4f0            
+            float m_fSpeedVariation; // 0x634            
             // metadata: MNetworkEnable
-            float m_fSpeedVariation; // 0x4f4            
+            float m_fTurbulence; // 0x638            
             // metadata: MNetworkEnable
-            float m_fTurbulence; // 0x4f8            
+            float m_fVolumeHalfExtentXY; // 0x63c            
             // metadata: MNetworkEnable
-            float m_fVolumeSizeXY; // 0x4fc            
+            float m_fVolumeHalfExtentZ; // 0x640            
             // metadata: MNetworkEnable
-            float m_fVolumeSizeZ; // 0x500            
+            std::int32_t m_nVolumeResolutionXY; // 0x644            
             // metadata: MNetworkEnable
-            float m_fVolumeMinSpacing; // 0x504            
+            std::int32_t m_nVolumeResolutionZ; // 0x648            
             // metadata: MNetworkEnable
-            std::int32_t m_nVolumeResolutionXY; // 0x508            
+            std::int32_t m_nClipmapLevels; // 0x64c            
             // metadata: MNetworkEnable
-            std::int32_t m_nVolumeResolutionZ; // 0x50c            
-            // metadata: MNetworkEnable
-            bool m_bIsMaster; // 0x510            
-            bool m_bFirstTime; // 0x511            
-            uint8_t _pad0512[0x6];
+            bool m_bIsMaster; // 0x650            
+            bool m_bFirstTime; // 0x651            
+            uint8_t _pad0652[0x6];
+            
+            // Datamap fields:
+            // void CEnvWindControllerWindThink; // 0x0
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvWindController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvWindController) == 0x518);
+        static_assert(sizeof(source2sdk::server::CEnvWindController) == 0x658);
     };
 };

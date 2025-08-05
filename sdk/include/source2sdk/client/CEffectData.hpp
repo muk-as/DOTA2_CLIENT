@@ -36,7 +36,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "uint32 m_nDamageType"
         // static metadata: MNetworkVarNames "uint8 m_nPenetrate"
         // static metadata: MNetworkVarNames "uint16 m_nMaterial"
-        // static metadata: MNetworkVarNames "uint16 m_nHitBox"
+        // static metadata: MNetworkVarNames "int16 m_nHitBox"
         // static metadata: MNetworkVarNames "uint8 m_nColor"
         // static metadata: MNetworkVarNames "uint8 m_fFlags"
         // static metadata: MNetworkVarNames "AttachmentHandle_t m_nAttachmentIndex"
@@ -92,7 +92,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::uint16_t m_nMaterial; // 0x5e            
             // metadata: MNetworkEnable
-            std::uint16_t m_nHitBox; // 0x60            
+            std::int16_t m_nHitBox; // 0x60            
             // metadata: MNetworkEnable
             std::uint8_t m_nColor; // 0x62            
             // metadata: MNetworkEnable

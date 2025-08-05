@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x80
+        // Size: 0x78
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -45,7 +45,7 @@ namespace source2sdk
             uint8_t _pad0054[0x4]; // 0x54
             // metadata: MFgdFromSchemaCompletelySkipField
             CUtlBinaryBlock m_encodedHeader; // 0x58            
-            uint8_t _pad0070[0x10];
+            uint8_t _pad0068[0x10];
         };
         #pragma pack(pop)
         
@@ -61,6 +61,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVSound, m_nLoopEnd) == 0x50);
         static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVSound, m_encodedHeader) == 0x58);
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVSound) == 0x80);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVSound) == 0x78);
     };
 };

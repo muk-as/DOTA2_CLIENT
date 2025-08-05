@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x30
         // Has VTable
         #pragma pack(push, 1)
         class CCopyRecipientFilter
@@ -28,12 +28,13 @@ namespace source2sdk
             // m_Recipients has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CPlayerSlot> m_Recipients;
             char m_Recipients[0x18]; // 0x10            
+            uint8_t _pad0028[0x8];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::client::CCopyRecipientFilter, m_Flags) == 0x8);
         static_assert(offsetof(source2sdk::client::CCopyRecipientFilter, m_Recipients) == 0x10);
         
-        static_assert(sizeof(source2sdk::client::CCopyRecipientFilter) == 0x28);
+        static_assert(sizeof(source2sdk::client::CCopyRecipientFilter) == 0x30);
     };
 };

@@ -42,7 +42,7 @@ namespace source2sdk
             // CUtlVector<source2sdk::animgraphlib::CAnimParamHandle> m_indexToHandle;
             char m_indexToHandle[0x18]; // 0x70            
             // m_autoResetParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlPair<source2sdk::animgraphlib::CAnimParamHandle,CAnimVariant>> m_autoResetParams;
+            // CUtlVector<std_pair<source2sdk::animgraphlib::CAnimParamHandle,CAnimVariant>> m_autoResetParams;
             char m_autoResetParams[0x18]; // 0x88            
             // m_autoResetMap has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlHashtable<source2sdk::animgraphlib::CAnimParamHandle,std::int16_t> m_autoResetMap;

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x68
+        // Size: 0x60
         // Has VTable
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::modellib::CPointConstraint) == 0x68);
+        static_assert(sizeof(source2sdk::modellib::CPointConstraint) == 0x60);
     };
 };

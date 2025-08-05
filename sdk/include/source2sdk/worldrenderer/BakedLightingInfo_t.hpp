@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/resourcesystem/InfoForResourceTypeCTextureBase.hpp"
+#include "source2sdk/worldrenderer/BakedLightingInfo_t_BakedShadowAssignment_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: worldrenderer
@@ -17,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x48
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -38,6 +39,9 @@ namespace source2sdk
             // m_lightMaps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase>> m_lightMaps;
             char m_lightMaps[0x18]; // 0x18            
+            // m_bakedShadows has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t> m_bakedShadows;
+            char m_bakedShadows[0x18]; // 0x30            
         };
         #pragma pack(pop)
         
@@ -51,7 +55,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t, m_nChartPackIterations) == 0x14);
         static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t, m_nVradQuality) == 0x15);
         static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t, m_lightMaps) == 0x18);
+        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t, m_bakedShadows) == 0x30);
         
-        static_assert(sizeof(source2sdk::worldrenderer::BakedLightingInfo_t) == 0x30);
+        static_assert(sizeof(source2sdk::worldrenderer::BakedLightingInfo_t) == 0x48);
     };
 };

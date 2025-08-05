@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,12 +32,12 @@ namespace source2sdk
         class C_DOTA_Ability_PrimalBeast_Pulverize : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::C_DOTA_BaseNPC* m_hTarget; // 0x680            
+            source2sdk::client::C_DOTA_BaseNPC* m_hTarget; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_PrimalBeast_Pulverize because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PrimalBeast_Pulverize) == 0x688);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PrimalBeast_Pulverize) == 0x690);
     };
 };

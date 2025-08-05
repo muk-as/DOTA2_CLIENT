@@ -8,6 +8,13 @@ namespace source2sdk
 {
     namespace server
     {
+        struct CFuncMover;
+    };
+};
+namespace source2sdk
+{
+    namespace server
+    {
         struct CMoverPathNode;
     };
 };
@@ -34,10 +41,10 @@ namespace source2sdk
             // m_vecPathNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CMoverPathNode>> m_vecPathNodes;
             char m_vecPathNodes[0x18]; // 0x5f0            
-            uint8_t _pad0608[0x8]; // 0x608
-            CTransform m_xInitialPathWorldToLocal; // 0x610            
-            bool m_bClosedLoop; // 0x630            
-            uint8_t _pad0631[0xf];
+            // m_vecMovers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::server::CFuncMover>> m_vecMovers;
+            char m_vecMovers[0x18]; // 0x608            
+            CTransform m_xInitialPathWorldToLocal; // 0x620            
         };
         #pragma pack(pop)
         

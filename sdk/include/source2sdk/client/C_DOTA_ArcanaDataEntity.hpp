@@ -38,7 +38,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -51,16 +51,16 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::CDOTA_ArcanaDataEntity_DrowRanger* m_pArcanaData_CDOTA_ArcanaDataEntity_DrowRanger; // 0x5e0            
+            source2sdk::client::CDOTA_ArcanaDataEntity_DrowRanger* m_pArcanaData_CDOTA_ArcanaDataEntity_DrowRanger; // 0x5e8            
             // metadata: MNetworkEnable
-            source2sdk::client::CDOTA_ArcanaDataEntity_FacelessVoid* m_pArcanaData_CDOTA_ArcanaDataEntity_FacelessVoid; // 0x5e8            
+            source2sdk::client::CDOTA_ArcanaDataEntity_FacelessVoid* m_pArcanaData_CDOTA_ArcanaDataEntity_FacelessVoid; // 0x5f0            
             // metadata: MNetworkEnable
-            source2sdk::client::CDOTA_ArcanaDataEntity_Razor* m_pArcanaData_CDOTA_ArcanaDataEntity_Razor; // 0x5f0            
+            source2sdk::client::CDOTA_ArcanaDataEntity_Razor* m_pArcanaData_CDOTA_ArcanaDataEntity_Razor; // 0x5f8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_ArcanaDataEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_ArcanaDataEntity) == 0x5f8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_ArcanaDataEntity) == 0x600);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,17 +35,17 @@ namespace source2sdk
         public:
             // m_hTornado has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTornado;
-            char m_hTornado[0x4]; // 0x680            
+            char m_hTornado[0x4]; // 0x688            
             // m_hNeutralTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hNeutralTarget;
-            char m_hNeutralTarget[0x4]; // 0x684            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x688            
-            uint8_t _pad068c[0x4];
+            char m_hNeutralTarget[0x4]; // 0x68c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x690            
+            uint8_t _pad0694[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_EnragedWildkin_Tornado because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EnragedWildkin_Tornado) == 0x690);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EnragedWildkin_Tornado) == 0x698);
     };
 };

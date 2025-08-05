@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/resourcesystem/InfoForResourceTypeIPulseGraphDef.hpp"
 namespace source2sdk
 {
     namespace smartprops
@@ -44,7 +45,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xc8
+        // Size: 0xd0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -86,7 +87,11 @@ namespace source2sdk
             // m_Modifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropModifier*> m_Modifiers;
             char m_Modifiers[0x18]; // 0x90            
-            uint8_t _pad00a8[0x20];
+            // metadata: MPropertySuppressExpr "!__IsSmartPropPulseActive"
+            // m_hPulseGraph has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIPulseGraphDef> m_hPulseGraph;
+            char m_hPulseGraph[0x8]; // 0xa8            
+            uint8_t _pad00b0[0x20];
         };
         #pragma pack(pop)
         
@@ -96,7 +101,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::smartprops::CSmartPropRoot, m_Choices) == 0x60);
         static_assert(offsetof(source2sdk::smartprops::CSmartPropRoot, m_Children) == 0x78);
         static_assert(offsetof(source2sdk::smartprops::CSmartPropRoot, m_Modifiers) == 0x90);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropRoot, m_hPulseGraph) == 0xa8);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropRoot) == 0xc8);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropRoot) == 0xd0);
     };
 };

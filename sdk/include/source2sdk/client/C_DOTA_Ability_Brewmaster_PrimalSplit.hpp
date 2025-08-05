@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -41,30 +41,30 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hPrimary has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hPrimary;
-            char m_hPrimary[0x4]; // 0x680            
+            char m_hPrimary[0x4]; // 0x688            
             // metadata: MNetworkEnable
             // m_hSecondary has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hSecondary;
-            char m_hSecondary[0x4]; // 0x684            
+            char m_hSecondary[0x4]; // 0x68c            
             // metadata: MNetworkEnable
             // m_hTertiary has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTertiary;
-            char m_hTertiary[0x4]; // 0x688            
+            char m_hTertiary[0x4]; // 0x690            
             // metadata: MNetworkEnable
             // m_hFourth has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hFourth;
-            char m_hFourth[0x4]; // 0x68c            
-            source2sdk::entity2::GameTime_t m_fHurlBoulder_CooldownTime; // 0x690            
-            source2sdk::entity2::GameTime_t m_fHDispelMagic_CooldownTime; // 0x694            
-            source2sdk::entity2::GameTime_t m_fCyclone_CooldownTime; // 0x698            
-            source2sdk::entity2::GameTime_t m_fWindWalk_CooldownTime; // 0x69c            
-            source2sdk::entity2::GameTime_t m_fAstralPulse_CooldownTime; // 0x6a0            
-            uint8_t _pad06a4[0x4];
+            char m_hFourth[0x4]; // 0x694            
+            source2sdk::entity2::GameTime_t m_fHurlBoulder_CooldownTime; // 0x698            
+            source2sdk::entity2::GameTime_t m_fHDispelMagic_CooldownTime; // 0x69c            
+            source2sdk::entity2::GameTime_t m_fCyclone_CooldownTime; // 0x6a0            
+            source2sdk::entity2::GameTime_t m_fWindWalk_CooldownTime; // 0x6a4            
+            source2sdk::entity2::GameTime_t m_fAstralPulse_CooldownTime; // 0x6a8            
+            uint8_t _pad06ac[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Brewmaster_PrimalSplit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Brewmaster_PrimalSplit) == 0x6a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Brewmaster_PrimalSplit) == 0x6b0);
     };
 };

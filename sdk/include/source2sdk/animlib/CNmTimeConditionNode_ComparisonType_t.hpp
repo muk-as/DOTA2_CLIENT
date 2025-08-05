@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Enumerator count: 4
+        // Enumerator count: 3
         // Alignment: 1
         // Size: 0x1
         enum class CNmTimeConditionNode_ComparisonType_t : std::uint8_t
@@ -21,7 +21,6 @@ namespace source2sdk
             PercentageThroughState = 0x0,
             PercentageThroughSyncEvent = 0x1,
             ElapsedTime = 0x2,
-            LoopCount = 0x3,
         };
     };
 };

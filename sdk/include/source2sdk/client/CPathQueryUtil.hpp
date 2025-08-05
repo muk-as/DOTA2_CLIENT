@@ -32,7 +32,8 @@ namespace source2sdk
             // m_vecPathSampleDistances has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_vecPathSampleDistances;
             char m_vecPathSampleDistances[0x18]; // 0x60            
-            uint8_t _pad0078[0x8];
+            bool m_bIsClosedLoop; // 0x78            
+            uint8_t _pad0079[0x7];
         };
         #pragma pack(pop)
         
@@ -40,6 +41,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSamplePositions) == 0x30);
         static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleParameters) == 0x48);
         static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleDistances) == 0x60);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_bIsClosedLoop) == 0x78);
         
         static_assert(sizeof(source2sdk::client::CPathQueryUtil) == 0x80);
     };

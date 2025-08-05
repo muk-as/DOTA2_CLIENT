@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x18c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Unit_Broodmother_Web : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1898            
-            Vector m_vecOrigin; // 0x189c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18b8            
+            Vector m_vecOrigin; // 0x18bc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Broodmother_Web because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Broodmother_Web) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Broodmother_Web) == 0x18c8);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6b8
+        // Size: 0x6c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,14 +34,14 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x680            
-            Vector m_vStart; // 0x698            
-            uint8_t _pad06a4[0x14];
+            char hAlreadyHitList[0x18]; // 0x688            
+            Vector m_vStart; // 0x6a0            
+            uint8_t _pad06ac[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Kunkka_Tidal_Wave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Kunkka_Tidal_Wave) == 0x6b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Kunkka_Tidal_Wave) == 0x6c0);
     };
 };

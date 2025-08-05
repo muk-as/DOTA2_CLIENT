@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x978
+        // Size: 0x9a0
         // Has VTable
         // Construct disallowed
         // MConstructibleClassBase
@@ -32,24 +32,24 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x7c8            
-            uint8_t _pad07c9[0x7]; // 0x7c9
+            bool m_bEnabled; // 0x7f0            
+            uint8_t _pad07f1[0x7]; // 0x7f1
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_DialogXMLName; // 0x7d0            
+            CUtlSymbolLarge m_DialogXMLName; // 0x7f8            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_PanelClassName; // 0x7d8            
+            CUtlSymbolLarge m_PanelClassName; // 0x800            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_PanelID; // 0x7e0            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput0; // 0x7e8            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput1; // 0x810            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput2; // 0x838            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput3; // 0x860            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput4; // 0x888            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput5; // 0x8b0            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput6; // 0x8d8            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput7; // 0x900            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput8; // 0x928            
-            source2sdk::entity2::CEntityIOOutput m_CustomOutput9; // 0x950            
+            CUtlSymbolLarge m_PanelID; // 0x808            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput0; // 0x810            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput1; // 0x838            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput2; // 0x860            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput3; // 0x888            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput4; // 0x8b0            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput5; // 0x8d8            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput6; // 0x900            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput7; // 0x928            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput8; // 0x950            
+            source2sdk::entity2::CEntityIOOutput m_CustomOutput9; // 0x978            
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -59,6 +59,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseClientUIEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseClientUIEntity) == 0x978);
+        static_assert(sizeof(source2sdk::server::CBaseClientUIEntity) == 0x9a0);
     };
 };

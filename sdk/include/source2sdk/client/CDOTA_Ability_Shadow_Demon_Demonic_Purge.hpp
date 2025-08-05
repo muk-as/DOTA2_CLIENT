@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_Shadow_Demon_Demonic_Purge : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            bool m_bGrantedScepterCharges; // 0x680            
-            uint8_t _pad0681[0x7];
+            bool m_bGrantedScepterCharges; // 0x688            
+            uint8_t _pad0689[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Shadow_Demon_Demonic_Purge because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Shadow_Demon_Demonic_Purge) == 0x688);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Shadow_Demon_Demonic_Purge) == 0x690);
     };
 };

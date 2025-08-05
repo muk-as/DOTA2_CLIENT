@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1960
+        // Size: 0x1948
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Lua : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0xe0]; // 0x1878
-            bool m_bHasCustomTransmitterData; // 0x1958            
-            uint8_t _pad1959[0x7];
+            uint8_t _pad1878[0xc8]; // 0x1878
+            bool m_bHasCustomTransmitterData; // 0x1940            
+            uint8_t _pad1941[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Lua because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Lua) == 0x1960);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Lua) == 0x1948);
     };
 };

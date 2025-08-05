@@ -39,15 +39,16 @@ namespace source2sdk
             CTransform m_CTransform; // 0x100            
             KeyValues* m_pKeyValues; // 0x120            
             CUtlBinaryBlock m_CUtlBinaryBlock; // 0x128            
-            CUtlString m_CUtlString; // 0x140            
-            CUtlSymbol m_CUtlSymbol; // 0x148            
-            uint8_t _pad014a[0x2]; // 0x14a
-            CUtlStringToken m_stringToken; // 0x14c            
-            CUtlStringTokenWithStorage m_stringTokenWithStorage; // 0x150            
+            CUtlString m_CUtlString; // 0x138            
+            CUtlSymbol m_CUtlSymbol; // 0x140            
+            uint8_t _pad0142[0x2]; // 0x142
+            CUtlStringToken m_stringToken; // 0x144            
+            CUtlStringTokenWithStorage m_stringTokenWithStorage; // 0x148            
             // m_ResourceTypes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceArray<CResourcePointer<CResourceString>> m_ResourceTypes;
-            char m_ResourceTypes[0x8]; // 0x168            
-            KeyValues3 m_KV3; // 0x170            
+            char m_ResourceTypes[0x8]; // 0x160            
+            KeyValues3 m_KV3; // 0x168            
+            uint8_t _pad0178[0x8];
         };
         #pragma pack(pop)
         
@@ -67,12 +68,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CTransform) == 0x100);
         static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_pKeyValues) == 0x120);
         static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CUtlBinaryBlock) == 0x128);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CUtlString) == 0x140);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CUtlSymbol) == 0x148);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_stringToken) == 0x14c);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_stringTokenWithStorage) == 0x150);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_ResourceTypes) == 0x168);
-        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_KV3) == 0x170);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CUtlString) == 0x138);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_CUtlSymbol) == 0x140);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_stringToken) == 0x144);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_stringTokenWithStorage) == 0x148);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_ResourceTypes) == 0x160);
+        static_assert(offsetof(source2sdk::schemasystem::CSchemaSystemInternalRegistration, m_KV3) == 0x168);
         
         static_assert(sizeof(source2sdk::schemasystem::CSchemaSystemInternalRegistration) == 0x180);
     };

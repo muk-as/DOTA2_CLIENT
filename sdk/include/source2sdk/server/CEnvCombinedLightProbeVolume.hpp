@@ -28,6 +28,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hCubemapTexture"
         // static metadata: MNetworkVarNames "bool m_Entity_bCustomCubemapTexture"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube"
+        // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SDF"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_R"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_G"
@@ -55,24 +56,28 @@ namespace source2sdk
         class CEnvCombinedLightProbeVolume : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x1080]; // 0x4e0
+            uint8_t _pad04e0[0x1078]; // 0x4e0
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "StateChanged"
-            Color m_Entity_Color; // 0x1560            
+            Color m_Entity_Color; // 0x1558            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "StateChanged"
-            float m_Entity_flBrightness; // 0x1564            
+            float m_Entity_flBrightness; // 0x155c            
             // metadata: MNetworkEnable
             // m_Entity_hCubemapTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hCubemapTexture;
-            char m_Entity_hCubemapTexture[0x8]; // 0x1568            
+            char m_Entity_hCubemapTexture[0x8]; // 0x1560            
             // metadata: MNetworkEnable
-            bool m_Entity_bCustomCubemapTexture; // 0x1570            
-            uint8_t _pad1571[0x7]; // 0x1571
+            bool m_Entity_bCustomCubemapTexture; // 0x1568            
+            uint8_t _pad1569[0x7]; // 0x1569
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_AmbientCube has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_AmbientCube;
-            char m_Entity_hLightProbeTexture_AmbientCube[0x8]; // 0x1578            
+            char m_Entity_hLightProbeTexture_AmbientCube[0x8]; // 0x1570            
+            // metadata: MNetworkEnable
+            // m_Entity_hLightProbeTexture_SDF has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SDF;
+            char m_Entity_hLightProbeTexture_SDF[0x8]; // 0x1578            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_DC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_DC;

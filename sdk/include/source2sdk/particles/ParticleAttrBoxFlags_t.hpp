@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Enumerator count: 6
+        // Enumerator count: 7
         // Alignment: 4
         // Size: 0x4
         enum class ParticleAttrBoxFlags_t : std::uint32_t
@@ -30,6 +30,8 @@ namespace source2sdk
             PARTICLE_ATTR_BOX_FLAGS_ASLEEP = 0x8,
             // MPropertyFriendlyName "Frozen"
             PARTICLE_ATTR_BOX_FLAGS_FROZEN = 0x10,
+            // MPropertyFriendlyName "Timed Decay"
+            PARTICLE_ATTR_BOX_FLAGS_TIMED_DECAY = 0x20,
         };
     };
 };

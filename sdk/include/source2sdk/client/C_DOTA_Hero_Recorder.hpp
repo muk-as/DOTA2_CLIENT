@@ -44,32 +44,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bStartRecording; // 0x5e0            
-            uint8_t _pad05e1[0x3]; // 0x5e1
+            bool m_bStartRecording; // 0x5e8            
+            uint8_t _pad05e9[0x3]; // 0x5e9
             // metadata: MNetworkEnable
             // m_hHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hHero;
-            char m_hHero[0x4]; // 0x5e4            
+            char m_hHero[0x4]; // 0x5ec            
             // metadata: MNetworkEnable
             // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTAPlayerController> m_hPlayer;
-            char m_hPlayer[0x4]; // 0x5e8            
-            bool m_bRecording; // 0x5ec            
-            bool m_bLastStartRecording; // 0x5ed            
-            uint8_t _pad05ee[0x2]; // 0x5ee
-            float m_flLastCycle; // 0x5f0            
-            std::int32_t m_nCompletedCycles; // 0x5f4            
-            std::int32_t m_nFramesThisCycle; // 0x5f8            
-            std::int32_t m_nRecordedFrames; // 0x5fc            
-            float m_flHeroAdvanceTime; // 0x600            
-            float m_flStartTime; // 0x604            
+            char m_hPlayer[0x4]; // 0x5f0            
+            bool m_bRecording; // 0x5f4            
+            bool m_bLastStartRecording; // 0x5f5            
+            uint8_t _pad05f6[0x2]; // 0x5f6
+            float m_flLastCycle; // 0x5f8            
+            std::int32_t m_nCompletedCycles; // 0x5fc            
+            std::int32_t m_nFramesThisCycle; // 0x600            
+            std::int32_t m_nRecordedFrames; // 0x604            
+            float m_flHeroAdvanceTime; // 0x608            
+            float m_flStartTime; // 0x60c            
             // m_flCycles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_flCycles;
-            char m_flCycles[0x18]; // 0x608            
+            char m_flCycles[0x18]; // 0x610            
             // m_pBatchFiles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString*> m_pBatchFiles;
-            char m_pBatchFiles[0x18]; // 0x620            
-            uint8_t _pad0638[0x3a8];
+            char m_pBatchFiles[0x18]; // 0x628            
+            uint8_t _pad0640[0x3a0];
         };
         #pragma pack(pop)
         

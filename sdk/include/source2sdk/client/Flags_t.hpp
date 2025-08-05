@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 23
+        // Enumerator count: 22
         // Alignment: 4
         // Size: 0x4
         enum class Flags_t : std::uint32_t
@@ -29,7 +29,6 @@ namespace source2sdk
             FL_FLY = 0x400,
             FL_SUPPRESS_SAVE = 0x800,
             FL_IN_VEHICLE = 0x1000,
-            FL_IN_VEHICLE_TRANSPORT = 0x2000,
             FL_GODMODE = 0x4000,
             FL_NOTARGET = 0x8000,
             FL_AIMTARGET = 0x10000,

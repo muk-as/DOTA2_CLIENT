@@ -17,17 +17,17 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7e0
+        // Size: 0x808
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFuncInteractionLayerClip : public source2sdk::server::CBaseModelEntity
         {
         public:
-            bool m_bDisabled; // 0x7c8            
-            uint8_t _pad07c9[0x7]; // 0x7c9
-            CUtlSymbolLarge m_iszInteractsAs; // 0x7d0            
-            CUtlSymbolLarge m_iszInteractsWith; // 0x7d8            
+            bool m_bDisabled; // 0x7f0            
+            uint8_t _pad07f1[0x7]; // 0x7f1
+            CUtlSymbolLarge m_iszInteractsAs; // 0x7f8            
+            CUtlSymbolLarge m_iszInteractsWith; // 0x800            
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -37,6 +37,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CFuncInteractionLayerClip because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFuncInteractionLayerClip) == 0x7e0);
+        static_assert(sizeof(source2sdk::server::CFuncInteractionLayerClip) == 0x808);
     };
 };

@@ -7,6 +7,7 @@
 #include "source2sdk/client/CDOTAEventActionTrigger.hpp"
 #include "source2sdk/client/CDOTAOverworldPathColorRule.hpp"
 #include "source2sdk/client/EEvent.hpp"
+#include "source2sdk/client/EOverworldProgressionType.hpp"
 #include "source2sdk/client/OverworldID_t.hpp"
 #include "source2sdk/client/OverworldNodeID_t.hpp"
 #include "source2sdk/client/OverworldTokenID_t.hpp"
@@ -64,6 +65,13 @@ namespace source2sdk
 {
     namespace client
     {
+        struct CDOTAOverworldRoom;
+    };
+};
+namespace source2sdk
+{
+    namespace client
+    {
         struct CDOTAOverworldToken;
     };
 };
@@ -80,7 +88,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x370
+        // Size: 0x3b0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -98,7 +106,7 @@ namespace source2sdk
             CUtlString m_sKey; // 0x10            
             // metadata: MPropertyDescription "The event related to this overworld. Used for rewards and expiration."
             source2sdk::client::EEvent m_eAssociatedEvent; // 0x18            
-            uint8_t _pad001c[0x4]; // 0x1c
+            source2sdk::client::EOverworldProgressionType m_eProgressionType; // 0x1c            
             // metadata: MPropertyDescription "An event action to grant whenever a node is unlocked."
             CUtlString m_sNodeUnlockEventAction; // 0x20            
             Vector2D m_vGridOffset; // 0x28            
@@ -138,33 +146,36 @@ namespace source2sdk
             // m_vecPathColorRules has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldPathColorRule> m_vecPathColorRules;
             char m_vecPathColorRules[0x18]; // 0xc8            
-            uint8_t _pad00e0[0x140]; // 0xe0
+            uint8_t _pad00e0[0x168]; // 0xe0
             // m_vecTokenTypes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldToken*> m_vecTokenTypes;
-            char m_vecTokenTypes[0x18]; // 0x220            
-            uint8_t _pad0238[0x18]; // 0x238
+            char m_vecTokenTypes[0x18]; // 0x248            
+            uint8_t _pad0260[0x18]; // 0x260
             // m_vecHeroRewards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldHeroReward*> m_vecHeroRewards;
-            char m_vecHeroRewards[0x18]; // 0x250            
+            char m_vecHeroRewards[0x18]; // 0x278            
             // m_vecNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldNode*> m_vecNodes;
-            char m_vecNodes[0x18]; // 0x268            
+            char m_vecNodes[0x18]; // 0x290            
             // m_vecPaths has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldPath*> m_vecPaths;
-            char m_vecPaths[0x18]; // 0x280            
+            char m_vecPaths[0x18]; // 0x2a8            
+            // m_vecRooms has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::client::CDOTAOverworldRoom*> m_vecRooms;
+            char m_vecRooms[0x18]; // 0x2c0            
             // m_vecEncounters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldEncounter*> m_vecEncounters;
-            char m_vecEncounters[0x18]; // 0x298            
+            char m_vecEncounters[0x18]; // 0x2d8            
             // m_vecHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldHero*> m_vecHeroes;
-            char m_vecHeroes[0x18]; // 0x2b0            
+            char m_vecHeroes[0x18]; // 0x2f0            
             // m_vecCharacters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldCharacter*> m_vecCharacters;
-            char m_vecCharacters[0x18]; // 0x2c8            
+            char m_vecCharacters[0x18]; // 0x308            
             // m_vecClickables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTAOverworldClickable*> m_vecClickables;
-            char m_vecClickables[0x18]; // 0x2e0            
-            uint8_t _pad02f8[0x78];
+            char m_vecClickables[0x18]; // 0x320            
+            uint8_t _pad0338[0x78];
         };
         #pragma pack(pop)
         
@@ -172,6 +183,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_unID) == 0x8);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_sKey) == 0x10);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_eAssociatedEvent) == 0x18);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_eProgressionType) == 0x1c);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_sNodeUnlockEventAction) == 0x20);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vGridOffset) == 0x28);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_unGridSize) == 0x30);
@@ -190,15 +202,16 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecEventActionTriggers) == 0x98);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecEventActionGrantAndClaimPairTriggers) == 0xb0);
         static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecPathColorRules) == 0xc8);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecTokenTypes) == 0x220);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecHeroRewards) == 0x250);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecNodes) == 0x268);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecPaths) == 0x280);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecEncounters) == 0x298);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecHeroes) == 0x2b0);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecCharacters) == 0x2c8);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecClickables) == 0x2e0);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecTokenTypes) == 0x248);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecHeroRewards) == 0x278);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecNodes) == 0x290);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecPaths) == 0x2a8);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecRooms) == 0x2c0);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecEncounters) == 0x2d8);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecHeroes) == 0x2f0);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecCharacters) == 0x308);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldDefinition, m_vecClickables) == 0x320);
         
-        static_assert(sizeof(source2sdk::client::CDOTAOverworldDefinition) == 0x370);
+        static_assert(sizeof(source2sdk::client::CDOTAOverworldDefinition) == 0x3b0);
     };
 };

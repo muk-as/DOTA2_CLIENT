@@ -31,7 +31,6 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Group"
         // static metadata: MPropertyDescription "A group of elements that will all be evaulated."
-        // static metadata: MVDataOutlinerLabelExpr
         #pragma pack(push, 1)
         class CSmartPropElement_Group : public source2sdk::smartprops::CSmartPropElement
         {
@@ -41,10 +40,7 @@ namespace source2sdk
             // metadata: MVDataPromoteField
             // m_Children has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropElement*> m_Children;
-            char m_Children[0x18]; // 0x80            
-            // metadata: MPropertyFriendlyName "Label"
-            // metadata: MPropertyDescription "Optional text that will appear in the outliner to help organize Smart Prop elements and communicate their purpose to other users."
-            CUtlString m_sLabel; // 0x98            
+            char m_Children[0x18]; // 0x88            
         };
         #pragma pack(pop)
         

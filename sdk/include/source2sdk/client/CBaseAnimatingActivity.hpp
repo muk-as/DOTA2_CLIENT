@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x998
+        // Size: 0x9c0
         // Has VTable
         // Construct allowed
         // 
@@ -28,18 +28,18 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bShouldAnimateDuringGameplayPause; // 0x970            
+            bool m_bShouldAnimateDuringGameplayPause; // 0x998            
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x971            
-            bool m_bAnimationUpdateScheduled; // 0x972            
-            uint8_t _pad0973[0x5]; // 0x973
+            bool m_bInitiallyPopulateInterpHistory; // 0x999            
+            bool m_bAnimationUpdateScheduled; // 0x99a            
+            uint8_t _pad099b[0x5]; // 0x99b
             // m_pSuppressedAnimEventTags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString>* m_pSuppressedAnimEventTags;
-            char m_pSuppressedAnimEventTags[0x8]; // 0x978            
-            bool m_bHasAnimatedMaterialAttributes; // 0x980            
-            uint8_t _pad0981[0xf]; // 0x981
-            bool m_bSuppressAnimEventSounds; // 0x990            
-            uint8_t _pad0991[0x7];
+            char m_pSuppressedAnimEventTags[0x8]; // 0x9a0            
+            bool m_bHasAnimatedMaterialAttributes; // 0x9a8            
+            uint8_t _pad09a9[0xf]; // 0x9a9
+            bool m_bSuppressAnimEventSounds; // 0x9b8            
+            uint8_t _pad09b9[0x7];
             
             // Datamap fields:
             // float InputSetPlaybackRate; // 0x0
@@ -49,6 +49,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseAnimatingActivity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBaseAnimatingActivity) == 0x998);
+        static_assert(sizeof(source2sdk::client::CBaseAnimatingActivity) == 0x9c0);
     };
 };

@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animationsystem/AnimParamType_t.hpp"
+#include "source2sdk/animgraphlib/AnimParamType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animgraphlib
@@ -26,7 +26,7 @@ namespace source2sdk
         class CAnimParamHandle
         {
         public:
-            source2sdk::animationsystem::AnimParamType_t m_type; // 0x0            
+            source2sdk::animgraphlib::AnimParamType_t m_type; // 0x0            
             std::uint8_t m_index; // 0x1            
         };
         #pragma pack(pop)

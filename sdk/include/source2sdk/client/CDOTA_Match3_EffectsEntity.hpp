@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x970
+        // Size: 0x998
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,6 +31,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Match3_EffectsEntity) == 0x970);
+        static_assert(sizeof(source2sdk::client::CDOTA_Match3_EffectsEntity) == 0x998);
     };
 };

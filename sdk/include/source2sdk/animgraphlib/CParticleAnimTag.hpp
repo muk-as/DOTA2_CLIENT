@@ -25,6 +25,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Particle Tag"
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CParticleAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
@@ -41,13 +42,15 @@ namespace source2sdk
             CUtlString m_configName; // 0x68            
             // metadata: MPropertyFriendlyName "Detach From Owner"
             bool m_bDetachFromOwner; // 0x70            
+            // metadata: MPropertyFriendlyName "Attempt to Aggregate"
+            bool m_bAggregate; // 0x71            
             // metadata: MPropertyFriendlyName "Stop on Tag End"
             // metadata: MPropertyGroupName "Ending"
-            bool m_bStopWhenTagEnds; // 0x71            
+            bool m_bStopWhenTagEnds; // 0x72            
             // metadata: MPropertyFriendlyName "Tag End Stop is Instant"
             // metadata: MPropertyGroupName "Ending"
-            bool m_bTagEndStopIsInstant; // 0x72            
-            uint8_t _pad0073[0x5]; // 0x73
+            bool m_bTagEndStopIsInstant; // 0x73            
+            uint8_t _pad0074[0x4]; // 0x74
             // metadata: MPropertyFriendlyName "Attachment"
             // metadata: MPropertyGroupName "Attachments"
             // metadata: MPropertyAttributeChoiceName "Attachment"

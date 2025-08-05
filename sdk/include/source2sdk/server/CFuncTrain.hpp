@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x890
+        // Size: 0x8b8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -34,16 +34,16 @@ namespace source2sdk
         public:
             // m_hCurrentTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCurrentTarget;
-            char m_hCurrentTarget[0x4]; // 0x870            
-            bool m_activated; // 0x874            
-            uint8_t _pad0875[0x3]; // 0x875
+            char m_hCurrentTarget[0x4]; // 0x898            
+            bool m_activated; // 0x89c            
+            uint8_t _pad089d[0x3]; // 0x89d
             // m_hEnemy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEnemy;
-            char m_hEnemy[0x4]; // 0x878            
-            float m_flBlockDamage; // 0x87c            
-            source2sdk::entity2::GameTime_t m_flNextBlockTime; // 0x880            
-            uint8_t _pad0884[0x4]; // 0x884
-            CUtlSymbolLarge m_iszLastTarget; // 0x888            
+            char m_hEnemy[0x4]; // 0x8a0            
+            float m_flBlockDamage; // 0x8a4            
+            source2sdk::entity2::GameTime_t m_flNextBlockTime; // 0x8a8            
+            uint8_t _pad08ac[0x4]; // 0x8ac
+            CUtlSymbolLarge m_iszLastTarget; // 0x8b0            
             
             // Datamap fields:
             // void CFuncTrainWait; // 0x0
@@ -56,6 +56,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CFuncTrain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFuncTrain) == 0x890);
+        static_assert(sizeof(source2sdk::server::CFuncTrain) == 0x8b8);
     };
 };

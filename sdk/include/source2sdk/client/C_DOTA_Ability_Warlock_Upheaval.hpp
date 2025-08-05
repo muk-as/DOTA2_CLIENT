@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x710
+        // Size: 0x718
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,34 +35,34 @@ namespace source2sdk
         class C_DOTA_Ability_Warlock_Upheaval : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            Vector m_vPosition; // 0x680            
-            float aoe; // 0x68c            
-            std::int32_t slow_per_second; // 0x690            
-            std::int32_t aspd_per_second; // 0x694            
-            std::int32_t max_slow; // 0x698            
-            std::int32_t base_damage; // 0x69c            
-            std::int32_t damage_per_second; // 0x6a0            
-            std::int32_t max_damage; // 0x6a4            
-            float damage_tick_interval; // 0x6a8            
-            uint8_t _pad06ac[0x4]; // 0x6ac
-            source2sdk::client::CountdownTimer m_timer; // 0x6b0            
-            source2sdk::client::CountdownTimer m_shardTimer; // 0x6c8            
-            float duration; // 0x6e0            
-            source2sdk::entity2::GameTime_t m_flElapsedTime; // 0x6e4            
-            float m_flCurrentSlow; // 0x6e8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x6ec            
-            source2sdk::client::ParticleIndex_t m_nCastFXIndex; // 0x6f0            
-            uint8_t _pad06f4[0x14]; // 0x6f4
-            bool m_bTargetCast; // 0x708            
-            uint8_t _pad0709[0x3]; // 0x709
+            Vector m_vPosition; // 0x688            
+            float aoe; // 0x694            
+            std::int32_t slow_per_second; // 0x698            
+            std::int32_t aspd_per_second; // 0x69c            
+            std::int32_t max_slow; // 0x6a0            
+            std::int32_t base_damage; // 0x6a4            
+            std::int32_t damage_per_second; // 0x6a8            
+            std::int32_t max_damage; // 0x6ac            
+            float damage_tick_interval; // 0x6b0            
+            uint8_t _pad06b4[0x4]; // 0x6b4
+            source2sdk::client::CountdownTimer m_timer; // 0x6b8            
+            source2sdk::client::CountdownTimer m_shardTimer; // 0x6d0            
+            float duration; // 0x6e8            
+            source2sdk::entity2::GameTime_t m_flElapsedTime; // 0x6ec            
+            float m_flCurrentSlow; // 0x6f0            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x6f4            
+            source2sdk::client::ParticleIndex_t m_nCastFXIndex; // 0x6f8            
+            uint8_t _pad06fc[0x14]; // 0x6fc
+            bool m_bTargetCast; // 0x710            
+            uint8_t _pad0711[0x3]; // 0x711
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x70c            
+            char m_hTarget[0x4]; // 0x714            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Warlock_Upheaval because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Warlock_Upheaval) == 0x710);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Warlock_Upheaval) == 0x718);
     };
 };

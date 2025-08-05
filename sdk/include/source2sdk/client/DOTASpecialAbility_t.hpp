@@ -30,8 +30,9 @@ namespace source2sdk
             char* m_pszLevelKey; // 0x10            
             std::int32_t m_nCount; // 0x18            
             float m_Values[11]; // 0x1c            
-            std::int32_t m_nBonusesCount; // 0x48            
-            uint8_t _pad004c[0x4]; // 0x4c
+            std::uint8_t m_eDisplayType; // 0x48            
+            uint8_t _pad0049[0x3]; // 0x49
+            std::int32_t m_nBonusesCount; // 0x4c            
             source2sdk::client::DOTASpecialAbilityBonus_t m_Bonuses[1]; // 0x50            
             source2sdk::client::DOTALevelingAbilityBonus_t m_ScepterBonus; // 0x60            
             source2sdk::client::DOTALevelingAbilityBonus_t m_ShardBonus; // 0x88            
@@ -53,7 +54,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_pszLevelKey) == 0x10);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_nCount) == 0x18);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_Values) == 0x1c);
-        static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_nBonusesCount) == 0x48);
+        static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_eDisplayType) == 0x48);
+        static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_nBonusesCount) == 0x4c);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_Bonuses) == 0x50);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_ScepterBonus) == 0x60);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_ShardBonus) == 0x88);

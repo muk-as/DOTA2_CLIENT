@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a0
+        // Size: 0x6a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -37,18 +37,18 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x680            
-            Vector m_vProjectileLocation; // 0x684            
-            bool m_bProjectileActive; // 0x690            
-            uint8_t _pad0691[0x3]; // 0x691
-            std::int32_t latch_distance; // 0x694            
-            std::int32_t m_iProjectileIndex; // 0x698            
-            uint8_t _pad069c[0x4];
+            char m_hTarget[0x4]; // 0x688            
+            Vector m_vProjectileLocation; // 0x68c            
+            bool m_bProjectileActive; // 0x698            
+            uint8_t _pad0699[0x3]; // 0x699
+            std::int32_t latch_distance; // 0x69c            
+            std::int32_t m_iProjectileIndex; // 0x6a0            
+            uint8_t _pad06a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Aghsfort_Elemental_Wisp_Tether because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Aghsfort_Elemental_Wisp_Tether) == 0x6a0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Aghsfort_Elemental_Wisp_Tether) == 0x6a8);
     };
 };

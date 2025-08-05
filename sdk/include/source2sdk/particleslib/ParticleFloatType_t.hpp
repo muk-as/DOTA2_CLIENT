@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Enumerator count: 24
+        // Enumerator count: 28
         // Alignment: 4
         // Size: 0x4
         enum class ParticleFloatType_t : std::uint32_t
@@ -37,11 +37,15 @@ namespace source2sdk
             PF_TYPE_PARTICLE_AGE = 0xf,
             PF_TYPE_PARTICLE_AGE_NORMALIZED = 0x10,
             PF_TYPE_PARTICLE_FLOAT = 0x11,
-            PF_TYPE_PARTICLE_VECTOR_COMPONENT = 0x12,
-            PF_TYPE_PARTICLE_SPEED = 0x13,
-            PF_TYPE_PARTICLE_NUMBER = 0x14,
-            PF_TYPE_PARTICLE_NUMBER_NORMALIZED = 0x15,
-            PF_TYPE_COUNT = 0x16,
+            PF_TYPE_PARTICLE_INITIAL_FLOAT = 0x12,
+            PF_TYPE_PARTICLE_VECTOR_COMPONENT = 0x13,
+            PF_TYPE_PARTICLE_INITIAL_VECTOR_COMPONENT = 0x14,
+            PF_TYPE_PARTICLE_SPEED = 0x15,
+            PF_TYPE_PARTICLE_NUMBER = 0x16,
+            PF_TYPE_PARTICLE_NUMBER_NORMALIZED = 0x17,
+            PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DISTANCE = 0x18,
+            PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DOT_PRODUCT = 0x19,
+            PF_TYPE_COUNT = 0x1a,
         };
     };
 };

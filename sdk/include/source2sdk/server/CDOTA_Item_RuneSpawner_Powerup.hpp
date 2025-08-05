@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7f0
+        // Size: 0x818
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,19 +29,19 @@ namespace source2sdk
         class CDOTA_Item_RuneSpawner_Powerup : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            CUtlSymbolLarge m_szPosition; // 0x7d8            
+            CUtlSymbolLarge m_szPosition; // 0x800            
             // metadata: MNetworkEnable
-            float m_flLastSpawnTime; // 0x7e0            
+            float m_flLastSpawnTime; // 0x808            
             // metadata: MNetworkEnable
-            float m_flNextSpawnTime; // 0x7e4            
+            float m_flNextSpawnTime; // 0x80c            
             // metadata: MNetworkEnable
-            bool m_bNextRuneIsWater; // 0x7e8            
-            uint8_t _pad07e9[0x7];
+            bool m_bNextRuneIsWater; // 0x810            
+            uint8_t _pad0811[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_RuneSpawner_Powerup because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_RuneSpawner_Powerup) == 0x7f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_RuneSpawner_Powerup) == 0x818);
     };
 };

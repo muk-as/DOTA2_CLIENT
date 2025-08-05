@@ -23,6 +23,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyElementNameFn
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CSosGroupActionSchema
         {

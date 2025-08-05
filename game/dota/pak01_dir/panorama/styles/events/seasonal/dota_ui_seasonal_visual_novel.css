@@ -1,0 +1,652 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTASeasonalVisualNovel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	padding: 48px;
+	opacity: 1;
+	transform: scale3d( 1, 1, 1 );
+}
+
+DOTASeasonalVisualNovel.Hidden
+{
+	opacity: 0;
+	transform: scale3d( 0.6, 0.6, 1 );
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+#CloseButtonContainer
+{
+	visibility: collapse;
+	margin: 3px;
+}
+
+.EscapePressed #CloseButtonContainer
+{
+	visibility: visible;
+}
+
+#ChapterNavigation
+{
+	visibility: collapse;
+}
+
+.MainContents
+{
+	width: 1200px;
+	height: 720px;
+}
+
+.EncounterDialogue .MainContents
+{
+	width: 1200px;
+	height: fit-children;
+	background-color: none;
+	box-shadow: none;
+	border: 0;
+}
+
+.ShakeWindow .MainContents
+{
+	animation-name: Shake;
+	animation-duration: 0.5s;
+	animation-iteration-count:1;
+}
+
+.EncounterDialogue .MainContents:hover .MoreIndicator
+{
+	wash-color: white;
+	pre-transform-scale2d: 1;
+}
+
+.VisualNovelBackground
+{
+	width: 120%;
+	height: 120%;
+	overflow: noclip;
+	horizontal-align: center;
+}
+
+.CustomHeading
+{
+	visibility: collapse;
+}
+
+.VisualNovelBorderTop
+{
+	width: 1260px;
+	vertical-align: top;
+	horizontal-align: center;
+	margin-top:-10px;
+}
+
+.Dash
+{
+	width: 50%;
+	height: 0.5px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( gold3&00 ), color-stop( 0.5, gold1 ), to( gold3&00 ) );
+	opacity: 0.7;
+	margin-top: 50px;
+	margin-bottom: 0px;
+}
+
+.NovelContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.GroupContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	margin-top: 0px;
+	opacity: 1;
+}
+
+.EncounterDialogue .GroupContainer
+{
+	ignore-parent-flow: true;
+}
+
+.TypewriterLabel
+{
+	vertical-align: top;
+}
+
+.ActorTextContainer
+{
+	width: 780px;
+	height: 200px;
+	vertical-align: top;
+	horizontal-align: center;
+	vertical-align: top;
+	z-index: 1;
+}
+
+.Exiting .ActorTextContainer
+{
+	opacity: 0.0;
+}
+
+.Top .ActorTextContainer
+{
+	height: 200px;
+	vertical-align: top;
+}
+
+.ActorTextContainer .MoreIndicator
+{
+	width: 26px;
+	height: 26px;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 32px;
+	background-image: url("s2r://panorama/images/transport_controls/icon_nexttrack_png.vtex");
+	background-size: contain;
+	wash-color: gold2;
+	pre-transform-scale2d: 0.8;
+	transition-property: wash-color, pre-transform-scale2d;
+	transition-duration: 0.1s;
+	animation-name: MoreIndicatorAnim;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	visibility: collapse;
+}
+
+.Bottom .ActorTextContainer .MoreIndicator
+{
+	margin-right: 80px;
+}
+
+.EncounterDialogue .ActorTextContainer .MoreIndicator
+{
+	visibility: visible;
+}
+
+.Animating .ActorTextContainer .MoreIndicator,.NoMoreDialogue .ActorTextContainer .MoreIndicator
+{
+	visibility: collapse;
+}
+
+@keyframes 'MoreIndicatorAnim'
+{
+	100%
+	{
+		transform: translateX( 3px );
+		brightness: 2;
+	}
+	
+}
+
+.PortraitGroup
+{
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: -10px;
+	margin-bottom: -90px;
+	width: 370px;
+	height: width-percentage( 100% );
+}
+
+.PortraitGroup .PortraitContainerLayered
+{
+	width: 100%;
+	height: width-percentage( 100% );
+	animation-name: ShowPortrait;
+	animation-duration: 0.7s;
+	animation-timing-function: ease-out;
+}
+
+.PortraitGroup .PortraitContainerLayered .PortraitDropShadow
+{
+	width: 50%;
+	height: width-percentage( 100% );
+	border-radius: 50%;
+	horizontal-align: center;
+	vertical-align: center;
+	box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.6);
+}
+
+.PortraitGroup .PortraitContainerLayered .PortraitBackgroundFrame
+{
+	width: 67%;
+	height: width-percentage( 100% );
+	margin-bottom: 11%;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.PortraitGroup .PortraitContainerLayered .AnimationContainer
+{
+	width: 100%;
+	height: width-percentage( 100% );
+}
+
+.PortraitGroup .PortraitContainerLayered .AnimationContainer .ActorPicture
+{
+	width: 100%;
+	height: width-percentage( 100% );
+}
+
+.PortraitGroup .PortraitContainerLayered.Hidden
+{
+	visibility: collapse;
+}
+
+@keyframes 'ShowPortrait'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	60%
+	{
+		opacity: 0;
+		transform: scale3d(0.9, 0.9, 1 );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: none;
+	}
+	
+}
+
+#PopupContainer
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: center;
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier( 0.5, 0, 0.5, 4 );
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+}
+
+.ShowPopup #PopupContainer
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+#PopupContainer .SoundEffectBackground
+{
+	width: 100%;
+	height: 100%;
+	margin-top: 3%;
+}
+
+#PopupContainer .SoundEffectBackground.Wet
+{
+	visibility: collapse;
+}
+
+.WetPopup #PopupContainer .SoundEffectBackground.Wet
+{
+	visibility: visible;
+}
+
+.WetPopup #PopupContainer .SoundEffectBackground.Hit
+{
+	visibility: collapse;
+}
+
+#PopupContainer #BackgroundHit
+{
+	visibility: visible;
+}
+
+#PopupContainer #PopupText
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 96px;
+	height: 96px;
+	max-width: 560px;
+	line-height: 0.9;
+	text-overflow: shrink;
+	font-style: italic;
+	font-weight: bold;
+	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+	margin: 160px 180px;
+	letter-spacing: -1px;
+}
+
+.EncounterDialogue #PopupContainer #PopupText
+{
+	margin:0;
+}
+
+.EncounterDialogue #PopupContainer
+{
+	height: 100%;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.InstructionTextContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 130px;
+	width: 60%;
+	padding: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold3&00 ), color-stop( 0.5, gold1 ), to( gold3&00 ) );
+}
+
+.InstructionTextContainer:hover .InstructionText
+{
+	brightness: 2;
+}
+
+.EncounterDialogue .InstructionTextContainer,.ShowingComic .InstructionTextContainer,.ShowExternalComic .InstructionTextContainer
+{
+	visibility: collapse;
+}
+
+.InstructionTextContainer .InstructionTextContent
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-right: -24px;
+}
+
+.InstructionTextContainer .InstructionTextContent .InstructionText
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 18px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	text-shadow: 0px 2px 12px black;
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+.InstructionTextContainer .InstructionTextContent .InstructionIcon
+{
+	vertical-align: center;
+	width: 20px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	margin-top: -1px;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	opacity: 0;
+	animation-name: none;
+}
+
+.DialogFinished .InstructionTextContainer .InstructionTextContent .InstructionIcon
+{
+	opacity: 1;
+	animation-name: MoreIndicatorAnim;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#ComicContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	blur: gaussian(2.0);
+	transition-property: opacity, blur;
+	transition-duration: 0.3s;
+}
+
+.ShowingComic #ComicContainer
+{
+	blur: none;
+	opacity: 1;
+}
+
+#ComicContainer .ComicViewer
+{
+	width: 100%;
+	height: 100%;
+}
+
+#ComicContainer .ComicViewer #Book
+{
+	margin-top: 0;
+	width: 100%;
+	height: width-percentage(58.7%);
+}
+
+#ComicContainer .ComicViewer #Book ComicViewerPage
+{
+	width: 100%;
+	height: 100%;
+}
+
+.ComicBlocker
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.PreventInput .ComicBlocker
+{
+	visibility: visible;
+}
+
+#ComicExternalContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition-property:opacity;
+	transition-duration: 0.5s;
+	transition-delay: 0.25s;
+}
+
+.ShowExternalComic #ComicExternalContainer
+{
+	opacity: 1;
+}
+
+#ComicExternalContainer #ExternalComicBackgroundPage
+{
+	blur: gaussian( 8px );
+	brightness: 0.3;
+}
+
+#ComicExternalContainer #ShowExternalComicButton
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.HideText
+{
+	color: transparent;
+	text-shadow: none;
+}
+
+#PreloadActorPicture
+{
+	visibility: collapse;
+}
+
+#ItemContents
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #08080870 ), to( #00000001 ) );
+	horizontal-align: center;
+	vertical-align: bottom;
+	border-radius: 5px;
+	border: 0px solid #ffffff;
+	width: 100%;
+	ignore-parent-flow: true;
+	flow-children: down;
+	ui-scale: 100%;
+	visibility: collapse;
+}
+
+.HasFlavorText #ItemContents
+{
+	width: 500px;
+}
+
+#ItemContents #ItemContentsContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+#ItemContents #RewardTextContainer
+{
+	flow-children: down;
+	horizontal-align: left;
+	vertical-align: center;
+	margin-left: 10px;
+}
+
+#ItemContents #RewardLabel
+{
+	font-size: 11px;
+	text-align: left;
+	color: #D5B789;
+	font-family: radiance;
+	font-weight: light;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+
+#ItemContents #RewardText
+{
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	font-family: titleFont;
+	font-weight: light;
+	vertical-align: top;
+	letter-spacing: 0.45px;
+	text-shadow: 1px 1px 2px black;
+	margin-bottom: 0px;
+}
+
+#ItemContents #RewardTextHero
+{
+	font-size: 14px;
+	text-align: left;
+	color: #D5B789;
+	font-family: radiance;
+	font-weight: light;
+	letter-spacing: 2.0px;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+
+#ItemContents #HeroText
+{
+	text-align: left;
+	color: #DDCDB5;
+	font-size: 16px;
+	font-family: titleFont;
+	font-weight: medium;
+	vertical-align: top;
+	letter-spacing: 0.25px;
+	text-shadow: 1px 1px 2px black;
+	margin-bottom: 10px;
+}
+
+#ItemContents #ImageContainer
+{
+	width: 114px;
+	height: 124px;
+	visibility: collapse;
+}
+
+.HasImage #ItemContents #ImageContainer,.HasVideo #ItemContents #ImageContainer
+{
+	visibility: visible;
+}
+
+#ItemContents #ImageContainer #RewardImage
+{
+	width: 100%;
+	height: 100%;
+}
+
+#ItemContents #ImageContainer #RewardVideo
+{
+	width: 100%;
+	height: 100%;
+}
+
+#ItemContents #RewardFlavorText
+{
+	width: 100%;
+	margin: 8px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: italic;
+	vertical-align: top;
+	letter-spacing: -1px;
+	visibility: collapse;
+}
+
+.HasFlavorText #ItemContents #RewardFlavorText
+{
+	visibility: visible;
+}
+
+#ItemContents #RewardClaimedText
+{
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight: normal;
+	vertical-align: top;
+	visibility: collapse;
+	font-style: italic;
+}
+
+.AlreadyClaimed #ItemContents #RewardClaimedText
+{
+	visibility: visible;
+}
+
+.HasItem #ItemContents
+{
+	visibility: visible;
+}
+
+.PopupBorderDash
+{
+	width: 100%;
+	height: 3px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #514431 ), color-stop( 0.5, #a89c78 ), to( #514431 ) );
+	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.PopupBorderDash.Bottom
+{
+	vertical-align: bottom;
+	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.6);
+}
+
+

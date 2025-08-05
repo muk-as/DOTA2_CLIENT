@@ -6,6 +6,8 @@
 #include "source2sdk/animgraphlib/CAnimParamHandle.hpp"
 #include "source2sdk/animgraphlib/CUnaryUpdateNode.hpp"
 #include "source2sdk/animgraphlib/TargetWarpAngleMode_t.hpp"
+#include "source2sdk/animgraphlib/TargetWarpCorrectionMethod.hpp"
+#include "source2sdk/animgraphlib/TargetWarpTimingMethod.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animgraphlib
@@ -19,7 +21,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x98
         // Has VTable
         // Construct allowed
         // 
@@ -35,19 +37,21 @@ namespace source2sdk
             source2sdk::animgraphlib::CAnimParamHandle m_hTargetFacePositionParameter; // 0x7c            
             source2sdk::animgraphlib::CAnimParamHandle m_hMoveHeadingParameter; // 0x7e            
             source2sdk::animgraphlib::CAnimParamHandle m_hDesiredMoveHeadingParameter; // 0x80            
-            bool m_bTargetFacePositionIsWorldSpace; // 0x82            
-            bool m_bTargetPositionIsWorldSpace; // 0x83            
-            bool m_bOnlyWarpWhenTagIsFound; // 0x84            
-            bool m_bWarpOrientationDuringTranslation; // 0x85            
-            bool m_bWarpAroundCenter; // 0x86            
-            uint8_t _pad0087[0x1]; // 0x87
-            float m_flMaxAngle; // 0x88            
-            uint8_t _pad008c[0x4];
+            uint8_t _pad0082[0x2]; // 0x82
+            source2sdk::animgraphlib::TargetWarpCorrectionMethod m_eCorrectionMethod; // 0x84            
+            source2sdk::animgraphlib::TargetWarpTimingMethod m_eTargetWarpTimingMethod; // 0x88            
+            bool m_bTargetFacePositionIsWorldSpace; // 0x8c            
+            bool m_bTargetPositionIsWorldSpace; // 0x8d            
+            bool m_bOnlyWarpWhenTagIsFound; // 0x8e            
+            bool m_bWarpOrientationDuringTranslation; // 0x8f            
+            bool m_bWarpAroundCenter; // 0x90            
+            uint8_t _pad0091[0x3]; // 0x91
+            float m_flMaxAngle; // 0x94            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTargetWarpUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CTargetWarpUpdateNode) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::CTargetWarpUpdateNode) == 0x98);
     };
 };

@@ -14,23 +14,22 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x10
+        // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x818
+        // Size: 0x830
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CBaseProp : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            bool m_bModelOverrodeBlockLOS; // 0x7d8            
-            uint8_t _pad07d9[0x3]; // 0x7d9
-            std::int32_t m_iShapeType; // 0x7dc            
-            bool m_bConformToCollisionBounds; // 0x7e0            
-            uint8_t _pad07e1[0x3]; // 0x7e1
-            matrix3x4_t m_mPreferredCatchTransform; // 0x7e4            
-            uint8_t _pad0814[0x4];
+            bool m_bModelOverrodeBlockLOS; // 0x800            
+            uint8_t _pad0801[0x3]; // 0x801
+            std::int32_t m_iShapeType; // 0x804            
+            bool m_bConformToCollisionBounds; // 0x808            
+            uint8_t _pad0809[0x7]; // 0x809
+            CTransform m_mPreferredCatchTransform; // 0x810            
             
             // Datamap fields:
             // void health; // 0x7fffffff
@@ -40,6 +39,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseProp because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseProp) == 0x818);
+        static_assert(sizeof(source2sdk::server::CBaseProp) == 0x830);
     };
 };

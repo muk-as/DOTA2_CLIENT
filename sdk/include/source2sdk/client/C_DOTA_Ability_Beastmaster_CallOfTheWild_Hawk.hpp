@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a0
+        // Size: 0x6a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,14 +34,14 @@ namespace source2sdk
         public:
             // m_HawkList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_HawkList;
-            char m_HawkList[0x18]; // 0x680            
-            float m_flRotation; // 0x698            
-            uint8_t _pad069c[0x4];
+            char m_HawkList[0x18]; // 0x688            
+            float m_flRotation; // 0x6a0            
+            uint8_t _pad06a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Beastmaster_CallOfTheWild_Hawk because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Beastmaster_CallOfTheWild_Hawk) == 0x6a0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Beastmaster_CallOfTheWild_Hawk) == 0x6a8);
     };
 };

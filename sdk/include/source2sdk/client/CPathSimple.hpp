@@ -29,7 +29,7 @@ namespace source2sdk
         class CPathSimple : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e0[0x10]; // 0x5e0
+            uint8_t _pad05e8[0x8]; // 0x5e8
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "CPathQueryComponent"
             // metadata: MNetworkAlias "CPathQueryComponent"
@@ -38,7 +38,8 @@ namespace source2sdk
             uint8_t _pad0690[0x50]; // 0x690
             // metadata: MNetworkEnable
             CUtlString m_pathString; // 0x6e0            
-            uint8_t _pad06e8[0x8];
+            bool m_bClosedLoop; // 0x6e8            
+            uint8_t _pad06e9[0x7];
         };
         #pragma pack(pop)
         

@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTAOverworldCharacterBase.hpp"
-#include "source2sdk/client/CDOTAOverworldCharacterConditional.hpp"
+#include "source2sdk/client/DOTAOverworldCharacterOverrideConditional_t.hpp"
 #include "source2sdk/client/OverworldHeroID_t.hpp"
 #include "source2sdk/client/OverworldNodeID_t.hpp"
 
@@ -41,7 +41,7 @@ namespace source2sdk
             source2sdk::client::CDOTAOverworldCharacterBase m_baseAppearance; // 0x20            
             // metadata: MPropertyDescription "The highest priority overrides go first. The first override that meets its conditions is applied."
             // m_vecOverrides has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlPair<source2sdk::client::CDOTAOverworldCharacterConditional,source2sdk::client::CDOTAOverworldCharacterBase>> m_vecOverrides;
+            // CUtlVector<source2sdk::client::DOTAOverworldCharacterOverrideConditional_t> m_vecOverrides;
             char m_vecOverrides[0x18]; // 0x48            
         };
         #pragma pack(pop)

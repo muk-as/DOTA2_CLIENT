@@ -22,6 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CSosGroupActionSoundeventClusterSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {

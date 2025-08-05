@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x960
+        // Size: 0x968
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -47,38 +47,38 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_pszQuestTitle[256]; // 0x5e0            
+            char m_pszQuestTitle[256]; // 0x5e8            
             // metadata: MNetworkEnable
-            char m_pszQuestText[256]; // 0x6e0            
+            char m_pszQuestText[256]; // 0x6e8            
             // metadata: MNetworkEnable
-            std::int32_t m_nQuestType; // 0x7e0            
+            std::int32_t m_nQuestType; // 0x7e8            
             // metadata: MNetworkEnable
             // m_hSubquests has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DotaSubquestBase> m_hSubquests[8];
-            char m_hSubquests[0x20]; // 0x7e4            
+            char m_hSubquests[0x20]; // 0x7ec            
             // metadata: MNetworkEnable
-            bool m_bHidden; // 0x804            
+            bool m_bHidden; // 0x80c            
             // metadata: MNetworkEnable
-            bool m_bCompleted; // 0x805            
+            bool m_bCompleted; // 0x80d            
             // metadata: MNetworkEnable
-            bool m_bWinIfCompleted; // 0x806            
+            bool m_bWinIfCompleted; // 0x80e            
             // metadata: MNetworkEnable
-            bool m_bLoseIfCompleted; // 0x807            
+            bool m_bLoseIfCompleted; // 0x80f            
             // metadata: MNetworkEnable
-            char m_pszGameEndText[256]; // 0x808            
+            char m_pszGameEndText[256]; // 0x810            
             // metadata: MNetworkEnable
-            std::int32_t m_pnTextReplaceValuesCDotaQuest[4]; // 0x908            
+            std::int32_t m_pnTextReplaceValuesCDotaQuest[4]; // 0x910            
             // metadata: MNetworkEnable
-            char m_pszTextReplaceString[64]; // 0x918            
+            char m_pszTextReplaceString[64]; // 0x920            
             // metadata: MNetworkEnable
-            std::int32_t m_nTextReplaceValueVersion; // 0x958            
-            bool m_bWasCompleted; // 0x95c            
-            uint8_t _pad095d[0x3];
+            std::int32_t m_nTextReplaceValueVersion; // 0x960            
+            bool m_bWasCompleted; // 0x964            
+            uint8_t _pad0965[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DotaQuest because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DotaQuest) == 0x960);
+        static_assert(sizeof(source2sdk::client::C_DotaQuest) == 0x968);
     };
 };

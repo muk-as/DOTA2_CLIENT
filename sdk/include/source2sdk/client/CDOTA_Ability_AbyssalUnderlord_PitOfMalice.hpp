@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Ability_AbyssalUnderlord_PitOfMalice : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x680            
-            uint8_t _pad0684[0x14];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x688            
+            uint8_t _pad068c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AbyssalUnderlord_PitOfMalice because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AbyssalUnderlord_PitOfMalice) == 0x698);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AbyssalUnderlord_PitOfMalice) == 0x6a0);
     };
 };

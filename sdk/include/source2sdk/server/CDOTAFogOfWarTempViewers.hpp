@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x578
+        // Size: 0x568
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -38,12 +38,12 @@ namespace source2sdk
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::TempViewerInfo_t> m_TempViewerInfo;
             char m_TempViewerInfo[0x68]; // 0x4e8            
             source2sdk::entity2::GameTime_t m_flEndTimeMin; // 0x550            
-            uint8_t _pad0554[0x24];
+            uint8_t _pad0554[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAFogOfWarTempViewers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAFogOfWarTempViewers) == 0x578);
+        static_assert(sizeof(source2sdk::server::CDOTAFogOfWarTempViewers) == 0x568);
     };
 };

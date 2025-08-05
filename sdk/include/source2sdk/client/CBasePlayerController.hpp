@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7c8
+        // Size: 0x7d0
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -53,64 +53,64 @@ namespace source2sdk
         class CBasePlayerController : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e0[0x8]; // 0x5e0
-            source2sdk::client::C_CommandContext m_CommandContext; // 0x5e8            
-            std::uint64_t m_nInButtonsWhichAreToggles; // 0x688            
+            uint8_t _pad05e8[0x8]; // 0x5e8
+            source2sdk::client::C_CommandContext m_CommandContext; // 0x5f0            
+            std::uint64_t m_nInButtonsWhichAreToggles; // 0x690            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "1"
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            std::uint32_t m_nTickBase; // 0x690            
+            std::uint32_t m_nTickBase; // 0x698            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPawnChanged"
             // m_hPawn has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BasePlayerPawn> m_hPawn;
-            char m_hPawn[0x4]; // 0x694            
+            char m_hPawn[0x4]; // 0x69c            
             // metadata: MNetworkEnable
-            bool m_bKnownTeamMismatch; // 0x698            
-            uint8_t _pad0699[0x3]; // 0x699
+            bool m_bKnownTeamMismatch; // 0x6a0            
+            uint8_t _pad06a1[0x3]; // 0x6a1
             // m_hPredictedPawn has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BasePlayerPawn> m_hPredictedPawn;
-            char m_hPredictedPawn[0x4]; // 0x69c            
-            CSplitScreenSlot m_nSplitScreenSlot; // 0x6a0            
+            char m_hPredictedPawn[0x4]; // 0x6a4            
+            CSplitScreenSlot m_nSplitScreenSlot; // 0x6a8            
             // m_hSplitOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBasePlayerController> m_hSplitOwner;
-            char m_hSplitOwner[0x4]; // 0x6a4            
+            char m_hSplitOwner[0x4]; // 0x6ac            
             // m_hSplitScreenPlayers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::CBasePlayerController>> m_hSplitScreenPlayers;
-            char m_hSplitScreenPlayers[0x18]; // 0x6a8            
-            bool m_bIsHLTV; // 0x6c0            
-            uint8_t _pad06c1[0x3]; // 0x6c1
+            char m_hSplitScreenPlayers[0x18]; // 0x6b0            
+            bool m_bIsHLTV; // 0x6c8            
+            uint8_t _pad06c9[0x3]; // 0x6c9
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnConnectionStateChanged"
-            source2sdk::client::PlayerConnectedState m_iConnected; // 0x6c4            
+            source2sdk::client::PlayerConnectedState m_iConnected; // 0x6cc            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerControllerNameChanged"
-            char m_iszPlayerName[128]; // 0x6c8            
-            uint8_t _pad0748[0x8]; // 0x748
+            char m_iszPlayerName[128]; // 0x6d0            
+            uint8_t _pad0750[0x8]; // 0x750
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnSteamIDChanged"
-            std::uint64_t m_steamID; // 0x750            
-            bool m_bIsLocalPlayerController; // 0x758            
+            std::uint64_t m_steamID; // 0x758            
+            bool m_bIsLocalPlayerController; // 0x760            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNoClipEnableChanged"
-            bool m_bNoClipEnabled; // 0x759            
-            uint8_t _pad075a[0x2]; // 0x75a
+            bool m_bNoClipEnabled; // 0x761            
+            uint8_t _pad0762[0x2]; // 0x762
             // metadata: MNetworkEnable
-            std::uint32_t m_iDesiredFOV; // 0x75c            
-            uint8_t _pad0760[0x68];
+            std::uint32_t m_iDesiredFOV; // 0x764            
+            uint8_t _pad0768[0x68];
             
             // Datamap fields:
             // bool fakeclient; // 0x7fffffff
             // bool is_hltv; // 0x7fffffff
             // const char * playername; // 0x7fffffff
             // bool reserving; // 0x7fffffff
-            // void m_pCurrentCommand; // 0x748
+            // void m_pCurrentCommand; // 0x750
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBasePlayerController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBasePlayerController) == 0x7c8);
+        static_assert(sizeof(source2sdk::client::CBasePlayerController) == 0x7d0);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x728
+        // Size: 0x730
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class C_DOTA_Item_BootsOfTravel : public source2sdk::client::C_DOTA_Item
         {
         public:
-            float m_flTeleportTimeOverride; // 0x720            
-            bool m_bPendingSellExcessScrolls; // 0x724            
-            bool m_bQueueSellScrolls; // 0x725            
-            uint8_t _pad0726[0x2];
+            float m_flTeleportTimeOverride; // 0x728            
+            bool m_bPendingSellExcessScrolls; // 0x72c            
+            bool m_bQueueSellScrolls; // 0x72d            
+            uint8_t _pad072e[0x2];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_BootsOfTravel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_BootsOfTravel) == 0x728);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_BootsOfTravel) == 0x730);
     };
 };

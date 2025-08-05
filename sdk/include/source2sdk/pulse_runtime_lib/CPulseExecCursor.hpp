@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: true
-        // Size: 0xd8
+        // Size: 0xd0
         // Has VTable
         // 
         // static metadata: MPulseInternal_IsCursor
@@ -24,11 +24,11 @@ namespace source2sdk
         class CPulseExecCursor
         {
         public:
-            uint8_t _pad0000[0xd8];
+            uint8_t _pad0000[0xd0];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseExecCursor) == 0xd8);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseExecCursor) == 0xd0);
     };
 };

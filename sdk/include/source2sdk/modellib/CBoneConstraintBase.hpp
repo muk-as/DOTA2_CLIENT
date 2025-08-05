@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x20
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -26,11 +26,11 @@ namespace source2sdk
         class CBoneConstraintBase
         {
         public:
-            uint8_t _pad0000[0x28];
+            uint8_t _pad0000[0x20];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::modellib::CBoneConstraintBase) == 0x28);
+        static_assert(sizeof(source2sdk::modellib::CBoneConstraintBase) == 0x20);
     };
 };

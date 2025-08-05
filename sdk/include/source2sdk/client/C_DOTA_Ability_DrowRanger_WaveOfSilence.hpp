@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class C_DOTA_Ability_DrowRanger_WaveOfSilence : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float wave_width; // 0x680            
-            float wave_speed; // 0x684            
-            float silence_duration; // 0x688            
-            float knockback_distance_max; // 0x68c            
-            std::int32_t m_nHeroesHit; // 0x690            
-            uint8_t _pad0694[0x4];
+            float wave_width; // 0x688            
+            float wave_speed; // 0x68c            
+            float silence_duration; // 0x690            
+            float knockback_distance_max; // 0x694            
+            std::int32_t m_nHeroesHit; // 0x698            
+            uint8_t _pad069c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_DrowRanger_WaveOfSilence because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DrowRanger_WaveOfSilence) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DrowRanger_WaveOfSilence) == 0x6a0);
     };
 };

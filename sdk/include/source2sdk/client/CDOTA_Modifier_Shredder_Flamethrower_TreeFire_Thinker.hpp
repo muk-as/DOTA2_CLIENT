@@ -32,7 +32,7 @@ namespace source2sdk
         {
         public:
             // m_vecTreeFires has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlPair<CHandle<source2sdk::client::C_BaseEntity>,source2sdk::entity2::GameTime_t>> m_vecTreeFires;
+            // CUtlVector<std_pair<CHandle<source2sdk::client::C_BaseEntity>,source2sdk::entity2::GameTime_t>> m_vecTreeFires;
             char m_vecTreeFires[0x18]; // 0x1878            
             bool m_bCleanupWhenEmpty; // 0x1890            
             uint8_t _pad1891[0x7];

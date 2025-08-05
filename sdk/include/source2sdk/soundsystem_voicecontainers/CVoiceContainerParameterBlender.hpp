@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x200
+        // Size: 0x1f8
         // Has VTable
         // Construct allowed
         // 
@@ -30,34 +30,34 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "First Sound"
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_firstSound; // 0xc0            
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_firstSound; // 0xb8            
             // metadata: MPropertyFriendlyName "Second Sound"
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_secondSound; // 0xd8            
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_secondSound; // 0xd0            
             // metadata: MPropertyStartGroup "Occlusion"
             // metadata: MPropertyFriendlyName "Enable Occlusion Blend"
-            bool m_bEnableOcclusionBlend; // 0xf0            
-            uint8_t _pad00f1[0x7]; // 0xf1
+            bool m_bEnableOcclusionBlend; // 0xe8            
+            uint8_t _pad00e9[0x7]; // 0xe9
             // metadata: MPropertySuppressExpr "m_bEnableOcclusionBlend == false"
             // metadata: MPropertyFriendlyName "First Curve"
-            CPiecewiseCurve m_curve1; // 0xf8            
+            CPiecewiseCurve m_curve1; // 0xf0            
             // metadata: MPropertySuppressExpr "m_bEnableOcclusionBlend == false"
             // metadata: MPropertyFriendlyName "Second Curve"
-            CPiecewiseCurve m_curve2; // 0x138            
+            CPiecewiseCurve m_curve2; // 0x130            
             // metadata: MPropertyStartGroup "Distance"
             // metadata: MPropertyFriendlyName "Enable Distance Blend"
-            bool m_bEnableDistanceBlend; // 0x178            
-            uint8_t _pad0179[0x7]; // 0x179
+            bool m_bEnableDistanceBlend; // 0x170            
+            uint8_t _pad0171[0x7]; // 0x171
             // metadata: MPropertySuppressExpr "m_bEnableDistanceBlend == false"
             // metadata: MPropertyFriendlyName "First Curve"
-            CPiecewiseCurve m_curve3; // 0x180            
+            CPiecewiseCurve m_curve3; // 0x178            
             // metadata: MPropertySuppressExpr "m_bEnableDistanceBlend == false"
             // metadata: MPropertyFriendlyName "Second Curve"
-            CPiecewiseCurve m_curve4; // 0x1c0            
+            CPiecewiseCurve m_curve4; // 0x1b8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerParameterBlender because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerParameterBlender) == 0x200);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerParameterBlender) == 0x1f8);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x28
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CNmFrameSnapEvent : public source2sdk::animlib::CNmEvent
         {
         public:
-            source2sdk::animlib::NmFrameSnapEventMode_t m_frameSnapMode; // 0x18            
-            uint8_t _pad001c[0x4];
+            source2sdk::animlib::NmFrameSnapEventMode_t m_frameSnapMode; // 0x20            
+            uint8_t _pad0024[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmFrameSnapEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmFrameSnapEvent) == 0x20);
+        static_assert(sizeof(source2sdk::animlib::CNmFrameSnapEvent) == 0x28);
     };
 };

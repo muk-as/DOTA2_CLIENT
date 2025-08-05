@@ -34,7 +34,8 @@ namespace source2sdk
             char m_optionWeights[0x10]; // 0x28            
             std::int16_t m_parameterNodeIdx; // 0x38            
             bool m_bIgnoreInvalidOptions; // 0x3a            
-            uint8_t _pad003b[0x5];
+            bool m_bHasWeightsSet; // 0x3b            
+            uint8_t _pad003c[0x4];
         };
         #pragma pack(pop)
         

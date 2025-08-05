@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,16 +36,16 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vStartLocation; // 0x680            
-            Vector m_vLandLocation; // 0x68c            
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x698            
-            uint8_t _pad069c[0x4]; // 0x69c
-            source2sdk::client::C_DOTA_BaseNPC* m_pTarget; // 0x6a0            
+            Vector m_vStartLocation; // 0x688            
+            Vector m_vLandLocation; // 0x694            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x6a0            
+            uint8_t _pad06a4[0x4]; // 0x6a4
+            source2sdk::client::C_DOTA_BaseNPC* m_pTarget; // 0x6a8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Rubick_Telekinesis because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rubick_Telekinesis) == 0x6a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rubick_Telekinesis) == 0x6b0);
     };
 };

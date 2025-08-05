@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xf0
+        // Size: 0xe8
         // Has VTable
         // Construct allowed
         // 
@@ -31,13 +31,13 @@ namespace source2sdk
         public:
             // m_tones has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CTone> m_tones;
-            char m_tones[0x18]; // 0xc0            
-            uint8_t _pad00d8[0x18];
+            char m_tones[0x18]; // 0xb8            
+            uint8_t _pad00d0[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerStaticAdditiveSynth because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth) == 0xf0);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth) == 0xe8);
     };
 };

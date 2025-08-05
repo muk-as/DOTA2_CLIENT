@@ -30,7 +30,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x80
+        // Size: 0x88
         // Has VTable
         // Construct allowed
         // 
@@ -39,6 +39,7 @@ namespace source2sdk
         // static metadata: MVDataNodeType "1"
         // static metadata: MVDataAnonymousNode
         // static metadata: MPropertyFriendlyName "Smart Prop Element"
+        // static metadata: MVDataOutlinerLabelExpr
         #pragma pack(push, 1)
         class CSmartPropElement
         {
@@ -52,24 +53,28 @@ namespace source2sdk
             // metadata: MPropertyDescription "Is this element enabled? If not enabled, this element will not be evaluted and will have no effect on the result."
             // metadata: MPropertySortPriority "10"
             CSmartPropAttributeBool m_bEnabled; // 0x10            
+            // metadata: MPropertyFriendlyName "Label"
+            // metadata: MPropertyDescription "Optional text that will appear in the outliner to help organize Smart Prop elements and communicate their purpose to other users."
+            CUtlString m_sLabel; // 0x50            
             // metadata: MPropertyFriendlyName "Selection Criteria"
             // metadata: MVDataPromoteField
             // m_SelectionCriteria has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropSelectionCriteria*> m_SelectionCriteria;
-            char m_SelectionCriteria[0x18]; // 0x50            
+            char m_SelectionCriteria[0x18]; // 0x58            
             // metadata: MPropertyFriendlyName "Modifiers"
             // metadata: MVDataPromoteField
             // m_Modifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropModifier*> m_Modifiers;
-            char m_Modifiers[0x18]; // 0x68            
+            char m_Modifiers[0x18]; // 0x70            
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_nElementID) == 0x8);
         static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_bEnabled) == 0x10);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_SelectionCriteria) == 0x50);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_Modifiers) == 0x68);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_sLabel) == 0x50);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_SelectionCriteria) == 0x58);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_Modifiers) == 0x70);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement) == 0x80);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement) == 0x88);
     };
 };

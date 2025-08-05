@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class C_DOTA_Ability_EarthSpirit_Magnetize : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float cast_radius; // 0x680            
-            float rock_explosion_radius; // 0x684            
-            float damage_duration; // 0x688            
-            uint8_t _pad068c[0x4];
+            float cast_radius; // 0x688            
+            float rock_explosion_radius; // 0x68c            
+            float damage_duration; // 0x690            
+            uint8_t _pad0694[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_EarthSpirit_Magnetize because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EarthSpirit_Magnetize) == 0x690);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EarthSpirit_Magnetize) == 0x698);
     };
 };

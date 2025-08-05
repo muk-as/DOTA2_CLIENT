@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x310
+        // Size: 0x350
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -63,11 +63,14 @@ namespace source2sdk
             // metadata: MPropertySortPriority "-2"
             // metadata: MPropertyDescription "Do not trace against dynamic entities which may move in game."
             CSmartPropAttributeBool m_bIgnoreEntities; // 0x2d0            
+            // metadata: MPropertySortPriority "-2"
+            // metadata: MPropertyDescription "Do not trace against cable geometry."
+            CSmartPropAttributeBool m_bIgnoreCables; // 0x310            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_Trace because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_Trace) == 0x310);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_Trace) == 0x350);
     };
 };

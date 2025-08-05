@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x650
+        // Size: 0x658
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -30,10 +30,10 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::fogparams_t m_fog; // 0x5e0            
-            bool m_bUseAngles; // 0x648            
-            uint8_t _pad0649[0x3]; // 0x649
-            std::int32_t m_iChangedVariables; // 0x64c            
+            source2sdk::client::fogparams_t m_fog; // 0x5e8            
+            bool m_bUseAngles; // 0x650            
+            uint8_t _pad0651[0x3]; // 0x651
+            std::int32_t m_iChangedVariables; // 0x654            
             
             // Datamap fields:
             // float InputSetStartDist; // 0x0
@@ -59,6 +59,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_FogController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_FogController) == 0x650);
+        static_assert(sizeof(source2sdk::client::C_FogController) == 0x658);
     };
 };

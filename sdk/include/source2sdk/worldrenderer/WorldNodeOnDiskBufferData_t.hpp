@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/rendersystemdx11/RenderInputLayoutField_t.hpp"
+#include "source2sdk/modellib/RenderInputLayoutField_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: worldrenderer
@@ -28,7 +28,7 @@ namespace source2sdk
             std::int32_t m_nElementCount; // 0x0            
             std::int32_t m_nElementSizeInBytes; // 0x4            
             // m_inputLayoutFields has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<source2sdk::rendersystemdx11::RenderInputLayoutField_t> m_inputLayoutFields;
+            // CUtlVector<source2sdk::modellib::RenderInputLayoutField_t> m_inputLayoutFields;
             char m_inputLayoutFields[0x18]; // 0x8            
             // m_pData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint8_t> m_pData;

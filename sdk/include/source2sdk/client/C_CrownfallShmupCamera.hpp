@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x648
+        // Size: 0x650
         // Has VTable
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_CrownfallShmupCamera) == 0x648);
+        static_assert(sizeof(source2sdk::client::C_CrownfallShmupCamera) == 0x650);
     };
 };

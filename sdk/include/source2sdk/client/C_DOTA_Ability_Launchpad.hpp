@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,12 +25,12 @@ namespace source2sdk
         class C_DOTA_Ability_Launchpad : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            char* pTargetName; // 0x680            
+            char* pTargetName; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Launchpad because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Launchpad) == 0x688);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Launchpad) == 0x690);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x10
+        // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0xad8
+        // Size: 0xaf0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,32 +29,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bRespawnClientEntity; // 0xab8            
+            bool m_bRespawnClientEntity; // 0xad0            
             // metadata: MNetworkEnable
-            bool m_bPlaySpawnAnimation; // 0xab9            
+            bool m_bPlaySpawnAnimation; // 0xad1            
             // metadata: MNetworkEnable
-            std::uint8_t m_unGuildTier; // 0xaba            
+            std::uint8_t m_unGuildTier; // 0xad2            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPrimaryColor; // 0xabb            
+            std::uint8_t m_unPrimaryColor; // 0xad3            
             // metadata: MNetworkEnable
-            std::uint8_t m_unSecondaryColor; // 0xabc            
+            std::uint8_t m_unSecondaryColor; // 0xad4            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPattern; // 0xabd            
-            uint8_t _pad0abe[0x2]; // 0xabe
+            std::uint8_t m_unPattern; // 0xad5            
+            uint8_t _pad0ad6[0x2]; // 0xad6
             // metadata: MNetworkEnable
-            std::uint64_t m_unLogo; // 0xac0            
+            std::uint64_t m_unLogo; // 0xad8            
             // metadata: MNetworkEnable
-            source2sdk::client::GuildID_t m_unGuildID; // 0xac8            
+            source2sdk::client::GuildID_t m_unGuildID; // 0xae0            
             // metadata: MNetworkEnable
-            std::uint32_t m_unGuildFlags; // 0xacc            
+            std::uint32_t m_unGuildFlags; // 0xae4            
             // metadata: MNetworkEnable
-            bool m_bUsePanelCache; // 0xad0            
-            uint8_t _pad0ad1[0x7];
+            bool m_bUsePanelCache; // 0xae8            
+            uint8_t _pad0ae9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_GuildBannerDynamic because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_GuildBannerDynamic) == 0xad8);
+        static_assert(sizeof(source2sdk::server::CDOTA_GuildBannerDynamic) == 0xaf0);
     };
 };

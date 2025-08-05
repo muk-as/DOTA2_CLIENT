@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ed8
+        // Size: 0x1ef8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Unit_Hero_CrystalMaiden : public source2sdk::server::CDOTA_BaseNPC_Hero
         {
         public:
-            std::int32_t m_iParticleMouthIndex; // 0x1ed0            
-            std::int32_t m_iParticleHandRIndex; // 0x1ed4            
+            std::int32_t m_iParticleMouthIndex; // 0x1ef0            
+            std::int32_t m_iParticleHandRIndex; // 0x1ef4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_CrystalMaiden because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_CrystalMaiden) == 0x1ed8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_CrystalMaiden) == 0x1ef8);
     };
 };

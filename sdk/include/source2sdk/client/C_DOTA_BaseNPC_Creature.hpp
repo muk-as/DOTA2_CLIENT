@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a10
+        // Size: 0x1a28
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,15 +29,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bIsCurrentlyChanneling; // 0x1a08            
-            uint8_t _pad1a09[0x3]; // 0x1a09
+            bool m_bIsCurrentlyChanneling; // 0x1a20            
+            uint8_t _pad1a21[0x3]; // 0x1a21
             // metadata: MNetworkEnable
-            float m_flChannelCycle; // 0x1a0c            
+            float m_flChannelCycle; // 0x1a24            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Creature because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Creature) == 0x1a10);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Creature) == 0x1a28);
     };
 };

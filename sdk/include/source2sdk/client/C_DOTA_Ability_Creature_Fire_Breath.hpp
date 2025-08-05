@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6c8
+        // Size: 0x6d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,20 +26,20 @@ namespace source2sdk
         class C_DOTA_Ability_Creature_Fire_Breath : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t speed; // 0x680            
-            std::int32_t projectile_count; // 0x684            
-            float rotation_angle; // 0x688            
-            float damage; // 0x68c            
-            float radius; // 0x690            
-            uint8_t _pad0694[0x4]; // 0x694
-            source2sdk::client::CountdownTimer ctTimer; // 0x698            
-            Vector m_vecStartRot; // 0x6b0            
-            Vector m_vecEndRot; // 0x6bc            
+            std::int32_t speed; // 0x688            
+            std::int32_t projectile_count; // 0x68c            
+            float rotation_angle; // 0x690            
+            float damage; // 0x694            
+            float radius; // 0x698            
+            uint8_t _pad069c[0x4]; // 0x69c
+            source2sdk::client::CountdownTimer ctTimer; // 0x6a0            
+            Vector m_vecStartRot; // 0x6b8            
+            Vector m_vecEndRot; // 0x6c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Creature_Fire_Breath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Creature_Fire_Breath) == 0x6c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Creature_Fire_Breath) == 0x6d0);
     };
 };

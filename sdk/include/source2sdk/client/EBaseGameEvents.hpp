@@ -22,7 +22,7 @@ namespace source2sdk
             GE_PlaceDecalEvent = 0xc9,
             GE_ClearWorldDecalsEvent = 0xca,
             GE_ClearEntityDecalsEvent = 0xcb,
-            GE_ClearDecalsForSkeletonInstanceEvent = 0xcc,
+            GE_ClearDecalsForEntityEvent = 0xcc,
             GE_Source1LegacyGameEventList = 0xcd,
             GE_Source1LegacyListenEvents = 0xce,
             GE_Source1LegacyGameEvent = 0xcf,

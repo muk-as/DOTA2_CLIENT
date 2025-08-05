@@ -38,7 +38,7 @@ namespace source2sdk
             // CUtlVector<std::int32_t> m_ImpactedProjectiles;
             char m_ImpactedProjectiles[0x18]; // 0x5d0            
             // m_vecBoxedUnitHits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlPair<std::int32_t,CHandle<source2sdk::server::CBaseEntity>>> m_vecBoxedUnitHits;
+            // CUtlVector<std_pair<std::int32_t,CHandle<source2sdk::server::CBaseEntity>>> m_vecBoxedUnitHits;
             char m_vecBoxedUnitHits[0x18]; // 0x5e8            
         };
         #pragma pack(pop)

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class C_DOTA_Ability_Furion_Teleportation : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndexStart; // 0x680            
-            source2sdk::client::ParticleIndex_t m_nFXIndexEnd; // 0x684            
-            source2sdk::client::ParticleIndex_t m_nFXIndexEndTeam; // 0x688            
-            uint8_t _pad068c[0x4];
+            source2sdk::client::ParticleIndex_t m_nFXIndexStart; // 0x688            
+            source2sdk::client::ParticleIndex_t m_nFXIndexEnd; // 0x68c            
+            source2sdk::client::ParticleIndex_t m_nFXIndexEndTeam; // 0x690            
+            uint8_t _pad0694[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Furion_Teleportation because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Furion_Teleportation) == 0x690);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Furion_Teleportation) == 0x698);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Ability_Mars_Bulwark : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::entity2::GameTime_t m_flNextAttack; // 0x680            
-            source2sdk::entity2::GameTime_t m_flLastActive; // 0x684            
+            source2sdk::entity2::GameTime_t m_flNextAttack; // 0x688            
+            source2sdk::entity2::GameTime_t m_flLastActive; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Mars_Bulwark because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Mars_Bulwark) == 0x688);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Mars_Bulwark) == 0x690);
     };
 };

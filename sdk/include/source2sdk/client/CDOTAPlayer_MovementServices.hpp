@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1e8
+        // Size: 0x240
         // Has VTable
         #pragma pack(push, 1)
         class CDOTAPlayer_MovementServices : public source2sdk::client::CPlayer_MovementServices
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTAPlayer_MovementServices) == 0x1e8);
+        static_assert(sizeof(source2sdk::client::CDOTAPlayer_MovementServices) == 0x240);
     };
 };

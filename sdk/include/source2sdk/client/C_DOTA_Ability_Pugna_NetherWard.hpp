@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,12 +28,12 @@ namespace source2sdk
         public:
             // vecAbilitiesUsed has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sAbilityHistory> vecAbilitiesUsed;
-            char vecAbilitiesUsed[0x18]; // 0x680            
+            char vecAbilitiesUsed[0x18]; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Pugna_NetherWard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pugna_NetherWard) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pugna_NetherWard) == 0x6a0);
     };
 };

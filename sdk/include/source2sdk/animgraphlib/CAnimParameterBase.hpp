@@ -23,6 +23,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CAnimParameterBase
         {
@@ -40,13 +41,13 @@ namespace source2sdk
             // metadata: MPropertyReadOnly
             source2sdk::modellib::AnimParamID m_id; // 0x30            
             uint8_t _pad0034[0x14]; // 0x34
-            // metadata: MPropertyHideField
-            // metadata: MPropertyAttrChangeCallback
+            // metadata: MPropertySuppressField
+            // metadata: MPropertyAutoRebuildOnChange
             CUtlString m_componentName; // 0x48            
             uint8_t _pad0050[0x18]; // 0x50
-            // metadata: MPropertyHideField
+            // metadata: MPropertySuppressField
             bool m_bNetworkingRequested; // 0x68            
-            // metadata: MPropertyHideField
+            // metadata: MPropertySuppressField
             bool m_bIsReferenced; // 0x69            
             uint8_t _pad006a[0x6];
         };

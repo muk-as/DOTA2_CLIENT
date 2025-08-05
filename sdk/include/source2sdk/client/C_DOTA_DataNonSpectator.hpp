@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1dc8
+        // Size: 0x1dd0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -72,82 +72,82 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_vecDataTeam has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::DataTeamPlayer_t> m_vecDataTeam;
-            char m_vecDataTeam[0x68]; // 0x5e0            
+            char m_vecDataTeam[0x68]; // 0x5e8            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnTeamWorldTreeStateChanged"
-            std::uint64_t m_bWorldTreeState[256]; // 0x648            
+            std::uint64_t m_bWorldTreeState[256]; // 0x650            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
-            std::uint64_t m_bNPCVisibleState[256]; // 0xe48            
+            std::uint64_t m_bNPCVisibleState[256]; // 0xe50            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnTeamWorldTreeModelsChanged"
             // m_vecWorldTreeModelReplacements has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::TreeModelReplacement_t> m_vecWorldTreeModelReplacements;
-            char m_vecWorldTreeModelReplacements[0x68]; // 0x1648            
+            char m_vecWorldTreeModelReplacements[0x68]; // 0x1650            
             // metadata: MNetworkEnable
-            Vector2D m_vDesiredWardPlacement[2]; // 0x16b0            
+            Vector2D m_vDesiredWardPlacement[2]; // 0x16b8            
             // metadata: MNetworkEnable
-            std::int32_t m_nEnemyStartingPosition[5]; // 0x16c0            
+            std::int32_t m_nEnemyStartingPosition[5]; // 0x16c8            
             // metadata: MNetworkEnable
-            std::int32_t m_nTotalEventPoints; // 0x16d4            
+            std::int32_t m_nTotalEventPoints; // 0x16dc            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_nCaptainInspectedHeroID; // 0x16d8            
+            source2sdk::client::HeroID_t m_nCaptainInspectedHeroID; // 0x16e0            
             // metadata: MNetworkEnable
-            std::int32_t m_nFeaturedPlayerID; // 0x16dc            
+            std::int32_t m_nFeaturedPlayerID; // 0x16e4            
             // metadata: MNetworkEnable
-            float m_flSuggestedWardWeights[20]; // 0x16e0            
+            float m_flSuggestedWardWeights[20]; // 0x16e8            
             // metadata: MNetworkEnable
-            std::uint8_t m_nSuggestedWardIndexes[20]; // 0x1730            
+            std::uint8_t m_nSuggestedWardIndexes[20]; // 0x1738            
             // metadata: MNetworkEnable
-            std::int32_t m_iSuggestedLanes[5]; // 0x1744            
+            std::int32_t m_iSuggestedLanes[5]; // 0x174c            
             // metadata: MNetworkEnable
-            float m_iSuggestedLaneWeights[5]; // 0x1758            
+            float m_iSuggestedLaneWeights[5]; // 0x1760            
             // metadata: MNetworkEnable
-            bool m_bSuggestedLaneRoam[5]; // 0x176c            
+            bool m_bSuggestedLaneRoam[5]; // 0x1774            
             // metadata: MNetworkEnable
-            bool m_bSuggestedLaneJungle[5]; // 0x1771            
-            uint8_t _pad1776[0x2]; // 0x1776
+            bool m_bSuggestedLaneJungle[5]; // 0x1779            
+            uint8_t _pad177e[0x2]; // 0x177e
             // metadata: MNetworkEnable
             // m_vecNeutralItemsTierInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::TierNeutralInfo_t> m_vecNeutralItemsTierInfo;
-            char m_vecNeutralItemsTierInfo[0x68]; // 0x1778            
+            char m_vecNeutralItemsTierInfo[0x68]; // 0x1780            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnTeamNeutralStashItemsChanged"
             // m_vecNeutralStashItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_vecNeutralStashItems;
-            char m_vecNeutralStashItems[0x18]; // 0x17e0            
+            char m_vecNeutralStashItems[0x18]; // 0x17e8            
             // metadata: MNetworkEnable
             // m_vecNeutralItemsConsumed has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<source2sdk::client::AbilityID_t> m_vecNeutralItemsConsumed;
-            char m_vecNeutralItemsConsumed[0x18]; // 0x17f8            
+            char m_vecNeutralItemsConsumed[0x18]; // 0x1800            
             // metadata: MNetworkEnable
             // m_PingConfirmationStates has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::PingConfirmationState_t> m_PingConfirmationStates;
-            char m_PingConfirmationStates[0x68]; // 0x1810            
+            char m_PingConfirmationStates[0x68]; // 0x1818            
             // metadata: MNetworkEnable
             // m_vecKnownClearCamps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_vecKnownClearCamps;
-            char m_vecKnownClearCamps[0x18]; // 0x1878            
+            char m_vecKnownClearCamps[0x18]; // 0x1880            
             // metadata: MNetworkEnable
-            Vector2D m_vPossibleWardPlacement[100]; // 0x1890            
+            Vector2D m_vPossibleWardPlacement[100]; // 0x1898            
             // metadata: MNetworkEnable
-            float m_vPossibleWardRadii[100]; // 0x1bb0            
+            float m_vPossibleWardRadii[100]; // 0x1bb8            
             // metadata: MNetworkEnable
             // m_vecTrackedTeleports has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::DOTATeleportInfo_t> m_vecTrackedTeleports;
-            char m_vecTrackedTeleports[0x68]; // 0x1d40            
+            char m_vecTrackedTeleports[0x68]; // 0x1d48            
             // metadata: MNetworkEnable
-            source2sdk::client::CRoshanPhaseInfo m_roshanSpawnInfo; // 0x1da8            
+            source2sdk::client::CRoshanPhaseInfo m_roshanSpawnInfo; // 0x1db0            
             // metadata: MNetworkEnable
-            std::int32_t m_nNextPowerRuneType; // 0x1dc0            
+            std::int32_t m_nNextPowerRuneType; // 0x1dc8            
             // metadata: MNetworkEnable
-            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x1dc4            
+            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x1dcc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_DataNonSpectator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_DataNonSpectator) == 0x1dc8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_DataNonSpectator) == 0x1dd0);
     };
 };

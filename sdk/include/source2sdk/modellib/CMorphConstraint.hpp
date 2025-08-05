@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x88
+        // Size: 0x80
         // Has VTable
         // Construct allowed
         // 
@@ -26,16 +26,16 @@ namespace source2sdk
         class CMorphConstraint : public source2sdk::modellib::CBaseConstraint
         {
         public:
-            CUtlString m_sTargetMorph; // 0x68            
-            std::int32_t m_nSlaveChannel; // 0x70            
-            float m_flMin; // 0x74            
-            float m_flMax; // 0x78            
-            uint8_t _pad007c[0xc];
+            CUtlString m_sTargetMorph; // 0x60            
+            std::int32_t m_nSlaveChannel; // 0x68            
+            float m_flMin; // 0x6c            
+            float m_flMax; // 0x70            
+            uint8_t _pad0074[0xc];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMorphConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CMorphConstraint) == 0x88);
+        static_assert(sizeof(source2sdk::modellib::CMorphConstraint) == 0x80);
     };
 };

@@ -28,7 +28,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x1488
+        // Size: 0x1478
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_TeamCommander
@@ -162,23 +162,23 @@ namespace source2sdk
             // m_hDisabledBots has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hDisabledBots;
             char m_hDisabledBots[0x18]; // 0xf28            
-            uint8_t _pad0f40[0x380]; // 0xf40
-            source2sdk::entity2::GameTime_t m_fGoodLuckFlavorTextTime; // 0x12c0            
-            source2sdk::entity2::GameTime_t m_fTeamfightFlavorTextTime; // 0x12c4            
-            source2sdk::entity2::GameTime_t m_fCongratulateHeroFlavorTextTime; // 0x12c8            
-            source2sdk::entity2::GameTime_t m_fLastAliveHeroHistorySnapshotTime; // 0x12cc            
-            std::int32_t m_iAliveHeroHistoryIndex; // 0x12d0            
-            std::int32_t m_iAliveHeroHistory[5]; // 0x12d4            
-            source2sdk::entity2::GameTime_t m_fPlayerDraftChooseTime; // 0x12e8            
-            uint8_t _pad12ec[0xc]; // 0x12ec
-            CUtlString m_sScriptDirectory; // 0x12f8            
-            HSCRIPT m_hHeroSelectionScriptScope; // 0x1300            
-            HSCRIPT m_hTeamLevelDesiresScriptScope; // 0x1308            
-            uint8_t _pad1310[0x68]; // 0x1310
-            source2sdk::entity2::GameTick_t m_nScriptPathAvoidanceUpdateTick; // 0x1378            
-            float m_fExecutionTime[30]; // 0x137c            
-            std::int32_t m_iCurExecutionTime; // 0x13f4            
-            uint8_t _pad13f8[0x90];
+            uint8_t _pad0f40[0x370]; // 0xf40
+            source2sdk::entity2::GameTime_t m_fGoodLuckFlavorTextTime; // 0x12b0            
+            source2sdk::entity2::GameTime_t m_fTeamfightFlavorTextTime; // 0x12b4            
+            source2sdk::entity2::GameTime_t m_fCongratulateHeroFlavorTextTime; // 0x12b8            
+            source2sdk::entity2::GameTime_t m_fLastAliveHeroHistorySnapshotTime; // 0x12bc            
+            std::int32_t m_iAliveHeroHistoryIndex; // 0x12c0            
+            std::int32_t m_iAliveHeroHistory[5]; // 0x12c4            
+            source2sdk::entity2::GameTime_t m_fPlayerDraftChooseTime; // 0x12d8            
+            uint8_t _pad12dc[0xc]; // 0x12dc
+            CUtlString m_sScriptDirectory; // 0x12e8            
+            HSCRIPT m_hHeroSelectionScriptScope; // 0x12f0            
+            HSCRIPT m_hTeamLevelDesiresScriptScope; // 0x12f8            
+            uint8_t _pad1300[0x68]; // 0x1300
+            source2sdk::entity2::GameTick_t m_nScriptPathAvoidanceUpdateTick; // 0x1368            
+            float m_fExecutionTime[30]; // 0x136c            
+            std::int32_t m_iCurExecutionTime; // 0x13e4            
+            uint8_t _pad13e8[0x90];
         };
         #pragma pack(pop)
         
@@ -244,20 +244,20 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnitsIncludingDead) == 0xec8);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hCouriers) == 0xf10);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hDisabledBots) == 0xf28);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fGoodLuckFlavorTextTime) == 0x12c0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fTeamfightFlavorTextTime) == 0x12c4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fCongratulateHeroFlavorTextTime) == 0x12c8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fLastAliveHeroHistorySnapshotTime) == 0x12cc);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistoryIndex) == 0x12d0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistory) == 0x12d4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPlayerDraftChooseTime) == 0x12e8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_sScriptDirectory) == 0x12f8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hHeroSelectionScriptScope) == 0x1300);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hTeamLevelDesiresScriptScope) == 0x1308);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nScriptPathAvoidanceUpdateTick) == 0x1378);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fExecutionTime) == 0x137c);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iCurExecutionTime) == 0x13f4);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fGoodLuckFlavorTextTime) == 0x12b0);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fTeamfightFlavorTextTime) == 0x12b4);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fCongratulateHeroFlavorTextTime) == 0x12b8);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fLastAliveHeroHistorySnapshotTime) == 0x12bc);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistoryIndex) == 0x12c0);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistory) == 0x12c4);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPlayerDraftChooseTime) == 0x12d8);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_sScriptDirectory) == 0x12e8);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hHeroSelectionScriptScope) == 0x12f0);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hTeamLevelDesiresScriptScope) == 0x12f8);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nScriptPathAvoidanceUpdateTick) == 0x1368);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fExecutionTime) == 0x136c);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iCurExecutionTime) == 0x13e4);
         
-        static_assert(sizeof(source2sdk::server::CDOTA_TeamCommander) == 0x1488);
+        static_assert(sizeof(source2sdk::server::CDOTA_TeamCommander) == 0x1478);
     };
 };

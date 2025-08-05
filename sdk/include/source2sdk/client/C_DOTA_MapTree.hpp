@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xab8
+        // Size: 0xae0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,14 +27,14 @@ namespace source2sdk
         class C_DOTA_MapTree : public source2sdk::client::C_DOTA_BinaryObject
         {
         public:
-            uint8_t _pad09a0[0x30]; // 0x9a0
-            bool m_bInitialized; // 0x9d0            
-            uint8_t _pad09d1[0xe7];
+            uint8_t _pad09c8[0x30]; // 0x9c8
+            bool m_bInitialized; // 0x9f8            
+            uint8_t _pad09f9[0xe7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_MapTree because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_MapTree) == 0xab8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_MapTree) == 0xae0);
     };
 };

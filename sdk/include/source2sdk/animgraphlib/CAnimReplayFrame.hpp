@@ -30,6 +30,7 @@ namespace source2sdk
             // CUtlVector<CUtlBinaryBlock> m_inputDataBlocks;
             char m_inputDataBlocks[0x18]; // 0x10            
             CUtlBinaryBlock m_instanceData; // 0x28            
+            uint8_t _pad0038[0x8]; // 0x38
             CTransform m_startingLocalToWorldTransform; // 0x40            
             CTransform m_localToWorldTransform; // 0x60            
             float m_timeStamp; // 0x80            

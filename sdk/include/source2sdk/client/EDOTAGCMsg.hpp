@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 958
+        // Enumerator count: 962
         // Alignment: 4
         // Size: 0x4
         enum class EDOTAGCMsg : std::uint32_t
@@ -608,6 +608,8 @@ namespace source2sdk
             k_EMsgSQLGCToGCGrantAllHeroProgressVictory = 0x20ac,
             k_EMsgDevDeleteEventActions = 0x20ad,
             k_EMsgDevDeleteEventActionsResponse = 0x20ae,
+            k_EMsgDevReloadAllEvents = 0x20af,
+            k_EMsgDevReloadAllEventsResponse = 0x20b0,
             k_EMsgGCToGCGetAllHeroCurrent = 0x21bb,
             k_EMsgGCToGCGetAllHeroCurrentResponse = 0x21bc,
             k_EMsgGCSubmitPlayerAvoidRequest = 0x21bd,
@@ -976,6 +978,8 @@ namespace source2sdk
             k_EMsgClientToGCCraftworksDevModifyComponents = 0x233c,
             k_EMsgClientToGCCraftworksDevModifyComponentsResponse = 0x233d,
             k_EMsgSignOutCraftworks = 0x233e,
+            k_EMsgClientToGCClaimGatedEvent = 0x2353,
+            k_EMsgClientToGCClaimGatedEventResponse = 0x2354,
         };
     };
 };

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 41
+        // Enumerator count: 40
         // Alignment: 8
         // Size: 0x8
         enum class DebugOverlayBits_t : std::uint64_t
@@ -100,9 +100,6 @@ namespace source2sdk
             // MPropertyFriendlyName "NPC Kill"
             // MPropertyDescription "kill the NPC, running all appropriate AI."
             OVERLAY_NPC_KILL_BIT = 0x10000000,
-            // MPropertyFriendlyName "OVERLAY_WC_CHANGE_ENTITY"
-            // MPropertyDescription "object changed during WC edit (probably unused)"
-            OVERLAY_WC_CHANGE_ENTITY = 0x20000000,
             // MPropertyFriendlyName "Buddha Mode"
             // MPropertyDescription "TODO take damage but don't die"
             OVERLAY_BUDDHA_MODE = 0x40000000,

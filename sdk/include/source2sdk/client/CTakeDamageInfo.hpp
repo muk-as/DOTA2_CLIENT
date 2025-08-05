@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xc8
+        // Size: 0xc0
         // Has VTable
         #pragma pack(push, 1)
         class CTakeDamageInfo
@@ -56,23 +56,21 @@ namespace source2sdk
             float m_flOriginalDamage; // 0x60            
             bool m_bShouldBleed; // 0x64            
             bool m_bShouldSpark; // 0x65            
-            uint8_t _pad0066[0x2]; // 0x66
-            float m_flDamageAbsorbed; // 0x68            
-            uint8_t _pad006c[0xc]; // 0x6c
-            source2sdk::client::TakeDamageFlags_t m_nDamageFlags; // 0x78            
-            CGlobalSymbol m_sDamageSourceName; // 0x80            
-            std::int32_t m_bitsDotaDamageType; // 0x88            
-            std::int32_t m_nDotaDamageCategory; // 0x8c            
-            float m_flCombatLogCreditFactor; // 0x90            
-            std::int16_t m_iRecord; // 0x94            
-            uint8_t _pad0096[0x2]; // 0x96
-            source2sdk::client::HitGroup_t m_iHitGroupId; // 0x98            
-            uint8_t _pad009c[0x20]; // 0x9c
-            bool m_bInTakeDamageFlow; // 0xbc            
-            uint8_t _pad00bd[0xb];
+            uint8_t _pad0066[0xa]; // 0x66
+            source2sdk::client::TakeDamageFlags_t m_nDamageFlags; // 0x70            
+            CGlobalSymbol m_sDamageSourceName; // 0x78            
+            std::int32_t m_bitsDotaDamageType; // 0x80            
+            std::int32_t m_nDotaDamageCategory; // 0x84            
+            float m_flCombatLogCreditFactor; // 0x88            
+            std::int16_t m_iRecord; // 0x8c            
+            uint8_t _pad008e[0x2]; // 0x8e
+            source2sdk::client::HitGroup_t m_iHitGroupId; // 0x90            
+            uint8_t _pad0094[0x20]; // 0x94
+            bool m_bInTakeDamageFlow; // 0xb4            
+            uint8_t _pad00b5[0xb];
             
             // Datamap fields:
-            // void m_hScriptInstance; // 0xa0
+            // void m_hScriptInstance; // 0x98
         };
         #pragma pack(pop)
         
@@ -91,16 +89,15 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_flOriginalDamage) == 0x60);
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bShouldBleed) == 0x64);
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bShouldSpark) == 0x65);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_flDamageAbsorbed) == 0x68);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_nDamageFlags) == 0x78);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_sDamageSourceName) == 0x80);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bitsDotaDamageType) == 0x88);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_nDotaDamageCategory) == 0x8c);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_flCombatLogCreditFactor) == 0x90);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iRecord) == 0x94);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iHitGroupId) == 0x98);
-        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bInTakeDamageFlow) == 0xbc);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_nDamageFlags) == 0x70);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_sDamageSourceName) == 0x78);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bitsDotaDamageType) == 0x80);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_nDotaDamageCategory) == 0x84);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_flCombatLogCreditFactor) == 0x88);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iRecord) == 0x8c);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iHitGroupId) == 0x90);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bInTakeDamageFlow) == 0xb4);
         
-        static_assert(sizeof(source2sdk::client::CTakeDamageInfo) == 0xc8);
+        static_assert(sizeof(source2sdk::client::CTakeDamageInfo) == 0xc0);
     };
 };

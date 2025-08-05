@@ -1,0 +1,83 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/seasonal/dota_ui_seasonal_visual_novel_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/seasonal/dota_ui_seasonal_visual_novel.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="PortraitContainerLayered">
+			<Panel class="PortraitContainerLayered">
+				<Panel class="PortraitDropShadow" />
+				<Image class="PortraitBackgroundFrame" defaultsrc="s2r://panorama/images/events/seasonal/border_under_png.vtex" />
+				<Panel id="AnimationContainer" class="AnimationContainer">
+					<Image id="ActorPicture" class="ActorPicture" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="NavButton">
+			<Panel class="NavButton">
+				<Panel class="NavButtonBackground" />
+				<Image class="NavButtonIcon Comic" src="s2r://panorama/images/control_icons/24px/comic_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="NavButtonIcon Lock" src="s2r://panorama/images/control_icons/24px/lock.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="VisualNovel">
+		<Panel id="ChapterNavigation" />
+		<Panel class="MainContentsWrapper">
+			<Panel class="MainContents" onactivate="DOTAVisualNovelNextStep()">
+				<Image class="VisualNovelBackground" defaultsrc="s2r://panorama/images/events/seasonal/backgrounds/fall_background_png.vtex" />
+				<Panel class="CustomHeading">
+					<Panel class="DashDotDivider">
+						<Panel class="Dash Left" />
+						<Label class="HeadingText TitleLarge" text="{s:custom_heading_text}" />
+						<Panel class="Dash Right" />
+					</Panel>
+				</Panel>
+				<Panel id="StoryPanel" class="NovelContainer" hittest="false">
+					<Panel class="GroupContainer Top" id="GroupContainer1">
+						<Panel class="PortraitGroup" id="PortraitGroup1" />
+						<Panel class="ActorTextContainer">
+							<DOTATypewriterText id="ActorText1" class="Crownfall ActorText Quartero" cursorimage="s2r://panorama/images/emoticons/crownfall/props/prop_donkey_prompt_psd.vtex" />
+							<Panel class="MoreIndicator" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="InstructionTextContainer">
+					<Panel class="InstructionTextContent">
+						<Label class="InstructionText" text="#DOTA_Seasonal_VisualNovel_ClickToContinue" />
+						<Image class="InstructionIcon" src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+				</Panel>
+				<Panel id="PopupContainer">
+					<Image class="SoundEffectBackground Hit" src="s2r://panorama/images/events/crownfall/visual_novel/sound_effect_background_png.vtex" />
+					<Image class="SoundEffectBackground Wet" src="s2r://panorama/images/events/crownfall/visual_novel/wet_effect_background_png.vtex" />
+					<Label id="PopupText" text="{s:text_popup}" />
+				</Panel>
+			</Panel>
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			</Panel>
+			<Panel class="PopupBorderDash" hittest="false" />
+			<Panel class="PopupBorderDash Bottom" hittest="false" />
+			<Panel class="PopupBorder" hittest="false" />
+		</Panel>
+		<Image id="PreloadActorPicture" />
+		<Panel id="ItemContents">
+			<Panel id="ItemContentsContainer">
+				<Panel id="ImageContainer">
+					<Image id="RewardImage" scaling="stretch-to-fit-preserve-aspect" />
+					<MoviePanel id="RewardVideo" repeat="true" autoplay="onload" />
+				</Panel>
+				<Panel id="RewardTextContainer">
+					<Label id="RewardLabel" text="REWARD:" />
+					<Label id="RewardText" html="true" text="{s:reward_name}" />
+					<Label id="RewardTextHero" html="true" text="{s:reward_hero}" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

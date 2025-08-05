@@ -18,19 +18,19 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9e0
+        // Size: 0xa08
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CTriggerDota : public source2sdk::server::CTriggerMultiple
         {
         public:
-            source2sdk::server::CDotaEntityFilterFlags m_FilterFlags; // 0x9c0            
+            source2sdk::server::CDotaEntityFilterFlags m_FilterFlags; // 0x9e8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerDota because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerDota) == 0x9e0);
+        static_assert(sizeof(source2sdk::server::CTriggerDota) == 0xa08);
     };
 };

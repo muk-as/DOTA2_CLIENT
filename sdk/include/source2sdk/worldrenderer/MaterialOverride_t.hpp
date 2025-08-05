@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18
+        // Size: 0x28
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -32,11 +32,13 @@ namespace source2sdk
             // m_pMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_pMaterial;
             char m_pMaterial[0x8]; // 0x10            
+            Vector m_vLinearTintColor; // 0x18            
+            uint8_t _pad0024[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in MaterialOverride_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::worldrenderer::MaterialOverride_t) == 0x18);
+        static_assert(sizeof(source2sdk::worldrenderer::MaterialOverride_t) == 0x28);
     };
 };

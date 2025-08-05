@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/client/CDestructiblePartsSystemData_HitGroupInfoAndPartData.hpp"
+#include "source2sdk/client/CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels.hpp"
 #include "source2sdk/client/HitGroup_t.hpp"
 #include "source2sdk/tier2/CRangeInt.hpp"
 
@@ -30,7 +30,7 @@ namespace source2sdk
         public:
             // metadata: MPropertyDescription "Destructible Parts"
             // m_PartsDataByHitGroup has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlOrderedMap<source2sdk::client::HitGroup_t,source2sdk::client::CDestructiblePartsSystemData_HitGroupInfoAndPartData> m_PartsDataByHitGroup;
+            // CUtlOrderedMap<source2sdk::client::HitGroup_t,source2sdk::client::CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels> m_PartsDataByHitGroup;
             char m_PartsDataByHitGroup[0x28]; // 0x0            
             // metadata: MPropertyDescription "Min/Max number parts to destroy when gibbing"
             source2sdk::tier2::CRangeInt m_nMinMaxNumberHitGroupsToDestroyWhenGibbing; // 0x28            

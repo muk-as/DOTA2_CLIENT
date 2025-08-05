@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x820
+        // Size: 0x848
         // Has VTable
         // Construct allowed
         // 
@@ -43,28 +43,28 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            source2sdk::entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x7d8            
+            source2sdk::entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x800            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            float m_flNextPrimaryAttackTickRatio; // 0x7dc            
+            float m_flNextPrimaryAttackTickRatio; // 0x804            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            source2sdk::entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x7e0            
+            source2sdk::entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x808            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            float m_flNextSecondaryAttackTickRatio; // 0x7e4            
+            float m_flNextSecondaryAttackTickRatio; // 0x80c            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iClip1; // 0x7e8            
+            std::int32_t m_iClip1; // 0x810            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            std::int32_t m_iClip2; // 0x7ec            
+            std::int32_t m_iClip2; // 0x814            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            std::int32_t m_pReserveAmmo[2]; // 0x7f0            
-            source2sdk::entity2::CEntityIOOutput m_OnPlayerUse; // 0x7f8            
+            std::int32_t m_pReserveAmmo[2]; // 0x818            
+            source2sdk::entity2::CEntityIOOutput m_OnPlayerUse; // 0x820            
             
             // Datamap fields:
             // int32_t InputSetClipPrimary; // 0x0
@@ -74,6 +74,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBasePlayerWeapon because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBasePlayerWeapon) == 0x820);
+        static_assert(sizeof(source2sdk::server::CBasePlayerWeapon) == 0x848);
     };
 };

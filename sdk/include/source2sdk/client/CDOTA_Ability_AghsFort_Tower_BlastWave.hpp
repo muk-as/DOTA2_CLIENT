@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_Tower_BlastWave : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x680            
-            float duration; // 0x684            
+            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x688            
+            float duration; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_Tower_BlastWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Tower_BlastWave) == 0x688);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Tower_BlastWave) == 0x690);
     };
 };

@@ -1,0 +1,27 @@
+#pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
+
+// /////////////////////////////////////////////////////////////
+// Module: modellib
+// Created using source2gen - github.com/neverlosecc/source2gen
+// /////////////////////////////////////////////////////////////
+
+namespace source2sdk
+{
+    namespace modellib
+    {
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class InputLayoutVariation_t : std::uint32_t
+        {
+            INPUT_LAYOUT_VARIATION_DEFAULT = 0x0,
+            INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID = 0x1,
+            INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID = 0x2,
+            INPUT_LAYOUT_VARIATION_MAX = 0x3,
+        };
+    };
+};

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7e0
+        // Size: 0x808
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -39,13 +39,13 @@ namespace source2sdk
         public:
             // m_hHeroHandle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC_Hero> m_hHeroHandle;
-            char m_hHeroHandle[0x4]; // 0x7d8            
-            uint8_t _pad07dc[0x4];
+            char m_hHeroHandle[0x4]; // 0x800            
+            uint8_t _pad0804[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Pet_CarriedItem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Pet_CarriedItem) == 0x7e0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Pet_CarriedItem) == 0x808);
     };
 };

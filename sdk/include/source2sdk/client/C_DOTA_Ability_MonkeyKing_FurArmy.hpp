@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6b8
+        // Size: 0x6c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,23 +36,23 @@ namespace source2sdk
         public:
             // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hThinker;
-            char m_hThinker[0x4]; // 0x680            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x684            
-            std::int32_t num_first_soldiers; // 0x688            
-            std::int32_t num_second_soldiers; // 0x68c            
-            bool m_bCreateMonkeys; // 0x690            
-            uint8_t _pad0691[0x3]; // 0x691
-            source2sdk::entity2::GameTime_t m_flNextCreationTime; // 0x694            
-            source2sdk::entity2::GameTime_t m_flScepterTime; // 0x698            
-            uint8_t _pad069c[0x4]; // 0x69c
+            char m_hThinker[0x4]; // 0x688            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x68c            
+            std::int32_t num_first_soldiers; // 0x690            
+            std::int32_t num_second_soldiers; // 0x694            
+            bool m_bCreateMonkeys; // 0x698            
+            uint8_t _pad0699[0x3]; // 0x699
+            source2sdk::entity2::GameTime_t m_flNextCreationTime; // 0x69c            
+            source2sdk::entity2::GameTime_t m_flScepterTime; // 0x6a0            
+            uint8_t _pad06a4[0x4]; // 0x6a4
             // m_vecSoldiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecSoldiers;
-            char m_vecSoldiers[0x18]; // 0x6a0            
+            char m_vecSoldiers[0x18]; // 0x6a8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_MonkeyKing_FurArmy because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_MonkeyKing_FurArmy) == 0x6b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_MonkeyKing_FurArmy) == 0x6c0);
     };
 };

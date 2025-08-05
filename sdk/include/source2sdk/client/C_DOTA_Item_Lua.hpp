@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x768
+        // Size: 0x770
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,12 +25,12 @@ namespace source2sdk
         class C_DOTA_Item_Lua : public source2sdk::client::C_DOTA_Item
         {
         public:
-            uint8_t _pad0720[0x48];
+            uint8_t _pad0728[0x48];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Lua) == 0x768);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Lua) == 0x770);
     };
 };

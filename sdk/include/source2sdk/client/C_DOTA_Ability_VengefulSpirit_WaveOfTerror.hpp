@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6d0
+        // Size: 0x6d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,21 +26,21 @@ namespace source2sdk
         class C_DOTA_Ability_VengefulSpirit_WaveOfTerror : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float wave_width; // 0x680            
-            float wave_speed; // 0x684            
-            std::int32_t m_iProjectile; // 0x688            
-            float vision_aoe; // 0x68c            
-            float vision_duration; // 0x690            
-            std::int32_t steal_pct; // 0x694            
-            float damage; // 0x698            
-            std::int32_t m_nNumHeroesHit; // 0x69c            
-            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x6a0            
-            uint8_t _pad06b8[0x18];
+            float wave_width; // 0x688            
+            float wave_speed; // 0x68c            
+            std::int32_t m_iProjectile; // 0x690            
+            float vision_aoe; // 0x694            
+            float vision_duration; // 0x698            
+            std::int32_t steal_pct; // 0x69c            
+            float damage; // 0x6a0            
+            std::int32_t m_nNumHeroesHit; // 0x6a4            
+            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x6a8            
+            uint8_t _pad06c0[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_VengefulSpirit_WaveOfTerror because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_VengefulSpirit_WaveOfTerror) == 0x6d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_VengefulSpirit_WaveOfTerror) == 0x6d8);
     };
 };

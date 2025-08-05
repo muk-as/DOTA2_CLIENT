@@ -3,7 +3,6 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/resourcesystem/InfoForResourceTypeCNmGraphDefinition.hpp"
 #include "source2sdk/server/CBaseModelEntity.hpp"
 #include "source2sdk/server/PhysicsRagdollPose_t.hpp"
 namespace source2sdk
@@ -26,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xab0
+        // Size: 0xa80
         // Has VTable
         // Construct allowed
         // 
@@ -38,61 +37,39 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "PhysicsRagdollPose_t m_RagdollPose"
         // static metadata: MNetworkVarNames "bool m_bRagdollEnabled"
         // static metadata: MNetworkVarNames "bool m_bRagdollClientSide"
-        // static metadata: MNetworkVarNames "HNmGraphDefinitionStrong m_hAnimGraph2DefinitionNetVar"
-        // static metadata: MNetworkVarNames "uint8 m_animGraph2FlagsNetVar"
-        // static metadata: MNetworkVarNames "uint8 m_animGraph2SerializeData"
-        // static metadata: MNetworkVarNames "int m_nAnimGraph2SerializeDataSizeBytes"
-        // static metadata: MNetworkVarNames "int m_animGraph2ReloadCountSV"
         #pragma pack(push, 1)
         class CBaseAnimGraph : public source2sdk::server::CBaseModelEntity
         {
         public:
-            uint8_t _pad07c8[0x80]; // 0x7c8
+            uint8_t _pad07f0[0x80]; // 0x7f0
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x848            
-            uint8_t _pad0849[0x7]; // 0x849
-            source2sdk::client::IChoreoServices* m_pChoreoServices; // 0x850            
+            bool m_bInitiallyPopulateInterpHistory; // 0x870            
+            uint8_t _pad0871[0x7]; // 0x871
+            source2sdk::client::IChoreoServices* m_pChoreoServices; // 0x878            
             // metadata: MNetworkEnable
-            bool m_bAnimGraphUpdateEnabled; // 0x858            
-            uint8_t _pad0859[0x3]; // 0x859
-            float m_flMaxSlopeDistance; // 0x85c            
-            Vector m_vLastSlopeCheckPos; // 0x860            
-            bool m_bAnimationUpdateScheduled; // 0x86c            
-            uint8_t _pad086d[0x3]; // 0x86d
+            bool m_bAnimGraphUpdateEnabled; // 0x880            
+            uint8_t _pad0881[0x3]; // 0x881
+            float m_flMaxSlopeDistance; // 0x884            
+            Vector m_vLastSlopeCheckPos; // 0x888            
+            bool m_bAnimationUpdateScheduled; // 0x894            
+            uint8_t _pad0895[0x3]; // 0x895
             // metadata: MNetworkEnable
-            Vector m_vecForce; // 0x870            
+            Vector m_vecForce; // 0x898            
             // metadata: MNetworkEnable
-            std::int32_t m_nForceBone; // 0x87c            
-            uint8_t _pad0880[0x10]; // 0x880
+            std::int32_t m_nForceBone; // 0x8a4            
+            uint8_t _pad08a8[0x10]; // 0x8a8
             // metadata: MNetworkEnable
-            source2sdk::server::PhysicsRagdollPose_t m_RagdollPose; // 0x890            
+            source2sdk::server::PhysicsRagdollPose_t m_RagdollPose; // 0x8b8            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollEnabledChanged"
-            bool m_bRagdollEnabled; // 0x8b8            
+            bool m_bRagdollEnabled; // 0x8e0            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
-            bool m_bRagdollClientSide; // 0x8b9            
-            uint8_t _pad08ba[0x15e]; // 0x8ba
-            // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "animGraph2DefinitionChanged"
-            // m_hAnimGraph2DefinitionNetVar has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmGraphDefinition> m_hAnimGraph2DefinitionNetVar;
-            char m_hAnimGraph2DefinitionNetVar[0x8]; // 0xa18            
-            // metadata: MNetworkEnable
-            std::uint8_t m_animGraph2FlagsNetVar; // 0xa20            
-            uint8_t _pad0a21[0x3f]; // 0xa21
-            // metadata: MNetworkEnable
-            // m_animGraph2SerializeData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CNetworkUtlVectorBase<std::uint8_t> m_animGraph2SerializeData;
-            char m_animGraph2SerializeData[0x18]; // 0xa60            
-            // metadata: MNetworkEnable
-            std::int32_t m_nAnimGraph2SerializeDataSizeBytes; // 0xa78            
-            // metadata: MNetworkEnable
-            std::int32_t m_animGraph2ReloadCountSV; // 0xa7c            
-            uint8_t _pad0a80[0x30];
+            bool m_bRagdollClientSide; // 0x8e1            
+            uint8_t _pad08e2[0x19e];
             
             // Datamap fields:
-            // void m_pMainGraphController; // 0x840
+            // void m_pMainGraphController; // 0x868
             // void CBaseAnimGraphChoreoServicesThink; // 0x0
             // float InputSetPlaybackRate; // 0x0
             // CUtlSymbolLarge InputSetBodyGroup; // 0x0
@@ -102,6 +79,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseAnimGraph because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseAnimGraph) == 0xab0);
+        static_assert(sizeof(source2sdk::server::CBaseAnimGraph) == 0xa80);
     };
 };

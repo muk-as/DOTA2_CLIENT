@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CNetworkViewOffsetVector.hpp"
+#include "source2sdk/client/DecalMode_t.hpp"
 #include "source2sdk/client/HitGroup_t.hpp"
 #include "source2sdk/client/RenderFx_t.hpp"
 #include "source2sdk/client/RenderMode_t.hpp"
@@ -41,7 +42,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7c8
+        // Size: 0x7f0
         // Has VTable
         // Construct allowed
         // 
@@ -67,6 +68,8 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "Vector m_vDecalForwardAxis"
         // static metadata: MNetworkVarNames "float m_flDecalHealBloodRate"
         // static metadata: MNetworkVarNames "float m_flDecalHealHeightRate"
+        // static metadata: MNetworkVarNames "DecalMode_t m_nDecalMode"
+        // static metadata: MNetworkVarNames "DecalMode_t m_nRequiredDecalMode"
         // static metadata: MNetworkVarNames "CHandle< CBaseModelEntity > m_ConfigEntitiesToPropagateMaterialDecalsTo"
         // static metadata: MNetworkVarNames "CNetworkViewOffsetVector m_vecViewOffset"
         #pragma pack(push, 1)
@@ -152,18 +155,24 @@ namespace source2sdk
             float m_flDecalHealBloodRate; // 0x774            
             // metadata: MNetworkEnable
             float m_flDecalHealHeightRate; // 0x778            
-            uint8_t _pad077c[0x4]; // 0x77c
+            // metadata: MNetworkEnable
+            source2sdk::client::DecalMode_t m_nDecalMode; // 0x77c            
+            // metadata: MNetworkEnable
+            source2sdk::client::DecalMode_t m_nRequiredDecalMode; // 0x77d            
+            uint8_t _pad077e[0x2]; // 0x77e
             // metadata: MNetworkEnable
             // m_ConfigEntitiesToPropagateMaterialDecalsTo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseModelEntity>> m_ConfigEntitiesToPropagateMaterialDecalsTo;
             char m_ConfigEntitiesToPropagateMaterialDecalsTo[0x18]; // 0x780            
+            uint8_t _pad0798[0x28]; // 0x798
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
-            source2sdk::client::CNetworkViewOffsetVector m_vecViewOffset; // 0x798            
-            uint8_t _pad07c0[0x8];
+            source2sdk::client::CNetworkViewOffsetVector m_vecViewOffset; // 0x7c0            
+            uint8_t _pad07e8[0x8];
             
             // Datamap fields:
+            // void m_bodyGroupChoices; // 0x798
             // int32_t InputAlpha; // 0x0
             // Color InputColor; // 0x0
             // int32_t InputSkin; // 0x0
@@ -195,6 +204,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseModelEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseModelEntity) == 0x7c8);
+        static_assert(sizeof(source2sdk::server::CBaseModelEntity) == 0x7f0);
     };
 };

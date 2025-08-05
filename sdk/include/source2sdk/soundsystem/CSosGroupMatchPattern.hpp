@@ -21,6 +21,7 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         // static metadata: MGetKV3ClassDefaults
         #pragma pack(push, 1)
         class CSosGroupMatchPattern : public source2sdk::soundsystem::CSosGroupBranchPattern

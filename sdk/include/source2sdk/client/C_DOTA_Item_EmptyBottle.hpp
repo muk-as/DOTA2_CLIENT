@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x730
+        // Size: 0x738
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,15 +30,15 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnStoredRuneChanged"
-            std::int32_t m_iStoredRuneType; // 0x720            
-            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x724            
-            float rune_expire_time; // 0x728            
-            uint8_t _pad072c[0x4];
+            std::int32_t m_iStoredRuneType; // 0x728            
+            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x72c            
+            float rune_expire_time; // 0x730            
+            uint8_t _pad0734[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_EmptyBottle because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_EmptyBottle) == 0x730);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_EmptyBottle) == 0x738);
     };
 };

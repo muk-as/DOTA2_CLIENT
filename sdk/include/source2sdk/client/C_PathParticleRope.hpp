@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6f0
+        // Size: 0x6f8
         // Has VTable
         // Construct allowed
         // 
@@ -38,59 +38,59 @@ namespace source2sdk
         class C_PathParticleRope : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e0[0x8]; // 0x5e0
-            bool m_bStartActive; // 0x5e8            
-            uint8_t _pad05e9[0x3]; // 0x5e9
-            float m_flMaxSimulationTime; // 0x5ec            
-            CUtlSymbolLarge m_iszEffectName; // 0x5f0            
+            uint8_t _pad05e8[0x8]; // 0x5e8
+            bool m_bStartActive; // 0x5f0            
+            uint8_t _pad05f1[0x3]; // 0x5f1
+            float m_flMaxSimulationTime; // 0x5f4            
+            CUtlSymbolLarge m_iszEffectName; // 0x5f8            
             // m_PathNodes_Name has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlSymbolLarge> m_PathNodes_Name;
-            char m_PathNodes_Name[0x18]; // 0x5f8            
+            char m_PathNodes_Name[0x18]; // 0x600            
             // metadata: MNetworkEnable
-            float m_flParticleSpacing; // 0x610            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "parametersChanged"
-            float m_flSlack; // 0x614            
+            float m_flParticleSpacing; // 0x618            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "parametersChanged"
-            float m_flRadius; // 0x618            
+            float m_flSlack; // 0x61c            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "parametersChanged"
-            Color m_ColorTint; // 0x61c            
+            float m_flRadius; // 0x620            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "parametersChanged"
+            Color m_ColorTint; // 0x624            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "effectStateChanged"
-            std::int32_t m_nEffectState; // 0x620            
-            uint8_t _pad0624[0x4]; // 0x624
+            std::int32_t m_nEffectState; // 0x628            
+            uint8_t _pad062c[0x4]; // 0x62c
             // metadata: MNetworkEnable
             // m_iEffectIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_iEffectIndex;
-            char m_iEffectIndex[0x8]; // 0x628            
+            char m_iEffectIndex[0x8]; // 0x630            
             // metadata: MNetworkEnable
             // m_PathNodes_Position has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_PathNodes_Position;
-            char m_PathNodes_Position[0x18]; // 0x630            
+            char m_PathNodes_Position[0x18]; // 0x638            
             // metadata: MNetworkEnable
             // m_PathNodes_TangentIn has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_PathNodes_TangentIn;
-            char m_PathNodes_TangentIn[0x18]; // 0x648            
+            char m_PathNodes_TangentIn[0x18]; // 0x650            
             // metadata: MNetworkEnable
             // m_PathNodes_TangentOut has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_PathNodes_TangentOut;
-            char m_PathNodes_TangentOut[0x18]; // 0x660            
+            char m_PathNodes_TangentOut[0x18]; // 0x668            
             // metadata: MNetworkEnable
             // m_PathNodes_Color has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_PathNodes_Color;
-            char m_PathNodes_Color[0x18]; // 0x678            
+            char m_PathNodes_Color[0x18]; // 0x680            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "pinStateChanged"
             // m_PathNodes_PinEnabled has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<bool> m_PathNodes_PinEnabled;
-            char m_PathNodes_PinEnabled[0x18]; // 0x690            
+            char m_PathNodes_PinEnabled[0x18]; // 0x698            
             // metadata: MNetworkEnable
             // m_PathNodes_RadiusScale has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<float> m_PathNodes_RadiusScale;
-            char m_PathNodes_RadiusScale[0x18]; // 0x6a8            
-            uint8_t _pad06c0[0x30];
+            char m_PathNodes_RadiusScale[0x18]; // 0x6b0            
+            uint8_t _pad06c8[0x30];
             
             // Datamap fields:
             // CUtlSymbolLarge pathNodes; // 0x7fffffff
@@ -106,6 +106,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_PathParticleRope because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PathParticleRope) == 0x6f0);
+        static_assert(sizeof(source2sdk::client::C_PathParticleRope) == 0x6f8);
     };
 };

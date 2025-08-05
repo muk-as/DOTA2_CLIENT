@@ -26,8 +26,8 @@ namespace source2sdk
         class CTwistConstraint : public source2sdk::modellib::CBaseConstraint
         {
         public:
-            bool m_bInverse; // 0x68            
-            uint8_t _pad0069[0x7]; // 0x69
+            bool m_bInverse; // 0x60            
+            uint8_t _pad0061[0xf]; // 0x61
             Quaternion m_qParentBindRotation; // 0x70            
             Quaternion m_qChildBindRotation; // 0x80            
         };

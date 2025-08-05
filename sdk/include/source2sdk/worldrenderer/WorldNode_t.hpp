@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x178
+        // Size: 0x190
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -75,8 +75,8 @@ namespace source2sdk
             char m_overlayLayerIndices[0x18]; // 0x120            
             CUtlString m_grassFileName; // 0x138            
             source2sdk::worldrenderer::BakedLightingInfo_t m_nodeLightingInfo; // 0x140            
-            bool m_bHasBakedGeometryFlag; // 0x170            
-            uint8_t _pad0171[0x7];
+            bool m_bHasBakedGeometryFlag; // 0x188            
+            uint8_t _pad0189[0x7];
         };
         #pragma pack(pop)
         
@@ -95,8 +95,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_overlayLayerIndices) == 0x120);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_grassFileName) == 0x138);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_nodeLightingInfo) == 0x140);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_bHasBakedGeometryFlag) == 0x170);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_bHasBakedGeometryFlag) == 0x188);
         
-        static_assert(sizeof(source2sdk::worldrenderer::WorldNode_t) == 0x178);
+        static_assert(sizeof(source2sdk::worldrenderer::WorldNode_t) == 0x190);
     };
 };

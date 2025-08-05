@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ed8
+        // Size: 0x1ef8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,14 +26,14 @@ namespace source2sdk
         class CDOTA_Unit_Hero_Phoenix : public source2sdk::server::CDOTA_BaseNPC_Hero
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXAmbientSpirits; // 0x1ed0            
-            bool m_bDetermineAmbientEffect; // 0x1ed4            
-            uint8_t _pad1ed5[0x3];
+            source2sdk::client::ParticleIndex_t m_nFXAmbientSpirits; // 0x1ef0            
+            bool m_bDetermineAmbientEffect; // 0x1ef4            
+            uint8_t _pad1ef5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_Phoenix because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Phoenix) == 0x1ed8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Phoenix) == 0x1ef8);
     };
 };

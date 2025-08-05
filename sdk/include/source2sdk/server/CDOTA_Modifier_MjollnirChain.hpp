@@ -32,12 +32,12 @@ namespace source2sdk
         public:
             std::int32_t chain_radius; // 0x1878            
             std::int32_t chain_strikes; // 0x187c            
-            std::int32_t chain_damage; // 0x1880            
+            float chain_damage; // 0x1880            
             float chain_delay; // 0x1884            
-            std::int32_t chain_damage_per_charge; // 0x1888            
-            std::int32_t m_iCurJumpCount; // 0x188c            
-            Vector m_vCurTargetLoc; // 0x1890            
-            uint8_t _pad189c[0x4]; // 0x189c
+            float chain_damage_per_charge; // 0x1888            
+            float illusion_multiplier_pct; // 0x188c            
+            std::int32_t m_iCurJumpCount; // 0x1890            
+            Vector m_vCurTargetLoc; // 0x1894            
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitEntities;
             char m_hHitEntities[0x18]; // 0x18a0            

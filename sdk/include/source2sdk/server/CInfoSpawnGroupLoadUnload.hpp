@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x5f8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -34,9 +34,11 @@ namespace source2sdk
             CUtlSymbolLarge m_iszLandmarkName; // 0x590            
             CUtlString m_sFixedSpawnGroupName; // 0x598            
             float m_flTimeoutInterval; // 0x5a0            
-            bool m_bStreamingStarted; // 0x5a4            
+            bool m_bAutoActivate; // 0x5a4            
             bool m_bUnloadingStarted; // 0x5a5            
-            uint8_t _pad05a6[0x3a];
+            bool m_bQueueActiveSpawnGroupChange; // 0x5a6            
+            bool m_bQueueFinishLoading; // 0x5a7            
+            uint8_t _pad05a8[0x50];
             
             // Datamap fields:
             // void CInfoSpawnGroupLoadUnloadSpawnGroupLoadingThink; // 0x0
@@ -50,6 +52,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CInfoSpawnGroupLoadUnload because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInfoSpawnGroupLoadUnload) == 0x5e0);
+        static_assert(sizeof(source2sdk::server::CInfoSpawnGroupLoadUnload) == 0x5f8);
     };
 };

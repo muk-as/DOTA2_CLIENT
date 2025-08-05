@@ -24,6 +24,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Material Attribute Tag"
+        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CMaterialAttributeAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
@@ -32,7 +33,7 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Attribute Name"
             CUtlString m_AttributeName; // 0x58            
             // metadata: MPropertyFriendlyName "Attribute Type"
-            // metadata: MPropertyAttrChangeCallback
+            // metadata: MPropertyAutoRebuildOnChange
             source2sdk::animgraphlib::MatterialAttributeTagType_t m_AttributeType; // 0x60            
             // metadata: MPropertyFriendlyName "Value"
             // metadata: MPropertyAttrStateCallback

@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/resourcesystem/InfoForResourceTypeIParticleSystemDefinition.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -28,7 +29,9 @@ namespace source2sdk
             float value; // 0x8            
             uint8_t _pad000c[0x4]; // 0xc
             CUtlString str; // 0x10            
-            CResourceName resource; // 0x18            
+            // resource has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> resource;
+            char resource[0xe0]; // 0x18            
             CUtlString desc; // 0xf8            
         };
         #pragma pack(pop)

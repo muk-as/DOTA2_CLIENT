@@ -1,3 +1,4 @@
+0	V_ftelli64
 0 0 0 0
 0 0 0 255
 0#0)070;0U0Y0[0g0q0y0}0
@@ -29,8 +30,9 @@
 0CThreadMutex@@QEAA@PEBD@Z
 0CThreadRWLock_FastRead@@QEAA@XZ
 0CThreadSemaphore@@QEAA@HHPEBD_N@Z
-0CUtlBuffer@@QEAA@HHH@Z
-0CUtlBuffer@@QEAA@PEBXHH@Z
+0CUtlBuffer@@QEAA@HHW4BufferFlags_t@0@@Z
+0CUtlBuffer@@QEAA@PEBXHW4BufferFlags_t@0@@Z
+0CUtlScratchMemoryPool@@QEAA@IIPEAX_N@Z
 0CUtlString@@QEAA@AEBVCBufferString@@@Z
 0CUtlSymbolTable@@QEAA@HH_N@Z
 0HcC(H
@@ -39,9 +41,11 @@
 0pp@5tqE?|sO541
 0tU+xc
 0  	0	  0
+1	V_fwrite
 1!1'1-191C1E1K1]1a1g1m1s1
 1#QNAN
 1#SNAN
+10DY4
 1122447788;;==>>@@CCEEFFIIJJLLOOQQRRTTWWXX[[]]^^aabbddgghhkkmmnnppssuuvvyyzz
 12s%s
 12sPublic Key Algorithm
@@ -57,6 +61,7 @@
 1CThreadMutex@@QEAA@XZ
 1CThreadSemaphore@@QEAA@XZ
 1CThreadSyncObject@@QEAA@XZ
+1CUtlScratchMemoryPool@@QEAA@XZ
 1CUtlSymbolTable@@QEAA@XZ
 1KeyValues@@QEAA@XZ
 1O\,n
@@ -64,15 +69,14 @@
 20s "%s" %s%s
 20s %s
 210429000000Z
-220323000000Z
 220801000000Z
 23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s
-240926000000Z
 241012000000Z
-250528181838Z0
+250507000000Z
+250604000000Z
+250805070346Z0
 271008235959Z0a1
-2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
-2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
+2DigiCert SHA256 RSA4096 Timestamp Responder 2025 10
 2KeyValues@@SAPEAX_K@Z
 2cb:RO
 2ffffff
@@ -83,9 +87,9 @@
 311109235959Z0b1
 33333
 3333D3
-351125235959Z0B1
 360428235959Z0i1
-370322235959Z0c1
+360903235959Z0c1
+380114235959Z0i1
 380115120000Z0b1
 3>N;kU
 3DES(168
@@ -107,6 +111,7 @@
 5;=CGIOSYaegkmq
 5http://cacerts.digicert.com/DigiCertTrustedRootG4.crt0C
 5lu file=%s, line=%d
+5y_V^a
 6#6165676;6M6O6S6Y6a6k6m6
 6-9'6-9
 6666666666666666jjjjjjjjjjjjjjjj
@@ -116,11 +121,14 @@
 8$4,8$4
 8A^A]A
 8A_A^A]A
-8B9<	u9
 8CUtlString@@QEBA_NAEBV0@@Z
 8D$ t4f
+8D9,)u
 8DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
 8DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA10
+8DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1
+8DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA10
+8F94	uY
 8SIffK5W
 8\$PtD
 8\$PtF
@@ -351,6 +359,7 @@ AV?$_Ref_count_obj2@VCWriteRequestHandle@CAsyncFileSystem2@@@std
 AV?$enable_shared_from_this@VCCopyFileHandle@CAsyncFileSystem2@@@std
 AV?$enable_shared_from_this@VCReadRequestHandle@CAsyncFileSystem2@@@std
 AV?$enable_shared_from_this@VCWriteRequestHandle@CAsyncFileSystem2@@@std
+AVAWD
 AVCAsyncFileSystem2
 AVCBarrierRequest@CAsyncFileSystem2
 AVCBaseFileSystem
@@ -423,6 +432,7 @@ Addreffing existing VPK file: %s
 Affiliation Changed
 AlignedByteArray not properly aligned
 Alignment
+AllocAligned@CUtlScratchMemoryPool@@QEAAPEAXHH@Z
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
@@ -611,7 +621,9 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\filesystem\basefilesystem.c
 C:\buildworker\source2_dota_rel_2019_win64\build\src\filesystem\filesystem_stdio.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\filesystem\filetracker.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\threadtoolstypes.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utldict.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utllinkedlist.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlrbtree.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsortvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsymboltable.h
@@ -865,18 +877,27 @@ CT Certificate SCTs
 CT Precertificate Poison
 CT Precertificate SCTs
 CT Precertificate Signer
-CUtlBlockMemory overflow
+CUtlBlockVector<struct FileHandleTracker_t,int,class CMemAllocAllocator>::GrowCount
+CUtlBlockVector<unsigned char,int,class CMemAllocAllocator>::GrowCount
 CUtlDict<class CFileInfo *,class CDefFastCaselessStringIgnoreSlashesLess>::Insert
 CUtlDict<class CPathIDFileList *,class CDefFastCaselessStringLess>::Insert
-CUtlDict<class CUtlVector<class CStoreIDEntry,int,class CUtlMemory<class CStoreIDEntry,int,0> > *,class CDefFastCaselessStringLess>::Insert
+CUtlDict<class CUtlVector<class CStoreIDEntry,int,class CUtlVectorMemory_Growable<class CStoreIDEntry,int,0> > *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<int,class CDefFastCaselessStringLess>::Insert
-CUtlFixedMemory overflow
+CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CFileInfo *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CZip *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<unsigned char,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<unsigned char,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLinkedList
 CUtlLinkedList overflow! (exhausted index range
-CUtlLinkedList overflow! (exhausted memory allocator
-CUtlRBTree overflow with %u elements
-CUtlRBTree<class CZipFile::CZipEntry,class CZipFile::CZipEntryLessFunc,int,class CUtlMemory<struct UtlRBTreeNode_t<class CZipFile::CZipEntry,int>,int,0> >::Insert
-CUtlRBTree<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,class CDefLess<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t>,int,class CUtlMemory<struct UtlRBTreeNode_t<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,int>,int,0> >::Insert
-CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlMemory<struct ChunkHashFraction_t,int,0> > >::Find
+CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::AddPage
+CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::Alloc
+CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::AddPage
+CUtlMemoryBlockAllocator<unsigned char,class CMemAllocAllocator>::AddPage
+CUtlRBTree<class CZipFile::CZipEntry,class CZipFile::CZipEntryLessFunc,int,class CUtlLeanVector<struct UtlRBTreeNode_t<class CZipFile::CZipEntry,int>,int,class CMemAllocAllocator> >::Insert
+CUtlRBTree<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,class CDefLess<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t>,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlRBTreeBase
+CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlVectorMemory_Growable<struct ChunkHashFraction_t,int,0> > >::Find
 CUtlSymbolTableLargeBase
 Camellia for x86_64 by <appro@openssl.org
 Camellia(128
@@ -936,6 +957,7 @@ CryptReleaseContext
 Ct-<D
 Current
 D#D)D;D?DEDKDQDSDYDeDoD
+D$ Ic
 D$$D9s8
 D$$D9s8u
 D$(SUATAUAVAWH
@@ -947,6 +969,7 @@ D$8D9~Pu=L
 D$8D9~PuCH
 D$8HcH
 D$HH1C
+D$HtOH
 D$PE3
 D$`E3
 D$`fA
@@ -975,6 +998,7 @@ D7q/;M
 D81uUL9r
 D8c^uPL9
 D8g^uNL9
+D8g^uTL9
 D8k^uKL9
 D8o^uSL9
 D8t$ht
@@ -1201,11 +1225,9 @@ Diffie-Hellman part of OpenSSL 1.0.2j  26 Sep 2016
 Diffie-Hellman routines
 DigiCert Assured ID Root CA0
 DigiCert Inc1
-DigiCert Timestamp 20240
 DigiCert Trusted Root G40
 DigiCert, Inc.1;09
 DigiCert, Inc.1A0
-DigiCert1 0
 Digital Signature
 DirName
 DirName@CUtlString@@QEBA?AV1@XZ
@@ -1218,6 +1240,7 @@ Domain error
 Duplicate): [%s]\%s
 E+E1EAEIESEUEaEwE}E
 E-mail Protection
+E9&~XI
 E9fPt
 EC PARAMETERS
 EC PRIVATE KEY
@@ -1657,6 +1680,7 @@ GOST94-NULL-GOST94
 GRAPHICSTRING
 GT$8E3
 GT$hE3
+GT$xE3
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameUIService_001
@@ -1757,6 +1781,7 @@ Hash Algorithm
 Hashes are missing
 HaveWriteLock_BlockReadsNow@CThreadRWLock_FastRead@@QEAAX_N@Z
 HcC(H
+HcL$ E
 HcL$0H
 HcN(E3
 HcO(E3
@@ -1817,13 +1842,10 @@ ISO US Member Body
 ISO-US
 ISSUING_DIST_POINT
 IV block
-Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
-Iiq`v1S
 Illegal byte sequence
 Improper link
 Inappropriate I/O control operation
 Independent
-Inert VModuleMetadata
 Inherit all
 Inhibit Policy Mapping
 Init@CThread@@MEAA_NXZ
@@ -1883,6 +1905,7 @@ L$ UVWAVAWH
 L$ UWATAVAWH
 L$ VWAVH
 L$ WATAUAVAW
+L$ WATAUAVAWH
 L$0SUATAUAVAWE
 L$0SUATAUAVAWH
 L$4+L$8
@@ -1905,11 +1928,11 @@ LanmanWorkstation
 Lc&D;f
 Lc7D;w
 Lc\$pI
+Lcl$Hff
 Lct$8I
 LeaveCriticalSection
 Length
 LengthOfMatchingPaths
-Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
 Load certs from files in a directory
 Load file into cache
 LoadFromBuffer@KeyValues@@QEAA_NPEBDAEAVCUtlBuffer@@PEAVIFileSystem@@0P6A_N0PEAX@ZPEAVIKeyValuesErrorSpew@@30@Z
@@ -1925,7 +1948,7 @@ Lock@CThreadSpinMutex@@AECAXPEBDHII@Z
 LockForRead@CThreadSpinRWLock@@QEAAXPEBDH@Z
 LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
-LoggingSystem_Log@@YA?AW4LoggingResponse_t@@HW4LoggingSeverity_t@@AEBULeafCodeInfo_t@@PEBDZZ
+LoggingSystem_Log@@YA?AW4LoggingResponse_t@@HW4LoggingSeverity_t@@AEBULoggingRareOptions_t@@PEBDZZ
 LoggingSystem_RegisterLoggingChannel
 LwH'LwH'LwH'LwH'LwH'LwH'LwH'LwH
 M08E0t
@@ -1984,8 +2007,8 @@ Monday
 Montgomery Multiplication for x86_64, CRYPTOGAMS by <appro@openssl.org
 Montgomery Multiplication with scatter/gather for x86_64, CRYPTOGAMS by <appro@openssl.org
 MultiByteToWideChar
-MzE @t
 M̪MT̪MT
+N Lc~ E3
 NAME_CONSTRAINTS
 NAN(IND
 NAN(SNAN
@@ -2057,6 +2080,7 @@ NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
 NextFile@CDirIterator@@QEAA_NXZ
+Nhttp://crl3.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crl0
 No child processes
 No error
 No locks available
@@ -2173,6 +2197,7 @@ OpenSSL error (%s): %s
 OpenSSL: FATAL
 Operation not permitted
 Order
+P@8|$1t
 PAGN_4
 PARAMETERS
 PARSE_BAG
@@ -2181,7 +2206,6 @@ PARSE_HTTP_LINE1
 PARSE_TAGGING
 PATHBYADDR
 PA_A^A]A
-PA_A^A]^]ËVp9V0|&@8ntt
 PAq=?Mp
 PBE-MD2-DES
 PBE-MD2-RC2-64
@@ -2424,6 +2448,7 @@ Public key OCSP hash
 Public-Key
 Public-Key: (%d bit
 Purge@CBufferString@@QEAAXH@Z
+Purge@CUtlScratchMemoryPool@@QEAAXXZ
 Put@CUtlBuffer@@QEAAXPEBXH@Z
 PutString@CUtlBuffer@@QEAAXPEBD@Z
 PxHcD
@@ -2432,6 +2457,7 @@ PщKDE3
 Q/xtJ2
 QZ^&D
 QZ^&E3
+Qhttp://cacerts.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crt0
 QueryPerformanceCounter
 Questionable extension field
 R2I_CERTPOL
@@ -2612,10 +2638,10 @@ S/MIME signing
 S2I_ASN1_IA5STRING
 S2I_ASN1_SKEY_ID
 S2I_SKEY_ID
-SATAUAVH
 SATAUL
 SATAVAW
 SATAWH
+SAUAVH
 SA|X=G
 SECG curve over a 112 bit prime field
 SECG curve over a 113 bit binary field
@@ -2783,6 +2809,7 @@ SUATAUAVL
 SUATAW
 SUAUAVAWD
 SUAUAVAWL
+SUAVH
 SUITEB128
 SUITEB128C2
 SUITEB128ONLY
@@ -2794,6 +2821,7 @@ SUVATAUAVAWH
 SUVATAV
 SUVATAVAW
 SUVATAW
+SUVATAWH
 SUVWATAU
 SUVWATAUAV
 SUVWATAUAVAW
@@ -2815,6 +2843,7 @@ SUWAVAWH
 SUWAWH
 SVATAU
 SVATAUAVH
+SVAVH
 SVWATAUAVAW
 SVWATAUAVAWH
 SVWATAVAWH
@@ -2856,9 +2885,10 @@ SetConsoleMode
 SetDirect@CUtlString@@QEAAXPEBDH@Z
 SetEndOfFile
 SetEnvironmentVariableW
-SetExternalBuffer@CUtlBuffer@@QEAAXPEAXHHH@Z
+SetExternalBuffer@CUtlBuffer@@QEAAXPEAXHHW4BufferFlags_t@1@@Z
 SetFilePointer
 SetFilePointerEx
+SetGrowSize
 SetLastError
 SetLength@CBufferString@@QEAAPEADH_NPEAH@Z
 SetName@CThread@@QEAAXPEBD@Z
@@ -3052,7 +3082,6 @@ USERNOTICE
 USVATAUAVAWH
 USVATAUAWH
 USVATAUH
-USVAUAVAWH
 USVWATAUAVAW
 USVWATAUAVAWH
 USVWATAUAVH
@@ -3079,8 +3108,7 @@ UUUUUUUUUUUa
 UVATAUAW
 UVATAUH
 UVATAVAWH
-UVATAVH
-UVAVAWH
+UVAWH
 UVWATAU
 UVWATAUAV
 UVWATAUAVAW
@@ -3089,6 +3117,7 @@ UVWATAUAWH
 UVWATAW
 UVWATAWH
 UVWAVAW
+UWATAUAVH
 UWATAVAW
 UWATAVAWH
 UWATAW
@@ -3114,9 +3143,10 @@ Unspecified
 Unsupported extension feature
 Unused
 Use native FS or STDIO
-UtlMemory_Alloc
-UtlMemory_CalcNewAllocationCount
-UtlMemory_FailedAllocation
+UtlVectorMemory_Alloc
+UtlVectorMemory_CalcNewAllocationCount
+UtlVectorMemory_FailedAllocation
+U|r*C
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -3169,6 +3199,8 @@ VWATAUAVAW
 VWATAUAW
 VWATAVAW
 VWATAVAWH
+VWATAVH
+VWAWH
 VWSUATAUAVAW
 VWebm001
 V_ComposeFileName
@@ -3209,9 +3241,9 @@ V_fread
 V_fseek
 V_fseeki64
 V_ftell
-V_ftelli64
-V_fwrite
 V_hextobinary
+V_qsort
+V_qsort_s
 V_stristr_fast@@YAPEBDPEBD0@Z
 V_strncmp
 V_strncpy
@@ -3233,6 +3265,7 @@ VggjeK uO5n
 VisBuilder_001
 Visual C++ CRT: Not enough memory to complete call to strerror
 Vrad3_001
+VyH]k
 W%08lX
 W@H1G@A
 WARNING: File might be corrupt or missing - '%s
@@ -3242,6 +3275,7 @@ WATAUAVAW
 WATAUAVAWH
 WATAUAW
 WATAVAW
+WATAWH
 WAVAW
 WAVAWH
 WIN32_BIND_FUNC
@@ -3416,12 +3450,10 @@ X9_62_FIELDID
 X9_62_PENTANOMIAL
 XA_A]A
 XZP%c %d
-Y	V_qsort
 Y;C;8V
 Ye80D
 You must type in
 You need to read the OpenSSL FAQ, http://www.openssl.org/support/faq.html
-Z	V_qsort_s
 ZIP_EndOfCentralDirRecord
 ZIP_FileHeader
 ZIP_LocalFileHeader
@@ -3565,7 +3597,6 @@ az-AZ-Cyrl
 az-AZ-Latn
 az-az-cyrl
 az-az-latn
-b	V_setvbuf
 b <= sizeof ctx->buf
 b <= sizeof ctx->final
 b2i_PVK_bio
@@ -4172,6 +4203,7 @@ d %d %d
 d %d %d %d
 d e not congruent to 1
 d$ fD
+d$HLc#L
 d.allOrFirstTier
 d.authenticatedData
 d.certificate
@@ -4601,6 +4633,7 @@ extensions
 externalFileAttribs
 extra data in message
 extraFieldLength
+f	V_setvbuf
 f %f %f
 f %f %f %f
 f elapsed w/o i/o
@@ -4700,7 +4733,6 @@ got next proto before a ccs
 got next proto without seeing extension
 group
 group2pkparameters failure
-hA^A]A
 hA_A^A]A
 hHcD$8Hk
 h`H(|sO
@@ -4734,10 +4766,8 @@ http request
 http://ocsp.digicert.com0
 http://ocsp.digicert.com0A
 http://ocsp.digicert.com0C
-http://ocsp.digicert.com0X
 http://www.digicert.com/CPS0
 https proxy request
-i	V_snprintf
 i <= EVP_MAX_MD_SIZE
 i <= n
 i2b_PVK_bio
@@ -5235,8 +5265,6 @@ krb5 server tkt expired
 krb5 server tkt not yet valid
 krb5 server tkt skew
 l <= sizeof(c->iv
-l$ HcA
-l$ Lcy
 l$ VAVAWH
 l$ VWATAVAWH
 l$ VWAUAVAW
@@ -5247,6 +5275,7 @@ l$0D+ D9
 l$0L9i
 l$0fD
 l$8H3D$0H3l
+l$@fD
 l$Ht4H
 l$pvD
 lZrNlZrN
@@ -5285,6 +5314,7 @@ localityName
 location
 locator
 long)msg_hdr->msg_len) > 0
+m	V_snprintf
 mXRecord
 m_bNeedsSort
 mac absent
@@ -5595,7 +5625,6 @@ number=%d, address=%08lX
 numberOfTheDiskWithStartOfCentralDirectory
 numberOfThisDisk
 n潍n畔e敗d
-o	V_sscanf
 o2i_ECPublicKey
 oD$@fA
 oD$`fE
@@ -5679,9 +5708,11 @@ othername error
 othername:<unsupported
 out of memory
 owner dead
+p	CUp
 p WATAUAVAWH
 p is not prime
 p not prime
+p%w+q4
 p+"	Hr9
 p.char_two
 p.onBasis
@@ -5870,7 +5901,6 @@ purecall
 pvk data too short
 pvk too short
 q not prime
-qS7hB
 qangle
 qcStatements
 qualifiers
@@ -5881,11 +5911,12 @@ quz-PE
 quz-bo
 quz-ec
 quz-pe
-r8H+ЋA
+r&fR{a
 r99Kr99K
 rFC822localPart
 rKf;\$t
 rNf;\$t
+rOH+ЋA
 rService-0x
 rX&O0
 random number generation failed
@@ -6008,6 +6039,7 @@ rtc$TZZ
 run length compression
 rvf;\$d
 rދD$0f
+s	V_sscanf
 s %2d %02d:%02d:%02d %d%s
 s %2d %02d:%02d:%02d%.*s %d%s
 s %s HTTP/1.0
@@ -6017,6 +6049,9 @@ s PARAMETERS
 s PRIVATE KEY
 s WAVAWH
 s algorithm "%s" unsupported
+s allocation count overflow
+s allocation count overflow( %llu + %llu > %llu
+s allocation count overflow( %llu > %llu
 s$;S s
 s%02X
 s%04x - <SPACES/NULS
@@ -6042,11 +6077,14 @@ s2i_ASN1_OCTET_STRING
 s6@8w
 s: (%d bit
 s: Invalid lock state %d
+s: allocation of %u too large, max %u
 s: element count overflow (%u
 s: file too large
 s: invalid insert point %u (current count %u
 s: max element overflow, cur count %u + %u
 s: member count overflow (%u
+s: no space for allocation of %u
+s: unable to grow count by %u (currently %u
 s:%d: rec->data != rec->input
 s<EMPTY
 s<Not Supported
@@ -6590,10 +6628,9 @@ syr-sy
 system lib
 system library
 t	@88t
-t	V_stricmp_fast
 t >= 0
 t$ ATAVAW
-t$ UWATAUAWH
+t$ ATAVAWH
 t$ WATAUAVAW
 t$ WATAUAVAWH
 t$ WATAV
@@ -6601,18 +6638,21 @@ t$ WAUAV
 t$ WAVAW
 t$(E3
 t$8@8w
-t$8Hc
 t$8Lcu
 t$;)u L
-t$@Hc
 t$@fD
 t$H;t
 t$HA_A^A]A
+t$HD9
+t$HLc
+t$PfA
 t$Pu4H
 t$X9^8H
+t$p9S |=@8s\t
 t$x9k`H
 t$xH9n
 t$xt*3
+t(E8 t#3
 t3HcK`A
 tA8_:t
 tIHcX H
@@ -6698,6 +6738,7 @@ trailerField
 tried to use unsupported cipher
 trustRoot
 ts datasign
+tsD80tnH
 tsa name mismatch
 tsa untrusted
 tst info setup error
@@ -6728,6 +6769,8 @@ ugfD9A
 uint16
 uint32
 uint64
+ukLc1E3
+ulHct$`H
 unable to bind socket
 unable to create new section
 unable to create socket
@@ -6892,6 +6935,7 @@ usr/local/ssl/lib/engines
 usr/local/ssl/private
 utf8only
 utfD9A
+uxHcB
 uz-UZ-Cyrl
 uz-UZ-Latn
 uz-uz-cyrl
@@ -6899,7 +6943,6 @@ uz-uz-latn
 u{L9mHu
 u~9t$Xt
 u͋C$9C rgH
-v	V_strlower_fast
 v2!L.2
 v2i_ASN1_BIT_STRING
 v2i_GENERAL_NAMES
@@ -6996,6 +7039,7 @@ wrong type
 wrong version number
 www.digicert.com1!0
 www.digicert.com1$0
+x	V_stricmp_fast
 x ATAVAWH
 x AUAVAWH
 x UAVAWH
@@ -7024,9 +7068,8 @@ xpaHFCu-H
 xrJ:DCG
 yAu[7
 yh9A(w
-ymIXa
 ynl$<M
-z9XxGT
+z	V_strlower_fast
 zh-CHS
 zh-CHT
 zh-chs

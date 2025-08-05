@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x5f8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,22 +34,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantCheers; // 0x5e0            
+            std::int16_t m_nRadiantCheers; // 0x5e8            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireCheers; // 0x5e2            
+            std::int16_t m_nDireCheers; // 0x5ea            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantPremiumCheers; // 0x5e4            
+            std::int16_t m_nRadiantPremiumCheers; // 0x5ec            
             // metadata: MNetworkEnable
-            std::int16_t m_nDirePremiumCheers; // 0x5e6            
+            std::int16_t m_nDirePremiumCheers; // 0x5ee            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x5e8            
+            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x5f0            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x5ec            
+            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x5f4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTACheers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTACheers) == 0x5f0);
+        static_assert(sizeof(source2sdk::client::C_DOTACheers) == 0x5f8);
     };
 };

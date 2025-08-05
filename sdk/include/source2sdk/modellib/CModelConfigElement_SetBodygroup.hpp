@@ -26,7 +26,7 @@ namespace source2sdk
         class CModelConfigElement_SetBodygroup : public source2sdk::modellib::CModelConfigElement
         {
         public:
-            CUtlString m_GroupName; // 0x48            
+            CGlobalSymbol m_GroupName; // 0x48            
             std::int32_t m_nChoice; // 0x50            
             uint8_t _pad0054[0x4];
         };
