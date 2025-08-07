@@ -85,7 +85,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5900
+        // Size: 0x58d8
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_nRuneCycle"
@@ -908,62 +908,62 @@ namespace source2sdk
             // m_vecChatLog has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::GameChatLogEntry_t> m_vecChatLog;
             char m_vecChatLog[0x18]; // 0x1ee0            
-            uint8_t _pad1ef8[0x2658]; // 0x1ef8
-            bool m_bFatalErrorAbortGame; // 0x4550            
-            bool m_bFillEmptySlotsWithBots; // 0x4551            
-            uint8_t _pad4552[0x2]; // 0x4552
-            std::uint32_t m_dotaMapSpawnGroup; // 0x4554            
-            uint8_t _pad4558[0x28]; // 0x4558
+            uint8_t _pad1ef8[0x2630]; // 0x1ef8
+            bool m_bFatalErrorAbortGame; // 0x4528            
+            bool m_bFillEmptySlotsWithBots; // 0x4529            
+            uint8_t _pad452a[0x2]; // 0x452a
+            std::uint32_t m_dotaMapSpawnGroup; // 0x452c            
+            uint8_t _pad4530[0x28]; // 0x4530
             // metadata: MNetworkEnable
-            std::uint32_t m_lobbyType; // 0x4580            
+            std::uint32_t m_lobbyType; // 0x4558            
             // metadata: MNetworkEnable
-            source2sdk::client::LeagueID_t m_lobbyLeagueID; // 0x4584            
+            source2sdk::client::LeagueID_t m_lobbyLeagueID; // 0x455c            
             // metadata: MNetworkEnable
-            char m_lobbyGameName[256]; // 0x4588            
+            char m_lobbyGameName[256]; // 0x4560            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnHeroStatueLiked"
             // m_vecHeroStatueLiked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CHeroStatueLiked> m_vecHeroStatueLiked;
-            char m_vecHeroStatueLiked[0x88]; // 0x4688            
+            char m_vecHeroStatueLiked[0x88]; // 0x4660            
             // metadata: MNetworkEnable
-            std::int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4710            
-            uint8_t _pad474c[0x44]; // 0x474c
+            std::int32_t m_CustomGameTeamMaxPlayers[15]; // 0x46e8            
+            uint8_t _pad4724[0x44]; // 0x4724
             // metadata: MNetworkEnable
-            std::int32_t m_iMutations[5]; // 0x4790            
-            uint8_t _pad47a4[0x4]; // 0x47a4
+            std::int32_t m_iMutations[5]; // 0x4768            
+            uint8_t _pad477c[0x4]; // 0x477c
             // metadata: MNetworkEnable
             // m_vecIngameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CIngameEvent_Base>> m_vecIngameEvents;
-            char m_vecIngameEvents[0x18]; // 0x47a8            
+            char m_vecIngameEvents[0x18]; // 0x4780            
             // metadata: MNetworkEnable
-            std::int8_t m_nPrimaryIngameEventIndex; // 0x47c0            
-            uint8_t _pad47c1[0x3]; // 0x47c1
-            std::uint32_t m_nOfrendaPledges; // 0x47c4            
-            std::uint32_t m_nRadiantOfrendas; // 0x47c8            
-            std::uint32_t m_nDireOfrendas; // 0x47cc            
+            std::int8_t m_nPrimaryIngameEventIndex; // 0x4798            
+            uint8_t _pad4799[0x3]; // 0x4799
+            std::uint32_t m_nOfrendaPledges; // 0x479c            
+            std::uint32_t m_nRadiantOfrendas; // 0x47a0            
+            std::uint32_t m_nDireOfrendas; // 0x47a4            
             // metadata: MNetworkEnable
-            bool m_bOfrendaEnabled; // 0x47d0            
-            uint8_t _pad47d1[0x7]; // 0x47d1
+            bool m_bOfrendaEnabled; // 0x47a8            
+            uint8_t _pad47a9[0x7]; // 0x47a9
             // m_vecMuertaPartingShotSouls has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sMuertaPartingShotSoulDef> m_vecMuertaPartingShotSouls;
-            char m_vecMuertaPartingShotSouls[0x18]; // 0x47d8            
-            uint8_t _pad47f0[0x18]; // 0x47f0
+            char m_vecMuertaPartingShotSouls[0x18]; // 0x47b0            
+            uint8_t _pad47c8[0x18]; // 0x47c8
             // metadata: MNetworkEnable
             // m_NeutralSpawnBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::NeutralSpawnBoxes_t> m_NeutralSpawnBoxes;
-            char m_NeutralSpawnBoxes[0x60]; // 0x4808            
+            char m_NeutralSpawnBoxes[0x60]; // 0x47e0            
             // metadata: MNetworkEnable
             // m_RegionTriggerBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::RegionTriggerBoxes_t> m_RegionTriggerBoxes;
-            char m_RegionTriggerBoxes[0x60]; // 0x4868            
-            double m_flLastItemSuggestionRequestTime[15]; // 0x48c8            
-            uint8_t _pad4940[0xfb8]; // 0x4940
-            double m_flLastPerfSampleTime; // 0x58f8            
+            char m_RegionTriggerBoxes[0x60]; // 0x4840            
+            double m_flLastItemSuggestionRequestTime[15]; // 0x48a0            
+            uint8_t _pad4918[0xfb8]; // 0x4918
+            double m_flLastPerfSampleTime; // 0x58d0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAGameRules because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAGameRules) == 0x5900);
+        static_assert(sizeof(source2sdk::server::CDOTAGameRules) == 0x58d8);
     };
 };
