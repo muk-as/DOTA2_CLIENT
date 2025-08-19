@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo " Áã1û"
+        // static metadata: MPulseCellOutflowHookInfo "@‘â1û"
         #pragma pack(push, 1)
         class CPulseCell_LerpCameraSettings : public source2sdk::pulse_runtime_lib::CPulseCell_BaseLerp
         {

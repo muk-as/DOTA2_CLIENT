@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 962
+        // Enumerator count: 965
         // Alignment: 4
         // Size: 0x4
         enum class EDOTAGCMsg : std::uint32_t
@@ -385,6 +385,7 @@ namespace source2sdk
             k_EMsgClientToGCGetProfileTicketsResponse = 0x1f8a,
             k_EMsgGCToClientMatchGroupsVersion = 0x1f8b,
             k_EMsgClientToGCH264Unsupported = 0x1f8c,
+            k_EMsgClientToGCWatchingBroadcast = 0x1f8d,
             k_EMsgClientToGCGetQuestProgress = 0x1f8e,
             k_EMsgClientToGCGetQuestProgressResponse = 0x1f8f,
             k_EMsgSignOutXPCoins = 0x1f90,
@@ -980,6 +981,8 @@ namespace source2sdk
             k_EMsgSignOutCraftworks = 0x233e,
             k_EMsgClientToGCClaimGatedEvent = 0x2353,
             k_EMsgClientToGCClaimGatedEventResponse = 0x2354,
+            k_EMsgClientToGCGetEventRanking = 0x2393,
+            k_EMsgClientToGCGetEventRankingResponse = 0x2394,
         };
     };
 };

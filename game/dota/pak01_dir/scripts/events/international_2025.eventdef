@@ -1,0 +1,1091 @@
+"EVENT_ID_INTERNATIONAL_2025" // 52
+{
+	"season_name"	"#DOTA_EventName_International2025"
+	"season_name_short"	"#DOTA_EventNameShort_International2025"
+	"season_class"	"Season_International2025"
+
+	"is_ti"		"1"
+	"league_id"		"18324"
+	"event_gated_claimable"				"1"
+	"event_gate_cutoff_time"			"1755500400" // Monday, August 18, 2025 12:00:00 AM GMT-07:00
+
+	"team_fandom_league_registration_period"		"10"
+	"team_fandom_content_season"		"12"
+	"team_logo_model"					"models/events/ti14/teams/team_%u.vmdl"
+	//"team_fandom_bundles_on_sale"		"1"
+
+	// The event_end_time is when all of the activities stop working (e.g. wagering, tipping, etc). Customers
+	// can still claim rewards or increase their level after this time as a grace period since they may have
+	// received some final
+	// levels from features like predictions. From a customer perspective, this is the date that the Battle
+	// Pass ends.
+	// CURRENT TIME SET: Tuesday, September 23, 2025 8:00:00 PM PST
+	"event_end_time"	"1758682800"
+
+	// The expiration_date is when the event is completely over and customers can no longer claim rewards.
+	// This date should mostly be unimportant for customers - it should be at least a few weeks after the
+	// end date to give customers a chance to claim their final rewards. It mostly serves as a stopping
+	// point after which we no longer have to support the Battle Pass features.
+	// CURRENT TIME SET: Tuesday, October 21, 2025 3:00:00 PM PST
+	"expiration_date"	"1761084000"
+
+	//"level_event_trophy"		"94"
+	//"questlines_trophy"			"85"
+
+	//"allows_season_changes"		"1"
+	//"challenges_enabled"		"1"
+
+	"event_level"
+	{
+		"show_battle_level"		"0"
+		"points_per_level"		"1000"
+	}
+
+	"uses_premium_points"	"0"
+
+	"does_event_point_popup"			"1"
+	"does_event_point_popup_premium"	"0"
+	"normal_points_leaderboard_name"				"International2025Points"
+
+	"notification_class"	"Compendium_2025"
+	"notifications"
+	{
+	}
+
+	// CHFLYNN TODO: Physical Aegis Reward
+	"physical_rewards"
+	{
+	}
+
+	"action_lists"
+	{
+	}
+
+	"ranking_rewards"
+	{
+		"end_date"					"1758218400" // Thursday, September 18th at 11am pdt		
+
+		"ranks"
+		{
+			"1"
+			{
+				"ranking_type"		"absolute"
+				"ranking_value"		"100"
+				"reward_action"		"rank_top_100"
+			}
+
+			"2"
+			{
+				"ranking_type"		"absolute"
+				"ranking_value"		"1500"
+				"reward_action"		"rank_top_1500"
+			}
+
+			"3"
+			{
+				"ranking_type"		"percentile"
+				"ranking_value"		"5"
+				"reward_action"		"rank_top_5_pct"
+			}
+
+			"4"
+			{
+				"ranking_type"		"percentile"
+				"ranking_value"		"10"
+				"reward_action"		"rank_top_10_pct"
+			}
+
+			"5"
+			{
+				"ranking_type"		"percentile"
+				"ranking_value"		"15"
+				"reward_action"		"rank_top_15_pct"
+			}
+		}
+	}
+
+	"event_actions"
+	{
+
+		// --------------------------------------------------------------------
+		// Team Fandom Bundles
+		// --------------------------------------------------------------------
+		"#include"		"scripts/events/fandom/international_2025_fandom.eventincludes"
+
+		// --------------------------------------------------------------------
+		// Initial Rewards Bundle on Purchase
+		// --------------------------------------------------------------------
+		"welcome_gifts"
+		{
+			"action_id" "400"
+			"always_claimable"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						// RTTI Fantasy Rolls
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"3"
+							"period"			"0"
+							"rolls"				"40"
+						}
+
+						// TI Fantasy Rolls
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"3"
+							"period"			"1"
+							"rolls"				"40"
+						}						
+					}
+				}
+			}
+		}
+
+		"welcome_emoticon"
+		{
+			"action_id"		"399"
+			"always_claimable"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"407"
+					}
+				}
+			}
+		}
+
+		"welcome_wallpapers"
+		{
+			"action_id"		"398"
+			"always_claimable"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						// TI Wallpapers
+						"grant_item"		"35848"
+						"grant_item"		"35849"
+						"grant_item"		"35850"
+						"grant_item"		"35851"
+						"grant_item"		"35852"
+
+						// Team Wallpapers
+						"grant_item"		"35197"
+						"grant_item"		"35192"
+						"grant_item"		"35200"
+						"grant_item"		"35193"
+						"grant_item"		"35202"
+						"grant_item"		"35195"
+						"grant_item"		"35196"
+						"grant_item"		"35190"
+						"grant_item"		"35194"
+						"grant_item"		"35188"
+						"grant_item"		"35199"
+						"grant_item"		"35204"
+						"grant_item"		"35191"
+						"grant_item"		"35203"
+						"grant_item"		"35201"
+						"grant_item"		"35198"
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Predictions
+		// --------------------------------------------------------------------
+		"predictions_road_to_ti"
+		{
+			"action_id" "401"
+			"max_grants" "16"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"30"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"2"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"30"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"3"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"60"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"4"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"240"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"5"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"360"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"6"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"480"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"7"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"600"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"8"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"720"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"9"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"840"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"10"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"960"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"11"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1080"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"12"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1200"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"13"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1320"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"14"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1440"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"15"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1560"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"16"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_RTTI"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1080"
+							"audit_action"	"46"
+						}
+					}
+				}
+			}
+		}
+
+		"predictions_main_event"
+		{
+			"action_id" "402"
+			"max_grants" "14"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"120"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"2"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"240"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"3"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"360"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"4"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"480"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"5"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"600"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"6"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"720"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"7"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"840"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"8"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"960"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"9"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1080"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"10"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1200"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"11"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1320"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"12"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1440"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"13"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1560"
+							"audit_action"	"46"
+						}
+					}
+				}
+
+				"14"
+				{
+					"reward_name"		"#DOTA_CompanionPoints_Prediction_MainEvent"
+					"grants"
+					{
+						"grant_points_custom"
+						{
+							"points"		"1080"
+							"audit_action"	"46"
+						}
+					}
+				}
+			}
+		}
+		
+		// --------------------------------------------------------------------
+		// Fantasy
+		// --------------------------------------------------------------------		
+		"fantasy_period_end_reward_0"
+		{
+			"action_id"		"600"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_0"
+		}
+		"fantasy_period_end_reward_25"
+		{
+			"action_id"		"601"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_25"
+		}
+		"fantasy_period_end_reward_50"
+		{
+			"action_id"		"602"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_50"
+		}
+		"fantasy_period_end_reward_75"
+		{
+			"action_id"		"603"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_75"
+		}
+		"fantasy_period_end_reward_90"
+		{
+			"action_id"		"604"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_90"
+		}
+		"fantasy_period_end_reward_95"
+		{
+			"action_id"		"605"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_95"
+		}
+		"fantasy_period_end_reward_99"
+		{
+			"action_id"		"606"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_99"
+		}
+		"fantasy_period_end_reward_999"
+		{
+			"action_id"		"607"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_999"
+		}
+		
+		"#include"		"scripts/events/fantasy/dpc_fantasy_period_nonclaimable.eventactions"
+
+		// --------------------------------------------------------------------
+		// Sticker Capsules
+		// --------------------------------------------------------------------
+		"reward_sticker_capsule"
+		{
+			"action_id"		"1010"
+			"max_grants"	"999999"
+		}
+
+		"reward_sticker_capsule_claimable"
+		{
+			"action_id"		"1011"
+			"claimable_if_prerequisites_satisfied" "1"
+			"max_grants"	"999999"
+			"prerequisite_actions"
+			{
+				"reward_sticker_capsule" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"	"35383"	// TI 2025 Team and Player Sticker Capsule
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Actual Rewards
+		// --------------------------------------------------------------------
+
+		"shard_redemption"
+		{
+			"claimable_up_to_event_level"	"1"
+			"action_id"						"1100"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_shards"	"300"
+					}
+				}
+			}
+		}
+		
+		"reward_months_dota_plus"
+		{
+			"action_id"		"1000"
+			"max_grants"	"12"
+		}
+
+		"reward_arcana_token"
+		{
+			"action_id"		"1001"
+			"max_grants"	"1"
+		}
+
+		"reward_aegis_discount"
+		{
+			"action_id"		"1002"
+			"max_grants"	"100"
+		}
+
+		"reward_purple_witness"
+		{
+			"action_id"		"1003"
+			"max_grants"	"5"
+		}
+
+		"reward_months_dota_plus_claimable"
+		{
+			"action_id"		"1004"
+			"claimable_if_prerequisites_satisfied" "1"
+			"max_grants"	"12"
+			"prerequisite_actions"
+			{
+				"reward_months_dota_plus" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"	"19998"	// 1 month non-recurring dota plus
+					}
+				}
+			}
+		}
+
+		"reward_arcana_token_claimable"
+		{
+			"action_id"		"1005"
+			"claimable_if_prerequisites_satisfied" "1"
+			"max_grants"	"1"
+			"prerequisite_actions"
+			{
+				"reward_arcana_token" "1 + 1n"
+			}
+			
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item_choice"
+						{
+							"choice_count"	"1"
+							"tradeable"		"0"
+							"giftable"		"0"
+							"loot_list" 	"ti_2025_arcana_rewards"
+						}
+					}
+				}
+			}
+		}
+
+		"reward_aegis_discount_claimable"
+		{
+			"action_id"		"1006"
+			"claimable_if_prerequisites_satisfied" "1"
+			"max_grants"	"100"
+			"prerequisite_actions"
+			{
+				"reward_aegis_discount" "1 + 1n"
+			}
+
+			// This doesn't grant anything specific, we just check the level of this for the discount
+		}
+
+		"reward_purple_witness_claimable"
+		{
+			"action_id"		"1007"
+			"claimable_if_prerequisites_satisfied" "1"
+			"max_grants"	"5"
+			"prerequisite_actions"
+			{
+				"reward_purple_witness" "1 + 1n"
+			}
+			
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item_choice"
+						{
+							"choice_count"	"1"
+							"tradeable"		"0"
+							"giftable"		"0"
+							"loot_list"		"ti_2025_tyrian_regalia"
+						}
+					}
+				}
+			}
+		}
+
+
+		// --------------------------------------------------------------------
+		// Placement Rewards
+		// --------------------------------------------------------------------
+		"rank_top_15_pct"
+		{
+			"max_grants"	"1"
+			"action_id"		"1101"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_months_dota_plus"
+							"count"		"1"
+						}
+					}
+				}
+			}
+		}
+
+		"rank_top_10_pct"
+		{
+			"max_grants"	"1"
+			"action_id"		"1102"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_months_dota_plus"
+							"count"		"1"					
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_arcana_token"
+							"count"		"1"
+						}
+					}
+				}
+			}
+		}
+
+		"rank_top_5_pct"
+		{
+			"max_grants"	"1"
+			"action_id"		"1103"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_months_dota_plus"
+							"count"		"2"					
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_arcana_token"
+							"count"		"1"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_aegis_discount"
+							"count"		"50"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_purple_witness"
+							"count"		"1"
+						}
+					}
+				}
+			}
+		}
+
+		"rank_top_1500"
+		{
+			"max_grants"	"1"
+			"action_id"		"1104"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_months_dota_plus"
+							"count"		"6"					
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_arcana_token"
+							"count"		"1"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_aegis_discount"
+							"count"		"100"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_purple_witness"
+							"count"		"2"
+						}
+					}
+				}
+			}
+		}
+
+		"rank_top_100"
+		{
+			"max_grants"	"1"
+			"action_id"		"1105"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_months_dota_plus"
+							"count"		"12"					
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_arcana_token"
+							"count"		"1"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_aegis_discount"
+							"count"		"100"
+						}
+
+						"grant_action_custom"
+						{
+							"action"	"reward_purple_witness"
+							"count"		"5"
+						}
+					}
+				}
+			}
+		}
+	}
+		
+	"seasons"
+	{
+		"period1"
+		{
+			"season_id"		"1"
+			"season_loc_name"		"#DOTA_TeamFandom_Period1_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period1_"
+			}
+		}
+		"period2"
+		{
+			"season_id"		"2"
+			"season_loc_name"		"#DOTA_TeamFandom_Period2_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period2_"
+			}
+		}
+	}
+
+	"fantasy_leaderboard_name"		"DPC_25_TIFantasyScore"
+	"fantasy"
+	{
+		"scoring"
+		{
+			"0"		"121"
+			"1"		"180"
+			"2"		"3"
+			"3"		"2"
+			"4"		"340"
+			"5"		"850"
+			"6"		"1895"
+			"7"		"113"
+			"8"		"170"
+			"9"		"121"
+			"10"	"1700"
+			"11"	"128"
+			"12"	"283"
+			"13"	"19"
+			"14"	"121"
+			"15"	"213"
+			"16"	"850"
+			"17"	"850"
+		}
+
+		"rewards"
+		{
+			"end_of_period_actions"
+			{
+				"0"			"600"
+				"25"		"601"
+				"50"		"602"
+				"75"		"603"
+				"90"		"604"
+				"95"		"605"
+				"99"		"606"
+				"999"		"607"
+			}
+		}
+
+		"period_definitions" 
+		{
+			// Road to The International
+			"0"
+			{
+				"start"		"1756972800"
+				"end"		"1757314800"
+				"allowed_leagues"
+				{
+					"LEAGUE_REGION_UNSET"	"18324"
+				}
+			}
+
+			// The International
+			"1"
+			{
+				"start"		"1757577600"
+				"end"		"1757919600"
+				"allowed_leagues"
+				{
+					"LEAGUE_REGION_UNSET"	"18324"
+				}
+			}
+		}
+	}
+
+}

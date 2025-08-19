@@ -2,14 +2,80 @@
 
 DOTAPopupPurchaseTeamFanContent.PopupPanel
 {
-	flow-children: none;
-	width: 1400px;
-	height: 800px;
-	padding: 0px;
-	border: 0px solid #00000000;
-	background-color: gradient( linear, 0% 0%, 90% 100%, from( #202429 ), to( #060708 ) );
-	box-shadow: fill #00000066 0px 0px 24px 0px;
-	animation-name: none;
+	width: 1320px;
+	height: 940px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	background-color: none;
+	box-shadow: none;
+	transition-property: transform, pre-transform-scale2d, opacity, background-color, height, box-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
+	transition-delay: 0.0s;
+}
+
+DOTAPopupPurchaseTeamFanContent.PopupPanel.Hidden
+{
+	opacity: 0.0;
+	pre-transform-scale2d: 1.25;
+	transform: translateY( -10px );
+	sound: "ui_custom_lobby_dialog_slide";
+	box-shadow: 0 0 0px transparent;
+}
+
+.PopupContents
+{
+	width: 100%;
+	height: fill-parent-flow(1);
+	flow-children: down;
+}
+
+.DashOrnament
+{
+	horizontal-align: center;
+	width: 100px;
+}
+
+.DashOrnament.Flipped
+{
+	transform: scaleY( -1 );
+	brightness: 0.4;
+}
+
+.SupporterTierBorder
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.BackgroundImage
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/international_2025/backgrounds/galaxy_background_home_png.vtex");
+	background-size: 180%;
+	background-position: center top;
+	ignore-parent-flow: true;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #FFFFFF ), to( #554587 ) );
+}
+
+.PopupBorder
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	border: 1px solid rgba(208, 208, 255, 0.02);
+}
+
+.TopDash
+{
+	width: 100%;
+	height: 3px;
+	background-color: gradient( linear, 0% 20%, 0% 80%, from( #FFFFFF ), to( #8d7893 ) );
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 #BackgroundTeamLogo
@@ -17,12 +83,7 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 	width: 256px;
 	height: 256px;
 	opacity: 0.00;
-}
-
-.AllContents
-{
-	width: 100%;
-	height: 100%;
+	visibility: collapse;
 }
 
 .Header
@@ -30,63 +91,67 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 	width: 100%;
 }
 
-.CloseButton
-{
-	horizontal-align: right;
-	margin-right: 8px;
-	margin-top: 8px;
-	margin-bottom: 12px;
-	background-color: bluegreyTextReg;
-	border-radius: 50%;
-	padding: 8px;
-	background-size: 80%;
-	width: 32px;
-	height: 32px;
-	background-image: url("s2r://panorama/images/control_icons/x_close_white_psd.vtex");
-}
-
 .TeamInfo
 {
 	flow-children: down;
-	width: 300px;
-	height: 100%;
+	width: 100%;
+	margin: 28px 32px 12px;
 }
 
-.TeamName
+.TeamInfo #CloseButton
 {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 32px;
-	margin-top: 40px;
-	color: bluegreyTextBright;
-	font-weight: semi-bold;
+	horizontal-align: right;
+	ignore-parent-flow: true;
 }
 
-.FeatureName
+.TeamInfo Label
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.TeamInfo .FeatureName
+{
+	color: #dfa8f4;
+	text-shadow: textShadowSmall;
+}
+
+.TeamInfo .TeamName
 {
 	text-transform: uppercase;
-	font-size: 16px;
-	letter-spacing: 3px;
-	color: gradient( linear, 0% 0%, 100% 0%, from( #F8E8B9 ), color-stop( 0.5, #E4C269), to( #C79123 ) );
-	color: dpcSupClubColor;
 	font-family: titleFont;
-	font-weight: semi-bold;
-	margin-top: -4px;
-	margin-bottom: 24px;
+	font-weight: normal;
+	font-size: 36px;
+	letter-spacing: 3px;
+	color: white;
+	text-shadow: 0px 0px 12px rgba(209, 124, 255, 0.3);
 }
 
-.TeamPerksTitle
+.TeamInfo .TeamPerksTitle
 {
 	color: bluegreyTextBright;
 	font-weight: semi-bold;
-	letter-spacing: 1px;
 	font-size: 20px;
 }
 
-.PerksText
+.TeamInfo .PerksText
 {
 	font-size: 16px;
-	color: bluegreyTextReg;
+	color: #babddb;
+}
+
+.TeamInfo .TeamPerksOverviewText
+{
+	width: 800px;
+	height: 76px;
+	color: #babddb;
+	font-family: titleFont;
+	text-overflow: shrink;
+}
+
+.TeamInfo .TeamPerksOverviewText b
+{
+	font-weight: semi-bold;
 }
 
 .TeamPerksText
@@ -104,14 +169,6 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 	visibility: collapse;
 }
 
-.MainContents
-{
-	flow-children: right;
-	height: fill-parent-flow( 1.0 );
-	padding: 0px 20px 0px 20px;
-	background-image: url("s2r://panorama/images/dpc/supclub_purchase_bg_psd.vtex");
-}
-
 .TeamInfo
 {
 	flow-children: down;
@@ -121,6 +178,8 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 {
 	flow-children: right;
 	height: 100%;
+	horizontal-align: center;
+	padding-bottom: 32px;
 }
 
 .SupporterTier
@@ -128,16 +187,9 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 	flow-children: down;
 	width: fill-parent-flow( 1.0 );
 	height: 100%;
-	margin-left: 16px;
 	visibility: collapse;
 	max-width: 337px;
-	transition-property: brightness;
-	transition-duration: 0.3s;
-}
-
-.SupporterTier:hover
-{
-	brightness: 1.2;
+	margin: 8px;
 }
 
 .TierAvailable
@@ -175,39 +227,37 @@ DOTAPopupPurchaseTeamFanContent.PopupPanel
 {
 	horizontal-align: center;
 	text-transform: uppercase;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
-	letter-spacing: 2px;
-	padding-bottom: 8px;
-	padding-top: 40px;
-	height: 72px;
+	letter-spacing: 1px;
+	padding: 8px 0px;
 	width: 100%;
 	text-align: center;
 	font-family: titleFont;
+	text-shadow: textShadowMedium;
+	background-color: rgba(255, 255, 255, 0.01);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #SupporterTier1 .TierTitle
 {
 	color: #b3897c;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #b3897c00 ), to( #b3897c08 ) );
 }
 
 #SupporterTier2 .TierTitle
 {
-	color: #ebe2df;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #ebe2df00 ), to( #ebe2df08 ) );
+	color: #a7d5d3;
 }
 
 #SupporterTier3 .TierTitle
 {
 	color: #d8d2a8;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #d8d2a800 ), to( #d8d2a808 ) );
 }
 
 .TierBadge
 {
-	width: 72px;
-	height: 72px;
+	width: 64px;
+	height: 64px;
 	horizontal-align: center;
 	margin-top: 32px;
 	background-color: none;
@@ -227,7 +277,6 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 .BadgeBannerContainer
 {
 	width: 100%;
-	margin-top: 12px;
 }
 
 .GoldBadgeBanner
@@ -271,13 +320,14 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 .TeamBadgeLabel
 {
 	margin-top: -48px;
-	margin-bottom: 18px;
+	margin-bottom: 12px;
 	horizontal-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 16px;
 	font-weight: semi-bold;
-	color: bluegreyTextBright;
+	color: whitesmoke;
+	text-shadow: textShadowMedium;
 }
 
 .TierDescription
@@ -294,42 +344,8 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 .TierPurchaseButton
 {
 	horizontal-align: center;
-	margin: 0px 0px 10px 0px;
-	height: 44px;
-	width: 188px;
-	background-color: gradient( linear, 0% 0%, 90% 100%, from( #042a0566 ), color-stop( 0.5, #15511c66 ), to( #042a0566 ) );
-	border: 1px solid #4C9C4F;
-	border-radius: 5px;
-	transition-property: brightness, pre-transform-scale2d;
-	transition-duration: 0.2s;
+	margin: 12px 48px;
 	visibility: collapse;
-}
-
-.TierPurchaseButton Label
-{
-	color: #9FDA9D;
-	font-size: 18px;
-	font-weight: semi-bold;
-	horizontal-align: center;
-	vertical-align: center;
-}
-
-.TierPurchaseButton:hover
-{
-	brightness: 2.0;
-	pre-transform-scale2d: 1.03;
-}
-
-.TierPurchaseButton:disabled
-{
-	saturation: 0.1;
-	brightness: 0.7;
-}
-
-.TierPurchaseButton:disabled:hover
-{
-	brightness: 0.7;
-	pre-transform-scale2d: 1;
 }
 
 .TierAvailable:not(.HasTier) .TierPurchaseButton
@@ -340,13 +356,17 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 .TierAlreadyPurchased
 {
 	horizontal-align: center;
-	color: bluegreyTextReg;
+	color: rgba(245, 245, 245, 0.6);
 	font-size: 16px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	visibility: collapse;
-	margin-bottom: 48px;
-	height: 36px;
+	margin-bottom: 56px;
+	width: 100%;
+	text-align: center;
+	padding-top: 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.057);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( rgba(255, 255, 255, 0) ) );
 }
 
 .TierAvailable.HasTier .TierAlreadyPurchased
@@ -379,9 +399,9 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 {
 	horizontal-align: center;
 	text-align: center;
-	color: bluegreyTextDim;
+	color: rgba(245, 245, 245, 0.3);
 	font-size: 15px;
-	margin-bottom: 12px;
+	margin-bottom: 16px;
 	visibility: collapse;
 }
 
@@ -400,6 +420,8 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 {
 	width: 48px;
 	height: 48px;
+	box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.6);
+	border-radius: 2px;
 }
 
 .FriendPreview
@@ -470,35 +492,30 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 {
 	flow-children: down;
 	horizontal-align: center;
-	margin-bottom: 32px;
-	box-shadow: 1px 1px #0003;
-	border-radius: 10px;
-	border: 1px solid #0005;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.3);
 	padding: 5px;
-}
-
-#SupporterTier3 .RewardCategory
-{
-	margin-bottom: 10px;
+	width: 100%;
+	margin: 4px 12px;
 }
 
 #RewardCategoryItems
 {
 	flow-children: right;
 	horizontal-align: center;
-	margin-top: 6px;
+	margin: 6px;
 }
 
 .RewardCategoryName
 {
 	horizontal-align: center;
 	text-align: center;
-	margin-top: 4px;
+	margin-bottom: 4px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 16px;
-	font-weight: semi-bold;
-	color: bluegreyTextBright;
+	font-size: 14px;
+	color: rgba(245, 245, 245, 0.6);
+	text-shadow: textShadowMedium;
 }
 
 .EmoticonReward
@@ -525,20 +542,25 @@ DOTAEventCrestImage.Quality2,DOTAEventCrestImage.Quality1
 {
 	flow-children: right;
 	border: 1px solid #ffffff06;
-	border-radius: 5px;
-	padding: 4px 8px;
+	border-radius: 4px;
+	padding: 0px 4px;
 	width: 280px;
 	margin-bottom: 6px;
-	background-color: gradient( linear, 0% 0%, 90% 100%, from( #ffffff02 ), color-stop( 0.8, #ffffff06 ), to( #ffffff00 ) );
+	background-color: #8881;
+	height: 36px;
 	transition-property: brightness;
 	transition-duration: 0.2s;
 }
 
 .ChatWheelReward Label
 {
-	color: #C2B9A9;
+	color: LightestGrey;
 	margin-left: 2px;
+	font-size: 16px;
 	vertical-align: center;
+	width: fill-parent-flow(1);
+	text-overflow: shrink;
+	color: LightestGrey;
 }
 
 .ChatWheelReward:hover

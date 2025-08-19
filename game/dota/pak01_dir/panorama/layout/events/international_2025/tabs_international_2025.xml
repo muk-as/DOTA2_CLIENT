@@ -1,0 +1,95 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/tabs_international_2025.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAInternational2025Tabs class="International2025Tabs SecondaryTabSet">
+		<Image class="CellStarMap" src="s2r://panorama/images/events/international_2025/artwork/starmap_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="LogoContainerSmall" onactivate="DOTAShowInternational2025Page()">
+			<Panel class="AegisContainer">
+				<Panel class="AegisGlow" />
+				<Image class="Aegis2025" src="s2r://panorama/images/events/international_2025/artwork/aegis2025_small_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="Aegis2025" src="s2r://panorama/images/events/international_2025/artwork/aegis2025_small_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Image class="TheInternationalScript" src="s2r://panorama/images/events/international_2025/artwork/the_international_script.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			<Label class="TheInternationalText" text="#DOTA_TheInternational" />
+			<Panel class="StarsContainer">
+				<Image class="StarIcon" src="s2r://panorama/images/control_icons/24px/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="StarIcon" src="s2r://panorama/images/control_icons/24px/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="StarIcon" src="s2r://panorama/images/control_icons/24px/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="StarIcon" src="s2r://panorama/images/control_icons/24px/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="StarIcon" src="s2r://panorama/images/control_icons/24px/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</Panel>
+		<Panel class="Divider" />
+		<Panel class="SecondaryTabsContainer">
+			<Label class="SectionHeader" text="#DOTA_Compendium2025_Participate" />
+			<RadioButton id="International2025Home" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium2025_Tabs_Rewards" onactivate="DOTAShowInternational2025Page()">
+				<Image class="TabGlow" src="s2r://panorama/images/events/international_2025/dashboard/tab_glow_png.vtex" />
+			</RadioButton>
+			<RadioButton id="International2025Fantasy" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium2025_Tabs_Fantasy" onactivate="DOTAShowInternational2025FantasyPage()">
+				<Image class="TabGlow" src="s2r://panorama/images/events/international_2025/dashboard/tab_glow_png.vtex" />
+			</RadioButton>
+			<RadioButton id="International2025Predictions" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium2025_Tabs_Predictions" onactivate="DOTAShowInternational2025PredictionsPage()">
+				<Image class="TabGlow" src="s2r://panorama/images/events/international_2025/dashboard/tab_glow_png.vtex" />
+			</RadioButton>
+			<Label class="SectionHeader" text="#DOTA_Compendium2025_TheEvent" />
+			<RadioButton id="International2025SupportersClub" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium2025_Tabs_TeamBundles" onactivate="DOTAShowInternational2025SupportersClub()">
+				<Image class="TabGlow" src="s2r://panorama/images/events/international_2025/dashboard/tab_glow_png.vtex" />
+			</RadioButton>
+			<RadioButton id="International2025Talent" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium2025_Tabs_TalentBundles" onactivate="DOTAShowInternational2025TalentPage()">
+				<Image class="TabGlow" src="s2r://panorama/images/events/international_2025/dashboard/tab_glow_png.vtex" />
+			</RadioButton>
+		</Panel>
+		<Panel class="Divider" />
+		<Panel class="PlayerInfoContainer">
+			<Panel class="PlayerInfoBlock" onmouseover="Compendium2025ShowScoreTooltip()" onmouseout="Compendium2025HideScoreTooltip()">
+				<Panel class="TotalPointsBlock">
+					<Label class="PlayerInfoValue TitleSmall" text="{d:local_user_score}" />
+					<Image class="InfoIcon" src="s2r://panorama/images/control_icons/24px/info.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Label class="PlayerInfoLabel LabelSmall" text="Points" />
+			</Panel>
+			<Panel class="VerticalDivider" />
+			<Panel class="PlayerInfoBlock">
+				<Label class="PlayerInfoValue TitleSmall" text="{s:local_user_percentile}" />
+				<Label class="PlayerInfoLabel LabelSmall" text="Percentile" />
+			</Panel>
+			<DOTAAvatarImage id="LocalPlayerAvatarImage" />
+		</Panel>
+		<Panel class="Divider" />
+		<Panel class="LeaderboardArea">
+			<Panel class="LeaderboardSelectorRow">
+				<RadioButton id="LeaderboardSelectFriends" class="LeaderboardSelector" group="2025Leaderboards" selected="true" text="#DOTA_Compendium25_LeaderboardSelect_Friends" onactivate="DOTAInternational2025ShowLeaderboard( 0 )" />
+				<RadioButton id="LeaderboardSelectGlobal" class="LeaderboardSelector" group="2025Leaderboards" text="#DOTA_Compendium25_LeaderboardSelect_Global" onactivate="DOTAInternational2025ShowLeaderboard( 1 )" />
+			</Panel>
+			<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+				<Panel class="LeaderListHeader">
+					<Label class="ScoreBoardType" text="#DOTA_Compendium25_LeaderboardTitle_Friends" />
+					<Label class="TotalScore" text="#DOTA_Compendium25_LeaderboardTitle_Score" />
+				</Panel>
+				<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="30px" />
+			</Panel>
+			<Panel id="LeaderboardContainerGlobal" class="LeaderboardContainer">
+				<Panel class="LeaderListHeader">
+					<Label class="ScoreBoardType" text="#DOTA_Compendium25_LeaderboardTitle_Global" />
+					<Label class="TotalScore" text="#DOTA_Compendium25_LeaderboardTitle_Score" />
+				</Panel>
+				<DelayLoadList id="LeaderListGlobal" class="LeaderList" itemwidth="200px" itemheight="30px" />
+			</Panel>
+		</Panel>
+	</DOTAInternational2025Tabs>
+</root>

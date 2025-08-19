@@ -1,0 +1,64 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_itemclaim_popup.vcss_c" />
+		<include src="s2r://panorama/styles/hero_loadout_background_images.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ChoiceItem">
+			<Panel class="ChoiceItem">
+				<Panel id="HeroLoadoutBackgroundImageContainer">
+					<Image id="HeroLoadoutBackgroundImage" class="PanelBackground" hittest="false" />
+				</Panel>
+				<Image class="CellStarMap" src="s2r://panorama/images/events/international_2025/artwork/starmap_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="ModelPreviewContainer">
+					<DOTAUIEconSetPreview id="ModelPreview" />
+				</Panel>
+				<Button id="InfoButton" onmouseover="UIShowTextTooltip( #Notification_ViewDetails )" onmouseout="UIHideTextTooltip()">
+					<Image class="InfoIconImage" src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Button>
+				<Panel class="ItemInfo">
+					<Label class="HeroName LabelSmall" text="{s:hero_name}" />
+					<Label class="ItemName" text="#DOTA_econ_item_details_item_name" />
+					<Button class="ButtonPrimary Large Gold" id="ClaimButton" onactivate="DOTACompendium25ClaimItem()">
+						<Label text="#DOTA_Compendium2025_ItemChoice_ButtonLabel" />
+					</Button>
+					<Panel class="HorizontalRule OwnedOnly" />
+					<Label class="AlreadyOwned OwnedOnly LabelLarge" text="#DOTA_Compendium2025_ItemChoice_AlreadyOwned" onmouseover="UIShowTextTooltip( &apos;#DOTA_StoreItem_AlreadyOwned&apos; )" onmouseout="UIHideTextTooltip()" />
+					<Label class="ReleaseDate BodySmall" text="#DOTA_econ_item_details_item_creation_date" />
+				</Panel>
+				<Panel class="ChoiceItemInnerShadow" hittest="false" />
+				<Panel class="ChoiceItemBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAInternational2025ItemClaimPopup popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Image class="DashOrnament" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="TopDash" />
+		<Panel class="PopupContents">
+			<Panel class="BackgroundImage" />
+			<Panel class="PopupBorder" hittest="false" />
+			<Panel class="PageHeaderContainer">
+				<Label class="PageTitle" text="#DOTA_Compendium2025_ItemChoice_Title" />
+				<Label class="PageSubtitle BodySmall" text="#DOTA_Compendium2025_ItemChoice_SubTitle" />
+				<Panel class="ClaimsRemainingContainer">
+					<Panel class="ClaimsRemainingTypeImage" />
+					<Label class="ClaimsRemainingDescription" text="{s:claims_remaining_text}" />
+					<Label class="ClaimsRemainingCountLabel" text="{d:claims_remaining}" />
+				</Panel>
+				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel class="ItemContainerOuter">
+				<Panel id="ItemContainer" />
+			</Panel>
+		</Panel>
+		<Panel class="TopDash" />
+		<Image class="DashOrnament Flipped" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+	</DOTAInternational2025ItemClaimPopup>
+</root>

@@ -1,0 +1,75 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_predictions.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="StageTab">
+			<TabButton class="StageTab FixedWidth">
+				<Panel class="TabContents">
+					<Panel class="TabBorder" />
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="{s:stage_name}" />
+						<Panel class="LeftRightFlow HorizontalCenter">
+							<DOTACountdown id="LockCountdown" class="LeftRightFlow" server-time="true">
+								<Label class="StageLock PredictionsNotAvailable" text="#DOTA_PredictionsLockUpcoming" />
+								<Label class="StageLock PredictionsUnlocked" text="#DOTA_PredictionsUnlocked" />
+								<Label class="StageLock PredictionsLocked" text="#DOTA_Predictions25_Predictions_Locked" />
+							</DOTACountdown>
+							<Panel id="StageResults" class="StageResultsContainer">
+								<Image class="CheckIcon" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/check.vsvg" />
+								<Label class="CorrectPredictionsCount" text="{d:correct}/{d:total}" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="StageTabRight" />
+				</Panel>
+			</TabButton>
+		</snippet>
+	</snippets>
+	<DOTAInternational2025PredictionsPage class="DashboardPage FullDashboardPage" dashboardclass="International2025CompendiumPage">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+		<AsyncDataPanel state="{d:page_state}">
+			<Panel class="PageContents BPSharedPageContainer AsyncSuccessContainer">
+				<Panel class="BPSharedHeaderContainer">
+					<Label class="BPTitle" text="#DOTA_Compendium_SecondaryTabHeader_Predictions" />
+					<Panel id="StageHeaderRow" class="StageTabsContainer" />
+					<Panel id="HelpPanel">
+						<DOTAInternational2025Button id="Predictions" class="TextOnly" text="#DOTA_HowToPlay" onactivate="DOTAPredictions25ToggleHelp()" />
+					</Panel>
+				</Panel>
+				<Panel id="StageBodyRow" class="Body">
+					<DOTAInternational2025PredictionRankings id="RTTIPredictions" />
+					<DOTAInternational2025PredictionMainEvent id="MainEventPredictions" />
+					<Panel class="PeriodLocked">
+						<Panel class="LockIconContainer">
+							<Panel class="LockBackground" />
+							<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" texturewidth="64px" textureheight="64px" />
+						</Panel>
+						<Label class="LockedHeader" text="#DOTA_Predictions25_StageUnavailable" />
+						<Label class="HeaderDetails LighterGreyText" text="#DOTA_Predictions25_StageUnavailable_Body" />
+					</Panel>
+				</Panel>
+				<Panel class="NoCompendiumView">
+					<Panel class="LockIconContainer">
+						<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" />
+					</Panel>
+					<Label class="LockedHeader" text="#DOTA_FantasyCraft_NoCompendium_Title" />
+					<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_Predictions2025_NoCompendium" />
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+		<Panel class="EventActivationContainer" onactivate="">
+			<Panel class="EventActivationContent">
+				<Label class="ActivationSubTitle" text="#DOTA_International2025_ActivationWelcome" />
+				<Label class="ActivationTitle" text="#DOTA_EventName_International2025" />
+				<Label class="ActivationDescription" text="#DOTA_International2025_ActivationDescription" html="true" />
+				<Label class="IneligibleDescription" text="#DOTA_ClaimedGatedEvent_CannotClaim" />
+				<DOTAInternational2025Button id="ActivateButton" class="GlowButton" text="#compendium_activate_now" onactivate="Compendium2025Activate()" />
+			</Panel>
+		</Panel>
+	</DOTAInternational2025PredictionsPage>
+</root>

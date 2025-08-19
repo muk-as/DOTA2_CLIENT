@@ -1,0 +1,42 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_itemclaim.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ChoiceItem">
+			<RadioButton class="ChoiceItem" group="ChoiceItems">
+				<EconItemImage id="ItemImage" class="ChoiceItemImage" scaling="stretch-to-cover-preserve-aspect" />
+				<DOTAHeroImage id="HeroImage" class="ChoiceItemHero" scaling="stretch-to-cover-preserve-aspect" />
+				<Panel class="ChoiceItemInfo">
+					<Label class="ChoiceItemHeroName" text="{s:hero_name}" />
+					<Label class="ChoiceItemName" text="#DOTA_econ_item_details_item_name" />
+					<Label class="ChoiceItemRelease" text="#DOTA_econ_item_details_item_creation_date" />
+				</Panel>
+				<Label class="ChoiceItemAlreadyOwned" text="#DOTA_Compendium2025_ItemChoice_AlreadyOwned" onmouseover="UIShowTextTooltip( &apos;#DOTA_StoreItem_AlreadyOwned&apos; )" onmouseout="UIHideTextTooltip()" />
+			</RadioButton>
+		</snippet>
+	</snippets>
+	<DOTAInternational2025ItemClaimPage class="DashboardPage FullDashboardPage" dashboardclass="International2025CompendiumPage">
+		<Panel class="PageHeaderContainer">
+			<Label class="PageLabel" text="#DOTA_Compendium2025_ItemChoice_Title" />
+			<Label class="ItemPickerTitle  HeaderText" text="{s:current_item_name}" />
+		</Panel>
+		<Panel class="HeroArea">
+			<DOTALargeModelPreview id="ModelPreview" class="HeroAreaModel" />
+		</Panel>
+		<Panel id="ItemList" class="ItemList" />
+		<Panel class="BottomGradient" hittest="false" />
+		<Panel class="ActionArea">
+			<DOTAInternational2025Button class="DarkGreen Small ClaimButton" id="ClaimButton" onactivate="DOTACompendium25ClaimItem()" text="#DOTA_International2022_Swagbag_ClaimArcanaLabel" />
+			<Panel class="ActionButtons">
+				<DOTAInternational2025Button class="DarkGreen Small" onactivate="DOTACompendium25DemoItem()" text="#DOTA_HeroDemo_Button_Arcana" />
+				<DOTAInternational2025Button class="DarkGreen Small" onactivate="DOTACompendium25ViewItem()" text="#DOTA_International2022_SwagBag_ItemDetails" />
+			</Panel>
+		</Panel>
+	</DOTAInternational2025ItemClaimPage>
+</root>

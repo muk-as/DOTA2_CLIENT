@@ -280,7 +280,7 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedGeneralItemsChanged"
             source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedGeneralItems[30]; // 0xdc4            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedNeutralChanged"
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedNeutralsChanged"
             source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralTrinkets[5]; // 0xeb4            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedNeutralsChanged"

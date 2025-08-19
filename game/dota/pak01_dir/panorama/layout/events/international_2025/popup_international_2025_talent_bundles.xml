@@ -1,0 +1,66 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/popup_international_2025_talent_bundles.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="StickerReward">
+			<Panel class="StickerReward">
+				<DOTAUIEconSetPreview id="StickerPreview" class="HideStickerbacks" stickeranim="sticker_card_idle_fold" stickermap="scenes/stickers/sticker_basic" />
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelReward">
+			<Panel class="ChatWheelReward">
+				<DOTAPreviewAudioButton class="Round Small" id="ChatWheelSoundButton" />
+				<Label class="ChatWheelText" text="{s:chat_wheel_label}" />
+			</Panel>
+		</snippet>
+		<snippet name="AutographReward">
+			<Panel class="AutographReward">
+				<DOTAEconItem id="AutographImage" itemdef="3048" />
+			</Panel>
+		</snippet>
+		<snippet name="Reward">
+			<Panel class="Reward">
+				<Label class="RewardName" text="{s:reward_name}" />
+				<Panel id="RewardContents" />
+			</Panel>
+		</snippet>
+		<snippet name="BundleTier">
+			<Panel class="BundleTier">
+				<Image class="CellStarMap" src="s2r://panorama/images/events/international_2025/artwork/starmap_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="BundleTierTexture" />
+				<Label class="TierName" text="{s:tier_name}" />
+				<Panel id="TierRewards" />
+				<Image class="PurchasedTick" src="s2r://panorama/images/control_icons/24px/check_corner_topright.vsvg" texturewidth="48px" textureheight="48px" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_International2025_Talent_Supported );" />
+				<DOTAInternational2025Button id="PurchaseButton" class="LightGreen" text="#DOTA_International2024_TalentBundle_Purchase" />
+				<Panel class="BundleTierBorder" hittest="false" />
+				<Panel class="SupportedBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPInternational2025TalentBundlesPopup class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Image class="DashOrnament" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="TopDash" />
+		<Panel class="PopupContents">
+			<Panel class="BackgroundImage" />
+			<Panel class="PopupBorder" hittest="false" />
+			<Panel class="Header">
+				<Label class="Title" text="#DOTA_International2025_TalentBundle_Title" html="true" />
+				<Label class="Subtitle" html="true" text="#DOTA_International2025_TalentBundle_Desc" />
+				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel class="NoBundleTiers">
+				<Label text="#DOTA_International2025_TalentBundle_NoBundles" />
+			</Panel>
+			<Panel id="BundleTiers" />
+		</Panel>
+		<Panel class="TopDash" />
+		<Image class="DashOrnament Flipped" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+	</DOTABPInternational2025TalentBundlesPopup>
+</root>

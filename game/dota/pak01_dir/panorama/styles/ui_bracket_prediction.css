@@ -5,19 +5,47 @@
 	width: 120px;
 	height: fit-children;
 	overflow: noclip;
-	brightness: 0.8;
-	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.5);
+}
+
+.NoSelectionBorder
+{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	opacity: 0;
+}
+
+.NoSelection:not(.Locked) .NoSelectionBorder
+{
+	opacity: 1;
+	animation-name: GlowNoSelection;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+@keyframes 'GlowNoSelection'
+{
+	0%
+	{
+		brightness: 1;
+		box-shadow: 0px 0px 24px -2px rgba(138, 66, 255, 0.1);
+	}
+	
+	100%
+	{
+		brightness: 2;
+		box-shadow: 0px 0px 28px -2px rgba(138, 66, 255, 0.5);
+	}
+	
 }
 
 .Prediction:disabled
 {
 	saturation: 0;
 	background-color: gray;
-}
-
-.MadeSelection.Prediction
-{
-	background-color: black;
 }
 
 .PredictionContainer
@@ -53,8 +81,21 @@
 
 .HasTeam1 .Picker.Team1,.HasTeam2 .Picker.Team2
 {
-	background-color: #2d1d21;
-	border: 1px solid #6b4a4d63;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4f1192 ), to( #2e165b ) );
+	border: 1px solid rgba(161, 124, 255, 0.5);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.5) ) );
+	z-index: 1;
+}
+
+.SelectedTeam1.HasTeam1 .Picker.Team1,.SelectedTeam2.HasTeam2 .Picker.Team2
+{
+	border: 1px solid #FFE4A6;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #999999 ) );
+	box-shadow: 0px 0px 24px -2px rgba(255, 192, 32, 0.2);
+	brightness: 1.6;
+	transition-property: brightness;
+	transition-duration: 0.1s;
+	z-index: 2;
 }
 
 .HasTeam1 .Picker.Team1:active,.HasTeam2 .Picker.Team2:active
@@ -89,14 +130,14 @@
 	height: SlotHeight;
 	width: SlotWidth;
 	font-size: SlotLabelFontSize;
-	color: rgb(190, 162, 162);
+	color: gradient( linear, 0% 0%, 0% 100%, from( #c97dff ), to( #8648cd ) );
+	text-align: center;
 	horizontal-align: center;
 	vertical-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0d052e ), to( #0f0632 ) );
+	border: 1px solid rgba(175, 143, 255, 0.1);
+	padding-top: 7px;
 	visibility: visible;
-	text-align: center;
-	background-color: #0b120f;
-	border: 1px solid #51373a63;
-	padding-top: 2px;
 }
 
 .AspectRatio16x10 .NoTeamMark
@@ -124,14 +165,31 @@
 	visibility: collapse;
 }
 
+.PickerLockIcon
+{
+	margin-bottom: 1px;
+	vertical-align: center;
+	width: 16px;
+	padding: 2px 1px;
+	img-shadow: 0px 2px 12px black;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ecdcff ), to( #bda5d1 ) );
+	opacity: 0.8;
+	visibility: collapse;
+}
+
+.Locked .PickerLockIcon
+{
+	visibility: visible;
+}
+
 .TeamImage
 {
-	height: 20px;
-	width: 20px;
+	height: 24px;
+	width: 24px;
 	visibility: collapse;
 	vertical-align: center;
-	margin-right: 6px;
-	margin-left: 6px;
+	margin-right: 4px;
+	margin-left: 4px;
 }
 
 .TeamImage Image
@@ -153,30 +211,50 @@
 {
 	font-size: 14px;
 	text-align: left;
-	color: rgb(190, 162, 162);
-	height: 16px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #eceeff ), to( #b0b3d7 ) );
+	text-shadow: textShadowMedium;
+	height: 17px;
+	margin-top: 1px;
 	vertical-align: center;
 	width: fill-parent-flow(1);
+	text-overflow: shrink;
 }
 
 .Crown
 {
 	horizontal-align: right;
 	vertical-align: middle;
-	height: 16px;
-	width: 16px;
-	margin-right: 4px;
+	height: 20px;
+	width: 20px;
+	margin-right: 5px;
+	margin-left: 2px;
 	background-image: url("s2r://panorama/images/compendium/international2024/crown.vsvg");
 	background-repeat: no-repeat;
-	background-size: 80%;
+	background-size: 65%;
 	background-position: center;
-	background-texture-size: 40px;
 	background-img-opacity: 0;
 	border-radius: 50%;
-	background-color: black;
-	border: 1px solid rgba(190, 162, 162, 0.2);
-	transition-property: border, background-img-opacity, background-color;
-	transition-duration: 0.1s;
+	background-color: rgb(21, 6, 56);
+	border: 1px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, gold1 ), to( gold2 ) );
+	box-shadow: 0px 1px 6px rgba(24, 1, 40, 0.5);
+	transition-property: border, box-shadow;
+	transition-duration: 0.1s, 0.05s;
+}
+
+.Crown:hover
+{
+	border: 1px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, white ), to( white ) );
+	box-shadow: 0px 0px 24px rgba(161, 110, 255, 0.8);
+}
+
+.Locked .Crown
+{
+	background-color: rgba(21, 6, 56, 0.632);
+	border: 1px solid rgba(213, 192, 255, 0.103);
+	border-brush: white;
+	box-shadow: none;
 }
 
 .Active .Crown:hover
@@ -211,14 +289,26 @@
 	border: 0px;
 }
 
-.Correct1 #Crown0,.Correct2 #Crown1
+.Incorrect2 .Team1,.Incorrect1 .Team2,.Correct2 .Team1,.Correct1 .Team2
 {
-	wash-color: winnerGreen;
+	opacity: 0.2;
 }
 
-.Incorrect1 #Crown0,.Incorrect2 #Crown1
+.Incorrect1 .Picker.Team1 .Crown,.Incorrect2 .Picker.Team2 .Crown,.Correct1 .Picker.Team1 .Crown,.Correct2 .Picker.Team2 .Crown
 {
-	wash-color: loserRed;
+	visibility: collapse;
+}
+
+.SelectedTeam1.Correct1 .Picker.Team1,.SelectedTeam2.Correct2 .Picker.Team2
+{
+	border: 2px solid #4df384;
+	box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.4);
+}
+
+.SelectedTeam1.Incorrect1 .Picker.Team1,.SelectedTeam2.Incorrect2 .Picker.Team2
+{
+	border: 2px solid loserRed;
+	box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes 'GlowActiveCrownSelector'
@@ -243,14 +333,13 @@
 
 .CompletedPanel
 {
-	width: 100%;
 	height: 100%;
-	padding-right: 20px;
 }
 
 .CompletionIcon
 {
-	margin-right: 3px;
+	margin-right: 9px;
+	margin-left: 5px;
 	horizontal-align: right;
 	vertical-align: center;
 	background-size: contain;

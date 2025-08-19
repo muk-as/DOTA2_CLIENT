@@ -20,7 +20,6 @@
 0 = small, 1 = med (default), 2 = large
 0 == ( pInstance->GetOwnerEntity()->GetEntityIdentity()->GetFlags() & EF_IN_STAGING_LIST
 0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample
-0 \v\b
 0 directions!\n
 0 to $1
 0 to max
@@ -52,7 +51,7 @@
 01.1f
 012
 0123
-01230
+01230m
 012345678
 0123456789
 0123456789:;<=>?@ABCDEFGHIJKLLMNOPQRSTUVWXY[]_`bdefhjlnprtvz
@@ -65,7 +64,6 @@
 0124
 0134
 019lu
-01\r\b
 01f
 0234
 0246AFKPUZ_dddddd
@@ -89,15 +87,11 @@
 02u:%02u
 02x%c
 02x%s
-03\v\b
 03d
 03o
 043\a7
 048
 048<@DHLPTX\\`dhlpt
-04\r\b
-04\t\b
-04\v\b
 04d %s :: %s (%03d)\n
 04d%02d%02d%02d%02d%02dZ
 04d_%02d_%02d_%02d_%02d_%02d
@@ -107,7 +101,6 @@
 04u-%02u-%02u %02u:%02u:%02u
 04x
 05=k
-05\r\b
 06d
 0700
 0800
@@ -116,88 +109,48 @@
 08bX
 09
 09,h
-09\v\b
 0: (V0) Legacy save format, 1: (V1) KeyValues3 save format
+0: Normal, 1:RTTI Available Main Unavailable, 2: RTTI Locked Main Unavailable, 3: RTTI Locked Main Available, 4: RTTI Locked Main Locked
 0: line, +: curve to the 'right' from node 1 to node 2, -: curve left
 0:%02d
 0;Q5
 0<cz
 0=off, 1=on, 2=debug visualization
 0@9
-0C\n\b
-0C\r\b
-0F\b
-0F\v\b
-0H\n\b
-0H\r\b
-0H\v\b
-0I\n\b
-0J\v\b
-0L\n\b
-0M\r\b
+0E\v\b
+0L\f\b
 0Oød
-0P\n\b
-0P\v\b
-0R\r\b
 0RژAX
-0S\v\b
-0V\f\b
-0V\r\b
-0V\v\b
 0W/5
-0Y\f\b
-0Y\r\b
 0Z@q
 0ZE\aK
-0\a\b
-0\a\r\b
 0\aw,a
 0\b88
-0\b\v\b
 0\f<pqA1
 0\n
-0\n\r\b
+0\n\f\b
+0\r \b
 0\r0#0)070;0U0Y0[0g0q0y0}0
-0\r\r\b
-0\t\b
-0\t\v\a
+0\t\f\b
 0\v\b
-0\v\f\b
 0`\f9
-0b\f\b
-0b\r\b
-0e\f\b
 0e\r8
-0e\r\b
 0enum $1 {\n
 0f
 0fT
-0h\f\b
-0h\r\b
-0h\t\b
-0j\n\b
-0k\f\b
-0k\r\b
+0g\v\b
 0message $1
 0nP
 0nV4
-0n\f\b
-0n\r\b
 0oneof $1
 0option $1;\n
 0p\bT
 0pp
 0pp@5tqE?|sO541
-0q\f\b
-0q\r\b
 0rpc $1($4.$2) returns ($5.$3
 0tU+xc
-0t\f\b
-0t\r\b
-0uJ\a
-0w\f\b
-0w\n\b
-0w\r\b
+0t\v\b
+0w\v\b
 0x" must be followed by hex digits
 0x%08X
 0x%4.4x
@@ -205,10 +158,8 @@
 0x%s
 0x%x
 0x%x, 0x%x
-0x\t\b
 0z
-0z\f\b
-0z\r\b
+0z\v\b
 0}dV
 0ՙd
 1
@@ -220,6 +171,7 @@
 1 = always block, 2 = block after attack, 3 = block, then jab
 1 = force setup of refrect / refact pipelines even when using cheap water
 1 == client, 2 == server
+1 \b
 1 arguments expected: %s <map name>\n
 1 to force dialog immediately, 2 to force ready dialog when we lose focus
 1 to pretend they're not a plus subcriber, 1 to pretend they are, 0 for default
@@ -277,6 +229,7 @@
 10CMsgIDLinkILj1ELj16ELj7688E38CMsgClientToGCUpdateFilteredPlayerNoteE
 10CMsgIDLinkILj1ELj16ELj7690E23CMsgClientToGCClaimSwagE
 10CMsgIDLinkILj1ELj16ELj8006E32CMsgClientToGCPlayerStatsRequestE
+10CMsgIDLinkILj1ELj16ELj8077E31CMsgClientToGCWatchingBroadcastE
 10CMsgIDLinkILj1ELj16ELj8118E22CMsgWeekendTourneyOptsE
 10CMsgIDLinkILj1ELj16ELj8120E23CMsgWeekendTourneyLeaveE
 10CMsgIDLinkILj1ELj16ELj8168E32CMsgClientToGCOpenPlayerCardPackE
@@ -1495,6 +1448,7 @@
 15CAsyncDataCacheI6EEvent25CMsgRoadToTIAssignedQuestE
 15CAsyncDataCacheI6EEvent29CDotaLabyrinthActiveBlessingsE
 15CAsyncDataCacheI6EEvent30CMsgGCToClientWageringResponseE
+15CAsyncDataCacheI6EEvent37CMsgClientToGCGetEventRankingResponseE
 15CAsyncDataCacheI6EEvent49CMsgClientToGCRequestArcanaVotesRemainingResponseE
 15CAsyncDataCacheI9ECurrency18market_full_data_tE
 15CAsyncDataCacheI9ELanguage39CMsgAvailablePrivateCoachingSessionListE
@@ -6133,16 +6087,14 @@
 1FV
 1GNK
 1H@H\b
-1K\b
 1L$1
 1M
 1O
 1T欗D
 1X
 1XG
-1\n\b
+1\f\b
 1\r
-1\r\b
 1\v\b
 1] -> empty
 1] -> gsn(empty
@@ -6167,6 +6119,7 @@
 1|n\e
 1~Pt
 1җZ\a
+1ԸR
 1ߍ9r#xV
 1糅dn
 1캵i\aq
@@ -6934,6 +6887,7 @@
 22CEntityComponentHelper
 22CEntityDebugGameSystem
 22CEntityMessageFixAngle
+22CEventUserRankingCache
 22CExternalWebApiService
 22CGBackpackSortFinished
 22CGCJobOtherLeftChannel
@@ -9314,6 +9268,7 @@
 27CMsgIDLinkGenericClientToGCILj1ELj7359E24CMsgDOTAChatModeratorBanE
 27CMsgIDLinkGenericClientToGCILj1ELj7669E31CMsgClientToGCUpdatePartyBeaconE
 27CMsgIDLinkGenericClientToGCILj1ELj7682E20CMsgClientToGCMMInfoE
+27CMsgIDLinkGenericClientToGCILj1ELj8077E31CMsgClientToGCWatchingBroadcastE
 27CMsgIDLinkGenericClientToGCILj1ELj8204E23CMsgDOTASetFavoriteTeamE
 27CMsgIDLinkGenericClientToGCILj1ELj8264E30CMsgPartyReadyCheckAcknowledgeE
 27CMsgIDLinkGenericClientToGCILj1ELj8718E40CMsgClientToGCAcknowledgeReporterUpdatesE
@@ -9928,6 +9883,7 @@
 29CDOTA_DB_Page_ControlsLibrary
 29CDOTA_DB_Page_GuildMemberList
 29CDOTA_DB_Page_HeroRelicsDebug
+29CDOTA_DB_Page_SeasonalRewards
 29CDOTA_DB_Page_TreasureDetails
 29CDOTA_DB_Page_VoidSpiritDebut
 29CDOTA_DB_Page_WraithKingDebut
@@ -10123,6 +10079,7 @@
 29CMsgClientToGCGetAllHeroOrder
 29CMsgClientToGCGetBattleReport
 29CMsgClientToGCGetDPCFavorites
+29CMsgClientToGCGetEventRanking
 29CMsgClientToGCGetHeroStickers
 29CMsgClientToGCH264Unsupported
 29CMsgClientToGCIntegrityStatus
@@ -10333,10 +10290,8 @@
 2[j
 2\\fWQx
 2\a3%3+3/353A3G3[3_3g3k3s3y3
-2\b
 2\b \btBo
 2\b=F
-2\b\b
 2\bl
 2\etG
 2\ffA
@@ -10344,8 +10299,8 @@
 2\r\b
 2\rlhp
 2\t"n
-2\t\b
 2\vJ
+2\v\b
 2]Rö3
 2^pV
 2_bot
@@ -11012,6 +10967,7 @@
 31CDOTA_DB_Frontpage_TI10Upcoming
 31CDOTA_DB_HeroPlusAverageStatRow
 31CDOTA_DB_International2024_Tabs
+31CDOTA_DB_International2025_Tabs
 31CDOTA_DB_Page_BP_Crownfall_Base
 31CDOTA_DB_Page_Collection_Browse
 31CDOTA_DB_Page_Collection_Global
@@ -11024,6 +10980,7 @@
 31CDOTA_DB_Page_Comp_TI9_Overview
 31CDOTA_DB_Page_CustomGamesBrowse
 31CDOTA_DB_Page_GuildsLeaderboard
+31CDOTA_DB_Page_International2025
 31CDOTA_DB_Page_Plus_Achievements
 31CDOTA_DB_Page_PudgePersonaDebut
 31CDOTA_DB_Page_WatchDPCStandings
@@ -11260,6 +11217,7 @@
 31CMsgClientToGCSetGuildRoleOrder
 31CMsgClientToGCUnderDraftRequest
 31CMsgClientToGCUpdatePartyBeacon
+31CMsgClientToGCWatchingBroadcast
 31CMsgDOTABotDebugInfo_Bot_Action
 31CMsgDOTAChatGetUserListResponse
 31CMsgDOTAClaimGatedEventResponse
@@ -11979,6 +11937,7 @@
 33CDOTA_DB_Background_CC_Summer2023
 33CDOTA_DB_Background_Frostivus2023
 33CDOTA_DB_Button_International2024
+33CDOTA_DB_Button_International2025
 33CDOTA_DB_ContextMenu_PlayerPicker
 33CDOTA_DB_Page_AcomplishmentsDebug
 33CDOTA_DB_Page_BP_Crownfall_Quests
@@ -13049,6 +13008,7 @@
 35CDOTA_Modifier_XP_Fountain_Building
 35CDOTA_Modifier_Zuus_Lightning_Hands
 35CDOTA_PanoramaScript_LocalInventory
+35CDOTA_Popup_International2025_Aegis
 35CDOTA_UIPolicy_ManageAvoidedPlayers
 35CDOTA_UI_BP_Spring2021_EventSummary
 35CDOTA_UI_BroadcasterGenericImageRow
@@ -13512,6 +13472,7 @@
 36CDOTA_DB_Page_BP_Crownfall_Overworld
 36CDOTA_DB_Page_BP_Spring2021_Purchase
 36CDOTA_DB_Page_Diretide2020_Cosmetics
+36CDOTA_DB_Page_International2025_Base
 36CDOTA_DB_Page_WatchDPCStandingsMajor
 36CDOTA_DB_Popup_CustomGameCreateLobby
 36CDOTA_DB_Popup_CustomGameFindPrivate
@@ -13920,6 +13881,7 @@
 37CDOTA_Ability_Treant_LifeBomb_Explode
 37CDOTA_Comp_DPC_PlayerCardDetail_Popup
 37CDOTA_Comp_TI9_PlayerCardDetail_Popup
+37CDOTA_DB_Background_International2025
 37CDOTA_DB_CavernCrawl_PostGameProgress
 37CDOTA_DB_Frontpage_VideoStream_Twitch
 37CDOTA_DB_Page_BP_Fall2021_CavernCrawl
@@ -14150,6 +14112,7 @@
 37CMsgClientToGCGetAllHeroOrderResponse
 37CMsgClientToGCGetBattleReportResponse
 37CMsgClientToGCGetDPCFavoritesResponse
+37CMsgClientToGCGetEventRankingResponse
 37CMsgClientToGCGetHeroStickersResponse
 37CMsgClientToGCKickGuildMemberResponse
 37CMsgClientToGCModifyGuildRoleResponse
@@ -14346,6 +14309,7 @@
 38CDOTA_DB_Page_BP_International2019_Zoo
 38CDOTA_DB_Page_BP_International2020_Zoo
 38CDOTA_DB_Page_Diretide_TreasureDetails
+38CDOTA_DB_Page_International2025_Talent
 38CDOTA_DB_Page_Post_Game_Overview_Coach
 38CDOTA_DB_Popup_Matchmaking_Region_Ping
 38CDOTA_DB_Popup_PurchaseRandomHeroRelic
@@ -14713,6 +14677,7 @@
 39CDOTA_DB_Page_BP_International2023_Home
 39CDOTA_DB_Page_BP_International2024_Base
 39CDOTA_DB_Page_BP_Spring2021_CavernCrawl
+39CDOTA_DB_Page_International2025_Fantasy
 39CDOTA_DB_Page_Post_Game_Kill_Matrix_Row
 39CDOTA_DB_Page_ShowcaseAdminReportReview
 39CDOTA_DB_Popup_EventDungeonLeaderboards
@@ -14887,6 +14852,7 @@
 39CDOTA_Modifier_Woodland_Striders_Active
 39CDOTA_Modifier_Zuus_Heavenly_Jump_Boost
 39CDOTA_Modifier_Zuus_ThunderTrail_Debuff
+39CDOTA_Popup_International2025_ItemClaim
 39CDOTA_UIPolicy_ManagePartySearchPlayers
 39CDOTA_UI_ContextMenu_GuildPatternPicker
 39CDOTA_UI_ContextMenu_HeroSlotItemPicker
@@ -15083,10 +15049,7 @@
 3Wk1
 3Z\e
 3\a74
-3\b
-3\b\b
-3\f\b
-3\n\b
+3\r\b
 3\v;8BJ\nH
 3_D\e
 3_L\n
@@ -15123,6 +15086,7 @@
 3wQ
 3wj
 3x\a
+3z\a
 3{H
 3|B
 3|rN
@@ -15131,6 +15095,7 @@
 4)m1
 4+ 8
 4+w
+4. \b
 4.j
 4/\aO
 40 40 40 196
@@ -15340,6 +15305,7 @@
 40CDOTA_UI_BattleReport_Screen_RoleDetails
 40CDOTA_UI_ContextMenu_BattleReportColumns
 40CDOTA_UI_Popup_FightingGameChallengeSent
+40CDOTA_UI_Tooltip_International2025_Score
 40CDOTA_Widget_Watch_DPC_Game_Details_Live
 40CDemoRecovery_DemoInitialSpawnGroupEntry
 40CEconTool_SupportGrantEventPremiumPoints
@@ -15565,6 +15531,7 @@
 41CDOTA_DB_Page_BP_International2023_Quests
 41CDOTA_DB_Page_BP_International2023_Talent
 41CDOTA_DB_Page_BP_International2024_Talent
+41CDOTA_DB_Page_International2025_ItemClaim
 41CDOTA_DB_Page_Post_Game_Fall2021EventGame
 41CDOTA_DB_Page_Post_Game_Support_Items_Row
 41CDOTA_DB_PopupSettingsReborn_SettingsBody
@@ -15707,7 +15674,9 @@
 41CDOTA_Modifier_Windrunner_Windrun_Passive
 41CDOTA_Modifier_Winter_Wyvern_Cold_Embrace
 41CDOTA_Modifier_Winter_Wyvern_Dragon_Sight
+41CDOTA_Popup_International2025_FantasyHelp
 41CDOTA_UI_ContextMenu_HeroGridConfigPicker
+41CDOTA_UI_International2025_Fantasy_Period
 41CDOTA_UI_Popup_CavernCrawlClaimMapVariant
 41CDOTA_UI_Tooltip_Group_Member_Region_Ping
 41CDOTA_Unit_AghsFort_Creature_DragonKnight
@@ -16034,6 +16003,7 @@
 42CDOTA_Modifier_WarpineRaider_SeedShot_Slow
 42CDOTA_Modifier_Weaver_GeminateAttack_Bonus
 42CDOTA_Modifier_Winter_Wyvern_Winters_Curse
+42CDOTA_Popup_International2025_FantasyTitle
 42CDOTA_UI_BP_International2022_EventSummary
 42CDOTA_UI_Popup_PurchaseItemWithEventPoints
 42CDOTA_Unit_AghsFort_SpectralTusk_Tombstone
@@ -16166,6 +16136,7 @@
 43CDOTA_DB_Page_BP_International2022_Diretide
 43CDOTA_DB_Page_BP_International2022_Purchase
 43CDOTA_DB_Page_BP_International2022_Stickers
+43CDOTA_DB_Page_International2025_Predictions
 43CDOTA_DB_Popup_BP_Crownfall_Encounter_Shmup
 43CDOTA_DB_Popup_BP_International2023_Welcome
 43CDOTA_DB_Popup_BP_International2024_Welcome
@@ -16293,6 +16264,7 @@
 43CDOTA_Modifier_VoidSpirit_Dissimilate_Invis
 43CDOTA_Modifier_VoidSpirit_Dissimilate_Phase
 43CDOTA_Modifier_Zuus_ThundergodsWrathThinker
+43CDOTA_Popup_International2025_FantasyChoice
 43CGCClientJobDOTABroadcastNotificationClient
 43CGCClientJobRequestCompendiumSelectionState
 43CGCClientJobRequestTopLeagueMatchesResponse
@@ -16837,6 +16809,7 @@
 45CDOTA_UI_BP_International2024_PredictionGroup
 45CDOTA_UI_ContextMenu_DotaPlusSuggestionPicker
 45CDOTA_UI_ContextMenu_HeroGridCategorySettings
+45CDOTA_UI_International2025_PredictionRankings
 45CDOTA_UI_Popup_ConfirmUnlockDotaPlusChatWheel
 45CDefaultResponseSystemSaveRestoreBlockHandler
 45CDotaMsgStructuredTooltipProperties_Attribute
@@ -16980,8 +16953,10 @@
 46CDOTA_DB_Page_BP_International2023_Predictions
 46CDOTA_DB_Page_BP_International2024_Predictions
 46CDOTA_DB_Page_Collection_Global_InterfaceItems
+46CDOTA_DB_Page_International2025_SupportersClub
 46CDOTA_DB_Page_OwnedItemDetails_PrimaryControls
 46CDOTA_DB_Popup_BP_Crownfall_Encounter_Fighting
+46CDOTA_DB_SeasonalRewards_FrontpageCellContents
 46CDOTA_Modifier_AbyssalUnderlord_Firestorm_Burn
 46CDOTA_Modifier_Abyssal_Underling_Warrior_Sight
 46CDOTA_Modifier_AghsFort_ShadowWaveEffectPotion
@@ -17078,10 +17053,13 @@
 46CDOTA_Modifier_Venomancer_NoxiousPlaguePrimary
 46CDOTA_Modifier_VoidSpirit_AetherRemnantThinker
 46CDOTA_Modifier_VoidSpirit_AstralStep_Intrinsic
+46CDOTA_Popup_International_2025_PredictionsHelp
 46CDOTA_UI_BP_International2022_StickerStoreItem
 46CDOTA_UI_BP_International2023_PredictionSeries
 46CDOTA_UI_BP_International2024_PredictionSeries
 46CDOTA_UI_ContextMenu_DotaPlusNeutralItemPicker
+46CDOTA_UI_International2025_FantasyCraft_Tablet
+46CDOTA_UI_International2025_PredictionMainEvent
 46CEconItemAttributeIterator_ApplyAttributeFloat
 46CEconItemAttributeIterator_EconItemViewWrapper
 46CGCClientJobToggleBroadcastChannelCameraStatus
@@ -17288,6 +17266,7 @@
 47CDOTA_Modifier_Windrunner_Windrun_Invis_Thinker
 47CDOTA_Modifier_Winter_Wyvern_Arctic_Burn_Flight
 47CDOTA_Modifier_Winter_Wyvern_Winters_Curse_Aura
+47CDOTA_UI_Tooltip_International2025_FantasyTitle
 47CInlineJob_CMsgGCToClientFightingGameStartMatch
 47CInlineJob_CMsgGCToClientGuildMembershipUpdated
 47CInlineJob_CMsgGCToClientInFlightChargesUpdated
@@ -17450,6 +17429,7 @@
 48CDOTA_Modifier_Winter_Wyvern_Splinter_Blast_Slow
 48CDOTA_Modifier_Wisp_Tether_Attack_Damage_Penalty
 48CDOTA_UI_Popup_CollectorsCacheAvailableDataCache
+48CDOTA_UI_Popup_International2025_CommunityBundle
 48CInlineJob_CMsgDOTAPostGameItemAwardNotification
 48CInlineJob_CMsgGCToClientAggregateMetricsBackoff
 48CInlineJob_CMsgGCToClientGuildMembersDataUpdated
@@ -17533,6 +17513,7 @@
 49CDOTA_DB_Popup_BP_International2023_TalentBundles
 49CDOTA_DB_Popup_BP_International2024_FantasyChoice
 49CDOTA_DB_Popup_BP_International2024_TalentBundles
+49CDOTA_DB_Popup_BP_International2025_TalentBundles
 49CDOTA_Modifier_AbyssalUnderlord_Firestorm_Thinker
 49CDOTA_Modifier_Abyssal_Underling_Warrior_LastWill
 49CDOTA_Modifier_Abyssal_Underling_Warrior_ManaBurn
@@ -17685,10 +17666,10 @@
 4W
 4Zis
 4\a
+4\b
 4\e$j
 4\e474E4U4W4c4i4m4
 4\fPl
-4\v\b
 4_bot
 4_top
 4_week_streak
@@ -18470,13 +18451,13 @@
 5Z\bJ
 5\at
 5\b
-5\f\b
 5\f\r
 5\n
+5\r\b
 5\r\v
-5\t\b
 5\vFuo
 5\vSF
+5\v\b
 5`q@roz
 5b!g
 5c
@@ -18500,6 +18481,7 @@
 5Ⱥb
 5俛Na
 6
+6 \b
 6#6165676;6M6O6S6Y6a6k6m6
 6%vi\b
 6+?R6
@@ -18727,14 +18709,13 @@
 6Sp
 6Zȷ\a
 6\aOL
+6\b
 6\bnH
 6\eWE
 6\f
-6\n\b
 6\r\b
 6\rߖ3ja
 6\t=t
-6\t\b
 6\v\b
 6_wEX
 6afD
@@ -18760,6 +18741,7 @@
 6ڲذML
 6ܾO
 7
+7 \b
 7!K
 7"u\n
 7$U8
@@ -18818,13 +18800,12 @@
 7W}2
 7XRJ
 7\a7\e7?7E7I7O7]7a7u7
-7\f\b
 7\nF
 7\n\r5
 7\r3
+7\r\b
 7\rayf
 7\tFq
-7\v\b
 7^0g
 7^Y
 7_b
@@ -18849,6 +18830,7 @@
 8%J
 8'B
 8+Qw
+8. \b
 8.3f
 8.3f %8.3f %8.3f
 8.3f[%d] %s:  %s
@@ -18870,7 +18852,6 @@
 82\n\f\f
 8333
 83C_DOTA_Ability_CDOTA_Ability_Special_Bonus_Unique_Hoodwink_SharpshooterPierceHeroes
-83\a
 83\v
 83\v\nHBJ7
 851Pe
@@ -18912,10 +18893,9 @@
 8TZvrv
 8W\f
 8\e7/Q\aa
-8\n\b
-8\r\b
 8\v
 8\v8!83858A8G8K8S8W8_8e8o8q8}8
+8\v\b
 8]Vc2
 8b  16-May-2010
 8ca1
@@ -19050,10 +19030,9 @@
 9Y@nJM
 9Zr4
 9\a
-9\a\b
-9\f\b
 9\notɾz
 9\r
+9\r\b
 9\tiI
 9\v\b
 9]Jn+LhyK
@@ -20820,8 +20799,6 @@ AWt
 A\b
 A\eB9
 A\n
-A\n\b
-A\r\b
 A\rjW
 A_txt
 AbW
@@ -21091,6 +21068,7 @@ AccountHighest1
 AccountHighest2
 AccountHighest3
 AccountID=%u
+AccountIneligible
 AccountPicker
 AccountSharingBan
 AccountTabButton
@@ -21365,6 +21343,8 @@ Advanced joystick settings initialized for joystick %d\n------------\n
 AdvancedSettingsTitle
 AdvancedVideo
 AdvancedVisible
+AegisEmoticonClaim
+AegisReward
 Aegises
 Affiliation Changed
 After
@@ -21675,9 +21655,12 @@ Any extra waiting cursors will be terminated. -1 for infinite cursors
 Any language
 AnyBarrier
 AnyBroadcastersConnected
+AnyClaimable
+AnyClaimableCapsules
 AnyCoachesInMatch
 AnyCompleted
 AnyLiveGames
+AnyOwnedCapsules
 AnyTeamMemberIneligible
 AnyTeamMemberPlayedTooRecently
 Anything before this date is not considered news anymore
@@ -21743,6 +21726,7 @@ ArcanaPopup
 ArcanaProgress
 ArcanaProgressHitBox
 ArcanaProgressPanel
+ArcanaReward
 ArcanaScoreBucket%d
 ArcanaStyleUnlocked
 ArcanaVote
@@ -22486,7 +22470,6 @@ BULLET
 BUMP_WITH_TIMEOUT_WHEN_LEARNED
 BURN
 BURNING_GROUND
-BV\b
 BWK
 BY_FILE_CTRL
 BY_Lq
@@ -22501,8 +22484,6 @@ BYldUploadGuideToWorkshop
 BZZn\rN]#8f
 BZq
 B\b
-B\f\b
-B\v\b
 B_txt
 B`4I
 B`z
@@ -22666,6 +22647,7 @@ Base_CmdKeyValues
 Basic OCSP Response
 Basic math support
 BasicGraphs
+BasicHotkeys
 BasicInfo
 BasicItems
 BasicProgressBar
@@ -26425,6 +26407,10 @@ CDOTA_DB_Page_HeroGuides::OnHeroGuidePublish
 CDOTA_DB_Page_HeroGuides::OnHeroGuidePublishAll
 CDOTA_DB_Page_HeroV2::EventShowHeroStickers
 CDOTA_DB_Page_Heroes::SetupCavernCrawl
+CDOTA_DB_Page_International2025::EventActivateCompanion
+CDOTA_DB_Page_International2025_Fantasy::ToggleHelp
+CDOTA_DB_Page_International2025_ItemClaim::ClaimItem
+CDOTA_DB_Page_International2025_Talent::EventShowTalentBundles
 CDOTA_DB_Page_LaneSuggestDebug::EventHeroSelected
 CDOTA_DB_Page_OwnedItemDetails - DefIndex: %u, AccountID: %u, ItemID: %llu
 CDOTA_DB_Page_OwnedItemDetails::AddSocketToItem
@@ -26473,6 +26459,7 @@ CDOTA_DB_Popup_BP_International2024_FantasyChoice::AddPlayerChoice no league dat
 CDOTA_DB_Popup_BP_International2024_FantasyChoice::OnShow called without AddPlayerChoice ever being called. league=%u
 CDOTA_DB_Popup_BP_International2024_TalentBundles::EventPurchaseBundle
 CDOTA_DB_Popup_BP_International2024_Welcome::EventClaimRewards
+CDOTA_DB_Popup_BP_International2025_TalentBundles::EventPurchaseBundle
 CDOTA_DB_Popup_BotSelection::RequestItemList
 CDOTA_DB_Popup_ChinaSSA
 CDOTA_DB_Popup_GiftRestrictions::SetupPopup
@@ -26491,6 +26478,7 @@ CDOTA_DB_Popup_SpinWheel::EventSpinWheel
 CDOTA_DB_PostGameProgress::EventConfirmAbusiveCoachRating
 CDOTA_DB_ProfileTeammateStats_ManageTeammates
 CDOTA_DB_Tooltip_Crownfall_ActSelector::EventOverworldSelected
+CDOTA_DOTADBPageSeasonalRewards
 CDOTA_DarkWillow_Creature
 CDOTA_DataCustomTeam
 CDOTA_DataDire
@@ -30446,6 +30434,10 @@ CDOTA_PanoramaScript_Particles
 CDOTA_PhantomAssassin_Gravestone
 CDOTA_PlayerChallengeInfo
 CDOTA_PlayerResource
+CDOTA_Popup_International2025_FantasyChoice::AddPlayerChoice no league data for league=%u
+CDOTA_Popup_International2025_FantasyChoice::AddPlayerChoice no league data for league=%u craftingId=%u
+CDOTA_Popup_International2025_FantasyChoice::OnShow called without AddPlayerChoice ever being called. league=%u
+CDOTA_Popup_International2025_ItemClaim::ClaimItem
 CDOTA_PushWave
 CDOTA_ReconnectInfo
 CDOTA_RoshanSpawner
@@ -30500,12 +30492,18 @@ CDOTA_UI_HeroGrid_New::EventDeleteSelectedConfig
 CDOTA_UI_HeroGuideBuilder::EditGuide
 CDOTA_UI_HeroGuideViewer::QueryVote
 CDOTA_UI_Hero_Picker::GetHeroFacet
+CDOTA_UI_International2025_Fantasy_Period::RollOperation
+CDOTA_UI_International2025_Fantasy_Period::SelectPlayer
+CDOTA_UI_International2025_Fantasy_Period::SelectPlayerForInitialRoster found no valid players. mapPlayingTeams=%d, totalPossiblePlayers=%d
+CDOTA_UI_International2025_Fantasy_Period::SelectTitles
+CDOTA_UI_International2025_PredictionRankings::EventTeamSelected
 CDOTA_UI_Popup_AutographReward::RequestStats
 CDOTA_UI_Popup_BroadcasterFact - Could not find stats key in secondary stats file %s\n
 CDOTA_UI_Popup_BroadcasterFact - Could not load secondary stats file %s\n
 CDOTA_UI_Popup_BroadcasterFact::RequestStats
 CDOTA_UI_Popup_GuildRole_Add::EventAddActivated
 CDOTA_UI_Popup_GuildRole_Add::EventModifyActivated
+CDOTA_UI_Popup_International2025_CommunityBundle::EventPurchaseLevel
 CDOTA_UI_Popup_ItemReceived::EventAcceptClicked::AutoEquip
 CDOTA_UI_Popup_OverwatchConvict::EventSubmitConvict
 CDOTA_UI_Popup_OverwatchPrep::EventDownloadError
@@ -32638,7 +32636,6 @@ CUtlVector<%s> element [%d] missing from net
 CUtlVector<%s> element [%d] missing from pred
 CUtlVectorEmbeddedNetworkVar
 CUtlVectorFixedGrowable
-CV\b
 CVariant
 CVariantBase
 CVariantDefaultAllocator
@@ -32683,13 +32680,10 @@ CWorldTextSceneObjectDesc
 C[L6
 C\\lVQ˅nF
 C\bD
-C\f\b
-C\n\b
 C\nף=33
 C\r\b
 C\tD\vD
 C\tr9rW
-C\v\b
 C\vc
 C]g
 C^k\e6^u
@@ -36137,8 +36131,10 @@ ChatWheelPlayButton
 ChatWheelPreview
 ChatWheelPurchaseButton
 ChatWheelReward
+ChatWheelReward%d
 ChatWheelRewardMessage
 ChatWheelRewardType
+ChatWheelSearch
 ChatWheelSettings1
 ChatWheelSettings2
 ChatWheelSoundButton
@@ -36206,6 +36202,7 @@ ChinaBanned
 ChinaSSA
 Choice
 Choice%d
+ChoiceItem
 ChoiceSelected
 Choices
 Choose Best
@@ -36263,6 +36260,7 @@ ClaimingInProgress
 ClaimingItem
 ClaimingReward
 ClaimingTreasureMap
+ClaimsSetup
 Clamp Float
 Clamp Int
 Clamp value to range (float
@@ -36635,6 +36633,7 @@ CommunicationPips
 CommunicationScoreProgressBar
 CommunicationScoreSection
 CommunicationSection
+CommunityBundle
 Comp
 CompTI10PlayerCardsTooltip
 CompTI10RewardList
@@ -36653,6 +36652,10 @@ Comparison Type for player score to baseline data or threshold value
 ComparisonValue
 Compendium Event ID
 Compendium Selection %u has correct value %u\n
+Compendium2025Activate
+Compendium2025HideScoreTooltip
+Compendium2025ShowScoreTooltip
+Compendium2025ViewReward
 CompendiumCell
 CompendiumLevelNumber
 CompendiumMatchRowReady
@@ -37245,6 +37248,7 @@ Cross3DOriented
 CrossVectors
 Crouch
 Crouching
+Crown%d
 CrownfallAct%uActive
 CrownfallActive
 CrownfallArchive
@@ -37492,6 +37496,7 @@ CutToDefaultCamera
 Cw!R
 Cwww
 Cycle
+Cycle done. result=%d, success=%s
 Cycle through the stat dropdown categories in a specified direction (-1 = back, 1 = forward
 Cycle through the stat dropdown sort methods
 Cycle: %.5f (%.5f
@@ -37528,6 +37533,7 @@ D2I_RSA_NET_2
 D2I_X509
 D2I_X509_CINF
 D2Lb
+D2\b
 D32FS8
 D33
 D333?333
@@ -37538,6 +37544,7 @@ D514p
 D55
 D58A17
 D5X
+D6 \b
 D65K
 D:/generated_set_portraits.txt
 D>\aa\n
@@ -37829,6 +37836,9 @@ DOOR_STATE_OPENING
 DOTA GameRules
 DOTA10thAnniversaryEventClaimReward
 DOTA10thAnniversaryTreasureDetails
+DOTA2025ClaimTeamCapsules
+DOTA2025ShowFanContentPurchasePopup
+DOTA202SetFanContentFavorite
 DOTA::FoW
 DOTAAbandonClicked
 DOTAAbandonConfirm
@@ -38122,6 +38132,7 @@ DOTABPInternational2024RewardsPage
 DOTABPInternational2024SupportersClub
 DOTABPInternational2024TalentBundlesPopup
 DOTABPInternational2024TalentPage
+DOTABPInternational2025TalentBundlesPopup
 DOTABPSetFanContentFavorite
 DOTABPShowFanContentPurchasePopup
 DOTABPSpring2021BasePage
@@ -38133,6 +38144,7 @@ DOTABPSpring2021WeeklyQuestsPage
 DOTABPWeekendTourneyHubPage
 DOTABackgroundCCSummer2023TriggerLookAt
 DOTABackgroundFrostivus2023
+DOTABackgroundInternational2025
 DOTABackgroundLastMatchDebugButtonVisibilityUpdated
 DOTABackgroundLastMatchDebugReset
 DOTABackgroundLastMatchUpdated
@@ -38415,6 +38427,7 @@ DOTAChatWheelLineSelected
 DOTAChatWheelMessage
 DOTAChatWheelMessageTypeSelected
 DOTAChatWheelSettings
+DOTAChatWheelSettingsClearSearch
 DOTAChatWheelSettingsMessageTypeSelected
 DOTAChatWheelSettingsToggleHideLockedMessages
 DOTAChatWheelVsScreen
@@ -38580,6 +38593,12 @@ DOTACompTI9PlayerCardDetailsPopup
 DOTACompTI9PlayerCardsPage
 DOTACompTI9PlayersPage
 DOTACompTI9TrueSightPage
+DOTACompendium25ClaimItem
+DOTACompendium25DemoItem
+DOTACompendium25PopupClaimItem
+DOTACompendium25PopupPreviewItem
+DOTACompendium25SelectItem
+DOTACompendium25ViewItem
 DOTACompendiumCaster
 DOTACompendiumCastersDelayedLanguageSelect
 DOTACompendiumCastersLanguageSelect
@@ -39085,6 +39104,7 @@ DOTAEventGoalUpdated
 DOTAEventLeaderboard
 DOTAEventLevelShield
 DOTAEventLevelState
+DOTAEventRankingUpdate
 DOTAEventRewardClaimButton
 DOTAEventRewardClaimButtonClaimRewards
 DOTAEventRewardClaimButtonMouseOut
@@ -39123,6 +39143,9 @@ DOTAFall2021EventGameShowStoreInfo
 DOTAFantasy2024RemoveAnimationClasses
 DOTAFantasy2024SelectCancelled
 DOTAFantasy2024SelectConfirmed
+DOTAFantasy2025RemoveAnimationClasses
+DOTAFantasy2025SelectCancelled
+DOTAFantasy2025SelectConfirmed
 DOTAFantasyCraftGenerateTabletsDone
 DOTAFantasyCraftOperationDone
 DOTAFantasyCraftPlayerSelectDone
@@ -39213,6 +39236,7 @@ DOTAFrontPageSeasonalRewardsSetNextUnclaimedLevelWithVNContent
 DOTAFrontpage10thAnniversaryEvent
 DOTAFrontpageButtonTimerRefresh
 DOTAFrontpageCarousel
+DOTAFrontpageCellSeasonalRewards
 DOTAFrontpageContents
 DOTAFrontpageDPCLive
 DOTAFrontpageDPCLiveScheduledUpdate
@@ -39825,6 +39849,7 @@ DOTAHideEventGoalTooltip
 DOTAHideFacetDisplayTooltip
 DOTAHideFacetTooltip
 DOTAHideFantasy2024PlayerTooltip
+DOTAHideFantasy2025PlayerTooltip
 DOTAHideFantasyCraftPlayerTooltip
 DOTAHideFrostivus2023Tooltip
 DOTAHideFrostivus2024ComponentTooltip
@@ -39995,6 +40020,50 @@ DOTAInternational2024ShowTalentBundles
 DOTAInternational2024Tabs
 DOTAInternational2024ToggleSpoilerBlock
 DOTAInternational2024WelcomePopupClaimRewards
+DOTAInternational2025AegisPopup
+DOTAInternational2025BasePage
+DOTAInternational2025Button
+DOTAInternational2025CommunityBundlesPopup
+DOTAInternational2025ExternalWatchStream
+DOTAInternational2025FantasyCraftTablet
+DOTAInternational2025FantasyPage
+DOTAInternational2025FantasyPeriod
+DOTAInternational2025ItemClaimPage
+DOTAInternational2025ItemClaimPopup
+DOTAInternational2025Page
+DOTAInternational2025PeriodicRefresh
+DOTAInternational2025PopupFantasyCraftChoice
+DOTAInternational2025PopupFantasyCraftHelp
+DOTAInternational2025PopupFantasyCraftTitle
+DOTAInternational2025PredictSlot
+DOTAInternational2025PredictionMainEvent
+DOTAInternational2025PredictionRankings
+DOTAInternational2025PredictionsCellRefresh
+DOTAInternational2025PredictionsMainEventClear
+DOTAInternational2025PredictionsMainEventHideResults
+DOTAInternational2025PredictionsMainEventTestResultsPanel
+DOTAInternational2025PredictionsMainEventToggleShowAnswers
+DOTAInternational2025PredictionsMainEventToggleTestData
+DOTAInternational2025PredictionsPage
+DOTAInternational2025PredictionsRankingsClear
+DOTAInternational2025PredictionsRankingsHideResults
+DOTAInternational2025PredictionsRankingsOnlySwissResults
+DOTAInternational2025PredictionsRankingsTestResultsPanel
+DOTAInternational2025PredictionsRankingsToggleTestData
+DOTAInternational2025PurchaseCommunityBundleLevel
+DOTAInternational2025PurchaseTalentBundle
+DOTAInternational2025SettingChanged
+DOTAInternational2025ShowLeaderboard
+DOTAInternational2025ShowLoadingScreenReward
+DOTAInternational2025ShowTalentBundles
+DOTAInternational2025SupportersClub
+DOTAInternational2025Tabs
+DOTAInternational2025TalentBundlePurchased
+DOTAInternational2025TalentCategorySelected
+DOTAInternational2025TalentHovered
+DOTAInternational2025TalentPage
+DOTAInternational2025TalentUnhovered
+DOTAInternational2025ToggleSpoilerBlock
 DOTAInternationalHallOfFame
 DOTAIntroMoviePopup
 DOTAInventory
@@ -40751,6 +40820,10 @@ DOTAPredictionResultAnim
 DOTAPredictionResultsPopup
 DOTAPredictions2024DismissResults
 DOTAPredictions2024ToggleHelp
+DOTAPredictions25DebugStateSelected
+DOTAPredictions25MainEventSelected
+DOTAPredictions25RTTISelected
+DOTAPredictions25ToggleHelp
 DOTAPredictionsButton
 DOTAPressCourierRewardButton
 DOTAPressCourierUnlockButton
@@ -41468,6 +41541,8 @@ DOTAShowFacetTooltip
 DOTAShowFanContentPurchasePopup
 DOTAShowFantasy2024PlayerFullTooltip
 DOTAShowFantasy2024PlayerMiniTooltip
+DOTAShowFantasy2025PlayerFullTooltip
+DOTAShowFantasy2025PlayerMiniTooltip
 DOTAShowFantasyCraftPlayerFullTooltip
 DOTAShowFantasyCraftPlayerMiniTooltip
 DOTAShowFindPrivateCustomLobbyDialog
@@ -41540,6 +41615,12 @@ DOTAShowHomePage
 DOTAShowInGamePage
 DOTAShowInnateDisplayTooltip
 DOTAShowInnateTooltip
+DOTAShowInternational2025FantasyPage
+DOTAShowInternational2025ItemClaimPage
+DOTAShowInternational2025Page
+DOTAShowInternational2025PredictionsPage
+DOTAShowInternational2025SupportersClub
+DOTAShowInternational2025TalentPage
 DOTAShowItemDefPage
 DOTAShowItemDetailsPage
 DOTAShowItemGenericPage
@@ -41631,6 +41712,7 @@ DOTAShowRewardsForEventLevel
 DOTAShowRewardsForEventLevel( %s, %u
 DOTAShowRubickArcanaPage
 DOTAShowRuneTooltip
+DOTAShowSeasonalRewardsPage
 DOTAShowSelectedOpenTreasureTooltip
 DOTAShowSeriesDetails
 DOTAShowSetsZooPage
@@ -42226,6 +42308,7 @@ DOTAToggleSpectatorOptionsVisible
 DOTAToggleSpellCard
 DOTAToggleTeamMuted
 DOTATogglelusHeroChallengeSelector
+DOTATooltip2025Score
 DOTATooltipAbility
 DOTATooltipAbilityDraftHero
 DOTATooltipAboutHeroRelics
@@ -42245,6 +42328,7 @@ DOTATooltipDashboardTip
 DOTATooltipDroppedItem
 DOTATooltipEconItem
 DOTATooltipEventGoal
+DOTATooltipFantasy2025Title
 DOTATooltipFriendsMenu
 DOTATooltipFrostivus2023
 DOTATooltipGlyph
@@ -43813,10 +43897,17 @@ DOTA_Chat_YearBeastKilled
 DOTA_Chat_YouPaused
 DOTA_ChinaSSA_NotCompleted
 DOTA_Claim
+DOTA_ClaimGatedEvent_GenericFailure
 DOTA_ClaimLevelRewardsFailed
 DOTA_ClaimLevelRewardsFailed_EventExpired
 DOTA_ClaimLevelRewards_AlreadyClaimed
 DOTA_ClaimLevelRewards_AlreadyClaimed_Title
+DOTA_ClaimedGatedEvent_AlreadyClaimed
+DOTA_ClaimedGatedEvent_CannotClaim
+DOTA_ClaimedGatedEvent_FailureTitle
+DOTA_ClaimedGatedEvent_InvalidEvent
+DOTA_ClaimedGatedEvent_Success
+DOTA_ClaimedGatedEvent_SuccessTitle
 DOTA_ClipBuilder_InvalidClipsFolderDesc
 DOTA_ClipBuilder_InvalidClipsFolderTitle
 DOTA_ClipBuilder_RangeSliderFillTooltip
@@ -43948,6 +44039,22 @@ DOTA_Compendium2024_WeeklyChallenge_LostTurboMatch
 DOTA_Compendium2024_WeeklyChallenge_WonMatch
 DOTA_Compendium2024_WeeklyChallenge_WonTurboMatch
 DOTA_Compendium2024_Welcome_ClaimFailed
+DOTA_Compendium2025_Rewards_RankReq_Top100
+DOTA_Compendium2025_Rewards_RankReq_Top10Pct
+DOTA_Compendium2025_Rewards_RankReq_Top1500
+DOTA_Compendium2025_Rewards_RankReq_Top15Pct
+DOTA_Compendium2025_Rewards_RankReq_Top5Pct
+DOTA_Compendium25_Arcana_ClaimDesc
+DOTA_Compendium25_ClaimError
+DOTA_Compendium25_ClaimError_Body
+DOTA_Compendium25_Claim_Confirm
+DOTA_Compendium25_Claim_Confirm_Body
+DOTA_Compendium25_DefaultCTA
+DOTA_Compendium25_Percentile_Unknown
+DOTA_Compendium25_PredictionTitle%d
+DOTA_Compendium25_SetPredictions
+DOTA_Compendium25_ViewResults
+DOTA_Compendium25_Witness_ClaimDesc
 DOTA_CompendiumLevelPurchaseUnavailable_Message
 DOTA_CompendiumLevelPurchaseUnavailable_Title
 DOTA_CompendiumLog_EventReward
@@ -44424,6 +44531,8 @@ DOTA_Fall2021_EventGameDepth_Bonus
 DOTA_Fall2021_SeasonalSpray
 DOTA_Fall2021_WeeklyQuest_GoalPip_Tooltip
 DOTA_Fantasy23_PeriodName%d
+DOTA_Fantasy25_PeriodName%d
+DOTA_Fantasy25_RewardTierName%d
 DOTA_FantasyBingo_FutureTokensTooltip
 DOTA_FantasyBingo_GroupStageRollsAndTokens
 DOTA_FantasyBingo_MainEventRollsAndTokens
@@ -45443,6 +45552,19 @@ DOTA_International2024_TalentBundle_Tier%d
 DOTA_International2024_UnclaimedBoosters:p
 DOTA_International2024_UnclaimedLevels:p
 DOTA_International2024_UnclaimedRewards:p
+DOTA_International2025_Community_Bundle_BTSBrasil
+DOTA_International2025_Community_Bundle_Filipino
+DOTA_International2025_Community_Bundle_Maincast
+DOTA_International2025_Community_Bundle_Portuguese
+DOTA_International2025_Community_Bundle_Ukrainian
+DOTA_International2025_Community_Bundle_WXC
+DOTA_International2025_TalentBundle_Autograph
+DOTA_International2025_TalentBundle_ChatWheel
+DOTA_International2025_TalentBundle_ConsumeDesc
+DOTA_International2025_TalentBundle_ConsumeTitle
+DOTA_International2025_TalentBundle_Sticker
+DOTA_International2025_TalentBundle_Tier%d
+DOTA_International2025_TalentCategory_%s
 DOTA_InvalidPersonaName
 DOTA_InviteDenied_Header
 DOTA_InviteDenied_Message
@@ -45693,6 +45815,10 @@ DOTA_KEYBIND_INVENTORYTP_QUICKAUTOCAST
 DOTA_KEYBIND_INVENTORYTP_QUICKCAST
 DOTA_KEYBIND_LEARN_ABILITIES
 DOTA_KEYBIND_LEARN_STATS
+DOTA_KEYBIND_NEUTRAL_ITEM_SELECT1
+DOTA_KEYBIND_NEUTRAL_ITEM_SELECT2
+DOTA_KEYBIND_NEUTRAL_ITEM_SELECT3
+DOTA_KEYBIND_NEUTRAL_ITEM_SELECT4
 DOTA_KEYBIND_NONE
 DOTA_KEYBIND_OVERLAYMAP_INPUTKEY
 DOTA_KEYBIND_PATROL
@@ -46242,6 +46368,7 @@ DOTA_NewPlayerHeroPick_Body
 DOTA_NewPlayerHeroPick_Title
 DOTA_NonHero_DamageSourceName
 DOTA_None
+DOTA_NotAvailable
 DOTA_NotEquippedItem_Label
 DOTA_NotShuffledItem_Label
 DOTA_Notification_Paused_Message
@@ -46297,6 +46424,7 @@ DOTA_OraclesChallenge_Playoffs
 DOTA_OraclesChallenge_PredictionsUnavailableBody
 DOTA_OraclesChallenge_PredictionsUnavailableBody_NotPurchased
 DOTA_OraclesChallenge_SelectTeam
+DOTA_OraclesChallenge_SelectWinner
 DOTA_OraclesChallenge_ViewPredictions
 DOTA_OtherType
 DOTA_OverwatchReportReason_%d
@@ -46758,6 +46886,14 @@ DOTA_PostGame_MVP
 DOTA_PostGame_Overview
 DOTA_PostGame_PerfVsGlobal
 DOTA_PostGame_Scoreboard
+DOTA_Predictions25_PredictRecord_04
+DOTA_Predictions25_PredictRecord_14
+DOTA_Predictions25_PredictRecord_40
+DOTA_Predictions25_PredictRecord_41
+DOTA_Predictions25_PredictRecord_ElimLoser
+DOTA_Predictions25_PredictRecord_ElimWinner
+DOTA_Predictions25_StageName_MainEvent
+DOTA_Predictions25_StageName_RTTI
 DOTA_PriceFree
 DOTA_PrivateChatChannel
 DOTA_ProfileCard_StatTitle_Commends
@@ -47366,6 +47502,8 @@ DOTA_THREATLEVEL_Low
 DOTA_THREATLEVEL_Medium
 DOTA_THREATLEVEL_None
 DOTA_THREATLEVEL_Ultra
+DOTA_TI10MatchStage_Elimination
+DOTA_TI10MatchStage_EliminationShort
 DOTA_TI10MatchStage_GroupA
 DOTA_TI10MatchStage_GroupB
 DOTA_TI10MatchStage_GroupC
@@ -47379,6 +47517,8 @@ DOTA_TI10MatchStage_LB_Round_4
 DOTA_TI10MatchStage_LB_Round_5
 DOTA_TI10MatchStage_Placement
 DOTA_TI10MatchStage_PlacementShort
+DOTA_TI10MatchStage_Swiss
+DOTA_TI10MatchStage_SwissShort
 DOTA_TI10MatchStage_UB
 DOTA_TI10MatchStage_UB_Final
 DOTA_TI10MatchStage_UB_GrandFinal
@@ -48328,7 +48468,6 @@ DZG
 D[X
 D\at͆mC
 D\a͈ad
-D\b\b
 D]R
 D]WO"#y
 D_ALLOW_PARALLAX
@@ -48365,6 +48504,7 @@ D_FR
 D_FXAA
 D_GLOBAL_LIGHT_SHADOWS
 D_HATE
+D_HEIGHT_FOG
 D_HERO_WRITE_STENCIL
 D_HT
 D_LI
@@ -48727,6 +48867,7 @@ DefaultOverHeadInfo
 DefaultResponseSystem
 DefaultScenario
 DefaultScriptThinkContext
+DefaultSectionButton
 DefaultSet
 DefaultSetEquipped
 DefaultTextColor
@@ -48735,6 +48876,7 @@ DefaultTiny
 DefaultTip
 DefaultTipAttachment
 DefaultToGridView
+DefaultToastContainer
 DefaultVerySmall
 DefaultVeryTiny
 Default_Keys
@@ -49489,6 +49631,14 @@ Dota_Doubloon_Maxmana_Tooltip
 Dota_Economy_Effigy_Animation_%s_%s
 Dota_Rapier_Attack_Tooltip
 Dota_Rapier_Spell_Tooltip
+Dota_Score2025_FantasyPlacement_25
+Dota_Score2025_FantasyPlacement_50
+Dota_Score2025_FantasyPlacement_75
+Dota_Score2025_FantasyPlacement_90
+Dota_Score2025_FantasyPlacement_95
+Dota_Score2025_FantasyPlacement_99
+Dota_Score2025_FantasyPlacement_999
+Dota_Score2025_FantasyPlacement_EveryoneElse
 Double
 Double-save to Member '%s
 DoubleDamage
@@ -50460,9 +50610,8 @@ EXTERNAL
 EXTERNAL TYPE %s\n
 EXTRA
 E[3M
-E\f\b
+E\b
 E\nQc
-E\r\b
 E\v0
 E\v\b
 Early exit
@@ -50614,6 +50763,7 @@ Element Access R%d <- R%d[R%d
 Element Style
 ElementsContainer
 EligibleForRanked
+EligibleToClaim
 Eliminated
 EliminationsContainer
 Elite
@@ -51708,6 +51858,7 @@ FOW_TEAM_UNUSED6
 FOW_TEAM_UNUSED7
 FOW_TEAM_WEIGHTED_PIE
 FPKciE
+FP\a
 FREE WEEKEND TOURNEY IS ACTIVE!\n
 FRESNELCOLORWARP
 FRESNELWARP
@@ -51748,10 +51899,7 @@ FXScenePanel
 FX_RicochetSound.Ricochet
 F\e
 F\e0M2~@p
-F\f\b
 F\rH'4
-F\r\b
-F\v\b
 Face
 FaceDown
 FaceHighlighted
@@ -52110,10 +52258,34 @@ Fantasy2024SetRosterPlayer
 Fantasy2024ToggleHelp
 Fantasy2024TutorialHighlight
 Fantasy2024UpgradeTablets
-Fantasy: Added player=%s to role=%s\n
+Fantasy2025AdvanceEmblemTutorial
+Fantasy2025AdvanceTitleTutorial
+Fantasy2025ChooseTitle
+Fantasy2025ClaimRewards
+Fantasy2025CompleteTutorial
+Fantasy2025ConfirmTitle
+Fantasy2025CreateTablets
+Fantasy2025GenerateTitles
+Fantasy2025HighlightOperation
+Fantasy2025RemoveOperationHighlights
+Fantasy2025RerollOperations
+Fantasy2025ResetTutorial
+Fantasy2025RollOperation
+Fantasy2025SelectPlayer
+Fantasy2025SelectTablet
+Fantasy2025SelectTitle
+Fantasy2025SetRosterPlayer
+Fantasy2025ToggleHelp
+Fantasy2025TutorialHighlight
+Fantasy2025UpgradeTablets
+Fantasy: Added player=%s (%u) to role=%s\n
+Fantasy: Processing team=%s\n
+Fantasy: Skipping player=%s (%u) since they are not a registered pro\n
+Fantasy: Skipping player=%s (%u) since they do not have a valid role\n
 FantasyAvailable
 FantasyBingoRewardImage
 FantasyButton
+FantasyCell
 FantasyChallengeWinnings
 FantasyCraft2023CancelChoice
 FantasyCraft2023ChoosePlayer
@@ -52121,6 +52293,9 @@ FantasyCraft2023ConfirmChoice
 FantasyCraft2024CancelChoice
 FantasyCraft2024ChoosePlayer
 FantasyCraft2024ConfirmChoice
+FantasyCraft2025CancelChoice
+FantasyCraft2025ChoosePlayer
+FantasyCraft2025ConfirmChoice
 FantasyCraftAdvanceEmblemTutorial
 FantasyCraftAdvanceTitleTutorial
 FantasyCraftChooseTitle
@@ -52173,7 +52348,11 @@ FantasyOperationSnippet
 FantasyPeriodData_t
 FantasyPeriod_t
 FantasyPlayerData_t
+FantasyPlayerLeft
+FantasyPlayerMiddle
+FantasyPlayerRight
 FantasyPlayerTooltip
+FantasyRTTILabel
 FantasyRecycling
 FantasyRewardImage
 FantasyRewardTiles
@@ -52183,6 +52362,7 @@ FantasyRole%d
 FantasyRoleData_t
 FantasyRoster
 FantasyStarterPacksClaimable
+FantasyTILabel
 FantasyTabletID_t
 FantasyTile
 FantasyTitle_t
@@ -52631,6 +52811,7 @@ For k_ePlayerTrackedStatImpl_HeroAdjective, what is the adjective information
 For k_ePlayerTrackedStatImpl_KillEater, what is the kill eater information
 For k_eTeamTrackedStatImpl_Expression, what is the expression information
 For k_eTeamTrackedStatImpl_PlayerAggregate, what is the aggregate information
+Force ALL async data panels to be in a specific state. -1:disabled, 0:failure, 1:loading, 2:success
 Force Display
 Force Reload Cubemaps
 Force Spawn
@@ -53104,6 +53285,7 @@ GPMDelta
 GPMRecord
 GPTotal
 GPU Level - Default: High
+GP\a
 GRAPHICSTRING
 GROUP
 GST-4GDT
@@ -53115,7 +53297,8 @@ GXy
 G[R
 G\e(jvg
 G\nY1\e
-G\n\b
+G\r\b
+G\v\b
 G]U
 Ga=`R
 Gabe Newell
@@ -54785,6 +54968,8 @@ H0+G+R
 H0y\e
 H5
 H5gRR
+H6 \b
+H6\b
 H8,2
 H8xp
 H=`HY
@@ -54897,6 +55082,7 @@ HPBarFG
 HPDamageBar
 HPProgressBar
 HPTicks
+HP\a
 HParticleSystemDefinition
 HParticleSystemDefinitionStrong
 HPostProcessing
@@ -54981,9 +55167,6 @@ H\a0
 H\ap
 H\bH
 H\bHqI9x
-H\n\b
-H\r\b
-H\v\b
 H`ЈݳIk\f`dub`D
 HadBadgeData
 HalfCreditAvailable
@@ -55158,6 +55341,7 @@ HasDialog
 HasDialogue
 HasDireLogo
 HasDisabledFeatures
+HasDiscount
 HasDiscountAvailable
 HasDiscountPrice
 HasDupeCommons
@@ -55169,6 +55353,7 @@ HasEmoticons
 HasEmptyDescription
 HasEmptySockets
 HasEncounter
+HasEndDate
 HasEnoughComponents
 HasEnoughDust
 HasEnoughDustPremium
@@ -55187,8 +55372,10 @@ HasFacet
 HasFacetDesc
 HasFacetName
 HasFacets
+HasFantasyRTTI
 HasFantasyRewards
 HasFantasySection
+HasFantasyTI
 HasFavoriteCounts
 HasFavoriteTeam
 HasFeaturedHero
@@ -55353,6 +55540,9 @@ HasPlayerMetadata
 HasPlayerResult
 HasPlusNotifications
 HasPointsGained
+HasPrediction
+HasPredictionsRTTI
+HasPredictionsTI
 HasPremiumPacks
 HasPreviewChatWheel
 HasPreviewMovie
@@ -55399,6 +55589,7 @@ HasScepterDetails
 HasScepterUpgrade
 HasScepterUpgradeTooltip
 HasScore
+HasScores
 HasSearchQuery
 HasSeasonalTreasure
 HasSecondaryAbilities
@@ -55494,6 +55685,7 @@ HasUnclaimedCompendiumRewards
 HasUnclaimedEventRewards
 HasUnclaimedLevel1Reward
 HasUnclaimedLevels
+HasUnclaimedReward
 HasUnclaimedRewards
 HasUneditableDescription
 HasUnlockedEffects
@@ -55508,6 +55700,7 @@ HasValidInnate
 HasValidPlayer
 HasValidPlayerData
 HasValidPlusData
+HasValidPredictionState
 HasVariants
 HasVengefulSpiritTeammate
 HasVideo
@@ -56341,6 +56534,7 @@ How much health between each vertical line in the health bars
 How much mana between each vertical line in the mana bars
 How much to enlarge ropes in screen space for antialiasing effect
 How much to slow down backwards motion
+How often to send a message to the GC so they know we're spectating
 How short the time between presses needs to be for us to consider it a double-press
 How to view the baseline data of the player's performance for comparison
 Hp)X
@@ -56571,17 +56765,13 @@ ITestScriptMgr
 IUIEngine::RegisterCustomFontPath
 IV block
 IW
-IW\b
 IYW
 IZ
-I\f\b
 I\n
-I\n\b
 I\r
 I\t
 I\tHA\t981G'dc
 I\v%H
-I\v\b
 I]P
 I`Mb"(\ao
 IceFrog
@@ -56807,6 +56997,7 @@ Incorrect keyframe parameters
 Incorrect%d
 Incorrect1
 Incorrect2
+IncorrectPrediction
 Increase replay speed
 Increase the pitch of every successive meepo voice by this many
 Increase this modifier's stack count by 1
@@ -56849,6 +57040,7 @@ Ineligible
 Inert VModuleMetadata
 Infinite time value
 Inflictor is the entity that is dealing the damage.\nIt can be the attacker itself or a summoned unit, a projectile entity of some sort.\nIt is *MOST DEFINITELY NOT* the weapon or ability. Use Set/GetAbility for that
+InfoButton
 InfoForResourceTypeCModel
 InfoForResourceTypeCNmGraphDefinition
 InfoForResourceTypeCPostProcessingResource
@@ -57055,6 +57247,7 @@ InputStartFogTransition
 InputStartGlowing
 InputStartSound
 InputStartTouch
+InputState
 InputStop
 InputStopEndCap
 InputStopGlowing
@@ -57242,6 +57435,15 @@ International2024Rewards
 International2024SupportersClubs
 International2024Tabs
 International2024Talent
+International2025Fantasy
+International2025Home
+International2025PopupPredictionsHelp
+International2025Predictions
+International2025Score
+International2025SupportersClub
+International2025TabContent
+International2025Tabs
+International2025Talent
 InternationalMatch
 Interp Ready=%s
 Interpolate LATCH_ANIMATION_BIT vars if interpolation interval is greater than simulation interval
@@ -57352,6 +57554,9 @@ Invalid proto descriptor for file
 Invalid public dependency index
 Invalid quest ID: %d\n
 Invalid range in '{}' in regular expression
+Invalid ranking reward ranking_type='%s
+Invalid ranking reward reward_action='%s
+Invalid ranking reward tier_id='%s
 Invalid rarity specified for component
 Invalid region
 Invalid request for mesh %d in model %s with %d entry remapping start table\n
@@ -58226,11 +58431,10 @@ JXsZ
 JY
 JZIX
 J\bſ6
+J\f\b
 J\nHBF
-J\r\b
 J\rs\n
 J\ty\bRF
-J\v\b
 J_R=I
 J_spY
 J`KL
@@ -58314,6 +58518,7 @@ K2Z
 K4
 K4K
 K4Q
+K4\b
 K5!n^n
 K8Ui
 K;xs
@@ -58348,11 +58553,9 @@ KV3 save transfer failed: %s
 KV;-W
 KWjI
 K[C7W
-K\a\b
+K\b
 K\e H
 K\n
-K\n\b
-K\r\b
 K\vHC\n
 Kaithi
 Kaldr
@@ -58486,9 +58689,9 @@ L10a
 L4Eud
 L4uGv~;6
 L5
-L5\b
 L5^x|S
 L7
+L7 \b
 L8
 L=333333
 L>333
@@ -58666,12 +58869,9 @@ LWIN
 LX\aqIE\b
 LXjt
 LY\r5
-L\b
 L\fL
-L\f\b
 L\n
 L\n/8x
-L\n\b
 L\t#Q
 L\tu
 LaNm
@@ -58685,6 +58885,7 @@ Label.TextColor
 Label.TextDullColor
 LabelBgColor
 LabelColumnData
+LabelContainer
 LabelDimText
 LabelHREF
 LabelRightClickContextMenu
@@ -58821,6 +59022,8 @@ LeaderboardRank10
 LeaderboardRank100
 LeaderboardRank1000
 LeaderboardRow
+LeaderboardSelectFriends
+LeaderboardSelectGlobal
 LeaderboardTabLabel1
 LeaderboardTabLabel2
 LeaderboardTabLabel3
@@ -59261,6 +59464,7 @@ LocalMember
 LocalMultiplayer
 LocalPlayer
 LocalPlayerAndObserversExclusive
+LocalPlayerAvatarImage
 LocalPlayerChampionsCupTicket
 LocalPlayerDisassembleItem
 LocalPlayerDropItemFromStash
@@ -59488,6 +59692,7 @@ M1
 M5
 M8MF
 M9
+M9\b
 MAGIC_MISSILE
 MARK
 MARK) must have an argument
@@ -60173,15 +60378,12 @@ MVDataUseLinkedEntityClasses
 MVPEnabled
 MVPMap
 MVT
-MX\a
 MZL
-M\b
-M\f\b
-M\n\b
 M\rLAI)haL<|p\t\t\b
 M\r\b
 M\v
 M\vOj
+M\v\b
 MaNia
 Mabel Bot
 MadeSelection
@@ -60212,6 +60414,11 @@ MainEventMode
 MainEventOnly
 MainEventPredictions
 MainEventPredictionsButton
+MainEventPredictionsLocked
+MainEventPredictionsNotAvailable
+MainEventPredictionsUnlocked
+MainEventSelected
+MainEventState
 MainEventTab
 MainHeroImage
 MainImage
@@ -60783,6 +60990,7 @@ Missing <league_ids>\n
 Missing <team id>\n
 Missing <type> <english file path> argument.\n
 Missing Huffman code table entry
+Missing Pro Info (%u/%s
 Missing caption for '%s'\n
 Missing cell schema '%s', replacing with 'CPulseCell_Unknown'\n
 Missing field: FileDescriptorProto.name
@@ -61675,6 +61883,7 @@ N5GCSDK12CProtoBufMsgI22CMsgPracticeLobbyLeaveEE
 N5GCSDK12CProtoBufMsgI22CMsgRedeemCodeResponseEE
 N5GCSDK12CProtoBufMsgI22CMsgSpectateFriendGameEE
 N5GCSDK12CProtoBufMsgI22CMsgSpectatorLobbyListEE
+N5GCSDK12CProtoBufMsgI23CMsgDOTAClaimGatedEventEE
 N5GCSDK12CProtoBufMsgI23CMsgDOTAEditTeamDetailsEE
 N5GCSDK12CProtoBufMsgI23CMsgDOTAGroupMergeReplyEE
 N5GCSDK12CProtoBufMsgI23CMsgDOTAJoinChatChannelEE
@@ -61751,6 +61960,7 @@ N5GCSDK12CProtoBufMsgI28CMsgPracticeLobbySetTeamSlotEE
 N5GCSDK12CProtoBufMsgI28CMsgSetSpectatorLobbyDetailsEE
 N5GCSDK12CProtoBufMsgI29CMsgClientToGCGetAllHeroOrderEE
 N5GCSDK12CProtoBufMsgI29CMsgClientToGCGetDPCFavoritesEE
+N5GCSDK12CProtoBufMsgI29CMsgClientToGCGetEventRankingEE
 N5GCSDK12CProtoBufMsgI29CMsgClientToGCH264UnsupportedEE
 N5GCSDK12CProtoBufMsgI29CMsgClientToGCPrivateChatKickEE
 N5GCSDK12CProtoBufMsgI29CMsgClientToGCUnlockItemStyleEE
@@ -61794,6 +62004,7 @@ N5GCSDK12CProtoBufMsgI31CMsgClientToGCGetProfileTicketsEE
 N5GCSDK12CProtoBufMsgI31CMsgClientToGCLookupAccountNameEE
 N5GCSDK12CProtoBufMsgI31CMsgClientToGCPrivateChatDemoteEE
 N5GCSDK12CProtoBufMsgI31CMsgClientToGCPrivateChatInviteEE
+N5GCSDK12CProtoBufMsgI31CMsgDOTAClaimGatedEventResponseEE
 N5GCSDK12CProtoBufMsgI31CMsgDOTAEditTeamDetailsResponseEE
 N5GCSDK12CProtoBufMsgI31CMsgDOTAJoinChatChannelResponseEE
 N5GCSDK12CProtoBufMsgI31CMsgDOTAMatchmakingStatsRequestEE
@@ -61878,6 +62089,7 @@ N5GCSDK12CProtoBufMsgI36CMsgGCToClientHeroStatueCreateResultEE
 N5GCSDK12CProtoBufMsgI36CMsgGCToClientInFlightChargesUpdatedEE
 N5GCSDK12CProtoBufMsgI37CMsgClientToGCGetAllHeroOrderResponseEE
 N5GCSDK12CProtoBufMsgI37CMsgClientToGCGetDPCFavoritesResponseEE
+N5GCSDK12CProtoBufMsgI37CMsgClientToGCGetEventRankingResponseEE
 N5GCSDK12CProtoBufMsgI37CMsgClientToGCPurchaseChargeCostItemsEE
 N5GCSDK12CProtoBufMsgI37CMsgClientToGCTopFriendMatchesRequestEE
 N5GCSDK12CProtoBufMsgI37CMsgClientToGCTopLeagueMatchesRequestEE
@@ -62084,6 +62296,7 @@ N5GCSDK17GCClientJobLambdaIZ25ShowOverwatchConvictPopupvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL18claim_event_actionRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL20dota_show_splash_adsRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL20spectator_lobby_listRK15CCommandContextRK8CCommandEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZL21dota_set_fantasy_roleRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL21fantasy_craft_upgradeRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL21treasure_peek_detailsRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZL22dota_reset_event_stateRK15CCommandContextRK8CCommandEUlvE_EE
@@ -62173,6 +62386,7 @@ N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent20CMsgRoadToTIUserDataE18R
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent25CMsgRoadToTIAssignedQuestE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent29CDotaLabyrinthActiveBlessingsE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent30CMsgGCToClientWageringResponseE18RequestCurrentDataERKS2_EUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent37CMsgClientToGCGetEventRankingResponseE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI6EEvent49CMsgClientToGCRequestArcanaVotesRemainingResponseE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ECurrency18market_full_data_tE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ELanguage39CMsgAvailablePrivateCoachingSessionListE18RequestCurrentDataERKS2_EUlvE_EE
@@ -62213,11 +62427,15 @@ N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj16CAccountTrophiesE18RequestCurr
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj16CMsgDOTATeamInfoE16BatchRequestDataEPKjiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj16CMsgDOTATeamInfoE18RequestCurrentDataERKjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj16CMsgDOTATeamInfoE20ScheduleBatchRequestEfEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj17CMsgStickerHeroesE16BatchRequestDataEPKjiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj17CMsgStickerHeroesE18RequestCurrentDataERKjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj17CMsgStickerHeroesE20ScheduleBatchRequestEfEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj18CMsgDOTAPlayerInfoE16BatchRequestDataEPKjiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj18CMsgDOTAPlayerInfoE18RequestCurrentDataERKjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj18CMsgDOTAPlayerInfoE20ScheduleBatchRequestEfEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj19CMsgDOTAProfileCardE16BatchRequestDataEPKjiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj19CMsgDOTAProfileCardE18RequestCurrentDataERKjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj19CMsgDOTAProfileCardE20ScheduleBatchRequestEfEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj20CMsgGuildPersonaInfoE16BatchRequestDataEPKjiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj20CMsgGuildPersonaInfoE18RequestCurrentDataERKjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIj20CMsgGuildPersonaInfoE20ScheduleBatchRequestEfEUlvE_EE
@@ -62589,6 +62807,8 @@ N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_BP_Crownfall_Overworld22EventActiva
 N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_BP_Crownfall_Overworld23EventNextOverworldIntroEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_BP_Crownfall_Overworld33EventCrownfallFeedbackPopupSubmitEPN8panorama8CPanel2DEEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_BP_Spring2021_Purchase23EventPurchaseBattlePassE23item_definition_index_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_International2025_Base17ActivateCompanionEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Page_International2025_Base30EventManuallyActivateCompanionEPN8panorama8CPanel2DEEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN36CDOTA_DB_Popup_ShortFilmWorkshopVote12GCRecordVoteEyiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN36CDOTA_Widget_Watch_DPC_Team_Schedule19EventToggleFavoriteEPN8panorama8CPanel2DEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN37CDOTA_Comp_DPC_PlayerCardDetail_Popup22EventRecyclePlayerCardEvEUlvE_EE
@@ -62604,16 +62824,19 @@ N5GCSDK17GCClientJobLambdaIZN38CDOTA_Comp_TI10_PlayerCardDetail_Popup22EventRecy
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Page_BP_Fall2021_WeeklyQuests21EventMakeSeasonActiveE15EventSeasonID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Page_Diretide_TreasureDetails22EventEquipSelectedItemEbEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Page_Diretide_TreasureDetails37EventPurchaseSelectedTreasureOnMarketEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Page_International2025_Talent22EventShowTalentBundlesEPKcEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Popup_PurchaseRandomHeroRelic18EventStartPurchaseEvEUlvE0_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Popup_PurchaseRandomHeroRelic18EventStartPurchaseEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_DB_Tooltip_Crownfall_ActSelector22EventOverworldSelectedE13OverworldID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN38CDOTA_UI_Popup_PurchaseCasterAutograph31EventPurchaseSelectedAutographsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTAInternational2022SwagBagController12ClaimSwagBagE10ESwagGrantjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN39CDOTA_DB_Page_International2025_Fantasy10ToggleHelpEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_DB_Page_ShowcaseAdminReportReview17HandleAdminActionI40CMsgClientToGCShowcaseAdminResetResponseZNS1_10EventResetEvEUlvE_EEvPKcT0_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_DB_Page_ShowcaseAdminReportReview17HandleAdminActionI42CMsgClientToGCShowcaseAdminConvictResponseZNS1_12EventConvictEvEUlvE_EEvPKcT0_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_DB_Page_ShowcaseAdminReportReview17HandleAdminActionI44CMsgClientToGCShowcaseAdminExonerateResponseZNS1_14EventExonerateEvEUlvE_EEvPKcT0_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_DB_Page_ShowcaseAdminReportReview17HandleAdminActionI46CMsgClientToGCShowcaseAdminLockAccountResponseZNS1_14EventApplyLockEvEUlvE_EEvPKcT0_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_LoadingScreen_BattleCupTeamPlayerC4EPN8panorama8CPanel2DEPKc10PlayerID_tjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN39CDOTA_Popup_International2025_ItemClaim14EventClaimItemE23item_definition_index_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_UI_Popup_PurchaseBattlePassLevels16EventApplyLevelsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN39CDOTA_UI_Popup_PurchaseBattlePassLevels17EventMakePurchaseEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN40CDOTA_DB_Page_BP_International2023_Bingo14BEventClaimRowE15BingoRowIndex_tEUlvE_EE
@@ -62626,6 +62849,13 @@ N5GCSDK17GCClientJobLambdaIZN41CDOTA_DB_Page_BP_International2023_Quests19EventA
 N5GCSDK17GCClientJobLambdaIZN41CDOTA_DB_Page_BP_International2023_Quests20EventUseCullingBladeEiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN41CDOTA_DB_Page_BP_International2023_Talent22EventShowTalentBundlesEPKcEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN41CDOTA_DB_Page_BP_International2024_Talent22EventShowTalentBundlesEPKcEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_DB_Page_International2025_ItemClaim21EventClaimCurrentItemEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period12ClaimRewardsEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period12SelectPlayerE17FantasyTabletID_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period12SelectTitlesE17FantasyTabletID_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period13RollOperationE20FantasyOperationID_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period16SetupResultsViewEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN41CDOTA_UI_International2025_Fantasy_Period28SelectPlayerForInitialRosterE17FantasyTabletID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN42CDOTA_DB_Page_BP_International2023_Fantasy10ToggleHelpEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN42CDOTA_DB_Page_BP_International2023_Rewards21CheckShowWelcomePopupEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN42CDOTA_DB_Page_BP_International2024_Fantasy10ToggleHelpEvEUlvE_EE
@@ -62636,6 +62866,7 @@ N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Page_BP_International2019_Wagering26Even
 N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Page_BP_International2020_Purchase23EventPurchaseBattlePassE23item_definition_index_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Page_BP_International2020_Wagering26EventMatchSignOutCompletedE9MatchID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Page_BP_International2022_Purchase23EventPurchaseBattlePassE23item_definition_index_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Page_International2025_Predictions15EventToggleHelpEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Popup_BP_International2023_Welcome17EventClaimRewardsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN43CDOTA_DB_Popup_BP_International2024_Welcome17EventClaimRewardsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN44CDOTA_DB_Page_BP_International2020_EventGame12EventOnWatchE9MatchID_tEUlvE_EE
@@ -62662,8 +62893,11 @@ N5GCSDK17GCClientJobLambdaIZN45CDOTA_DB_Page_BP_Fall2021_CollectorsCacheVote24Ev
 N5GCSDK17GCClientJobLambdaIZN45CDOTA_UI_BP_International2023_PredictionGroup21EventPredictionPickedEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN45CDOTA_UI_BP_International2024_PredictionGroup21EventPredictionPickedEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN45CDOTA_UI_ContextMenu_HeroGridCategorySettings20EventDeleteActivatedEPN8panorama8CPanel2DENS2_19EPanelEventSource_tEEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN45CDOTA_UI_International2025_PredictionRankings17EventTeamSelectedEjEUlvE0_EE
+N5GCSDK17GCClientJobLambdaIZN45CDOTA_UI_International2025_PredictionRankings17EventTeamSelectedEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN46CDOTA_DB_Page_BP_Crownfall_CollectorsCacheVote24EventVoteForSelectedItemEiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN46CDOTA_DB_Page_BP_International2024_Predictions15EventToggleHelpEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN46CDOTA_DB_Page_International2025_SupportersClub22EventShowPurchasePopupEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN46CDOTA_UI_BP_International2023_PredictionSeries18SetSelectableTeamsERK10CUtlVectorIji25CUtlVectorMemory_GrowableIjiLm0EEEEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN46CDOTA_UI_BP_International2023_PredictionSeries19EventWinnerSelectedEiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN46CDOTA_UI_BP_International2023_PredictionSeries21EventPredictionPickedEjEUlvE_EE
@@ -62689,11 +62923,13 @@ N5GCSDK17GCClientJobLambdaIZN47CDOTA_DB_Popup_BP_Crownfall_Encounter_Survivors32
 N5GCSDK17GCClientJobLambdaIZN47CDOTA_DB_Popup_BP_Crownfall_Encounter_Survivors37EventMetaDevGiveSessionAmountOfPointsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN48CDOTA_DB_Page_BP_International2024_PurchasePopup23EventPurchaseBattlePassE23item_definition_index_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN48CDOTA_DB_Popup_BP_Crownfall_Encounter_PitFighter17HandleFightResultEiEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN48CDOTA_UI_Popup_International2025_CommunityBundle18EventPurchaseLevelEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Page_BP_International2023_SupportersClub22EventShowPurchasePopupEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Page_BP_International2024_SupportersClub22EventShowPurchasePopupEjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Popup_BP_Crownfall_Encounter_TokenTrader17EventExecuteTradeEiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Popup_BP_International2023_TalentBundles19EventPurchaseBundleE23item_definition_index_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Popup_BP_International2024_TalentBundles19EventPurchaseBundleE23item_definition_index_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN49CDOTA_DB_Popup_BP_International2025_TalentBundles19EventPurchaseBundleE23item_definition_index_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN51CDOTA_DB_Popup_BP_Crownfall_Encounter_Minigame_Base14TryClaimRewardEjjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN52CDOTA_DB_ContextMenu_BP_Crownfall_OverworldNodeDebug18EventShowEncounterEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN53CDOTA_DB_Page_BP_International2022_StickerCollections15OnNavigatedAwayE24NavigationChangeReason_tEUlvE_EE
@@ -62705,6 +62941,7 @@ N5GCSDK17GCClientJobLambdaIZNK22CDOTAFantasyController16PerformOperationE17Fanta
 N5GCSDK17GCClientJobLambdaIZNK22CDOTAFantasyController16RerollOperationsE17FantasyLeagueID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZNK22CDOTAFantasyController27UpgradeFantasyCraftingSetupE17FantasyLeagueID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZNK22CDOTAFantasyController28GenerateFantasyCraftingSetupE17FantasyLeagueID_tRK10CUtlVectorIji25CUtlVectorMemory_GrowableIjiLm0EEEEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZZN46CDOTA_UI_International2025_FantasyCraft_Tablet16UpdateDirtyPanelEvENKUlPN8panorama8CPanel2DEiE_clES4_iEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZZN49CDOTA_UI_BP_International2023_FantasyCraft_Tablet16UpdateDirtyPanelEvENKUlPN8panorama8CPanel2DEiE_clES4_iEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZZN49CDOTA_UI_BP_International2024_FantasyCraft_Tablet16UpdateDirtyPanelEvENKUlPN8panorama8CPanel2DEiE_clES4_iEUlvE_EE
 N5GCSDK18CProtoBufNetPacketE
@@ -64092,6 +64329,11 @@ NeutralItemChanged
 NeutralItemContainer
 NeutralItemGuideBuilder
 NeutralItemOption
+NeutralItemSelect1
+NeutralItemSelect2
+NeutralItemSelect3
+NeutralItemSelect4
+NeutralItemSelection
 NeutralItemTier%d
 NeutralItemTooltip
 NeutralItemsList
@@ -64324,6 +64566,7 @@ NoDestroyedGate
 NoDetails
 NoDot
 NoEmbedChatInPage
+NoEvent
 NoFacet
 NoFacetAbilityDesc
 NoFacets
@@ -64354,6 +64597,7 @@ NoLiveGame
 NoLoadScreen
 NoLobbies
 NoLogo
+NoLootList
 NoMana
 NoMatchData
 NoMatches
@@ -64884,9 +65128,7 @@ O\a\e
 O\b
 O\b}d
 O\e4{Q
-O\n\b
 O\r5x
-O\r\b
 O\v\b
 O\v\nj
 O_yG
@@ -65021,6 +65263,7 @@ OnDamageLevelTakenByHitGroupChanged
 OnDamageMaxChanged
 OnDamageMinChanged
 OnDamagePrevented
+OnDashboardPage
 OnDataChanged
 OnDataTeamPlayerPlayerSteamIDsChanged
 OnDataTeamPlayerSelectionDirty
@@ -65028,7 +65271,6 @@ OnDataTeamPlayerSuggestedGeneralItemsChanged
 OnDataTeamPlayerSuggestedItemOptionsChanged
 OnDataTeamPlayerSuggestedItemSequenceChanged
 OnDataTeamPlayerSuggestedItemSequenceVariantsChanged
-OnDataTeamPlayerSuggestedNeutralChanged
 OnDataTeamPlayerSuggestedNeutralsChanged
 OnDataTeamPlayerSuggestedPregameItemsChanged
 OnDayStarted
@@ -65633,7 +65875,6 @@ P-256
 P-384
 P-521
 P0WonMatch
-P0\n\b
 P0_?G0
 P10CDOTA_Buff
 P10CDotaGuide
@@ -65656,12 +65897,17 @@ P2Avatar
 P2P ping to "%s". Timed out after %.2fms\n
 P2P_Messages
 P2T
+P3\r\b
 P5[1
 P5\e9
-P6\r\b
+P6\v\b
+P6_\b
+P7 \b
 P8CUI_Page
-P8\r\b
+P8\v\b
 P8i
+P9\r\b
+P9\v\b
 P=r
 P>K
 PAGN_4
@@ -65706,7 +65952,6 @@ PATTACH_RENDERORIGIN_FOLLOW
 PATTACH_ROOTBONE_FOLLOW
 PATTACH_WATERWAKE
 PATTACH_WORLDORIGIN
-PA\r\b
 PA_ARCANA_DETAIL1BLENDFACTOR
 PA_ARCANA_DETAIL1SCALE
 PA_ARCANA_SPECULAR_BLOOM_COLOR
@@ -65731,7 +65976,6 @@ PBKDF2PARAM
 PBMAC1
 PBUF
 PCRE does not support \\L, \\l, \\N{name}, \\U, or \\u
-PC\v\b
 PC_NETWORKED_ONLY
 PC_NON_NETWORKED_ONLY
 PDCaptain__HideRank
@@ -65800,7 +66044,6 @@ PF10CTransformRKS_S1_E
 PFN8panorama15CPanoramaSymbolERK31CDOTAPeriodicResourceDefinitioniiE
 PFPKciE
 PFT_SOUND
-PF\r\b
 PFv12ResourceId_tE
 PFvP12CSceneObjectE
 PFvRK36SpecificUpdateArcanaUICallbackData_tE
@@ -65830,6 +66073,7 @@ PK29CMsgDOTATournamentStateChange
 PK33CMsgDOTAWeekendTourneyPlayerStats
 PK35CMsgDOTAWeekendTourneyPlayerHistory
 PK36CMsgDOTAClientToGCQuickStatsResponse
+PK3\b
 PK42CMsgDOTAWeekendTourneyParticipationDetails
 PKCS #7 SIGNED DATA
 PKCS12
@@ -65961,7 +66205,6 @@ PKIX
 PKN11CUtlAtlas2DItE11EntryType_tE
 PKN8panorama19ILocalizationStringE
 PK\eXS
-PK\r\b
 PL
 PLACEHOLDER_VALUE
 PLACEMENT
@@ -65983,7 +66226,7 @@ PLAY_TAB_SECTION_NORMAL
 PLAY_TAB_SECTION_PRACTICE_BOTS
 PLAY_TAB_SECTION_RANKED
 PLAY_TAB_SECTION_RANKED_CLASSIC
-PMX\a
+PM\v\b
 PM_NORMAL
 PM_NO_GIBS
 PN14CTechiemenGame6CEnemyE
@@ -66136,11 +66379,8 @@ PP13_SEL_TEAMCUP_TEAM
 PP13_SEL_TEAMCUP_TEAM_LOCK
 PP@981\t
 PPK20CMsgInGamePrediction
-PP\b\b
-PP\r\b
 PPz\v
 PQRSTUVWXYZ
-PQ\v\b
 PR
 PRB
 PRC-8
@@ -66186,7 +66426,6 @@ PULSE_OUTPUT_list
 PULSE_SHARED_SAVE_RESTORE_BLOCK_HANDLER_VERSION
 PURH
 PUT
-PU\r\b
 PV
 PVAL_ANY
 PVAL_ARRAY
@@ -66222,16 +66461,14 @@ PVAL_VEC3
 PVAL_VEC3_WORLDSPACE
 PVAL_VEC4
 PVAL_VOID
+PZ\v\b
 P\aNhk
+P\a\f\b
 P\a\t
-P\f\b
-P\n\b
+P\f\f\b
 P\n\e\f
-P\r\b
-P\r\f\b
+P\r \b
 P\vP\v
-P\v\b
-P\v\n\b
 P]A
 Pablo Bot
 PackDirectory
@@ -66601,6 +66838,7 @@ PerformThinkFunctions
 PerformanceHeroIcon
 PerformanceMode
 PerformanceMode_t
+PerformanceRewardContainer
 PerformingOperation
 Period
 Period the quest represents
@@ -66612,6 +66850,7 @@ PeriodGroups
 PeriodHeaderRow
 PeriodList
 PeriodLocked
+PeriodSelection
 PeriodTab
 Periodic resource '%s' has duplicate periodic_resource_id '%u
 Periodic resource '%s' is missing a periodic_resource_id
@@ -67106,6 +67345,7 @@ PlusPopup.welcome
 PlusPrepaid
 PlusRecycling
 PlusRenewal
+PlusReward
 PlusRewardClaimed
 PlusRewardLog
 PlusShowRewards
@@ -67116,8 +67356,6 @@ PlusTab
 PlusWaitingOnSelections
 Pm8A
 PmR"H
-Pm\t\b
-Pn\n\b
 PodsShowPlayerPictures
 PodsVisible
 Point entity
@@ -67479,6 +67717,7 @@ Prediction copy does not support FTYPEDESC_PTR(%s
 Prediction time (%f) is ahead of sim time (%f) by excessive amount (%f)?  Clamping offset\n
 Prediction time (%f) is less that sim time (%f)?  Clamping offset\n
 Prediction%d
+PredictionContainer
 PredictionCopyDataMap_t::LookupFlatGroup( %u ) is invalid, list only has %u entries\n
 PredictionCopyDataMap_t::m_CustomFields only allows fields of type FIELD_CUSTOM! [%s] is invalid
 PredictionCorrect
@@ -67494,7 +67733,13 @@ PredictionLossIncorrect
 PredictionToastManager
 PredictionWin%d
 PredictionWinCorrect
+PredictionsAvailable
+PredictionsCell
+PredictionsLocked
+PredictionsNotAvailable
 PredictionsSection
+PredictionsUnavailable
+PredictionsUnlocked
 Prefab_%s
 PreferIntegral
 PreferRole%d
@@ -67785,7 +68030,6 @@ Protocol Buffer reflection usage error:\n  Method      : google::protobuf::Refle
 ProvidesVision
 Proxy Certificate Information
 PseudoModifiers
-Pt\n\b
 Pu\rm
 PubMatch
 Public
@@ -67927,7 +68171,6 @@ Pushes an identifier used to group overlays. Overlays marked with this identifie
 PushingBar
 Put all physics in all the worlds to sleep
 Pv\t
-Px\a\b
 Pyrexae \t\t\t
 P|iC\r
 PǻtE
@@ -67951,6 +68194,7 @@ QAngle-world
 QC,A
 QE
 QJײG
+QK\b
 QM
 QPI\b
 QP\v
@@ -67985,10 +68229,7 @@ QUILLSPRAY_4_ACTION_DEFINITION
 QUILLSPRAY_FINISH_ACTION_DEFINITION
 QUILLSPRAY_START_ACTION_DEFINITION
 QYJ
-Q\b\b
-Q\f\b
 Q\t
-Q\v\b
 Q`uV
 Qcp8
 Qdsma
@@ -68440,6 +68681,12 @@ RSA_verify_PKCS1_PSS_mgf1
 RST%d
 RSTUVWX
 RTHeight
+RTTIPredictions
+RTTIPredictionsLocked
+RTTIPredictionsNotAvailable
+RTTIPredictionsUnlocked
+RTTISelected
+RTTIState
 RTWidth
 RT\e
 RT_txt
@@ -68473,7 +68720,6 @@ RUMBLE_STOP_ALL
 R\nt
 R\r1>Vp
 R\r<g
-R\r\b
 R]Di
 R_T5Y
 RadialDistortion
@@ -69460,13 +69706,17 @@ Reward
 Reward%d%d
 Reward1
 Reward2
+RewardAegis
+RewardArcana
 RewardAvailable
+RewardBody
 RewardButton
 RewardCarousel
 RewardCarouselItem
 RewardCategory
 RewardCategoryItems
 RewardCell
+RewardCellLine
 RewardClaimable
 RewardClaimed
 RewardComingSoon
@@ -69474,6 +69724,7 @@ RewardComplete
 RewardContainer
 RewardContents
 RewardCount%d
+RewardDotaPlus
 RewardForTreasureOpened
 RewardGallery
 RewardHero
@@ -69505,9 +69756,13 @@ RewardToken
 RewardTokensContainer
 RewardTooltip
 RewardTreasureImage
+RewardTypeAutograph
+RewardTypeChatWheel
+RewardTypeSticker
 RewardUnavailable
 RewardUnlocked
 RewardVideo
+RewardWitness
 Reward_%d
 Reward_%i
 Reward_%s
@@ -70237,7 +70492,6 @@ S\aʒ5
 S\e
 S\f\r6
 S\vQN
-S\v\b
 S_U\eL
 Safe
 Safe Lane
@@ -70777,6 +71031,7 @@ SearchStickersTextEntry
 SearchTextEntry
 Searches for soundname which emits specified text
 Searching for entities with class/target name containing substrings
+SearchingChatWheels
 SearchingCountVisible
 SearchingForWeekendTourney
 SeasonContentsSnippet
@@ -71619,6 +71874,7 @@ ShardsPurchaseButton
 ShardsRelicsSearchTextEntry
 ShardsRelicsSortByDropDown
 ShardsReward
+ShardsRewardContainer
 ShardsTabDescriptionLabel
 ShareLobby%d
 ShareParty%d
@@ -71918,12 +72174,14 @@ ShowExtraDescription
 ShowFavoriteStar
 ShowFightRecap
 ShowFilters
+ShowFriendsLeader
 ShowFullScheduleEndcap
 ShowGameEndPanel
 ShowGeneric
 ShowGenericGCBusy
 ShowGetStartedButton
 ShowGifting
+ShowGlobalLeader
 ShowGlow%d
 ShowGoLiveButton
 ShowGold
@@ -72032,6 +72290,7 @@ ShowPatchNotes
 ShowPatchWebsite
 ShowPhysicalPercent
 ShowPicker
+ShowPivotIcon
 ShowPlayer
 ShowPlayerModifierImage
 ShowPlayerTab
@@ -72469,6 +72728,7 @@ Solved Knee
 Solved Thigh
 Some options could not be correctly parsed using the proto descriptors compiled into this binary.\nUnparsed options
 SomeItemContextMenuOpen
+SomeTalentHovered
 Someone Else
 Someone just posted on your wall
 SomethingHighlighted
@@ -72526,6 +72786,7 @@ SoundSystem001
 SoundeventPathCornerPairNetworked_t
 Soundmixer
 Sounds
+SoundsSectionButton
 Soundscape %s:Unknown command %s\n
 SoundscapeSystem
 Soundscape[%d]: %s\n
@@ -72832,6 +73093,7 @@ SprayWheelImageShadow
 Spray_Height
 Spray_Width
 Sprays
+SpraysSectionButton
 Spraywheel.Paint
 Spring2021CavernCrawl
 Spring2021Home
@@ -73014,9 +73276,12 @@ StackSize
 StackTimer
 Stage%d
 StageHUD
+StageHeaderRow
 StageInProgress
 StageIntro
+StageLocked
 StageState
+StageTab
 Stale
 StampCount%d
 StampIndex%d
@@ -73677,6 +73942,8 @@ SupportMessage
 SupportSoft
 SupportSoftHandicap
 SupportSoftSelected
+SupporterLevel
+SupporterLevel%d
 SupporterTier%d
 SupportersClubActive
 SupportersClubNew
@@ -74047,10 +74314,8 @@ T\b
 T\ew®pcN
 T\f
 T\n
-T\r\b
 T\t
 T\tJY
-T\v\b
 T\viMOb
 T`D
 Tab Index
@@ -74103,6 +74368,8 @@ Talent
 Talent Sticker
 TalentBranchActive
 TalentBundlesPopup
+TalentCategories
+TalentCategorySelection
 TalentContainer
 TalentDisplay
 TalentGuideViewer
@@ -74328,6 +74595,7 @@ TeamPlayer%d
 TeamPlayerContainer
 TeamPopup
 TeamPredictionContainer
+TeamPredictionSnippet
 TeamPurchasesStrategyControl
 TeamQuestSnippet
 TeamRosterAvatarImage
@@ -74365,6 +74633,7 @@ TeamTypeSearching
 TeamTypeSinglePlayer
 TeamTypeTBD
 TeamURLEntry
+TeamUnavailable
 TeamVoiceIsOpenMic
 TeamWardItem0
 TeamWardItem1
@@ -75307,6 +75576,7 @@ TriggerStyle
 Triggered event: %d, %s\n
 Triggers impulse command
 Triggers the creation of entities in a manually-completed spawn group
+TrinketSelected
 TripleKills
 Tripmine
 Tripmine.Explode
@@ -75684,6 +75954,7 @@ UPDATE_ENT\n
 UPDATE_INTERVAL
 URI:%s
 URL for images.  Supports %CDN% and %LANGUAGE% variables to be replaced at runtime
+UR\b
 USAGE: bounty_completed_test <killer_id> <victim_id>\n
 USAGE: bounty_toast_test <toast_type> <killer_id> <victim_id>\n
 USAGE: duel_request_toast_test <requestor_id> <acceptor_id>\n
@@ -75721,7 +75992,7 @@ UVElements
 UVWQ8888
 UZڀg
 U\\8h
-U\r\b
+U\v\b
 U^Pg
 U`5K
 Ugaritic
@@ -75950,6 +76221,7 @@ Unknown version %d for vpk %s
 UnknownColor
 UnknownHero
 UnknownMsg%d
+UnknownPrediction
 UnknownPurchaseIssue
 UnknownSet
 UnknownState
@@ -76132,6 +76404,7 @@ Upgrade%d
 Upgrade%dDescriptionContainer
 UpgradeAvailable
 UpgradeButton
+UpgradeHotkeys
 UpgradeItems
 UpgradeName%d
 UpgradeOption%d
@@ -76502,13 +76775,10 @@ VZ#-DLU[3=h
 VZ\at
 V\b\v
 V\fG
-V\f\b
 V\n
 V\rKk
 V\rO:e
-V\r\b
 V\vA[o
-V\v\b
 V_:X1
 V_\tm
 V_a|I
@@ -76775,7 +77045,12 @@ VoiceCreditsLanguage
 VoiceDataFormat_t
 VoiceDeviceDropDown
 VoiceFile
+VoiceLine%d
+VoiceLineButton
 VoiceLineCarousel
+VoiceLineCount1
+VoiceLineCount2
+VoiceLineCount3
 VoiceMuteButton
 VoiceMuted
 VoiceStatus
@@ -76951,13 +77226,9 @@ WTLS curve over a 160 bit prime field
 WTLS curvs over a 224 bit prime field
 WZTR
 W\am
-W\b
-W\f\b
 W\noB
-W\r\b
 W\t4
 W\v
-W\v\b
 W\v^9
 W`c[\e\fF
 Wager%dChanged
@@ -77000,6 +77271,7 @@ WakeGotLock
 WakeRecvMsg
 WalkSpeed
 WalkSpeedLabel
+WallpaperClaim
 Walter Bot
 WantsLiveVideo
 Ward
@@ -77271,6 +77543,7 @@ Which entity should we spew input for? (Useful for debugging bot input
 Which stats can this gem roll
 Which stick controls movement (0 is left stick
 Which tokens to filter on in hero pick and other token progression UI
+WhichLeaderboard
 WhichTab
 While active, activate a child state based on the results of a boolean condition. Any referenced variables must be marked as observable
 While open event
@@ -77357,6 +77630,7 @@ WisdomShrineRadialTimer
 WitchDoctor
 WithCharacter
 WithHero
+WitnessReward
 WizardSubPanel.BgColor
 Wl
 Wlw
@@ -77701,10 +77975,7 @@ YYYY-MM-DD hh:mm:ss Z0000
 YZJ
 Y\bMK
 Y\e
-Y\f\b
 Y\f\vtw
-Y\n\b
-Y\r\b
 Y\vQlJ
 Y]A
 Y_txt
@@ -77789,7 +78060,6 @@ Z41InitClassDynamicSignatureFromExtensions_RP12CEntityClassRKSt8functionIFP26CEn
 Z41InitClassDynamicSignatureFromExtensions_RP12CEntityClassRKSt8functionIFP26CEntityClassPulseSignaturevEEEUlRK19CPulseTypeWithScopePK24PulseMethodBindingInfo_tE
 Z44PulseAPIConvertArgumentsForCall_CppSignaturePKcRK23PulseBindingSignature_tP18CPulseArgumentPackP15CEntityInstanceS7_S7_PK12CVariantBaseI24CVariantDefaultAllocatorEPKS4_PK19CPulseInputParamMapEUliPS0_P19CPulseValueFullTypePPK13CPulseVariantE
 Z47PulseAPIConvertArgumentsForCall_MethodSignaturePKcRK14CUtlLeanVectorI22CPulseRuntimeMethodArgi18CMemAllocAllocatorEP18CPulseArgumentPackP15CEntityInstanceSA_SA_PK12CVariantBaseI24CVariantDefaultAllocatorEPKS7_PK19CPulseInputParamMapEUliPS0_P19CPulseValueFullTypePPK13CPulseVariantE
-Z5\b
 Z7"c
 Z72\v
 Z8
@@ -77808,7 +78078,6 @@ ZIP_LocalFileHeader
 ZIP_PreloadDirectoryEntry
 ZIP_PreloadHeader
 ZI\r\v
-ZJ\b
 ZL19UpdateFilterPresetsPN8panorama8CPanel2DEiPKciRKSt8functionIFS3_iEEEUlPNS_12CRadioButtonEiE
 ZL19UpdateFilterPresetsPN8panorama8CPanel2DEiPKciRKSt8functionIFS3_iEEEUliE
 ZL21dota_hide_fight_recapRK15CCommandContextRK8CCommandEUlP20CDOTA_Hud_FightRecapE
@@ -78253,6 +78522,7 @@ ZN26CDOTA_UI_Hero_Facet_Picker15OnFacetSelectedE14HeroFacetKey_tEUlPN8panorama8C
 ZN26CDOTA_UI_Hero_Facet_Picker4InitE8HeroID_tEUlPN8panorama8CPanel2DEiE
 ZN26CDOTA_UI_Match3_Popup_Help16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN26CDOTA_UI_Match3_Popup_Help18UpdateAbilityPanelEPN8panorama8CPanel2DERK21CMatch3HeroDefinitionRK24CMatch3AbilityDefinition24EMatch3PieceUpgradeStateEUlPNS0_6CLabelEiE
+ZN26CDOTA_UI_SeasonRewardToast27UpdateToastTypeBasedOnEventE6EEventEUlPN8panorama8CPanel2DEE
 ZN26CDOTA_UI_StoreItemCarousel15RebuildCarouselEvEUlPN8panorama15CDelayLoadPanelEE
 ZN26CDOTA_UI_TechiemenRenderer14BSetPropertiesERK10CUtlVectorIN8panorama21ParsedPanelProperty_tEi25CUtlVectorMemory_GrowableIS2_iLm0EEEEUlRKS2_NS_9ESpriteIDEE
 ZN26CDOTA_UI_TechiemenRenderer14BSetPropertiesERK10CUtlVectorIN8panorama21ParsedPanelProperty_tEi25CUtlVectorMemory_GrowableIS2_iLm0EEEEUlRKS2_NS_9ESpriteIDEE0
@@ -78352,6 +78622,8 @@ ZN30CDOTA_UI_Tooltip_OverworldHero16UpdateDirtyPanelEvEUlP23CDOTA_UI_CrownfallTo
 ZN30CDOTA_UI_Tooltip_OverworldHero16UpdateDirtyPanelEvEUliE
 ZN31CDOTA_DB_ContextMenu_TeamPicker11FindChoicesE10CUtlStringEUlPN8panorama11CImagePanelEE
 ZN31CDOTA_DB_ContextMenu_TeamPicker20EventSearchSubmittedEvEUlPN8panorama11CImagePanelEE
+ZN31CDOTA_DB_International2025_TabsC4EPN8panorama8CPanel2DEPKcEUlS2_iS2_E
+ZN31CDOTA_DB_International2025_TabsC4EPN8panorama8CPanel2DEPKcEUlS2_iS2_E0
 ZN31CDOTA_DB_Page_Collection_Browse20OnItemSearchFinishedERK15CEconItemSearchEUlPN8panorama8CPanel2DEiE
 ZN31CDOTA_DB_Page_Collection_Browse20OnItemSearchFinishedERK15CEconItemSearchEUliE
 ZN31CDOTA_DB_Page_Collection_Browse8OnUpdateEvEUlPK19CDOTAItemDefinitionE
@@ -78378,6 +78650,7 @@ ZN31CDOTA_DB_Page_Collection_Shards8OnUpdateEvEUliE
 ZN31CDOTA_DB_Page_GuildsLeaderboard17UpdateLeaderboardEPK36CMsgGuildLeaderboardCombinedResponseEUlPN8panorama8CPanel2DEiE
 ZN31CDOTA_DB_Page_GuildsLeaderboard17UpdateLeaderboardEPK36CMsgGuildLeaderboardCombinedResponseEUliE
 ZN31CDOTA_DB_Page_GuildsLeaderboardC4EPN8panorama8CPanel2DEPKcEUlS2_iS2_E
+ZN31CDOTA_DB_Page_International202523InitializeRewardDisplayEvEUlPN8panorama8CPanel2DEiE
 ZN31CDOTA_DB_Page_Plus_Achievements9SetupPageEPKcEUlPN8panorama12CTabContentsEE
 ZN31CDOTA_DB_Page_WatchDPCStandings16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN31CDOTA_DB_Page_WatchDPCStandings16UpdateDirtyPanelEvEUliE
@@ -78506,10 +78779,13 @@ ZN37CDOTA_UI_BattleReport_Screen_Calendar16UpdateDirtyPanelEvEUlPN8panorama8CPan
 ZN37CDOTA_UI_BattleReport_Screen_Calendar19UpdateCalendarMonthEPN8panorama8CPanel2DEjRK18BattleReportFull_tEUlS2_iE
 ZN38CDOTA_DB_Page_Diretide_TreasureDetails21DisplayAssetModifiersEPK19CDOTAItemDefinitionEUlPK14CAssetModifierE
 ZN38CDOTA_DB_Page_Diretide_TreasureDetails21LoadItemPanelContentsEPN8panorama8CPanel2DEEUlPNS0_15CDelayLoadPanelEE
+ZN38CDOTA_DB_Page_International2025_Talent16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN38CDOTA_DB_Page_International2025_Talent16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE0
 ZN38CDOTA_UI_Match3_Tooltip_OpponentAction17SetOpponentActionERK21CMatch3OpponentActionEUlPN8panorama6CLabelEiE
 ZN39CDOTA_DB_Frostivus2024_ComponentTooltip16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN39CDOTA_DB_Page_ShowcaseAdminReportReview16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN39CDOTA_DB_Page_ShowcaseAdminReportReview16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE0
+ZN39CDOTA_Popup_International2025_ItemClaim16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN39CDOTA_UI_ContextMenu_HeroSlotItemPickerC4EPN8panorama8CPanel2DEPKcS2_EUlS2_iS2_E
 ZN39CDOTA_UI_ContextMenu_Showcase_HeroModel7SetItemE16ShowcaseItemID_tP25CDOTA_UI_ShowcaseContentsEUlPN8panorama10CTabButtonEiE
 ZN39CDOTA_UI_ContextMenu_Showcase_HeroModel7SetItemE16ShowcaseItemID_tP25CDOTA_UI_ShowcaseContentsEUliE
@@ -78535,12 +78811,22 @@ ZN40CDOTA_UI_BP_International2023_RewardList21UpdateCellsClaimStateEvEUlPN8panor
 ZN41CDOTA_DB_Page_BP_International2019_Quests15SetupQuestStateEvEUlP14CDOTA_UI_QuestE
 ZN41CDOTA_DB_Page_BP_International2023_Talent16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN41CDOTA_DB_Page_BP_International2024_Talent16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN41CDOTA_DB_Page_International2025_ItemClaim16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN41CDOTA_Popup_International2025_FantasyHelp16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN41CDOTA_UI_International2025_Fantasy_Period17TutorialHighlightEPKcEUlPN8panorama8CPanel2DEE
+ZN41CDOTA_UI_International2025_Fantasy_Period18HighlightOperationE20FantasyOperationID_tEUlPN8panorama8CPanel2DEE
+ZN41CDOTA_UI_International2025_Fantasy_Period25RemoveOperationHighlightsEvEUlPN8panorama8CPanel2DEE
+ZN41CDOTA_UI_International2025_Fantasy_PeriodC4EPN8panorama8CPanel2DEPKcEUlS2_iS2_E
+ZN41CDOTA_UI_International2025_Fantasy_PeriodC4EPN8panorama8CPanel2DEPKcEUlS2_iS2_E0
 ZN42CDOTA_DB_Page_BP_International2023_Rewards16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEE
 ZN42CDOTA_DB_Page_BP_International2023_Rewards17UpdateTPfxRewardsEPK20CDOTAEventDefinitionPK18CDOTAEventUserDataEUlPN8panorama8CPanel2DEE
 ZN42CDOTA_DB_Page_BP_International2024_Rewards17UpdateTPfxRewardsEPK20CDOTAEventDefinitionPK18CDOTAEventUserDataEUlPN8panorama8CPanel2DEE
+ZN42CDOTA_Popup_International2025_FantasyTitle11SelectTitleE14FantasyTitle_tEUlPN8panorama8CPanel2DEE
+ZN42CDOTA_Popup_International2025_FantasyTitle16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN43CDOTA_DB_Popup_BP_Crownfall_Encounter_Shmup16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN43CDOTA_DB_Popup_BP_Crownfall_Encounter_Shmup16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE0
 ZN43CDOTA_DB_Popup_BP_Crownfall_Encounter_Shmup19SetupChainContainerEvEUlPN8panorama8CPanel2DEiE
+ZN43CDOTA_Popup_International2025_FantasyChoice16OnPlayerSelectedEjEUlPN8panorama8CPanel2DEE
 ZN44CDOTA_DB_Page_BP_International2022_CandyShop13UpdateRewardsERK21CMsgCandyShopUserDataEUlPN8panorama8CPanel2DEiE
 ZN44CDOTA_DB_Page_BP_International2022_CandyShop14UpdateExchangeERK21CMsgCandyShopUserDataEUlPN8panorama8CPanel2DEiE
 ZN44CDOTA_DB_Page_BP_International2022_CandyShop15UpdateInventoryERK21CMsgCandyShopUserDataPK23SPeriodicResourceValuesEUlPN8panorama8CPanel2DEiE
@@ -78566,7 +78852,9 @@ ZN45CDOTA_DB_Popup_BP_Crownfall_Encounter_Fishing8SetStateENS_23EncounterFishing
 ZN45CDOTA_DB_Popup_BP_Crownfall_Encounter_Fishing8SetStateENS_23EncounterFishingState_tEEUlvE20
 ZN45CDOTA_DB_Popup_BP_Crownfall_Encounter_Fishing8SetStateENS_23EncounterFishingState_tEEUlvE6
 ZN45CDOTA_DB_Popup_BP_Crownfall_Encounter_Fishing8SetStateENS_23EncounterFishingState_tEEUlvE7
+ZN45CDOTA_UI_International2025_PredictionRankings16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN46CDOTA_DB_Page_BP_Crownfall_CollectorsCacheVote16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN46CDOTA_UI_International2025_FantasyCraft_Tablet16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN47CDOTA_DB_Page_Collection_Featured_ItemsCarousel15RebuildCarouselEvEUlPN8panorama15CDelayLoadPanelEE
 ZN47CDOTA_DB_Popup_BP_Crownfall_Encounter_Artillery14UpdateLevelWonEvEUlPN8panorama8CPanel2DEiE
 ZN47CDOTA_DB_Popup_BP_Crownfall_Encounter_Artillery17UpdateDebugCanvasEvEUlPN8panorama8CPanel2DEiE
@@ -78610,6 +78898,8 @@ ZN49CDOTA_DB_Popup_BP_International2023_TalentBundles16UpdateDirtyPanelEvEUlPN8p
 ZN49CDOTA_DB_Popup_BP_International2024_FantasyChoice16OnPlayerSelectedEjEUlPN8panorama8CPanel2DEE
 ZN49CDOTA_DB_Popup_BP_International2024_TalentBundles16UpdateBundleTierEPN8panorama8CPanel2DEi23item_definition_index_tEUlS2_iE
 ZN49CDOTA_DB_Popup_BP_International2024_TalentBundles16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
+ZN49CDOTA_DB_Popup_BP_International2025_TalentBundles16UpdateBundleTierEPN8panorama8CPanel2DEiRK29International2025BundleTier_tEUlS2_iE
+ZN49CDOTA_DB_Popup_BP_International2025_TalentBundles16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN49CDOTA_UI_BP_International2023_FantasyCraft_Tablet16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN49CDOTA_UI_BP_International2024_FantasyCraft_Tablet16UpdateDirtyPanelEvEUlPN8panorama8CPanel2DEiE
 ZN51CDOTA_DB_Popup_BP_Crownfall_Encounter_Minigame_Base13UpdateRewardsEvEUlPN8panorama8CPanel2DEiE
@@ -78637,6 +78927,7 @@ ZN8panorama8CPanel2D12SortChildrenIZN23CDOTA_DB_Page_StorePlus20UpdateRelicsList
 ZN8panorama8CPanel2D12SortChildrenIZN23CDOTA_DB_Page_StorePlus20UpdateRelicsListSortEvEUlPS0_S3_E1_EEvOT_EUlPNS_8IUIPanelES8_E
 ZN8panorama8CPanel2D12SortChildrenIZN23CDOTA_DB_Page_StorePlus20UpdateRelicsListSortEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
 ZN8panorama8CPanel2D12SortChildrenIZN25CDOTA_UI_ShopItemCombines14UpdateControlsEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
+ZN8panorama8CPanel2D12SortChildrenIZN26CDOTA_UI_ChatWheelSettings15PopulateOptionsEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
 ZN8panorama8CPanel2D12SortChildrenIZN29CDOTA_DB_Page_GuildMemberList19SortGuildMemberRowsEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
 ZN8panorama8CPanel2D12SortChildrenIZN30CDOTA_DB_Page_Comp_DPC_Fantasy16UpdateDirtyPanelEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
 ZN8panorama8CPanel2D12SortChildrenIZN30CDOTA_DB_Page_ProfileHeroStats12SortStatRowsEvEUlPS0_S3_E_EEvOT_EUlPNS_8IUIPanelES8_E
@@ -78760,6 +79051,8 @@ ZZN40CDOTA_DB_Background_BP_International202316UpdateBingoPanelEPK20CDOTAEventDe
 ZZN40CDOTA_DB_Background_BP_International202316UpdateBingoPanelEPK20CDOTAEventDefinitionPK18CDOTAEventUserDataENKUlPN8panorama8CPanel2DEiE_clES8_iEUliE
 ZZN40CDOTA_DB_Background_BP_International202416UpdateBingoPanelEPK20CDOTAEventDefinitionPK18CDOTAEventUserDataENKUlPN8panorama8CPanel2DEiE_clES8_iEUlS8_iE
 ZZN40CDOTA_DB_Background_BP_International202416UpdateBingoPanelEPK20CDOTAEventDefinitionPK18CDOTAEventUserDataENKUlPN8panorama8CPanel2DEiE_clES8_iEUliE
+ZZN41CDOTA_UI_International2025_Fantasy_Period18HighlightOperationE20FantasyOperationID_tENKUlPN8panorama8CPanel2DEE_clES3_EUlS3_E
+ZZN41CDOTA_UI_International2025_Fantasy_Period25RemoveOperationHighlightsEvENKUlPN8panorama8CPanel2DEE_clES2_EUlS2_E
 ZZN44CDOTA_DB_Page_BP_International2022_CandyShop13UpdateRewardsERK21CMsgCandyShopUserDataENKUlPN8panorama8CPanel2DEiE_clES5_iEUlP19CDOTA_UI_CandyImageiE
 ZZN44CDOTA_DB_Page_BP_International2022_CandyShop13UpdateRewardsERK21CMsgCandyShopUserDataENKUlPN8panorama8CPanel2DEiE_clES5_iEUlP19CDOTA_UI_CandyImageiE0
 ZZN44CDOTA_DB_Page_BP_International2022_CandyShop14UpdateExchangeERK21CMsgCandyShopUserDataENKUlPN8panorama8CPanel2DEiE_clES5_iEUlP19CDOTA_UI_CandyImageiE
@@ -78782,11 +79075,9 @@ ZZZN47CDOTA_DB_Popup_BP_Crownfall_Encounter_Survivors18UpdateMetaUpgradesEiENKUl
 ZZZZZZZZZZZZZZZ
 ZZZZZZZZZZZZZZZZ
 Z\aGdD
-Z\f\b
-Z\n\b
 Z\n{S
-Z\r\b
 Z\v
+Z\v\b
 Zabecki
 ZaugDragonAnimationFrameChanged
 Zb
@@ -78854,6 +79145,7 @@ ZۥJQ
 Z樲}gE3
 a
 a %b %e %T %Y
+a \b
 a b c d
 a class="%s ItemRarityColor" href="event:DOTAShowItemDefPage(%d)" onmouseover="event:DOTAShowEconItemTooltip(%d,%d,0)" onmouseout="event:DOTAHideEconItemTooltip()">%s</a
 a class="CustomGameName" href="event:DOTAShowCustomGamePage(%llu)">%s</a
@@ -78963,16 +79255,15 @@ a\b\n\f
 a\b\t\n\v5
 a\b\t\t\n
 a\b\t\v\f
+a\f\b
 a\fiB
 a\n\t\b\v
-a\r\b
 a\raU
 a\t\b\n
 a\t\n\n\t
 a\t\n\v\f
 a\t\v\r
 a\v"7
-a\v\b
 a]?xG
 a]g
 a_bitstr.c
@@ -79148,6 +79439,8 @@ account_guilds_persona_info
 account_id
 account_id=%i
 account_id=%u
+account_id=%u&role=%d
+account_id> <fantasy_role> Set the fantasy role for a player on public
 account_id_%d
 account_id_0
 account_id_1
@@ -79385,6 +79678,7 @@ advanced_view
 advancing_team_name
 advancing_team_round
 aegis
+aegis_claim_popup
 aegis_denied
 aegis_event
 aegis_icon
@@ -79972,6 +80266,7 @@ application/pkcs7-signature
 application/x-pkcs7
 application/x-pkcs7-mime
 application/x-pkcs7-signature
+application/x-www-form-urlencoded
 application_damage
 application_radius
 applied_damage
@@ -80218,7 +80513,6 @@ asynchronous
 at <EOF
 at end of pattern
 at offset %d
-at\a
 at_any_cost
 atan
 atan2
@@ -80670,7 +80964,6 @@ bJj
 bKUl
 bKayaApplied
 bKlD
-bL\b
 bLanded
 bLockTeams
 bLocketAmpApplied
@@ -80726,7 +81019,6 @@ bTryDirectConnect=%d, connecting %s\n
 bUnderThreshold
 bUseExperimentalFormula
 bUseNormalMaps
-bV\b
 bValue
 bVisible
 bV}TS
@@ -80738,24 +81030,21 @@ bYashaAndKayaApplied
 b[I0
 b\a1
 b\a\f\v\n
-b\b
 b\b 0\b\b  \b\t
 b\b\b\b
 b\b}d
 b\eQEy
 b\eV
+b\e\b
 b\f\b
 b\fzUkm
 b\n\b\n\f
 b\n\v\f
-b\r\b
 b\t
 b\t 0\b\t
 b\t\f\r
 b\t\n\f\r
 b\t\n\v
-b\v\a
-b\v\b
 b\v\r\t\n
 b]FşF
 b_HITGROUP_CHEST_destroyed
@@ -81209,6 +81498,7 @@ bignum routines
 bignum too long
 bigportrait
 bigsplash
+bilibili
 binary
 binary blob: %u bytes
 binary_auto
@@ -82120,7 +82410,6 @@ c2tnb431r1
 c3Wb28Yxdqk
 c51.l
 c5@O
-c7\b
 c82
 cACertificate
 cAmbientColor
@@ -82141,9 +82430,7 @@ cSpecularColor
 cV
 c\bdqO
 c\eH
-c\f\b
 c\r1m
-c\r\b
 c\ti5
 c\v\fC
 c^M\e
@@ -83325,6 +83612,8 @@ claimed_reward
 claimed_rewards_%d
 claimed_rewards_0
 claimed_rewards_1
+claims_remaining
+claims_remaining_text
 clamp
 clamping dimensions of panorama world panel from %d x %d to %d x %d! (%.1f" x %.1f" @ %.1f dpi)\n
 clarity_mana_amount
@@ -83692,6 +83981,7 @@ communication_score
 communication_score_current
 communication_score_max
 communication_score_raw
+community
 community_market_item_remaps
 community_sparkle
 comp
@@ -83990,8 +84280,11 @@ corpse_explosion_chance_pct
 corpse_explosion_damage_pct
 corpse_explosion_radius
 corpselord_revive
+correct
 correct_answer_base_trivia_points
 correct_answers
+correct_predictions_rtti
+correct_predictions_ti
 correction to slot %d: %s:'%s' changed '%s' to '%s
 corrosive_breath_armor_reduction
 corrosive_breath_damage
@@ -84807,6 +85100,7 @@ d[kHy
 d\bؓS\n
 d\n
 d\n\t
+d\r \b
 d] %s\n
 d] -> gsn(%s
 d] CLASS: %s, ITEM: %s\n
@@ -85175,6 +85469,7 @@ debugNumbersImage
 debugNumbersImageHeight
 debugNumbersImageWidth
 debug_anim_source
+debug_async_data_panel_override_state
 debug_dashboard_cell_end_timer
 debug_dashboard_overlay_opacity
 debug_dashboard_overlay_path
@@ -85636,6 +85931,7 @@ disconnect local lobby disconnect
 disconnect quit demo mode
 disconnect script finish game
 disconnected
+discount
 discountActive
 discount_price
 discriminant is zero
@@ -86352,6 +86648,10 @@ dota_compendium_2024_predictions_show_debug_node_names
 dota_compendium_2024_predictions_unlock_all
 dota_compendium_2024_predictions_use_test_data
 dota_compendium_2024_predictions_winner_reveal_state
+dota_compendium_2025_predictions_main_event_results_shown
+dota_compendium_2025_predictions_rtti_results_shown
+dota_compendium_2025_predictions_show_debug_node_names
+dota_compendium_2025_predictions_test_state
 dota_compendium_levelup_interval_accel
 dota_compendium_levelup_interval_min
 dota_compendium_levelup_pitch_adjust_high
@@ -86611,6 +86911,7 @@ dota_event_override_points %d %s\n
 dota_event_override_premium_points
 dota_event_override_premium_points %d %s\n
 dota_event_points_value
+dota_event_rankings_cache_duration
 dota_event_set_active_seasonid
 dota_event_stage
 dota_event_tips_cache_duration
@@ -86666,6 +86967,8 @@ dota_fake_ti10_schedule_time
 dota_fake_update_play
 dota_fantasy_2024_force_results_period
 dota_fantasy_2024_tutorial_state
+dota_fantasy_2025_force_results_period
+dota_fantasy_2025_tutorial_state
 dota_fantasy_craft_tutorial_state
 dota_fantasy_force_results_period
 dota_fantasy_league_region
@@ -87306,6 +87609,9 @@ dota_international2024_rewards_level_animation_duration_max_change
 dota_international2024_rewards_level_animation_duration_max_seconds
 dota_international2024_rewards_level_animation_duration_min_change
 dota_international2024_rewards_level_animation_duration_min_seconds
+dota_international2025_force_ineligible
+dota_international_2025_fandom_level_override
+dota_international_2025_favorite_team_override
 dota_intro_movie_volume
 dota_inventory_changed
 dota_inventory_changed_query_unit
@@ -87385,6 +87691,7 @@ dota_joy_pow
 dota_joy_undocked_target_max_distance
 dota_key
 dota_keybind
+dota_keybind_neutral_item_selection
 dota_keybind_talent_upgrade_attribute_keybind
 dota_keybind_talent_upgrade_left_keybind
 dota_keybind_talent_upgrade_right_keybind
@@ -87920,6 +88227,7 @@ dota_purchase_random_hero_relic_steady_time
 dota_purchase_stickybuy
 dota_pvp
 dota_pvp_tiled
+dota_quartero_show_page
 dota_queen_of_pain_arcana_disable_display
 dota_queen_of_pain_arcana_summary_display_delay
 dota_queen_of_pain_arcana_summary_linger_duration
@@ -88068,6 +88376,7 @@ dota_select_friend_title
 dota_select_hero npc_dota_hero_%s
 dota_select_hero random
 dota_select_hero repick
+dota_select_neutral_item
 dota_select_scout
 dota_select_starting_position %d
 dota_selected_broadcaster_player_id
@@ -88077,6 +88386,7 @@ dota_series_prediction_2024_use_placeholder_icon
 dota_series_prediction_use_placeholder_icon
 dota_server_wait_for_lobby
 dota_set_bp_gift_level
+dota_set_fantasy_role
 dota_set_hpbar_background
 dota_set_hpbar_streak_particle
 dota_set_portrait_streak_particle
@@ -88191,6 +88501,7 @@ dota_show_plus_assistant_violator
 dota_show_popular_items
 dota_show_purchase_team_fan_content_popup
 dota_show_quick_stats_damage_breakdown_enabled
+dota_show_range_finder_on_quickcast_down
 dota_show_rank_calibration_popup
 dota_show_rate_coaching_session_popup
 dota_show_scan_particle
@@ -88612,6 +88923,7 @@ dota_wagering_info_cache_duration
 dota_ward_killed
 dota_ward_placement_max_suggestions
 dota_ward_placement_min_weight
+dota_watch_broadcast_heartbeat_interval_s
 dota_watch_force_main_event
 dota_watch_game_disable_client_validation
 dota_watch_live_friend_score_boost
@@ -88933,7 +89245,6 @@ e,/root
 e-resize
 e1
 e1A26b
-e1\b
 e2_d
 e4bP
 e5<K
@@ -89017,7 +89328,6 @@ eUh3
 eUnlockEvent
 eUserInitiatedSwitchToLast
 eUserInitiatedUIKeyPress
-eV\b
 eVeryFast
 eXIfoFFstIMEsPLTpHYshISTbKGDiTXtzTXttEXtsRGBsBITiCCPgAMAcHRMtRNSIDATPLTEIHDR
 eXQd
@@ -89031,10 +89341,7 @@ e\a.m
 e\aPm
 e\eCk
 e\f
-e\f\b
 e\nLq
-e\r\b
-e\t\b
 e\tcCPtH
 e\vUE
 e]g
@@ -90039,12 +90346,10 @@ f1OJ
 f1cK
 f4%B
 f45\r
-f6\b
 f7
 f7#T
 f7@7F
 f7ig
-f8\b
 f;Zv9l\r
 f<<0A1pq
 f<>28
@@ -90106,15 +90411,11 @@ f\ej
 f\eփZ
 f\f1x
 f\fM\t
-f\f\b
 f\f\f
-f\n\b
 f\r
-f\r\b
 f\t\b
 f\trixZ
 f\tu
-f\v\b
 f]ne3
 f_int.c
 f_string.c
@@ -90191,6 +90492,7 @@ fake_account_disabled
 fake_account_disabled_end_time
 fake_chat_members
 fake_custom_lobbies
+fake_data_state
 fake_event_game_active
 fake_event_game_countdown
 fake_low_behavior_for_ranked
@@ -90237,6 +90539,7 @@ fantasy_card_pack_sets_staging
 fantasy_craft_decode_title_awards
 fantasy_craft_populate_league_data
 fantasy_craft_reset_2024_tutorial
+fantasy_craft_reset_2025_tutorial
 fantasy_craft_reset_tablets
 fantasy_craft_reset_tutorial
 fantasy_craft_set_roll_tokens
@@ -90263,11 +90566,13 @@ fantasy_reward
 fantasy_reward_redemption
 fantasy_reward_treasure_item_def
 fantasy_role
+fantasy_rtti_score
 fantasy_score
 fantasy_select_player
 fantasy_select_title
 fantasy_staging
 fantasy_stat
+fantasy_ti_score
 fantasy_ticket
 farPlane
 far_damage
@@ -90595,6 +90900,7 @@ file://{images}/teamfancontent/season_%u/%u/teamlogo.png
 file://{images}/teamfancontent/season_%u/%u/teamlogo_medium.png
 file://{images}/teamfancontent/season_%u/%u/teamlogo_small.png
 file://{images}/teamfancontent/season_%u/players/%u.png
+file://{images}/teamfancontent/season_%u/players/%u_%s.png
 file://{images}/teams/%u.png
 file://{images}/teams/square_medium/%u.png
 file://{images}/teams/square_small/%u.png
@@ -90972,6 +91278,7 @@ file://{resources}/layout/dashboard_background_last_match.xml
 file://{resources}/layout/dashboard_background_loadout_treasure.xml
 file://{resources}/layout/dashboard_background_manager.xml
 file://{resources}/layout/dashboard_background_map_update_2023.xml
+file://{resources}/layout/dashboard_background_seasonal_reward_line_fall_2025.xml
 file://{resources}/layout/dashboard_frontpage_10th_anniversary_event.xml
 file://{resources}/layout/dashboard_frontpage_muerta_event.xml
 file://{resources}/layout/dashboard_page_accomplishments_debug.xml
@@ -91147,6 +91454,29 @@ file://{resources}/layout/events/frostivus2024/frostivus2024_reward.xml
 file://{resources}/layout/events/frostivus2024/popup_frostivus2024_story.xml
 file://{resources}/layout/events/frostivus2024/tooltip_frostivus2024_component.xml
 file://{resources}/layout/events/frostivus2024/tooltip_frostivus2024_tier_locked.xml
+file://{resources}/layout/events/international_2025/dasbboard_background_international_2025.xml
+file://{resources}/layout/events/international_2025/dashboard_page_international_2025.xml
+file://{resources}/layout/events/international_2025/international_2025_aegis_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_button.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasy.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasy_period.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasychoice_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasycraft_tablet.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasyhelp_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasytitle_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_fantasytitle_tooltip.xml
+file://{resources}/layout/events/international_2025/international_2025_itemclaim.xml
+file://{resources}/layout/events/international_2025/international_2025_itemclaim_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_predictions.xml
+file://{resources}/layout/events/international_2025/international_2025_predictions_mainevent.xml
+file://{resources}/layout/events/international_2025/international_2025_predictions_rankings.xml
+file://{resources}/layout/events/international_2025/international_2025_predictionshelp_popup.xml
+file://{resources}/layout/events/international_2025/international_2025_score_tooltip.xml
+file://{resources}/layout/events/international_2025/international_2025_supporters_clubs.xml
+file://{resources}/layout/events/international_2025/international_2025_talent.xml
+file://{resources}/layout/events/international_2025/popup_international_2025_purchase_community_bundle.xml
+file://{resources}/layout/events/international_2025/popup_international_2025_talent_bundles.xml
+file://{resources}/layout/events/international_2025/tabs_international_2025.xml
 file://{resources}/layout/events/newbloom2025_frontpage.xml
 file://{resources}/layout/events/seasonal/dota_ui_seasonal_visual_novel.xml
 file://{resources}/layout/events/seasonal/popup_seasonal_visual_novel.xml
@@ -91952,6 +92282,7 @@ first_blood_test
 first_leaderboard_week
 first_loot_list_override
 first_lotus_pickup_time
+first_message_id
 first_pick
 first_prediction_id
 first_radius
@@ -92643,7 +92974,6 @@ g*\ag*\bg
 g+g
 g0
 g0dW
-g1\b
 g4FA
 g5}6
 g6\b
@@ -92670,7 +93000,7 @@ gXC.nT\v\e
 gZB
 g\a6*\v
 g\b$n
-g\t\b
+g\v\b
 g]i/H
 g_GameEventManager.Init
 g_bLightingOnly
@@ -92837,6 +93167,8 @@ game/client/dota/panorama/hud/dota_hud_xp.cpp
 game/client/dota/panorama/international2020/dota_db_page_comp_ti10_fantasy.cpp
 game/client/dota/panorama/international2024/dota_db_page_international2024_fantasy_period.cpp
 game/client/dota/panorama/international2024/dota_db_popup_international2024_fantasychoice.cpp
+game/client/dota/panorama/international2025/dota_popup_international_2025_fantasychoice.cpp
+game/client/dota/panorama/international2025/dota_ui_international_2025_fantasy_period.cpp
 game/client/dota/panorama/popups/dota_db_popup_settings.cpp
 game/client/dota/panorama/popups/dota_db_popup_settings_reborn.cpp
 game/client/dota/panorama/settings/dota_ui_chat_wheel_settings.cpp
@@ -93722,6 +94054,7 @@ h W
 h&eC
 h)j
 h*Ax
+h-4\b
 h0
 h0XB
 h1
@@ -93789,12 +94122,8 @@ hW_z
 hX
 hX@e
 h\e\r
-h\f\b
 h\n2
-h\n\b
 h\nȸYm
-h\r\b
-h\t\b
 h] %8llx (%-30.30s) <%3.3s> [loc] %-33.33s [abs] %-33.33s [ang] %-33.33s [s] %5.3f
 h`H(|sO
 h`H1pqA\a
@@ -94077,6 +94406,7 @@ hero_category_name
 hero_challenge_instances
 hero_chat_wheel
 hero_check_radius
+hero_class
 hero_complexity
 hero_damage
 hero_damage_penalty
@@ -94412,6 +94742,7 @@ hotkey
 hotkey_alt
 hotkey_category
 hotkey_ctrl
+hotkey_tab
 hotpink
 hour
 hours
@@ -94506,6 +94837,7 @@ https://store.beta.steampowered.com/account/preferences#CommunityContentPreferen
 https://store.steampowered.com/account/preferences#CommunityContentPreferences
 https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=%s&quality=0
 https://www.dota2.com
+https://www.dota2.com/proregistration/setplayerfantasyrole?account_id=%u&role=%d
 https://www.netflix.com/dotadragonsblood
 https://www.netflix.com/title/80994336
 https://www.twitch.tv/%s
@@ -94747,8 +95079,6 @@ iU[&l
 iVY2L
 i\bD
 i\b\e4ȿ;rB
-i\f\b
-i\r\b
 i]Wb
 i_destructible_part_destroyed_part_index
 ia5org
@@ -95114,6 +95444,7 @@ imageIndex
 imageSize
 image_banner
 image_bits
+image_ext
 image_flipped
 image_inventory
 image_inventory_overlay
@@ -96769,7 +97100,6 @@ j[D\f
 j\a
 j\eFb2
 j\t
-j\t\b
 j\vIP{s
 j]*\r2q
 ja_JP
@@ -96923,7 +97253,6 @@ k+ka\\T
 k/.fG
 k/sn
 k0>Z
-k1\b
 k26C
 k8\vD
 k8fo
@@ -97110,11 +97439,8 @@ kXKlQT
 kYxY
 kZ
 k\aL
-k\a\b
 k\a\bu
-k\f\b
 k\r\b
-k\t\b
 k^ZP
 k_DOTASelectionPriorityChoice
 k_DOTASelectionPriorityChoice_Dire
@@ -97629,6 +97955,8 @@ k_EMsgClientToGCGetCurrentPrivateCoachingSession
 k_EMsgClientToGCGetCurrentPrivateCoachingSessionResponse
 k_EMsgClientToGCGetDPCFavorites
 k_EMsgClientToGCGetDPCFavoritesResponse
+k_EMsgClientToGCGetEventRanking
+k_EMsgClientToGCGetEventRankingResponse
 k_EMsgClientToGCGetFavoritePlayers
 k_EMsgClientToGCGetFilteredPlayers
 k_EMsgClientToGCGetGiftPermissions
@@ -97934,6 +98262,7 @@ k_EMsgClientToGCVoteForArcanaResponse
 k_EMsgClientToGCVoteForMVP
 k_EMsgClientToGCVoteForMVPResponse
 k_EMsgClientToGCWageringRequest
+k_EMsgClientToGCWatchingBroadcast
 k_EMsgClientToGCWeekendTourneyGetPlayerStats
 k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse
 k_EMsgClientToGCWeekendTourneyLeave
@@ -99618,8 +99947,6 @@ lDa
 lDcW
 lM2p
 lY7
-l\f\b
-l\r\b
 l\rur
 l]i
 l`L
@@ -99740,6 +100067,7 @@ lazy = true] can only be specified for submessage fields
 lb
 lbN
 lb_csm_cascade_size_override
+lblTl
 ld bytes leaked in %d chunks\n
 ld unused bits)\n
 ld%c
@@ -100178,6 +100506,8 @@ local_player_pawn_changed
 local_player_team
 local_strings
 local_temp_entity
+local_user_percentile
+local_user_score
 local_user_trivia_points
 local_vote_0_count
 local_vote_1_count
@@ -100354,12 +100684,11 @@ mS'7
 mT
 mXRecord
 mZKB
-m\a
 m\a0
 m\b
 m\t4
-m\t\b
 m\ta=\ruWb
+m\v\b
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT\n
 m_AbilityDraftAbilities
 m_AbilityDraftHeroes
@@ -102384,9 +102713,12 @@ m_eDoorState
 m_eDrawCondition
 m_eEvent
 m_eEventAction == SDOTAEventRewardDefinition_ActionList::k_eEventAction
+m_eEventAction == SDOTAEventRewardDefinition_Autograph::k_eEventAction
 m_eEventAction == SDOTAEventRewardDefinition_ChatWheel::k_eEventAction
 m_eEventAction == SDOTAEventRewardDefinition_ConsumableItemCharges::k_eEventAction
 m_eEventAction == SDOTAEventRewardDefinition_Emoticon::k_eEventAction
+m_eEventAction == SDOTAEventRewardDefinition_GrantItemChoice::k_eEventAction
+m_eEventAction == SDOTAEventRewardDefinition_Item::k_eEventAction
 m_eEventAction == SDOTAEventRewardDefinition_OverworldTokens::k_eEventAction
 m_eEventAction == SDOTAEventRewardDefinition_Points::k_eEventAction
 m_eExpireEvent
@@ -106863,6 +107195,7 @@ m_vCastLocation
 m_vCastPosition
 m_vCasterStartPos
 m_vCasterStartPosition
+m_vCasterStartingLocation
 m_vCenter
 m_vCenterVelocity
 m_vChannelPos
@@ -107497,6 +107830,7 @@ main_event_points
 main_event_total
 main_meepo_stats_pct
 main_view
+maincast
 mainmenu
 major
 majorTickColor
@@ -108246,6 +108580,7 @@ methods
 mgf1
 mgf1 with sha1 (default
 mgmt
+mhm\\m
 micDist
 mic_listen_while_nonfocused
 micalg
@@ -112262,12 +112597,14 @@ n2W
 n2\b%n
 n2s
 n2w
+n4\b
 n4\f6
 n5a=Z
 n5cM
 n6j
 n6ּ3
 n8<\f
+n9\a
 n:2C
 n:82H
 n:e
@@ -112464,9 +112801,6 @@ nZ#v
 n[FV
 n[Sq\n
 n\a<4x
-n\a\b
-n\b
-n\b\b
 n\eN
 n\f\b
 n\fjST
@@ -112474,7 +112808,6 @@ n\fp
 n\n
 n\n/5
 n\nTotal Frames : %3i\n\n
-n\n\b
 n\nbzip2/libbzip2: internal error number %d.\nThis is a bug in bzip2/libbzip2, %s.\nPlease report it to me at: jseward@acm.org.  If this happened\nwhen you were using some program which uses libbzip2 as a\ncomponent, you should also report this bug to the author(s)\nof that program.  Please make an effort to report this bug;\ntimely and accurate bug reports eventually lead to higher\nquality software.  Thanks.  Julian Seward, 30 December 2001.\n\n
 n\r2S
 n\rKq
@@ -112483,7 +112816,6 @@ n\r\t
 n\t.2
 n\tIPSec/IKE/Oakley curve #3 over a 155 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
 n\tIPSec/IKE/Oakley curve #4 over a 185 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
-n\t\b
 n\t\b\r
 n\v\b\t
 n\v\f\r
@@ -113538,14 +113870,12 @@ oG)e5L
 oN
 oN86
 oR
-oU\b
 oUؔx
 oXHT
 oY.o
 oYR
 o\f\b
-o\n\b
-o\r\b
+o\v\b
 o_je
 o_names.c
 oad2
@@ -113706,6 +114036,7 @@ only_keyboard
 only_others
 only_render_to_texture
 only_self
+only_swiss_results
 onlyattr
 onlysomereasons
 onlyuser
@@ -113782,9 +114113,12 @@ operation_text
 operaton not initialized
 operator
 operator const SDOTAEventRewardDefinition_ActionList
+operator const SDOTAEventRewardDefinition_Autograph
 operator const SDOTAEventRewardDefinition_ChatWheel
 operator const SDOTAEventRewardDefinition_ConsumableItemCharges
 operator const SDOTAEventRewardDefinition_Emoticon
+operator const SDOTAEventRewardDefinition_GrantItemChoice
+operator const SDOTAEventRewardDefinition_Item
 operator const SDOTAEventRewardDefinition_OverworldTokens
 operator const SDOTAEventRewardDefinition_Points
 operatorName
@@ -114052,7 +114386,7 @@ p.ppBasis
 p.prime
 p.tpBasis
 p00
-p0\r\b
+p0\f\b
 p0qKpJXOJsY
 p12_add.c
 p12_crpt.c
@@ -114060,7 +114394,7 @@ p12_decr.c
 p12_key.c
 p12_p8e.c
 p12_utl.c
-p2\v\b
+p2\f\b
 p2p_FightingGame_Connection
 p2p_FightingGame_GameData
 p2p_Ping
@@ -114076,58 +114410,49 @@ p2p_ping sending to "%s"\n
 p2{l
 p3\bpU>\\AL
 p3\bq}M
-p3\r\b
+p3\v\b
 p4 add ..\\..\\..\\content\\dota\\panorama\\images\\heroes\\selection\\%s.png\n
 p4 add ..\\panorama\\videos\\heroes\\%s.webm\n
 p4 edit ..\\..\\..\\content\\dota\\panorama\\images\\heroes\\selection\\%s.png\n
 p4 edit ..\\panorama\\videos\\heroes\\%s.webm\n
 p4Z3
-p4\a\b
+p4\v\b
 p5Z3
 p5\nL
-p5\v\b
 p5_crpt.c
 p5_crpt2.c
 p5_pbe.c
 p5_pbev2.c
 p618
-p8\v\b
-p9\r\b
+p8\r\b
 p;i
 p<R\a\e6ۀG
 p@0pqE5tsO?|1
 pAbility
 pAbilityName
 pAddedBuff
-pB\n\b
 pBfff?fff
 pC
 pCheckpointName
 pClass
 pD4t
-pD\r\b
 pData->GetDataDescMap() == pTemplateDataMap
 pDef != nullptr
 pDescription
 pDest
 pDifficultyLevel != nullptr
-pE\n\b
 pEventName
 pEㆱo
-pFS\b
-pF\n\b
 pField
 pFilter
-pG\f\b
-pG\v\b
 pG_*h
 pGameModeDef != nullptr
 pGameModeDefinition != nullptr
-pH\f\b
 pHitEntity
-pI\r\b
+pI\v\b
 pIp
 pItemName
+pJ\v\b
 pK
 pKeyName
 pL
@@ -114136,8 +114461,6 @@ pLocalInventory->GetInventoryItemByItemID( msgItem.item_id
 pLocationEntity
 pMessage
 pMsg
-pN\n\b
-pN\r\b
 pNewCamera
 pNewRoot
 pNextNode
@@ -114150,8 +114473,6 @@ pPowerUpDef
 pRTH
 pRevenant
 pSN.F
-pS\n\b
-pS\r\b
 pSectionData != nullptr
 pSequenceName
 pSnippetName
@@ -114169,27 +114490,13 @@ pTarget
 pTarget != nullptr
 pTargetName
 pTargettingSource
-pU\n\b
-pU\v\b
 pUnitName
-pW\b
-pW\n\b
 pWhitelistKeyValues
 pWorldObject
-pX\f\b
-pX\r\b
 p[r
-p\a\b
-p\a\v\a
-p\b\b
-p\b\f\b
-p\e\n\b
-p\e\r\b
-p\f\b\b
-p\f\r\b
-p\t\b
-p\t\r\b
-p\v\b\b
+p\e\f\b
+p\r\f\b
+p\v\f\b
 p^?CSI
 p^A
 p^i9\a
@@ -114198,8 +114505,6 @@ p_sign.c
 p_verify.c
 pa
 pa\a)uG
-pa\f\b
-pa\r\b
 pack_config
 pack_count
 pack_count_frozen
@@ -114307,6 +114612,7 @@ panorama/images/spellicons/*.vtex_c
 panorama/images/teamfancontent/season_%u/%u/teamlogo_medium_png.vtex_c
 panorama/images/teamfancontent/season_%u/%u/teamlogo_png.vtex_c
 panorama/images/teamfancontent/season_%u/%u/teamlogo_small_png.vtex_c
+panorama/images/teamfancontent/season_%u/players/%u_%s_png.vtex_c
 panorama/images/teamfancontent/season_%u/players/%u_png.vtex_c
 panorama/images/teams/%u_png.vtex_c
 panorama/images/teams/square_medium/%u_png.vtex_c
@@ -114319,8 +114625,6 @@ panorama/scripts
 panorama/styles
 panorama::CPanelPtr
 panoramaDeferredView
-panoramaTexCoordOffset
-panoramaTexCoordScale
 panorama\\images\\teamfancontent\\season_%d\\%d\\banner_png.vtex
 panorama\\images\\teamfancontent\\season_%d\\%d\\baselogo_png.vtex
 panorama\\images\\teams\\%d_png.vtex
@@ -115795,8 +116099,6 @@ pcy_cache.c
 pcy_data.c
 pcy_node.c
 pcy_tree.c
-pd\f\b
-pd\r\b
 peachpuff
 peak_damage
 peak_denies
@@ -115927,8 +116229,6 @@ peru
 pet_effigy
 pet_npc_script_override
 pg
-pg\f\b
-pg\r\b
 phantom_ass_dagger
 phantom_assassin_armor_corruption_debuff
 phantom_assassin_blur
@@ -116029,7 +116329,6 @@ physical_rewards
 physical_source_%d
 physical_weakness
 physics_joint_modification_type
-pi\t\b
 pick
 pick%d_class
 pick%d_id
@@ -116109,8 +116408,6 @@ pitchmax
 pitchmin
 pixelAspectRatio
 pixelAspectRatio" attribute not found in the header
-pj\f\b
-pj\r\b
 pk7_attr.c
 pk7_doit.c
 pk7_lib.c
@@ -116360,8 +116657,6 @@ plus_subscription_renew_price
 plus_subscription_start_date
 pm
 pm"U
-pm\f\b
-pm\r\b
 pmeth_fn.c
 pmeth_gn.c
 pmeth_lib.c
@@ -116582,9 +116877,6 @@ powerup_type
 pp&c
 pp@0
 ppBasis
-pp\f\b
-pp\n\b
-pp\r\b
 pqrstuvwxyz
 pqualid
 pqueue.c
@@ -116619,6 +116911,7 @@ prediction forced re-latch of %s due to prediction error for field marked FTYPED
 prediction.cpp
 prediction_action
 prediction_correct
+prediction_cta
 prediction_events.proto
 prediction_name
 prediction_notification_question
@@ -116629,6 +116922,7 @@ prediction_reset_days
 prediction_reset_hours
 prediction_reset_minutes
 prediction_stage
+prediction_stages
 prediction_start_date
 prediction_start_days
 prediction_start_hours
@@ -116636,19 +116930,26 @@ prediction_start_minutes
 prediction_state
 prediction_time_min
 prediction_time_sec
+prediction_title
 prediction_tokens_left
 predictions_correct
 predictions_help_popup
+predictions_incorrect
+predictions_main_event
 predictions_period_name
 predictions_points
+predictions_road_to_ti
+predictions_rtti_score
 predictions_spoof_league_id
 predictions_spoof_league_id_ti10
 predictions_spoof_league_id_ti11
+predictions_ti_score
 predictions_total
 prefab
 prefab:%s
 prefab_load_dynamic
 prefabs
+prefer_local_assets
 preferredDeliveryMethod
 preferred_name
 prefix_bonus
@@ -116888,8 +117189,7 @@ proxyPolicy
 ps(crh
 psC3
 ps\f\b
-ps\n\b
-ps\r\b
+ps\v\b
 pseudonym
 psk identity not found
 psk no client cb
@@ -117083,17 +117383,14 @@ push_length
 push_pull_enabled
 push_radius
 pushing_score
-pv\f\b
-pv\r\b
+pv\v\b
 pvk data too short
 pvk too short
 pvsplayer
 pw
 pwatchent
 pwatchvar
-px\n\b
-py\f\b
-py\r\b
+py\v\b
 pzKD
 p{T
 q
@@ -117127,11 +117424,9 @@ qUN1
 qV
 qVS
 q\ad
-q\f\b
 q\n
-q\n\b
 q\r2
-q\r\b
+q\v\b
 qa
 qangle
 qangle_pitch_yaw
@@ -117247,6 +117542,7 @@ qĤxK
 qВwT
 qۛl
 r
+r \b
 r axis
 r$0I
 r&I|C
@@ -117269,8 +117565,8 @@ r3c1
 r3c2
 r3c3
 r3c4
+r4\b
 r5A9-hxwaDI
-r6\b
 r;M
 r<\rND
 r>6
@@ -117300,6 +117596,7 @@ rMinghuaQu\f
 rN
 rOtk
 rP
+rR\b
 rRfKR
 rS,\r
 rS.u
@@ -117322,14 +117619,11 @@ r\bc&C
 r\bu{p
 r\e
 r\eiB
-r\f\b
 r\n
-r\n\b
-r\r\b
 r\r\f\f
 r\t
-r\t\b
 r\vDi
+r\v\b
 r\v\f\t\n
 r\v\t\a
 r\vpL1
@@ -117613,6 +117907,11 @@ rank_pips_name
 rank_tier_name
 rank_tier_score
 rank_tier_tooltip_title
+rank_top_100
+rank_top_10_pct
+rank_top_1500
+rank_top_15_pct
+rank_top_5_pct
 rank_wager_token
 rank_wagering_item
 rank_wagering_periodic_resource
@@ -117628,6 +117927,10 @@ ranked_phone_anchor_unanchor_popup_header
 ranked_phone_anchor_unanchor_result_error_unknown
 ranked_phone_anchor_unanchor_result_header
 ranked_required_play_time_hrs_for_unlock
+ranking_rewards
+ranking_type
+ranking_value
+ranks
 rankstart
 rapgod
 rapier_alt
@@ -118177,6 +118480,7 @@ resource/ti10_compendium_caster_list.txt
 resource/ti11_compendium_caster_list.txt
 resource/ti12_compendium_caster_list.txt
 resource/ti13_compendium_caster_list.txt
+resource/ti14_compendium_caster_list.txt
 resource/ti9_compendium_caster_list.txt
 resource\\cache\\fow_cache_01.bin
 resource\\cache\\fow_cache_02.bin
@@ -118301,16 +118605,23 @@ rewardImportantEconItemModelWidth
 rewardImportantImageWidth
 rewardLabyrinthBlessing
 rewardSprayWheelWidth
+reward_action
 reward_action_id
 reward_action_name
+reward_aegis_discount
+reward_aegis_discount_claimable
 reward_after_wins
 reward_amount
+reward_arcana_token
+reward_arcana_token_claimable
 reward_can_be_shown_in_toast
 reward_claim
+reward_claim_popup
 reward_claimed_week
 reward_claimed_week_unowned
 reward_class
 reward_cost
+reward_count
 reward_damage
 reward_desc
 reward_description
@@ -118328,14 +118639,22 @@ reward_level_2
 reward_line_ui
 reward_list
 reward_loot_list
+reward_months_dota_plus
+reward_months_dota_plus_claimable
 reward_name
 reward_normal_pts
 reward_normal_pts_escalation_amount
 reward_normal_pts_escalation_limit
 reward_num
 reward_premium_pts
+reward_purple_witness
+reward_purple_witness_claimable
 reward_quantity
+reward_requirement_name
+reward_row_name
+reward_row_value
 reward_state
+reward_sticker_capsule_claimable
 reward_tracking
 reward_type
 rewardpip_%u
@@ -118434,6 +118753,7 @@ rndwave
 ro
 roKK
 ro_RO
+road_to_ti
 road_to_ti_correct
 road_to_ti_incorrect
 road_to_ti_points
@@ -119918,6 +120238,7 @@ searchquery
 seashell
 season
 seasonQuestListColumns
+season_%u
 season_action
 season_class
 season_dates
@@ -120607,9 +120928,11 @@ shard_passive_movespeed
 shard_price
 shard_radius
 shard_recipient_id
+shard_redemption
 shard_reduce_range
 shard_regen_pct
 shard_regen_reduction_pct_per_stack
+shard_reward
 shard_rewards
 shard_self_movement_speed_slow_pct
 shard_slow_pct
@@ -120749,6 +121072,7 @@ showPurchaseState
 show_ability_charges
 show_achievements_event
 show_act_name
+show_answers_state
 show_as_preview
 show_battle_level
 show_count
@@ -122717,6 +123041,8 @@ stage
 stage_intro
 stage_message_text
 stage_name
+stagebutton_main_event
+stagebutton_rtti
 stages_cleared
 stages_cleared_score
 staging
@@ -123683,13 +124009,11 @@ tHAI8xpH\f
 tH^\tzڣJA
 tHistogram:\n
 tIø2
-tJ\a
 tJm_9
 tJƈq
 tKey: %s, Action = %s\n
 tL
 tLY^m`6
-tL\b
 tLa0
 tListen for close event
 tListen for open event
@@ -123767,11 +124091,9 @@ t\bSY
 t\f
 t\f%n
 t\f\b
-t\n\b
 t\n\r
 t\n\v\b\r
 t\rW\f
-t\r\b
 t\r\n
 t\t"CDmeInputTexture"\n\t\t{\n\t\t\t"m_name" "string" "inputTexture%i"\n\t\t\t"m_fileName" "string" "%s"\n\t\t\t"m_colorSpace" "string" "linear"\n\t\t\t"m_typeString" "string" "CUBE"\n\t\t\t"m_imageProcessorArray" "element_array"\n\t\t\t[\n\t\t\t]\n\t\t}%s\n
 t\t"DOTA_BroadcastFact_AbilityMovie_%s_%s"\t\t"%s"\n
@@ -123787,7 +124109,6 @@ t\t\t\t"inputTexture%i"%s\n
 t\t\t]\n\t\t}\n\t]\n\t"m_bHiddenAssetFlag" "bool" "1"\n}\n
 t\t|87
 t\v
-t\v\a
 t\v\b
 t]\n\t"m_outputTypeString" "string" "%s"\n\t"m_outputFormat" "string" "%s"\n\t"m_textureOutputChannelArray" "element_array"\n\t[\n\t\t"CDmeTextureOutputChannel"\n\t\t{\n\t\t\t"m_srcChannels" "string" "rgba"\n\t\t\t"m_dstChannels" "string" "rgba"\n\t\t\t"m_mipAlgorithm" "CDmeImageProcessor"\n\t\t\t{\n\t\t\t\t"m_algorithm" "string" "%s"\n\t\t\t}\n\t\t\t"m_outputColorSpace" "string" "%s"\n\t\t\t"m_inputTextureArray" "string_array"\n\t\t\t[\n
 t_Q
@@ -123840,6 +124161,7 @@ talent_%d
 talent_comment_%d
 talent_comment_0
 talent_comment_1
+talent_item_def
 talent_name
 talent_rates
 talent_skeleton_damage
@@ -123971,6 +124293,7 @@ team_image
 team_info_cache.json
 team_info_cache.json is not writeable. Check it out in p4?\n
 team_info_local_cache.json
+team_item_def
 team_kills_%d
 team_label
 team_loading_screen
@@ -124252,6 +124575,11 @@ ti13_live_video_fake_timestamp
 ti13_live_video_fake_twitch_channel
 ti13_live_video_spoilers_blocked
 ti13_live_video_update_interval_s
+ti14_live_video_fake_steam_account
+ti14_live_video_fake_timestamp
+ti14_live_video_fake_twitch_channel
+ti14_live_video_spoilers_blocked
+ti14_live_video_update_interval_s
 ti9_collectors_cache_voting
 ti_loading_screen
 ti_podseats
@@ -125145,8 +125473,8 @@ uE*q
 uE]*P
 uI$гPGr
 uJ4CA2
-uJ\a
 uQ'ZH
+uQ\b
 uQbK
 uR5&m
 uU
@@ -125155,11 +125483,9 @@ uW\tַV
 uY
 uZF
 u\ax
-u\f\b
 u\n
-u\n\b
-u\r\b
 u\vMW
+u\v\b
 ua
 uaqf
 ub=A
@@ -125328,6 +125654,7 @@ unbundled_count
 uncheckedvalue
 unclaimed_boosters
 unclaimed_boosters_text
+unclaimed_capsules
 unclaimed_event_rewards_count
 unclaimed_levels
 unclaimed_levels_text
@@ -125779,7 +126106,6 @@ v0A
 v0o/5
 v1(0
 v1GZ\b\f
-v1\b
 v2
 v2i_ASN1_BIT_STRING
 v2i_GENERAL_NAMES
@@ -125849,7 +126175,6 @@ vHm
 vIK \f3
 vIg
 vJEd
-vJ\a
 vJza\r
 vL
 vLastPos
@@ -125904,12 +126229,10 @@ v\bTC\tf
 v\bft6
 v\f
 v\f\tvC
-v\n\b
 v\n\t\b
 v\na
 v\r
 v\rEߴK7
-v\r\b
 v\tX
 v\tf
 v\v$m8
@@ -126229,6 +126552,7 @@ voice_chat_bubbles
 voice_clientdebug
 voice_device_override
 voice_item
+voice_line_label
 voice_loopback
 voice_modenable
 voice_persona_1
@@ -126402,7 +126726,6 @@ w-g2
 w-resize
 w0A4k
 w0\v\e
-w1\b
 w3Xc
 w4v
 w8i_q
@@ -126422,9 +126745,6 @@ wRlb
 wWE
 wXR\r
 wY[K
-w\a\b
-w\f\b
-w\r\b
 w\v\b
 w]UG
 w_5&#R4
@@ -127020,13 +127340,9 @@ xUN
 xU`u
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
-x\a\b
 x\f3
 x\fS
-x\f\b
 x\nt
-x\r\b
-x\t\b
 x\v6V
 x\v\b
 x]y1
@@ -127117,7 +127433,6 @@ yU\n2
 yWTb
 yX
 y\b0
-y\n\b
 y\r
 y\teE
 y_GE
@@ -127150,6 +127465,7 @@ your_coins
 your_team_name
 your_tournament_round
 your_wager_winnings
+youtube
 ypos
 yr
 yres
@@ -127185,12 +127501,8 @@ zQѧv
 zRXU
 zT
 zWrgoI
-z\b\b
 z\e߁A
-z\f\b
 z\r?, i
-z\r\b
-z\t\b
 z\v\b
 z_speed_override
 zbe

@@ -1,0 +1,58 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_fantasy.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="PeriodTab">
+			<TabButton class="StageTab FixedWidth">
+				<Panel class="TabContents">
+					<Panel class="TabBorder" />
+					<Panel class="StageTabLeft">
+						<Label class="StageName" text="{s:stage_name}" />
+						<DOTACountdown id="LockCountdown" class="LeftRightFlow" server-time="true">
+							<Label class="StageLock LockUpcoming" text="#DOTA_FantasyRosterLockCountdown" />
+							<Label class="StageLock Locked" text="#DOTA_FantasyRosterLocked" />
+						</DOTACountdown>
+					</Panel>
+					<Panel class="StageTabRight" />
+				</Panel>
+			</TabButton>
+		</snippet>
+	</snippets>
+	<DOTAInternational2025FantasyPage class="DashboardPage FullDashboardPage" dashboardclass="International2025CompendiumPage">
+		<AsyncDataPanel state="{d:page_state}">
+			<Panel class="PageContents BPSharedPageContainer AsyncSuccessContainer">
+				<Panel class="BPSharedHeaderContainer">
+					<Label class="BPTitle" text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" />
+					<Panel id="PeriodHeaderRow" class="StageTabsContainer" />
+					<Panel id="HelpPanel">
+						<DOTAInternational2025Button id="CraftingHelpButton" class="TextOnly" text="#DOTA_HowToPlay" onactivate="Fantasy2025ToggleHelp()" />
+						<DOTAInternational2025Button id="CraftingResetButton" class="TextOnly" text="#DOTA_FantasyCraft_ResetTutorial" onactivate="Fantasy2025ResetTutorial()" />
+					</Panel>
+				</Panel>
+				<Panel id="PeriodBodyRow" class="Body" />
+				<Panel class="NoCompendiumView">
+					<Panel class="LockIconContainer">
+						<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" />
+					</Panel>
+					<Label class="LockedHeader" text="#DOTA_FantasyCraft_NoCompendium_Title" />
+					<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_Fantasy2025_NoCompendium" />
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+		<Panel class="EventActivationContainer" onactivate="">
+			<Panel class="EventActivationContent">
+				<Label class="ActivationSubTitle" text="#DOTA_International2025_ActivationWelcome" />
+				<Label class="ActivationTitle" text="#DOTA_EventName_International2025" />
+				<Label class="ActivationDescription" text="#DOTA_International2025_ActivationDescription" html="true" />
+				<Label class="IneligibleDescription" text="#DOTA_ClaimedGatedEvent_CannotClaim" />
+				<DOTAInternational2025Button id="ActivateButton" class="GlowButton" text="#compendium_activate_now" onactivate="Compendium2025Activate()" />
+			</Panel>
+		</Panel>
+	</DOTAInternational2025FantasyPage>
+</root>
