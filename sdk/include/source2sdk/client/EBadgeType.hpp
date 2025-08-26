@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 22
+        // Enumerator count: 27
         // Alignment: 4
         // Size: 0x4
         enum class EBadgeType : std::uint32_t
@@ -40,6 +40,11 @@ namespace source2sdk
             k_EBadgeType_TI13_FinalsDay2 = 0x13,
             k_EBadgeType_TI13_FinalsDay3 = 0x14,
             k_EBadgeType_TI13_Special = 0x15,
+            k_EBadgeType_TI14_FinalsDay1 = 0x16,
+            k_EBadgeType_TI14_FinalsDay2 = 0x17,
+            k_EBadgeType_TI14_FinalsDay3 = 0x18,
+            k_EBadgeType_TI14_FinalsDay4 = 0x19,
+            k_EBadgeType_TI14_Special = 0x1a,
         };
     };
 };

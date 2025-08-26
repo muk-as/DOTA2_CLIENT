@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "Ðc2û"
+        // static metadata: MPulseCellOutflowHookInfo "Ðƒ2û"
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/observable_variable_listener.png"
         // static metadata: MPropertyFriendlyName "Wait For Observable Condition"
         #pragma pack(push, 1)
