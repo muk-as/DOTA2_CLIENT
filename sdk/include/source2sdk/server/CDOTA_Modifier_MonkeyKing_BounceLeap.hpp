@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x18d0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_BounceLeap : public source2sdk::client::CDOTA_Buff
@@ -52,12 +52,14 @@ namespace source2sdk
             std::int32_t m_nLeapSpeed; // 0x18b8            
             source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18bc            
             source2sdk::client::ParticleIndex_t m_nFXIndex2; // 0x18c0            
-            uint8_t _pad18c4[0x4];
+            float m_flFlightDuration; // 0x18c4            
+            float m_flCurrentTimeVert; // 0x18c8            
+            uint8_t _pad18cc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_BounceLeap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_BounceLeap) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_BounceLeap) == 0x18d0);
     };
 };

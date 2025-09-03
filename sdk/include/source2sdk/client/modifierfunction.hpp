@@ -42,7 +42,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PROCATTACK_FEEDBACK = 0xa,
             // MScriptDescription "GetModifierPreAttack GetModifierOverrideAttackDamage"
             MODIFIER_PROPERTY_OVERRIDE_ATTACK_DAMAGE = 0xb,
-            // MScriptDescription "†ƒ˘1˚ GetModifierPreAttack"
+            // MScriptDescription "¿ƒ˘1˚ GetModifierPreAttack"
             MODIFIER_PROPERTY_PRE_ATTACK = 0xc,
             // MScriptDescription "GetModifierInvisibilityAttackBehaviorException GetModifierInvisibilityLevel"
             MODIFIER_PROPERTY_INVISIBILITY_LEVEL = 0xd,
@@ -72,7 +72,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT_UNIQUE_2 = 0x19,
             // MScriptDescription "GetModifierMoveSpeed_AbsoluteMin GetModifierMoveSpeed_Absolute"
             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE = 0x1a,
-            // MScriptDescription "ê≈˘1˚ GetModifierMoveSpeed_AbsoluteMin"
+            // MScriptDescription "∞≈˘1˚ GetModifierMoveSpeed_AbsoluteMin"
             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN = 0x1b,
             // MScriptDescription "GetModifierIgnoreMovespeedLimit GetModifierMoveSpeed_AbsoluteMax"
             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX = 0x1c,
@@ -122,7 +122,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET = 0x32,
             // MScriptDescription "GetModifierHealAmplify_PercentageTarget GetModifierHealAmplify_PercentageSource"
             MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE = 0x33,
-            // MScriptDescription "P«˘1˚ GetModifierHealAmplify_PercentageTarget"
+            // MScriptDescription "p«˘1˚ GetModifierHealAmplify_PercentageTarget"
             MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET = 0x34,
             // MScriptDescription "GetModifierLifestealRegenAmplify_Percentage GetModifierHPRegenAmplify_Percentage"
             MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE = 0x35,
@@ -180,7 +180,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE = 0x4f,
             // MScriptDescription "GetModifierMinPhysicalArmor GetModifierPhysicalArmorBonusPost"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_POST = 0x50,
-            // MScriptDescription "P…˘1˚ GetModifierMinPhysicalArmor"
+            // MScriptDescription "p…˘1˚ GetModifierMinPhysicalArmor"
             MODIFIER_PROPERTY_MIN_PHYSICAL_ARMOR = 0x51,
             // MScriptDescription "GetModifierMagicalResistanceBaseReduction GetModifierIgnorePhysicalArmor"
             MODIFIER_PROPERTY_IGNORE_PHYSICAL_ARMOR = 0x52,
@@ -220,7 +220,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS = 0x63,
             // MScriptDescription "GetModifierExtraManaBonusPercentage GetModifierExtraManaBonus"
             MODIFIER_PROPERTY_EXTRA_MANA_BONUS = 0x64,
-            // MScriptDescription "– ˘1˚ GetModifierExtraManaBonusPercentage"
+            // MScriptDescription " ˘1˚ GetModifierExtraManaBonusPercentage"
             MODIFIER_PROPERTY_EXTRA_MANA_BONUS_PERCENTAGE = 0x65,
             // MScriptDescription "GetModifierExtraManaPercentage GetModifierExtraHealthPercentage"
             MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE = 0x66,
@@ -254,7 +254,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE = 0x74,
             // MScriptDescription "GetModifierMaxAttackRange GetModifierAttackRangeBonusPercentage"
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE = 0x75,
-            // MScriptDescription "À˘1˚ GetModifierMaxAttackRange"
+            // MScriptDescription "Ã˘1˚ GetModifierMaxAttackRange"
             MODIFIER_PROPERTY_MAX_ATTACK_RANGE = 0x76,
             // MScriptDescription "GetModifierProjectileSpeedBonusPercentage GetModifierProjectileSpeedBonus"
             MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS = 0x77,
@@ -280,7 +280,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CASTTIME_PERCENTAGE = 0x81,
             // MScriptDescription "GetModifierPercentageManacost GetModifierPercentageAttackAnimTime"
             MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE = 0x82,
-            // MScriptDescription "–Ã˘1˚ GetModifierPercentageManacost"
+            // MScriptDescription "Ã˘1˚ GetModifierPercentageManacost"
             MODIFIER_PROPERTY_MANACOST_PERCENTAGE = 0x83,
             // MScriptDescription "GetModifierPercentageHealthcost GetModifierPercentageManacostStacking"
             MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING = 0x84,
@@ -330,7 +330,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BONUS_NIGHT_VISION = 0x9a,
             // MScriptDescription "GetBonusVisionPercentage GetBonusNightVisionUnique"
             MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE = 0x9b,
-            // MScriptDescription "êŒ˘1˚ GetBonusVisionPercentage"
+            // MScriptDescription "∞Œ˘1˚ GetBonusVisionPercentage"
             MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE = 0x9c,
             // MScriptDescription "GetFixedNightVision GetFixedDayVision"
             MODIFIER_PROPERTY_FIXED_DAY_VISION = 0x9d,
@@ -560,7 +560,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_PROJECTILE_OBSTRUCTION_HIT = 0x10d,
             // MScriptDescription "OnAttackCancelled GetSuppressTeleport"
             MODIFIER_PROPERTY_SUPPRESS_TELEPORT = 0x10e,
-            // MScriptDescription "ê‚˘1˚ OnAttackCancelled"
+            // MScriptDescription "∞‚˘1˚ OnAttackCancelled"
             MODIFIER_EVENT_ON_ATTACK_CANCELLED = 0x10f,
             // MScriptDescription "BotAttackScoreBonus GetSuppressCleave"
             MODIFIER_PROPERTY_SUPPRESS_CLEAVE = 0x110,
@@ -624,7 +624,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PROJECTILE_SPEED_TARGET = 0x12d,
             // MScriptDescription "GetModifierBecomeAgility GetModifierBecomeStrength"
             MODIFIER_PROPERTY_BECOME_STRENGTH = 0x12e,
-            // MScriptDescription "‰˘1˚ GetModifierBecomeAgility"
+            // MScriptDescription "Â˘1˚ GetModifierBecomeAgility"
             MODIFIER_PROPERTY_BECOME_AGILITY = 0x12f,
             // MScriptDescription "GetModifierBecomeUniversal GetModifierBecomeIntelligence"
             MODIFIER_PROPERTY_BECOME_INTELLIGENCE = 0x130,
@@ -650,7 +650,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_FORCE_MAX_MANA = 0x13a,
             // MScriptDescription "GetModifierAoEBonusConstantStacking GetModifierAoEBonusConstant"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT = 0x13b,
-            // MScriptDescription "–Â˘1˚ GetModifierAoEBonusConstantStacking"
+            // MScriptDescription "Â˘1˚ GetModifierAoEBonusConstantStacking"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT_STACKING = 0x13c,
             // MScriptDescription "OnMuteDamageAbilities OnTakeDamagePostUnavoidableBlock"
             MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK = 0x13d,
@@ -676,7 +676,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ATTACKSPEED_ABSOLUTE_MAX = 0x147,
             // MScriptDescription "OnHeroBeginDying GetModifierFoWTeam"
             MODIFIER_PROPERTY_FOW_TEAM = 0x148,
-            // MScriptDescription "∞Ê˘1˚ OnHeroBeginDying"
+            // MScriptDescription "–Ê˘1˚ OnHeroBeginDying"
             MODIFIER_EVENT_ON_HERO_BEGIN_DYING = 0x149,
             // MScriptDescription "GetModifierBonusLotusHeal GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BONUS_LOTUS_HEAL = 0x14a,
@@ -752,7 +752,7 @@ namespace source2sdk
             MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS = 0x16d,
             // MScriptDescription "GetModifierMoveSpeedMax_BonusConstant GetModifierNeutralEnhancementOptions"
             MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS = 0x16e,
-            // MScriptDescription "∞Í˘1˚ GetModifierMoveSpeedMax_BonusConstant"
+            // MScriptDescription "–Í˘1˚ GetModifierMoveSpeedMax_BonusConstant"
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x16f,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant "
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x170,
