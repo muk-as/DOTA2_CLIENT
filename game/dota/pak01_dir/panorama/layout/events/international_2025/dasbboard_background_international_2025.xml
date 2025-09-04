@@ -6,7 +6,7 @@
 		<include src="s2r://panorama/styles/events/international_2025/dasbboard_background_international_2025.vcss_c" />
 	</styles>
 	<snippets />
-	<DOTABackgroundInternational2025 class="DOTAInternational2025Background">
+	<DOTABackgroundInternational2025 class="DOTAInternational2025Background ShowVideoPlayer">
 		<Panel class="BackgroundContainer">
 			<Image class="BackgroundImage" src="s2r://panorama/images/events/international_2025/backgrounds/galaxy_background_home_png.vtex" />
 			<DOTAParticleScenePanel class="GalaxyFX" hittest="false" particleName="particles/ui/compendium/ui_compendium_2025_galaxy.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="100 0 0" lookAt="0 0 0" fov="120" squarePixels="true" />
@@ -63,6 +63,50 @@
 					<Label text="#DOTA_Compendium25_TI_Dates" class="EventStateDate LabelSmall" />
 					<Label text="#DOTA_Compendium25_EventSubtitle_Venue" class="EventStateLocation LabelSmall" />
 					<Label text="#DOTA_Compendium25_EventSubtitle_CityCountry" class="EventStateLocation LabelSmall" />
+				</Panel>
+			</Panel>
+			<Panel id="VideoPlayer">
+				<Panel class="VideoPlayerBorder" hittest="false" />
+				<Panel class="EventLogoContainerSmall">
+					<Panel class="AegisContainer">
+						<Panel class="AegisGlow" />
+						<Image class="Aegis2025" src="s2r://panorama/images/events/international_2025/artwork/aegis2025_small_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="Aegis2025" src="s2r://panorama/images/events/international_2025/artwork/aegis2025_small_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Image class="TheInternationalScript" src="s2r://panorama/images/events/international_2025/artwork/the_international_script.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="AegisDash" />
+					<Label text="#DOTA_Compendium25_EventSubtitle_RTII" class="EventStateTitle LabelSmall" />
+					<Label text="#DOTA_Compendium25_RTTI_Dates" class="EventStateDate LabelSmall" />
+					<Panel class="AegisLabelsSpacer" />
+					<Label text="#DOTA_Compendium25_EventSubtitle_TI" class="EventStateTitle LabelSmall" />
+					<Label text="#DOTA_Compendium25_TI_Dates" class="EventStateDate LabelSmall" />
+					<Label text="#DOTA_Compendium25_EventSubtitle_Venue" class="EventStateLocation LabelSmall" />
+					<Label text="#DOTA_Compendium25_EventSubtitle_CityCountry" class="EventStateLocation LabelSmall" />
+				</Panel>
+				<Panel class="VideoPlayerContainer">
+					<Panel class="FootageContainer">
+						<Panel class="LiveContainer">
+							<DOTALiveStream id="LiveStream" />
+							<Panel class="OverlayPanel" hittest="false">
+								<Button id="ExternalBrowserButton" class="BrowserButton OverlayButton" onactivate="DOTAInternational2024ExternalWatchStream()" />
+								<Button id="HideButton" class="HideButton OverlayButton" onactivate="DOTAInternational2024ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+						<Panel class="NotLiveContainer">
+							<Label class="NotLiveLabel" text="#DOTA_Compendium25_StreamNotLive" />
+						</Panel>
+						<Panel class="LiveBlockedContainer">
+							<Panel class="LiveBlockedCenter">
+								<Label class="LiveBlockedDay LabelLarge WhiteText" text="{s:broadcast_day}" />
+								<TextButton class="ButtonPrimary Large TI24Green" text="#DOTATournamentMatchListWatchLive" onactivate="DOTAInternational2024ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<DOTACountdown id="LiveStreamCountdown" class="LiveFeedCountdownContainer">
+						<Label class="LabelLarge WhiteText" text="{s:broadcast_day}" />
+						<Label class="CountDownActiveText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartsIn" />
+						<Label class="CountDownCompleteText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartingSoon" />
+					</DOTACountdown>
 				</Panel>
 			</Panel>
 			<Panel class="CellsContainer">
