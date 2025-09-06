@@ -52,7 +52,6 @@
 0|t?L
 0|t?z7
 0}/ff
-0猬0独0狼0
 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause
 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused
 1.2.11
@@ -919,6 +918,8 @@
 2?O_n
 2CScs
 2f GB
+2f, STREAM_DELTAFRAMES Failed to get fragment %d, stopping playback. Server tick: %d
+2f, Tick: %d. playcast: Play delta Fragment %d
 2f. Broadcast IO error. Please try again later
 2f. Broadcast Streaming error %d %s
 2f. Broadcast failed to start: cannot retrieve startup packet data
@@ -937,8 +938,7 @@
 2f. Broadcast: Synchronizing stream
 2f. Could not get http response body (size %d bytes
 2f. Failed to retrieve %s fragment %d, status %d
-2f. Playcast cannot retrieve fragment %d, retrying
-2f. Playcast failed to retrieve fragment %d (succ=%d, %.1f sec
+2f. Playcast failed to retrieve fragment %d (succ=%d, %.1f sec), http response: %d
 2f. Received signup fragment %d
 2f. Releasing fragment %d (older than %d
 2f. Requesting sync
@@ -1053,6 +1053,7 @@
 3i.%3i.%3i.%3i
 4$D;3
 4$H;t
+4$Lc%)E
 4(~Mff
 4.1fms (+/- %4.1fms
 4.2f FPS %4.3f ms
@@ -1180,6 +1181,8 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
+8즌8쩌8쨌8
+9*ubC
 9=aA\E
 9CCallbackI13CSteam3Client17LowBatteryPower_tLb0EE
 9CCallbackI13CSteam3Client20PersonaStateChange_tLb0EE
@@ -1615,6 +1618,7 @@ A\A]A^A_ÐAWAVE1
 A\A]A^A_ÐAWAVH
 A\A]A^A_ÐAWAVI
 A\A]A^A_ÐAWAVL
+A\A]A^A_ÐAWH
 A\A]A^A_ÐUSH
 A\A]A^H
 A\A]A^Hc
@@ -3090,7 +3094,6 @@ ClientActive
 ClientCommand, 0 length string supplied
 ClientCommandKeyValues:  Some entity tried to stuff '%s' to console buffer of entity %i when maxclients was set to %i, ignoring
 ClientCommandTick
-ClientFrame
 ClientPredictionPostNetupdate
 ClientPutInServer
 ClientPutInServer - no player in save game
@@ -3307,7 +3310,12 @@ D9kXH
 D9}(Hc
 D9X0J
 D9ÉGPA
-D;%Ud3
+D;%CaC
+D;%LaC
+D;%UaC
+D;%qbC
+D;%uh3
+D;%zbC
 D;&t_Hcv
 D;4$}VD
 D;`Xt*9pPt7D
@@ -3819,6 +3827,7 @@ F0[A\A]A
 F0t!A
 F4A9G`D
 F8HcX
+F@D;=Di
 FAILED_PRECONDITION
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
@@ -4320,12 +4329,22 @@ H9wXt
 H9z r
 H9z s
 H;2s]A
-H;=0d2
-H;=7h2
-H;=Gn
-H;=KZ2
-H;=Rl0
-H;=uT
+H;=0h2
+H;=31H
+H;=7l2
+H;=9kR
+H;=DsR
+H;=IFR
+H;=IJR
+H;=IRT
+H;=Kl
+H;=Rp0
+H;=Sh
+H;=Xo
+H;=bdR
+H;=ebE
+H;=iKR
+H;=vu
 H;D$ps5H
 H;G0s0
 H;T$8t~H
@@ -4938,7 +4957,7 @@ L9t$ t9H
 L9|$(tLL
 L;#tGH
 L;$$tJA
-L;-EdR
+L;%6LS
 L;4$t0A
 L;4$trM
 L;k s3H
@@ -4985,7 +5004,6 @@ Launch path: %s
 LayeredGameRoot
 LayeredOnMod
 Lc#D;c
-Lc%_S5
 Lc+D;k
 Lc3D;s
 Lc9D;y
@@ -5990,6 +6008,7 @@ Number of seconds to skip back to instant replay from live
 Number of seconds to track failed rcon authentications
 Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned
 Numbers starting with leading zero must be in octal
+N讯N讯N
 O-p?A6
 OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on
 OFFICIAL_ADDONS
@@ -6028,6 +6047,7 @@ OnClientProcessNetworking
 OnClientSceneSystemThreadStateChange
 OnClientSimulate
 OnDemoFileEndReached
+OnDemoStreamStop
 OnEngineClientSignonStateChange
 OnEngineDisconnectReason
 OnEngineLevelLoadingFinished
@@ -6133,6 +6153,7 @@ P410ToARGBRow_Any_AVX2
 P410ToARGBRow_Any_SSSE3
 P410ToARGBRow_C
 P410ToARGBRow_SSSE3
+P8HcH0Hc
 P95:%.1f
 P95:%u
 P99:%.1f
@@ -6430,7 +6451,6 @@ Poor man's restart: reload the current map from disk
 Position
 Post Source2 Client
 PostProcessingSystem_001
-PpLc=qO
 Pre Source2 Client
 Pre-match interface command from [U:1:%u]: %s
 Precache table %s:  %i slots used
@@ -6845,6 +6865,7 @@ Resume
 Resumes demo playback
 Resumes instant replay
 Retrying connection to %s, server requires lobby reservation but is unreserved
+Retrying request for fragment %d
 Retrying sync
 ReturnJobManualEventToPool
 RevisionVersion
@@ -6952,7 +6973,6 @@ STEAMVIDEO_INTERFACE_V002
 STEAM] %s
 STEAM_ID_LAN
 STEAM_ID_PENDING
-STREAM_DELTAFRAMES Failed to get fragment %d, stopping
 STRING
 STRING_CHAR
 STRING_PIECE
@@ -7288,6 +7308,7 @@ SendSpawnGroupManifestUpdateCall_t
 SendVprofLiteProfileToServer
 Sending A2S_RESERVE_CHECK [%u protocol] %08X:%08X [%llu] to %s
 Sending C2S_CONNECT [%u protocol %u auth %d] to %s
+Sending Get Request (pending:%d): %s
 Sending S2A_RESERVE_CHECK_RESPONSE %08X:%08X [%d/%d] to %s @ %s
 Sending S2A_RESERVE_CHECK_RESPONSE to all [%d/%d] (%d clients
 Sending S2C_CHALLENGE [%u auth %d] to %s
@@ -7958,6 +7979,7 @@ System/lock
 System/network
 SystemLoad %.3f - %.3f, retrieval cost %sns
 SystemLoad unavailable
+S栄S构S本S
 T$ H9T
 T$ HcE
 T$ IcD
@@ -14005,6 +14027,7 @@ avg_packets_out
 avg_ping_ms
 avi = .avi video and audio (unavailable on this platform
 avisound
+a限a门a闘a
 backColorBuffer
 backDepthBuffer
 backbuffer
@@ -14151,6 +14174,7 @@ bytes_total
 bytes_total_reliable
 bytes_total_voice
 b}b*XhUu
+b히b히b히b히b
 c at end of pattern
 c must be followed by an ASCII character
 c)%i : %s
@@ -14521,7 +14545,7 @@ cxa_throw_bad_array_new_length
 cyclevar
 cyclevar: cvar "%s" not found
 cyclevar: no varname specified
-cиcπcΘc
+c셀c궤c성c
 d %d %d
 d %d %d %d
 d (s/n %d
@@ -14545,7 +14569,6 @@ d. parsing tick %d; %d bytes
 d. playcast: Adjusting fragment %d->%d, tick %d->%d
 d. playcast: Fragment %d keyframe and delta frames ready
 d. playcast: Fragment %d keyframe and delta frames ready, delayed precache took %.2f sec
-d. playcast: Play delta Fragment %d
 d. playcast: Play keyframe Fragment %d
 d/%d [%.3f msec
 d/%d [not started
@@ -14991,7 +15014,7 @@ fwrite
 fxstat
 fxstat64
 f|XYd
-f부f부f부f
+f纲f纲f
 g (%g): AdvanceTime ticks this frame %d, sim remain: %g
 g is not followed by a braced, angle-bracketed, or quoted name/number or by a plain number
 g)>3j
@@ -15688,8 +15711,6 @@ low_value
 low_violence
 lseek64
 lua_is_currently_executing
-m8H;-F
-m8L;-F
 m_Args
 m_CScriptComponent
 m_Description
@@ -15950,7 +15971,7 @@ multvar
 multvar: cvar "%s" not found
 multvar: no varname specified
 must be unique within
-mxH;-4
+mxH;-t
 n L9l
 n8ATUH
 n8E;nHD
@@ -17840,6 +17861,7 @@ tv_password1
 tv_playcast_delay_prediction
 tv_playcast_delay_resync
 tv_playcast_fragment_cache_history_length
+tv_playcast_http_delta_fragment_timeout_s
 tv_playcast_max_rcvage
 tv_playcast_max_rtdelay
 tv_playcast_origin_auth
@@ -17908,6 +17930,7 @@ u,D;EH
 u/%u started, %u full, %u cancels / %u stops, %u fails%s
 u3[A\A]A
 u4[A\A]A
+uGL;%8
 uID	k
 uJD	k
 uN[A\A
@@ -18359,7 +18382,6 @@ xstat64
 xuidReserve
 xxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxx
-x|H;=mDS
 y != __null
 y AUATL
 y?$Cz

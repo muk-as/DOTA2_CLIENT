@@ -5451,6 +5451,7 @@
 20CSpeechBubbleManager
 20CStickerBackModifier
 20CTeamRecipientFilter
+20CTormentorSpawnPhase
 20CTraceFilterPushMove
 20CUserMessageHudMsg_t
 20CUserMessageResetHUD
@@ -14845,7 +14846,6 @@
 6ActionI13CDOTA_BaseNPCE
 6CCoJob
 6CWorld
-6\b\a
 6d unresolved strings\n
 6f
 70CDOTA_Ability_CDOTA_Ability_Special_Bonus_Unique_Keeper_of_the_Light_2
@@ -26801,6 +26801,7 @@ CTonemapController2Alias_env_tonemap_controller2
 CTonemapTrigger
 CToolGameSimulationAPI
 CToolGameSimulationAPI::LoadSavegame:  no such save file '%s'\n
+CTormentorSpawnPhase
 CTouchExpansionComponent
 CTouchExpansionComponentReferenced
 CTouchExpansionComponentReferencedPtr
@@ -30875,6 +30876,8 @@ ETABLE
 ETEProtobufIds
 ETeamTrackedStatImpl
 ETimerAlertType
+ETormentorLocation
+ETormentorSpawnPhase
 ETourneyQueueDeadlineState
 ETrackedStatAggregate
 EVASIVE_MANEUVERS
@@ -39492,6 +39495,7 @@ N13sky3dparams_t14NetworkVar_fogE
 N14AnimGraphUtils26CTraceFilterAnimGraphSlopeE
 N14CBaseAnimGraph24NetworkVar_m_RagdollPoseE
 N14CBaseAnimGraph26CRagdollAsyncConflictFixupE
+N14CDOTAGameRules32NetworkVar_m_tormentorSpawnPhaseE
 N14CDOTAGameRules36NetworkVar_m_AssassinMiniGameNetDataE
 N14CFogController16NetworkVar_m_fogE
 N14CGameSceneNode20NetworkVar_m_hParentE
@@ -42966,6 +42970,7 @@ Roshan.RevengeRoar.Local
 Roshan.Slam
 Roshan.Throw
 Roshan.Throw.Impact
+RoshanThink
 Rotate
 Rotate a QAngle by another QAngle
 Rotate a Vector around a point
@@ -46196,6 +46201,7 @@ Synchronously spawn an entity group from a list of spawn tables
 Synchronously spawns a single entity from a table
 Synthetic oneofs must be after all other oneofs
 System %s failed to init\n
+T
 T0d
 TACTICAL_SEARCH
 TARGET
@@ -46327,6 +46333,11 @@ TODO the npc is current selected SOURCE2_UNSUPPORTED
 TODO: Motors only support attaching to aggregates with one part right now.  Need to add a part name to the entity.\n
 TOGGLE_STATE
 TOK_COLON
+TORMENTOR_LOCATION_BOTTOM
+TORMENTOR_LOCATION_TOP
+TORMENTOR_SPAWN_PHASE_ALIVE
+TORMENTOR_SPAWN_PHASE_HAS_NOT_SPAWNED
+TORMENTOR_SPAWN_PHASE_RESPAWNING
 TOWER_BASE_1
 TOWER_BASE_2
 TOWER_BOT_1
@@ -53631,7 +53642,6 @@ eForward
 eGib
 eGround
 eHead
-eHexe
 eInvalid
 eKeypoints
 eKill
@@ -63413,6 +63423,8 @@ m_eStats
 m_eTarget
 m_eTeam
 m_eTier
+m_eTormentorLocation
+m_eTormentorSpawnPhase
 m_eTransitionedToPathNodeAction
 m_eType
 m_eVarType
@@ -64856,6 +64868,8 @@ m_flTimeoutInterval
 m_flTimer
 m_flTiming
 m_flTonemapEVSmoothingRange
+m_flTormentorPhaseEndTime
+m_flTormentorPhaseStartTime
 m_flTorqueScale
 m_flTotalAppliedDamage
 m_flTotalAttributes
@@ -65206,6 +65220,7 @@ m_hLinkedEntities
 m_hListManagers
 m_hLoadedUnit
 m_hLookTarget
+m_hLotusPools
 m_hMagnetizeAbility
 m_hMaster
 m_hMaterial
@@ -65448,9 +65463,11 @@ m_hWard
 m_hWards
 m_hWarrior
 m_hWatchPathThinkers
+m_hWatchers
 m_hWave
 m_hWebClusters
 m_hWebs
+m_hWisdomShrines
 m_hWisp
 m_hXPRuneSpawners
 m_hXPRune_1
@@ -68080,6 +68097,7 @@ m_timestamp
 m_toggle_state
 m_tonemapControllerName
 m_tooltipString
+m_tormentorSpawnPhase
 m_torqueLimit
 m_totalLength
 m_traceResults
@@ -78627,6 +78645,7 @@ pvs_debugentity
 pvs_flowtype
 pvs_modify_entity
 pvsplayer
+pàqÌq´q
 qInvChange
 qTarget
 qangle
@@ -78634,6 +78653,7 @@ qangle_pitch_yaw
 qcStatements
 qop_blink
 qsort [0x%x, 0x%x]   done %d   this %d\n
+qtq$q
 qualities
 quality
 qualityLabelledData
@@ -83956,7 +83976,6 @@ u
 u %u %u
 u00
 u:%02u:%02u
-u\e\a
 uchar32
 ui.abilitydraft_theirpick
 ui_menu_activate_open
@@ -84880,7 +84899,6 @@ yield_token
 yielding
 ymax
 ymin
-zDд\r\a
 zFar
 zNear
 zPos

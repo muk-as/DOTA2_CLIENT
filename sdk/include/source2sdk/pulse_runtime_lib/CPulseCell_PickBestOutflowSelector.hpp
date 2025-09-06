@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo " 2û"
+        // static metadata: MPulseCellOutflowHookInfo
         // static metadata: MPropertyFriendlyName "Select Best Exit"
         // static metadata: MPropertyDescription "Evaluate the requirements of each connected node"
         // static metadata: MPulseCell_WithNoDefaultOutflow
