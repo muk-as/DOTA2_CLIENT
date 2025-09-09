@@ -24,7 +24,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "`'Ûßû"
+        // static metadata: MPulseCellOutflowHookInfo "`'Äßû"
         // static metadata: MPropertyFriendlyName "End Cap Settings"
         // static metadata: MPropertyDescription "Specifies that this is a special part that should be used at the start or end of the line."
         #pragma pack(push, 1)
