@@ -56,7 +56,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a18
+        // Size: 0x1a40
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -509,53 +509,53 @@ namespace source2sdk
             bool m_bWasRevealedFromFOWAsDead; // 0x175b            
             uint8_t _pad175c[0x18]; // 0x175c
             float m_flAdditionalSinkDelay; // 0x1774            
-            uint8_t _pad1778[0xe0]; // 0x1778
+            uint8_t _pad1778[0x108]; // 0x1778
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_NetworkActivity; // 0x1858            
-            std::int32_t m_PrevNetworkActivity; // 0x185c            
+            std::int32_t m_NetworkActivity; // 0x1880            
+            std::int32_t m_PrevNetworkActivity; // 0x1884            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_NetworkSequenceIndex; // 0x1860            
+            std::int32_t m_NetworkSequenceIndex; // 0x1888            
             // metadata: MNetworkEnable
-            bool m_bShouldDoFlyHeightVisual; // 0x1864            
-            uint8_t _pad1865[0x3]; // 0x1865
+            bool m_bShouldDoFlyHeightVisual; // 0x188c            
+            uint8_t _pad188d[0x3]; // 0x188d
             // metadata: MNetworkEnable
-            float m_flStartSequenceCycle; // 0x1868            
-            uint8_t _pad186c[0x4]; // 0x186c
+            float m_flStartSequenceCycle; // 0x1890            
+            uint8_t _pad1894[0x4]; // 0x1894
             // m_ActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlSymbol> m_ActivityModifiers;
-            char m_ActivityModifiers[0x18]; // 0x1870            
+            char m_ActivityModifiers[0x18]; // 0x1898            
             // m_hBackgroundSceneEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_SceneEntity> m_hBackgroundSceneEnt;
-            char m_hBackgroundSceneEnt[0x4]; // 0x1888            
+            char m_hBackgroundSceneEnt[0x4]; // 0x18b0            
             // m_hSpeakingSceneEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_SceneEntity> m_hSpeakingSceneEnt;
-            char m_hSpeakingSceneEnt[0x4]; // 0x188c            
-            uint8_t _pad1890[0x10]; // 0x1890
+            char m_hSpeakingSceneEnt[0x4]; // 0x18b4            
+            uint8_t _pad18b8[0x10]; // 0x18b8
             // m_hOldWearables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_EconWearable>> m_hOldWearables;
-            char m_hOldWearables[0x18]; // 0x18a0            
+            char m_hOldWearables[0x18]; // 0x18c8            
             // m_hOldWearableSkins has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlStringToken> m_hOldWearableSkins;
-            char m_hOldWearableSkins[0x18]; // 0x18b8            
+            char m_hOldWearableSkins[0x18]; // 0x18e0            
             // metadata: MNetworkEnable
-            char m_CustomHealthLabel[256]; // 0x18d0            
+            char m_CustomHealthLabel[256]; // 0x18f8            
             // metadata: MNetworkEnable
-            Color m_CustomHealthLabelColor; // 0x19d0            
-            source2sdk::client::item_definition_index_t m_nWearableDefIndex; // 0x19d4            
-            uint8_t _pad19d8[0x1]; // 0x19d8
-            Color m_gibTintColor; // 0x19d9            
-            bool m_bForceMaterialCombine; // 0x19dd            
-            bool m_bShouldDrawParticlesWhileHidden; // 0x19de            
-            bool m_bIsClientThinkPending; // 0x19df            
-            bool m_bActivityModifiersDirty; // 0x19e0            
-            bool m_bUnitModelVariantChanged; // 0x19e1            
-            bool m_bWearablesAreTaunting; // 0x19e2            
-            bool m_bWearablesLoadoutOverride; // 0x19e3            
-            uint8_t _pad19e4[0x14]; // 0x19e4
-            bool m_bShowCannotBeDisabledIcon; // 0x19f8            
-            uint8_t _pad19f9[0x1f];
+            Color m_CustomHealthLabelColor; // 0x19f8            
+            source2sdk::client::item_definition_index_t m_nWearableDefIndex; // 0x19fc            
+            uint8_t _pad1a00[0x1]; // 0x1a00
+            Color m_gibTintColor; // 0x1a01            
+            bool m_bForceMaterialCombine; // 0x1a05            
+            bool m_bShouldDrawParticlesWhileHidden; // 0x1a06            
+            bool m_bIsClientThinkPending; // 0x1a07            
+            bool m_bActivityModifiersDirty; // 0x1a08            
+            bool m_bUnitModelVariantChanged; // 0x1a09            
+            bool m_bWearablesAreTaunting; // 0x1a0a            
+            bool m_bWearablesLoadoutOverride; // 0x1a0b            
+            uint8_t _pad1a0c[0x14]; // 0x1a0c
+            bool m_bShowCannotBeDisabledIcon; // 0x1a20            
+            uint8_t _pad1a21[0x1f];
             
             // Datamap fields:
             // int32_t InputSetStyleOverride; // 0x0
@@ -570,6 +570,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC) == 0x1a18);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC) == 0x1a40);
     };
 };

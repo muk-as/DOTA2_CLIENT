@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a18
+        // Size: 0x1a40
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_NPC_Treant_EyesInTheForest) == 0x1a18);
+        static_assert(sizeof(source2sdk::client::C_DOTA_NPC_Treant_EyesInTheForest) == 0x1a40);
     };
 };

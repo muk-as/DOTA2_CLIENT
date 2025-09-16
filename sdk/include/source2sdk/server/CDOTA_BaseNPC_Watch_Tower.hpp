@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x19e0
+        // Size: 0x1a08
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,14 +29,14 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_szOutpostName; // 0x19d0            
+            CUtlSymbolLarge m_szOutpostName; // 0x19f8            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_szInteractAbilityName; // 0x19d8            
+            CUtlSymbolLarge m_szInteractAbilityName; // 0x1a00            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Watch_Tower because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Watch_Tower) == 0x19e0);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Watch_Tower) == 0x1a08);
     };
 };

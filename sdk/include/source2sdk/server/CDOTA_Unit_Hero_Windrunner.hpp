@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ef8
+        // Size: 0x1f20
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,13 +30,13 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetAngle; // 0x1ef0            
-            source2sdk::client::ParticleIndex_t m_nFXDeath; // 0x1ef4            
+            std::int32_t m_nTargetAngle; // 0x1f18            
+            source2sdk::client::ParticleIndex_t m_nFXDeath; // 0x1f1c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_Windrunner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Windrunner) == 0x1ef8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Windrunner) == 0x1f20);
     };
 };

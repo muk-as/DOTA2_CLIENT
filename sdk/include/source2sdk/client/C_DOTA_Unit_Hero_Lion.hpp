@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1db8
+        // Size: 0x1de0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Unit_Hero_Lion : public source2sdk::client::C_DOTA_BaseNPC_Hero
         {
         public:
-            std::uint32_t m_unFingerPrestigeKills; // 0x1db0            
-            uint8_t _pad1db4[0x4];
+            std::uint32_t m_unFingerPrestigeKills; // 0x1dd8            
+            uint8_t _pad1ddc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Lion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Lion) == 0x1db8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Lion) == 0x1de0);
     };
 };

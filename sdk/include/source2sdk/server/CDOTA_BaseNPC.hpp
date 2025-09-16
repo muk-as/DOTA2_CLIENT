@@ -63,7 +63,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x18e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -634,6 +634,7 @@ namespace source2sdk
             bool m_bShouldComputeRemainingPathLength; // 0x18b0            
             uint8_t _pad18b1[0x3]; // 0x18b1
             float m_flRemainingPathLength; // 0x18b4            
+            uint8_t _pad18b8[0x28];
             
             // Datamap fields:
             // CUtlSymbolLarge Input_MoveTo; // 0x0
@@ -655,6 +656,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC) == 0x18b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC) == 0x18e0);
     };
 };

@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a50
+        // Size: 0x1a78
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_Trap_Ward : public source2sdk::server::CDOTA_BaseNPC_Creature
         {
         public:
-            CUtlSymbolLarge m_iszDefaultAnim; // 0x1a38            
-            Vector m_vTrapTargetLocal; // 0x1a40            
-            uint8_t _pad1a4c[0x4];
+            CUtlSymbolLarge m_iszDefaultAnim; // 0x1a60            
+            Vector m_vTrapTargetLocal; // 0x1a68            
+            uint8_t _pad1a74[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Trap_Ward because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Trap_Ward) == 0x1a50);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Trap_Ward) == 0x1a78);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x1e60
+        // Size: 0x1e90
         // Has VTable
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_Artillery_PortraitWorldUnit) == 0x1e60);
+        static_assert(sizeof(source2sdk::client::C_Artillery_PortraitWorldUnit) == 0x1e90);
     };
 };

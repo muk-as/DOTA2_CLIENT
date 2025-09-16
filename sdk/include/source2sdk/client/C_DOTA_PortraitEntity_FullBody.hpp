@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a60
+        // Size: 0x1a88
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_PortraitEntity_FullBody) == 0x1a60);
+        static_assert(sizeof(source2sdk::client::C_DOTA_PortraitEntity_FullBody) == 0x1a88);
     };
 };

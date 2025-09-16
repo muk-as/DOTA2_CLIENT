@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ef8
+        // Size: 0x1f20
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Unit_Hero_DarkSeer : public source2sdk::server::CDOTA_BaseNPC_Hero
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nNormalPunchBuffIndex; // 0x1ef0            
-            uint8_t _pad1ef4[0x4];
+            source2sdk::client::ParticleIndex_t m_nNormalPunchBuffIndex; // 0x1f18            
+            uint8_t _pad1f1c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_DarkSeer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_DarkSeer) == 0x1ef8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_DarkSeer) == 0x1f20);
     };
 };

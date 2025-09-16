@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1f18
+        // Size: 0x1f40
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,20 +31,20 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-            Vector m_stolenAbilityColorHSV1; // 0x1ef0            
+            Vector m_stolenAbilityColorHSV1; // 0x1f18            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-            Vector m_stolenAbilityColorHSV2; // 0x1efc            
+            Vector m_stolenAbilityColorHSV2; // 0x1f24            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-            Vector m_stolenAbilityFXColorHSV; // 0x1f08            
-            bool m_bHasInitializedAbilityColors; // 0x1f14            
-            uint8_t _pad1f15[0x3];
+            Vector m_stolenAbilityFXColorHSV; // 0x1f30            
+            bool m_bHasInitializedAbilityColors; // 0x1f3c            
+            uint8_t _pad1f3d[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_Rubick because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Rubick) == 0x1f18);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Rubick) == 0x1f40);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18c0
+        // Size: 0x18e8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,13 +34,13 @@ namespace source2sdk
         public:
             // m_hOwningNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOwningNPC;
-            char m_hOwningNPC[0x4]; // 0x18b8            
-            uint8_t _pad18bc[0x4];
+            char m_hOwningNPC[0x4]; // 0x18e0            
+            uint8_t _pad18e4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Side_Gunner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Side_Gunner) == 0x18c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Side_Gunner) == 0x18e8);
     };
 };

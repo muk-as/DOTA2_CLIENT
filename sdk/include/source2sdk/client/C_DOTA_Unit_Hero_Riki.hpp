@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1dc8
+        // Size: 0x1df0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,12 +25,12 @@ namespace source2sdk
         class C_DOTA_Unit_Hero_Riki : public source2sdk::client::C_DOTA_BaseNPC_Hero
         {
         public:
-            uint8_t _pad1db0[0x18];
+            uint8_t _pad1dd8[0x18];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Riki) == 0x1dc8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Riki) == 0x1df0);
     };
 };

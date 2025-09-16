@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 965
+        // Enumerator count: 967
         // Alignment: 4
         // Size: 0x4
         enum class EDOTAGCMsg : std::uint32_t
@@ -983,6 +983,8 @@ namespace source2sdk
             k_EMsgClientToGCClaimGatedEventResponse = 0x2354,
             k_EMsgClientToGCGetEventRanking = 0x2393,
             k_EMsgClientToGCGetEventRankingResponse = 0x2394,
+            k_EMsgClientToGCGetEventCoupon = 0x2395,
+            k_EMsgClientToGCGetEventCouponResponse = 0x2396,
         };
     };
 };

@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18d0
+        // Size: 0x18f8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_NPC_Observer_Ward_TrueSight : public source2sdk::server::CDOTA_NPC_Observer_Ward
         {
         public:
-            float m_flTrueSight; // 0x18c8            
-            CEntityHandle m_hAbilityEntity; // 0x18cc            
+            float m_flTrueSight; // 0x18f0            
+            CEntityHandle m_hAbilityEntity; // 0x18f4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_NPC_Observer_Ward_TrueSight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_NPC_Observer_Ward_TrueSight) == 0x18d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_NPC_Observer_Ward_TrueSight) == 0x18f8);
     };
 };
