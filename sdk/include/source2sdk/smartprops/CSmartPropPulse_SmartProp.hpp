@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "SmartPropEval"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "ê Íˇ"
+        // static metadata: MPulseCellOutflowHookInfo "ê5Íˇ"
         // static metadata: MPropertyFriendlyName "Smart Prop Reference"
         #pragma pack(push, 1)
         class CSmartPropPulse_SmartProp : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow
