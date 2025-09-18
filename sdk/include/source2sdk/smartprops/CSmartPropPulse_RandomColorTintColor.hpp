@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ">°éÿ"
+        // static metadata: MPulseCellOutflowHookInfo "> êÿ"
         // static metadata: MPropertyFriendlyName "Tint Color Gradient"
         // static metadata: MPropertyDescription "Set the color tint to a selection from within the defined gradient."
         #pragma pack(push, 1)
