@@ -24,7 +24,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "°`þÿ"
+        // static metadata: MPulseCellOutflowHookInfo "°`üÿ"
         // static metadata: MPropertyFriendlyName "Gradient"
         #pragma pack(push, 1)
         class CPulseCell_Value_Gradient : public source2sdk::pulse_runtime_lib::CPulseCell_BaseValue
