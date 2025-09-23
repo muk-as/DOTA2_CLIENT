@@ -24,7 +24,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "TestDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "@γλπÿ"
+        // static metadata: MPulseCellOutflowHookInfo "@γ$ρÿ"
         // static metadata: MPropertyFriendlyName "Tracepoint"
         #pragma pack(push, 1)
         class CPulseCell_Step_TestDomainTracepoint : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow
