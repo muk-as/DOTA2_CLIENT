@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "SmartPropEval"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "Р'ґия"
+        // static metadata: MPulseCellOutflowHookInfo "Р'%ия"
         // static metadata: MPropertyFriendlyName "Fit on Line"
         // static metadata: MPropertyDescription "An element which fits one or more instances of a set of choices on to a line."
         // static metadata: MPulseCell_WithNoDefaultOutflow
