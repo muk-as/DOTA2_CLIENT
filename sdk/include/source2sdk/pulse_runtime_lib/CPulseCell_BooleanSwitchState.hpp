@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "€qüÿ"
+        // static metadata: MPulseCellOutflowHookInfo "@rq<ý"
         // static metadata: MPropertyFriendlyName "Boolean Switch State"
         // static metadata: MPropertyDescription "While active, activate a child state based on the results of a boolean condition. Any referenced variables must be marked as observable."
         // static metadata: MPulseEditorCanvasItemSpecKV3
