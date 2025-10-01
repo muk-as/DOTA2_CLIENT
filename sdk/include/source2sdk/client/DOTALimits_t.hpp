@@ -32,7 +32,7 @@ namespace source2sdk
             DOTA_MAX_SPECTATOR_LOBBY_SIZE = 0xf,
             // MScriptDescription "Default number of non-spectator players supported. Default number of players per team."
             DOTA_DEFAULT_MAX_TEAM = 0x5,
-            // MScriptDescription " H_<ý Default number of non-spectator players supported."
+            // MScriptDescription " H&ý Default number of non-spectator players supported."
             DOTA_DEFAULT_MAX_TEAM_PLAYERS = 0xa,
         };
     };
