@@ -115,6 +115,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bHasUpgradeableAbilities"
         // static metadata: MNetworkVarNames "int m_iBKBChargesUsed"
         // static metadata: MNetworkVarNames "int m_iAeonChargesUsed"
+        // static metadata: MNetworkVarNames "int m_iRefresherChargesUsed"
         // static metadata: MNetworkVarNames "GameTime_t m_flRefresherUseTime"
         // static metadata: MNetworkVarNames "float m_flRefresherLastCooldown"
         // static metadata: MNetworkVarNames "GameTime_t m_flLastDealtDamageTime"
@@ -248,16 +249,18 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_iAeonChargesUsed; // 0xa6c            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRefresherUseTime; // 0xa70            
+            std::int32_t m_iRefresherChargesUsed; // 0xa70            
             // metadata: MNetworkEnable
-            float m_flRefresherLastCooldown; // 0xa74            
+            source2sdk::entity2::GameTime_t m_flRefresherUseTime; // 0xa74            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flLastDealtDamageTime; // 0xa78            
+            float m_flRefresherLastCooldown; // 0xa78            
             // metadata: MNetworkEnable
-            std::int32_t m_iBotDebugData; // 0xa7c            
+            source2sdk::entity2::GameTime_t m_flLastDealtDamageTime; // 0xa7c            
             // metadata: MNetworkEnable
-            bool m_bIsMoving; // 0xa80            
-            uint8_t _pad0a81[0x19f]; // 0xa81
+            std::int32_t m_iBotDebugData; // 0xa80            
+            // metadata: MNetworkEnable
+            bool m_bIsMoving; // 0xa84            
+            uint8_t _pad0a85[0x19b]; // 0xa85
             float m_flChannelMultiplier; // 0xc20            
             // metadata: MNetworkEnable
             bool m_bCanUseWards; // 0xc24            

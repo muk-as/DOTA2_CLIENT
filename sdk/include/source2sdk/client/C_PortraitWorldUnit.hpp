@@ -31,36 +31,36 @@ namespace source2sdk
         class C_PortraitWorldUnit : public source2sdk::client::C_DOTA_BaseNPC
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OutputAnimOver; // 0x1a40            
-            bool m_bSuppressIntroEffects; // 0x1a68            
-            bool m_bIsAlternateLoadout; // 0x1a69            
-            bool m_bSkipBackgroundEntities; // 0x1a6a            
-            bool m_bSpawnBackgroundModels; // 0x1a6b            
-            bool m_bDeferredPortrait; // 0x1a6c            
-            bool m_bShowParticleAssetModifiers; // 0x1a6d            
-            bool m_bIgnorePortraitInfo; // 0x1a6e            
-            bool m_bFlyingCourier; // 0x1a6f            
-            bool m_bDisableDefaultModifiers; // 0x1a70            
-            uint8_t _pad1a71[0x3]; // 0x1a71
-            std::int32_t m_nEffigyStatusEffect; // 0x1a74            
-            CUtlSymbolLarge m_effigySequenceName; // 0x1a78            
-            float m_flStartingAnimationCycle; // 0x1a80            
-            float m_flAnimationPlaybackSpeed; // 0x1a84            
-            float m_flRareLoadoutAnimChance; // 0x1a88            
-            bool m_bSetDefaultActivityOnSequenceFinished; // 0x1a8c            
-            uint8_t _pad1a8d[0x3]; // 0x1a8d
+            source2sdk::entity2::CEntityIOOutput m_OutputAnimOver; // 0x1a48            
+            bool m_bSuppressIntroEffects; // 0x1a70            
+            bool m_bIsAlternateLoadout; // 0x1a71            
+            bool m_bSkipBackgroundEntities; // 0x1a72            
+            bool m_bSpawnBackgroundModels; // 0x1a73            
+            bool m_bDeferredPortrait; // 0x1a74            
+            bool m_bShowParticleAssetModifiers; // 0x1a75            
+            bool m_bIgnorePortraitInfo; // 0x1a76            
+            bool m_bFlyingCourier; // 0x1a77            
+            bool m_bDisableDefaultModifiers; // 0x1a78            
+            uint8_t _pad1a79[0x3]; // 0x1a79
+            std::int32_t m_nEffigyStatusEffect; // 0x1a7c            
+            CUtlSymbolLarge m_effigySequenceName; // 0x1a80            
+            float m_flStartingAnimationCycle; // 0x1a88            
+            float m_flAnimationPlaybackSpeed; // 0x1a8c            
+            float m_flRareLoadoutAnimChance; // 0x1a90            
+            bool m_bSetDefaultActivityOnSequenceFinished; // 0x1a94            
+            uint8_t _pad1a95[0x3]; // 0x1a95
             // m_vecActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlSymbolLarge> m_vecActivityModifiers;
-            char m_vecActivityModifiers[0x18]; // 0x1a90            
-            source2sdk::client::DOTAPortraitEnvironmentType_t m_environment; // 0x1aa8            
-            uint8_t _pad1aac[0x4]; // 0x1aac
-            source2sdk::client::StartupBehavior_t m_nStartupBehavior; // 0x1ab0            
-            uint8_t _pad1ab4[0x1e4]; // 0x1ab4
-            CUtlSymbolLarge m_cameraName; // 0x1c98            
-            uint8_t _pad1ca0[0x50]; // 0x1ca0
-            source2sdk::client::ParticleIndex_t m_nPortraitParticle; // 0x1cf0            
-            std::int32_t m_nCourierType; // 0x1cf4            
-            uint8_t _pad1cf8[0x198];
+            char m_vecActivityModifiers[0x18]; // 0x1a98            
+            source2sdk::client::DOTAPortraitEnvironmentType_t m_environment; // 0x1ab0            
+            uint8_t _pad1ab4[0x4]; // 0x1ab4
+            source2sdk::client::StartupBehavior_t m_nStartupBehavior; // 0x1ab8            
+            uint8_t _pad1abc[0x1e4]; // 0x1abc
+            CUtlSymbolLarge m_cameraName; // 0x1ca0            
+            uint8_t _pad1ca8[0x50]; // 0x1ca8
+            source2sdk::client::ParticleIndex_t m_nPortraitParticle; // 0x1cf8            
+            std::int32_t m_nCourierType; // 0x1cfc            
+            uint8_t _pad1d00[0x190];
             
             // Datamap fields:
             // CUtlSymbolLarge activity_modifier; // 0x7fffffff

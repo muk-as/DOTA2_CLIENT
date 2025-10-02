@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "Ë&ý"
+        // static metadata: MPulseCellOutflowHookInfo "ðË&ý"
         // static metadata: MPropertyFriendlyName "Wait"
         // static metadata: MPropertyDescription "Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken."
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/inflow_wait.png"

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a50
+        // Size: 0x1a58
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,17 +29,17 @@ namespace source2sdk
         class C_DOTA_NPC_WitchDoctor_Ward : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXSkullIndex; // 0x1a40            
+            source2sdk::client::ParticleIndex_t m_nFXSkullIndex; // 0x1a48            
             // metadata: MNetworkEnable
-            std::int32_t m_nTargetType; // 0x1a44            
+            std::int32_t m_nTargetType; // 0x1a4c            
             // metadata: MNetworkEnable
-            std::int32_t m_nTargetFlags; // 0x1a48            
-            uint8_t _pad1a4c[0x4];
+            std::int32_t m_nTargetFlags; // 0x1a50            
+            uint8_t _pad1a54[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_NPC_WitchDoctor_Ward because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_NPC_WitchDoctor_Ward) == 0x1a50);
+        static_assert(sizeof(source2sdk::client::C_DOTA_NPC_WitchDoctor_Ward) == 0x1a58);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1b60
+        // Size: 0x1b68
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,18 +28,18 @@ namespace source2sdk
         class C_DOTA_Unit_LoopingSound : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            uint8_t _pad1a40[0x14]; // 0x1a40
-            std::int32_t m_nPrevLoopingSoundParity; // 0x1a54            
+            uint8_t _pad1a48[0x14]; // 0x1a48
+            std::int32_t m_nPrevLoopingSoundParity; // 0x1a5c            
             // metadata: MNetworkEnable
-            char m_pszNetworkedSoundLoop[256]; // 0x1a58            
+            char m_pszNetworkedSoundLoop[256]; // 0x1a60            
             // metadata: MNetworkEnable
-            std::int32_t m_nLoopingSoundParity; // 0x1b58            
-            uint8_t _pad1b5c[0x4];
+            std::int32_t m_nLoopingSoundParity; // 0x1b60            
+            uint8_t _pad1b64[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_LoopingSound because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_LoopingSound) == 0x1b60);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_LoopingSound) == 0x1b68);
     };
 };

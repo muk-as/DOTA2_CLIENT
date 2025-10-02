@@ -22,7 +22,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1ab0
+        // Size: 0x1ab8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -37,47 +37,47 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageLevel; // 0x1a40            
-            source2sdk::client::ParticleIndex_t m_nAmbientFXIndex; // 0x1a44            
-            source2sdk::client::ParticleIndex_t m_nTPFXIndex; // 0x1a48            
-            source2sdk::client::ParticleIndex_t m_nStatusFXIndex; // 0x1a4c            
+            std::int32_t m_iDamageLevel; // 0x1a48            
+            source2sdk::client::ParticleIndex_t m_nAmbientFXIndex; // 0x1a4c            
+            source2sdk::client::ParticleIndex_t m_nTPFXIndex; // 0x1a50            
+            source2sdk::client::ParticleIndex_t m_nStatusFXIndex; // 0x1a54            
             // metadata: MNetworkEnable
             // m_nFXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndex;
-            char m_nFXIndex[0x8]; // 0x1a50            
+            char m_nFXIndex[0x8]; // 0x1a58            
             // metadata: MNetworkEnable
             // m_nFXIndexDestruction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndexDestruction;
-            char m_nFXIndexDestruction[0x8]; // 0x1a58            
+            char m_nFXIndexDestruction[0x8]; // 0x1a60            
             // metadata: MNetworkEnable
-            QAngle m_angInitialAngles; // 0x1a60            
+            QAngle m_angInitialAngles; // 0x1a68            
             // metadata: MNetworkEnable
-            source2sdk::animationsystem::HSequence m_hHeroStatueSequence; // 0x1a6c            
+            source2sdk::animationsystem::HSequence m_hHeroStatueSequence; // 0x1a74            
             // metadata: MNetworkEnable
-            source2sdk::animationsystem::HSequence m_hConstantLayerSequence; // 0x1a70            
+            source2sdk::animationsystem::HSequence m_hConstantLayerSequence; // 0x1a78            
             // metadata: MNetworkEnable
-            float m_fHeroStatueCycle; // 0x1a74            
+            float m_fHeroStatueCycle; // 0x1a7c            
             // metadata: MNetworkEnable
-            std::int32_t m_iHeroStatueStatusEffectIndex; // 0x1a78            
+            std::int32_t m_iHeroStatueStatusEffectIndex; // 0x1a80            
             // metadata: MNetworkEnable
-            bool m_bHeroStatue; // 0x1a7c            
+            bool m_bHeroStatue; // 0x1a84            
             // metadata: MNetworkEnable
-            bool m_bBattleCup; // 0x1a7d            
+            bool m_bBattleCup; // 0x1a85            
             // metadata: MNetworkEnable
-            char m_HeroStatueInscription[32]; // 0x1a7e            
-            uint8_t _pad1a9e[0x2]; // 0x1a9e
+            char m_HeroStatueInscription[32]; // 0x1a86            
+            uint8_t _pad1aa6[0x2]; // 0x1aa6
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x1aa0            
+            source2sdk::client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x1aa8            
             // metadata: MNetworkEnable
-            Color m_ParticleTintColor; // 0x1aa4            
+            Color m_ParticleTintColor; // 0x1aac            
             // metadata: MNetworkEnable
-            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x1aa8            
-            uint8_t _pad1aac[0x4];
+            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x1ab0            
+            uint8_t _pad1ab4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Building because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Building) == 0x1ab0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Building) == 0x1ab8);
     };
 };

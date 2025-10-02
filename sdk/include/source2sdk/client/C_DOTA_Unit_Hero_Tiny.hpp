@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1de8
+        // Size: 0x1df0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -45,20 +45,20 @@ namespace source2sdk
         public:
             // m_hTreeWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTreeWearable;
-            char m_hTreeWearable[0x4]; // 0x1dd8            
-            source2sdk::client::ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1ddc            
+            char m_hTreeWearable[0x4]; // 0x1de0            
+            source2sdk::client::ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1de4            
             // metadata: MNetworkEnable
             // m_hIllusionOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hIllusionOwner;
-            char m_hIllusionOwner[0x4]; // 0x1de0            
+            char m_hIllusionOwner[0x4]; // 0x1de8            
             // metadata: MNetworkEnable
-            bool m_bIllusionHasTree; // 0x1de4            
-            uint8_t _pad1de5[0x3];
+            bool m_bIllusionHasTree; // 0x1dec            
+            uint8_t _pad1ded[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Tiny because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Tiny) == 0x1de8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Tiny) == 0x1df0);
     };
 };

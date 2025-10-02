@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1a88
+        // Size: 0x1a90
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,14 +26,14 @@ namespace source2sdk
         class C_PortraitHero : public source2sdk::client::C_DOTA_BaseNPC
         {
         public:
-            source2sdk::client::HeroID_t m_nHeroID; // 0x1a40            
-            std::int32_t m_actQueuedActivity; // 0x1a44            
-            char m_szQueuedActivityModifier[64]; // 0x1a48            
+            source2sdk::client::HeroID_t m_nHeroID; // 0x1a48            
+            std::int32_t m_actQueuedActivity; // 0x1a4c            
+            char m_szQueuedActivityModifier[64]; // 0x1a50            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PortraitHero because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PortraitHero) == 0x1a88);
+        static_assert(sizeof(source2sdk::client::C_PortraitHero) == 0x1a90);
     };
 };
