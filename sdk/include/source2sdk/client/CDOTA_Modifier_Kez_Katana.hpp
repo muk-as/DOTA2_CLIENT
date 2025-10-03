@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_Katana : public source2sdk::client::CDOTA_Buff
@@ -33,13 +33,15 @@ namespace source2sdk
             std::int32_t bleed_as_rupture_pct; // 0x1894            
             std::int32_t m_nBonusPreAttackDamage; // 0x1898            
             bool m_bBackstab; // 0x189c            
-            bool m_bShardAttack; // 0x189d            
-            uint8_t _pad189e[0x2];
+            uint8_t _pad189d[0x3]; // 0x189d
+            float m_flStacksForLifesteal; // 0x18a0            
+            bool m_bShardAttack; // 0x18a4            
+            uint8_t _pad18a5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_Katana because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_Katana) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_Katana) == 0x18a8);
     };
 };
