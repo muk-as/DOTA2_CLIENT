@@ -1,0 +1,38 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/frontpage_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/banners/front_page_international_2025_short.vcss_c" />
+	</styles>
+	<CustomLayoutPanel class="International2025" onactivate="DOTAShowInternational2025Page()">
+		<Image class="BackgroundImage" src="s2r://panorama/images/front_page/international_2025_background_short_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="TopContent" hittest="false">
+			<Label class="TeamName BodyExtraLarge" text="#DOTA_International2025_EventFinished_Dashboard_Title" />
+		</Panel>
+		<DOTAFrontpageCellInternational2025 class="BottomContent">
+			<Label class="LabelSmall YourPerformanceLabel" text="#DOTA_Compendium25_PerformanceHeader" />
+			<Panel class="PlayerInfoContents">
+				<Panel class="PlayerInfoBlock" onmouseover="Compendium2025ShowScoreTooltip()" onmouseout="Compendium2025HideScoreTooltip()">
+					<Panel class="TotalPointsBlock">
+						<Label class="PlayerInfoValue TitleSmall" text="{d:local_user_score}" />
+						<Image class="InfoIcon" src="s2r://panorama/images/control_icons/24px/info.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Label class="PlayerInfoLabel LabelSmall" text="#DOTA_Compendium2025_Tabs_Points" />
+				</Panel>
+				<Panel class="VerticalDivider" />
+				<Panel class="PlayerInfoBlock">
+					<Label class="PlayerInfoValue TitleSmall" text="{s:local_user_percentile}" />
+					<Label class="PlayerInfoLabel LabelSmall" text="#DOTA_Compendium2025_Tabs_Percentile" />
+				</Panel>
+			</Panel>
+			<Panel class="EventActionsContainer">
+				<DOTAParticleScenePanel class="ClaimRewardsFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<DOTAInternational2025Button id="ClaimRewardsButton" class="Gold Small FillWidth" text="#DOTA_ClaimRewards" onactivate="DOTAShowInternational2025Page()" />
+				<DOTAInternational2025Button id="ViewEventButton" class="Small FillWidth" text="#DOTA_ViewEvent" onactivate="DOTAShowInternational2025Page()" />
+			</Panel>
+		</DOTAFrontpageCellInternational2025>
+		<Panel class="CellBorder" hittest="false" />
+	</CustomLayoutPanel>
+</root>
