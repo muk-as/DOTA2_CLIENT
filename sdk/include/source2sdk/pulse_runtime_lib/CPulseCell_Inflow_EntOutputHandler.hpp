@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
         // static metadata: MPulseCellOutflowHookInfo "°
-Ú$ý"
+&ý"
         // static metadata: MPulseCellWithCustomDocNode
         #pragma pack(push, 1)
         class CPulseCell_Inflow_EntOutputHandler : public source2sdk::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint
