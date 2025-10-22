@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "SmartPropEval"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "ÀYµ¡ù"
+        // static metadata: MPulseCellOutflowHookInfo "ÀY_¡ù"
         // static metadata: MPropertyFriendlyName "Select Single Child"
         // static metadata: MPropertyDescription "An element which selects a single choice from its set of child choices."
         // static metadata: MPulseCell_WithNoDefaultOutflow
