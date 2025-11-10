@@ -1,0 +1,652 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTAMonsterHunterInvestigation
+{
+	margin: -18px -18px;
+	padding: 24px;
+	width: 300px;
+	height: 520px;
+	padding-top: 48px;
+	transition-property: transform, brightness;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	flow-children: down;
+}
+
+DOTAMonsterHunterInvestigation:hover .BackgroundPanel
+{
+	brightness: 2;
+	saturation: 1.15;
+}
+
+DOTAMonsterHunterInvestigation:hover .BackgroundBorder
+{
+	border: 1px solid #ffe2ba1d;
+}
+
+DOTAMonsterHunterInvestigation:active
+{
+	transform: scale3d( 0.99, 0.99, 1 );
+	brightness: 0.7;
+	sound: "ui_generic_button_click";
+}
+
+DOTAMonsterHunterInvestigation:selected
+{
+	z-index: 1;
+	transform: translateY( -4px );
+	sound: "ui.pick_captains";
+	animation-name: PulseSelectedHunt;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+}
+
+DOTAMonsterHunterInvestigation:selected .BackgroundPanel
+{
+	brightness: 1;
+	saturation: 1;
+}
+
+DOTAMonsterHunterInvestigation:selected .SelectedBackground
+{
+	opacity: 1;
+}
+
+DOTAMonsterHunterInvestigation:selected .BackgroundBorder
+{
+	border: 2px solid #ffdda9e2;
+}
+
+DOTAMonsterHunterInvestigation:selected .EdgeBorder
+{
+	opacity: 0;
+}
+
+DOTAMonsterHunterInvestigation:selected .Shimmer
+{
+	animation-name: Shimmer;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-out;
+}
+
+DOTAMonsterHunterInvestigation:selected .SelectedGlow
+{
+	opacity: 1;
+	transform: none;
+	animation-name: GlowSelectedHunt;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen:selected
+{
+	transform: translateY( -8px );
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen
+{
+	width: 330px;
+	height: 490px;
+	margin: -18px -12px;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen #UpperMonsterName
+{
+	visibility: visible;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen #InnerHeroName
+{
+	visibility: collapse;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen .PlayerNameContainer
+{
+	visibility: visible;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen .ContentContainer
+{
+	margin-top: 11px;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen .MonsterHeroPortraitImage
+{
+	width: 115px;
+	height: width-percentage(100%);
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen .MaterialOuterContainer
+{
+	padding-top: 6px;
+}
+
+DOTAMonsterHunterInvestigation.InVersusScreen #RecommendationContainer
+{
+	padding: 1px 10px;
+	margin-top: -20px;
+}
+
+@keyframes 'Shimmer'
+{
+	0%
+	{
+		background-color: gradient( linear, -50% -50%, 0% 0%, from( #FFE8BE00 ), color-stop( 0.5, #FFE8BE11 ), to( #FFE8BE00 ) );
+	}
+	
+	100%
+	{
+		background-color: gradient( linear, 100% 100%, 150% 150%, from( #FFE8BE00 ), color-stop( 0.5, #FFE8BE11 ), to( #FFE8BE00 ) );
+	}
+	
+}
+
+@keyframes 'PulseSelectedHunt'
+{
+	0%
+	{
+		brightness: 1;
+		pre-transform-scale2d: 1;
+	}
+	
+	15%
+	{
+		brightness: 2;
+		pre-transform-scale2d: 1.03;
+	}
+	
+	30%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	45%
+	{
+		pre-transform-scale2d: 1.03;
+	}
+	
+	100%
+	{
+		brightness: 1;
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+.OuterContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.SelectedGlow
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+}
+
+@keyframes 'GlowSelectedHunt'
+{
+	0%
+	{
+		brightness: 1.8;
+		box-shadow: 0px 0px 48px -4px rgba(255, 180, 76, 0.5);
+	}
+	
+	100%
+	{
+		brightness: 1;
+		box-shadow: 0px 0px 48px -4px rgba(255, 180, 76, 0.1);
+	}
+	
+}
+
+.BackgroundPanel
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0B0E11 ), to( #302417 ) );
+	box-shadow: 0px 6px 28px -2px rgba(0, 0, 0, 0.5);
+	opacity: 0.9;
+	transition-property: brightness, saturation;
+	transition-duration: 0.1s;
+}
+
+.BackgroundPanel .BackgroundBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ffd59a0b;
+	transition-property: border;
+	transition-duration: 0.1s;
+}
+
+.BackgroundPanel .SelectedBackground
+{
+	width: 100%;
+	height: 100%;
+	margin: 6px;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( rgba(255, 185, 92, 0.1) ), to( rgba(255, 203, 135, 0.02) ) );
+	border: 1px solid rgba(255, 237, 201, 0.02);
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	opacity: 0;
+}
+
+.BackgroundPanel .EdgeBorder
+{
+	width: 100%;
+	border: 5px solid;
+	border-image-source: url("s2r://panorama/images/events/monster_hunter/artwork/emblem1_png.vtex");
+	border-image-slice: 10px;
+	wash-color: #ffe2b9;
+	opacity: 0.2;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+.BackgroundPanel .EdgeBorder.Top
+{
+	transform: scaleY( -1 );
+}
+
+.BackgroundPanel .EdgeBorder.Bottom
+{
+	vertical-align: bottom;
+}
+
+.BackgroundPanel .Shimmer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.BackgroundPanel .SigilContainer
+{
+	ui-scale: 55%;
+	margin-top: -140px;
+}
+
+.BackgroundPanel .SigilContainer .SigilBackground
+{
+	opacity: 0.4;
+}
+
+.BackgroundPanel .SigilContainer.Bottom
+{
+	vertical-align: bottom;
+	transform: scaleY( -1 );
+	margin-top: 0px;
+	margin-bottom: -140px;
+}
+
+.PlayerNameContainer
+{
+	margin: 2px 0px 4px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.PlayerNameContainer .PlayerName
+{
+	color: TextColorLighter&99;
+	text-shadow: TextShadowSmall;
+	horizontal-align: center;
+	font-size: 14px;
+	text-overflow: shrink;
+	vertical-align: center;
+	text-transform: none;
+	letter-spacing: 0px;
+}
+
+.PlayerNameContainer .HeroIcon
+{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.PlayerNameContainer .PlayerStreak
+{
+	color: #ffd677;
+	text-shadow: 0px 0px 8px rgba(255, 132, 83, 0.2);
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.MonsterHeroPortraitImage
+{
+	width: 150px;
+	height: 150px;
+	margin-bottom: 8px;
+	img-shadow: ImgShadowLarge;
+	horizontal-align: center;
+	transition-property: background-color;
+	transition-duration: 0.1s;
+}
+
+.MonsterHeroName.MHTitleFont,.MonsterHeroNameVersus.MHTitleFont
+{
+	text-align: center;
+	font-size: 17px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #978A76 ) );
+	text-shadow: TextShadowMedium;
+	width: 100%;
+	margin: 0px 12px;
+	margin-top: 4px;
+	margin-bottom: -4px;
+	height: 25px;
+	text-overflow: shrink;
+	horizontal-align: center;
+}
+
+#UpperMonsterName
+{
+	visibility: collapse;
+	text-shadow: 0px 2px 3px 3.3 black;
+	margin-bottom: 3px;
+	font-size: 30px;
+	height: 25px;
+}
+
+.MaterialOuterContainer
+{
+	horizontal-align: center;
+	flow-children: down;
+	width: 100%;
+	padding: 0px 0px 10px;
+	background-color: gradient( radial, 50% 100%, 0% 0%, 50% 60%, from( #00000081 ), to( #00000000 ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffc77900 ), color-stop( 0.5, #ffd0a3 ), to( #ffc77900 ) );
+}
+
+.MaterialOuterContainer .WinMatchLabelContainer
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 2px;
+}
+
+.MaterialOuterContainer .WinMatchLabelContainer .WinMatchLabel
+{
+	horizontal-align: center;
+	color: TextColorLighter;
+	text-shadow: TextShadowSmall;
+	margin: 2px;
+	font-size: 13px;
+}
+
+.MaterialOuterContainer .WinMatchLabelContainer .Emblem
+{
+	vertical-align: center;
+	margin: 0px 4px 2px;
+	wash-color: #AC997B;
+}
+
+.MaterialOuterContainer .WinMatchLabelContainer .Emblem.Right
+{
+	transform: scaleX( -1 );
+}
+
+.KillNoteLabel
+{
+	horizontal-align: center;
+	color: #bba78ecc;
+	margin-top: -2px;
+	margin-bottom: 2px;
+	text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.KillHeroMaterial
+{
+	horizontal-align: center;
+	margin: -6px;
+}
+
+.MaterialContainer
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.MaterialContainer .MaterialQuantity
+{
+	margin: 0px 2px;
+}
+
+.MaterialContainer .MaterialQuantity DOTAMonsterHunterMaterial
+{
+	margin: -6px;
+}
+
+.MaterialContainer .MaterialQuantity .QuantityText
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	font-size: 16px;
+	margin-bottom: -4px;
+	color: whitesmoke;
+}
+
+.DashDivider
+{
+	horizontal-align: center;
+	width: 80%;
+	height: 1px;
+	margin: 8px 0px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #ffc77900 ), color-stop( 0.5, #FFC779 ), to( #ffc77900 ) );
+	opacity: 0.05;
+}
+
+.ContentContainer
+{
+	width: 100%;
+	horizontal-align: center;
+	flow-children: down;
+	vertical-align: top;
+	margin-top: 16px;
+}
+
+.ContentContainerInner
+{
+	width: 100%;
+	horizontal-align: center;
+	flow-children: down;
+	margin-bottom: 4px;
+	background-color: gradient( radial, 50% 100%, 0% 0%, 50% 60%, from( #00000081 ), to( #00000000 ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffc77900 ), color-stop( 0.5, #ffd0a3 ), to( #ffc77900 ) );
+}
+
+.EmblemTriangles
+{
+	horizontal-align: center;
+	transform: scaleY( -1 );
+	wash-color: #826d50;
+	width: 44px;
+	margin-top: -1px;
+}
+
+.RadioButton
+{
+	visibility: collapse;
+}
+
+.ChooseLabel
+{
+	horizontal-align: center;
+	margin-top: 12px;
+	color: whitesmoke;
+	text-shadow: 0px 0px 12px rgba(255, 179, 112, 0.4);
+}
+
+.RewardsContainerOuter
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-top: 12px;
+	flow-children: down;
+}
+
+.RewardsContainerOuter .RewardsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.RewardsContainerOuter .RewardsContainer #ItemHeroIcon
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: -6px;
+	ignore-parent-flow: true;
+	texture-sampling: point;
+	width: 24px;
+	height: width-percentage( 100% );
+	img-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.6);
+}
+
+.RewardsContainerOuter .RewardsContainer .RewardsContainerLabel
+{
+	margin-bottom: 5px;
+}
+
+.ItemSlot
+{
+	width: 64px;
+	height: width-percentage( 100% );
+	background-color: black;
+	box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.4);
+	margin: 4px;
+}
+
+.ItemSlot EconItemImage
+{
+	width: 104%;
+	height: 104%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.ItemSlot .ItemImageBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.HunterRankContainer
+{
+	flow-children: down;
+	margin: 12px;
+}
+
+.HunterRankContainer .HunterRankEmblem
+{
+	width: 14px;
+	horizontal-align: center;
+	img-shadow: ImgShadowMedium;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #978A76 ) );
+	margin-left: -2px;
+}
+
+.HunterRankContainer .HunterRankValue
+{
+	horizontal-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #978A76 ) );
+	text-shadow: TextShadowMedium;
+}
+
+.HeroSetLabelContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.HeroSetLabelContainer .HeroSetLabel
+{
+	vertical-align: center;
+	color: TextColorLighter&99;
+	text-shadow: TextShadowSmall;
+}
+
+.HeroSetLabelContainer .HeroIcon
+{
+	margin-right: 5px;
+	texture-sampling: point;
+	width: 20px;
+	height: width-percentage( 100% );
+	img-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.6);
+}
+
+.HeroSetLabelContainer .TrackingIcon
+{
+	margin: -1px 0px -3px;
+	margin-right: 2px;
+	width: 24px;
+	height: width-percentage( 100% );
+	visibility: collapse;
+}
+
+.HeroSetLabelContainer.IsTracked .HeroSetLabel
+{
+	color: whitesmoke;
+	text-shadow: 0px 0px 12px rgba(255, 154, 30, 0.5);
+}
+
+.HeroSetLabelContainer.IsTracked .TrackingIcon
+{
+	visibility: visible;
+}
+
+#RecommendationContainer
+{
+	ignore-parent-flow: true;
+	z-index: 1;
+	background-color: #422c13;
+	border: 1px solid #ffe2b9;
+	border-radius: 4px;
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: -10px;
+	padding: 4px 12px;
+	box-shadow: 0px 0px 16px rgba(255, 162, 87, 0.1);
+	animation-name: GlowRecommendedBadge;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+#RecommendationContainer Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	color: TextColorLightest;
+	text-shadow: 0px 0px 12px rgba(255, 168, 97, 0.3);
+}
+
+@keyframes 'GlowRecommendedBadge'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	100%
+	{
+		brightness: 1.8;
+		box-shadow: 0px 0px 16px rgba(255, 162, 87, 0.3);
+	}
+	
+}
+

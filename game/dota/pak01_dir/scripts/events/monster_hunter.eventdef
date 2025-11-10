@@ -1,0 +1,2682 @@
+"EVENT_ID_MONSTER_HUNTER" //51
+{
+	"season_name"	"#DOTA_EventName_MonsterHunter"
+	"season_class"	"Season_MonsterHunter"
+	
+	"show_home_page_event"	"DOTAShowMonsterHunterPage()"
+
+	"is_major"		"0"
+	"has_bracket_data" "0"
+	"must_be_owned"		"0"
+	"uses_premium_points"	"1" // Used for sticker recycling
+
+
+	// The time at which we stop granting progression, like match rewards.
+	"event_end_time"	"1770436800" // Friday, February 6, 2026 8:00:00 PM GMT-08:00 (Seattle Time)
+
+	// The time after which you can no longer access the event, even to claim rewards.
+ 	"expiration_date"	"1770436800" // Friday, February 6, 2026 8:00:00 PM GMT-08:00 (Seattle Time)
+
+	"effects_item_def"		"36190"
+
+	"event_level"
+	{
+		"show_battle_level"		"1"
+		"points_per_level"		"1000"
+		"badge_tiers"
+		{
+			"1"
+			{
+				"event_level"	"1"
+				"tier_class"	"Tier0"
+				"tier_badge"	"file://{images}/events/monster_hunter/artwork/hunter_rank_emblem_00.psd"
+			}
+			"2"
+			{
+				"event_level"	"10"
+				"tier_class"	"Tier1"
+				"tier_badge"	"file://{images}/events/monster_hunter/artwork/hunter_rank_emblem_01.psd"
+			}
+			"3"
+			{
+				"event_level"	"20"
+				"tier_class"	"Tier2"
+				"tier_badge"	"file://{images}/events/monster_hunter/artwork/hunter_rank_emblem_02.psd"
+			}
+			"4"
+			{
+				"event_level"	"30"
+				"tier_class"	"Tier3"
+				"tier_badge"	"file://{images}/events/monster_hunter/artwork/hunter_rank_emblem_03.psd"
+			}
+			"5"
+			{
+				"event_level"	"40"
+				"tier_class"	"Tier4"
+				"tier_badge"	"file://{images}/events/monster_hunter/artwork/hunter_rank_emblem_04.psd"
+			}
+		}
+	}
+	
+	"notification_class"	"MonsterHunter"
+	"notifications"
+	{
+	}
+	// Begin at Hunter Rank 1.
+	"default_event_points" "1000"
+
+	// TODO: monster hunter effects? high fives, party hats, etc.
+	// "effects_item_def"		"17528" 
+
+	"event_actions"
+	{
+		// ----------------------------------------------------------------------------------------
+		//  Codex Rewards: Reserved Action IDs: 50000-60000
+		// ----------------------------------------------------------------------------------------
+		"#include"		"scripts/events/monster_hunter/monster_hunter_codex_rewards.eventactions"	
+
+		"event_grants"
+		{
+			"action_id"					"100"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"	"35950" // "Ancient Monster Hunter Monsters"
+					}
+				}
+			}
+		}
+
+		"win_matches"
+		{
+			"action_id"		"101"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points" "800"
+					}
+				}
+			}
+		}
+
+		"lose_matches"
+		{
+			"action_id"		"103"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points" "300"
+					}
+				}
+			}
+		}
+
+		"win_turbo_matches"
+		{
+			"action_id"		"102"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points" "500"
+					}
+				}
+			}
+		}
+
+		"lose_turbo_matches"
+		{
+			"action_id"		"104"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points" "200"
+					}
+				}
+			}
+		}
+		
+		"tutorial_done"
+		{
+			"action_id"					"140"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action"	"unlock_material_trader"
+					}
+				}
+			}
+		}
+
+		"tutorial_materials"
+		{
+			"action_id"					"141"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"Tutorial"
+							"materials_from_item"	"34129"
+						}
+					}
+				}
+			}
+		}
+
+		"show_first_tutorial"
+		{
+			"action_id"					"142"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+		}
+
+		"premium_pass"
+		{
+			"action_id"		"200"
+			"required_item_def"			"34330" // Monster Hunter Premium Pass
+			"max_grants"	"1"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36045" // Monster Hunter Music Pack
+						"grant_action"		"reward_base_poogie" // Base Poogie
+						"grant_action"		"reward_dragon_knight_rathalos_form" // Dragon Knight Rathalos Form
+						"grant_action"		"reward_beastmaster_boar_summon" // Beastmaster Summon
+
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"PremiumPass"
+						}
+
+						// Poogie Sprays
+						"grant_chat_wheel_messages" "790 - 794"
+
+						// Celestial Sprays
+						"grant_chat_wheel_messages" "770 - 774"
+					}
+				}
+			}
+		}
+
+		// Windranger Zinogre Base Set
+		"crafting_reward_windranger_zinogre_head"
+		{
+			"action_id"		"1001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33640"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_shoulder"
+		{
+			"action_id"		"1002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33641"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_bow"
+		{
+			"action_id"		"1003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33642"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_quiver"
+		{
+			"action_id"		"1004"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33643"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_back"
+		{
+			"action_id"		"1005"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33644"
+					}
+				}
+			}
+		}
+
+		// Windranger Zinogre Set Style 1 - Autumn
+		"crafting_reward_windranger_zinogre_autumn_head"
+		{
+			"action_id"		"1006"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35868"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_autumn_shoulder"
+		{
+			"action_id"		"1007"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35871"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_autumn_bow"
+		{
+			"action_id"		"1008"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35874"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_autumn_quiver"
+		{
+			"action_id"		"1009"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35877"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_autumn_back"
+		{
+			"action_id"		"1010"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35880"
+					}
+				}
+			}
+		}
+
+		// Windranger Zinogre Set Style 2 - Stygian
+		"crafting_reward_windranger_zinogre_stygian_head"
+		{
+			"action_id"		"1011"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35867"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_stygian_shoulder"
+		{
+			"action_id"		"1012"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35870"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_stygian_bow"
+		{
+			"action_id"		"1013"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35873"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_stygian_quiver"
+		{
+			"action_id"		"1014"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35876"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_stygian_back"
+		{
+			"action_id"		"1015"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35879"
+					}
+				}
+			}
+		}
+
+		// Windranger Zinogre Set Style 3 - Rainbow
+		"crafting_reward_windranger_zinogre_rainbow_head"
+		{
+			"action_id"		"1016"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35869"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_rainbow_shoulder"
+		{
+			"action_id"		"1017"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35872"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_rainbow_bow"
+		{
+			"action_id"		"1018"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35875"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_rainbow_quiver"
+		{
+			"action_id"		"1019"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35878"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_windranger_zinogre_rainbow_back"
+		{
+			"action_id"		"1020"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35881"
+					}
+				}
+			}
+		}
+		
+		// Palico Couriers
+		"crafting_reward_palico_courier"
+		{
+			"action_id"		"1100"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34129"
+					}
+				}
+			}
+		}
+
+
+		"crafting_reward_palico_courier_rathalos"
+		{
+			"action_id"		"1101"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34975"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_palico_courier_odogaron"
+		{
+			"action_id"		"1102"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35205"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_palico_courier_zinogre"
+		{
+			"action_id"		"1103"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35885"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_palico_courier_kirin"
+		{
+			"action_id"		"1104"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36024"
+					}
+				}
+			}
+		}
+
+		"crafting_reward_palico_courier_bone"
+		{
+			"action_id"		"1105"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35996"
+					}
+				}
+			}
+		}
+
+		// Sniper Odogaron Base Set
+		"crafting_reward_sniper_weapon"
+		{
+			"action_id"		"1200"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34256"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_arms"
+		{
+			"action_id"		"1201"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34257"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_back"
+		{
+			"action_id"		"1202"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34260"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_shoulder"
+		{
+			"action_id"		"1203"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34258"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_head"
+		{
+			"action_id"		"1204"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34259"
+					}
+				}
+			}
+		}
+
+		// Sniper Odogaron Set Style 1 - Ebony
+		"crafting_reward_sniper_ebony_arms"
+		{
+			"action_id"		"1205"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35554"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_ebony_back"
+		{
+			"action_id"		"1206"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35564"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_ebony_shoulder"
+		{
+			"action_id"		"1207"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35555"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_ebony_head"
+		{
+			"action_id"		"1208"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35563"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_ebony_weapon"
+		{
+			"action_id"		"1210"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36059"
+					}
+				}
+			}
+		}
+
+		// Sniper Odogaron Set Style 2 - Foxfire
+		"crafting_reward_sniper_foxfire_arms"
+		{
+			"action_id"		"1215"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36175"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_foxfire_back"
+		{
+			"action_id"		"1216"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36178"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_foxfire_shoulder"
+		{
+			"action_id"		"1217"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36176"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_foxfire_head"
+		{
+			"action_id"		"1218"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36177"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_foxfire_weapon"
+		{
+			"action_id"		"1219"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36179"
+					}
+				}
+			}
+		}
+
+		// Sniper Odogaron Set Style 3 - Rainbow
+		"crafting_reward_sniper_rainbow_arms"
+		{
+			"action_id"		"1209"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35565"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_rainbow_back"
+		{
+			"action_id"		"1211"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35568"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_rainbow_shoulder"
+		{
+			"action_id"		"1212"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35566"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_rainbow_head"
+		{
+			"action_id"		"1213"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35567"
+					}
+				}
+			}
+		}
+		"crafting_reward_sniper_rainbow_weapon"
+		{
+			"action_id"		"1214"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36060"
+					}
+				}
+			}
+		}
+
+		// Dragon Knight Rathalos Base Set
+		"crafting_reward_dragon_knight_arms"
+		{
+			"action_id"		"1300"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34301"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_back"
+		{
+			"action_id"		"1301"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34302"
+					}
+				}
+			}
+		}
+		"reward_dragon_knight_rathalos_form"
+		{
+			"action_id"		"1302"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"31375"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_head"
+		{
+			"action_id"		"1303"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34303"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_offhand_weapon"
+		{
+			"action_id"		"1304"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34306"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_shoulder"
+		{
+			"action_id"		"1305"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34304"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_weapon"
+		{
+			"action_id"		"1306"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34305"
+					}
+				}
+			}
+		}
+
+		// Dragon Knight Rathalos Set Style 1 - Azure
+		"crafting_reward_dragon_knight_azure_arms"
+		{
+			"action_id"		"1307"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35808"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_azure_back"
+		{
+			"action_id"		"1308"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35809"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_azure_head"
+		{
+			"action_id"		"1310"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35810"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_azure_offhand_weapon"
+		{
+			"action_id"		"1311"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35825"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_azure_shoulder"
+		{
+			"action_id"		"1312"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35811"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_azure_weapon"
+		{
+			"action_id"		"1313"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35822"
+					}
+				}
+			}
+		}
+
+		// Dragon Knight Rathalos Set Style 2 - Silver
+		"crafting_reward_dragon_knight_silver_arms"
+		{
+			"action_id"		"1314"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35813"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_silver_back"
+		{
+			"action_id"		"1315"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35814"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_silver_head"
+		{
+			"action_id"		"1316"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35815"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_silver_offhand_weapon"
+		{
+			"action_id"		"1317"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35826"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_silver_shoulder"
+		{
+			"action_id"		"1318"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35816"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_silver_weapon"
+		{
+			"action_id"		"1319"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35823"
+					}
+				}
+			}
+		}
+
+		// Dragon Knight Rathalos Set Style 3 - Rainbow
+		"crafting_reward_dragon_knight_rainbow_arms"
+		{
+			"action_id"		"1320"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35819"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_rainbow_back"
+		{
+			"action_id"		"1321"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35820"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_rainbow_head"
+		{
+			"action_id"		"1322"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35821"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_rainbow_offhand_weapon"
+		{
+			"action_id"		"1323"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35827"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_rainbow_shoulder"
+		{
+			"action_id"		"1324"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35812"
+					}
+				}
+			}
+		}
+		"crafting_reward_dragon_knight_rainbow_weapon"
+		{
+			"action_id"		"1325"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35824"
+					}
+				}
+			}
+		}
+
+		// Anti Mage Kirin Base Set
+		"crafting_reward_antimage_head"
+		{
+			"action_id"		"1400"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34226"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_armor"
+		{
+			"action_id"		"1401"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34227"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_weapon"
+		{
+			"action_id"		"1402"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34228"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_offhand_weapon"
+		{
+			"action_id"		"1403"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34229"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_persona"
+		{
+			"action_id"		"1404"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"13783"
+					}
+				}
+			}
+		}
+
+		// Anti Mage Kirin Set Style 1 - Oroshi
+		"crafting_reward_antimage_oroshi_head"
+		{
+			"action_id"		"1405"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35834"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_oroshi_armor"
+		{
+			"action_id"		"1406"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35833"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_oroshi_weapon"
+		{
+			"action_id"		"1407"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35835"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_oroshi_offhand_weapon"
+		{
+			"action_id"		"1408"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35836"
+					}
+				}
+			}
+		}
+
+		// Anti Mage Kirin Set Style 2 - Thunder Emperor
+		"crafting_reward_antimage_thunder_head"
+		{
+			"action_id"		"1409"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35839"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_thunder_armor"
+		{
+			"action_id"		"1410"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35838"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_thunder_weapon"
+		{
+			"action_id"		"1411"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35840"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_thunder_offhand_weapon"
+		{
+			"action_id"		"1412"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35841"
+					}
+				}
+			}
+		}
+
+		// Anti Mage Kirin Set Style 3 - Rainbow
+		"crafting_reward_antimage_rainbow_head"
+		{
+			"action_id"		"1413"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35844"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_rainbow_armor"
+		{
+			"action_id"		"1414"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35843"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_rainbow_weapon"
+		{
+			"action_id"		"1415"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35845"
+					}
+				}
+			}
+		}
+		"crafting_reward_antimage_rainbow_offhand_weapon"
+		{
+			"action_id"		"1416"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35846"
+					}
+				}
+			}
+		}
+
+		// Beastmaster Bone Armor Base Set
+		"crafting_reward_beastmaster_weapon"
+		{
+			"action_id"		"1500"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"33974"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_shoulder"
+		{
+			"action_id"		"1501"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34230"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_arms"
+		{
+			"action_id"		"1502"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34231"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_belt"
+		{
+			"action_id"		"1503"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34232"
+					}
+				}
+			}
+		}
+		"reward_beastmaster_boar_summon"
+		{
+			"action_id"		"1504"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34233"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_head"
+		{
+			"action_id"		"1505"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34234"
+					}
+				}
+			}
+		}
+
+		// Beastmaster Bone Armor Style 1 - Dark Pigment
+		"crafting_reward_beastmaster_dark_shoulder"
+		{
+			"action_id"		"1506"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35571"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_dark_arms"
+		{
+			"action_id"		"1507"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35572"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_dark_belt"
+		{
+			"action_id"		"1508"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35573"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_dark_head"
+		{
+			"action_id"		"1510"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35574"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_dark_weapon"
+		{
+			"action_id"		"1512"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35760"
+					}
+				}
+			}
+		}
+
+		// Beastmaster Bone Armor Style 3 - White Stag
+		"crafting_reward_beastmaster_white_stag_shoulder"
+		{
+			"action_id"		"1518"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36167"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_white_stag_arms"
+		{
+			"action_id"		"1519"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36168"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_white_stag_belt"
+		{
+			"action_id"		"1520"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36169"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_white_stag_head"
+		{
+			"action_id"		"1521"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36170"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_white_stag_weapon"
+		{
+			"action_id"		"1522"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36172"
+					}
+				}
+			}
+		}
+
+		// Beastmaster Bone Armor Style 4 - Rainbow
+		"crafting_reward_beastmaster_rainbow_shoulder"
+		{
+			"action_id"		"1513"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35576"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_rainbow_arms"
+		{
+			"action_id"		"1514"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35577"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_rainbow_belt"
+		{
+			"action_id"		"1515"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35578"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_rainbow_head"
+		{
+			"action_id"		"1516"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35579"
+					}
+				}
+			}
+		}
+		"crafting_reward_beastmaster_rainbow_weapon"
+		{
+			"action_id"		"1517"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35761"
+					}
+				}
+			}
+		}
+
+		// Poogie Base Style
+		"reward_base_poogie"
+		{
+			"action_id"		"1600"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34018"
+					}
+				}
+			}
+		}
+		"crafting_reward_poogie_camper"
+		{
+			"action_id"		"1601"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36117"
+					}
+				}
+			}
+		}
+		"crafting_reward_poogie_bee"
+		{
+			"action_id"		"1602"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36118"
+					}
+				}
+			}
+		}
+		"crafting_reward_poogie_pumpkin"
+		{
+			"action_id"		"1603"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35854"
+					}
+				}
+			}
+		}
+		"crafting_reward_poogie_pajamas"
+		{
+			"action_id"		"1604"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35858"
+					}
+				}
+			}
+		}
+		"crafting_reward_poogie_king"
+		{
+			"action_id"		"1605"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36116"
+					}
+				}
+			}
+		}
+
+		// Techies Palico Base Set
+		"crafting_reward_techies_bazooka"
+		{
+			"action_id"		"1700"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34343"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_spleen"
+		{
+			"action_id"		"1701"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34341"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_spoon"
+		{
+			"action_id"		"1702"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34345"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_squee"
+		{
+			"action_id"		"1703"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34342"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_sticky_bomb"
+		{
+			"action_id"		"1704"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34237"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_cart"
+		{
+			"action_id"		"1705"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34340"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_sign"
+		{
+			"action_id"		"1706"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34347"
+					}
+				}
+			}
+		}
+
+		// Techies Palico Set Style 1 - Alt Color
+		"crafting_reward_techies_alt_bazooka"
+		{
+			"action_id"		"1707"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36114"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_alt_spleen"
+		{
+			"action_id"		"1708"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35859"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_alt_spoon"
+		{
+			"action_id"		"1709"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35861"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_alt_squee"
+		{
+			"action_id"		"1710"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35860"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_alt_cart"
+		{
+			"action_id"		"1711"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36154"
+					}
+				}
+			}
+		}
+
+		// Techies Palico Set Style 2 - Poison
+		"crafting_reward_techies_poison_bazooka"
+		{
+			"action_id"		"1718"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36184"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_poison_spleen"
+		{
+			"action_id"		"1719"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36186"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_poison_spoon"
+		{
+			"action_id"		"1720"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36183"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_poison_squee"
+		{
+			"action_id"		"1721"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36185"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_poison_cart"
+		{
+			"action_id"		"1722"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36182"
+					}
+				}
+			}
+		}
+
+		// Techies Palico Set Style 3 - Rainbow
+		"crafting_reward_techies_rainbow_bazooka"
+		{
+			"action_id"		"1713"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36115"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_rainbow_spleen"
+		{
+			"action_id"		"1714"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35855"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_rainbow_spoon"
+		{
+			"action_id"		"1715"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35862"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_rainbow_squee"
+		{
+			"action_id"		"1716"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"35856"
+					}
+				}
+			}
+		}
+		"crafting_reward_techies_rainbow_cart"
+		{
+			"action_id"		"1717"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"36155"
+					}
+				}
+			}
+		}
+
+		///
+		/// Sprays
+		///
+		"base_spray_1"
+		{
+			"action_id"					"2020"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "745"
+					}
+				}
+			}
+		}
+		"base_spray_7"
+		{
+			"action_id"					"2026"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "751"
+					}
+				}
+			}
+		}
+		"base_spray_10"
+		{
+			"action_id"					"2029"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "754"
+					}
+				}
+			}
+		}
+		"base_spray_11"
+		{
+			"action_id"					"2030"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "755"
+					}
+				}
+			}
+		}
+		"palico_spray_2"
+		{
+			"action_id"					"2033"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "758"
+					}
+				}
+			}
+		}
+		"palico_spray_3"
+		{
+			"action_id"					"2034"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "759"
+					}
+				}
+			}
+		}
+		"palico_spray_9"
+		{
+			"action_id"					"2040"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "765"
+					}
+				}
+			}
+		}
+		"palico_spray_11"
+		{
+			"action_id"					"2042"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "767"
+					}
+				}
+			}
+		}
+		"palico_spray_12"
+		{
+			"action_id"					"2043"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "768"
+					}
+				}
+			}
+		}
+		"palico_spray_13"
+		{
+			"action_id"					"2045"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "769"
+					}
+				}
+			}
+		}
+
+		// Super Rare Material -> Sticker Capsule
+		"material_recycle_superrare"
+		{
+			"action_id"		"4005"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"max_grants"	"100"
+			"prerequisite_actions"
+			{
+				"unlock_material_trader_sticker_recipe"	"1"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_items"
+						{
+							"item_def"		"35534" // Monster Hunter Sticker Capsule
+							"quantity"	"10"
+						}
+					}
+				}
+			}
+		}
+
+		"unlock_material_trader"
+		{
+			"action_id"		"4007"
+			"max_grants"	"1"
+		}
+		"unlock_material_trader_sticker_recipe"
+		{
+			"action_id"		"4008"
+			"max_grants"	"1"
+		}
+		
+		"hunter_rank_rewards_10"
+		{
+			"action_id"					"5010"
+			"max_grants"	"1"
+			"available_at_event_level"	"10"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"	"411"
+						"grant_emoticon"	"410"
+						"grant_chat_wheel_messages"	"758" // palico_sprays_02
+						"grant_chat_wheel_messages"	"759" // palico_sprays_03
+						"grant_chat_wheel_messages"	"767" // palico_sprays_11
+
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"HunterRankReward"
+							"materials"
+							{
+								"255"		"20" // Random Commons
+							}
+						}
+						// 
+						// "grant_action"	"unlock_material_trader"
+					}
+				}
+			}
+		}
+		"hunter_rank_rewards_20"
+		{
+			"action_id"					"5020"
+			"max_grants"	"1"
+			"available_at_event_level"	"20"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"hunter_rank_rewards_10"	"1"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"	"416"
+						"grant_emoticon"	"408"
+						"grant_chat_wheel_messages"	"765" // palico_sprays_09
+						"grant_chat_wheel_messages"	"768" // palico_sprays_12
+						"grant_chat_wheel_messages"	"769" // palico_sprays_13
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"HunterRankReward"
+							"materials"
+							{
+								"255"		"20" // Random Commons
+								"254"		"10"  // Random Uncommons
+							}
+						}
+					}
+				}
+			}
+		}
+		"hunter_rank_rewards_30"
+		{
+			"action_id"					"5030"
+			"max_grants"	"1"
+			"available_at_event_level"	"30"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"hunter_rank_rewards_20"	"1"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"	"412"
+						"grant_emoticon"	"413"
+						"grant_emoticon"	"409"
+						"grant_chat_wheel_messages"	"745" // monster_hunter_sprays_01
+						"grant_chat_wheel_messages"	"751" // monster_hunter_sprays_07
+						"grant_chat_wheel_messages"	"754" // monster_hunter_sprays_10
+						"grant_chat_wheel_messages"	"755" // monster_hunter_sprays_11
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"HunterRankReward"
+							"materials"
+							{
+								"255"		"20" // 15 Random Commons
+								"254"		"10" // 10 Random Uncommons
+								"253"		"5" // 5 Random Rares
+							}
+						}
+					}
+				}
+			}
+		}
+		"hunter_rank_rewards_40"
+		{
+			"action_id"					"5040"
+			"max_grants"	"1"
+			"available_at_event_level"	"40"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"hunter_rank_rewards_30"	"1"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action"	"unlock_material_trader_sticker_recipe"
+
+						"grant_monster_hunter_materials"
+						{
+							"material_source"	"HunterRankReward"
+							"materials"
+							{
+								"42"		"1" // 1 Palico Voucher
+								"43"		"1" // 1 Poogie Voucher
+								"44"		"2" // 2 Rainbow Pigments
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

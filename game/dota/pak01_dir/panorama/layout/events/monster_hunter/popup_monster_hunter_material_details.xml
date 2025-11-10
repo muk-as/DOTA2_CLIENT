@@ -1,0 +1,83 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/ui_monster_hunter_material.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/popup_monster_hunter_material_details.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="HeroIconRow">
+			<Panel class="HeroIconRow" />
+		</snippet>
+		<snippet name="HeroIconDrop">
+			<Image class="HeroIconDrop" src="s2r://panorama/images/heroes/icons/npc_dota_hero_rubick_png.vtex" />
+		</snippet>
+		<snippet name="SetCraftingListContainer">
+			<Panel class="SetCraftingListContainer">
+				<Panel class="SetCraftingListTitle">
+					<DOTAHeroImage id="HeroIcon" class="HeroIcon" heroimagestyle="icon" />
+					<Label class="SetName MHTitleFont Small" text="{s:set_name}" />
+					<Image class="PrerequisiteLock" src="s2r://panorama/images/events/monster_hunter/artwork/lock_png.vtex" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_MonsterHunter_RewardDetails_PrecedingRequired )" onmouseout="UIHideTextTooltip()" />
+					<Image class="PremiumLock" src="s2r://panorama/images/events/monster_hunter/icons/guildmembership_icon_on_png.vtex" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_MonsterHunter_RewardDetails_RequiresPremium )" onmouseout="UIHideTextTooltip()" />
+					<Label class="VariantName MHLabelFont Small" text="{s:variant_name}" />
+				</Panel>
+				<Panel id="SetCraftingList" class="SetCraftingList" />
+			</Panel>
+		</snippet>
+		<snippet name="SetCraftingItem">
+			<Panel class="SetCraftingItem">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" scaling="cover" />
+				</Panel>
+				<Label class="ItemName MHDisplayFont Small" text="{s:item_name}" />
+				<Panel id="MaterialQuantity" class="MaterialQuantity">
+					<Panel class="HasEnoughGlow" />
+					<DOTAMonsterHunterMaterial id="Material" class="Small" trackingstyle="never" />
+					<Panel class="Quantity">
+						<Label class="QuantityText MHBodyFont Small" text="{d:material_have_count}" />
+						<Label class="QuantityText MHBodyFont Small" text="/" />
+						<Label class="QuantityText MHBodyFont Small" text="{d:material_required_count}" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterMaterialDetailsPopup class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="MainContentsContainer">
+			<Panel class="MainContents">
+				<Panel class="MaterialNameContainer">
+					<Panel class="RareBorder" />
+					<Panel class="MaterialBackgroundGlow" />
+					<DOTAParticleScenePanel class="RareFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<DOTAMonsterHunterMaterial id="Material" trackingstyle="never" />
+					<Panel class="TextContainer">
+						<Label class="MaterialName MHDisplayFont Large" text="{s:material_name}" />
+						<Panel class="RarityTextContainer">
+							<Panel class="RarityTextGlow" />
+							<Label class="RarityText MHLabelFont Medium" text="{s:rarity}" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="HeroDropList">
+					<Label class="HeroDropTitle MHLabelFont Medium" text="#DOTA_MonsterHunter_MaterialDetails_HeroDrops" />
+					<Label class="SuperRareTitle MHDisplayFont" text="#DOTA_MonsterHunter_MaterialDetails_MatchDrops" />
+					<Panel id="HeroDropContainer" />
+				</Panel>
+				<Panel class="CraftingListContainer" id="CraftingListContainer">
+					<Label class="CraftingListTitle MHLabelFont Medium" text="#DOTA_MonsterHunter_MaterialDetails_UsedToCraft" />
+					<Panel id="CraftingList" />
+				</Panel>
+				<Panel id="NoMoreNeeded" class="Hide">
+					<Label class="SuperRareTitle MHDisplayFont" text="#DOTA_MonsterHunter_MaterialDetails_NoMoreNeeded" />
+				</Panel>
+			</Panel>
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			</Panel>
+		</Panel>
+	</DOTAMonsterHunterMaterialDetailsPopup>
+</root>

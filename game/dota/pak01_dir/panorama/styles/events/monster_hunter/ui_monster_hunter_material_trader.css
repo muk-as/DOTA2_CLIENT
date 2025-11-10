@@ -1,0 +1,528 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTAMonsterHunterMaterialTrader
+{
+	horizontal-align: center;
+	height: fit-children;
+	flow-children: none;
+	padding: 0;
+}
+
+.BodyContainer
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 8px;
+	border-top: 1px solid rgba(255, 255, 255, 0.02);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0.1) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0.1) ) );
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(0, 0, 0, 0) ), color-stop( 0.4, rgba(0, 0, 0, 0.3) ), color-stop( 0.6, rgba(0, 0, 0, 0.3) ), to( rgba(0, 0, 0, 0) ) );
+}
+
+.Contents
+{
+	flow-children: down;
+}
+
+.Title
+{
+	font-family: monospace;
+	text-transform: uppercase;
+	font-size: 48px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	letter-spacing: 4px;
+}
+
+.RarityInfo
+{
+	margin-top: 2px;
+	horizontal-align: center;
+	opacity: 0.3;
+	color: rgb(220, 207, 188);
+	visibility: collapse;
+}
+
+#TradeRecipe1
+{
+	padding-right: 10px;
+}
+
+#TradeRecipe2
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#TradeRecipe2 .RarityInfo
+{
+	visibility: visible;
+}
+
+#TradeRecipe3
+{
+	height: 100%;
+	padding-bottom: 0;
+	padding-left: 10px;
+	border-left: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.TradeContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+	transition-property: brightness, saturation;
+	transition-duration: 0.2s;
+}
+
+.TradeContainer.PickingSomething
+{
+	brightness: 0.3;
+	saturation: 0.4;
+	blur: gaussian( 0.3px );
+}
+
+.TradeContainer.PickingSomething.ActiveTrade
+{
+	brightness: 1;
+	saturation: 1;
+	blur: none;
+}
+
+.TradeContainer .TradeContents
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin: 16px 32px 0px;
+}
+
+.TradeContainer .MaterialSection
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.TradeContainer #TradeTitle,.TradeContainer .MaterialTrade,.TradeContainer .RarityInfo,.TradeContainer .ResetContainer
+{
+	blur: gaussian( 1.8px );
+	saturation: 0.4;
+	brightness: 0.7;
+}
+
+.TradeContainer #TradeTitle
+{
+	horizontal-align: center;
+	color: #fbe7d4bb;
+	text-align: center;
+	margin-bottom: 2px;
+	text-shadow: 0px 2px 12px black;
+}
+
+.TradeContainer #TradeTitle b
+{
+	font-weight: normal;
+	color: #ddb15e;
+}
+
+.LockedOverlay
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.7;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	ignore-parent-flow: true;
+}
+
+.LockedOverlay Label
+{
+	vertical-align: center;
+	horizontal-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 16px;
+	font-weight: semi-bold;
+	brightness: 1.2;
+	text-shadow: 1px 1px 3px black;
+}
+
+.Unlocked .LockedOverlay
+{
+	visibility: collapse;
+}
+
+.Unlocked.TradeContainer #TradeTitle,.Unlocked.TradeContainer .MaterialTrade,.Unlocked.TradeContainer .RarityInfo,.Unlocked.TradeContainer .ResetContainer
+{
+	blur: none;
+	saturation: 1;
+	brightness: 1;
+}
+
+.TradeContainer.RecipeActive
+{
+	visibility: visible;
+}
+
+.DashDotDivider.ThreeTradeDivider
+{
+	visibility: collapse;
+}
+
+.MaterialTrade
+{
+	flow-children: right;
+}
+
+.MaterialTrade .Materials
+{
+	flow-children: right;
+}
+
+.MaterialTrade DOTAMonsterHunterMaterial
+{
+	vertical-align: center;
+	width: 64px;
+	height: width-percentage( 100% );
+	margin: 0px -6px;
+}
+
+.MaterialTrade DOTAMonsterHunterMaterial.PickingThis
+{
+	transition-duration: 0.07s;
+	pre-transform-scale2d: 1.1;
+	animation-name: PickingMaterialBob;
+	animation-duration: 1s;
+	animation-timing-function:ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.MaterialTrade DOTAMonsterHunterMaterial.PickingOther
+{
+	brightness: 0.75;
+}
+
+.MaterialTrade DOTAMonsterHunterMaterial.ZeroCount
+{
+	opacity: 0.25;
+	brightness: 0.5;
+}
+
+.MaterialTrade .TradeArrow
+{
+	width: 28px;
+	height: 28px;
+	vertical-align: center;
+	margin: 0px 12px;
+	wash-color: LighterGrey;
+	img-shadow: 0px 2px 8px black;
+}
+
+.MaterialTrade .StickerCapsuleInfo
+{
+	height: 100%;
+	width: height-percentage( 80% );
+}
+
+.MaterialTrade .StickerCapsuleInfo .RewardHolder
+{
+	width: 100%;
+	height: 100%;
+}
+
+.MaterialTrade .StickerCapsuleInfo .RewardHolder .RewardModelPreview
+{
+	margin-top: -5px;
+}
+
+@keyframes 'PickingMaterialBob'
+{
+	0%
+	{
+		transform: translateY( -2px );
+		transform: none;
+		brightness: 2.5;
+	}
+	
+	100%
+	{
+		transform: translateY( -4px );
+		brightness: 3.5;
+	}
+	
+}
+
+.ResetContainer
+{
+	width: 100%;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.ResetContainer:hover
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, rgba(255, 255, 255,0.01) ), color-stop( 0.7, rgba(255, 255, 255, 0.01) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.ResetContainer:hover .ResetButton Label
+{
+	brightness: 2.0;
+}
+
+.ResetContainer:hover .ResetButton Image
+{
+	brightness: 2.0;
+}
+
+.ResetContainer:active
+{
+	sound: "monsterhunter.materialtrader.reset";
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(100, 100, 100, 0) ), color-stop( 0.3, rgba(100, 100, 100,0.01) ), color-stop( 0.7, rgba(100, 100, 100, 0.01) ), to( rgba(100, 100, 100, 0) ) );
+}
+
+.ResetContainer:active .ResetButton
+{
+	transform: translateY( 0.5px );
+}
+
+.ResetContainer:active .ResetButton Label
+{
+	brightness: 1;
+}
+
+.ResetContainer:active .ResetButton Image
+{
+	brightness: 1;
+	transform: rotateZ( -30deg );
+	transition-duration: 0.1s, 0.15s;
+}
+
+.ResetContainer .ResetButton
+{
+	horizontal-align: center;
+	flow-children: right;
+	padding: 8px;
+	transition-property: transform, brightness;
+	transition-duration: 0.05s;
+}
+
+.ResetContainer .ResetButton Label
+{
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: center;
+	color: LightGrey;
+	text-shadow: 0px 2px 8px black;
+	margin-right: 4px;
+	transition-property: color;
+	transition-duration: 0.1s;
+}
+
+.ResetContainer .ResetButton Image
+{
+	vertical-align: center;
+	wash-color: LightGrey;
+	width: 20px;
+	height: width-percentage( 100% );
+	img-shadow: 0px 2px 8px black;
+	transition-property: wash-color, transform;
+	transition-duration: 0.1s, 0.03s;
+}
+
+.ResetContainer .ResetButton:active
+{
+	transform: translateY( 0.5px );
+	brightness: 0.5;
+}
+
+.Actions
+{
+	width: 100%;
+	min-height: 100px;
+}
+
+.ExecuteTradeButton
+{
+	margin-left: 12px;
+	vertical-align: center;
+}
+
+.ExecuteTradeButton .TradeLabel,.ExecuteTradeButton .Spinner
+{
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+}
+
+.ExecuteTradeButton .TradeLabel
+{
+	opacity: 1;
+}
+
+.ExecuteTradeButton .Spinner
+{
+	horizontal-align: center;
+	opacity: 0;
+}
+
+.TradeExecuting .ExecuteTradeButton .Spinner
+{
+	opacity: 1;
+}
+
+.TradeExecuting .ExecuteTradeButton .TradeLabel
+{
+	opacity: 0;
+}
+
+.InfoIcon
+{
+	vertical-align: center;
+}
+
+.PopupPanel.MaterialTrader.ThreeTrades .BodyContainer
+{
+	padding-top: 0px;
+}
+
+.ThreeTrades .DashDotDivider
+{
+	margin: -4px 0px;
+}
+
+.ThreeTrades .DashDotDivider.ThreeTradeDivider
+{
+	visibility: visible;
+}
+
+.ThreeTrades .TradeContainer
+{
+	padding: 0px;
+	margin-top: 0px;
+}
+
+.ThreeTrades .MaterialTrade
+{
+	horizontal-align: center;
+	margin-right: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.ThreeTrades .MaterialTrade DOTAMonsterHunterMaterial
+{
+	ui-scale: 130%;
+}
+
+.ThreeTrades .MaterialTrade .ExecuteTradeButton
+{
+	margin-top: 4px;
+}
+
+.ThreeTrades .TradeArrow
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	margin: 12px 12px 12px 12px;
+	wash-color: LighterGrey;
+	img-shadow: 0px 2px 8px black;
+}
+
+.PickerContainer
+{
+	ignore-parent-flow: true;
+	vertical-align: bottom;
+	horizontal-align: center;
+	flow-children: down;
+	width: 720px;
+	min-height: 100px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #192635 ), to( #0a0f18 ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #bcdbff12 ), to( #88aeff05 ) );
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+	transition-property: transform, opacity;
+	transition-duration: 0.1s;
+}
+
+.ShowInventoryPicker .PickerContainer
+{
+	opacity: 1;
+	transform: none;
+}
+
+#CloseButtonContainer
+{
+	vertical-align: top;
+	horizontal-align: right;
+	width: 96px;
+	height: 96px;
+	overflow: clip;
+}
+
+#CloseButtonContainer .CloseButtonBackground,#CloseButtonContainer .CloseButtonBackgroundHover
+{
+	overflow: noclip;
+	width: 140px;
+	height: width-percentage( 100% );
+	horizontal-align: right;
+}
+
+#CloseButtonContainer .CloseButtonBackground
+{
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	transform: rotateZ( 45deg ) translateX( 78px ) translateY( -78px );
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CloseButtonContainer .CloseButtonBackgroundHover
+{
+	transform: rotateZ( 45deg ) translateX( 76px ) translateY( -166px );
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CloseButtonContainer .CloseIcon
+{
+	horizontal-align: right;
+	margin: 12px;
+	img-shadow: 0px 1px 8px rgba(0, 0, 0, 1);
+	wash-color: LightestGrey;
+	opacity: 0.6;
+	transition-property: wash-color, opacity;
+	transition-duration: 0.1s;
+}
+
+#CloseButtonContainer.Hovered .CloseButtonBackground
+{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#CloseButtonContainer.Hovered .CloseButtonBackground
+{
+	transform: rotateZ( 45deg ) translateX( 74px ) translateY( -74px );
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in;
+}
+
+#CloseButtonContainer.Hovered .CloseButtonBackgroundHover
+{
+	transform: rotateZ( 45deg ) translateX( 77px ) translateY( -77px );
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in;
+}
+
+#CloseButtonContainer.Hovered .CloseIcon
+{
+	wash-color: white;
+	opacity: 1;
+}
+

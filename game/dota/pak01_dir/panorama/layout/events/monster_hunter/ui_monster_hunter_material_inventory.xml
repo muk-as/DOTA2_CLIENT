@@ -1,0 +1,71 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/ui_monster_hunter_material_inventory.vcss_c" />
+	</styles>
+	<DOTAMonsterHunterMaterialInventory>
+		<Panel class="MaterialsWrapper" onactivate="">
+			<Panel class="MaterialsTitleContainer TitleEmblemContainer">
+				<Panel class="MHEmblem Left" />
+				<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Inventory_MyMaterials" />
+				<Panel class="MHEmblem Right" />
+			</Panel>
+			<Panel class="TradeTitleContainer TitleEmblemContainer">
+				<Panel class="MHEmblem Left" />
+				<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Trade_Materials" />
+				<Panel class="MHEmblem Right" />
+			</Panel>
+			<Panel class="CloseTraderButton" onactivate="DOTAMonsterHunterMaterialInventoryUpdateCraftingVisible( false )">
+				<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel class="CraftingContainer">
+				<DOTAMonsterHunterMaterialTrader id="MaterialTrader" />
+			</Panel>
+			<AsyncDataPanel class="AsyncContents" state="{d:page_state}">
+				<Panel id="MaterialsContainer" class="AsyncSuccessContainer">
+					<Panel class="MaterialRaritySection">
+						<Panel id="MaterialsContainer_Common" class="Materials" />
+						<Panel class="MaterialRaritySectionTitleContainer">
+							<Panel class="MarkerBorder" />
+							<Label text="#DOTA_MonsterHunter_Material_Rarity_Common" class="MHLabelFont Small MaterialSectionTitle" />
+						</Panel>
+					</Panel>
+					<Panel class="Separator" />
+					<Panel class="MaterialRaritySection">
+						<Panel id="MaterialsContainer_Uncommon" class="Materials" />
+						<Panel class="MaterialRaritySectionTitleContainer">
+							<Panel class="MarkerBorder" />
+							<Label text="#DOTA_MonsterHunter_Material_Rarity_Uncommon" class="MHLabelFont Small MaterialSectionTitle" />
+						</Panel>
+					</Panel>
+					<Panel class="Separator" />
+					<Panel class="MaterialRaritySection">
+						<Panel id="MaterialsContainer_Rare" class="Materials" />
+						<Panel class="MaterialRaritySectionTitleContainer">
+							<Panel class="MarkerBorder" />
+							<Label text="#DOTA_MonsterHunter_Material_Rarity_Rare" class="MHLabelFont Small MaterialSectionTitle" />
+						</Panel>
+					</Panel>
+					<Panel class="Separator" />
+					<Panel class="MaterialRaritySection">
+						<Panel id="MaterialsContainer_SuperRare" class="Materials" />
+						<Panel class="MaterialRaritySectionTitleContainer">
+							<Panel class="MarkerBorder" />
+							<Label text="#DOTA_MonsterHunter_Material_Rarity_SuperRare" class="MHLabelFont Small MaterialSectionTitle" />
+						</Panel>
+					</Panel>
+					<DOTAMonsterHunterButton id="CraftingToggle" hittestchildren="false" class="Secondary Small" text="#DOTA_MonsterHunter_Trade" onactivate="DOTAMonsterHunterMaterialInventoryUpdateCraftingVisible( true )" onmouseover="UIShowTextTooltip( #DOTA_MonsterHunter_Trade_Material_Tooltip )" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+				<Panel class="AsyncLoadingContainer">
+					<Label text="#DOTA_MonsterHunter_State_Loading_Materials" />
+					<Panel class="Spinner" />
+				</Panel>
+				<Panel class="AsyncFailureContainer">
+					<Label text="#DOTA_MonsterHunter_State_Error" />
+				</Panel>
+			</AsyncDataPanel>
+		</Panel>
+	</DOTAMonsterHunterMaterialInventory>
+</root>

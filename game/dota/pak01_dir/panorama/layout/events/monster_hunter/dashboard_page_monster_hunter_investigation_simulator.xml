@@ -1,0 +1,109 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/dashboard_page_monster_hunter_investigation_simulator.vcss_c" />
+	</styles>
+	<scripts />
+	<snippets>
+		<snippet name="MaterialQuantity">
+			<Panel class="MaterialQuantity">
+				<DOTAMonsterHunterMaterial id="Material" />
+			</Panel>
+		</snippet>
+		<snippet name="MaterialBreakdownRow">
+			<Panel class="MaterialBreakdownRow">
+				<Label class="MaterialBreakdownTitle" text="{s:material_reason}" />
+				<Panel id="MaterialRewardsContainer" class="MaterialRewardsContainer LeftRightFlow" />
+			</Panel>
+		</snippet>
+		<snippet name="MonsterHunterProgress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="BackgroundImageContainer">
+					<Panel class="BackgroundTexture" />
+				</Panel>
+				<DOTAParticleScenePanel class="SmokeFX Bottom" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Panel class="BottomGradient" hittest="false" />
+				<Panel id="MonsterHunterProgressMain">
+					<Panel id="MonsterHunterProgressTitle">
+						<Image class="MonsterHunterLogo en" src="s2r://panorama/images/events/monster_hunter/logos/monter_hunter_logo_en_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="MonsterHunterInvestigationResult">
+						<DOTAMonsterHunterHeroImage id="InvestigationHeroImage" class="HideHeroName" />
+					</Panel>
+					<Panel id="MonsterHunterProgressContainer">
+						<Panel id="MonsterHunterProgressRewards">
+							<Panel class="RewardTitleContainer">
+								<Image class="Emblem Left" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="MaterialsTitle MHTitleFont Medium" text="Materials Earned" />
+								<Image class="Emblem Right" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel id="RewardList" />
+						</Panel>
+						<Panel id="MonsterHunterProgressCodex">
+							<Panel class="RewardTitleContainer">
+								<Image class="Emblem Left" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="CodexTitle MHTitleFont Medium" text="Codex Progress" />
+								<Image class="Emblem Right" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel id="CodexList" />
+						</Panel>
+					</Panel>
+					<Panel class="HunterRankContainer">
+						<Panel class="HunterRankTitleContainer">
+							<Image class="Emblem Left" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="HunterRankTitle MHTitleFont Medium" text="#DOTA_MonsterHunter_HunterRank" />
+							<Image class="Emblem Right" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<DOTAMonsterHunterRankBadge id="HunterRank" suppress-tooltip="true" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterInvestigationSimulator class="DashboardPage" hidebackground="true" require-composition-layer="true">
+		<Image class="TempMapBackgroundImage" src="s2r://panorama/images/events/monster_hunter/backgrounds/temp_map_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="SimulationContainer TopBottomFlow">
+			<DOTAMonsterHunterInvestigationsContainer id="InvestigationsContainer" />
+			<TextButton id="LockHuntButton" class="PopupButton Gold" text="Lock Hunt" onactivate="DOTAMonsterHunterLockHuntChoice()" unlocalized="true" />
+			<Panel id="SimulationHuntButtons" class="SimulationHuntButtons LeftRightFlow">
+				<TextButton class="PopupButton Gold" text="Attempt hunt objectives" onactivate="DOTAMonsterHunterAttemptHunts()" unlocalized="true" />
+			</Panel>
+			<Panel id="SimulationButtons" class="SimulationButtons LeftRightFlow">
+				<TextButton class="PopupButton Green" text="Win" onactivate="DOTAMonsterHunterSimulateMatch( 0 )" unlocalized="true" />
+				<TextButton class="PopupButton Gold" text="Random" onactivate="DOTAMonsterHunterSimulateMatch( 2 )" unlocalized="true" />
+				<TextButton class="PopupButton Red" text="Lose" onactivate="DOTAMonsterHunterSimulateMatch( 1 )" unlocalized="true" />
+			</Panel>
+			<Panel class="OuterContainer">
+				<Panel class="RewardsContainer TopBottomFlow">
+					<Label class="MHBodyFont RewardsTitle" text="You {s:match_result} the game and received these materials:" html="true" unlocalized="true" />
+					<Panel id="MaterialBreakdownContainer" class="MaterialBreakdownContainer" />
+				</Panel>
+				<Panel class="RewardsContainer">
+					<Label class="MHBodyFont RewardsTitle" text="You gained {d:match_xp} XP toward your Hunter Rank." unlocalized="true" />
+				</Panel>
+				<TextButton class="PopupButton Gold ExtraMarginTop" text="Play again" onactivate="DOTAMonsterHunterRerollInvestigations()" unlocalized="true" />
+				<TextButton class="PopupButton Gold" text="Back to front page" onactivate="DOTAShowMonsterHunterPage()" unlocalized="true" />
+			</Panel>
+		</Panel>
+		<Panel id="ControlContainer">
+			<Panel class="HeroPicker">
+				<Label text="Your Hero:" class="MHLabelFont" unlocalized="true" />
+				<DOTAHeroImage id="OurHero" heroimagestyle="portrait" scaling="stretch-to-fit-x-preserve-aspect" onactivate="DOTAMonsterHunterSelectHero()" />
+			</Panel>
+		</Panel>
+		<DOTAMonsterHunterInvestigationDisplay id="InvestigationDisplay" />
+		<Panel class="DebugMetricsPanel">
+			<Label text="Hunter Rank: {d:debug_rank} ({d:debug_xp} / {d:debug_per_rank})" />
+			<Label text="Record: {d:debug_wins} - {d:debug_losses}" />
+			<Label text="Time playing: {d:debug_hours}h {d:debug_minutes}m" />
+		</Panel>
+		<Panel class="DebugButtons">
+			<TextButton class="MainBranchOnly ButtonPrimary Small Magenta" text="Debug" onactivate="MonsterHunterShowDebugContextMenu()" />
+			<TextButton class="MainBranchOnly ButtonPrimary Small Magenta" text="Reroll Investigations" onactivate="DOTAMonsterHunterRerollInvestigations()" />
+			<TextButton class="MainBranchOnly ButtonPrimary Small Magenta" text="Back To Front Page" onactivate="DOTAShowMonsterHunterPage()" />
+		</Panel>
+	</DOTAMonsterHunterInvestigationSimulator>
+</root>

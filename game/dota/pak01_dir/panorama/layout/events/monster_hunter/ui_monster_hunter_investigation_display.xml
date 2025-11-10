@@ -1,0 +1,129 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/ui_monster_hunter_investigation_display.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="HeroIcon">
+			<Panel class="HeroIconContainer">
+				<Image id="HeroIcon" class="HeroIcon" src="s2r://panorama/images/heroes/icons/npc_dota_hero_rubick_png.vtex" />
+				<Image class="HeroSlash" src="s2r://panorama/images/events/monster_hunter/artwork/blood_slash_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="Task">
+			<Panel class="Task">
+				<Panel class="TaskContentsContainer">
+					<Panel class="CheckboxContainer ">
+						<Panel class="Checkbox" />
+						<Image class="Checkmark" src="s2r://panorama/images/events/monster_hunter/icons/check_fancy.vsvg" scaling="stretch-to-cover-preserve-aspect" />
+					</Panel>
+					<Panel class="HeroIconContainer">
+						<Image id="HeroIcon" class="HeroIcon" src="s2r://panorama/images/heroes/icons/npc_dota_hero_rubick_png.vtex" />
+						<Image class="HeroSlash" src="s2r://panorama/images/events/monster_hunter/artwork/blood_slash_png.vtex" />
+					</Panel>
+					<Label class="TaskLabel MHBodyFont Small" text="{s:task}" />
+				</Panel>
+				<Panel class="Strikethrough" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterInvestigationDisplay>
+		<Panel id="HuntSelection">
+			<Panel class="OuterHuntSelectionContainer">
+				<Label class="HuntSelectionTitle MHTitleFont Small" text="#DOTA_MonsterHunter_Investigation_HuntTarget" />
+				<Image class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_main_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+				<Panel class="ContentsContainer">
+					<Panel class="BackgroundPanel">
+						<Panel class="SelectedBackground" hittest="false" />
+						<Panel class="SigilContainer">
+							<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="SigilOutline" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil_outline.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel class="SigilContainer Bottom">
+							<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="SigilOutline" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil_outline.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel class="EdgeBorder Top" />
+						<Panel class="EdgeBorder Bottom" />
+						<Panel class="BackgroundBorder" hittest="false" />
+					</Panel>
+					<Panel class="ContentsPanel" onactivate="DOTAMonsterHunterInvestigationChangeButtonClicked() DOTAMonsterHunterInvestigationDisplayPinged(-1)">
+						<Label class="MonsterHeroName MHTitleFont Medium" text="{s:hero_name}" />
+						<Image id="HeroPortraitImage" class="MonsterHeroPortraitImage" src="s2r://panorama/images/events/monster_hunter/heroes_icons/npc_dota_hero_bane_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="ChangeButtonContainer" onactivate="DOTAMonsterHunterInvestigationChangeButtonClicked()">
+						<Panel id="ChangeButton">
+							<Label class="ChangeLabel" text="#DOTA_MonsterHunter_Investigation_ChangeTarget" />
+							<Label id="TimeRemaining" text="#DOTA_MonsterHunter_Investigation_TimeRemaining" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Button class="MinimizeButton" onactivate="DOTAMonsterHunterInvestigationDisplayMinimized()">
+				<Panel class="RightArrowButtonIcon" />
+				<Panel class="ObjectiveImagesContainer">
+					<Image class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_main_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+			</Button>
+		</Panel>
+		<Panel id="OngoingObjectives">
+			<Panel class="OuterObjectivesContainer">
+				<Panel class="OngoingObjectivesBackground" />
+				<Panel id="MainObjectivesContainer" class="ObjectivesContainer">
+					<Panel id="MainObjectivesTitle" class="ObjectivesTitle" onmouseover="UIShowTextTooltipStyled( #DOTA_MonsterHunter_MainObjective_Tooltip, &apos;MonsterHunter&apos; )" onmouseout="UIHideTextTooltip()">
+						<Panel class="TitleContainer">
+							<Panel class="TitleBackgroundPanel MainObjectivesBackgroundPanel">
+								<Panel class="EdgeBorder Top" />
+								<Panel class="EdgeBorder Bottom" />
+							</Panel>
+							<Panel class="LeftRightFlow LabelContainer">
+								<Label class="ObjectiveLabel MHTitleFont Small" text="{s:main_objective_title}" />
+								<Image class="TooltipInfoIconSmall" src="s2r://panorama/images/control_icons/24px/info.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+						</Panel>
+						<Image id="MainObjectiveIcon" class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_main_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+					</Panel>
+					<Panel id="MainTaskContainer" class="TasksContainer">
+						<Panel class="Task">
+							<Panel class="TaskContentsContainer">
+								<Panel class="CheckboxContainer ">
+									<Panel class="Checkbox" />
+									<Image class="Checkmark" src="s2r://panorama/images/events/monster_hunter/artwork/checkmark_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+								</Panel>
+								<Image class="HeroIcon" src="s2r://panorama/images/heroes/icons/npc_dota_hero_rubick_png.vtex" />
+								<Label class="TaskLabel MHBodyFont Small" text="Hunt Rubick" />
+							</Panel>
+							<Panel class="Strikethrough" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="SideObjectivesContainer" class="ObjectivesContainer">
+					<Panel id="SideObjectivesTitle" class="ObjectivesTitle" onmouseover="UIShowTextTooltipStyled( #DOTA_MonsterHunter_HuntingYou_Tooltip, &apos;MonsterHunter&apos; )" onmouseout="UIHideTextTooltip()">
+						<Panel class="TitleContainer">
+							<Panel class="TitleBackgroundPanel SideObjectivesBackgroundPanel">
+								<Panel class="EdgeBorder Top" />
+								<Panel class="EdgeBorder Bottom" />
+							</Panel>
+							<Panel class="LeftRightFlow LabelContainer">
+								<Label class="ObjectiveLabel MHTitleFont Small" text="#DOTA_MonsterHunter_HuntingYou" />
+								<Image class="TooltipInfoIconSmall" src="s2r://panorama/images/control_icons/24px/info.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+						</Panel>
+						<Image class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_side_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+					</Panel>
+					<Panel id="SideTaskContainer" class="TasksContainer" />
+				</Panel>
+			</Panel>
+			<Button class="MinimizeButton" onactivate="DOTAMonsterHunterInvestigationDisplayMinimized()">
+				<Panel class="ObjectiveImagesContainer">
+					<Image id="SideObjectiveMinimizeImage" class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_side_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+					<Image id="DuelObjectiveMinimizeImage" class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_side_objective_icon_withbg_gloves_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+					<Image id="MainObjectiveMinimizeImage" class="ObjectiveImage" src="s2r://panorama/images/events/monster_hunter/artwork/quest_main_objective_icon_withbg_psd.vtex" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				<Panel class="RightArrowButtonIcon" />
+			</Button>
+		</Panel>
+	</DOTAMonsterHunterInvestigationDisplay>
+</root>

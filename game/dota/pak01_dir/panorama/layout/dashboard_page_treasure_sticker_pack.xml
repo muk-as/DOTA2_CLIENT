@@ -21,6 +21,17 @@
 				<Label class="PackOverviewTeamName" id="TeamName" text="{g:dota_team_name:team_id}" />
 			</Panel>
 		</snippet>
+		<snippet name="RecycleControlsSnippet">
+			<Panel class="RecycleControlsContainer">
+				<Button id="RemoveStickerButton" class="ButtonPrimary Small">
+					<Image src="s2r://panorama/images/control_icons/24px/minus.vsvg" />
+				</Button>
+				<Label text="{d:recycle_count}/{d:recycle_max}" />
+				<Button id="AddStickerButton" class="ButtonPrimary Small">
+					<Image src="s2r://panorama/images/control_icons/24px/plus.vsvg" />
+				</Button>
+			</Panel>
+		</snippet>
 		<snippet name="TreasurePreviewPanel">
 			<Panel>
 				<DOTAUIEconSetPreview id="StickerPreview" stickercamera="sticker_camera_Close" rotateonmousemove="true" rotationlimits="1.5 -1.5 1.5 -1.5" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
@@ -31,6 +42,7 @@
 		</snippet>
 	</snippets>
 	<DOTATreasureStickerPackDetailsPage class="DashboardPage OpeningNone" defaultfocus="TreasureContents" onnavigatedaway="DOTAStickerPackHideDetailedContents()">
+		<Panel class="StickerCapsuleBackgroundOverride" />
 		<Panel id="TreasureCapsuleAndDetailsContainer">
 			<Panel id="TreasureIdleAndInfoContainer" hittest="false">
 				<DOTAUIEconSetPreview id="CapsuleScene" />
@@ -49,7 +61,7 @@
 					<Panel class="TopBottomFlow">
 						<Label id="TreasureName" class="TreasureName" text="{g:dota_item_name:base_treasure_item_def}{s:base_treasure_item_def_number}" />
 					</Panel>
-					<Label class="TreasureDetailsRow LargeText" text="{s:item_description}" html="true" />
+					<Label class="CapsuleDescription" text="{s:item_description}" html="true" />
 					<Panel class="PeekRoot">
 						<DOTAUIEconSetPreview id="PeekItemPreview" />
 						<Panel class="PeekNextTreasure VerticalCenter">
@@ -57,23 +69,26 @@
 							<Label id="PeekTreasureName" class="PeekTreasureName" text="{g:dota_item_name:peek_item_def}" />
 						</Panel>
 					</Panel>
-					<Panel id="TreasurePurchaseRow" class="TreasureDetailsRow LeftRightFlow">
-						<Label class="PurchaseOptionTitle VerticalCenter" text="#DOTA_Treasure_BuyCapsulesLabel" />
-						<Panel class="VerticalCenter">
-							<NumberEntry id="QtySelector" min="1" max="10" value="1" />
+					<Panel class="PurchaseOpenRow">
+						<Panel id="TreasurePurchaseRow">
+							<Label class="PurchaseOptionTitle VerticalCenter" text="#DOTA_Treasure_BuyCapsulesLabel" />
+							<Panel class="VerticalCenter">
+								<NumberEntry id="QtySelector" min="1" max="10" value="1" />
+							</Panel>
+							<Button id="BuyStickersButton" class="ButtonPrimary Large Green VerticalCenter" onactivate="DOTAStickerPackPurchaseTreasure()">
+								<Label class="CratePriceLabel" text="{m:treasure_price}" />
+							</Button>
 						</Panel>
-						<Button id="BuyStickersButton" class="PopupButton ButtonPrimary Large TI23Blue VerticalCenter" onactivate="DOTAStickerPackPurchaseTreasure()">
-							<Label class="CratePriceLabel" text="{m:treasure_price}" />
-						</Button>
+						<Panel id="OpenCapsuleContainer">
+							<Label class="PurchaseOptionTitle VerticalCenter" text="#DOTA_Treasure_OpenCapsulesLabel" />
+							<Button id="OpenStickerPackButton" class="MainPurchaseButton TreasureOpeningButton ButtonPrimary Large TI23Blue" onactivate="DOTAStickerPackStartOpeningSelectedTreasure()">
+								<Label text="#DOTA_Treasure_OpenStickerPack" />
+							</Button>
+							<Label class="OwnedCountLabel VerticalCenter" text="#DOTA_Treasure_ChestsOwned" />
+						</Panel>
 					</Panel>
+					<DOTATreasureRecycleStatus id="TreasureRecycleStatus" class="IsRecyclingSticker" show_claim_button="true" />
 					<TextButton id="TreasureGrantButton" class="TreasureGrantButton" text="Grant Capsule" unlocalized="true" onactivate="DOTAStickerPackGrantSelectedTreasure()" />
-					<Panel id="OpenCapsuleContainer" class="LeftRightFlow FullWidth">
-						<Label class="PurchaseOptionTitle VerticalCenter" text="#DOTA_Treasure_OpenCapsulesLabel" />
-						<Button id="OpenStickerPackButton" class="MainPurchaseButton TreasureOpeningButton ButtonPrimary Large TI23Blue" onactivate="DOTAStickerPackStartOpeningSelectedTreasure()">
-							<Label text="#DOTA_Treasure_OpenStickerPack" />
-						</Button>
-						<Label class="OwnedCountLabel VerticalCenter" text="#DOTA_Treasure_ChestsOwned" />
-					</Panel>
 				</Panel>
 			</Panel>
 		</Panel>
@@ -135,7 +150,9 @@
 		<Panel id="DetailedTreasureContentsClip" hittest="false" hittestchildren="true">
 			<Panel id="DetailedTreasureContentsContainer">
 				<Panel id="DetailedTreasureContentsBody">
-					<Button id="ClosePreview" class="CloseButton" onactivate="DOTAStickerPackShowDetailedContents()" />
+					<Button id="ClosePreview" class="ButtonPrimary" onactivate="DOTAStickerPackHideDetailedContents()">
+						<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+					</Button>
 					<Panel id="PackOverviewTeam" hittest="false">
 						<Label class="PackOverviewTeamHeader" text="#DOTA_Sticker_TeamOverview" />
 						<Panel id="PackOverviewTeamContainer" />
@@ -149,35 +166,39 @@
 						</RadioButton>
 						<Panel id="TreasureHelpIcon" class="InfoIcon" />
 						<Label class="Title" text="#DOTA_Sticker_QualitySelectionLabel" />
-						<RadioButton id="QualitySelection_unique" class="QualitySelection" group="StickerQuality" selected="true" onactivate="DOTAStickerPackOverrideQuality( Basic )">
+						<RadioButton id="QualitySelection_unique" class="QualitySelection" group="StickerQuality" selected="true" onactivate="DOTAStickerPackOverrideQuality( Unique )">
 							<Panel class="QualityRadioBox StickerQuality_unique StickerQualityBackgroundImage">
 								<Panel class="Dot" />
 							</Panel>
-							<Label class="QualityName" text="#base" />
+							<Label class="QualityName" text="{s:quality_name}" />
 						</RadioButton>
 						<RadioButton id="QualitySelection_glitter" class="QualitySelection" group="StickerQuality" onactivate="DOTAStickerPackOverrideQuality( Glitter )">
 							<Panel class="QualityRadioBox StickerQuality_glitter StickerQualityBackgroundImage">
 								<Panel class="Dot" />
 							</Panel>
-							<Label class="QualityName" text="#glitter" />
+							<Label class="QualityName" text="{s:quality_name}" />
 						</RadioButton>
 						<RadioButton id="QualitySelection_holo" class="QualitySelection" group="StickerQuality" onactivate="DOTAStickerPackOverrideQuality( Holo )">
 							<Panel class="QualityRadioBox StickerQuality_holo StickerQualityBackgroundImage">
 								<Panel class="Dot" />
 							</Panel>
-							<Label class="QualityName" text="#holo" />
+							<Label class="QualityName" text="{s:quality_name}" />
 						</RadioButton>
 						<RadioButton id="QualitySelection_gold" class="QualitySelection" group="StickerQuality" onactivate="DOTAStickerPackOverrideQuality( Gold )">
 							<Panel class="QualityRadioBox StickerQuality_gold StickerQualityBackgroundImage">
 								<Panel class="Dot" />
 							</Panel>
-							<Label class="QualityName" text="#gold" />
+							<Label class="QualityName" text="{s:quality_name}" />
 						</RadioButton>
 					</Panel>
+					<Label class="RecycleStickerHeader LargeText" text="#DOTA_Sticker_RecycleHeader" />
 					<Panel id="DetailedTreasureContents" />
 					<Label class="CollectedCount">
 						<Label text="#DOTA_Sticker_CollectedCount" />
 					</Label>
+					<Button id="RecycleSelectedStickersButton" class="ButtonPrimary HorizontalCenter Large" onactivate="DOTAStickerPackRecycleSelectedStickers()">
+						<Label text="#DOTA_Recycling_Action_Multiple" />
+					</Button>
 				</Panel>
 			</Panel>
 		</Panel>

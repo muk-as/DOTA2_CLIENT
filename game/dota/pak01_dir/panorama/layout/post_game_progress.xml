@@ -27,6 +27,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_crownfall.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2024.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_monster_hunter.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -41,7 +42,7 @@
 						<Panel class="HeroImageOverlay" hittest="false" />
 					</Panel>
 					<Label id="PlayerName" class="OverviewHeroPlayerName" hittest="false" html="true" text="{g:dota_persona:ng:user_account_id}" />
-					<Label id="BotPlayerName" class="OverviewHeroPlayerName" hittest="false" text="{s:bot_player_name}" />
+					<Label id="AnonPlayerName" class="OverviewHeroPlayerName" hittest="false" text="{s:anon_player_name}" />
 					<Label class="Guildname" hittest="false" html="true" text="{g:dota_guild_name:user_guild_id}" />
 					<DOTAHeroImage id="MainHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
 					<Image id="EventLogo" scaling="cover" hittest="false" />
@@ -1148,6 +1149,117 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="MonsterHunterProgress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="PageBackgroundContainer">
+					<Image class="PageBackgroundImage" src="s2r://panorama/images/events/monster_hunter/backgrounds/mountains_psd.vtex" />
+				</Panel>
+				<DOTAParticleScenePanel class="SmokeFX Bottom" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Panel class="BottomGradient" hittest="false" />
+				<Panel id="SigilContainer">
+					<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="SigilOutline" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil_outline.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel id="MonsterHunterProgressMain">
+					<Panel id="MonsterHunterProgressTitle">
+						<Image class="MonsterHunterLogo en" src="s2r://panorama/images/events/monster_hunter/logos/monster_hunter_logo_horiz_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="WinLossDescriptionContainer">
+						<Panel id="WinLossContainer">
+							<Panel class="ObjectiveContainer">
+								<Image class="SwordIcon" src="s2r://panorama/images/events/monster_hunter/icons/win_icon_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="ObjectiveText MHDisplayFont GreenBold" html="true" text="#DOTA_MonsterHunter_PostGame_WinMatch" />
+								<Panel class="Checkbox">
+									<Panel class="CheckboxBackground" />
+									<Panel class="Check" />
+								</Panel>
+								<Panel class="StrikeThrough" />
+							</Panel>
+						</Panel>
+						<Panel id="HuntStatus">
+							<Panel class="ObjectiveContainer">
+								<Image id="ObjectiveIcon" class="ObjectiveIcon" src="s2r://panorama/images/events/monster_hunter/artwork/quest_main_objective_icon_withbg_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<DOTAHeroImage id="HuntHeroIconImage" class="HeroIcon" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="ObjectiveText MHDisplayFont GreenBold" html="true" text="#DOTA_MonsterHunter_PostGame_HuntStatus" />
+								<Panel class="Checkbox">
+									<Panel class="CheckboxBackground" />
+									<Panel class="Check" />
+								</Panel>
+								<Panel class="StrikeThrough" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="MonsterHunterProgressContainer">
+						<Panel class="EmblemContainer Top">
+							<Image class="Triangle" src="s2r://panorama/images/events/monster_hunter/artwork/triangle.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="Emblem" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel id="MonsterHunterMaterialRewards">
+							<Panel class="MonsterHunterProgressContainerBorder" />
+							<Panel class="MatchRewards MaterialRewardSection" id="MatchRewardsContainer">
+								<DOTAParticleScenePanel class="RewardsGlowFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<Panel class="MaterialRewardTitle">
+									<Label class="Title MHTitleFont Large" text="#DOTA_MonsterHunter_PostGame_MaterialsEarned" />
+									<Label id="LossExplaination" class="Subtitle MHBodyFont Small" text="Losses grant half of your match rewards" />
+								</Panel>
+								<Panel id="MaterialRewardListMatch" class="MaterialList" />
+							</Panel>
+							<Panel class="EdgeBorder Top" />
+							<Panel class="EdgeBorder Bottom" />
+						</Panel>
+						<Panel class="EmblemContainer Bottom">
+							<Image class="Triangle" src="s2r://panorama/images/events/monster_hunter/artwork/triangle.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="Emblem" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel class="LowerRewardsContainer">
+							<Panel id="MonsterHunterProgressCodex">
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_PostGame_HeroAtlasProgress" />
+								<Panel id="CodexList" />
+								<Label class="CodexInstructions MHBodyFont Medium" text="#DOTA_MonsterHunter_PostGame_HeroAtlas_Howto" />
+							</Panel>
+							<Panel id="HunterRankContainer">
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_HunterRank" />
+								<DOTAMonsterHunterRankBadge id="HunterRankBadge" suppress-tooltip="true" />
+								<Panel class="HunterRankProgressBarContainer">
+									<ProgressBarWithMiddle id="HunterRankProgressBar" />
+								</Panel>
+								<Panel class="XPNumbersContainer">
+									<Label class="XPNumbers MHDisplayFont Medium" text="#DOTA_MonsterHunter_HunterRankXP" html="true" />
+									<Panel class="InfoIcon" onmouseover="MonsterHunterShowXPTooltip()" onmouseout="MonsterHunterHideXPTooltip()" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="CraftingAvailableContainer">
+							<Image class="EmblemFooter Top" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="CraftingAvailableBadge">
+								<DOTAParticleScenePanel class="CraftingAvailableFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<Label text="#DOTA_MonsterHunter_PostGame_CraftingAvailable" />
+							</Panel>
+							<Image class="EmblemFooter Bottom" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="MonsterHunterMaterial">
+			<Panel class="MaterialQuantity">
+				<DOTAHeroImage id="HeroIconImage" class="HeroIcon" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="InnerMaterialContainer">
+					<DOTAMonsterHunterMaterial id="Material" highlight_same_type="false" />
+					<Panel class="FailedIndicator" hittest="false" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="MonsterHunterMaterialDivider">
+			<Panel class="MonsterHunterMaterialDivider" />
+		</snippet>
+		<snippet name="MonsterHunterHeroCodex">
+			<Panel class="HeroCodexEntry">
+				<Panel class="NewGlow" />
+				<DOTAMonsterHunterHeroImage id="HeroImage" class="HideHeroName PostGame" />
+				<Label class="NewBadge MHLabelFont Small" hittest="false" text="#DOTA_MonsterHunter_Codex_Entry_New" />
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1239,7 +1351,8 @@
 				<Panel id="MVPDetails">
 					<Panel id="MatchMVPCrown" />
 					<Label class="MatchMVPText" text="#DOTAMVPVote_Title" />
-					<Label class="Username" hittest="false" html="true" text="{g:dota_persona:ng:user_account_id}" />
+					<Label id="MVPPlayerName" class="Username" hittest="false" html="true" text="{g:dota_persona:ng:user_account_id}" />
+					<Label id="AnonMVPPlayerName" class="Username" hittest="false" html="true" text="{s:anon_player_name}" />
 					<Panel id="GuildDetails" class="GuildDetails">
 						<DOTAGuildImage id="GuildImage" class="GuildImage" />
 						<Label class="Guildtag" hittest="false" html="true" text="[{g:dota_guild_tag:user_guild_id}]" />
@@ -1460,6 +1573,7 @@
 			<TextButton class="PopupButton" text="Frostivus 2023" unlocalized="true" onactivate="TestAnimateFrostivus2023()" />
 			<TextButton class="PopupButton" text="Crownfall" unlocalized="true" onactivate="TestAnimateCrownfall()" />
 			<TextButton class="PopupButton" text="Frostivus 2024" unlocalized="true" onactivate="TestAnimateFrostivus2024()" />
+			<TextButton class="PopupButton" text="Monster Hunter" unlocalized="true" onactivate="TestAnimateMonsterHunter()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

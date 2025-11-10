@@ -304,10 +304,12 @@
 								<DOTASettingsCheckbox convar="dota_player_add_summoned_to_selection" text="#dota_settings_autoselect" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_AutoSelectSummons, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsCheckbox convar="dota_player_multipler_orders" text="#dota_settings_unifiedorders" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_UnifiedOrders, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsCheckbox convar="dota_player_auto_repeat_right_mouse" text="#dota_settings_player_auto_repeat_right_mouse" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_AutoRepeatRightMouse, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+								<DOTASettingsCheckbox convar="dota_selection_groups" text="#dota_settings_selection_groups" onmouseover="UIShowTextTooltipStyled( #dota_settings_selection_groups_tooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" new-setting-index="13" />
+								<DOTASettingsCheckbox convar="dota_player_smart_multiunit_cast" text="#dota_settings_smart_multiunit_cast" onmouseover="UIShowTextTooltipStyled( #dota_settings_smart_multiunit_cast_tooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" new-setting-index="14" />
 								<Panel class="SettingsSectionDivider" />
 								<Label class="SettingsSectionSubSubtitleSmall" text="#dota_settings_channels" searchable="true" />
 								<DOTASettingsCheckbox convar="dota_player_teleport_requires_halt" text="#dota_settings_teleportrequireshalt" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_TeleportStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-								<DOTASettingsCheckbox convar="dota_player_channels_require_stop" text="#dota_settings_channelrequireshalt" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ChannelStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+								<DOTASettingsCheckbox convar="dota_player_channels_require_stop" text="#dota_settings_channelrequireshalt" onvaluechanged="DOTASettingsAbilityChannelsRequireHaltChanged()" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ChannelStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsCheckbox convar="dota_player_interaction_channels_require_stop" text="#dota_settings_interactionrequireshalt" new-setting-index="5" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_InteractionStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<Panel class="SettingsSectionDivider" />
 								<Label class="SettingsSectionSubSubtitleSmall" text="#dota_settings_doubletap" searchable="true" />
@@ -569,6 +571,8 @@
 								<ToggleButton id="SelfFocus" text="#dota_settings_hud_color_selffocus" onactivate="DOTAUpdateColorblindSetting();" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_Differentiate, OptionsTooltip)" onmouseout="UIHideTextTooltip()" onvaluechanged="DOTASettingsHealthBarSettingsUpdated()">
 									<Panel id="SelfFocusInfo" class="InfoIcon" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ModeNotCompatibleWithColorblind, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								</ToggleButton>
+								<DOTASettingsCheckbox convar="dota_health_bar_hurt_effect" text="#dota_settings_visualize_damage" onvaluechanged="DOTASettingsHealthBarSettingsUpdated()" onmouseover="UIShowTextTooltipStyled( #dota_settings_visualize_damage_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()" new-setting-index="12" />
+								<DOTASettingsCheckbox convar="dota_health_bar_healing_effect" text="#dota_settings_visualize_healing" onvaluechanged="DOTASettingsHealthBarSettingsUpdated()" onmouseover="UIShowTextTooltipStyled( #dota_settings_visualize_healing_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()" new-setting-index="12" />
 								<Panel style="height: 16px;" />
 								<DOTASettingsEnum convar="dota_hero_overhead_names" text="#dota_settings_name_over_healthbar" onvaluechanged="DOTASettingsHealthBarSettingsUpdated()">
 									<RadioButton text="#dota_settings_showheronames" value="0" class="EnumButton" group="overhead_names" />
@@ -605,7 +609,8 @@
 														<Panel class="HealthbarHealthPip" />
 														<Panel class="HealthbarHealthPip" />
 														<Panel class="HealthbarHealthPip" />
-														<Panel class="HealthbarHealthPip" />
+														<Panel class="HealthbarHealthPip HealingPip" />
+														<Panel class="HealthbarHealthPip DamagePip" />
 														<Panel class="HealthbarHealthPip LastPip" />
 													</Panel>
 													<Panel class="HealthbarManaBar" />
@@ -624,7 +629,8 @@
 														<Panel class="HealthbarHealthPip" />
 														<Panel class="HealthbarHealthPip" />
 														<Panel class="HealthbarHealthPip" />
-														<Panel class="HealthbarHealthPip" />
+														<Panel class="HealthbarHealthPip HealingPip" />
+														<Panel class="HealthbarHealthPip DamagePip" />
 														<Panel class="HealthbarHealthPip LastPip" />
 													</Panel>
 													<Panel class="HealthbarManaBar" />

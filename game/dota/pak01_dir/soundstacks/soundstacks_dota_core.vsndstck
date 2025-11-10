@@ -726,6 +726,15 @@
 						data_type = "float"
 						value = "0.000000"
 					}
+					pitch_dynamic_override = 
+					{
+						data_type = "float"
+						value = "0.000000"
+						_system_properties = 
+						{
+							display_group = "advanced"
+						}
+					}
 					soundlevel = 
 					{
 						data_type = "float"
@@ -1038,6 +1047,14 @@
 			},
 			
 			{
+				name = "block_pitch_override_dynamic"
+				operator = "ctrl_switch_float"
+				input1 = "@pitch_random.output"
+				input2 = "@public.pitch_dynamic_override"
+				input_switch = "@public.pitch_dynamic_override"
+			},
+			
+			{
 				name = "delay_random"
 				operator = "math_random_float"
 				input_execute = "1.000000"
@@ -1293,7 +1310,7 @@
 				input_execute = "1.000000"
 				input_start = "@stop_time_and_unstopped.output"
 				input_speaker_volumes = "@speakers_spatialize.output"
-				input_pitch = "@pitch_random.output"
+				input_pitch = "@block_pitch_override_dynamic.output"
 				input_delay = "@delay_total.output"
 				input_fade_out = "@public.volume_fade_out"
 				input_memory_type = "@public.memory_type"
@@ -2676,6 +2693,15 @@
 						data_type = "float"
 						value = "0.000000"
 					}
+					pitch_dynamic_override = 
+					{
+						data_type = "float"
+						value = "0.000000"
+						_system_properties = 
+						{
+							display_group = "advanced"
+						}
+					}
 					limiter_on = 
 					{
 						data_type = "float"
@@ -2869,6 +2895,14 @@
 			},
 			
 			{
+				name = "block_pitch_override_dynamic"
+				operator = "ctrl_switch_float"
+				input1 = "@pitch_random.output"
+				input2 = "@public.pitch_dynamic_override"
+				input_switch = "@public.pitch_dynamic_override"
+			},
+			
+			{
 				name = "mixer"
 				operator = "soundmixer_get_mixgroup"
 				mixgroup = "@public.mixgroup"
@@ -2943,7 +2977,7 @@
 				input_execute = "@public.start"
 				input_start = "@get_event_info.output_unstopped"
 				input_speaker_volumes = "@volume_fan.output"
-				input_pitch = "@pitch_random.output"
+				input_pitch = "@block_pitch_override_dynamic.output"
 				input_delay = "@public.delay"
 				input_fade_out = "@public.volume_fade_out"
 				input_memory_type = "@public.memory_type"

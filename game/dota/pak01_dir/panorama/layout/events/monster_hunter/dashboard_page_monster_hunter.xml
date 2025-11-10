@@ -1,0 +1,172 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/dashboard_page_monster_hunter.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="StyleRadioButton">
+			<RadioButton class="StyleSelectorButton" value="0" group="set_style" selected="true" html="true" />
+		</snippet>
+		<snippet name="SubPip">
+			<Panel class="SubPip" />
+		</snippet>
+		<snippet name="Craftable">
+			<Panel class="Craftable" hittest="false">
+				<Panel id="EconSetPreviewContainer" class="Preview" hittest="false" hittestchildren="false">
+					<Panel class="FloorShadow" />
+					<DOTAUIEconSetPreview id="RewardSetPreview" class="RewardSetPreview" activity-modifier="takeover" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" allowrotation="true" />
+					<DOTAUIEconSetPreview id="RewardSetDetailedPreview" activity-modifier="takeover" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" allowrotation="true" />
+				</Panel>
+				<Panel id="CraftableHitBox" />
+				<Panel class="CraftingAvailableContainer">
+					<DOTAParticleScenePanel class="CanCraftFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<Label class="NotifyCanCraftSomething MHLabelFont Medium" text="#DOTA_MonsterHunter_Crafting_Available" hittest="false" />
+				</Panel>
+				<Panel class="LowerContents">
+					<Panel class="StyleSelectorContainer" id="StyleSelectorContainer" />
+					<Label class="HeroName MHLabelFont Small" text="{s:hero_name}" />
+					<Label class="SetName MHDisplayFont Small" text="{s:set_name}" />
+					<Panel id="VariantPips" class="VariantPips HideBeforePremium" />
+					<Panel class="ProgressContainer">
+						<Panel class="SubPipContainerWraper">
+							<Image class="SubPipExtension Left" src="s2r://panorama/images/events/monster_hunter/icons/craftable_progress_off_png.vtex" />
+							<Panel id="SubPipContainer" />
+							<Image class="SubPipExtension Right" src="s2r://panorama/images/events/monster_hunter/icons/craftable_progress_off_png.vtex" />
+						</Panel>
+						<Label class="CurrentVariantName MHLabelFont Medium" text="#DOTA_MonsterHunter_Dashboard_Crafted" />
+					</Panel>
+				</Panel>
+				<Label text="#DOTA_MonsterHunter_Intro_FreeSetUnlocked" class="MHTitleFont FreeSetUnlockedText" hittest="false" />
+				<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( Purchase premium )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+		</snippet>
+		<snippet name="VariantPip">
+			<Panel class="VariantPip">
+				<Panel class="Connector" />
+				<Panel class="IntroFX" hittest="false" />
+				<Panel class="PipBackground">
+					<Panel class="PipBackgroundInner" />
+				</Panel>
+				<Image class="GuildLockedIcon" src="s2r://panorama/images/events/monster_hunter/artwork/lock_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="GuildIcon" src="s2r://panorama/images/events/monster_hunter/icons/guildmembership_icon_on_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="CheckMarkIcon" src="s2r://panorama/images/control_icons/24px/check_fancy.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterPage class="DashboardPage" hidebackground="true" require-composition-layer="true">
+		<Panel class="PageBackgroundContainer">
+			<Image class="PageBackgroundImage" src="s2r://panorama/images/events/monster_hunter/backgrounds/mountains_psd.vtex" />
+		</Panel>
+		<AsyncDataPanel class="AsyncContents" state="{d:page_state}">
+			<Panel id="MainContents" class="AsyncSuccessContainer">
+				<Image class="SetBackgroundImage" src="s2r://panorama/images/events/monster_hunter/backgrounds/rewards_background_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="EventContainer">
+					<Image class="RewardsBackgroundImage" src="s2r://panorama/images/events/monster_hunter/backgrounds/rewards_background_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<DOTAParticleScenePanel class="AmbientFX" hittest="false" particleName="particles/ui/events/monter_hunter/mh_rewardline_background.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<Panel class="EventTitleContainer">
+						<Label class="CrossOverLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_CrossOverEvent" />
+						<Panel class="LogoContainer">
+							<Panel class="LogoListBackgroundContainer">
+								<Panel class="LogoListBackground" />
+								<Image class="TitleEmblem Top" />
+								<Image class="TitleEmblem Bottom" />
+							</Panel>
+							<Panel class="LogoList">
+								<Image class="DotaLogo" src="s2r://panorama/images/events/monster_hunter/logos/dota_2_logo_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="DotaLogoCN" src="s2r://panorama/images/events/monster_hunter/logos/dota_2_logo_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="CrossIcon" src="s2r://panorama/images/events/monster_hunter/artwork/x_icon.vsvg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48px" textureheight="48px" />
+								<Image class="MonsterHunterLogoHoriz" src="s2r://panorama/images/events/monster_hunter/logos/monster_hunter_logo_horiz_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+						</Panel>
+						<Panel class="EventDescriptionContainer">
+							<Label class="EventDescription MHDisplayFont Large" text="#DOTA_MonsterHunter_EventDescription" />
+							<Image class="InfoIcon" src="s2r://panorama/images/control_icons/24px/info.vsvg" scaling="stretch-to-fit-preserve-aspect" onactivate="MonsterHunterShowTutorialPopup()" />
+						</Panel>
+						<Panel class="PurchaseContainer HideBeforeTutorial">
+							<Panel class="PurchaseContainerInfo">
+								<Panel class="PurchaseNote" onactivate="MonsterHunterShowPremiumPopup()">
+									<Label class="PremiumText MHBodyFont" text="#DOTA_MonsterHunter_GetFullAccess" html="true" />
+								</Panel>
+								<Panel class="OwnedNote" onactivate="MonsterHunterShowPremiumPopup()">
+									<Image class="CheckIcon" src="s2r://panorama/images/events/monster_hunter/icons/check_fancy.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="OwnedText MHBodyFont" text="#DOTA_MonsterHunter_Premium_ExpeditionPackOwned" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="PreviewPremiumContainer" class="HideBeforeTutorial Hide">
+							<Panel class="ShowFree Slider">
+								<Panel class="BackgroundSlider" />
+								<Label class="Free Option" text="#DOTA_MonsterHunter_PremiumPreview_Free" onactivate="MonsterHunterUpdatePremiumPreview( 0 )" />
+								<Label class="Paid Option" text="#DOTA_MonsterHunter_PremiumPreview_Paid" onactivate="MonsterHunterUpdatePremiumPreview( 2 )" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="RewardsList" hittest="false" />
+				<Panel class="EventContainer" hittest="false">
+					<Panel id="RankPanel" class="TopLeftContainer HideBeforeTutorial TierValue" onmouseactivate="MonsterHunterShowSmallRewardsPopup()">
+						<Panel class="RankPanelContents">
+							<Panel class="FadedBackground" />
+							<DOTAMonsterHunterRankBadge suppress-tooltip="true" class="RewardsPageBadge" />
+							<Panel class="TitleEmblemContainer">
+								<Panel class="MHEmblem Left" />
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_HunterRank" />
+								<Panel class="MHEmblem Right" />
+							</Panel>
+							<ProgressBar id="RankProgressBar" />
+							<Label class="XPNumbers MHDisplayFont Medium" text="#DOTA_MonsterHunter_HunterRankXP" html="true" />
+							<Label id="NewRankRewards" class="NewBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
+							<DOTAMonsterHunterButton class="SmallRewardsButton Secondary Small" text="#DOTA_MonsterHunter_HunterRankRewards_ViewRewards" onmouseactivate="MonsterHunterShowSmallRewardsPopup()" />
+						</Panel>
+					</Panel>
+					<Panel id="CodexPanel" class="TopRightContainer HideBeforeTutorial" onactivate="MonsterHunterShowHeroCodexPopup( 0 )">
+						<Panel class="CodexPanelContents">
+							<Panel class="FadedBackground" />
+							<Image class="CodexIcon" src="s2r://panorama/images/events/monster_hunter/artwork/codex_icon_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="TitleEmblemContainer">
+								<Panel class="MHEmblem Left" />
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_HeroAtlas" />
+								<Panel class="MHEmblem Right" />
+							</Panel>
+							<Panel class="CodexStatsContainer">
+								<Panel class="CodexStatBlock">
+									<Label class="CodexStat MHDisplayFont Medium" text="{d:codex_heroes_complete} / {d:codex_heroes_total}" />
+									<Label class="CodexLabel MHLabelFont Small" text="#DOTA_MonsterHunter_HeroAtlas_EntriesComplete" />
+								</Panel>
+							</Panel>
+							<Label id="NewCodexRewards" class="NewBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
+							<DOTAMonsterHunterButton class="SmallRewardsButton Secondary Small" text="#DOTA_MonsterHunter_ViewCodex" onactivate="MonsterHunterShowHeroCodexPopup( 0 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="InventoryBackgroundBlockerRewardDetails" onactivate="DOTAMonsterHunterMaterialInventoryUpdateCraftingVisible( false )" />
+				<DOTAMonsterHunterRewardDetails id="RewardDetails" />
+				<Panel class="InventoryBackgroundBlocker" onactivate="DOTAMonsterHunterMaterialInventoryUpdateCraftingVisible( false )" />
+				<DOTAMonsterHunterMaterialInventory id="MaterialInventory" class="HideBeforeTutorial" />
+				<Panel class="EventEndDate">
+					<Label class="MHBodyFont Small" html="true" text="#DOTA_MonsterHunter_EndDate" />
+					<Label class="MHBodyFont Small" html="true" text="#DOTA_MonsterHunter_Copyright" />
+				</Panel>
+			</Panel>
+			<Panel class="AsyncLoadingContainer">
+				<Label text="#DOTA_MonsterHunter_State_Loading_Page" />
+				<Panel class="Spinner" />
+			</Panel>
+			<Panel class="AsyncFailureContainer">
+				<Label text="#DOTA_MonsterHunter_State_Error" />
+			</Panel>
+		</AsyncDataPanel>
+		<Panel class="DebugButtons HideBeforeTutorial">
+			<TextButton class="DebugPopupButton ButtonPrimary Small Magenta MainOrStagingBranchOnly" unlocalized="true" text="Debug" onactivate="MonsterHunterShowDebugContextMenu()" />
+			<TextButton class="DebugPopupButton ButtonPrimary Small Magenta MainBranchOnly" unlocalized="true" text="Simulate Game" onactivate="DOTAShowMonsterHunterInvestigationSimulator()" />
+			<Button class="DebugPopupButton ButtonPrimary Small Magenta MainBranchOnly" unlocalized="true" text="Event debug" onactivate="DOTAShowEventDebugPage()">
+				<Label text="Event debug" unlocalized="true" />
+				<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+			</Button>
+		</Panel>
+		<TextButton id="SimulateButton" class="PopupButton Purple MainBranchOnly" text="Simulate" onactivate="DOTAShowMonsterHunterInvestigationSimulator()" />
+	</DOTAMonsterHunterPage>
+</root>

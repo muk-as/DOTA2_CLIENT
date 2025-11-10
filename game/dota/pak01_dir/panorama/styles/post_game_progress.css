@@ -10,6 +10,7 @@
 @import url("s2r://panorama/styles/post_game_progress_frostivus2023.vcss_c");
 @import url("s2r://panorama/styles/post_game_progress_crownfall.vcss_c");
 @import url("s2r://panorama/styles/post_game_progress_frostivus2024.vcss_c");
+@import url("s2r://panorama/styles/post_game_progress_monster_hunter.vcss_c");
 @define HeroTransitionDuration: 0.46s;
 @define slot0color: #0038AC;
 @define slot1color: #17B271;
@@ -4323,16 +4324,6 @@ DOTAPostGameHeroStats .BotIcon
 	visibility: collapse;
 }
 
-#BotPlayerName
-{
-	visibility: collapse;
-}
-
-.OverviewHeroContainer.IsBot #BotPlayerName
-{
-	visibility: visible;
-}
-
 DOTAPostGameProgress
 {
 	width: 100%;
@@ -4345,11 +4336,27 @@ DOTAPostGameProgress
 	flow-children: down;
 	horizontal-align: left;
 	vertical-align: top;
-	visibility: collapse;
-	margin-left: 20px;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	overflow: squish scroll;
+	padding: 16px 20px 36px 30px;
+	opacity-mask: url("s2r://panorama/images/masks/soft_top_bottom_vscroll_psd.vtex");
+	margin-top: 60px;
+	margin-bottom: 80px;
 	z-index: 99;
+	visibility: collapse;
+}
+
+#DebugControls:hover VerticalScrollBar
+{
+	opacity: 1;
+}
+
+#DebugControls VerticalScrollBar
+{
+	opacity: 0;
+	width: 4px;
+	margin: 20px 0px 40px;
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
 }
 
 #DebugControls.fade
@@ -9469,6 +9476,26 @@ DOTAGuildContract
 DOTAHeroBadge
 {
 	img-shadow: 0px 0px 10px 10.0 #000000;
+}
+
+#AnonPlayerName,#AnonMVPPlayerName
+{
+	visibility: collapse;
+}
+
+#AnonPlayerName
+{
+	horizontal-align: center;
+}
+
+.ShowAnonName #PlayerName,.ShowAnonName #MVPPlayerName
+{
+	visibility: collapse;
+}
+
+.ShowAnonName #AnonPlayerName,.ShowAnonName #AnonMVPPlayerName
+{
+	visibility: visible;
 }
 
 @define bloodseeker_scale: 1.4;

@@ -84,6 +84,7 @@
 1L$؉x\b
 1\b5mF\tfE
 1\n-k_ESteamDatagramMsg_SetSecondaryAddressResult
+1\t=/7A
 1\tT$(M
 1\tT$\bH
 1\tt$\bH
@@ -94,7 +95,6 @@
 1kYL\r
 1ǉt$DH
 1ɋr ;3H
-1ۃ=N12
 1ۉt$ L
 1ۋD$LH
 1ۋT$\bH
@@ -220,7 +220,6 @@
 3\n\bNamePart
 3\v;8BJ\nH
 3f4˨C`<6
-3fD9H
 3ki\rgz
 3l$ D1
 3l$$D
@@ -388,12 +387,12 @@
 8ʿ4<Td
 8ϸֹai`UJ4\f
 9#9%9)9/9=9A9M9[9k9y9}9
-9(r*f
 9(rcwQfD;h
 9(}ZA
 92"\anv1
 99rKJJ
 9:dzGN
+9;s!f
 9D$$D
 9D$$~aH
 9D$HvyH
@@ -438,7 +437,6 @@ A9D$0
 A9D$0|t
 A9D$4
 A9D$4t H
-A9E\frBM
 A9F0|\bA
 A9F<|\e
 A9T$,A
@@ -1628,6 +1626,8 @@ Assertion Failed: pMsg->m_nMessageNumber > nLastMsgNumForUnreliable
 Assertion Failed: pMsg->m_pfnFreeData == CSteamNetworkingMessage::DefaultFreeData
 Assertion Failed: pMsgInsertBefore->m_links.m_pQueue == &m_queueRecvMessages
 Assertion Failed: pMsgInsertBefore->m_linksSecondaryQueue.m_pQueue == nullptr
+Assertion Failed: pNextForTarget->m_pPrevTaskForTarget == pTask
+Assertion Failed: pNextForTarget->m_pTarget == pTarget
 Assertion Failed: pOldConn->m_identityRemote == identityRemote
 Assertion Failed: pOut == pExpectedOutEnd
 Assertion Failed: pOutDigest
@@ -1639,6 +1639,8 @@ Assertion Failed: pPendingPkt->m_info.m_bQueuedForOutOfOrder
 Assertion Failed: pPendingPkt->m_nWireSeqNum >= 0
 Assertion Failed: pPing->m_nRouteFlags == 0
 Assertion Failed: pPing->m_nRoutePenalty == 0
+Assertion Failed: pPrevForTarget->m_pNextTaskForTarget == pTask
+Assertion Failed: pPrevForTarget->m_pTarget == pTarget
 Assertion Failed: pPrimarySession->m_pServer->m_usecTimeLastRecv > 0
 Assertion Failed: pPriorityClass[i].m_nPriority < pPriorityClass[j].m_nPriority
 Assertion Failed: pPubKey->m_eTrust == k_ETrust_Revoked
@@ -1674,6 +1676,8 @@ Assertion Failed: pSrc != NULL
 Assertion Failed: pStatus->m_flConnectionQualityLocal >= 0.0f
 Assertion Failed: pStatus->m_flConnectionQualityRemote >= 0.0f
 Assertion Failed: pStr != NULL
+Assertion Failed: pTarget->m_pFirstTask != nullptr
+Assertion Failed: pTarget->m_pFirstTask != pTask
 Assertion Failed: pTarget->m_pFirstTask == pTask
 Assertion Failed: pTarget->m_pFirstTask->m_pPrevTaskForTarget == nullptr
 Assertion Failed: pTask->m_eTaskState == CQueuedTask::k_ETaskState_Init
@@ -1962,7 +1966,6 @@ BUG_no_ping_data
 BY_Lq
 BZZn\rN]#8f
 B\bH9F\b
-B\bfA9A\b|<L
 B\btYM
 B\n\fextra_fields
 BackUp() can only be called after Next
@@ -2601,6 +2604,7 @@ C\bE1
 C\bHcD$ H
 C\bHǄ$H
 C\bZ[]ÐSH
+C\bfD;@\b
 C\btCHcU
 C\n\ralt_addresses
 C\tr9rW
@@ -3116,7 +3120,7 @@ D8`\vtHH
 D9 r9f
 D9 rUwCf;x
 D9+t H
-D9=\t>D
+D9=yGD
 D9@\f
 D9D\a\br
 D9H\f
@@ -3145,11 +3149,12 @@ D9t$0t\rH
 D:c\trT
 D; s)f
 D;8}#Ic
+D;=y6D
 D;GL|\nD
 D;GL|\vD
 D;G\f
 D;G\fu
-D;\r\eu
+D;\r5f
 D;\ri$F
 D;cXs
 D;ch}#D
@@ -4173,25 +4178,29 @@ H9։G,t
 H9팒dkT
 H;,$vKH
 H;,$vPH
-H;-Ix6
+H;-\nB6
 H;2s!H
 H;2s"H
 H;2sPH
 H;=1rO
 H;=4LP
+H;=6\bD
 H;=6\bN
+H;=Ao
 H;=AtO
+H;=FD
 H;=GZK
 H;=JpO
+H;=Jz
+H;=K5C
 H;=L\vN
-H;=Rt
 H;=ZwO
 H;=\azO
 H;=\vYH
 H;=a\bN
-H;=f\bD
 H;=ltO
-H;=n\tD
+H;=mb
+H;=rl
 H;=upO
 H;=w\vN
 H;D$0
@@ -4745,7 +4754,7 @@ L$\a0KGH
 L$\b0KHH
 L$\bA
 L$\bC D
-L$\bD
+L$\bD;%a4D
 L$\bE
 L$\bH
 L$\bH9l$\btbH
@@ -4832,6 +4841,9 @@ L9|$0
 L9|$8rBH
 L9|$\bE
 L9|$\bvIL
+L;%mNA
+L;-MGA
+L;-m9B
 L;4$tlM
 L;4$trM
 L;L$XD
@@ -4943,6 +4955,7 @@ M-qƼBV\t
 M3^\bL
 M3gpI3_xL
 M9B\bvaf
+M9l$\bt
 M;t$\bL
 MD5-SHA1
 MF?8ib[T
@@ -5817,8 +5830,9 @@ P\f1҃}P
 P\f9U\f|0
 P\fA9T$\f
 P\fthH
+P\nf9P\n
 P\nf9U\n
-P\nfA9U\n
+P\nfA9R\n
 Packet is %d bytes, must be padded to at least %d bytes
 Packet is too small
 Packet of size %d is too small
@@ -5914,7 +5928,6 @@ Q\bA1V
 Q\n\f\a\bA\v
 Q\tt\bd\nO
 Qjh/T
-Q|/fD9P\n|H
 R##Fe
 R/Qs߬}MF
 R65Fu
@@ -7157,6 +7170,7 @@ X[]ÐAWAVAUATUH
 X[]ÐUSH
 X\fA9
 X\n\bprotocol
+X\nfA9Z\n
 Xt,,4
 X醑U[D
 Y&\f -aY
@@ -7169,6 +7183,7 @@ Y[]A\\A]ÐAWAVAUATI
 Y[]A\\A]ÐAWAVAUL
 Y[]A\\A]ÐAWAVI
 Y\bI9X\bw
+Y\nf9Z\n|6
 YedcCH
 You must type in
 Your ping location string buffer is too small, truncation is possible
@@ -7296,7 +7311,6 @@ Z[]A\\A]ÐAWAVAUI
 Z[]ÐATUSH
 Z[]ÐAUI
 Z\aGdD
-Z\nfA9Y\n
 ZdOt\n
 ZdaPv
 ZdlPv
@@ -7747,6 +7761,7 @@ bf-cbc
 bf-cfb
 bf-ecb
 bf-ofb
+bfA9Y\b|=L
 bgD$ȸA
 bh.b|C
 bignum out of range
@@ -8825,7 +8840,6 @@ e8Ict
 eContent
 eContentType
 eN.d\tA
-eXL;%1j6
 eYe80D
 eYs/MA\b`}ڷN
 e\aPm
@@ -9069,6 +9083,7 @@ f*\fWk
 f0HcBDH9
 f7@7F
 f9(r8
+f9Z\b|B
 f9p\b
 f;Zv9l\r
 f;x\n
@@ -9117,8 +9132,6 @@ fdelt_chk
 fdhWTh
 fdxfv
 ferror
-ff;X\b
-ffD;X\b
 ffdhe2048
 ffdhe3072
 ffdhe4096
@@ -10243,7 +10256,7 @@ length too long
 length_ >= n
 level_add_node
 lf%n %n
-lib Sep 10 2024 01:06:41
+lib Oct  2 2025 23:55:42
 lib(%lu
 libc.so.6
 libm.so.6
@@ -10285,8 +10298,7 @@ lookup returned nothing
 lookup_certs_sk
 loopback
 lৢXU\e
-m H;->D6
-m H;-|v6
+m H;-Ku6
 m$L9d$\b
 m0IcE@L
 m>FC*a7H
@@ -10430,6 +10442,7 @@ multipath_packets_recv_later
 multipath_send_enabled
 munmap
 must be unique within
+mxH;-?H6
 my_ips
 m۶m۶\rL
 m۶m۶mAUATU
@@ -10774,7 +10787,7 @@ new_dir
 newer crl not newer
 nextUpdate
 nextupdate before thisupdate
-nf9{\n
+nfA9B\n|5
 nfD;}\n
 nfffff
 nistp224_pre_comp_new
@@ -11373,7 +11386,9 @@ qE7\t8\e
 qF{qc\t
 qOy*o
 qTm_fC
+q\bf9w\b
 q\bu\eH9
+q\nf9w\n
 q\tZp\f\t
 qcStatements
 qualifiers
@@ -11429,6 +11444,7 @@ r\n\tJS_NUMBER
 r\n\tJS_STRING
 r\n\tTYPE_BOOL
 r\n\tTYPE_ENUM
+r\nf9s\n
 r\nfD;u\n
 r_32_12_16_init_key
 rand_drbg_enable_locking
@@ -11768,6 +11784,7 @@ sUser Notice:\n
 sVersion: %ld (0x%lX
 s\a4T9\n
 s\eD\t
+s\nfE9q\n
 s]   decode pkt %lld ack last block ack begin %lld\n
 s]   decode pkt %lld latest recv %lld, inflight=%lld\n
 s]   decode pkt %lld nack [%lld,%lld) ack [%lld,%lld)\n
@@ -12580,6 +12597,7 @@ t<Hcv
 t=D9t$ u6Mc
 t@0t\v@H
 t@IcƋU\bH
+t@L9m\bt
 t@M;o ~:H
 tAIc̾\b
 tA`KO/3G!\n7h
@@ -12598,6 +12616,7 @@ tIHcD
 tJHc0H
 tJL9t
 tJm_9
+tK1ۃ=b
 tKH;2swH
 tLD9A\btND9A\ftPI
 tLY^m`6
@@ -13149,6 +13168,7 @@ vector::_M_range_insert
 vector::reserve
 verification failure
 version
+vfD9I\b
 vfprintf_chk
 viH9s(utH
 vms_bind_sym
@@ -13280,7 +13300,7 @@ x\b;_hu
 x\bH9w\b
 x\fA9
 x\ffD9z\f
-x\nfA9
+x\nf9{\n
 xboxpwid
 xboxpwid:%s
 xg-9Ja
@@ -13300,7 +13320,6 @@ yAu[7
 yU#\f\fy
 y\b]A
 y\bsett
-y\nfD;}\n
 yhA\\A]A^A
 ym\bdy
 ynl$<M
@@ -13321,6 +13340,7 @@ zG=dȬd
 zLD3BH1
 zWrgoI
 z\bfD;}\b
+z\nf9y\n
 z\r?, i
 zlib compression
 zoT& ġzo\\&0

@@ -225,6 +225,7 @@ DOTATreasureStickerPackDetailsPage
 #ClosePreview
 {
 	ignore-parent-flow: true;
+	horizontal-align: right;
 }
 
 .ShowReceivedTreasure #ItemDetails,.IsPeeking #ItemDetails
@@ -441,7 +442,12 @@ DOTATreasureStickerPackDetailsPage
 {
 	margin-bottom: detailsPadding;
 	tooltip-position: left;
-	width: 100%;
+}
+
+.CapsuleDescription
+{
+	width: 80%;
+	font-size: 24px;
 }
 
 .ItemDetailsDivider
@@ -460,11 +466,11 @@ DOTATreasureStickerPackDetailsPage
 
 .PurchaseOptionTitle
 {
-	font-size: 24px;
+	font-size: 22px;
 	text-transform: uppercase;
 	font-weight: semi-bold;
 	color: whitesmoke;
-	margin-right: 16px;
+	margin-right: 12px;
 	letter-spacing: 1px;
 }
 
@@ -529,7 +535,7 @@ DOTATreasureStickerPackDetailsPage
 {
 	width: 960px;
 	height: 100%;
-	margin-left: -360px;
+	margin-left: -660px;
 	horizontal-align: center;
 }
 
@@ -546,7 +552,6 @@ DOTATreasureStickerPackDetailsPage
 {
 	vertical-align: bottom;
 	horizontal-align: center;
-	width: 600px;
 	flow-children: down;
 	margin-bottom: 220px;
 }
@@ -574,14 +579,13 @@ DOTATreasureStickerPackDetailsPage
 	flow-children: down;
 	vertical-align: center;
 	horizontal-align: center;
-	margin-left: 680px;
-	width: 660px;
+	margin-left: 760px;
+	width: 800px;
 }
 
 #TreasureDetailsContents
 {
 	flow-children: down;
-	margin-left: 40px;
 	width: 100%;
 	transition-property: transform, opacity;
 	transition-duration: 0.25s;
@@ -589,12 +593,12 @@ DOTATreasureStickerPackDetailsPage
 
 .TreasureName
 {
-	font-size: 44px;
-	font-weight: semi-bold;
+	font-size: 40px;
 	overflow: squish;
-	line-height: 1.1;
+	line-height: 1.3;
 	color: whitesmoke;
-	text-shadow: 0px 0px 48px defaultColor&88;
+	text-shadow: 0px 2px 16px rgba(0, 0, 0, 0.6);
+	font-family: titleFont;
 }
 
 .StickerType
@@ -624,11 +628,6 @@ DOTATreasureStickerPackDetailsPage
 	visibility: visible;
 }
 
-#BuyStickersButton
-{
-	min-width: 140px;
-}
-
 #StickerChancesText
 {
 	width: 70%;
@@ -638,10 +637,8 @@ DOTATreasureStickerPackDetailsPage
 
 #OpenCapsuleContainer
 {
-	border-top: 1px solid rgba(255, 255, 255, 0.05);
-	padding-top: 20px;
-	opacity: 0;
-	transform: translateY(-20px);
+	flow-children: right;
+	visibility: collapse;
 	transition-property: opacity, transform;
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
@@ -649,19 +646,39 @@ DOTATreasureStickerPackDetailsPage
 
 .OwnsTreasures #OpenCapsuleContainer
 {
-	opacity: 1;
-	transform: none;
+	visibility: visible;
 }
 
 .OwnedCountLabel
 {
-	font-size: 24px;
-	padding: 8px 16px;
+	font-size: 20px;
+	margin-left: 12px;
 	color: white;
+	text-shadow: 0px 0px 12px rgba(124, 198, 255, 0.98);
+	animation-name: GlowOwnedCount;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+@keyframes 'GlowOwnedCount'
+{
+	0%
+	{
+		text-shadow: 0px 0px 12px rgba(124, 198, 255, 0.3);
+	}
+	
+	100%
+	{
+		text-shadow: 0px 0px 12px rgba(124, 198, 255, 0.98);
+	}
+	
 }
 
 #TreasurePurchaseRow
 {
+	flow-children: right;
+	margin-right: 24px;
 	visibility: collapse;
 }
 
@@ -683,6 +700,11 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 #QtySelector
 {
 	margin-right: 12px;
+}
+
+.PurchaseOpenRow
+{
+	flow-children: right;
 }
 
 #DetailedTreasureContentsClip
@@ -768,7 +790,7 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 {
 	width: 200px;
 	height: 200px;
-	margin: -4px;
+	margin: 0px -4px;
 }
 
 .StickerCountLarge .DetailedContentsItem:hover
@@ -1078,11 +1100,6 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 	visibility: collapse;
 }
 
-.ShowCollectedCount .StickerNumber
-{
-	visibility: visible;
-}
-
 .StickerNumber Label
 {
 	color: #ccc;
@@ -1121,5 +1138,91 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 		opacity: 1;
 	}
 	
+}
+
+#TreasureRecycleStatus
+{
+	width: 100%;
+	margin-top: 32px;
+	margin-right: 80px;
+	visibility: collapse;
+}
+
+.RecycleEnabled #TreasureRecycleStatus
+{
+	visibility: visible;
+}
+
+#RecycleButton
+{
+	margin-top: 12px;
+}
+
+#RecycleSelectedStickersButton
+{
+	visibility: collapse;
+}
+
+.RecycleStickerHeader
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: LightestGrey;
+	font-weight: semi-bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	visibility: collapse;
+}
+
+.RecycleContents .QualitySelector,.RecycleContents .CollectedCount
+{
+	visibility: collapse;
+}
+
+.RecycleContents #RecycleSelectedStickersButton,.RecycleContents .RecycleStickerHeader
+{
+	visibility: visible;
+}
+
+.RecycleControlsContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: -4px;
+	padding: 4px;
+	border-radius: 5px;
+}
+
+.RecycleControlsContainer Button
+{
+	vertical-align: center;
+}
+
+.RecycleControlsContainer Label
+{
+	vertical-align: center;
+	font-size: 16px;
+	margin-top: 2px;
+	color: LightestGrey;
+	text-shadow: 0px 2px 8px black;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 0px 8px;
+}
+
+DOTATreasureStickerPackDetailsPage.Season_MonsterHunter
+{
+	background-color: black;
+}
+
+DOTATreasureStickerPackDetailsPage.Season_MonsterHunter .StickerCapsuleBackgroundOverride
+{
+	background-image: url("s2r://panorama/images/events/monster_hunter/backgrounds/mountains_psd.vtex");
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
 }
 

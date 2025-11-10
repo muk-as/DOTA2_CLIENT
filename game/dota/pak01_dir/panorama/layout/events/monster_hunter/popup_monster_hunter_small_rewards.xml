@@ -1,0 +1,89 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/popup_monster_hunter_small_rewards.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="SprayReward">
+			<Panel class="AnyReward SprayReward" onmouseover="UIShowTitleTextTooltip(#DOTA_MonsterHunter_Reward_SeasonalSpray, &apos;{s:spray_text}&apos;)" onmouseout="UIHideTitleTextTooltip()">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="EmoticonReward">
+			<Panel class="AnyReward EmoticonReward" onmouseover="UIShowTitleTextTooltip(#DOTA_MonsterHunter_Reward_Emoticon, &apos;{s:emoticon_text}&apos;)" onmouseout="UIHideTitleTextTooltip()">
+				<DOTAEmoticon id="Emoticon" class="EmoticonIcon" />
+				<Image id="EmoticonRef" class="EmoticonIconRef" />
+				<Image id="EmoticonShadow" class="EmoticonIconShadow" />
+			</Panel>
+		</snippet>
+		<snippet name="UnlockTraderReward">
+			<Panel class="AnyReward UnlockTraderReward TraderReward" onmouseover="UIShowTextTooltip(&apos;#DOTA_MonsterHunter_HunterRankPopup_Tooltip_Trader&apos;)" onmouseout="UIHideTextTooltip()">
+				<Label class="MHTitleFont" text="#DOTA_MonsterHunter_HunterRankPopup_MaterialTrader" />
+				<Panel class="TraderIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="UnlockTradeRecipeReward">
+			<Panel class="AnyReward UnlockTradeRecipeReward TraderReward" onmouseover="UIShowTextTooltip(&apos;#DOTA_MonsterHunter_HunterRankPopup_Tooltip_TradeRecipe&apos;)" onmouseout="UIHideTextTooltip()">
+				<Label class="MHTitleFont" text="#DOTA_MonsterHunter_HunterRankPopup_MaterialRecipe" />
+				<Panel class="MHTitleFont TraderIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="HunterRankGroup">
+			<Panel class="HunterRankGroup">
+				<ProgressBar id="RankProgressBar" />
+				<Panel class="RankContents">
+					<Panel class="BehindBageShadow" />
+					<DOTAMonsterHunterRankBadge id="RankBadge" class="NoBackgroundEffect" suppress-tooltip="true" />
+					<Label class="RankText" text="{s:rank_name}" />
+					<Label class="RewardsLabel MHLabelFont Small" text="#DOTA_MonsterHunter_HunterRankPopup_Rewards" />
+					<Panel class="RewardsSection">
+						<Panel class="RewardsSubsection" id="EmoticonsList" />
+						<Panel class="RewardsSubsection" id="SpraysList" />
+						<Panel class="RewardsSubsection" id="MaterialsList" />
+						<Panel class="RewardsSubsection" id="SpecialList" />
+					</Panel>
+					<DOTAMonsterHunterButton class="ClaimButton" text="#DOTA_MonsterHunter_HunterRankPopup_ClaimRewards" id="ClaimRewardsButton" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterSmallRewardsPopup class="PopupPanel Hidden" allows_popups="1" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="MainContentsContainer">
+			<Panel class="MainContents">
+				<Image class="PopupTopLeftTexture" src="s2r://panorama/images/events/monster_hunter/backgrounds/popup_texture_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="PopupBottomRightTexture" src="s2r://panorama/images/events/monster_hunter/backgrounds/popup_texture_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="Contents">
+					<Panel class="InfoSection">
+						<Panel class="RankInfo">
+							<Panel class="TitleEmblemContainer Large">
+								<Panel class="MHEmblem Left" />
+								<Label class="Title MHTitleFont UltraLarge" text="#DOTA_MonsterHunter_HunterRank" />
+								<Panel class="MHEmblem Right" />
+							</Panel>
+							<Label class="MHDisplayFont NextLevelText ProgressionInfo" text="#DOTA_MonsterHunter_HunterRankPopup_NextLevel" />
+							<Panel class="XPRow">
+								<Label class="XPNumbers MHDisplayFont Large" text="#DOTA_MonsterHunter_HunterRankXP" html="true" />
+								<Panel class="XPNumbers InfoIcon" onmouseover="MonsterHunterShowXPTooltip()" onmouseout="MonsterHunterHideXPTooltip()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="RankGroups" />
+				</Panel>
+			</Panel>
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			</Panel>
+		</Panel>
+		<DOTAMonsterHunterRankBadge class="CurrentBadge" suppress-tooltip="true" />
+		<Panel class="DebugButtons HideBeforeTutorial">
+			<TextButton class="DebugPopupButton ButtonPrimary Small Magenta MainBranchOnly" unlocalized="true" text="Debug" onactivate="MonsterHunterShowDebugContextMenu()" />
+		</Panel>
+	</DOTAMonsterHunterSmallRewardsPopup>
+</root>

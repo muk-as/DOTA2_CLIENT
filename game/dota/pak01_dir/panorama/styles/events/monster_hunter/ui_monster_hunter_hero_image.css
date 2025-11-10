@@ -1,0 +1,412 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTAMonsterHunterHeroImage
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	transition-property: background-color, border;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+DOTAMonsterHunterHeroImage:not(.HideHeroName):hover,DOTAMonsterHunterHeroImage.OpensPopupOnClick:hover
+{
+	background-color: rgba(14, 9, 6, 0.6);
+	border: 1px solid rgba(255, 239, 222, 0.015);
+}
+
+DOTAMonsterHunterHeroImage:not(.HideHeroName):hover .ImageContainer,DOTAMonsterHunterHeroImage.OpensPopupOnClick:hover .ImageContainer
+{
+	transform: scale3d( 0.95, 0.95, 1 ) translateY( -1% );
+	brightness: 1.5;
+}
+
+DOTAMonsterHunterHeroImage.State_Complete.IsBook
+{
+	animation-name: BookBob;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+DOTAMonsterHunterHeroImage.State_Complete.IsBook:hover
+{
+	background-color: none;
+	border: 0px;
+}
+
+DOTAMonsterHunterHeroImage.State_Complete.IsBook .MonsterHeroName
+{
+	visibility: collapse;
+}
+
+@keyframes 'BookBob'
+{
+	0%
+	{
+		transform:translateY( 7px );
+	}
+	
+	100%
+	{
+		transform:translateY( 10px );
+	}
+	
+}
+
+.ImageContainer
+{
+	width: 100%;
+	height: width-percentage(100%);
+	transform: scale3d( 0.9, 0.9, 1 ) translateY( -1% );
+	transition-property: transform, brightness;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.UnknownHeroPortraitImage
+{
+	saturation: 0;
+	wash-color: #5e503b;
+	margin-top: 4%;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+}
+
+#PortraitImage
+{
+	img-shadow: ImgShadowLarge;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 1, rgba(255, 255, 255, 0) ), color-stop( 1, white ), to( white ) );
+	transition-property: opacity-brush, opacity;
+	transition-duration: 0.4s, 0.15s;
+}
+
+.CodexHeroDetailsPage #PortraitImage
+{
+	img-shadow: 0px 0px 14px #613702;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 1, rgba(255, 255, 255, 0) ), color-stop( 1, white ), to( white ) );
+	transition-property: opacity-brush, opacity;
+	transition-duration: 0.4s, 0.15s;
+}
+
+#PortraitImageSilhouette
+{
+	img-shadow: none;
+	saturation: 0;
+	wash-color: #5e503b;
+	texture-sampling: alpha-only;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+}
+
+.UnknownHeroPortraitImage,#PortraitImageSilhouette,#PortraitImage
+{
+	width: 100%;
+	height: width-percentage(100%);
+	opacity: 0;
+}
+
+.DisableAnimations .UnknownHeroPortraitImage,.DisableAnimations #PortraitImageSilhouette,.DisableAnimations #PortraitImage
+{
+	transition-duration: 0s;
+}
+
+.MonsterHeroName
+{
+	color: TextColorLighter&55;
+	horizontal-align: center;
+	vertical-align: bottom;
+	text-shadow: TextShadowSmall;
+	margin-bottom: 2px;
+	visibility: collapse;
+}
+
+.MonsterHeroName.Small
+{
+	font-size: 13px;
+}
+
+.RevealBorder
+{
+	width: 100%;
+	flow-children: down;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+	margin-top: -1px;
+	visibility: collapse;
+	transition-property: transform, opacity;
+	transition-duration: 0.4s, 0.1s;
+	transition-delay: 0s, 0.3s;
+	transform: translateY( 100% );
+}
+
+.DisableAnimations .RevealBorder
+{
+	transition-duration: 0s;
+	transition-delay: 0s;
+}
+
+.RevealBorder .BorderBright
+{
+	width: 100%;
+	height: 1px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+	background-color: rgb(201, 180, 145);
+}
+
+.RevealBorder .BorderShadow
+{
+	width: 100%;
+	height: 1px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+	background-color: rgb(0, 0, 0);
+}
+
+.State_Unknown .UnknownHeroPortraitImage
+{
+	opacity: 0.4;
+}
+
+.State_Seen #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Seen .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial1 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial1 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.89, rgba(255, 255, 255, 0) ), color-stop( 0.89, white ), to( white ) );
+}
+
+.State_Partial1 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 89% );
+}
+
+.State_Partial1 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial2 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial2 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.78, rgba(255, 255, 255, 0) ), color-stop( 0.78, white ), to( white ) );
+}
+
+.State_Partial2 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 78% );
+}
+
+.State_Partial2 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial3 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial3 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.66, rgba(255, 255, 255, 0) ), color-stop( 0.66, white ), to( white ) );
+}
+
+.State_Partial3 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 66% );
+}
+
+.State_Partial3 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial4 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial4 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.55, rgba(255, 255, 255, 0) ), color-stop( 0.55, white ), to( white ) );
+}
+
+.State_Partial4 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 55% );
+}
+
+.State_Partial4 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial5 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial5 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.44, rgba(255, 255, 255, 0) ), color-stop( 0.44, white ), to( white ) );
+}
+
+.State_Partial5 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 44% );
+}
+
+.State_Partial5 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial6 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial6 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.33, rgba(255, 255, 255, 0) ), color-stop( 0.33, white ), to( white ) );
+}
+
+.State_Partial6 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 33% );
+}
+
+.State_Partial6 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial7 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial7 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.22, rgba(255, 255, 255, 0) ), color-stop( 0.22, white ), to( white ) );
+}
+
+.State_Partial7 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 22% );
+}
+
+.State_Partial7 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial8 #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial8 #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.11, rgba(255, 255, 255, 0) ), color-stop( 0.11, white ), to( white ) );
+}
+
+.State_Partial8 .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 11% );
+}
+
+.State_Partial8 .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Partial_Half #PortraitImageSilhouette
+{
+	opacity: 0.7;
+}
+
+.State_Partial_Half #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( white ) );
+}
+
+.State_Partial_Half .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 50% );
+}
+
+.State_Partial_Half .MonsterHeroName
+{
+	visibility: visible;
+}
+
+.State_Partial_Half .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.State_Complete #PortraitImage
+{
+	opacity: 1;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0, rgba(255, 255, 255, 0) ), color-stop( 0, white ), to( white ) );
+}
+
+.State_Complete .RevealBorder
+{
+	visibility: visible;
+	transform: translateY( 0% );
+	opacity: 0;
+}
+
+.State_Complete .MonsterHeroName
+{
+	visibility: visible;
+	color: TextColorLightest&AA;
+}
+
+.State_Complete .UnknownHeroPortraitImage
+{
+	opacity: 0.0;
+}
+
+.HideHeroName .MonsterHeroName
+{
+	visibility: collapse;
+}
+

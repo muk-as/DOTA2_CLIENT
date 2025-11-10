@@ -1,0 +1,263 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/ui_monster_hunter_hero_image.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/popup_monster_hunter_hero_codex.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="MonsterHeroPortrait">
+			<Panel class="MonsterHeroPortrait">
+				<Panel class="NewGlow" />
+				<DOTAMonsterHunterHeroImage id="HeroImage" />
+				<Label class="NewBadge MHLabelFont Small" hittest="false" text="#DOTA_MonsterHunter_Codex_Entry_New" />
+				<Label class="ClaimableBadge MHLabelFont Small" hittest="false" text="#DOTA_MonsterHunter_Codex_Entry_Claimable" />
+				<Panel class="DebugControls">
+					<TextButton text="Clear" id="Clear" unlocalized="true" />
+					<TextButton text="+WinsAs" id="Stat1" unlocalized="true" />
+					<TextButton text="+Kills" id="Stat0" unlocalized="true" />
+					<TextButton text="+WinsWith" id="Stat2" unlocalized="true" />
+					<TextButton text="+LossesAs" id="Stat3" unlocalized="true" />
+					<TextButton text="+LossesWith" id="Stat4" unlocalized="true" />
+					<TextButton text="+TurboWinsAs" id="Stat5" unlocalized="true" />
+					<TextButton text="+TurboWinsWith" id="Stat6" unlocalized="true" />
+					<TextButton text="+TurboLossesAs" id="Stat7" unlocalized="true" />
+					<TextButton text="+TurboLossesWith" id="Stat8" unlocalized="true" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="CodexHeroList">
+			<Panel class="CodexHeroList" />
+		</snippet>
+		<snippet name="HeroDetailsMaterial">
+			<Panel class="HeroDetailsMaterial">
+				<DOTAMonsterHunterMaterial id="Material" />
+			</Panel>
+		</snippet>
+		<snippet name="AtlasPageLeft">
+			<Panel class="AtlasPageLeft">
+				<Image class="PageBackgroundImage" src="s2r://panorama/images/events/monster_hunter/artwork/book_page_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="FirstPageBookBackgroundImage" src="s2r://panorama/images/events/monster_hunter/artwork/book_inside_cover_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="SigilBackground" hittest="false" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="CodexHeroDetailsPage">
+					<Panel class="CodexHeroNameContainer" hittest="false" hittestchildren="false">
+						<Image class="Emblem Left" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" texturewidth="38px" textureheight="21px" scaling="stretch-to-fit-preserve-aspect" />
+						<Label class="CodexHeroName MHTitleFont ExtraLarge" text="{s:hero_name}" />
+						<Image class="Emblem Right" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" texturewidth="38px" textureheight="21px" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<DOTAMonsterHunterHeroImage id="HeroImage" class="HideHeroName DisableAnimations CodexDetails" />
+					<Panel class="PersonaSwitcher">
+						<Label selected="true" text="#DOTA_MonsterHunter_Codex_SwapBase" class="PersonaSwitcherOption MHLabelFont" group="PersonaSwitcher" id="PersonaSwitcherBase" onactivate="MonsterHunterCodexSelectPersona( false )" />
+						<Label text="#DOTA_MonsterHunter_Codex_SwapPersona" class="PersonaSwitcherOption MHLabelFont" group="PersonaSwitcher" id="PersonaSwitcherPersona" onactivate="MonsterHunterCodexSelectPersona( true )" />
+					</Panel>
+					<Panel id="CodexRewardsContainer">
+						<Panel class="MaterialsRewardsContainer">
+							<Panel class="TitleEmblemContainer Invert">
+								<Panel class="MHEmblem Left" />
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Materials" />
+								<Panel class="MHEmblem Right" />
+							</Panel>
+							<Label class="MaterialsDescription MHDisplayFont Small" text="#DOTA_MonsterHunter_Codex_Reward_Materials_Info" />
+							<Panel id="MaterialsList" />
+							<Panel class="Divider" />
+							<Label class="MaterialsClaimDescription MHBodyFont Medium" html="true" text="#DOTA_MonsterHunter_Codex_Reward_Materials_Claim_Info" />
+							<DOTAMonsterHunterButton id="ClaimMaterialRewardsButton" class="NoShadow" text="#DOTA_MonsterHunter_Codex_Reward_Materials_Claim" onactivate="MonsterHunterCodexClaimMaterialReward()" />
+							<Label class="MaterialsClaimedLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Claimed" />
+						</Panel>
+						<Panel class="StickerRewardsContainer">
+							<Panel class="TitleEmblemContainer Invert">
+								<Panel class="MHEmblem Left" />
+								<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Sticker" />
+								<Panel class="MHEmblem Right" />
+							</Panel>
+							<Panel class="StickerPreviewContainer">
+								<DOTAUIEconSetPreview id="StickerPreviewModel" itemdef="40037" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" onactivate="DOTAShowItemDefPage(40037)" />
+								<Label class="QuestionMark MHTitleFont Large" text="?" />
+							</Panel>
+							<Label class="StickerClaimDescription MHBodyFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Sticker_Claim_Info" />
+							<DOTAMonsterHunterButton id="ClaimStickerButton" class="NoShadow" text="#DOTA_MonsterHunter_Codex_Reward_Sticker_Claim" onactivate="MonsterHunterCodexClaimStickerReward()" />
+							<Label class="StickerClaimedLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Claimed" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="AtlasPageRight">
+			<Panel class="AtlasPageRight">
+				<Image class="PageBackgroundImage" src="s2r://panorama/images/events/monster_hunter/artwork/book_page_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="ForewordContents">
+					<Panel class="BorderContainer Outer">
+						<Panel class="BorderContainer Inner">
+							<Panel class="Section Title">
+								<Label text="#DOTA_MonsterHunter_HeroAtlas_Title_1" class="Subtitle PreTitle" />
+								<Label text="#DOTA_MonsterHunter_HeroAtlas_Title_2" class="Uppercase Title EvenWider" />
+								<Label text="#DOTA_MonsterHunter_HeroAtlas_Title_3" class="Subtitle" />
+								<Label text="#DOTA_MonsterHunter_HeroAtlas_Title_4" class="Subtitle SevenRealms" />
+								<Image class="Sigil" hittest="false" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel class="WideDivider" />
+							<Panel class="Section Description">
+								<Label class="Small Unimportant" html="true" text="#DOTA_MonsterHunter_HeroAtlas_LongDescription" />
+							</Panel>
+							<Panel class="MediumDivider Top" />
+							<Panel class="Section Authors">
+								<Label class="Small" text="#DOTA_MonsterHunter_HeroAtlas_Authors_1" />
+								<Label class="Medium Goodkind" text="#DOTA_MonsterHunter_HeroAtlas_Authors_2" />
+								<Label class="Small" text="#DOTA_MonsterHunter_HeroAtlas_Authors_3" />
+								<Label class="Small" text="#DOTA_MonsterHunter_HeroAtlas_Authors_4" />
+								<Panel class="BlankDivider" />
+								<Label class="Small" text="#DOTA_MonsterHunter_HeroAtlas_Authors_5" />
+								<Label class="Medium" text="#DOTA_MonsterHunter_HeroAtlas_Authors_6" />
+								<Label class="Small" text="#DOTA_MonsterHunter_HeroAtlas_Authors_7" />
+							</Panel>
+							<Panel class="ComicBookContainer" onactivate="MonsterHunterCodexShowComic()">
+								<Panel class="ComicBookCover">
+									<Image class="ComicBookCoverImage" src="s2r://panorama/images/events/monster_hunter/artwork/comic_book_cover_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Panel>
+								<DOTAMonsterHunterButton class="ShowComicButton" text="#DOTA_MonsterHunter_Codex_ViewComic" onactivate="MonsterHunterCodexShowComic()" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Image class="SigilBackground" hittest="false" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="CodexHeroDetailsPage">
+					<Panel class="TitleEmblemContainer Invert MatchStatsTitle">
+						<Panel class="MHEmblem Left" />
+						<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Codex_MatchStats" />
+						<Panel class="MHEmblem Right" />
+					</Panel>
+					<Panel class="CodexHeroStatsContainer">
+						<Panel class="HeroStat">
+							<Label class="HeroStatLabel MHLabelFont Small" text="#DOTA_MonsterHunter_Codex_Stat_Seen" />
+							<Label class="HeroStatValue MHTitleFont UltraLarge" text="{d:stat_seen}" />
+						</Panel>
+						<Panel class="StatDivider" />
+						<Panel class="HeroStat">
+							<Label class="HeroStatLabel MHLabelFont Small" text="#DOTA_MonsterHunter_Codex_Stat_Killed" />
+							<Label class="HeroStatValue MHTitleFont UltraLarge" text="{d:stat_killed}" />
+						</Panel>
+						<Panel class="StatDivider" />
+						<Panel class="HeroStat">
+							<Label class="HeroStatLabel MHLabelFont Small" text="#DOTA_MonsterHunter_Codex_Stat_Wins" />
+							<Label class="HeroStatValue MHTitleFont UltraLarge" text="{d:stat_win}" />
+						</Panel>
+					</Panel>
+					<Panel class="TitleEmblemContainer Invert">
+						<Panel class="MHEmblem Left" />
+						<Label class="Title MHTitleFont Medium" text="#DOTA_MonsterHunter_Codex_FieldNotes" />
+						<Panel class="MHEmblem Right" />
+					</Panel>
+					<Panel id="HeroFieldNotes" class="HeroDescriptionContainer">
+						<Panel class="EmptyNotes" />
+						<Label class="HeroDescription MHDisplayFont Medium" html="true" id="FieldNotesLabel" />
+						<Panel class="SignatureContainer">
+							<Panel id="FieldNotesSignature" />
+							<Label text="{s:signature_text}" />
+						</Panel>
+						<Label class="UnknownDescription MHDisplayFont" text="#DOTA_MonsterHunter_Codex_Entry_Unknown" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterHeroCodexPopup class="PopupPanel Hidden" allows_popups="1" popupbackground="blur" oncancel="MonsterHunterCodexClose()" onactivate="UIPopupButtonClicked()">
+		<AsyncDataPanel class="AsyncContents" state="{d:page_state}">
+			<Panel id="MainContents" class="AsyncSuccessContainer" onactivate="">
+				<Panel class="HeaderRegion">
+					<Panel class="TitleContainer">
+						<Panel class="TitleEmblemContainer Large">
+							<Panel class="MHEmblem Left" />
+							<Label class="Title MHTitleFont UltraLarge" text="#DOTA_MonsterHunter_HeroAtlas" />
+							<Panel class="MHEmblem Right" />
+						</Panel>
+					</Panel>
+					<Panel class="StatsContainer">
+						<Panel class="ClaimableStats Stat" onactivate="MonsterHunterCodexGoToNextClaimable()">
+							<Panel class="TopStat">
+								<Label class="MHTitleFont ExtraLarge" text="{d:codex_heroes_claimable}" />
+							</Panel>
+							<Label id="RewardClaimableText" class="StatLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_Codex_Reward_Claimable" />
+						</Panel>
+						<Panel class="CompleteStats Stat">
+							<Panel class="TopStat">
+								<Label class="MHTitleFont ExtraLarge" text="{d:codex_heroes_complete}" />
+								<Label class="MHTitleFont Medium" text="/ {d:codex_heroes_total}" />
+							</Panel>
+							<Label class="StatLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_HeroAtlas_EntriesComplete" />
+						</Panel>
+					</Panel>
+					<Panel id="SortToggleContainer">
+						<Label class="SortLabel MHLabelFont Medium" text="#DOTA_MonsterHunter_Codex_SortBy" />
+						<RadioButton class="" group="SortAtlas" text="#DOTA_MonsterHunter_Codex_SortBy_Completed" selected="true" onactivate="MonsterHunterCodexUpdateSort( 1 )" />
+						<RadioButton class="" group="SortAtlas" text="#DOTA_MonsterHunter_Codex_SortBy_Alphabetical" onactivate="MonsterHunterCodexUpdateSort( 0 )" />
+					</Panel>
+				</Panel>
+				<Panel class="CodexContainer" onactivate="">
+					<Panel class="CodexBackground" />
+					<Panel class="CodexBackgroundTexture" />
+					<Panel class="CodexContainerBorder" hittest="false" />
+					<Panel id="HeroPortraitListPages" />
+					<Panel class="CodexHeroListPaginationContainer">
+						<RadioButton class="CarouselDot" selected="true" id="CarouselDot0" />
+						<RadioButton class="CarouselDot" id="CarouselDot1" />
+						<RadioButton class="CarouselDot" id="CarouselDot2" />
+						<RadioButton class="CarouselDot" id="CarouselDot3" />
+						<RadioButton class="CarouselDot" id="CarouselDot4" />
+					</Panel>
+					<Panel class="ProgressionMechanicsContainer" onmouseover="UIShowTextTooltipStyled(&apos;#DOTA_MonsterHunter_Codex_Entry_Partial_Tip&apos;, &apos;HeroAtlasInstructions&apos;)" onmouseout="UIHideTextTooltip()">
+						<Panel class="ProgressionMechanicGroup">
+							<DOTAMonsterHunterHeroImage class="State_Partial_Half HideHeroName" codex_id="1" />
+							<Label class="MHBodyFont Small ProgressionValue" text="#DOTA_MonsterHunter_Codex_Entry_Partial" />
+						</Panel>
+						<Panel class="ProgressionMechanicGroup">
+							<DOTAMonsterHunterHeroImage class="State_Complete HideHeroName" codex_id="1" />
+							<Label class="MHBodyFont Small ProgressionValue" text="#DOTA_MonsterHunter_Codex_Entry_Complete" />
+						</Panel>
+					</Panel>
+					<Panel id="CloseButtonContainer">
+						<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+						<Panel class="CloseButtonBackgroundHover" hittest="false" />
+						<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+					</Panel>
+				</Panel>
+				<DOTAMonsterHunterButton class="ShowComicButton" text="#DOTA_MonsterHunter_Codex_ViewComic" onactivate="MonsterHunterCodexShowComic()" />
+				<Panel class="BookBackground">
+					<Panel class="Page Left">
+						<Image class="BookBackgroundImage" src="s2r://panorama/images/events/monster_hunter/artwork/book_inside_cover_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="Page Right">
+						<Image class="BookBackgroundImage" src="s2r://panorama/images/events/monster_hunter/artwork/book_inside_cover_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+				</Panel>
+				<Panel class="CodexHeroDetailsContainer" id="CodexHeroDetailsPageContainer" hittest="false">
+					<Panel class="Page Left" id="OldLeftPage" onactivate="" />
+					<Panel class="Page Right" id="OldRightPage" onactivate="" />
+					<Panel class="Page Right" id="RightPage" onactivate="" />
+					<Panel class="Page Left" id="LeftPage" onactivate="" />
+					<Panel class="CloseHeroPanelButton" onactivate="PlaySoundEffect( monsterhunter.heroatlas.close_entry ) MonsterHunterCodexShowHeroDetails( 0 )">
+						<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+					</Panel>
+				</Panel>
+				<Panel class="PrevPageButtonContainer" onactivate="">
+					<DOTAMonsterHunterButton id="PrevPageButton" class="CodexHeroListPaginationButton Large Circular" icon="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" disabled="true" onactivate="MonsterHunterCodexPrevPage()" />
+				</Panel>
+				<Panel class="NextPageButtonContainer" onactivate="">
+					<DOTAMonsterHunterButton id="NextPageButton" class="CodexHeroListPaginationButton Large Circular" icon="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" onactivate="MonsterHunterCodexNextPage()" />
+				</Panel>
+				<Panel class="DebugButtons MainOrStagingBranchOnly">
+					<ToggleButton id="ToggleDebug" text="Enable Debug" unlocalized="true" onactivate="MonsterHunterCodexToggleDebug()" />
+					<TextButton class="DebugPopupButton ButtonPrimary Small Magenta" text="Reset Codex State" unlocalized="true" onactivate="MonsterHunterCodexReset()" />
+				</Panel>
+			</Panel>
+			<Panel class="AsyncLoadingContainer">
+				<Label text="#DOTA_MonsterHunter_State_Loading" />
+				<Panel class="Spinner" />
+			</Panel>
+			<Panel class="AsyncFailureContainer">
+				<Label text="#DOTA_MonsterHunter_State_Error" />
+			</Panel>
+		</AsyncDataPanel>
+	</DOTAMonsterHunterHeroCodexPopup>
+</root>

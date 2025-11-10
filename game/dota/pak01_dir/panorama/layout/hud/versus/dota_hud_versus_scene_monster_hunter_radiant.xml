@@ -1,0 +1,39 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_shared.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_default_hero_scale.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_monster_hunter.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/hud/versus/dota_hud_versus_scene_shared.vts_c" />
+		<include src="s2r://panorama/scripts/hud/versus/dota_hud_versus_scene_monster_hunter.vts_c" />
+	</scripts>
+	<DOTAHudVersusScene>
+		<DOTAScenePanel id="VersusScene" map="scenes/versus/versus_mh_radiant" camera="versus_camera" light="versus_light" deferredalpha="false" pin-fov="vertical" renderdeferred="true" particleonly="false" />
+		<Panel id="FooterPanel" hittest="false" />
+		<Panel class="HeaderPanel">
+			<Label class="MHTitleFont InvestigationsTitle" text="Choose Your Quest" />
+			<Label class="InvestigationsSubtitle MHBodyFont Large" text="Hunt heroes and win the game to earn materials!" html="true" />
+		</Panel>
+		<DOTAMonsterHunterInvestigationsContainer id="MonsterHunterInvestigationsContainer" class="InVersusScreen" />
+		<Panel class="CountdownContainer">
+			<Label id="Countdown" class="MHBodyFont" text="{d:seconds}s" />
+		</Panel>
+		<Panel id="BlackOverlay" hittest="false" />
+		<Panel id="LoadingState">
+			<Panel class="Spinner" />
+			<Label text="#DOTA_VersusScreen_Loading" />
+		</Panel>
+		<Panel id="DebugButtons">
+			<TextButton class="ButtonBevel" onactivate="PlayScene()" text="Play Scene" unlocalized="true" />
+			<ToggleButton id="ToggleFadeOut" text="Fade Out When Complete" unlocalized="true" onactivate="ToggleFadeOutEnabled()" selected="true" />
+		</Panel>
+	</DOTAHudVersusScene>
+</root>

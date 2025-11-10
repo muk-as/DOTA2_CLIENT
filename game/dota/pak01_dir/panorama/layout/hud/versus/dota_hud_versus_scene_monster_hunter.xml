@@ -1,0 +1,58 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_shared.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_default_hero_scale.vcss_c" />
+		<include src="s2r://panorama/styles/hud/versus/dota_hud_versus_scene_monster_hunter.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/hud/versus/dota_hud_versus_scene_shared.vts_c" />
+		<include src="s2r://panorama/scripts/hud/versus/dota_hud_versus_scene_monster_hunter.vts_c" />
+	</scripts>
+	<DOTAHudVersusScene>
+		<DOTAScenePanel id="VersusSceneBackground" map="scenes/versus/versus_mh_radiant" camera="versus_camera" light="versus_light" deferredalpha="false" pin-fov="vertical" renderdeferred="true" particleonly="false" />
+		<DOTAScenePanel id="VersusScene" map="scenes/versus/versus_mh_radiant" camera="versus_camera_heroes" light="versus_light" deferredalpha="true" pin-fov="vertical" renderdeferred="true" particleonly="false" />
+		<Panel id="FooterPanel" hittest="false" />
+		<Panel class="SigilContainer">
+			<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="SigilOutline" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil_outline.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+		<Panel id="HeaderContainer">
+			<Panel class="TitleContainer">
+				<Panel class="ItemSetNameGlow" />
+				<Image class="TitleEmblem Top" />
+				<Panel class="TitleEmblemContainer Large">
+					<Panel class="MHEmblem Left" />
+					<Label class="Title MHTitleFont" text="Choose your hunt" />
+					<Panel class="MHEmblem Right" />
+				</Panel>
+				<Image class="TitleEmblem Bottom" />
+			</Panel>
+			<Label class="MHDisplayFont Small HuntDescription" text="Hunt heroes by killing them first or winning against them to earn materials!" />
+		</Panel>
+		<DOTAMonsterHunterInvestigationsContainer id="MonsterHunterInvestigationsContainer" class="InVersusScreen" />
+		<Panel id="CountdownContainer">
+			<Image class="CountdownEmblem" src="s2r://panorama/images/events/monster_hunter/artwork/timer_container.vsvg" texturewidth="456px" textureheight="64px" scaling="stretch-to-fit-preserve-aspect" />
+			<Label id="Countdown" class="MHDisplayFont" text="{d:seconds}s" />
+		</Panel>
+		<Panel id="BlackOverlay" hittest="false" />
+		<Panel id="LoadingState">
+			<Panel class="Spinner" />
+			<Label text="#DOTA_VersusScreen_Loading" />
+		</Panel>
+		<Panel id="DebugButtons">
+			<TextButton class="ButtonBevel" onactivate="PlayScene()" text="Play Scene" unlocalized="true" />
+			<ToggleButton id="ToggleFadeOut" text="Fade Out When Complete" unlocalized="true" onactivate="ToggleFadeOutEnabled()" selected="true" />
+			<Label class="ButtonBevel" text="Hero 1" unlocalized="true" onmouseover="Hero(1)" onmouseout="HeroReset()" />
+			<Label class="ButtonBevel" text="Hero 2" unlocalized="true" onmouseover="Hero(2)" onmouseout="HeroReset()" />
+			<Label class="ButtonBevel" text="Hero 3" unlocalized="true" onmouseover="Hero(3)" onmouseout="HeroReset()" />
+			<Label class="ButtonBevel" text="Reset" unlocalized="true" onmouseover="HeroReset()" />
+		</Panel>
+	</DOTAHudVersusScene>
+</root>
