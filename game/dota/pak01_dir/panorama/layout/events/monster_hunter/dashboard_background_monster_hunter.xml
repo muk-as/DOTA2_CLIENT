@@ -42,96 +42,101 @@
 					<Label class="EventDescription MHDisplayFont Large" text="#DOTA_MonsterHunter_EventDescription" />
 				</Panel>
 			</Panel>
-			<Panel id="CraftPalicoContainer">
-				<Panel class="CraftPalicoContents" onmouseover="$(&apos;#CraftPalicoContainer&apos;).AddClass(&apos;Hovered&apos;);" onmouseout="$(&apos;#CraftPalicoContainer&apos;).RemoveClass(&apos;Hovered&apos;);" onmouseactivate="MonsterHunterShowFreePalicoCrafting()">
-					<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
-					<Panel class="EdgeBorder Top" />
-					<Panel class="EdgeBorder Bottom" />
-					<Panel class="BackgroundBorder" hittest="false" />
-					<Panel class="Shimmer" hittest="false" />
-					<Panel class="CraftContainer">
-						<Label class="PalicoLabel MHDisplayFont" text="#DOTA_MonsterHunter_FrontPage_FreePalico" />
-						<DOTAMonsterHunterButton class="JoinButton GlowButton" text="#DOTA_MonsterHunter_FrontPage_ViewEvent" onmouseactivate="MonsterHunterShowFreePalicoCrafting();" />
+			<Panel class="EventUIContainer">
+				<Panel id="CraftPalicoContainer">
+					<Panel class="CraftPalicoContents" onmouseover="$(&apos;#CraftPalicoContainer&apos;).AddClass(&apos;Hovered&apos;);" onmouseout="$(&apos;#CraftPalicoContainer&apos;).RemoveClass(&apos;Hovered&apos;);" onmouseactivate="MonsterHunterShowFreePalicoCrafting()">
+						<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="EdgeBorder Top" />
+						<Panel class="EdgeBorder Bottom" />
+						<Panel class="BackgroundBorder" hittest="false" />
+						<Panel class="Shimmer" hittest="false" />
+						<Panel class="CraftContainer">
+							<Label class="PalicoLabel MHDisplayFont" text="#DOTA_MonsterHunter_FrontPage_FreePalico" />
+							<DOTAMonsterHunterButton class="JoinButton GlowButton" text="#DOTA_MonsterHunter_FrontPage_ViewEvent" onmouseactivate="MonsterHunterShowFreePalicoCrafting();" />
+						</Panel>
+					</Panel>
+					<Panel class="PalicoModelContainer" hittest="false" hittestchildren="false">
+						<DOTAParticleScenePanel class="PalicoModelFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<DOTAUIEconSetPreview class="PalicoModel" rotation="0" itemdef="34129" drawbackground="false" displaymode="loadout_small" require-composition-layer="true" suppress-intro-effects="true" />
 					</Panel>
 				</Panel>
-				<Panel class="PalicoModelContainer" hittest="false" hittestchildren="false">
-					<DOTAParticleScenePanel class="PalicoModelFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
-					<DOTAUIEconSetPreview class="PalicoModel" rotation="0" itemdef="34129" drawbackground="false" displaymode="loadout_small" require-composition-layer="true" suppress-intro-effects="true" />
+				<Panel class="WidgetsContainer">
+					<Panel class="WidgetsBackground" />
+					<Panel class="Widget" id="HunterRankWidget" onmouseactivate="MonsterHunterShowSmallRewardsPopup()">
+						<Panel class="WidgetContents">
+							<Panel class="WidgetBackground" />
+							<Panel class="WidgetProgressGlow" />
+							<DOTAMonsterHunterRankBadge id="MonsterHunterRankBadge" suppress-tooltip="true" class="RewardsPageBadge Small" />
+							<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_HunterRank" />
+							<Label class="WidgetStat MHLabelFont Medium" html="true" text="#DOTA_MonsterHunter_HunterRankXP" />
+							<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
+						</Panel>
+						<Panel class="LoadingInfo">
+							<Panel class="Spinner" />
+						</Panel>
+					</Panel>
+					<Panel class="WidgetDivider" />
+					<Panel class="Widget" id="CraftingWidget" onmouseactivate="DOTAShowMonsterHunterPage()">
+						<Panel class="WidgetContents">
+							<Panel class="WidgetBackground" />
+							<Panel class="WidgetProgressGlow" />
+							<Panel class="CraftingIcon">
+								<Panel class="HeaderIconBackground" />
+								<Panel class="HeaderIcon" />
+							</Panel>
+							<Panel class="CraftingHeroesList">
+								<Panel id="CraftingHero1" class="CraftingHero">
+									<DOTAHeroImage id="ItemHeroIcon1" heroimagestyle="icon" heroid="49" />
+									<Image id="ItemIcon1" />
+								</Panel>
+								<Panel id="CraftingHero2" class="CraftingHero">
+									<DOTAHeroImage id="ItemHeroIcon2" heroimagestyle="icon" heroid="48" />
+									<Image id="ItemIcon2" />
+								</Panel>
+								<Panel id="CraftingHero3" class="CraftingHero">
+									<DOTAHeroImage id="ItemHeroIcon3" heroimagestyle="icon" heroid="47" />
+									<Image id="ItemIcon3" />
+								</Panel>
+							</Panel>
+							<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_FrontPage_Crafting" />
+							<Label class="WidgetStat MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_Crafting_Info" />
+							<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_Crafting_Available" />
+						</Panel>
+						<Panel class="LoadingInfo">
+							<Panel class="Spinner" />
+						</Panel>
+					</Panel>
+					<Panel class="WidgetDivider" />
+					<Panel class="Widget" id="AtlasWidget" onmouseactivate="MonsterHunterShowHeroCodexPopup( 0 )">
+						<Panel class="WidgetContents">
+							<Panel class="WidgetBackground" />
+							<Panel class="WidgetProgressGlow" />
+							<Image class="CodexIcon" src="s2r://panorama/images/events/monster_hunter/artwork/codex_icon_small_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_HeroAtlas" />
+							<Label class="WidgetStat MHLabelFont Medium" text="#DOTA_MonsterHunter_HeroAtlas_DetailedUnlocked" />
+							<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
+						</Panel>
+						<Panel class="LoadingInfo">
+							<Panel class="Spinner" />
+						</Panel>
+					</Panel>
+					<Panel class="WidgetDivider" />
+					<Panel class="ViewEventButtonContainer">
+						<DOTAMonsterHunterButton class="ViewEventButton" text="#DOTA_MonsterHunter_FrontPage_ViewEvent" onmouseactivate="DOTAShowMonsterHunterPage()" />
+					</Panel>
+					<Panel class="WidgetsForeground" hittest="false" hittestchildren="false">
+						<Panel class="EdgeBorder Top" />
+						<Panel class="EdgeBorder Bottom" />
+						<Panel class="WidgetsBackgroundBorder" />
+					</Panel>
+				</Panel>
+				<Panel class="PurchaseNote" onactivate="MonsterHunterShowPremiumPopup()">
+					<Label class="PremiumText MHBodyFont" text="#DOTA_MonsterHunter_GetFullAccess" html="true" />
 				</Panel>
 			</Panel>
-			<Panel class="WidgetsContainer">
-				<Panel class="WidgetsBackground" />
-				<Panel class="Widget" id="HunterRankWidget" onmouseactivate="MonsterHunterShowSmallRewardsPopup()">
-					<Panel class="WidgetContents">
-						<Panel class="WidgetBackground" />
-						<Panel class="WidgetProgressGlow" />
-						<DOTAMonsterHunterRankBadge id="MonsterHunterRankBadge" suppress-tooltip="true" class="RewardsPageBadge Small" />
-						<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_HunterRank" />
-						<Label class="WidgetStat MHLabelFont Medium" html="true" text="#DOTA_MonsterHunter_HunterRankXP" />
-						<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
-					</Panel>
-					<Panel class="LoadingInfo">
-						<Panel class="Spinner" />
-					</Panel>
-				</Panel>
-				<Panel class="WidgetDivider" />
-				<Panel class="Widget" id="CraftingWidget" onmouseactivate="DOTAShowMonsterHunterPage()">
-					<Panel class="WidgetContents">
-						<Panel class="WidgetBackground" />
-						<Panel class="WidgetProgressGlow" />
-						<Panel class="CraftingIcon">
-							<Panel class="HeaderIconBackground" />
-							<Panel class="HeaderIcon" />
-						</Panel>
-						<Panel class="CraftingHeroesList">
-							<Panel id="CraftingHero1" class="CraftingHero">
-								<DOTAHeroImage id="ItemHeroIcon1" heroimagestyle="icon" heroid="49" />
-								<Image id="ItemIcon1" />
-							</Panel>
-							<Panel id="CraftingHero2" class="CraftingHero">
-								<DOTAHeroImage id="ItemHeroIcon2" heroimagestyle="icon" heroid="48" />
-								<Image id="ItemIcon2" />
-							</Panel>
-							<Panel id="CraftingHero3" class="CraftingHero">
-								<DOTAHeroImage id="ItemHeroIcon3" heroimagestyle="icon" heroid="47" />
-								<Image id="ItemIcon3" />
-							</Panel>
-						</Panel>
-						<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_FrontPage_Crafting" />
-						<Label class="WidgetStat MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_Crafting_Info" />
-						<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_Crafting_Available" />
-					</Panel>
-					<Panel class="LoadingInfo">
-						<Panel class="Spinner" />
-					</Panel>
-				</Panel>
-				<Panel class="WidgetDivider" />
-				<Panel class="Widget" id="AtlasWidget" onmouseactivate="MonsterHunterShowHeroCodexPopup( 0 )">
-					<Panel class="WidgetContents">
-						<Panel class="WidgetBackground" />
-						<Panel class="WidgetProgressGlow" />
-						<Image class="CodexIcon" src="s2r://panorama/images/events/monster_hunter/artwork/codex_icon_small_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
-						<Label class="WidgetTitle MHTitleFont" text="#DOTA_MonsterHunter_HeroAtlas" />
-						<Label class="WidgetStat MHLabelFont Medium" text="#DOTA_MonsterHunter_HeroAtlas_DetailedUnlocked" />
-						<Label class="ProgressBadge MHLabelFont Medium" text="#DOTA_MonsterHunter_FrontPage_ProgressAvailable" />
-					</Panel>
-					<Panel class="LoadingInfo">
-						<Panel class="Spinner" />
-					</Panel>
-				</Panel>
-				<Panel class="WidgetDivider" />
-				<Panel class="ViewEventButtonContainer">
-					<DOTAMonsterHunterButton class="ViewEventButton" text="#DOTA_MonsterHunter_FrontPage_ViewEvent" onmouseactivate="DOTAShowMonsterHunterPage()" />
-				</Panel>
-				<Panel class="WidgetsForeground" hittest="false" hittestchildren="false">
-					<Panel class="EdgeBorder Top" />
-					<Panel class="EdgeBorder Bottom" />
-					<Panel class="WidgetsBackgroundBorder" />
-				</Panel>
-			</Panel>
-			<TextButton id="SimulateButton" class="PopupButton Purple MainBranchOnly" text="Simulate" onmouseactivate="DOTAShowMonsterHunterInvestigationSimulator()" />
 			<Panel class="EventEndDate">
 				<Label class="MHBodyFont Small" html="true" text="#DOTA_MonsterHunter_EndDate" />
+				<Panel class="Pipe" />
 				<Label class="MHBodyFont Small" html="true" text="#DOTA_MonsterHunter_Copyright" />
 			</Panel>
 		</Panel>
