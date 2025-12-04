@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,12 +32,12 @@ namespace source2sdk
         public:
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( SavedState )"
             // metadata: MPropertyDescription "Name to assign to the saved state, the save state can be restored later using this name."
-            CUtlString m_StateName; // 0x50            
+            CUtlString m_StateName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_SaveState because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_SaveState) == 0x58);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_SaveState) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x70
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,33 +25,33 @@ namespace source2sdk
         struct InfoOverlayData_t
         {
         public:
-            matrix3x4_t m_transform; // 0x0            
-            float m_flWidth; // 0x30            
-            float m_flHeight; // 0x34            
-            float m_flDepth; // 0x38            
-            Vector2D m_vUVStart; // 0x3c            
-            Vector2D m_vUVEnd; // 0x44            
-            uint8_t _pad004c[0x4]; // 0x4c
+            matrix3x4_t m_transform; // 0x_            
+            float m_flWidth; // 0x_            
+            float m_flHeight; // 0x_            
+            float m_flDepth; // 0x_            
+            Vector2D m_vUVStart; // 0x_            
+            Vector2D m_vUVEnd; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_pMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_pMaterial;
-            char m_pMaterial[0x8]; // 0x50            
-            std::int32_t m_nRenderOrder; // 0x58            
-            Vector4D m_vTintColor; // 0x5c            
-            std::int32_t m_nSequenceOverride; // 0x6c            
+            char m_pMaterial[0x_]; // 0x_            
+            std::int32_t m_nRenderOrder; // 0x_            
+            Vector4D m_vTintColor; // 0x_            
+            std::int32_t m_nSequenceOverride; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_transform) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flWidth) == 0x30);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flHeight) == 0x34);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flDepth) == 0x38);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vUVStart) == 0x3c);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vUVEnd) == 0x44);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_pMaterial) == 0x50);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_nRenderOrder) == 0x58);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vTintColor) == 0x5c);
-        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_nSequenceOverride) == 0x6c);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_transform) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flWidth) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flHeight) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_flDepth) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vUVStart) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vUVEnd) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_pMaterial) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_nRenderOrder) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_vTintColor) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::InfoOverlayData_t, m_nSequenceOverride) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::InfoOverlayData_t) == 0x70);
+        static_assert(sizeof(source2sdk::worldrenderer::InfoOverlayData_t) == 0x_);
     };
 };

@@ -30,9 +30,9 @@ namespace source2sdk
     namespace particles
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x2c18
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -45,251 +45,251 @@ namespace source2sdk
             // metadata: MPropertyStartGroup "+Renderer Modifiers"
             // metadata: MPropertyFriendlyName "radius scale"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRadiusScale; // 0x210            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRadiusScale; // 0x_            
             // metadata: MPropertyFriendlyName "alpha scale"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAlphaScale; // 0x370            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAlphaScale; // 0x_            
             // metadata: MPropertyFriendlyName "rotation roll scale"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRollScale; // 0x4d0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRollScale; // 0x_            
             // metadata: MPropertyFriendlyName "per-particle alpha scale attribute"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAlpha2Field; // 0x630            
-            uint8_t _pad0634[0x4]; // 0x634
+            source2sdk::particles::ParticleAttributeIndex_t m_nAlpha2Field; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "color blend"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particleslib::CParticleCollectionRendererVecInput m_vecColorScale; // 0x638            
+            source2sdk::particleslib::CParticleCollectionRendererVecInput m_vecColorScale; // 0x_            
             // metadata: MPropertyFriendlyName "color blend type"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0xcb0            
+            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x_            
             // metadata: MPropertyStartGroup "+Material"
             // metadata: MPropertyFriendlyName "Shader"
             // metadata: MPropertySortPriority "600"
-            source2sdk::particles::SpriteCardShaderType_t m_nShaderType; // 0xcb4            
+            source2sdk::particles::SpriteCardShaderType_t m_nShaderType; // 0x_            
             // metadata: MPropertyFriendlyName "Custom Shader"
             // metadata: MPropertySuppressExpr "m_nShaderType != SPRITECARD_SHADER_CUSTOM"
             // metadata: MPropertySortPriority "600"
-            CUtlString m_strShaderOverride; // 0xcb8            
+            CUtlString m_strShaderOverride; // 0x_            
             // metadata: MPropertyFriendlyName "X offset of center point"
             // metadata: MPropertySortPriority "600"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flCenterXOffset; // 0xcc0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flCenterXOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Y offset of center point"
             // metadata: MPropertySortPriority "600"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flCenterYOffset; // 0xe20            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flCenterYOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Bump Strength"
             // metadata: MPropertySortPriority "600"
-            float m_flBumpStrength; // 0xf80            
+            float m_flBumpStrength; // 0x_            
             // metadata: MPropertyFriendlyName "Sheet Crop Behavior"
             // metadata: MPropertySortPriority "600"
-            source2sdk::particles::ParticleSequenceCropOverride_t m_nCropTextureOverride; // 0xf84            
+            source2sdk::particles::ParticleSequenceCropOverride_t m_nCropTextureOverride; // 0x_            
             // metadata: MPropertyFriendlyName "Textures"
             // metadata: MParticleRequireDefaultArrayEntry
             // metadata: MPropertyAutoExpandSelf
             // metadata: MPropertySortPriority "600"
             // m_vecTexturesInput has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::particles::TextureGroup_t> m_vecTexturesInput;
-            char m_vecTexturesInput[0x10]; // 0xf88            
+            char m_vecTexturesInput[0x_]; // 0x_            
             // metadata: MPropertyStartGroup "Animation"
             // metadata: MPropertyFriendlyName "animation rate"
             // metadata: MPropertyAttributeRange "0 5"
             // metadata: MPropertySortPriority "500"
-            float m_flAnimationRate; // 0xf98            
+            float m_flAnimationRate; // 0x_            
             // metadata: MPropertyFriendlyName "animation type"
             // metadata: MPropertySortPriority "500"
-            source2sdk::particles::AnimationType_t m_nAnimationType; // 0xf9c            
+            source2sdk::particles::AnimationType_t m_nAnimationType; // 0x_            
             // metadata: MPropertyFriendlyName "set animation value in FPS"
             // metadata: MPropertySortPriority "500"
-            bool m_bAnimateInFPS; // 0xfa0            
-            uint8_t _pad0fa1[0x7]; // 0xfa1
+            bool m_bAnimateInFPS; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "motion vector scale U"
             // metadata: MPropertySortPriority "500"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flMotionVectorScaleU; // 0xfa8            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flMotionVectorScaleU; // 0x_            
             // metadata: MPropertyFriendlyName "motion vector scale V"
             // metadata: MPropertySortPriority "500"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flMotionVectorScaleV; // 0x1108            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flMotionVectorScaleV; // 0x_            
             // metadata: MPropertyStartGroup "Lighting and Shadows"
             // metadata: MPropertyFriendlyName "self illum amount"
             // metadata: MPropertyAttributeRange "0 2"
             // metadata: MPropertySortPriority "400"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSelfIllumAmount; // 0x1268            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSelfIllumAmount; // 0x_            
             // metadata: MPropertyFriendlyName "diffuse lighting amount"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "400"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDiffuseAmount; // 0x13c8            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDiffuseAmount; // 0x_            
             // metadata: MPropertyFriendlyName "diffuse max contribution clamp"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "400"
             // metadata: MPropertySuppressExpr "mod != hlx"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDiffuseClamp; // 0x1528            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDiffuseClamp; // 0x_            
             // metadata: MPropertyFriendlyName "diffuse lighting origin Control Point"
             // metadata: MPropertySortPriority "400"
-            std::int32_t m_nLightingControlPoint; // 0x1688            
+            std::int32_t m_nLightingControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "self illum per-particle"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
             // metadata: MPropertySortPriority "400"
             // metadata: MPropertySuppressExpr "m_nOrientationType == PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL || m_nOrientationType == PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL"
-            source2sdk::particles::ParticleAttributeIndex_t m_nSelfIllumPerParticle; // 0x168c            
+            source2sdk::particles::ParticleAttributeIndex_t m_nSelfIllumPerParticle; // 0x_            
             // metadata: MPropertyStartGroup "+Color and alpha adjustments"
             // metadata: MPropertyFriendlyName "output blend mode"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particles::ParticleOutputBlendMode_t m_nOutputBlendMode; // 0x1690            
+            source2sdk::particles::ParticleOutputBlendMode_t m_nOutputBlendMode; // 0x_            
             // metadata: MPropertyFriendlyName "Gamma-correct vertex colors"
             // metadata: MPropertySortPriority "300"
-            bool m_bGammaCorrectVertexColors; // 0x1694            
+            bool m_bGammaCorrectVertexColors; // 0x_            
             // metadata: MPropertyFriendlyName "Saturate color pre alphablend"
             // metadata: MPropertySortPriority "300"
             // metadata: MPropertySuppressExpr "mod != dota && mod != hlx"
-            bool m_bSaturateColorPreAlphaBlend; // 0x1695            
-            uint8_t _pad1696[0x2]; // 0x1696
+            bool m_bSaturateColorPreAlphaBlend; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "add self amount over alphablend"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAddSelfAmount; // 0x1698            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAddSelfAmount; // 0x_            
             // metadata: MPropertyFriendlyName "desaturation amount"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDesaturation; // 0x17f8            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDesaturation; // 0x_            
             // metadata: MPropertyFriendlyName "overbright factor"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flOverbrightFactor; // 0x1958            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flOverbrightFactor; // 0x_            
             // metadata: MPropertyFriendlyName "HSV Shift Control Point"
             // metadata: MPropertySortPriority "300"
-            std::int32_t m_nHSVShiftControlPoint; // 0x1ab8            
+            std::int32_t m_nHSVShiftControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "Apply fog to particle"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particles::ParticleFogType_t m_nFogType; // 0x1abc            
+            source2sdk::particles::ParticleFogType_t m_nFogType; // 0x_            
             // metadata: MPropertyFriendlyName "Fog Scale"
             // metadata: MPropertySortPriority "300"
             // metadata: MPropertySuppressExpr "mod != hlx"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFogAmount; // 0x1ac0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFogAmount; // 0x_            
             // metadata: MPropertyFriendlyName "Apply fog of war to color"
             // metadata: MPropertySortPriority "300"
             // metadata: MPropertySuppressExpr "mod != dota"
-            bool m_bTintByFOW; // 0x1c20            
+            bool m_bTintByFOW; // 0x_            
             // metadata: MPropertyFriendlyName "Apply global light to color"
             // metadata: MPropertySortPriority "300"
             // metadata: MPropertySuppressExpr "mod != dota"
-            bool m_bTintByGlobalLight; // 0x1c21            
-            uint8_t _pad1c22[0x2]; // 0x1c22
+            bool m_bTintByGlobalLight; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "Color and alpha adjustments/Alpha Reference"
             // metadata: MPropertyFriendlyName "alpha reference"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particles::SpriteCardPerParticleScale_t m_nPerParticleAlphaReference; // 0x1c24            
+            source2sdk::particles::SpriteCardPerParticleScale_t m_nPerParticleAlphaReference; // 0x_            
             // metadata: MPropertyFriendlyName "alpha reference window size"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particles::SpriteCardPerParticleScale_t m_nPerParticleAlphaRefWindow; // 0x1c28            
+            source2sdk::particles::SpriteCardPerParticleScale_t m_nPerParticleAlphaRefWindow; // 0x_            
             // metadata: MPropertyFriendlyName "alpha reference type"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particles::ParticleAlphaReferenceType_t m_nAlphaReferenceType; // 0x1c2c            
+            source2sdk::particles::ParticleAlphaReferenceType_t m_nAlphaReferenceType; // 0x_            
             // metadata: MPropertyFriendlyName "alpha reference softness"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAlphaReferenceSoftness; // 0x1c30            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flAlphaReferenceSoftness; // 0x_            
             // metadata: MPropertyFriendlyName "source alpha value to map to alpha of zero"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSourceAlphaValueToMapToZero; // 0x1d90            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSourceAlphaValueToMapToZero; // 0x_            
             // metadata: MPropertyFriendlyName "source alpha value to map to alpha of 1"
             // metadata: MPropertyAttributeRange "0 1"
             // metadata: MPropertySortPriority "300"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSourceAlphaValueToMapToOne; // 0x1ef0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flSourceAlphaValueToMapToOne; // 0x_            
             // metadata: MPropertyStartGroup "Refraction"
             // metadata: MPropertyFriendlyName "refract background"
             // metadata: MPropertySortPriority "200"
-            bool m_bRefract; // 0x2050            
+            bool m_bRefract; // 0x_            
             // metadata: MPropertyFriendlyName "refract draws opaque - alpha scales refraction"
             // metadata: MPropertySortPriority "200"
             // metadata: MPropertySuppressExpr "!m_bRefract"
-            bool m_bRefractSolid; // 0x2051            
-            uint8_t _pad2052[0x6]; // 0x2052
+            bool m_bRefractSolid; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "refract amount"
             // metadata: MPropertyAttributeRange "-2 2"
             // metadata: MPropertySortPriority "200"
             // metadata: MPropertySuppressExpr "!m_bRefract"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRefractAmount; // 0x2058            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flRefractAmount; // 0x_            
             // metadata: MPropertyFriendlyName "refract blur radius"
             // metadata: MPropertySortPriority "200"
             // metadata: MPropertySuppressExpr "!m_bRefract"
-            std::int32_t m_nRefractBlurRadius; // 0x21b8            
+            std::int32_t m_nRefractBlurRadius; // 0x_            
             // metadata: MPropertyFriendlyName "refract blur type"
             // metadata: MPropertySortPriority "200"
             // metadata: MPropertySuppressExpr "!m_bRefract"
-            source2sdk::particles::BlurFilterType_t m_nRefractBlurType; // 0x21bc            
+            source2sdk::particles::BlurFilterType_t m_nRefractBlurType; // 0x_            
             // metadata: MPropertyStartGroup
             // metadata: MPropertyFriendlyName "Only Render in effects bloom pass"
             // metadata: MPropertySortPriority "1100"
-            bool m_bOnlyRenderInEffectsBloomPass; // 0x21c0            
+            bool m_bOnlyRenderInEffectsBloomPass; // 0x_            
             // metadata: MPropertyFriendlyName "Only Render in effects water pass"
             // metadata: MPropertySortPriority "1050"
             // metadata: MPropertySuppressExpr "mod != csgo"
-            bool m_bOnlyRenderInEffectsWaterPass; // 0x21c1            
+            bool m_bOnlyRenderInEffectsWaterPass; // 0x_            
             // metadata: MPropertyFriendlyName "Use Mixed Resolution Rendering"
             // metadata: MPropertySortPriority "1200"
-            bool m_bUseMixedResolutionRendering; // 0x21c2            
+            bool m_bUseMixedResolutionRendering; // 0x_            
             // metadata: MPropertyFriendlyName "Only Render in effects game overlay pass"
             // metadata: MPropertySortPriority "1210"
             // metadata: MPropertySuppressExpr "mod != csgo"
-            bool m_bOnlyRenderInEffecsGameOverlay; // 0x21c3            
+            bool m_bOnlyRenderInEffecsGameOverlay; // 0x_            
             // metadata: MPropertyStartGroup "Stencil"
             // metadata: MPropertyFriendlyName "stencil test ID"
             // metadata: MPropertySortPriority "0"
-            char m_stencilTestID[128]; // 0x21c4            
+            char m_stencilTestID[128]; // 0x_            
             // metadata: MPropertyFriendlyName "only write where stencil is NOT stencil test ID"
             // metadata: MPropertySortPriority "0"
-            bool m_bStencilTestExclude; // 0x2244            
+            bool m_bStencilTestExclude; // 0x_            
             // metadata: MPropertyFriendlyName "stencil write ID"
             // metadata: MPropertySortPriority "0"
-            char m_stencilWriteID[128]; // 0x2245            
+            char m_stencilWriteID[128]; // 0x_            
             // metadata: MPropertyFriendlyName "write stencil on z-buffer test success"
             // metadata: MPropertySortPriority "0"
-            bool m_bWriteStencilOnDepthPass; // 0x22c5            
+            bool m_bWriteStencilOnDepthPass; // 0x_            
             // metadata: MPropertyFriendlyName "write stencil on z-buffer test failure"
             // metadata: MPropertySortPriority "0"
-            bool m_bWriteStencilOnDepthFail; // 0x22c6            
+            bool m_bWriteStencilOnDepthFail; // 0x_            
             // metadata: MPropertyStartGroup "Depth buffer control and effects"
             // metadata: MPropertyFriendlyName "reverse z-buffer test"
             // metadata: MPropertySortPriority "900"
-            bool m_bReverseZBuffering; // 0x22c7            
+            bool m_bReverseZBuffering; // 0x_            
             // metadata: MPropertyFriendlyName "disable z-buffer test"
             // metadata: MPropertySortPriority "900"
-            bool m_bDisableZBuffering; // 0x22c8            
-            uint8_t _pad22c9[0x3]; // 0x22c9
+            bool m_bDisableZBuffering; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Depth feathering mode"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particles::ParticleDepthFeatheringMode_t m_nFeatheringMode; // 0x22cc            
+            source2sdk::particles::ParticleDepthFeatheringMode_t m_nFeatheringMode; // 0x_            
             // metadata: MPropertyFriendlyName "particle feathering closest distance to surface"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringMinDist; // 0x22d0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringMinDist; // 0x_            
             // metadata: MPropertyFriendlyName "particle feathering farthest distance to surface"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringMaxDist; // 0x2430            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringMaxDist; // 0x_            
             // metadata: MPropertyFriendlyName "particle feathering alpha filter"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringFilter; // 0x2590            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringFilter; // 0x_            
             // metadata: MPropertyFriendlyName "particle feathering depthmap layer filter"
             // metadata: MPropertySortPriority "900"
             // metadata: MPropertySuppressExpr "mod != hlx"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringDepthMapFilter; // 0x26f0            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flFeatheringDepthMapFilter; // 0x_            
             // metadata: MPropertyFriendlyName "depth comparison bias"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDepthBias; // 0x2850            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flDepthBias; // 0x_            
             // metadata: MPropertyFriendlyName "Sort Method"
             // metadata: MPropertySortPriority "900"
-            source2sdk::particles::ParticleSortingChoiceList_t m_nSortMethod; // 0x29b0            
+            source2sdk::particles::ParticleSortingChoiceList_t m_nSortMethod; // 0x_            
             // metadata: MPropertyStartGroup "Animation"
             // metadata: MPropertyFriendlyName "blend sequence animation frames"
             // metadata: MPropertySortPriority "500"
-            bool m_bBlendFramesSeq0; // 0x29b4            
+            bool m_bBlendFramesSeq0; // 0x_            
             // metadata: MPropertyFriendlyName "use max-luminance blending for sequence"
             // metadata: MPropertySortPriority "500"
             // metadata: MPropertySuppressExpr "!m_bBlendFramesSeq0"
-            bool m_bMaxLuminanceBlendingSequence0; // 0x29b5            
-            uint8_t _pad29b6[0x262];
+            bool m_bMaxLuminanceBlendingSequence0; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseRendererSource2 because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::CBaseRendererSource2) == 0x2c18);
+        static_assert(sizeof(source2sdk::particles::CBaseRendererSource2) == 0x_);
     };
 };

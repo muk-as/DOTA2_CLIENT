@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 15
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAScriptInventorySlot_t : std::uint32_t
         {
             DOTA_ITEM_SLOT_1 = 0x0,

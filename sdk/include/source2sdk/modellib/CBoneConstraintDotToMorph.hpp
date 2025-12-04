@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,16 +26,16 @@ namespace source2sdk
         class CBoneConstraintDotToMorph : public source2sdk::modellib::CBoneConstraintBase
         {
         public:
-            CUtlString m_sBoneName; // 0x20            
-            CUtlString m_sTargetBoneName; // 0x28            
-            CUtlString m_sMorphChannelName; // 0x30            
-            float m_flRemap[4]; // 0x38            
-            uint8_t _pad0048[0x10];
+            CUtlString m_sBoneName; // 0x_            
+            CUtlString m_sTargetBoneName; // 0x_            
+            CUtlString m_sMorphChannelName; // 0x_            
+            float m_flRemap[4]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBoneConstraintDotToMorph because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CBoneConstraintDotToMorph) == 0x58);
+        static_assert(sizeof(source2sdk::modellib::CBoneConstraintDotToMorph) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EPrivateCoachingSessionState : std::uint32_t
         {
             k_ePrivateCoachingSessionState_Invalid = 0x0,

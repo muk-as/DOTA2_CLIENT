@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Muerta_Revenant_HealingThinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float hit_radius; // 0x1878            
-            float dead_zone_distance; // 0x187c            
+            float hit_radius; // 0x_            
+            float dead_zone_distance; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Muerta_Revenant_HealingThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Muerta_Revenant_HealingThinker) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Muerta_Revenant_HealingThinker) == 0x_);
     };
 };

@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,21 +29,21 @@ namespace source2sdk
         public:
             // m_Instructions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::pulse_runtime_lib::PGDInstruction_t> m_Instructions;
-            char m_Instructions[0x10]; // 0x0            
+            char m_Instructions[0x_]; // 0x_            
             // m_Registers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::pulse_runtime_lib::CPulse_RegisterInfo> m_Registers;
-            char m_Registers[0x10]; // 0x10            
+            char m_Registers[0x_]; // 0x_            
             // m_InstructionEditorIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::pulse_runtime_lib::PulseDocNodeID_t> m_InstructionEditorIDs;
-            char m_InstructionEditorIDs[0x10]; // 0x20            
-            uint8_t _pad0030[0x28];
+            char m_InstructionEditorIDs[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Instructions) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Registers) == 0x10);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_InstructionEditorIDs) == 0x20);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Instructions) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Registers) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_InstructionEditorIDs) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_Chunk) == 0x58);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_Chunk) == 0x_);
     };
 };

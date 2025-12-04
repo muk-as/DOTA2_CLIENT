@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class CNmEventConsumerAttributes : public source2sdk::client::CNmEventConsumer
         {
         public:
-            uint8_t _pad0010[0x28];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CNmEventConsumerAttributes) == 0x38);
+        static_assert(sizeof(source2sdk::client::CNmEventConsumerAttributes) == 0x_);
     };
 };

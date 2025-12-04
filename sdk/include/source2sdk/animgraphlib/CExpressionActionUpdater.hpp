@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,15 +29,15 @@ namespace source2sdk
         class CExpressionActionUpdater : public source2sdk::animgraphlib::CAnimActionUpdater
         {
         public:
-            source2sdk::animgraphlib::CAnimParamHandle m_hParam; // 0x18            
-            source2sdk::animgraphlib::AnimParamType_t m_eParamType; // 0x1a            
-            uint8_t _pad001b[0x1]; // 0x1b
-            source2sdk::modellib::AnimScriptHandle m_hScript; // 0x1c            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParam; // 0x_            
+            source2sdk::animgraphlib::AnimParamType_t m_eParamType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::modellib::AnimScriptHandle m_hScript; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CExpressionActionUpdater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CExpressionActionUpdater) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CExpressionActionUpdater) == 0x_);
     };
 };

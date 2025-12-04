@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAPostGameLayout_t : std::uint32_t
         {
             DOTA_POST_GAME_LAYOUT_DOUBLE_COLUMN = 0x0,

@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,20 +29,20 @@ namespace source2sdk
         public:
             // m_skeleton has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmSkeleton> m_skeleton;
-            char m_skeleton[0x8]; // 0x0            
+            char m_skeleton[0x_]; // 0x_            
             // m_vecBodies has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animlib::CNmIKBody> m_vecBodies;
-            char m_vecBodies[0x18]; // 0x8            
+            char m_vecBodies[0x_]; // 0x_            
             // m_vecJoints has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animlib::CNmIKJoint> m_vecJoints;
-            char m_vecJoints[0x18]; // 0x20            
+            char m_vecJoints[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_skeleton) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_vecBodies) == 0x8);
-        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_vecJoints) == 0x20);
+        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_skeleton) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_vecBodies) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKRig, m_vecJoints) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmIKRig) == 0x38);
+        static_assert(sizeof(source2sdk::animlib::CNmIKRig) == 0x_);
     };
 };

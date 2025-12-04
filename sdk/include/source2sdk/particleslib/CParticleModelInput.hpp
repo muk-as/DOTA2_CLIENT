@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,16 +30,16 @@ namespace source2sdk
         class CParticleModelInput : public source2sdk::particleslib::CParticleInput
         {
         public:
-            source2sdk::particleslib::ParticleModelType_t m_nType; // 0x10            
-            uint8_t _pad0014[0x4]; // 0x14
-            CParticleNamedValueRef m_NamedValue; // 0x18            
-            std::int32_t m_nControlPoint; // 0x58            
-            uint8_t _pad005c[0x4];
+            source2sdk::particleslib::ParticleModelType_t m_nType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CParticleNamedValueRef m_NamedValue; // 0x_            
+            std::int32_t m_nControlPoint; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CParticleModelInput because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particleslib::CParticleModelInput) == 0x60);
+        static_assert(sizeof(source2sdk::particleslib::CParticleModelInput) == 0x_);
     };
 };

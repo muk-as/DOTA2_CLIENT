@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x100
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,24 +29,24 @@ namespace source2sdk
         class CStateMachineUpdateNode : public source2sdk::animgraphlib::CAnimUpdateNodeBase
         {
         public:
-            uint8_t _pad0058[0x18]; // 0x58
-            source2sdk::animgraphlib::CAnimStateMachineUpdater m_stateMachine; // 0x70            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimStateMachineUpdater m_stateMachine; // 0x_            
             // m_stateData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CStateNodeStateData> m_stateData;
-            char m_stateData[0x18]; // 0xc8            
+            char m_stateData[0x_]; // 0x_            
             // m_transitionData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CStateNodeTransitionData> m_transitionData;
-            char m_transitionData[0x18]; // 0xe0            
-            uint8_t _pad00f8[0x4]; // 0xf8
-            bool m_bBlockWaningTags; // 0xfc            
-            bool m_bLockStateWhenWaning; // 0xfd            
-            bool m_bResetWhenActivated; // 0xfe            
-            uint8_t _pad00ff[0x1];
+            char m_transitionData[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bBlockWaningTags; // 0x_            
+            bool m_bLockStateWhenWaning; // 0x_            
+            bool m_bResetWhenActivated; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CStateMachineUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CStateMachineUpdateNode) == 0x100);
+        static_assert(sizeof(source2sdk::animgraphlib::CStateMachineUpdateNode) == 0x_);
     };
 };

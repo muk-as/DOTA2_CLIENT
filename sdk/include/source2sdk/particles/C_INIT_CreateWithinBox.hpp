@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xed0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,25 +30,25 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "min"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecMin; // 0x1c8            
+            source2sdk::particleslib::CPerParticleVecInput m_vecMin; // 0x_            
             // metadata: MPropertyFriendlyName "max"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecMax; // 0x840            
+            source2sdk::particleslib::CPerParticleVecInput m_vecMax; // 0x_            
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0xeb8            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "use local space"
-            bool m_bLocalSpace; // 0xebc            
-            uint8_t _pad0ebd[0x3]; // 0xebd
+            bool m_bLocalSpace; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Random number generator controls"
-            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0xec0            
+            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0x_            
             // metadata: MPropertyFriendlyName "use new code"
-            bool m_bUseNewCode; // 0xec8            
-            uint8_t _pad0ec9[0x7];
+            bool m_bUseNewCode; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateWithinBox because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateWithinBox) == 0xed0);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateWithinBox) == 0x_);
     };
 };

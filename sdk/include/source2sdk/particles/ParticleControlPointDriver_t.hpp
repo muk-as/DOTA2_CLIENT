@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,22 +25,22 @@ namespace source2sdk
         struct ParticleControlPointDriver_t
         {
         public:
-            std::int32_t m_iControlPoint; // 0x0            
-            source2sdk::animationsystem::ParticleAttachment_t m_iAttachType; // 0x4            
-            CUtlString m_attachmentName; // 0x8            
-            Vector m_vecOffset; // 0x10            
-            QAngle m_angOffset; // 0x1c            
-            CUtlString m_entityName; // 0x28            
+            std::int32_t m_iControlPoint; // 0x_            
+            source2sdk::animationsystem::ParticleAttachment_t m_iAttachType; // 0x_            
+            CUtlString m_attachmentName; // 0x_            
+            Vector m_vecOffset; // 0x_            
+            QAngle m_angOffset; // 0x_            
+            CUtlString m_entityName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_iControlPoint) == 0x0);
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_iAttachType) == 0x4);
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_attachmentName) == 0x8);
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_vecOffset) == 0x10);
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_angOffset) == 0x1c);
-        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_entityName) == 0x28);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_iControlPoint) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_iAttachType) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_attachmentName) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_vecOffset) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_angOffset) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleControlPointDriver_t, m_entityName) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::ParticleControlPointDriver_t) == 0x30);
+        static_assert(sizeof(source2sdk::particles::ParticleControlPointDriver_t) == 0x_);
     };
 };

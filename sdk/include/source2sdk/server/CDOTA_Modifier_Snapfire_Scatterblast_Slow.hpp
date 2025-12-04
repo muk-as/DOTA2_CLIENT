@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Snapfire_Scatterblast_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bIsPointBlank; // 0x1878            
-            uint8_t _pad1879[0x3]; // 0x1879
-            std::int32_t movement_slow_pct; // 0x187c            
-            std::int32_t attack_slow_pct; // 0x1880            
-            std::int32_t point_blank_dmg_bonus_pct; // 0x1884            
+            bool m_bIsPointBlank; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t movement_slow_pct; // 0x_            
+            std::int32_t attack_slow_pct; // 0x_            
+            std::int32_t point_blank_dmg_bonus_pct; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Snapfire_Scatterblast_Slow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Snapfire_Scatterblast_Slow) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Snapfire_Scatterblast_Slow) == 0x_);
     };
 };

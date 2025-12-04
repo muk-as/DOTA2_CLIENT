@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x600
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -38,30 +38,30 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantCheers; // 0x5e8            
+            std::int16_t m_nRadiantCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantBronzeCheers; // 0x5ea            
+            std::int16_t m_nRadiantBronzeCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantSilverCheers; // 0x5ec            
+            std::int16_t m_nRadiantSilverCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantGoldCheers; // 0x5ee            
+            std::int16_t m_nRadiantGoldCheers; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x5f0            
+            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireCheers; // 0x5f4            
+            std::int16_t m_nDireCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireBronzeCheers; // 0x5f6            
+            std::int16_t m_nDireBronzeCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireSilverCheers; // 0x5f8            
+            std::int16_t m_nDireSilverCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireGoldCheers; // 0x5fa            
+            std::int16_t m_nDireGoldCheers; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x5fc            
+            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAAppCheers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAAppCheers) == 0x600);
+        static_assert(sizeof(source2sdk::client::C_DOTAAppCheers) == 0x_);
     };
 };

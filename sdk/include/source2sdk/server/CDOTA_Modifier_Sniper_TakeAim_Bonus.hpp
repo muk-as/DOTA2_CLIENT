@@ -17,27 +17,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Sniper_TakeAim_Bonus : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t slow; // 0x1878            
-            std::int32_t active_attack_range_bonus; // 0x187c            
-            std::int32_t does_root; // 0x1880            
-            bool no_reveal; // 0x1884            
-            uint8_t _pad1885[0x3]; // 0x1885
-            std::int32_t bonus_armor; // 0x1888            
-            std::int32_t attack_speed; // 0x188c            
-            float bonus_vision; // 0x1890            
-            float view_restrict; // 0x1894            
-            uint8_t _pad1898[0x18];
+            std::int32_t slow; // 0x_            
+            std::int32_t active_attack_range_bonus; // 0x_            
+            std::int32_t does_root; // 0x_            
+            bool no_reveal; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t bonus_armor; // 0x_            
+            std::int32_t attack_speed; // 0x_            
+            float bonus_vision; // 0x_            
+            float view_restrict; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Sniper_TakeAim_Bonus because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sniper_TakeAim_Bonus) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sniper_TakeAim_Bonus) == 0x_);
     };
 };

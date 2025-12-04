@@ -21,9 +21,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkOverride "m_baseLayer.m_hSequence"
@@ -38,13 +38,13 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "baseAnimBaseLayerChanged"
-            source2sdk::client::CNetworkedSequenceOperation m_baseLayer; // 0x10            
-            bool m_bSequenceFinished; // 0x38            
-            uint8_t _pad0039[0x3]; // 0x39
-            float m_flGroundSpeed; // 0x3c            
-            float m_flLastEventCycle; // 0x40            
-            source2sdk::entity2::GameTime_t m_flLastEventAnimTime; // 0x44            
-            float m_flSoundSyncTime; // 0x48            
+            source2sdk::client::CNetworkedSequenceOperation m_baseLayer; // 0x_            
+            bool m_bSequenceFinished; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flGroundSpeed; // 0x_            
+            float m_flLastEventCycle; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastEventAnimTime; // 0x_            
+            float m_flSoundSyncTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "0,000000"
@@ -52,46 +52,46 @@ namespace source2sdk
             // metadata: MNetworkEncodeFlags "8"
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkChangeCallback "playbackRateChanged"
-            CNetworkedQuantizedFloat m_flPlaybackRate; // 0x4c            
-            source2sdk::entity2::GameTime_t m_flPrevAnimTime; // 0x54            
-            source2sdk::entity2::GameTime_t m_flSeqStartTime; // 0x58            
+            CNetworkedQuantizedFloat m_flPlaybackRate; // 0x_            
+            source2sdk::entity2::GameTime_t m_flPrevAnimTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_flSeqStartTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "11"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkUserGroup "m_flPoseParameter"
             // metadata: MNetworkChangeCallback "poseParametersChanged"
-            float m_flPoseParameter[24]; // 0x5c            
-            bool m_bNetworkedAnimationInputsChanged; // 0xbc            
-            std::uint8_t m_nPrevNewSequenceParity; // 0xbd            
-            std::uint8_t m_nPrevResetEventsParity; // 0xbe            
-            bool m_bPlaybackRateLocked; // 0xbf            
+            float m_flPoseParameter[24]; // 0x_            
+            bool m_bNetworkedAnimationInputsChanged; // 0x_            
+            std::uint8_t m_nPrevNewSequenceParity; // 0x_            
+            std::uint8_t m_nPrevResetEventsParity; // 0x_            
+            bool m_bPlaybackRateLocked; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkChangeCallback "clientSideAnimCycleReset"
-            std::int32_t m_nNewSequenceParity; // 0xc0            
+            std::int32_t m_nNewSequenceParity; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nResetEventsParity; // 0xc4            
+            std::int32_t m_nResetEventsParity; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::AnimLoopMode_t m_nAnimLoopMode; // 0xc8            
-            float m_flCachedSequenceCycleRate; // 0xcc            
-            float m_flCachedGroundSpeed; // 0xd0            
-            source2sdk::client::SequenceFinishNotifyState_t m_nNotifyState; // 0xd4            
-            bool m_bHasEverDispatchedAnimEvents; // 0xd5            
-            uint8_t _pad00d6[0x29a]; // 0xd6
-            source2sdk::client::C_CSequenceTransitioner2 m_SequenceTransitioner; // 0x370            
-            source2sdk::animationsystem::HSequence m_hLastAnimEventSequence; // 0x528            
-            uint8_t _pad052c[0xb4];
+            source2sdk::client::AnimLoopMode_t m_nAnimLoopMode; // 0x_            
+            float m_flCachedSequenceCycleRate; // 0x_            
+            float m_flCachedGroundSpeed; // 0x_            
+            source2sdk::client::SequenceFinishNotifyState_t m_nNotifyState; // 0x_            
+            bool m_bHasEverDispatchedAnimEvents; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::C_CSequenceTransitioner2 m_SequenceTransitioner; // 0x_            
+            source2sdk::animationsystem::HSequence m_hLastAnimEventSequence; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_iv_AnimOpHistory; // 0x538
-            // void m_iv_flPoseParameter; // 0x588
+            // void m_iv_AnimOpHistory; // 0x_
+            // void m_iv_flPoseParameter; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BaseAnimatingController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BaseAnimatingController) == 0x5e0);
+        static_assert(sizeof(source2sdk::client::C_BaseAnimatingController) == 0x_);
     };
 };

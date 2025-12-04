@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x620
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,33 +33,33 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_TrapRoom_MeatHook : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05c0[0x10]; // 0x5c0
-            Vector m_vProjectileLocation; // 0x5d0            
-            float hook_speed; // 0x5dc            
-            std::int32_t hook_width; // 0x5e0            
-            std::int32_t hook_distance; // 0x5e4            
-            bool m_bRetracting; // 0x5e8            
-            bool m_bDiedInHook; // 0x5e9            
-            uint8_t _pad05ea[0x2]; // 0x5ea
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vProjectileLocation; // 0x_            
+            float hook_speed; // 0x_            
+            std::int32_t hook_width; // 0x_            
+            std::int32_t hook_distance; // 0x_            
+            bool m_bRetracting; // 0x_            
+            bool m_bDiedInHook; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hVictim has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hVictim;
-            char m_hVictim[0x4]; // 0x5ec            
-            Vector m_vTargetPosition; // 0x5f0            
-            Vector m_vCasterPosition; // 0x5fc            
-            bool m_bChainDetached; // 0x608            
-            uint8_t _pad0609[0x3]; // 0x609
-            source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x60c            
-            std::int32_t m_iHookParticle; // 0x610            
-            std::int32_t m_nManaCost; // 0x614            
+            char m_hVictim[0x_]; // 0x_            
+            Vector m_vTargetPosition; // 0x_            
+            Vector m_vCasterPosition; // 0x_            
+            bool m_bChainDetached; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x_            
+            std::int32_t m_iHookParticle; // 0x_            
+            std::int32_t m_nManaCost; // 0x_            
             // m_hSourceCaster has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSourceCaster;
-            char m_hSourceCaster[0x4]; // 0x618            
-            std::int32_t m_nNextConsecutiveHitCount; // 0x61c            
+            char m_hSourceCaster[0x_]; // 0x_            
+            std::int32_t m_nNextConsecutiveHitCount; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_TrapRoom_MeatHook because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_TrapRoom_MeatHook) == 0x620);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_TrapRoom_MeatHook) == 0x_);
     };
 };

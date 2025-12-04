@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,12 +30,12 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "0.0 to 1.0 value indicating the probability of this element being evaluated. Where a value of 0 means the element will never be evaluated and 1.0 means it will always be evaluated"
-            CSmartPropAttributeFloat m_flProbability; // 0x50            
+            CSmartPropAttributeFloat m_flProbability; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropFilter_Probability because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropFilter_Probability) == 0x90);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropFilter_Probability) == 0x_);
     };
 };

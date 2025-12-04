@@ -25,46 +25,46 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18f8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_GrapplingClaw_Movement : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vGrappleHookPos; // 0x1878            
-            Vector m_vInitialDir; // 0x1884            
-            Vector m_vHookDir; // 0x1890            
-            Vector m_vLastVelocity; // 0x189c            
-            float m_flHookDistance; // 0x18a8            
-            float m_flCurrentHookRetractSpeed; // 0x18ac            
-            float m_flCurrentHookLength; // 0x18b0            
-            float m_flCurHookDistDelta; // 0x18b4            
-            float m_flCurMomentumDistDelta; // 0x18b8            
-            float m_flDecelerationRate; // 0x18bc            
-            float m_flMaxHeight; // 0x18c0            
-            float m_flInitialSpeed; // 0x18c4            
-            float m_flDT; // 0x18c8            
-            float m_flAccumDist; // 0x18cc            
-            bool m_bHookAttached; // 0x18d0            
-            uint8_t _pad18d1[0x3]; // 0x18d1
-            std::int32_t grapple_speed; // 0x18d4            
-            std::int32_t impact_damage; // 0x18d8            
-            std::int32_t land_distance; // 0x18dc            
-            std::int32_t max_distance_break; // 0x18e0            
+            Vector m_vGrappleHookPos; // 0x_            
+            Vector m_vInitialDir; // 0x_            
+            Vector m_vHookDir; // 0x_            
+            Vector m_vLastVelocity; // 0x_            
+            float m_flHookDistance; // 0x_            
+            float m_flCurrentHookRetractSpeed; // 0x_            
+            float m_flCurrentHookLength; // 0x_            
+            float m_flCurHookDistDelta; // 0x_            
+            float m_flCurMomentumDistDelta; // 0x_            
+            float m_flDecelerationRate; // 0x_            
+            float m_flMaxHeight; // 0x_            
+            float m_flInitialSpeed; // 0x_            
+            float m_flDT; // 0x_            
+            float m_flAccumDist; // 0x_            
+            bool m_bHookAttached; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t grapple_speed; // 0x_            
+            std::int32_t impact_damage; // 0x_            
+            std::int32_t land_distance; // 0x_            
+            std::int32_t max_distance_break; // 0x_            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x18e4            
-            bool m_bDidAttack; // 0x18e8            
-            bool m_bStartedAnimation; // 0x18e9            
-            uint8_t _pad18ea[0x2]; // 0x18ea
-            source2sdk::client::GameActivity_t m_Activity; // 0x18ec            
-            float m_flTimeLeftForActivity; // 0x18f0            
-            uint8_t _pad18f4[0x4];
+            char m_hTarget[0x_]; // 0x_            
+            bool m_bDidAttack; // 0x_            
+            bool m_bStartedAnimation; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::GameActivity_t m_Activity; // 0x_            
+            float m_flTimeLeftForActivity; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_GrapplingClaw_Movement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_GrapplingClaw_Movement) == 0x18f8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_GrapplingClaw_Movement) == 0x_);
     };
 };

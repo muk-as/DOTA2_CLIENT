@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9c0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,27 +28,27 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bShouldAnimateDuringGameplayPause; // 0x998            
+            bool m_bShouldAnimateDuringGameplayPause; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x999            
-            bool m_bAnimationUpdateScheduled; // 0x99a            
-            uint8_t _pad099b[0x5]; // 0x99b
+            bool m_bInitiallyPopulateInterpHistory; // 0x_            
+            bool m_bAnimationUpdateScheduled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_pSuppressedAnimEventTags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString>* m_pSuppressedAnimEventTags;
-            char m_pSuppressedAnimEventTags[0x8]; // 0x9a0            
-            bool m_bHasAnimatedMaterialAttributes; // 0x9a8            
-            uint8_t _pad09a9[0xf]; // 0x9a9
-            bool m_bSuppressAnimEventSounds; // 0x9b8            
-            uint8_t _pad09b9[0x7];
+            char m_pSuppressedAnimEventTags[0x_]; // 0x_            
+            bool m_bHasAnimatedMaterialAttributes; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bSuppressAnimEventSounds; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // float InputSetPlaybackRate; // 0x0
-            // bool InputDisableAnimEventSounds; // 0x0
+            // float InputSetPlaybackRate; // 0x_
+            // bool InputDisableAnimEventSounds; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseAnimatingActivity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBaseAnimatingActivity) == 0x9c0);
+        static_assert(sizeof(source2sdk::client::CBaseAnimatingActivity) == 0x_);
     };
 };

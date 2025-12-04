@@ -24,28 +24,28 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MjollnirChain : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t chain_radius; // 0x1878            
-            std::int32_t chain_strikes; // 0x187c            
-            float chain_damage; // 0x1880            
-            float chain_delay; // 0x1884            
-            float chain_damage_per_charge; // 0x1888            
-            float illusion_multiplier_pct; // 0x188c            
-            std::int32_t m_iCurJumpCount; // 0x1890            
-            Vector m_vCurTargetLoc; // 0x1894            
+            std::int32_t chain_radius; // 0x_            
+            std::int32_t chain_strikes; // 0x_            
+            float chain_damage; // 0x_            
+            float chain_delay; // 0x_            
+            float chain_damage_per_charge; // 0x_            
+            float illusion_multiplier_pct; // 0x_            
+            std::int32_t m_iCurJumpCount; // 0x_            
+            Vector m_vCurTargetLoc; // 0x_            
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x18a0            
+            char m_hHitEntities[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MjollnirChain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MjollnirChain) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MjollnirChain) == 0x_);
     };
 };

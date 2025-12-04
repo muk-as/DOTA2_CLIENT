@@ -15,9 +15,9 @@ namespace source2sdk
     namespace pulse_system
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x108
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MPulseInstanceDomainInfo
@@ -34,6 +34,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain_FakeEntityOwner) == 0x108);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain_FakeEntityOwner) == 0x_);
     };
 };

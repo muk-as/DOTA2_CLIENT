@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,22 +27,22 @@ namespace source2sdk
         class CSurvivorsPowerUpSnapshot
         {
         public:
-            source2sdk::client::SurvivorsPowerUpID_t m_unPowerUpID; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
+            source2sdk::client::SurvivorsPowerUpID_t m_unPowerUpID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecUpgradeIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::SurvivorsUpgradeID_t> m_vecUpgradeIDs;
-            char m_vecUpgradeIDs[0x18]; // 0x8            
-            bool m_bShardUpgraded; // 0x20            
-            bool m_bScepterUpgraded; // 0x21            
-            uint8_t _pad0022[0x6];
+            char m_vecUpgradeIDs[0x_]; // 0x_            
+            bool m_bShardUpgraded; // 0x_            
+            bool m_bScepterUpgraded; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_unPowerUpID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_vecUpgradeIDs) == 0x8);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_bShardUpgraded) == 0x20);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_bScepterUpgraded) == 0x21);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_unPowerUpID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_vecUpgradeIDs) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_bShardUpgraded) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpSnapshot, m_bScepterUpgraded) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpSnapshot) == 0x28);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpSnapshot) == 0x_);
     };
 };

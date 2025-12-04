@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 39
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PARTICLE_MESSAGE : std::uint32_t
         {
             GAME_PARTICLE_MANAGER_EVENT_CREATE = 0x0,

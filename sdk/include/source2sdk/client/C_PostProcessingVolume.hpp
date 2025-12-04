@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb18
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -39,39 +39,39 @@ namespace source2sdk
         class C_PostProcessingVolume : public source2sdk::client::C_BaseTrigger
         {
         public:
-            uint8_t _pad0ad8[0x10]; // 0xad8
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hPostSettings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCPostProcessingResource> m_hPostSettings;
-            char m_hPostSettings[0x8]; // 0xae8            
+            char m_hPostSettings[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeDuration; // 0xaf0            
+            float m_flFadeDuration; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinLogExposure; // 0xaf4            
+            float m_flMinLogExposure; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxLogExposure; // 0xaf8            
+            float m_flMaxLogExposure; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinExposure; // 0xafc            
+            float m_flMinExposure; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxExposure; // 0xb00            
+            float m_flMaxExposure; // 0x_            
             // metadata: MNetworkEnable
-            float m_flExposureCompensation; // 0xb04            
+            float m_flExposureCompensation; // 0x_            
             // metadata: MNetworkEnable
-            float m_flExposureFadeSpeedUp; // 0xb08            
+            float m_flExposureFadeSpeedUp; // 0x_            
             // metadata: MNetworkEnable
-            float m_flExposureFadeSpeedDown; // 0xb0c            
+            float m_flExposureFadeSpeedDown; // 0x_            
             // metadata: MNetworkEnable
-            float m_flTonemapEVSmoothingRange; // 0xb10            
+            float m_flTonemapEVSmoothingRange; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bMaster; // 0xb14            
+            bool m_bMaster; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bExposureControl; // 0xb15            
-            uint8_t _pad0b16[0x2];
+            bool m_bExposureControl; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PostProcessingVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PostProcessingVolume) == 0xb18);
+        static_assert(sizeof(source2sdk::client::C_PostProcessingVolume) == 0x_);
     };
 };

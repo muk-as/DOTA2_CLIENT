@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ESurvivorsAttackTargeting : std::uint32_t
         {
             INVALID_TARGET = 0xffffffff,

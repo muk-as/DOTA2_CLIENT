@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ScriptedConflictResponse_t : std::uint32_t
         {
             SS_CONFLICT_ENQUEUE = 0x0,

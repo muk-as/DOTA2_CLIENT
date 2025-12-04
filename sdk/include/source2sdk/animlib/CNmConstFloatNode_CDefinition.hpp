@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,13 +26,13 @@ namespace source2sdk
         class CNmConstFloatNode_CDefinition : public source2sdk::animlib::CNmFloatValueNode_CDefinition
         {
         public:
-            float m_flValue; // 0x10            
-            uint8_t _pad0014[0x4];
+            float m_flValue; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmConstFloatNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmConstFloatNode_CDefinition) == 0x18);
+        static_assert(sizeof(source2sdk::animlib::CNmConstFloatNode_CDefinition) == 0x_);
     };
 };

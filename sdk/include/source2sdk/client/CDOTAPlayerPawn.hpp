@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xdc0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -45,17 +45,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0xdb8            
-            uint8_t _pad0dbc[0x4];
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // CDOTAPlayer_CameraServices m_pCameraServices; // 0xc80
-            // CDOTAPlayer_MovementServices m_pMovementServices; // 0xc88
+            // CDOTAPlayer_CameraServices m_pCameraServices; // 0x_
+            // CDOTAPlayer_MovementServices m_pMovementServices; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0xdc0);
+        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0x_);
     };
 };

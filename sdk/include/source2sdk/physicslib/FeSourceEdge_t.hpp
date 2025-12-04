@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x2
-        // Alignment: 0x2
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,12 +25,12 @@ namespace source2sdk
         struct FeSourceEdge_t
         {
         public:
-            std::uint16_t nNode[2]; // 0x0            
+            std::uint16_t nNode[2]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeSourceEdge_t, nNode) == 0x0);
+        static_assert(offsetof(source2sdk::physicslib::FeSourceEdge_t, nNode) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeSourceEdge_t) == 0x4);
+        static_assert(sizeof(source2sdk::physicslib::FeSourceEdge_t) == 0x_);
     };
 };

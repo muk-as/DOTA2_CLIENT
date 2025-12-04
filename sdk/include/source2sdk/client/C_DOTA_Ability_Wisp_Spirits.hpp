@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,14 +28,14 @@ namespace source2sdk
         public:
             // m_SpiritDefs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sSpiritDef> m_SpiritDefs;
-            char m_SpiritDefs[0x18]; // 0x688            
-            std::int32_t m_nWispDirection; // 0x6a0            
-            std::int32_t spirit_amount; // 0x6a4            
+            char m_SpiritDefs[0x_]; // 0x_            
+            std::int32_t m_nWispDirection; // 0x_            
+            std::int32_t spirit_amount; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Wisp_Spirits because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Wisp_Spirits) == 0x6a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Wisp_Spirits) == 0x_);
     };
 };

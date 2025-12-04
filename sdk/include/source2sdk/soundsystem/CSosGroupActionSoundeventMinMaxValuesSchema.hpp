@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,32 +28,32 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Public field name to query."
-            CUtlString m_strQueryPublicFieldName; // 0x18            
+            CUtlString m_strQueryPublicFieldName; // 0x_            
             // metadata: MPropertyFriendlyName "Public field 'delay' name."
-            CUtlString m_strDelayPublicFieldName; // 0x20            
+            CUtlString m_strDelayPublicFieldName; // 0x_            
             // metadata: MPropertyFriendlyName "Exclude stopped sounds from evaluation"
-            bool m_bExcludeStoppedSounds; // 0x28            
+            bool m_bExcludeStoppedSounds; // 0x_            
             // metadata: MPropertyFriendlyName "Exclude delayed sounds from evaluation"
-            bool m_bExcludeDelayedSounds; // 0x29            
+            bool m_bExcludeDelayedSounds; // 0x_            
             // metadata: MPropertyFriendlyName "Exclude sounds from evaluation less than or equal to a min value threshold."
-            bool m_bExcludeSoundsBelowThreshold; // 0x2a            
-            uint8_t _pad002b[0x1]; // 0x2b
+            bool m_bExcludeSoundsBelowThreshold; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "The minimum threshold value to exclude sounds."
-            float m_flExcludeSoundsMinThresholdValue; // 0x2c            
+            float m_flExcludeSoundsMinThresholdValue; // 0x_            
             // metadata: MPropertyFriendlyName "Exclude sounds from evaluation greater than or equal to a max value threshold."
-            bool m_bExcludSoundsAboveThreshold; // 0x30            
-            uint8_t _pad0031[0x3]; // 0x31
+            bool m_bExcludSoundsAboveThreshold; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "The maximum threshold value to exclude sounds."
-            float m_flExcludeSoundsMaxThresholdValue; // 0x34            
+            float m_flExcludeSoundsMaxThresholdValue; // 0x_            
             // metadata: MPropertyFriendlyName "Min value property name"
-            CUtlString m_strMinValueName; // 0x38            
+            CUtlString m_strMinValueName; // 0x_            
             // metadata: MPropertyFriendlyName "Max value property name"
-            CUtlString m_strMaxValueName; // 0x40            
+            CUtlString m_strMaxValueName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSosGroupActionSoundeventMinMaxValuesSchema because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventMinMaxValuesSchema) == 0x48);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventMinMaxValuesSchema) == 0x_);
     };
 };

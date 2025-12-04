@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x230
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,23 +28,23 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "maximum distance"
-            float m_fMaxDistance; // 0x1c8            
-            uint8_t _pad01cc[0x4]; // 0x1cc
-            source2sdk::particles::CPathParameters m_PathParams; // 0x1d0            
+            float m_fMaxDistance; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::particles::CPathParameters m_PathParams; // 0x_            
             // metadata: MPropertyFriendlyName "randomly select sequential CP pairs between start and end points"
-            bool m_bUseRandomCPs; // 0x210            
-            uint8_t _pad0211[0x3]; // 0x211
+            bool m_bUseRandomCPs; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Offset from control point for path end"
             // metadata: MVectorIsCoordinate
-            Vector m_vEndOffset; // 0x214            
+            Vector m_vEndOffset; // 0x_            
             // metadata: MPropertyFriendlyName "save offset"
-            bool m_bSaveOffset; // 0x220            
-            uint8_t _pad0221[0xf];
+            bool m_bSaveOffset; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateAlongPath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateAlongPath) == 0x230);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateAlongPath) == 0x_);
     };
 };

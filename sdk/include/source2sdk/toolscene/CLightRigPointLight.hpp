@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace toolscene
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::toolscene::CLightRigPointLight) == 0x40);
+        static_assert(sizeof(source2sdk::toolscene::CLightRigPointLight) == 0x_);
     };
 };

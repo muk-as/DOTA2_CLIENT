@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xe18
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,28 +30,28 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Color Blend"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vColorBlend; // 0x210            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vColorBlend; // 0x_            
             // metadata: MPropertyFriendlyName "Color Blend Type"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x888            
-            uint8_t _pad088c[0x4]; // 0x88c
+            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Lumens Per Meter"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flBrightnessLumensPerMeter; // 0x890            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flBrightnessLumensPerMeter; // 0x_            
             // metadata: MPropertyFriendlyName "Shadows"
             // metadata: MPropertySuppressExpr "mod == csgo"
-            bool m_bCastShadows; // 0x9f0            
-            uint8_t _pad09f1[0x7]; // 0x9f1
+            bool m_bCastShadows; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Skirt"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flSkirt; // 0x9f8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flSkirt; // 0x_            
             // metadata: MPropertyFriendlyName "Range"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flRange; // 0xb58            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flRange; // 0x_            
             // metadata: MPropertyFriendlyName "Thickness"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flThickness; // 0xcb8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flThickness; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RenderLightBeam because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RenderLightBeam) == 0xe18);
+        static_assert(sizeof(source2sdk::particles::C_OP_RenderLightBeam) == 0x_);
     };
 };

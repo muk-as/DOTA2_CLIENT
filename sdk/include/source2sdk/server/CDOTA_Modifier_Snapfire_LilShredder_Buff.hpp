@@ -17,30 +17,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Snapfire_LilShredder_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0x18]; // 0x1878
+            uint8_t _pad_[0x_]; // 0x_
             // m_InFlightAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_InFlightAttackRecords;
-            char m_InFlightAttackRecords[0x18]; // 0x1890            
-            std::int32_t m_nIsActive; // 0x18a8            
-            bool m_bBonusAttack; // 0x18ac            
-            uint8_t _pad18ad[0x3]; // 0x18ad
-            std::int32_t attack_range_bonus; // 0x18b0            
-            std::int32_t buffed_attacks; // 0x18b4            
-            float base_attack_time; // 0x18b8            
-            std::int32_t attack_speed_bonus; // 0x18bc            
-            float armor_duration; // 0x18c0            
-            std::int32_t extra_targets; // 0x18c4            
+            char m_InFlightAttackRecords[0x_]; // 0x_            
+            std::int32_t m_nIsActive; // 0x_            
+            bool m_bBonusAttack; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t attack_range_bonus; // 0x_            
+            std::int32_t buffed_attacks; // 0x_            
+            float base_attack_time; // 0x_            
+            std::int32_t attack_speed_bonus; // 0x_            
+            float armor_duration; // 0x_            
+            std::int32_t extra_targets; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Snapfire_LilShredder_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Snapfire_LilShredder_Buff) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Snapfire_LilShredder_Buff) == 0x_);
     };
 };

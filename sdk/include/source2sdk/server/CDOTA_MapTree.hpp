@@ -14,26 +14,26 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x510
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_MapTree : public source2sdk::server::CDOTA_BinaryObject
         {
         public:
-            uint8_t _pad04e8[0x28];
+            uint8_t _pad_[0x_];
             // Datamap fields:
-            // void InputCutDown; // 0x0
-            // void InputCutDownForever; // 0x0
-            // void InputGrowBack; // 0x0
+            // void InputCutDown; // 0x_
+            // void InputCutDownForever; // 0x_
+            // void InputGrowBack; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_MapTree) == 0x510);
+        static_assert(sizeof(source2sdk::server::CDOTA_MapTree) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 49
         // Alignment: 8
-        // Size: 0x8
+        // Size: 0x_
         enum class DOTA_ABILITY_BEHAVIOR : std::uint64_t
         {
             DOTA_ABILITY_BEHAVIOR_NONE = 0x0,

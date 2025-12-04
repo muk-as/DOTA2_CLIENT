@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x68
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,13 +29,13 @@ namespace source2sdk
         public:
             // m_pMotionGraph has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CSmartPtr<source2sdk::animgraphlib::CMotionGraph> m_pMotionGraph;
-            char m_pMotionGraph[0x8]; // 0x58            
-            uint8_t _pad0060[0x8];
+            char m_pMotionGraph[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMotionGraphUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMotionGraphUpdateNode) == 0x68);
+        static_assert(sizeof(source2sdk::animgraphlib::CMotionGraphUpdateNode) == 0x_);
     };
 };

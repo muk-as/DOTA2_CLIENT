@@ -14,22 +14,22 @@ namespace source2sdk
     namespace navlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class Extent
         {
         public:
-            Vector lo; // 0x0            
-            Vector hi; // 0xc            
+            Vector lo; // 0x_            
+            Vector hi; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::navlib::Extent, lo) == 0x0);
-        static_assert(offsetof(source2sdk::navlib::Extent, hi) == 0xc);
+        static_assert(offsetof(source2sdk::navlib::Extent, lo) == 0x_);
+        static_assert(offsetof(source2sdk::navlib::Extent, hi) == 0x_);
         
-        static_assert(sizeof(source2sdk::navlib::Extent) == 0x18);
+        static_assert(sizeof(source2sdk::navlib::Extent) == 0x_);
     };
 };

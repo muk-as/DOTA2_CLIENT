@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,21 +26,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Quietest Volume"
-            float m_flMinVolume; // 0x0            
+            float m_flMinVolume; // 0x_            
             // metadata: MPropertyFriendlyName "# Instances Playing Until We Get Louder Than Quietest Volume"
-            std::int32_t m_nInstancesAtMinVolume; // 0x4            
+            std::int32_t m_nInstancesAtMinVolume; // 0x_            
             // metadata: MPropertyFriendlyName "Loudest Volume"
-            float m_flMaxVolume; // 0x8            
+            float m_flMaxVolume; // 0x_            
             // metadata: MPropertyFriendlyName "# Instances Playing Required To Reach Loudest Volume"
-            std::int32_t m_nInstancesAtMaxVolume; // 0xc            
+            std::int32_t m_nInstancesAtMaxVolume; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_flMinVolume) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_nInstancesAtMinVolume) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_flMaxVolume) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_nInstancesAtMaxVolume) == 0xc);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_flMinVolume) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_nInstancesAtMinVolume) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_flMaxVolume) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance, m_nInstancesAtMaxVolume) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance) == 0x10);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerStaticAdditiveSynth_CGainScalePerInstance) == 0x_);
     };
 };

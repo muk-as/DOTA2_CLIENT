@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ESurvivorsEnemySpawnBehavior : std::uint32_t
         {
             INVALID_SPAWN_BEHAVIOR = 0xffffffff,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x68
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,12 +28,12 @@ namespace source2sdk
         public:
             // m_footIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_footIndices;
-            char m_footIndices[0x18]; // 0x50            
+            char m_footIndices[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFootCycleMetricEvaluator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CFootCycleMetricEvaluator) == 0x68);
+        static_assert(sizeof(source2sdk::animgraphlib::CFootCycleMetricEvaluator) == 0x_);
     };
 };

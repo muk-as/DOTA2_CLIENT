@@ -15,27 +15,27 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
         class CDOTA_Tree : public source2sdk::server::CObstructionObject
         {
         public:
-            bool m_bStanding; // 0x18            
-            bool m_bSpecialConsume; // 0x19            
-            bool m_bSpecialConsumeSameTeamOnly; // 0x1a            
-            bool m_bSpecialPathing; // 0x1b            
-            std::int32_t m_iTreePlanterTeam; // 0x1c            
-            std::uint32_t m_unOccluderID; // 0x20            
-            uint8_t _pad0024[0x4];
+            bool m_bStanding; // 0x_            
+            bool m_bSpecialConsume; // 0x_            
+            bool m_bSpecialConsumeSameTeamOnly; // 0x_            
+            bool m_bSpecialPathing; // 0x_            
+            std::int32_t m_iTreePlanterTeam; // 0x_            
+            std::uint32_t m_unOccluderID; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Tree because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Tree) == 0x28);
+        static_assert(sizeof(source2sdk::server::CDOTA_Tree) == 0x_);
     };
 };

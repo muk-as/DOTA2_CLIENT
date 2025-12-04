@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,15 +29,15 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Warp Position"
-            bool m_bWarpPosition; // 0x50            
+            bool m_bWarpPosition; // 0x_            
             // metadata: MPropertyFriendlyName "Warp Orientation"
-            bool m_bWarpOrientation; // 0x51            
-            uint8_t _pad0052[0x6];
+            bool m_bWarpOrientation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CWarpSectionAnimTag because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CWarpSectionAnimTag) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CWarpSectionAnimTag) == 0x_);
     };
 };

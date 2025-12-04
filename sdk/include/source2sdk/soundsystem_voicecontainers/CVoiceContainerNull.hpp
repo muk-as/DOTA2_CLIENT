@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,6 +32,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerNull) == 0xb8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerNull) == 0x_);
     };
 };

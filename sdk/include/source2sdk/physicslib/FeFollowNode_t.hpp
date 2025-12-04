@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,16 +25,16 @@ namespace source2sdk
         struct FeFollowNode_t
         {
         public:
-            std::uint16_t nParentNode; // 0x0            
-            std::uint16_t nChildNode; // 0x2            
-            float flWeight; // 0x4            
+            std::uint16_t nParentNode; // 0x_            
+            std::uint16_t nChildNode; // 0x_            
+            float flWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, nParentNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, nChildNode) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, flWeight) == 0x4);
+        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, nParentNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, nChildNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeFollowNode_t, flWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeFollowNode_t) == 0x8);
+        static_assert(sizeof(source2sdk::physicslib::FeFollowNode_t) == 0x_);
     };
 };

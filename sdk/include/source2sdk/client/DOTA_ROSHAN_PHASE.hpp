@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_ROSHAN_PHASE : std::uint32_t
         {
             k_SRSP_ROSHAN_ALIVE = 0x0,

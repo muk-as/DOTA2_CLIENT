@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 26
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class FlexOpCode_t : std::uint32_t
         {
             FLEX_OP_CONST = 0x1,

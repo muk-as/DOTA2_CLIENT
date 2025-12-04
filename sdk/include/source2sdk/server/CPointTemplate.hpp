@@ -16,37 +16,37 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x548
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CPointTemplate : public source2sdk::server::CLogicalEntity
         {
         public:
-            CUtlSymbolLarge m_iszWorldName; // 0x4e0            
-            CUtlSymbolLarge m_iszSource2EntityLumpName; // 0x4e8            
-            CUtlSymbolLarge m_iszEntityFilterName; // 0x4f0            
-            float m_flTimeoutInterval; // 0x4f8            
-            bool m_bAsynchronouslySpawnEntities; // 0x4fc            
-            uint8_t _pad04fd[0x3]; // 0x4fd
-            source2sdk::client::PointTemplateClientOnlyEntityBehavior_t m_clientOnlyEntityBehavior; // 0x500            
-            source2sdk::client::PointTemplateOwnerSpawnGroupType_t m_ownerSpawnGroupType; // 0x504            
+            CUtlSymbolLarge m_iszWorldName; // 0x_            
+            CUtlSymbolLarge m_iszSource2EntityLumpName; // 0x_            
+            CUtlSymbolLarge m_iszEntityFilterName; // 0x_            
+            float m_flTimeoutInterval; // 0x_            
+            bool m_bAsynchronouslySpawnEntities; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::PointTemplateClientOnlyEntityBehavior_t m_clientOnlyEntityBehavior; // 0x_            
+            source2sdk::client::PointTemplateOwnerSpawnGroupType_t m_ownerSpawnGroupType; // 0x_            
             // m_createdSpawnGroupHandles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_createdSpawnGroupHandles;
-            char m_createdSpawnGroupHandles[0x18]; // 0x508            
+            char m_createdSpawnGroupHandles[0x_]; // 0x_            
             // m_SpawnedEntityHandles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityHandle> m_SpawnedEntityHandles;
-            char m_SpawnedEntityHandles[0x18]; // 0x520            
-            HSCRIPT m_ScriptSpawnCallback; // 0x538            
-            HSCRIPT m_ScriptCallbackScope; // 0x540            
+            char m_SpawnedEntityHandles[0x_]; // 0x_            
+            HSCRIPT m_ScriptSpawnCallback; // 0x_            
+            HSCRIPT m_ScriptCallbackScope; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPointTemplate because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPointTemplate) == 0x548);
+        static_assert(sizeof(source2sdk::server::CPointTemplate) == 0x_);
     };
 };

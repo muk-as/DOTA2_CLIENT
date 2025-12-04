@@ -14,9 +14,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -26,11 +26,11 @@ namespace source2sdk
         class CAnimActionUpdater
         {
         public:
-            uint8_t _pad0000[0x18];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimActionUpdater) == 0x18);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimActionUpdater) == 0x_);
     };
 };

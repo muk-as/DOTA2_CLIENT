@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,18 +34,18 @@ namespace source2sdk
         public:
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x688            
-            float bounce_radius; // 0x6a0            
-            float damage_radius; // 0x6a4            
-            std::int32_t damage; // 0x6a8            
-            std::int32_t max_targets; // 0x6ac            
-            float scepter_heal_pct; // 0x6b0            
-            uint8_t _pad06b4[0x4];
+            char m_hHitEntities[0x_]; // 0x_            
+            float bounce_radius; // 0x_            
+            float damage_radius; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t max_targets; // 0x_            
+            float scepter_heal_pct; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Dazzle_ShadowWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Dazzle_ShadowWave) == 0x6b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Dazzle_ShadowWave) == 0x_);
     };
 };

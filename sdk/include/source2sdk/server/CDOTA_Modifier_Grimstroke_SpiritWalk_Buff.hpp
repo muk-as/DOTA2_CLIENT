@@ -18,35 +18,35 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Grimstroke_SpiritWalk_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1878            
-            std::int32_t m_nHeroTickDamageApplied; // 0x187c            
-            source2sdk::entity2::GameTime_t m_fLastEffectsTime; // 0x1880            
-            float radius; // 0x1884            
-            float buff_duration; // 0x1888            
-            float debuff_duration; // 0x188c            
-            std::int32_t max_damage; // 0x1890            
-            float max_stun; // 0x1894            
-            std::int32_t movespeed_bonus_pct; // 0x1898            
-            std::int32_t damage_per_tick; // 0x189c            
-            float tick_rate; // 0x18a0            
-            float max_threshold_duration; // 0x18a4            
-            std::int32_t can_end_early; // 0x18a8            
-            std::int32_t shard_bonus_damage_pct; // 0x18ac            
-            std::int32_t shard_heal_pct; // 0x18b0            
-            float shard_creep_penalty; // 0x18b4            
-            bool m_bIsReflection; // 0x18b8            
-            uint8_t _pad18b9[0x7];
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x_            
+            std::int32_t m_nHeroTickDamageApplied; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastEffectsTime; // 0x_            
+            float radius; // 0x_            
+            float buff_duration; // 0x_            
+            float debuff_duration; // 0x_            
+            std::int32_t max_damage; // 0x_            
+            float max_stun; // 0x_            
+            std::int32_t movespeed_bonus_pct; // 0x_            
+            std::int32_t damage_per_tick; // 0x_            
+            float tick_rate; // 0x_            
+            float max_threshold_duration; // 0x_            
+            std::int32_t can_end_early; // 0x_            
+            std::int32_t shard_bonus_damage_pct; // 0x_            
+            std::int32_t shard_heal_pct; // 0x_            
+            float shard_creep_penalty; // 0x_            
+            bool m_bIsReflection; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Grimstroke_SpiritWalk_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Grimstroke_SpiritWalk_Buff) == 0x18c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Grimstroke_SpiritWalk_Buff) == 0x_);
     };
 };

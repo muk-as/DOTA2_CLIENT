@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 163
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDotaUserMessages : std::uint32_t
         {
             DOTA_UM_AddUnitToSelection = 0x1d0,

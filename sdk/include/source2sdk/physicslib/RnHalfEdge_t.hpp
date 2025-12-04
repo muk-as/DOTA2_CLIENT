@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x1
-        // Alignment: 0x1
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,18 +26,18 @@ namespace source2sdk
         struct RnHalfEdge_t
         {
         public:
-            std::uint8_t m_nNext; // 0x0            
-            std::uint8_t m_nTwin; // 0x1            
-            std::uint8_t m_nOrigin; // 0x2            
-            std::uint8_t m_nFace; // 0x3            
+            std::uint8_t m_nNext; // 0x_            
+            std::uint8_t m_nTwin; // 0x_            
+            std::uint8_t m_nOrigin; // 0x_            
+            std::uint8_t m_nFace; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nNext) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nTwin) == 0x1);
-        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nOrigin) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nFace) == 0x3);
+        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nNext) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nTwin) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nOrigin) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnHalfEdge_t, m_nFace) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::RnHalfEdge_t) == 0x4);
+        static_assert(sizeof(source2sdk::physicslib::RnHalfEdge_t) == 0x_);
     };
 };

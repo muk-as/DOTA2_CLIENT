@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,15 +31,15 @@ namespace source2sdk
         public:
             // m_firstSound has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCVoiceContainerBase> m_firstSound;
-            char m_firstSound[0x8]; // 0xb8            
+            char m_firstSound[0x_]; // 0x_            
             // m_secondSound has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCVoiceContainerBase> m_secondSound;
-            char m_secondSound[0x8]; // 0xc0            
+            char m_secondSound[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTestBlendContainer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem::CTestBlendContainer) == 0xc8);
+        static_assert(sizeof(source2sdk::soundsystem::CTestBlendContainer) == 0x_);
     };
 };

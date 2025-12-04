@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,15 +25,15 @@ namespace source2sdk
         struct SkeletonAnimCapture_t_Camera_t
         {
         public:
-            CTransform m_tmCamera; // 0x0            
-            float m_flTime; // 0x20            
-            uint8_t _pad0024[0xc];
+            CTransform m_tmCamera; // 0x_            
+            float m_flTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t, m_tmCamera) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t, m_flTime) == 0x20);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t, m_tmCamera) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t, m_flTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t) == 0x30);
+        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t_Camera_t) == 0x_);
     };
 };

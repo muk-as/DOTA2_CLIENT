@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_EchoSlamPotion : public source2sdk::server::CDOTA_Item
         {
         public:
-            std::int32_t echo_slam_damage_range; // 0x690            
-            std::int32_t echo_slam_echo_search_range; // 0x694            
-            std::int32_t echo_slam_echo_range; // 0x698            
-            std::int32_t echo_slam_echo_damage; // 0x69c            
-            std::int32_t echo_slam_initial_damage; // 0x6a0            
-            float spend_charge_delay; // 0x6a4            
+            std::int32_t echo_slam_damage_range; // 0x_            
+            std::int32_t echo_slam_echo_search_range; // 0x_            
+            std::int32_t echo_slam_echo_range; // 0x_            
+            std::int32_t echo_slam_echo_damage; // 0x_            
+            std::int32_t echo_slam_initial_damage; // 0x_            
+            float spend_charge_delay; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_EchoSlamPotion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_EchoSlamPotion) == 0x6a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_EchoSlamPotion) == 0x_);
     };
 };

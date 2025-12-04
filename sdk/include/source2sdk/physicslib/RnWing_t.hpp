@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,12 +25,12 @@ namespace source2sdk
         struct RnWing_t
         {
         public:
-            std::int32_t m_nIndex[3]; // 0x0            
+            std::int32_t m_nIndex[3]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::RnWing_t, m_nIndex) == 0x0);
+        static_assert(offsetof(source2sdk::physicslib::RnWing_t, m_nIndex) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::RnWing_t) == 0xc);
+        static_assert(sizeof(source2sdk::physicslib::RnWing_t) == 0x_);
     };
 };

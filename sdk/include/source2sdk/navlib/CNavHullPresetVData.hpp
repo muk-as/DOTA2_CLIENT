@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace navlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MVDataRoot
@@ -30,12 +30,12 @@ namespace source2sdk
             // metadata: MPropertyAttributeEditor "VDataChoice( scripts/nav_hulls.vdata )"
             // m_vecNavHulls has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_vecNavHulls;
-            char m_vecNavHulls[0x18]; // 0x0            
+            char m_vecNavHulls[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::navlib::CNavHullPresetVData, m_vecNavHulls) == 0x0);
+        static_assert(offsetof(source2sdk::navlib::CNavHullPresetVData, m_vecNavHulls) == 0x_);
         
-        static_assert(sizeof(source2sdk::navlib::CNavHullPresetVData) == 0x18);
+        static_assert(sizeof(source2sdk::navlib::CNavHullPresetVData) == 0x_);
     };
 };

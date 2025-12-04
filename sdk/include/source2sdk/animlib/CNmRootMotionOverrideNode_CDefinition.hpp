@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,19 +27,19 @@ namespace source2sdk
         class CNmRootMotionOverrideNode_CDefinition : public source2sdk::animlib::CNmPassthroughNode_CDefinition
         {
         public:
-            std::int16_t m_desiredMovingVelocityNodeIdx; // 0x18            
-            std::int16_t m_desiredFacingDirectionNodeIdx; // 0x1a            
-            std::int16_t m_linearVelocityLimitNodeIdx; // 0x1c            
-            std::int16_t m_angularVelocityLimitNodeIdx; // 0x1e            
-            float m_maxLinearVelocity; // 0x20            
-            float m_maxAngularVelocityRadians; // 0x24            
-            source2sdk::animlib::CNmBitFlags m_overrideFlags; // 0x28            
-            uint8_t _pad002c[0x4];
+            std::int16_t m_desiredMovingVelocityNodeIdx; // 0x_            
+            std::int16_t m_desiredFacingDirectionNodeIdx; // 0x_            
+            std::int16_t m_linearVelocityLimitNodeIdx; // 0x_            
+            std::int16_t m_angularVelocityLimitNodeIdx; // 0x_            
+            float m_maxLinearVelocity; // 0x_            
+            float m_maxAngularVelocityRadians; // 0x_            
+            source2sdk::animlib::CNmBitFlags m_overrideFlags; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmRootMotionOverrideNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmRootMotionOverrideNode_CDefinition) == 0x30);
+        static_assert(sizeof(source2sdk::animlib::CNmRootMotionOverrideNode_CDefinition) == 0x_);
     };
 };

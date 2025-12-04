@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_Ability_Marci_Unleash : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float duration; // 0x5c0            
-            float pulse_radius; // 0x5c4            
-            float pulse_debuff_duration; // 0x5c8            
-            float pulse_damage; // 0x5cc            
-            float pulse_silence_duration; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            float duration; // 0x_            
+            float pulse_radius; // 0x_            
+            float pulse_debuff_duration; // 0x_            
+            float pulse_damage; // 0x_            
+            float pulse_silence_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Marci_Unleash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Marci_Unleash) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Marci_Unleash) == 0x_);
     };
 };

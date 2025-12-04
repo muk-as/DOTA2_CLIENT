@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,14 +26,14 @@ namespace source2sdk
         class CTiltTwistConstraint : public source2sdk::modellib::CBaseConstraint
         {
         public:
-            std::int32_t m_nTargetAxis; // 0x60            
-            std::int32_t m_nSlaveAxis; // 0x64            
-            uint8_t _pad0068[0x28];
+            std::int32_t m_nTargetAxis; // 0x_            
+            std::int32_t m_nSlaveAxis; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTiltTwistConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CTiltTwistConstraint) == 0x90);
+        static_assert(sizeof(source2sdk::modellib::CTiltTwistConstraint) == 0x_);
     };
 };

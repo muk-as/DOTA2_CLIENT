@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,15 +27,15 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "sequence"
             // metadata: MPropertyAttributeEditor "SequencePicker( 1 )"
-            std::int32_t m_nSequence; // 0x0            
+            std::int32_t m_nSequence; // 0x_            
             // metadata: MPropertyFriendlyName "weight"
-            float m_flRelativeWeight; // 0x4            
+            float m_flRelativeWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::SequenceWeightedList_t, m_nSequence) == 0x0);
-        static_assert(offsetof(source2sdk::particles::SequenceWeightedList_t, m_flRelativeWeight) == 0x4);
+        static_assert(offsetof(source2sdk::particles::SequenceWeightedList_t, m_nSequence) == 0x_);
+        static_assert(offsetof(source2sdk::particles::SequenceWeightedList_t, m_flRelativeWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::SequenceWeightedList_t) == 0x8);
+        static_assert(sizeof(source2sdk::particles::SequenceWeightedList_t) == 0x_);
     };
 };

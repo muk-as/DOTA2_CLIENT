@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 27
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class RumbleEffect_t : std::uint32_t
         {
             RUMBLE_INVALID = 0xffffffff,

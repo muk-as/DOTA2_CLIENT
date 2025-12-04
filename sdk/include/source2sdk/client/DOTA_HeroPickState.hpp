@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 63
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_HeroPickState : std::uint32_t
         {
             DOTA_HEROPICK_STATE_NONE = 0x0,

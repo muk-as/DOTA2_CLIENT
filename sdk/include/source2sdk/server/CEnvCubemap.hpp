@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -45,57 +45,57 @@ namespace source2sdk
         class CEnvCubemap : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x80]; // 0x4e0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_Entity_hCubemapTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hCubemapTexture;
-            char m_Entity_hCubemapTexture[0x8]; // 0x560            
+            char m_Entity_hCubemapTexture[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bCustomCubemapTexture; // 0x568            
-            uint8_t _pad0569[0x3]; // 0x569
+            bool m_Entity_bCustomCubemapTexture; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_Entity_flInfluenceRadius; // 0x56c            
+            float m_Entity_flInfluenceRadius; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_Entity_vBoxProjectMins; // 0x570            
+            Vector m_Entity_vBoxProjectMins; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_Entity_vBoxProjectMaxs; // 0x57c            
+            Vector m_Entity_vBoxProjectMaxs; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bMoveable; // 0x588            
-            uint8_t _pad0589[0x3]; // 0x589
+            bool m_Entity_bMoveable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nHandshake; // 0x58c            
+            std::int32_t m_Entity_nHandshake; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nEnvCubeMapArrayIndex; // 0x590            
+            std::int32_t m_Entity_nEnvCubeMapArrayIndex; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nPriority; // 0x594            
+            std::int32_t m_Entity_nPriority; // 0x_            
             // metadata: MNetworkEnable
-            float m_Entity_flEdgeFadeDist; // 0x598            
+            float m_Entity_flEdgeFadeDist; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_Entity_vEdgeFadeDists; // 0x59c            
+            Vector m_Entity_vEdgeFadeDists; // 0x_            
             // metadata: MNetworkEnable
-            float m_Entity_flDiffuseScale; // 0x5a8            
+            float m_Entity_flDiffuseScale; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bStartDisabled; // 0x5ac            
+            bool m_Entity_bStartDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bDefaultEnvMap; // 0x5ad            
+            bool m_Entity_bDefaultEnvMap; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bDefaultSpecEnvMap; // 0x5ae            
+            bool m_Entity_bDefaultSpecEnvMap; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bIndoorCubeMap; // 0x5af            
+            bool m_Entity_bIndoorCubeMap; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bCopyDiffuseFromDefaultCubemap; // 0x5b0            
-            uint8_t _pad05b1[0xf]; // 0x5b1
+            bool m_Entity_bCopyDiffuseFromDefaultCubemap; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_Entity_bEnabled; // 0x5c0            
-            uint8_t _pad05c1[0x7];
+            bool m_Entity_bEnabled; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_Entity_pSceneObject; // 0x5b8
+            // void m_Entity_pSceneObject; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvCubemap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvCubemap) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CEnvCubemap) == 0x_);
     };
 };

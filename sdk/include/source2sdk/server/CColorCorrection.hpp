@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x718
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -40,48 +40,48 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flFadeInDuration; // 0x4e0            
+            float m_flFadeInDuration; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeOutDuration; // 0x4e4            
-            float m_flStartFadeInWeight; // 0x4e8            
-            float m_flStartFadeOutWeight; // 0x4ec            
-            source2sdk::entity2::GameTime_t m_flTimeStartFadeIn; // 0x4f0            
-            source2sdk::entity2::GameTime_t m_flTimeStartFadeOut; // 0x4f4            
+            float m_flFadeOutDuration; // 0x_            
+            float m_flStartFadeInWeight; // 0x_            
+            float m_flStartFadeOutWeight; // 0x_            
+            source2sdk::entity2::GameTime_t m_flTimeStartFadeIn; // 0x_            
+            source2sdk::entity2::GameTime_t m_flTimeStartFadeOut; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxWeight; // 0x4f8            
-            bool m_bStartDisabled; // 0x4fc            
+            float m_flMaxWeight; // 0x_            
+            bool m_bStartDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x4fd            
+            bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bMaster; // 0x4fe            
+            bool m_bMaster; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bClientSide; // 0x4ff            
+            bool m_bClientSide; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bExclusive; // 0x500            
-            uint8_t _pad0501[0x3]; // 0x501
+            bool m_bExclusive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_MinFalloff; // 0x504            
+            float m_MinFalloff; // 0x_            
             // metadata: MNetworkEnable
-            float m_MaxFalloff; // 0x508            
+            float m_MaxFalloff; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCurWeight; // 0x50c            
+            float m_flCurWeight; // 0x_            
             // metadata: MNetworkEnable
-            char m_netlookupFilename[512]; // 0x510            
-            CUtlSymbolLarge m_lookupFilename; // 0x710            
+            char m_netlookupFilename[512]; // 0x_            
+            CUtlSymbolLarge m_lookupFilename; // 0x_            
             
             // Datamap fields:
-            // void CColorCorrectionFadeInThink; // 0x0
-            // void CColorCorrectionFadeOutThink; // 0x0
-            // void m_netlookupFilename; // 0x510
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
-            // float InputSetFadeInDuration; // 0x0
-            // float InputSetFadeOutDuration; // 0x0
+            // void CColorCorrectionFadeInThink; // 0x_
+            // void CColorCorrectionFadeOutThink; // 0x_
+            // void m_netlookupFilename; // 0x_
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // float InputSetFadeInDuration; // 0x_
+            // float InputSetFadeOutDuration; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CColorCorrection because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CColorCorrection) == 0x718);
+        static_assert(sizeof(source2sdk::server::CColorCorrection) == 0x_);
     };
 };

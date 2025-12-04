@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,25 +27,25 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c8            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "override CP (X/Y/Z *= radius/density/speed)"
-            std::int32_t m_nOverrideCP; // 0x1cc            
+            std::int32_t m_nOverrideCP; // 0x_            
             // metadata: MPropertyFriendlyName "density"
-            std::int32_t m_nDensity; // 0x1d0            
+            std::int32_t m_nDensity; // 0x_            
             // metadata: MPropertyFriendlyName "initial radius"
-            float m_flInitialRadius; // 0x1d4            
+            float m_flInitialRadius; // 0x_            
             // metadata: MPropertyFriendlyName "min initial speed"
-            float m_flInitialSpeedMin; // 0x1d8            
+            float m_flInitialSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "max initial speed"
-            float m_flInitialSpeedMax; // 0x1dc            
+            float m_flInitialSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "use particle count as density scale"
-            bool m_bUseParticleCount; // 0x1e0            
-            uint8_t _pad01e1[0x7];
+            bool m_bUseParticleCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateSpiralSphere because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateSpiralSphere) == 0x1e8);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateSpiralSphere) == 0x_);
     };
 };

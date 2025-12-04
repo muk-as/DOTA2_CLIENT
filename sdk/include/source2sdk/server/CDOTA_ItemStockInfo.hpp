@@ -17,9 +17,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // MNetworkNoBase
         // 
@@ -36,39 +36,39 @@ namespace source2sdk
         class CDOTA_ItemStockInfo
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t iTeamNumber; // 0x30            
+            std::int32_t iTeamNumber; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::AbilityID_t nItemAbilityID; // 0x34            
+            source2sdk::client::AbilityID_t nItemAbilityID; // 0x_            
             // metadata: MNetworkEnable
-            float fStockDuration; // 0x38            
+            float fStockDuration; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t fStockTime; // 0x3c            
+            source2sdk::entity2::GameTime_t fStockTime; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t iStockCount; // 0x40            
+            std::int32_t iStockCount; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t iMaxCount; // 0x44            
+            std::int32_t iMaxCount; // 0x_            
             // metadata: MNetworkEnable
-            float fInitialStockDuration; // 0x48            
+            float fInitialStockDuration; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t iPlayerID; // 0x4c            
+            source2sdk::client::PlayerID_t iPlayerID; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t iBonusDelayedStockCount; // 0x50            
-            uint8_t _pad0054[0x4];
+            std::int32_t iBonusDelayedStockCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iTeamNumber) == 0x30);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, nItemAbilityID) == 0x34);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fStockDuration) == 0x38);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fStockTime) == 0x3c);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iStockCount) == 0x40);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iMaxCount) == 0x44);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fInitialStockDuration) == 0x48);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iPlayerID) == 0x4c);
-        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iBonusDelayedStockCount) == 0x50);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iTeamNumber) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, nItemAbilityID) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fStockDuration) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fStockTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iStockCount) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iMaxCount) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, fInitialStockDuration) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iPlayerID) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_ItemStockInfo, iBonusDelayedStockCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CDOTA_ItemStockInfo) == 0x58);
+        static_assert(sizeof(source2sdk::server::CDOTA_ItemStockInfo) == 0x_);
     };
 };

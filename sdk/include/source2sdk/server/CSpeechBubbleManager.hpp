@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,14 +33,14 @@ namespace source2sdk
             // metadata: MNetworkTypeAlias "m_SpeechBubbles"
             // m_SpeechBubbles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CSpeechBubbleInfo> m_SpeechBubbles;
-            char m_SpeechBubbles[0x578]; // 0x4e0            
-            std::uint16_t m_unBubbleCount; // 0xa58            
-            uint8_t _pad0a5a[0x6];
+            char m_SpeechBubbles[0x_]; // 0x_            
+            std::uint16_t m_unBubbleCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSpeechBubbleManager because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSpeechBubbleManager) == 0xa60);
+        static_assert(sizeof(source2sdk::server::CSpeechBubbleManager) == 0x_);
     };
 };

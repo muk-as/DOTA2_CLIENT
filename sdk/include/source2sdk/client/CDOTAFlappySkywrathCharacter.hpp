@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         class CDOTAFlappySkywrathCharacter
         {
         public:
-            float flInitialSpeed; // 0x0            
-            float flMaxSpeed; // 0x4            
-            float flAcceleration; // 0x8            
-            float flActionCooldown; // 0xc            
+            float flInitialSpeed; // 0x_            
+            float flMaxSpeed; // 0x_            
+            float flAcceleration; // 0x_            
+            float flActionCooldown; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flInitialSpeed) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flMaxSpeed) == 0x4);
-        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flAcceleration) == 0x8);
-        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flActionCooldown) == 0xc);
+        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flInitialSpeed) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flMaxSpeed) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flAcceleration) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFlappySkywrathCharacter, flActionCooldown) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAFlappySkywrathCharacter) == 0x10);
+        static_assert(sizeof(source2sdk::client::CDOTAFlappySkywrathCharacter) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,16 +26,16 @@ namespace source2sdk
         struct ClutterTile_t
         {
         public:
-            std::uint32_t m_nFirstInstance; // 0x0            
-            std::uint32_t m_nLastInstance; // 0x4            
-            source2sdk::mathlib_extended::AABB_t m_BoundsWs; // 0x8            
+            std::uint32_t m_nFirstInstance; // 0x_            
+            std::uint32_t m_nLastInstance; // 0x_            
+            source2sdk::mathlib_extended::AABB_t m_BoundsWs; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_nFirstInstance) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_nLastInstance) == 0x4);
-        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_BoundsWs) == 0x8);
+        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_nFirstInstance) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_nLastInstance) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::ClutterTile_t, m_BoundsWs) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::ClutterTile_t) == 0x20);
+        static_assert(sizeof(source2sdk::worldrenderer::ClutterTile_t) == 0x_);
     };
 };

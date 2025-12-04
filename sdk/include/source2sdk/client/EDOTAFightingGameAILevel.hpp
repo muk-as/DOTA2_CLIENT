@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTAFightingGameAILevel : std::uint32_t
         {
             FG_AI_LEVEL_NONE = 0xffffffff,

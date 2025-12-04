@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAUnitAttackCapability_t : std::uint32_t
         {
             DOTA_UNIT_CAP_NO_ATTACK = 0x0,

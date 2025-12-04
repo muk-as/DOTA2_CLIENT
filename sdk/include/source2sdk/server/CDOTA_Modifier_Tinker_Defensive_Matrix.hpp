@@ -17,26 +17,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tinker_Defensive_Matrix : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage_absorb; // 0x1878            
-            std::int32_t status_resistance; // 0x187c            
-            std::int32_t cooldown_reduction; // 0x1880            
-            std::int32_t flicker_range; // 0x1884            
-            std::int32_t flicker_angle; // 0x1888            
-            bool m_bStartedTimer; // 0x188c            
-            uint8_t _pad188d[0x3]; // 0x188d
-            std::int32_t m_nDamageAbsorbed; // 0x1890            
-            uint8_t _pad1894[0x4];
+            std::int32_t damage_absorb; // 0x_            
+            std::int32_t status_resistance; // 0x_            
+            std::int32_t cooldown_reduction; // 0x_            
+            std::int32_t flicker_range; // 0x_            
+            std::int32_t flicker_angle; // 0x_            
+            bool m_bStartedTimer; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nDamageAbsorbed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tinker_Defensive_Matrix because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tinker_Defensive_Matrix) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tinker_Defensive_Matrix) == 0x_);
     };
 };

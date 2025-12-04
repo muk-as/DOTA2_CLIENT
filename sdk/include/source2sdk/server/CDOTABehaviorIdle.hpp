@@ -15,21 +15,21 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTABehaviorIdle
         {
         public:
-            uint8_t _pad0000[0x60]; // 0x0
-            source2sdk::server::CountdownTimer m_IdleRareAnimationTime; // 0x60            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_IdleRareAnimationTime; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorIdle, m_IdleRareAnimationTime) == 0x60);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorIdle, m_IdleRareAnimationTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CDOTABehaviorIdle) == 0x78);
+        static_assert(sizeof(source2sdk::server::CDOTABehaviorIdle) == 0x_);
     };
 };

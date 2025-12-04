@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd08
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,24 +31,24 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_boneIndexAttached; // 0xcd0            
+            std::uint32_t m_boneIndexAttached; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_ragdollAttachedObjectIndex; // 0xcd4            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkEncoder "coord"
-            Vector m_attachmentPointBoneSpace; // 0xcd8            
+            std::uint32_t m_ragdollAttachedObjectIndex; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_attachmentPointRagdollSpace; // 0xce4            
-            Vector m_vecOffset; // 0xcf0            
-            float m_parentTime; // 0xcfc            
-            bool m_bHasParent; // 0xd00            
-            uint8_t _pad0d01[0x7];
+            Vector m_attachmentPointBoneSpace; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkEncoder "coord"
+            Vector m_attachmentPointRagdollSpace; // 0x_            
+            Vector m_vecOffset; // 0x_            
+            float m_parentTime; // 0x_            
+            bool m_bHasParent; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_RagdollPropAttached because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_RagdollPropAttached) == 0xd08);
+        static_assert(sizeof(source2sdk::client::C_RagdollPropAttached) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,19 +26,19 @@ namespace source2sdk
         class CStaticPoseCache
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_poses has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CCachedPose> m_poses;
-            char m_poses[0x18]; // 0x10            
-            std::int32_t m_nBoneCount; // 0x28            
-            std::int32_t m_nMorphCount; // 0x2c            
+            char m_poses[0x_]; // 0x_            
+            std::int32_t m_nBoneCount; // 0x_            
+            std::int32_t m_nMorphCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_poses) == 0x10);
-        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_nBoneCount) == 0x28);
-        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_nMorphCount) == 0x2c);
+        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_poses) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_nBoneCount) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CStaticPoseCache, m_nMorphCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CStaticPoseCache) == 0x30);
+        static_assert(sizeof(source2sdk::animgraphlib::CStaticPoseCache) == 0x_);
     };
 };

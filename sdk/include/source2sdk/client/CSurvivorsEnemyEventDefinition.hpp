@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,24 +25,24 @@ namespace source2sdk
         class CSurvivorsEnemyEventDefinition
         {
         public:
-            CUtlString m_sSpawnerName; // 0x0            
-            std::int32_t m_nMinimumEnemyCountOverride; // 0x8            
-            std::int32_t m_nMaxSpawnCountPerIntervalOverride; // 0xc            
-            std::int32_t m_nOverflowEnemySpawnCountOverride; // 0x10            
-            float m_flSpawnIntervalOverride; // 0x14            
-            float m_flStartTime; // 0x18            
-            float m_flEndTime; // 0x1c            
+            CUtlString m_sSpawnerName; // 0x_            
+            std::int32_t m_nMinimumEnemyCountOverride; // 0x_            
+            std::int32_t m_nMaxSpawnCountPerIntervalOverride; // 0x_            
+            std::int32_t m_nOverflowEnemySpawnCountOverride; // 0x_            
+            float m_flSpawnIntervalOverride; // 0x_            
+            float m_flStartTime; // 0x_            
+            float m_flEndTime; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_sSpawnerName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nMinimumEnemyCountOverride) == 0x8);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nMaxSpawnCountPerIntervalOverride) == 0xc);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nOverflowEnemySpawnCountOverride) == 0x10);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flSpawnIntervalOverride) == 0x14);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flStartTime) == 0x18);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flEndTime) == 0x1c);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_sSpawnerName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nMinimumEnemyCountOverride) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nMaxSpawnCountPerIntervalOverride) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_nOverflowEnemySpawnCountOverride) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flSpawnIntervalOverride) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemyEventDefinition, m_flEndTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsEnemyEventDefinition) == 0x20);
+        static_assert(sizeof(source2sdk::client::CSurvivorsEnemyEventDefinition) == 0x_);
     };
 };

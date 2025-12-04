@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -28,15 +28,15 @@ namespace source2sdk
         struct ExtraVertexStreamOverride_t : public source2sdk::worldrenderer::BaseSceneObjectOverride_t
         {
         public:
-            std::uint32_t m_nSubSceneObject; // 0x4            
-            std::uint32_t m_nDrawCallIndex; // 0x8            
-            source2sdk::modellib::MeshDrawPrimitiveFlags_t m_nAdditionalMeshDrawPrimitiveFlags; // 0xc            
-            source2sdk::modellib::CRenderBufferBinding m_extraBufferBinding; // 0x10            
+            std::uint32_t m_nSubSceneObject; // 0x_            
+            std::uint32_t m_nDrawCallIndex; // 0x_            
+            source2sdk::modellib::MeshDrawPrimitiveFlags_t m_nAdditionalMeshDrawPrimitiveFlags; // 0x_            
+            source2sdk::modellib::CRenderBufferBinding m_extraBufferBinding; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in ExtraVertexStreamOverride_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::worldrenderer::ExtraVertexStreamOverride_t) == 0x30);
+        static_assert(sizeof(source2sdk::worldrenderer::ExtraVertexStreamOverride_t) == 0x_);
     };
 };

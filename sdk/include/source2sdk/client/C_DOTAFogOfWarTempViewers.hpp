@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x660
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,19 +30,19 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_FoWTempViewerVersion; // 0x5e8            
-            uint8_t _pad05ec[0x4]; // 0x5ec
+            std::uint32_t m_FoWTempViewerVersion; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_TempViewerInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::TempViewerInfo_t> m_TempViewerInfo;
-            char m_TempViewerInfo[0x68]; // 0x5f0            
-            std::int32_t m_dota_spectator_fog_of_war_last; // 0x658            
-            std::uint32_t m_unLastFogOfWarTeam; // 0x65c            
+            char m_TempViewerInfo[0x_]; // 0x_            
+            std::int32_t m_dota_spectator_fog_of_war_last; // 0x_            
+            std::uint32_t m_unLastFogOfWarTeam; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAFogOfWarTempViewers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAFogOfWarTempViewers) == 0x660);
+        static_assert(sizeof(source2sdk::client::C_DOTAFogOfWarTempViewers) == 0x_);
     };
 };

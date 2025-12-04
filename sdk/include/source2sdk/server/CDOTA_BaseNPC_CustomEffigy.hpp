@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1a00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,15 +32,15 @@ namespace source2sdk
         class CDOTA_BaseNPC_CustomEffigy : public source2sdk::server::CDOTA_BaseNPC_Building
         {
         public:
-            std::uint32_t m_unStatusEffectIndex; // 0x19f8            
+            std::uint32_t m_unStatusEffectIndex; // 0x_            
             // m_hPedestal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hPedestal;
-            char m_hPedestal[0x4]; // 0x19fc            
+            char m_hPedestal[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_CustomEffigy because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_CustomEffigy) == 0x1a00);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_CustomEffigy) == 0x_);
     };
 };

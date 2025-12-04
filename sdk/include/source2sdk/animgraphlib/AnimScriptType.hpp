@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 2
-        // Size: 0x2
+        // Size: 0x_
         enum class AnimScriptType : std::uint16_t
         {
             ANIMSCRIPT_TYPE_INVALID = 0xffff,

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         struct VoxelVisBlockOffset_t
         {
         public:
-            std::uint32_t m_nOffset; // 0x0            
-            std::uint32_t m_nElementCount; // 0x4            
+            std::uint32_t m_nOffset; // 0x_            
+            std::uint32_t m_nElementCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::VoxelVisBlockOffset_t, m_nOffset) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::VoxelVisBlockOffset_t, m_nElementCount) == 0x4);
+        static_assert(offsetof(source2sdk::worldrenderer::VoxelVisBlockOffset_t, m_nOffset) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::VoxelVisBlockOffset_t, m_nElementCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::VoxelVisBlockOffset_t) == 0x8);
+        static_assert(sizeof(source2sdk::worldrenderer::VoxelVisBlockOffset_t) == 0x_);
     };
 };

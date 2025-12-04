@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,14 +31,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Local space position translation to apply to the current transform"
-            CSmartPropAttributeVector m_vPosition; // 0x50            
+            CSmartPropAttributeVector m_vPosition; // 0x_            
             // metadata: MPropertyDescription "Specifies the coordinate space of the specified position value."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpace; // 0x90            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpace; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_Translate because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_Translate) == 0xd0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_Translate) == 0x_);
     };
 };

@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x630
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,25 +33,25 @@ namespace source2sdk
         class CDOTA_Ability_AncientApparition_IceBlast : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::server::CountdownTimer m_PathTimer; // 0x5c0            
-            Vector m_vTarget; // 0x5d8            
-            Vector m_vStartPos; // 0x5e4            
-            Vector m_vLastTempViewer; // 0x5f0            
-            std::int32_t m_iTrackerProjectile; // 0x5fc            
-            float path_radius; // 0x600            
-            float radius_min; // 0x604            
-            float radius_max; // 0x608            
-            float radius_grow; // 0x60c            
-            float frostbite_duration; // 0x610            
-            float target_sight_radius; // 0x614            
+            source2sdk::server::CountdownTimer m_PathTimer; // 0x_            
+            Vector m_vTarget; // 0x_            
+            Vector m_vStartPos; // 0x_            
+            Vector m_vLastTempViewer; // 0x_            
+            std::int32_t m_iTrackerProjectile; // 0x_            
+            float path_radius; // 0x_            
+            float radius_min; // 0x_            
+            float radius_max; // 0x_            
+            float radius_grow; // 0x_            
+            float frostbite_duration; // 0x_            
+            float target_sight_radius; // 0x_            
             // m_hFrostbittenEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hFrostbittenEntities;
-            char m_hFrostbittenEntities[0x18]; // 0x618            
+            char m_hFrostbittenEntities[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AncientApparition_IceBlast because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AncientApparition_IceBlast) == 0x630);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AncientApparition_IceBlast) == 0x_);
     };
 };

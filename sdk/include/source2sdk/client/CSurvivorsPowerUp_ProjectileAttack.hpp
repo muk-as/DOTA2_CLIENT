@@ -18,9 +18,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x730
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsPowerUp_ProjectileAttack : public source2sdk::client::CSurvivorsPowerUp
@@ -28,26 +28,26 @@ namespace source2sdk
         public:
             // m_sParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sParticle;
-            char m_sParticle[0xe0]; // 0x608            
-            source2sdk::client::ESurvivorsAttackTargeting m_eTargeting; // 0x6e8            
-            source2sdk::client::ESurvivorsAttackTargeting m_eBounceTargeting; // 0x6ec            
-            float m_flSpawnMinimumLifetime; // 0x6f0            
-            float m_flBounceMinimumLifetime; // 0x6f4            
-            bool m_bExpireOnWorldCollision; // 0x6f8            
-            bool m_bAbilityActiveWhileProjectileIsActive; // 0x6f9            
-            uint8_t _pad06fa[0x2]; // 0x6fa
-            std::int32_t m_nActiveProjectilesToTrack; // 0x6fc            
+            char m_sParticle[0x_]; // 0x_            
+            source2sdk::client::ESurvivorsAttackTargeting m_eTargeting; // 0x_            
+            source2sdk::client::ESurvivorsAttackTargeting m_eBounceTargeting; // 0x_            
+            float m_flSpawnMinimumLifetime; // 0x_            
+            float m_flBounceMinimumLifetime; // 0x_            
+            bool m_bExpireOnWorldCollision; // 0x_            
+            bool m_bAbilityActiveWhileProjectileIsActive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nActiveProjectilesToTrack; // 0x_            
             // m_vecQueuedProjectileTimers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_vecQueuedProjectileTimers;
-            char m_vecQueuedProjectileTimers[0x18]; // 0x700            
+            char m_vecQueuedProjectileTimers[0x_]; // 0x_            
             // m_vecTargetExclusions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::SurvivorsUnitID_t> m_vecTargetExclusions;
-            char m_vecTargetExclusions[0x18]; // 0x718            
+            char m_vecTargetExclusions[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsPowerUp_ProjectileAttack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_ProjectileAttack) == 0x730);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_ProjectileAttack) == 0x_);
     };
 };

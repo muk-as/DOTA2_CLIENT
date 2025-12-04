@@ -25,31 +25,31 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DeathProphet_Scepter : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            float spirit_speed; // 0x187c            
-            float max_distance; // 0x1880            
-            float give_up_distance; // 0x1884            
-            float min_damage; // 0x1888            
-            float max_damage; // 0x188c            
-            std::int32_t heal_percent; // 0x1890            
-            std::int32_t spirit_duration; // 0x1894            
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1898            
-            source2sdk::entity2::GameTime_t m_fLastThinkTime; // 0x189c            
-            bool m_bExpired; // 0x18a0            
-            uint8_t _pad18a1[0x7]; // 0x18a1
-            source2sdk::client::sSpiritInfo* m_SpiritInfo; // 0x18a8            
-            uint8_t _pad18b0[0x18];
+            float radius; // 0x_            
+            float spirit_speed; // 0x_            
+            float max_distance; // 0x_            
+            float give_up_distance; // 0x_            
+            float min_damage; // 0x_            
+            float max_damage; // 0x_            
+            std::int32_t heal_percent; // 0x_            
+            std::int32_t spirit_duration; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastThinkTime; // 0x_            
+            bool m_bExpired; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::sSpiritInfo* m_SpiritInfo; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DeathProphet_Scepter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DeathProphet_Scepter) == 0x18c8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DeathProphet_Scepter) == 0x_);
     };
 };

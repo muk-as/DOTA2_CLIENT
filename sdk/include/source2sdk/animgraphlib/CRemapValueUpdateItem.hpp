@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,22 +26,22 @@ namespace source2sdk
         class CRemapValueUpdateItem
         {
         public:
-            source2sdk::animgraphlib::CAnimParamHandle m_hParamIn; // 0x0            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParamOut; // 0x2            
-            float m_flMinInputValue; // 0x4            
-            float m_flMaxInputValue; // 0x8            
-            float m_flMinOutputValue; // 0xc            
-            float m_flMaxOutputValue; // 0x10            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParamIn; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParamOut; // 0x_            
+            float m_flMinInputValue; // 0x_            
+            float m_flMaxInputValue; // 0x_            
+            float m_flMinOutputValue; // 0x_            
+            float m_flMaxOutputValue; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_hParamIn) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_hParamOut) == 0x2);
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMinInputValue) == 0x4);
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMaxInputValue) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMinOutputValue) == 0xc);
-        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMaxOutputValue) == 0x10);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_hParamIn) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_hParamOut) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMinInputValue) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMaxInputValue) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMinOutputValue) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CRemapValueUpdateItem, m_flMaxOutputValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CRemapValueUpdateItem) == 0x14);
+        static_assert(sizeof(source2sdk::animgraphlib::CRemapValueUpdateItem) == 0x_);
     };
 };

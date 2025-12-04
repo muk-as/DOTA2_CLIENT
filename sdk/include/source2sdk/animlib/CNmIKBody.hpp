@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         class CNmIKBody
         {
         public:
-            float m_flMass; // 0x0            
-            Vector m_vLocalMassCenter; // 0x4            
-            Vector m_vRadius; // 0x10            
-            float m_flResistance; // 0x1c            
+            float m_flMass; // 0x_            
+            Vector m_vLocalMassCenter; // 0x_            
+            Vector m_vRadius; // 0x_            
+            float m_flResistance; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_flMass) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_vLocalMassCenter) == 0x4);
-        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_vRadius) == 0x10);
-        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_flResistance) == 0x1c);
+        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_flMass) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_vLocalMassCenter) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_vRadius) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKBody, m_flResistance) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmIKBody) == 0x20);
+        static_assert(sizeof(source2sdk::animlib::CNmIKBody) == 0x_);
     };
 };

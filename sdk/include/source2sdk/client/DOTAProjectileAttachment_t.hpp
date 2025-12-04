@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAProjectileAttachment_t : std::uint32_t
         {
             DOTA_PROJECTILE_ATTACHMENT_NONE = 0x0,

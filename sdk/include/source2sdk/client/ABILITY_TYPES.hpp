@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ABILITY_TYPES : std::uint32_t
         {
             ABILITY_TYPE_BASIC = 0x0,

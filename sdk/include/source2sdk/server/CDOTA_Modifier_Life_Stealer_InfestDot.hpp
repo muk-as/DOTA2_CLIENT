@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Life_Stealer_InfestDot : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float dot_damage_as_pct_of_damage_dealt; // 0x1878            
-            float dot_tick_interval; // 0x187c            
-            std::int32_t m_nDamagePerTick; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float dot_damage_as_pct_of_damage_dealt; // 0x_            
+            float dot_tick_interval; // 0x_            
+            std::int32_t m_nDamagePerTick; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Life_Stealer_InfestDot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Life_Stealer_InfestDot) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Life_Stealer_InfestDot) == 0x_);
     };
 };

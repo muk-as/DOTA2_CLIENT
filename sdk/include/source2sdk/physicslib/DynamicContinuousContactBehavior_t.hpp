@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class DynamicContinuousContactBehavior_t : std::uint8_t
         {
             DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY = 0x0,

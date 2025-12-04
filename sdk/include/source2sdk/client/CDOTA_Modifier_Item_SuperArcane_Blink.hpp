@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_SuperArcane_Blink : public source2sdk::client::CDOTA_Modifier_Item_Arcane_Blink
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_SuperArcane_Blink) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_SuperArcane_Blink) == 0x_);
     };
 };

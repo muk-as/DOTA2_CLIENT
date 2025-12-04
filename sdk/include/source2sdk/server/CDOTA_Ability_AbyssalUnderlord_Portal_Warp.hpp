@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,24 +36,24 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5c0            
+            char m_hTarget[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            float m_flChannelTime; // 0x5c4            
+            float m_flChannelTime; // 0x_            
             // m_hSpawnUnderlingThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSpawnUnderlingThinker;
-            char m_hSpawnUnderlingThinker[0x4]; // 0x5c8            
+            char m_hSpawnUnderlingThinker[0x_]; // 0x_            
             // m_hWarrior has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hWarrior;
-            char m_hWarrior[0x4]; // 0x5cc            
+            char m_hWarrior[0x_]; // 0x_            
             // m_hArcher has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hArcher;
-            char m_hArcher[0x4]; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            char m_hArcher[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AbyssalUnderlord_Portal_Warp because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AbyssalUnderlord_Portal_Warp) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AbyssalUnderlord_Portal_Warp) == 0x_);
     };
 };

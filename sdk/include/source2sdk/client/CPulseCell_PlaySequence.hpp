@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -35,17 +35,17 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyAttributeSuggestionName "pulse_model_sequence_name"
-            CUtlString m_SequenceName; // 0x48            
+            CUtlString m_SequenceName; // 0x_            
             // metadata: MPulseDocCustomAttr
-            source2sdk::pulse_runtime_lib::PulseNodeDynamicOutflows_t m_PulseAnimEvents; // 0x50            
+            source2sdk::pulse_runtime_lib::PulseNodeDynamicOutflows_t m_PulseAnimEvents; // 0x_            
             // metadata: MPulseCellOutflow_IsDefault
-            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnFinished; // 0x68            
-            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnCanceled; // 0xb0            
+            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnFinished; // 0x_            
+            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnCanceled; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_PlaySequence because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPulseCell_PlaySequence) == 0xf8);
+        static_assert(sizeof(source2sdk::client::CPulseCell_PlaySequence) == 0x_);
     };
 };

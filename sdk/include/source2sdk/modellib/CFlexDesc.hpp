@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,12 +24,12 @@ namespace source2sdk
         class CFlexDesc
         {
         public:
-            CUtlString m_szFacs; // 0x0            
+            CUtlString m_szFacs; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CFlexDesc, m_szFacs) == 0x0);
+        static_assert(offsetof(source2sdk::modellib::CFlexDesc, m_szFacs) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CFlexDesc) == 0x8);
+        static_assert(sizeof(source2sdk::modellib::CFlexDesc) == 0x_);
     };
 };

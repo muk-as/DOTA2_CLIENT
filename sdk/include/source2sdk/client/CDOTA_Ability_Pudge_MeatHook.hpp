@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,28 +27,28 @@ namespace source2sdk
         class CDOTA_Ability_Pudge_MeatHook : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            Vector m_vEndpoint; // 0x688            
+            Vector m_vEndpoint; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nConsecutiveHits; // 0x694            
-            bool m_bIsVectorTargeted; // 0x698            
-            uint8_t _pad0699[0x3]; // 0x699
-            Vector m_vTurnLocation; // 0x69c            
-            Vector m_vDirectionAfterTurn; // 0x6a8            
-            bool m_bHasTurned; // 0x6b4            
-            uint8_t _pad06b5[0x3]; // 0x6b5
-            float m_flDistanceAfterTurn; // 0x6b8            
-            Vector m_vFinalPosition; // 0x6bc            
-            float reveal_duration; // 0x6c8            
-            std::int32_t curve_hook; // 0x6cc            
-            float curve_hook_turn_rate; // 0x6d0            
-            std::int32_t curve_hook_debug; // 0x6d4            
-            float m_fTimeRemaining; // 0x6d8            
-            float m_flFacingTarget; // 0x6dc            
+            std::int32_t m_nConsecutiveHits; // 0x_            
+            bool m_bIsVectorTargeted; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vTurnLocation; // 0x_            
+            Vector m_vDirectionAfterTurn; // 0x_            
+            bool m_bHasTurned; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flDistanceAfterTurn; // 0x_            
+            Vector m_vFinalPosition; // 0x_            
+            float reveal_duration; // 0x_            
+            std::int32_t curve_hook; // 0x_            
+            float curve_hook_turn_rate; // 0x_            
+            std::int32_t curve_hook_debug; // 0x_            
+            float m_fTimeRemaining; // 0x_            
+            float m_flFacingTarget; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Pudge_MeatHook because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Pudge_MeatHook) == 0x6e0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Pudge_MeatHook) == 0x_);
     };
 };

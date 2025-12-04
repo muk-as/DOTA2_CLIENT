@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 275
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class GameActivity_t : std::uint32_t
         {
             ACT_DOTA_IDLE = 0x5dc,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,13 +29,13 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Scripts"
             // m_scriptsToRun has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CGlobalSymbol> m_scriptsToRun;
-            char m_scriptsToRun[0x18]; // 0x30            
-            uint8_t _pad0048[0x18];
+            char m_scriptsToRun[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CCPPScriptComponentUpdater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CCPPScriptComponentUpdater) == 0x60);
+        static_assert(sizeof(source2sdk::animgraphlib::CCPPScriptComponentUpdater) == 0x_);
     };
 };

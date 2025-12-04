@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 121
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ENetworkDisconnectionReason : std::uint32_t
         {
             NETWORK_DISCONNECT_INVALID = 0x0,

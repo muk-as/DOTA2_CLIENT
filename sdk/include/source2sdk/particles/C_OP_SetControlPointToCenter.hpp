@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "control point number to set"
-            std::int32_t m_nCP1; // 0x1c8            
+            std::int32_t m_nCP1; // 0x_            
             // metadata: MPropertyFriendlyName "center offset"
             // metadata: MVectorIsCoordinate
-            Vector m_vecCP1Pos; // 0x1cc            
+            Vector m_vecCP1Pos; // 0x_            
             // metadata: MPropertyFriendlyName "use average particle position"
             // metadata: MVectorIsCoordinate
-            bool m_bUseAvgParticlePos; // 0x1d8            
-            uint8_t _pad01d9[0x3]; // 0x1d9
+            bool m_bUseAvgParticlePos; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "set parent"
-            source2sdk::particles::ParticleParentSetMode_t m_nSetParent; // 0x1dc            
+            source2sdk::particles::ParticleParentSetMode_t m_nSetParent; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SetControlPointToCenter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SetControlPointToCenter) == 0x1e0);
+        static_assert(sizeof(source2sdk::particles::C_OP_SetControlPointToCenter) == 0x_);
     };
 };

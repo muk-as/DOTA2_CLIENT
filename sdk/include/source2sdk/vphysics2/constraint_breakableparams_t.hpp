@@ -14,30 +14,30 @@ namespace source2sdk
     namespace vphysics2
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct constraint_breakableparams_t
         {
         public:
-            float strength; // 0x0            
-            float forceLimit; // 0x4            
-            float torqueLimit; // 0x8            
-            float bodyMassScale[2]; // 0xc            
-            bool isActive; // 0x14            
-            uint8_t _pad0015[0x3];
+            float strength; // 0x_            
+            float forceLimit; // 0x_            
+            float torqueLimit; // 0x_            
+            float bodyMassScale[2]; // 0x_            
+            bool isActive; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, strength) == 0x0);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, forceLimit) == 0x4);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, torqueLimit) == 0x8);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, bodyMassScale) == 0xc);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, isActive) == 0x14);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, strength) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, forceLimit) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, torqueLimit) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, bodyMassScale) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_breakableparams_t, isActive) == 0x_);
         
-        static_assert(sizeof(source2sdk::vphysics2::constraint_breakableparams_t) == 0x18);
+        static_assert(sizeof(source2sdk::vphysics2::constraint_breakableparams_t) == 0x_);
     };
 };

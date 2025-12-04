@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CLICK_BEHAVIORS : std::uint32_t
         {
             DOTA_CLICK_BEHAVIOR_NONE = 0x0,

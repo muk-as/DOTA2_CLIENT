@@ -14,23 +14,23 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x818
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CScriptNavBlocker : public source2sdk::server::CFuncNavBlocker
         {
         public:
-            Vector m_vExtent; // 0x808            
-            uint8_t _pad0814[0x4];
+            Vector m_vExtent; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CScriptNavBlocker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CScriptNavBlocker) == 0x818);
+        static_assert(sizeof(source2sdk::server::CScriptNavBlocker) == 0x_);
     };
 };

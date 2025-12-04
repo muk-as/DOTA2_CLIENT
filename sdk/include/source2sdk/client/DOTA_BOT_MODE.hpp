@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 27
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_BOT_MODE : std::uint32_t
         {
             DOTA_BOT_MODE_NONE = 0x0,

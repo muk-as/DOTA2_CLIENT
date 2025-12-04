@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct FeSimdRodConstraint_t
         {
         public:
-            std::uint16_t nNode[2][4]; // 0x0            
-            fltx4 f4MaxDist; // 0x10            
-            fltx4 f4MinDist; // 0x20            
-            fltx4 f4Weight0; // 0x30            
-            fltx4 f4RelaxationFactor; // 0x40            
+            std::uint16_t nNode[2][4]; // 0x_            
+            fltx4 f4MaxDist; // 0x_            
+            fltx4 f4MinDist; // 0x_            
+            fltx4 f4Weight0; // 0x_            
+            fltx4 f4RelaxationFactor; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4MaxDist) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4MinDist) == 0x20);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4Weight0) == 0x30);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4RelaxationFactor) == 0x40);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4MaxDist) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4MinDist) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4Weight0) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdRodConstraint_t, f4RelaxationFactor) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeSimdRodConstraint_t) == 0x50);
+        static_assert(sizeof(source2sdk::physicslib::FeSimdRodConstraint_t) == 0x_);
     };
 };

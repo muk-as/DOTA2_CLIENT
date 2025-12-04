@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Fantasy_Selection_Mode : std::uint32_t
         {
             FANTASY_SELECTION_INVALID = 0x0,

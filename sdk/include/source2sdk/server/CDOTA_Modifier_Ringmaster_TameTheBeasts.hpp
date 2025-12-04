@@ -19,23 +19,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Ringmaster_TameTheBeasts : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flPreviousMult; // 0x1878            
-            float m_fChannelTime; // 0x187c            
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1880            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1884            
-            std::int32_t has_debuff_immunity; // 0x1888            
-            std::int32_t magic_resist; // 0x188c            
+            float m_flPreviousMult; // 0x_            
+            float m_fChannelTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            std::int32_t has_debuff_immunity; // 0x_            
+            std::int32_t magic_resist; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_TameTheBeasts because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Ringmaster_TameTheBeasts) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Ringmaster_TameTheBeasts) == 0x_);
     };
 };

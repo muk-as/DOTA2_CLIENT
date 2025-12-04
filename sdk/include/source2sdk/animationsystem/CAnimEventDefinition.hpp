@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,26 +24,26 @@ namespace source2sdk
         class CAnimEventDefinition
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            std::int32_t m_nFrame; // 0x8            
-            std::int32_t m_nEndFrame; // 0xc            
-            float m_flCycle; // 0x10            
-            float m_flDuration; // 0x14            
-            KeyValues3 m_EventData; // 0x18            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nFrame; // 0x_            
+            std::int32_t m_nEndFrame; // 0x_            
+            float m_flCycle; // 0x_            
+            float m_flDuration; // 0x_            
+            KeyValues3 m_EventData; // 0x_            
             // metadata: MKV3TransferName "m_sOptions"
-            CBufferString m_sLegacyOptions; // 0x28            
-            CGlobalSymbol m_sEventName; // 0x38            
+            CBufferString m_sLegacyOptions; // 0x_            
+            CGlobalSymbol m_sEventName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_nFrame) == 0x8);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_nEndFrame) == 0xc);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_flCycle) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_flDuration) == 0x14);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_EventData) == 0x18);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_sLegacyOptions) == 0x28);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_sEventName) == 0x38);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_nFrame) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_nEndFrame) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_flCycle) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_flDuration) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_EventData) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_sLegacyOptions) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimEventDefinition, m_sEventName) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimEventDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimEventDefinition) == 0x_);
     };
 };

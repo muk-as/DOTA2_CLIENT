@@ -15,9 +15,9 @@ namespace source2sdk
     namespace particleslib
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x128
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MPulseInstanceDomainInfo
@@ -31,11 +31,11 @@ namespace source2sdk
         class CParticleCollectionBindingInstance : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {
         public:
-            uint8_t _pad0108[0x20];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::particleslib::CParticleCollectionBindingInstance) == 0x128);
+        static_assert(sizeof(source2sdk::particleslib::CParticleCollectionBindingInstance) == 0x_);
     };
 };

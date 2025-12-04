@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x638
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,24 +27,24 @@ namespace source2sdk
         class CDOTA_Ability_Aghanim_UrnUpheaval : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vPosition; // 0x5c0            
-            float aoe; // 0x5cc            
-            float slow_rate; // 0x5d0            
-            float slow_rate_duration; // 0x5d4            
-            float duration; // 0x5d8            
-            float max_slow; // 0x5dc            
-            float burn_damage; // 0x5e0            
-            float m_flCurrentSlow; // 0x5e4            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5e8            
-            uint8_t _pad05ec[0x4]; // 0x5ec
-            source2sdk::server::CountdownTimer m_SlowTimer; // 0x5f0            
-            source2sdk::server::CountdownTimer m_timer; // 0x608            
-            uint8_t _pad0620[0x18];
+            Vector m_vPosition; // 0x_            
+            float aoe; // 0x_            
+            float slow_rate; // 0x_            
+            float slow_rate_duration; // 0x_            
+            float duration; // 0x_            
+            float max_slow; // 0x_            
+            float burn_damage; // 0x_            
+            float m_flCurrentSlow; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_SlowTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_timer; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Aghanim_UrnUpheaval because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Aghanim_UrnUpheaval) == 0x638);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Aghanim_UrnUpheaval) == 0x_);
     };
 };

@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,22 +33,22 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Selection Mode"
             // metadata: MPropertyDescription "Specifies how the color is to be selected from the authored set of choices"
-            source2sdk::smartprops::CSmartPropAttributeChoiceSelectionMode m_SelectionMode; // 0x50            
+            source2sdk::smartprops::CSmartPropAttributeChoiceSelectionMode m_SelectionMode; // 0x_            
             // metadata: MPropertyFriendlyName "Color Position"
             // metadata: MPropertyDescription "[ 0, 1 ] Value specifying the location on the gradient to pick the color from."
             // metadata: MPropertySuppressExpr "( m_SelectionMode != SPECIFIC )"
-            CSmartPropAttributeFloat m_ColorPosition; // 0x90            
+            CSmartPropAttributeFloat m_ColorPosition; // 0x_            
             // metadata: MPropertyFriendlyName "Application Mode"
             // metadata: MPropertyDescription "Specifies how the selected color should be applied to the current color."
-            source2sdk::smartprops::ApplyColorMode_t m_Mode; // 0xd0            
-            uint8_t _pad00d4[0x4]; // 0xd4
+            source2sdk::smartprops::ApplyColorMode_t m_Mode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Defines a color gradient from which a random color will be piked."
-            CColorGradient m_Gradient; // 0xd8            
+            CColorGradient m_Gradient; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_RandomColorTintColor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RandomColorTintColor) == 0xf0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RandomColorTintColor) == 0x_);
     };
 };

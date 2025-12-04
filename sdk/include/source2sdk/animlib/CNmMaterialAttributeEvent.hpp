@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x130
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         class CNmMaterialAttributeEvent : public source2sdk::animlib::CNmEvent
         {
         public:
-            CUtlString m_attributeName; // 0x20            
-            CUtlStringToken m_attributeNameToken; // 0x28            
-            uint8_t _pad002c[0x4]; // 0x2c
-            CPiecewiseCurve m_x; // 0x30            
-            CPiecewiseCurve m_y; // 0x70            
-            CPiecewiseCurve m_z; // 0xb0            
-            CPiecewiseCurve m_w; // 0xf0            
+            CUtlString m_attributeName; // 0x_            
+            CUtlStringToken m_attributeNameToken; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CPiecewiseCurve m_x; // 0x_            
+            CPiecewiseCurve m_y; // 0x_            
+            CPiecewiseCurve m_z; // 0x_            
+            CPiecewiseCurve m_w; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmMaterialAttributeEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmMaterialAttributeEvent) == 0x130);
+        static_assert(sizeof(source2sdk::animlib::CNmMaterialAttributeEvent) == 0x_);
     };
 };

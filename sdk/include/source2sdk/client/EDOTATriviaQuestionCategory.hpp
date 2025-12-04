@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 18
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTATriviaQuestionCategory : std::uint32_t
         {
             k_EDOTATriviaQuestionCategory_AbilityIcon = 0x0,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CFuncMover_OrientationUpdate_t : std::uint32_t
         {
             ORIENTATION_FORWARD_PATH = 0x0,

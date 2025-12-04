@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x120
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,15 +32,15 @@ namespace source2sdk
             // metadata: MPropertyProvidesEditContextString
             // m_sModelName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_sModelName;
-            char m_sModelName[0xe0]; // 0x38            
+            char m_sModelName[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "Default Material Group"
             // metadata: MPropertyDescription "Default material group (skin) to assign to the variable value."
-            CModelMaterialGroupName m_DefaultValue; // 0x118            
+            CModelMaterialGroupName m_DefaultValue; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_MaterialGroup because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_MaterialGroup) == 0x120);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_MaterialGroup) == 0x_);
     };
 };

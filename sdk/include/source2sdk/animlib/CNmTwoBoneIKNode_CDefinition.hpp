@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,18 +27,18 @@ namespace source2sdk
         class CNmTwoBoneIKNode_CDefinition : public source2sdk::animlib::CNmPassthroughNode_CDefinition
         {
         public:
-            CGlobalSymbol m_effectorBoneID; // 0x18            
-            std::int16_t m_nEffectorTargetNodeIdx; // 0x20            
-            std::int16_t m_nEnabledNodeIdx; // 0x22            
-            float m_flBlendTimeSeconds; // 0x24            
-            source2sdk::animlib::NmIKBlendMode_t m_blendMode; // 0x28            
-            bool m_bIsTargetInWorldSpace; // 0x29            
-            uint8_t _pad002a[0x6];
+            CGlobalSymbol m_effectorBoneID; // 0x_            
+            std::int16_t m_nEffectorTargetNodeIdx; // 0x_            
+            std::int16_t m_nEnabledNodeIdx; // 0x_            
+            float m_flBlendTimeSeconds; // 0x_            
+            source2sdk::animlib::NmIKBlendMode_t m_blendMode; // 0x_            
+            bool m_bIsTargetInWorldSpace; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmTwoBoneIKNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmTwoBoneIKNode_CDefinition) == 0x30);
+        static_assert(sizeof(source2sdk::animlib::CNmTwoBoneIKNode_CDefinition) == 0x_);
     };
 };

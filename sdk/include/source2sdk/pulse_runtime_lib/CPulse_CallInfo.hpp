@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,24 +27,24 @@ namespace source2sdk
         class CPulse_CallInfo
         {
         public:
-            PulseSymbol_t m_PortName; // 0x0            
-            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_nEditorNodeID; // 0x10            
-            uint8_t _pad0014[0x4]; // 0x14
-            source2sdk::pulse_runtime_lib::PulseRegisterMap_t m_RegisterMap; // 0x18            
-            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_CallMethodID; // 0x48            
-            source2sdk::pulse_runtime_lib::PulseRuntimeChunkIndex_t m_nSrcChunk; // 0x4c            
-            std::int32_t m_nSrcInstruction; // 0x50            
-            uint8_t _pad0054[0x4];
+            PulseSymbol_t m_PortName; // 0x_            
+            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_nEditorNodeID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::PulseRegisterMap_t m_RegisterMap; // 0x_            
+            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_CallMethodID; // 0x_            
+            source2sdk::pulse_runtime_lib::PulseRuntimeChunkIndex_t m_nSrcChunk; // 0x_            
+            std::int32_t m_nSrcInstruction; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_PortName) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nEditorNodeID) == 0x10);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_RegisterMap) == 0x18);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_CallMethodID) == 0x48);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nSrcChunk) == 0x4c);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nSrcInstruction) == 0x50);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_PortName) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nEditorNodeID) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_RegisterMap) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_CallMethodID) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nSrcChunk) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_CallInfo, m_nSrcInstruction) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_CallInfo) == 0x58);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_CallInfo) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 1
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SVC_Messages_LowFrequency : std::uint32_t
         {
             svc_dummy = 0x258,

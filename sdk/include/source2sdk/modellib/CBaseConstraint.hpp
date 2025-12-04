@@ -17,9 +17,9 @@ namespace source2sdk
     namespace modellib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -29,20 +29,20 @@ namespace source2sdk
         class CBaseConstraint : public source2sdk::modellib::CBoneConstraintBase
         {
         public:
-            CUtlString m_name; // 0x20            
-            Vector m_vUpVector; // 0x28            
-            uint8_t _pad0034[0x4]; // 0x34
+            CUtlString m_name; // 0x_            
+            Vector m_vUpVector; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_slaves has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::modellib::CConstraintSlave> m_slaves;
-            char m_slaves[0x10]; // 0x38            
+            char m_slaves[0x_]; // 0x_            
             // m_targets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CConstraintTarget> m_targets;
-            char m_targets[0x18]; // 0x48            
+            char m_targets[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CBaseConstraint) == 0x60);
+        static_assert(sizeof(source2sdk::modellib::CBaseConstraint) == 0x_);
     };
 };

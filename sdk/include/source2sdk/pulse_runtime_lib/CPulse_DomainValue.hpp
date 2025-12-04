@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,18 +25,18 @@ namespace source2sdk
         class CPulse_DomainValue
         {
         public:
-            source2sdk::pulse_runtime_lib::PulseDomainValueType_t m_nType; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
-            CGlobalSymbolCaseSensitive m_Value; // 0x8            
-            CPulseValueFullType m_RequiredRuntimeType; // 0x10            
-            uint8_t _pad0028[0x8];
+            source2sdk::pulse_runtime_lib::PulseDomainValueType_t m_nType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CGlobalSymbolCaseSensitive m_Value; // 0x_            
+            CPulseValueFullType m_RequiredRuntimeType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_nType) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_Value) == 0x8);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_RequiredRuntimeType) == 0x10);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_nType) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_Value) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_DomainValue, m_RequiredRuntimeType) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_DomainValue) == 0x30);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_DomainValue) == 0x_);
     };
 };

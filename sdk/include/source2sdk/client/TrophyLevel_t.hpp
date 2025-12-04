@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,18 +26,18 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "the score at which this level is unlocked"
-            std::uint32_t m_nScore; // 0x0            
+            std::uint32_t m_nScore; // 0x_            
             // metadata: MPropertyDescription "points to award for achieving this trophy level"
-            std::int32_t m_nBadgePoints; // 0x4            
+            std::int32_t m_nBadgePoints; // 0x_            
             // metadata: MPropertyDescription "the image used to represent this level"
-            CPanoramaImageName m_sImage; // 0x8            
+            CPanoramaImageName m_sImage; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_nScore) == 0x0);
-        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_nBadgePoints) == 0x4);
-        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_sImage) == 0x8);
+        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_nScore) == 0x_);
+        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_nBadgePoints) == 0x_);
+        static_assert(offsetof(source2sdk::client::TrophyLevel_t, m_sImage) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::TrophyLevel_t) == 0x18);
+        static_assert(sizeof(source2sdk::client::TrophyLevel_t) == 0x_);
     };
 };

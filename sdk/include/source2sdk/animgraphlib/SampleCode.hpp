@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x1
-        // Alignment: 0x1
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,12 +26,12 @@ namespace source2sdk
         class SampleCode
         {
         public:
-            std::uint8_t m_subCode[8]; // 0x0            
+            std::uint8_t m_subCode[8]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::SampleCode, m_subCode) == 0x0);
+        static_assert(offsetof(source2sdk::animgraphlib::SampleCode, m_subCode) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::SampleCode) == 0x8);
+        static_assert(sizeof(source2sdk::animgraphlib::SampleCode) == 0x_);
     };
 };

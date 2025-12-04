@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 24
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCBaseMsg : std::uint32_t
         {
             k_EMsgGCInviteToParty = 0x1195,

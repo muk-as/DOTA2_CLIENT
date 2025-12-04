@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,21 +24,21 @@ namespace source2sdk
         class CAnimBoneDifference
         {
         public:
-            CBufferString m_name; // 0x0            
-            CBufferString m_parent; // 0x10            
-            Vector m_posError; // 0x20            
-            bool m_bHasRotation; // 0x2c            
-            bool m_bHasMovement; // 0x2d            
-            uint8_t _pad002e[0x2];
+            CBufferString m_name; // 0x_            
+            CBufferString m_parent; // 0x_            
+            Vector m_posError; // 0x_            
+            bool m_bHasRotation; // 0x_            
+            bool m_bHasMovement; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_name) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_parent) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_posError) == 0x20);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_bHasRotation) == 0x2c);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_bHasMovement) == 0x2d);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_parent) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_posError) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_bHasRotation) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBoneDifference, m_bHasMovement) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimBoneDifference) == 0x30);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimBoneDifference) == 0x_);
     };
 };

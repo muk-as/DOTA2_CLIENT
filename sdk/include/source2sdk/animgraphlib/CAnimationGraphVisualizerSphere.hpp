@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // Construct allowed
@@ -27,15 +27,15 @@ namespace source2sdk
         class CAnimationGraphVisualizerSphere : public source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase
         {
         public:
-            VectorAligned m_vWsPosition; // 0x40            
-            float m_flRadius; // 0x50            
-            Color m_Color; // 0x54            
-            uint8_t _pad0058[0x8];
+            VectorAligned m_vWsPosition; // 0x_            
+            float m_flRadius; // 0x_            
+            Color m_Color; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAnimationGraphVisualizerSphere because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimationGraphVisualizerSphere) == 0x60);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimationGraphVisualizerSphere) == 0x_);
     };
 };

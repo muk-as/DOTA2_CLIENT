@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,14 +26,14 @@ namespace source2sdk
         class CNmSpeedScaleBaseNode_CDefinition : public source2sdk::animlib::CNmPassthroughNode_CDefinition
         {
         public:
-            std::int16_t m_nInputValueNodeIdx; // 0x18            
-            uint8_t _pad001a[0x2]; // 0x1a
-            float m_flDefaultInputValue; // 0x1c            
+            std::int16_t m_nInputValueNodeIdx; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flDefaultInputValue; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmSpeedScaleBaseNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmSpeedScaleBaseNode_CDefinition) == 0x20);
+        static_assert(sizeof(source2sdk::animlib::CNmSpeedScaleBaseNode_CDefinition) == 0x_);
     };
 };

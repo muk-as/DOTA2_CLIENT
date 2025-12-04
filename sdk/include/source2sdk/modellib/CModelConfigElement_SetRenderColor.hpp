@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x50
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,13 +26,13 @@ namespace source2sdk
         class CModelConfigElement_SetRenderColor : public source2sdk::modellib::CModelConfigElement
         {
         public:
-            Color m_Color; // 0x48            
-            uint8_t _pad004c[0x4];
+            Color m_Color; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CModelConfigElement_SetRenderColor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CModelConfigElement_SetRenderColor) == 0x50);
+        static_assert(sizeof(source2sdk::modellib::CModelConfigElement_SetRenderColor) == 0x_);
     };
 };

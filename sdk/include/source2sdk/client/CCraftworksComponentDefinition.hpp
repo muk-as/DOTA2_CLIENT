@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,23 +25,23 @@ namespace source2sdk
         class CCraftworksComponentDefinition
         {
         public:
-            source2sdk::client::CraftworksComponentID_t m_unComponentID; // 0x0            
-            uint8_t _pad0001[0x7]; // 0x1
-            CUtlString m_strComponentLocName; // 0x8            
-            CUtlString m_strComponentLocDesc; // 0x10            
-            CPanoramaImageName m_strComponentImageSmall; // 0x18            
-            CPanoramaImageName m_strComponentImageMedium; // 0x28            
-            CUtlString m_strSound; // 0x38            
+            source2sdk::client::CraftworksComponentID_t m_unComponentID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_strComponentLocName; // 0x_            
+            CUtlString m_strComponentLocDesc; // 0x_            
+            CPanoramaImageName m_strComponentImageSmall; // 0x_            
+            CPanoramaImageName m_strComponentImageMedium; // 0x_            
+            CUtlString m_strSound; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_unComponentID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentLocName) == 0x8);
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentLocDesc) == 0x10);
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentImageSmall) == 0x18);
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentImageMedium) == 0x28);
-        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strSound) == 0x38);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_unComponentID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentLocName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentLocDesc) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentImageSmall) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strComponentImageMedium) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksComponentDefinition, m_strSound) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CCraftworksComponentDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::client::CCraftworksComponentDefinition) == 0x_);
     };
 };

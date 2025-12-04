@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         struct RnNode_t
         {
         public:
-            Vector m_vMin; // 0x0            
-            std::uint32_t m_nChildren; // 0xc            
-            Vector m_vMax; // 0x10            
-            std::uint32_t m_nTriangleOffset; // 0x1c            
+            Vector m_vMin; // 0x_            
+            std::uint32_t m_nChildren; // 0x_            
+            Vector m_vMax; // 0x_            
+            std::uint32_t m_nTriangleOffset; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_vMin) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_nChildren) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_vMax) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_nTriangleOffset) == 0x1c);
+        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_vMin) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_nChildren) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_vMax) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnNode_t, m_nTriangleOffset) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::RnNode_t) == 0x20);
+        static_assert(sizeof(source2sdk::physicslib::RnNode_t) == 0x_);
     };
 };

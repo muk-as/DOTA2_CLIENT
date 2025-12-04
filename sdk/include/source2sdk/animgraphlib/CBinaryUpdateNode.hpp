@@ -17,9 +17,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -29,19 +29,19 @@ namespace source2sdk
         class CBinaryUpdateNode : public source2sdk::animgraphlib::CAnimUpdateNodeBase
         {
         public:
-            uint8_t _pad0058[0x8]; // 0x58
-            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChild1; // 0x60            
-            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChild2; // 0x70            
-            source2sdk::animgraphlib::BinaryNodeTiming m_timingBehavior; // 0x80            
-            float m_flTimingBlend; // 0x84            
-            bool m_bResetChild1; // 0x88            
-            bool m_bResetChild2; // 0x89            
-            uint8_t _pad008a[0x6];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChild1; // 0x_            
+            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChild2; // 0x_            
+            source2sdk::animgraphlib::BinaryNodeTiming m_timingBehavior; // 0x_            
+            float m_flTimingBlend; // 0x_            
+            bool m_bResetChild1; // 0x_            
+            bool m_bResetChild2; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBinaryUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CBinaryUpdateNode) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::CBinaryUpdateNode) == 0x_);
     };
 };

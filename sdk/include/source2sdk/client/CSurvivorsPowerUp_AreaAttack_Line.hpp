@@ -15,22 +15,22 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x810
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsPowerUp_AreaAttack_Line : public source2sdk::client::CSurvivorsPowerUp_AreaAttack
         {
         public:
-            Vector m_vCachedFacingDirection; // 0x800            
-            bool m_bUseFacingDirection; // 0x80c            
-            uint8_t _pad080d[0x3];
+            Vector m_vCachedFacingDirection; // 0x_            
+            bool m_bUseFacingDirection; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsPowerUp_AreaAttack_Line because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_AreaAttack_Line) == 0x810);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_AreaAttack_Line) == 0x_);
     };
 };

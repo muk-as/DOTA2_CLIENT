@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CAI_ExpresserWithFollowup : public source2sdk::server::CAI_Expresser
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CAI_ExpresserWithFollowup) == 0xa0);
+        static_assert(sizeof(source2sdk::server::CAI_ExpresserWithFollowup) == 0x_);
     };
 };

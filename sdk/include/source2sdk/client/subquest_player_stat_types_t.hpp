@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class subquest_player_stat_types_t : std::uint32_t
         {
             SUBQUEST_PLAYER_STAT_GOLD = 0x0,

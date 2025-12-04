@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class StartupBehavior_t : std::uint32_t
         {
             UNIT_STARTUP_BEHAVIOR_DEFAULT = 0x0,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 20
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EPlayerVoiceListenState : std::uint32_t
         {
             kPVLS_None = 0x0,

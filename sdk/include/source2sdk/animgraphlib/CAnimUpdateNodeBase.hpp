@@ -16,9 +16,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -28,18 +28,18 @@ namespace source2sdk
         class CAnimUpdateNodeBase
         {
         public:
-            uint8_t _pad0000[0x18]; // 0x0
-            source2sdk::animgraphlib::CAnimNodePath m_nodePath; // 0x18            
-            source2sdk::animgraphlib::AnimNodeNetworkMode m_networkMode; // 0x48            
-            uint8_t _pad004c[0x4]; // 0x4c
-            CUtlString m_name; // 0x50            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimNodePath m_nodePath; // 0x_            
+            source2sdk::animgraphlib::AnimNodeNetworkMode m_networkMode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_name; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_nodePath) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_networkMode) == 0x48);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_name) == 0x50);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_nodePath) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_networkMode) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimUpdateNodeBase, m_name) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimUpdateNodeBase) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimUpdateNodeBase) == 0x_);
     };
 };

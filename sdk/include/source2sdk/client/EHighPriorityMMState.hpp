@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EHighPriorityMMState : std::uint32_t
         {
             k_EHighPriorityMM_Unknown = 0x0,

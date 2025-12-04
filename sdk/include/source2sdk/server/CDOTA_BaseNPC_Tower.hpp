@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1a30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -35,21 +35,21 @@ namespace source2sdk
         class CDOTA_BaseNPC_Tower : public source2sdk::server::CDOTA_BaseNPC_Building
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OnTowerKilled; // 0x19f8            
+            source2sdk::entity2::CEntityIOOutput m_OnTowerKilled; // 0x_            
             // metadata: MNetworkEnable
             // m_hTowerAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTowerAttackTarget;
-            char m_hTowerAttackTarget[0x4]; // 0x1a20            
+            char m_hTowerAttackTarget[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hTowerHighFiveTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTowerHighFiveTarget;
-            char m_hTowerHighFiveTarget[0x4]; // 0x1a24            
-            uint8_t _pad1a28[0x8];
+            char m_hTowerHighFiveTarget[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Tower because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Tower) == 0x1a30);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Tower) == 0x_);
     };
 };

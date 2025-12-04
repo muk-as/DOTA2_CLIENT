@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,20 +26,20 @@ namespace source2sdk
         class C_GlobalLight : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e8[0x528]; // 0x5e8
-            std::uint16_t m_WindClothForceHandle; // 0xb10            
-            uint8_t _pad0b12[0x2e];
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint16_t m_WindClothForceHandle; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // CGlobalLightBase CGlobalLightBase; // 0x5f0
-            // void InputTurnOn; // 0x0
-            // void InputTurnOff; // 0x0
-            // float InputSetLightScale; // 0x0
+            // CGlobalLightBase CGlobalLightBase; // 0x_
+            // void InputTurnOn; // 0x_
+            // void InputTurnOff; // 0x_
+            // float InputSetLightScale; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_GlobalLight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_GlobalLight) == 0xb40);
+        static_assert(sizeof(source2sdk::client::C_GlobalLight) == 0x_);
     };
 };

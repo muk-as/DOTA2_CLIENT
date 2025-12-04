@@ -14,9 +14,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // 
@@ -26,17 +26,17 @@ namespace source2sdk
         class CGameSceneNodeHandle
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CEntityHandle m_hOwner; // 0x8            
+            CEntityHandle m_hOwner; // 0x_            
             // metadata: MNetworkEnable
-            CUtlStringToken m_name; // 0xc            
+            CUtlStringToken m_name; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CGameSceneNodeHandle, m_hOwner) == 0x8);
-        static_assert(offsetof(source2sdk::server::CGameSceneNodeHandle, m_name) == 0xc);
+        static_assert(offsetof(source2sdk::server::CGameSceneNodeHandle, m_hOwner) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameSceneNodeHandle, m_name) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CGameSceneNodeHandle) == 0x10);
+        static_assert(sizeof(source2sdk::server::CGameSceneNodeHandle) == 0x_);
     };
 };

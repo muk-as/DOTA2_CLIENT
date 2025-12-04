@@ -14,25 +14,25 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x808
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFuncNavObstruction : public source2sdk::server::CBaseModelEntity
         {
         public:
-            uint8_t _pad07f0[0x10]; // 0x7f0
-            bool m_bDisabled; // 0x800            
-            bool m_bUseAsyncObstacleUpdate; // 0x801            
-            uint8_t _pad0802[0x6];
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bDisabled; // 0x_            
+            bool m_bUseAsyncObstacleUpdate; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFuncNavObstruction because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFuncNavObstruction) == 0x808);
+        static_assert(sizeof(source2sdk::server::CFuncNavObstruction) == 0x_);
     };
 };

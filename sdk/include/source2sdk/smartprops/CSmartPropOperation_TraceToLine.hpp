@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4d0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,26 +33,26 @@ namespace source2sdk
         public:
             // metadata: MPropertyStartGroup "+Line End Point A"
             // metadata: MPropertyDescription "End point of the line to trace to."
-            CSmartPropAttributeVector m_EndPointA; // 0x350            
+            CSmartPropAttributeVector m_EndPointA; // 0x_            
             // metadata: MPropertyDescription "Coordinate space the end point is specified in."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_EndPointSpaceA; // 0x390            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_EndPointSpaceA; // 0x_            
             // metadata: MPropertyStartGroup "+Line End Point B"
             // metadata: MPropertyDescription "End point of the line to trace to."
-            CSmartPropAttributeVector m_EndPointB; // 0x3d0            
+            CSmartPropAttributeVector m_EndPointB; // 0x_            
             // metadata: MPropertyDescription "Coordinate space the end point is specified in."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_EndPointSpaceB; // 0x410            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_EndPointSpaceB; // 0x_            
             // metadata: MPropertyStartGroup "+Trace Away"
             // metadata: MPropertyFriendlyName "Trace away from line"
             // metadata: MPropertyDescription "If enabled, instead of tracing from the origin to the line, trace away from the line for the specified distance starting at the origin."
-            CSmartPropAttributeBool m_bTraceAway; // 0x450            
+            CSmartPropAttributeBool m_bTraceAway; // 0x_            
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyDescription "Maximum length of the trace. Surfaces beyond this distance will not be hit."
-            CSmartPropAttributeFloat m_flTraceLength; // 0x490            
+            CSmartPropAttributeFloat m_flTraceLength; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_TraceToLine because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_TraceToLine) == 0x4d0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_TraceToLine) == 0x_);
     };
 };

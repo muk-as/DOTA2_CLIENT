@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x70
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,28 +28,28 @@ namespace source2sdk
         class CAnimData
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
-            CBufferString m_name; // 0x10            
+            uint8_t _pad_[0x_]; // 0x_
+            CBufferString m_name; // 0x_            
             // m_animArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animationsystem::CAnimDesc> m_animArray;
-            char m_animArray[0x18]; // 0x20            
+            char m_animArray[0x_]; // 0x_            
             // m_decoderArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animationsystem::CAnimDecoder> m_decoderArray;
-            char m_decoderArray[0x18]; // 0x38            
-            std::int32_t m_nMaxUniqueFrameIndex; // 0x50            
-            uint8_t _pad0054[0x4]; // 0x54
+            char m_decoderArray[0x_]; // 0x_            
+            std::int32_t m_nMaxUniqueFrameIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_segmentArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animationsystem::CAnimFrameSegment> m_segmentArray;
-            char m_segmentArray[0x18]; // 0x58            
+            char m_segmentArray[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_name) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_animArray) == 0x20);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_decoderArray) == 0x38);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_nMaxUniqueFrameIndex) == 0x50);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_segmentArray) == 0x58);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_animArray) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_decoderArray) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_nMaxUniqueFrameIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimData, m_segmentArray) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimData) == 0x70);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimData) == 0x_);
     };
 };

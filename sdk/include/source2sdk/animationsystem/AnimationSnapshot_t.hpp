@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x120
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,14 +25,14 @@ namespace source2sdk
         struct AnimationSnapshot_t : public source2sdk::animationsystem::AnimationSnapshotBase_t
         {
         public:
-            std::int32_t m_nEntIndex; // 0x110            
-            uint8_t _pad0114[0x4]; // 0x114
-            CUtlString m_modelName; // 0x118            
+            std::int32_t m_nEntIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_modelName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in AnimationSnapshot_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animationsystem::AnimationSnapshot_t) == 0x120);
+        static_assert(sizeof(source2sdk::animationsystem::AnimationSnapshot_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTAPlayerMMRType : std::uint32_t
         {
             k_EDOTAPlayerMMRType_Invalid = 0x0,

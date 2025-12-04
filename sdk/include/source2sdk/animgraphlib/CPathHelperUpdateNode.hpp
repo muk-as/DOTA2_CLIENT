@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,13 +26,13 @@ namespace source2sdk
         class CPathHelperUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            float m_flStoppingRadius; // 0x70            
-            float m_flStoppingSpeedScale; // 0x74            
+            float m_flStoppingRadius; // 0x_            
+            float m_flStoppingSpeedScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPathHelperUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CPathHelperUpdateNode) == 0x78);
+        static_assert(sizeof(source2sdk::animgraphlib::CPathHelperUpdateNode) == 0x_);
     };
 };

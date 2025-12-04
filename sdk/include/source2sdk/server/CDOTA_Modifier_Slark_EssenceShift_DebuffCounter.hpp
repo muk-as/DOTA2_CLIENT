@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Slark_EssenceShift_DebuffCounter : public source2sdk::server::CDOTA_Modifier_Stacking_Base
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slark_EssenceShift_DebuffCounter) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slark_EssenceShift_DebuffCounter) == 0x_);
     };
 };

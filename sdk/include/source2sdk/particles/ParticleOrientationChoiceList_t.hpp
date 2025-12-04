@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ParticleOrientationChoiceList_t : std::uint32_t
         {
             // MPropertyFriendlyName "Screen Align"

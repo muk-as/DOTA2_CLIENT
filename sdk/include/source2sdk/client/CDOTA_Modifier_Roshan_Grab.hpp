@@ -18,26 +18,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Roshan_Grab : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
-            float m_flOffset; // 0x187c            
-            QAngle m_vStartAngles; // 0x1880            
-            Vector m_vStartLocation; // 0x188c            
-            float animation_rate; // 0x1898            
-            bool m_bInterrupted; // 0x189c            
-            bool m_bHasBeenDestroyed; // 0x189d            
-            bool m_bDoingThrow; // 0x189e            
-            uint8_t _pad189f[0x1];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            float m_flOffset; // 0x_            
+            QAngle m_vStartAngles; // 0x_            
+            Vector m_vStartLocation; // 0x_            
+            float animation_rate; // 0x_            
+            bool m_bInterrupted; // 0x_            
+            bool m_bHasBeenDestroyed; // 0x_            
+            bool m_bDoingThrow; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Roshan_Grab because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Roshan_Grab) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Roshan_Grab) == 0x_);
     };
 };

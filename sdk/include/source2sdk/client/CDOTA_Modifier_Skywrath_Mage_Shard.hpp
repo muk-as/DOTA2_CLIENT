@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Skywrath_Mage_Shard : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float stack_duration; // 0x1878            
-            std::int32_t damage_barrier_base; // 0x187c            
-            std::int32_t damage_barrier_per_level; // 0x1880            
-            float barrier_duration; // 0x1884            
+            float stack_duration; // 0x_            
+            std::int32_t damage_barrier_base; // 0x_            
+            std::int32_t damage_barrier_per_level; // 0x_            
+            float barrier_duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Skywrath_Mage_Shard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Skywrath_Mage_Shard) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Skywrath_Mage_Shard) == 0x_);
     };
 };

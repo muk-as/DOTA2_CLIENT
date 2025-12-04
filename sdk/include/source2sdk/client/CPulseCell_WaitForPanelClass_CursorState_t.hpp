@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct CPulseCell_WaitForPanelClass_CursorState_t
         {
         public:
-            panorama_CPanelPtr m_hPanel; // 0x0            
-            CGlobalSymbol m_Class; // 0x8            
+            panorama_CPanelPtr m_hPanel; // 0x_            
+            CGlobalSymbol m_Class; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t, m_hPanel) == 0x0);
-        static_assert(offsetof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t, m_Class) == 0x8);
+        static_assert(offsetof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t, m_hPanel) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t, m_Class) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t) == 0x10);
+        static_assert(sizeof(source2sdk::client::CPulseCell_WaitForPanelClass_CursorState_t) == 0x_);
     };
 };

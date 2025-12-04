@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,14 +26,14 @@ namespace source2sdk
         class CDOTAMinesweeperPlayerDefinition
         {
         public:
-            std::int32_t m_nInitialHealth; // 0x0            
-            std::int32_t m_nInitialMana; // 0x4            
+            std::int32_t m_nInitialHealth; // 0x_            
+            std::int32_t m_nInitialMana; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAMinesweeperPlayerDefinition, m_nInitialHealth) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTAMinesweeperPlayerDefinition, m_nInitialMana) == 0x4);
+        static_assert(offsetof(source2sdk::client::CDOTAMinesweeperPlayerDefinition, m_nInitialHealth) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAMinesweeperPlayerDefinition, m_nInitialMana) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAMinesweeperPlayerDefinition) == 0x8);
+        static_assert(sizeof(source2sdk::client::CDOTAMinesweeperPlayerDefinition) == 0x_);
     };
 };

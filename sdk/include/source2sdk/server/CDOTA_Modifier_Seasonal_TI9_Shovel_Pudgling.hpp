@@ -18,22 +18,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Seasonal_TI9_Shovel_Pudgling : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x1878            
-            std::int32_t m_nActionCount; // 0x187c            
-            Vector m_vecStartingPos; // 0x1880            
-            Vector m_vecDestinationOffset; // 0x188c            
-            uint8_t _pad1898[0x18];
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
+            std::int32_t m_nActionCount; // 0x_            
+            Vector m_vecStartingPos; // 0x_            
+            Vector m_vecDestinationOffset; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Seasonal_TI9_Shovel_Pudgling because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Seasonal_TI9_Shovel_Pudgling) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Seasonal_TI9_Shovel_Pudgling) == 0x_);
     };
 };

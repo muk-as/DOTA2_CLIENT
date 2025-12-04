@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 65
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class modifierstate : std::uint32_t
         {
             MODIFIER_STATE_ROOTED = 0x0,

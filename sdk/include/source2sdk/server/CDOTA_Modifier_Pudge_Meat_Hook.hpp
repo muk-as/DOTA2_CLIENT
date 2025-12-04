@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pudge_Meat_Hook : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float distance_to_damage; // 0x1878            
-            float min_distance_damage; // 0x187c            
-            Vector2D m_vLastPosition; // 0x1880            
-            float m_flAccumulatedDistance; // 0x1888            
-            uint8_t _pad188c[0x4];
+            float distance_to_damage; // 0x_            
+            float min_distance_damage; // 0x_            
+            Vector2D m_vLastPosition; // 0x_            
+            float m_flAccumulatedDistance; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pudge_Meat_Hook because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pudge_Meat_Hook) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pudge_Meat_Hook) == 0x_);
     };
 };

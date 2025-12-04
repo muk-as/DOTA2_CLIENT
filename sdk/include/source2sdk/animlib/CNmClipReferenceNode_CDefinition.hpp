@@ -15,9 +15,9 @@ namespace source2sdk
     namespace animlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x2
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x10
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -31,6 +31,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animlib::CNmClipReferenceNode_CDefinition) == 0x10);
+        static_assert(sizeof(source2sdk::animlib::CNmClipReferenceNode_CDefinition) == 0x_);
     };
 };

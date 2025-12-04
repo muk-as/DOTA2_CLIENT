@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Invoker_QuasInstance : public source2sdk::server::CDOTA_Modifier_Invoker_Instance
         {
         public:
-            float hp_regen_per_instance; // 0x1878            
-            uint8_t _pad187c[0x4]; // 0x187c
-            char* m_pSlotName; // 0x1880            
+            float hp_regen_per_instance; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            char* m_pSlotName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_QuasInstance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_QuasInstance) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_QuasInstance) == 0x_);
     };
 };

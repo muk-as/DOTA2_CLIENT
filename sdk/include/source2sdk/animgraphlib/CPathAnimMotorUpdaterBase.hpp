@@ -15,9 +15,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -27,13 +27,13 @@ namespace source2sdk
         class CPathAnimMotorUpdaterBase : public source2sdk::animgraphlib::CAnimMotorUpdaterBase
         {
         public:
-            bool m_bLockToPath; // 0x20            
-            uint8_t _pad0021[0x7];
+            bool m_bLockToPath; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPathAnimMotorUpdaterBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CPathAnimMotorUpdaterBase) == 0x28);
+        static_assert(sizeof(source2sdk::animgraphlib::CPathAnimMotorUpdaterBase) == 0x_);
     };
 };

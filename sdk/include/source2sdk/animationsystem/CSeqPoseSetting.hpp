@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,28 +24,28 @@ namespace source2sdk
         class CSeqPoseSetting
         {
         public:
-            CBufferString m_sPoseParameter; // 0x0            
-            CBufferString m_sAttachment; // 0x10            
-            CBufferString m_sReferenceSequence; // 0x20            
-            float m_flValue; // 0x30            
-            bool m_bX; // 0x34            
-            bool m_bY; // 0x35            
-            bool m_bZ; // 0x36            
-            uint8_t _pad0037[0x1]; // 0x37
-            std::int32_t m_eType; // 0x38            
-            uint8_t _pad003c[0x4];
+            CBufferString m_sPoseParameter; // 0x_            
+            CBufferString m_sAttachment; // 0x_            
+            CBufferString m_sReferenceSequence; // 0x_            
+            float m_flValue; // 0x_            
+            bool m_bX; // 0x_            
+            bool m_bY; // 0x_            
+            bool m_bZ; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_eType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sPoseParameter) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sAttachment) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sReferenceSequence) == 0x20);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_flValue) == 0x30);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bX) == 0x34);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bY) == 0x35);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bZ) == 0x36);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_eType) == 0x38);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sPoseParameter) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sAttachment) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_sReferenceSequence) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_flValue) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bX) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bY) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_bZ) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqPoseSetting, m_eType) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CSeqPoseSetting) == 0x40);
+        static_assert(sizeof(source2sdk::animationsystem::CSeqPoseSetting) == 0x_);
     };
 };

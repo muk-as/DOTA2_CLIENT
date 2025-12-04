@@ -15,25 +15,25 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct ResponseContext_t
         {
         public:
-            CUtlSymbolLarge m_iszName; // 0x0            
-            CUtlSymbolLarge m_iszValue; // 0x8            
-            source2sdk::entity2::GameTime_t m_fExpirationTime; // 0x10            
-            uint8_t _pad0014[0x4];
+            CUtlSymbolLarge m_iszName; // 0x_            
+            CUtlSymbolLarge m_iszValue; // 0x_            
+            source2sdk::entity2::GameTime_t m_fExpirationTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_iszName) == 0x0);
-        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_iszValue) == 0x8);
-        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_fExpirationTime) == 0x10);
+        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_iszName) == 0x_);
+        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_iszValue) == 0x_);
+        static_assert(offsetof(source2sdk::server::ResponseContext_t, m_fExpirationTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::ResponseContext_t) == 0x18);
+        static_assert(sizeof(source2sdk::server::ResponseContext_t) == 0x_);
     };
 };

@@ -28,10 +28,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -41,20 +41,20 @@ namespace source2sdk
         public:
             // m_hSourceAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTABaseAbility> m_hSourceAbility;
-            char m_hSourceAbility[0x4]; // 0x5c0            
+            char m_hSourceAbility[0x_]; // 0x_            
             // m_hSourceCaster has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSourceCaster;
-            char m_hSourceCaster[0x4]; // 0x5c4            
+            char m_hSourceCaster[0x_]; // 0x_            
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x5c8            
-            bool passthrough_damage; // 0x5e0            
-            uint8_t _pad05e1[0x7];
+            char m_hHitEntities[0x_]; // 0x_            
+            bool passthrough_damage; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_BountyHunter_ShurikenToss because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_BountyHunter_ShurikenToss) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_BountyHunter_ShurikenToss) == 0x_);
     };
 };

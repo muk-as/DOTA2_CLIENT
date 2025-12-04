@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,43 +26,43 @@ namespace source2sdk
         class CAnimSkeleton
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_localSpaceTransforms has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CTransform> m_localSpaceTransforms;
-            char m_localSpaceTransforms[0x18]; // 0x10            
+            char m_localSpaceTransforms[0x_]; // 0x_            
             // m_modelSpaceTransforms has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CTransform> m_modelSpaceTransforms;
-            char m_modelSpaceTransforms[0x18]; // 0x28            
+            char m_modelSpaceTransforms[0x_]; // 0x_            
             // m_boneNames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_boneNames;
-            char m_boneNames[0x18]; // 0x40            
+            char m_boneNames[0x_]; // 0x_            
             // m_children has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlVector<std::int32_t>> m_children;
-            char m_children[0x18]; // 0x58            
+            char m_children[0x_]; // 0x_            
             // m_parents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_parents;
-            char m_parents[0x18]; // 0x70            
+            char m_parents[0x_]; // 0x_            
             // m_feet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CAnimFoot> m_feet;
-            char m_feet[0x18]; // 0x88            
+            char m_feet[0x_]; // 0x_            
             // m_morphNames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_morphNames;
-            char m_morphNames[0x18]; // 0xa0            
+            char m_morphNames[0x_]; // 0x_            
             // m_lodBoneCounts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_lodBoneCounts;
-            char m_lodBoneCounts[0x18]; // 0xb8            
+            char m_lodBoneCounts[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_localSpaceTransforms) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_modelSpaceTransforms) == 0x28);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_boneNames) == 0x40);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_children) == 0x58);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_parents) == 0x70);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_feet) == 0x88);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_morphNames) == 0xa0);
-        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_lodBoneCounts) == 0xb8);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_localSpaceTransforms) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_modelSpaceTransforms) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_boneNames) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_children) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_parents) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_feet) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_morphNames) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimSkeleton, m_lodBoneCounts) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CAnimSkeleton) == 0xd0);
+        static_assert(sizeof(source2sdk::modellib::CAnimSkeleton) == 0x_);
     };
 };

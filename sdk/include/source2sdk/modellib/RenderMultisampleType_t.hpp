@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class RenderMultisampleType_t : std::uint8_t
         {
             RENDER_MULTISAMPLE_INVALID = 0xff,

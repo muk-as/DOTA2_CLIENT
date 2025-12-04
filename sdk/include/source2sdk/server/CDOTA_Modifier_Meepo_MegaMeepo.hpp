@@ -18,25 +18,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Meepo_MegaMeepo : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
-            float m_flOffset; // 0x187c            
-            QAngle m_vStartAngles; // 0x1880            
-            Vector m_vStartLocation; // 0x188c            
-            bool m_bInterrupted; // 0x1898            
-            bool m_bHasBeenDestroyed; // 0x1899            
-            bool m_bIsHighestMeepo; // 0x189a            
-            uint8_t _pad189b[0x5];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            float m_flOffset; // 0x_            
+            QAngle m_vStartAngles; // 0x_            
+            Vector m_vStartLocation; // 0x_            
+            bool m_bInterrupted; // 0x_            
+            bool m_bHasBeenDestroyed; // 0x_            
+            bool m_bIsHighestMeepo; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Meepo_MegaMeepo because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Meepo_MegaMeepo) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Meepo_MegaMeepo) == 0x_);
     };
 };

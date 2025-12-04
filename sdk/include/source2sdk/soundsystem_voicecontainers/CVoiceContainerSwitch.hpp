@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,12 +32,12 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Container List"
             // m_soundsToPlay has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::soundsystem_voicecontainers::CSoundContainerReference> m_soundsToPlay;
-            char m_soundsToPlay[0x18]; // 0xb8            
+            char m_soundsToPlay[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerSwitch because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSwitch) == 0xd0);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSwitch) == 0x_);
     };
 };

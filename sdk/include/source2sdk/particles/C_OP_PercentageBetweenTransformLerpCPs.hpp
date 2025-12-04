@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x2b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,36 +31,36 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1c0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "percentage minimum"
-            float m_flInputMin; // 0x1c4            
+            float m_flInputMin; // 0x_            
             // metadata: MPropertyFriendlyName "percentage maximum"
-            float m_flInputMax; // 0x1c8            
-            uint8_t _pad01cc[0x4]; // 0x1cc
+            float m_flInputMax; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "strarting transform"
-            source2sdk::particleslib::CParticleTransformInput m_TransformStart; // 0x1d0            
+            source2sdk::particleslib::CParticleTransformInput m_TransformStart; // 0x_            
             // metadata: MPropertyFriendlyName "end transform"
-            source2sdk::particleslib::CParticleTransformInput m_TransformEnd; // 0x238            
+            source2sdk::particleslib::CParticleTransformInput m_TransformEnd; // 0x_            
             // metadata: MPropertyFriendlyName "output starting control point number"
-            std::int32_t m_nOutputStartCP; // 0x2a0            
+            std::int32_t m_nOutputStartCP; // 0x_            
             // metadata: MPropertyFriendlyName "output starting control point field 0-2 X/Y/Z"
-            std::int32_t m_nOutputStartField; // 0x2a4            
+            std::int32_t m_nOutputStartField; // 0x_            
             // metadata: MPropertyFriendlyName "output ending control point number"
-            std::int32_t m_nOutputEndCP; // 0x2a8            
+            std::int32_t m_nOutputEndCP; // 0x_            
             // metadata: MPropertyFriendlyName "output ending control point field 0-2 X/Y/Z"
-            std::int32_t m_nOutputEndField; // 0x2ac            
+            std::int32_t m_nOutputEndField; // 0x_            
             // metadata: MPropertyFriendlyName "set value method"
-            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x2b0            
+            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x_            
             // metadata: MPropertyFriendlyName "only active within input range"
-            bool m_bActiveRange; // 0x2b4            
+            bool m_bActiveRange; // 0x_            
             // metadata: MPropertyFriendlyName "treat distance between points as radius"
-            bool m_bRadialCheck; // 0x2b5            
-            uint8_t _pad02b6[0x2];
+            bool m_bRadialCheck; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_PercentageBetweenTransformLerpCPs because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_PercentageBetweenTransformLerpCPs) == 0x2b8);
+        static_assert(sizeof(source2sdk::particles::C_OP_PercentageBetweenTransformLerpCPs) == 0x_);
     };
 };

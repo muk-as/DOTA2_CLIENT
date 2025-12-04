@@ -23,24 +23,24 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Construct disallowed
         #pragma pack(push, 1)
         class CBodyComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
-            source2sdk::client::CGameSceneNode* m_pSceneNode; // 0x8            
-            uint8_t _pad0010[0x38]; // 0x10
-            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x48            
-            uint8_t _pad0070[0x8];
+            source2sdk::client::CGameSceneNode* m_pSceneNode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBodyComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBodyComponent) == 0x78);
+        static_assert(sizeof(source2sdk::client::CBodyComponent) == 0x_);
     };
 };

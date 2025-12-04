@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x548
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -50,81 +50,81 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_FOV; // 0x4e0            
+            float m_FOV; // 0x_            
             // metadata: MNetworkEnable
-            float m_Resolution; // 0x4e4            
+            float m_Resolution; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFogEnable; // 0x4e8            
+            bool m_bFogEnable; // 0x_            
             // metadata: MNetworkEnable
-            Color m_FogColor; // 0x4e9            
-            uint8_t _pad04ed[0x3]; // 0x4ed
+            Color m_FogColor; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flFogStart; // 0x4f0            
+            float m_flFogStart; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFogEnd; // 0x4f4            
+            float m_flFogEnd; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFogMaxDensity; // 0x4f8            
+            float m_flFogMaxDensity; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bActive; // 0x4fc            
+            bool m_bActive; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseScreenAspectRatio; // 0x4fd            
-            uint8_t _pad04fe[0x2]; // 0x4fe
+            bool m_bUseScreenAspectRatio; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flAspectRatio; // 0x500            
+            float m_flAspectRatio; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bNoSky; // 0x504            
-            uint8_t _pad0505[0x3]; // 0x505
+            bool m_bNoSky; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_fBrightness; // 0x508            
+            float m_fBrightness; // 0x_            
             // metadata: MNetworkEnable
-            float m_flZFar; // 0x50c            
+            float m_flZFar; // 0x_            
             // metadata: MNetworkEnable
-            float m_flZNear; // 0x510            
+            float m_flZNear; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCanHLTVUse; // 0x514            
+            bool m_bCanHLTVUse; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAlignWithParent; // 0x515            
-            uint8_t _pad0516[0x2]; // 0x516
+            bool m_bAlignWithParent; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flOverrideShadowFarZ; // 0x518            
+            float m_flOverrideShadowFarZ; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDofEnabled; // 0x51c            
-            uint8_t _pad051d[0x3]; // 0x51d
+            bool m_bDofEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flDofNearBlurry; // 0x520            
+            float m_flDofNearBlurry; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDofNearCrisp; // 0x524            
+            float m_flDofNearCrisp; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDofFarCrisp; // 0x528            
+            float m_flDofFarCrisp; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDofFarBlurry; // 0x52c            
+            float m_flDofFarBlurry; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDofTiltToGround; // 0x530            
-            float m_TargetFOV; // 0x534            
-            float m_DegreesPerSecond; // 0x538            
-            bool m_bIsOn; // 0x53c            
-            uint8_t _pad053d[0x3]; // 0x53d
-            source2sdk::server::CPointCamera* m_pNext; // 0x540            
+            float m_flDofTiltToGround; // 0x_            
+            float m_TargetFOV; // 0x_            
+            float m_DegreesPerSecond; // 0x_            
+            bool m_bIsOn; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CPointCamera* m_pNext; // 0x_            
             
             // Datamap fields:
-            // CUtlSymbolLarge InputChangeFOV; // 0x0
-            // void InputSetOnAndTurnOthersOff; // 0x0
-            // void InputSetOn; // 0x0
-            // void InputSetOff; // 0x0
-            // void InputForceActive; // 0x0
-            // void InputForceInactive; // 0x0
-            // void InputEnableDOF; // 0x0
-            // void InputDisableDOF; // 0x0
-            // float InputSetDOFNearBlurry; // 0x0
-            // float InputSetDOFNearCrisp; // 0x0
-            // float InputSetDOFFarCrisp; // 0x0
-            // float InputSetDOFFarBlurry; // 0x0
-            // float InputSetDOFTiltToGround; // 0x0
+            // CUtlSymbolLarge InputChangeFOV; // 0x_
+            // void InputSetOnAndTurnOthersOff; // 0x_
+            // void InputSetOn; // 0x_
+            // void InputSetOff; // 0x_
+            // void InputForceActive; // 0x_
+            // void InputForceInactive; // 0x_
+            // void InputEnableDOF; // 0x_
+            // void InputDisableDOF; // 0x_
+            // float InputSetDOFNearBlurry; // 0x_
+            // float InputSetDOFNearCrisp; // 0x_
+            // float InputSetDOFFarCrisp; // 0x_
+            // float InputSetDOFFarBlurry; // 0x_
+            // float InputSetDOFTiltToGround; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPointCamera because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPointCamera) == 0x548);
+        static_assert(sizeof(source2sdk::server::CPointCamera) == 0x_);
     };
 };

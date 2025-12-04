@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Pipe : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_all_stats; // 0x1878            
-            float health_regen; // 0x187c            
-            std::int32_t magic_resistance; // 0x1880            
-            float aura_radius; // 0x1884            
+            std::int32_t bonus_all_stats; // 0x_            
+            float health_regen; // 0x_            
+            std::int32_t magic_resistance; // 0x_            
+            float aura_radius; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Pipe because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Pipe) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Pipe) == 0x_);
     };
 };

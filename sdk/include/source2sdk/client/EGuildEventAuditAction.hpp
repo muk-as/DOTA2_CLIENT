@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGuildEventAuditAction : std::uint32_t
         {
             k_EGuildEventAuditAction_Invalid = 0x0,

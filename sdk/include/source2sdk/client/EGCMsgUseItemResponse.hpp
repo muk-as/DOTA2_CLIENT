@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCMsgUseItemResponse : std::uint32_t
         {
             k_EGCMsgUseItemResponse_ItemUsed = 0x0,

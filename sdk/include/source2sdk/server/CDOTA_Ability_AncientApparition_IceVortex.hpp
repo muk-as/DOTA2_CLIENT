@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_AncientApparition_IceVortex : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float vision_aoe; // 0x5c0            
-            float vortex_duration; // 0x5c4            
+            float vision_aoe; // 0x_            
+            float vortex_duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AncientApparition_IceVortex because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AncientApparition_IceVortex) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AncientApparition_IceVortex) == 0x_);
     };
 };

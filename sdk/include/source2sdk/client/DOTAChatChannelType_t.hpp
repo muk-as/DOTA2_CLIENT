@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 25
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAChatChannelType_t : std::uint32_t
         {
             DOTAChannelType_Regional = 0x0,

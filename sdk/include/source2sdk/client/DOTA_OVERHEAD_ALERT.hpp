@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 24
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_OVERHEAD_ALERT : std::uint32_t
         {
             OVERHEAD_ALERT_GOLD = 0x0,

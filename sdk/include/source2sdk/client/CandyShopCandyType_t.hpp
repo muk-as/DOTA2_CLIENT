@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,19 +27,19 @@ namespace source2sdk
         public:
             // metadata: MPropertyDescription "unique integer ID of this candy type"
             // game bug: prop with no declared class info (CandyShopCandyTypeID_t)
-            char m_unCandyTypeID[0x1]; // 0x0            
-            uint8_t _pad0001[0x7]; // 0x1
+            char m_unCandyTypeID[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "localization name of the candy type"
-            CUtlString m_sLocName; // 0x8            
+            CUtlString m_sLocName; // 0x_            
             // metadata: MPropertyDescription "the image used for this candy type"
-            CPanoramaImageName m_sImage; // 0x10            
+            CPanoramaImageName m_sImage; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_unCandyTypeID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_sLocName) == 0x8);
-        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_sImage) == 0x10);
+        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_unCandyTypeID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_sLocName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CandyShopCandyType_t, m_sImage) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CandyShopCandyType_t) == 0x20);
+        static_assert(sizeof(source2sdk::client::CandyShopCandyType_t) == 0x_);
     };
 };

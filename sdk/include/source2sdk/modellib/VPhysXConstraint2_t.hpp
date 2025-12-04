@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x100
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         struct VPhysXConstraint2_t
         {
         public:
-            std::uint32_t m_nFlags; // 0x0            
-            std::uint16_t m_nParent; // 0x4            
-            std::uint16_t m_nChild; // 0x6            
-            source2sdk::modellib::VPhysXConstraintParams_t m_params; // 0x8            
+            std::uint32_t m_nFlags; // 0x_            
+            std::uint16_t m_nParent; // 0x_            
+            std::uint16_t m_nChild; // 0x_            
+            source2sdk::modellib::VPhysXConstraintParams_t m_params; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nFlags) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nParent) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nChild) == 0x6);
-        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_params) == 0x8);
+        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nFlags) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nParent) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_nChild) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::VPhysXConstraint2_t, m_params) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::VPhysXConstraint2_t) == 0x100);
+        static_assert(sizeof(source2sdk::modellib::VPhysXConstraint2_t) == 0x_);
     };
 };

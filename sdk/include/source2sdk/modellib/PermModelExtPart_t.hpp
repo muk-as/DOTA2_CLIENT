@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,22 +25,22 @@ namespace source2sdk
         struct PermModelExtPart_t
         {
         public:
-            CTransform m_Transform; // 0x0            
-            CUtlString m_Name; // 0x20            
-            std::int32_t m_nParent; // 0x28            
-            uint8_t _pad002c[0x4]; // 0x2c
+            CTransform m_Transform; // 0x_            
+            CUtlString m_Name; // 0x_            
+            std::int32_t m_nParent; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_refModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel> m_refModel;
-            char m_refModel[0x8]; // 0x30            
-            uint8_t _pad0038[0x8];
+            char m_refModel[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_Transform) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_Name) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_nParent) == 0x28);
-        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_refModel) == 0x30);
+        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_Transform) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_Name) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_nParent) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PermModelExtPart_t, m_refModel) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::PermModelExtPart_t) == 0x40);
+        static_assert(sizeof(source2sdk::modellib::PermModelExtPart_t) == 0x_);
     };
 };

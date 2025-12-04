@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 1
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCEconBaseMsg : std::uint32_t
         {
             k_EMsgGCGenericResult = 0xa13,

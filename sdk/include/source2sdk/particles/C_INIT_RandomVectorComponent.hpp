@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "min"
-            float m_flMin; // 0x1c8            
+            float m_flMin; // 0x_            
             // metadata: MPropertyFriendlyName "max"
-            float m_flMax; // 0x1cc            
+            float m_flMax; // 0x_            
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1d0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "component 0/1/2 X/Y/Z"
             // metadata: MPropertyAttributeChoiceName "vector_component"
             // metadata: MVectorIsSometimesCoordinate "m_nFieldOutput"
-            std::int32_t m_nComponent; // 0x1d4            
+            std::int32_t m_nComponent; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_RandomVectorComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_RandomVectorComponent) == 0x1d8);
+        static_assert(sizeof(source2sdk::particles::C_INIT_RandomVectorComponent) == 0x_);
     };
 };

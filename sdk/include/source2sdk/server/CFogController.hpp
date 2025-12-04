@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x550
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -30,35 +30,35 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::server::fogparams_t m_fog; // 0x4e0            
-            bool m_bUseAngles; // 0x548            
-            uint8_t _pad0549[0x3]; // 0x549
-            std::int32_t m_iChangedVariables; // 0x54c            
+            source2sdk::server::fogparams_t m_fog; // 0x_            
+            bool m_bUseAngles; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_iChangedVariables; // 0x_            
             
             // Datamap fields:
-            // float InputSetStartDist; // 0x0
-            // float InputSetEndDist; // 0x0
-            // float InputSetMaxDensity; // 0x0
-            // void InputTurnOn; // 0x0
-            // void InputTurnOff; // 0x0
-            // Color InputSetColor; // 0x0
-            // Color InputSetColorSecondary; // 0x0
-            // int32_t InputSetFarZ; // 0x0
-            // CUtlSymbolLarge InputSetAngles; // 0x0
-            // float InputSet2DSkyboxFogFactor; // 0x0
-            // Color InputSetColorLerpTo; // 0x0
-            // Color InputSetColorSecondaryLerpTo; // 0x0
-            // float InputSetStartDistLerpTo; // 0x0
-            // float InputSetEndDistLerpTo; // 0x0
-            // float InputSetMaxDensityLerpTo; // 0x0
-            // float InputSet2DSkyboxFogFactorLerpTo; // 0x0
-            // void InputStartFogTransition; // 0x0
-            // void CFogControllerSetLerpValues; // 0x0
+            // float InputSetStartDist; // 0x_
+            // float InputSetEndDist; // 0x_
+            // float InputSetMaxDensity; // 0x_
+            // void InputTurnOn; // 0x_
+            // void InputTurnOff; // 0x_
+            // Color InputSetColor; // 0x_
+            // Color InputSetColorSecondary; // 0x_
+            // int32_t InputSetFarZ; // 0x_
+            // CUtlSymbolLarge InputSetAngles; // 0x_
+            // float InputSet2DSkyboxFogFactor; // 0x_
+            // Color InputSetColorLerpTo; // 0x_
+            // Color InputSetColorSecondaryLerpTo; // 0x_
+            // float InputSetStartDistLerpTo; // 0x_
+            // float InputSetEndDistLerpTo; // 0x_
+            // float InputSetMaxDensityLerpTo; // 0x_
+            // float InputSet2DSkyboxFogFactorLerpTo; // 0x_
+            // void InputStartFogTransition; // 0x_
+            // void CFogControllerSetLerpValues; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFogController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFogController) == 0x550);
+        static_assert(sizeof(source2sdk::server::CFogController) == 0x_);
     };
 };

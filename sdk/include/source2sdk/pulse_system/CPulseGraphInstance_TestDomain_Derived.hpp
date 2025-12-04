@@ -15,9 +15,9 @@ namespace source2sdk
     namespace pulse_system
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x148
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MPulseInstanceDomainInfo
@@ -29,13 +29,13 @@ namespace source2sdk
         class CPulseGraphInstance_TestDomain_Derived : public source2sdk::pulse_system::CPulseGraphInstance_TestDomain
         {
         public:
-            std::int32_t m_nInstanceValueX; // 0x140            
-            uint8_t _pad0144[0x4];
+            std::int32_t m_nInstanceValueX; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseGraphInstance_TestDomain_Derived because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain_Derived) == 0x148);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain_Derived) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 52
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class GameAnimEventIndex_t : std::uint32_t
         {
             AE_EMPTY = 0x0,

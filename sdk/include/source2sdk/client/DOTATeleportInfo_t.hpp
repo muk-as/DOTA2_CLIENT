@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "GameTime_t m_flTime"
@@ -27,21 +27,21 @@ namespace source2sdk
         struct DOTATeleportInfo_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flTime; // 0x30            
+            source2sdk::entity2::GameTime_t m_flTime; // 0x_            
             // metadata: MNetworkEnable
-            Vector2D m_vPosition; // 0x34            
+            Vector2D m_vPosition; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsOutpost; // 0x3c            
-            uint8_t _pad003d[0x3];
+            bool m_bIsOutpost; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_flTime) == 0x30);
-        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_vPosition) == 0x34);
-        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_bIsOutpost) == 0x3c);
+        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_flTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_vPosition) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTATeleportInfo_t, m_bIsOutpost) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::DOTATeleportInfo_t) == 0x40);
+        static_assert(sizeof(source2sdk::client::DOTATeleportInfo_t) == 0x_);
     };
 };

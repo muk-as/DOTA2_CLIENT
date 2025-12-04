@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,12 +27,12 @@ namespace source2sdk
         class CNmConstTargetNode_CDefinition : public source2sdk::animlib::CNmTargetValueNode_CDefinition
         {
         public:
-            source2sdk::animlib::CNmTarget m_value; // 0x10            
+            source2sdk::animlib::CNmTarget m_value; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmConstTargetNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmConstTargetNode_CDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::animlib::CNmConstTargetNode_CDefinition) == 0x_);
     };
 };

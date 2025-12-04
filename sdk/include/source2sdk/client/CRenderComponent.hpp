@@ -16,30 +16,30 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CRenderComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
-            uint8_t _pad0008[0x8]; // 0x8
-            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x10            
-            uint8_t _pad0038[0x18]; // 0x38
-            bool m_bIsRenderingWithViewModels; // 0x50            
-            uint8_t _pad0051[0x3]; // 0x51
-            std::uint32_t m_nSplitscreenFlags; // 0x54            
-            bool m_bEnableRendering; // 0x58            
-            uint8_t _pad0059[0x4f]; // 0x59
-            bool m_bInterpolationReadyToDraw; // 0xa8            
-            uint8_t _pad00a9[0x27];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bIsRenderingWithViewModels; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_nSplitscreenFlags; // 0x_            
+            bool m_bEnableRendering; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bInterpolationReadyToDraw; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CRenderComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CRenderComponent) == 0xd0);
+        static_assert(sizeof(source2sdk::client::CRenderComponent) == 0x_);
     };
 };

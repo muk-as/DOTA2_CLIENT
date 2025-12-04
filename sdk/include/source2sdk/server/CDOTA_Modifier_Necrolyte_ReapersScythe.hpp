@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Necrolyte_ReapersScythe : public source2sdk::server::CDOTA_Modifier_Stunned
         {
         public:
-            float stun_duration; // 0x1878            
-            bool m_bIllusion; // 0x187c            
-            bool m_bArcWardenClone; // 0x187d            
-            bool m_bSpiritBear; // 0x187e            
-            uint8_t _pad187f[0x1];
+            float stun_duration; // 0x_            
+            bool m_bIllusion; // 0x_            
+            bool m_bArcWardenClone; // 0x_            
+            bool m_bSpiritBear; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Necrolyte_ReapersScythe because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Necrolyte_ReapersScythe) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Necrolyte_ReapersScythe) == 0x_);
     };
 };

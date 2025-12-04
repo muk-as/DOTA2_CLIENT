@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class AnimationSnapshotType_t : std::uint32_t
         {
             ANIMATION_SNAPSHOT_SERVER_SIMULATION = 0x0,

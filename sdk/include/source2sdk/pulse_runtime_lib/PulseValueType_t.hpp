@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 32
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PulseValueType_t : std::uint32_t
         {
             // MPropertyFriendlyName "Void"

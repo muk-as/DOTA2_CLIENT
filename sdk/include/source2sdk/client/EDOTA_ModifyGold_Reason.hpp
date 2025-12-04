@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 22
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTA_ModifyGold_Reason : std::uint32_t
         {
             DOTA_ModifyGold_Unspecified = 0x0,

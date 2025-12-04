@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_MODIFIER_ENTRY_TYPE : std::uint32_t
         {
             DOTA_MODIFIER_ENTRY_TYPE_ACTIVE = 0x1,

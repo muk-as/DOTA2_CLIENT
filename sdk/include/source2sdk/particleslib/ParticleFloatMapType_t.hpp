@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ParticleFloatMapType_t : std::uint32_t
         {
             PF_MAP_TYPE_INVALID = 0xffffffff,

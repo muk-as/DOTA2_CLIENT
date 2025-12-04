@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x70
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,24 +29,24 @@ namespace source2sdk
         class CMaterialAttributeAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
         public:
-            uint8_t _pad0050[0x8]; // 0x50
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Attribute Name"
-            CUtlString m_AttributeName; // 0x58            
+            CUtlString m_AttributeName; // 0x_            
             // metadata: MPropertyFriendlyName "Attribute Type"
             // metadata: MPropertyAutoRebuildOnChange
-            source2sdk::animgraphlib::MatterialAttributeTagType_t m_AttributeType; // 0x60            
+            source2sdk::animgraphlib::MatterialAttributeTagType_t m_AttributeType; // 0x_            
             // metadata: MPropertyFriendlyName "Value"
             // metadata: MPropertyAttrStateCallback
-            float m_flValue; // 0x64            
+            float m_flValue; // 0x_            
             // metadata: MPropertyFriendlyName "Color"
             // metadata: MPropertyAttrStateCallback
-            Color m_Color; // 0x68            
-            uint8_t _pad006c[0x4];
+            Color m_Color; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMaterialAttributeAnimTag because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMaterialAttributeAnimTag) == 0x70);
+        static_assert(sizeof(source2sdk::animgraphlib::CMaterialAttributeAnimTag) == 0x_);
     };
 };

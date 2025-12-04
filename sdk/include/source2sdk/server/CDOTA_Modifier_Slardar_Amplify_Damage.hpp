@@ -24,27 +24,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Slardar_Amplify_Damage : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t armor_reduction; // 0x1878            
-            float scepter_delay; // 0x187c            
-            std::int32_t undispellable; // 0x1880            
-            float puddle_radius; // 0x1884            
-            float puddle_duration; // 0x1888            
-            Vector m_vecLastPuddle; // 0x188c            
+            std::int32_t armor_reduction; // 0x_            
+            float scepter_delay; // 0x_            
+            std::int32_t undispellable; // 0x_            
+            float puddle_radius; // 0x_            
+            float puddle_duration; // 0x_            
+            Vector m_vecLastPuddle; // 0x_            
             // m_hPuddle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hPuddle;
-            char m_hPuddle[0x4]; // 0x1898            
-            std::int32_t m_nSelfBuffSerialNumber; // 0x189c            
+            char m_hPuddle[0x_]; // 0x_            
+            std::int32_t m_nSelfBuffSerialNumber; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Slardar_Amplify_Damage because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slardar_Amplify_Damage) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slardar_Amplify_Damage) == 0x_);
     };
 };

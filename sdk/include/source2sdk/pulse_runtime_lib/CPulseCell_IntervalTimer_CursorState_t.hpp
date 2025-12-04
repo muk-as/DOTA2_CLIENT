@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,21 +26,21 @@ namespace source2sdk
         struct CPulseCell_IntervalTimer_CursorState_t
         {
         public:
-            source2sdk::entity2::GameTime_t m_StartTime; // 0x0            
-            source2sdk::entity2::GameTime_t m_EndTime; // 0x4            
-            float m_flWaitInterval; // 0x8            
-            float m_flWaitIntervalHigh; // 0xc            
-            bool m_bCompleteOnNextWake; // 0x10            
-            uint8_t _pad0011[0x3];
+            source2sdk::entity2::GameTime_t m_StartTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_EndTime; // 0x_            
+            float m_flWaitInterval; // 0x_            
+            float m_flWaitIntervalHigh; // 0x_            
+            bool m_bCompleteOnNextWake; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_StartTime) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_EndTime) == 0x4);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_flWaitInterval) == 0x8);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_flWaitIntervalHigh) == 0xc);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_bCompleteOnNextWake) == 0x10);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_StartTime) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_EndTime) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_flWaitInterval) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_flWaitIntervalHigh) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t, m_bCompleteOnNextWake) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t) == 0x14);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_IntervalTimer_CursorState_t) == 0x_);
     };
 };

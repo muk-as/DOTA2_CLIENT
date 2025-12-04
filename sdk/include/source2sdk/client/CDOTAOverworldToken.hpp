@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,21 +29,21 @@ namespace source2sdk
         public:
             // metadata: MVDataUniqueMonotonicInt "_editor/next_id_token"
             // metadata: MPropertyAttributeEditor "locked_int()"
-            source2sdk::client::OverworldTokenID_t m_unID; // 0x0            
-            uint8_t _pad0001[0x7]; // 0x1
+            source2sdk::client::OverworldTokenID_t m_unID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription
-            CUtlString m_sName; // 0x8            
-            uint8_t _pad0010[0x28]; // 0x10
+            CUtlString m_sName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription
-            source2sdk::client::EOverworldTokenType m_eTokenType; // 0x38            
-            uint8_t _pad003c[0x4];
+            source2sdk::client::EOverworldTokenType m_eTokenType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_unID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_sName) == 0x8);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_eTokenType) == 0x38);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_unID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_sName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldToken, m_eTokenType) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAOverworldToken) == 0x40);
+        static_assert(sizeof(source2sdk::client::CDOTAOverworldToken) == 0x_);
     };
 };

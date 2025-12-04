@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         struct CMaterialDrawDescriptor_RigidMeshPart_t
         {
         public:
-            std::uint16_t m_nRigidBLASIndex; // 0x0            
-            std::int16_t m_nBoneIndex; // 0x2            
-            std::uint32_t m_nStartIndexOffset; // 0x4            
-            std::uint32_t m_nPrimitiveCount; // 0x8            
+            std::uint16_t m_nRigidBLASIndex; // 0x_            
+            std::int16_t m_nBoneIndex; // 0x_            
+            std::uint32_t m_nStartIndexOffset; // 0x_            
+            std::uint32_t m_nPrimitiveCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nRigidBLASIndex) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nBoneIndex) == 0x2);
-        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nStartIndexOffset) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nPrimitiveCount) == 0x8);
+        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nRigidBLASIndex) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nBoneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nStartIndexOffset) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t, m_nPrimitiveCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t) == 0xc);
+        static_assert(sizeof(source2sdk::modellib::CMaterialDrawDescriptor_RigidMeshPart_t) == 0x_);
     };
 };

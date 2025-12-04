@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1370
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,42 +30,42 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "use bones instead of hitboxes"
-            bool m_bUseBones; // 0x1c8            
+            bool m_bUseBones; // 0x_            
             // metadata: MPropertyFriendlyName "force creation height to desired height"
-            bool m_bForceZ; // 0x1c9            
-            uint8_t _pad01ca[0x2]; // 0x1ca
+            bool m_bForceZ; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1cc            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "height override control point number"
-            std::int32_t m_nHeightCP; // 0x1d0            
+            std::int32_t m_nHeightCP; // 0x_            
             // metadata: MPropertyFriendlyName "desired height is relative to water"
-            bool m_bUseWaterHeight; // 0x1d4            
-            uint8_t _pad01d5[0x3]; // 0x1d5
+            bool m_bUseWaterHeight; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "relative desired height"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flDesiredHeight; // 0x1d8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flDesiredHeight; // 0x_            
             // metadata: MPropertyFriendlyName "model hitbox scale"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecHitBoxScale; // 0x338            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecHitBoxScale; // 0x_            
             // metadata: MPropertyFriendlyName "direction bias"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecDirectionBias; // 0x9b0            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecDirectionBias; // 0x_            
             // metadata: MPropertyFriendlyName "bias type"
-            source2sdk::particles::ParticleHitboxBiasType_t m_nBiasType; // 0x1028            
+            source2sdk::particles::ParticleHitboxBiasType_t m_nBiasType; // 0x_            
             // metadata: MPropertyFriendlyName "bias in local space"
-            bool m_bLocalCoords; // 0x102c            
+            bool m_bLocalCoords; // 0x_            
             // metadata: MPropertyFriendlyName "bias prefers moving hitboxes"
-            bool m_bPreferMovingBoxes; // 0x102d            
+            bool m_bPreferMovingBoxes; // 0x_            
             // metadata: MPropertyFriendlyName "hitbox set"
-            char m_HitboxSetName[128]; // 0x102e            
-            uint8_t _pad10ae[0x2]; // 0x10ae
+            char m_HitboxSetName[128]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "hitbox velocity inherited scale"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flHitboxVelocityScale; // 0x10b0            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flHitboxVelocityScale; // 0x_            
             // metadata: MPropertyFriendlyName "max hitbox velocity"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxBoneVelocity; // 0x1210            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxBoneVelocity; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateOnModelAtHeight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnModelAtHeight) == 0x1370);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnModelAtHeight) == 0x_);
     };
 };

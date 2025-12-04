@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 21
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETEProtobufIds : std::uint32_t
         {
             TE_EffectDispatchId = 0x190,

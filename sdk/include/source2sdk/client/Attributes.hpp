@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Attributes : std::uint32_t
         {
             DOTA_ATTRIBUTE_STRENGTH = 0x0,

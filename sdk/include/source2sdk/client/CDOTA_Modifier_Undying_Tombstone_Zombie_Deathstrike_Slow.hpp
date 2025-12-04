@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Undying_Tombstone_Zombie_Deathstrike_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t slow; // 0x1878            
-            float m_flDecrementTime; // 0x187c            
+            std::int32_t slow; // 0x_            
+            float m_flDecrementTime; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Undying_Tombstone_Zombie_Deathstrike_Slow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Undying_Tombstone_Zombie_Deathstrike_Slow) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Undying_Tombstone_Zombie_Deathstrike_Slow) == 0x_);
     };
 };

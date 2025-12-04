@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,16 +27,16 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_HiddenDisplacement; // 0x4e0            
-            uint8_t _pad04e4[0x4];
+            std::int32_t m_HiddenDisplacement; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // int32_t InputHideDisplacement; // 0x0
+            // int32_t InputHideDisplacement; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_DisplacementVisibility because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_DisplacementVisibility) == 0x4e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_DisplacementVisibility) == 0x_);
     };
 };

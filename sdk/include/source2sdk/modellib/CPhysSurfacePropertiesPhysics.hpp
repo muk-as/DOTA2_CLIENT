@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,27 +26,27 @@ namespace source2sdk
         {
         public:
             // metadata: MKV3TransferName "friction"
-            float m_friction; // 0x0            
+            float m_friction; // 0x_            
             // metadata: MKV3TransferName "elasticity"
-            float m_elasticity; // 0x4            
+            float m_elasticity; // 0x_            
             // metadata: MKV3TransferName "density"
-            float m_density; // 0x8            
+            float m_density; // 0x_            
             // metadata: MKV3TransferName "thickness"
-            float m_thickness; // 0xc            
+            float m_thickness; // 0x_            
             // metadata: MKV3TransferName "softcontactfrequency"
-            float m_softContactFrequency; // 0x10            
+            float m_softContactFrequency; // 0x_            
             // metadata: MKV3TransferName "softcontactdampingratio"
-            float m_softContactDampingRatio; // 0x14            
+            float m_softContactDampingRatio; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_friction) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_elasticity) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_density) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_thickness) == 0xc);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactFrequency) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactDampingRatio) == 0x14);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_friction) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_elasticity) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_density) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_thickness) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactFrequency) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactDampingRatio) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesPhysics) == 0x18);
+        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesPhysics) == 0x_);
     };
 };

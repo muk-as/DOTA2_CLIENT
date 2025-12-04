@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class MoveLinearAuthoredPos_t : std::uint32_t
         {
             MOVELINEAR_AUTHORED_AT_START_POSITION = 0x0,

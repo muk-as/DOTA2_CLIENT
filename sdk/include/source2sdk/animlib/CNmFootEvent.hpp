@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CNmFootEvent : public source2sdk::animlib::CNmEvent
         {
         public:
-            source2sdk::animlib::NmFootPhase_t m_phase; // 0x20            
-            uint8_t _pad0021[0x7];
+            source2sdk::animlib::NmFootPhase_t m_phase; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmFootEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmFootEvent) == 0x28);
+        static_assert(sizeof(source2sdk::animlib::CNmFootEvent) == 0x_);
     };
 };

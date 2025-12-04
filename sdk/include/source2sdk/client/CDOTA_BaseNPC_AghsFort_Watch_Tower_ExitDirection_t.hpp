@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CDOTA_BaseNPC_AghsFort_Watch_Tower_ExitDirection_t : std::uint32_t
         {
             EXIT_DIRECTION_LEFT = 0x0,

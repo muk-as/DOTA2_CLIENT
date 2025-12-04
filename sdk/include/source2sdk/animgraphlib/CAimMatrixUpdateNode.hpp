@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x180
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,20 +30,20 @@ namespace source2sdk
         class CAimMatrixUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            source2sdk::animgraphlib::AimMatrixOpFixedSettings_t m_opFixedSettings; // 0x70            
-            uint8_t _pad0160[0x8]; // 0x160
-            source2sdk::animgraphlib::AnimVectorSource m_target; // 0x168            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x16c            
-            uint8_t _pad016e[0x2]; // 0x16e
-            source2sdk::animationsystem::HSequence m_hSequence; // 0x170            
-            bool m_bResetChild; // 0x174            
-            bool m_bLockWhenWaning; // 0x175            
-            uint8_t _pad0176[0xa];
+            source2sdk::animgraphlib::AimMatrixOpFixedSettings_t m_opFixedSettings; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::AnimVectorSource m_target; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animationsystem::HSequence m_hSequence; // 0x_            
+            bool m_bResetChild; // 0x_            
+            bool m_bLockWhenWaning; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAimMatrixUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAimMatrixUpdateNode) == 0x180);
+        static_assert(sizeof(source2sdk::animgraphlib::CAimMatrixUpdateNode) == 0x_);
     };
 };

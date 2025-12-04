@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAAbilitySpeakTrigger_t : std::uint32_t
         {
             DOTA_ABILITY_SPEAK_START_ACTION_PHASE = 0x0,

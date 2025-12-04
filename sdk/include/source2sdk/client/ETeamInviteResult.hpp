@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETeamInviteResult : std::uint32_t
         {
             TEAM_INVITE_SUCCESS = 0x0,

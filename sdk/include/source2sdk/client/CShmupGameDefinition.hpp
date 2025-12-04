@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xb8
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,22 +27,22 @@ namespace source2sdk
         class CShmupGameDefinition
         {
         public:
-            float m_flGameWidth; // 0x0            
-            float m_flGameHeight; // 0x4            
-            float m_flBossFightDuration; // 0x8            
-            std::int32_t m_nComboBaseScore; // 0xc            
-            source2sdk::client::CShmupPlayerDefinition m_player; // 0x10            
-            source2sdk::client::CShmupBossDefinition m_boss; // 0x70            
+            float m_flGameWidth; // 0x_            
+            float m_flGameHeight; // 0x_            
+            float m_flBossFightDuration; // 0x_            
+            std::int32_t m_nComboBaseScore; // 0x_            
+            source2sdk::client::CShmupPlayerDefinition m_player; // 0x_            
+            source2sdk::client::CShmupBossDefinition m_boss; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flGameWidth) == 0x0);
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flGameHeight) == 0x4);
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flBossFightDuration) == 0x8);
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_nComboBaseScore) == 0xc);
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_player) == 0x10);
-        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_boss) == 0x70);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flGameWidth) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flGameHeight) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_flBossFightDuration) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_nComboBaseScore) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_player) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupGameDefinition, m_boss) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CShmupGameDefinition) == 0xb8);
+        static_assert(sizeof(source2sdk::client::CShmupGameDefinition) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 30
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class soundlevel_t : std::uint32_t
         {
             SNDLVL_NONE = 0x0,

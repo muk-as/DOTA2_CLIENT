@@ -14,30 +14,30 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CRagdollMagnet : public source2sdk::server::CPointEntity
         {
         public:
-            bool m_bDisabled; // 0x4e0            
-            uint8_t _pad04e1[0x3]; // 0x4e1
-            float m_radius; // 0x4e4            
-            float m_force; // 0x4e8            
-            Vector m_axis; // 0x4ec            
+            bool m_bDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_radius; // 0x_            
+            float m_force; // 0x_            
+            Vector m_axis; // 0x_            
             
             // Datamap fields:
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CRagdollMagnet because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CRagdollMagnet) == 0x4f8);
+        static_assert(sizeof(source2sdk::server::CRagdollMagnet) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SPELL_DISPELLABLE_TYPES : std::uint32_t
         {
             SPELL_DISPELLABLE_NONE = 0x0,

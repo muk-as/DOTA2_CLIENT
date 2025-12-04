@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,17 +26,17 @@ namespace source2sdk
         class CDOTA_Ability_Razor_StaticLink : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t m_iLinkIndex; // 0x5c0            
-            uint8_t _pad05c4[0x4]; // 0x5c4
-            source2sdk::server::CountdownTimer m_ViewerTimer; // 0x5c8            
-            float vision_duration; // 0x5e0            
-            bool m_bIsAltCastState; // 0x5e4            
-            uint8_t _pad05e5[0x3];
+            std::int32_t m_iLinkIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_ViewerTimer; // 0x_            
+            float vision_duration; // 0x_            
+            bool m_bIsAltCastState; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Razor_StaticLink because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Razor_StaticLink) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Razor_StaticLink) == 0x_);
     };
 };

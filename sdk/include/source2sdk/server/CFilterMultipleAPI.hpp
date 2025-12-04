@@ -14,9 +14,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MPulseLibraryBindings
@@ -26,11 +26,11 @@ namespace source2sdk
         class CFilterMultipleAPI
         {
         public:
-            uint8_t _pad0000[0x8];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CFilterMultipleAPI) == 0x8);
+        static_assert(sizeof(source2sdk::server::CFilterMultipleAPI) == 0x_);
     };
 };

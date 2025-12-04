@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ScoutBonuses : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float reveal_radius; // 0x1878            
-            float increase_health; // 0x187c            
-            std::int32_t max_health; // 0x1880            
-            float increase_armor; // 0x1884            
-            float max_armor; // 0x1888            
-            uint8_t _pad188c[0x4];
+            float reveal_radius; // 0x_            
+            float increase_health; // 0x_            
+            std::int32_t max_health; // 0x_            
+            float increase_armor; // 0x_            
+            float max_armor; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ScoutBonuses because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_ScoutBonuses) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_ScoutBonuses) == 0x_);
     };
 };

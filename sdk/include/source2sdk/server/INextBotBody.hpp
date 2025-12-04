@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class INextBotBody : public source2sdk::server::INextBotComponent
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::INextBotBody) == 0x20);
+        static_assert(sizeof(source2sdk::server::INextBotBody) == 0x_);
     };
 };

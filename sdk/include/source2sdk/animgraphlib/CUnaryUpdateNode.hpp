@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x70
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CUnaryUpdateNode : public source2sdk::animgraphlib::CAnimUpdateNodeBase
         {
         public:
-            uint8_t _pad0058[0x8]; // 0x58
-            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChildNode; // 0x60            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimUpdateNodeRef m_pChildNode; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CUnaryUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CUnaryUpdateNode) == 0x70);
+        static_assert(sizeof(source2sdk::animgraphlib::CUnaryUpdateNode) == 0x_);
     };
 };

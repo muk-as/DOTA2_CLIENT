@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x80
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,16 +31,16 @@ namespace source2sdk
         public:
             // m_actions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPtr<source2sdk::animgraphlib::CAnimActionUpdater>> m_actions;
-            char m_actions[0x18]; // 0x58            
-            source2sdk::animgraphlib::CPoseHandle m_hPoseCacheHandle; // 0x70            
-            source2sdk::animationsystem::HSequence m_hSequence; // 0x74            
-            float m_flCycle; // 0x78            
-            uint8_t _pad007c[0x4];
+            char m_actions[0x_]; // 0x_            
+            source2sdk::animgraphlib::CPoseHandle m_hPoseCacheHandle; // 0x_            
+            source2sdk::animationsystem::HSequence m_hSequence; // 0x_            
+            float m_flCycle; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSingleFrameUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CSingleFrameUpdateNode) == 0x80);
+        static_assert(sizeof(source2sdk::animgraphlib::CSingleFrameUpdateNode) == 0x_);
     };
 };

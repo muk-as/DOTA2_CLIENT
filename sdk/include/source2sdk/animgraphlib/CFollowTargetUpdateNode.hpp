@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,16 +28,16 @@ namespace source2sdk
         class CFollowTargetUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            source2sdk::animgraphlib::FollowTargetOpFixedSettings_t m_opFixedData; // 0x70            
-            uint8_t _pad0080[0x8]; // 0x80
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPosition; // 0x88            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterOrientation; // 0x8a            
-            uint8_t _pad008c[0x4];
+            source2sdk::animgraphlib::FollowTargetOpFixedSettings_t m_opFixedData; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPosition; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterOrientation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFollowTargetUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CFollowTargetUpdateNode) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::CFollowTargetUpdateNode) == 0x_);
     };
 };

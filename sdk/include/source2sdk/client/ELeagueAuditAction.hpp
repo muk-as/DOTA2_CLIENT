@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 42
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELeagueAuditAction : std::uint32_t
         {
             LEAGUE_AUDIT_ACTION_INVALID = 0x0,

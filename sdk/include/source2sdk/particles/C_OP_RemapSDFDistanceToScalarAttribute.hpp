@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa08
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,27 +30,27 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1c0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "Input field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldInput; // 0x1c4            
+            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldInput; // 0x_            
             // metadata: MPropertyFriendlyName "Minimum distance"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMinDistance; // 0x1c8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMinDistance; // 0x_            
             // metadata: MPropertyFriendlyName "Maximum distance"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxDistance; // 0x328            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxDistance; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist<min"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueBelowMin; // 0x488            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueBelowMin; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist=min"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAtMin; // 0x5e8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAtMin; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist=max"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAtMax; // 0x748            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAtMax; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist>max"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAboveMax; // 0x8a8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flValueAboveMax; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RemapSDFDistanceToScalarAttribute because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RemapSDFDistanceToScalarAttribute) == 0xa08);
+        static_assert(sizeof(source2sdk::particles::C_OP_RemapSDFDistanceToScalarAttribute) == 0x_);
     };
 };

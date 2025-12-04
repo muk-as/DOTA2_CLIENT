@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x138
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -28,34 +28,34 @@ namespace source2sdk
         struct ArtyLevelInfo_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            source2sdk::client::ArtyLevelID_t m_unID; // 0x8            
-            uint8_t _pad000c[0x4]; // 0xc
-            CUtlString m_sLocLevelName; // 0x10            
-            source2sdk::client::ArtyLevelObjectInstance_t m_playerInfo; // 0x18            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ArtyLevelID_t m_unID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_sLocLevelName; // 0x_            
+            source2sdk::client::ArtyLevelObjectInstance_t m_playerInfo; // 0x_            
             // m_vecGameObjects has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ArtyLevelObjectInstance_t> m_vecGameObjects;
-            char m_vecGameObjects[0x18]; // 0xa0            
+            char m_vecGameObjects[0x_]; // 0x_            
             // m_vecWeapons has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ArtyLevelWeaponInstance_t> m_vecWeapons;
-            char m_vecWeapons[0x18]; // 0xb8            
-            std::int32_t m_nLevelCompletePoints; // 0xd0            
-            std::int32_t m_nTimeBonusBasePoints; // 0xd4            
-            std::int32_t m_nTimeBonusMaxPoints; // 0xd8            
-            std::int32_t m_nTimeBonusFastTime; // 0xdc            
-            std::int32_t m_nTimeBonusMaxTime; // 0xe0            
-            float m_flBackgroundOffsetX; // 0xe4            
-            std::int32_t m_aryStarPointThresholds[3]; // 0xe8            
-            uint8_t _pad00f4[0x4]; // 0xf4
-            CPanoramaImageName m_sBackgroundImage; // 0xf8            
-            CPanoramaImageName m_sTerrainBackgroundImage; // 0x108            
-            CPanoramaImageName m_sTerrainImage; // 0x118            
-            CPanoramaImageName m_sTerrainForegroundImage; // 0x128            
+            char m_vecWeapons[0x_]; // 0x_            
+            std::int32_t m_nLevelCompletePoints; // 0x_            
+            std::int32_t m_nTimeBonusBasePoints; // 0x_            
+            std::int32_t m_nTimeBonusMaxPoints; // 0x_            
+            std::int32_t m_nTimeBonusFastTime; // 0x_            
+            std::int32_t m_nTimeBonusMaxTime; // 0x_            
+            float m_flBackgroundOffsetX; // 0x_            
+            std::int32_t m_aryStarPointThresholds[3]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CPanoramaImageName m_sBackgroundImage; // 0x_            
+            CPanoramaImageName m_sTerrainBackgroundImage; // 0x_            
+            CPanoramaImageName m_sTerrainImage; // 0x_            
+            CPanoramaImageName m_sTerrainForegroundImage; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in ArtyLevelInfo_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::ArtyLevelInfo_t) == 0x138);
+        static_assert(sizeof(source2sdk::client::ArtyLevelInfo_t) == 0x_);
     };
 };

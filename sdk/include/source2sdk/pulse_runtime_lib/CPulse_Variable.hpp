@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,28 +26,28 @@ namespace source2sdk
         class CPulse_Variable
         {
         public:
-            PulseSymbol_t m_Name; // 0x0            
-            CUtlString m_Description; // 0x10            
-            CPulseValueFullType m_Type; // 0x18            
-            KeyValues3 m_DefaultValue; // 0x30            
-            uint8_t _pad0040[0x4]; // 0x40
-            source2sdk::pulse_runtime_lib::PulseVariableKeysSource_t m_nKeysSource; // 0x44            
-            bool m_bIsPublicBlackboardVariable; // 0x48            
-            bool m_bIsObservable; // 0x49            
-            uint8_t _pad004a[0x2]; // 0x4a
-            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_nEditorNodeID; // 0x4c            
+            PulseSymbol_t m_Name; // 0x_            
+            CUtlString m_Description; // 0x_            
+            CPulseValueFullType m_Type; // 0x_            
+            KeyValues3 m_DefaultValue; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::PulseVariableKeysSource_t m_nKeysSource; // 0x_            
+            bool m_bIsPublicBlackboardVariable; // 0x_            
+            bool m_bIsObservable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::PulseDocNodeID_t m_nEditorNodeID; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Name) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Description) == 0x10);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Type) == 0x18);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_DefaultValue) == 0x30);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_nKeysSource) == 0x44);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_bIsPublicBlackboardVariable) == 0x48);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_bIsObservable) == 0x49);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_nEditorNodeID) == 0x4c);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Name) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Description) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_Type) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_DefaultValue) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_nKeysSource) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_bIsPublicBlackboardVariable) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_bIsObservable) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Variable, m_nEditorNodeID) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_Variable) == 0x50);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_Variable) == 0x_);
     };
 };

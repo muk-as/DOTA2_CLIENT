@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CavernCrawlItemType_t : std::uint8_t
         {
             CAVERN_CRAWL_ITEM_TYPE_INVALID = 0xff,

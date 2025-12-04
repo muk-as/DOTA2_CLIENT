@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,27 +32,27 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flAlphaScale; // 0xf48            
+            float m_flAlphaScale; // 0x_            
             // metadata: MNetworkEnable
-            float m_flRadiusScale; // 0xf4c            
+            float m_flRadiusScale; // 0x_            
             // metadata: MNetworkEnable
-            float m_flSelfIllumScale; // 0xf50            
+            float m_flSelfIllumScale; // 0x_            
             // metadata: MNetworkEnable
-            Color m_ColorTint; // 0xf54            
+            Color m_ColorTint; // 0x_            
             // metadata: MNetworkEnable
             // m_hTextureOverride has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hTextureOverride;
-            char m_hTextureOverride[0x8]; // 0xf58            
+            char m_hTextureOverride[0x_]; // 0x_            
             
             // Datamap fields:
-            // float InputSetScale; // 0x0
-            // float InputSetAlphaScale; // 0x0
-            // Color InputSetColorTint; // 0x0
+            // float InputSetScale; // 0x_
+            // float InputSetAlphaScale; // 0x_
+            // Color InputSetColorTint; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EnvParticleGlow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EnvParticleGlow) == 0xf60);
+        static_assert(sizeof(source2sdk::client::C_EnvParticleGlow) == 0x_);
     };
 };

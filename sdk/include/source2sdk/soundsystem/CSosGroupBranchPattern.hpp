@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // Construct allowed
@@ -27,27 +27,27 @@ namespace source2sdk
         class CSosGroupBranchPattern
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Event Name"
-            bool m_bMatchEventName; // 0x8            
+            bool m_bMatchEventName; // 0x_            
             // metadata: MPropertyFriendlyName "Sub-String"
-            bool m_bMatchEventSubString; // 0x9            
+            bool m_bMatchEventSubString; // 0x_            
             // metadata: MPropertyFriendlyName "Source Entity Index"
-            bool m_bMatchEntIndex; // 0xa            
+            bool m_bMatchEntIndex; // 0x_            
             // metadata: MPropertyFriendlyName "Opvar Float"
-            bool m_bMatchOpvar; // 0xb            
+            bool m_bMatchOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "Opvar String"
-            bool m_bMatchString; // 0xc            
-            uint8_t _pad000d[0x3];
+            bool m_bMatchString; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEventName) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEventSubString) == 0x9);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEntIndex) == 0xa);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchOpvar) == 0xb);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchString) == 0xc);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEventName) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEventSubString) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchEntIndex) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchOpvar) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupBranchPattern, m_bMatchString) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupBranchPattern) == 0x10);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupBranchPattern) == 0x_);
     };
 };

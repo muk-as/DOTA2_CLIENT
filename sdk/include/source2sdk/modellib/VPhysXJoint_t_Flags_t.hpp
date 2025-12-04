@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class VPhysXJoint_t_Flags_t : std::uint32_t
         {
             JOINT_FLAGS_NONE = 0x0,

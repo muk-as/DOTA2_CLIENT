@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,20 +25,20 @@ namespace source2sdk
         class CMatch3AbilityBaseDefinition
         {
         public:
-            CUtlString m_sLocName; // 0x0            
-            CUtlString m_sLocDescription; // 0x8            
-            CPanoramaImageName m_sImage; // 0x10            
+            CUtlString m_sLocName; // 0x_            
+            CUtlString m_sLocDescription; // 0x_            
+            CPanoramaImageName m_sImage; // 0x_            
             // m_vecParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CMatch3AbilityParamDefinition> m_vecParams;
-            char m_vecParams[0x18]; // 0x20            
+            char m_vecParams[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sLocName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sLocDescription) == 0x8);
-        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sImage) == 0x10);
-        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_vecParams) == 0x20);
+        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sLocName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sLocDescription) == 0x_);
+        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_sImage) == 0x_);
+        static_assert(offsetof(source2sdk::client::CMatch3AbilityBaseDefinition, m_vecParams) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CMatch3AbilityBaseDefinition) == 0x38);
+        static_assert(sizeof(source2sdk::client::CMatch3AbilityBaseDefinition) == 0x_);
     };
 };

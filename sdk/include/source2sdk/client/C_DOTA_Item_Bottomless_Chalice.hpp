@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x738
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,15 +30,15 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnChaliceStoredRuneChanged"
-            std::int32_t m_iStoredRuneType; // 0x728            
-            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x72c            
-            float stored_rune_duration; // 0x730            
-            uint8_t _pad0734[0x4];
+            std::int32_t m_iStoredRuneType; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x_            
+            float stored_rune_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Bottomless_Chalice because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Bottomless_Chalice) == 0x738);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Bottomless_Chalice) == 0x_);
     };
 };

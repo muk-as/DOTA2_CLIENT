@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class AttributeDerivedStats : std::uint32_t
         {
             DOTA_ATTRIBUTE_STRENGTH_DAMAGE = 0x0,

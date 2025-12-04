@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x220
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,15 +27,15 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "outline color"
-            Color m_OutlineColor; // 0x210            
-            uint8_t _pad0214[0x4]; // 0x214
+            Color m_OutlineColor; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "default text"
-            CUtlString m_DefaultText; // 0x218            
+            CUtlString m_DefaultText; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RenderText because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RenderText) == 0x220);
+        static_assert(sizeof(source2sdk::particles::C_OP_RenderText) == 0x_);
     };
 };

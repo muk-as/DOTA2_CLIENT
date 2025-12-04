@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,15 +26,15 @@ namespace source2sdk
         class CAnimGraphSettingsManager
         {
         public:
-            uint8_t _pad0000[0x18]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_settingsGroups has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPtr<source2sdk::animgraphlib::CAnimGraphSettingsGroup>> m_settingsGroups;
-            char m_settingsGroups[0x18]; // 0x18            
+            char m_settingsGroups[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphSettingsManager, m_settingsGroups) == 0x18);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphSettingsManager, m_settingsGroups) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphSettingsManager) == 0x30);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphSettingsManager) == 0x_);
     };
 };

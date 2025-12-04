@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         struct FeTwistConstraint_t
         {
         public:
-            std::uint16_t nNodeOrient; // 0x0            
-            std::uint16_t nNodeEnd; // 0x2            
-            float flTwistRelax; // 0x4            
-            float flSwingRelax; // 0x8            
+            std::uint16_t nNodeOrient; // 0x_            
+            std::uint16_t nNodeEnd; // 0x_            
+            float flTwistRelax; // 0x_            
+            float flSwingRelax; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, nNodeOrient) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, nNodeEnd) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, flTwistRelax) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, flSwingRelax) == 0x8);
+        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, nNodeOrient) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, nNodeEnd) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, flTwistRelax) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTwistConstraint_t, flSwingRelax) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeTwistConstraint_t) == 0xc);
+        static_assert(sizeof(source2sdk::physicslib::FeTwistConstraint_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ESupportEventRequestResult : std::uint32_t
         {
             k_ESupportEventRequestResult_Success = 0x0,

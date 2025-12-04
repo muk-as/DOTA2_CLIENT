@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,37 +26,37 @@ namespace source2sdk
         class CDOTAFeaturedGamemodeDefinition
         {
         public:
-            uint8_t _pad0000[0x18]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "unique integer ID of this weekly featured game mode"
             // metadata: MVDataUniqueMonotonicInt "_editor/next_featured_gamemode_id"
             // metadata: MPropertyAttributeEditor "locked_int()"
-            std::uint16_t m_nID; // 0x18            
-            uint8_t _pad001a[0x2]; // 0x1a
+            std::uint16_t m_nID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Game Mode; use DOTA_GAMEMODE_EVENT for custom games and include custom game name"
-            source2sdk::client::DOTA_GameMode m_eGameMode; // 0x1c            
+            source2sdk::client::DOTA_GameMode m_eGameMode; // 0x_            
             // metadata: MPropertyDescription "custom game addon name if any; references event_games.txt"
-            CUtlString m_sCustomGame; // 0x20            
+            CUtlString m_sCustomGame; // 0x_            
             // metadata: MPropertyDescription "shards per win"
-            std::int32_t m_nShardsPerWin; // 0x28            
+            std::int32_t m_nShardsPerWin; // 0x_            
             // metadata: MPropertyDescription "shards per loss"
-            std::int32_t m_nShardsPerLoss; // 0x2c            
+            std::int32_t m_nShardsPerLoss; // 0x_            
             // metadata: MPropertyDescription "the date/time this mode starts (YYYY-MM-DD hh:mm:ss) UTC"
-            CUtlString m_sStartTime; // 0x30            
-            uint8_t _pad0038[0x8]; // 0x38
+            CUtlString m_sStartTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "the date/time this mode ends (YYYY-MM-DD hh:mm:ss) UTC"
-            CUtlString m_sEndTime; // 0x40            
-            uint8_t _pad0048[0x8];
+            CUtlString m_sEndTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nID) == 0x18);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_eGameMode) == 0x1c);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sCustomGame) == 0x20);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nShardsPerWin) == 0x28);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nShardsPerLoss) == 0x2c);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sStartTime) == 0x30);
-        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sEndTime) == 0x40);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_eGameMode) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sCustomGame) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nShardsPerWin) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_nShardsPerLoss) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAFeaturedGamemodeDefinition, m_sEndTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAFeaturedGamemodeDefinition) == 0x50);
+        static_assert(sizeof(source2sdk::client::CDOTAFeaturedGamemodeDefinition) == 0x_);
     };
 };

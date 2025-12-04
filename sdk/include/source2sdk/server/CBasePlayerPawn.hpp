@@ -94,10 +94,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xaa0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -135,72 +135,72 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_WeaponServices* m_pWeaponServices; // 0x958            
+            source2sdk::server::CPlayer_WeaponServices* m_pWeaponServices; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_ItemServices* m_pItemServices; // 0x960            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::server::CPlayer_AutoaimServices* m_pAutoaimServices; // 0x968            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_ObserverServices* m_pObserverServices; // 0x970            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_WaterServices* m_pWaterServices; // 0x978            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_UseServices* m_pUseServices; // 0x980            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_FlashlightServices* m_pFlashlightServices; // 0x988            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_CameraServices* m_pCameraServices; // 0x990            
-            // metadata: MNetworkEnable
-            source2sdk::server::CPlayer_MovementServices* m_pMovementServices; // 0x998            
-            uint8_t _pad09a0[0x8]; // 0x9a0
-            QAngle v_angle; // 0x9a8            
-            QAngle v_anglePrevious; // 0x9b4            
+            source2sdk::server::CPlayer_ItemServices* m_pItemServices; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            std::uint32_t m_iHideHUD; // 0x9c0            
-            uint8_t _pad09c4[0x4]; // 0x9c4
+            source2sdk::server::CPlayer_AutoaimServices* m_pAutoaimServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_ObserverServices* m_pObserverServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_WaterServices* m_pWaterServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_UseServices* m_pUseServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_FlashlightServices* m_pFlashlightServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_CameraServices* m_pCameraServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::server::CPlayer_MovementServices* m_pMovementServices; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            QAngle v_angle; // 0x_            
+            QAngle v_anglePrevious; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::server::sky3dparams_t m_skybox3d; // 0x9c8            
-            source2sdk::entity2::GameTime_t m_fTimeLastHurt; // 0xa58            
+            std::uint32_t m_iHideHUD; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::entity2::GameTime_t m_flDeathTime; // 0xa5c            
-            source2sdk::entity2::GameTime_t m_fNextSuicideTime; // 0xa60            
-            bool m_fInitHUD; // 0xa64            
-            uint8_t _pad0a65[0x3]; // 0xa65
-            source2sdk::server::CAI_Expresser* m_pExpresser; // 0xa68            
+            source2sdk::server::sky3dparams_t m_skybox3d; // 0x_            
+            source2sdk::entity2::GameTime_t m_fTimeLastHurt; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fNextSuicideTime; // 0x_            
+            bool m_fInitHUD; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CAI_Expresser* m_pExpresser; // 0x_            
             // metadata: MNetworkEnable
             // m_hController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBasePlayerController> m_hController;
-            char m_hController[0x4]; // 0xa70            
+            char m_hController[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hDefaultController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBasePlayerController> m_hDefaultController;
-            char m_hDefaultController[0x4]; // 0xa74            
-            uint8_t _pad0a78[0x4]; // 0xa78
-            float m_fHltvReplayDelay; // 0xa7c            
-            float m_fHltvReplayEnd; // 0xa80            
-            CEntityIndex m_iHltvReplayEntity; // 0xa84            
+            char m_hDefaultController[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fHltvReplayDelay; // 0x_            
+            float m_fHltvReplayEnd; // 0x_            
+            CEntityIndex m_iHltvReplayEntity; // 0x_            
             // m_sndOpvarLatchData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sndopvarlatchdata_t> m_sndOpvarLatchData;
-            char m_sndOpvarLatchData[0x18]; // 0xa88            
+            char m_sndOpvarLatchData[0x_]; // 0x_            
             
             // Datamap fields:
-            // void m_hPawnListEntry; // 0xa78
-            // void m_hLastValidNavArea; // 0x8d0
-            // void m_hCurrentNavArea; // 0x8c0
-            // void m_hCurrentNavAreaBlocked; // 0x8e0
-            // CHandle< CBaseEntity > controller; // 0x7fffffff
-            // int32_t InputSetHealth; // 0x0
-            // bool InputSetHUDVisibility; // 0x0
-            // CUtlSymbolLarge InputSetFogController; // 0x0
+            // void m_hPawnListEntry; // 0x_
+            // void m_hLastValidNavArea; // 0x_
+            // void m_hCurrentNavArea; // 0x_
+            // void m_hCurrentNavAreaBlocked; // 0x_
+            // CHandle< CBaseEntity > controller; // 0x_
+            // int32_t InputSetHealth; // 0x_
+            // bool InputSetHUDVisibility; // 0x_
+            // CUtlSymbolLarge InputSetFogController; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBasePlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBasePlayerPawn) == 0xaa0);
+        static_assert(sizeof(source2sdk::server::CBasePlayerPawn) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETeamTrackedStatImpl : std::uint32_t
         {
             k_eTeamTrackedStatImpl_Invalid = 0x0,

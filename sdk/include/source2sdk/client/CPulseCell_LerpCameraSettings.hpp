@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,15 +30,15 @@ namespace source2sdk
         class CPulseCell_LerpCameraSettings : public source2sdk::pulse_runtime_lib::CPulseCell_BaseLerp
         {
         public:
-            float m_flSeconds; // 0x90            
-            source2sdk::client::PointCameraSettings_t m_Start; // 0x94            
-            source2sdk::client::PointCameraSettings_t m_End; // 0xa4            
-            uint8_t _pad00b4[0x4];
+            float m_flSeconds; // 0x_            
+            source2sdk::client::PointCameraSettings_t m_Start; // 0x_            
+            source2sdk::client::PointCameraSettings_t m_End; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_LerpCameraSettings because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPulseCell_LerpCameraSettings) == 0xb8);
+        static_assert(sizeof(source2sdk::client::CPulseCell_LerpCameraSettings) == 0x_);
     };
 };

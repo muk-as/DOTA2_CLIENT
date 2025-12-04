@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct CNmFloatRemapNode_RemapRange_t
         {
         public:
-            float m_flBegin; // 0x0            
-            float m_flEnd; // 0x4            
+            float m_flBegin; // 0x_            
+            float m_flEnd; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t, m_flBegin) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t, m_flEnd) == 0x4);
+        static_assert(offsetof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t, m_flBegin) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t, m_flEnd) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t) == 0x8);
+        static_assert(sizeof(source2sdk::animlib::CNmFloatRemapNode_RemapRange_t) == 0x_);
     };
 };

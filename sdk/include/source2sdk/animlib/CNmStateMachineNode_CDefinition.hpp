@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x138
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,14 +29,14 @@ namespace source2sdk
         public:
             // m_stateDefinitions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVectorFixedGrowable<source2sdk::animlib::CNmStateMachineNode_StateDefinition_t,5> m_stateDefinitions;
-            char m_stateDefinitions[0x120]; // 0x10            
-            std::int16_t m_nDefaultStateIndex; // 0x130            
-            uint8_t _pad0132[0x6];
+            char m_stateDefinitions[0x_]; // 0x_            
+            std::int16_t m_nDefaultStateIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmStateMachineNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmStateMachineNode_CDefinition) == 0x138);
+        static_assert(sizeof(source2sdk::animlib::CNmStateMachineNode_CDefinition) == 0x_);
     };
 };

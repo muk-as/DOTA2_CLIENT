@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -34,6 +34,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_BaseQueryableFlow) == 0x48);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_BaseQueryableFlow) == 0x_);
     };
 };

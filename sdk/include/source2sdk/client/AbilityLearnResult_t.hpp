@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class AbilityLearnResult_t : std::uint32_t
         {
             ABILITY_CAN_BE_UPGRADED = 0x0,

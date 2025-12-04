@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 90
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DotaPseudoRandomType : std::uint32_t
         {
             DOTA_PSEUDO_RANDOM_NONE = 0x0,

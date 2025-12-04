@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Black_King_Bar : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_strength; // 0x1878            
-            std::int32_t bonus_damage; // 0x187c            
-            float duration; // 0x1880            
-            uint8_t _pad1884[0x4];
+            std::int32_t bonus_strength; // 0x_            
+            std::int32_t bonus_damage; // 0x_            
+            float duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Black_King_Bar because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Black_King_Bar) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Black_King_Bar) == 0x_);
     };
 };

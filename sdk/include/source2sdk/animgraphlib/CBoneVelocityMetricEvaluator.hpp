@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,13 +26,13 @@ namespace source2sdk
         class CBoneVelocityMetricEvaluator : public source2sdk::animgraphlib::CMotionMetricEvaluator
         {
         public:
-            std::int32_t m_nBoneIndex; // 0x50            
-            uint8_t _pad0054[0x4];
+            std::int32_t m_nBoneIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBoneVelocityMetricEvaluator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CBoneVelocityMetricEvaluator) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CBoneVelocityMetricEvaluator) == 0x_);
     };
 };

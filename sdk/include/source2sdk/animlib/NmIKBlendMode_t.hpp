@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class NmIKBlendMode_t : std::uint8_t
         {
             Effector = 0x0,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 109
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTASlotType_t : std::uint32_t
         {
             DOTA_LOADOUT_TYPE_INVALID = 0xffffffff,

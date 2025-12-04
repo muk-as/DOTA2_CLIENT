@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x630
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,20 +25,20 @@ namespace source2sdk
         class CDOTA_Ability_Kunkka_GhostShip : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float buff_duration; // 0x5c0            
-            float stun_duration; // 0x5c4            
-            float ghostship_width; // 0x5c8            
-            float ghostship_width_scepter; // 0x5cc            
-            std::int32_t num_cannon_volleys; // 0x5d0            
-            Vector m_vFinalDestination; // 0x5d4            
-            Vector m_vStartingPoint; // 0x5e0            
-            std::int32_t m_hProjectileID; // 0x5ec            
-            uint8_t _pad05f0[0x40];
+            float buff_duration; // 0x_            
+            float stun_duration; // 0x_            
+            float ghostship_width; // 0x_            
+            float ghostship_width_scepter; // 0x_            
+            std::int32_t num_cannon_volleys; // 0x_            
+            Vector m_vFinalDestination; // 0x_            
+            Vector m_vStartingPoint; // 0x_            
+            std::int32_t m_hProjectileID; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Kunkka_GhostShip because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Kunkka_GhostShip) == 0x630);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Kunkka_GhostShip) == 0x_);
     };
 };

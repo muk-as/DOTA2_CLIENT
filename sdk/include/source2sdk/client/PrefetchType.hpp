@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 1
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PrefetchType : std::uint32_t
         {
             PFT_SOUND = 0x0,

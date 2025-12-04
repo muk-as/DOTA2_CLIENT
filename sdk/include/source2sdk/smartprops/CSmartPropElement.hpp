@@ -27,10 +27,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x88
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -44,37 +44,37 @@ namespace source2sdk
         class CSmartPropElement
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
             // metadata: MVDataUniqueMonotonicInt "_editor/next_element_id"
-            std::int32_t m_nElementID; // 0x8            
-            uint8_t _pad000c[0x4]; // 0xc
+            std::int32_t m_nElementID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MVDataEnableKey
             // metadata: MPropertyDescription "Is this element enabled? If not enabled, this element will not be evaluted and will have no effect on the result."
             // metadata: MPropertySortPriority "10"
-            CSmartPropAttributeBool m_bEnabled; // 0x10            
+            CSmartPropAttributeBool m_bEnabled; // 0x_            
             // metadata: MPropertyFriendlyName "Label"
             // metadata: MPropertyDescription "Optional text that will appear in the outliner to help organize Smart Prop elements and communicate their purpose to other users."
-            CUtlString m_sLabel; // 0x50            
+            CUtlString m_sLabel; // 0x_            
             // metadata: MPropertyFriendlyName "Selection Criteria"
             // metadata: MVDataPromoteField
             // m_SelectionCriteria has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropSelectionCriteria*> m_SelectionCriteria;
-            char m_SelectionCriteria[0x18]; // 0x58            
+            char m_SelectionCriteria[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "Modifiers"
             // metadata: MVDataPromoteField
             // m_Modifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropModifier*> m_Modifiers;
-            char m_Modifiers[0x18]; // 0x70            
+            char m_Modifiers[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_nElementID) == 0x8);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_bEnabled) == 0x10);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_sLabel) == 0x50);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_SelectionCriteria) == 0x58);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_Modifiers) == 0x70);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_nElementID) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_bEnabled) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_sLabel) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_SelectionCriteria) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropElement, m_Modifiers) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement) == 0x88);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement) == 0x_);
     };
 };

@@ -17,27 +17,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Razor_StormSurge : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t self_movement_speed_pct; // 0x1878            
-            std::int32_t strike_pct_chance; // 0x187c            
-            float strike_damage; // 0x1880            
-            std::int32_t strike_move_slow_pct; // 0x1884            
-            float strike_search_radius; // 0x1888            
-            std::int32_t strike_target_count; // 0x188c            
-            float strike_slow_duration; // 0x1890            
-            float strike_internal_cd; // 0x1894            
-            float strike_cd_reduction_during_storm; // 0x1898            
-            std::int32_t eye_of_the_storm_chance_multiplier; // 0x189c            
+            std::int32_t self_movement_speed_pct; // 0x_            
+            std::int32_t strike_pct_chance; // 0x_            
+            float strike_damage; // 0x_            
+            std::int32_t strike_move_slow_pct; // 0x_            
+            float strike_search_radius; // 0x_            
+            std::int32_t strike_target_count; // 0x_            
+            float strike_slow_duration; // 0x_            
+            float strike_internal_cd; // 0x_            
+            float strike_cd_reduction_during_storm; // 0x_            
+            std::int32_t eye_of_the_storm_chance_multiplier; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Razor_StormSurge because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Razor_StormSurge) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Razor_StormSurge) == 0x_);
     };
 };

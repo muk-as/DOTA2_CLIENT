@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EOverworldNodeState : std::uint32_t
         {
             k_eOverworldNodeState_Invalid = 0x0,

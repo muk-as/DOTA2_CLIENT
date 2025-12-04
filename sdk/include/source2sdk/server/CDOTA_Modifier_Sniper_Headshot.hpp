@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Sniper_Headshot : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t proc_chance; // 0x1878            
-            float slow_duration; // 0x187c            
-            float knockback_distance; // 0x1880            
-            std::int32_t bonus_damage_creeps; // 0x1884            
-            std::int32_t damage; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t proc_chance; // 0x_            
+            float slow_duration; // 0x_            
+            float knockback_distance; // 0x_            
+            std::int32_t bonus_damage_creeps; // 0x_            
+            std::int32_t damage; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Sniper_Headshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sniper_Headshot) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sniper_Headshot) == 0x_);
     };
 };

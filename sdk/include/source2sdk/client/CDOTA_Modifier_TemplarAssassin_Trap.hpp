@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_TemplarAssassin_Trap : public source2sdk::client::CDOTA_Modifier_Invisible
         {
         public:
-            float bonus_vision; // 0x1888            
-            uint8_t _pad188c[0x4];
+            float bonus_vision; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_TemplarAssassin_Trap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_TemplarAssassin_Trap) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_TemplarAssassin_Trap) == 0x_);
     };
 };

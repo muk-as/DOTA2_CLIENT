@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,15 +29,15 @@ namespace source2sdk
         class CVoiceContainerBlender : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
         {
         public:
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_firstSound; // 0xb8            
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_secondSound; // 0xd0            
-            float m_flBlendFactor; // 0xe8            
-            uint8_t _pad00ec[0x4];
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_firstSound; // 0x_            
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_secondSound; // 0x_            
+            float m_flBlendFactor; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerBlender because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBlender) == 0xf0);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBlender) == 0x_);
     };
 };

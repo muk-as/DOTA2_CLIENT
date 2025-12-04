@@ -24,26 +24,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mirana_Starfall_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float starfall_secondary_radius; // 0x1878            
-            float starstruck_duration; // 0x187c            
+            float starfall_secondary_radius; // 0x_            
+            float starstruck_duration; // 0x_            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x1880            
-            float m_flDamage; // 0x1884            
-            bool m_bStarDropped; // 0x1888            
-            bool m_bSecondStar; // 0x1889            
-            uint8_t _pad188a[0x6];
+            char m_hTarget[0x_]; // 0x_            
+            float m_flDamage; // 0x_            
+            bool m_bStarDropped; // 0x_            
+            bool m_bSecondStar; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mirana_Starfall_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Starfall_Thinker) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Starfall_Thinker) == 0x_);
     };
 };

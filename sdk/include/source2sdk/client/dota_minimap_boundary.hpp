@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // Construct disallowed
@@ -25,12 +25,12 @@ namespace source2sdk
         class dota_minimap_boundary : public source2sdk::entity2::CEmptyEntityInstance
         {
         public:
-            uint8_t _pad0001[0x7];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::dota_minimap_boundary) == 0x8);
+        static_assert(sizeof(source2sdk::client::dota_minimap_boundary) == 0x_);
     };
 };

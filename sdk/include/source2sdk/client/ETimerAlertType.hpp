@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETimerAlertType : std::uint32_t
         {
             k_TimerAlertType_PowerRune = 0x1,

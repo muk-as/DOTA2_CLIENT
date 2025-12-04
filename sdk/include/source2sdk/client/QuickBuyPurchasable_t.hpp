@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class QuickBuyPurchasable_t : std::uint32_t
         {
             QUICK_BUY_PURCHASABLE_INVALID = 0xffffffff,

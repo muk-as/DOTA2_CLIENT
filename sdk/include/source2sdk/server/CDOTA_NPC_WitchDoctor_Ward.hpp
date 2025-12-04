@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x18e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,14 +29,14 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_nTargetType; // 0x18e0            
+            std::int32_t m_nTargetType; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTargetFlags; // 0x18e4            
+            std::int32_t m_nTargetFlags; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_NPC_WitchDoctor_Ward because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_NPC_WitchDoctor_Ward) == 0x18e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_NPC_WitchDoctor_Ward) == 0x_);
     };
 };

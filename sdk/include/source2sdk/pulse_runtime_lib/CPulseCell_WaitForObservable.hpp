@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x108
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -34,13 +34,13 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Condition to evaluate when any of its dependent values change."
-            source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t m_Condition; // 0x48            
-            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnTrue; // 0xc0            
+            source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t m_Condition; // 0x_            
+            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnTrue; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_WaitForObservable because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForObservable) == 0x108);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForObservable) == 0x_);
     };
 };

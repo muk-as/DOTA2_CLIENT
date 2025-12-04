@@ -18,31 +18,31 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PrimalBeast_Onslaught_Windup : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bReachedMax; // 0x1878            
-            bool m_bShouldCharge; // 0x1879            
-            uint8_t _pad187a[0x2]; // 0x187a
-            float m_flLastOverheadTime; // 0x187c            
-            float m_flFacingTarget; // 0x1880            
-            Vector m_vAimTarget; // 0x1884            
-            source2sdk::client::ParticleIndex_t m_nCrosshairFX; // 0x1890            
-            float m_flChargeDuration; // 0x1894            
-            std::int32_t max_distance; // 0x1898            
-            float max_charge_time; // 0x189c            
-            float turn_rate; // 0x18a0            
-            float base_power; // 0x18a4            
-            std::int32_t charge_speed; // 0x18a8            
-            uint8_t _pad18ac[0x4];
+            bool m_bReachedMax; // 0x_            
+            bool m_bShouldCharge; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flLastOverheadTime; // 0x_            
+            float m_flFacingTarget; // 0x_            
+            Vector m_vAimTarget; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nCrosshairFX; // 0x_            
+            float m_flChargeDuration; // 0x_            
+            std::int32_t max_distance; // 0x_            
+            float max_charge_time; // 0x_            
+            float turn_rate; // 0x_            
+            float base_power; // 0x_            
+            std::int32_t charge_speed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PrimalBeast_Onslaught_Windup because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Onslaught_Windup) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Onslaught_Windup) == 0x_);
     };
 };

@@ -29,10 +29,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -44,23 +44,23 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_ActivityModifier[256]; // 0x5c0            
+            char m_ActivityModifier[256]; // 0x_            
             // metadata: MNetworkEnable
-            float m_fStolenCastPoint; // 0x6c0            
+            float m_fStolenCastPoint; // 0x_            
             // m_hStealTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hStealTarget;
-            char m_hStealTarget[0x4]; // 0x6c4            
+            char m_hStealTarget[0x_]; // 0x_            
             // m_hStealAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTABaseAbility> m_hStealAbility;
-            char m_hStealAbility[0x4]; // 0x6c8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x6cc            
-            std::int32_t m_hProjectile; // 0x6d0            
-            uint8_t _pad06d4[0x4];
+            char m_hStealAbility[0x_]; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            std::int32_t m_hProjectile; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Rubick_SpellSteal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Rubick_SpellSteal) == 0x6d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Rubick_SpellSteal) == 0x_);
     };
 };

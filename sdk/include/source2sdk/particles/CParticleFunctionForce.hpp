@@ -15,9 +15,9 @@ namespace source2sdk
     namespace particles
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1d0
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -27,11 +27,11 @@ namespace source2sdk
         class CParticleFunctionForce : public source2sdk::particles::CParticleFunction
         {
         public:
-            uint8_t _pad01c0[0x10];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::particles::CParticleFunctionForce) == 0x1d0);
+        static_assert(sizeof(source2sdk::particles::CParticleFunctionForce) == 0x_);
     };
 };

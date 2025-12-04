@@ -17,27 +17,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Invoker_IceWall_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float damage_per_second; // 0x1878            
-            Vector m_vWallDirection; // 0x187c            
-            Vector m_vWallStart; // 0x1888            
-            float wall_total_length; // 0x1894            
-            float wall_width; // 0x1898            
-            float slow_duration; // 0x189c            
-            std::int32_t slow; // 0x18a0            
-            float root_damage; // 0x18a4            
-            float root_duration; // 0x18a8            
-            float tick_interval; // 0x18ac            
+            float damage_per_second; // 0x_            
+            Vector m_vWallDirection; // 0x_            
+            Vector m_vWallStart; // 0x_            
+            float wall_total_length; // 0x_            
+            float wall_width; // 0x_            
+            float slow_duration; // 0x_            
+            std::int32_t slow; // 0x_            
+            float root_damage; // 0x_            
+            float root_duration; // 0x_            
+            float tick_interval; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_IceWall_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Invoker_IceWall_Thinker) == 0x18b0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Invoker_IceWall_Thinker) == 0x_);
     };
 };

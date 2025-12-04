@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ViewFadeMode_t : std::uint32_t
         {
             VIEW_FADE_CONSTANT_COLOR = 0x0,

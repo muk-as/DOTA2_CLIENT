@@ -26,238 +26,238 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1478
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_TeamCommander
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
-            source2sdk::entity2::GameTick_t m_nLastUnitsCollectTick; // 0x10            
-            uint8_t _pad0014[0x2b4]; // 0x14
-            source2sdk::server::CountdownTimer m_LaneFrontUpdate; // 0x2c8            
-            std::uint64_t m_ulBotScriptUGC; // 0x2e0            
-            std::uint32_t m_rtBotScriptUpdated; // 0x2e8            
-            uint8_t _pad02ec[0x4]; // 0x2ec
-            source2sdk::server::CountdownTimer m_AvoidanceGridTimer; // 0x2f0            
-            source2sdk::server::CountdownTimer m_EnemyVisibilityGridTimer; // 0x308            
-            source2sdk::server::CountdownTimer m_LaneStatusTimer; // 0x320            
-            source2sdk::server::CountdownTimer m_ChatThrottleTimer; // 0x338            
-            source2sdk::client::DOTATeam_t m_eTeam; // 0x350            
-            uint8_t _pad0354[0x6c]; // 0x354
-            bool m_bLateGame; // 0x3c0            
-            uint8_t _pad03c1[0x3]; // 0x3c1
-            float m_LaneLengths[4]; // 0x3c4            
-            float m_LaneFrontCreepsAmounts[2][4]; // 0x3d4            
-            float m_LaneFrontTowersAmounts[2][4]; // 0x3f4            
-            uint8_t _pad0414[0x4]; // 0x414
-            source2sdk::server::CountdownTimer m_LaneReassignTimer; // 0x418            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTick_t m_nLastUnitsCollectTick; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_LaneFrontUpdate; // 0x_            
+            std::uint64_t m_ulBotScriptUGC; // 0x_            
+            std::uint32_t m_rtBotScriptUpdated; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_AvoidanceGridTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_EnemyVisibilityGridTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_LaneStatusTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_ChatThrottleTimer; // 0x_            
+            source2sdk::client::DOTATeam_t m_eTeam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bLateGame; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_LaneLengths[4]; // 0x_            
+            float m_LaneFrontCreepsAmounts[2][4]; // 0x_            
+            float m_LaneFrontTowersAmounts[2][4]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_LaneReassignTimer; // 0x_            
             // m_AvoidanceGrid has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_AvoidanceGrid;
-            char m_AvoidanceGrid[0x18]; // 0x430            
-            source2sdk::entity2::GameTime_t m_fNextPotentialLocationTick[24]; // 0x448            
-            std::int32_t m_iPotentialLocationBuffer[24]; // 0x4a8            
+            char m_AvoidanceGrid[0x_]; // 0x_            
+            source2sdk::entity2::GameTime_t m_fNextPotentialLocationTick[24]; // 0x_            
+            std::int32_t m_iPotentialLocationBuffer[24]; // 0x_            
             // m_PotentialLocationGrid has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint8_t> m_PotentialLocationGrid[2][24];
-            char m_PotentialLocationGrid[0x480]; // 0x508            
+            char m_PotentialLocationGrid[0x_]; // 0x_            
             // m_hRoamingUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRoamingUnit;
-            char m_hRoamingUnit[0x4]; // 0x988            
-            source2sdk::client::DOTA_LANE m_RoamTargetLane; // 0x98c            
-            uint8_t _pad0990[0x30]; // 0x990
+            char m_hRoamingUnit[0x_]; // 0x_            
+            source2sdk::client::DOTA_LANE m_RoamTargetLane; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_Buildings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_Buildings[4][8];
-            char m_Buildings[0x80]; // 0x9c0            
-            float m_fBuildingFortTimings[4][8]; // 0xa40            
+            char m_Buildings[0x_]; // 0x_            
+            float m_fBuildingFortTimings[4][8]; // 0x_            
             // m_LaneNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_LaneNodes[4][9];
-            char m_LaneNodes[0x90]; // 0xac0            
-            float m_fPushLaneDesire[4]; // 0xb50            
-            float m_fPushLaneRawDesire[4]; // 0xb60            
-            float m_fPushLaneConvenienceDesire[4]; // 0xb70            
-            float m_fDefendLaneDesire[4]; // 0xb80            
-            float m_fDefendLaneUrgencyDesire[4]; // 0xb90            
-            float m_fDefendLanePowerDesire[4]; // 0xba0            
-            float m_fFarmLaneDesire[4]; // 0xbb0            
-            std::int32_t m_iLastSeenRoshanHealth; // 0xbc0            
-            float m_fRoshanDesire; // 0xbc4            
+            char m_LaneNodes[0x_]; // 0x_            
+            float m_fPushLaneDesire[4]; // 0x_            
+            float m_fPushLaneRawDesire[4]; // 0x_            
+            float m_fPushLaneConvenienceDesire[4]; // 0x_            
+            float m_fDefendLaneDesire[4]; // 0x_            
+            float m_fDefendLaneUrgencyDesire[4]; // 0x_            
+            float m_fDefendLanePowerDesire[4]; // 0x_            
+            float m_fFarmLaneDesire[4]; // 0x_            
+            std::int32_t m_iLastSeenRoshanHealth; // 0x_            
+            float m_fRoshanDesire; // 0x_            
             // m_hProposedPushUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hProposedPushUnits[4];
-            char m_hProposedPushUnits[0x60]; // 0xbc8            
+            char m_hProposedPushUnits[0x_]; // 0x_            
             // m_hProposedDefendUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hProposedDefendUnits[4];
-            char m_hProposedDefendUnits[0x60]; // 0xc28            
+            char m_hProposedDefendUnits[0x_]; // 0x_            
             // m_hProposedRoamUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hProposedRoamUnits;
-            char m_hProposedRoamUnits[0x18]; // 0xc88            
+            char m_hProposedRoamUnits[0x_]; // 0x_            
             // m_hProposedRoshanUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hProposedRoshanUnits;
-            char m_hProposedRoshanUnits[0x18]; // 0xca0            
-            float m_fRoamDesire; // 0xcb8            
-            float m_fRoamOffensivePowerFactor; // 0xcbc            
-            float m_fRoamDistanceFactor; // 0xcc0            
-            float m_fRoamPositionFactor; // 0xcc4            
+            char m_hProposedRoshanUnits[0x_]; // 0x_            
+            float m_fRoamDesire; // 0x_            
+            float m_fRoamOffensivePowerFactor; // 0x_            
+            float m_fRoamDistanceFactor; // 0x_            
+            float m_fRoamPositionFactor; // 0x_            
             // m_hRoamTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRoamTarget;
-            char m_hRoamTarget[0x4]; // 0xcc8            
-            Vector m_vRoamTargetLoc; // 0xccc            
-            float m_fHeroSelectionTimes[24]; // 0xcd8            
-            uint8_t _pad0d38[0x18]; // 0xd38
-            Vector m_vBaseLocation; // 0xd50            
-            uint8_t _pad0d5c[0x4]; // 0xd5c
+            char m_hRoamTarget[0x_]; // 0x_            
+            Vector m_vRoamTargetLoc; // 0x_            
+            float m_fHeroSelectionTimes[24]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vBaseLocation; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_AllUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllUnits;
-            char m_AllUnits[0x18]; // 0xd60            
+            char m_AllUnits[0x_]; // 0x_            
             // m_AllAlliedUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedUnits;
-            char m_AllAlliedUnits[0x18]; // 0xd78            
+            char m_AllAlliedUnits[0x_]; // 0x_            
             // m_AllAlliedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedHeroes;
-            char m_AllAlliedHeroes[0x18]; // 0xd90            
+            char m_AllAlliedHeroes[0x_]; // 0x_            
             // m_AllAlliedCreeps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedCreeps;
-            char m_AllAlliedCreeps[0x18]; // 0xda8            
+            char m_AllAlliedCreeps[0x_]; // 0x_            
             // m_AllAlliedWards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedWards;
-            char m_AllAlliedWards[0x18]; // 0xdc0            
+            char m_AllAlliedWards[0x_]; // 0x_            
             // m_AllAlliedBuildings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedBuildings;
-            char m_AllAlliedBuildings[0x18]; // 0xdd8            
+            char m_AllAlliedBuildings[0x_]; // 0x_            
             // m_AllAlliedOther has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllAlliedOther;
-            char m_AllAlliedOther[0x18]; // 0xdf0            
+            char m_AllAlliedOther[0x_]; // 0x_            
             // m_AllEnemyUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyUnits;
-            char m_AllEnemyUnits[0x18]; // 0xe08            
+            char m_AllEnemyUnits[0x_]; // 0x_            
             // m_AllEnemyHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyHeroes;
-            char m_AllEnemyHeroes[0x18]; // 0xe20            
+            char m_AllEnemyHeroes[0x_]; // 0x_            
             // m_AllEnemyCreeps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyCreeps;
-            char m_AllEnemyCreeps[0x18]; // 0xe38            
+            char m_AllEnemyCreeps[0x_]; // 0x_            
             // m_AllEnemyWards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyWards;
-            char m_AllEnemyWards[0x18]; // 0xe50            
+            char m_AllEnemyWards[0x_]; // 0x_            
             // m_AllEnemyBuildings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyBuildings;
-            char m_AllEnemyBuildings[0x18]; // 0xe68            
+            char m_AllEnemyBuildings[0x_]; // 0x_            
             // m_AllEnemyOther has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllEnemyOther;
-            char m_AllEnemyOther[0x18]; // 0xe80            
+            char m_AllEnemyOther[0x_]; // 0x_            
             // m_AllNeutralCreeps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllNeutralCreeps;
-            char m_AllNeutralCreeps[0x18]; // 0xe98            
+            char m_AllNeutralCreeps[0x_]; // 0x_            
             // m_ThinkerUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_ThinkerUnits;
-            char m_ThinkerUnits[0x18]; // 0xeb0            
+            char m_ThinkerUnits[0x_]; // 0x_            
             // m_AllUnitsIncludingDead has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllUnitsIncludingDead;
-            char m_AllUnitsIncludingDead[0x18]; // 0xec8            
-            uint8_t _pad0ee0[0x30]; // 0xee0
+            char m_AllUnitsIncludingDead[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hCouriers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hCouriers;
-            char m_hCouriers[0x18]; // 0xf10            
+            char m_hCouriers[0x_]; // 0x_            
             // m_hDisabledBots has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hDisabledBots;
-            char m_hDisabledBots[0x18]; // 0xf28            
-            uint8_t _pad0f40[0x370]; // 0xf40
-            source2sdk::entity2::GameTime_t m_fGoodLuckFlavorTextTime; // 0x12b0            
-            source2sdk::entity2::GameTime_t m_fTeamfightFlavorTextTime; // 0x12b4            
-            source2sdk::entity2::GameTime_t m_fCongratulateHeroFlavorTextTime; // 0x12b8            
-            source2sdk::entity2::GameTime_t m_fLastAliveHeroHistorySnapshotTime; // 0x12bc            
-            std::int32_t m_iAliveHeroHistoryIndex; // 0x12c0            
-            std::int32_t m_iAliveHeroHistory[5]; // 0x12c4            
-            source2sdk::entity2::GameTime_t m_fPlayerDraftChooseTime; // 0x12d8            
-            uint8_t _pad12dc[0xc]; // 0x12dc
-            CUtlString m_sScriptDirectory; // 0x12e8            
-            HSCRIPT m_hHeroSelectionScriptScope; // 0x12f0            
-            HSCRIPT m_hTeamLevelDesiresScriptScope; // 0x12f8            
-            uint8_t _pad1300[0x68]; // 0x1300
-            source2sdk::entity2::GameTick_t m_nScriptPathAvoidanceUpdateTick; // 0x1368            
-            float m_fExecutionTime[30]; // 0x136c            
-            std::int32_t m_iCurExecutionTime; // 0x13e4            
-            uint8_t _pad13e8[0x90];
+            char m_hDisabledBots[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_fGoodLuckFlavorTextTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fTeamfightFlavorTextTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fCongratulateHeroFlavorTextTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastAliveHeroHistorySnapshotTime; // 0x_            
+            std::int32_t m_iAliveHeroHistoryIndex; // 0x_            
+            std::int32_t m_iAliveHeroHistory[5]; // 0x_            
+            source2sdk::entity2::GameTime_t m_fPlayerDraftChooseTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_sScriptDirectory; // 0x_            
+            HSCRIPT m_hHeroSelectionScriptScope; // 0x_            
+            HSCRIPT m_hTeamLevelDesiresScriptScope; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTick_t m_nScriptPathAvoidanceUpdateTick; // 0x_            
+            float m_fExecutionTime[30]; // 0x_            
+            std::int32_t m_iCurExecutionTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nLastUnitsCollectTick) == 0x10);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontUpdate) == 0x2c8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ulBotScriptUGC) == 0x2e0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_rtBotScriptUpdated) == 0x2e8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AvoidanceGridTimer) == 0x2f0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_EnemyVisibilityGridTimer) == 0x308);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneStatusTimer) == 0x320);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ChatThrottleTimer) == 0x338);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_eTeam) == 0x350);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_bLateGame) == 0x3c0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneLengths) == 0x3c4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontCreepsAmounts) == 0x3d4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontTowersAmounts) == 0x3f4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneReassignTimer) == 0x418);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AvoidanceGrid) == 0x430);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fNextPotentialLocationTick) == 0x448);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iPotentialLocationBuffer) == 0x4a8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_PotentialLocationGrid) == 0x508);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hRoamingUnit) == 0x988);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_RoamTargetLane) == 0x98c);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_Buildings) == 0x9c0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fBuildingFortTimings) == 0xa40);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneNodes) == 0xac0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneDesire) == 0xb50);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneRawDesire) == 0xb60);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneConvenienceDesire) == 0xb70);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLaneDesire) == 0xb80);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLaneUrgencyDesire) == 0xb90);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLanePowerDesire) == 0xba0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fFarmLaneDesire) == 0xbb0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iLastSeenRoshanHealth) == 0xbc0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoshanDesire) == 0xbc4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedPushUnits) == 0xbc8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedDefendUnits) == 0xc28);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedRoamUnits) == 0xc88);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedRoshanUnits) == 0xca0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamDesire) == 0xcb8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamOffensivePowerFactor) == 0xcbc);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamDistanceFactor) == 0xcc0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamPositionFactor) == 0xcc4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hRoamTarget) == 0xcc8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vRoamTargetLoc) == 0xccc);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fHeroSelectionTimes) == 0xcd8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vBaseLocation) == 0xd50);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnits) == 0xd60);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedUnits) == 0xd78);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedHeroes) == 0xd90);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedCreeps) == 0xda8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedWards) == 0xdc0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedBuildings) == 0xdd8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedOther) == 0xdf0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyUnits) == 0xe08);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyHeroes) == 0xe20);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyCreeps) == 0xe38);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyWards) == 0xe50);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyBuildings) == 0xe68);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyOther) == 0xe80);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllNeutralCreeps) == 0xe98);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ThinkerUnits) == 0xeb0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnitsIncludingDead) == 0xec8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hCouriers) == 0xf10);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hDisabledBots) == 0xf28);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fGoodLuckFlavorTextTime) == 0x12b0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fTeamfightFlavorTextTime) == 0x12b4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fCongratulateHeroFlavorTextTime) == 0x12b8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fLastAliveHeroHistorySnapshotTime) == 0x12bc);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistoryIndex) == 0x12c0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistory) == 0x12c4);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPlayerDraftChooseTime) == 0x12d8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_sScriptDirectory) == 0x12e8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hHeroSelectionScriptScope) == 0x12f0);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hTeamLevelDesiresScriptScope) == 0x12f8);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nScriptPathAvoidanceUpdateTick) == 0x1368);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fExecutionTime) == 0x136c);
-        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iCurExecutionTime) == 0x13e4);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nLastUnitsCollectTick) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontUpdate) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ulBotScriptUGC) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_rtBotScriptUpdated) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AvoidanceGridTimer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_EnemyVisibilityGridTimer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneStatusTimer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ChatThrottleTimer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_eTeam) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_bLateGame) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneLengths) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontCreepsAmounts) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneFrontTowersAmounts) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneReassignTimer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AvoidanceGrid) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fNextPotentialLocationTick) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iPotentialLocationBuffer) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_PotentialLocationGrid) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hRoamingUnit) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_RoamTargetLane) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_Buildings) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fBuildingFortTimings) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_LaneNodes) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneRawDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPushLaneConvenienceDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLaneDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLaneUrgencyDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fDefendLanePowerDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fFarmLaneDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iLastSeenRoshanHealth) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoshanDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedPushUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedDefendUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedRoamUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hProposedRoshanUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamDesire) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamOffensivePowerFactor) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamDistanceFactor) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fRoamPositionFactor) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hRoamTarget) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vRoamTargetLoc) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fHeroSelectionTimes) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vBaseLocation) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedHeroes) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedCreeps) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedWards) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedBuildings) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedOther) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyHeroes) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyCreeps) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyWards) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyBuildings) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllEnemyOther) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllNeutralCreeps) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_ThinkerUnits) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnitsIncludingDead) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hCouriers) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hDisabledBots) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fGoodLuckFlavorTextTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fTeamfightFlavorTextTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fCongratulateHeroFlavorTextTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fLastAliveHeroHistorySnapshotTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistoryIndex) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iAliveHeroHistory) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fPlayerDraftChooseTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_sScriptDirectory) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hHeroSelectionScriptScope) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_hTeamLevelDesiresScriptScope) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_nScriptPathAvoidanceUpdateTick) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fExecutionTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_iCurExecutionTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CDOTA_TeamCommander) == 0x1478);
+        static_assert(sizeof(source2sdk::server::CDOTA_TeamCommander) == 0x_);
     };
 };

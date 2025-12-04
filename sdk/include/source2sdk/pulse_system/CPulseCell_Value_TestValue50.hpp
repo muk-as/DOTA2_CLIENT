@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_system
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -35,6 +35,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Value_TestValue50) == 0x48);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Value_TestValue50) == 0x_);
     };
 };

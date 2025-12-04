@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class StateActionBehavior : std::uint32_t
         {
             STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT = 0x0,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,16 +25,16 @@ namespace source2sdk
         class CSequenceTagSpans
         {
         public:
-            CGlobalSymbol m_sSequenceName; // 0x0            
+            CGlobalSymbol m_sSequenceName; // 0x_            
             // m_tags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::TagSpan_t> m_tags;
-            char m_tags[0x18]; // 0x8            
+            char m_tags[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CSequenceTagSpans, m_sSequenceName) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CSequenceTagSpans, m_tags) == 0x8);
+        static_assert(offsetof(source2sdk::animgraphlib::CSequenceTagSpans, m_sSequenceName) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CSequenceTagSpans, m_tags) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CSequenceTagSpans) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CSequenceTagSpans) == 0x_);
     };
 };

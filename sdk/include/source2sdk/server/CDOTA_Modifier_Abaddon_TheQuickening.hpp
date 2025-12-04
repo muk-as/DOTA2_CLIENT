@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Abaddon_TheQuickening : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float cooldown_reduction_creeps; // 0x1878            
-            float cooldown_reduction_heroes; // 0x187c            
-            float radius; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float cooldown_reduction_creeps; // 0x_            
+            float cooldown_reduction_heroes; // 0x_            
+            float radius; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Abaddon_TheQuickening because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Abaddon_TheQuickening) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Abaddon_TheQuickening) == 0x_);
     };
 };

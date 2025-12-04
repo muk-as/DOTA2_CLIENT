@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,19 +30,19 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Frequency (Hz)"
             // metadata: MPropertyDescription "The frequency of this sine tone."
-            float m_flCarrierFrequency; // 0xb8            
+            float m_flCarrierFrequency; // 0x_            
             // metadata: MPropertyFriendlyName "Mod Frequency (Hz)"
             // metadata: MPropertyDescription "The frequency of the sine tone modulating this sine tone."
-            float m_flModulatorFrequency; // 0xbc            
+            float m_flModulatorFrequency; // 0x_            
             // metadata: MPropertyFriendlyName "Mod Amount (Hz)"
             // metadata: MPropertyDescription "The amount the modulating sine tone modulates this sine tone."
-            float m_flModulatorAmount; // 0xc0            
-            uint8_t _pad00c4[0x4];
+            float m_flModulatorAmount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerRealtimeFMSineWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerRealtimeFMSineWave) == 0xc8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerRealtimeFMSineWave) == 0x_);
     };
 };

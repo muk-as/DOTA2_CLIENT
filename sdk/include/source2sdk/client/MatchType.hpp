@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class MatchType : std::uint32_t
         {
             MATCH_TYPE_CASUAL = 0x0,

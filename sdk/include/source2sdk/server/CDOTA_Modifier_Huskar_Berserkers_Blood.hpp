@@ -17,24 +17,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Huskar_Berserkers_Blood : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t maximum_health_regen; // 0x1878            
-            std::int32_t maximum_attack_speed; // 0x187c            
-            std::int32_t maximum_magic_resist; // 0x1880            
-            std::int32_t hp_threshold_max; // 0x1884            
-            bool m_bIsActive; // 0x1888            
-            uint8_t _pad1889[0x3]; // 0x1889
-            std::int32_t aura_effectiveness; // 0x188c            
+            std::int32_t maximum_health_regen; // 0x_            
+            std::int32_t maximum_attack_speed; // 0x_            
+            std::int32_t maximum_magic_resist; // 0x_            
+            std::int32_t hp_threshold_max; // 0x_            
+            bool m_bIsActive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t aura_effectiveness; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Huskar_Berserkers_Blood because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Huskar_Berserkers_Blood) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Huskar_Berserkers_Blood) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELeagueRegion : std::uint32_t
         {
             LEAGUE_REGION_UNSET = 0x0,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ERoshanSpawnPhase : std::uint32_t
         {
             ROSHAN_SPAWN_PHASE_ALIVE = 0x0,

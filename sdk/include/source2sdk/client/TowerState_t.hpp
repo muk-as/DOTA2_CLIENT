@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class TowerState_t : std::uint32_t
         {
             TOWER_STATE_ACTIVE = 0x0,

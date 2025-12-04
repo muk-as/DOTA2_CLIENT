@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PointTemplateOwnerSpawnGroupType_t : std::uint32_t
         {
             INSERT_INTO_POINT_TEMPLATE_SPAWN_GROUP = 0x0,

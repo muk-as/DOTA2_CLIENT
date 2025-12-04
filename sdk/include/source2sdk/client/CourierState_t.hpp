@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CourierState_t : std::uint32_t
         {
             COURIER_STATE_INIT = 0xffffffff,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class LatchDirtyPermission_t : std::uint32_t
         {
             LATCH_DIRTY_DISALLOW = 0x0,

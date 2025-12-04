@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_BountyHunter_Track_Bear_Trap : public source2sdk::server::CDOTA_Modifier_Invisible
         {
         public:
-            bool m_bActivated; // 0x1888            
-            uint8_t _pad1889[0x7];
+            bool m_bActivated; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_BountyHunter_Track_Bear_Trap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_BountyHunter_Track_Bear_Trap) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_BountyHunter_Track_Bear_Trap) == 0x_);
     };
 };

@@ -14,21 +14,21 @@ namespace source2sdk
     namespace smartprops
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct CSmartPropPulse_SelectionChoiceWeight_Criteria_t
         {
         public:
             // metadata: MPropertyDescription "Relative weight of this choice, higher weighted choices are more likely to be selected."
-            float m_flWeight; // 0x0            
+            float m_flWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionChoiceWeight_Criteria_t, m_flWeight) == 0x0);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionChoiceWeight_Criteria_t, m_flWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_SelectionChoiceWeight_Criteria_t) == 0x4);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_SelectionChoiceWeight_Criteria_t) == 0x_);
     };
 };

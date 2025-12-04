@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,17 +25,17 @@ namespace source2sdk
         struct BakedLightingInfo_t_BakedShadowAssignment_t
         {
         public:
-            std::uint32_t m_nLightHash; // 0x0            
-            std::uint32_t m_nMapHash; // 0x4            
-            std::int8_t m_nShadowChannel; // 0x8            
-            uint8_t _pad0009[0x3];
+            std::uint32_t m_nLightHash; // 0x_            
+            std::uint32_t m_nMapHash; // 0x_            
+            std::int8_t m_nShadowChannel; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nLightHash) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nMapHash) == 0x4);
-        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nShadowChannel) == 0x8);
+        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nLightHash) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nMapHash) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t, m_nShadowChannel) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t) == 0xc);
+        static_assert(sizeof(source2sdk::worldrenderer::BakedLightingInfo_t_BakedShadowAssignment_t) == 0x_);
     };
 };

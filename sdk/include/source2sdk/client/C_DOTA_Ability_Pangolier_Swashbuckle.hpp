@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,19 +25,19 @@ namespace source2sdk
         class C_DOTA_Ability_Pangolier_Swashbuckle : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float dash_speed; // 0x688            
-            float start_radius; // 0x68c            
-            float end_radius; // 0x690            
-            float range; // 0x694            
-            float damage; // 0x698            
-            float attack_damage; // 0x69c            
-            std::int32_t procs_onhit_effects; // 0x6a0            
-            uint8_t _pad06a4[0x4];
+            float dash_speed; // 0x_            
+            float start_radius; // 0x_            
+            float end_radius; // 0x_            
+            float range; // 0x_            
+            float damage; // 0x_            
+            float attack_damage; // 0x_            
+            std::int32_t procs_onhit_effects; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Pangolier_Swashbuckle because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pangolier_Swashbuckle) == 0x6a8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pangolier_Swashbuckle) == 0x_);
     };
 };

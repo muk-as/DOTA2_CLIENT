@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Brewmaster_Void_Astral_Pull_Movement : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vDirection; // 0x1878            
-            float m_flEndTime; // 0x1884            
-            float m_flCurTime; // 0x1888            
-            std::int32_t pull_distance; // 0x188c            
-            std::int32_t damage; // 0x1890            
-            float pull_duration; // 0x1894            
+            Vector m_vDirection; // 0x_            
+            float m_flEndTime; // 0x_            
+            float m_flCurTime; // 0x_            
+            std::int32_t pull_distance; // 0x_            
+            std::int32_t damage; // 0x_            
+            float pull_duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Brewmaster_Void_Astral_Pull_Movement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Brewmaster_Void_Astral_Pull_Movement) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Brewmaster_Void_Astral_Pull_Movement) == 0x_);
     };
 };

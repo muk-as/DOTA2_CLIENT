@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x800
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsPowerUp_AreaAttack_Circle : public source2sdk::client::CSurvivorsPowerUp_AreaAttack
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_AreaAttack_Circle) == 0x800);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_AreaAttack_Circle) == 0x_);
     };
 };

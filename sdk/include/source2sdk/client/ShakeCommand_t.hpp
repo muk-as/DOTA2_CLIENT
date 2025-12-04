@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ShakeCommand_t : std::uint32_t
         {
             SHAKE_START = 0x0,

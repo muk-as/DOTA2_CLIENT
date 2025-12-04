@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,19 +26,19 @@ namespace source2sdk
         class C_EnvDeferredLight : public source2sdk::client::C_ModelPointEntity
         {
         public:
-            uint8_t _pad0998[0x2c8];
+            uint8_t _pad_[0x_];
             // Datamap fields:
-            // CDeferredLightBase CDeferredLightBase; // 0x9a0
-            // void InputTurnOn; // 0x0
-            // void InputTurnOff; // 0x0
-            // Color InputSetLightColor; // 0x0
-            // float InputSetLightIntensity; // 0x0
-            // CUtlSymbolLarge InputSetLightIntensityOverTime; // 0x0
-            // float InputSetLightRadius; // 0x0
+            // CDeferredLightBase CDeferredLightBase; // 0x_
+            // void InputTurnOn; // 0x_
+            // void InputTurnOff; // 0x_
+            // Color InputSetLightColor; // 0x_
+            // float InputSetLightIntensity; // 0x_
+            // CUtlSymbolLarge InputSetLightIntensityOverTime; // 0x_
+            // float InputSetLightRadius; // 0x_
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_EnvDeferredLight) == 0xc60);
+        static_assert(sizeof(source2sdk::client::C_EnvDeferredLight) == 0x_);
     };
 };

@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x500
+        // Size: 0x_
         // Has VTable
         // Construct disallowed
         // MConstructibleClassBase
@@ -30,22 +30,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bDisabled; // 0x4e0            
-            uint8_t _pad04e1[0x7]; // 0x4e1
+            bool m_bDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszSoundAreaType; // 0x4e8            
+            CUtlSymbolLarge m_iszSoundAreaType; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vPos; // 0x4f0            
-            uint8_t _pad04fc[0x4];
+            Vector m_vPos; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSoundAreaEntityBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSoundAreaEntityBase) == 0x500);
+        static_assert(sizeof(source2sdk::server::CSoundAreaEntityBase) == 0x_);
     };
 };

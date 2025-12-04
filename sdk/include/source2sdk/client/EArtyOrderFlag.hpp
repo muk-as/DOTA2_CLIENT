@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EArtyOrderFlag : std::uint32_t
         {
             k_EArtyOrderFlag_None = 0x0,

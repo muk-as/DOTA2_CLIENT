@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,14 +29,14 @@ namespace source2sdk
         public:
             // m_blendItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::MotionBlendItem> m_blendItems;
-            char m_blendItems[0x18]; // 0x28            
-            std::int32_t m_nParamIndex; // 0x40            
-            uint8_t _pad0044[0x4];
+            char m_blendItems[0x_]; // 0x_            
+            std::int32_t m_nParamIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMotionNodeBlend1D because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMotionNodeBlend1D) == 0x48);
+        static_assert(sizeof(source2sdk::animgraphlib::CMotionNodeBlend1D) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x1
-        // Alignment: 0x1
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x2
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,14 +26,14 @@ namespace source2sdk
         class CAnimParamHandle
         {
         public:
-            source2sdk::animgraphlib::AnimParamType_t m_type; // 0x0            
-            std::uint8_t m_index; // 0x1            
+            source2sdk::animgraphlib::AnimParamType_t m_type; // 0x_            
+            std::uint8_t m_index; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParamHandle, m_type) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParamHandle, m_index) == 0x1);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParamHandle, m_type) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParamHandle, m_index) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimParamHandle) == 0x2);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimParamHandle) == 0x_);
     };
 };

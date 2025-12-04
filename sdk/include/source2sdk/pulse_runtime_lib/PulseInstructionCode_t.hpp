@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 125
         // Alignment: 2
-        // Size: 0x2
+        // Size: 0x_
         enum class PulseInstructionCode_t : std::uint16_t
         {
             INVALID = 0x0,

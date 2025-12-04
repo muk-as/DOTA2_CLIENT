@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x2
-        // Alignment: 0x2
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,19 +25,19 @@ namespace source2sdk
         struct CNmStateMachineNode_TransitionDefinition_t
         {
         public:
-            std::int16_t m_nTargetStateIdx; // 0x0            
-            std::int16_t m_nConditionNodeIdx; // 0x2            
-            std::int16_t m_nTransitionNodeIdx; // 0x4            
-            bool m_bCanBeForced; // 0x6            
-            uint8_t _pad0007[0x1];
+            std::int16_t m_nTargetStateIdx; // 0x_            
+            std::int16_t m_nConditionNodeIdx; // 0x_            
+            std::int16_t m_nTransitionNodeIdx; // 0x_            
+            bool m_bCanBeForced; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nTargetStateIdx) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nConditionNodeIdx) == 0x2);
-        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nTransitionNodeIdx) == 0x4);
-        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_bCanBeForced) == 0x6);
+        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nTargetStateIdx) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nConditionNodeIdx) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_nTransitionNodeIdx) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t, m_bCanBeForced) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t) == 0x8);
+        static_assert(sizeof(source2sdk::animlib::CNmStateMachineNode_TransitionDefinition_t) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,21 +25,21 @@ namespace source2sdk
         class CPulse_RegisterInfo
         {
         public:
-            source2sdk::pulse_runtime_lib::PulseRuntimeRegisterIndex_t m_nReg; // 0x0            
-            uint8_t _pad0002[0x6]; // 0x2
-            CPulseValueFullType m_Type; // 0x8            
-            CKV3MemberNameWithStorage m_OriginName; // 0x20            
-            std::int32_t m_nWrittenByInstruction; // 0x58            
-            std::int32_t m_nLastReadByInstruction; // 0x5c            
+            source2sdk::pulse_runtime_lib::PulseRuntimeRegisterIndex_t m_nReg; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CPulseValueFullType m_Type; // 0x_            
+            CKV3MemberNameWithStorage m_OriginName; // 0x_            
+            std::int32_t m_nWrittenByInstruction; // 0x_            
+            std::int32_t m_nLastReadByInstruction; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nReg) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_Type) == 0x8);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_OriginName) == 0x20);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nWrittenByInstruction) == 0x58);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nLastReadByInstruction) == 0x5c);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nReg) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_Type) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_OriginName) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nWrittenByInstruction) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo, m_nLastReadByInstruction) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo) == 0x60);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_RegisterInfo) == 0x_);
     };
 };

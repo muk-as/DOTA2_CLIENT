@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class NavScope_t : std::uint8_t
         {
             eGround = 0x0,

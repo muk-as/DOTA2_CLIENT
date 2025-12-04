@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1af8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,17 +30,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::DOTA_SHOP_TYPE m_ShopType; // 0x1ab8            
-            uint8_t _pad1abc[0x24]; // 0x1abc
-            source2sdk::client::ParticleIndex_t m_nShopFX; // 0x1ae0            
-            Vector m_vShopFXOrigin; // 0x1ae4            
-            float m_flLastSpeech; // 0x1af0            
-            uint8_t _pad1af4[0x4];
+            source2sdk::client::DOTA_SHOP_TYPE m_ShopType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_nShopFX; // 0x_            
+            Vector m_vShopFXOrigin; // 0x_            
+            float m_flLastSpeech; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Shop because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Shop) == 0x1af8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Shop) == 0x_);
     };
 };

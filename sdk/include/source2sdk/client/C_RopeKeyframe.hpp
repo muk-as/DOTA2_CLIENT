@@ -24,10 +24,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd08
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -60,93 +60,93 @@ namespace source2sdk
         class C_RopeKeyframe : public source2sdk::client::C_BaseModelEntity
         {
         public:
-            uint8_t _pad0998[0x8]; // 0x998
+            uint8_t _pad_[0x_]; // 0x_
             // m_LinksTouchingSomething has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CBitVec<10> m_LinksTouchingSomething;
-            char m_LinksTouchingSomething[0x4]; // 0x9a0            
-            std::int32_t m_nLinksTouchingSomething; // 0x9a4            
-            bool m_bApplyWind; // 0x9a8            
-            uint8_t _pad09a9[0x3]; // 0x9a9
-            std::int32_t m_fPrevLockedPoints; // 0x9ac            
-            std::int32_t m_iForcePointMoveCounter; // 0x9b0            
-            bool m_bPrevEndPointPos[2]; // 0x9b4            
-            uint8_t _pad09b6[0x2]; // 0x9b6
-            Vector m_vPrevEndPointPos[2]; // 0x9b8            
-            float m_flCurScroll; // 0x9d0            
+            char m_LinksTouchingSomething[0x_]; // 0x_            
+            std::int32_t m_nLinksTouchingSomething; // 0x_            
+            bool m_bApplyWind; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_fPrevLockedPoints; // 0x_            
+            std::int32_t m_iForcePointMoveCounter; // 0x_            
+            bool m_bPrevEndPointPos[2]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vPrevEndPointPos[2]; // 0x_            
+            float m_flCurScroll; // 0x_            
             // metadata: MNetworkEnable
-            float m_flScrollSpeed; // 0x9d4            
+            float m_flScrollSpeed; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_RopeFlags; // 0x9d8            
-            uint8_t _pad09da[0x6]; // 0x9da
+            std::uint16_t m_RopeFlags; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_iRopeMaterialModelIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_iRopeMaterialModelIndex;
-            char m_iRopeMaterialModelIndex[0x8]; // 0x9e0            
-            uint8_t _pad09e8[0x270]; // 0x9e8
+            char m_iRopeMaterialModelIndex[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint8_t m_nSegments; // 0xc58            
-            uint8_t _pad0c59[0x3]; // 0xc59
+            std::uint8_t m_nSegments; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hStartPoint has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hStartPoint;
-            char m_hStartPoint[0x4]; // 0xc5c            
+            char m_hStartPoint[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hEndPoint has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEndPoint;
-            char m_hEndPoint[0x4]; // 0xc60            
+            char m_hEndPoint[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::modellib::AttachmentHandle_t m_iStartAttachment; // 0xc64            
+            source2sdk::modellib::AttachmentHandle_t m_iStartAttachment; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::modellib::AttachmentHandle_t m_iEndAttachment; // 0xc65            
+            source2sdk::modellib::AttachmentHandle_t m_iEndAttachment; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_Subdiv; // 0xc66            
-            uint8_t _pad0c67[0x1]; // 0xc67
-            // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "RecomputeSprings"
-            std::int16_t m_RopeLength; // 0xc68            
+            std::uint8_t m_Subdiv; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "RecomputeSprings"
-            std::int16_t m_Slack; // 0xc6a            
+            std::int16_t m_RopeLength; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "RecomputeSprings"
+            std::int16_t m_Slack; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "0,100000"
             // metadata: MNetworkMaxValue "10,000000"
-            float m_TextureScale; // 0xc6c            
+            float m_TextureScale; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_fLockedPoints; // 0xc70            
+            std::uint8_t m_fLockedPoints; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_nChangeCount; // 0xc71            
-            uint8_t _pad0c72[0x2]; // 0xc72
+            std::uint8_t m_nChangeCount; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_Width; // 0xc74            
-            source2sdk::client::C_RopeKeyframe_CPhysicsDelegate m_PhysicsDelegate; // 0xc78            
+            float m_Width; // 0x_            
+            source2sdk::client::C_RopeKeyframe_CPhysicsDelegate m_PhysicsDelegate; // 0x_            
             // m_hMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hMaterial;
-            char m_hMaterial[0x8]; // 0xc88            
-            std::int32_t m_TextureHeight; // 0xc90            
-            Vector m_vecImpulse; // 0xc94            
-            Vector m_vecPreviousImpulse; // 0xca0            
-            float m_flCurrentGustTimer; // 0xcac            
-            float m_flCurrentGustLifetime; // 0xcb0            
-            float m_flTimeToNextGust; // 0xcb4            
-            Vector m_vWindDir; // 0xcb8            
-            Vector m_vColorMod; // 0xcc4            
-            Vector m_vCachedEndPointAttachmentPos[2]; // 0xcd0            
-            QAngle m_vCachedEndPointAttachmentAngle[2]; // 0xce8            
+            char m_hMaterial[0x_]; // 0x_            
+            std::int32_t m_TextureHeight; // 0x_            
+            Vector m_vecImpulse; // 0x_            
+            Vector m_vecPreviousImpulse; // 0x_            
+            float m_flCurrentGustTimer; // 0x_            
+            float m_flCurrentGustLifetime; // 0x_            
+            float m_flTimeToNextGust; // 0x_            
+            Vector m_vWindDir; // 0x_            
+            Vector m_vColorMod; // 0x_            
+            Vector m_vCachedEndPointAttachmentPos[2]; // 0x_            
+            QAngle m_vCachedEndPointAttachmentAngle[2]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bConstrainBetweenEndpoints; // 0xd00            
+            bool m_bConstrainBetweenEndpoints; // 0x_            
             // start of bitfield block
             uint8_t m_bEndPointAttachmentPositionsDirty: 1;
             uint8_t m_bEndPointAttachmentAnglesDirty: 1;
             uint8_t m_bNewDataThisFrame: 1;
             uint8_t m_bPhysicsInitted: 1;
             // end of bitfield block// 4 bits
-            uint8_t _pad0d02[0x6];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_RopeKeyframe because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_RopeKeyframe) == 0xd08);
+        static_assert(sizeof(source2sdk::client::C_RopeKeyframe) == 0x_);
     };
 };

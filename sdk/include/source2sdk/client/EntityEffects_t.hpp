@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 2
-        // Size: 0x2
+        // Size: 0x_
         enum class EntityEffects_t : std::uint16_t
         {
             DEPRICATED_EF_NOINTERP = 0x8,

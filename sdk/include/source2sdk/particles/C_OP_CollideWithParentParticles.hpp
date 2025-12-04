@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x480
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,14 +28,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "parent particle radius scale"
-            source2sdk::particleslib::CPerParticleFloatInput m_flParentRadiusScale; // 0x1c0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flParentRadiusScale; // 0x_            
             // metadata: MPropertyFriendlyName "particle radius scale"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRadiusScale; // 0x320            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRadiusScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_CollideWithParentParticles because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_CollideWithParentParticles) == 0x480);
+        static_assert(sizeof(source2sdk::particles::C_OP_CollideWithParentParticles) == 0x_);
     };
 };

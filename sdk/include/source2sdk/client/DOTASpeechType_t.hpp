@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTASpeechType_t : std::uint32_t
         {
             DOTA_SPEECH_USER_INVALID = 0x0,

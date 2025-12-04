@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,45 +25,45 @@ namespace source2sdk
         {
         public:
             // metadata: MKV3TransferName "impactsoft"
-            CUtlString m_impactSoft; // 0x0            
+            CUtlString m_impactSoft; // 0x_            
             // metadata: MKV3TransferName "impacthard"
-            CUtlString m_impactHard; // 0x8            
+            CUtlString m_impactHard; // 0x_            
             // metadata: MKV3TransferName "scrapesmooth"
-            CUtlString m_scrapeSmooth; // 0x10            
+            CUtlString m_scrapeSmooth; // 0x_            
             // metadata: MKV3TransferName "scraperough"
-            CUtlString m_scrapeRough; // 0x18            
+            CUtlString m_scrapeRough; // 0x_            
             // metadata: MKV3TransferName "bulletimpact"
-            CUtlString m_bulletImpact; // 0x20            
+            CUtlString m_bulletImpact; // 0x_            
             // metadata: MKV3TransferName "rolling"
-            CUtlString m_rolling; // 0x28            
+            CUtlString m_rolling; // 0x_            
             // metadata: MKV3TransferName "break"
-            CUtlString m_break; // 0x30            
+            CUtlString m_break; // 0x_            
             // metadata: MKV3TransferName "strain"
-            CUtlString m_strain; // 0x38            
+            CUtlString m_strain; // 0x_            
             // metadata: MKV3TransferName "meleeimpact"
-            CUtlString m_meleeImpact; // 0x40            
+            CUtlString m_meleeImpact; // 0x_            
             // metadata: MKV3TransferName "pushoff"
-            CUtlString m_pushOff; // 0x48            
+            CUtlString m_pushOff; // 0x_            
             // metadata: MKV3TransferName "skidstop"
-            CUtlString m_skidStop; // 0x50            
+            CUtlString m_skidStop; // 0x_            
             // metadata: MKV3TransferName "resonant"
-            CUtlString m_resonant; // 0x58            
+            CUtlString m_resonant; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_impactSoft) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_impactHard) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_scrapeSmooth) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_scrapeRough) == 0x18);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_bulletImpact) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_rolling) == 0x28);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_break) == 0x30);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_strain) == 0x38);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_meleeImpact) == 0x40);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_pushOff) == 0x48);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_skidStop) == 0x50);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_resonant) == 0x58);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_impactSoft) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_impactHard) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_scrapeSmooth) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_scrapeRough) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_bulletImpact) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_rolling) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_break) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_strain) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_meleeImpact) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_pushOff) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_skidStop) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames, m_resonant) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames) == 0x60);
+        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesSoundNames) == 0x_);
     };
 };

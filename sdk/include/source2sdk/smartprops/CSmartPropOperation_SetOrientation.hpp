@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x190
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,22 +31,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyGroupName "+Forward"
-            CSmartPropAttributeVector m_vForwardVector; // 0x50            
+            CSmartPropAttributeVector m_vForwardVector; // 0x_            
             // metadata: MPropertyGroupName "+Forward"
             // metadata: MPropertyDescription "Specifies the coordinate space the forward direction is being specified in"
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_ForwardDirectionSpace; // 0x90            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_ForwardDirectionSpace; // 0x_            
             // metadata: MPropertyGroupName "+Up"
-            CSmartPropAttributeVector m_vUpVector; // 0xd0            
+            CSmartPropAttributeVector m_vUpVector; // 0x_            
             // metadata: MPropertyGroupName "+Up"
             // metadata: MPropertyDescription "Specifies the coordinate space the up direction is being specified in"
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x110            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x_            
             // metadata: MPropertyDescription "If the specified vectors are not orthogonal, normally the up vector will be adjusted to make it orthogonal to the forward vector. If prioritize up is true, then the forward vector will be adjusted to be orthogonal to the specified up vector instead."
-            CSmartPropAttributeBool m_bPrioritizeUp; // 0x150            
+            CSmartPropAttributeBool m_bPrioritizeUp; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_SetOrientation because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_SetOrientation) == 0x190);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_SetOrientation) == 0x_);
     };
 };

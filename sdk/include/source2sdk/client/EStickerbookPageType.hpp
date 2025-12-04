@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EStickerbookPageType : std::uint32_t
         {
             STICKER_PAGE_GENERIC = 0x0,

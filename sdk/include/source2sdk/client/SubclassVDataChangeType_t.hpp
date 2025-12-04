@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SubclassVDataChangeType_t : std::uint32_t
         {
             SUBCLASS_VDATA_CREATED = 0x0,

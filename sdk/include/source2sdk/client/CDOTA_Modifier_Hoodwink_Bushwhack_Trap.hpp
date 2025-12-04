@@ -18,26 +18,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Hoodwink_Bushwhack_Trap : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t visual_height; // 0x1878            
-            float animation_rate; // 0x187c            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1880            
-            bool m_bPullComplete; // 0x1884            
-            uint8_t _pad1885[0x3]; // 0x1885
-            std::uint32_t m_TreeId; // 0x1888            
-            float m_flDamagePerTick; // 0x188c            
-            std::int32_t m_nDamageTicks; // 0x1890            
-            uint8_t _pad1894[0x4];
+            std::int32_t visual_height; // 0x_            
+            float animation_rate; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            bool m_bPullComplete; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_TreeId; // 0x_            
+            float m_flDamagePerTick; // 0x_            
+            std::int32_t m_nDamageTicks; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Hoodwink_Bushwhack_Trap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Hoodwink_Bushwhack_Trap) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Hoodwink_Bushwhack_Trap) == 0x_);
     };
 };

@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct EventClientPostSimulate_t : public source2sdk::client::EventSimulate_t
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::EventClientPostSimulate_t) == 0x30);
+        static_assert(sizeof(source2sdk::client::EventClientPostSimulate_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EDOTASpecialBonusOperation : std::uint8_t
         {
             SPECIAL_BONUS_ADD = 0x0,

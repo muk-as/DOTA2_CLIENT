@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Winter_Wyvern_Cold_Embrace : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0x14]; // 0x1878
-            std::int32_t heal_additive; // 0x188c            
-            float heal_percentage; // 0x1890            
-            float tick_interval; // 0x1894            
-            float damage_buff_pct; // 0x1898            
-            float damage_buff_duration; // 0x189c            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t heal_additive; // 0x_            
+            float heal_percentage; // 0x_            
+            float tick_interval; // 0x_            
+            float damage_buff_pct; // 0x_            
+            float damage_buff_duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Winter_Wyvern_Cold_Embrace because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Winter_Wyvern_Cold_Embrace) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Winter_Wyvern_Cold_Embrace) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Item_Overflowing_Elixir : public source2sdk::server::CDOTA_Item
         {
         public:
-            std::int32_t m_iStoredRuneType; // 0x690            
-            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x694            
+            std::int32_t m_iStoredRuneType; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Overflowing_Elixir because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Overflowing_Elixir) == 0x698);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Overflowing_Elixir) == 0x_);
     };
 };

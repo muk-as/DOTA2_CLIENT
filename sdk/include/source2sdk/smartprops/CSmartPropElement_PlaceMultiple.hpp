@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xe8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,16 +29,16 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Number of instances of this object and its children to be placed."
-            CSmartPropAttributeInt m_nCount; // 0xa0            
+            CSmartPropAttributeInt m_nCount; // 0x_            
             // metadata: MPropertyFriendlyName "Stop When"
             // metadata: MPropertyDescription "Stop placing copies of the children when this expression evaluates to true."
             // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor(expression)"
-            CUtlString m_Expression; // 0xe0            
+            CUtlString m_Expression; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropElement_PlaceMultiple because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_PlaceMultiple) == 0xe8);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_PlaceMultiple) == 0x_);
     };
 };

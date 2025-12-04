@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x608
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,20 +26,20 @@ namespace source2sdk
         class CDOTA_Ability_Creature_Ice_Breath : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t speed; // 0x5c0            
-            std::int32_t projectile_count; // 0x5c4            
-            float rotation_angle; // 0x5c8            
-            float damage; // 0x5cc            
-            float radius; // 0x5d0            
-            float slow_duration; // 0x5d4            
-            source2sdk::server::CountdownTimer ctTimer; // 0x5d8            
-            Vector m_vecStartRot; // 0x5f0            
-            Vector m_vecEndRot; // 0x5fc            
+            std::int32_t speed; // 0x_            
+            std::int32_t projectile_count; // 0x_            
+            float rotation_angle; // 0x_            
+            float damage; // 0x_            
+            float radius; // 0x_            
+            float slow_duration; // 0x_            
+            source2sdk::server::CountdownTimer ctTimer; // 0x_            
+            Vector m_vecStartRot; // 0x_            
+            Vector m_vecEndRot; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Creature_Ice_Breath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Creature_Ice_Breath) == 0x608);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Creature_Ice_Breath) == 0x_);
     };
 };

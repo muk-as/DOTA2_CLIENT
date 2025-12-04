@@ -25,30 +25,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PrimalBeast_Onslaught_Movement : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float tick_interval; // 0x1878            
-            float charge_speed; // 0x187c            
-            float movement_turn_rate; // 0x1880            
-            float knockback_radius; // 0x1884            
-            float knockback_distance; // 0x1888            
-            std::int32_t knockback_damage; // 0x188c            
-            std::int32_t m_nEnemyHeroesHit; // 0x1890            
-            float m_flFacingTarget; // 0x1894            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1898            
-            uint8_t _pad189c[0x4]; // 0x189c
+            float tick_interval; // 0x_            
+            float charge_speed; // 0x_            
+            float movement_turn_rate; // 0x_            
+            float knockback_radius; // 0x_            
+            float knockback_distance; // 0x_            
+            std::int32_t knockback_damage; // 0x_            
+            std::int32_t m_nEnemyHeroesHit; // 0x_            
+            float m_flFacingTarget; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x18a0            
+            char m_hHitEntities[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PrimalBeast_Onslaught_Movement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Onslaught_Movement) == 0x18b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Onslaught_Movement) == 0x_);
     };
 };

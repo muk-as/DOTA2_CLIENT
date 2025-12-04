@@ -21,9 +21,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // 
@@ -32,43 +32,43 @@ namespace source2sdk
         struct C_fogplayerparams_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "PlayerFogController"
             // m_hCtrl has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_FogController> m_hCtrl;
-            char m_hCtrl[0x4]; // 0x8            
-            float m_flTransitionTime; // 0xc            
-            Color m_OldColor; // 0x10            
-            float m_flOldStart; // 0x14            
-            float m_flOldEnd; // 0x18            
-            float m_flOldMaxDensity; // 0x1c            
-            float m_flOldHDRColorScale; // 0x20            
-            float m_flOldFarZ; // 0x24            
-            Color m_NewColor; // 0x28            
-            float m_flNewStart; // 0x2c            
-            float m_flNewEnd; // 0x30            
-            float m_flNewMaxDensity; // 0x34            
-            float m_flNewHDRColorScale; // 0x38            
-            float m_flNewFarZ; // 0x3c            
+            char m_hCtrl[0x_]; // 0x_            
+            float m_flTransitionTime; // 0x_            
+            Color m_OldColor; // 0x_            
+            float m_flOldStart; // 0x_            
+            float m_flOldEnd; // 0x_            
+            float m_flOldMaxDensity; // 0x_            
+            float m_flOldHDRColorScale; // 0x_            
+            float m_flOldFarZ; // 0x_            
+            Color m_NewColor; // 0x_            
+            float m_flNewStart; // 0x_            
+            float m_flNewEnd; // 0x_            
+            float m_flNewMaxDensity; // 0x_            
+            float m_flNewHDRColorScale; // 0x_            
+            float m_flNewFarZ; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_hCtrl) == 0x8);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flTransitionTime) == 0xc);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_OldColor) == 0x10);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldStart) == 0x14);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldEnd) == 0x18);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldMaxDensity) == 0x1c);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldHDRColorScale) == 0x20);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldFarZ) == 0x24);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_NewColor) == 0x28);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewStart) == 0x2c);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewEnd) == 0x30);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewMaxDensity) == 0x34);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewHDRColorScale) == 0x38);
-        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewFarZ) == 0x3c);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_hCtrl) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flTransitionTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_OldColor) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldStart) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldEnd) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldMaxDensity) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldHDRColorScale) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flOldFarZ) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_NewColor) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewStart) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewEnd) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewMaxDensity) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewHDRColorScale) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_fogplayerparams_t, m_flNewFarZ) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::C_fogplayerparams_t) == 0x40);
+        static_assert(sizeof(source2sdk::client::C_fogplayerparams_t) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace pulse_system
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,12 +25,12 @@ namespace source2sdk
         struct CPulseCell_Test_MultiOutflow_WithParams_Yielding_CursorState_t
         {
         public:
-            std::int32_t nTestStep; // 0x0            
+            std::int32_t nTestStep; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding_CursorState_t, nTestStep) == 0x0);
+        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding_CursorState_t, nTestStep) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding_CursorState_t) == 0x4);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding_CursorState_t) == 0x_);
     };
 };

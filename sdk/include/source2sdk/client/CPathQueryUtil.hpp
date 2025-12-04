@@ -14,35 +14,35 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x10
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x80
+        // Size: 0x_
         #pragma pack(push, 1)
         class CPathQueryUtil
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
-            CTransform m_PathToEntityTransform; // 0x10            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_PathToEntityTransform; // 0x_            
             // m_vecPathSamplePositions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> m_vecPathSamplePositions;
-            char m_vecPathSamplePositions[0x18]; // 0x30            
+            char m_vecPathSamplePositions[0x_]; // 0x_            
             // m_vecPathSampleParameters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_vecPathSampleParameters;
-            char m_vecPathSampleParameters[0x18]; // 0x48            
+            char m_vecPathSampleParameters[0x_]; // 0x_            
             // m_vecPathSampleDistances has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_vecPathSampleDistances;
-            char m_vecPathSampleDistances[0x18]; // 0x60            
-            bool m_bIsClosedLoop; // 0x78            
-            uint8_t _pad0079[0x7];
+            char m_vecPathSampleDistances[0x_]; // 0x_            
+            bool m_bIsClosedLoop; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_PathToEntityTransform) == 0x10);
-        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSamplePositions) == 0x30);
-        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleParameters) == 0x48);
-        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleDistances) == 0x60);
-        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_bIsClosedLoop) == 0x78);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_PathToEntityTransform) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSamplePositions) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleParameters) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_vecPathSampleDistances) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPathQueryUtil, m_bIsClosedLoop) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CPathQueryUtil) == 0x80);
+        static_assert(sizeof(source2sdk::client::CPathQueryUtil) == 0x_);
     };
 };

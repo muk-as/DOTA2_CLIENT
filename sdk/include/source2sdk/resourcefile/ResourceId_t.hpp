@@ -14,9 +14,9 @@ namespace source2sdk
     namespace resourcefile
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MIsBoxedIntegerType
@@ -24,12 +24,12 @@ namespace source2sdk
         struct ResourceId_t
         {
         public:
-            std::uint64_t m_Value; // 0x0            
+            std::uint64_t m_Value; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::resourcefile::ResourceId_t, m_Value) == 0x0);
+        static_assert(offsetof(source2sdk::resourcefile::ResourceId_t, m_Value) == 0x_);
         
-        static_assert(sizeof(source2sdk::resourcefile::ResourceId_t) == 0x8);
+        static_assert(sizeof(source2sdk::resourcefile::ResourceId_t) == 0x_);
     };
 };

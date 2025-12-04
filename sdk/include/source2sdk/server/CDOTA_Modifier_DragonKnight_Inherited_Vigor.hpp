@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DragonKnight_Inherited_Vigor : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float base_health_regen; // 0x1878            
-            float base_armor; // 0x187c            
-            float level_mult; // 0x1880            
-            float regen_and_armor_multiplier_during_dragon_form; // 0x1884            
+            float base_health_regen; // 0x_            
+            float base_armor; // 0x_            
+            float level_mult; // 0x_            
+            float regen_and_armor_multiplier_during_dragon_form; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_Inherited_Vigor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_Inherited_Vigor) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_Inherited_Vigor) == 0x_);
     };
 };

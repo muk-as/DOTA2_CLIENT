@@ -15,20 +15,20 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CLocomotionBase : public source2sdk::server::INextBotComponent
         {
         public:
-            uint8_t _pad0020[0x70];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CLocomotionBase) == 0x90);
+        static_assert(sizeof(source2sdk::server::CLocomotionBase) == 0x_);
     };
 };

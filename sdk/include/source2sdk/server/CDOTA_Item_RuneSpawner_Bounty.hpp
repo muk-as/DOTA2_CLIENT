@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x818
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,18 +28,18 @@ namespace source2sdk
         class CDOTA_Item_RuneSpawner_Bounty : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            CUtlSymbolLarge m_szPosition; // 0x800            
-            std::int32_t m_nDotaTeam; // 0x808            
+            CUtlSymbolLarge m_szPosition; // 0x_            
+            std::int32_t m_nDotaTeam; // 0x_            
             // metadata: MNetworkEnable
-            float m_flLastSpawnTime; // 0x80c            
+            float m_flLastSpawnTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flNextSpawnTime; // 0x810            
-            uint8_t _pad0814[0x4];
+            float m_flNextSpawnTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_RuneSpawner_Bounty because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_RuneSpawner_Bounty) == 0x818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_RuneSpawner_Bounty) == 0x_);
     };
 };

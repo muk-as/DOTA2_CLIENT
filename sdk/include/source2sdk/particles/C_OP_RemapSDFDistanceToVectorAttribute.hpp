@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,27 +30,27 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldOutput; // 0x1c0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "Input field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldInput; // 0x1c4            
+            source2sdk::particles::ParticleAttributeIndex_t m_nVectorFieldInput; // 0x_            
             // metadata: MPropertyFriendlyName "Minimum distance"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMinDistance; // 0x1c8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMinDistance; // 0x_            
             // metadata: MPropertyFriendlyName "Maximum distance"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxDistance; // 0x328            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaxDistance; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist<min"
-            Vector m_vValueBelowMin; // 0x488            
+            Vector m_vValueBelowMin; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist=min"
-            Vector m_vValueAtMin; // 0x494            
+            Vector m_vValueAtMin; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist=max"
-            Vector m_vValueAtMax; // 0x4a0            
+            Vector m_vValueAtMax; // 0x_            
             // metadata: MPropertyFriendlyName "Value for dist>max"
-            Vector m_vValueAboveMax; // 0x4ac            
+            Vector m_vValueAboveMax; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RemapSDFDistanceToVectorAttribute because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RemapSDFDistanceToVectorAttribute) == 0x4b8);
+        static_assert(sizeof(source2sdk::particles::C_OP_RemapSDFDistanceToVectorAttribute) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,16 +24,16 @@ namespace source2sdk
         class CAnimDecoder
         {
         public:
-            CBufferString m_szName; // 0x0            
-            std::int32_t m_nVersion; // 0x10            
-            std::int32_t m_nType; // 0x14            
+            CBufferString m_szName; // 0x_            
+            std::int32_t m_nVersion; // 0x_            
+            std::int32_t m_nType; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_szName) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_nVersion) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_nType) == 0x14);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_szName) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_nVersion) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimDecoder, m_nType) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimDecoder) == 0x18);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimDecoder) == 0x_);
     };
 };

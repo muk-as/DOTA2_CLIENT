@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x2
-        // Alignment: 0x2
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,16 +26,16 @@ namespace source2sdk
         struct FeEdgeDesc_t
         {
         public:
-            std::uint16_t nEdge[2]; // 0x0            
-            std::uint16_t nSide[2][2]; // 0x4            
-            std::uint16_t nVirtElem[2]; // 0xc            
+            std::uint16_t nEdge[2]; // 0x_            
+            std::uint16_t nSide[2][2]; // 0x_            
+            std::uint16_t nVirtElem[2]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nEdge) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nSide) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nVirtElem) == 0xc);
+        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nEdge) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nSide) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeEdgeDesc_t, nVirtElem) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeEdgeDesc_t) == 0x10);
+        static_assert(sizeof(source2sdk::physicslib::FeEdgeDesc_t) == 0x_);
     };
 };

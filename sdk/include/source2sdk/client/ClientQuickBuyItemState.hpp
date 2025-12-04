@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x2
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "short nItemType"
@@ -25,18 +25,18 @@ namespace source2sdk
         class ClientQuickBuyItemState
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int16_t nItemType; // 0x30            
+            std::int16_t nItemType; // 0x_            
             // metadata: MNetworkEnable
-            bool bPurchasable; // 0x32            
-            uint8_t _pad0033[0x5];
+            bool bPurchasable; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::ClientQuickBuyItemState, nItemType) == 0x30);
-        static_assert(offsetof(source2sdk::client::ClientQuickBuyItemState, bPurchasable) == 0x32);
+        static_assert(offsetof(source2sdk::client::ClientQuickBuyItemState, nItemType) == 0x_);
+        static_assert(offsetof(source2sdk::client::ClientQuickBuyItemState, bPurchasable) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::ClientQuickBuyItemState) == 0x38);
+        static_assert(sizeof(source2sdk::client::ClientQuickBuyItemState) == 0x_);
     };
 };

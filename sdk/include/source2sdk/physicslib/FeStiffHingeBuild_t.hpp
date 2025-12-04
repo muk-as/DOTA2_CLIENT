@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,19 +25,19 @@ namespace source2sdk
         struct FeStiffHingeBuild_t
         {
         public:
-            float flMaxAngle; // 0x0            
-            float flStrength; // 0x4            
-            float flMotionBias[3]; // 0x8            
-            std::uint16_t nNode[3]; // 0x14            
-            uint8_t _pad001a[0x2];
+            float flMaxAngle; // 0x_            
+            float flStrength; // 0x_            
+            float flMotionBias[3]; // 0x_            
+            std::uint16_t nNode[3]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flMaxAngle) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flStrength) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flMotionBias) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, nNode) == 0x14);
+        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flMaxAngle) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flStrength) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, flMotionBias) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeStiffHingeBuild_t, nNode) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeStiffHingeBuild_t) == 0x1c);
+        static_assert(sizeof(source2sdk::physicslib::FeStiffHingeBuild_t) == 0x_);
     };
 };

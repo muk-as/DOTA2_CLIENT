@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class quest_hud_types_t : std::uint32_t
         {
             QUEST_HUD_TYPE_DEFAULT = 0x0,

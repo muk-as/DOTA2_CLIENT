@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc0
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,39 +26,39 @@ namespace source2sdk
         struct SkeletonAnimCapture_t
         {
         public:
-            CEntityIndex m_nEntIndex; // 0x0            
-            CEntityIndex m_nEntParent; // 0x4            
+            CEntityIndex m_nEntIndex; // 0x_            
+            CEntityIndex m_nEntParent; // 0x_            
             // m_ImportedCollision has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityIndex> m_ImportedCollision;
-            char m_ImportedCollision[0x18]; // 0x8            
-            CUtlString m_ModelName; // 0x20            
-            CUtlString m_CaptureName; // 0x28            
+            char m_ImportedCollision[0x_]; // 0x_            
+            CUtlString m_ModelName; // 0x_            
+            CUtlString m_CaptureName; // 0x_            
             // m_ModelBindPose has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::SkeletonAnimCapture_t_Bone_t> m_ModelBindPose;
-            char m_ModelBindPose[0x18]; // 0x30            
+            char m_ModelBindPose[0x_]; // 0x_            
             // m_FeModelInitPose has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::SkeletonAnimCapture_t_Bone_t> m_FeModelInitPose;
-            char m_FeModelInitPose[0x18]; // 0x48            
-            std::int32_t m_nFlexControllers; // 0x60            
-            bool m_bPredicted; // 0x64            
-            uint8_t _pad0065[0x43]; // 0x65
+            char m_FeModelInitPose[0x_]; // 0x_            
+            std::int32_t m_nFlexControllers; // 0x_            
+            bool m_bPredicted; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_Frames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::SkeletonAnimCapture_t_Frame_t> m_Frames;
-            char m_Frames[0x18]; // 0xa8            
+            char m_Frames[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nEntIndex) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nEntParent) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ImportedCollision) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ModelName) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_CaptureName) == 0x28);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ModelBindPose) == 0x30);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_FeModelInitPose) == 0x48);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nFlexControllers) == 0x60);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_bPredicted) == 0x64);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_Frames) == 0xa8);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nEntIndex) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nEntParent) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ImportedCollision) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ModelName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_CaptureName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_ModelBindPose) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_FeModelInitPose) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_nFlexControllers) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_bPredicted) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t, m_Frames) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t) == 0xc0);
+        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x2
-        // Alignment: 0x2
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xa
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct FeRigidColliderIndices_t
         {
         public:
-            std::uint16_t m_nTaperedCapsuleRigidIndex; // 0x0            
-            std::uint16_t m_nSphereRigidIndex; // 0x2            
-            std::uint16_t m_nBoxRigidIndex; // 0x4            
-            std::uint16_t m_nSDFRigidIndex; // 0x6            
-            std::uint16_t m_nCollisionPlaneIndex; // 0x8            
+            std::uint16_t m_nTaperedCapsuleRigidIndex; // 0x_            
+            std::uint16_t m_nSphereRigidIndex; // 0x_            
+            std::uint16_t m_nBoxRigidIndex; // 0x_            
+            std::uint16_t m_nSDFRigidIndex; // 0x_            
+            std::uint16_t m_nCollisionPlaneIndex; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nTaperedCapsuleRigidIndex) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nSphereRigidIndex) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nBoxRigidIndex) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nSDFRigidIndex) == 0x6);
-        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nCollisionPlaneIndex) == 0x8);
+        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nTaperedCapsuleRigidIndex) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nSphereRigidIndex) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nBoxRigidIndex) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nSDFRigidIndex) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeRigidColliderIndices_t, m_nCollisionPlaneIndex) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeRigidColliderIndices_t) == 0xa);
+        static_assert(sizeof(source2sdk::physicslib::FeRigidColliderIndices_t) == 0x_);
     };
 };

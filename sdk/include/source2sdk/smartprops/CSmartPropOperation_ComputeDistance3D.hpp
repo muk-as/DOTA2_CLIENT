@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x198
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,26 +32,26 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Output Variable"
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableName; // 0x50            
+            CUtlString m_OutputVariableName; // 0x_            
             // metadata: MPropertyDescription "Specifies the coordinate space the distance should be computed in. The scale of the coordinate space may affect the distance value."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_OutputCoordinateSpace; // 0x58            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_OutputCoordinateSpace; // 0x_            
             // metadata: MPropertyGroupName "+Position A"
             // metadata: MPropertyFriendlyName "Position A"
-            CSmartPropAttributeVector m_InputPositionA; // 0x98            
+            CSmartPropAttributeVector m_InputPositionA; // 0x_            
             // metadata: MPropertyGroupName "+Position A"
             // metadata: MPropertyDescription "Specifies the coordinate space of position A."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpaceA; // 0xd8            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpaceA; // 0x_            
             // metadata: MPropertyGroupName "+Position B"
             // metadata: MPropertyFriendlyName "Position B"
-            CSmartPropAttributeVector m_InputPositionB; // 0x118            
+            CSmartPropAttributeVector m_InputPositionB; // 0x_            
             // metadata: MPropertyGroupName "+Position B"
             // metadata: MPropertyDescription "Specifies the coordinate space of position B."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpaceB; // 0x158            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_CoordinateSpaceB; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_ComputeDistance3D because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_ComputeDistance3D) == 0x198);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_ComputeDistance3D) == 0x_);
     };
 };

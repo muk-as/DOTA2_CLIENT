@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class BeginDeathLifeStateTransition_t : std::uint8_t
         {
             TRANSITION_TO_LIFESTATE_DYING = 0x0,

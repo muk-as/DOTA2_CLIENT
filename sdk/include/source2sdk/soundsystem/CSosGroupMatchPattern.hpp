@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,20 +28,20 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Event Name"
-            CUtlString m_matchSoundEventName; // 0x10            
+            CUtlString m_matchSoundEventName; // 0x_            
             // metadata: MPropertyFriendlyName "Sub-String"
-            CUtlString m_matchSoundEventSubString; // 0x18            
+            CUtlString m_matchSoundEventSubString; // 0x_            
             // metadata: MPropertyFriendlyName "Source Entity Index"
-            float m_flEntIndex; // 0x20            
+            float m_flEntIndex; // 0x_            
             // metadata: MPropertyFriendlyName "Opvar Float"
-            float m_flOpvar; // 0x24            
+            float m_flOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "Opvar String"
-            CUtlString m_opvarString; // 0x28            
+            CUtlString m_opvarString; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSosGroupMatchPattern because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupMatchPattern) == 0x30);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupMatchPattern) == 0x_);
     };
 };

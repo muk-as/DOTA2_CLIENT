@@ -21,28 +21,28 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CTakeDamageResult
         {
         public:
-            source2sdk::client::CTakeDamageInfo* m_pOriginatingInfo; // 0x0            
-            std::int32_t m_nHealthLost; // 0x8            
-            std::int32_t m_nDamageTaken; // 0xc            
-            std::int32_t m_nTotalledHealthLost; // 0x10            
-            std::int32_t m_nTotalledDamageDealt; // 0x14            
+            source2sdk::client::CTakeDamageInfo* m_pOriginatingInfo; // 0x_            
+            std::int32_t m_nHealthLost; // 0x_            
+            std::int32_t m_nDamageTaken; // 0x_            
+            std::int32_t m_nTotalledHealthLost; // 0x_            
+            std::int32_t m_nTotalledDamageDealt; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_pOriginatingInfo) == 0x0);
-        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nHealthLost) == 0x8);
-        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nDamageTaken) == 0xc);
-        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nTotalledHealthLost) == 0x10);
-        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nTotalledDamageDealt) == 0x14);
+        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_pOriginatingInfo) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nHealthLost) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nDamageTaken) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nTotalledHealthLost) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTakeDamageResult, m_nTotalledDamageDealt) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CTakeDamageResult) == 0x18);
+        static_assert(sizeof(source2sdk::client::CTakeDamageResult) == 0x_);
     };
 };

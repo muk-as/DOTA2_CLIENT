@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Bracer : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_strength; // 0x1878            
-            std::int32_t bonus_agility; // 0x187c            
-            std::int32_t bonus_intellect; // 0x1880            
-            float bonus_health_regen; // 0x1884            
-            std::int32_t bonus_damage; // 0x1888            
-            std::int32_t bonus_slow_resistance; // 0x188c            
-            std::int32_t bonus_health; // 0x1890            
-            uint8_t _pad1894[0x4];
+            std::int32_t bonus_strength; // 0x_            
+            std::int32_t bonus_agility; // 0x_            
+            std::int32_t bonus_intellect; // 0x_            
+            float bonus_health_regen; // 0x_            
+            std::int32_t bonus_damage; // 0x_            
+            std::int32_t bonus_slow_resistance; // 0x_            
+            std::int32_t bonus_health; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Bracer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Bracer) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Bracer) == 0x_);
     };
 };

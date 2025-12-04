@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 43
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class dotaunitorder_t : std::uint32_t
         {
             DOTA_UNIT_ORDER_NONE = 0x0,

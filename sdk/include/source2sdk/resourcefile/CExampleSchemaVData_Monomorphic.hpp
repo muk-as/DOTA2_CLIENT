@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace resourcefile
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         class CExampleSchemaVData_Monomorphic
         {
         public:
-            std::int32_t m_nExample1; // 0x0            
-            std::int32_t m_nExample2; // 0x4            
+            std::int32_t m_nExample1; // 0x_            
+            std::int32_t m_nExample2; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic, m_nExample1) == 0x0);
-        static_assert(offsetof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic, m_nExample2) == 0x4);
+        static_assert(offsetof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic, m_nExample1) == 0x_);
+        static_assert(offsetof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic, m_nExample2) == 0x_);
         
-        static_assert(sizeof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic) == 0x8);
+        static_assert(sizeof(source2sdk::resourcefile::CExampleSchemaVData_Monomorphic) == 0x_);
     };
 };

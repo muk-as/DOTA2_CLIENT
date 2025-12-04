@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x19f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,24 +33,24 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnMuertaReleaseEventMiniGameActiveChanged"
-            bool m_bMiniGameActive; // 0x19b0            
+            bool m_bMiniGameActive; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnMuertaReleaseEventTargetAssignmentsChanged"
-            std::int8_t m_vecTargetAssignments[10]; // 0x19b1            
+            std::int8_t m_vecTargetAssignments[10]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnMuertaReleaseEventMiniGamePointsChanged"
-            std::uint8_t m_vecMiniGamePoints[10]; // 0x19bb            
+            std::uint8_t m_vecMiniGamePoints[10]; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_vecMiniGameKills[10]; // 0x19c5            
-            uint8_t _pad19cf[0x11]; // 0x19cf
+            std::uint8_t m_vecMiniGameKills[10]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_activeGravestones has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_activeGravestones;
-            char m_activeGravestones[0x18]; // 0x19e0            
+            char m_activeGravestones[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CIngameEvent_MuertaReleaseSpring2023 because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CIngameEvent_MuertaReleaseSpring2023) == 0x19f8);
+        static_assert(sizeof(source2sdk::client::CIngameEvent_MuertaReleaseSpring2023) == 0x_);
     };
 };

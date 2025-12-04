@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace pulse_system
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,15 +26,15 @@ namespace source2sdk
         struct CPulseCell_TestWaitWithCursorState_CursorState_t
         {
         public:
-            float flWaitValue; // 0x0            
-            bool bFailOnCancel; // 0x4            
-            uint8_t _pad0005[0x3];
+            float flWaitValue; // 0x_            
+            bool bFailOnCancel; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t, flWaitValue) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t, bFailOnCancel) == 0x4);
+        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t, flWaitValue) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t, bFailOnCancel) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t) == 0x8);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_TestWaitWithCursorState_CursorState_t) == 0x_);
     };
 };

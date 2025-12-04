@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Bristleback_Prickly : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t amp_pct; // 0x1878            
-            std::int32_t angle; // 0x187c            
+            std::int32_t amp_pct; // 0x_            
+            std::int32_t angle; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_Prickly because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Bristleback_Prickly) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Bristleback_Prickly) == 0x_);
     };
 };

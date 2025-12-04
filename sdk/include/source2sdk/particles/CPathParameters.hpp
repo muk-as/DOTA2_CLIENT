@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,37 +26,37 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "start control point number"
-            std::int32_t m_nStartControlPointNumber; // 0x0            
+            std::int32_t m_nStartControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "end control point number"
-            std::int32_t m_nEndControlPointNumber; // 0x4            
+            std::int32_t m_nEndControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "bulge control 0=random 1=orientation of start pnt 2=orientation of end point"
-            std::int32_t m_nBulgeControl; // 0x8            
+            std::int32_t m_nBulgeControl; // 0x_            
             // metadata: MPropertyFriendlyName "random bulge"
-            float m_flBulge; // 0xc            
+            float m_flBulge; // 0x_            
             // metadata: MPropertyFriendlyName "mid point position"
-            float m_flMidPoint; // 0x10            
+            float m_flMidPoint; // 0x_            
             // metadata: MPropertyFriendlyName "Offset from curve start point for path start"
             // metadata: MVectorIsCoordinate
-            Vector m_vStartPointOffset; // 0x14            
+            Vector m_vStartPointOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Offset from curve midpoint for curve center"
             // metadata: MVectorIsCoordinate
-            Vector m_vMidPointOffset; // 0x20            
+            Vector m_vMidPointOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Offset from control point for path end"
             // metadata: MVectorIsCoordinate
-            Vector m_vEndOffset; // 0x2c            
-            uint8_t _pad0038[0x8];
+            Vector m_vEndOffset; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nStartControlPointNumber) == 0x0);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nEndControlPointNumber) == 0x4);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nBulgeControl) == 0x8);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_flBulge) == 0xc);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_flMidPoint) == 0x10);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vStartPointOffset) == 0x14);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vMidPointOffset) == 0x20);
-        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vEndOffset) == 0x2c);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nStartControlPointNumber) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nEndControlPointNumber) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_nBulgeControl) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_flBulge) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_flMidPoint) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vStartPointOffset) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vMidPointOffset) == 0x_);
+        static_assert(offsetof(source2sdk::particles::CPathParameters, m_vEndOffset) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::CPathParameters) == 0x40);
+        static_assert(sizeof(source2sdk::particles::CPathParameters) == 0x_);
     };
 };

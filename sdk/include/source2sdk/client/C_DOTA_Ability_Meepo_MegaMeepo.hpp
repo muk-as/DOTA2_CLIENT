@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6b0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,20 +34,20 @@ namespace source2sdk
         public:
             // hPreviousMeepo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hPreviousMeepo;
-            char hPreviousMeepo[0x4]; // 0x688            
+            char hPreviousMeepo[0x_]; // 0x_            
             // hMegameepoFrame has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hMegameepoFrame;
-            char hMegameepoFrame[0x4]; // 0x68c            
+            char hMegameepoFrame[0x_]; // 0x_            
             // hListOfMeepos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hListOfMeepos;
-            char hListOfMeepos[0x18]; // 0x690            
-            bool m_bHasSwappedAbilities; // 0x6a8            
-            uint8_t _pad06a9[0x7];
+            char hListOfMeepos[0x_]; // 0x_            
+            bool m_bHasSwappedAbilities; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Meepo_MegaMeepo because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Meepo_MegaMeepo) == 0x6b0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Meepo_MegaMeepo) == 0x_);
     };
 };

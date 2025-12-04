@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,22 +28,22 @@ namespace source2sdk
         class CHitReactUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            source2sdk::animgraphlib::HitReactFixedSettings_t m_opFixedSettings; // 0x70            
-            uint8_t _pad00b4[0x8]; // 0xb4
-            source2sdk::animgraphlib::CAnimParamHandle m_triggerParam; // 0xbc            
-            source2sdk::animgraphlib::CAnimParamHandle m_hitBoneParam; // 0xbe            
-            source2sdk::animgraphlib::CAnimParamHandle m_hitOffsetParam; // 0xc0            
-            source2sdk::animgraphlib::CAnimParamHandle m_hitDirectionParam; // 0xc2            
-            source2sdk::animgraphlib::CAnimParamHandle m_hitStrengthParam; // 0xc4            
-            uint8_t _pad00c6[0x2]; // 0xc6
-            float m_flMinDelayBetweenHits; // 0xc8            
-            bool m_bResetChild; // 0xcc            
-            uint8_t _pad00cd[0x3];
+            source2sdk::animgraphlib::HitReactFixedSettings_t m_opFixedSettings; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimParamHandle m_triggerParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hitBoneParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hitOffsetParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hitDirectionParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hitStrengthParam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMinDelayBetweenHits; // 0x_            
+            bool m_bResetChild; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CHitReactUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CHitReactUpdateNode) == 0xd0);
+        static_assert(sizeof(source2sdk::animgraphlib::CHitReactUpdateNode) == 0x_);
     };
 };

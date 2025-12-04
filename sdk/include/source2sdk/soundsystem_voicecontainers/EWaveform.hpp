@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EWaveform : std::uint8_t
         {
             Sine = 0x0,

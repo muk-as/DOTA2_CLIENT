@@ -23,9 +23,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x68
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_iReapplyProvisionParity"
@@ -35,38 +35,38 @@ namespace source2sdk
         class CAttributeManager
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_Providers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_Providers;
-            char m_Providers[0x18]; // 0x8            
+            char m_Providers[0x_]; // 0x_            
             // m_Receivers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_Receivers;
-            char m_Receivers[0x18]; // 0x20            
+            char m_Receivers[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iReapplyProvisionParity; // 0x38            
+            std::int32_t m_iReapplyProvisionParity; // 0x_            
             // metadata: MNetworkEnable
             // m_hOuter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOuter;
-            char m_hOuter[0x4]; // 0x3c            
-            bool m_bPreventLoopback; // 0x40            
-            uint8_t _pad0041[0x3]; // 0x41
+            char m_hOuter[0x_]; // 0x_            
+            bool m_bPreventLoopback; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::attributeprovidertypes_t m_ProviderType; // 0x44            
+            source2sdk::client::attributeprovidertypes_t m_ProviderType; // 0x_            
             // m_CachedResults has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CAttributeManager_cached_attribute_float_t> m_CachedResults;
-            char m_CachedResults[0x18]; // 0x48            
-            uint8_t _pad0060[0x8];
+            char m_CachedResults[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_Providers) == 0x8);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_Receivers) == 0x20);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_iReapplyProvisionParity) == 0x38);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_hOuter) == 0x3c);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_bPreventLoopback) == 0x40);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_ProviderType) == 0x44);
-        static_assert(offsetof(source2sdk::server::CAttributeManager, m_CachedResults) == 0x48);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_Providers) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_Receivers) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_iReapplyProvisionParity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_hOuter) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_bPreventLoopback) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_ProviderType) == 0x_);
+        static_assert(offsetof(source2sdk::server::CAttributeManager, m_CachedResults) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CAttributeManager) == 0x68);
+        static_assert(sizeof(source2sdk::server::CAttributeManager) == 0x_);
     };
 };

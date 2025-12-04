@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EShowcaseAuditAction : std::uint32_t
         {
             k_eShowcaseAuditAction_Invalid = 0x0,

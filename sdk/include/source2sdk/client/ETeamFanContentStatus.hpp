@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETeamFanContentStatus : std::uint32_t
         {
             TEAM_FAN_CONTENT_STATUS_INVALID = 0x0,

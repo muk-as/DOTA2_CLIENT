@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,12 +27,12 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Duration value for path point"
-            float m_flTimeDuration; // 0x14            
+            float m_flTimeDuration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in PointDefinitionWithTimeValues_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::PointDefinitionWithTimeValues_t) == 0x18);
+        static_assert(sizeof(source2sdk::particles::PointDefinitionWithTimeValues_t) == 0x_);
     };
 };

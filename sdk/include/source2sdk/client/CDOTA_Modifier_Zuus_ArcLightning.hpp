@@ -24,29 +24,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Zuus_ArcLightning : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            std::int32_t jump_count; // 0x187c            
-            std::int32_t arc_damage; // 0x1880            
-            float jump_delay; // 0x1884            
-            std::int32_t total_damage_pct; // 0x1888            
-            std::int32_t m_iCurJumpCount; // 0x188c            
-            bool trigger_spell_absorb; // 0x1890            
-            uint8_t _pad1891[0x3]; // 0x1891
-            Vector m_vCurTargetLoc; // 0x1894            
+            float radius; // 0x_            
+            std::int32_t jump_count; // 0x_            
+            std::int32_t arc_damage; // 0x_            
+            float jump_delay; // 0x_            
+            std::int32_t total_damage_pct; // 0x_            
+            std::int32_t m_iCurJumpCount; // 0x_            
+            bool trigger_spell_absorb; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vCurTargetLoc; // 0x_            
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x18a0            
+            char m_hHitEntities[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Zuus_ArcLightning because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Zuus_ArcLightning) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Zuus_ArcLightning) == 0x_);
     };
 };

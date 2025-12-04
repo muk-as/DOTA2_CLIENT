@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -27,17 +27,17 @@ namespace source2sdk
         struct VMixSubgraphSwitchDesc_t
         {
         public:
-            source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchInterpolationType_t m_interpolationMode; // 0x0            
-            bool m_bOnlyTailsOnFadeOut; // 0x4            
-            uint8_t _pad0005[0x3]; // 0x5
-            float m_flInterpolationTime; // 0x8            
+            source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchInterpolationType_t m_interpolationMode; // 0x_            
+            bool m_bOnlyTailsOnFadeOut; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flInterpolationTime; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_interpolationMode) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_bOnlyTailsOnFadeOut) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_flInterpolationTime) == 0x8);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_interpolationMode) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_bOnlyTailsOnFadeOut) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_flInterpolationTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t) == 0xc);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t) == 0x_);
     };
 };

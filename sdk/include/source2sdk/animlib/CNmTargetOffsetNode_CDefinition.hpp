@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,17 +26,17 @@ namespace source2sdk
         class CNmTargetOffsetNode_CDefinition : public source2sdk::animlib::CNmTargetValueNode_CDefinition
         {
         public:
-            std::int16_t m_nInputValueNodeIdx; // 0x10            
-            bool m_bIsBoneSpaceOffset; // 0x12            
-            uint8_t _pad0013[0xd]; // 0x13
-            Quaternion m_rotationOffset; // 0x20            
-            Vector m_translationOffset; // 0x30            
-            uint8_t _pad003c[0x4];
+            std::int16_t m_nInputValueNodeIdx; // 0x_            
+            bool m_bIsBoneSpaceOffset; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Quaternion m_rotationOffset; // 0x_            
+            Vector m_translationOffset; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmTargetOffsetNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmTargetOffsetNode_CDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::animlib::CNmTargetOffsetNode_CDefinition) == 0x_);
     };
 };

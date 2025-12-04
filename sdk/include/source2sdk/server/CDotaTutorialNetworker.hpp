@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc88
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,37 +40,37 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_nTutorialState; // 0x4e0            
+            std::int32_t m_nTutorialState; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTaskProgress; // 0x4e4            
+            std::int32_t m_nTaskProgress; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTaskSteps; // 0x4e8            
+            std::int32_t m_nTaskSteps; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTaskSecondsRemianing; // 0x4ec            
+            std::int32_t m_nTaskSecondsRemianing; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nUIState; // 0x4f0            
+            std::int32_t m_nUIState; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nShopState; // 0x4f4            
+            std::int32_t m_nShopState; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_TargetLocation; // 0x4f8            
-            uint8_t _pad0504[0x4]; // 0x504
+            Vector m_TargetLocation; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkTypeAlias "m_SpeechBubbles"
             // m_SpeechBubbles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CSpeechBubbleInfo> m_SpeechBubbles;
-            char m_SpeechBubbles[0x578]; // 0x508            
+            char m_SpeechBubbles[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nLocationID; // 0xa80            
+            std::int32_t m_nLocationID; // 0x_            
             // metadata: MNetworkEnable
-            char m_GuideStr[256]; // 0xa84            
+            char m_GuideStr[256]; // 0x_            
             // metadata: MNetworkEnable
-            char m_QuickBuyStr[256]; // 0xb84            
-            uint8_t _pad0c84[0x4];
+            char m_QuickBuyStr[256]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDotaTutorialNetworker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDotaTutorialNetworker) == 0xc88);
+        static_assert(sizeof(source2sdk::server::CDotaTutorialNetworker) == 0x_);
     };
 };

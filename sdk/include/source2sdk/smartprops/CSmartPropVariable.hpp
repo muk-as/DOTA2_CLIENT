@@ -15,9 +15,9 @@ namespace source2sdk
     namespace smartprops
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -31,29 +31,29 @@ namespace source2sdk
         class CSmartPropVariable : public source2sdk::smartprops::CSmartPropParameter
         {
         public:
-            CUtlString m_VariableName; // 0x10            
+            CUtlString m_VariableName; // 0x_            
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyDescription "If enabled, this value will be exposed as a parameter that can be set on the smart prop object in hammer."
-            bool m_bExposeAsParameter; // 0x18            
-            uint8_t _pad0019[0x7]; // 0x19
+            bool m_bExposeAsParameter; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyFriendlyName "Parameter Display Name"
             // metadata: MPropertyDescription "Name of the parameter which will appear as a property in the Hammer object properties ui when selecting an object using this smart prop."
-            CUtlString m_DisplayName; // 0x20            
+            CUtlString m_DisplayName; // 0x_            
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyDescription "Expression to evaluate to determine if this parameter should be hidden. Can be used to hide this parameter based on the state of other parameters."
-            CUtlString m_HideExpression; // 0x28            
+            CUtlString m_HideExpression; // 0x_            
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyDescription "Expression to evaluate to detemrine if this parameter should be read-only. Can be used to make this parameter read-only based on the state of other parameters."
-            CUtlString m_ReadOnlyExpression; // 0x30            
+            CUtlString m_ReadOnlyExpression; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable) == 0x38);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable) == 0x_);
     };
 };

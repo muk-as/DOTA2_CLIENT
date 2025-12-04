@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -25,28 +25,28 @@ namespace source2sdk
         {
         public:
             // Datamap fields:
-            // CUtlString Group00; // 0x7fffffff
-            // CUtlString Group01; // 0x7fffffff
-            // CUtlString Group02; // 0x7fffffff
-            // CUtlString Group03; // 0x7fffffff
-            // CUtlString Group04; // 0x7fffffff
-            // CUtlString Group05; // 0x7fffffff
-            // CUtlString Group06; // 0x7fffffff
-            // CUtlString Group07; // 0x7fffffff
-            // CUtlString Group08; // 0x7fffffff
-            // CUtlString Group09; // 0x7fffffff
-            // CUtlString Group10; // 0x7fffffff
-            // CUtlString Group11; // 0x7fffffff
-            // CUtlString Group12; // 0x7fffffff
-            // CUtlString Group13; // 0x7fffffff
-            // CUtlString Group14; // 0x7fffffff
-            // CUtlString Group15; // 0x7fffffff
-            // CUtlString Group16; // 0x7fffffff
+            // CUtlString Group00; // 0x_
+            // CUtlString Group01; // 0x_
+            // CUtlString Group02; // 0x_
+            // CUtlString Group03; // 0x_
+            // CUtlString Group04; // 0x_
+            // CUtlString Group05; // 0x_
+            // CUtlString Group06; // 0x_
+            // CUtlString Group07; // 0x_
+            // CUtlString Group08; // 0x_
+            // CUtlString Group09; // 0x_
+            // CUtlString Group10; // 0x_
+            // CUtlString Group11; // 0x_
+            // CUtlString Group12; // 0x_
+            // CUtlString Group13; // 0x_
+            // CUtlString Group14; // 0x_
+            // CUtlString Group15; // 0x_
+            // CUtlString Group16; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CLogicScript) == 0x4e0);
+        static_assert(sizeof(source2sdk::server::CLogicScript) == 0x_);
     };
 };

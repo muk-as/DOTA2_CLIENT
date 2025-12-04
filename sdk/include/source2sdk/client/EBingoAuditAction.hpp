@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EBingoAuditAction : std::uint32_t
         {
             k_eBingoAuditAction_Invalid = 0x0,

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x24
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,40 +26,40 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Input Gain (dB)"
-            float m_fldbGainInput; // 0x0            
+            float m_fldbGainInput; // 0x_            
             // metadata: MPropertyFriendlyName "Output Gain (dB)"
-            float m_fldbGainOutput; // 0x4            
+            float m_fldbGainOutput; // 0x_            
             // metadata: MPropertyFriendlyName "Below Threshold(dB)"
-            float m_fldbThresholdBelow; // 0x8            
+            float m_fldbThresholdBelow; // 0x_            
             // metadata: MPropertyFriendlyName "Above Threshold(dB)"
-            float m_fldbThresholdAbove; // 0xc            
+            float m_fldbThresholdAbove; // 0x_            
             // metadata: MPropertyFriendlyName "Upward Ratio"
-            float m_flRatioBelow; // 0x10            
+            float m_flRatioBelow; // 0x_            
             // metadata: MPropertyFriendlyName "Downward Ratio"
-            float m_flRatioAbove; // 0x14            
+            float m_flRatioAbove; // 0x_            
             // metadata: MPropertyFriendlyName "Attack time (ms)"
-            float m_flAttackTimeMS; // 0x18            
+            float m_flAttackTimeMS; // 0x_            
             // metadata: MPropertyFriendlyName "Release time (ms)"
-            float m_flReleaseTimeMS; // 0x1c            
+            float m_flReleaseTimeMS; // 0x_            
             // metadata: MPropertyFriendlyName "Enabled"
-            bool m_bEnable; // 0x20            
+            bool m_bEnable; // 0x_            
             // metadata: MPropertyFriendlyName "Solo"
-            bool m_bSolo; // 0x21            
-            uint8_t _pad0022[0x2];
+            bool m_bSolo; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbGainInput) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbGainOutput) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbThresholdBelow) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbThresholdAbove) == 0xc);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flRatioBelow) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flRatioAbove) == 0x14);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flAttackTimeMS) == 0x18);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flReleaseTimeMS) == 0x1c);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_bEnable) == 0x20);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_bSolo) == 0x21);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbGainInput) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbGainOutput) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbThresholdBelow) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_fldbThresholdAbove) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flRatioBelow) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flRatioAbove) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flAttackTimeMS) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_flReleaseTimeMS) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_bEnable) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t, m_bSolo) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t) == 0x24);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixDynamicsBand_t) == 0x_);
     };
 };

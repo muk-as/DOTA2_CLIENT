@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,20 +29,20 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Unique ID for the Tablet"
-            source2sdk::client::FantasyTabletID_t m_unID; // 0x0            
-            uint8_t _pad0001[0x3]; // 0x1
+            source2sdk::client::FantasyTabletID_t m_unID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "What role is this tablet for"
-            source2sdk::client::Fantasy_Roles m_eRole; // 0x4            
+            source2sdk::client::Fantasy_Roles m_eRole; // 0x_            
             // m_vecGemSlots has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::FantasyCraftingGemSlotData_t> m_vecGemSlots;
-            char m_vecGemSlots[0x18]; // 0x8            
+            char m_vecGemSlots[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_unID) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_eRole) == 0x4);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_vecGemSlots) == 0x8);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_unID) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_eRole) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingTabletData_t, m_vecGemSlots) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftingTabletData_t) == 0x20);
+        static_assert(sizeof(source2sdk::client::FantasyCraftingTabletData_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EBaseGameEvents : std::uint32_t
         {
             GE_VDebugGameSessionIDEvent = 0xc8,

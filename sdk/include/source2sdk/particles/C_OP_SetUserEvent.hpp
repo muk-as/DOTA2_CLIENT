@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,22 +29,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "input value"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInput; // 0x1c0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInput; // 0x_            
             // metadata: MPropertyFriendlyName "rising edge value"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRisingEdge; // 0x320            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRisingEdge; // 0x_            
             // metadata: MPropertyFriendlyName "rising edge event type"
-            source2sdk::particles::EventTypeSelection_t m_nRisingEventType; // 0x480            
-            uint8_t _pad0484[0x4]; // 0x484
+            source2sdk::particles::EventTypeSelection_t m_nRisingEventType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "falling edge value"
-            source2sdk::particleslib::CPerParticleFloatInput m_flFallingEdge; // 0x488            
+            source2sdk::particleslib::CPerParticleFloatInput m_flFallingEdge; // 0x_            
             // metadata: MPropertyFriendlyName "falling edge event type"
-            source2sdk::particles::EventTypeSelection_t m_nFallingEventType; // 0x5e8            
-            uint8_t _pad05ec[0x4];
+            source2sdk::particles::EventTypeSelection_t m_nFallingEventType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SetUserEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SetUserEvent) == 0x5f0);
+        static_assert(sizeof(source2sdk::particles::C_OP_SetUserEvent) == 0x_);
     };
 };

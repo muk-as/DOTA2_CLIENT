@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PFNoiseType_t : std::uint32_t
         {
             PF_NOISE_TYPE_PERLIN = 0x0,

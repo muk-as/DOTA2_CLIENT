@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1918
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Unit_Brewmaster_PrimalStorm : public source2sdk::server::CDOTA_BaseNPC_Creep
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXStormAmbient1; // 0x1910            
-            source2sdk::client::ParticleIndex_t m_nFXStormAmbient2; // 0x1914            
+            source2sdk::client::ParticleIndex_t m_nFXStormAmbient1; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXStormAmbient2; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Brewmaster_PrimalStorm because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Brewmaster_PrimalStorm) == 0x1918);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Brewmaster_PrimalStorm) == 0x_);
     };
 };

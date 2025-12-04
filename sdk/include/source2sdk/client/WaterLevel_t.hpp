@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class WaterLevel_t : std::uint8_t
         {
             WL_NotInWater = 0x0,

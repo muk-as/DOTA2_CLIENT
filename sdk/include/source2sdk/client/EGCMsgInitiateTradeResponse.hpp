@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 25
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCMsgInitiateTradeResponse : std::uint32_t
         {
             k_EGCMsgInitiateTradeResponse_Accepted = 0x0,

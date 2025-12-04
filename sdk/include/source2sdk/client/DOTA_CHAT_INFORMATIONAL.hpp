@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_CHAT_INFORMATIONAL : std::uint32_t
         {
             INFO_COOP_BATTLE_POINTS_RULES = 0x1,

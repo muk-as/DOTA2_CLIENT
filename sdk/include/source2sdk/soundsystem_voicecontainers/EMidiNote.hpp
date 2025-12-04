@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EMidiNote : std::uint8_t
         {
             C = 0x0,

@@ -15,28 +15,28 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct DOTAOutgoingBonus_t
         {
         public:
-            char* m_pszAbilityName; // 0x0            
-            char* m_pszSpecialName; // 0x8            
-            uint8_t _pad0010[0x4]; // 0x10
-            float m_fValue; // 0x14            
-            source2sdk::client::EDOTASpecialBonusOperation m_eOperation; // 0x18            
-            uint8_t _pad0019[0x7];
+            char* m_pszAbilityName; // 0x_            
+            char* m_pszSpecialName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fValue; // 0x_            
+            source2sdk::client::EDOTASpecialBonusOperation m_eOperation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_pszAbilityName) == 0x0);
-        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_pszSpecialName) == 0x8);
-        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_fValue) == 0x14);
-        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_eOperation) == 0x18);
+        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_pszAbilityName) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_pszSpecialName) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_fValue) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTAOutgoingBonus_t, m_eOperation) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::DOTAOutgoingBonus_t) == 0x20);
+        static_assert(sizeof(source2sdk::client::DOTAOutgoingBonus_t) == 0x_);
     };
 };

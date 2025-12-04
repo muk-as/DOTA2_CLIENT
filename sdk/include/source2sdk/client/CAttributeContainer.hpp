@@ -16,9 +16,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x140
+        // Size: 0x_
         // Has VTable
         // MNetworkNoBase
         // 
@@ -32,12 +32,12 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::C_EconItemView m_Item; // 0x68            
+            source2sdk::client::C_EconItemView m_Item; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAttributeContainer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CAttributeContainer) == 0x140);
+        static_assert(sizeof(source2sdk::client::CAttributeContainer) == 0x_);
     };
 };

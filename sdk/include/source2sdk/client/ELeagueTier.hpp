@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELeagueTier : std::uint32_t
         {
             LEAGUE_TIER_UNSET = 0x0,

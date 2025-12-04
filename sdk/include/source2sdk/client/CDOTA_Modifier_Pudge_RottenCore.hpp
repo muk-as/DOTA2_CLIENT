@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pudge_RottenCore : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float attack_damage_per_stack; // 0x1878            
-            std::int32_t max_total_stacks; // 0x187c            
-            float rot_tick; // 0x1880            
-            std::int32_t stacks_decrement_per_rot_off_tick; // 0x1884            
-            std::int32_t m_nRotOffTicksToDecrement; // 0x1888            
-            std::int32_t m_nAccumulatedRotOffTicks; // 0x188c            
+            float attack_damage_per_stack; // 0x_            
+            std::int32_t max_total_stacks; // 0x_            
+            float rot_tick; // 0x_            
+            std::int32_t stacks_decrement_per_rot_off_tick; // 0x_            
+            std::int32_t m_nRotOffTicksToDecrement; // 0x_            
+            std::int32_t m_nAccumulatedRotOffTicks; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pudge_RottenCore because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Pudge_RottenCore) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Pudge_RottenCore) == 0x_);
     };
 };

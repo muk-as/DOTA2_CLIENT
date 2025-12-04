@@ -22,9 +22,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x148
+        // Size: 0x_
         // Has VTable
         // MNetworkNoBase
         // 
@@ -39,35 +39,35 @@ namespace source2sdk
         class C_SpeechBubbleInfo
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            char m_LocalizationStr[256]; // 0x30            
+            char m_LocalizationStr[256]; // 0x_            
             // metadata: MNetworkEnable
             // m_hNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hNPC;
-            char m_hNPC[0x4]; // 0x130            
+            char m_hNPC[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x134            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDuration; // 0x138            
+            float m_flDuration; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unOffsetX; // 0x13c            
+            std::uint32_t m_unOffsetX; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unOffsetY; // 0x140            
+            std::uint32_t m_unOffsetY; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_unCount; // 0x144            
-            uint8_t _pad0146[0x2];
+            std::uint16_t m_unCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_LocalizationStr) == 0x30);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_hNPC) == 0x130);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_flStartTime) == 0x134);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_flDuration) == 0x138);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unOffsetX) == 0x13c);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unOffsetY) == 0x140);
-        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unCount) == 0x144);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_LocalizationStr) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_hNPC) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_flStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_flDuration) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unOffsetX) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unOffsetY) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_SpeechBubbleInfo, m_unCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::C_SpeechBubbleInfo) == 0x148);
+        static_assert(sizeof(source2sdk::client::C_SpeechBubbleInfo) == 0x_);
     };
 };

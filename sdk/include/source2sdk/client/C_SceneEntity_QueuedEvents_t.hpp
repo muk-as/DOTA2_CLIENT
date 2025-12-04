@@ -14,22 +14,22 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct C_SceneEntity_QueuedEvents_t
         {
         public:
-            float starttime; // 0x0            
-            uint8_t _pad0004[0x14];
+            float starttime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::C_SceneEntity_QueuedEvents_t, starttime) == 0x0);
+        static_assert(offsetof(source2sdk::client::C_SceneEntity_QueuedEvents_t, starttime) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::C_SceneEntity_QueuedEvents_t) == 0x18);
+        static_assert(sizeof(source2sdk::client::C_SceneEntity_QueuedEvents_t) == 0x_);
     };
 };

@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::EventModInitialized_t) == 0x1);
+        static_assert(sizeof(source2sdk::client::EventModInitialized_t) == 0x_);
     };
 };

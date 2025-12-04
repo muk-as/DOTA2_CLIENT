@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,23 +25,23 @@ namespace source2sdk
         class CNmIKEffector
         {
         public:
-            std::int32_t m_nBodyIndex; // 0x0            
-            bool m_bEnabled; // 0x4            
-            uint8_t _pad0005[0x3]; // 0x5
-            Vector m_vTargetPosition; // 0x8            
-            uint8_t _pad0014[0xc]; // 0x14
-            Quaternion m_qTargetOrientation; // 0x20            
-            float m_flWeight; // 0x30            
-            uint8_t _pad0034[0xc];
+            std::int32_t m_nBodyIndex; // 0x_            
+            bool m_bEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vTargetPosition; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Quaternion m_qTargetOrientation; // 0x_            
+            float m_flWeight; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_nBodyIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_bEnabled) == 0x4);
-        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_vTargetPosition) == 0x8);
-        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_qTargetOrientation) == 0x20);
-        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_flWeight) == 0x30);
+        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_nBodyIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_bEnabled) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_vTargetPosition) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_qTargetOrientation) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKEffector, m_flWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmIKEffector) == 0x40);
+        static_assert(sizeof(source2sdk::animlib::CNmIKEffector) == 0x_);
     };
 };

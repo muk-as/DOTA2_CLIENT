@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // MNetworkNoBase
@@ -30,23 +30,23 @@ namespace source2sdk
         class CountdownTimer
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_duration; // 0x8            
+            float m_duration; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_timestamp; // 0xc            
+            source2sdk::entity2::GameTime_t m_timestamp; // 0x_            
             // metadata: MNetworkEnable
-            float m_timescale; // 0x10            
+            float m_timescale; // 0x_            
             // metadata: MNetworkEnable
-            WorldGroupId_t m_nWorldGroupId; // 0x14            
+            WorldGroupId_t m_nWorldGroupId; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CountdownTimer, m_duration) == 0x8);
-        static_assert(offsetof(source2sdk::client::CountdownTimer, m_timestamp) == 0xc);
-        static_assert(offsetof(source2sdk::client::CountdownTimer, m_timescale) == 0x10);
-        static_assert(offsetof(source2sdk::client::CountdownTimer, m_nWorldGroupId) == 0x14);
+        static_assert(offsetof(source2sdk::client::CountdownTimer, m_duration) == 0x_);
+        static_assert(offsetof(source2sdk::client::CountdownTimer, m_timestamp) == 0x_);
+        static_assert(offsetof(source2sdk::client::CountdownTimer, m_timescale) == 0x_);
+        static_assert(offsetof(source2sdk::client::CountdownTimer, m_nWorldGroupId) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CountdownTimer) == 0x18);
+        static_assert(sizeof(source2sdk::client::CountdownTimer) == 0x_);
     };
 };

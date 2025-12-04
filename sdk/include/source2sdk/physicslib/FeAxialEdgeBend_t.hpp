@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct FeAxialEdgeBend_t
         {
         public:
-            float te; // 0x0            
-            float tv; // 0x4            
-            float flDist; // 0x8            
-            float flWeight[4]; // 0xc            
-            std::uint16_t nNode[6]; // 0x1c            
+            float te; // 0x_            
+            float tv; // 0x_            
+            float flDist; // 0x_            
+            float flWeight[4]; // 0x_            
+            std::uint16_t nNode[6]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, te) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, tv) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, flDist) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, flWeight) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, nNode) == 0x1c);
+        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, te) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, tv) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, flDist) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, flWeight) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeAxialEdgeBend_t, nNode) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeAxialEdgeBend_t) == 0x28);
+        static_assert(sizeof(source2sdk::physicslib::FeAxialEdgeBend_t) == 0x_);
     };
 };

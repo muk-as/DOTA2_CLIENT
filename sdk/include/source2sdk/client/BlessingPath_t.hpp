@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,30 +26,30 @@ namespace source2sdk
         struct BlessingPath_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyAttributeEditor "VDataNodePicker(//m_mapBlessings/*)"
-            CUtlString Node1; // 0x8            
-            uint8_t _pad0010[0x8]; // 0x10
+            CUtlString Node1; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyAttributeEditor "VDataNodePicker(//m_mapBlessings/*)"
-            CUtlString Node2; // 0x18            
-            uint8_t _pad0020[0x4]; // 0x20
+            CUtlString Node2; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "This edge only allows unlocks in the direction of the arrow."
-            bool bOneWay; // 0x24            
-            uint8_t _pad0025[0x3]; // 0x25
+            bool bOneWay; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyAttributeRange "-1 1"
             // metadata: MPropertyDescription "0 = line, + = curve to the 'right' from node 1 to node 2, - = curve left"
-            float flCircleInvRadius; // 0x28            
+            float flCircleInvRadius; // 0x_            
             // metadata: MPropertyDescription "path particle color"
-            Color color; // 0x2c            
+            Color color; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::BlessingPath_t, Node1) == 0x8);
-        static_assert(offsetof(source2sdk::client::BlessingPath_t, Node2) == 0x18);
-        static_assert(offsetof(source2sdk::client::BlessingPath_t, bOneWay) == 0x24);
-        static_assert(offsetof(source2sdk::client::BlessingPath_t, flCircleInvRadius) == 0x28);
-        static_assert(offsetof(source2sdk::client::BlessingPath_t, color) == 0x2c);
+        static_assert(offsetof(source2sdk::client::BlessingPath_t, Node1) == 0x_);
+        static_assert(offsetof(source2sdk::client::BlessingPath_t, Node2) == 0x_);
+        static_assert(offsetof(source2sdk::client::BlessingPath_t, bOneWay) == 0x_);
+        static_assert(offsetof(source2sdk::client::BlessingPath_t, flCircleInvRadius) == 0x_);
+        static_assert(offsetof(source2sdk::client::BlessingPath_t, color) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::BlessingPath_t) == 0x30);
+        static_assert(sizeof(source2sdk::client::BlessingPath_t) == 0x_);
     };
 };

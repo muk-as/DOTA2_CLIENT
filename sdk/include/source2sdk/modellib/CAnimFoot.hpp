@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,20 +24,20 @@ namespace source2sdk
         class CAnimFoot
         {
         public:
-            CUtlString m_name; // 0x0            
-            Vector m_vBallOffset; // 0x8            
-            Vector m_vHeelOffset; // 0x14            
-            std::int32_t m_ankleBoneIndex; // 0x20            
-            std::int32_t m_toeBoneIndex; // 0x24            
+            CUtlString m_name; // 0x_            
+            Vector m_vBallOffset; // 0x_            
+            Vector m_vHeelOffset; // 0x_            
+            std::int32_t m_ankleBoneIndex; // 0x_            
+            std::int32_t m_toeBoneIndex; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_name) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_vBallOffset) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_vHeelOffset) == 0x14);
-        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_ankleBoneIndex) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_toeBoneIndex) == 0x24);
+        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_vBallOffset) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_vHeelOffset) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_ankleBoneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CAnimFoot, m_toeBoneIndex) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CAnimFoot) == 0x28);
+        static_assert(sizeof(source2sdk::modellib::CAnimFoot) == 0x_);
     };
 };

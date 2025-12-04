@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x8b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,40 +30,40 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "snapshot control point number"
-            std::int32_t m_nSnapshotControlPointNumber; // 0x1c0            
+            std::int32_t m_nSnapshotControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c4            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "random order"
-            bool m_bRandom; // 0x1c8            
-            uint8_t _pad01c9[0x3]; // 0x1c9
+            bool m_bRandom; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "random seed"
-            std::int32_t m_nRandomSeed; // 0x1cc            
+            std::int32_t m_nRandomSeed; // 0x_            
             // metadata: MPropertyFriendlyName "set normal"
-            bool m_bSetNormal; // 0x1d0            
+            bool m_bSetNormal; // 0x_            
             // metadata: MPropertyFriendlyName "set radius"
-            bool m_bSetRadius; // 0x1d1            
-            uint8_t _pad01d2[0x2]; // 0x1d2
+            bool m_bSetRadius; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Snapshot Read Type"
-            source2sdk::particles::SnapshotIndexType_t m_nIndexType; // 0x1d4            
+            source2sdk::particles::SnapshotIndexType_t m_nIndexType; // 0x_            
             // metadata: MPropertyFriendlyName "Snapshot Index"
             // metadata: MPropertySuppressExpr "m_nIndexType != SNAPSHOT_INDEX_DIRECT"
-            source2sdk::particleslib::CPerParticleFloatInput m_flReadIndex; // 0x1d8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flReadIndex; // 0x_            
             // metadata: MPropertyFriendlyName "particle increment amount"
             // metadata: MPropertySuppressExpr "m_nIndexType != SNAPSHOT_INDEX_INCREMENT"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flIncrement; // 0x338            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flIncrement; // 0x_            
             // metadata: MPropertyFriendlyName "Full Loop Increment Amount"
             // metadata: MPropertySuppressExpr "m_nIndexType != SNAPSHOT_INDEX_INCREMENT"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nFullLoopIncrement; // 0x498            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nFullLoopIncrement; // 0x_            
             // metadata: MPropertyFriendlyName "Snapshot start point"
             // metadata: MPropertySuppressExpr "m_nIndexType != SNAPSHOT_INDEX_INCREMENT"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotStartPoint; // 0x5f8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotStartPoint; // 0x_            
             // metadata: MPropertyFriendlyName "Interpolation"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInterpolation; // 0x758            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInterpolation; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_MovementSkinnedPositionFromCPSnapshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_MovementSkinnedPositionFromCPSnapshot) == 0x8b8);
+        static_assert(sizeof(source2sdk::particles::C_OP_MovementSkinnedPositionFromCPSnapshot) == 0x_);
     };
 };

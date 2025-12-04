@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class MorphFlexControllerRemapType_t : std::uint32_t
         {
             MORPH_FLEXCONTROLLER_REMAP_PASSTHRU = 0x0,

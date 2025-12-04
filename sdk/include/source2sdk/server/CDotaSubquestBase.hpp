@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x738
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,29 +36,29 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_pszSubquestText[256]; // 0x4e0            
+            char m_pszSubquestText[256]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bHidden; // 0x5e0            
+            bool m_bHidden; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCompleted; // 0x5e1            
+            bool m_bCompleted; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bShowProgressBar; // 0x5e2            
-            uint8_t _pad05e3[0x1]; // 0x5e3
+            bool m_bShowProgressBar; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nProgressBarHueShift; // 0x5e4            
+            std::int32_t m_nProgressBarHueShift; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x5e8            
+            std::int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x_            
             // metadata: MNetworkEnable
-            char m_pszTextReplaceString[64]; // 0x5f0            
+            char m_pszTextReplaceString[64]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTextReplaceValueVersion; // 0x630            
-            char m_pszSubquestName[256]; // 0x634            
-            uint8_t _pad0734[0x4];
+            std::int32_t m_nTextReplaceValueVersion; // 0x_            
+            char m_pszSubquestName[256]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDotaSubquestBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDotaSubquestBase) == 0x738);
+        static_assert(sizeof(source2sdk::server::CDotaSubquestBase) == 0x_);
     };
 };

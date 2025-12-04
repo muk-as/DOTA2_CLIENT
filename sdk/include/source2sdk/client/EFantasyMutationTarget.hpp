@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 2
-        // Size: 0x2
+        // Size: 0x_
         enum class EFantasyMutationTarget : std::uint16_t
         {
             k_eFantasyMutationTarget_None = 0x0,

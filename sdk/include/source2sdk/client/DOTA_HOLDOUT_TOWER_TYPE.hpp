@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_HOLDOUT_TOWER_TYPE : std::uint32_t
         {
             DOTA_HOLDOUT_TOWER_NONE = 0x0,

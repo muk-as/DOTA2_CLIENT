@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x588
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,43 +30,43 @@ namespace source2sdk
         class CSoundOpvarSetPointBase : public source2sdk::server::CBaseEntity
         {
         public:
-            bool m_bDisabled; // 0x4e0            
-            uint8_t _pad04e1[0x3]; // 0x4e1
-            CEntityHandle m_hSource; // 0x4e4            
-            uint8_t _pad04e8[0x18]; // 0x4e8
-            CUtlSymbolLarge m_iszSourceEntityName; // 0x500            
-            uint8_t _pad0508[0x50]; // 0x508
-            Vector m_vLastPosition; // 0x558            
-            uint8_t _pad0564[0x4]; // 0x564
+            bool m_bDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CEntityHandle m_hSource; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszSourceEntityName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vLastPosition; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszStackName; // 0x568            
+            CUtlSymbolLarge m_iszStackName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOperatorName; // 0x570            
+            CUtlSymbolLarge m_iszOperatorName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOpvarName; // 0x578            
+            CUtlSymbolLarge m_iszOpvarName; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iOpvarIndex; // 0x580            
+            std::int32_t m_iOpvarIndex; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseAutoCompare; // 0x584            
-            uint8_t _pad0585[0x3];
+            bool m_bUseAutoCompare; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // uint64_t InputSetEventGuid; // 0x0
-            // CUtlSymbolLarge InputSetStackName; // 0x0
-            // CUtlSymbolLarge InputSetOperatorName; // 0x0
-            // CUtlSymbolLarge InputSetOpvarName; // 0x0
-            // CUtlSymbolLarge InputSetOpvarIndex; // 0x0
-            // CUtlSymbolLarge InputSetSourceEntity; // 0x0
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
-            // void CSoundOpvarSetPointBaseSetOpvarThink; // 0x0
-            // void m_nGUID; // 0x4e8
-            // void m_hOpvarData; // 0x508
+            // uint64_t InputSetEventGuid; // 0x_
+            // CUtlSymbolLarge InputSetStackName; // 0x_
+            // CUtlSymbolLarge InputSetOperatorName; // 0x_
+            // CUtlSymbolLarge InputSetOpvarName; // 0x_
+            // CUtlSymbolLarge InputSetOpvarIndex; // 0x_
+            // CUtlSymbolLarge InputSetSourceEntity; // 0x_
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // void CSoundOpvarSetPointBaseSetOpvarThink; // 0x_
+            // void m_nGUID; // 0x_
+            // void m_hOpvarData; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSoundOpvarSetPointBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSoundOpvarSetPointBase) == 0x588);
+        static_assert(sizeof(source2sdk::server::CSoundOpvarSetPointBase) == 0x_);
     };
 };

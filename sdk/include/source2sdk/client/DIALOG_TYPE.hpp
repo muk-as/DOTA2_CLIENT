@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DIALOG_TYPE : std::uint32_t
         {
             DIALOG_MSG = 0x0,

@@ -18,22 +18,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mirana_Starfall_Scepter_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float interval_scepter; // 0x1878            
-            bool bInBufferTime; // 0x187c            
-            uint8_t _pad187d[0x3]; // 0x187d
-            std::int32_t damage; // 0x1880            
-            source2sdk::entity2::GameTime_t m_flLastApplyTime; // 0x1884            
+            float interval_scepter; // 0x_            
+            bool bInBufferTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t damage; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastApplyTime; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mirana_Starfall_Scepter_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Starfall_Scepter_Thinker) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Starfall_Scepter_Thinker) == 0x_);
     };
 };

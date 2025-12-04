@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MPropertyCustomEditor "multi_int( 4 )"
@@ -24,12 +24,12 @@ namespace source2sdk
         class CSkillInt
         {
         public:
-            std::int32_t m_pValue[4]; // 0x0            
+            std::int32_t m_pValue[4]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSkillInt, m_pValue) == 0x0);
+        static_assert(offsetof(source2sdk::client::CSkillInt, m_pValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSkillInt) == 0x10);
+        static_assert(sizeof(source2sdk::client::CSkillInt) == 0x_);
     };
 };

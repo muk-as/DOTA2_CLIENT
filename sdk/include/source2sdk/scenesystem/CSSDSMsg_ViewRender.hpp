@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace scenesystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,14 +25,14 @@ namespace source2sdk
         class CSSDSMsg_ViewRender
         {
         public:
-            source2sdk::scenesystem::SceneViewId_t m_viewId; // 0x0            
-            CUtlString m_ViewName; // 0x10            
+            source2sdk::scenesystem::SceneViewId_t m_viewId; // 0x_            
+            CUtlString m_ViewName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_ViewRender, m_viewId) == 0x0);
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_ViewRender, m_ViewName) == 0x10);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_ViewRender, m_viewId) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_ViewRender, m_ViewName) == 0x_);
         
-        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_ViewRender) == 0x18);
+        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_ViewRender) == 0x_);
     };
 };

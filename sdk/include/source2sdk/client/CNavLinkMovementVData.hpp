@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x100
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -30,28 +30,28 @@ namespace source2sdk
             // metadata: MPropertyDescription "Model used by the tools only to populate comboboxes for things like animgraph parameter pickers"
             // m_sToolsOnlyOwnerModelName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_sToolsOnlyOwnerModelName;
-            char m_sToolsOnlyOwnerModelName[0xe0]; // 0x0            
+            char m_sToolsOnlyOwnerModelName[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "Is Interpolated"
             // metadata: MPropertyDescription "Indicates that the animation has a segment that's interpolated. In general using this on navlinks that traverse +/- 50% of the recommended distance should look okay."
-            bool m_bIsInterpolated; // 0xe0            
-            uint8_t _pad00e1[0x3]; // 0xe1
+            bool m_bIsInterpolated; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Recommended Distance"
             // metadata: MPropertyDescription "Recommended distance this movement traverses"
-            std::uint32_t m_unRecommendedDistance; // 0xe4            
+            std::uint32_t m_unRecommendedDistance; // 0x_            
             // metadata: MPropertyFriendlyName "Animgraph Variables"
             // metadata: MPropertyDescription "List of animgraph variables to use when moving through this navlink. Can include multiple, with different amounts of angular slack. The most permissive animgraph variable that exists on the entity's animgraph will be used,"
             // metadata: MPropertyAutoExpandSelf
             // m_vecAnimgraphVars has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CNavLinkAnimgraphVar> m_vecAnimgraphVars;
-            char m_vecAnimgraphVars[0x18]; // 0xe8            
+            char m_vecAnimgraphVars[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_sToolsOnlyOwnerModelName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_bIsInterpolated) == 0xe0);
-        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_unRecommendedDistance) == 0xe4);
-        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_vecAnimgraphVars) == 0xe8);
+        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_sToolsOnlyOwnerModelName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_bIsInterpolated) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_unRecommendedDistance) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNavLinkMovementVData, m_vecAnimgraphVars) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CNavLinkMovementVData) == 0x100);
+        static_assert(sizeof(source2sdk::client::CNavLinkMovementVData) == 0x_);
     };
 };

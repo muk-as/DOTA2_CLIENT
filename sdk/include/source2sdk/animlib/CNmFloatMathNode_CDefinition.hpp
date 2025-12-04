@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,19 +27,19 @@ namespace source2sdk
         class CNmFloatMathNode_CDefinition : public source2sdk::animlib::CNmFloatValueNode_CDefinition
         {
         public:
-            std::int16_t m_nInputValueNodeIdxA; // 0x10            
-            std::int16_t m_nInputValueNodeIdxB; // 0x12            
-            bool m_bReturnAbsoluteResult; // 0x14            
-            bool m_bReturnNegatedResult; // 0x15            
-            source2sdk::animlib::CNmFloatMathNode_Operator_t m_operator; // 0x16            
-            uint8_t _pad0017[0x1]; // 0x17
-            float m_flValueB; // 0x18            
-            uint8_t _pad001c[0x4];
+            std::int16_t m_nInputValueNodeIdxA; // 0x_            
+            std::int16_t m_nInputValueNodeIdxB; // 0x_            
+            bool m_bReturnAbsoluteResult; // 0x_            
+            bool m_bReturnNegatedResult; // 0x_            
+            source2sdk::animlib::CNmFloatMathNode_Operator_t m_operator; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flValueB; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmFloatMathNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmFloatMathNode_CDefinition) == 0x20);
+        static_assert(sizeof(source2sdk::animlib::CNmFloatMathNode_CDefinition) == 0x_);
     };
 };

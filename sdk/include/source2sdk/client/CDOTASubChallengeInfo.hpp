@@ -16,9 +16,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int nType"
@@ -36,45 +36,45 @@ namespace source2sdk
         class CDOTASubChallengeInfo
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t nType; // 0x30            
+            std::int32_t nType; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nTier; // 0x34            
+            std::int32_t nTier; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nSlotID; // 0x38            
+            std::int32_t nSlotID; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nProgress; // 0x3c            
+            std::int32_t nProgress; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nCompletionThreshold; // 0x40            
+            std::int32_t nCompletionThreshold; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t nPlayerID; // 0x44            
+            source2sdk::client::PlayerID_t nPlayerID; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nQueryIndex; // 0x48            
+            std::int32_t nQueryIndex; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nEventID; // 0x4c            
+            std::int32_t nEventID; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nSequenceID; // 0x50            
+            std::int32_t nSequenceID; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t nRequiredHero; // 0x54            
+            source2sdk::client::HeroID_t nRequiredHero; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t nCompleted; // 0x58            
-            uint8_t _pad005c[0x4];
+            std::int32_t nCompleted; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nType) == 0x30);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nTier) == 0x34);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nSlotID) == 0x38);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nProgress) == 0x3c);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nCompletionThreshold) == 0x40);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nPlayerID) == 0x44);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nQueryIndex) == 0x48);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nEventID) == 0x4c);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nSequenceID) == 0x50);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nRequiredHero) == 0x54);
-        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nCompleted) == 0x58);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nType) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nTier) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nSlotID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nProgress) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nCompletionThreshold) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nPlayerID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nQueryIndex) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nEventID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nSequenceID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nRequiredHero) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTASubChallengeInfo, nCompleted) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTASubChallengeInfo) == 0x60);
+        static_assert(sizeof(source2sdk::client::CDOTASubChallengeInfo) == 0x_);
     };
 };

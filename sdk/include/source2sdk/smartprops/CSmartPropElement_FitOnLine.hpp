@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x2e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,33 +33,33 @@ namespace source2sdk
         public:
             // metadata: MPropertyStartGroup "+End Points"
             // metadata: MPropertyDescription "Specifies the start point of the line in the specified coordinate space."
-            CSmartPropAttributeVector m_vStart; // 0xa0            
+            CSmartPropAttributeVector m_vStart; // 0x_            
             // metadata: MPropertyDescription "Specifies the end point of the line in the specified coordinate space."
-            CSmartPropAttributeVector m_vEnd; // 0xe0            
+            CSmartPropAttributeVector m_vEnd; // 0x_            
             // metadata: MPropertyFriendlyName "End point space"
             // metadata: MPropertyDescription "Specifies the coordinate space in which the end point values are specified."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_PointSpace; // 0x120            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_PointSpace; // 0x_            
             // metadata: MPropertyStartGroup "+Orientation"
             // metadata: MPropertyDescription "Should the child elements be oriented based on the line. If enabled the child elements placed on the line will be oriented such that their +x axis points along the line towards the end point."
-            CSmartPropAttributeBool m_bOrientAlongLine; // 0x160            
+            CSmartPropAttributeBool m_bOrientAlongLine; // 0x_            
             // metadata: MPropertyDescription "Up vector which is used to determine the rotation of each element around the line."
-            CSmartPropAttributeVector m_vUpDirection; // 0x1a0            
+            CSmartPropAttributeVector m_vUpDirection; // 0x_            
             // metadata: MPropertyDescription "Space in which the up direction is defined."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x1e0            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x_            
             // metadata: MPropertyDescription "When the up direction is not orthogonal to the line direction normally the up vector will be adjusted to make it orthogonal to the line direction. If prioritize up is true, then the up direction will be maintained and the forward direction will be adjusted."
-            CSmartPropAttributeBool m_bPrioritizeUp; // 0x220            
+            CSmartPropAttributeBool m_bPrioritizeUp; // 0x_            
             // metadata: MPropertyStartGroup
             // metadata: MPropertyFriendlyName "Scale Mode"
             // metadata: MPropertyDescription "Specifies how scale is applied to each of the selected element in order to fit them to the line."
-            source2sdk::smartprops::CSmartPropAttributeScaleMode m_nScaleMode; // 0x260            
+            source2sdk::smartprops::CSmartPropAttributeScaleMode m_nScaleMode; // 0x_            
             // metadata: MPropertyFriendlyName "Child Selection Mode"
             // metadata: MPropertyDescription "Specifies how scale is applied to each of the selected element in order to fit them to the line."
-            source2sdk::smartprops::CSmartPropAttributePickMode m_nPickMode; // 0x2a0            
+            source2sdk::smartprops::CSmartPropAttributePickMode m_nPickMode; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropElement_FitOnLine because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_FitOnLine) == 0x2e0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_FitOnLine) == 0x_);
     };
 };

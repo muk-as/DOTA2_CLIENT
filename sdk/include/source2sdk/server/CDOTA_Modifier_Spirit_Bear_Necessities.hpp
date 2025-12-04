@@ -17,29 +17,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Spirit_Bear_Necessities : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float bonus_int; // 0x1878            
-            float bonus_str; // 0x187c            
-            float bonus_agi; // 0x1880            
-            std::int32_t bonus_attack_speed; // 0x1884            
-            std::int32_t bonus_attack_damage; // 0x1888            
-            float bonus_health_regen; // 0x188c            
-            float bonus_health_regen_percent; // 0x1890            
-            float bonus_mana_regen; // 0x1894            
-            std::int32_t bonus_health; // 0x1898            
-            std::int32_t bonus_mana; // 0x189c            
-            float bonus_evasion; // 0x18a0            
-            std::int32_t item_slots; // 0x18a4            
+            float bonus_int; // 0x_            
+            float bonus_str; // 0x_            
+            float bonus_agi; // 0x_            
+            std::int32_t bonus_attack_speed; // 0x_            
+            std::int32_t bonus_attack_damage; // 0x_            
+            float bonus_health_regen; // 0x_            
+            float bonus_health_regen_percent; // 0x_            
+            float bonus_mana_regen; // 0x_            
+            std::int32_t bonus_health; // 0x_            
+            std::int32_t bonus_mana; // 0x_            
+            float bonus_evasion; // 0x_            
+            std::int32_t item_slots; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Spirit_Bear_Necessities because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spirit_Bear_Necessities) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spirit_Bear_Necessities) == 0x_);
     };
 };

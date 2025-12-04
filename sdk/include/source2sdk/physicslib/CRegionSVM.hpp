@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,16 +27,16 @@ namespace source2sdk
         public:
             // m_Planes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::RnPlane_t> m_Planes;
-            char m_Planes[0x18]; // 0x0            
+            char m_Planes[0x_]; // 0x_            
             // m_Nodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_Nodes;
-            char m_Nodes[0x18]; // 0x18            
+            char m_Nodes[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::CRegionSVM, m_Planes) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::CRegionSVM, m_Nodes) == 0x18);
+        static_assert(offsetof(source2sdk::physicslib::CRegionSVM, m_Planes) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CRegionSVM, m_Nodes) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::CRegionSVM) == 0x30);
+        static_assert(sizeof(source2sdk::physicslib::CRegionSVM) == 0x_);
     };
 };

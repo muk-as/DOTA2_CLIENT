@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,14 +27,14 @@ namespace source2sdk
         public:
             // m_blendRanges has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVectorFixedGrowable<source2sdk::animlib::CNmParameterizedBlendNode_BlendRange_t,5> m_blendRanges;
-            char m_blendRanges[0x48]; // 0x0            
-            Range_t m_parameterRange; // 0x48            
+            char m_blendRanges[0x_]; // 0x_            
+            Range_t m_parameterRange; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t, m_blendRanges) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t, m_parameterRange) == 0x48);
+        static_assert(offsetof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t, m_blendRanges) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t, m_parameterRange) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t) == 0x50);
+        static_assert(sizeof(source2sdk::animlib::CNmParameterizedBlendNode_Parameterization_t) == 0x_);
     };
 };

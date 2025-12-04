@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x300
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,37 +30,37 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Name of the path to use. This path name will show up in the property editor when selecting a placement of this smart prop in Hammer, allowing selection of a path object in the map to use."
-            CUtlString m_PathName; // 0xa0            
+            CUtlString m_PathName; // 0x_            
             // metadata: MPropertyDescription "Spacing between points on the path"
-            CSmartPropAttributeFloat m_flSpacing; // 0xa8            
+            CSmartPropAttributeFloat m_flSpacing; // 0x_            
             // metadata: MPropertyDescription "Offset from the start of the path to place the first point."
-            CSmartPropAttributeFloat m_flOffsetAlongPath; // 0xe8            
+            CSmartPropAttributeFloat m_flOffsetAlongPath; // 0x_            
             // metadata: MPropertyFriendlyName "Offset from path"
             // metadata: MPropertyDescription "Offset to apply to the path, specifies a horizontal and vertical offset to apply relative to the up direction."
-            CSmartPropAttributeVector2D m_vPathOffset; // 0x128            
+            CSmartPropAttributeVector2D m_vPathOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Path Evaluation Space"
             // metadata: MPropertyDescription "Specifies the space in which the provided input path is to be evalauted.<br><br><b>World Space</b>: The input path will be evaluated in world space, such that child elements will be placed directly on the target path regardless of the transform of the smart prop object. <br><b>Object Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the smart prop object. <br><b>Element Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the current element within the smart prop. "
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_PathSpace; // 0x168            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_PathSpace; // 0x_            
             // metadata: MPropertyDescription "If true, treat the specified up direction as fixed up direction to apply to all elements placed on the path. If false the up direction is just an initial direction."
-            CSmartPropAttributeBool m_bUseFixedUpDirection; // 0x1a8            
+            CSmartPropAttributeBool m_bUseFixedUpDirection; // 0x_            
             // metadata: MPropertyDescription "Compute the spacing distance in the 2d plane defined by the up direction. Most useful when using a fixed up direction, if maintaining a distance in the 2d plane is more important than maintaing distance along the path."
-            CSmartPropAttributeBool m_bUseProjectedDistance; // 0x1e8            
+            CSmartPropAttributeBool m_bUseProjectedDistance; // 0x_            
             // metadata: MPropertyDescription "If not using a fixed up direction, provides an initial up direction which will be used to determine the orientation of first element on the path, after that the elements will incrementally update to follow the path and may not match this direction. If Use Fixed Up direction is specified, then all elements will use this direction to deterime their up direction."
-            CSmartPropAttributeVector m_vUpDirection; // 0x228            
+            CSmartPropAttributeVector m_vUpDirection; // 0x_            
             // metadata: MPropertyDescription "Space in which the up direction is defined."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x268            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x_            
             // metadata: MPropertyFriendlyName "Default Path In World Space"
             // metadata: MPropertyDescription "If enabled, the default path values will be treated as world space values, if disabled they are treated as object space values. Typically it makes sense for literal values to be treated as being in object space, but if the values are being supplied by locators they will typically be in world space."
-            CSmartPropAttributeBool m_DefaultPathInWorldSpace; // 0x2a8            
+            CSmartPropAttributeBool m_DefaultPathInWorldSpace; // 0x_            
             // metadata: MPropertyDescription "A set of points defining a path to use when an external path isn't specified. This will be used in the preview and thumbnail for the smart prop. It will also be used when the smart prop is placed in Hammer before a path is selected."
             // m_DefaultPath has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPropAttributeVector> m_DefaultPath;
-            char m_DefaultPath[0x18]; // 0x2e8            
+            char m_DefaultPath[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropElement_PlaceOnPath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_PlaceOnPath) == 0x300);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_PlaceOnPath) == 0x_);
     };
 };

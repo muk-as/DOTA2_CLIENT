@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,15 +28,15 @@ namespace source2sdk
         public:
             // m_sourceNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<std::int16_t,5> m_sourceNodeIndices;
-            char m_sourceNodeIndices[0x28]; // 0x10            
-            std::int16_t m_nInputParameterValueNodeIdx; // 0x38            
-            bool m_bAllowLooping; // 0x3a            
-            uint8_t _pad003b[0x5];
+            char m_sourceNodeIndices[0x_]; // 0x_            
+            std::int16_t m_nInputParameterValueNodeIdx; // 0x_            
+            bool m_bAllowLooping; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmParameterizedBlendNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmParameterizedBlendNode_CDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::animlib::CNmParameterizedBlendNode_CDefinition) == 0x_);
     };
 };

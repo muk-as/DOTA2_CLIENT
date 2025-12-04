@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CLogicBranchList_LogicBranchListenerLastState_t : std::uint32_t
         {
             LOGIC_BRANCH_LISTENER_NOT_INIT = 0x0,

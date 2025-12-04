@@ -21,22 +21,22 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         #pragma pack(push, 1)
         class CResponseQueue
         {
         public:
-            uint8_t _pad0000[0x38]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_ExpresserTargets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CAI_Expresser*> m_ExpresserTargets;
-            char m_ExpresserTargets[0x18]; // 0x38            
+            char m_ExpresserTargets[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CResponseQueue, m_ExpresserTargets) == 0x38);
+        static_assert(offsetof(source2sdk::server::CResponseQueue, m_ExpresserTargets) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CResponseQueue) == 0x50);
+        static_assert(sizeof(source2sdk::server::CResponseQueue) == 0x_);
     };
 };

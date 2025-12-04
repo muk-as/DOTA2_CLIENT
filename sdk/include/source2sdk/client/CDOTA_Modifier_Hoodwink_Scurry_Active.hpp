@@ -18,26 +18,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Hoodwink_Scurry_Active : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movement_speed_pct; // 0x1878            
-            std::int32_t attack_range; // 0x187c            
-            std::int32_t cast_range; // 0x1880            
-            float radius_increase; // 0x1884            
-            float evasion_multiplier; // 0x1888            
-            bool m_bIgnoreInCalc; // 0x188c            
-            uint8_t _pad188d[0x3]; // 0x188d
-            source2sdk::entity2::GameTime_t m_flLastCalculationTime; // 0x1890            
-            float m_flTotalEvasion; // 0x1894            
+            std::int32_t movement_speed_pct; // 0x_            
+            std::int32_t attack_range; // 0x_            
+            std::int32_t cast_range; // 0x_            
+            float radius_increase; // 0x_            
+            float evasion_multiplier; // 0x_            
+            bool m_bIgnoreInCalc; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_flLastCalculationTime; // 0x_            
+            float m_flTotalEvasion; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Hoodwink_Scurry_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Hoodwink_Scurry_Active) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Hoodwink_Scurry_Active) == 0x_);
     };
 };

@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Spectre_SpectralDagger : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float path_radius; // 0x1878            
-            float hero_path_duration; // 0x187c            
-            Vector m_vLastPosition; // 0x1880            
-            uint8_t _pad188c[0x4];
+            float path_radius; // 0x_            
+            float hero_path_duration; // 0x_            
+            Vector m_vLastPosition; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Spectre_SpectralDagger because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Spectre_SpectralDagger) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Spectre_SpectralDagger) == 0x_);
     };
 };

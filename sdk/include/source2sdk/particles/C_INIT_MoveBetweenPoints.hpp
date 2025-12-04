@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x8b0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,25 +28,25 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "minimum speed"
-            source2sdk::particleslib::CPerParticleFloatInput m_flSpeedMin; // 0x1c8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "maximum speed"
-            source2sdk::particleslib::CPerParticleFloatInput m_flSpeedMax; // 0x328            
+            source2sdk::particleslib::CPerParticleFloatInput m_flSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "end spread"
-            source2sdk::particleslib::CPerParticleFloatInput m_flEndSpread; // 0x488            
+            source2sdk::particleslib::CPerParticleFloatInput m_flEndSpread; // 0x_            
             // metadata: MPropertyFriendlyName "start offset"
-            source2sdk::particleslib::CPerParticleFloatInput m_flStartOffset; // 0x5e8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flStartOffset; // 0x_            
             // metadata: MPropertyFriendlyName "end offset"
-            source2sdk::particleslib::CPerParticleFloatInput m_flEndOffset; // 0x748            
+            source2sdk::particleslib::CPerParticleFloatInput m_flEndOffset; // 0x_            
             // metadata: MPropertyFriendlyName "end control point"
-            std::int32_t m_nEndControlPointNumber; // 0x8a8            
+            std::int32_t m_nEndControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "bias lifetime by trail length"
-            bool m_bTrailBias; // 0x8ac            
-            uint8_t _pad08ad[0x3];
+            bool m_bTrailBias; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_MoveBetweenPoints because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_MoveBetweenPoints) == 0x8b0);
+        static_assert(sizeof(source2sdk::particles::C_INIT_MoveBetweenPoints) == 0x_);
     };
 };

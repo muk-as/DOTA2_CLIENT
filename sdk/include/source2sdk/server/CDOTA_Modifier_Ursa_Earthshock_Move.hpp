@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Ursa_Earthshock_Move : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float hop_duration; // 0x1878            
-            std::int32_t hop_height; // 0x187c            
-            std::int32_t hop_distance; // 0x1880            
-            float m_flStartZ; // 0x1884            
-            float m_flCurTime; // 0x1888            
-            float m_flJumpDuration; // 0x188c            
-            float m_flJumpHeight; // 0x1890            
-            Vector m_vTargetHorizontalDirection; // 0x1894            
+            float hop_duration; // 0x_            
+            std::int32_t hop_height; // 0x_            
+            std::int32_t hop_distance; // 0x_            
+            float m_flStartZ; // 0x_            
+            float m_flCurTime; // 0x_            
+            float m_flJumpDuration; // 0x_            
+            float m_flJumpHeight; // 0x_            
+            Vector m_vTargetHorizontalDirection; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Ursa_Earthshock_Move because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Ursa_Earthshock_Move) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Ursa_Earthshock_Move) == 0x_);
     };
 };

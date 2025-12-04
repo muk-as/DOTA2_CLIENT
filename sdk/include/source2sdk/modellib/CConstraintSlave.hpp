@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,22 +24,22 @@ namespace source2sdk
         class CConstraintSlave
         {
         public:
-            Quaternion m_qBaseOrientation; // 0x0            
-            Vector m_vBasePosition; // 0x10            
-            std::uint32_t m_nBoneHash; // 0x1c            
-            float m_flWeight; // 0x20            
-            uint8_t _pad0024[0x4]; // 0x24
-            CUtlString m_sName; // 0x28            
-            uint8_t _pad0030[0x20];
+            Quaternion m_qBaseOrientation; // 0x_            
+            Vector m_vBasePosition; // 0x_            
+            std::uint32_t m_nBoneHash; // 0x_            
+            float m_flWeight; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_sName; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_qBaseOrientation) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_vBasePosition) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_nBoneHash) == 0x1c);
-        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_flWeight) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_sName) == 0x28);
+        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_qBaseOrientation) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_vBasePosition) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_nBoneHash) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_flWeight) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CConstraintSlave, m_sName) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CConstraintSlave) == 0x50);
+        static_assert(sizeof(source2sdk::modellib::CConstraintSlave) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x68
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,20 +26,20 @@ namespace source2sdk
         class CNmIDToFloatNode_CDefinition : public source2sdk::animlib::CNmFloatValueNode_CDefinition
         {
         public:
-            std::int16_t m_nInputValueNodeIdx; // 0x10            
-            uint8_t _pad0012[0x2]; // 0x12
-            float m_defaultValue; // 0x14            
+            std::int16_t m_nInputValueNodeIdx; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_defaultValue; // 0x_            
             // m_IDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVectorFixedGrowable<CGlobalSymbol,5> m_IDs;
-            char m_IDs[0x30]; // 0x18            
+            char m_IDs[0x_]; // 0x_            
             // m_values has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVectorFixedGrowable<float,5> m_values;
-            char m_values[0x20]; // 0x48            
+            char m_values[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmIDToFloatNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmIDToFloatNode_CDefinition) == 0x68);
+        static_assert(sizeof(source2sdk::animlib::CNmIDToFloatNode_CDefinition) == 0x_);
     };
 };

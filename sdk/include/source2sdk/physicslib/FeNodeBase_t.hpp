@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,24 +25,24 @@ namespace source2sdk
         struct FeNodeBase_t
         {
         public:
-            std::uint16_t nNode; // 0x0            
-            std::uint16_t nDummy[3]; // 0x2            
-            std::uint16_t nNodeX0; // 0x8            
-            std::uint16_t nNodeX1; // 0xa            
-            std::uint16_t nNodeY0; // 0xc            
-            std::uint16_t nNodeY1; // 0xe            
-            QuaternionStorage qAdjust; // 0x10            
+            std::uint16_t nNode; // 0x_            
+            std::uint16_t nDummy[3]; // 0x_            
+            std::uint16_t nNodeX0; // 0x_            
+            std::uint16_t nNodeX1; // 0x_            
+            std::uint16_t nNodeY0; // 0x_            
+            std::uint16_t nNodeY1; // 0x_            
+            QuaternionStorage qAdjust; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nDummy) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeX0) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeX1) == 0xa);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeY0) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeY1) == 0xe);
-        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, qAdjust) == 0x10);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nDummy) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeX0) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeX1) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeY0) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, nNodeY1) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeNodeBase_t, qAdjust) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeNodeBase_t) == 0x20);
+        static_assert(sizeof(source2sdk::physicslib::FeNodeBase_t) == 0x_);
     };
 };

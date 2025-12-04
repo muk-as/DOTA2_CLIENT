@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class DisableShadows_t : std::uint8_t
         {
             kDisableShadows_None = 0x0,

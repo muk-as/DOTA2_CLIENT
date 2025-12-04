@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Bidirectional_Messages : std::uint32_t
         {
             bi_RebroadcastGameEvent = 0x10,

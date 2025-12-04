@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class RenderSlotType_t : std::uint8_t
         {
             RENDER_SLOT_INVALID = 0xff,

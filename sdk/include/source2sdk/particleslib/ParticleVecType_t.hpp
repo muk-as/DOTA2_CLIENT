@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 20
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ParticleVecType_t : std::uint32_t
         {
             PVEC_TYPE_INVALID = 0xffffffff,

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,19 +26,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Control point"
-            std::int32_t m_nControlPoint; // 0x0            
+            std::int32_t m_nControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "Use local coordinates for offset"
-            bool m_bLocalCoords; // 0x4            
-            uint8_t _pad0005[0x3]; // 0x5
+            bool m_bLocalCoords; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Offset from control point"
-            Vector m_vOffset; // 0x8            
+            Vector m_vOffset; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_nControlPoint) == 0x0);
-        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_bLocalCoords) == 0x4);
-        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_vOffset) == 0x8);
+        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_nControlPoint) == 0x_);
+        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_bLocalCoords) == 0x_);
+        static_assert(offsetof(source2sdk::particles::PointDefinition_t, m_vOffset) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::PointDefinition_t) == 0x14);
+        static_assert(sizeof(source2sdk::particles::PointDefinition_t) == 0x_);
     };
 };

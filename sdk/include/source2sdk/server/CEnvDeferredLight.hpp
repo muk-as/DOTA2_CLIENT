@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -43,38 +43,38 @@ namespace source2sdk
         public:
             // m_hTargetEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTargetEntity;
-            char m_hTargetEntity[0x4]; // 0x7f0            
+            char m_hTargetEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            Color m_LightColor; // 0x7f4            
+            Color m_LightColor; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntensity; // 0x7f8            
+            float m_flIntensity; // 0x_            
             // metadata: MNetworkEnable
-            float m_flLightSize; // 0x7fc            
+            float m_flLightSize; // 0x_            
             // metadata: MNetworkEnable
-            float m_flSpotFoV; // 0x800            
+            float m_flSpotFoV; // 0x_            
             // metadata: MNetworkEnable
-            QAngle m_vLightDirection; // 0x804            
+            QAngle m_vLightDirection; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStartFalloff; // 0x810            
+            float m_flStartFalloff; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDistanceFalloff; // 0x814            
+            float m_flDistanceFalloff; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nFlags; // 0x818            
+            std::uint32_t m_nFlags; // 0x_            
             // metadata: MNetworkEnable
-            char m_ProjectedTextureName[512]; // 0x81c            
-            uint8_t _pad0a1c[0x4];
+            char m_ProjectedTextureName[512]; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void InputTurnOn; // 0x0
-            // void InputTurnOff; // 0x0
-            // Color InputSetLightColor; // 0x0
-            // float InputSetLightIntensity; // 0x0
-            // float InputSetLightRadius; // 0x0
+            // void InputTurnOn; // 0x_
+            // void InputTurnOff; // 0x_
+            // Color InputSetLightColor; // 0x_
+            // float InputSetLightIntensity; // 0x_
+            // float InputSetLightRadius; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvDeferredLight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvDeferredLight) == 0xa20);
+        static_assert(sizeof(source2sdk::server::CEnvDeferredLight) == 0x_);
     };
 };

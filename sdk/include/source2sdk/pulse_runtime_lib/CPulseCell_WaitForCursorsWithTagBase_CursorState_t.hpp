@@ -14,20 +14,20 @@ namespace source2sdk
     namespace pulse_runtime_lib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         #pragma pack(push, 1)
         struct CPulseCell_WaitForCursorsWithTagBase_CursorState_t
         {
         public:
-            PulseSymbol_t m_TagName; // 0x0            
-            uint8_t _pad0010[0x20];
+            PulseSymbol_t m_TagName; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase_CursorState_t, m_TagName) == 0x0);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase_CursorState_t, m_TagName) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase_CursorState_t) == 0x30);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase_CursorState_t) == 0x_);
     };
 };

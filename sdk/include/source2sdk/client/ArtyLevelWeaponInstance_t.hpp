@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,18 +26,18 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyCustomFGDType "vdata_choice:scripts/events/crownfall/artillery_weapons.vdata"
-            CUtlString m_szName; // 0x0            
-            uint8_t _pad0008[0x4]; // 0x8
-            std::int32_t m_nReloads; // 0xc            
-            std::int32_t m_nPointsPerShot; // 0x10            
-            uint8_t _pad0014[0x4];
+            CUtlString m_szName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nReloads; // 0x_            
+            std::int32_t m_nPointsPerShot; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_szName) == 0x0);
-        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nReloads) == 0xc);
-        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nPointsPerShot) == 0x10);
+        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_szName) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nReloads) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nPointsPerShot) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::ArtyLevelWeaponInstance_t) == 0x18);
+        static_assert(sizeof(source2sdk::client::ArtyLevelWeaponInstance_t) == 0x_);
     };
 };

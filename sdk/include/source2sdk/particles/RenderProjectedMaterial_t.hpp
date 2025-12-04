@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -28,12 +28,12 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Material"
             // m_hMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hMaterial;
-            char m_hMaterial[0x8]; // 0x0            
+            char m_hMaterial[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::RenderProjectedMaterial_t, m_hMaterial) == 0x0);
+        static_assert(offsetof(source2sdk::particles::RenderProjectedMaterial_t, m_hMaterial) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::RenderProjectedMaterial_t) == 0x8);
+        static_assert(sizeof(source2sdk::particles::RenderProjectedMaterial_t) == 0x_);
     };
 };

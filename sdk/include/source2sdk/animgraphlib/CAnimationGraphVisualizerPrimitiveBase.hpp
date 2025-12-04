@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // Construct allowed
@@ -28,18 +28,18 @@ namespace source2sdk
         class CAnimationGraphVisualizerPrimitiveBase
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveType m_Type; // 0x8            
-            source2sdk::modellib::AnimNodeID m_OwningAnimNodePaths[11]; // 0xc            
-            std::int32_t m_nOwningAnimNodePathCount; // 0x38            
-            uint8_t _pad003c[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveType m_Type; // 0x_            
+            source2sdk::modellib::AnimNodeID m_OwningAnimNodePaths[11]; // 0x_            
+            std::int32_t m_nOwningAnimNodePathCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_Type) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_OwningAnimNodePaths) == 0xc);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_nOwningAnimNodePathCount) == 0x38);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_Type) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_OwningAnimNodePaths) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase, m_nOwningAnimNodePathCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase) == 0x40);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimationGraphVisualizerPrimitiveBase) == 0x_);
     };
 };

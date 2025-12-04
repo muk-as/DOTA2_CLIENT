@@ -17,38 +17,38 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18d8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_OgreSealTotem_Active : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flTotalTime; // 0x1878            
-            float m_flInitialVelocity; // 0x187c            
-            Vector m_vStartPosition; // 0x1880            
-            Vector m_vTargetHorizontalDirection; // 0x188c            
-            float m_flCurrentTimeHoriz; // 0x1898            
-            float m_flCurrentTimeVert; // 0x189c            
-            bool m_bInterrupted; // 0x18a0            
-            uint8_t _pad18a1[0x3]; // 0x18a1
-            Vector m_vLastOrderPos; // 0x18a4            
-            bool m_bIssuedOrder; // 0x18b0            
-            uint8_t _pad18b1[0x3]; // 0x18b1
-            std::int32_t m_nCurrentBounce; // 0x18b4            
-            std::int32_t leap_distance; // 0x18b8            
-            float leap_speed; // 0x18bc            
-            float leap_acceleration; // 0x18c0            
-            std::int32_t leap_radius; // 0x18c4            
-            float leap_bonus_duration; // 0x18c8            
-            bool m_bLaunched; // 0x18cc            
-            uint8_t _pad18cd[0x3]; // 0x18cd
-            float m_flFacingTarget; // 0x18d0            
-            float movement_turn_rate; // 0x18d4            
+            float m_flTotalTime; // 0x_            
+            float m_flInitialVelocity; // 0x_            
+            Vector m_vStartPosition; // 0x_            
+            Vector m_vTargetHorizontalDirection; // 0x_            
+            float m_flCurrentTimeHoriz; // 0x_            
+            float m_flCurrentTimeVert; // 0x_            
+            bool m_bInterrupted; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vLastOrderPos; // 0x_            
+            bool m_bIssuedOrder; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nCurrentBounce; // 0x_            
+            std::int32_t leap_distance; // 0x_            
+            float leap_speed; // 0x_            
+            float leap_acceleration; // 0x_            
+            std::int32_t leap_radius; // 0x_            
+            float leap_bonus_duration; // 0x_            
+            bool m_bLaunched; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flFacingTarget; // 0x_            
+            float movement_turn_rate; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_OgreSealTotem_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_OgreSealTotem_Active) == 0x18d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_OgreSealTotem_Active) == 0x_);
     };
 };

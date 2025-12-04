@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xbe0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,26 +31,26 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_MaxWeight; // 0x9c0            
+            float m_MaxWeight; // 0x_            
             // metadata: MNetworkEnable
-            float m_FadeDuration; // 0x9c4            
+            float m_FadeDuration; // 0x_            
             // metadata: MNetworkEnable
-            float m_Weight; // 0x9c8            
+            float m_Weight; // 0x_            
             // metadata: MNetworkEnable
-            char m_lookupFilename[512]; // 0x9cc            
-            float m_LastEnterWeight; // 0xbcc            
-            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0xbd0            
-            float m_LastExitWeight; // 0xbd4            
-            source2sdk::entity2::GameTime_t m_LastExitTime; // 0xbd8            
-            uint8_t _pad0bdc[0x4];
+            char m_lookupFilename[512]; // 0x_            
+            float m_LastEnterWeight; // 0x_            
+            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0x_            
+            float m_LastExitWeight; // 0x_            
+            source2sdk::entity2::GameTime_t m_LastExitTime; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void CColorCorrectionVolumeThinkFunc; // 0x0
+            // void CColorCorrectionVolumeThinkFunc; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CColorCorrectionVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CColorCorrectionVolume) == 0xbe0);
+        static_assert(sizeof(source2sdk::server::CColorCorrectionVolume) == 0x_);
     };
 };

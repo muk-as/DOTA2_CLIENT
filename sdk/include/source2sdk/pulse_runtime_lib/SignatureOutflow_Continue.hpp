@@ -15,9 +15,9 @@ namespace source2sdk
     namespace pulse_runtime_lib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         #pragma pack(push, 1)
         class SignatureOutflow_Continue : public source2sdk::pulse_runtime_lib::CPulse_OutflowConnection
         {
@@ -27,6 +27,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::SignatureOutflow_Continue) == 0x48);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::SignatureOutflow_Continue) == 0x_);
     };
 };

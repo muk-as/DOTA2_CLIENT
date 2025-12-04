@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_TutorialNPCBlocker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vecStart; // 0x1878            
-            Vector m_vecEnd; // 0x1884            
-            Vector m_vecCenter; // 0x1890            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x189c            
-            bool m_bHidden; // 0x18a0            
-            uint8_t _pad18a1[0x7];
+            Vector m_vecStart; // 0x_            
+            Vector m_vecEnd; // 0x_            
+            Vector m_vecCenter; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            bool m_bHidden; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_TutorialNPCBlocker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_TutorialNPCBlocker) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_TutorialNPCBlocker) == 0x_);
     };
 };

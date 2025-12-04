@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -29,16 +29,16 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "What this operation is targeting"
-            source2sdk::client::EFantasyMutationTarget m_eTarget; // 0x0            
-            uint8_t _pad0002[0x2]; // 0x2
+            source2sdk::client::EFantasyMutationTarget m_eTarget; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "What we are doing in this operation"
-            source2sdk::client::EFantasyMutationOperation m_eOperation; // 0x4            
+            source2sdk::client::EFantasyMutationOperation m_eOperation; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftingGemMutation_t, m_eTarget) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingGemMutation_t, m_eOperation) == 0x4);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingGemMutation_t, m_eTarget) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingGemMutation_t, m_eOperation) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftingGemMutation_t) == 0x8);
+        static_assert(sizeof(source2sdk::client::FantasyCraftingGemMutation_t) == 0x_);
     };
 };

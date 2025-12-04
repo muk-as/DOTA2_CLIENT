@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,18 +27,18 @@ namespace source2sdk
         class CAddUpdateNode : public source2sdk::animgraphlib::CBinaryUpdateNode
         {
         public:
-            uint8_t _pad0090[0x4]; // 0x90
-            source2sdk::animgraphlib::BinaryNodeChildOption m_footMotionTiming; // 0x94            
-            bool m_bApplyToFootMotion; // 0x98            
-            bool m_bApplyChannelsSeparately; // 0x99            
-            bool m_bUseModelSpace; // 0x9a            
-            bool m_bApplyScale; // 0x9b            
-            uint8_t _pad009c[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::BinaryNodeChildOption m_footMotionTiming; // 0x_            
+            bool m_bApplyToFootMotion; // 0x_            
+            bool m_bApplyChannelsSeparately; // 0x_            
+            bool m_bUseModelSpace; // 0x_            
+            bool m_bApplyScale; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAddUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAddUpdateNode) == 0xa0);
+        static_assert(sizeof(source2sdk::animgraphlib::CAddUpdateNode) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CSmartPropVariable_Vector3D : public source2sdk::smartprops::CSmartPropVariable
         {
         public:
-            Vector m_DefaultValue; // 0x38            
-            uint8_t _pad0044[0x4];
+            Vector m_DefaultValue; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_Vector3D because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Vector3D) == 0x48);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Vector3D) == 0x_);
     };
 };

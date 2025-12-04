@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x678
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,6 +31,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::particleslib::CParticleCollectionRendererVecInput) == 0x678);
+        static_assert(sizeof(source2sdk::particleslib::CParticleCollectionRendererVecInput) == 0x_);
     };
 };

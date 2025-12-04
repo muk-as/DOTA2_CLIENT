@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 49
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class eEconItemOrigin : std::uint32_t
         {
             kEconItemOrigin_Invalid = 0xffffffff,

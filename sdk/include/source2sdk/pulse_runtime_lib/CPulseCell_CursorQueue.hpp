@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,13 +33,13 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Any cursors above this count will wait, up to the limit."
-            std::int32_t m_nCursorsAllowedToRunParallel; // 0x98            
-            uint8_t _pad009c[0x4];
+            std::int32_t m_nCursorsAllowedToRunParallel; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_CursorQueue because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_CursorQueue) == 0xa0);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_CursorQueue) == 0x_);
     };
 };

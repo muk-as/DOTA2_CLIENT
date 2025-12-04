@@ -14,27 +14,27 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x858
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CMarkupVolumeWithRef : public source2sdk::server::CMarkupVolumeTagged
         {
         public:
-            uint8_t _pad0830[0x8]; // 0x830
-            bool m_bUseRef; // 0x838            
-            uint8_t _pad0839[0x3]; // 0x839
-            Vector m_vRefPosEntitySpace; // 0x83c            
-            Vector m_vRefPosWorldSpace; // 0x848            
-            float m_flRefDot; // 0x854            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bUseRef; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vRefPosEntitySpace; // 0x_            
+            Vector m_vRefPosWorldSpace; // 0x_            
+            float m_flRefDot; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMarkupVolumeWithRef because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMarkupVolumeWithRef) == 0x858);
+        static_assert(sizeof(source2sdk::server::CMarkupVolumeWithRef) == 0x_);
     };
 };

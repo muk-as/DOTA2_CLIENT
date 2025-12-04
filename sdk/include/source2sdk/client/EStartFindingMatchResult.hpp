@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 41
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EStartFindingMatchResult : std::uint32_t
         {
             k_EStartFindingMatchResult_Invalid = 0x0,

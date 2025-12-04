@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace resourcesystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,17 +26,17 @@ namespace source2sdk
         {
         public:
             // metadata: MKV3TransferName "name"
-            CUtlString m_name; // 0x0            
+            CUtlString m_name; // 0x_            
             // metadata: MKV3TransferName "child"
             // m_child has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeManifestTestResource_t> m_child;
-            char m_child[0x8]; // 0x8            
+            char m_child[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::resourcesystem::ManifestTestResource_t, m_name) == 0x0);
-        static_assert(offsetof(source2sdk::resourcesystem::ManifestTestResource_t, m_child) == 0x8);
+        static_assert(offsetof(source2sdk::resourcesystem::ManifestTestResource_t, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::resourcesystem::ManifestTestResource_t, m_child) == 0x_);
         
-        static_assert(sizeof(source2sdk::resourcesystem::ManifestTestResource_t) == 0x10);
+        static_assert(sizeof(source2sdk::resourcesystem::ManifestTestResource_t) == 0x_);
     };
 };

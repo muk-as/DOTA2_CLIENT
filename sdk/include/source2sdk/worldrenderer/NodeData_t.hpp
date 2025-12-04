@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,27 +24,27 @@ namespace source2sdk
         struct NodeData_t
         {
         public:
-            std::int32_t m_nParent; // 0x0            
-            Vector m_vOrigin; // 0x4            
-            Vector m_vMinBounds; // 0x10            
-            Vector m_vMaxBounds; // 0x1c            
-            float m_flMinimumDistance; // 0x28            
-            uint8_t _pad002c[0x4]; // 0x2c
+            std::int32_t m_nParent; // 0x_            
+            Vector m_vOrigin; // 0x_            
+            Vector m_vMinBounds; // 0x_            
+            Vector m_vMaxBounds; // 0x_            
+            float m_flMinimumDistance; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_ChildNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_ChildNodeIndices;
-            char m_ChildNodeIndices[0x18]; // 0x30            
-            CUtlString m_worldNodePrefix; // 0x48            
+            char m_ChildNodeIndices[0x_]; // 0x_            
+            CUtlString m_worldNodePrefix; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_nParent) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vOrigin) == 0x4);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vMinBounds) == 0x10);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vMaxBounds) == 0x1c);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_flMinimumDistance) == 0x28);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_ChildNodeIndices) == 0x30);
-        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_worldNodePrefix) == 0x48);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_nParent) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vOrigin) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vMinBounds) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_vMaxBounds) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_flMinimumDistance) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_ChildNodeIndices) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::NodeData_t, m_worldNodePrefix) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::NodeData_t) == 0x50);
+        static_assert(sizeof(source2sdk::worldrenderer::NodeData_t) == 0x_);
     };
 };

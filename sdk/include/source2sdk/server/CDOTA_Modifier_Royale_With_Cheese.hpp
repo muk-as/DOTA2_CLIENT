@@ -19,25 +19,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Royale_With_Cheese : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float shield; // 0x1878            
-            float regen; // 0x187c            
-            float idle; // 0x1880            
-            std::int32_t m_nDamageAbsorbed; // 0x1884            
-            source2sdk::entity2::GameTime_t m_timeLastTick; // 0x1888            
-            source2sdk::entity2::GameTime_t m_timeLastDamage; // 0x188c            
-            source2sdk::client::ParticleIndex_t nFXIndex; // 0x1890            
-            uint8_t _pad1894[0x4];
+            float shield; // 0x_            
+            float regen; // 0x_            
+            float idle; // 0x_            
+            std::int32_t m_nDamageAbsorbed; // 0x_            
+            source2sdk::entity2::GameTime_t m_timeLastTick; // 0x_            
+            source2sdk::entity2::GameTime_t m_timeLastDamage; // 0x_            
+            source2sdk::client::ParticleIndex_t nFXIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Royale_With_Cheese because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Royale_With_Cheese) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Royale_With_Cheese) == 0x_);
     };
 };

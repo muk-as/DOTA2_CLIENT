@@ -37,10 +37,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -55,158 +55,158 @@ namespace source2sdk
         class CSceneEntity : public source2sdk::server::CPointEntity
         {
         public:
-            uint8_t _pad04e0[0x8]; // 0x4e0
-            CUtlSymbolLarge m_iszSceneFile; // 0x4e8            
-            CUtlSymbolLarge m_iszResumeSceneFile; // 0x4f0            
-            CUtlSymbolLarge m_iszTarget1; // 0x4f8            
-            CUtlSymbolLarge m_iszTarget2; // 0x500            
-            CUtlSymbolLarge m_iszTarget3; // 0x508            
-            CUtlSymbolLarge m_iszTarget4; // 0x510            
-            CUtlSymbolLarge m_iszTarget5; // 0x518            
-            CUtlSymbolLarge m_iszTarget6; // 0x520            
-            CUtlSymbolLarge m_iszTarget7; // 0x528            
-            CUtlSymbolLarge m_iszTarget8; // 0x530            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszSceneFile; // 0x_            
+            CUtlSymbolLarge m_iszResumeSceneFile; // 0x_            
+            CUtlSymbolLarge m_iszTarget1; // 0x_            
+            CUtlSymbolLarge m_iszTarget2; // 0x_            
+            CUtlSymbolLarge m_iszTarget3; // 0x_            
+            CUtlSymbolLarge m_iszTarget4; // 0x_            
+            CUtlSymbolLarge m_iszTarget5; // 0x_            
+            CUtlSymbolLarge m_iszTarget6; // 0x_            
+            CUtlSymbolLarge m_iszTarget7; // 0x_            
+            CUtlSymbolLarge m_iszTarget8; // 0x_            
             // m_hTarget1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget1;
-            char m_hTarget1[0x4]; // 0x538            
+            char m_hTarget1[0x_]; // 0x_            
             // m_hTarget2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget2;
-            char m_hTarget2[0x4]; // 0x53c            
+            char m_hTarget2[0x_]; // 0x_            
             // m_hTarget3 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget3;
-            char m_hTarget3[0x4]; // 0x540            
+            char m_hTarget3[0x_]; // 0x_            
             // m_hTarget4 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget4;
-            char m_hTarget4[0x4]; // 0x544            
+            char m_hTarget4[0x_]; // 0x_            
             // m_hTarget5 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget5;
-            char m_hTarget5[0x4]; // 0x548            
+            char m_hTarget5[0x_]; // 0x_            
             // m_hTarget6 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget6;
-            char m_hTarget6[0x4]; // 0x54c            
+            char m_hTarget6[0x_]; // 0x_            
             // m_hTarget7 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget7;
-            char m_hTarget7[0x4]; // 0x550            
+            char m_hTarget7[0x_]; // 0x_            
             // m_hTarget8 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget8;
-            char m_hTarget8[0x4]; // 0x554            
-            CUtlSymbolLarge m_sTargetAttachment; // 0x558            
+            char m_hTarget8[0x_]; // 0x_            
+            CUtlSymbolLarge m_sTargetAttachment; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsPlayingBack; // 0x560            
+            bool m_bIsPlayingBack; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPaused; // 0x561            
+            bool m_bPaused; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bMultiplayer; // 0x562            
+            bool m_bMultiplayer; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAutogenerated; // 0x563            
+            bool m_bAutogenerated; // 0x_            
             // metadata: MNetworkEnable
-            float m_flForceClientTime; // 0x564            
-            float m_flCurrentTime; // 0x568            
-            float m_flFrameTime; // 0x56c            
-            bool m_bCancelAtNextInterrupt; // 0x570            
-            uint8_t _pad0571[0x3]; // 0x571
-            float m_fPitch; // 0x574            
-            bool m_bAutomated; // 0x578            
-            uint8_t _pad0579[0x3]; // 0x579
-            std::int32_t m_nAutomatedAction; // 0x57c            
-            float m_flAutomationDelay; // 0x580            
-            float m_flAutomationTime; // 0x584            
-            std::int32_t m_nSpeechPriority; // 0x588            
+            float m_flForceClientTime; // 0x_            
+            float m_flCurrentTime; // 0x_            
+            float m_flFrameTime; // 0x_            
+            bool m_bCancelAtNextInterrupt; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fPitch; // 0x_            
+            bool m_bAutomated; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nAutomatedAction; // 0x_            
+            float m_flAutomationDelay; // 0x_            
+            float m_flAutomationTime; // 0x_            
+            std::int32_t m_nSpeechPriority; // 0x_            
             // m_hWaitingForThisResumeScene has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hWaitingForThisResumeScene;
-            char m_hWaitingForThisResumeScene[0x4]; // 0x58c            
-            bool m_bWaitingForResumeScene; // 0x590            
-            bool m_bPausedViaInput; // 0x591            
-            bool m_bPauseAtNextInterrupt; // 0x592            
-            bool m_bWaitingForActor; // 0x593            
-            bool m_bWaitingForInterrupt; // 0x594            
-            bool m_bInterruptedActorsScenes; // 0x595            
-            bool m_bBreakOnNonIdle; // 0x596            
-            bool m_bSceneFinished; // 0x597            
+            char m_hWaitingForThisResumeScene[0x_]; // 0x_            
+            bool m_bWaitingForResumeScene; // 0x_            
+            bool m_bPausedViaInput; // 0x_            
+            bool m_bPauseAtNextInterrupt; // 0x_            
+            bool m_bWaitingForActor; // 0x_            
+            bool m_bWaitingForInterrupt; // 0x_            
+            bool m_bInterruptedActorsScenes; // 0x_            
+            bool m_bBreakOnNonIdle; // 0x_            
+            bool m_bSceneFinished; // 0x_            
             // metadata: MNetworkEnable
             // m_hActorList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseFlex>> m_hActorList;
-            char m_hActorList[0x18]; // 0x598            
+            char m_hActorList[0x_]; // 0x_            
             // m_hRemoveActorList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hRemoveActorList;
-            char m_hRemoveActorList[0x18]; // 0x5b0            
-            uint8_t _pad05c8[0x30]; // 0x5c8
-            std::int32_t m_nSceneFlushCounter; // 0x5f8            
+            char m_hRemoveActorList[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nSceneFlushCounter; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_nSceneStringIndex; // 0x5fc            
-            uint8_t _pad05fe[0x2]; // 0x5fe
-            source2sdk::entity2::CEntityIOOutput m_OnStart; // 0x600            
-            source2sdk::entity2::CEntityIOOutput m_OnCompletion; // 0x628            
-            source2sdk::entity2::CEntityIOOutput m_OnCanceled; // 0x650            
-            source2sdk::entity2::CEntityIOOutput m_OnPaused; // 0x678            
-            source2sdk::entity2::CEntityIOOutput m_OnResumed; // 0x6a0            
-            source2sdk::entity2::CEntityIOOutput m_OnTrigger[16]; // 0x6c8            
-            uint8_t _pad0948[0x90]; // 0x948
+            std::uint16_t m_nSceneStringIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_OnStart; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnCompletion; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnCanceled; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnPaused; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnResumed; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnTrigger[16]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hInterruptScene has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CSceneEntity> m_hInterruptScene;
-            char m_hInterruptScene[0x4]; // 0x9d8            
-            std::int32_t m_nInterruptCount; // 0x9dc            
-            bool m_bSceneMissing; // 0x9e0            
-            bool m_bInterrupted; // 0x9e1            
-            bool m_bCompletedEarly; // 0x9e2            
-            bool m_bInterruptSceneFinished; // 0x9e3            
-            bool m_bRestoring; // 0x9e4            
-            uint8_t _pad09e5[0x3]; // 0x9e5
+            char m_hInterruptScene[0x_]; // 0x_            
+            std::int32_t m_nInterruptCount; // 0x_            
+            bool m_bSceneMissing; // 0x_            
+            bool m_bInterrupted; // 0x_            
+            bool m_bCompletedEarly; // 0x_            
+            bool m_bInterruptSceneFinished; // 0x_            
+            bool m_bRestoring; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hNotifySceneCompletion has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CSceneEntity>> m_hNotifySceneCompletion;
-            char m_hNotifySceneCompletion[0x18]; // 0x9e8            
+            char m_hNotifySceneCompletion[0x_]; // 0x_            
             // m_hListManagers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CSceneListManager>> m_hListManagers;
-            char m_hListManagers[0x18]; // 0xa00            
-            CUtlSymbolLarge m_iszSoundName; // 0xa18            
-            CUtlSymbolLarge m_iszSequenceName; // 0xa20            
+            char m_hListManagers[0x_]; // 0x_            
+            CUtlSymbolLarge m_iszSoundName; // 0x_            
+            CUtlSymbolLarge m_iszSequenceName; // 0x_            
             // m_hActor has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseFlex> m_hActor;
-            char m_hActor[0x4]; // 0xa28            
+            char m_hActor[0x_]; // 0x_            
             // m_hActivator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hActivator;
-            char m_hActivator[0x4]; // 0xa2c            
-            std::int32_t m_BusyActor; // 0xa30            
-            source2sdk::server::SceneOnPlayerDeath_t m_iPlayerDeathBehavior; // 0xa34            
-            uint8_t _pad0a38[0x8];
+            char m_hActivator[0x_]; // 0x_            
+            std::int32_t m_BusyActor; // 0x_            
+            source2sdk::server::SceneOnPlayerDeath_t m_iPlayerDeathBehavior; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pScene; // 0x5f0
-            // void m_pRecipientFilter; // 0xa38
-            // void InputStartPlayback; // 0x0
-            // void InputPausePlayback; // 0x0
-            // void InputResumePlayback; // 0x0
-            // void InputCancelPlayback; // 0x0
-            // void InputCancelAtNextInterrupt; // 0x0
-            // float InputPitchShiftPlayback; // 0x0
-            // CUtlSymbolLarge InputInterjectResponse; // 0x0
-            // void InputStopWaitingForActor; // 0x0
-            // int32_t InputTriggerEvent; // 0x0
-            // CUtlSymbolLarge InputSetTarget1; // 0x0
-            // CUtlSymbolLarge InputSetTarget2; // 0x0
-            // void InputScriptPlayerDeath; // 0x0
-            // void InputPauseAtNextInterrupt; // 0x0
-            // void m_OnTrigger[ 0 ]; // 0x6c8
-            // void m_OnTrigger[ 1 ]; // 0x6f0
-            // void m_OnTrigger[ 2 ]; // 0x718
-            // void m_OnTrigger[ 3 ]; // 0x740
-            // void m_OnTrigger[ 4 ]; // 0x768
-            // void m_OnTrigger[ 5 ]; // 0x790
-            // void m_OnTrigger[ 6 ]; // 0x7b8
-            // void m_OnTrigger[ 7 ]; // 0x7e0
-            // void m_OnTrigger[ 8 ]; // 0x808
-            // void m_OnTrigger[ 9 ]; // 0x830
-            // void m_OnTrigger[ 10 ]; // 0x858
-            // void m_OnTrigger[ 11 ]; // 0x880
-            // void m_OnTrigger[ 12 ]; // 0x8a8
-            // void m_OnTrigger[ 13 ]; // 0x8d0
-            // void m_OnTrigger[ 14 ]; // 0x8f8
-            // void m_OnTrigger[ 15 ]; // 0x920
+            // void m_pScene; // 0x_
+            // void m_pRecipientFilter; // 0x_
+            // void InputStartPlayback; // 0x_
+            // void InputPausePlayback; // 0x_
+            // void InputResumePlayback; // 0x_
+            // void InputCancelPlayback; // 0x_
+            // void InputCancelAtNextInterrupt; // 0x_
+            // float InputPitchShiftPlayback; // 0x_
+            // CUtlSymbolLarge InputInterjectResponse; // 0x_
+            // void InputStopWaitingForActor; // 0x_
+            // int32_t InputTriggerEvent; // 0x_
+            // CUtlSymbolLarge InputSetTarget1; // 0x_
+            // CUtlSymbolLarge InputSetTarget2; // 0x_
+            // void InputScriptPlayerDeath; // 0x_
+            // void InputPauseAtNextInterrupt; // 0x_
+            // void m_OnTrigger[ 0 ]; // 0x_
+            // void m_OnTrigger[ 1 ]; // 0x_
+            // void m_OnTrigger[ 2 ]; // 0x_
+            // void m_OnTrigger[ 3 ]; // 0x_
+            // void m_OnTrigger[ 4 ]; // 0x_
+            // void m_OnTrigger[ 5 ]; // 0x_
+            // void m_OnTrigger[ 6 ]; // 0x_
+            // void m_OnTrigger[ 7 ]; // 0x_
+            // void m_OnTrigger[ 8 ]; // 0x_
+            // void m_OnTrigger[ 9 ]; // 0x_
+            // void m_OnTrigger[ 10 ]; // 0x_
+            // void m_OnTrigger[ 11 ]; // 0x_
+            // void m_OnTrigger[ 12 ]; // 0x_
+            // void m_OnTrigger[ 13 ]; // 0x_
+            // void m_OnTrigger[ 14 ]; // 0x_
+            // void m_OnTrigger[ 15 ]; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSceneEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSceneEntity) == 0xa40);
+        static_assert(sizeof(source2sdk::server::CSceneEntity) == 0x_);
     };
 };

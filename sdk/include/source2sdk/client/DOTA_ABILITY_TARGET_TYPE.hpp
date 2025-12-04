@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_ABILITY_TARGET_TYPE : std::uint32_t
         {
             DOTA_ABILITY_TARGET_NONE = 0x0,

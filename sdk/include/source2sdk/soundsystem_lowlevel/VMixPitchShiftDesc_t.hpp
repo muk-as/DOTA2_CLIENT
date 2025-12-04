@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,18 +26,18 @@ namespace source2sdk
         struct VMixPitchShiftDesc_t
         {
         public:
-            std::int32_t m_nGrainSampleCount; // 0x0            
-            float m_flPitchShift; // 0x4            
-            std::int32_t m_nQuality; // 0x8            
-            std::int32_t m_nProcType; // 0xc            
+            std::int32_t m_nGrainSampleCount; // 0x_            
+            float m_flPitchShift; // 0x_            
+            std::int32_t m_nQuality; // 0x_            
+            std::int32_t m_nProcType; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nGrainSampleCount) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_flPitchShift) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nQuality) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nProcType) == 0xc);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nGrainSampleCount) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_flPitchShift) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nQuality) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t, m_nProcType) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t) == 0x10);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixPitchShiftDesc_t) == 0x_);
     };
 };

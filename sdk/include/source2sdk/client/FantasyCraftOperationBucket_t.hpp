@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,18 +27,18 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "How many operations should the user get from this bucket"
-            std::uint16_t m_unOperationCount; // 0x0            
-            uint8_t _pad0002[0x6]; // 0x2
+            std::uint16_t m_unOperationCount; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecOperations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::FantasyCraftOperation_t> m_vecOperations;
-            char m_vecOperations[0x18]; // 0x8            
-            uint8_t _pad0020[0x8];
+            char m_vecOperations[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftOperationBucket_t, m_unOperationCount) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftOperationBucket_t, m_vecOperations) == 0x8);
+        static_assert(offsetof(source2sdk::client::FantasyCraftOperationBucket_t, m_unOperationCount) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftOperationBucket_t, m_vecOperations) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftOperationBucket_t) == 0x28);
+        static_assert(sizeof(source2sdk::client::FantasyCraftOperationBucket_t) == 0x_);
     };
 };

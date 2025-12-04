@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,20 +27,20 @@ namespace source2sdk
         class CDampedPathAnimMotorUpdater : public source2sdk::animgraphlib::CPathAnimMotorUpdaterBase
         {
         public:
-            uint8_t _pad0028[0x4]; // 0x28
-            float m_flAnticipationTime; // 0x2c            
-            float m_flMinSpeedScale; // 0x30            
-            source2sdk::animgraphlib::CAnimParamHandle m_hAnticipationPosParam; // 0x34            
-            source2sdk::animgraphlib::CAnimParamHandle m_hAnticipationHeadingParam; // 0x36            
-            float m_flSpringConstant; // 0x38            
-            float m_flMinSpringTension; // 0x3c            
-            float m_flMaxSpringTension; // 0x40            
-            uint8_t _pad0044[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flAnticipationTime; // 0x_            
+            float m_flMinSpeedScale; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hAnticipationPosParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hAnticipationHeadingParam; // 0x_            
+            float m_flSpringConstant; // 0x_            
+            float m_flMinSpringTension; // 0x_            
+            float m_flMaxSpringTension; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDampedPathAnimMotorUpdater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CDampedPathAnimMotorUpdater) == 0x48);
+        static_assert(sizeof(source2sdk::animgraphlib::CDampedPathAnimMotorUpdater) == 0x_);
     };
 };

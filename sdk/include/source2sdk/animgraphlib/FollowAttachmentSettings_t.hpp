@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x90
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,21 +27,21 @@ namespace source2sdk
         struct FollowAttachmentSettings_t
         {
         public:
-            source2sdk::modellib::CAnimAttachment m_attachment; // 0x0            
-            std::int32_t m_boneIndex; // 0x80            
-            source2sdk::modellib::AttachmentHandle_t m_attachmentHandle; // 0x84            
-            bool m_bMatchTranslation; // 0x85            
-            bool m_bMatchRotation; // 0x86            
-            uint8_t _pad0087[0x9];
+            source2sdk::modellib::CAnimAttachment m_attachment; // 0x_            
+            std::int32_t m_boneIndex; // 0x_            
+            source2sdk::modellib::AttachmentHandle_t m_attachmentHandle; // 0x_            
+            bool m_bMatchTranslation; // 0x_            
+            bool m_bMatchRotation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_attachment) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_boneIndex) == 0x80);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_attachmentHandle) == 0x84);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_bMatchTranslation) == 0x85);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_bMatchRotation) == 0x86);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_attachment) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_boneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_attachmentHandle) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_bMatchTranslation) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowAttachmentSettings_t, m_bMatchRotation) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::FollowAttachmentSettings_t) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::FollowAttachmentSettings_t) == 0x_);
     };
 };

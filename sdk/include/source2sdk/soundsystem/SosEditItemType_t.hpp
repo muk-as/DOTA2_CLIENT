@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SosEditItemType_t : std::uint32_t
         {
             SOS_EDIT_ITEM_TYPE_SOUNDEVENTS = 0x0,

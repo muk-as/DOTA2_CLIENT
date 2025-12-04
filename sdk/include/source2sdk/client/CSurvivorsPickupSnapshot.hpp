@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,16 +27,16 @@ namespace source2sdk
         class CSurvivorsPickupSnapshot
         {
         public:
-            source2sdk::client::SurvivorsPickupID_t m_pickupID; // 0x0            
-            std::int32_t m_nExperienceReward; // 0x4            
-            Vector m_vOrigin; // 0x8            
+            source2sdk::client::SurvivorsPickupID_t m_pickupID; // 0x_            
+            std::int32_t m_nExperienceReward; // 0x_            
+            Vector m_vOrigin; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_pickupID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_nExperienceReward) == 0x4);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_vOrigin) == 0x8);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_pickupID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_nExperienceReward) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPickupSnapshot, m_vOrigin) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPickupSnapshot) == 0x14);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPickupSnapshot) == 0x_);
     };
 };

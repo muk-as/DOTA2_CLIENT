@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Gem Slot"
-            source2sdk::client::FantasyGemSlot_t m_unGemSlot; // 0x0            
-            uint8_t _pad0001[0x3]; // 0x1
+            source2sdk::client::FantasyGemSlot_t m_unGemSlot; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Gem Type"
-            source2sdk::client::Fantasy_Gem_Type m_eGemType; // 0x4            
+            source2sdk::client::Fantasy_Gem_Type m_eGemType; // 0x_            
             // metadata: MPropertyDescription "Minimum tablet level to unlock this type of gem, -1 or 0 for always unlocked"
-            std::int32_t m_nRequiredTabletLevel; // 0x8            
+            std::int32_t m_nRequiredTabletLevel; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_unGemSlot) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_eGemType) == 0x4);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_nRequiredTabletLevel) == 0x8);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_unGemSlot) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_eGemType) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingGemSlotData_t, m_nRequiredTabletLevel) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftingGemSlotData_t) == 0xc);
+        static_assert(sizeof(source2sdk::client::FantasyCraftingGemSlotData_t) == 0x_);
     };
 };

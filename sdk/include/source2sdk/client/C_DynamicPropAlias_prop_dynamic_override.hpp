@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DynamicPropAlias_prop_dynamic_override) == 0xc90);
+        static_assert(sizeof(source2sdk::client::C_DynamicPropAlias_prop_dynamic_override) == 0x_);
     };
 };

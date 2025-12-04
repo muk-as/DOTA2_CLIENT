@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         struct StanceInfo_t
         {
         public:
-            Vector m_vPosition; // 0x0            
-            float m_flDirection; // 0xc            
+            Vector m_vPosition; // 0x_            
+            float m_flDirection; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::StanceInfo_t, m_vPosition) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::StanceInfo_t, m_flDirection) == 0xc);
+        static_assert(offsetof(source2sdk::animgraphlib::StanceInfo_t, m_vPosition) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::StanceInfo_t, m_flDirection) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::StanceInfo_t) == 0x10);
+        static_assert(sizeof(source2sdk::animgraphlib::StanceInfo_t) == 0x_);
     };
 };

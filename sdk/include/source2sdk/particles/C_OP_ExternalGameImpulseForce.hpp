@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x338
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "force scale"
-            source2sdk::particleslib::CPerParticleFloatInput m_flForceScale; // 0x1d0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flForceScale; // 0x_            
             // metadata: MPropertyFriendlyName "rope shake"
-            bool m_bRopes; // 0x330            
+            bool m_bRopes; // 0x_            
             // metadata: MPropertyFriendlyName "limit rope impulses to Z"
-            bool m_bRopesZOnly; // 0x331            
+            bool m_bRopesZOnly; // 0x_            
             // metadata: MPropertyFriendlyName "explosions"
-            bool m_bExplosions; // 0x332            
+            bool m_bExplosions; // 0x_            
             // metadata: MPropertyFriendlyName "particle systems"
-            bool m_bParticles; // 0x333            
-            uint8_t _pad0334[0x4];
+            bool m_bParticles; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_ExternalGameImpulseForce because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_ExternalGameImpulseForce) == 0x338);
+        static_assert(sizeof(source2sdk::particles::C_OP_ExternalGameImpulseForce) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class MoveCollide_t : std::uint8_t
         {
             MOVECOLLIDE_DEFAULT = 0x0,

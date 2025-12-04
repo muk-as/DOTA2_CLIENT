@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_NO_BATTLE_POINTS_REASONS : std::uint32_t
         {
             NO_BATTLE_POINTS_WRONG_LOBBY_TYPE = 0x1,

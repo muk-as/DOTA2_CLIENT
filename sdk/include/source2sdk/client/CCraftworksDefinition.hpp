@@ -19,10 +19,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x160
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,34 +31,34 @@ namespace source2sdk
         class CCraftworksDefinition
         {
         public:
-            CUtlString m_sName; // 0x0            
-            source2sdk::client::CraftworksID_t m_unCraftworksID; // 0x8            
-            uint8_t _pad0009[0x3]; // 0x9
-            source2sdk::client::EEvent m_eAssociatedEvent; // 0xc            
+            CUtlString m_sName; // 0x_            
+            source2sdk::client::CraftworksID_t m_unCraftworksID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::EEvent m_eAssociatedEvent; // 0x_            
             // m_vecComponents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CCraftworksComponentDefinition> m_vecComponents;
-            char m_vecComponents[0x18]; // 0x10            
+            char m_vecComponents[0x_]; // 0x_            
             // m_vecRecipeTiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CCraftworksRecipeTierDefinition> m_vecRecipeTiers;
-            char m_vecRecipeTiers[0x18]; // 0x28            
+            char m_vecRecipeTiers[0x_]; // 0x_            
             // m_vecRecipes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CCraftworksRecipeDefinition> m_vecRecipes;
-            char m_vecRecipes[0x18]; // 0x40            
+            char m_vecRecipes[0x_]; // 0x_            
             // m_vecQuests has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CCraftworksQuestDefinition> m_vecQuests;
-            char m_vecQuests[0x18]; // 0x58            
-            uint8_t _pad0070[0xf0];
+            char m_vecQuests[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_sName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_unCraftworksID) == 0x8);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_eAssociatedEvent) == 0xc);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecComponents) == 0x10);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecRecipeTiers) == 0x28);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecRecipes) == 0x40);
-        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecQuests) == 0x58);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_sName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_unCraftworksID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_eAssociatedEvent) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecComponents) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecRecipeTiers) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecRecipes) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksDefinition, m_vecQuests) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CCraftworksDefinition) == 0x160);
+        static_assert(sizeof(source2sdk::client::CCraftworksDefinition) == 0x_);
     };
 };

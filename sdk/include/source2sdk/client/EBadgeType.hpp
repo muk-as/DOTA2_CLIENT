@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 27
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EBadgeType : std::uint32_t
         {
             k_EBadgeType_Invalid = 0x0,

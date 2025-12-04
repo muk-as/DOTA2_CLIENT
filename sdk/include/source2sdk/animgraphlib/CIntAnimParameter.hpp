@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,17 +29,17 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Default Value"
-            std::int32_t m_defaultValue; // 0x80            
+            std::int32_t m_defaultValue; // 0x_            
             // metadata: MPropertyFriendlyName "Min Value"
-            std::int32_t m_minValue; // 0x84            
+            std::int32_t m_minValue; // 0x_            
             // metadata: MPropertyFriendlyName "Max Value"
-            std::int32_t m_maxValue; // 0x88            
-            uint8_t _pad008c[0x4];
+            std::int32_t m_maxValue; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CIntAnimParameter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CIntAnimParameter) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::CIntAnimParameter) == 0x_);
     };
 };

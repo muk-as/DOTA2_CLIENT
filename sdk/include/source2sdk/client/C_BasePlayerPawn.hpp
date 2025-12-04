@@ -86,10 +86,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xdb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -126,68 +126,68 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_WeaponServices* m_pWeaponServices; // 0xc48            
+            source2sdk::client::CPlayer_WeaponServices* m_pWeaponServices; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_ItemServices* m_pItemServices; // 0xc50            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::client::CPlayer_AutoaimServices* m_pAutoaimServices; // 0xc58            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_ObserverServices* m_pObserverServices; // 0xc60            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_WaterServices* m_pWaterServices; // 0xc68            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_UseServices* m_pUseServices; // 0xc70            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_FlashlightServices* m_pFlashlightServices; // 0xc78            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_CameraServices* m_pCameraServices; // 0xc80            
-            // metadata: MNetworkEnable
-            source2sdk::client::CPlayer_MovementServices* m_pMovementServices; // 0xc88            
-            uint8_t _pad0c90[0x8]; // 0xc90
-            QAngle v_angle; // 0xc98            
-            QAngle v_anglePrevious; // 0xca4            
+            source2sdk::client::CPlayer_ItemServices* m_pItemServices; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            std::uint32_t m_iHideHUD; // 0xcb0            
-            uint8_t _pad0cb4[0x4]; // 0xcb4
+            source2sdk::client::CPlayer_AutoaimServices* m_pAutoaimServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_ObserverServices* m_pObserverServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_WaterServices* m_pWaterServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_UseServices* m_pUseServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_FlashlightServices* m_pFlashlightServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_CameraServices* m_pCameraServices; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::CPlayer_MovementServices* m_pMovementServices; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            QAngle v_angle; // 0x_            
+            QAngle v_anglePrevious; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::client::sky3dparams_t m_skybox3d; // 0xcb8            
+            std::uint32_t m_iHideHUD; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::entity2::GameTime_t m_flDeathTime; // 0xd48            
-            Vector m_vecPredictionError; // 0xd4c            
-            source2sdk::entity2::GameTime_t m_flPredictionErrorTime; // 0xd58            
-            uint8_t _pad0d5c[0x1c]; // 0xd5c
-            Vector m_vecLastCameraSetupLocalOrigin; // 0xd78            
-            source2sdk::entity2::GameTime_t m_flLastCameraSetupTime; // 0xd84            
-            float m_flFOVSensitivityAdjust; // 0xd88            
-            float m_flMouseSensitivity; // 0xd8c            
-            Vector m_vOldOrigin; // 0xd90            
-            float m_flOldSimulationTime; // 0xd9c            
-            std::int32_t m_nLastExecutedCommandNumber; // 0xda0            
-            std::int32_t m_nLastExecutedCommandTick; // 0xda4            
+            source2sdk::client::sky3dparams_t m_skybox3d; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            Vector m_vecPredictionError; // 0x_            
+            source2sdk::entity2::GameTime_t m_flPredictionErrorTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vecLastCameraSetupLocalOrigin; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastCameraSetupTime; // 0x_            
+            float m_flFOVSensitivityAdjust; // 0x_            
+            float m_flMouseSensitivity; // 0x_            
+            Vector m_vOldOrigin; // 0x_            
+            float m_flOldSimulationTime; // 0x_            
+            std::int32_t m_nLastExecutedCommandNumber; // 0x_            
+            std::int32_t m_nLastExecutedCommandTick; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnControllerChanged"
             // m_hController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBasePlayerController> m_hController;
-            char m_hController[0x4]; // 0xda8            
+            char m_hController[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hDefaultController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBasePlayerController> m_hDefaultController;
-            char m_hDefaultController[0x4]; // 0xdac            
-            bool m_bIsSwappingToPredictableController; // 0xdb0            
-            uint8_t _pad0db1[0x7];
+            char m_hDefaultController[0x_]; // 0x_            
+            bool m_bIsSwappingToPredictableController; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_hPawnListEntry; // 0xdb2
-            // void m_predictionVisualState; // 0xd5c
+            // void m_hPawnListEntry; // 0x_
+            // void m_predictionVisualState; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BasePlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BasePlayerPawn) == 0xdb8);
+        static_assert(sizeof(source2sdk::client::C_BasePlayerPawn) == 0x_);
     };
 };

@@ -24,10 +24,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1b40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -41,28 +41,28 @@ namespace source2sdk
         class C_DOTA_Unit_Courier : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            bool m_bUnitRespawned; // 0x1a48            
-            bool m_bPreUpdateFlyingCourier; // 0x1a49            
-            uint8_t _pad1a4a[0x2]; // 0x1a4a
+            bool m_bUnitRespawned; // 0x_            
+            bool m_bPreUpdateFlyingCourier; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x1a4c            
+            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFlyingCourier; // 0x1a50            
-            uint8_t _pad1a51[0x3]; // 0x1a51
+            bool m_bFlyingCourier; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x1a54            
+            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::CourierState_t m_nCourierState; // 0x1a58            
+            source2sdk::client::CourierState_t m_nCourierState; // 0x_            
             // metadata: MNetworkEnable
             // m_hCourierStateEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hCourierStateEntity;
-            char m_hCourierStateEntity[0x4]; // 0x1a5c            
-            uint8_t _pad1a60[0xe0];
+            char m_hCourierStateEntity[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Courier because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Courier) == 0x1b40);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Courier) == 0x_);
     };
 };

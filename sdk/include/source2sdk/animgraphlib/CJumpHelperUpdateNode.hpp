@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         class CJumpHelperUpdateNode : public source2sdk::animgraphlib::CSequenceUpdateNode
         {
         public:
-            source2sdk::animgraphlib::CAnimParamHandle m_hTargetParam; // 0xb0            
-            uint8_t _pad00b2[0x2]; // 0xb2
-            Vector m_flOriginalJumpMovement; // 0xb4            
-            float m_flOriginalJumpDuration; // 0xc0            
-            float m_flJumpStartCycle; // 0xc4            
-            float m_flJumpEndCycle; // 0xc8            
-            source2sdk::animgraphlib::JumpCorrectionMethod m_eCorrectionMethod; // 0xcc            
-            bool m_bTranslationAxis[3]; // 0xd0            
-            bool m_bScaleSpeed; // 0xd3            
-            uint8_t _pad00d4[0x4];
+            source2sdk::animgraphlib::CAnimParamHandle m_hTargetParam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_flOriginalJumpMovement; // 0x_            
+            float m_flOriginalJumpDuration; // 0x_            
+            float m_flJumpStartCycle; // 0x_            
+            float m_flJumpEndCycle; // 0x_            
+            source2sdk::animgraphlib::JumpCorrectionMethod m_eCorrectionMethod; // 0x_            
+            bool m_bTranslationAxis[3]; // 0x_            
+            bool m_bScaleSpeed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CJumpHelperUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CJumpHelperUpdateNode) == 0xd8);
+        static_assert(sizeof(source2sdk::animgraphlib::CJumpHelperUpdateNode) == 0x_);
     };
 };

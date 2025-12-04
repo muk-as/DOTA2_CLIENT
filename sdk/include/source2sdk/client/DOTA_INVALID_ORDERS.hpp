@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 124
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_INVALID_ORDERS : std::uint32_t
         {
             DOTA_ORDER_SUCCESS = 0xffffffff,

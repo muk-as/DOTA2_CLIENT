@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -39,17 +39,17 @@ namespace source2sdk
         class CVoiceContainerBase
         {
         public:
-            uint8_t _pad0000[0x38]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
-            source2sdk::soundsystem_voicecontainers::CVSound m_vSound; // 0x38            
+            source2sdk::soundsystem_voicecontainers::CVSound m_vSound; // 0x_            
             // metadata: MPropertySuppressExpr "true"
-            source2sdk::soundsystem_voicecontainers::CVoiceContainerAnalysisBase* m_pEnvelopeAnalyzer; // 0xb0            
+            source2sdk::soundsystem_voicecontainers::CVoiceContainerAnalysisBase* m_pEnvelopeAnalyzer; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase, m_vSound) == 0x38);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase, m_pEnvelopeAnalyzer) == 0xb0);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase, m_vSound) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase, m_pEnvelopeAnalyzer) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase) == 0xb8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerBase) == 0x_);
     };
 };

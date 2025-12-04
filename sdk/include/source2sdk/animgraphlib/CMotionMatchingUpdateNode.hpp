@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x148
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,45 +30,45 @@ namespace source2sdk
         class CMotionMatchingUpdateNode : public source2sdk::animgraphlib::CLeafUpdateNode
         {
         public:
-            source2sdk::animgraphlib::CMotionDataSet m_dataSet; // 0x58            
+            source2sdk::animgraphlib::CMotionDataSet m_dataSet; // 0x_            
             // m_metrics has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPtr<source2sdk::animgraphlib::CMotionMetricEvaluator>> m_metrics;
-            char m_metrics[0x18]; // 0x78            
+            char m_metrics[0x_]; // 0x_            
             // m_weights has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_weights;
-            char m_weights[0x18]; // 0x90            
-            uint8_t _pad00a8[0x38]; // 0xa8
-            bool m_bSearchEveryTick; // 0xe0            
-            uint8_t _pad00e1[0x3]; // 0xe1
-            float m_flSearchInterval; // 0xe4            
-            bool m_bSearchWhenClipEnds; // 0xe8            
-            bool m_bSearchWhenGoalChanges; // 0xe9            
-            uint8_t _pad00ea[0x2]; // 0xea
-            source2sdk::animgraphlib::CBlendCurve m_blendCurve; // 0xec            
-            float m_flSampleRate; // 0xf4            
-            float m_flBlendTime; // 0xf8            
-            bool m_bLockClipWhenWaning; // 0xfc            
-            uint8_t _pad00fd[0x3]; // 0xfd
-            float m_flSelectionThreshold; // 0x100            
-            float m_flReselectionTimeWindow; // 0x104            
-            bool m_bEnableRotationCorrection; // 0x108            
-            bool m_bGoalAssist; // 0x109            
-            uint8_t _pad010a[0x2]; // 0x10a
-            float m_flGoalAssistDistance; // 0x10c            
-            float m_flGoalAssistTolerance; // 0x110            
-            uint8_t _pad0114[0x4]; // 0x114
-            source2sdk::animgraphlib::CAnimInputDamping m_distanceScale_Damping; // 0x118            
-            float m_flDistanceScale_OuterRadius; // 0x130            
-            float m_flDistanceScale_InnerRadius; // 0x134            
-            float m_flDistanceScale_MaxScale; // 0x138            
-            float m_flDistanceScale_MinScale; // 0x13c            
-            bool m_bEnableDistanceScaling; // 0x140            
-            uint8_t _pad0141[0x7];
+            char m_weights[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bSearchEveryTick; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flSearchInterval; // 0x_            
+            bool m_bSearchWhenClipEnds; // 0x_            
+            bool m_bSearchWhenGoalChanges; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CBlendCurve m_blendCurve; // 0x_            
+            float m_flSampleRate; // 0x_            
+            float m_flBlendTime; // 0x_            
+            bool m_bLockClipWhenWaning; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flSelectionThreshold; // 0x_            
+            float m_flReselectionTimeWindow; // 0x_            
+            bool m_bEnableRotationCorrection; // 0x_            
+            bool m_bGoalAssist; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flGoalAssistDistance; // 0x_            
+            float m_flGoalAssistTolerance; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimInputDamping m_distanceScale_Damping; // 0x_            
+            float m_flDistanceScale_OuterRadius; // 0x_            
+            float m_flDistanceScale_InnerRadius; // 0x_            
+            float m_flDistanceScale_MaxScale; // 0x_            
+            float m_flDistanceScale_MinScale; // 0x_            
+            bool m_bEnableDistanceScaling; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMotionMatchingUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMotionMatchingUpdateNode) == 0x148);
+        static_assert(sizeof(source2sdk::animgraphlib::CMotionMatchingUpdateNode) == 0x_);
     };
 };

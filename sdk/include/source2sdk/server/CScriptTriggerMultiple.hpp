@@ -14,23 +14,23 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CScriptTriggerMultiple : public source2sdk::server::CTriggerMultiple
         {
         public:
-            Vector m_vExtent; // 0x9e8            
-            uint8_t _pad09f4[0x4];
+            Vector m_vExtent; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CScriptTriggerMultiple because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CScriptTriggerMultiple) == 0x9f8);
+        static_assert(sizeof(source2sdk::server::CScriptTriggerMultiple) == 0x_);
     };
 };

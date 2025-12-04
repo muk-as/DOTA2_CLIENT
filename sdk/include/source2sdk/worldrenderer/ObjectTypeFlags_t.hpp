@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 15
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ObjectTypeFlags_t : std::uint32_t
         {
             OBJECT_TYPE_NONE = 0x0,

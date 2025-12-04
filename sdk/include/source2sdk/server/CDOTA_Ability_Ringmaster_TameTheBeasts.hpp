@@ -30,10 +30,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x600
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -44,28 +44,28 @@ namespace source2sdk
         class CDOTA_Ability_Ringmaster_TameTheBeasts : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vCrackLocation; // 0x5c0            
-            uint8_t _pad05cc[0x4]; // 0x5cc
-            source2sdk::server::CDOTA_BaseNPC* m_pTarget; // 0x5d0            
+            Vector m_vCrackLocation; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CDOTA_BaseNPC* m_pTarget; // 0x_            
             // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hThinker;
-            char m_hThinker[0x4]; // 0x5d8            
-            source2sdk::client::ParticleIndex_t m_nAvailableAOEFXIndex; // 0x5dc            
-            source2sdk::client::ParticleIndex_t m_nFinalAOEFXIndex; // 0x5e0            
-            source2sdk::client::ParticleIndex_t m_nWhipAOEFXIndex; // 0x5e4            
-            bool m_bWhiped; // 0x5e8            
-            uint8_t _pad05e9[0x3]; // 0x5e9
+            char m_hThinker[0x_]; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nAvailableAOEFXIndex; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFinalAOEFXIndex; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nWhipAOEFXIndex; // 0x_            
+            bool m_bWhiped; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x5ec            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSetStartLocation"
-            Vector m_vStartLocation; // 0x5f0            
-            uint8_t _pad05fc[0x4];
+            Vector m_vStartLocation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Ringmaster_TameTheBeasts because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_TameTheBeasts) == 0x600);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_TameTheBeasts) == 0x_);
     };
 };

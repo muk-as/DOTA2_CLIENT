@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,16 +26,16 @@ namespace source2sdk
         public:
             // m_centroidVectors has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_centroidVectors;
-            char m_centroidVectors[0x18]; // 0x0            
-            std::int32_t m_nCentroids; // 0x18            
-            std::int32_t m_nDimensions; // 0x1c            
+            char m_centroidVectors[0x_]; // 0x_            
+            std::int32_t m_nCentroids; // 0x_            
+            std::int32_t m_nDimensions; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_centroidVectors) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_nCentroids) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_nDimensions) == 0x1c);
+        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_centroidVectors) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_nCentroids) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CVectorQuantizer, m_nDimensions) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CVectorQuantizer) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CVectorQuantizer) == 0x_);
     };
 };

@@ -14,9 +14,9 @@ namespace source2sdk
     namespace tier2
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MPropertyCustomEditor "multi_int(2)"
@@ -24,12 +24,12 @@ namespace source2sdk
         class CRangeInt
         {
         public:
-            std::int32_t m_pValue[2]; // 0x0            
+            std::int32_t m_pValue[2]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::tier2::CRangeInt, m_pValue) == 0x0);
+        static_assert(offsetof(source2sdk::tier2::CRangeInt, m_pValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::tier2::CRangeInt) == 0x8);
+        static_assert(sizeof(source2sdk::tier2::CRangeInt) == 0x_);
     };
 };

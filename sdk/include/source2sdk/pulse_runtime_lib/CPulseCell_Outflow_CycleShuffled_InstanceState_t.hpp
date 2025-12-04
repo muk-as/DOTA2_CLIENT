@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,15 +26,15 @@ namespace source2sdk
         public:
             // m_Shuffle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<std::uint8_t,8> m_Shuffle;
-            char m_Shuffle[0x20]; // 0x0            
-            std::int32_t m_nNextShuffle; // 0x20            
-            uint8_t _pad0024[0x4];
+            char m_Shuffle[0x_]; // 0x_            
+            std::int32_t m_nNextShuffle; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t, m_Shuffle) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t, m_nNextShuffle) == 0x20);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t, m_Shuffle) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t, m_nNextShuffle) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t) == 0x28);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Outflow_CycleShuffled_InstanceState_t) == 0x_);
     };
 };

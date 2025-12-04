@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDotaBroadcastMessages : std::uint32_t
         {
             DOTA_BM_LANLobbyRequest = 0x1,

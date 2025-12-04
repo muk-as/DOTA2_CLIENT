@@ -32,9 +32,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CGameChoreoServices : public source2sdk::client::IChoreoServices
@@ -42,19 +42,19 @@ namespace source2sdk
         public:
             // m_hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseAnimGraph> m_hOwner;
-            char m_hOwner[0x4]; // 0x8            
+            char m_hOwner[0x_]; // 0x_            
             // m_hScriptedSequence has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CScriptedSequence> m_hScriptedSequence;
-            char m_hScriptedSequence[0x4]; // 0xc            
-            source2sdk::client::IChoreoServices_ScriptState_t m_scriptState; // 0x10            
-            source2sdk::client::IChoreoServices_ChoreoState_t m_choreoState; // 0x14            
-            source2sdk::entity2::GameTime_t m_flTimeStartedState; // 0x18            
-            uint8_t _pad001c[0x4];
+            char m_hScriptedSequence[0x_]; // 0x_            
+            source2sdk::client::IChoreoServices_ScriptState_t m_scriptState; // 0x_            
+            source2sdk::client::IChoreoServices_ChoreoState_t m_choreoState; // 0x_            
+            source2sdk::entity2::GameTime_t m_flTimeStartedState; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CGameChoreoServices because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CGameChoreoServices) == 0x20);
+        static_assert(sizeof(source2sdk::server::CGameChoreoServices) == 0x_);
     };
 };

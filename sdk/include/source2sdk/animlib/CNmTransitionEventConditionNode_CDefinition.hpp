@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,16 +28,16 @@ namespace source2sdk
         class CNmTransitionEventConditionNode_CDefinition : public source2sdk::animlib::CNmBoolValueNode_CDefinition
         {
         public:
-            CGlobalSymbol m_requireRuleID; // 0x10            
-            source2sdk::animlib::CNmBitFlags m_eventConditionRules; // 0x18            
-            std::int16_t m_nSourceStateNodeIdx; // 0x1c            
-            source2sdk::animlib::NmTransitionRuleCondition_t m_ruleCondition; // 0x1e            
-            uint8_t _pad001f[0x1];
+            CGlobalSymbol m_requireRuleID; // 0x_            
+            source2sdk::animlib::CNmBitFlags m_eventConditionRules; // 0x_            
+            std::int16_t m_nSourceStateNodeIdx; // 0x_            
+            source2sdk::animlib::NmTransitionRuleCondition_t m_ruleCondition; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmTransitionEventConditionNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmTransitionEventConditionNode_CDefinition) == 0x20);
+        static_assert(sizeof(source2sdk::animlib::CNmTransitionEventConditionNode_CDefinition) == 0x_);
     };
 };

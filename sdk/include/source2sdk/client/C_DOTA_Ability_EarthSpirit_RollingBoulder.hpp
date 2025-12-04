@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x710
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,39 +26,39 @@ namespace source2sdk
         class C_DOTA_Ability_EarthSpirit_RollingBoulder : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t radius; // 0x688            
-            std::int32_t speed; // 0x68c            
-            std::int32_t rock_speed; // 0x690            
-            std::int32_t damage; // 0x694            
-            std::int32_t damage_str; // 0x698            
-            float distance; // 0x69c            
-            float rock_distance; // 0x6a0            
-            float rock_distance_multiplier; // 0x6a4            
-            float slow_duration; // 0x6a8            
-            std::int32_t destroy_stone; // 0x6ac            
-            bool can_roll_over_allied_heroes; // 0x6b0            
-            uint8_t _pad06b1[0x3]; // 0x6b1
-            float allied_hero_multiplier; // 0x6b4            
-            float allied_hero_distance; // 0x6b8            
-            float allied_hero_speed; // 0x6bc            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x6c0            
-            bool m_boulderSetposBool; // 0x6c4            
-            uint8_t _pad06c5[0x3]; // 0x6c5
-            std::int32_t m_nProjectileID; // 0x6c8            
-            Vector m_vStartingLocation; // 0x6cc            
-            Vector m_vProjectileLocation; // 0x6d8            
-            Vector m_vDir; // 0x6e4            
-            Vector m_vVel; // 0x6f0            
-            bool m_bUsedStone; // 0x6fc            
-            bool m_bRolledOverAlliedHero; // 0x6fd            
-            uint8_t _pad06fe[0x2]; // 0x6fe
-            Vector m_vRollDirection; // 0x700            
-            uint8_t _pad070c[0x4];
+            std::int32_t radius; // 0x_            
+            std::int32_t speed; // 0x_            
+            std::int32_t rock_speed; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t damage_str; // 0x_            
+            float distance; // 0x_            
+            float rock_distance; // 0x_            
+            float rock_distance_multiplier; // 0x_            
+            float slow_duration; // 0x_            
+            std::int32_t destroy_stone; // 0x_            
+            bool can_roll_over_allied_heroes; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float allied_hero_multiplier; // 0x_            
+            float allied_hero_distance; // 0x_            
+            float allied_hero_speed; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            bool m_boulderSetposBool; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nProjectileID; // 0x_            
+            Vector m_vStartingLocation; // 0x_            
+            Vector m_vProjectileLocation; // 0x_            
+            Vector m_vDir; // 0x_            
+            Vector m_vVel; // 0x_            
+            bool m_bUsedStone; // 0x_            
+            bool m_bRolledOverAlliedHero; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vRollDirection; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_EarthSpirit_RollingBoulder because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EarthSpirit_RollingBoulder) == 0x710);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_EarthSpirit_RollingBoulder) == 0x_);
     };
 };

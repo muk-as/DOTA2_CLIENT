@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x80
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,15 +25,15 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Color to be applied if this choice is selected."
-            CSmartPropAttributeColor m_Color; // 0x0            
+            CSmartPropAttributeColor m_Color; // 0x_            
             // metadata: MPropertyDescription "Relative weight of this choice, higher weighted choices are more likely to be selected."
-            CSmartPropAttributeFloat m_flWeight; // 0x40            
+            CSmartPropAttributeFloat m_flWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::ColorChoice_t, m_Color) == 0x0);
-        static_assert(offsetof(source2sdk::smartprops::ColorChoice_t, m_flWeight) == 0x40);
+        static_assert(offsetof(source2sdk::smartprops::ColorChoice_t, m_Color) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::ColorChoice_t, m_flWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::ColorChoice_t) == 0x80);
+        static_assert(sizeof(source2sdk::smartprops::ColorChoice_t) == 0x_);
     };
 };

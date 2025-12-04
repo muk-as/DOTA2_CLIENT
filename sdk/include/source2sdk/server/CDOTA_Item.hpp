@@ -24,9 +24,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -81,139 +81,139 @@ namespace source2sdk
         class CDOTA_Item : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t m_iState; // 0x5c0            
-            std::int32_t m_CastAnimation; // 0x5c4            
+            std::int32_t m_iState; // 0x_            
+            std::int32_t m_CastAnimation; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCombinable; // 0x5c8            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            bool m_bPermanent; // 0x5c9            
+            bool m_bCombinable; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            bool m_bStackable; // 0x5ca            
-            uint8_t _pad05cb[0x1]; // 0x5cb
+            bool m_bPermanent; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iStackableMax; // 0x5cc            
-            // metadata: MNetworkEnable
-            bool m_bRecipe; // 0x5d0            
-            // metadata: MNetworkEnable
-            bool m_bRecipeConsumesCharges; // 0x5d1            
-            uint8_t _pad05d2[0x2]; // 0x5d2
+            bool m_bStackable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iSharability; // 0x5d4            
+            std::int32_t m_iStackableMax; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDroppable; // 0x5d8            
+            bool m_bRecipe; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPurchasable; // 0x5d9            
-            // metadata: MNetworkEnable
-            bool m_bSellable; // 0x5da            
-            // metadata: MNetworkEnable
-            bool m_bInitiallySellable; // 0x5db            
-            // metadata: MNetworkEnable
-            bool m_bForceUnsellable; // 0x5dc            
-            // metadata: MNetworkEnable
-            bool m_bRequiresCharges; // 0x5dd            
-            // metadata: MNetworkEnable
-            bool m_bKillable; // 0x5de            
-            // metadata: MNetworkEnable
-            bool m_bGloballyCombinable; // 0x5df            
-            // metadata: MNetworkEnable
-            bool m_bDisassemblable; // 0x5e0            
-            // metadata: MNetworkEnable
-            bool m_bNeverDisassemble; // 0x5e1            
-            bool m_bIsTempestDoubleClonable; // 0x5e2            
-            // metadata: MNetworkEnable
-            bool m_bIsNeutralActiveDrop; // 0x5e3            
-            // metadata: MNetworkEnable
-            bool m_bIsNeutralPassiveDrop; // 0x5e4            
-            uint8_t _pad05e5[0x3]; // 0x5e5
-            // metadata: MNetworkEnable
-            std::int32_t m_nNeutralDropTeam; // 0x5e8            
-            // metadata: MNetworkEnable
-            bool m_bAlertable; // 0x5ec            
-            uint8_t _pad05ed[0x3]; // 0x5ed
+            bool m_bRecipeConsumesCharges; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iInitialCharges; // 0x5f0            
+            std::int32_t m_iSharability; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCastOnPickup; // 0x5f4            
+            bool m_bDroppable; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOnlyPlayerHeroPickup; // 0x5f5            
+            bool m_bPurchasable; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCreepHeroPickup; // 0x5f6            
+            bool m_bSellable; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCanBeUsedOutOfInventory; // 0x5f7            
+            bool m_bInitiallySellable; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bItemEnabled; // 0x5f8            
-            uint8_t _pad05f9[0x3]; // 0x5f9
+            bool m_bForceUnsellable; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bRequiresCharges; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bKillable; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bGloballyCombinable; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bDisassemblable; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bNeverDisassemble; // 0x_            
+            bool m_bIsTempestDoubleClonable; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bIsNeutralActiveDrop; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bIsNeutralPassiveDrop; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            std::int32_t m_nNeutralDropTeam; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bAlertable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flEnableTime; // 0x5fc            
+            std::int32_t m_iInitialCharges; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flReclaimTime; // 0x600            
+            bool m_bCastOnPickup; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCanBeConsumed; // 0x604            
+            bool m_bOnlyPlayerHeroPickup; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDisplayOwnership; // 0x605            
+            bool m_bCreepHeroPickup; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bShowOnMinimap; // 0x606            
-            uint8_t _pad0607[0x1]; // 0x607
+            bool m_bCanBeUsedOutOfInventory; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinimapIconSize; // 0x608            
+            bool m_bItemEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bIsUpgradeable; // 0x60c            
-            uint8_t _pad060d[0x3]; // 0x60d
+            // metadata: MNetworkPriority "32"
+            source2sdk::entity2::GameTime_t m_flEnableTime; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nUpgradeProgress; // 0x610            
+            source2sdk::entity2::GameTime_t m_flReclaimTime; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nUpgradeGoal; // 0x614            
+            bool m_bCanBeConsumed; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bDisplayOwnership; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bShowOnMinimap; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            float m_flMinimapIconSize; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bIsUpgradeable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            std::int32_t m_nUpgradeProgress; // 0x_            
+            // metadata: MNetworkEnable
+            std::int32_t m_nUpgradeGoal; // 0x_            
             // metadata: MNetworkEnable
             // m_vecPreGameTransferPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<std::uint8_t> m_vecPreGameTransferPlayerIDs;
-            char m_vecPreGameTransferPlayerIDs[0x18]; // 0x618            
-            bool m_bStackWithOtherOwners; // 0x630            
-            bool m_bTemporarilyUncombinable; // 0x631            
-            bool m_bHasCommentedOnEquip; // 0x632            
-            uint8_t _pad0633[0x1]; // 0x633
-            std::int32_t m_iDeclarationFlags; // 0x634            
-            bool m_bCreatedByDisassemble; // 0x638            
-            bool m_bHasMixedOwnership; // 0x639            
-            bool m_bIsClonedItemProxy; // 0x63a            
-            bool m_bNeutralItemRequestDrop; // 0x63b            
+            char m_vecPreGameTransferPlayerIDs[0x_]; // 0x_            
+            bool m_bStackWithOtherOwners; // 0x_            
+            bool m_bTemporarilyUncombinable; // 0x_            
+            bool m_bHasCommentedOnEquip; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_iDeclarationFlags; // 0x_            
+            bool m_bCreatedByDisassemble; // 0x_            
+            bool m_bHasMixedOwnership; // 0x_            
+            bool m_bIsClonedItemProxy; // 0x_            
+            bool m_bNeutralItemRequestDrop; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flPurchaseTime; // 0x63c            
+            source2sdk::entity2::GameTime_t m_flPurchaseTime; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flAssembledTime; // 0x640            
+            source2sdk::entity2::GameTime_t m_flAssembledTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iCurrentCharges; // 0x644            
+            std::int32_t m_iCurrentCharges; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iValuelessCharges; // 0x648            
+            std::int32_t m_iValuelessCharges; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iSecondaryCharges; // 0x64c            
+            std::int32_t m_iSecondaryCharges; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCombineLocked; // 0x650            
+            bool m_bCombineLocked; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bMarkForSell; // 0x651            
-            uint8_t _pad0652[0x2]; // 0x652
+            bool m_bMarkForSell; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hContainer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_Item_Physical> m_hContainer;
-            char m_hContainer[0x4]; // 0x654            
+            char m_hContainer[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerOwnerID; // 0x658            
+            source2sdk::client::PlayerID_t m_iPlayerOwnerID; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPurchasedWhileDead; // 0x65c            
-            uint8_t _pad065d[0x3]; // 0x65d
-            std::int32_t m_nCombineVersion; // 0x660            
-            uint8_t _pad0664[0x2c];
+            bool m_bPurchasedWhileDead; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nCombineVersion; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item) == 0x690);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item) == 0x_);
     };
 };

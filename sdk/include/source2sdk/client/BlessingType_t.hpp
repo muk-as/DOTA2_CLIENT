@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -28,15 +28,15 @@ namespace source2sdk
         public:
             // metadata: MVDataUniqueMonotonicInt "m_nNextBlessingTypeID"
             // metadata: MPropertyAttributeEditor "locked_int()"
-            source2sdk::client::BlessingTypeID_t nID; // 0x0            
-            uint8_t _pad0004[0xc]; // 0x4
-            CPanoramaImageName szIconImage; // 0x10            
+            source2sdk::client::BlessingTypeID_t nID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CPanoramaImageName szIconImage; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::BlessingType_t, nID) == 0x0);
-        static_assert(offsetof(source2sdk::client::BlessingType_t, szIconImage) == 0x10);
+        static_assert(offsetof(source2sdk::client::BlessingType_t, nID) == 0x_);
+        static_assert(offsetof(source2sdk::client::BlessingType_t, szIconImage) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::BlessingType_t) == 0x20);
+        static_assert(sizeof(source2sdk::client::BlessingType_t) == 0x_);
     };
 };

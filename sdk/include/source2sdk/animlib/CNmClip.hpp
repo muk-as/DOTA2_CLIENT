@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1e0
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,48 +31,48 @@ namespace source2sdk
         public:
             // m_skeleton has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmSkeleton> m_skeleton;
-            char m_skeleton[0x8]; // 0x0            
-            std::uint32_t m_nNumFrames; // 0x8            
-            float m_flDuration; // 0xc            
-            CUtlBinaryBlock m_compressedPoseData; // 0x10            
+            char m_skeleton[0x_]; // 0x_            
+            std::uint32_t m_nNumFrames; // 0x_            
+            float m_flDuration; // 0x_            
+            CUtlBinaryBlock m_compressedPoseData; // 0x_            
             // m_trackCompressionSettings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animlib::NmCompressionSettings_t> m_trackCompressionSettings;
-            char m_trackCompressionSettings[0x18]; // 0x20            
+            char m_trackCompressionSettings[0x_]; // 0x_            
             // m_compressedPoseOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_compressedPoseOffsets;
-            char m_compressedPoseOffsets[0x18]; // 0x38            
-            uint8_t _pad0050[0x28]; // 0x50
+            char m_compressedPoseOffsets[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_secondaryAnimations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<source2sdk::animlib::CNmClip*,1> m_secondaryAnimations;
-            char m_secondaryAnimations[0x20]; // 0x78            
-            source2sdk::animlib::CNmSyncTrack m_syncTrack; // 0x98            
-            uint8_t _pad0148[0x8]; // 0x148
-            source2sdk::animlib::CNmRootMotionData m_rootMotion; // 0x150            
-            bool m_bIsAdditive; // 0x1a0            
-            uint8_t _pad01a1[0x7]; // 0x1a1
+            char m_secondaryAnimations[0x_]; // 0x_            
+            source2sdk::animlib::CNmSyncTrack m_syncTrack; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animlib::CNmRootMotionData m_rootMotion; // 0x_            
+            bool m_bIsAdditive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_modelSpaceSamplingChain has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animlib::CNmClip_ModelSpaceSamplingChainLink_t> m_modelSpaceSamplingChain;
-            char m_modelSpaceSamplingChain[0x18]; // 0x1a8            
+            char m_modelSpaceSamplingChain[0x_]; // 0x_            
             // m_modelSpaceBoneSamplingIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_modelSpaceBoneSamplingIndices;
-            char m_modelSpaceBoneSamplingIndices[0x18]; // 0x1c0            
-            uint8_t _pad01d8[0x8];
+            char m_modelSpaceBoneSamplingIndices[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_skeleton) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_nNumFrames) == 0x8);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_flDuration) == 0xc);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseData) == 0x10);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_trackCompressionSettings) == 0x20);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseOffsets) == 0x38);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_secondaryAnimations) == 0x78);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0x98);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_rootMotion) == 0x150);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_bIsAdditive) == 0x1a0);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceSamplingChain) == 0x1a8);
-        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceBoneSamplingIndices) == 0x1c0);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_skeleton) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_nNumFrames) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_flDuration) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseData) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_trackCompressionSettings) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseOffsets) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_secondaryAnimations) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_rootMotion) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_bIsAdditive) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceSamplingChain) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceBoneSamplingIndices) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmClip) == 0x1e0);
+        static_assert(sizeof(source2sdk::animlib::CNmClip) == 0x_);
     };
 };

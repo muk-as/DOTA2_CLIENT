@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -34,48 +34,48 @@ namespace source2sdk
         class CBaseAnimGraph : public source2sdk::client::C_BaseModelEntity
         {
         public:
-            uint8_t _pad0998[0x80]; // 0x998
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0xa18            
-            uint8_t _pad0a19[0x1]; // 0xa19
-            bool m_bSuppressAnimEventSounds; // 0xa1a            
-            uint8_t _pad0a1b[0xd]; // 0xa1b
+            bool m_bInitiallyPopulateInterpHistory; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bSuppressAnimEventSounds; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bAnimGraphUpdateEnabled; // 0xa28            
-            uint8_t _pad0a29[0x3]; // 0xa29
-            float m_flMaxSlopeDistance; // 0xa2c            
-            Vector m_vLastSlopeCheckPos; // 0xa30            
-            bool m_bAnimationUpdateScheduled; // 0xa3c            
-            uint8_t _pad0a3d[0x3]; // 0xa3d
+            bool m_bAnimGraphUpdateEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMaxSlopeDistance; // 0x_            
+            Vector m_vLastSlopeCheckPos; // 0x_            
+            bool m_bAnimationUpdateScheduled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            Vector m_vecForce; // 0xa40            
+            Vector m_vecForce; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nForceBone; // 0xa4c            
-            source2sdk::client::CBaseAnimGraph* m_pClientsideRagdoll; // 0xa50            
-            bool m_bBuiltRagdoll; // 0xa58            
-            uint8_t _pad0a59[0x17]; // 0xa59
+            std::int32_t m_nForceBone; // 0x_            
+            source2sdk::client::CBaseAnimGraph* m_pClientsideRagdoll; // 0x_            
+            bool m_bBuiltRagdoll; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::PhysicsRagdollPose_t m_RagdollPose; // 0xa70            
+            source2sdk::client::PhysicsRagdollPose_t m_RagdollPose; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollEnabledChanged"
-            bool m_bRagdollEnabled; // 0xab8            
+            bool m_bRagdollEnabled; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
-            bool m_bRagdollClientSide; // 0xab9            
-            uint8_t _pad0aba[0xe]; // 0xaba
-            bool m_bHasAnimatedMaterialAttributes; // 0xac8            
-            uint8_t _pad0ac9[0x177];
+            bool m_bRagdollClientSide; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bHasAnimatedMaterialAttributes; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pMainGraphController; // 0xa10
-            // float InputSetPlaybackRate; // 0x0
-            // CUtlSymbolLarge InputSetBodyGroup; // 0x0
-            // bool InputDisableAnimEventSounds; // 0x0
+            // void m_pMainGraphController; // 0x_
+            // float InputSetPlaybackRate; // 0x_
+            // CUtlSymbolLarge InputSetBodyGroup; // 0x_
+            // bool InputDisableAnimEventSounds; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseAnimGraph because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBaseAnimGraph) == 0xc40);
+        static_assert(sizeof(source2sdk::client::CBaseAnimGraph) == 0x_);
     };
 };

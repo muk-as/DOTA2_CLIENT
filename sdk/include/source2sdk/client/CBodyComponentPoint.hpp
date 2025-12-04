@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1e0
+        // Size: 0x_
         // Has VTable
         // Construct disallowed
         // 
@@ -27,14 +27,14 @@ namespace source2sdk
         class CBodyComponentPoint : public source2sdk::client::CBodyComponent
         {
         public:
-            uint8_t _pad0078[0x8]; // 0x78
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::CGameSceneNode m_sceneNode; // 0x80            
+            source2sdk::client::CGameSceneNode m_sceneNode; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBodyComponentPoint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBodyComponentPoint) == 0x1e0);
+        static_assert(sizeof(source2sdk::client::CBodyComponentPoint) == 0x_);
     };
 };

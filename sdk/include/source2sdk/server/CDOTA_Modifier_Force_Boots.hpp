@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Force_Boots : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vDirection; // 0x1878            
-            float m_flEndTime; // 0x1884            
-            float m_flCurTime; // 0x1888            
-            std::int32_t push_length; // 0x188c            
-            float push_duration; // 0x1890            
-            uint8_t _pad1894[0x4];
+            Vector m_vDirection; // 0x_            
+            float m_flEndTime; // 0x_            
+            float m_flCurTime; // 0x_            
+            std::int32_t push_length; // 0x_            
+            float push_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Force_Boots because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Force_Boots) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Force_Boots) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,31 +26,31 @@ namespace source2sdk
         struct VMixVocoderDesc_t
         {
         public:
-            std::int32_t m_nBandCount; // 0x0            
-            float m_flBandwidth; // 0x4            
-            float m_fldBModGain; // 0x8            
-            float m_flFreqRangeStart; // 0xc            
-            float m_flFreqRangeEnd; // 0x10            
-            float m_fldBUnvoicedGain; // 0x14            
-            float m_flAttackTimeMS; // 0x18            
-            float m_flReleaseTimeMS; // 0x1c            
-            std::int32_t m_nDebugBand; // 0x20            
-            bool m_bPeakMode; // 0x24            
-            uint8_t _pad0025[0x3];
+            std::int32_t m_nBandCount; // 0x_            
+            float m_flBandwidth; // 0x_            
+            float m_fldBModGain; // 0x_            
+            float m_flFreqRangeStart; // 0x_            
+            float m_flFreqRangeEnd; // 0x_            
+            float m_fldBUnvoicedGain; // 0x_            
+            float m_flAttackTimeMS; // 0x_            
+            float m_flReleaseTimeMS; // 0x_            
+            std::int32_t m_nDebugBand; // 0x_            
+            bool m_bPeakMode; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_nBandCount) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flBandwidth) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_fldBModGain) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flFreqRangeStart) == 0xc);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flFreqRangeEnd) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_fldBUnvoicedGain) == 0x14);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flAttackTimeMS) == 0x18);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flReleaseTimeMS) == 0x1c);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_nDebugBand) == 0x20);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_bPeakMode) == 0x24);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_nBandCount) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flBandwidth) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_fldBModGain) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flFreqRangeStart) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flFreqRangeEnd) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_fldBUnvoicedGain) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flAttackTimeMS) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_flReleaseTimeMS) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_nDebugBand) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t, m_bPeakMode) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t) == 0x28);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixVocoderDesc_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTALowPriorityBanType : std::uint32_t
         {
             DOTA_LOW_PRIORITY_BAN_ABANDON = 0x0,

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ObstructionRelationshipClass_t : std::uint32_t
         {
             DOTA_OBSTRUCTION_RELATIONSHIP_NONE = 0x0,

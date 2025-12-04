@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DoomBringer_Doom : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage; // 0x1878            
-            float duration; // 0x187c            
-            std::int32_t deniable_pct; // 0x1880            
-            float flElapsedTime; // 0x1884            
-            std::int32_t damage_amp; // 0x1888            
-            bool m_bDoesBreak; // 0x188c            
-            bool m_bDoesMute; // 0x188d            
-            uint8_t _pad188e[0x2];
+            std::int32_t damage; // 0x_            
+            float duration; // 0x_            
+            std::int32_t deniable_pct; // 0x_            
+            float flElapsedTime; // 0x_            
+            std::int32_t damage_amp; // 0x_            
+            bool m_bDoesBreak; // 0x_            
+            bool m_bDoesMute; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DoomBringer_Doom because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DoomBringer_Doom) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DoomBringer_Doom) == 0x_);
     };
 };

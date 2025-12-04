@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x808
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,42 +32,42 @@ namespace source2sdk
         class CDynamicLight : public source2sdk::server::CBaseModelEntity
         {
         public:
-            std::uint8_t m_ActualFlags; // 0x7f0            
+            std::uint8_t m_ActualFlags; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_Flags; // 0x7f1            
+            std::uint8_t m_Flags; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_LightStyle; // 0x7f2            
-            bool m_On; // 0x7f3            
+            std::uint8_t m_LightStyle; // 0x_            
+            bool m_On; // 0x_            
             // metadata: MNetworkEnable
-            float m_Radius; // 0x7f4            
+            float m_Radius; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Exponent; // 0x7f8            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkBitCount "8"
-            // metadata: MNetworkMinValue "0,000000"
-            // metadata: MNetworkMaxValue "360,000000"
-            float m_InnerAngle; // 0x7fc            
+            std::int32_t m_Exponent; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "360,000000"
-            float m_OuterAngle; // 0x800            
+            float m_InnerAngle; // 0x_            
             // metadata: MNetworkEnable
-            float m_SpotRadius; // 0x804            
+            // metadata: MNetworkBitCount "8"
+            // metadata: MNetworkMinValue "0,000000"
+            // metadata: MNetworkMaxValue "360,000000"
+            float m_OuterAngle; // 0x_            
+            // metadata: MNetworkEnable
+            float m_SpotRadius; // 0x_            
             
             // Datamap fields:
-            // void CDynamicLightDynamicLightThink; // 0x0
-            // void InputTurnOn; // 0x0
-            // void InputTurnOff; // 0x0
-            // void InputToggle; // 0x0
-            // Color _light; // 0x7fffffff
-            // float pitch; // 0x7fffffff
-            // int32_t spawnflags; // 0x7fffffff
+            // void CDynamicLightDynamicLightThink; // 0x_
+            // void InputTurnOn; // 0x_
+            // void InputTurnOff; // 0x_
+            // void InputToggle; // 0x_
+            // Color _light; // 0x_
+            // float pitch; // 0x_
+            // int32_t spawnflags; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDynamicLight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDynamicLight) == 0x808);
+        static_assert(sizeof(source2sdk::server::CDynamicLight) == 0x_);
     };
 };

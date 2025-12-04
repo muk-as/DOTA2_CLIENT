@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,16 +25,16 @@ namespace source2sdk
         class CVoiceContainerSetElement
         {
         public:
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_sound; // 0x0            
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_sound; // 0x_            
             // metadata: MPropertyFriendlyName "Volume (in Decibels)"
-            float m_flVolumeDB; // 0x18            
-            uint8_t _pad001c[0x4];
+            float m_flVolumeDB; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement, m_sound) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement, m_flVolumeDB) == 0x18);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement, m_sound) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement, m_flVolumeDB) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement) == 0x20);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSetElement) == 0x_);
     };
 };

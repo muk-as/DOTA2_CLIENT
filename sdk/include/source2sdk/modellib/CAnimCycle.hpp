@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::modellib::CAnimCycle) == 0x4);
+        static_assert(sizeof(source2sdk::modellib::CAnimCycle) == 0x_);
     };
 };

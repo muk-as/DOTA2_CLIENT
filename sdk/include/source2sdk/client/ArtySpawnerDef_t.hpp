@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,18 +27,18 @@ namespace source2sdk
         struct ArtySpawnerDef_t : public source2sdk::client::ArtyGameObjectDef_t
         {
         public:
-            float m_flInitialDelay; // 0xb0            
-            float m_flDelayBetween; // 0xb4            
-            std::int32_t m_nNumToSpawn; // 0xb8            
-            source2sdk::client::EArtyTeam m_eSpawnedUnitTeam; // 0xbc            
-            uint8_t _pad00bd[0x3]; // 0xbd
-            CUtlString m_szGameObject; // 0xc0            
-            uint8_t _pad00c8[0x8];
+            float m_flInitialDelay; // 0x_            
+            float m_flDelayBetween; // 0x_            
+            std::int32_t m_nNumToSpawn; // 0x_            
+            source2sdk::client::EArtyTeam m_eSpawnedUnitTeam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_szGameObject; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in ArtySpawnerDef_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::ArtySpawnerDef_t) == 0xd0);
+        static_assert(sizeof(source2sdk::client::ArtySpawnerDef_t) == 0x_);
     };
 };

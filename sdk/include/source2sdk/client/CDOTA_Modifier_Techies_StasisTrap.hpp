@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Techies_StasisTrap : public source2sdk::client::CDOTA_Modifier_Invisible
         {
         public:
-            float activation_radius; // 0x1888            
-            float stun_radius; // 0x188c            
-            float stun_duration; // 0x1890            
-            float explode_delay; // 0x1894            
-            float activation_time; // 0x1898            
-            bool m_bActivated; // 0x189c            
-            bool m_bTriggered; // 0x189d            
-            uint8_t _pad189e[0x2];
+            float activation_radius; // 0x_            
+            float stun_radius; // 0x_            
+            float stun_duration; // 0x_            
+            float explode_delay; // 0x_            
+            float activation_time; // 0x_            
+            bool m_bActivated; // 0x_            
+            bool m_bTriggered; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Techies_StasisTrap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_StasisTrap) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_StasisTrap) == 0x_);
     };
 };

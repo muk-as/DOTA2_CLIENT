@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x270
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,30 +28,30 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "interpolation rate"
-            float m_flInterpRate; // 0x1c0            
+            float m_flInterpRate; // 0x_            
             // metadata: MPropertyFriendlyName "max trace length"
-            float m_flMaxTraceLength; // 0x1c4            
+            float m_flMaxTraceLength; // 0x_            
             // metadata: MPropertyFriendlyName "CP movement tolerance"
-            float m_flTolerance; // 0x1c8            
+            float m_flTolerance; // 0x_            
             // metadata: MPropertyFriendlyName "trace offset"
-            float m_flTraceOffset; // 0x1cc            
+            float m_flTraceOffset; // 0x_            
             // metadata: MPropertyFriendlyName "collision group"
-            char m_CollisionGroupName[128]; // 0x1d0            
+            char m_CollisionGroupName[128]; // 0x_            
             // metadata: MPropertyFriendlyName "Trace Set"
-            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x250            
+            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x_            
             // metadata: MPropertyFriendlyName "CP to trace from"
-            std::int32_t m_nInputCP; // 0x254            
+            std::int32_t m_nInputCP; // 0x_            
             // metadata: MPropertyFriendlyName "CP to set"
-            std::int32_t m_nOutputCP; // 0x258            
-            uint8_t _pad025c[0xc]; // 0x25c
+            std::int32_t m_nOutputCP; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "include water"
-            bool m_bIncludeWater; // 0x268            
-            uint8_t _pad0269[0x7];
+            bool m_bIncludeWater; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SetCPOrientationToGroundNormal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SetCPOrientationToGroundNormal) == 0x270);
+        static_assert(sizeof(source2sdk::particles::C_OP_SetCPOrientationToGroundNormal) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace pulse_system
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -34,15 +34,15 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Yes"
             // metadata: MPropertyDescription "Randomly taken half of the time"
-            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_Yes; // 0x48            
+            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_Yes; // 0x_            
             // metadata: MPropertyFriendlyName "No"
             // metadata: MPropertyDescription "Randomly taken half of the time"
-            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_No; // 0x90            
+            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_No; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_Outflow_TestRandomYesNo because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Outflow_TestRandomYesNo) == 0xd8);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Outflow_TestRandomYesNo) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,16 +30,16 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBrawlActiveChanged"
-            std::int32_t m_iBrawlActive; // 0x688            
-            bool m_bUpdateIcons; // 0x68c            
-            uint8_t _pad068d[0x3]; // 0x68d
-            source2sdk::client::ParticleIndex_t m_nDrunkenBrawlerFX; // 0x690            
-            uint8_t _pad0694[0x4];
+            std::int32_t m_iBrawlActive; // 0x_            
+            bool m_bUpdateIcons; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_nDrunkenBrawlerFX; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Brewmaster_DrunkenBrawler because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Brewmaster_DrunkenBrawler) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Brewmaster_DrunkenBrawler) == 0x_);
     };
 };

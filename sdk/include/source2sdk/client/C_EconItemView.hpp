@@ -20,9 +20,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd8
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "item_definition_index_t m_iItemDefinitionIndex"
@@ -39,41 +39,41 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::item_definition_index_t m_iItemDefinitionIndex; // 0x8            
+            source2sdk::client::item_definition_index_t m_iItemDefinitionIndex; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iEntityQuality; // 0xc            
+            std::int32_t m_iEntityQuality; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_iEntityLevel; // 0x10            
-            uint8_t _pad0014[0x4]; // 0x14
+            std::uint32_t m_iEntityLevel; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::itemid_t m_iItemID; // 0x18            
+            source2sdk::client::itemid_t m_iItemID; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_iAccountID; // 0x20            
+            std::uint32_t m_iAccountID; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_iInventoryPosition; // 0x24            
-            uint8_t _pad0028[0x8]; // 0x28
+            std::uint32_t m_iInventoryPosition; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bInitialized; // 0x30            
+            bool m_bInitialized; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::style_index_t m_nOverrideStyle; // 0x31            
-            bool m_bIsStoreItem; // 0x32            
-            bool m_bIsTradeItem; // 0x33            
-            bool m_bHasComputedAttachedParticles; // 0x34            
-            bool m_bHasAttachedParticles; // 0x35            
-            uint8_t _pad0036[0x2]; // 0x36
-            std::int32_t m_iEntityQuantity; // 0x38            
-            std::uint8_t m_unClientFlags; // 0x3c            
-            uint8_t _pad003d[0x3]; // 0x3d
-            source2sdk::client::eEconItemOrigin m_unOverrideOrigin; // 0x40            
-            uint8_t _pad0044[0x14]; // 0x44
+            source2sdk::client::style_index_t m_nOverrideStyle; // 0x_            
+            bool m_bIsStoreItem; // 0x_            
+            bool m_bIsTradeItem; // 0x_            
+            bool m_bHasComputedAttachedParticles; // 0x_            
+            bool m_bHasAttachedParticles; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_iEntityQuantity; // 0x_            
+            std::uint8_t m_unClientFlags; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::eEconItemOrigin m_unOverrideOrigin; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::CAttributeList m_AttributeList; // 0x58            
-            uint8_t _pad00d0[0x8];
+            source2sdk::client::CAttributeList m_AttributeList; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EconItemView because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EconItemView) == 0xd8);
+        static_assert(sizeof(source2sdk::client::C_EconItemView) == 0x_);
     };
 };

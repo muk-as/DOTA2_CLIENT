@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,12 +27,12 @@ namespace source2sdk
         public:
             // m_vecLootEntryCollections has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CSurvivorsLootTable_CLootEntryCollection> m_vecLootEntryCollections;
-            char m_vecLootEntryCollections[0x18]; // 0x0            
+            char m_vecLootEntryCollections[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsLootTable, m_vecLootEntryCollections) == 0x0);
+        static_assert(offsetof(source2sdk::client::CSurvivorsLootTable, m_vecLootEntryCollections) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsLootTable) == 0x18);
+        static_assert(sizeof(source2sdk::client::CSurvivorsLootTable) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PlayerOrderIssuer_t : std::uint32_t
         {
             DOTA_ORDER_ISSUER_SELECTED_UNITS = 0x0,

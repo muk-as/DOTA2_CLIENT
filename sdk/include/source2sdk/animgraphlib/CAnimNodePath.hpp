@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,14 +26,14 @@ namespace source2sdk
         class CAnimNodePath
         {
         public:
-            source2sdk::modellib::AnimNodeID m_path[11]; // 0x0            
-            std::int32_t m_nCount; // 0x2c            
+            source2sdk::modellib::AnimNodeID m_path[11]; // 0x_            
+            std::int32_t m_nCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimNodePath, m_path) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimNodePath, m_nCount) == 0x2c);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimNodePath, m_path) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimNodePath, m_nCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimNodePath) == 0x30);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimNodePath) == 0x_);
     };
 };

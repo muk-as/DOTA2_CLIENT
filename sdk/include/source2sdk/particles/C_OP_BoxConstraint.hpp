@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xeb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,21 +28,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "min coords"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecMin; // 0x1c0            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecMin; // 0x_            
             // metadata: MPropertyFriendlyName "max coords"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecMax; // 0x838            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecMax; // 0x_            
             // metadata: MPropertyFriendlyName "control point"
-            std::int32_t m_nCP; // 0xeb0            
+            std::int32_t m_nCP; // 0x_            
             // metadata: MPropertyFriendlyName "use local space"
-            bool m_bLocalSpace; // 0xeb4            
+            bool m_bLocalSpace; // 0x_            
             // metadata: MPropertyFriendlyName "Take radius into account"
-            bool m_bAccountForRadius; // 0xeb5            
-            uint8_t _pad0eb6[0x2];
+            bool m_bAccountForRadius; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_BoxConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_BoxConstraint) == 0xeb8);
+        static_assert(sizeof(source2sdk::particles::C_OP_BoxConstraint) == 0x_);
     };
 };

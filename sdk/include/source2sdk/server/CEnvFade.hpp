@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x518
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,19 +28,19 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Color m_fadeColor; // 0x4e0            
-            float m_Duration; // 0x4e4            
-            float m_HoldDuration; // 0x4e8            
-            uint8_t _pad04ec[0x4]; // 0x4ec
-            source2sdk::entity2::CEntityIOOutput m_OnBeginFade; // 0x4f0            
+            Color m_fadeColor; // 0x_            
+            float m_Duration; // 0x_            
+            float m_HoldDuration; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_OnBeginFade; // 0x_            
             
             // Datamap fields:
-            // void InputFade; // 0x0
+            // void InputFade; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvFade because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvFade) == 0x518);
+        static_assert(sizeof(source2sdk::server::CEnvFade) == 0x_);
     };
 };

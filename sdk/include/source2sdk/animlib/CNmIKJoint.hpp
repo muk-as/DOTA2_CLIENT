@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,25 +25,25 @@ namespace source2sdk
         class CNmIKJoint
         {
         public:
-            std::int32_t m_nParentIndex; // 0x0            
-            std::int32_t m_nBodyIndex; // 0x4            
-            uint8_t _pad0008[0x8]; // 0x8
-            CTransform m_xLocalFrame; // 0x10            
-            float m_flSwingLimit; // 0x30            
-            float m_flMinTwistLimit; // 0x34            
-            float m_flMaxTwistLimit; // 0x38            
-            float m_flWeight; // 0x3c            
+            std::int32_t m_nParentIndex; // 0x_            
+            std::int32_t m_nBodyIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_xLocalFrame; // 0x_            
+            float m_flSwingLimit; // 0x_            
+            float m_flMinTwistLimit; // 0x_            
+            float m_flMaxTwistLimit; // 0x_            
+            float m_flWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_nParentIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_nBodyIndex) == 0x4);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_xLocalFrame) == 0x10);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flSwingLimit) == 0x30);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flMinTwistLimit) == 0x34);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flMaxTwistLimit) == 0x38);
-        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flWeight) == 0x3c);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_nParentIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_nBodyIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_xLocalFrame) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flSwingLimit) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flMinTwistLimit) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flMaxTwistLimit) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmIKJoint, m_flWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmIKJoint) == 0x40);
+        static_assert(sizeof(source2sdk::animlib::CNmIKJoint) == 0x_);
     };
 };

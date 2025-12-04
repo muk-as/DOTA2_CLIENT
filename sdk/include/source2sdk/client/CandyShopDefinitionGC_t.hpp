@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,20 +26,20 @@ namespace source2sdk
         struct CandyShopDefinitionGC_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "unique integer ID of this candy shop"
             // game bug: prop with no declared class info (CandyShopID_t)
-            char m_unCandyShopID[0x1]; // 0x8            
-            uint8_t _pad0009[0x7]; // 0x9
+            char m_unCandyShopID[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecRewards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CandyShopRewardOptionGC_t> m_vecRewards;
-            char m_vecRewards[0x18]; // 0x10            
+            char m_vecRewards[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CandyShopDefinitionGC_t, m_unCandyShopID) == 0x8);
-        static_assert(offsetof(source2sdk::client::CandyShopDefinitionGC_t, m_vecRewards) == 0x10);
+        static_assert(offsetof(source2sdk::client::CandyShopDefinitionGC_t, m_unCandyShopID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CandyShopDefinitionGC_t, m_vecRewards) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CandyShopDefinitionGC_t) == 0x28);
+        static_assert(sizeof(source2sdk::client::CandyShopDefinitionGC_t) == 0x_);
     };
 };

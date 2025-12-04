@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x590
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -36,33 +36,33 @@ namespace source2sdk
         class CDOTAAppCheers : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x96]; // 0x4e0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantCheers; // 0x576            
+            std::int16_t m_nRadiantCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantBronzeCheers; // 0x578            
+            std::int16_t m_nRadiantBronzeCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantSilverCheers; // 0x57a            
+            std::int16_t m_nRadiantSilverCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantGoldCheers; // 0x57c            
-            uint8_t _pad057e[0x2]; // 0x57e
+            std::int16_t m_nRadiantGoldCheers; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x580            
+            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireCheers; // 0x584            
+            std::int16_t m_nDireCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireBronzeCheers; // 0x586            
+            std::int16_t m_nDireBronzeCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireSilverCheers; // 0x588            
+            std::int16_t m_nDireSilverCheers; // 0x_            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireGoldCheers; // 0x58a            
+            std::int16_t m_nDireGoldCheers; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x58c            
+            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAAppCheers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAAppCheers) == 0x590);
+        static_assert(sizeof(source2sdk::server::CDOTAAppCheers) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 82
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class fieldtype_t : std::uint8_t
         {
             FIELD_VOID = 0x0,

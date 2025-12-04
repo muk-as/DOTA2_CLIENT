@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 46
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_COMBATLOG_TYPES : std::uint32_t
         {
             DOTA_COMBATLOG_INVALID = 0xffffffff,

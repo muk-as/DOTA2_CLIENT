@@ -14,22 +14,22 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CNetworkTransmitComponent
         {
         public:
-            uint8_t _pad0000[0x184]; // 0x0
-            std::uint8_t m_nTransmitStateOwnedCounter; // 0x184            
-            uint8_t _pad0185[0x43];
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint8_t m_nTransmitStateOwnedCounter; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CNetworkTransmitComponent, m_nTransmitStateOwnedCounter) == 0x184);
+        static_assert(offsetof(source2sdk::client::CNetworkTransmitComponent, m_nTransmitStateOwnedCounter) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CNetworkTransmitComponent) == 0x1c8);
+        static_assert(sizeof(source2sdk::client::CNetworkTransmitComponent) == 0x_);
     };
 };

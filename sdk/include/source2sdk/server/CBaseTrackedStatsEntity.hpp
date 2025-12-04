@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x548
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,12 +32,12 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "OnTrackedStatsChanged"
             // m_vecTrackedStats has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::TrackedStatNetworkData_t> m_vecTrackedStats;
-            char m_vecTrackedStats[0x68]; // 0x4e0            
+            char m_vecTrackedStats[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseTrackedStatsEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseTrackedStatsEntity) == 0x548);
+        static_assert(sizeof(source2sdk::server::CBaseTrackedStatsEntity) == 0x_);
     };
 };

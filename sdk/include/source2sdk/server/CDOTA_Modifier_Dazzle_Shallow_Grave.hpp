@@ -18,24 +18,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Dazzle_Shallow_Grave : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bHasPostedEvent; // 0x1878            
-            uint8_t _pad1879[0x3]; // 0x1879
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x187c            
-            float fx_halo_height; // 0x1880            
-            float m_flExpirationHeal; // 0x1884            
-            std::int32_t heal_amplify; // 0x1888            
-            uint8_t _pad188c[0x4];
+            bool m_bHasPostedEvent; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            float fx_halo_height; // 0x_            
+            float m_flExpirationHeal; // 0x_            
+            std::int32_t heal_amplify; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Dazzle_Shallow_Grave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dazzle_Shallow_Grave) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dazzle_Shallow_Grave) == 0x_);
     };
 };

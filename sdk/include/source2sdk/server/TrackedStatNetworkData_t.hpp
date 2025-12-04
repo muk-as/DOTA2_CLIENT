@@ -16,9 +16,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "TrackedStatID_t unStatID"
@@ -27,17 +27,17 @@ namespace source2sdk
         struct TrackedStatNetworkData_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::TrackedStatID_t unStatID; // 0x30            
+            source2sdk::client::TrackedStatID_t unStatID; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::TrackedStatValue_t unStatValue; // 0x34            
+            source2sdk::client::TrackedStatValue_t unStatValue; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::TrackedStatNetworkData_t, unStatID) == 0x30);
-        static_assert(offsetof(source2sdk::server::TrackedStatNetworkData_t, unStatValue) == 0x34);
+        static_assert(offsetof(source2sdk::server::TrackedStatNetworkData_t, unStatID) == 0x_);
+        static_assert(offsetof(source2sdk::server::TrackedStatNetworkData_t, unStatValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::TrackedStatNetworkData_t) == 0x38);
+        static_assert(sizeof(source2sdk::server::TrackedStatNetworkData_t) == 0x_);
     };
 };

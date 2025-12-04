@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MNetworkVarsAtomic
@@ -24,35 +24,35 @@ namespace source2sdk
         class CNetworkVelocityVector
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "18"
             // metadata: MNetworkMinValue "-4096,000000"
             // metadata: MNetworkMaxValue "4096,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkVelocityVector"
-            CNetworkedQuantizedFloat m_vecX; // 0x10            
+            CNetworkedQuantizedFloat m_vecX; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "18"
             // metadata: MNetworkMinValue "-4096,000000"
             // metadata: MNetworkMaxValue "4096,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkVelocityVector"
-            CNetworkedQuantizedFloat m_vecY; // 0x18            
+            CNetworkedQuantizedFloat m_vecY; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "18"
             // metadata: MNetworkMinValue "-4096,000000"
             // metadata: MNetworkMaxValue "4096,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkVelocityVector"
-            CNetworkedQuantizedFloat m_vecZ; // 0x20            
+            CNetworkedQuantizedFloat m_vecZ; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecX) == 0x10);
-        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecY) == 0x18);
-        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecZ) == 0x20);
+        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecX) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecY) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNetworkVelocityVector, m_vecZ) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CNetworkVelocityVector) == 0x28);
+        static_assert(sizeof(source2sdk::client::CNetworkVelocityVector) == 0x_);
     };
 };

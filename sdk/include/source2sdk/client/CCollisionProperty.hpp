@@ -17,9 +17,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xb0
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "VPhysicsCollisionAttribute_t m_collisionAttribute"
@@ -40,73 +40,73 @@ namespace source2sdk
         class CCollisionProperty
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "CollisionAttributeChanged"
-            source2sdk::client::VPhysicsCollisionAttribute_t m_collisionAttribute; // 0x10            
+            source2sdk::client::VPhysicsCollisionAttribute_t m_collisionAttribute; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateOBB"
-            Vector m_vecMins; // 0x40            
+            Vector m_vecMins; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateOBB"
-            Vector m_vecMaxs; // 0x4c            
-            uint8_t _pad0058[0x2]; // 0x58
+            Vector m_vecMaxs; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateSolidFlags"
-            std::uint8_t m_usSolidFlags; // 0x5a            
+            std::uint8_t m_usSolidFlags; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateSolidType"
-            source2sdk::client::SolidType_t m_nSolidType; // 0x5b            
+            source2sdk::client::SolidType_t m_nSolidType; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "MarkSurroundingBoundsDirty"
-            std::uint8_t m_triggerBloat; // 0x5c            
+            std::uint8_t m_triggerBloat; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "MarkSurroundingBoundsDirty"
-            source2sdk::client::SurroundingBoundsType_t m_nSurroundType; // 0x5d            
+            source2sdk::client::SurroundingBoundsType_t m_nSurroundType; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_CollisionGroup; // 0x5e            
+            std::uint8_t m_CollisionGroup; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateEnablePhysics"
-            std::uint8_t m_nEnablePhysics; // 0x5f            
-            float m_flBoundingRadius; // 0x60            
+            std::uint8_t m_nEnablePhysics; // 0x_            
+            float m_flBoundingRadius; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "MarkSurroundingBoundsDirty"
-            Vector m_vecSpecifiedSurroundingMins; // 0x64            
+            Vector m_vecSpecifiedSurroundingMins; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "MarkSurroundingBoundsDirty"
-            Vector m_vecSpecifiedSurroundingMaxs; // 0x70            
-            Vector m_vecSurroundingMaxs; // 0x7c            
-            Vector m_vecSurroundingMins; // 0x88            
+            Vector m_vecSpecifiedSurroundingMaxs; // 0x_            
+            Vector m_vecSurroundingMaxs; // 0x_            
+            Vector m_vecSurroundingMins; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateCapsule"
-            Vector m_vCapsuleCenter1; // 0x94            
+            Vector m_vCapsuleCenter1; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateCapsule"
-            Vector m_vCapsuleCenter2; // 0xa0            
+            Vector m_vCapsuleCenter2; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUpdateCapsule"
-            float m_flCapsuleRadius; // 0xac            
+            float m_flCapsuleRadius; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_collisionAttribute) == 0x10);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecMins) == 0x40);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecMaxs) == 0x4c);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_usSolidFlags) == 0x5a);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nSolidType) == 0x5b);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_triggerBloat) == 0x5c);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nSurroundType) == 0x5d);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_CollisionGroup) == 0x5e);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nEnablePhysics) == 0x5f);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_flBoundingRadius) == 0x60);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSpecifiedSurroundingMins) == 0x64);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSpecifiedSurroundingMaxs) == 0x70);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSurroundingMaxs) == 0x7c);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSurroundingMins) == 0x88);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vCapsuleCenter1) == 0x94);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vCapsuleCenter2) == 0xa0);
-        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_flCapsuleRadius) == 0xac);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_collisionAttribute) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecMins) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecMaxs) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_usSolidFlags) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nSolidType) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_triggerBloat) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nSurroundType) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_CollisionGroup) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_nEnablePhysics) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_flBoundingRadius) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSpecifiedSurroundingMins) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSpecifiedSurroundingMaxs) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSurroundingMaxs) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vecSurroundingMins) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vCapsuleCenter1) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_vCapsuleCenter2) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCollisionProperty, m_flCapsuleRadius) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CCollisionProperty) == 0xb0);
+        static_assert(sizeof(source2sdk::client::CCollisionProperty) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDotaEntityMessages : std::uint32_t
         {
             DOTA_UNIT_SPEECH = 0x0,

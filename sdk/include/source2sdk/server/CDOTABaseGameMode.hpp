@@ -25,10 +25,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x818
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -131,239 +131,239 @@ namespace source2sdk
         class CDOTABaseGameMode : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x18]; // 0x4e0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnForcedHUDSkinChanged"
-            CUtlString m_ForcedHUDSkin; // 0x4f8            
+            CUtlString m_ForcedHUDSkin; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_nCustomGameForceHeroSelectionId; // 0x500            
+            source2sdk::client::HeroID_t m_nCustomGameForceHeroSelectionId; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroFacetID_t m_nCustomGameForceHeroVariant; // 0x504            
+            source2sdk::client::HeroFacetID_t m_nCustomGameForceHeroVariant; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAlwaysShowPlayerInventory; // 0x508            
+            bool m_bAlwaysShowPlayerInventory; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGoldSoundDisabled; // 0x509            
+            bool m_bGoldSoundDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bRecommendedItemsDisabled; // 0x50a            
+            bool m_bRecommendedItemsDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bStickyItemDisabled; // 0x50b            
+            bool m_bStickyItemDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bStashPurchasingDisabled; // 0x50c            
+            bool m_bStashPurchasingDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFogOfWarDisabled; // 0x50d            
+            bool m_bFogOfWarDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseUnseenFOW; // 0x50e            
+            bool m_bUseUnseenFOW; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseCustomBuybackCost; // 0x50f            
+            bool m_bUseCustomBuybackCost; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseCustomBuybackCooldown; // 0x510            
+            bool m_bUseCustomBuybackCooldown; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBuybackEnabled; // 0x511            
+            bool m_bBuybackEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseTurboCouriers; // 0x512            
-            uint8_t _pad0513[0x1]; // 0x513
+            bool m_bUseTurboCouriers; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flCameraDistanceOverride; // 0x514            
+            float m_flCameraDistanceOverride; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nCameraSmoothCountOverride; // 0x518            
+            std::int32_t m_nCameraSmoothCountOverride; // 0x_            
             // metadata: MNetworkEnable
             // m_hOverrideSelectionEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hOverrideSelectionEntity;
-            char m_hOverrideSelectionEntity[0x4]; // 0x51c            
+            char m_hOverrideSelectionEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTopBarTeamValuesOverride; // 0x520            
+            bool m_bTopBarTeamValuesOverride; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTopBarTeamValuesVisible; // 0x521            
-            uint8_t _pad0522[0x2]; // 0x522
+            bool m_bTopBarTeamValuesVisible; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nTeamGoodGuysTopBarValue; // 0x524            
+            std::int32_t m_nTeamGoodGuysTopBarValue; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTeamBadGuysTopBarValue; // 0x528            
+            std::int32_t m_nTeamBadGuysTopBarValue; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAlwaysShowPlayerNames; // 0x52c            
+            bool m_bAlwaysShowPlayerNames; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseCustomHeroLevels; // 0x52d            
-            uint8_t _pad052e[0x2]; // 0x52e
+            bool m_bUseCustomHeroLevels; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_nCustomXPRequiredToReachNextLevel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<std::int32_t> m_nCustomXPRequiredToReachNextLevel;
-            char m_nCustomXPRequiredToReachNextLevel[0x18]; // 0x530            
+            char m_nCustomXPRequiredToReachNextLevel[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTowerBackdoorProtectionEnabled; // 0x548            
+            bool m_bTowerBackdoorProtectionEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBotThinkingEnabled; // 0x549            
+            bool m_bBotThinkingEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAnnouncerDisabled; // 0x54a            
+            bool m_bAnnouncerDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAnnouncerGameModeAnnounceDisabled; // 0x54b            
+            bool m_bAnnouncerGameModeAnnounceDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDeathTipsDisabled; // 0x54c            
+            bool m_bDeathTipsDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFilterPlayerHeroAvailability; // 0x54d            
+            bool m_bFilterPlayerHeroAvailability; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bKillingSpreeAnnouncerDisabled; // 0x54e            
-            uint8_t _pad054f[0x1]; // 0x54f
+            bool m_bKillingSpreeAnnouncerDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flFixedRespawnTime; // 0x550            
+            float m_flFixedRespawnTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flBuybackCostScale; // 0x554            
+            float m_flBuybackCostScale; // 0x_            
             // metadata: MNetworkEnable
-            float m_flRespawnTimeScale; // 0x558            
+            float m_flRespawnTimeScale; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bLoseGoldOnDeath; // 0x55c            
+            bool m_bLoseGoldOnDeath; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bKillableTombstones; // 0x55d            
-            uint8_t _pad055e[0x2]; // 0x55e
+            bool m_bKillableTombstones; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint32_t m_nHUDVisibilityBits; // 0x560            
+            std::uint32_t m_nHUDVisibilityBits; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinimumAttackSpeed; // 0x564            
+            float m_flMinimumAttackSpeed; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaximumAttackSpeed; // 0x568            
+            float m_flMaximumAttackSpeed; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsDaynightCycleDisabled; // 0x56c            
-            uint8_t _pad056d[0x3]; // 0x56d
+            bool m_bIsDaynightCycleDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flDaynightCycleAdvanceRate; // 0x570            
+            float m_flDaynightCycleAdvanceRate; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAreWeatherEffectsDisabled; // 0x574            
+            bool m_bAreWeatherEffectsDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDisableHudFlip; // 0x575            
+            bool m_bDisableHudFlip; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableFriendlyBuildingMoveTo; // 0x576            
+            bool m_bEnableFriendlyBuildingMoveTo; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsDeathOverlayDisabled; // 0x577            
+            bool m_bIsDeathOverlayDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsHudCombatEventsDisabled; // 0x578            
-            uint8_t _pad0579[0x7]; // 0x579
+            bool m_bIsHudCombatEventsDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlString m_strDefaultStickyItem; // 0x580            
+            CUtlString m_strDefaultStickyItem; // 0x_            
             // metadata: MNetworkEnable
-            CUtlString m_sCustomTerrainWeatherEffect; // 0x588            
+            CUtlString m_sCustomTerrainWeatherEffect; // 0x_            
             // metadata: MNetworkEnable
-            CUtlString m_strTPScrollSlotItemOverride; // 0x590            
+            CUtlString m_strTPScrollSlotItemOverride; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStrengthDamage; // 0x598            
+            float m_flStrengthDamage; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStrengthHP; // 0x59c            
+            float m_flStrengthHP; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStrengthHPRegen; // 0x5a0            
+            float m_flStrengthHPRegen; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgilityDamage; // 0x5a4            
+            float m_flAgilityDamage; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgilityArmor; // 0x5a8            
+            float m_flAgilityArmor; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgilityAttackSpeed; // 0x5ac            
+            float m_flAgilityAttackSpeed; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgilityMovementSpeedPercent; // 0x5b0            
+            float m_flAgilityMovementSpeedPercent; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntelligenceDamage; // 0x5b4            
+            float m_flIntelligenceDamage; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntelligenceMana; // 0x5b8            
+            float m_flIntelligenceMana; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntelligenceManaRegen; // 0x5bc            
+            float m_flIntelligenceManaRegen; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntelligenceMres; // 0x5c0            
+            float m_flIntelligenceMres; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntelligenceSpellAmpPercent; // 0x5c4            
+            float m_flIntelligenceSpellAmpPercent; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStrengthMagicResistancePercent; // 0x5c8            
+            float m_flStrengthMagicResistancePercent; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAttributeAllDamage; // 0x5cc            
+            float m_flAttributeAllDamage; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDraftingHeroPickSelectTimeOverride; // 0x5d0            
+            float m_flDraftingHeroPickSelectTimeOverride; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDraftingBanningTimeOverride; // 0x5d4            
+            float m_flDraftingBanningTimeOverride; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPauseEnabled; // 0x5d8            
-            uint8_t _pad05d9[0x3]; // 0x5d9
+            bool m_bPauseEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_iCustomScanMaxCharges; // 0x5dc            
+            std::int32_t m_iCustomScanMaxCharges; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCustomScanCooldown; // 0x5e0            
+            float m_flCustomScanCooldown; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCustomGlyphCooldown; // 0x5e4            
+            float m_flCustomGlyphCooldown; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCustomBackpackSwapCooldown; // 0x5e8            
+            float m_flCustomBackpackSwapCooldown; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCustomBackpackCooldownPercent; // 0x5ec            
+            float m_flCustomBackpackCooldownPercent; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDefaultRuneSpawnLogic; // 0x5f0            
+            bool m_bDefaultRuneSpawnLogic; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableFreeCourierMode; // 0x5f1            
+            bool m_bEnableFreeCourierMode; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAllowNeutralItemDrops; // 0x5f2            
+            bool m_bAllowNeutralItemDrops; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableNeutralStash; // 0x5f3            
+            bool m_bEnableNeutralStash; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableNeutralStashTeamViewOnly; // 0x5f4            
+            bool m_bEnableNeutralStashTeamViewOnly; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableNeutralItemHideUndiscovered; // 0x5f5            
+            bool m_bEnableNeutralItemHideUndiscovered; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableSendToStash; // 0x5f6            
+            bool m_bEnableSendToStash; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bForceRightClickAttackDisabled; // 0x5f7            
+            bool m_bForceRightClickAttackDisabled; // 0x_            
             // metadata: MNetworkEnable
             // m_vecCustomShopInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CDOTACustomShopInfo> m_vecCustomShopInfo;
-            char m_vecCustomShopInfo[0x68]; // 0x5f8            
+            char m_vecCustomShopInfo[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCanSellAnywhere; // 0x660            
-            uint8_t _pad0661[0x3]; // 0x661
+            bool m_bCanSellAnywhere; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flCameraNearZ; // 0x664            
+            float m_flCameraNearZ; // 0x_            
             // metadata: MNetworkEnable
-            float m_flCameraFarZ; // 0x668            
+            float m_flCameraFarZ; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nCustomRadiantScore; // 0x66c            
+            std::int32_t m_nCustomRadiantScore; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nCustomDireScore; // 0x670            
+            std::int32_t m_nCustomDireScore; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAbilityUpgradeWhitelistEnabled; // 0x674            
-            uint8_t _pad0675[0x3]; // 0x675
+            bool m_bAbilityUpgradeWhitelistEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_vecAbilityUpgradeWhitelist has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::AbilityID_t> m_vecAbilityUpgradeWhitelist;
-            char m_vecAbilityUpgradeWhitelist[0x18]; // 0x678            
+            char m_vecAbilityUpgradeWhitelist[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGiveFreeTPOnDeath; // 0x690            
-            uint8_t _pad0691[0x3]; // 0x691
+            bool m_bGiveFreeTPOnDeath; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nInnateMeleeDamageBlockPct; // 0x694            
+            std::int32_t m_nInnateMeleeDamageBlockPct; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nInnateMeleeDamageBlockAmount; // 0x698            
+            std::int32_t m_nInnateMeleeDamageBlockAmount; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nInnateMeleeDamageBlockPerLevelAmount; // 0x69c            
+            std::int32_t m_nInnateMeleeDamageBlockPerLevelAmount; // 0x_            
             // metadata: MNetworkEnable
-            float m_flWaterRuneSpawnInterval; // 0x6a0            
-            uint8_t _pad06a4[0x4]; // 0x6a4
+            float m_flWaterRuneSpawnInterval; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_vecBigHealthBarUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CDOTA_BaseNPC>> m_vecBigHealthBarUnits;
-            char m_vecBigHealthBarUnits[0x18]; // 0x6a8            
-            uint8_t _pad06c0[0x20]; // 0x6c0
-            bool m_bSelectionGoldPenaltyEnabled; // 0x6e0            
-            bool m_bRemoveIllusionsOnDeath; // 0x6e1            
-            bool m_bRandomHeroBonusItemGrantDisabled; // 0x6e2            
-            bool m_bDisableClumpingBehaviorByDefault; // 0x6e3            
-            bool m_bRuneTypeEnabled[10]; // 0x6e4            
-            bool m_bOverrideBotLateGame; // 0x6ee            
-            bool m_bBotsAlwaysPushWithHuman; // 0x6ef            
-            bool m_bBotsInLateGame; // 0x6f0            
-            uint8_t _pad06f1[0x3]; // 0x6f1
-            std::int32_t m_nBotMaxPushTier; // 0x6f4            
-            float m_flFountainPercentageHealthRegen; // 0x6f8            
-            float m_flFountainPercentageManaRegen; // 0x6fc            
-            float m_flFountainConstantManaRegen; // 0x700            
-            float m_flPowerRuneSpawnInterval; // 0x704            
-            float m_flBountyRuneSpawnInterval; // 0x708            
-            float m_flXPRuneSpawnInterval; // 0x70c            
-            uint8_t _pad0710[0x108];
+            char m_vecBigHealthBarUnits[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bSelectionGoldPenaltyEnabled; // 0x_            
+            bool m_bRemoveIllusionsOnDeath; // 0x_            
+            bool m_bRandomHeroBonusItemGrantDisabled; // 0x_            
+            bool m_bDisableClumpingBehaviorByDefault; // 0x_            
+            bool m_bRuneTypeEnabled[10]; // 0x_            
+            bool m_bOverrideBotLateGame; // 0x_            
+            bool m_bBotsAlwaysPushWithHuman; // 0x_            
+            bool m_bBotsInLateGame; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nBotMaxPushTier; // 0x_            
+            float m_flFountainPercentageHealthRegen; // 0x_            
+            float m_flFountainPercentageManaRegen; // 0x_            
+            float m_flFountainConstantManaRegen; // 0x_            
+            float m_flPowerRuneSpawnInterval; // 0x_            
+            float m_flBountyRuneSpawnInterval; // 0x_            
+            float m_flXPRuneSpawnInterval; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTABaseGameMode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTABaseGameMode) == 0x818);
+        static_assert(sizeof(source2sdk::server::CDOTABaseGameMode) == 0x_);
     };
 };

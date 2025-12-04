@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         class FourVectors2D
         {
         public:
-            fltx4 x; // 0x0            
-            fltx4 y; // 0x10            
+            fltx4 x; // 0x_            
+            fltx4 y; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FourVectors2D, x) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FourVectors2D, y) == 0x10);
+        static_assert(offsetof(source2sdk::physicslib::FourVectors2D, x) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FourVectors2D, y) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FourVectors2D) == 0x20);
+        static_assert(sizeof(source2sdk::physicslib::FourVectors2D) == 0x_);
     };
 };

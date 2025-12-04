@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x168
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,14 +26,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "material variable"
-            CUtlString m_strVariable; // 0x0            
+            CUtlString m_strVariable; // 0x_            
             // metadata: MPropertyFriendlyName "input"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flInput; // 0x8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flInput; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in FloatInputMaterialVariable_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::FloatInputMaterialVariable_t) == 0x168);
+        static_assert(sizeof(source2sdk::particles::FloatInputMaterialVariable_t) == 0x_);
     };
 };

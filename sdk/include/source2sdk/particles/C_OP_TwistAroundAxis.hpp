@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,20 +27,20 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "amount of force"
-            float m_fForceAmount; // 0x1d0            
+            float m_fForceAmount; // 0x_            
             // metadata: MPropertyFriendlyName "twist axis"
             // metadata: MVectorIsCoordinate
-            Vector m_TwistAxis; // 0x1d4            
+            Vector m_TwistAxis; // 0x_            
             // metadata: MPropertyFriendlyName "object local space axis 0/1"
-            bool m_bLocalSpace; // 0x1e0            
-            uint8_t _pad01e1[0x3]; // 0x1e1
+            bool m_bLocalSpace; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "control point"
-            std::int32_t m_nControlPointNumber; // 0x1e4            
+            std::int32_t m_nControlPointNumber; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_TwistAroundAxis because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_TwistAroundAxis) == 0x1e8);
+        static_assert(sizeof(source2sdk::particles::C_OP_TwistAroundAxis) == 0x_);
     };
 };

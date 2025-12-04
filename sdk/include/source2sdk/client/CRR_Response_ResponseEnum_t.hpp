@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CRR_Response_ResponseEnum_t : std::uint32_t
         {
             MAX_RESPONSE_NAME = 0xc0,

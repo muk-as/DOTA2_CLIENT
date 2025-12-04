@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1df0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,19 +28,19 @@ namespace source2sdk
         class C_DOTA_Unit_Hero_Razor : public source2sdk::client::C_DOTA_BaseNPC_Hero
         {
         public:
-            std::int32_t m_iPoseParameterAim; // 0x1de0            
-            std::int32_t m_iPoseParameterRange; // 0x1de4            
+            std::int32_t m_iPoseParameterAim; // 0x_            
+            std::int32_t m_iPoseParameterRange; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetAngle; // 0x1de8            
+            std::int32_t m_nTargetAngle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetRange; // 0x1dec            
+            std::int32_t m_nTargetRange; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Razor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Razor) == 0x1df0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Razor) == 0x_);
     };
 };

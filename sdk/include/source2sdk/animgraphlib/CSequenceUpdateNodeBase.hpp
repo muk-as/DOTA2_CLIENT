@@ -15,9 +15,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -27,15 +27,15 @@ namespace source2sdk
         class CSequenceUpdateNodeBase : public source2sdk::animgraphlib::CLeafUpdateNode
         {
         public:
-            uint8_t _pad0058[0x14]; // 0x58
-            float m_playbackSpeed; // 0x6c            
-            bool m_bLoop; // 0x70            
-            uint8_t _pad0071[0x7];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_playbackSpeed; // 0x_            
+            bool m_bLoop; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSequenceUpdateNodeBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CSequenceUpdateNodeBase) == 0x78);
+        static_assert(sizeof(source2sdk::animgraphlib::CSequenceUpdateNodeBase) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,13 +26,13 @@ namespace source2sdk
         class CNmIDEvent : public source2sdk::animlib::CNmEvent
         {
         public:
-            CGlobalSymbol m_ID; // 0x20            
-            CGlobalSymbol m_secondaryID; // 0x28            
+            CGlobalSymbol m_ID; // 0x_            
+            CGlobalSymbol m_secondaryID; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmIDEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmIDEvent) == 0x30);
+        static_assert(sizeof(source2sdk::animlib::CNmIDEvent) == 0x_);
     };
 };

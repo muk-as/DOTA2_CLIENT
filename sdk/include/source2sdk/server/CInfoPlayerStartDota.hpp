@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x538
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,20 +28,20 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bDisabled; // 0x4e0            
-            uint8_t _pad04e1[0x7]; // 0x4e1
-            source2sdk::entity2::CEntityIOOutput m_OnEnabled; // 0x4e8            
-            source2sdk::entity2::CEntityIOOutput m_OnDisabled; // 0x510            
+            bool m_bDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_OnEnabled; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnDisabled; // 0x_            
             
             // Datamap fields:
-            // void InputSetEnabled; // 0x0
-            // void InputSetDisabled; // 0x0
-            // void InputSetEnabledExclusively; // 0x0
+            // void InputSetEnabled; // 0x_
+            // void InputSetDisabled; // 0x_
+            // void InputSetEnabledExclusively; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CInfoPlayerStartDota because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInfoPlayerStartDota) == 0x538);
+        static_assert(sizeof(source2sdk::server::CInfoPlayerStartDota) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         struct FeCollisionPlane_t
         {
         public:
-            std::uint16_t nCtrlParent; // 0x0            
-            std::uint16_t nChildNode; // 0x2            
-            source2sdk::physicslib::RnPlane_t m_Plane; // 0x4            
-            float flStrength; // 0x14            
+            std::uint16_t nCtrlParent; // 0x_            
+            std::uint16_t nChildNode; // 0x_            
+            source2sdk::physicslib::RnPlane_t m_Plane; // 0x_            
+            float flStrength; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, nCtrlParent) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, nChildNode) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, m_Plane) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, flStrength) == 0x14);
+        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, nCtrlParent) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, nChildNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, m_Plane) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCollisionPlane_t, flStrength) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeCollisionPlane_t) == 0x18);
+        static_assert(sizeof(source2sdk::physicslib::FeCollisionPlane_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_REPLAY_STATE_EVENT : std::uint32_t
         {
             DOTA_REPLAY_STATE_EVENT_GAME_START = 0x1,

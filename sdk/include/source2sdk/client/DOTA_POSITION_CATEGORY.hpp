@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 16
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_POSITION_CATEGORY : std::uint32_t
         {
             DOTA_POSITION_NONE = 0x0,

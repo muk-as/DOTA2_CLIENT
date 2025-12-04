@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class FowCustomTeams_t : std::uint32_t
         {
             FOW_TEAM_NONE = 0x0,

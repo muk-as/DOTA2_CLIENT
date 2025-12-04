@@ -15,40 +15,40 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x618
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CPhysSlideConstraint : public source2sdk::server::CPhysConstraint
         {
         public:
-            uint8_t _pad0550[0x8]; // 0x550
-            Vector m_axisEnd; // 0x558            
-            float m_slideFriction; // 0x564            
-            float m_systemLoadScale; // 0x568            
-            float m_initialOffset; // 0x56c            
-            bool m_bEnableLinearConstraint; // 0x570            
-            bool m_bEnableAngularConstraint; // 0x571            
-            uint8_t _pad0572[0x2]; // 0x572
-            float m_flMotorFrequency; // 0x574            
-            float m_flMotorDampingRatio; // 0x578            
-            bool m_bUseEntityPivot; // 0x57c            
-            uint8_t _pad057d[0x3]; // 0x57d
-            source2sdk::server::ConstraintSoundInfo m_soundInfo; // 0x580            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_axisEnd; // 0x_            
+            float m_slideFriction; // 0x_            
+            float m_systemLoadScale; // 0x_            
+            float m_initialOffset; // 0x_            
+            bool m_bEnableLinearConstraint; // 0x_            
+            bool m_bEnableAngularConstraint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMotorFrequency; // 0x_            
+            float m_flMotorDampingRatio; // 0x_            
+            bool m_bUseEntityPivot; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::ConstraintSoundInfo m_soundInfo; // 0x_            
             
             // Datamap fields:
-            // float InputSetOffset; // 0x0
-            // float InputSetVelocity; // 0x0
-            // float InputSetSlideFriction; // 0x0
-            // void CPhysSlideConstraintSoundThink; // 0x0
+            // float InputSetOffset; // 0x_
+            // float InputSetVelocity; // 0x_
+            // float InputSetSlideFriction; // 0x_
+            // void CPhysSlideConstraintSoundThink; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPhysSlideConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysSlideConstraint) == 0x618);
+        static_assert(sizeof(source2sdk::server::CPhysSlideConstraint) == 0x_);
     };
 };

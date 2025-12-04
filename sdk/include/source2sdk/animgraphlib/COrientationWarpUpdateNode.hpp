@@ -20,10 +20,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,29 +32,29 @@ namespace source2sdk
         class COrientationWarpUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            uint8_t _pad0070[0x4]; // 0x70
-            source2sdk::animgraphlib::OrientationWarpMode_t m_eMode; // 0x74            
-            source2sdk::animgraphlib::CAnimParamHandle m_hTargetParam; // 0x78            
-            source2sdk::animgraphlib::CAnimParamHandle m_hTargetPositionParam; // 0x7a            
-            source2sdk::animgraphlib::CAnimParamHandle m_hFallbackTargetPositionParam; // 0x7c            
-            uint8_t _pad007e[0x2]; // 0x7e
-            source2sdk::animgraphlib::OrientationWarpTargetOffsetMode_t m_eTargetOffsetMode; // 0x80            
-            float m_flTargetOffset; // 0x84            
-            source2sdk::animgraphlib::CAnimParamHandle m_hTargetOffsetParam; // 0x88            
-            uint8_t _pad008a[0x6]; // 0x8a
-            source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x90            
-            source2sdk::animgraphlib::OrientationWarpRootMotionSource_t m_eRootMotionSource; // 0xa8            
-            float m_flMaxRootMotionScale; // 0xac            
-            bool m_bEnablePreferredRotationDirection; // 0xb0            
-            uint8_t _pad00b1[0x3]; // 0xb1
-            source2sdk::animgraphlib::AnimValueSource m_ePreferredRotationDirection; // 0xb4            
-            float m_flPreferredRotationThreshold; // 0xb8            
-            uint8_t _pad00bc[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::OrientationWarpMode_t m_eMode; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hTargetParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hTargetPositionParam; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hFallbackTargetPositionParam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::OrientationWarpTargetOffsetMode_t m_eTargetOffsetMode; // 0x_            
+            float m_flTargetOffset; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hTargetOffsetParam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x_            
+            source2sdk::animgraphlib::OrientationWarpRootMotionSource_t m_eRootMotionSource; // 0x_            
+            float m_flMaxRootMotionScale; // 0x_            
+            bool m_bEnablePreferredRotationDirection; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::AnimValueSource m_ePreferredRotationDirection; // 0x_            
+            float m_flPreferredRotationThreshold; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in COrientationWarpUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::COrientationWarpUpdateNode) == 0xc0);
+        static_assert(sizeof(source2sdk::animgraphlib::COrientationWarpUpdateNode) == 0x_);
     };
 };

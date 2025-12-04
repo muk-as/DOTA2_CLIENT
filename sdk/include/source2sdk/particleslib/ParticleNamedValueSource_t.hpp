@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,26 +26,26 @@ namespace source2sdk
         struct ParticleNamedValueSource_t
         {
         public:
-            CUtlString m_Name; // 0x0            
-            bool m_IsPublic; // 0x8            
-            uint8_t _pad0009[0x3]; // 0x9
+            CUtlString m_Name; // 0x_            
+            bool m_IsPublic; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
-            source2sdk::pulse_runtime_lib::PulseValueType_t m_ValueType; // 0xc            
+            source2sdk::pulse_runtime_lib::PulseValueType_t m_ValueType; // 0x_            
             // metadata: MPropertySuppressField
-            source2sdk::particleslib::ParticleNamedValueConfiguration_t m_DefaultConfig; // 0x10            
+            source2sdk::particleslib::ParticleNamedValueConfiguration_t m_DefaultConfig; // 0x_            
             // metadata: MPropertySuppressField
             // m_NamedConfigs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particleslib::ParticleNamedValueConfiguration_t> m_NamedConfigs;
-            char m_NamedConfigs[0x18]; // 0x48            
+            char m_NamedConfigs[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_Name) == 0x0);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_IsPublic) == 0x8);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_ValueType) == 0xc);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_DefaultConfig) == 0x10);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_NamedConfigs) == 0x48);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_Name) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_IsPublic) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_ValueType) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_DefaultConfig) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_NamedConfigs) == 0x_);
         
-        static_assert(sizeof(source2sdk::particleslib::ParticleNamedValueSource_t) == 0x60);
+        static_assert(sizeof(source2sdk::particleslib::ParticleNamedValueSource_t) == 0x_);
     };
 };

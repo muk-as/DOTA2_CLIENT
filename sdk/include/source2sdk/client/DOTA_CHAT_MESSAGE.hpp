@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 115
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_CHAT_MESSAGE : std::uint32_t
         {
             CHAT_MESSAGE_INVALID = 0xffffffff,

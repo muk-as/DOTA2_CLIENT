@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,24 +26,24 @@ namespace source2sdk
         struct VMixPlateverbDesc_t
         {
         public:
-            float m_flPrefilter; // 0x0            
-            float m_flInputDiffusion1; // 0x4            
-            float m_flInputDiffusion2; // 0x8            
-            float m_flDecay; // 0xc            
-            float m_flDamp; // 0x10            
-            float m_flFeedbackDiffusion1; // 0x14            
-            float m_flFeedbackDiffusion2; // 0x18            
+            float m_flPrefilter; // 0x_            
+            float m_flInputDiffusion1; // 0x_            
+            float m_flInputDiffusion2; // 0x_            
+            float m_flDecay; // 0x_            
+            float m_flDamp; // 0x_            
+            float m_flFeedbackDiffusion1; // 0x_            
+            float m_flFeedbackDiffusion2; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flPrefilter) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flInputDiffusion1) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flInputDiffusion2) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flDecay) == 0xc);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flDamp) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flFeedbackDiffusion1) == 0x14);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flFeedbackDiffusion2) == 0x18);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flPrefilter) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flInputDiffusion1) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flInputDiffusion2) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flDecay) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flDamp) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flFeedbackDiffusion1) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t, m_flFeedbackDiffusion2) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t) == 0x1c);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixPlateverbDesc_t) == 0x_);
     };
 };

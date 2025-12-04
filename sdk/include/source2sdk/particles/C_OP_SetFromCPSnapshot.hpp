@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x610
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,43 +30,43 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "snapshot control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c0            
-            uint8_t _pad01c4[0x4]; // 0x1c4
+            std::int32_t m_nControlPointNumber; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "snapshot subset"
             // metadata: MPropertySuppressExpr "m_nControlPointNumber < 0"
-            CUtlString m_strSnapshotSubset; // 0x1c8            
+            CUtlString m_strSnapshotSubset; // 0x_            
             // metadata: MPropertyFriendlyName "field to read"
             // metadata: MPropertyAttributeChoiceName "particlefield"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToRead; // 0x1d0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToRead; // 0x_            
             // metadata: MPropertyFriendlyName "field to write"
             // metadata: MPropertyAttributeChoiceName "particlefield"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToWrite; // 0x1d4            
+            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToWrite; // 0x_            
             // metadata: MPropertyFriendlyName "local space control point number"
-            std::int32_t m_nLocalSpaceCP; // 0x1d8            
+            std::int32_t m_nLocalSpaceCP; // 0x_            
             // metadata: MPropertyFriendlyName "random order"
-            bool m_bRandom; // 0x1dc            
+            bool m_bRandom; // 0x_            
             // metadata: MPropertyFriendlyName "reverse order"
-            bool m_bReverse; // 0x1dd            
-            uint8_t _pad01de[0x2]; // 0x1de
+            bool m_bReverse; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "random seed"
-            std::int32_t m_nRandomSeed; // 0x1e0            
-            uint8_t _pad01e4[0x4]; // 0x1e4
+            std::int32_t m_nRandomSeed; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Snapshot start point"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotStartPoint; // 0x1e8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotStartPoint; // 0x_            
             // metadata: MPropertyFriendlyName "Snapshot increment amount"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotIncrement; // 0x348            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotIncrement; // 0x_            
             // metadata: MPropertyFriendlyName "Interpolation"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInterpolation; // 0x4a8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInterpolation; // 0x_            
             // metadata: MPropertyFriendlyName "Sub-Sample Between Input Points"
-            bool m_bSubSample; // 0x608            
+            bool m_bSubSample; // 0x_            
             // metadata: MPropertyFriendlyName "Position also sets Previous Position"
-            bool m_bPrev; // 0x609            
-            uint8_t _pad060a[0x6];
+            bool m_bPrev; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SetFromCPSnapshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SetFromCPSnapshot) == 0x610);
+        static_assert(sizeof(source2sdk::particles::C_OP_SetFromCPSnapshot) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,33 +26,33 @@ namespace source2sdk
         public:
             // metadata: MPropertyDescription "Name of the mixgroup. TODO: needs to be autopopulated with mixgroups."
             // metadata: MPropertyFriendlyName "Mixgroup Name"
-            CUtlString m_mixgroup; // 0x0            
+            CUtlString m_mixgroup; // 0x_            
             // metadata: MPropertyDescription "The amount to multiply the volume of the non-spatialized reverb/dsp by when at the max reverb blend distance. 1.0 leaves the volume unchanged."
             // metadata: MPropertyFriendlyName "Max reverb gain amount for listener DSP."
-            float m_flModifier; // 0x8            
+            float m_flModifier; // 0x_            
             // metadata: MPropertyDescription "The amount to multiply the volume of the non-spatialized reverb/dsp by when at the min reverb blend distance. 1.0 leaves the volume unchanged."
             // metadata: MPropertyFriendlyName "Min reverb gain amount amount for listener DSP."
-            float m_flModifierMin; // 0xc            
+            float m_flModifierMin; // 0x_            
             // metadata: MPropertyDescription "If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."
             // metadata: MPropertyFriendlyName "Max reverb gain amount for source-specific DSP."
-            float m_flSourceModifier; // 0x10            
+            float m_flSourceModifier; // 0x_            
             // metadata: MPropertyDescription "If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."
             // metadata: MPropertyFriendlyName "Min reverb gain amount for source-specific DSP."
-            float m_flSourceModifierMin; // 0x14            
+            float m_flSourceModifierMin; // 0x_            
             // metadata: MPropertyDescription "When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount."
             // metadata: MPropertyFriendlyName "Modification amount for listener DSP when source DSP is used."
-            float m_flListenerReverbModifierWhenSourceReverbIsActive; // 0x18            
-            uint8_t _pad001c[0x4];
+            float m_flListenerReverbModifierWhenSourceReverbIsActive; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_mixgroup) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flModifier) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flModifierMin) == 0xc);
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flSourceModifier) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flSourceModifierMin) == 0x14);
-        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flListenerReverbModifierWhenSourceReverbIsActive) == 0x18);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_mixgroup) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flModifier) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flModifierMin) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flSourceModifier) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flSourceModifierMin) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CDSPMixgroupModifier, m_flListenerReverbModifierWhenSourceReverbIsActive) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem::CDSPMixgroupModifier) == 0x20);
+        static_assert(sizeof(source2sdk::soundsystem::CDSPMixgroupModifier) == 0x_);
     };
 };

@@ -19,10 +19,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x130
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -30,62 +30,62 @@ namespace source2sdk
         struct MaterialResourceData_t
         {
         public:
-            CUtlString m_materialName; // 0x0            
-            CUtlString m_shaderName; // 0x8            
+            CUtlString m_materialName; // 0x_            
+            CUtlString m_shaderName; // 0x_            
             // m_intParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamInt_t> m_intParams;
-            char m_intParams[0x18]; // 0x10            
+            char m_intParams[0x_]; // 0x_            
             // m_floatParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamFloat_t> m_floatParams;
-            char m_floatParams[0x18]; // 0x28            
+            char m_floatParams[0x_]; // 0x_            
             // m_vectorParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamVector_t> m_vectorParams;
-            char m_vectorParams[0x18]; // 0x40            
+            char m_vectorParams[0x_]; // 0x_            
             // m_textureParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamTexture_t> m_textureParams;
-            char m_textureParams[0x18]; // 0x58            
+            char m_textureParams[0x_]; // 0x_            
             // m_dynamicParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamBuffer_t> m_dynamicParams;
-            char m_dynamicParams[0x18]; // 0x70            
+            char m_dynamicParams[0x_]; // 0x_            
             // m_dynamicTextureParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamBuffer_t> m_dynamicTextureParams;
-            char m_dynamicTextureParams[0x18]; // 0x88            
+            char m_dynamicTextureParams[0x_]; // 0x_            
             // m_intAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamInt_t> m_intAttributes;
-            char m_intAttributes[0x18]; // 0xa0            
+            char m_intAttributes[0x_]; // 0x_            
             // m_floatAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamFloat_t> m_floatAttributes;
-            char m_floatAttributes[0x18]; // 0xb8            
+            char m_floatAttributes[0x_]; // 0x_            
             // m_vectorAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamVector_t> m_vectorAttributes;
-            char m_vectorAttributes[0x18]; // 0xd0            
+            char m_vectorAttributes[0x_]; // 0x_            
             // m_textureAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamTexture_t> m_textureAttributes;
-            char m_textureAttributes[0x18]; // 0xe8            
+            char m_textureAttributes[0x_]; // 0x_            
             // m_stringAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::materialsystem2::MaterialParamString_t> m_stringAttributes;
-            char m_stringAttributes[0x18]; // 0x100            
+            char m_stringAttributes[0x_]; // 0x_            
             // m_renderAttributesUsed has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_renderAttributesUsed;
-            char m_renderAttributesUsed[0x18]; // 0x118            
+            char m_renderAttributesUsed[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_materialName) == 0x0);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_shaderName) == 0x8);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_intParams) == 0x10);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_floatParams) == 0x28);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_vectorParams) == 0x40);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_textureParams) == 0x58);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_dynamicParams) == 0x70);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_dynamicTextureParams) == 0x88);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_intAttributes) == 0xa0);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_floatAttributes) == 0xb8);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_vectorAttributes) == 0xd0);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_textureAttributes) == 0xe8);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_stringAttributes) == 0x100);
-        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_renderAttributesUsed) == 0x118);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_materialName) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_shaderName) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_intParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_floatParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_vectorParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_textureParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_dynamicParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_dynamicTextureParams) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_intAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_floatAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_vectorAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_textureAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_stringAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::MaterialResourceData_t, m_renderAttributesUsed) == 0x_);
         
-        static_assert(sizeof(source2sdk::materialsystem2::MaterialResourceData_t) == 0x130);
+        static_assert(sizeof(source2sdk::materialsystem2::MaterialResourceData_t) == 0x_);
     };
 };

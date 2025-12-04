@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,15 +27,15 @@ namespace source2sdk
         public:
             // m_subQuantizers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CVectorQuantizer> m_subQuantizers;
-            char m_subQuantizers[0x18]; // 0x0            
-            std::int32_t m_nDimensions; // 0x18            
-            uint8_t _pad001c[0x4];
+            char m_subQuantizers[0x_]; // 0x_            
+            std::int32_t m_nDimensions; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CProductQuantizer, m_subQuantizers) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CProductQuantizer, m_nDimensions) == 0x18);
+        static_assert(offsetof(source2sdk::animgraphlib::CProductQuantizer, m_subQuantizers) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CProductQuantizer, m_nDimensions) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CProductQuantizer) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CProductQuantizer) == 0x_);
     };
 };

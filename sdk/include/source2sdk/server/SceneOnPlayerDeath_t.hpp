@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SceneOnPlayerDeath_t : std::uint32_t
         {
             SCENE_ONPLAYERDEATH_DO_NOTHING = 0x0,

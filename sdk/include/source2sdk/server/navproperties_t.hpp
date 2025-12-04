@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 1
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class navproperties_t : std::uint32_t
         {
             NAV_IGNORE = 0x1,

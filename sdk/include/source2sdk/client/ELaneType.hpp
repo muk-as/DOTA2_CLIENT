@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELaneType : std::uint32_t
         {
             LANE_TYPE_UNKNOWN = 0x0,

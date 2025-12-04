@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,24 +24,24 @@ namespace source2sdk
         struct FeVertexMapBuild_t
         {
         public:
-            CUtlString m_VertexMapName; // 0x0            
-            std::uint32_t m_nNameHash; // 0x8            
-            Color m_Color; // 0xc            
-            float m_flVolumetricSolveStrength; // 0x10            
-            std::int32_t m_nScaleSourceNode; // 0x14            
+            CUtlString m_VertexMapName; // 0x_            
+            std::uint32_t m_nNameHash; // 0x_            
+            Color m_Color; // 0x_            
+            float m_flVolumetricSolveStrength; // 0x_            
+            std::int32_t m_nScaleSourceNode; // 0x_            
             // m_Weights has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_Weights;
-            char m_Weights[0x18]; // 0x18            
+            char m_Weights[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_VertexMapName) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_nNameHash) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_Color) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_flVolumetricSolveStrength) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_nScaleSourceNode) == 0x14);
-        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_Weights) == 0x18);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_VertexMapName) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_nNameHash) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_Color) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_flVolumetricSolveStrength) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_nScaleSourceNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeVertexMapBuild_t, m_Weights) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeVertexMapBuild_t) == 0x30);
+        static_assert(sizeof(source2sdk::physicslib::FeVertexMapBuild_t) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -25,11 +25,11 @@ namespace source2sdk
         class CAnimGraphSettingsGroup
         {
         public:
-            uint8_t _pad0000[0x20];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphSettingsGroup) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphSettingsGroup) == 0x_);
     };
 };

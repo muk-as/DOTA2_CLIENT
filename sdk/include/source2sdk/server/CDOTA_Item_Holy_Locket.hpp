@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Item_Holy_Locket : public source2sdk::server::CDOTA_Item
         {
         public:
-            float charge_radius; // 0x690            
-            std::int32_t max_charges; // 0x694            
+            float charge_radius; // 0x_            
+            std::int32_t max_charges; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Holy_Locket because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Holy_Locket) == 0x698);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Holy_Locket) == 0x_);
     };
 };

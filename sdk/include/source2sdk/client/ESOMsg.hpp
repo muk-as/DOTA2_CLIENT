@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ESOMsg : std::uint32_t
         {
             k_ESOMsg_Create = 0x15,

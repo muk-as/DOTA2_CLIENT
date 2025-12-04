@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,21 +31,21 @@ namespace source2sdk
         public:
             // m_motors has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPtr<source2sdk::animgraphlib::CAnimMotorUpdaterBase>> m_motors;
-            char m_motors[0x18]; // 0x30            
-            source2sdk::animgraphlib::CAnimInputDamping m_facingDamping; // 0x48            
-            uint8_t _pad0060[0x8]; // 0x60
-            std::int32_t m_nDefaultMotorIndex; // 0x68            
-            float m_flDefaultRunSpeed; // 0x6c            
-            bool m_bMoveVarsDisabled; // 0x70            
-            bool m_bNetworkPath; // 0x71            
-            bool m_bNetworkFacing; // 0x72            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramHandles[34]; // 0x73            
-            uint8_t _pad00b7[0x1];
+            char m_motors[0x_]; // 0x_            
+            source2sdk::animgraphlib::CAnimInputDamping m_facingDamping; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nDefaultMotorIndex; // 0x_            
+            float m_flDefaultRunSpeed; // 0x_            
+            bool m_bMoveVarsDisabled; // 0x_            
+            bool m_bNetworkPath; // 0x_            
+            bool m_bNetworkFacing; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramHandles[34]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMovementComponentUpdater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMovementComponentUpdater) == 0xb8);
+        static_assert(sizeof(source2sdk::animgraphlib::CMovementComponentUpdater) == 0x_);
     };
 };

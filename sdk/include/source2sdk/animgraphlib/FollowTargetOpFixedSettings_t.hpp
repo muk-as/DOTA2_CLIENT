@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,22 +25,22 @@ namespace source2sdk
         struct FollowTargetOpFixedSettings_t
         {
         public:
-            std::int32_t m_boneIndex; // 0x0            
-            bool m_bBoneTarget; // 0x4            
-            uint8_t _pad0005[0x3]; // 0x5
-            std::int32_t m_boneTargetIndex; // 0x8            
-            bool m_bWorldCoodinateTarget; // 0xc            
-            bool m_bMatchTargetOrientation; // 0xd            
-            uint8_t _pad000e[0x2];
+            std::int32_t m_boneIndex; // 0x_            
+            bool m_bBoneTarget; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_boneTargetIndex; // 0x_            
+            bool m_bWorldCoodinateTarget; // 0x_            
+            bool m_bMatchTargetOrientation; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_boneIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bBoneTarget) == 0x4);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_boneTargetIndex) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bWorldCoodinateTarget) == 0xc);
-        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bMatchTargetOrientation) == 0xd);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_boneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bBoneTarget) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_boneTargetIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bWorldCoodinateTarget) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t, m_bMatchTargetOrientation) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t) == 0x10);
+        static_assert(sizeof(source2sdk::animgraphlib::FollowTargetOpFixedSettings_t) == 0x_);
     };
 };

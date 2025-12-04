@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb70
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -37,83 +37,83 @@ namespace source2sdk
         class CPhysicsProp : public source2sdk::server::CBreakableProp
         {
         public:
-            uint8_t _pad09c0[0x8]; // 0x9c0
-            source2sdk::entity2::CEntityIOOutput m_MotionEnabled; // 0x9c8            
-            source2sdk::entity2::CEntityIOOutput m_OnAwakened; // 0x9f0            
-            source2sdk::entity2::CEntityIOOutput m_OnAwake; // 0xa18            
-            source2sdk::entity2::CEntityIOOutput m_OnAsleep; // 0xa40            
-            source2sdk::entity2::CEntityIOOutput m_OnPlayerUse; // 0xa68            
-            source2sdk::entity2::CEntityIOOutput m_OnOutOfWorld; // 0xa90            
-            source2sdk::entity2::CEntityIOOutput m_OnPlayerPickup; // 0xab8            
-            bool m_bForceNavIgnore; // 0xae0            
-            bool m_bNoNavmeshBlocker; // 0xae1            
-            bool m_bForceNpcExclude; // 0xae2            
-            uint8_t _pad0ae3[0x1]; // 0xae3
-            float m_massScale; // 0xae4            
-            float m_buoyancyScale; // 0xae8            
-            std::int32_t m_damageType; // 0xaec            
-            std::int32_t m_damageToEnableMotion; // 0xaf0            
-            float m_flForceToEnableMotion; // 0xaf4            
-            bool m_bThrownByPlayer; // 0xaf8            
-            bool m_bDroppedByPlayer; // 0xaf9            
-            bool m_bTouchedByPlayer; // 0xafa            
-            bool m_bFirstCollisionAfterLaunch; // 0xafb            
-            bool m_bHasBeenAwakened; // 0xafc            
-            bool m_bIsOverrideProp; // 0xafd            
-            uint8_t _pad0afe[0x2]; // 0xafe
-            source2sdk::entity2::GameTime_t m_flLastBurn; // 0xb00            
-            source2sdk::physicslib::DynamicContinuousContactBehavior_t m_nDynamicContinuousContactBehavior; // 0xb04            
-            uint8_t _pad0b05[0x3]; // 0xb05
-            source2sdk::entity2::GameTime_t m_fNextCheckDisableMotionContactsTime; // 0xb08            
-            std::int32_t m_iInitialGlowState; // 0xb0c            
-            std::int32_t m_nGlowRange; // 0xb10            
-            std::int32_t m_nGlowRangeMin; // 0xb14            
-            Color m_glowColor; // 0xb18            
-            bool m_bShouldAutoConvertBackFromDebris; // 0xb1c            
-            bool m_bMuteImpactEffects; // 0xb1d            
-            uint8_t _pad0b1e[0x9]; // 0xb1e
-            bool m_bAcceptDamageFromHeldObjects; // 0xb27            
-            bool m_bEnableUseOutput; // 0xb28            
-            uint8_t _pad0b29[0x3]; // 0xb29
-            source2sdk::server::CPhysicsProp_CrateType_t m_CrateType; // 0xb2c            
-            CUtlSymbolLarge m_strItemClass[4]; // 0xb30            
-            std::int32_t m_nItemCount[4]; // 0xb50            
-            bool m_bRemovableForAmmoBalancing; // 0xb60            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_MotionEnabled; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnAwakened; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnAwake; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnAsleep; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnPlayerUse; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOutOfWorld; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnPlayerPickup; // 0x_            
+            bool m_bForceNavIgnore; // 0x_            
+            bool m_bNoNavmeshBlocker; // 0x_            
+            bool m_bForceNpcExclude; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_massScale; // 0x_            
+            float m_buoyancyScale; // 0x_            
+            std::int32_t m_damageType; // 0x_            
+            std::int32_t m_damageToEnableMotion; // 0x_            
+            float m_flForceToEnableMotion; // 0x_            
+            bool m_bThrownByPlayer; // 0x_            
+            bool m_bDroppedByPlayer; // 0x_            
+            bool m_bTouchedByPlayer; // 0x_            
+            bool m_bFirstCollisionAfterLaunch; // 0x_            
+            bool m_bHasBeenAwakened; // 0x_            
+            bool m_bIsOverrideProp; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_flLastBurn; // 0x_            
+            source2sdk::physicslib::DynamicContinuousContactBehavior_t m_nDynamicContinuousContactBehavior; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_fNextCheckDisableMotionContactsTime; // 0x_            
+            std::int32_t m_iInitialGlowState; // 0x_            
+            std::int32_t m_nGlowRange; // 0x_            
+            std::int32_t m_nGlowRangeMin; // 0x_            
+            Color m_glowColor; // 0x_            
+            bool m_bShouldAutoConvertBackFromDebris; // 0x_            
+            bool m_bMuteImpactEffects; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bAcceptDamageFromHeldObjects; // 0x_            
+            bool m_bEnableUseOutput; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CPhysicsProp_CrateType_t m_CrateType; // 0x_            
+            CUtlSymbolLarge m_strItemClass[4]; // 0x_            
+            std::int32_t m_nItemCount[4]; // 0x_            
+            bool m_bRemovableForAmmoBalancing; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAwake; // 0xb61            
-            bool m_bAttachedToReferenceFrame; // 0xb62            
-            uint8_t _pad0b63[0xd];
+            bool m_bAwake; // 0x_            
+            bool m_bAttachedToReferenceFrame; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void InputEnableMotion; // 0x0
-            // void InputDisableMotion; // 0x0
-            // void InputWake; // 0x0
-            // bool InputSetAutoConvertBackFromDebris; // 0x0
-            // void InputSleep; // 0x0
-            // void InputStartGlowing; // 0x0
-            // void InputStopGlowing; // 0x0
-            // Vector InputSetGlowOverride; // 0x0
-            // int32_t InputSetGlowRange; // 0x0
-            // float InputSetMass; // 0x0
-            // void InputEnableGravity; // 0x0
-            // void InputDisableGravity; // 0x0
-            // void InputEnableDrag; // 0x0
-            // void InputDisableDrag; // 0x0
-            // void InputEnableCollisions; // 0x0
-            // void InputDisableCollisions; // 0x0
-            // bool forcemotiondisabled; // 0x7fffffff
-            // bool phys_start_asleep; // 0x7fffffff
-            // void CPhysicsPropClearFlagsThink; // 0x0
-            // int32_t m_nNavObstacleType; // 0xb20
-            // bool m_bUpdateNavWhenMoving; // 0xb24
-            // bool m_bForceNavObstacleCut; // 0xb25
-            // bool m_bAllowObstacleConvexHullMerging; // 0xb26
-            // int32_t health; // 0x7fffffff
+            // void InputEnableMotion; // 0x_
+            // void InputDisableMotion; // 0x_
+            // void InputWake; // 0x_
+            // bool InputSetAutoConvertBackFromDebris; // 0x_
+            // void InputSleep; // 0x_
+            // void InputStartGlowing; // 0x_
+            // void InputStopGlowing; // 0x_
+            // Vector InputSetGlowOverride; // 0x_
+            // int32_t InputSetGlowRange; // 0x_
+            // float InputSetMass; // 0x_
+            // void InputEnableGravity; // 0x_
+            // void InputDisableGravity; // 0x_
+            // void InputEnableDrag; // 0x_
+            // void InputDisableDrag; // 0x_
+            // void InputEnableCollisions; // 0x_
+            // void InputDisableCollisions; // 0x_
+            // bool forcemotiondisabled; // 0x_
+            // bool phys_start_asleep; // 0x_
+            // void CPhysicsPropClearFlagsThink; // 0x_
+            // int32_t m_nNavObstacleType; // 0x_
+            // bool m_bUpdateNavWhenMoving; // 0x_
+            // bool m_bForceNavObstacleCut; // 0x_
+            // bool m_bAllowObstacleConvexHullMerging; // 0x_
+            // int32_t health; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPhysicsProp because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysicsProp) == 0xb70);
+        static_assert(sizeof(source2sdk::server::CPhysicsProp) == 0x_);
     };
 };

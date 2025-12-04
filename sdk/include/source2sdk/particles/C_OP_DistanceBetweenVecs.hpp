@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1440
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,30 +32,30 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1c0            
-            uint8_t _pad01c4[0x4]; // 0x1c4
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "first vector"
-            source2sdk::particleslib::CPerParticleVecInput m_vecPoint1; // 0x1c8            
+            source2sdk::particleslib::CPerParticleVecInput m_vecPoint1; // 0x_            
             // metadata: MPropertyFriendlyName "second vector"
-            source2sdk::particleslib::CPerParticleVecInput m_vecPoint2; // 0x840            
+            source2sdk::particleslib::CPerParticleVecInput m_vecPoint2; // 0x_            
             // metadata: MPropertyFriendlyName "distance minimum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInputMin; // 0xeb8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInputMin; // 0x_            
             // metadata: MPropertyFriendlyName "distance maximum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInputMax; // 0x1018            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInputMax; // 0x_            
             // metadata: MPropertyFriendlyName "output minimum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMin; // 0x1178            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMin; // 0x_            
             // metadata: MPropertyFriendlyName "output maximum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMax; // 0x12d8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMax; // 0x_            
             // metadata: MPropertyFriendlyName "set value method"
-            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x1438            
+            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x_            
             // metadata: MPropertyFriendlyName "divide by deltatime (for comparing motion since last simulation)"
-            bool m_bDeltaTime; // 0x143c            
-            uint8_t _pad143d[0x3];
+            bool m_bDeltaTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_DistanceBetweenVecs because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_DistanceBetweenVecs) == 0x1440);
+        static_assert(sizeof(source2sdk::particles::C_OP_DistanceBetweenVecs) == 0x_);
     };
 };

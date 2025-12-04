@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x3c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,57 +31,57 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertyDescription "Name used to identify the sizer. Must be unique within the paraent element."
-            CUtlString m_Name; // 0x50            
+            CUtlString m_Name; // 0x_            
             // metadata: MPropertyFriendlyName "Display Model"
             // metadata: MPropertyDescription "If enabled a model will be displayed at the position of the sizer that can be used to select the sizer in Hammer."
-            CSmartPropAttributeBool m_bDisplayModel; // 0x58            
+            CSmartPropAttributeBool m_bDisplayModel; // 0x_            
             // metadata: MPropertyGroupName "X-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMinX; // 0x98            
+            CSmartPropAttributeFloat m_flInitialMinX; // 0x_            
             // metadata: MPropertyGroupName "X-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMaxX; // 0xd8            
+            CSmartPropAttributeFloat m_flInitialMaxX; // 0x_            
             // metadata: MPropertyGroupName "X-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMinX; // 0x118            
+            CSmartPropAttributeFloat m_flConstraintMinX; // 0x_            
             // metadata: MPropertyGroupName "X-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMaxX; // 0x158            
-            // metadata: MPropertyGroupName "X-Axis Size"
-            // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMinX; // 0x198            
+            CSmartPropAttributeFloat m_flConstraintMaxX; // 0x_            
             // metadata: MPropertyGroupName "X-Axis Size"
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMaxX; // 0x1a0            
+            CUtlString m_OutputVariableMinX; // 0x_            
+            // metadata: MPropertyGroupName "X-Axis Size"
+            // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
+            CUtlString m_OutputVariableMaxX; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMinY; // 0x1a8            
+            CSmartPropAttributeFloat m_flInitialMinY; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMaxY; // 0x1e8            
+            CSmartPropAttributeFloat m_flInitialMaxY; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMinY; // 0x228            
+            CSmartPropAttributeFloat m_flConstraintMinY; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMaxY; // 0x268            
+            CSmartPropAttributeFloat m_flConstraintMaxY; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMinY; // 0x2a8            
+            CUtlString m_OutputVariableMinY; // 0x_            
             // metadata: MPropertyGroupName "Y-Axis Size"
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMaxY; // 0x2b0            
+            CUtlString m_OutputVariableMaxY; // 0x_            
             // metadata: MPropertyGroupName "Z-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMinZ; // 0x2b8            
+            CSmartPropAttributeFloat m_flInitialMinZ; // 0x_            
             // metadata: MPropertyGroupName "Z-Axis Size"
-            CSmartPropAttributeFloat m_flInitialMaxZ; // 0x2f8            
+            CSmartPropAttributeFloat m_flInitialMaxZ; // 0x_            
             // metadata: MPropertyGroupName "Z-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMinZ; // 0x338            
+            CSmartPropAttributeFloat m_flConstraintMinZ; // 0x_            
             // metadata: MPropertyGroupName "Z-Axis Size"
-            CSmartPropAttributeFloat m_flConstraintMaxZ; // 0x378            
-            // metadata: MPropertyGroupName "Z-Axis Size"
-            // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMinZ; // 0x3b8            
+            CSmartPropAttributeFloat m_flConstraintMaxZ; // 0x_            
             // metadata: MPropertyGroupName "Z-Axis Size"
             // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
-            CUtlString m_OutputVariableMaxZ; // 0x3c0            
+            CUtlString m_OutputVariableMinZ; // 0x_            
+            // metadata: MPropertyGroupName "Z-Axis Size"
+            // metadata: MPropertyAttributeEditor "SmartPropItemNameEditor( Variable:Float )"
+            CUtlString m_OutputVariableMaxZ; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_CreateSizer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_CreateSizer) == 0x3c8);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_CreateSizer) == 0x_);
     };
 };

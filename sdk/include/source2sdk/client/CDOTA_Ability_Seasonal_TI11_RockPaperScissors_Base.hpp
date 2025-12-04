@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Seasonal_TI11_RockPaperScissors_Base) == 0x688);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Seasonal_TI11_RockPaperScissors_Base) == 0x_);
     };
 };

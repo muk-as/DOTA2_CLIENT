@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,36 +33,36 @@ namespace source2sdk
         class CBlend2DUpdateNode : public source2sdk::animgraphlib::CAnimUpdateNodeBase
         {
         public:
-            uint8_t _pad0058[0x8]; // 0x58
+            uint8_t _pad_[0x_]; // 0x_
             // m_items has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::BlendItem_t> m_items;
-            char m_items[0x18]; // 0x60            
+            char m_items[0x_]; // 0x_            
             // m_tags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::TagSpan_t> m_tags;
-            char m_tags[0x18]; // 0x78            
-            source2sdk::animgraphlib::CParamSpanUpdater m_paramSpans; // 0x90            
+            char m_tags[0x_]; // 0x_            
+            source2sdk::animgraphlib::CParamSpanUpdater m_paramSpans; // 0x_            
             // m_nodeItemIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_nodeItemIndices;
-            char m_nodeItemIndices[0x18]; // 0xa8            
-            source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0xc0            
-            source2sdk::animgraphlib::AnimValueSource m_blendSourceX; // 0xd8            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramX; // 0xdc            
-            uint8_t _pad00de[0x2]; // 0xde
-            source2sdk::animgraphlib::AnimValueSource m_blendSourceY; // 0xe0            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramY; // 0xe4            
-            uint8_t _pad00e6[0x2]; // 0xe6
-            source2sdk::animgraphlib::Blend2DMode m_eBlendMode; // 0xe8            
-            float m_playbackSpeed; // 0xec            
-            bool m_bLoop; // 0xf0            
-            bool m_bLockBlendOnReset; // 0xf1            
-            bool m_bLockWhenWaning; // 0xf2            
-            bool m_bAnimEventsAndTagsOnMostWeightedOnly; // 0xf3            
-            uint8_t _pad00f4[0x4];
+            char m_nodeItemIndices[0x_]; // 0x_            
+            source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x_            
+            source2sdk::animgraphlib::AnimValueSource m_blendSourceX; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramX; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::AnimValueSource m_blendSourceY; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramY; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::Blend2DMode m_eBlendMode; // 0x_            
+            float m_playbackSpeed; // 0x_            
+            bool m_bLoop; // 0x_            
+            bool m_bLockBlendOnReset; // 0x_            
+            bool m_bLockWhenWaning; // 0x_            
+            bool m_bAnimEventsAndTagsOnMostWeightedOnly; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBlend2DUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CBlend2DUpdateNode) == 0xf8);
+        static_assert(sizeof(source2sdk::animgraphlib::CBlend2DUpdateNode) == 0x_);
     };
 };

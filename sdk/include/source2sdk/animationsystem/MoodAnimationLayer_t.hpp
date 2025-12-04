@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,53 +29,53 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertyDescription "Name of the layer"
-            CUtlString m_sName; // 0x0            
+            CUtlString m_sName; // 0x_            
             // metadata: MPropertyFriendlyName "Active When Listening"
             // metadata: MPropertyDescription "Sets the mood's animation buckets to be active when the character is listening"
-            bool m_bActiveListening; // 0x8            
+            bool m_bActiveListening; // 0x_            
             // metadata: MPropertyFriendlyName "Active When Talking"
             // metadata: MPropertyDescription "Sets the mood's animation buckets to be active when the character is talking"
-            bool m_bActiveTalking; // 0x9            
-            uint8_t _pad000a[0x6]; // 0xa
+            bool m_bActiveTalking; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "List of animations to choose from"
             // m_layerAnimations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animationsystem::MoodAnimation_t> m_layerAnimations;
-            char m_layerAnimations[0x18]; // 0x10            
+            char m_layerAnimations[0x_]; // 0x_            
             // metadata: MPropertyDescription "Intensity of the animation"
             // metadata: MPropertyAttributeRange "0 1"
-            source2sdk::tier2::CRangeFloat m_flIntensity; // 0x28            
+            source2sdk::tier2::CRangeFloat m_flIntensity; // 0x_            
             // metadata: MPropertyDescription "Multiplier of the animation duration"
-            source2sdk::tier2::CRangeFloat m_flDurationScale; // 0x30            
+            source2sdk::tier2::CRangeFloat m_flDurationScale; // 0x_            
             // metadata: MPropertyDescription "When scaling an animation, grab the scale value as in int. Used for gestures/postures to control number of looping sections"
-            bool m_bScaleWithInts; // 0x38            
-            uint8_t _pad0039[0x3]; // 0x39
+            bool m_bScaleWithInts; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Time before the next animation can start"
-            source2sdk::tier2::CRangeFloat m_flNextStart; // 0x3c            
+            source2sdk::tier2::CRangeFloat m_flNextStart; // 0x_            
             // metadata: MPropertyDescription "Time from the start of the mood before an animation can start"
-            source2sdk::tier2::CRangeFloat m_flStartOffset; // 0x44            
+            source2sdk::tier2::CRangeFloat m_flStartOffset; // 0x_            
             // metadata: MPropertyDescription "Time from the end of the mood when an animation cannot play"
-            source2sdk::tier2::CRangeFloat m_flEndOffset; // 0x4c            
+            source2sdk::tier2::CRangeFloat m_flEndOffset; // 0x_            
             // metadata: MPropertyDescription "Fade in time of the animation"
-            float m_flFadeIn; // 0x54            
+            float m_flFadeIn; // 0x_            
             // metadata: MPropertyDescription "Fade out time of the animation"
-            float m_flFadeOut; // 0x58            
-            uint8_t _pad005c[0x4];
+            float m_flFadeOut; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_sName) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bActiveListening) == 0x8);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bActiveTalking) == 0x9);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_layerAnimations) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flIntensity) == 0x28);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flDurationScale) == 0x30);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bScaleWithInts) == 0x38);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flNextStart) == 0x3c);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flStartOffset) == 0x44);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flEndOffset) == 0x4c);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flFadeIn) == 0x54);
-        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flFadeOut) == 0x58);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_sName) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bActiveListening) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bActiveTalking) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_layerAnimations) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flIntensity) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flDurationScale) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_bScaleWithInts) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flNextStart) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flStartOffset) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flEndOffset) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flFadeIn) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::MoodAnimationLayer_t, m_flFadeOut) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::MoodAnimationLayer_t) == 0x60);
+        static_assert(sizeof(source2sdk::animationsystem::MoodAnimationLayer_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class NmRootMotionBlendMode_t : std::uint8_t
         {
             Blend = 0x0,

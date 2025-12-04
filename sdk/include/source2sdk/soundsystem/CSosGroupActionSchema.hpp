@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,20 +28,20 @@ namespace source2sdk
         class CSosGroupActionSchema
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Name"
-            CUtlString m_name; // 0x8            
+            CUtlString m_name; // 0x_            
             // metadata: MPropertyFriendlyName "Action Type"
-            source2sdk::soundsystem::ActionType_t m_actionType; // 0x10            
+            source2sdk::soundsystem::ActionType_t m_actionType; // 0x_            
             // metadata: MPropertySuppressField
-            source2sdk::soundsystem::ActionType_t m_actionInstanceType; // 0x14            
+            source2sdk::soundsystem::ActionType_t m_actionInstanceType; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_name) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_actionType) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_actionInstanceType) == 0x14);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_actionType) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::CSosGroupActionSchema, m_actionInstanceType) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSchema) == 0x18);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSchema) == 0x_);
     };
 };

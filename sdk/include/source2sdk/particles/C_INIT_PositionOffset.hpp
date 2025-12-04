@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xf30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,25 +31,25 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "offset min"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_OffsetMin; // 0x1c8            
+            source2sdk::particleslib::CPerParticleVecInput m_OffsetMin; // 0x_            
             // metadata: MPropertyFriendlyName "offset max"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_OffsetMax; // 0x840            
+            source2sdk::particleslib::CPerParticleVecInput m_OffsetMax; // 0x_            
             // metadata: MPropertyFriendlyName "transform input"
-            source2sdk::particleslib::CParticleTransformInput m_TransformInput; // 0xeb8            
+            source2sdk::particleslib::CParticleTransformInput m_TransformInput; // 0x_            
             // metadata: MPropertyFriendlyName "offset in local space 0/1"
-            bool m_bLocalCoords; // 0xf20            
+            bool m_bLocalCoords; // 0x_            
             // metadata: MPropertyFriendlyName "offset proportional to radius 0/1"
-            bool m_bProportional; // 0xf21            
-            uint8_t _pad0f22[0x2]; // 0xf22
+            bool m_bProportional; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Random number generator controls"
-            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0xf24            
-            uint8_t _pad0f2c[0x4];
+            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_PositionOffset because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_PositionOffset) == 0xf30);
+        static_assert(sizeof(source2sdk::particles::C_INIT_PositionOffset) == 0x_);
     };
 };

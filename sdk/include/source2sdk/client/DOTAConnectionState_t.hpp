@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAConnectionState_t : std::uint32_t
         {
             DOTA_CONNECTION_STATE_UNKNOWN = 0x0,

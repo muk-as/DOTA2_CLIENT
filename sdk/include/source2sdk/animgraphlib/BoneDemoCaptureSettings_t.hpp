@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,30 +27,30 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Bone"
             // metadata: MPropertyAttributeChoiceName "Bone"
-            CUtlString m_boneName; // 0x0            
+            CUtlString m_boneName; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorSplineRotationMax; // 0x8            
+            float m_flErrorSplineRotationMax; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorSplineTranslationMax; // 0xc            
+            float m_flErrorSplineTranslationMax; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorSplineScaleMax; // 0x10            
+            float m_flErrorSplineScaleMax; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorQuantizationRotationMax; // 0x14            
+            float m_flErrorQuantizationRotationMax; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorQuantizationTranslationMax; // 0x18            
+            float m_flErrorQuantizationTranslationMax; // 0x_            
             // metadata: MPropertySuppressField
-            float m_flErrorQuantizationScaleMax; // 0x1c            
+            float m_flErrorQuantizationScaleMax; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_boneName) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineRotationMax) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineTranslationMax) == 0xc);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineScaleMax) == 0x10);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationRotationMax) == 0x14);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationTranslationMax) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationScaleMax) == 0x1c);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_boneName) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineRotationMax) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineTranslationMax) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorSplineScaleMax) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationRotationMax) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationTranslationMax) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t, m_flErrorQuantizationScaleMax) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::BoneDemoCaptureSettings_t) == 0x_);
     };
 };

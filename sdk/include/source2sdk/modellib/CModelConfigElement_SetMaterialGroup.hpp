@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x50
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,12 +26,12 @@ namespace source2sdk
         class CModelConfigElement_SetMaterialGroup : public source2sdk::modellib::CModelConfigElement
         {
         public:
-            CUtlString m_MaterialGroupName; // 0x48            
+            CUtlString m_MaterialGroupName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CModelConfigElement_SetMaterialGroup because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CModelConfigElement_SetMaterialGroup) == 0x50);
+        static_assert(sizeof(source2sdk::modellib::CModelConfigElement_SetMaterialGroup) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct SkeletonBoneBounds_t
         {
         public:
-            Vector m_vecCenter; // 0x0            
-            Vector m_vecSize; // 0xc            
+            Vector m_vecCenter; // 0x_            
+            Vector m_vecSize; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::SkeletonBoneBounds_t, m_vecCenter) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::SkeletonBoneBounds_t, m_vecSize) == 0xc);
+        static_assert(offsetof(source2sdk::modellib::SkeletonBoneBounds_t, m_vecCenter) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonBoneBounds_t, m_vecSize) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::SkeletonBoneBounds_t) == 0x18);
+        static_assert(sizeof(source2sdk::modellib::SkeletonBoneBounds_t) == 0x_);
     };
 };

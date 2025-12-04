@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 18
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class WeaponSound_t : std::uint32_t
         {
             WEAPON_SOUND_EMPTY = 0x0,

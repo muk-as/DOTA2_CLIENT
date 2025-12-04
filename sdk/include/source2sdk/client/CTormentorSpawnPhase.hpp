@@ -16,9 +16,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // MNetworkNoBase
@@ -31,23 +31,23 @@ namespace source2sdk
         class CTormentorSpawnPhase
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::ETormentorLocation m_eTormentorLocation; // 0x8            
+            source2sdk::client::ETormentorLocation m_eTormentorLocation; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::ETormentorSpawnPhase m_eTormentorSpawnPhase; // 0xc            
+            source2sdk::client::ETormentorSpawnPhase m_eTormentorSpawnPhase; // 0x_            
             // metadata: MNetworkEnable
-            float m_flTormentorPhaseStartTime; // 0x10            
+            float m_flTormentorPhaseStartTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flTormentorPhaseEndTime; // 0x14            
+            float m_flTormentorPhaseEndTime; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_eTormentorLocation) == 0x8);
-        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_eTormentorSpawnPhase) == 0xc);
-        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_flTormentorPhaseStartTime) == 0x10);
-        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_flTormentorPhaseEndTime) == 0x14);
+        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_eTormentorLocation) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_eTormentorSpawnPhase) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_flTormentorPhaseStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTormentorSpawnPhase, m_flTormentorPhaseEndTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CTormentorSpawnPhase) == 0x18);
+        static_assert(sizeof(source2sdk::client::CTormentorSpawnPhase) == 0x_);
     };
 };

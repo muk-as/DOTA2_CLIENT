@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x960
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,45 +32,45 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1c8            
-            uint8_t _pad01cc[0x4]; // 0x1cc
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "distance minimum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInputMin; // 0x1d0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInputMin; // 0x_            
             // metadata: MPropertyFriendlyName "distance maximum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInputMax; // 0x330            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInputMax; // 0x_            
             // metadata: MPropertyFriendlyName "output minimum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMin; // 0x490            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMin; // 0x_            
             // metadata: MPropertyFriendlyName "output maximum"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMax; // 0x5f0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOutputMax; // 0x_            
             // metadata: MPropertyFriendlyName "control point"
-            std::int32_t m_nStartCP; // 0x750            
+            std::int32_t m_nStartCP; // 0x_            
             // metadata: MPropertyFriendlyName "ensure line of sight"
-            bool m_bLOS; // 0x754            
+            bool m_bLOS; // 0x_            
             // metadata: MPropertyFriendlyName "LOS collision group"
-            char m_CollisionGroupName[128]; // 0x755            
-            uint8_t _pad07d5[0x3]; // 0x7d5
+            char m_CollisionGroupName[128]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Trace Set"
-            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x7d8            
-            uint8_t _pad07dc[0x4]; // 0x7dc
+            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Maximum Trace Length"
-            source2sdk::particleslib::CPerParticleFloatInput m_flMaxTraceLength; // 0x7e0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flMaxTraceLength; // 0x_            
             // metadata: MPropertyFriendlyName "LOS Failure Scalar"
-            float m_flLOSScale; // 0x940            
+            float m_flLOSScale; // 0x_            
             // metadata: MPropertyFriendlyName "set value method"
-            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x944            
+            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x_            
             // metadata: MPropertyFriendlyName "only active within specified distance"
-            bool m_bActiveRange; // 0x948            
-            uint8_t _pad0949[0x3]; // 0x949
+            bool m_bActiveRange; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "distance component scale"
-            Vector m_vecDistanceScale; // 0x94c            
+            Vector m_vecDistanceScale; // 0x_            
             // metadata: MPropertyFriendlyName "remap bias"
-            float m_flRemapBias; // 0x958            
-            uint8_t _pad095c[0x4];
+            float m_flRemapBias; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_DistanceToCPInit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_DistanceToCPInit) == 0x960);
+        static_assert(sizeof(source2sdk::particles::C_INIT_DistanceToCPInit) == 0x_);
     };
 };

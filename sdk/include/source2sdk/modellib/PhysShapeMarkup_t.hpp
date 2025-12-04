@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,16 +25,16 @@ namespace source2sdk
         struct PhysShapeMarkup_t
         {
         public:
-            std::int32_t m_nBodyInAggregate; // 0x0            
-            std::int32_t m_nShapeInBody; // 0x4            
-            CGlobalSymbol m_sHitGroup; // 0x8            
+            std::int32_t m_nBodyInAggregate; // 0x_            
+            std::int32_t m_nShapeInBody; // 0x_            
+            CGlobalSymbol m_sHitGroup; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_nBodyInAggregate) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_nShapeInBody) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_sHitGroup) == 0x8);
+        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_nBodyInAggregate) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_nShapeInBody) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysShapeMarkup_t, m_sHitGroup) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::PhysShapeMarkup_t) == 0x10);
+        static_assert(sizeof(source2sdk::modellib::PhysShapeMarkup_t) == 0x_);
     };
 };

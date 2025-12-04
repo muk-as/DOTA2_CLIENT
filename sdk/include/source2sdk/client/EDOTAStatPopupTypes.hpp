@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTAStatPopupTypes : std::uint32_t
         {
             k_EDOTA_SPT_Textline = 0x0,

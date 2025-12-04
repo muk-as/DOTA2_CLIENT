@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 15
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAJoinLobbyResult : std::uint32_t
         {
             DOTA_JOIN_RESULT_SUCCESS = 0x0,

@@ -14,20 +14,20 @@ namespace source2sdk
     namespace pulse_runtime_lib
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct CPulseCell_IsRequirementValid_Criteria_t
         {
         public:
-            bool m_bIsValid; // 0x0            
+            bool m_bIsValid; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IsRequirementValid_Criteria_t, m_bIsValid) == 0x0);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_IsRequirementValid_Criteria_t, m_bIsValid) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_IsRequirementValid_Criteria_t) == 0x1);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_IsRequirementValid_Criteria_t) == 0x_);
     };
 };

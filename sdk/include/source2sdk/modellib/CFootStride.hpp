@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,14 +26,14 @@ namespace source2sdk
         class CFootStride
         {
         public:
-            source2sdk::modellib::CFootCycleDefinition m_definition; // 0x0            
-            uint8_t _pad003c[0x4]; // 0x3c
-            source2sdk::modellib::CFootTrajectories m_trajectories; // 0x40            
+            source2sdk::modellib::CFootCycleDefinition m_definition; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::modellib::CFootTrajectories m_trajectories; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFootStride because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::modellib::CFootStride) == 0x58);
+        static_assert(sizeof(source2sdk::modellib::CFootStride) == 0x_);
     };
 };

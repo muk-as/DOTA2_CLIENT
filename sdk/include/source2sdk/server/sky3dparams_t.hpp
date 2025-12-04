@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // 
@@ -31,33 +31,33 @@ namespace source2sdk
         struct sky3dparams_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int16_t scale; // 0x8            
-            uint8_t _pad000a[0x2]; // 0xa
+            std::int16_t scale; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector origin; // 0xc            
+            Vector origin; // 0x_            
             // metadata: MNetworkEnable
-            bool bClip3DSkyBoxNearToWorldFar; // 0x18            
-            uint8_t _pad0019[0x3]; // 0x19
+            bool bClip3DSkyBoxNearToWorldFar; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float flClip3DSkyBoxNearToWorldFarOffset; // 0x1c            
+            float flClip3DSkyBoxNearToWorldFarOffset; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::server::fogparams_t fog; // 0x20            
+            source2sdk::server::fogparams_t fog; // 0x_            
             // metadata: MNetworkEnable
-            WorldGroupId_t m_nWorldGroupID; // 0x88            
-            uint8_t _pad008c[0x4];
+            WorldGroupId_t m_nWorldGroupID; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, scale) == 0x8);
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, origin) == 0xc);
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, bClip3DSkyBoxNearToWorldFar) == 0x18);
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, flClip3DSkyBoxNearToWorldFarOffset) == 0x1c);
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, fog) == 0x20);
-        static_assert(offsetof(source2sdk::server::sky3dparams_t, m_nWorldGroupID) == 0x88);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, scale) == 0x_);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, origin) == 0x_);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, bClip3DSkyBoxNearToWorldFar) == 0x_);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, flClip3DSkyBoxNearToWorldFarOffset) == 0x_);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, fog) == 0x_);
+        static_assert(offsetof(source2sdk::server::sky3dparams_t, m_nWorldGroupID) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::sky3dparams_t) == 0x90);
+        static_assert(sizeof(source2sdk::server::sky3dparams_t) == 0x_);
     };
 };

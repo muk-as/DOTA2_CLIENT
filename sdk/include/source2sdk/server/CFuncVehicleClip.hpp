@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x7f0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -25,15 +25,15 @@ namespace source2sdk
         {
         public:
             // Datamap fields:
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CFuncVehicleClip) == 0x7f0);
+        static_assert(sizeof(source2sdk::server::CFuncVehicleClip) == 0x_);
     };
 };

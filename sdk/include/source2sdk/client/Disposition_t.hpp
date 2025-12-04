@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Disposition_t : std::uint32_t
         {
             D_ER = 0x0,

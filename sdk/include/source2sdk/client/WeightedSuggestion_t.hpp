@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
@@ -24,15 +24,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t nSuggestion; // 0x0            
+            std::int32_t nSuggestion; // 0x_            
             // metadata: MNetworkEnable
-            float fWeight; // 0x4            
+            float fWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::WeightedSuggestion_t, nSuggestion) == 0x0);
-        static_assert(offsetof(source2sdk::client::WeightedSuggestion_t, fWeight) == 0x4);
+        static_assert(offsetof(source2sdk::client::WeightedSuggestion_t, nSuggestion) == 0x_);
+        static_assert(offsetof(source2sdk::client::WeightedSuggestion_t, fWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::WeightedSuggestion_t) == 0x8);
+        static_assert(sizeof(source2sdk::client::WeightedSuggestion_t) == 0x_);
     };
 };

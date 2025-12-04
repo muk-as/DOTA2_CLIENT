@@ -14,32 +14,32 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         #pragma pack(push, 1)
         class CSurvivorsPowerUpDamageTickInfo
         {
         public:
-            Vector vOrigin; // 0x0            
-            Vector vFacing; // 0xc            
-            float flTimeLeft; // 0x18            
-            float flMagicalDamage; // 0x1c            
-            float flPhysicalDamage; // 0x20            
-            uint8_t _pad0024[0x4]; // 0x24
+            Vector vOrigin; // 0x_            
+            Vector vFacing; // 0x_            
+            float flTimeLeft; // 0x_            
+            float flMagicalDamage; // 0x_            
+            float flPhysicalDamage; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // vDirections has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> vDirections;
-            char vDirections[0x18]; // 0x28            
+            char vDirections[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vOrigin) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vFacing) == 0xc);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flTimeLeft) == 0x18);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flMagicalDamage) == 0x1c);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flPhysicalDamage) == 0x20);
-        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vDirections) == 0x28);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vOrigin) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vFacing) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flTimeLeft) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flMagicalDamage) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, flPhysicalDamage) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo, vDirections) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo) == 0x40);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDamageTickInfo) == 0x_);
     };
 };

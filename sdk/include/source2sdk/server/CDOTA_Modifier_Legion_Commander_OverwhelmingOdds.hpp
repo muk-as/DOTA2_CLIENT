@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Legion_Commander_OverwhelmingOdds : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_attack_speed_creeps; // 0x1878            
-            std::int32_t bonus_attack_speed; // 0x187c            
-            float armor_per_creep; // 0x1880            
-            float armor_per_hero; // 0x1884            
-            std::int32_t m_nTotalBonus; // 0x1888            
-            float m_flBonusArmor; // 0x188c            
+            std::int32_t bonus_attack_speed_creeps; // 0x_            
+            std::int32_t bonus_attack_speed; // 0x_            
+            float armor_per_creep; // 0x_            
+            float armor_per_hero; // 0x_            
+            std::int32_t m_nTotalBonus; // 0x_            
+            float m_flBonusArmor; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Legion_Commander_OverwhelmingOdds because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Legion_Commander_OverwhelmingOdds) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Legion_Commander_OverwhelmingOdds) == 0x_);
     };
 };

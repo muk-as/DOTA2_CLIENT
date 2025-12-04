@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // MNetworkNoBase
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTABaseCustomHeroPickRules) == 0x5e8);
+        static_assert(sizeof(source2sdk::client::C_DOTABaseCustomHeroPickRules) == 0x_);
     };
 };

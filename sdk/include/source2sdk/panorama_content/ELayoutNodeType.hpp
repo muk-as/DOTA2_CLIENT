@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELayoutNodeType : std::uint32_t
         {
             ROOT = 0x0,

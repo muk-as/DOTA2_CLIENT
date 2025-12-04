@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4b0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,42 +30,42 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "snapshot control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c8            
-            uint8_t _pad01cc[0x4]; // 0x1cc
+            std::int32_t m_nControlPointNumber; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "snapshot subset"
             // metadata: MPropertySuppressExpr "m_nControlPointNumber < 0"
-            CUtlString m_strSnapshotSubset; // 0x1d0            
+            CUtlString m_strSnapshotSubset; // 0x_            
             // metadata: MPropertyFriendlyName "field to read"
             // metadata: MPropertyAttributeChoiceName "particlefield"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToRead; // 0x1d8            
+            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToRead; // 0x_            
             // metadata: MPropertyFriendlyName "field to write"
             // metadata: MPropertyAttributeChoiceName "particlefield"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToWrite; // 0x1dc            
+            source2sdk::particles::ParticleAttributeIndex_t m_nAttributeToWrite; // 0x_            
             // metadata: MPropertyFriendlyName "local space control point number"
-            std::int32_t m_nLocalSpaceCP; // 0x1e0            
+            std::int32_t m_nLocalSpaceCP; // 0x_            
             // metadata: MPropertyFriendlyName "random order"
-            bool m_bRandom; // 0x1e4            
+            bool m_bRandom; // 0x_            
             // metadata: MPropertyFriendlyName "reverse order"
             // metadata: MPropertySuppressExpr "m_bRandom == true"
-            bool m_bReverse; // 0x1e5            
-            uint8_t _pad01e6[0x2]; // 0x1e6
+            bool m_bReverse; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Snapshot increment amount"
             // metadata: MPropertySuppressExpr "m_bRandom == true"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotIncrement; // 0x1e8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nSnapShotIncrement; // 0x_            
             // metadata: MPropertyFriendlyName "Manual Snapshot Index"
             // metadata: MPropertySuppressExpr "m_bRandom == true"
-            source2sdk::particleslib::CPerParticleFloatInput m_nManualSnapshotIndex; // 0x348            
+            source2sdk::particleslib::CPerParticleFloatInput m_nManualSnapshotIndex; // 0x_            
             // metadata: MPropertyFriendlyName "random seed"
             // metadata: MPropertySuppressExpr "m_bRandom == false"
-            std::int32_t m_nRandomSeed; // 0x4a8            
+            std::int32_t m_nRandomSeed; // 0x_            
             // metadata: MPropertyFriendlyName "local space angles"
-            bool m_bLocalSpaceAngles; // 0x4ac            
-            uint8_t _pad04ad[0x3];
+            bool m_bLocalSpaceAngles; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_InitFromCPSnapshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_InitFromCPSnapshot) == 0x4b0);
+        static_assert(sizeof(source2sdk::particles::C_INIT_InitFromCPSnapshot) == 0x_);
     };
 };

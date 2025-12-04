@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,18 +25,18 @@ namespace source2sdk
         class CShmupBossPhase
         {
         public:
-            CUtlString m_strName; // 0x0            
-            float m_flChargeTime; // 0x8            
-            float m_flDuration; // 0xc            
-            Vector2D m_vPosition; // 0x10            
+            CUtlString m_strName; // 0x_            
+            float m_flChargeTime; // 0x_            
+            float m_flDuration; // 0x_            
+            Vector2D m_vPosition; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_strName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_flChargeTime) == 0x8);
-        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_flDuration) == 0xc);
-        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_vPosition) == 0x10);
+        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_strName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_flChargeTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_flDuration) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossPhase, m_vPosition) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CShmupBossPhase) == 0x18);
+        static_assert(sizeof(source2sdk::client::CShmupBossPhase) == 0x_);
     };
 };

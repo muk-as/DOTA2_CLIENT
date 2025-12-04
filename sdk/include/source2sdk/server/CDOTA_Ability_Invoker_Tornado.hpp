@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x608
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,21 +25,21 @@ namespace source2sdk
         class CDOTA_Ability_Invoker_Tornado : public source2sdk::server::CDOTA_Ability_Invoker_InvokedBase
         {
         public:
-            float vision_distance; // 0x5d0            
-            float end_vision_duration; // 0x5d4            
-            float lift_duration; // 0x5d8            
-            float base_damage; // 0x5dc            
-            float quas_damage; // 0x5e0            
-            float wex_damage; // 0x5e4            
-            float twister_duration; // 0x5e8            
-            float twister_distance_interval; // 0x5ec            
-            float twister_damage; // 0x5f0            
-            uint8_t _pad05f4[0x14];
+            float vision_distance; // 0x_            
+            float end_vision_duration; // 0x_            
+            float lift_duration; // 0x_            
+            float base_damage; // 0x_            
+            float quas_damage; // 0x_            
+            float wex_damage; // 0x_            
+            float twister_duration; // 0x_            
+            float twister_distance_interval; // 0x_            
+            float twister_damage; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Invoker_Tornado because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Invoker_Tornado) == 0x608);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Invoker_Tornado) == 0x_);
     };
 };

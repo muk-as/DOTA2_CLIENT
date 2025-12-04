@@ -14,27 +14,27 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CLogicRelay : public source2sdk::server::CLogicalEntity
         {
         public:
-            bool m_bDisabled; // 0x4e0            
-            bool m_bWaitForRefire; // 0x4e1            
-            bool m_bTriggerOnce; // 0x4e2            
-            bool m_bFastRetrigger; // 0x4e3            
-            bool m_bPassthoughCaller; // 0x4e4            
-            uint8_t _pad04e5[0x3];
+            bool m_bDisabled; // 0x_            
+            bool m_bWaitForRefire; // 0x_            
+            bool m_bTriggerOnce; // 0x_            
+            bool m_bFastRetrigger; // 0x_            
+            bool m_bPassthoughCaller; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CLogicRelay because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CLogicRelay) == 0x4e8);
+        static_assert(sizeof(source2sdk::server::CLogicRelay) == 0x_);
     };
 };

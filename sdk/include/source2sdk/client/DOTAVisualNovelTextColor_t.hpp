@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAVisualNovelTextColor_t : std::uint32_t
         {
             VN_TEXT_COLOR_DEFAULT = 0x0,

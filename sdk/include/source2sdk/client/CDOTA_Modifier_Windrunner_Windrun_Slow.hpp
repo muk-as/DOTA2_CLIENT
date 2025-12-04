@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Windrunner_Windrun_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float enemy_movespeed_bonus_pct; // 0x1878            
-            float scepter_movespeed_bonus_pct; // 0x187c            
-            std::int32_t scepter_blind; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float enemy_movespeed_bonus_pct; // 0x_            
+            float scepter_movespeed_bonus_pct; // 0x_            
+            std::int32_t scepter_blind; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Windrunner_Windrun_Slow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Windrunner_Windrun_Slow) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Windrunner_Windrun_Slow) == 0x_);
     };
 };

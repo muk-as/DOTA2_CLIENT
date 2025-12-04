@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,16 +36,16 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vStartLocation; // 0x5c0            
-            Vector m_vLandLocation; // 0x5cc            
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x5d8            
-            uint8_t _pad05dc[0x4]; // 0x5dc
-            source2sdk::server::CDOTA_BaseNPC* m_pTarget; // 0x5e0            
+            Vector m_vStartLocation; // 0x_            
+            Vector m_vLandLocation; // 0x_            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CDOTA_BaseNPC* m_pTarget; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Rubick_Telekinesis because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Rubick_Telekinesis) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Rubick_Telekinesis) == 0x_);
     };
 };

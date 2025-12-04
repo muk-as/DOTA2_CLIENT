@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x230
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,13 +30,13 @@ namespace source2sdk
         public:
             // m_sInvulnerableParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sInvulnerableParticle;
-            char m_sInvulnerableParticle[0xe0]; // 0x148            
-            CUtlString m_sInvulnerableSkinName; // 0x228            
+            char m_sInvulnerableParticle[0x_]; // 0x_            
+            CUtlString m_sInvulnerableSkinName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsSpawnerEliteTurretDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsSpawnerEliteTurretDefinition) == 0x230);
+        static_assert(sizeof(source2sdk::client::CSurvivorsSpawnerEliteTurretDefinition) == 0x_);
     };
 };

@@ -52,9 +52,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x158
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "fogplayerparams_t m_PlayerFog"
@@ -68,40 +68,40 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::server::fogplayerparams_t m_PlayerFog; // 0x40            
+            source2sdk::server::fogplayerparams_t m_PlayerFog; // 0x_            
             // metadata: MNetworkEnable
             // m_hColorCorrectionCtrl has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CColorCorrection> m_hColorCorrectionCtrl;
-            char m_hColorCorrectionCtrl[0x4]; // 0x80            
+            char m_hColorCorrectionCtrl[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hViewEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hViewEntity;
-            char m_hViewEntity[0x4]; // 0x84            
+            char m_hViewEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerAndObserversExclusive"
             // m_hTonemapController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CTonemapController2> m_hTonemapController;
-            char m_hTonemapController[0x4]; // 0x88            
-            uint8_t _pad008c[0x4]; // 0x8c
+            char m_hTonemapController[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerAndObserversExclusive"
-            source2sdk::server::audioparams_t m_audio; // 0x90            
+            source2sdk::server::audioparams_t m_audio; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerAndObserversExclusive"
             // m_PostProcessingVolumes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CPostProcessingVolume>> m_PostProcessingVolumes;
-            char m_PostProcessingVolumes[0x18]; // 0x108            
-            float m_flOldPlayerZ; // 0x120            
-            float m_flOldPlayerViewOffsetZ; // 0x124            
-            uint8_t _pad0128[0x18]; // 0x128
+            char m_PostProcessingVolumes[0x_]; // 0x_            
+            float m_flOldPlayerZ; // 0x_            
+            float m_flOldPlayerViewOffsetZ; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hTriggerSoundscapeList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CEnvSoundscapeTriggerable>> m_hTriggerSoundscapeList;
-            char m_hTriggerSoundscapeList[0x18]; // 0x140            
+            char m_hTriggerSoundscapeList[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPlayer_CameraServices because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPlayer_CameraServices) == 0x158);
+        static_assert(sizeof(source2sdk::server::CPlayer_CameraServices) == 0x_);
     };
 };

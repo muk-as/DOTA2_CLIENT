@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,28 +27,28 @@ namespace source2sdk
         class C_DOTA_Ability_Windrunner_Powershot : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            uint8_t _pad0688[0x14]; // 0x688
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x69c            
-            float m_fPower; // 0x6a0            
-            std::int32_t m_iProjectile; // 0x6a4            
-            float damage_reduction; // 0x6a8            
-            float arrow_width; // 0x6ac            
-            std::int32_t powershot_damage; // 0x6b0            
-            float tree_width; // 0x6b4            
-            float slow; // 0x6b8            
-            float slow_duration; // 0x6bc            
-            float min_execute_threshold; // 0x6c0            
-            float max_execute_threshold; // 0x6c4            
-            bool m_bAwardedKillEater; // 0x6c8            
-            uint8_t _pad06c9[0x3]; // 0x6c9
-            std::int32_t m_nHeroesHit; // 0x6cc            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x6d0            
-            uint8_t _pad06d4[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x_            
+            float m_fPower; // 0x_            
+            std::int32_t m_iProjectile; // 0x_            
+            float damage_reduction; // 0x_            
+            float arrow_width; // 0x_            
+            std::int32_t powershot_damage; // 0x_            
+            float tree_width; // 0x_            
+            float slow; // 0x_            
+            float slow_duration; // 0x_            
+            float min_execute_threshold; // 0x_            
+            float max_execute_threshold; // 0x_            
+            bool m_bAwardedKillEater; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nHeroesHit; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Windrunner_Powershot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Windrunner_Powershot) == 0x6d8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Windrunner_Powershot) == 0x_);
     };
 };

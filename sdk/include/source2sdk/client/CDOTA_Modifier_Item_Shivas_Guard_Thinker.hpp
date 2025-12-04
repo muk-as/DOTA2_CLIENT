@@ -26,29 +26,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Shivas_Guard_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_fCurRadius; // 0x1878            
-            source2sdk::entity2::GameTime_t m_fLastThink; // 0x187c            
+            float m_fCurRadius; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastThink; // 0x_            
             // m_entitiesHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_entitiesHit;
-            char m_entitiesHit[0x18]; // 0x1880            
-            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x1898            
-            std::int32_t blast_speed; // 0x18b0            
-            float blast_radius; // 0x18b4            
-            std::int32_t blast_damage; // 0x18b8            
-            std::int32_t illusion_multiplier_pct; // 0x18bc            
-            float blast_debuff_duration; // 0x18c0            
-            float resist_debuff_duration; // 0x18c4            
+            char m_entitiesHit[0x_]; // 0x_            
+            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x_            
+            std::int32_t blast_speed; // 0x_            
+            float blast_radius; // 0x_            
+            std::int32_t blast_damage; // 0x_            
+            std::int32_t illusion_multiplier_pct; // 0x_            
+            float blast_debuff_duration; // 0x_            
+            float resist_debuff_duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Shivas_Guard_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Shivas_Guard_Thinker) == 0x18c8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Shivas_Guard_Thinker) == 0x_);
     };
 };

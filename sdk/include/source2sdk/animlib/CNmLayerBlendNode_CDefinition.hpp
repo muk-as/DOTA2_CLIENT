@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,17 +27,17 @@ namespace source2sdk
         class CNmLayerBlendNode_CDefinition : public source2sdk::animlib::CNmPoseNode_CDefinition
         {
         public:
-            std::int16_t m_nBaseNodeIdx; // 0x10            
-            bool m_bOnlySampleBaseRootMotion; // 0x12            
-            uint8_t _pad0013[0x5]; // 0x13
+            std::int16_t m_nBaseNodeIdx; // 0x_            
+            bool m_bOnlySampleBaseRootMotion; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_layerDefinition has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVectorFixedGrowable<source2sdk::animlib::CNmLayerBlendNode_LayerDefinition_t,3> m_layerDefinition;
-            char m_layerDefinition[0x30]; // 0x18            
+            char m_layerDefinition[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmLayerBlendNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmLayerBlendNode_CDefinition) == 0x48);
+        static_assert(sizeof(source2sdk::animlib::CNmLayerBlendNode_CDefinition) == 0x_);
     };
 };

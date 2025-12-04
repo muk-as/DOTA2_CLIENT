@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAPortraitEnvironmentType_t : std::uint32_t
         {
             DOTA_PORTRAIT_ENVIRONMENT_INVALID = 0xffffffff,

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct FeAntiTunnelGroupBuild_t
         {
         public:
-            std::uint32_t m_nVertexMapHash; // 0x0            
-            std::uint32_t m_nCollisionMask; // 0x4            
+            std::uint32_t m_nVertexMapHash; // 0x_            
+            std::uint32_t m_nCollisionMask; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t, m_nVertexMapHash) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t, m_nCollisionMask) == 0x4);
+        static_assert(offsetof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t, m_nVertexMapHash) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t, m_nCollisionMask) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t) == 0x8);
+        static_assert(sizeof(source2sdk::physicslib::FeAntiTunnelGroupBuild_t) == 0x_);
     };
 };

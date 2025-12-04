@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ECustomGameWhitelistState : std::uint32_t
         {
             CUSTOM_GAME_WHITELIST_STATE_UNKNOWN = 0x0,

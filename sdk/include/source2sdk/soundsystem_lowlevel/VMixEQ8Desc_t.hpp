@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x80
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,12 +26,12 @@ namespace source2sdk
         struct VMixEQ8Desc_t
         {
         public:
-            source2sdk::soundsystem_lowlevel::VMixFilterDesc_t m_stages[8]; // 0x0            
+            source2sdk::soundsystem_lowlevel::VMixFilterDesc_t m_stages[8]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixEQ8Desc_t, m_stages) == 0x0);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixEQ8Desc_t, m_stages) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixEQ8Desc_t) == 0x80);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixEQ8Desc_t) == 0x_);
     };
 };

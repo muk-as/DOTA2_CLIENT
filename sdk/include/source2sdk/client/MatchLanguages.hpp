@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class MatchLanguages : std::uint32_t
         {
             MATCH_LANGUAGE_INVALID = 0x0,

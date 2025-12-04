@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 40
         // Alignment: 8
-        // Size: 0x8
+        // Size: 0x_
         enum class DebugOverlayBits_t : std::uint64_t
         {
             // MPropertyFriendlyName "Ent Text"

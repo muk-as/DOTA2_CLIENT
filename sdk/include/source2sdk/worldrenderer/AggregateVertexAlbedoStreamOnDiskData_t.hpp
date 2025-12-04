@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,12 +24,12 @@ namespace source2sdk
         struct AggregateVertexAlbedoStreamOnDiskData_t
         {
         public:
-            CUtlBinaryBlock m_BufferData; // 0x0            
+            CUtlBinaryBlock m_BufferData; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t, m_BufferData) == 0x0);
+        static_assert(offsetof(source2sdk::worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t, m_BufferData) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t) == 0x10);
+        static_assert(sizeof(source2sdk::worldrenderer::AggregateVertexAlbedoStreamOnDiskData_t) == 0x_);
     };
 };

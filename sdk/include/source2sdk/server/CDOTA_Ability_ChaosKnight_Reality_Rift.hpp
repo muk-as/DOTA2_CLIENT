@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,20 +33,20 @@ namespace source2sdk
         class CDOTA_Ability_ChaosKnight_Reality_Rift : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float m_flPercentage; // 0x5c0            
-            uint8_t _pad05c4[0x4]; // 0x5c4
+            float m_flPercentage; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_FXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_FXIndex;
-            char m_FXIndex[0x18]; // 0x5c8            
+            char m_FXIndex[0x_]; // 0x_            
             // m_hRiftIllusion has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRiftIllusion;
-            char m_hRiftIllusion[0x4]; // 0x5e0            
-            uint8_t _pad05e4[0x4];
+            char m_hRiftIllusion[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_ChaosKnight_Reality_Rift because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_ChaosKnight_Reality_Rift) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_ChaosKnight_Reality_Rift) == 0x_);
     };
 };

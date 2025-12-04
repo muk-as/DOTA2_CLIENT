@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,18 +32,18 @@ namespace source2sdk
         class CDOTA_Ability_Huskar_Life_Break : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05c0[0x10]; // 0x5c0
-            Vector m_vProjectileLocation; // 0x5d0            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vProjectileLocation; // 0x_            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5dc            
-            bool m_bInterrupted; // 0x5e0            
-            uint8_t _pad05e1[0x7];
+            char m_hTarget[0x_]; // 0x_            
+            bool m_bInterrupted; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Huskar_Life_Break because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Huskar_Life_Break) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Huskar_Life_Break) == 0x_);
     };
 };

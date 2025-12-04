@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "string_t m_iszBroadcasterChannelDescription"
@@ -26,20 +26,20 @@ namespace source2sdk
         struct PlayerResourceBroadcasterData_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszBroadcasterChannelDescription; // 0x30            
+            CUtlSymbolLarge m_iszBroadcasterChannelDescription; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszBroadcasterChannelCountryCode; // 0x38            
+            CUtlSymbolLarge m_iszBroadcasterChannelCountryCode; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszBroadcasterChannelLanguageCode; // 0x40            
+            CUtlSymbolLarge m_iszBroadcasterChannelLanguageCode; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelDescription) == 0x30);
-        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelCountryCode) == 0x38);
-        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelLanguageCode) == 0x40);
+        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelDescription) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelCountryCode) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourceBroadcasterData_t, m_iszBroadcasterChannelLanguageCode) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::PlayerResourceBroadcasterData_t) == 0x48);
+        static_assert(sizeof(source2sdk::client::PlayerResourceBroadcasterData_t) == 0x_);
     };
 };

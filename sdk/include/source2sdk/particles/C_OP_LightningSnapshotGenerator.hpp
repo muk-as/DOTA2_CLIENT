@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1100
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,42 +29,42 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "snapshot control point number"
-            std::int32_t m_nCPSnapshot; // 0x1c8            
+            std::int32_t m_nCPSnapshot; // 0x_            
             // metadata: MPropertyFriendlyName "start control point number"
-            std::int32_t m_nCPStartPnt; // 0x1cc            
+            std::int32_t m_nCPStartPnt; // 0x_            
             // metadata: MPropertyFriendlyName "end control point number"
-            std::int32_t m_nCPEndPnt; // 0x1d0            
-            uint8_t _pad01d4[0x4]; // 0x1d4
+            std::int32_t m_nCPEndPnt; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Recursion Depth"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flSegments; // 0x1d8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flSegments; // 0x_            
             // metadata: MPropertyFriendlyName "Offset"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flOffset; // 0x338            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Offset Decay"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flOffsetDecay; // 0x498            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flOffsetDecay; // 0x_            
             // metadata: MPropertyFriendlyName "Recalculation Rate"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flRecalcRate; // 0x5f8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flRecalcRate; // 0x_            
             // metadata: MPropertyFriendlyName "UV Scale"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flUVScale; // 0x758            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flUVScale; // 0x_            
             // metadata: MPropertyFriendlyName "UV Offset"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flUVOffset; // 0x8b8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flUVOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Branch Split Rate"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flSplitRate; // 0xa18            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flSplitRate; // 0x_            
             // metadata: MPropertyFriendlyName "Branch Twist"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flBranchTwist; // 0xb78            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flBranchTwist; // 0x_            
             // metadata: MPropertyFriendlyName "Branch Behavior"
-            source2sdk::particles::ParticleLightnintBranchBehavior_t m_nBranchBehavior; // 0xcd8            
-            uint8_t _pad0cdc[0x4]; // 0xcdc
+            source2sdk::particles::ParticleLightnintBranchBehavior_t m_nBranchBehavior; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Start Radius"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flRadiusStart; // 0xce0            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flRadiusStart; // 0x_            
             // metadata: MPropertyFriendlyName "End Radius"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flRadiusEnd; // 0xe40            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flRadiusEnd; // 0x_            
             // metadata: MPropertyFriendlyName "Dedicated Particle Pool Count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flDedicatedPool; // 0xfa0            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flDedicatedPool; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_LightningSnapshotGenerator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_LightningSnapshotGenerator) == 0x1100);
+        static_assert(sizeof(source2sdk::particles::C_OP_LightningSnapshotGenerator) == 0x_);
     };
 };

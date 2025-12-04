@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace scenesystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         struct SceneViewId_t
         {
         public:
-            std::uint64_t m_nViewId; // 0x0            
-            std::uint64_t m_nFrameCount; // 0x8            
+            std::uint64_t m_nViewId; // 0x_            
+            std::uint64_t m_nFrameCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::scenesystem::SceneViewId_t, m_nViewId) == 0x0);
-        static_assert(offsetof(source2sdk::scenesystem::SceneViewId_t, m_nFrameCount) == 0x8);
+        static_assert(offsetof(source2sdk::scenesystem::SceneViewId_t, m_nViewId) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::SceneViewId_t, m_nFrameCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::scenesystem::SceneViewId_t) == 0x10);
+        static_assert(sizeof(source2sdk::scenesystem::SceneViewId_t) == 0x_);
     };
 };

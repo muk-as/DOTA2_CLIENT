@@ -14,31 +14,31 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x508
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CSoundEventParameter : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x18]; // 0x4e0
-            CUtlSymbolLarge m_iszParamName; // 0x4f8            
-            float m_flFloatValue; // 0x500            
-            uint8_t _pad0504[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszParamName; // 0x_            
+            float m_flFloatValue; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // uint64_t InputSetEventGuid; // 0x0
-            // CUtlSymbolLarge InputSetParamName; // 0x0
-            // float InputSetFloatValue; // 0x0
-            // void m_nGUID; // 0x4e0
+            // uint64_t InputSetEventGuid; // 0x_
+            // CUtlSymbolLarge InputSetParamName; // 0x_
+            // float InputSetFloatValue; // 0x_
+            // void m_nGUID; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSoundEventParameter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSoundEventParameter) == 0x508);
+        static_assert(sizeof(source2sdk::server::CSoundEventParameter) == 0x_);
     };
 };

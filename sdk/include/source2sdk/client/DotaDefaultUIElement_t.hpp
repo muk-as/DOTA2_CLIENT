@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 34
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DotaDefaultUIElement_t : std::uint32_t
         {
             DOTA_DEFAULT_UI_INVALID = 0xffffffff,

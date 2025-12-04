@@ -17,24 +17,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_LanceOfPursuit : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_mana; // 0x1878            
-            std::int32_t bonus_strength; // 0x187c            
-            std::int32_t backstab_damage; // 0x1880            
-            std::int32_t backstab_angle; // 0x1884            
-            float slow_duration; // 0x1888            
-            bool m_bBackstab; // 0x188c            
-            uint8_t _pad188d[0x3];
+            std::int32_t bonus_mana; // 0x_            
+            std::int32_t bonus_strength; // 0x_            
+            std::int32_t backstab_damage; // 0x_            
+            std::int32_t backstab_angle; // 0x_            
+            float slow_duration; // 0x_            
+            bool m_bBackstab; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_LanceOfPursuit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_LanceOfPursuit) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_LanceOfPursuit) == 0x_);
     };
 };

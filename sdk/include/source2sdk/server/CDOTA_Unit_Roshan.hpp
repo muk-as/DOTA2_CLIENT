@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1918
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,29 +35,29 @@ namespace source2sdk
         class CDOTA_Unit_Roshan : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
         public:
-            std::int32_t m_iKillerTeam; // 0x18e0            
-            std::int32_t m_iLastHealthPercent; // 0x18e4            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18e8            
+            std::int32_t m_iKillerTeam; // 0x_            
+            std::int32_t m_iLastHealthPercent; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
             // m_hRadiantRoshanPit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRadiantRoshanPit;
-            char m_hRadiantRoshanPit[0x4]; // 0x18ec            
+            char m_hRadiantRoshanPit[0x_]; // 0x_            
             // m_hDireRoshanPit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hDireRoshanPit;
-            char m_hDireRoshanPit[0x4]; // 0x18f0            
+            char m_hDireRoshanPit[0x_]; // 0x_            
             // m_hRiverMidpoint has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRiverMidpoint;
-            char m_hRiverMidpoint[0x4]; // 0x18f4            
+            char m_hRiverMidpoint[0x_]; // 0x_            
             // m_hAttackingHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hAttackingHeroes;
-            char m_hAttackingHeroes[0x18]; // 0x18f8            
+            char m_hAttackingHeroes[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGoldenRoshan; // 0x1910            
-            uint8_t _pad1911[0x7];
+            bool m_bGoldenRoshan; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Roshan because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Roshan) == 0x1918);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Roshan) == 0x_);
     };
 };

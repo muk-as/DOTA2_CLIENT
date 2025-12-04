@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace toolscene
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,17 +25,17 @@ namespace source2sdk
         class CLightRigExposure
         {
         public:
-            bool m_bEnabled; // 0x0            
-            uint8_t _pad0001[0x3]; // 0x1
-            float m_flMinEV; // 0x4            
-            float m_flMaxEV; // 0x8            
+            bool m_bEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMinEV; // 0x_            
+            float m_flMaxEV; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_bEnabled) == 0x0);
-        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_flMinEV) == 0x4);
-        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_flMaxEV) == 0x8);
+        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_bEnabled) == 0x_);
+        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_flMinEV) == 0x_);
+        static_assert(offsetof(source2sdk::toolscene::CLightRigExposure, m_flMaxEV) == 0x_);
         
-        static_assert(sizeof(source2sdk::toolscene::CLightRigExposure) == 0xc);
+        static_assert(sizeof(source2sdk::toolscene::CLightRigExposure) == 0x_);
     };
 };

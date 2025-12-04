@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Octarine_Core : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_health; // 0x1878            
-            std::int32_t bonus_mana; // 0x187c            
-            float bonus_cooldown; // 0x1880            
-            float bonus_health_regen; // 0x1884            
-            float bonus_mana_regen; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t bonus_health; // 0x_            
+            std::int32_t bonus_mana; // 0x_            
+            float bonus_cooldown; // 0x_            
+            float bonus_health_regen; // 0x_            
+            float bonus_mana_regen; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Octarine_Core because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Octarine_Core) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Octarine_Core) == 0x_);
     };
 };

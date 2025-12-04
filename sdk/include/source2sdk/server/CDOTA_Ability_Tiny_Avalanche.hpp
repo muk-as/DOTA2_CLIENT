@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_Tiny_Avalanche : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vTargetLoc; // 0x5c0            
-            uint8_t _pad05cc[0x14];
+            Vector m_vTargetLoc; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Tiny_Avalanche because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tiny_Avalanche) == 0x5e0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tiny_Avalanche) == 0x_);
     };
 };

@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc68
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -44,55 +44,55 @@ namespace source2sdk
         class C_PointWorldText : public source2sdk::client::C_ModelPointEntity
         {
         public:
-            uint8_t _pad0998[0x8]; // 0x998
-            bool m_bForceRecreateNextUpdate; // 0x9a0            
-            uint8_t _pad09a1[0x17]; // 0x9a1
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bForceRecreateNextUpdate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            char m_messageText[512]; // 0x9b8            
+            char m_messageText[512]; // 0x_            
             // metadata: MNetworkEnable
-            char m_FontName[64]; // 0xbb8            
+            char m_FontName[64]; // 0x_            
             // metadata: MNetworkEnable
-            char m_BackgroundMaterialName[64]; // 0xbf8            
+            char m_BackgroundMaterialName[64]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0xc38            
+            bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFullbright; // 0xc39            
-            uint8_t _pad0c3a[0x2]; // 0xc3a
+            bool m_bFullbright; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flWorldUnitsPerPx; // 0xc3c            
+            float m_flWorldUnitsPerPx; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFontSize; // 0xc40            
+            float m_flFontSize; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDepthOffset; // 0xc44            
+            float m_flDepthOffset; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDrawBackground; // 0xc48            
-            uint8_t _pad0c49[0x3]; // 0xc49
+            bool m_bDrawBackground; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flBackgroundBorderWidth; // 0xc4c            
+            float m_flBackgroundBorderWidth; // 0x_            
             // metadata: MNetworkEnable
-            float m_flBackgroundBorderHeight; // 0xc50            
+            float m_flBackgroundBorderHeight; // 0x_            
             // metadata: MNetworkEnable
-            float m_flBackgroundWorldToUV; // 0xc54            
+            float m_flBackgroundWorldToUV; // 0x_            
             // metadata: MNetworkEnable
-            Color m_Color; // 0xc58            
+            Color m_Color; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PointWorldTextJustifyHorizontal_t m_nJustifyHorizontal; // 0xc5c            
+            source2sdk::client::PointWorldTextJustifyHorizontal_t m_nJustifyHorizontal; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PointWorldTextJustifyVertical_t m_nJustifyVertical; // 0xc60            
+            source2sdk::client::PointWorldTextJustifyVertical_t m_nJustifyVertical; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PointWorldTextReorientMode_t m_nReorientMode; // 0xc64            
+            source2sdk::client::PointWorldTextReorientMode_t m_nReorientMode; // 0x_            
             
             // Datamap fields:
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
-            // void InputToggle; // 0x0
-            // CUtlSymbolLarge InputSetMessage; // 0x0
-            // int32_t InputSetIntMessage; // 0x0
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // void InputToggle; // 0x_
+            // CUtlSymbolLarge InputSetMessage; // 0x_
+            // int32_t InputSetIntMessage; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PointWorldText because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PointWorldText) == 0xc68);
+        static_assert(sizeof(source2sdk::client::C_PointWorldText) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 76
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SurvivorsAttributeType_t : std::uint32_t
         {
             k_eSurvivorsAttribute_Invalid = 0x0,

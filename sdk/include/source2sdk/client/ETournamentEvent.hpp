@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETournamentEvent : std::uint32_t
         {
             k_ETournamentEvent_None = 0x0,

@@ -14,20 +14,20 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class INextBotEventResponder
         {
         public:
-            uint8_t _pad0000[0x8];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::INextBotEventResponder) == 0x8);
+        static_assert(sizeof(source2sdk::server::INextBotEventResponder) == 0x_);
     };
 };

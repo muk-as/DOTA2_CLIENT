@@ -75,10 +75,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x3f0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -89,201 +89,201 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "version"
             // metadata: MPropertySuppressField
-            std::int32_t m_nBehaviorVersion; // 0x8            
-            uint8_t _pad000c[0x4]; // 0xc
+            std::int32_t m_nBehaviorVersion; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
             // m_PreEmissionOperators has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionPreEmission*> m_PreEmissionOperators;
-            char m_PreEmissionOperators[0x18]; // 0x10            
+            char m_PreEmissionOperators[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Emitters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionEmitter*> m_Emitters;
-            char m_Emitters[0x18]; // 0x28            
+            char m_Emitters[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Initializers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionInitializer*> m_Initializers;
-            char m_Initializers[0x18]; // 0x40            
+            char m_Initializers[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Operators has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionOperator*> m_Operators;
-            char m_Operators[0x18]; // 0x58            
+            char m_Operators[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_ForceGenerators has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionForce*> m_ForceGenerators;
-            char m_ForceGenerators[0x18]; // 0x70            
+            char m_ForceGenerators[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Constraints has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionConstraint*> m_Constraints;
-            char m_Constraints[0x18]; // 0x88            
+            char m_Constraints[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Renderers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::CParticleFunctionRenderer*> m_Renderers;
-            char m_Renderers[0x18]; // 0xa0            
+            char m_Renderers[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_Children has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::ParticleChildrenInfo_t> m_Children;
-            char m_Children[0x18]; // 0xb8            
-            uint8_t _pad00d0[0xa8]; // 0xd0
+            char m_Children[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
-            std::int32_t m_nFirstMultipleOverride_BackwardCompat; // 0x178            
-            uint8_t _pad017c[0x94]; // 0x17c
+            std::int32_t m_nFirstMultipleOverride_BackwardCompat; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "+Collection Options"
             // metadata: MPropertyFriendlyName "initial particles"
-            std::int32_t m_nInitialParticles; // 0x210            
+            std::int32_t m_nInitialParticles; // 0x_            
             // metadata: MPropertyFriendlyName "max particles"
-            std::int32_t m_nMaxParticles; // 0x214            
+            std::int32_t m_nMaxParticles; // 0x_            
             // metadata: MPropertyFriendlyName "group id"
-            std::int32_t m_nGroupID; // 0x218            
+            std::int32_t m_nGroupID; // 0x_            
             // metadata: MPropertyStartGroup "Bounding Box"
             // metadata: MPropertyFriendlyName "bounding box bloat min"
             // metadata: MVectorIsCoordinate
-            Vector m_BoundingBoxMin; // 0x21c            
+            Vector m_BoundingBoxMin; // 0x_            
             // metadata: MPropertyFriendlyName "bounding box bloat max"
             // metadata: MVectorIsCoordinate
-            Vector m_BoundingBoxMax; // 0x228            
+            Vector m_BoundingBoxMax; // 0x_            
             // metadata: MPropertyFriendlyName "bounding box depth sort bias"
-            float m_flDepthSortBias; // 0x234            
+            float m_flDepthSortBias; // 0x_            
             // metadata: MPropertyFriendlyName "sort override position CP"
-            std::int32_t m_nSortOverridePositionCP; // 0x238            
+            std::int32_t m_nSortOverridePositionCP; // 0x_            
             // metadata: MPropertyFriendlyName "infinite bounds - don't cull"
-            bool m_bInfiniteBounds; // 0x23c            
+            bool m_bInfiniteBounds; // 0x_            
             // metadata: MPropertyStartGroup "Named Values"
             // metadata: MPropertyFriendlyName "Enable Named Values (EXPERIMENTAL)"
-            bool m_bEnableNamedValues; // 0x23d            
-            uint8_t _pad023e[0x2]; // 0x23e
+            bool m_bEnableNamedValues; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Domain Class"
             // metadata: MPropertyAttributeChoiceName "particlefield_domain"
             // metadata: MPropertyAutoRebuildOnChange
             // metadata: MPropertySuppressExpr "!m_bEnableNamedValues"
-            CUtlString m_NamedValueDomain; // 0x240            
+            CUtlString m_NamedValueDomain; // 0x_            
             // metadata: MPropertySuppressField
             // m_NamedValueLocals has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particleslib::ParticleNamedValueSource_t*> m_NamedValueLocals;
-            char m_NamedValueLocals[0x18]; // 0x248            
+            char m_NamedValueLocals[0x_]; // 0x_            
             // metadata: MPropertyStartGroup "+Base Properties"
             // metadata: MPropertyFriendlyName "color"
             // metadata: MPropertyColorPlusAlpha
-            Color m_ConstantColor; // 0x260            
+            Color m_ConstantColor; // 0x_            
             // metadata: MPropertyFriendlyName "normal"
             // metadata: MVectorIsCoordinate
-            Vector m_ConstantNormal; // 0x264            
+            Vector m_ConstantNormal; // 0x_            
             // metadata: MPropertyFriendlyName "radius"
             // metadata: MPropertyAttributeRange "biased 0 500"
-            float m_flConstantRadius; // 0x270            
+            float m_flConstantRadius; // 0x_            
             // metadata: MPropertyFriendlyName "rotation"
-            float m_flConstantRotation; // 0x274            
+            float m_flConstantRotation; // 0x_            
             // metadata: MPropertyFriendlyName "rotation speed"
-            float m_flConstantRotationSpeed; // 0x278            
+            float m_flConstantRotationSpeed; // 0x_            
             // metadata: MPropertyFriendlyName "lifetime"
-            float m_flConstantLifespan; // 0x27c            
+            float m_flConstantLifespan; // 0x_            
             // metadata: MPropertyFriendlyName "sequence number"
             // metadata: MPropertyAttributeEditor "SequencePicker( 1 )"
-            std::int32_t m_nConstantSequenceNumber; // 0x280            
+            std::int32_t m_nConstantSequenceNumber; // 0x_            
             // metadata: MPropertyFriendlyName "sequence number 1"
             // metadata: MPropertyAttributeEditor "SequencePicker( 2 )"
-            std::int32_t m_nConstantSequenceNumber1; // 0x284            
+            std::int32_t m_nConstantSequenceNumber1; // 0x_            
             // metadata: MPropertyStartGroup "Snapshot Options"
-            std::int32_t m_nSnapshotControlPoint; // 0x288            
-            uint8_t _pad028c[0x4]; // 0x28c
+            std::int32_t m_nSnapshotControlPoint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hSnapshot has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSnapshot> m_hSnapshot;
-            char m_hSnapshot[0x8]; // 0x290            
+            char m_hSnapshot[0x_]; // 0x_            
             // metadata: MPropertyStartGroup "Replacement Options"
             // metadata: MPropertyFriendlyName "cull replacement definition"
             // m_pszCullReplacementName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_pszCullReplacementName;
-            char m_pszCullReplacementName[0x8]; // 0x298            
+            char m_pszCullReplacementName[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "cull radius"
-            float m_flCullRadius; // 0x2a0            
+            float m_flCullRadius; // 0x_            
             // metadata: MPropertyFriendlyName "cull cost"
-            float m_flCullFillCost; // 0x2a4            
+            float m_flCullFillCost; // 0x_            
             // metadata: MPropertyFriendlyName "cull control point"
-            std::int32_t m_nCullControlPoint; // 0x2a8            
-            uint8_t _pad02ac[0x4]; // 0x2ac
+            std::int32_t m_nCullControlPoint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "fallback replacement definition"
             // m_hFallback has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hFallback;
-            char m_hFallback[0x8]; // 0x2b0            
+            char m_hFallback[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "fallback max count"
-            std::int32_t m_nFallbackMaxCount; // 0x2b8            
-            uint8_t _pad02bc[0x4]; // 0x2bc
+            std::int32_t m_nFallbackMaxCount; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "low violence definition"
             // m_hLowViolenceDef has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hLowViolenceDef;
-            char m_hLowViolenceDef[0x8]; // 0x2c0            
+            char m_hLowViolenceDef[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "reference replacement definition"
             // m_hReferenceReplacement has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hReferenceReplacement;
-            char m_hReferenceReplacement[0x8]; // 0x2c8            
+            char m_hReferenceReplacement[0x_]; // 0x_            
             // metadata: MPropertyStartGroup "Simulation Options"
             // metadata: MPropertyFriendlyName "pre-simulation time"
-            float m_flPreSimulationTime; // 0x2d0            
+            float m_flPreSimulationTime; // 0x_            
             // metadata: MPropertyFriendlyName "freeze simulation after time"
-            float m_flStopSimulationAfterTime; // 0x2d4            
+            float m_flStopSimulationAfterTime; // 0x_            
             // metadata: MPropertyFriendlyName "maximum time step"
-            float m_flMaximumTimeStep; // 0x2d8            
+            float m_flMaximumTimeStep; // 0x_            
             // metadata: MPropertyFriendlyName "maximum sim tick rate"
-            float m_flMaximumSimTime; // 0x2dc            
+            float m_flMaximumSimTime; // 0x_            
             // metadata: MPropertyFriendlyName "minimum sim tick rate"
-            float m_flMinimumSimTime; // 0x2e0            
+            float m_flMinimumSimTime; // 0x_            
             // metadata: MPropertyFriendlyName "minimum simulation time step"
-            float m_flMinimumTimeStep; // 0x2e4            
+            float m_flMinimumTimeStep; // 0x_            
             // metadata: MPropertyFriendlyName "minimum required rendered frames"
-            std::int32_t m_nMinimumFrames; // 0x2e8            
+            std::int32_t m_nMinimumFrames; // 0x_            
             // metadata: MPropertyStartGroup "Performance Options"
             // metadata: MPropertyFriendlyName "minimum CPU level"
-            std::int32_t m_nMinCPULevel; // 0x2ec            
+            std::int32_t m_nMinCPULevel; // 0x_            
             // metadata: MPropertyFriendlyName "minimum GPU level"
-            std::int32_t m_nMinGPULevel; // 0x2f0            
+            std::int32_t m_nMinGPULevel; // 0x_            
             // metadata: MPropertyFriendlyName "time to sleep when not drawn"
-            float m_flNoDrawTimeToGoToSleep; // 0x2f4            
+            float m_flNoDrawTimeToGoToSleep; // 0x_            
             // metadata: MPropertyFriendlyName "maximum draw distance"
-            float m_flMaxDrawDistance; // 0x2f8            
+            float m_flMaxDrawDistance; // 0x_            
             // metadata: MPropertyFriendlyName "start fade distance"
-            float m_flStartFadeDistance; // 0x2fc            
+            float m_flStartFadeDistance; // 0x_            
             // metadata: MPropertyFriendlyName "maximum creation distance"
-            float m_flMaxCreationDistance; // 0x300            
+            float m_flMaxCreationDistance; // 0x_            
             // metadata: MPropertyFriendlyName "minimum free particles to aggregate"
-            std::int32_t m_nAggregationMinAvailableParticles; // 0x304            
+            std::int32_t m_nAggregationMinAvailableParticles; // 0x_            
             // metadata: MPropertyFriendlyName "aggregation radius"
-            float m_flAggregateRadius; // 0x308            
+            float m_flAggregateRadius; // 0x_            
             // metadata: MPropertyFriendlyName "batch particle systems (DO NOT USE)"
             // metadata: MParticleAdvancedField
-            bool m_bShouldBatch; // 0x30c            
+            bool m_bShouldBatch; // 0x_            
             // metadata: MPropertyFriendlyName "Hitboxes fall back to render bounds"
-            bool m_bShouldHitboxesFallbackToRenderBounds; // 0x30d            
+            bool m_bShouldHitboxesFallbackToRenderBounds; // 0x_            
             // metadata: MPropertyFriendlyName "Hitboxes fall back to snapshot"
-            bool m_bShouldHitboxesFallbackToSnapshot; // 0x30e            
+            bool m_bShouldHitboxesFallbackToSnapshot; // 0x_            
             // metadata: MPropertyFriendlyName "Hitboxes fall back to collision hulls"
-            bool m_bShouldHitboxesFallbackToCollisionHulls; // 0x30f            
+            bool m_bShouldHitboxesFallbackToCollisionHulls; // 0x_            
             // metadata: MPropertyStartGroup "Rendering Options"
             // metadata: MPropertyFriendlyName "view model effect"
             // metadata: MPropertySuppressExpr "m_bScreenSpaceEffect"
-            source2sdk::particles::InheritableBoolType_t m_nViewModelEffect; // 0x310            
+            source2sdk::particles::InheritableBoolType_t m_nViewModelEffect; // 0x_            
             // metadata: MPropertyFriendlyName "screen space effect"
             // metadata: MPropertySuppressExpr "m_nViewModelEffect == INHERITABLE_BOOL_TRUE"
-            bool m_bScreenSpaceEffect; // 0x314            
-            uint8_t _pad0315[0x3]; // 0x315
+            bool m_bScreenSpaceEffect; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "target layer ID for rendering"
-            CUtlSymbolLarge m_pszTargetLayerID; // 0x318            
+            CUtlSymbolLarge m_pszTargetLayerID; // 0x_            
             // metadata: MPropertyFriendlyName "control point to disable rendering if it is the camera"
-            std::int32_t m_nSkipRenderControlPoint; // 0x320            
+            std::int32_t m_nSkipRenderControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "control point to only enable rendering if it is the camera"
-            std::int32_t m_nAllowRenderControlPoint; // 0x324            
+            std::int32_t m_nAllowRenderControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "sort particles (DEPRECATED - USE RENDERER OPTION)"
             // metadata: MParticleAdvancedField
-            bool m_bShouldSort; // 0x328            
-            uint8_t _pad0329[0x47]; // 0x329
+            bool m_bShouldSort; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
             // m_controlPointConfigurations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::particles::ParticleControlPointConfiguration_t> m_controlPointConfigurations;
-            char m_controlPointConfigurations[0x18]; // 0x370            
-            uint8_t _pad0388[0x68];
+            char m_controlPointConfigurations[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CParticleSystemDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::CParticleSystemDefinition) == 0x3f0);
+        static_assert(sizeof(source2sdk::particles::CParticleSystemDefinition) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct FeSpringIntegrator_t
         {
         public:
-            std::uint16_t nNode[2]; // 0x0            
-            float flSpringRestLength; // 0x4            
-            float flSpringConstant; // 0x8            
-            float flSpringDamping; // 0xc            
-            float flNodeWeight0; // 0x10            
+            std::uint16_t nNode[2]; // 0x_            
+            float flSpringRestLength; // 0x_            
+            float flSpringConstant; // 0x_            
+            float flSpringDamping; // 0x_            
+            float flNodeWeight0; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringRestLength) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringConstant) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringDamping) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flNodeWeight0) == 0x10);
+        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringRestLength) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringConstant) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flSpringDamping) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSpringIntegrator_t, flNodeWeight0) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeSpringIntegrator_t) == 0x14);
+        static_assert(sizeof(source2sdk::physicslib::FeSpringIntegrator_t) == 0x_);
     };
 };

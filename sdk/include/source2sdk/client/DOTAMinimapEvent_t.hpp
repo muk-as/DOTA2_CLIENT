@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAMinimapEvent_t : std::uint32_t
         {
             DOTA_MINIMAP_EVENT_ANCIENT_UNDER_ATTACK = 0x2,

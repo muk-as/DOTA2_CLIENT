@@ -25,10 +25,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x970
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -77,127 +77,127 @@ namespace source2sdk
         class CDOTAPlayerController : public source2sdk::server::CBasePlayerController
         {
         public:
-            uint8_t _pad07d8[0x8]; // 0x7d8
-            std::int32_t m_iMinimapMove; // 0x7e0            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_iMinimapMove; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iCursor[2]; // 0x7e4            
+            std::int32_t m_iCursor[2]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iSpectatorClickBehavior; // 0x7ec            
+            std::int32_t m_iSpectatorClickBehavior; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flAspectRatio; // 0x7f0            
+            float m_flAspectRatio; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
             // m_hSpectatorQueryUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSpectatorQueryUnit;
-            char m_hSpectatorQueryUnit[0x4]; // 0x7f4            
+            char m_hSpectatorQueryUnit[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsPanel; // 0x7f8            
+            std::int32_t m_iStatsPanel; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iShopPanel; // 0x7fc            
+            std::int32_t m_iShopPanel; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            source2sdk::client::ShopItemViewMode_t m_iShopViewMode; // 0x800            
+            source2sdk::client::ShopItemViewMode_t m_iShopViewMode; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsDropdownCategory; // 0x804            
+            std::int32_t m_iStatsDropdownCategory; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsDropdownSort; // 0x808            
+            std::int32_t m_iStatsDropdownSort; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            char m_szShopString[64]; // 0x80c            
+            char m_szShopString[64]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            bool m_bInShowCaseMode; // 0x84c            
-            uint8_t _pad084d[0x3]; // 0x84d
+            bool m_bInShowCaseMode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flCameraZoomAmount; // 0x850            
+            float m_flCameraZoomAmount; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iHighPriorityScore; // 0x854            
+            std::int32_t m_iHighPriorityScore; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flUnfilteredFrameTime; // 0x858            
+            float m_flUnfilteredFrameTime; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUsingAssistedCameraOperator; // 0x85c            
+            bool m_bUsingAssistedCameraOperator; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUsingCameraMan; // 0x85d            
-            uint8_t _pad085e[0x2]; // 0x85e
+            bool m_bUsingCameraMan; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nPlayerAssistFlags; // 0x860            
-            float m_flHighPriorityScoreTimeStamp; // 0x864            
-            float m_flExecuteOrdersLagCompensation; // 0x868            
+            std::int32_t m_nPlayerAssistFlags; // 0x_            
+            float m_flHighPriorityScoreTimeStamp; // 0x_            
+            float m_flExecuteOrdersLagCompensation; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iMusicStatus; // 0x86c            
+            std::int32_t m_iMusicStatus; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMusicOperatorVals[3]; // 0x870            
+            float m_flMusicOperatorVals[3]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iMusicOperatorVals[4]; // 0x87c            
-            uint8_t _pad088c[0x4]; // 0x88c
-            source2sdk::server::CountdownTimer m_MusicRestTime; // 0x890            
+            std::int32_t m_iMusicOperatorVals[4]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_MusicRestTime; // 0x_            
             // metadata: MNetworkEnable
             // m_hKillCamUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hKillCamUnit;
-            char m_hKillCamUnit[0x4]; // 0x8a8            
-            Vector m_vecCrosshairTracePos; // 0x8ac            
-            CEntityIndex m_iCrosshairEntity; // 0x8b8            
+            char m_hKillCamUnit[0x_]; // 0x_            
+            Vector m_vecCrosshairTracePos; // 0x_            
+            CEntityIndex m_iCrosshairEntity; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0x8bc            
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0x_            
             // metadata: MNetworkEnable
             // m_hAssignedHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAssignedHero;
-            char m_hAssignedHero[0x4]; // 0x8c0            
-            uint8_t _pad08c4[0xc]; // 0x8c4
-            bool m_bTeleportRequiresHalt; // 0x8d0            
-            bool m_bChannelRequiresHalt; // 0x8d1            
-            bool m_bInteractionChannelsRequiresHalt; // 0x8d2            
-            uint8_t _pad08d3[0x1]; // 0x8d3
+            char m_hAssignedHero[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bTeleportRequiresHalt; // 0x_            
+            bool m_bChannelRequiresHalt; // 0x_            
+            bool m_bInteractionChannelsRequiresHalt; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            std::int32_t m_nServerOrderSequenceNumber; // 0x8d4            
-            float m_flLastOrderTime; // 0x8d8            
-            float m_flLastKnownActiveTime; // 0x8dc            
-            std::uint32_t m_nLastOrderLatency; // 0x8e0            
-            source2sdk::entity2::GameTime_t m_flLastReconnectTime; // 0x8e4            
-            source2sdk::entity2::GameTime_t m_fLastSuggestionTime; // 0x8e8            
-            uint8_t _pad08ec[0x1c]; // 0x8ec
-            bool m_bWantsRandomHero; // 0x908            
-            bool m_bFullyJoinedServer; // 0x909            
-            uint8_t _pad090a[0x2]; // 0x90a
-            std::int32_t m_nCheatDetectOrderReferenceCommandNumber; // 0x90c            
-            source2sdk::client::PlayerID_t m_iSwapPreferencePlayerID; // 0x910            
-            std::uint32_t m_nCoachListenMask; // 0x914            
+            std::int32_t m_nServerOrderSequenceNumber; // 0x_            
+            float m_flLastOrderTime; // 0x_            
+            float m_flLastKnownActiveTime; // 0x_            
+            std::uint32_t m_nLastOrderLatency; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastReconnectTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastSuggestionTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bWantsRandomHero; // 0x_            
+            bool m_bFullyJoinedServer; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nCheatDetectOrderReferenceCommandNumber; // 0x_            
+            source2sdk::client::PlayerID_t m_iSwapPreferencePlayerID; // 0x_            
+            std::uint32_t m_nCoachListenMask; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nCachedCoachedTeam; // 0x918            
-            float m_flLastChatWheelTime[2]; // 0x91c            
-            float m_flLastChatWheelAudioTime[2]; // 0x924            
-            float m_flLastChatWheelAllChatAudioTime[2]; // 0x92c            
-            float m_flLastChatWheelSprayTime; // 0x934            
-            float m_flLastChatWheelLongCooldownTime; // 0x938            
-            float m_flLastPingTime; // 0x93c            
-            float m_flPingAllowance; // 0x940            
-            float m_flLastMapLineTime; // 0x944            
-            float m_flMapLineAllowance; // 0x948            
-            float m_flLastWaypointPathPingTime; // 0x94c            
-            float m_flWaypointPathPingAllowance; // 0x950            
-            float m_flLastVersusBehaviorTime; // 0x954            
-            float m_flVersusBehaviorAllowance; // 0x958            
-            std::uint8_t m_pOrderRetirementHistory[10]; // 0x95c            
-            std::uint16_t m_nOrderRetirementSum; // 0x966            
-            std::int32_t m_nOrderRetirementLastTick; // 0x968            
-            uint8_t _pad096c[0x4];
+            std::int32_t m_nCachedCoachedTeam; // 0x_            
+            float m_flLastChatWheelTime[2]; // 0x_            
+            float m_flLastChatWheelAudioTime[2]; // 0x_            
+            float m_flLastChatWheelAllChatAudioTime[2]; // 0x_            
+            float m_flLastChatWheelSprayTime; // 0x_            
+            float m_flLastChatWheelLongCooldownTime; // 0x_            
+            float m_flLastPingTime; // 0x_            
+            float m_flPingAllowance; // 0x_            
+            float m_flLastMapLineTime; // 0x_            
+            float m_flMapLineAllowance; // 0x_            
+            float m_flLastWaypointPathPingTime; // 0x_            
+            float m_flWaypointPathPingAllowance; // 0x_            
+            float m_flLastVersusBehaviorTime; // 0x_            
+            float m_flVersusBehaviorAllowance; // 0x_            
+            std::uint8_t m_pOrderRetirementHistory[10]; // 0x_            
+            std::uint16_t m_nOrderRetirementSum; // 0x_            
+            std::int32_t m_nOrderRetirementLastTick; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPlayerController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAPlayerController) == 0x970);
+        static_assert(sizeof(source2sdk::server::CDOTAPlayerController) == 0x_);
     };
 };

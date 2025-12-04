@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,20 +27,20 @@ namespace source2sdk
         struct PulseGraphExecutionHistoryEntry_t
         {
         public:
-            source2sdk::pulse_runtime_lib::PulseCursorID_t nCursorID; // 0x0            
-            source2sdk::pulse_runtime_lib::PulseDocNodeID_t nEditorID; // 0x4            
-            float flExecTime; // 0x8            
-            std::uint32_t unFlags; // 0xc            
-            PulseSymbol_t tagName; // 0x10            
+            source2sdk::pulse_runtime_lib::PulseCursorID_t nCursorID; // 0x_            
+            source2sdk::pulse_runtime_lib::PulseDocNodeID_t nEditorID; // 0x_            
+            float flExecTime; // 0x_            
+            std::uint32_t unFlags; // 0x_            
+            PulseSymbol_t tagName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, nCursorID) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, nEditorID) == 0x4);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, flExecTime) == 0x8);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, unFlags) == 0xc);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, tagName) == 0x10);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, nCursorID) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, nEditorID) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, flExecTime) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, unFlags) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t, tagName) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t) == 0x20);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseGraphExecutionHistoryEntry_t) == 0x_);
     };
 };

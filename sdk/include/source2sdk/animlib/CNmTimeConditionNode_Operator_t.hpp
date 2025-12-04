@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CNmTimeConditionNode_Operator_t : std::uint8_t
         {
             LessThan = 0x0,

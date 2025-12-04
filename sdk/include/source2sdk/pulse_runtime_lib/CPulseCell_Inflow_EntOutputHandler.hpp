@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,14 +30,14 @@ namespace source2sdk
         class CPulseCell_Inflow_EntOutputHandler : public source2sdk::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint
         {
         public:
-            PulseSymbol_t m_SourceEntity; // 0x80            
-            PulseSymbol_t m_SourceOutput; // 0x90            
-            CPulseValueFullType m_ExpectedParamType; // 0xa0            
+            PulseSymbol_t m_SourceEntity; // 0x_            
+            PulseSymbol_t m_SourceOutput; // 0x_            
+            CPulseValueFullType m_ExpectedParamType; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_Inflow_EntOutputHandler because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Inflow_EntOutputHandler) == 0xb8);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Inflow_EntOutputHandler) == 0x_);
     };
 };

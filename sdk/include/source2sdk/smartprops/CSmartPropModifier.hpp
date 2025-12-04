@@ -14,9 +14,9 @@ namespace source2sdk
     namespace smartprops
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -29,15 +29,15 @@ namespace source2sdk
         class CSmartPropModifier
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MVDataEnableKey
-            CSmartPropAttributeBool m_bEnabled; // 0x8            
-            uint8_t _pad0048[0x8];
+            CSmartPropAttributeBool m_bEnabled; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropModifier, m_bEnabled) == 0x8);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropModifier, m_bEnabled) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropModifier) == 0x50);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropModifier) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -30,24 +30,24 @@ namespace source2sdk
             // metadata: MPropertyDescription "unique integer ID of this new setting"
             // metadata: MVDataUniqueMonotonicInt "_editor/next_new_setting_id"
             // metadata: MPropertyAttributeEditor "locked_int()"
-            source2sdk::client::NewSettingsID_t nID; // 0x0            
-            uint8_t _pad0004[0xc]; // 0x4
-            CUtlString m_sTitle; // 0x10            
-            CUtlString m_sDescription; // 0x18            
-            CPanoramaImageName sIcon; // 0x20            
-            CUtlString m_sCreationDate; // 0x30            
-            uint8_t _pad0038[0x4]; // 0x38
-            source2sdk::client::ENewSettingsBadge m_eNewSettingsBadge; // 0x3c            
+            source2sdk::client::NewSettingsID_t nID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_sTitle; // 0x_            
+            CUtlString m_sDescription; // 0x_            
+            CPanoramaImageName sIcon; // 0x_            
+            CUtlString m_sCreationDate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ENewSettingsBadge m_eNewSettingsBadge; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, nID) == 0x0);
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sTitle) == 0x10);
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sDescription) == 0x18);
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, sIcon) == 0x20);
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sCreationDate) == 0x30);
-        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_eNewSettingsBadge) == 0x3c);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, nID) == 0x_);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sTitle) == 0x_);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sDescription) == 0x_);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, sIcon) == 0x_);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_sCreationDate) == 0x_);
+        static_assert(offsetof(source2sdk::client::SNewSettingsDefinition, m_eNewSettingsBadge) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::SNewSettingsDefinition) == 0x40);
+        static_assert(sizeof(source2sdk::client::SNewSettingsDefinition) == 0x_);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mutation_Spellcast : public source2sdk::client::CDOTA_Buff
@@ -32,16 +32,16 @@ namespace source2sdk
         public:
             // m_vecAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CDOTABaseAbility*> m_vecAbilities;
-            char m_vecAbilities[0x18]; // 0x1878            
-            float m_fNextCastTime; // 0x1890            
-            float m_fCastInterval; // 0x1894            
-            float m_fWarningTime; // 0x1898            
-            std::int32_t m_iNextAbility; // 0x189c            
+            char m_vecAbilities[0x_]; // 0x_            
+            float m_fNextCastTime; // 0x_            
+            float m_fCastInterval; // 0x_            
+            float m_fWarningTime; // 0x_            
+            std::int32_t m_iNextAbility; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mutation_Spellcast because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_Spellcast) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_Spellcast) == 0x_);
     };
 };

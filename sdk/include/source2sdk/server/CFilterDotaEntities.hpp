@@ -15,22 +15,22 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x558
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFilterDotaEntities : public source2sdk::server::CBaseFilter
         {
         public:
-            source2sdk::server::CDotaEntityFilterFlags m_FilterFlags; // 0x538            
+            source2sdk::server::CDotaEntityFilterFlags m_FilterFlags; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFilterDotaEntities because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFilterDotaEntities) == 0x558);
+        static_assert(sizeof(source2sdk::server::CFilterDotaEntities) == 0x_);
     };
 };

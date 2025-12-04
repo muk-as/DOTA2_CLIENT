@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,21 +27,21 @@ namespace source2sdk
         struct PermEntityLumpData_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            CUtlString m_name; // 0x8            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_name; // 0x_            
             // m_childLumps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CStrongHandleCopyable<source2sdk::resourcesystem::InfoForResourceTypeCEntityLump>> m_childLumps;
-            char m_childLumps[0x18]; // 0x10            
+            char m_childLumps[0x_]; // 0x_            
             // m_entityKeyValues has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::worldrenderer::EntityKeyValueData_t> m_entityKeyValues;
-            char m_entityKeyValues[0x10]; // 0x28            
+            char m_entityKeyValues[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_name) == 0x8);
-        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_childLumps) == 0x10);
-        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_entityKeyValues) == 0x28);
+        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_childLumps) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::PermEntityLumpData_t, m_entityKeyValues) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::PermEntityLumpData_t) == 0x38);
+        static_assert(sizeof(source2sdk::worldrenderer::PermEntityLumpData_t) == 0x_);
     };
 };

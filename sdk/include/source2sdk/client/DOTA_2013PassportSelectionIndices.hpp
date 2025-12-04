@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 96
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_2013PassportSelectionIndices : std::uint32_t
         {
             PP13_SEL_ALLSTAR_PLAYER_0 = 0x0,

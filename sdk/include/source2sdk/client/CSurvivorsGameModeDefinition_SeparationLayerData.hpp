@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -27,14 +27,14 @@ namespace source2sdk
         class CSurvivorsGameModeDefinition_SeparationLayerData
         {
         public:
-            source2sdk::client::ESurvivorsEnemySeparationLayer m_eSeparationLayer; // 0x0            
-            float m_flSeperationDistance; // 0x4            
+            source2sdk::client::ESurvivorsEnemySeparationLayer m_eSeparationLayer; // 0x_            
+            float m_flSeperationDistance; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData, m_eSeparationLayer) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData, m_flSeperationDistance) == 0x4);
+        static_assert(offsetof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData, m_eSeparationLayer) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData, m_flSeperationDistance) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData) == 0x8);
+        static_assert(sizeof(source2sdk::client::CSurvivorsGameModeDefinition_SeparationLayerData) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EDOTAFacetColor : std::uint8_t
         {
             FACET_COLOR_RED = 0x0,

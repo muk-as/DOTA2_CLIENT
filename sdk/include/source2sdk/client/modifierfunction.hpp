@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 380
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class modifierfunction : std::uint32_t
         {
             // MScriptDescription "GetModifierPreAttack_BonusDamage_Target GetModifierPreAttack_BonusDamage"

@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // 
@@ -28,12 +28,12 @@ namespace source2sdk
         class CNetworkedSequenceOperation
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkChangeCallback "sequenceOpSequenceChanged"
             // metadata: MNetworkPriority "32"
-            source2sdk::animationsystem::HSequence m_hSequence; // 0x8            
+            source2sdk::animationsystem::HSequence m_hSequence; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "15"
             // metadata: MNetworkMinValue "0,000000"
@@ -42,7 +42,7 @@ namespace source2sdk
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkSendProxyRecipientsFilter
             // metadata: MNetworkUserGroup "m_flCycle"
-            float m_flPrevCycle; // 0xc            
+            float m_flPrevCycle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "15"
             // metadata: MNetworkMinValue "0,000000"
@@ -51,34 +51,34 @@ namespace source2sdk
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkSendProxyRecipientsFilter
             // metadata: MNetworkUserGroup "m_flCycle"
-            float m_flCycle; // 0x10            
+            float m_flCycle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkEncodeFlags "0"
-            CNetworkedQuantizedFloat m_flWeight; // 0x14            
-            bool m_bSequenceChangeNetworked; // 0x1c            
-            bool m_bDiscontinuity; // 0x1d            
-            uint8_t _pad001e[0x2]; // 0x1e
-            float m_flPrevCycleFromDiscontinuity; // 0x20            
-            float m_flPrevCycleForAnimEventDetection; // 0x24            
+            CNetworkedQuantizedFloat m_flWeight; // 0x_            
+            bool m_bSequenceChangeNetworked; // 0x_            
+            bool m_bDiscontinuity; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flPrevCycleFromDiscontinuity; // 0x_            
+            float m_flPrevCycleForAnimEventDetection; // 0x_            
             
             // Datamap fields:
-            // CUtlString sequenceName; // 0x7fffffff
-            // int32_t sequence; // 0x7fffffff
+            // CUtlString sequenceName; // 0x_
+            // int32_t sequence; // 0x_
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_hSequence) == 0x8);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycle) == 0xc);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flCycle) == 0x10);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flWeight) == 0x14);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_bSequenceChangeNetworked) == 0x1c);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_bDiscontinuity) == 0x1d);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycleFromDiscontinuity) == 0x20);
-        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycleForAnimEventDetection) == 0x24);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_hSequence) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycle) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flCycle) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flWeight) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_bSequenceChangeNetworked) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_bDiscontinuity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycleFromDiscontinuity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CNetworkedSequenceOperation, m_flPrevCycleForAnimEventDetection) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CNetworkedSequenceOperation) == 0x28);
+        static_assert(sizeof(source2sdk::server::CNetworkedSequenceOperation) == 0x_);
     };
 };

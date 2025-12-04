@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,14 +25,14 @@ namespace source2sdk
         class C_DOTASceneEntity : public source2sdk::client::C_SceneEntity
         {
         public:
-            std::int32_t m_nCustomStackIndex; // 0x648            
-            float m_flVolume; // 0x64c            
-            uint8_t _pad0650[0x8];
+            std::int32_t m_nCustomStackIndex; // 0x_            
+            float m_flVolume; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTASceneEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTASceneEntity) == 0x658);
+        static_assert(sizeof(source2sdk::client::C_DOTASceneEntity) == 0x_);
     };
 };

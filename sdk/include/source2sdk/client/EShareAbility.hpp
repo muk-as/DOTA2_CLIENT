@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EShareAbility : std::uint32_t
         {
             ITEM_FULLY_SHAREABLE = 0x0,

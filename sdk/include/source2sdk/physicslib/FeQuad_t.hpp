@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,16 +25,16 @@ namespace source2sdk
         struct FeQuad_t
         {
         public:
-            std::uint16_t nNode[4]; // 0x0            
-            float flSlack; // 0x8            
-            Vector4D vShape[4]; // 0xc            
+            std::uint16_t nNode[4]; // 0x_            
+            float flSlack; // 0x_            
+            Vector4D vShape[4]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, flSlack) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, vShape) == 0xc);
+        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, flSlack) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeQuad_t, vShape) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeQuad_t) == 0x4c);
+        static_assert(sizeof(source2sdk::physicslib::FeQuad_t) == 0x_);
     };
 };

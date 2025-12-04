@@ -23,10 +23,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,19 +34,19 @@ namespace source2sdk
         class CDOTA_Ability_MonkeyKing_Spring : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vPos; // 0x5c0            
-            source2sdk::entity2::GameTime_t m_fStartChannelTime; // 0x5cc            
+            Vector m_vPos; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStartChannelTime; // 0x_            
             // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hThinker;
-            char m_hThinker[0x4]; // 0x5d0            
-            source2sdk::client::ParticleIndex_t m_nFxIndex; // 0x5d4            
-            std::int32_t m_nRefCount; // 0x5d8            
-            uint8_t _pad05dc[0x4];
+            char m_hThinker[0x_]; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFxIndex; // 0x_            
+            std::int32_t m_nRefCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_MonkeyKing_Spring because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_MonkeyKing_Spring) == 0x5e0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_MonkeyKing_Spring) == 0x_);
     };
 };

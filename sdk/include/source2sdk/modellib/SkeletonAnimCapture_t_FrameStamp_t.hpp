@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,27 +25,27 @@ namespace source2sdk
         struct SkeletonAnimCapture_t_FrameStamp_t
         {
         public:
-            float m_flTime; // 0x0            
-            float m_flEntitySimTime; // 0x4            
-            bool m_bTeleportTick; // 0x8            
-            bool m_bPredicted; // 0x9            
-            uint8_t _pad000a[0x2]; // 0xa
-            float m_flCurTime; // 0xc            
-            float m_flRealTime; // 0x10            
-            std::int32_t m_nFrameCount; // 0x14            
-            std::int32_t m_nTickCount; // 0x18            
+            float m_flTime; // 0x_            
+            float m_flEntitySimTime; // 0x_            
+            bool m_bTeleportTick; // 0x_            
+            bool m_bPredicted; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flCurTime; // 0x_            
+            float m_flRealTime; // 0x_            
+            std::int32_t m_nFrameCount; // 0x_            
+            std::int32_t m_nTickCount; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flTime) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flEntitySimTime) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_bTeleportTick) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_bPredicted) == 0x9);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flCurTime) == 0xc);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flRealTime) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_nFrameCount) == 0x14);
-        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_nTickCount) == 0x18);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flTime) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flEntitySimTime) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_bTeleportTick) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_bPredicted) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flCurTime) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_flRealTime) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_nFrameCount) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t, m_nTickCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t) == 0x1c);
+        static_assert(sizeof(source2sdk::modellib::SkeletonAnimCapture_t_FrameStamp_t) == 0x_);
     };
 };

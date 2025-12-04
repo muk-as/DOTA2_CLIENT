@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ELeagueNodeGroupType : std::uint32_t
         {
             INVALID_GROUP_TYPE = 0x0,

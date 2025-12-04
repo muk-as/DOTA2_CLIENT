@@ -17,27 +17,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18e0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Illusion : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t outgoing_damage; // 0x1878            
-            std::int32_t outgoing_damage_structure; // 0x187c            
-            std::int32_t outgoing_damage_roshan; // 0x1880            
-            std::int32_t incoming_damage; // 0x1884            
-            std::int32_t bounty_base; // 0x1888            
-            std::int32_t bounty_growth; // 0x188c            
-            CUtlString m_strIllusionType; // 0x1890            
-            char m_szIllusionLabel[64]; // 0x1898            
-            bool m_bHidden; // 0x18d8            
-            uint8_t _pad18d9[0x7];
+            std::int32_t outgoing_damage; // 0x_            
+            std::int32_t outgoing_damage_structure; // 0x_            
+            std::int32_t outgoing_damage_roshan; // 0x_            
+            std::int32_t incoming_damage; // 0x_            
+            std::int32_t bounty_base; // 0x_            
+            std::int32_t bounty_growth; // 0x_            
+            CUtlString m_strIllusionType; // 0x_            
+            char m_szIllusionLabel[64]; // 0x_            
+            bool m_bHidden; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Illusion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Illusion) == 0x18e0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Illusion) == 0x_);
     };
 };

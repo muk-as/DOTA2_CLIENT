@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x12e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,47 +31,47 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "input model"
-            source2sdk::particleslib::CParticleModelInput m_modelInput; // 0x1c8            
+            source2sdk::particleslib::CParticleModelInput m_modelInput; // 0x_            
             // metadata: MPropertyFriendlyName "input transform for transforming local space bias vector"
             // metadata: MParticleInputOptional
-            source2sdk::particleslib::CParticleTransformInput m_transformInput; // 0x228            
+            source2sdk::particleslib::CParticleTransformInput m_transformInput; // 0x_            
             // metadata: MPropertyFriendlyName "force to be inside model"
-            std::int32_t m_nForceInModel; // 0x290            
+            std::int32_t m_nForceInModel; // 0x_            
             // metadata: MPropertyFriendlyName "bias box distribution by volume"
-            bool m_bScaleToVolume; // 0x294            
+            bool m_bScaleToVolume; // 0x_            
             // metadata: MPropertyFriendlyName "even distribution within boxes"
-            bool m_bEvenDistribution; // 0x295            
-            uint8_t _pad0296[0x2]; // 0x296
+            bool m_bEvenDistribution; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "desired hitbox"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nDesiredHitbox; // 0x298            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nDesiredHitbox; // 0x_            
             // metadata: MPropertyFriendlyName "Control Point Providing Hitbox index"
-            std::int32_t m_nHitboxValueFromControlPointIndex; // 0x3f8            
-            uint8_t _pad03fc[0x4]; // 0x3fc
+            std::int32_t m_nHitboxValueFromControlPointIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "hitbox scale"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecHitBoxScale; // 0x400            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecHitBoxScale; // 0x_            
             // metadata: MPropertyFriendlyName "inherited velocity scale"
-            float m_flBoneVelocity; // 0xa78            
+            float m_flBoneVelocity; // 0x_            
             // metadata: MPropertyFriendlyName "maximum inherited velocity"
-            float m_flMaxBoneVelocity; // 0xa7c            
+            float m_flMaxBoneVelocity; // 0x_            
             // metadata: MPropertyFriendlyName "direction bias"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecDirectionBias; // 0xa80            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecDirectionBias; // 0x_            
             // metadata: MPropertyFriendlyName "hitbox set"
-            char m_HitboxSetName[128]; // 0x10f8            
+            char m_HitboxSetName[128]; // 0x_            
             // metadata: MPropertyFriendlyName "bias in local space"
-            bool m_bLocalCoords; // 0x1178            
+            bool m_bLocalCoords; // 0x_            
             // metadata: MPropertyFriendlyName "use bones instead of hitboxes"
-            bool m_bUseBones; // 0x1179            
+            bool m_bUseBones; // 0x_            
             // metadata: MPropertyFriendlyName "Use renderable meshes instead of hitboxes"
-            bool m_bUseMesh; // 0x117a            
-            uint8_t _pad117b[0x5]; // 0x117b
+            bool m_bUseMesh; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "hitbox shell thickness"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flShellSize; // 0x1180            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flShellSize; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateOnModel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnModel) == 0x12e0);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnModel) == 0x_);
     };
 };

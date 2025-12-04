@@ -14,9 +14,9 @@ namespace source2sdk
     namespace animlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x2
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         class CNmGraphNode_CDefinition
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            std::int16_t m_nNodeIdx; // 0x8            
-            uint8_t _pad000a[0x6];
+            uint8_t _pad_[0x_]; // 0x_
+            std::int16_t m_nNodeIdx; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmGraphNode_CDefinition, m_nNodeIdx) == 0x8);
+        static_assert(offsetof(source2sdk::animlib::CNmGraphNode_CDefinition, m_nNodeIdx) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmGraphNode_CDefinition) == 0x10);
+        static_assert(sizeof(source2sdk::animlib::CNmGraphNode_CDefinition) == 0x_);
     };
 };

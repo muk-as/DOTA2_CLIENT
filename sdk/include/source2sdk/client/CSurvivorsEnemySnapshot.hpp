@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,16 +27,16 @@ namespace source2sdk
         class CSurvivorsEnemySnapshot
         {
         public:
-            source2sdk::client::SurvivorsEnemyID_t m_enemyID; // 0x0            
-            float m_flHealth; // 0x4            
-            Vector m_vOrigin; // 0x8            
+            source2sdk::client::SurvivorsEnemyID_t m_enemyID; // 0x_            
+            float m_flHealth; // 0x_            
+            Vector m_vOrigin; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_enemyID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_flHealth) == 0x4);
-        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_vOrigin) == 0x8);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_enemyID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_flHealth) == 0x_);
+        static_assert(offsetof(source2sdk::client::CSurvivorsEnemySnapshot, m_vOrigin) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsEnemySnapshot) == 0x14);
+        static_assert(sizeof(source2sdk::client::CSurvivorsEnemySnapshot) == 0x_);
     };
 };

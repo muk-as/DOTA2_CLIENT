@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class SurroundingBoundsType_t : std::uint8_t
         {
             USE_OBB_COLLISION_BOUNDS = 0x0,

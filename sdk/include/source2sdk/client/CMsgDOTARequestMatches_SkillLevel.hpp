@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CMsgDOTARequestMatches_SkillLevel : std::uint32_t
         {
             CMsgDOTARequestMatches_SkillLevel_Any = 0x0,

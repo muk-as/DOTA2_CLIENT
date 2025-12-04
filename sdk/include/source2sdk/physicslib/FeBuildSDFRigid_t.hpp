@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,15 +25,15 @@ namespace source2sdk
         struct FeBuildSDFRigid_t : public source2sdk::physicslib::FeSDFRigid_t
         {
         public:
-            std::int32_t m_nPriority; // 0x50            
-            std::uint32_t m_nVertexMapHash; // 0x54            
-            std::uint32_t m_nAntitunnelGroupBits; // 0x58            
-            uint8_t _pad005c[0x4];
+            std::int32_t m_nPriority; // 0x_            
+            std::uint32_t m_nVertexMapHash; // 0x_            
+            std::uint32_t m_nAntitunnelGroupBits; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in FeBuildSDFRigid_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::physicslib::FeBuildSDFRigid_t) == 0x60);
+        static_assert(sizeof(source2sdk::physicslib::FeBuildSDFRigid_t) == 0x_);
     };
 };

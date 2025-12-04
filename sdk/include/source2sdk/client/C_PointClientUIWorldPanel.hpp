@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -57,78 +57,78 @@ namespace source2sdk
         class C_PointClientUIWorldPanel : public source2sdk::client::C_BaseClientUIEntity
         {
         public:
-            uint8_t _pad09c8[0x8]; // 0x9c8
-            bool m_bForceRecreateNextUpdate; // 0x9d0            
-            bool m_bMoveViewToPlayerNextThink; // 0x9d1            
-            bool m_bCheckCSSClasses; // 0x9d2            
-            uint8_t _pad09d3[0xd]; // 0x9d3
-            CTransform m_anchorDeltaTransform; // 0x9e0            
-            uint8_t _pad0a00[0x178]; // 0xa00
-            source2sdk::client::CPointOffScreenIndicatorUi* m_pOffScreenIndicator; // 0xb78            
-            uint8_t _pad0b80[0x20]; // 0xb80
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bForceRecreateNextUpdate; // 0x_            
+            bool m_bMoveViewToPlayerNextThink; // 0x_            
+            bool m_bCheckCSSClasses; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_anchorDeltaTransform; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::CPointOffScreenIndicatorUi* m_pOffScreenIndicator; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bIgnoreInput; // 0xba0            
+            bool m_bIgnoreInput; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bLit; // 0xba1            
+            bool m_bLit; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFollowPlayerAcrossTeleport; // 0xba2            
-            uint8_t _pad0ba3[0x1]; // 0xba3
+            bool m_bFollowPlayerAcrossTeleport; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flWidth; // 0xba4            
+            float m_flWidth; // 0x_            
             // metadata: MNetworkEnable
-            float m_flHeight; // 0xba8            
+            float m_flHeight; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDPI; // 0xbac            
+            float m_flDPI; // 0x_            
             // metadata: MNetworkEnable
-            float m_flInteractDistance; // 0xbb0            
+            float m_flInteractDistance; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDepthOffset; // 0xbb4            
+            float m_flDepthOffset; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unOwnerContext; // 0xbb8            
+            std::uint32_t m_unOwnerContext; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unHorizontalAlign; // 0xbbc            
+            std::uint32_t m_unHorizontalAlign; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unVerticalAlign; // 0xbc0            
+            std::uint32_t m_unVerticalAlign; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unOrientation; // 0xbc4            
+            std::uint32_t m_unOrientation; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAllowInteractionFromAllSceneWorlds; // 0xbc8            
-            uint8_t _pad0bc9[0x7]; // 0xbc9
+            bool m_bAllowInteractionFromAllSceneWorlds; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_vecCSSClasses has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CUtlSymbolLarge> m_vecCSSClasses;
-            char m_vecCSSClasses[0x18]; // 0xbd0            
+            char m_vecCSSClasses[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOpaque; // 0xbe8            
+            bool m_bOpaque; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bNoDepth; // 0xbe9            
+            bool m_bNoDepth; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bVisibleWhenParentNoDraw; // 0xbea            
+            bool m_bVisibleWhenParentNoDraw; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bRenderBackface; // 0xbeb            
+            bool m_bRenderBackface; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bUseOffScreenIndicator; // 0xbec            
+            bool m_bUseOffScreenIndicator; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bExcludeFromSaveGames; // 0xbed            
+            bool m_bExcludeFromSaveGames; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGrabbable; // 0xbee            
+            bool m_bGrabbable; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOnlyRenderToTexture; // 0xbef            
+            bool m_bOnlyRenderToTexture; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bDisableMipGen; // 0xbf0            
-            uint8_t _pad0bf1[0x3]; // 0xbf1
+            bool m_bDisableMipGen; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nExplicitImageLayout; // 0xbf4            
-            uint8_t _pad0bf8[0x8];
+            std::int32_t m_nExplicitImageLayout; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // CUtlSymbolLarge css_class; // 0x7fffffff
-            // CStrongHandle< InfoForResourceTypeIMaterial2 > m_hPanelOverrideMaterial; // 0xb70
+            // CUtlSymbolLarge css_class; // 0x_
+            // CStrongHandle< InfoForResourceTypeIMaterial2 > m_hPanelOverrideMaterial; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PointClientUIWorldPanel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PointClientUIWorldPanel) == 0xc00);
+        static_assert(sizeof(source2sdk::client::C_PointClientUIWorldPanel) == 0x_);
     };
 };

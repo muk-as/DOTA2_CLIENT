@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class NmGraphEventTypeCondition_t : std::uint8_t
         {
             Entry = 0x0,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,19 +26,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "material variable"
-            CUtlString m_strVariable; // 0x0            
+            CUtlString m_strVariable; // 0x_            
             // metadata: MPropertyFriendlyName "particle field"
             // metadata: MPropertyAttributeChoiceName "particlefield"
-            source2sdk::particles::ParticleAttributeIndex_t m_nVariableField; // 0x8            
+            source2sdk::particles::ParticleAttributeIndex_t m_nVariableField; // 0x_            
             // metadata: MPropertyFriendlyName "scale"
-            float m_flScale; // 0xc            
+            float m_flScale; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_strVariable) == 0x0);
-        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_nVariableField) == 0x8);
-        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_flScale) == 0xc);
+        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_strVariable) == 0x_);
+        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_nVariableField) == 0x_);
+        static_assert(offsetof(source2sdk::particles::MaterialVariable_t, m_flScale) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::MaterialVariable_t) == 0x10);
+        static_assert(sizeof(source2sdk::particles::MaterialVariable_t) == 0x_);
     };
 };

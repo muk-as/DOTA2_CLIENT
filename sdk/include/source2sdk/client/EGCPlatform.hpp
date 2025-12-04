@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCPlatform : std::uint32_t
         {
             k_eGCPlatform_None = 0x0,

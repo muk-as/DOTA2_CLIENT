@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,23 +28,23 @@ namespace source2sdk
         class CAimCameraUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPosition; // 0x70            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterOrientation; // 0x72            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterSpineRotationWeight; // 0x74            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPelvisOffset; // 0x76            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterUseIK; // 0x78            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterCameraOnly; // 0x7a            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDistance; // 0x7c            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDelta; // 0x7e            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterCameraClearanceDistance; // 0x80            
-            uint8_t _pad0082[0x6]; // 0x82
-            source2sdk::animgraphlib::AimCameraOpFixedSettings_t m_opFixedSettings; // 0x88            
-            uint8_t _pad00b8[0x8];
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPosition; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterOrientation; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterSpineRotationWeight; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterPelvisOffset; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterUseIK; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterCameraOnly; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDistance; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDelta; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParameterCameraClearanceDistance; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::AimCameraOpFixedSettings_t m_opFixedSettings; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CAimCameraUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAimCameraUpdateNode) == 0xc0);
+        static_assert(sizeof(source2sdk::animgraphlib::CAimCameraUpdateNode) == 0x_);
     };
 };

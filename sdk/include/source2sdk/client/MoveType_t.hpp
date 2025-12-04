@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 13
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class MoveType_t : std::uint8_t
         {
             MOVETYPE_NONE = 0x0,

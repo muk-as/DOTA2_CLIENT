@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class CZeroPoseUpdateNode : public source2sdk::animgraphlib::CLeafUpdateNode
         {
         public:
-            uint8_t _pad0058[0x8];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animgraphlib::CZeroPoseUpdateNode) == 0x60);
+        static_assert(sizeof(source2sdk::animgraphlib::CZeroPoseUpdateNode) == 0x_);
     };
 };

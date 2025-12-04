@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,15 +26,15 @@ namespace source2sdk
         class CCraftworksQuestComponentReward
         {
         public:
-            source2sdk::client::CraftworksComponentID_t m_unComponentID; // 0x0            
-            uint8_t _pad0001[0x3]; // 0x1
-            float m_flStatMultiplier; // 0x4            
+            source2sdk::client::CraftworksComponentID_t m_unComponentID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flStatMultiplier; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CCraftworksQuestComponentReward, m_unComponentID) == 0x0);
-        static_assert(offsetof(source2sdk::client::CCraftworksQuestComponentReward, m_flStatMultiplier) == 0x4);
+        static_assert(offsetof(source2sdk::client::CCraftworksQuestComponentReward, m_unComponentID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCraftworksQuestComponentReward, m_flStatMultiplier) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CCraftworksQuestComponentReward) == 0x8);
+        static_assert(sizeof(source2sdk::client::CCraftworksQuestComponentReward) == 0x_);
     };
 };

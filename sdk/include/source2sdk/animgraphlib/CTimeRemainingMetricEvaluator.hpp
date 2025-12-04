@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,17 +26,17 @@ namespace source2sdk
         class CTimeRemainingMetricEvaluator : public source2sdk::animgraphlib::CMotionMetricEvaluator
         {
         public:
-            bool m_bMatchByTimeRemaining; // 0x50            
-            uint8_t _pad0051[0x3]; // 0x51
-            float m_flMaxTimeRemaining; // 0x54            
-            bool m_bFilterByTimeRemaining; // 0x58            
-            uint8_t _pad0059[0x3]; // 0x59
-            float m_flMinTimeRemaining; // 0x5c            
+            bool m_bMatchByTimeRemaining; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMaxTimeRemaining; // 0x_            
+            bool m_bFilterByTimeRemaining; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMinTimeRemaining; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTimeRemainingMetricEvaluator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CTimeRemainingMetricEvaluator) == 0x60);
+        static_assert(sizeof(source2sdk::animgraphlib::CTimeRemainingMetricEvaluator) == 0x_);
     };
 };

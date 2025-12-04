@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class C_BaseCombatCharacter_WaterWakeMode_t : std::uint32_t
         {
             WATER_WAKE_NONE = 0x0,

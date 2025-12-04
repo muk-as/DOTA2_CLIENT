@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
@@ -25,14 +25,14 @@ namespace source2sdk
         class CHitboxComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
-            uint8_t _pad0008[0x1c]; // 0x8
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint32_t m_bvDisabledHitGroups[1]; // 0x24            
+            std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CHitboxComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CHitboxComponent) == 0x28);
+        static_assert(sizeof(source2sdk::server::CHitboxComponent) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,18 +32,18 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Clear Active Overrides"
             // metadata: MPropertyDescription "If enabled, clear any previous material overrides, so that only the material replacements specified in this table will be active."
-            CSmartPropAttributeBool m_bClearCurrentOverrides; // 0x50            
+            CSmartPropAttributeBool m_bClearCurrentOverrides; // 0x_            
             // metadata: MPropertyAutoExpandSelf
             // metadata: MPropertyFriendlyName "Material Replacements"
             // metadata: MPropertyDescription "Table specifying pairs of existing materials and the material to replace them with."
             // m_MaterialReplacements has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::smartprops::CSmartPropMaterialReplacement> m_MaterialReplacements;
-            char m_MaterialReplacements[0x18]; // 0x90            
+            char m_MaterialReplacements[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_MaterialOverride because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_MaterialOverride) == 0xa8);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_MaterialOverride) == 0x_);
     };
 };

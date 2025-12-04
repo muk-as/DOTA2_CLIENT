@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,15 +25,15 @@ namespace source2sdk
         struct CPulseCell_Timeline_TimelineEvent_t
         {
         public:
-            float m_flTimeFromPrevious; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
-            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_EventOutflow; // 0x8            
+            float m_flTimeFromPrevious; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_EventOutflow; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t, m_flTimeFromPrevious) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t, m_EventOutflow) == 0x8);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t, m_flTimeFromPrevious) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t, m_EventOutflow) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t) == 0x50);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Timeline_TimelineEvent_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 30
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SVC_Messages : std::uint32_t
         {
             svc_ServerInfo = 0x28,

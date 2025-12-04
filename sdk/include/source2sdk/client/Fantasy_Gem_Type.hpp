@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Fantasy_Gem_Type : std::uint32_t
         {
             FANTASY_GEM_TYPE_RUBY = 0x0,

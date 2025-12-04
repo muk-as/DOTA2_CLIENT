@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MPropertyCustomEditor "multi_float( 4 )"
@@ -24,12 +24,12 @@ namespace source2sdk
         class CSkillFloat
         {
         public:
-            float m_pValue[4]; // 0x0            
+            float m_pValue[4]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CSkillFloat, m_pValue) == 0x0);
+        static_assert(offsetof(source2sdk::client::CSkillFloat, m_pValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CSkillFloat) == 0x10);
+        static_assert(sizeof(source2sdk::client::CSkillFloat) == 0x_);
     };
 };

@@ -15,9 +15,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x70
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -28,39 +28,39 @@ namespace source2sdk
         class CAnimParameterBase
         {
         public:
-            uint8_t _pad0000[0x18]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertySortPriority "100"
-            CGlobalSymbol m_name; // 0x18            
+            CGlobalSymbol m_name; // 0x_            
             // metadata: MPropertyFriendlyName "Comment"
             // metadata: MPropertyAttributeEditor "TextBlock()"
             // metadata: MPropertySortPriority "-100"
-            CUtlString m_sComment; // 0x20            
+            CUtlString m_sComment; // 0x_            
             // metadata: MPropertyReadOnly
-            CUtlString m_group; // 0x28            
+            CUtlString m_group; // 0x_            
             // metadata: MPropertyReadOnly
-            source2sdk::modellib::AnimParamID m_id; // 0x30            
-            uint8_t _pad0034[0x14]; // 0x34
+            source2sdk::modellib::AnimParamID m_id; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
             // metadata: MPropertyAutoRebuildOnChange
-            CUtlString m_componentName; // 0x48            
-            uint8_t _pad0050[0x18]; // 0x50
+            CUtlString m_componentName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField
-            bool m_bNetworkingRequested; // 0x68            
+            bool m_bNetworkingRequested; // 0x_            
             // metadata: MPropertySuppressField
-            bool m_bIsReferenced; // 0x69            
-            uint8_t _pad006a[0x6];
+            bool m_bIsReferenced; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_name) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_sComment) == 0x20);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_group) == 0x28);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_id) == 0x30);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_componentName) == 0x48);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_bNetworkingRequested) == 0x68);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_bIsReferenced) == 0x69);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_sComment) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_group) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_id) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_componentName) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_bNetworkingRequested) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimParameterBase, m_bIsReferenced) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimParameterBase) == 0x70);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimParameterBase) == 0x_);
     };
 };

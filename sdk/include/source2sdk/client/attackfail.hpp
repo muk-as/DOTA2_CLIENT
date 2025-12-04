@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class attackfail : std::uint32_t
         {
             DOTA_ATTACK_RECORD_FAIL_NO = 0x0,

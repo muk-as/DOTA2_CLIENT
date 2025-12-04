@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x748
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,16 +26,16 @@ namespace source2sdk
         class CDotaSubquestAbilityCastCount : public source2sdk::server::CDotaSubquestBase
         {
         public:
-            std::int32_t m_sAbilityNameSymbol; // 0x738            
-            std::int32_t m_nTargetCastCount; // 0x73c            
-            std::int32_t m_nCurrentCastCount; // 0x740            
-            bool m_bRequiresChannelSuccess; // 0x744            
-            uint8_t _pad0745[0x3];
+            std::int32_t m_sAbilityNameSymbol; // 0x_            
+            std::int32_t m_nTargetCastCount; // 0x_            
+            std::int32_t m_nCurrentCastCount; // 0x_            
+            bool m_bRequiresChannelSuccess; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDotaSubquestAbilityCastCount because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDotaSubquestAbilityCastCount) == 0x748);
+        static_assert(sizeof(source2sdk::server::CDotaSubquestAbilityCastCount) == 0x_);
     };
 };

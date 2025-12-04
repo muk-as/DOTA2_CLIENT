@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 17
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_SHOP_CATEGORY : std::uint32_t
         {
             DOTA_SHOP_CATEGORY_NONE = 0xffffffff,

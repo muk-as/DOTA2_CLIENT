@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1d0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,14 +27,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c8            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "velocity scale"
-            float m_flVelocityScale; // 0x1cc            
+            float m_flVelocityScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_InheritVelocity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_InheritVelocity) == 0x1d0);
+        static_assert(sizeof(source2sdk::particles::C_INIT_InheritVelocity) == 0x_);
     };
 };

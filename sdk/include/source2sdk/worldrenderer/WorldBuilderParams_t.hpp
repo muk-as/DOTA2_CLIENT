@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,23 +25,23 @@ namespace source2sdk
         struct WorldBuilderParams_t
         {
         public:
-            float m_flMinDrawVolumeSize; // 0x0            
-            bool m_bBuildBakedLighting; // 0x4            
-            bool m_bAggregateInstanceStreams; // 0x5            
-            uint8_t _pad0006[0x2]; // 0x6
-            source2sdk::worldrenderer::BakedLightingInfo_t m_bakedLightingInfo; // 0x8            
-            std::uint64_t m_nCompileTimestamp; // 0x50            
-            std::uint64_t m_nCompileFingerprint; // 0x58            
+            float m_flMinDrawVolumeSize; // 0x_            
+            bool m_bBuildBakedLighting; // 0x_            
+            bool m_bAggregateInstanceStreams; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::worldrenderer::BakedLightingInfo_t m_bakedLightingInfo; // 0x_            
+            std::uint64_t m_nCompileTimestamp; // 0x_            
+            std::uint64_t m_nCompileFingerprint; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_flMinDrawVolumeSize) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bBuildBakedLighting) == 0x4);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bAggregateInstanceStreams) == 0x5);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bakedLightingInfo) == 0x8);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_nCompileTimestamp) == 0x50);
-        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_nCompileFingerprint) == 0x58);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_flMinDrawVolumeSize) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bBuildBakedLighting) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bAggregateInstanceStreams) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_bakedLightingInfo) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_nCompileTimestamp) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldBuilderParams_t, m_nCompileFingerprint) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::WorldBuilderParams_t) == 0x60);
+        static_assert(sizeof(source2sdk::worldrenderer::WorldBuilderParams_t) == 0x_);
     };
 };

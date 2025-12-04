@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x880
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,16 +28,16 @@ namespace source2sdk
         class CSurvivorsPowerUpDefinition_MagicMissile : public source2sdk::client::CSurvivorsPowerUpDefinition_ProjectileAttack
         {
         public:
-            float m_flShardDamageMultiplier; // 0x798            
-            float m_flScepterDamageIncreasePerEnemyKilled; // 0x79c            
+            float m_flShardDamageMultiplier; // 0x_            
+            float m_flScepterDamageIncreasePerEnemyKilled; // 0x_            
             // m_sImpactParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sImpactParticle;
-            char m_sImpactParticle[0xe0]; // 0x7a0            
+            char m_sImpactParticle[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_MagicMissile because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_MagicMissile) == 0x880);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_MagicMissile) == 0x_);
     };
 };

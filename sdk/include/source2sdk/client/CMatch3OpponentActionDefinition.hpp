@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,13 +27,13 @@ namespace source2sdk
         class CMatch3OpponentActionDefinition : public source2sdk::client::CMatch3AbilityBaseDefinition
         {
         public:
-            source2sdk::client::Match3OpponentActionID_t m_unOpponentActionID; // 0x38            
-            uint8_t _pad003c[0xc];
+            source2sdk::client::Match3OpponentActionID_t m_unOpponentActionID; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMatch3OpponentActionDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CMatch3OpponentActionDefinition) == 0x48);
+        static_assert(sizeof(source2sdk::client::CMatch3OpponentActionDefinition) == 0x_);
     };
 };

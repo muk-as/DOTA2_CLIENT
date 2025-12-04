@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x628
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,45 +30,45 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "oscillation rate min"
             // metadata: MVectorIsSometimesCoordinate "m_nField"
-            Vector m_RateMin; // 0x1c0            
+            Vector m_RateMin; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation rate max"
             // metadata: MVectorIsSometimesCoordinate "m_nField"
-            Vector m_RateMax; // 0x1cc            
+            Vector m_RateMax; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation frequency min"
             // metadata: MVectorIsSometimesCoordinate "m_nField"
-            Vector m_FrequencyMin; // 0x1d8            
+            Vector m_FrequencyMin; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation frequency max"
             // metadata: MVectorIsSometimesCoordinate "m_nField"
-            Vector m_FrequencyMax; // 0x1e4            
+            Vector m_FrequencyMax; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nField; // 0x1f0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nField; // 0x_            
             // metadata: MPropertyFriendlyName "proportional 0/1"
-            bool m_bProportional; // 0x1f4            
+            bool m_bProportional; // 0x_            
             // metadata: MPropertyFriendlyName "start/end proportional"
-            bool m_bProportionalOp; // 0x1f5            
+            bool m_bProportionalOp; // 0x_            
             // metadata: MPropertyFriendlyName "offset instead of accelerate position"
-            bool m_bOffset; // 0x1f6            
-            uint8_t _pad01f7[0x1]; // 0x1f7
+            bool m_bOffset; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "start time min"
-            float m_flStartTime_min; // 0x1f8            
+            float m_flStartTime_min; // 0x_            
             // metadata: MPropertyFriendlyName "start time max"
-            float m_flStartTime_max; // 0x1fc            
+            float m_flStartTime_max; // 0x_            
             // metadata: MPropertyFriendlyName "end time min"
-            float m_flEndTime_min; // 0x200            
+            float m_flEndTime_min; // 0x_            
             // metadata: MPropertyFriendlyName "end time max"
-            float m_flEndTime_max; // 0x204            
+            float m_flEndTime_max; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation multiplier"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOscMult; // 0x208            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOscMult; // 0x_            
             // metadata: MPropertyFriendlyName "oscillation start phase"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOscAdd; // 0x368            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOscAdd; // 0x_            
             // metadata: MPropertyFriendlyName "rate scale"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRateScale; // 0x4c8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRateScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_OscillateVector because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_OscillateVector) == 0x628);
+        static_assert(sizeof(source2sdk::particles::C_OP_OscillateVector) == 0x_);
     };
 };

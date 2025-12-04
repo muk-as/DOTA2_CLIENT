@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class C_DOTA_Ability_Tinker_MarchOfTheMachines : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t splash_radius; // 0x688            
-            std::int32_t damage; // 0x68c            
-            std::int32_t heal_duration; // 0x690            
-            uint8_t _pad0694[0x4];
+            std::int32_t splash_radius; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t heal_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Tinker_MarchOfTheMachines because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tinker_MarchOfTheMachines) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tinker_MarchOfTheMachines) == 0x_);
     };
 };

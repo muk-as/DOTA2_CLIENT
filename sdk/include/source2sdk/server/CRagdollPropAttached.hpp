@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,24 +30,24 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_boneIndexAttached; // 0xc50            
+            std::uint32_t m_boneIndexAttached; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_ragdollAttachedObjectIndex; // 0xc54            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkEncoder "coord"
-            Vector m_attachmentPointBoneSpace; // 0xc58            
+            std::uint32_t m_ragdollAttachedObjectIndex; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_attachmentPointRagdollSpace; // 0xc64            
-            bool m_bShouldDetach; // 0xc70            
-            uint8_t _pad0c71[0xf]; // 0xc71
-            bool m_bShouldDeleteAttachedActivationRecord; // 0xc80            
-            uint8_t _pad0c81[0xf];
+            Vector m_attachmentPointBoneSpace; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkEncoder "coord"
+            Vector m_attachmentPointRagdollSpace; // 0x_            
+            bool m_bShouldDetach; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bShouldDeleteAttachedActivationRecord; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CRagdollPropAttached because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CRagdollPropAttached) == 0xc90);
+        static_assert(sizeof(source2sdk::server::CRagdollPropAttached) == 0x_);
     };
 };

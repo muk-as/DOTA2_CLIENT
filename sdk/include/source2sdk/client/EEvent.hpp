@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 52
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EEvent : std::uint32_t
         {
             EVENT_ID_NONE = 0x0,

@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x50
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,22 +27,22 @@ namespace source2sdk
         struct ChainToSolveData_t
         {
         public:
-            std::int32_t m_nChainIndex; // 0x0            
-            source2sdk::animgraphlib::IKSolverSettings_t m_SolverSettings; // 0x4            
-            source2sdk::animgraphlib::IKTargetSettings_t m_TargetSettings; // 0x10            
-            source2sdk::animgraphlib::SolveIKChainAnimNodeDebugSetting m_DebugSetting; // 0x38            
-            float m_flDebugNormalizedValue; // 0x3c            
-            VectorAligned m_vDebugOffset; // 0x40            
+            std::int32_t m_nChainIndex; // 0x_            
+            source2sdk::animgraphlib::IKSolverSettings_t m_SolverSettings; // 0x_            
+            source2sdk::animgraphlib::IKTargetSettings_t m_TargetSettings; // 0x_            
+            source2sdk::animgraphlib::SolveIKChainAnimNodeDebugSetting m_DebugSetting; // 0x_            
+            float m_flDebugNormalizedValue; // 0x_            
+            VectorAligned m_vDebugOffset; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_nChainIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_SolverSettings) == 0x4);
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_TargetSettings) == 0x10);
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_DebugSetting) == 0x38);
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_flDebugNormalizedValue) == 0x3c);
-        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_vDebugOffset) == 0x40);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_nChainIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_SolverSettings) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_TargetSettings) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_DebugSetting) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_flDebugNormalizedValue) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ChainToSolveData_t, m_vDebugOffset) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::ChainToSolveData_t) == 0x50);
+        static_assert(sizeof(source2sdk::animgraphlib::ChainToSolveData_t) == 0x_);
     };
 };

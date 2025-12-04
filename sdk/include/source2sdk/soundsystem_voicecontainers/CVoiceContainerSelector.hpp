@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x130
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,20 +31,20 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Playback Mode"
-            source2sdk::soundsystem_voicecontainers::PlayBackMode_t m_mode; // 0xb8            
-            uint8_t _pad00bc[0x4]; // 0xbc
+            source2sdk::soundsystem_voicecontainers::PlayBackMode_t m_mode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Sounds To play"
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReferenceArray m_soundsToPlay; // 0xc0            
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReferenceArray m_soundsToPlay; // 0x_            
             // metadata: MPropertyFriendlyName "Relative Weights"
             // m_fProbabilityWeights has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_fProbabilityWeights;
-            char m_fProbabilityWeights[0x18]; // 0xf8            
-            uint8_t _pad0110[0x20];
+            char m_fProbabilityWeights[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerSelector because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSelector) == 0x130);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerSelector) == 0x_);
     };
 };

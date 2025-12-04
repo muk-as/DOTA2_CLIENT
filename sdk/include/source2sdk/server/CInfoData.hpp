@@ -14,22 +14,22 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x870
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CInfoData : public source2sdk::server::CServerOnlyEntity
         {
         public:
-            uint8_t _pad04e0[0x390];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CInfoData) == 0x870);
+        static_assert(sizeof(source2sdk::server::CInfoData) == 0x_);
     };
 };

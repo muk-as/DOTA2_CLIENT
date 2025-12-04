@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x630
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -45,52 +45,52 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bActive; // 0x5e8            
-            uint8_t _pad05e9[0x3]; // 0x5e9
+            bool m_bActive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            Vector m_vBoxMins; // 0x5ec            
+            Vector m_vBoxMins; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vBoxMaxs; // 0x5f8            
+            Vector m_vBoxMaxs; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bStartDisabled; // 0x604            
+            bool m_bStartDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIndirectUseLPVs; // 0x605            
-            uint8_t _pad0606[0x2]; // 0x606
+            bool m_bIndirectUseLPVs; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flStrength; // 0x608            
+            float m_flStrength; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nFalloffShape; // 0x60c            
+            std::int32_t m_nFalloffShape; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFalloffExponent; // 0x610            
+            float m_flFalloffExponent; // 0x_            
             // metadata: MNetworkEnable
-            float m_flHeightFogDepth; // 0x614            
+            float m_flHeightFogDepth; // 0x_            
             // metadata: MNetworkEnable
-            float m_fHeightFogEdgeWidth; // 0x618            
+            float m_fHeightFogEdgeWidth; // 0x_            
             // metadata: MNetworkEnable
-            float m_fIndirectLightStrength; // 0x61c            
+            float m_fIndirectLightStrength; // 0x_            
             // metadata: MNetworkEnable
-            float m_fSunLightStrength; // 0x620            
+            float m_fSunLightStrength; // 0x_            
             // metadata: MNetworkEnable
-            float m_fNoiseStrength; // 0x624            
+            float m_fNoiseStrength; // 0x_            
             // metadata: MNetworkEnable
-            Color m_TintColor; // 0x628            
+            Color m_TintColor; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOverrideTintColor; // 0x62c            
+            bool m_bOverrideTintColor; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOverrideIndirectLightStrength; // 0x62d            
+            bool m_bOverrideIndirectLightStrength; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOverrideSunLightStrength; // 0x62e            
+            bool m_bOverrideSunLightStrength; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bOverrideNoiseStrength; // 0x62f            
+            bool m_bOverrideNoiseStrength; // 0x_            
             
             // Datamap fields:
-            // bool InputEnable; // 0x0
-            // bool InputDisable; // 0x0
+            // bool InputEnable; // 0x_
+            // bool InputDisable; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EnvVolumetricFogVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EnvVolumetricFogVolume) == 0x630);
+        static_assert(sizeof(source2sdk::client::C_EnvVolumetricFogVolume) == 0x_);
     };
 };

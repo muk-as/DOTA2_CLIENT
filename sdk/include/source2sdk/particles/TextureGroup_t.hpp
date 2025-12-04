@@ -19,10 +19,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xb58
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,40 +31,40 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Enabled"
-            bool m_bEnabled; // 0x0            
+            bool m_bEnabled; // 0x_            
             // metadata: MPropertyFriendlyName "Author Texture As Gradient"
             // metadata: MPropertySuppressExpr "( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP || m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC || m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A || m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C || m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT || m_nTextureType == SPRITECARD_TEXTURE_DEPTH )"
-            bool m_bReplaceTextureWithGradient; // 0x1            
-            uint8_t _pad0002[0x6]; // 0x2
+            bool m_bReplaceTextureWithGradient; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Texture"
             // metadata: MPropertySuppressExpr "m_bReplaceTextureWithGradient"
             // metadata: MPropertyAttributeEditor "AssetBrowse( vtex, *showassetpreview )"
             // m_hTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hTexture;
-            char m_hTexture[0x8]; // 0x8            
+            char m_hTexture[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "Gradient"
             // metadata: MPropertySuppressExpr "!m_bReplaceTextureWithGradient"
-            CColorGradient m_Gradient; // 0x10            
+            CColorGradient m_Gradient; // 0x_            
             // metadata: MPropertyFriendlyName "Texture Type"
-            source2sdk::particles::SpriteCardTextureType_t m_nTextureType; // 0x28            
+            source2sdk::particles::SpriteCardTextureType_t m_nTextureType; // 0x_            
             // metadata: MPropertyFriendlyName "Channel Mix"
             // metadata: MPropertySuppressExpr "( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP || m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC || m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A || m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C || m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT || m_nTextureType == SPRITECARD_TEXTURE_DEPTH )"
-            source2sdk::particles::SpriteCardTextureChannel_t m_nTextureChannels; // 0x2c            
+            source2sdk::particles::SpriteCardTextureChannel_t m_nTextureChannels; // 0x_            
             // metadata: MPropertyFriendlyName "Mix Blend Mode"
             // metadata: MPropertySuppressExpr "( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP || m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC || m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A || m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C || m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT || m_nTextureType == SPRITECARD_TEXTURE_DEPTH )"
-            source2sdk::particles::ParticleTextureLayerBlendType_t m_nTextureBlendMode; // 0x30            
-            uint8_t _pad0034[0x4]; // 0x34
+            source2sdk::particles::ParticleTextureLayerBlendType_t m_nTextureBlendMode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Blend Amount"
             // metadata: MPropertySuppressExpr "( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP || m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC || m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A || m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C || m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT || m_nTextureType == SPRITECARD_TEXTURE_DEPTH )"
-            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flTextureBlend; // 0x38            
+            source2sdk::particleslib::CParticleCollectionRendererFloatInput m_flTextureBlend; // 0x_            
             // metadata: MPropertyFriendlyName "Texture Controls"
             // metadata: MPropertySuppressExpr "( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP || m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC || m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A || m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B || m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C || m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT || m_nTextureType == SPRITECARD_TEXTURE_DEPTH )"
-            source2sdk::particles::TextureControls_t m_TextureControls; // 0x198            
+            source2sdk::particles::TextureControls_t m_TextureControls; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in TextureGroup_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::TextureGroup_t) == 0xb58);
+        static_assert(sizeof(source2sdk::particles::TextureGroup_t) == 0x_);
     };
 };

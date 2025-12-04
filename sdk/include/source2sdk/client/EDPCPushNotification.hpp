@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDPCPushNotification : std::uint32_t
         {
             DPC_PUSH_NOTIFICATION_MATCH_STARTING = 0x1,

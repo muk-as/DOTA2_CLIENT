@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x508
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,30 +28,30 @@ namespace source2sdk
         class CDOTA_SimpleObstruction : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x18]; // 0x4e0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x4f8            
+            bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBlockFoW; // 0x4f9            
+            bool m_bBlockFoW; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBlockNav; // 0x4fa            
-            uint8_t _pad04fb[0x1]; // 0x4fb
-            std::uint32_t m_unOccluderID; // 0x4fc            
-            bool m_bBlockingGridNav; // 0x500            
-            uint8_t _pad0501[0x7];
+            bool m_bBlockNav; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_unOccluderID; // 0x_            
+            bool m_bBlockingGridNav; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void InputToggle; // 0x0
-            // void InputEnable; // 0x0
-            // void InputDisable; // 0x0
-            // bool StartDisabled; // 0x7fffffff
-            // bool block_fow; // 0x7fffffff
-            // bool block_nav; // 0x7fffffff
+            // void InputToggle; // 0x_
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // bool StartDisabled; // 0x_
+            // bool block_fow; // 0x_
+            // bool block_nav; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_SimpleObstruction because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_SimpleObstruction) == 0x508);
+        static_assert(sizeof(source2sdk::server::CDOTA_SimpleObstruction) == 0x_);
     };
 };

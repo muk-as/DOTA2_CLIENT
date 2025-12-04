@@ -19,10 +19,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,36 +31,36 @@ namespace source2sdk
         class CPlayerTrackedStatDefinition
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "unique integer ID of this stat"
             // metadata: MVDataUniqueMonotonicInt "_editor/next_player_stat_id"
             // metadata: MPropertyAttributeEditor "locked_int()"
-            source2sdk::client::TrackedStatID_t m_unStatID; // 0x8            
+            source2sdk::client::TrackedStatID_t m_unStatID; // 0x_            
             // metadata: MPropertyDescription "how this stat is implemented"
-            source2sdk::client::EPlayerTrackedStatImpl m_eStatImpl; // 0xc            
+            source2sdk::client::EPlayerTrackedStatImpl m_eStatImpl; // 0x_            
             // metadata: MPropertyDescription "For k_ePlayerTrackedStatImpl_KillEater, what is the kill eater information."
             // metadata: MPropertySuppressExpr "m_eStatImpl != k_ePlayerTrackedStatImpl_KillEater"
-            source2sdk::client::TrackedStatKillEaterData_t m_killEaterData; // 0x10            
-            uint8_t _pad0014[0x4]; // 0x14
+            source2sdk::client::TrackedStatKillEaterData_t m_killEaterData; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "For k_ePlayerTrackedStatImpl_CombatQuery, what is the combat query information."
             // metadata: MPropertySuppressExpr "m_eStatImpl != k_ePlayerTrackedStatImpl_CombatQuery"
-            source2sdk::client::TrackedStatCombatQueryData_t m_combatQueryData; // 0x18            
+            source2sdk::client::TrackedStatCombatQueryData_t m_combatQueryData; // 0x_            
             // metadata: MPropertyDescription "For k_ePlayerTrackedStatImpl_Expression, what is the expression information."
             // metadata: MPropertySuppressExpr "m_eStatImpl != k_ePlayerTrackedStatImpl_Expression"
-            source2sdk::client::TrackedStatExpressionData_t m_expressionData; // 0x20            
+            source2sdk::client::TrackedStatExpressionData_t m_expressionData; // 0x_            
             // metadata: MPropertyDescription "For k_ePlayerTrackedStatImpl_HeroAdjective, what is the adjective information."
             // metadata: MPropertySuppressExpr "m_eStatImpl != k_ePlayerTrackedStatImpl_HeroAdjective"
-            source2sdk::client::TrackedStatHeroAdjectiveData_t m_heroAdjectiveData; // 0x30            
+            source2sdk::client::TrackedStatHeroAdjectiveData_t m_heroAdjectiveData; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_unStatID) == 0x8);
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_eStatImpl) == 0xc);
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_killEaterData) == 0x10);
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_combatQueryData) == 0x18);
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_expressionData) == 0x20);
-        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_heroAdjectiveData) == 0x30);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_unStatID) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_eStatImpl) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_killEaterData) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_combatQueryData) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_expressionData) == 0x_);
+        static_assert(offsetof(source2sdk::client::CPlayerTrackedStatDefinition, m_heroAdjectiveData) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CPlayerTrackedStatDefinition) == 0x38);
+        static_assert(sizeof(source2sdk::client::CPlayerTrackedStatDefinition) == 0x_);
     };
 };

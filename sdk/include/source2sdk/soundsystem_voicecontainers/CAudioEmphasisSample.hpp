@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         class CAudioEmphasisSample
         {
         public:
-            float m_flTime; // 0x0            
-            float m_flValue; // 0x4            
+            float m_flTime; // 0x_            
+            float m_flValue; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flTime) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flValue) == 0x4);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flTime) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flValue) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample) == 0x8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample) == 0x_);
     };
 };

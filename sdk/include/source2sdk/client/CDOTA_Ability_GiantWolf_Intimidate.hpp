@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_GiantWolf_Intimidate : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float radius; // 0x688            
-            float duration; // 0x68c            
+            float radius; // 0x_            
+            float duration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_GiantWolf_Intimidate because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_GiantWolf_Intimidate) == 0x690);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_GiantWolf_Intimidate) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,22 +25,22 @@ namespace source2sdk
         struct SosEditItemInfo_t
         {
         public:
-            source2sdk::soundsystem::SosEditItemType_t itemType; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
-            CUtlString itemName; // 0x8            
-            CUtlString itemTypeName; // 0x10            
-            uint8_t _pad0018[0x8]; // 0x18
-            CUtlString itemKVString; // 0x20            
-            Vector2D itemPos; // 0x28            
+            source2sdk::soundsystem::SosEditItemType_t itemType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString itemName; // 0x_            
+            CUtlString itemTypeName; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString itemKVString; // 0x_            
+            Vector2D itemPos; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemType) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemName) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemTypeName) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemKVString) == 0x20);
-        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemPos) == 0x28);
+        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemType) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemName) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemTypeName) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemKVString) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem::SosEditItemInfo_t, itemPos) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem::SosEditItemInfo_t) == 0x30);
+        static_assert(sizeof(source2sdk::soundsystem::SosEditItemInfo_t) == 0x_);
     };
 };

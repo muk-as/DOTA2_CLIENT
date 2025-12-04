@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,16 +26,16 @@ namespace source2sdk
         struct FeBandBendLimit_t
         {
         public:
-            float flDistMin; // 0x0            
-            float flDistMax; // 0x4            
-            std::uint16_t nNode[6]; // 0x8            
+            float flDistMin; // 0x_            
+            float flDistMax; // 0x_            
+            std::uint16_t nNode[6]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, flDistMin) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, flDistMax) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, nNode) == 0x8);
+        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, flDistMin) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, flDistMax) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeBandBendLimit_t, nNode) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeBandBendLimit_t) == 0x14);
+        static_assert(sizeof(source2sdk::physicslib::FeBandBendLimit_t) == 0x_);
     };
 };

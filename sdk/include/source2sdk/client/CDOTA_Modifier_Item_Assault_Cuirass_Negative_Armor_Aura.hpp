@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1878
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Assault_Cuirass_Negative_Armor_Aura : public source2sdk::client::CDOTA_Buff_Item
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Assault_Cuirass_Negative_Armor_Aura) == 0x1878);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Assault_Cuirass_Negative_Armor_Aura) == 0x_);
     };
 };

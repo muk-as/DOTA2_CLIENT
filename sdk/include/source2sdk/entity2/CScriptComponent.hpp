@@ -15,22 +15,22 @@ namespace source2sdk
     namespace entity2
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CScriptComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
-            uint8_t _pad0008[0x28]; // 0x8
-            CUtlSymbolLarge m_scriptClassName; // 0x30            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_scriptClassName; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CScriptComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::entity2::CScriptComponent) == 0x38);
+        static_assert(sizeof(source2sdk::entity2::CScriptComponent) == 0x_);
     };
 };

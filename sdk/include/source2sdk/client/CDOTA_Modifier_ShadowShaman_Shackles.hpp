@@ -18,29 +18,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ShadowShaman_Shackles : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t nShackleFXIndex; // 0x1878            
-            float tick_interval; // 0x187c            
-            float total_damage; // 0x1880            
-            float channel_time; // 0x1884            
-            float heal_percentage; // 0x1888            
-            bool bApplyHeal; // 0x188c            
-            uint8_t _pad188d[0x3]; // 0x188d
-            float scepter_shock_pct; // 0x1890            
-            float scepter_shock_radius; // 0x1894            
-            float scepter_shock_interval; // 0x1898            
-            float ally_break_range; // 0x189c            
-            uint8_t _pad18a0[0x18];
+            source2sdk::client::ParticleIndex_t nShackleFXIndex; // 0x_            
+            float tick_interval; // 0x_            
+            float total_damage; // 0x_            
+            float channel_time; // 0x_            
+            float heal_percentage; // 0x_            
+            bool bApplyHeal; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float scepter_shock_pct; // 0x_            
+            float scepter_shock_radius; // 0x_            
+            float scepter_shock_interval; // 0x_            
+            float ally_break_range; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ShadowShaman_Shackles because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ShadowShaman_Shackles) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ShadowShaman_Shackles) == 0x_);
     };
 };

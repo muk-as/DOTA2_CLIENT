@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class AnimVectorSource : std::uint32_t
         {
             // MPropertyFriendlyName "Move Direction"

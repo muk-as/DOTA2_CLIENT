@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 11
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETeamFanContentAssetType : std::uint32_t
         {
             k_eFanContentAssetType_LogoPNG = 0x1,

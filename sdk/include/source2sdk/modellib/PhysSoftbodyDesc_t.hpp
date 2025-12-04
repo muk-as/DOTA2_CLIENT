@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x90
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,32 +29,32 @@ namespace source2sdk
         public:
             // m_ParticleBoneHash has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_ParticleBoneHash;
-            char m_ParticleBoneHash[0x18]; // 0x0            
+            char m_ParticleBoneHash[0x_]; // 0x_            
             // m_Particles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::RnSoftbodyParticle_t> m_Particles;
-            char m_Particles[0x18]; // 0x18            
+            char m_Particles[0x_]; // 0x_            
             // m_Springs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::RnSoftbodySpring_t> m_Springs;
-            char m_Springs[0x18]; // 0x30            
+            char m_Springs[0x_]; // 0x_            
             // m_Capsules has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::RnSoftbodyCapsule_t> m_Capsules;
-            char m_Capsules[0x18]; // 0x48            
+            char m_Capsules[0x_]; // 0x_            
             // m_InitPose has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CTransform> m_InitPose;
-            char m_InitPose[0x18]; // 0x60            
+            char m_InitPose[0x_]; // 0x_            
             // m_ParticleBoneName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_ParticleBoneName;
-            char m_ParticleBoneName[0x18]; // 0x78            
+            char m_ParticleBoneName[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_ParticleBoneHash) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Particles) == 0x18);
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Springs) == 0x30);
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Capsules) == 0x48);
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_InitPose) == 0x60);
-        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_ParticleBoneName) == 0x78);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_ParticleBoneHash) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Particles) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Springs) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_Capsules) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_InitPose) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PhysSoftbodyDesc_t, m_ParticleBoneName) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::PhysSoftbodyDesc_t) == 0x90);
+        static_assert(sizeof(source2sdk::modellib::PhysSoftbodyDesc_t) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SPELL_IMMUNITY_TYPES : std::uint32_t
         {
             SPELL_IMMUNITY_NONE = 0x0,

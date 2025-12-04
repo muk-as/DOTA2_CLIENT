@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MModelGameData
@@ -31,15 +31,15 @@ namespace source2sdk
             // metadata: MPropertyDescription "Destructible Parts"
             // m_PartsDataByHitGroup has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<source2sdk::client::HitGroup_t,source2sdk::client::CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels> m_PartsDataByHitGroup;
-            char m_PartsDataByHitGroup[0x28]; // 0x0            
+            char m_PartsDataByHitGroup[0x_]; // 0x_            
             // metadata: MPropertyDescription "Min/Max number parts to destroy when gibbing"
-            source2sdk::tier2::CRangeInt m_nMinMaxNumberHitGroupsToDestroyWhenGibbing; // 0x28            
+            source2sdk::tier2::CRangeInt m_nMinMaxNumberHitGroupsToDestroyWhenGibbing; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemData, m_PartsDataByHitGroup) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemData, m_nMinMaxNumberHitGroupsToDestroyWhenGibbing) == 0x28);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemData, m_PartsDataByHitGroup) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemData, m_nMinMaxNumberHitGroupsToDestroyWhenGibbing) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDestructiblePartsSystemData) == 0x30);
+        static_assert(sizeof(source2sdk::client::CDestructiblePartsSystemData) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class VPhysXAggregateData_t_VPhysXFlagEnum_t : std::uint32_t
         {
             FLAG_IS_POLYSOUP_GEOMETRY = 0x1,

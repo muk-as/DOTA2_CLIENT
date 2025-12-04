@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -37,35 +37,35 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::server::CEnvWindShared m_EnvWindShared; // 0x4e0            
+            source2sdk::server::CEnvWindShared m_EnvWindShared; // 0x_            
             // metadata: MNetworkEnable
-            float m_fDirectionVariation; // 0x630            
+            float m_fDirectionVariation; // 0x_            
             // metadata: MNetworkEnable
-            float m_fSpeedVariation; // 0x634            
+            float m_fSpeedVariation; // 0x_            
             // metadata: MNetworkEnable
-            float m_fTurbulence; // 0x638            
+            float m_fTurbulence; // 0x_            
             // metadata: MNetworkEnable
-            float m_fVolumeHalfExtentXY; // 0x63c            
+            float m_fVolumeHalfExtentXY; // 0x_            
             // metadata: MNetworkEnable
-            float m_fVolumeHalfExtentZ; // 0x640            
+            float m_fVolumeHalfExtentZ; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nVolumeResolutionXY; // 0x644            
+            std::int32_t m_nVolumeResolutionXY; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nVolumeResolutionZ; // 0x648            
+            std::int32_t m_nVolumeResolutionZ; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nClipmapLevels; // 0x64c            
+            std::int32_t m_nClipmapLevels; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsMaster; // 0x650            
-            bool m_bFirstTime; // 0x651            
-            uint8_t _pad0652[0x6];
+            bool m_bIsMaster; // 0x_            
+            bool m_bFirstTime; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void CEnvWindControllerWindThink; // 0x0
+            // void CEnvWindControllerWindThink; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvWindController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvWindController) == 0x658);
+        static_assert(sizeof(source2sdk::server::CEnvWindController) == 0x_);
     };
 };

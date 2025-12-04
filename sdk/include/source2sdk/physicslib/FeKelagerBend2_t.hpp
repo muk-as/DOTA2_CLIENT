@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         struct FeKelagerBend2_t
         {
         public:
-            float flWeight[3]; // 0x0            
-            float flHeight0; // 0xc            
-            std::uint16_t nNode[3]; // 0x10            
-            std::uint16_t nReserved; // 0x16            
+            float flWeight[3]; // 0x_            
+            float flHeight0; // 0x_            
+            std::uint16_t nNode[3]; // 0x_            
+            std::uint16_t nReserved; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, flWeight) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, flHeight0) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, nNode) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, nReserved) == 0x16);
+        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, flWeight) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, flHeight0) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeKelagerBend2_t, nReserved) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeKelagerBend2_t) == 0x18);
+        static_assert(sizeof(source2sdk::physicslib::FeKelagerBend2_t) == 0x_);
     };
 };

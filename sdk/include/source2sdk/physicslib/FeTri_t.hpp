@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,21 +25,21 @@ namespace source2sdk
         struct FeTri_t
         {
         public:
-            std::uint16_t nNode[3]; // 0x0            
-            uint8_t _pad0006[0x2]; // 0x6
-            float w1; // 0x8            
-            float w2; // 0xc            
-            float v1x; // 0x10            
-            Vector2D v2; // 0x14            
+            std::uint16_t nNode[3]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float w1; // 0x_            
+            float w2; // 0x_            
+            float v1x; // 0x_            
+            Vector2D v2; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeTri_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeTri_t, w1) == 0x8);
-        static_assert(offsetof(source2sdk::physicslib::FeTri_t, w2) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::FeTri_t, v1x) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeTri_t, v2) == 0x14);
+        static_assert(offsetof(source2sdk::physicslib::FeTri_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTri_t, w1) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTri_t, w2) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTri_t, v1x) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeTri_t, v2) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeTri_t) == 0x1c);
+        static_assert(sizeof(source2sdk::physicslib::FeTri_t) == 0x_);
     };
 };

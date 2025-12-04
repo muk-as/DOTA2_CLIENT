@@ -18,26 +18,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_QueenOfPain_ShadowStrike : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t duration_damage; // 0x1878            
-            std::int32_t duration_heal; // 0x187c            
-            std::int32_t movement_slow; // 0x1880            
-            uint8_t _pad1884[0x4]; // 0x1884
-            source2sdk::server::CountdownTimer m_SlowInterval; // 0x1888            
-            float m_flSlowStep; // 0x18a0            
-            float m_flSlowStepStep; // 0x18a4            
-            float attack_buff_duration; // 0x18a8            
-            uint8_t _pad18ac[0x4];
+            std::int32_t duration_damage; // 0x_            
+            std::int32_t duration_heal; // 0x_            
+            std::int32_t movement_slow; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_SlowInterval; // 0x_            
+            float m_flSlowStep; // 0x_            
+            float m_flSlowStepStep; // 0x_            
+            float attack_buff_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_QueenOfPain_ShadowStrike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_QueenOfPain_ShadowStrike) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_QueenOfPain_ShadowStrike) == 0x_);
     };
 };

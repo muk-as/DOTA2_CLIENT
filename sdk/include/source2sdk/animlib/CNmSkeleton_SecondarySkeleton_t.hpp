@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,16 +25,16 @@ namespace source2sdk
         struct CNmSkeleton_SecondarySkeleton_t
         {
         public:
-            CGlobalSymbol m_attachToBoneID; // 0x0            
+            CGlobalSymbol m_attachToBoneID; // 0x_            
             // m_skeleton has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmSkeleton> m_skeleton;
-            char m_skeleton[0x8]; // 0x8            
+            char m_skeleton[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t, m_attachToBoneID) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t, m_skeleton) == 0x8);
+        static_assert(offsetof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t, m_attachToBoneID) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t, m_skeleton) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t) == 0x10);
+        static_assert(sizeof(source2sdk::animlib::CNmSkeleton_SecondarySkeleton_t) == 0x_);
     };
 };

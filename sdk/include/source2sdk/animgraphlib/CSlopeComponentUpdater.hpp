@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,20 +27,20 @@ namespace source2sdk
         class CSlopeComponentUpdater : public source2sdk::animgraphlib::CAnimComponentUpdater
         {
         public:
-            uint8_t _pad0030[0x4]; // 0x30
-            float m_flTraceDistance; // 0x34            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngle; // 0x38            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngleFront; // 0x3a            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngleSide; // 0x3c            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeHeading; // 0x3e            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeNormal; // 0x40            
-            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeNormal_WorldSpace; // 0x42            
-            uint8_t _pad0044[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flTraceDistance; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngle; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngleFront; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeAngleSide; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeHeading; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeNormal; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_hSlopeNormal_WorldSpace; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSlopeComponentUpdater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CSlopeComponentUpdater) == 0x48);
+        static_assert(sizeof(source2sdk::animgraphlib::CSlopeComponentUpdater) == 0x_);
     };
 };

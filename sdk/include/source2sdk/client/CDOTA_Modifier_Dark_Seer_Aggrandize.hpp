@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Dark_Seer_Aggrandize : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float heal_pct_base; // 0x1878            
-            float heal_pct_per_level; // 0x187c            
+            float heal_pct_base; // 0x_            
+            float heal_pct_per_level; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Dark_Seer_Aggrandize because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Dark_Seer_Aggrandize) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Dark_Seer_Aggrandize) == 0x_);
     };
 };

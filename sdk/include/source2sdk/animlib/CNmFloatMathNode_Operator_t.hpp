@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CNmFloatMathNode_Operator_t : std::uint8_t
         {
             Add = 0x0,

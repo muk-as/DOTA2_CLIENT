@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_GaleGuard : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float barrier_amount; // 0x1878            
-            float barrier_pct; // 0x187c            
-            float slow_resist; // 0x1880            
-            std::int32_t m_nDamageAbsorbed; // 0x1884            
+            float barrier_amount; // 0x_            
+            float barrier_pct; // 0x_            
+            float slow_resist; // 0x_            
+            std::int32_t m_nDamageAbsorbed; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_GaleGuard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_GaleGuard) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_GaleGuard) == 0x_);
     };
 };

@@ -20,10 +20,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -33,23 +33,23 @@ namespace source2sdk
         struct CastSphereSATParams_t
         {
         public:
-            Vector m_vRayStart; // 0x0            
-            Vector m_vRayDelta; // 0xc            
-            float m_flRadius; // 0x18            
-            float m_flMaxFraction; // 0x1c            
-            float m_flScale; // 0x20            
-            uint8_t _pad0024[0x4]; // 0x24
-            source2sdk::physicslib::RnHull_t* m_pHull; // 0x28            
+            Vector m_vRayStart; // 0x_            
+            Vector m_vRayDelta; // 0x_            
+            float m_flRadius; // 0x_            
+            float m_flMaxFraction; // 0x_            
+            float m_flScale; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::physicslib::RnHull_t* m_pHull; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_vRayStart) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_vRayDelta) == 0xc);
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flRadius) == 0x18);
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flMaxFraction) == 0x1c);
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flScale) == 0x20);
-        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_pHull) == 0x28);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_vRayStart) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_vRayDelta) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flRadius) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flMaxFraction) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_flScale) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CastSphereSATParams_t, m_pHull) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::CastSphereSATParams_t) == 0x30);
+        static_assert(sizeof(source2sdk::physicslib::CastSphereSATParams_t) == 0x_);
     };
 };

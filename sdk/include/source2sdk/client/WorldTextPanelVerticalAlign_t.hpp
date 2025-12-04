@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class WorldTextPanelVerticalAlign_t : std::uint32_t
         {
             WORLDTEXT_VERTICAL_ALIGN_TOP = 0x0,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x650
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,29 +33,29 @@ namespace source2sdk
         class CCitadelSoundOpvarSetOBB : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e8[0x18]; // 0x5e8
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszStackName; // 0x600            
+            CUtlSymbolLarge m_iszStackName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOperatorName; // 0x608            
+            CUtlSymbolLarge m_iszOperatorName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOpvarName; // 0x610            
+            CUtlSymbolLarge m_iszOpvarName; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDistanceInnerMins; // 0x618            
+            Vector m_vDistanceInnerMins; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDistanceInnerMaxs; // 0x624            
+            Vector m_vDistanceInnerMaxs; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDistanceOuterMins; // 0x630            
+            Vector m_vDistanceOuterMins; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDistanceOuterMaxs; // 0x63c            
+            Vector m_vDistanceOuterMaxs; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nAABBDirection; // 0x648            
-            uint8_t _pad064c[0x4];
+            std::int32_t m_nAABBDirection; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CCitadelSoundOpvarSetOBB because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CCitadelSoundOpvarSetOBB) == 0x650);
+        static_assert(sizeof(source2sdk::client::CCitadelSoundOpvarSetOBB) == 0x_);
     };
 };

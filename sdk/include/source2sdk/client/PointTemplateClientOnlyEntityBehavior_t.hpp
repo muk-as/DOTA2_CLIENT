@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PointTemplateClientOnlyEntityBehavior_t : std::uint32_t
         {
             CREATE_FOR_CURRENTLY_CONNECTED_CLIENTS_ONLY = 0x0,

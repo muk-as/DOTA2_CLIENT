@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -34,19 +34,19 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertyDescription "Name used to identify the sizer. Must be unique within the paraent element."
-            CUtlString m_Name; // 0x48            
-            bool m_bHACK_ProvideResultMinX; // 0x50            
-            bool m_bHACK_ProvideResultMaxX; // 0x51            
-            bool m_bHACK_ProvideResultMinY; // 0x52            
-            bool m_bHACK_ProvideResultMaxY; // 0x53            
-            bool m_bHACK_ProvideResultMinZ; // 0x54            
-            bool m_bHACK_ProvideResultMaxZ; // 0x55            
-            uint8_t _pad0056[0x2];
+            CUtlString m_Name; // 0x_            
+            bool m_bHACK_ProvideResultMinX; // 0x_            
+            bool m_bHACK_ProvideResultMaxX; // 0x_            
+            bool m_bHACK_ProvideResultMinY; // 0x_            
+            bool m_bHACK_ProvideResultMaxY; // 0x_            
+            bool m_bHACK_ProvideResultMinZ; // 0x_            
+            bool m_bHACK_ProvideResultMaxZ; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropPulse_CreateSizer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_CreateSizer) == 0x58);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_CreateSizer) == 0x_);
     };
 };

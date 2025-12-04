@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,30 +26,30 @@ namespace source2sdk
         struct VMixModDelayDesc_t
         {
         public:
-            source2sdk::soundsystem_lowlevel::VMixFilterDesc_t m_feedbackFilter; // 0x0            
-            bool m_bPhaseInvert; // 0x10            
-            uint8_t _pad0011[0x3]; // 0x11
-            float m_flGlideTime; // 0x14            
-            float m_flDelay; // 0x18            
-            float m_flOutputGain; // 0x1c            
-            float m_flFeedbackGain; // 0x20            
-            float m_flModRate; // 0x24            
-            float m_flModDepth; // 0x28            
-            bool m_bApplyAntialiasing; // 0x2c            
-            uint8_t _pad002d[0x3];
+            source2sdk::soundsystem_lowlevel::VMixFilterDesc_t m_feedbackFilter; // 0x_            
+            bool m_bPhaseInvert; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flGlideTime; // 0x_            
+            float m_flDelay; // 0x_            
+            float m_flOutputGain; // 0x_            
+            float m_flFeedbackGain; // 0x_            
+            float m_flModRate; // 0x_            
+            float m_flModDepth; // 0x_            
+            bool m_bApplyAntialiasing; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_feedbackFilter) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_bPhaseInvert) == 0x10);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flGlideTime) == 0x14);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flDelay) == 0x18);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flOutputGain) == 0x1c);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flFeedbackGain) == 0x20);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flModRate) == 0x24);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flModDepth) == 0x28);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_bApplyAntialiasing) == 0x2c);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_feedbackFilter) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_bPhaseInvert) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flGlideTime) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flDelay) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flOutputGain) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flFeedbackGain) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flModRate) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_flModDepth) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t, m_bApplyAntialiasing) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t) == 0x30);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixModDelayDesc_t) == 0x_);
     };
 };

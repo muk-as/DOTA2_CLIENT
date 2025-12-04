@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Hoodwink_Camouflage : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float fade_time; // 0x1878            
-            source2sdk::entity2::GameTime_t m_flFadeTime; // 0x187c            
-            bool m_bInvisLastThink; // 0x1880            
-            uint8_t _pad1881[0x7];
+            float fade_time; // 0x_            
+            source2sdk::entity2::GameTime_t m_flFadeTime; // 0x_            
+            bool m_bInvisLastThink; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Hoodwink_Camouflage because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Hoodwink_Camouflage) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Hoodwink_Camouflage) == 0x_);
     };
 };

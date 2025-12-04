@@ -20,10 +20,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x13b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -33,51 +33,51 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Type"
-            source2sdk::particles::ParticleOmni2LightTypeChoiceList_t m_nLightType; // 0x210            
-            uint8_t _pad0214[0x4]; // 0x214
+            source2sdk::particles::ParticleOmni2LightTypeChoiceList_t m_nLightType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Color Blend"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vColorBlend; // 0x218            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vColorBlend; // 0x_            
             // metadata: MPropertyFriendlyName "Color Blend Type"
             // metadata: MPropertySortPriority "700"
-            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x890            
-            source2sdk::particles::ParticleLightUnitChoiceList_t m_nBrightnessUnit; // 0x894            
+            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x_            
+            source2sdk::particles::ParticleLightUnitChoiceList_t m_nBrightnessUnit; // 0x_            
             // metadata: MPropertyFriendlyName "Lumens"
             // metadata: MPropertySuppressExpr "m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_LUMENS"
-            source2sdk::particleslib::CPerParticleFloatInput m_flBrightnessLumens; // 0x898            
+            source2sdk::particleslib::CPerParticleFloatInput m_flBrightnessLumens; // 0x_            
             // metadata: MPropertyFriendlyName "Candelas"
             // metadata: MPropertySuppressExpr "m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_CANDELAS"
-            source2sdk::particleslib::CPerParticleFloatInput m_flBrightnessCandelas; // 0x9f8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flBrightnessCandelas; // 0x_            
             // metadata: MPropertyFriendlyName "Shadows"
             // metadata: MPropertySuppressExpr "mod == csgo"
-            bool m_bCastShadows; // 0xb58            
+            bool m_bCastShadows; // 0x_            
             // metadata: MPropertyFriendlyName "Fog"
-            bool m_bFog; // 0xb59            
-            uint8_t _pad0b5a[0x6]; // 0xb5a
+            bool m_bFog; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Fog Scale"
             // metadata: MPropertySuppressExpr "!m_bFog"
-            source2sdk::particleslib::CPerParticleFloatInput m_flFogScale; // 0xb60            
+            source2sdk::particleslib::CPerParticleFloatInput m_flFogScale; // 0x_            
             // metadata: MPropertyFriendlyName "Light Radius"
-            source2sdk::particleslib::CPerParticleFloatInput m_flLuminaireRadius; // 0xcc0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flLuminaireRadius; // 0x_            
             // metadata: MPropertyFriendlyName "Skirt"
-            source2sdk::particleslib::CPerParticleFloatInput m_flSkirt; // 0xe20            
+            source2sdk::particleslib::CPerParticleFloatInput m_flSkirt; // 0x_            
             // metadata: MPropertyFriendlyName "Range"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRange; // 0xf80            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRange; // 0x_            
             // metadata: MPropertyFriendlyName "Inner Cone Angle"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInnerConeAngle; // 0x10e0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInnerConeAngle; // 0x_            
             // metadata: MPropertyFriendlyName "Outer Cone Angle"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOuterConeAngle; // 0x1240            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOuterConeAngle; // 0x_            
             // metadata: MPropertyFriendlyName "Cookie"
             // m_hLightCookie has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hLightCookie;
-            char m_hLightCookie[0x8]; // 0x13a0            
+            char m_hLightCookie[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "Cookie is Spherically Mapped"
-            bool m_bSphericalCookie; // 0x13a8            
-            uint8_t _pad13a9[0xf];
+            bool m_bSphericalCookie; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RenderOmni2Light because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RenderOmni2Light) == 0x13b8);
+        static_assert(sizeof(source2sdk::particles::C_OP_RenderOmni2Light) == 0x_);
     };
 };

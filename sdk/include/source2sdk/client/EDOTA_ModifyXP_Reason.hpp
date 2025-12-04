@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTA_ModifyXP_Reason : std::uint32_t
         {
             DOTA_ModifyXP_Unspecified = 0x0,

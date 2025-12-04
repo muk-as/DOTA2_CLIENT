@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1b00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,21 +33,21 @@ namespace source2sdk
         class C_DOTA_BaseNPC_NeutralItemStash : public source2sdk::client::C_DOTA_BaseNPC_Building
         {
         public:
-            uint8_t _pad1ab8[0x10]; // 0x1ab8
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecNewItemFX has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_vecNewItemFX;
-            char m_vecNewItemFX[0x18]; // 0x1ac8            
-            bool m_bHasFoundProps; // 0x1ae0            
-            bool m_bDidHaveNewItems; // 0x1ae1            
-            uint8_t _pad1ae2[0x6]; // 0x1ae2
+            char m_vecNewItemFX[0x_]; // 0x_            
+            bool m_bHasFoundProps; // 0x_            
+            bool m_bDidHaveNewItems; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecProps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_DynamicPropClientside>> m_vecProps;
-            char m_vecProps[0x18]; // 0x1ae8            
+            char m_vecProps[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_NeutralItemStash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_NeutralItemStash) == 0x1b00);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_NeutralItemStash) == 0x_);
     };
 };

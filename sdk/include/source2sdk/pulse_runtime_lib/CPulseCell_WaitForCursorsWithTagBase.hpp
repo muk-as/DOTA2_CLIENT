@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x98
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,14 +29,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Any extra waiting cursors will be terminated. -1 for infinite cursors."
-            std::int32_t m_nCursorsAllowedToWait; // 0x48            
-            uint8_t _pad004c[0x4]; // 0x4c
-            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_WaitComplete; // 0x50            
+            std::int32_t m_nCursorsAllowedToWait; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_WaitComplete; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_WaitForCursorsWithTagBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase) == 0x98);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_WaitForCursorsWithTagBase) == 0x_);
     };
 };

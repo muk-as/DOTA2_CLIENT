@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CNmFloatAngleMathNode_Operation_t : std::uint8_t
         {
             ClampTo180 = 0x0,

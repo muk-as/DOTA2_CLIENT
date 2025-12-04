@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int32 m_iGlowType"
@@ -31,44 +31,44 @@ namespace source2sdk
         class CGlowProperty
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            Vector m_fGlowColor; // 0x8            
-            uint8_t _pad0014[0x1c]; // 0x14
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_fGlowColor; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGlowTypeChanged"
-            std::int32_t m_iGlowType; // 0x30            
+            std::int32_t m_iGlowType; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iGlowTeam; // 0x34            
+            std::int32_t m_iGlowTeam; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nGlowRange; // 0x38            
+            std::int32_t m_nGlowRange; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nGlowRangeMin; // 0x3c            
+            std::int32_t m_nGlowRangeMin; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGlowColorChanged"
-            Color m_glowColorOverride; // 0x40            
+            Color m_glowColorOverride; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFlashing; // 0x44            
-            uint8_t _pad0045[0x3]; // 0x45
+            bool m_bFlashing; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flGlowTime; // 0x48            
+            float m_flGlowTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flGlowStartTime; // 0x4c            
-            bool m_bGlowing; // 0x50            
-            uint8_t _pad0051[0x7];
+            float m_flGlowStartTime; // 0x_            
+            bool m_bGlowing; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_fGlowColor) == 0x8);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_iGlowType) == 0x30);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_iGlowTeam) == 0x34);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_nGlowRange) == 0x38);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_nGlowRangeMin) == 0x3c);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_glowColorOverride) == 0x40);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_bFlashing) == 0x44);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_flGlowTime) == 0x48);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_flGlowStartTime) == 0x4c);
-        static_assert(offsetof(source2sdk::client::CGlowProperty, m_bGlowing) == 0x50);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_fGlowColor) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_iGlowType) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_iGlowTeam) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_nGlowRange) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_nGlowRangeMin) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_glowColorOverride) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_bFlashing) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_flGlowTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_flGlowStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CGlowProperty, m_bGlowing) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CGlowProperty) == 0x58);
+        static_assert(sizeof(source2sdk::client::CGlowProperty) == 0x_);
     };
 };

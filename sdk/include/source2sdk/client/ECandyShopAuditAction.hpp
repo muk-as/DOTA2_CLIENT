@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ECandyShopAuditAction : std::uint32_t
         {
             k_ECandyShopAuditAction_Invalid = 0x0,

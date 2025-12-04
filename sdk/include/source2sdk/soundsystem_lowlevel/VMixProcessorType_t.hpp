@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 32
         // Alignment: 2
-        // Size: 0x2
+        // Size: 0x_
         enum class VMixProcessorType_t : std::uint16_t
         {
             VPROCESSOR_UNKNOWN = 0x0,

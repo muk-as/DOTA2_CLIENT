@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x118
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,11 +31,11 @@ namespace source2sdk
         class CPulseGraphInstance_SmartPropEval : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {
         public:
-            uint8_t _pad0108[0x10];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::smartprops::CPulseGraphInstance_SmartPropEval) == 0x118);
+        static_assert(sizeof(source2sdk::smartprops::CPulseGraphInstance_SmartPropEval) == 0x_);
     };
 };

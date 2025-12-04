@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 15
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PermModelInfo_t_FlagEnum : std::uint32_t
         {
             FLAG_TRANSLUCENT = 0x1,

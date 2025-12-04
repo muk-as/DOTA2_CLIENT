@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct PostProcessingFogScatteringParameters_t
         {
         public:
-            float m_fRadius; // 0x0            
-            float m_fScale; // 0x4            
-            float m_fCubemapScale; // 0x8            
-            float m_fVolumetricScale; // 0xc            
-            float m_fGradientScale; // 0x10            
+            float m_fRadius; // 0x_            
+            float m_fScale; // 0x_            
+            float m_fCubemapScale; // 0x_            
+            float m_fVolumetricScale; // 0x_            
+            float m_fGradientScale; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fRadius) == 0x0);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fScale) == 0x4);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fCubemapScale) == 0x8);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fVolumetricScale) == 0xc);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fGradientScale) == 0x10);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fRadius) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fScale) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fCubemapScale) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fVolumetricScale) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t, m_fGradientScale) == 0x_);
         
-        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t) == 0x14);
+        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingFogScatteringParameters_t) == 0x_);
     };
 };

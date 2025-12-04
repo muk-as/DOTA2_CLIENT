@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Default Value"
-            float m_fDefaultValue; // 0x80            
+            float m_fDefaultValue; // 0x_            
             // metadata: MPropertyFriendlyName "Min Value"
-            float m_fMinValue; // 0x84            
+            float m_fMinValue; // 0x_            
             // metadata: MPropertyFriendlyName "Max Value"
-            float m_fMaxValue; // 0x88            
+            float m_fMaxValue; // 0x_            
             // metadata: MPropertyFriendlyName "Interpolate"
-            bool m_bInterpolate; // 0x8c            
-            uint8_t _pad008d[0x3];
+            bool m_bInterpolate; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFloatAnimParameter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CFloatAnimParameter) == 0x90);
+        static_assert(sizeof(source2sdk::animgraphlib::CFloatAnimParameter) == 0x_);
     };
 };

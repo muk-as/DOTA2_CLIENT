@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SeqPoseSetting_t : std::uint32_t
         {
             SEQ_POSE_SETTING_CONSTANT = 0x0,

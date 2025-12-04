@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         public:
             // m_conditionNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<std::int16_t,5> m_conditionNodeIndices;
-            char m_conditionNodeIndices[0x28]; // 0x10            
+            char m_conditionNodeIndices[0x_]; // 0x_            
             // m_values has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<float,5> m_values;
-            char m_values[0x30]; // 0x38            
-            float m_flDefaultValue; // 0x68            
-            float m_flEaseTime; // 0x6c            
-            source2sdk::animlib::NmEasingOperation_t m_easingOp; // 0x70            
-            uint8_t _pad0071[0x7];
+            char m_values[0x_]; // 0x_            
+            float m_flDefaultValue; // 0x_            
+            float m_flEaseTime; // 0x_            
+            source2sdk::animlib::NmEasingOperation_t m_easingOp; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmFloatSelectorNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmFloatSelectorNode_CDefinition) == 0x78);
+        static_assert(sizeof(source2sdk::animlib::CNmFloatSelectorNode_CDefinition) == 0x_);
     };
 };

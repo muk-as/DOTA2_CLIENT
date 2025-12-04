@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 17
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SeqCmd_t : std::uint32_t
         {
             SeqCmd_Nop = 0x0,

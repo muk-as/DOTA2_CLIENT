@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EFantasyStatMatchMode : std::uint32_t
         {
             k_FantasyStatMatchMode_Any = 0x0,

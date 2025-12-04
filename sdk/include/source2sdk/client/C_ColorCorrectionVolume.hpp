@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,27 +32,27 @@ namespace source2sdk
         class C_ColorCorrectionVolume : public source2sdk::client::C_BaseTrigger
         {
         public:
-            float m_LastEnterWeight; // 0xad8            
-            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0xadc            
-            float m_LastExitWeight; // 0xae0            
-            source2sdk::entity2::GameTime_t m_LastExitTime; // 0xae4            
+            float m_LastEnterWeight; // 0x_            
+            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0x_            
+            float m_LastExitWeight; // 0x_            
+            source2sdk::entity2::GameTime_t m_LastExitTime; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0xae8            
-            uint8_t _pad0ae9[0x3]; // 0xae9
+            bool m_bEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_MaxWeight; // 0xaec            
+            float m_MaxWeight; // 0x_            
             // metadata: MNetworkEnable
-            float m_FadeDuration; // 0xaf0            
+            float m_FadeDuration; // 0x_            
             // metadata: MNetworkEnable
-            float m_Weight; // 0xaf4            
+            float m_Weight; // 0x_            
             // metadata: MNetworkEnable
-            char m_lookupFilename[512]; // 0xaf8            
-            uint8_t _pad0cf8[0x8];
+            char m_lookupFilename[512]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_ColorCorrectionVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_ColorCorrectionVolume) == 0xd00);
+        static_assert(sizeof(source2sdk::client::C_ColorCorrectionVolume) == 0x_);
     };
 };

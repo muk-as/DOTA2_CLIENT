@@ -48,10 +48,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1f18
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -82,159 +82,159 @@ namespace source2sdk
         class CDOTA_BaseNPC_Hero : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
         public:
-            uint8_t _pad18e0[0x98]; // 0x18e0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flStrength; // 0x1978            
+            float m_flStrength; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgility; // 0x197c            
+            float m_flAgility; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntellect; // 0x1980            
+            float m_flIntellect; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStrengthTotal; // 0x1984            
+            float m_flStrengthTotal; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAgilityTotal; // 0x1988            
+            float m_flAgilityTotal; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntellectTotal; // 0x198c            
+            float m_flIntellectTotal; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iRecentDamage; // 0x1990            
+            std::int32_t m_iRecentDamage; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iPrimaryAttribute; // 0x1994            
+            std::int32_t m_iPrimaryAttribute; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flDeathTime; // 0x1998            
-            float m_flStrengthGain; // 0x199c            
-            float m_flAgilityGain; // 0x19a0            
-            float m_flIntellectGain; // 0x19a4            
-            float m_flLastSuggestionTime; // 0x19a8            
-            bool m_bItemsAddedToLoadout; // 0x19ac            
-            bool m_bPregameItemsAddedToLoadout; // 0x19ad            
-            uint8_t _pad19ae[0x2]; // 0x19ae
+            source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            float m_flStrengthGain; // 0x_            
+            float m_flAgilityGain; // 0x_            
+            float m_flIntellectGain; // 0x_            
+            float m_flLastSuggestionTime; // 0x_            
+            bool m_bItemsAddedToLoadout; // 0x_            
+            bool m_bPregameItemsAddedToLoadout; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hNewARDMHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hNewARDMHero;
-            char m_hNewARDMHero[0x4]; // 0x19b0            
-            source2sdk::entity2::GameTime_t m_fBuybackCooldown; // 0x19b4            
-            source2sdk::entity2::GameTime_t m_fBuybackGoldLimit; // 0x19b8            
-            std::int32_t m_nLastHealedAmount; // 0x19bc            
-            float m_flLastHealedTime; // 0x19c0            
+            char m_hNewARDMHero[0x_]; // 0x_            
+            source2sdk::entity2::GameTime_t m_fBuybackCooldown; // 0x_            
+            source2sdk::entity2::GameTime_t m_fBuybackGoldLimit; // 0x_            
+            std::int32_t m_nLastHealedAmount; // 0x_            
+            float m_flLastHealedTime; // 0x_            
             // m_hLastHealEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hLastHealEntity;
-            char m_hLastHealEntity[0x4]; // 0x19c4            
-            Vector m_vRespawnPosition; // 0x19c8            
-            uint8_t _pad19d4[0x4]; // 0x19d4
+            char m_hLastHealEntity[0x_]; // 0x_            
+            Vector m_vRespawnPosition; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_HeroDamageInfoArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CDOTA_BaseNPC_Hero_sHeroDamageInfo> m_HeroDamageInfoArray;
-            char m_HeroDamageInfoArray[0x18]; // 0x19d8            
+            char m_HeroDamageInfoArray[0x_]; // 0x_            
             // m_vecRecentModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CDOTA_BaseNPC_Hero_sHeroRecentModifierInfo> m_vecRecentModifiers;
-            char m_vecRecentModifiers[0x18]; // 0x19f0            
-            source2sdk::entity2::GameTime_t m_fMostRecentDamageTime; // 0x1a08            
+            char m_vecRecentModifiers[0x_]; // 0x_            
+            source2sdk::entity2::GameTime_t m_fMostRecentDamageTime; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iAbilityPoints; // 0x1a0c            
+            std::int32_t m_iAbilityPoints; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iTotalAbilityPoints; // 0x1a10            
+            std::int32_t m_iTotalAbilityPoints; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iCurrentXP; // 0x1a14            
+            std::int32_t m_iCurrentXP; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x1a18            
+            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flRespawnTimePenalty; // 0x1a1c            
-            float m_flTimeUntilRespawn; // 0x1a20            
-            float m_flScriptRespawnTime; // 0x1a24            
-            float m_flPendingRespawnTime; // 0x1a28            
+            float m_flRespawnTimePenalty; // 0x_            
+            float m_flTimeUntilRespawn; // 0x_            
+            float m_flScriptRespawnTime; // 0x_            
+            float m_flPendingRespawnTime; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bScriptDisableRespawns; // 0x1a2c            
-            uint8_t _pad1a2d[0x3]; // 0x1a2d
+            bool m_bScriptDisableRespawns; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerID; // 0x1a30            
-            uint8_t _pad1a34[0x4]; // 0x1a34
+            source2sdk::client::PlayerID_t m_iPlayerID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::HeroFacetKey_t m_iHeroFacetKey; // 0x1a38            
-            source2sdk::client::PlayerID_t m_iIllusionOriginalPlayerID; // 0x1a40            
-            source2sdk::client::HeroID_t m_iHeroID; // 0x1a44            
+            source2sdk::client::HeroFacetKey_t m_iHeroFacetKey; // 0x_            
+            source2sdk::client::PlayerID_t m_iIllusionOriginalPlayerID; // 0x_            
+            source2sdk::client::HeroID_t m_iHeroID; // 0x_            
             // metadata: MNetworkEnable
             // m_hReplicatingOtherHeroModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel;
-            char m_hReplicatingOtherHeroModel[0x4]; // 0x1a48            
-            uint8_t _pad1a4c[0x34]; // 0x1a4c
-            source2sdk::server::CountdownTimer m_RespawnMusicTimer; // 0x1a80            
-            source2sdk::server::CountdownTimer m_HeroKillTimer; // 0x1a98            
-            source2sdk::server::CountdownTimer m_MultipleHeroKillTimer; // 0x1ab0            
-            source2sdk::server::CountdownTimer m_MultipleLastHitTimer; // 0x1ac8            
-            std::int32_t m_iMultipleKillCount; // 0x1ae0            
-            float m_flKillStreakStartTime; // 0x1ae4            
-            bool m_bDisableWearables; // 0x1ae8            
-            uint8_t _pad1ae9[0x3]; // 0x1ae9
+            char m_hReplicatingOtherHeroModel[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CountdownTimer m_RespawnMusicTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_HeroKillTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_MultipleHeroKillTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_MultipleLastHitTimer; // 0x_            
+            std::int32_t m_iMultipleKillCount; // 0x_            
+            float m_flKillStreakStartTime; // 0x_            
+            bool m_bDisableWearables; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hTogglableWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTAWearableItem> m_hTogglableWearable[103];
-            char m_hTogglableWearable[0x19c]; // 0x1aec            
-            source2sdk::server::CDOTA_BaseNPC_Hero_KillInfo_t m_KillInfo; // 0x1c88            
-            source2sdk::server::CountdownTimer m_DirectorAbilityActivity; // 0x1ca8            
+            char m_hTogglableWearable[0x_]; // 0x_            
+            source2sdk::server::CDOTA_BaseNPC_Hero_KillInfo_t m_KillInfo; // 0x_            
+            source2sdk::server::CountdownTimer m_DirectorAbilityActivity; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bReincarnating; // 0x1cc0            
+            bool m_bReincarnating; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCustomKillEffect; // 0x1cc1            
-            uint8_t _pad1cc2[0x2]; // 0x1cc2
+            bool m_bCustomKillEffect; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flSpawnedAt; // 0x1cc4            
+            source2sdk::entity2::GameTime_t m_flSpawnedAt; // 0x_            
             // metadata: MNetworkEnable
             // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseEntity>> m_hFacetAbilities;
-            char m_hFacetAbilities[0x18]; // 0x1cc8            
-            source2sdk::server::CountdownTimer m_PurchaseItemTimer; // 0x1ce0            
-            source2sdk::server::CountdownTimer m_NeutralItemTimer; // 0x1cf8            
-            source2sdk::server::CountdownTimer m_RetrieveItemsFromStashTimer; // 0x1d10            
-            source2sdk::server::CountdownTimer m_RequestGoToSecretShopTimer; // 0x1d28            
-            std::int32_t m_iNextItemToPurchase; // 0x1d40            
-            bool m_bDoesNextItemCompleteRecipe; // 0x1d44            
-            uint8_t _pad1d45[0x3]; // 0x1d45
+            char m_hFacetAbilities[0x_]; // 0x_            
+            source2sdk::server::CountdownTimer m_PurchaseItemTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_NeutralItemTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_RetrieveItemsFromStashTimer; // 0x_            
+            source2sdk::server::CountdownTimer m_RequestGoToSecretShopTimer; // 0x_            
+            std::int32_t m_iNextItemToPurchase; // 0x_            
+            bool m_bDoesNextItemCompleteRecipe; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_Loadout has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::sLoadoutItem> m_Loadout;
-            char m_Loadout[0x18]; // 0x1d48            
+            char m_Loadout[0x_]; // 0x_            
             // m_BuildingOrBuilt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std_pair<source2sdk::client::AbilityID_t,bool>> m_BuildingOrBuilt;
-            char m_BuildingOrBuilt[0x18]; // 0x1d60            
-            source2sdk::server::sLoadoutItem m_TPScroll; // 0x1d78            
-            source2sdk::server::sLoadoutItem m_Dust; // 0x1d90            
-            source2sdk::server::sLoadoutItem m_Gem; // 0x1da8            
-            source2sdk::server::sLoadoutItem m_SentryWard; // 0x1dc0            
-            source2sdk::server::sLoadoutItem m_ObserverWard; // 0x1dd8            
-            bool m_bAutoPurchaseItems; // 0x1df0            
-            bool m_bBuybackDisabled; // 0x1df1            
-            uint8_t _pad1df2[0x6]; // 0x1df2
+            char m_BuildingOrBuilt[0x_]; // 0x_            
+            source2sdk::server::sLoadoutItem m_TPScroll; // 0x_            
+            source2sdk::server::sLoadoutItem m_Dust; // 0x_            
+            source2sdk::server::sLoadoutItem m_Gem; // 0x_            
+            source2sdk::server::sLoadoutItem m_SentryWard; // 0x_            
+            source2sdk::server::sLoadoutItem m_ObserverWard; // 0x_            
+            bool m_bAutoPurchaseItems; // 0x_            
+            bool m_bBuybackDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hPets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Pet>> m_hPets;
-            char m_hPets[0x18]; // 0x1df8            
-            bool m_bPreventPetSpawn; // 0x1e10            
-            uint8_t _pad1e11[0x7]; // 0x1e11
-            source2sdk::server::CDOTAMusicProbabilityEntry m_MusicProbabilityGank; // 0x1e18            
-            uint8_t _pad1e40[0x28]; // 0x1e40
-            CUtlString m_strCustomKillEffect; // 0x1e68            
-            CUtlString m_strCustomHexModel; // 0x1e70            
-            source2sdk::client::ParticleIndex_t m_nKillStreakFX; // 0x1e78            
-            uint8_t _pad1e7c[0x4]; // 0x1e7c
+            char m_hPets[0x_]; // 0x_            
+            bool m_bPreventPetSpawn; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CDOTAMusicProbabilityEntry m_MusicProbabilityGank; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_strCustomKillEffect; // 0x_            
+            CUtlString m_strCustomHexModel; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nKillStreakFX; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_AbilitiesPendingDelete has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AbilitiesPendingDelete;
-            char m_AbilitiesPendingDelete[0x18]; // 0x1e80            
+            char m_AbilitiesPendingDelete[0x_]; // 0x_            
             // m_vecItemPurchaseHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::sAcquireHistory> m_vecItemPurchaseHistory;
-            char m_vecItemPurchaseHistory[0x18]; // 0x1e98            
+            char m_vecItemPurchaseHistory[0x_]; // 0x_            
             // m_vecAbilitySkillHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::sAcquireHistory> m_vecAbilitySkillHistory;
-            char m_vecAbilitySkillHistory[0x18]; // 0x1eb0            
+            char m_vecAbilitySkillHistory[0x_]; // 0x_            
             // m_vecNeutralItemEquippedHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::sAcquireHistory> m_vecNeutralItemEquippedHistory;
-            char m_vecNeutralItemEquippedHistory[0x18]; // 0x1ec8            
-            uint8_t _pad1ee0[0x18]; // 0x1ee0
+            char m_vecNeutralItemEquippedHistory[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_vecExpiredIllusions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Hero>> m_vecExpiredIllusions;
-            char m_vecExpiredIllusions[0x18]; // 0x1ef8            
-            uint8_t _pad1f10[0x4]; // 0x1f10
-            float m_flLastTimeLookedAtByDirector; // 0x1f14            
+            char m_vecExpiredIllusions[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flLastTimeLookedAtByDirector; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Hero because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Hero) == 0x1f18);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Hero) == 0x_);
     };
 };

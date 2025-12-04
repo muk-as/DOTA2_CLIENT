@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xac8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,26 +32,26 @@ namespace source2sdk
         class C_DOTA_TempTree : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad09c0[0x30]; // 0x9c0
-            source2sdk::entity2::GameTime_t m_fExpireTime; // 0x9f0            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_fExpireTime; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vecTreeCircleCenter; // 0x9f4            
+            Vector m_vecTreeCircleCenter; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCanApplyTreeCostume; // 0xa00            
+            bool m_bCanApplyTreeCostume; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsMangoTree; // 0xa01            
-            uint8_t _pad0a02[0x6]; // 0xa02
+            bool m_bIsMangoTree; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_ParticleList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_ParticleList;
-            char m_ParticleList[0x18]; // 0xa08            
+            char m_ParticleList[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsPartOfFowSystem; // 0xa20            
-            uint8_t _pad0a21[0xa7];
+            bool m_bIsPartOfFowSystem; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_TempTree because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_TempTree) == 0xac8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_TempTree) == 0x_);
     };
 };

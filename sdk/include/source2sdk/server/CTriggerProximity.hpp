@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -33,22 +33,22 @@ namespace source2sdk
         public:
             // m_hMeasureTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hMeasureTarget;
-            char m_hMeasureTarget[0x4]; // 0x9c0            
-            uint8_t _pad09c4[0x4]; // 0x9c4
-            CUtlSymbolLarge m_iszMeasureTarget; // 0x9c8            
-            float m_fRadius; // 0x9d0            
-            std::int32_t m_nTouchers; // 0x9d4            
+            char m_hMeasureTarget[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszMeasureTarget; // 0x_            
+            float m_fRadius; // 0x_            
+            std::int32_t m_nTouchers; // 0x_            
             // m_NearestEntityDistance has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<float> m_NearestEntityDistance;
-            char m_NearestEntityDistance[0x28]; // 0x9d8            
+            char m_NearestEntityDistance[0x_]; // 0x_            
             
             // Datamap fields:
-            // void CTriggerProximityMeasureThink; // 0x0
+            // void CTriggerProximityMeasureThink; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerProximity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerProximity) == 0xa00);
+        static_assert(sizeof(source2sdk::server::CTriggerProximity) == 0x_);
     };
 };

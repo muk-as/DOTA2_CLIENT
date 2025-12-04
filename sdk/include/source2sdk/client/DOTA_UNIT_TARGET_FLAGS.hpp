@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 23
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         // 
         // metadata: MEnumFlagsWithOverlappingBits
         enum class DOTA_UNIT_TARGET_FLAGS : std::uint32_t

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,16 +25,16 @@ namespace source2sdk
         struct FeSimdAnimStrayRadius_t
         {
         public:
-            std::uint16_t nNode[2][4]; // 0x0            
-            fltx4 flMaxDist; // 0x10            
-            fltx4 flRelaxationFactor; // 0x20            
+            std::uint16_t nNode[2][4]; // 0x_            
+            fltx4 flMaxDist; // 0x_            
+            fltx4 flRelaxationFactor; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, nNode) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, flMaxDist) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, flRelaxationFactor) == 0x20);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, flMaxDist) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSimdAnimStrayRadius_t, flRelaxationFactor) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeSimdAnimStrayRadius_t) == 0x30);
+        static_assert(sizeof(source2sdk::physicslib::FeSimdAnimStrayRadius_t) == 0x_);
     };
 };

@@ -20,10 +20,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -34,12 +34,12 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBaseAnimatingActivity> m_hTarget;
-            char m_hTarget[0x4]; // 0x0            
+            char m_hTarget[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CPulseCell_PlaySequence_CursorState_t, m_hTarget) == 0x0);
+        static_assert(offsetof(source2sdk::client::CPulseCell_PlaySequence_CursorState_t, m_hTarget) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CPulseCell_PlaySequence_CursorState_t) == 0x4);
+        static_assert(sizeof(source2sdk::client::CPulseCell_PlaySequence_CursorState_t) == 0x_);
     };
 };

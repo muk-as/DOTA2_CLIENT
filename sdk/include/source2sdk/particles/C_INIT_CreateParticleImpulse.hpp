@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,22 +30,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "radius"
-            source2sdk::particleslib::CPerParticleFloatInput m_InputRadius; // 0x1c8            
+            source2sdk::particleslib::CPerParticleFloatInput m_InputRadius; // 0x_            
             // metadata: MPropertyFriendlyName "magnitude"
-            source2sdk::particleslib::CPerParticleFloatInput m_InputMagnitude; // 0x328            
+            source2sdk::particleslib::CPerParticleFloatInput m_InputMagnitude; // 0x_            
             // metadata: MPropertyFriendlyName "force falloff function"
-            source2sdk::particles::ParticleFalloffFunction_t m_nFalloffFunction; // 0x488            
-            uint8_t _pad048c[0x4]; // 0x48c
+            source2sdk::particles::ParticleFalloffFunction_t m_nFalloffFunction; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "exponential falloff exponent"
-            source2sdk::particleslib::CPerParticleFloatInput m_InputFalloffExp; // 0x490            
+            source2sdk::particleslib::CPerParticleFloatInput m_InputFalloffExp; // 0x_            
             // metadata: MPropertyFriendlyName "impulse type"
-            source2sdk::particles::ParticleImpulseType_t m_nImpulseType; // 0x5f0            
-            uint8_t _pad05f4[0x4];
+            source2sdk::particles::ParticleImpulseType_t m_nImpulseType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateParticleImpulse because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateParticleImpulse) == 0x5f8);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateParticleImpulse) == 0x_);
     };
 };

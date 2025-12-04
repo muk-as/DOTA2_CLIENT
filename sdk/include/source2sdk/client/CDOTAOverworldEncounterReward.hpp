@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTAOverworldEncounterReward
         {
         public:
-            std::uint32_t m_unRewardData; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
-            CUtlString m_sEventAction; // 0x8            
-            KeyValues3 m_kvRewardExtraData; // 0x10            
+            std::uint32_t m_unRewardData; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_sEventAction; // 0x_            
+            KeyValues3 m_kvRewardExtraData; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_unRewardData) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_sEventAction) == 0x8);
-        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_kvRewardExtraData) == 0x10);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_unRewardData) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_sEventAction) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAOverworldEncounterReward, m_kvRewardExtraData) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAOverworldEncounterReward) == 0x20);
+        static_assert(sizeof(source2sdk::client::CDOTAOverworldEncounterReward) == 0x_);
     };
 };

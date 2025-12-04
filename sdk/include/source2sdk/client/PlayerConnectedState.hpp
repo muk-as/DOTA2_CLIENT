@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PlayerConnectedState : std::uint32_t
         {
             PlayerNeverConnected = 0xffffffff,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1e90
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_Artillery_PortraitWorldUnit) == 0x1e90);
+        static_assert(sizeof(source2sdk::client::C_Artillery_PortraitWorldUnit) == 0x_);
     };
 };

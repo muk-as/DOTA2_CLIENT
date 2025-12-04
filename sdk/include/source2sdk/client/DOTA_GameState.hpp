@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_GameState : std::uint32_t
         {
             DOTA_GAMERULES_STATE_INIT = 0x0,

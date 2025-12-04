@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x8c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,28 +28,28 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c0            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "use only bounding box"
-            bool m_bBoundBox; // 0x1c4            
+            bool m_bBoundBox; // 0x_            
             // metadata: MPropertyFriendlyName "dampen outside instead of inside"
-            bool m_bOutside; // 0x1c5            
+            bool m_bOutside; // 0x_            
             // metadata: MPropertyFriendlyName "use bones instead of hitboxes"
-            bool m_bUseBones; // 0x1c6            
+            bool m_bUseBones; // 0x_            
             // metadata: MPropertyFriendlyName "hitbox set"
-            char m_HitboxSetName[128]; // 0x1c7            
-            uint8_t _pad0247[0x1]; // 0x247
+            char m_HitboxSetName[128]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "test position offset"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecPosOffset; // 0x248            
+            source2sdk::particleslib::CPerParticleVecInput m_vecPosOffset; // 0x_            
             // metadata: MPropertyFriendlyName "drag"
             // metadata: MPropertyAttributeRange "-1 1"
-            float m_fDrag; // 0x8c0            
-            uint8_t _pad08c4[0x4];
+            float m_fDrag; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_ModelDampenMovement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_ModelDampenMovement) == 0x8c8);
+        static_assert(sizeof(source2sdk::particles::C_OP_ModelDampenMovement) == 0x_);
     };
 };

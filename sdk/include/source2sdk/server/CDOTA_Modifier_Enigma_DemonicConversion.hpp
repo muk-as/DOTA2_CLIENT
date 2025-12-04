@@ -24,30 +24,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Enigma_DemonicConversion : public source2sdk::server::CDOTA_Modifier_Kill
         {
         public:
-            std::int32_t m_iAttackCount; // 0x1880            
-            std::int32_t split_attack_count; // 0x1884            
-            float life_extension; // 0x1888            
-            std::int32_t eidolon_attack_range; // 0x188c            
-            std::int32_t eidolon_bonus_damage; // 0x1890            
-            std::int32_t eidolon_bonus_attack_speed; // 0x1894            
-            bool m_bAllowSplit; // 0x1898            
-            uint8_t _pad1899[0x3]; // 0x1899
-            std::int32_t m_nSpawnNum; // 0x189c            
+            std::int32_t m_iAttackCount; // 0x_            
+            std::int32_t split_attack_count; // 0x_            
+            float life_extension; // 0x_            
+            std::int32_t eidolon_attack_range; // 0x_            
+            std::int32_t eidolon_bonus_damage; // 0x_            
+            std::int32_t eidolon_bonus_attack_speed; // 0x_            
+            bool m_bAllowSplit; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nSpawnNum; // 0x_            
             // attack_target has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> attack_target;
-            char attack_target[0x4]; // 0x18a0            
-            uint8_t _pad18a4[0x4];
+            char attack_target[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Enigma_DemonicConversion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enigma_DemonicConversion) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enigma_DemonicConversion) == 0x_);
     };
 };

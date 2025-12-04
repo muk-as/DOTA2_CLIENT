@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1f40
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,21 +29,21 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_nTreeDisguise; // 0x1f18            
+            std::uint32_t m_nTreeDisguise; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nPerchedTree; // 0x1f1c            
-            Vector m_vLastPos; // 0x1f20            
-            bool m_bIsOnCloud; // 0x1f2c            
-            uint8_t _pad1f2d[0x3]; // 0x1f2d
-            float m_fTotalDistOnCloud; // 0x1f30            
-            float m_fTotalDistoffCloud; // 0x1f34            
-            float m_fBackOnCloudThresh; // 0x1f38            
-            uint8_t _pad1f3c[0x4];
+            std::uint32_t m_nPerchedTree; // 0x_            
+            Vector m_vLastPos; // 0x_            
+            bool m_bIsOnCloud; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fTotalDistOnCloud; // 0x_            
+            float m_fTotalDistoffCloud; // 0x_            
+            float m_fBackOnCloudThresh; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_MonkeyKing because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_MonkeyKing) == 0x1f40);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_MonkeyKing) == 0x_);
     };
 };

@@ -24,30 +24,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Elder_Titan_AncestralSpirit : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float pass_damage; // 0x1878            
-            float radius; // 0x187c            
-            std::int32_t controllable; // 0x1880            
-            std::int32_t m_nCreepsHit; // 0x1884            
-            std::int32_t m_nHeroesHit; // 0x1888            
-            float m_flSpeed; // 0x188c            
+            float pass_damage; // 0x_            
+            float radius; // 0x_            
+            std::int32_t controllable; // 0x_            
+            std::int32_t m_nCreepsHit; // 0x_            
+            std::int32_t m_nHeroesHit; // 0x_            
+            float m_flSpeed; // 0x_            
             // m_hHitUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitUnits;
-            char m_hHitUnits[0x18]; // 0x1890            
-            Vector m_vCasterStartPosition; // 0x18a8            
-            Vector m_vSpiritStartPosition; // 0x18b4            
-            std::int32_t m_nBonusMoveSpeed; // 0x18c0            
-            uint8_t _pad18c4[0x4];
+            char m_hHitUnits[0x_]; // 0x_            
+            Vector m_vCasterStartPosition; // 0x_            
+            Vector m_vSpiritStartPosition; // 0x_            
+            std::int32_t m_nBonusMoveSpeed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Elder_Titan_AncestralSpirit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Elder_Titan_AncestralSpirit) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Elder_Titan_AncestralSpirit) == 0x_);
     };
 };

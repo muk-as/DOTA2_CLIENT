@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // MNetworkNoBase
         // 
@@ -27,17 +27,17 @@ namespace source2sdk
         class CHeroStatueLiked
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerIDLiker; // 0x30            
+            source2sdk::client::PlayerID_t m_iPlayerIDLiker; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerIDLiked; // 0x34            
+            source2sdk::client::PlayerID_t m_iPlayerIDLiked; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CHeroStatueLiked, m_iPlayerIDLiker) == 0x30);
-        static_assert(offsetof(source2sdk::client::CHeroStatueLiked, m_iPlayerIDLiked) == 0x34);
+        static_assert(offsetof(source2sdk::client::CHeroStatueLiked, m_iPlayerIDLiker) == 0x_);
+        static_assert(offsetof(source2sdk::client::CHeroStatueLiked, m_iPlayerIDLiked) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CHeroStatueLiked) == 0x38);
+        static_assert(sizeof(source2sdk::client::CHeroStatueLiked) == 0x_);
     };
 };

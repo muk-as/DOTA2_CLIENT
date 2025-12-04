@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 91
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EDOTAFacetIcon : std::uint8_t
         {
             // MAlternateSemanticName

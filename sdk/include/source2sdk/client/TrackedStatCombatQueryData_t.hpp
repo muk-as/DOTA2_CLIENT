@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,12 +26,12 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "the combat query file"
-            CUtlString strCombatQueryPath; // 0x0            
+            CUtlString strCombatQueryPath; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::TrackedStatCombatQueryData_t, strCombatQueryPath) == 0x0);
+        static_assert(offsetof(source2sdk::client::TrackedStatCombatQueryData_t, strCombatQueryPath) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::TrackedStatCombatQueryData_t) == 0x8);
+        static_assert(sizeof(source2sdk::client::TrackedStatCombatQueryData_t) == 0x_);
     };
 };

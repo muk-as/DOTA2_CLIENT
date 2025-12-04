@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,18 +26,18 @@ namespace source2sdk
         struct VMixFreeverbDesc_t
         {
         public:
-            float m_flRoomSize; // 0x0            
-            float m_flDamp; // 0x4            
-            float m_flWidth; // 0x8            
-            float m_flLateReflections; // 0xc            
+            float m_flRoomSize; // 0x_            
+            float m_flDamp; // 0x_            
+            float m_flWidth; // 0x_            
+            float m_flLateReflections; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flRoomSize) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flDamp) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flWidth) == 0x8);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flLateReflections) == 0xc);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flRoomSize) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flDamp) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flWidth) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t, m_flLateReflections) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t) == 0x10);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixFreeverbDesc_t) == 0x_);
     };
 };

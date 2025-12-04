@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,27 +26,27 @@ namespace source2sdk
         struct ArtyGameObjectInstance_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            CUtlString m_szName; // 0x8            
-            CUtlString m_szGameObject; // 0x10            
-            uint8_t _pad0018[0x4]; // 0x18
-            Vector2D m_vPosition; // 0x1c            
-            float m_flRotation; // 0x24            
-            Vector2D m_vScale; // 0x28            
-            bool m_bFacingLeft; // 0x30            
-            uint8_t _pad0031[0x3]; // 0x31
-            float m_flYawOffset; // 0x34            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_szName; // 0x_            
+            CUtlString m_szGameObject; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector2D m_vPosition; // 0x_            
+            float m_flRotation; // 0x_            
+            Vector2D m_vScale; // 0x_            
+            bool m_bFacingLeft; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flYawOffset; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_szName) == 0x8);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_szGameObject) == 0x10);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_vPosition) == 0x1c);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_flRotation) == 0x24);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_vScale) == 0x28);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_bFacingLeft) == 0x30);
-        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_flYawOffset) == 0x34);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_szName) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_szGameObject) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_vPosition) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_flRotation) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_vScale) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_bFacingLeft) == 0x_);
+        static_assert(offsetof(source2sdk::client::ArtyGameObjectInstance_t, m_flYawOffset) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::ArtyGameObjectInstance_t) == 0x38);
+        static_assert(sizeof(source2sdk::client::ArtyGameObjectInstance_t) == 0x_);
     };
 };

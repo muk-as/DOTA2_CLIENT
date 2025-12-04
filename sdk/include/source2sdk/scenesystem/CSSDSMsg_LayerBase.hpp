@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace scenesystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,20 +25,20 @@ namespace source2sdk
         class CSSDSMsg_LayerBase
         {
         public:
-            source2sdk::scenesystem::SceneViewId_t m_viewId; // 0x0            
-            CUtlString m_ViewName; // 0x10            
-            std::uint64_t m_nLayerId; // 0x18            
-            CUtlString m_LayerName; // 0x20            
-            CUtlString m_displayText; // 0x28            
+            source2sdk::scenesystem::SceneViewId_t m_viewId; // 0x_            
+            CUtlString m_ViewName; // 0x_            
+            std::uint64_t m_nLayerId; // 0x_            
+            CUtlString m_LayerName; // 0x_            
+            CUtlString m_displayText; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_viewId) == 0x0);
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_ViewName) == 0x10);
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_nLayerId) == 0x18);
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_LayerName) == 0x20);
-        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_displayText) == 0x28);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_viewId) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_ViewName) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_nLayerId) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_LayerName) == 0x_);
+        static_assert(offsetof(source2sdk::scenesystem::CSSDSMsg_LayerBase, m_displayText) == 0x_);
         
-        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_LayerBase) == 0x30);
+        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_LayerBase) == 0x_);
     };
 };

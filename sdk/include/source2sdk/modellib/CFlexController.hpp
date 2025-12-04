@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,18 +24,18 @@ namespace source2sdk
         class CFlexController
         {
         public:
-            CUtlString m_szName; // 0x0            
-            CUtlString m_szType; // 0x8            
-            float min; // 0x10            
-            float max; // 0x14            
+            CUtlString m_szName; // 0x_            
+            CUtlString m_szType; // 0x_            
+            float min; // 0x_            
+            float max; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CFlexController, m_szName) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CFlexController, m_szType) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CFlexController, min) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CFlexController, max) == 0x14);
+        static_assert(offsetof(source2sdk::modellib::CFlexController, m_szName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CFlexController, m_szType) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CFlexController, min) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CFlexController, max) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CFlexController) == 0x18);
+        static_assert(sizeof(source2sdk::modellib::CFlexController) == 0x_);
     };
 };

@@ -23,9 +23,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x150
+        // Size: 0x_
         // Has VTable
         // MClassHasEntityLimitedDataDesc
         // 
@@ -47,68 +47,68 @@ namespace source2sdk
         class CEnvWindShared
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x8            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_iWindSeed; // 0xc            
+            std::uint32_t m_iWindSeed; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iMinWind; // 0x10            
+            std::uint16_t m_iMinWind; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iMaxWind; // 0x12            
+            std::uint16_t m_iMaxWind; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_windRadius; // 0x14            
+            std::int32_t m_windRadius; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iMinGust; // 0x18            
+            std::uint16_t m_iMinGust; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iMaxGust; // 0x1a            
+            std::uint16_t m_iMaxGust; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinGustDelay; // 0x1c            
+            float m_flMinGustDelay; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxGustDelay; // 0x20            
+            float m_flMaxGustDelay; // 0x_            
             // metadata: MNetworkEnable
-            float m_flGustDuration; // 0x24            
+            float m_flGustDuration; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iGustDirChange; // 0x28            
+            std::uint16_t m_iGustDirChange; // 0x_            
             // metadata: MNetworkEnable
-            std::uint16_t m_iInitialWindDir; // 0x2a            
+            std::uint16_t m_iInitialWindDir; // 0x_            
             // metadata: MNetworkEnable
-            float m_flInitialWindSpeed; // 0x2c            
+            float m_flInitialWindSpeed; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_location; // 0x30            
-            uint8_t _pad003c[0x4]; // 0x3c
-            source2sdk::entity2::CEntityIOOutput m_OnGustStart; // 0x40            
-            source2sdk::entity2::CEntityIOOutput m_OnGustEnd; // 0x68            
+            Vector m_location; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_OnGustStart; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnGustEnd; // 0x_            
             // m_hEntOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEntOwner;
-            char m_hEntOwner[0x4]; // 0x90            
-            uint8_t _pad0094[0xbc];
+            char m_hEntOwner[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // float m_Sim.m_fWindDir; // 0x94
-            // float m_Sim.m_flWindSpeed; // 0x98
+            // float m_Sim.m_fWindDir; // 0x_
+            // float m_Sim.m_flWindSpeed; // 0x_
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flStartTime) == 0x8);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iWindSeed) == 0xc);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMinWind) == 0x10);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMaxWind) == 0x12);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_windRadius) == 0x14);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMinGust) == 0x18);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMaxGust) == 0x1a);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flMinGustDelay) == 0x1c);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flMaxGustDelay) == 0x20);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flGustDuration) == 0x24);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iGustDirChange) == 0x28);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iInitialWindDir) == 0x2a);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flInitialWindSpeed) == 0x2c);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_location) == 0x30);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_OnGustStart) == 0x40);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_OnGustEnd) == 0x68);
-        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_hEntOwner) == 0x90);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iWindSeed) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMinWind) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMaxWind) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_windRadius) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMinGust) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iMaxGust) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flMinGustDelay) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flMaxGustDelay) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flGustDuration) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iGustDirChange) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_iInitialWindDir) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_flInitialWindSpeed) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_location) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_OnGustStart) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_OnGustEnd) == 0x_);
+        static_assert(offsetof(source2sdk::server::CEnvWindShared, m_hEntOwner) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CEnvWindShared) == 0x150);
+        static_assert(sizeof(source2sdk::server::CEnvWindShared) == 0x_);
     };
 };

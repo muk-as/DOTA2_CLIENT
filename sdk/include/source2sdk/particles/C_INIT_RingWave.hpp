@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,33 +30,33 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "input transform"
-            source2sdk::particleslib::CParticleTransformInput m_TransformInput; // 0x1c8            
+            source2sdk::particleslib::CParticleTransformInput m_TransformInput; // 0x_            
             // metadata: MPropertyFriendlyName "even distribution count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flParticlesPerOrbit; // 0x230            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flParticlesPerOrbit; // 0x_            
             // metadata: MPropertyFriendlyName "initial radius"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInitialRadius; // 0x390            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialRadius; // 0x_            
             // metadata: MPropertyFriendlyName "thickness"
-            source2sdk::particleslib::CPerParticleFloatInput m_flThickness; // 0x4f0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flThickness; // 0x_            
             // metadata: MPropertyFriendlyName "min initial speed"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMin; // 0x650            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "max initial speed"
-            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMax; // 0x7b0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "roll"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRoll; // 0x910            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRoll; // 0x_            
             // metadata: MPropertyFriendlyName "pitch"
-            source2sdk::particleslib::CPerParticleFloatInput m_flPitch; // 0xa70            
+            source2sdk::particleslib::CPerParticleFloatInput m_flPitch; // 0x_            
             // metadata: MPropertyFriendlyName "yaw"
-            source2sdk::particleslib::CPerParticleFloatInput m_flYaw; // 0xbd0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flYaw; // 0x_            
             // metadata: MPropertyFriendlyName "even distribution"
-            bool m_bEvenDistribution; // 0xd30            
+            bool m_bEvenDistribution; // 0x_            
             // metadata: MPropertyFriendlyName "XY velocity only"
-            bool m_bXYVelocityOnly; // 0xd31            
-            uint8_t _pad0d32[0x6];
+            bool m_bXYVelocityOnly; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_RingWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_RingWave) == 0xd38);
+        static_assert(sizeof(source2sdk::particles::C_INIT_RingWave) == 0x_);
     };
 };

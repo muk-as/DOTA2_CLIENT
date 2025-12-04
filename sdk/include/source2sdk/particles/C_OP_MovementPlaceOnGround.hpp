@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x3e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,48 +30,48 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "offset"
-            source2sdk::particleslib::CPerParticleFloatInput m_flOffset; // 0x1c0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flOffset; // 0x_            
             // metadata: MPropertyFriendlyName "max trace length"
-            float m_flMaxTraceLength; // 0x320            
+            float m_flMaxTraceLength; // 0x_            
             // metadata: MPropertyFriendlyName "CP movement tolerance"
-            float m_flTolerance; // 0x324            
+            float m_flTolerance; // 0x_            
             // metadata: MPropertyFriendlyName "trace offset"
-            float m_flTraceOffset; // 0x328            
+            float m_flTraceOffset; // 0x_            
             // metadata: MPropertyFriendlyName "interpolation rate"
-            float m_flLerpRate; // 0x32c            
+            float m_flLerpRate; // 0x_            
             // metadata: MPropertyFriendlyName "collision group"
-            char m_CollisionGroupName[128]; // 0x330            
+            char m_CollisionGroupName[128]; // 0x_            
             // metadata: MPropertyFriendlyName "Trace Set"
-            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x3b0            
+            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x_            
             // metadata: MPropertyFriendlyName "reference CP 1"
-            std::int32_t m_nRefCP1; // 0x3b4            
+            std::int32_t m_nRefCP1; // 0x_            
             // metadata: MPropertyFriendlyName "reference CP 2"
-            std::int32_t m_nRefCP2; // 0x3b8            
+            std::int32_t m_nRefCP2; // 0x_            
             // metadata: MPropertyFriendlyName "interploation distance tolerance cp"
-            std::int32_t m_nLerpCP; // 0x3bc            
-            uint8_t _pad03c0[0x8]; // 0x3c0
+            std::int32_t m_nLerpCP; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "No Collision Behavior"
-            source2sdk::particles::ParticleTraceMissBehavior_t m_nTraceMissBehavior; // 0x3c8            
+            source2sdk::particles::ParticleTraceMissBehavior_t m_nTraceMissBehavior; // 0x_            
             // metadata: MPropertyFriendlyName "include default contents trace hulls"
-            bool m_bIncludeShotHull; // 0x3cc            
+            bool m_bIncludeShotHull; // 0x_            
             // metadata: MPropertyFriendlyName "include water"
-            bool m_bIncludeWater; // 0x3cd            
-            uint8_t _pad03ce[0x2]; // 0x3ce
+            bool m_bIncludeWater; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "set normal"
-            bool m_bSetNormal; // 0x3d0            
+            bool m_bSetNormal; // 0x_            
             // metadata: MPropertyFriendlyName "treat offset as scalar of particle radius"
-            bool m_bScaleOffset; // 0x3d1            
-            uint8_t _pad03d2[0x2]; // 0x3d2
+            bool m_bScaleOffset; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "preserve initial Z-offset relative to cp"
-            std::int32_t m_nPreserveOffsetCP; // 0x3d4            
+            std::int32_t m_nPreserveOffsetCP; // 0x_            
             // metadata: MPropertyFriendlyName "CP Entity to Ignore for Collisions"
-            std::int32_t m_nIgnoreCP; // 0x3d8            
-            uint8_t _pad03dc[0x4];
+            std::int32_t m_nIgnoreCP; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_MovementPlaceOnGround because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_MovementPlaceOnGround) == 0x3e0);
+        static_assert(sizeof(source2sdk::particles::C_OP_MovementPlaceOnGround) == 0x_);
     };
 };

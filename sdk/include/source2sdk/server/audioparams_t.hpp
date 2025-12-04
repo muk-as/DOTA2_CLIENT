@@ -14,9 +14,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // 
@@ -29,28 +29,28 @@ namespace source2sdk
         struct audioparams_t
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector localSound[8]; // 0x8            
+            Vector localSound[8]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t soundscapeIndex; // 0x68            
+            std::int32_t soundscapeIndex; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t localBits; // 0x6c            
-            uint8_t _pad006d[0x3]; // 0x6d
+            std::uint8_t localBits; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t soundscapeEntityListIndex; // 0x70            
+            std::int32_t soundscapeEntityListIndex; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t soundEventHash; // 0x74            
+            std::uint32_t soundEventHash; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::audioparams_t, localSound) == 0x8);
-        static_assert(offsetof(source2sdk::server::audioparams_t, soundscapeIndex) == 0x68);
-        static_assert(offsetof(source2sdk::server::audioparams_t, localBits) == 0x6c);
-        static_assert(offsetof(source2sdk::server::audioparams_t, soundscapeEntityListIndex) == 0x70);
-        static_assert(offsetof(source2sdk::server::audioparams_t, soundEventHash) == 0x74);
+        static_assert(offsetof(source2sdk::server::audioparams_t, localSound) == 0x_);
+        static_assert(offsetof(source2sdk::server::audioparams_t, soundscapeIndex) == 0x_);
+        static_assert(offsetof(source2sdk::server::audioparams_t, localBits) == 0x_);
+        static_assert(offsetof(source2sdk::server::audioparams_t, soundscapeEntityListIndex) == 0x_);
+        static_assert(offsetof(source2sdk::server::audioparams_t, soundEventHash) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::audioparams_t) == 0x78);
+        static_assert(sizeof(source2sdk::server::audioparams_t) == 0x_);
     };
 };

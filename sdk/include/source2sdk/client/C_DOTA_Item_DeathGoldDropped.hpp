@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,11 +30,11 @@ namespace source2sdk
         class C_DOTA_Item_DeathGoldDropped : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad09c0[0xa0];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_DeathGoldDropped) == 0xa60);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_DeathGoldDropped) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,22 +27,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Unique Identifier for the Quality"
-            source2sdk::client::FantasyGemQuality_t m_unQualityID; // 0x0            
-            uint8_t _pad0001[0x7]; // 0x1
+            source2sdk::client::FantasyGemQuality_t m_unQualityID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Localization token for the name of the quality"
-            CUtlString m_sLocName; // 0x8            
+            CUtlString m_sLocName; // 0x_            
             // metadata: MPropertyDescription "How much does this quality improve the stat?"
-            std::int32_t m_nBonus; // 0x10            
+            std::int32_t m_nBonus; // 0x_            
             // metadata: MPropertyDescription "How likely are we to roll this quality?"
-            std::int32_t m_nRollWeight; // 0x14            
+            std::int32_t m_nRollWeight; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_unQualityID) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_sLocName) == 0x8);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_nBonus) == 0x10);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_nRollWeight) == 0x14);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_unQualityID) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_sLocName) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_nBonus) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingQualityData_t, m_nRollWeight) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftingQualityData_t) == 0x18);
+        static_assert(sizeof(source2sdk::client::FantasyCraftingQualityData_t) == 0x_);
     };
 };

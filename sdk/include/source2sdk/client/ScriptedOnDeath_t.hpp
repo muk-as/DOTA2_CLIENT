@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ScriptedOnDeath_t : std::uint32_t
         {
             SS_ONDEATH_NOT_APPLICABLE = 0xffffffff,

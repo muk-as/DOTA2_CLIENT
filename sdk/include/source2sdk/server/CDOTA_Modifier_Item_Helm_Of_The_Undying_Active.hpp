@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Helm_Of_The_Undying_Active : public source2sdk::client::CDOTA_Buff
@@ -32,16 +32,16 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x1878            
-            bool m_bPassive; // 0x187c            
-            uint8_t _pad187d[0x3]; // 0x187d
-            float bonus_kill_duration; // 0x1880            
-            float kill_radius; // 0x1884            
+            char m_hTarget[0x_]; // 0x_            
+            bool m_bPassive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float bonus_kill_duration; // 0x_            
+            float kill_radius; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Helm_Of_The_Undying_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Helm_Of_The_Undying_Active) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Helm_Of_The_Undying_Active) == 0x_);
     };
 };

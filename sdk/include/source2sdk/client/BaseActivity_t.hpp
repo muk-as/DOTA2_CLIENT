@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 1024
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class BaseActivity_t : std::uint32_t
         {
             ACT_RESET = 0x0,

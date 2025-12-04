@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETournamentNodeState : std::uint32_t
         {
             k_ETournamentNodeState_Unknown = 0x0,

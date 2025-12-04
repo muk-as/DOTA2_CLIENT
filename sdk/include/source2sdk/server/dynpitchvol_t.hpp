@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x64
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::dynpitchvol_t) == 0x64);
+        static_assert(sizeof(source2sdk::server::dynpitchvol_t) == 0x_);
     };
 };

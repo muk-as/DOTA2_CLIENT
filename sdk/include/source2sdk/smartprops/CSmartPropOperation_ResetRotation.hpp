@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x150
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,18 +30,18 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "If enabled, the rotation will be reset to a world space instead of object space, meaning any rotation applied to the object in Hammer will be ignored."
-            CSmartPropAttributeBool m_bIgnoreObjectRotation; // 0x50            
+            CSmartPropAttributeBool m_bIgnoreObjectRotation; // 0x_            
             // metadata: MPropertyDescription "Should the pitch (rotation around left vector) value be reset."
-            CSmartPropAttributeBool m_bResetPitch; // 0x90            
+            CSmartPropAttributeBool m_bResetPitch; // 0x_            
             // metadata: MPropertyDescription "Should the yaw (roation around the up vector) value be reset."
-            CSmartPropAttributeBool m_bResetYaw; // 0xd0            
+            CSmartPropAttributeBool m_bResetYaw; // 0x_            
             // metadata: MPropertyDescription "Should the roll (rotation around forward vector) value be reset."
-            CSmartPropAttributeBool m_bResetRoll; // 0x110            
+            CSmartPropAttributeBool m_bResetRoll; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_ResetRotation because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_ResetRotation) == 0x150);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_ResetRotation) == 0x_);
     };
 };

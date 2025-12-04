@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // 
@@ -28,23 +28,23 @@ namespace source2sdk
         class C_GameRules
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x8            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTotalPausedTicks; // 0x30            
+            std::int32_t m_nTotalPausedTicks; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nPauseStartTick; // 0x34            
+            std::int32_t m_nPauseStartTick; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGamePaused; // 0x38            
-            uint8_t _pad0039[0x7];
+            bool m_bGamePaused; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::C_GameRules, __m_pChainEntity) == 0x8);
-        static_assert(offsetof(source2sdk::client::C_GameRules, m_nTotalPausedTicks) == 0x30);
-        static_assert(offsetof(source2sdk::client::C_GameRules, m_nPauseStartTick) == 0x34);
-        static_assert(offsetof(source2sdk::client::C_GameRules, m_bGamePaused) == 0x38);
+        static_assert(offsetof(source2sdk::client::C_GameRules, __m_pChainEntity) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_GameRules, m_nTotalPausedTicks) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_GameRules, m_nPauseStartTick) == 0x_);
+        static_assert(offsetof(source2sdk::client::C_GameRules, m_bGamePaused) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::C_GameRules) == 0x40);
+        static_assert(sizeof(source2sdk::client::C_GameRules) == 0x_);
     };
 };

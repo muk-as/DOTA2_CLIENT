@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,17 +27,17 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "rotate normals"
-            bool m_bTransformNormals; // 0x1c0            
+            bool m_bTransformNormals; // 0x_            
             // metadata: MPropertyFriendlyName "scale radii"
-            bool m_bTransformRadii; // 0x1c1            
-            uint8_t _pad01c2[0x2]; // 0x1c2
+            bool m_bTransformRadii; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c4            
+            std::int32_t m_nControlPointNumber; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SnapshotRigidSkinToBones because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SnapshotRigidSkinToBones) == 0x1c8);
+        static_assert(sizeof(source2sdk::particles::C_OP_SnapshotRigidSkinToBones) == 0x_);
     };
 };

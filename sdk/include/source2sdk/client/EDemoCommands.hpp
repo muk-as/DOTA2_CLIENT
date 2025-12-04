@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 22
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDemoCommands : std::uint32_t
         {
             DEM_Error = 0xffffffff,

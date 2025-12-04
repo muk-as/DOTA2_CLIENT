@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CFuncRotator_Rotate_t : std::uint32_t
         {
             ROTATE_LOOP = 0x0,

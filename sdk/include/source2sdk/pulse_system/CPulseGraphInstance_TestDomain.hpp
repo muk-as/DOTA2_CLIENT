@@ -15,9 +15,9 @@ namespace source2sdk
     namespace pulse_system
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x140
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MPulseInstanceDomainInfo
@@ -31,25 +31,25 @@ namespace source2sdk
         class CPulseGraphInstance_TestDomain : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {
         public:
-            uint8_t _pad0108[0x8]; // 0x108
-            bool m_bIsRunningUnitTests; // 0x110            
-            bool m_bExplicitTimeStepping; // 0x111            
-            bool m_bExpectingToDestroyWithYieldedCursors; // 0x112            
-            bool m_bQuietTracepoints; // 0x113            
-            bool m_bExpectingCursorTerminatedDueToMaxInstructions; // 0x114            
-            uint8_t _pad0115[0x3]; // 0x115
-            std::int32_t m_nCursorsTerminatedDueToMaxInstructions; // 0x118            
-            std::int32_t m_nNextValidateIndex; // 0x11c            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bIsRunningUnitTests; // 0x_            
+            bool m_bExplicitTimeStepping; // 0x_            
+            bool m_bExpectingToDestroyWithYieldedCursors; // 0x_            
+            bool m_bQuietTracepoints; // 0x_            
+            bool m_bExpectingCursorTerminatedDueToMaxInstructions; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nCursorsTerminatedDueToMaxInstructions; // 0x_            
+            std::int32_t m_nNextValidateIndex; // 0x_            
             // m_Tracepoints has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_Tracepoints;
-            char m_Tracepoints[0x18]; // 0x120            
-            bool m_bTestYesOrNoPath; // 0x138            
-            uint8_t _pad0139[0x7];
+            char m_Tracepoints[0x_]; // 0x_            
+            bool m_bTestYesOrNoPath; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseGraphInstance_TestDomain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain) == 0x140);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseGraphInstance_TestDomain) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class AmmoFlags_t : std::uint32_t
         {
             AMMO_FORCE_DROP_IF_CARRIED = 0x1,

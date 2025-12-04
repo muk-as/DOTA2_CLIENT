@@ -14,26 +14,26 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CFloatExponentialMovingAverage
         {
         public:
-            uint8_t _pad0000[0x14];
+            uint8_t _pad_[0x_];
             // Datamap fields:
-            // int32_t m_nSampleCount; // 0x4
-            // int32_t m_nMaxSampleCount; // 0x0
-            // float m_previousSample; // 0x8
-            // float m_average; // 0xc
-            // float m_averageDelta; // 0x10
+            // int32_t m_nSampleCount; // 0x_
+            // int32_t m_nMaxSampleCount; // 0x_
+            // float m_previousSample; // 0x_
+            // float m_average; // 0x_
+            // float m_averageDelta; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CFloatExponentialMovingAverage) == 0x14);
+        static_assert(sizeof(source2sdk::client::CFloatExponentialMovingAverage) == 0x_);
     };
 };

@@ -19,10 +19,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x98
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,39 +31,39 @@ namespace source2sdk
         class CMorphSetData
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
-            std::int32_t m_nWidth; // 0x10            
-            std::int32_t m_nHeight; // 0x14            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nWidth; // 0x_            
+            std::int32_t m_nHeight; // 0x_            
             // m_bundleTypes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::MorphBundleType_t> m_bundleTypes;
-            char m_bundleTypes[0x18]; // 0x18            
+            char m_bundleTypes[0x_]; // 0x_            
             // m_morphDatas has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CMorphData> m_morphDatas;
-            char m_morphDatas[0x18]; // 0x30            
+            char m_morphDatas[0x_]; // 0x_            
             // m_pTextureAtlas has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_pTextureAtlas;
-            char m_pTextureAtlas[0x8]; // 0x48            
+            char m_pTextureAtlas[0x_]; // 0x_            
             // m_FlexDesc has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CFlexDesc> m_FlexDesc;
-            char m_FlexDesc[0x18]; // 0x50            
+            char m_FlexDesc[0x_]; // 0x_            
             // m_FlexControllers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CFlexController> m_FlexControllers;
-            char m_FlexControllers[0x18]; // 0x68            
+            char m_FlexControllers[0x_]; // 0x_            
             // m_FlexRules has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CFlexRule> m_FlexRules;
-            char m_FlexRules[0x18]; // 0x80            
+            char m_FlexRules[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_nWidth) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_nHeight) == 0x14);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_bundleTypes) == 0x18);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_morphDatas) == 0x30);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_pTextureAtlas) == 0x48);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexDesc) == 0x50);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexControllers) == 0x68);
-        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexRules) == 0x80);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_nWidth) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_nHeight) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_bundleTypes) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_morphDatas) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_pTextureAtlas) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexDesc) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexControllers) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphSetData, m_FlexRules) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CMorphSetData) == 0x98);
+        static_assert(sizeof(source2sdk::modellib::CMorphSetData) == 0x_);
     };
 };

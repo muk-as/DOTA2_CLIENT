@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace worldrenderer
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,18 +24,18 @@ namespace source2sdk
         struct AggregateLODSetup_t
         {
         public:
-            Vector m_vLODOrigin; // 0x0            
-            float m_fMaxObjectScale; // 0xc            
+            Vector m_vLODOrigin; // 0x_            
+            float m_fMaxObjectScale; // 0x_            
             // m_fSwitchDistances has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_fSwitchDistances;
-            char m_fSwitchDistances[0x18]; // 0x10            
+            char m_fSwitchDistances[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_vLODOrigin) == 0x0);
-        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_fMaxObjectScale) == 0xc);
-        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_fSwitchDistances) == 0x10);
+        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_vLODOrigin) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_fMaxObjectScale) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::AggregateLODSetup_t, m_fSwitchDistances) == 0x_);
         
-        static_assert(sizeof(source2sdk::worldrenderer::AggregateLODSetup_t) == 0x28);
+        static_assert(sizeof(source2sdk::worldrenderer::AggregateLODSetup_t) == 0x_);
     };
 };

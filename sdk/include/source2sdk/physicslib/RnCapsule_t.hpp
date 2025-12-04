@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct RnCapsule_t
         {
         public:
-            Vector m_vCenter[2]; // 0x0            
-            float m_flRadius; // 0x18            
+            Vector m_vCenter[2]; // 0x_            
+            float m_flRadius; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::RnCapsule_t, m_vCenter) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::RnCapsule_t, m_flRadius) == 0x18);
+        static_assert(offsetof(source2sdk::physicslib::RnCapsule_t, m_vCenter) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnCapsule_t, m_flRadius) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::RnCapsule_t) == 0x1c);
+        static_assert(sizeof(source2sdk::physicslib::RnCapsule_t) == 0x_);
     };
 };

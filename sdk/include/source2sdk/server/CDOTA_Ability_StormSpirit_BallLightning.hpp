@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x610
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,25 +25,25 @@ namespace source2sdk
         class CDOTA_Ability_StormSpirit_BallLightning : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05c0[0x10]; // 0x5c0
-            bool m_bHasAutoRemnantTalent; // 0x5d0            
-            uint8_t _pad05d1[0x3]; // 0x5d1
-            float m_fAutoRemnantInterval; // 0x5d4            
-            std::int32_t ball_lightning_initial_mana_base; // 0x5d8            
-            float ball_lightning_initial_mana_percentage; // 0x5dc            
-            std::int32_t ball_lightning_travel_cost_base; // 0x5e0            
-            float ball_lightning_travel_cost_percent; // 0x5e4            
-            std::int32_t m_iProjectileID; // 0x5e8            
-            Vector m_vStartLocation; // 0x5ec            
-            Vector m_vProjectileLocation; // 0x5f8            
-            float m_fDistanceAccumulator; // 0x604            
-            float m_fTalentDistanceAccumulator; // 0x608            
-            std::int32_t scepter_remnant_interval; // 0x60c            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bHasAutoRemnantTalent; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fAutoRemnantInterval; // 0x_            
+            std::int32_t ball_lightning_initial_mana_base; // 0x_            
+            float ball_lightning_initial_mana_percentage; // 0x_            
+            std::int32_t ball_lightning_travel_cost_base; // 0x_            
+            float ball_lightning_travel_cost_percent; // 0x_            
+            std::int32_t m_iProjectileID; // 0x_            
+            Vector m_vStartLocation; // 0x_            
+            Vector m_vProjectileLocation; // 0x_            
+            float m_fDistanceAccumulator; // 0x_            
+            float m_fTalentDistanceAccumulator; // 0x_            
+            std::int32_t scepter_remnant_interval; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_StormSpirit_BallLightning because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_StormSpirit_BallLightning) == 0x610);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_StormSpirit_BallLightning) == 0x_);
     };
 };

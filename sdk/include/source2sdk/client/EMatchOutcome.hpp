@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 19
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EMatchOutcome : std::uint32_t
         {
             k_EMatchOutcome_Unknown = 0x0,

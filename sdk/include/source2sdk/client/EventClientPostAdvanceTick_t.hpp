@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct EventClientPostAdvanceTick_t : public source2sdk::client::EventPostAdvanceTick_t
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::EventClientPostAdvanceTick_t) == 0x40);
+        static_assert(sizeof(source2sdk::client::EventClientPostAdvanceTick_t) == 0x_);
     };
 };

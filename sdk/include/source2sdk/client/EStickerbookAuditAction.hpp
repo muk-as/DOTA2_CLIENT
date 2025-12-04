@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EStickerbookAuditAction : std::uint32_t
         {
             STICKERBOOK_AUDIT_CREATE_PAGE = 0x0,

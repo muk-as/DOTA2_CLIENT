@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -28,19 +28,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Tier of the Reward"
-            source2sdk::client::CMsgBattleReport_HighlightTier m_eTier; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
+            source2sdk::client::CMsgBattleReport_HighlightTier m_eTier; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Compare Contexts to Achieve Tier"
             // metadata: MPropertyAutoExpandSelf
             // m_vecCompareContexts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTABattleReportHighlightCompareContext_t> m_vecCompareContexts;
-            char m_vecCompareContexts[0x18]; // 0x8            
+            char m_vecCompareContexts[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTABattleReportHighlightTier_t, m_eTier) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTABattleReportHighlightTier_t, m_vecCompareContexts) == 0x8);
+        static_assert(offsetof(source2sdk::client::CDOTABattleReportHighlightTier_t, m_eTier) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTABattleReportHighlightTier_t, m_vecCompareContexts) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTABattleReportHighlightTier_t) == 0x20);
+        static_assert(sizeof(source2sdk::client::CDOTABattleReportHighlightTier_t) == 0x_);
     };
 };

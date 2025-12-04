@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,19 +25,19 @@ namespace source2sdk
         class CShmupBossBodyPart
         {
         public:
-            CUtlString m_strAttachName; // 0x0            
-            float m_flRadius; // 0x8            
-            std::int32_t m_nHitRegionIndex; // 0xc            
-            std::int32_t m_nDamageMultiplier; // 0x10            
-            uint8_t _pad0014[0x4];
+            CUtlString m_strAttachName; // 0x_            
+            float m_flRadius; // 0x_            
+            std::int32_t m_nHitRegionIndex; // 0x_            
+            std::int32_t m_nDamageMultiplier; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_strAttachName) == 0x0);
-        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_flRadius) == 0x8);
-        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_nHitRegionIndex) == 0xc);
-        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_nDamageMultiplier) == 0x10);
+        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_strAttachName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_flRadius) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_nHitRegionIndex) == 0x_);
+        static_assert(offsetof(source2sdk::client::CShmupBossBodyPart, m_nDamageMultiplier) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CShmupBossBodyPart) == 0x18);
+        static_assert(sizeof(source2sdk::client::CShmupBossBodyPart) == 0x_);
     };
 };

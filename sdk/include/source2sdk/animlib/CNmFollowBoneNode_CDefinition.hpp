@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,16 +27,16 @@ namespace source2sdk
         class CNmFollowBoneNode_CDefinition : public source2sdk::animlib::CNmPassthroughNode_CDefinition
         {
         public:
-            CGlobalSymbol m_bone; // 0x18            
-            CGlobalSymbol m_followTargetBone; // 0x20            
-            std::int16_t m_nEnabledNodeIdx; // 0x28            
-            source2sdk::animlib::NmFollowBoneMode_t m_mode; // 0x2a            
-            uint8_t _pad002b[0x5];
+            CGlobalSymbol m_bone; // 0x_            
+            CGlobalSymbol m_followTargetBone; // 0x_            
+            std::int16_t m_nEnabledNodeIdx; // 0x_            
+            source2sdk::animlib::NmFollowBoneMode_t m_mode; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmFollowBoneNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmFollowBoneNode_CDefinition) == 0x30);
+        static_assert(sizeof(source2sdk::animlib::CNmFollowBoneNode_CDefinition) == 0x_);
     };
 };

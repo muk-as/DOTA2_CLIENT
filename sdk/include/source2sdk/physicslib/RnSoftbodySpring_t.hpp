@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,14 +26,14 @@ namespace source2sdk
         struct RnSoftbodySpring_t
         {
         public:
-            std::uint16_t m_nParticle[2]; // 0x0            
-            float m_flLength; // 0x4            
+            std::uint16_t m_nParticle[2]; // 0x_            
+            float m_flLength; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::RnSoftbodySpring_t, m_nParticle) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::RnSoftbodySpring_t, m_flLength) == 0x4);
+        static_assert(offsetof(source2sdk::physicslib::RnSoftbodySpring_t, m_nParticle) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnSoftbodySpring_t, m_flLength) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::RnSoftbodySpring_t) == 0x8);
+        static_assert(sizeof(source2sdk::physicslib::RnSoftbodySpring_t) == 0x_);
     };
 };

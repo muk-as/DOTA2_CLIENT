@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x810
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsPowerUp_EchoStrike : public source2sdk::client::CSurvivorsPowerUp_AreaAttack_Line
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_EchoStrike) == 0x810);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_EchoStrike) == 0x_);
     };
 };

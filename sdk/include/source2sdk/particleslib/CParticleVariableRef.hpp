@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,15 +26,15 @@ namespace source2sdk
         class CParticleVariableRef
         {
         public:
-            CKV3MemberNameWithStorage m_variableName; // 0x0            
-            source2sdk::pulse_runtime_lib::PulseValueType_t m_variableType; // 0x38            
-            uint8_t _pad003c[0x4];
+            CKV3MemberNameWithStorage m_variableName; // 0x_            
+            source2sdk::pulse_runtime_lib::PulseValueType_t m_variableType; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particleslib::CParticleVariableRef, m_variableName) == 0x0);
-        static_assert(offsetof(source2sdk::particleslib::CParticleVariableRef, m_variableType) == 0x38);
+        static_assert(offsetof(source2sdk::particleslib::CParticleVariableRef, m_variableName) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::CParticleVariableRef, m_variableType) == 0x_);
         
-        static_assert(sizeof(source2sdk::particleslib::CParticleVariableRef) == 0x40);
+        static_assert(sizeof(source2sdk::particleslib::CParticleVariableRef) == 0x_);
     };
 };

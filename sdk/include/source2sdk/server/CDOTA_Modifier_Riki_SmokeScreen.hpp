@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Riki_SmokeScreen : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t miss_rate; // 0x1878            
-            std::int32_t dodge_chance; // 0x187c            
-            std::int32_t block_targeting; // 0x1880            
-            std::int32_t armor_reduction; // 0x1884            
+            std::int32_t miss_rate; // 0x_            
+            std::int32_t dodge_chance; // 0x_            
+            std::int32_t block_targeting; // 0x_            
+            std::int32_t armor_reduction; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Riki_SmokeScreen because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Riki_SmokeScreen) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Riki_SmokeScreen) == 0x_);
     };
 };

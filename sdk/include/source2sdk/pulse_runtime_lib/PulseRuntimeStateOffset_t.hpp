@@ -14,9 +14,9 @@ namespace source2sdk
     namespace pulse_runtime_lib
     {
         // Registered alignment: unknown
-        // Alignment: 0x2
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x2
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MIsBoxedIntegerType
@@ -24,12 +24,12 @@ namespace source2sdk
         struct PulseRuntimeStateOffset_t
         {
         public:
-            std::uint16_t m_Value; // 0x0            
+            std::uint16_t m_Value; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseRuntimeStateOffset_t, m_Value) == 0x0);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseRuntimeStateOffset_t, m_Value) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseRuntimeStateOffset_t) == 0x2);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseRuntimeStateOffset_t) == 0x_);
     };
 };

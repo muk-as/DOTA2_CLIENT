@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PointWorldTextJustifyVertical_t : std::uint32_t
         {
             POINT_WORLD_TEXT_JUSTIFY_VERTICAL_BOTTOM = 0x0,

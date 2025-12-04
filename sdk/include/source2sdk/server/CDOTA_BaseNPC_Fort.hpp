@@ -14,22 +14,22 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1a10
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_Fort : public source2sdk::server::CDOTA_BaseNPC_Building
         {
         public:
-            uint8_t _pad19f8[0x18];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x1a10);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x_);
     };
 };

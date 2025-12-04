@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_LoneDruid_SpiritBear_AttackCheck : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bCanBeResummoned; // 0x1878            
-            bool m_bCanAttack; // 0x1879            
-            uint8_t _pad187a[0x2]; // 0x187a
-            source2sdk::client::ParticleIndex_t m_nFxIndex; // 0x187c            
-            source2sdk::client::ParticleIndex_t m_nStatusFxIndex; // 0x1880            
-            std::int32_t bear_attack_leash_range; // 0x1884            
+            bool m_bCanBeResummoned; // 0x_            
+            bool m_bCanAttack; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_nFxIndex; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nStatusFxIndex; // 0x_            
+            std::int32_t bear_attack_leash_range; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_LoneDruid_SpiritBear_AttackCheck because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_LoneDruid_SpiritBear_AttackCheck) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_LoneDruid_SpiritBear_AttackCheck) == 0x_);
     };
 };

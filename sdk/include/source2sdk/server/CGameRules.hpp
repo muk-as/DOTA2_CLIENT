@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc0
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // 
@@ -28,27 +28,27 @@ namespace source2sdk
         class CGameRules
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x8            
-            char m_szQuestName[128]; // 0x30            
-            std::int32_t m_nQuestPhase; // 0xb0            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
+            char m_szQuestName[128]; // 0x_            
+            std::int32_t m_nQuestPhase; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nTotalPausedTicks; // 0xb4            
+            std::int32_t m_nTotalPausedTicks; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nPauseStartTick; // 0xb8            
+            std::int32_t m_nPauseStartTick; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGamePaused; // 0xbc            
-            uint8_t _pad00bd[0x3];
+            bool m_bGamePaused; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CGameRules, __m_pChainEntity) == 0x8);
-        static_assert(offsetof(source2sdk::server::CGameRules, m_szQuestName) == 0x30);
-        static_assert(offsetof(source2sdk::server::CGameRules, m_nQuestPhase) == 0xb0);
-        static_assert(offsetof(source2sdk::server::CGameRules, m_nTotalPausedTicks) == 0xb4);
-        static_assert(offsetof(source2sdk::server::CGameRules, m_nPauseStartTick) == 0xb8);
-        static_assert(offsetof(source2sdk::server::CGameRules, m_bGamePaused) == 0xbc);
+        static_assert(offsetof(source2sdk::server::CGameRules, __m_pChainEntity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameRules, m_szQuestName) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameRules, m_nQuestPhase) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameRules, m_nTotalPausedTicks) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameRules, m_nPauseStartTick) == 0x_);
+        static_assert(offsetof(source2sdk::server::CGameRules, m_bGamePaused) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CGameRules) == 0xc0);
+        static_assert(sizeof(source2sdk::server::CGameRules) == 0x_);
     };
 };

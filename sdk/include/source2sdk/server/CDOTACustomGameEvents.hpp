@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -25,18 +25,18 @@ namespace source2sdk
         {
         public:
             // Datamap fields:
-            // int32_t InputSetGameWinner; // 0x0
-            // void InputLevelAllHeroesUpOnce; // 0x0
-            // void InputLevelAllHeroesToMax; // 0x0
-            // int32_t InputLevelAllHeroesToLevel; // 0x0
-            // bool InputSetStashPurchasingDisabled; // 0x0
-            // bool InputSetFogOfWarDisabled; // 0x0
-            // bool InputSetUnseenFogOfWarEnabled; // 0x0
+            // int32_t InputSetGameWinner; // 0x_
+            // void InputLevelAllHeroesUpOnce; // 0x_
+            // void InputLevelAllHeroesToMax; // 0x_
+            // int32_t InputLevelAllHeroesToLevel; // 0x_
+            // bool InputSetStashPurchasingDisabled; // 0x_
+            // bool InputSetFogOfWarDisabled; // 0x_
+            // bool InputSetUnseenFogOfWarEnabled; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTACustomGameEvents) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTACustomGameEvents) == 0x_);
     };
 };

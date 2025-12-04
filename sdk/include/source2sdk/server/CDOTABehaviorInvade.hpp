@@ -22,34 +22,34 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x158
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTABehaviorInvade
         {
         public:
-            uint8_t _pad0000[0x68]; // 0x0
-            source2sdk::server::CDOTABehaviorMoveTo m_MoveTo; // 0x68            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CDOTABehaviorMoveTo m_MoveTo; // 0x_            
             // m_goalEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_goalEntity;
-            char m_goalEntity[0x4]; // 0x148            
+            char m_goalEntity[0x_]; // 0x_            
             // m_nextGoalEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_nextGoalEntity;
-            char m_nextGoalEntity[0x4]; // 0x14c            
-            bool m_bReachedFinalGoal; // 0x150            
-            bool m_bRequireReachingEndPath; // 0x151            
-            uint8_t _pad0152[0x6];
+            char m_nextGoalEntity[0x_]; // 0x_            
+            bool m_bReachedFinalGoal; // 0x_            
+            bool m_bRequireReachingEndPath; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_MoveTo) == 0x68);
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_goalEntity) == 0x148);
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_nextGoalEntity) == 0x14c);
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_bReachedFinalGoal) == 0x150);
-        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_bRequireReachingEndPath) == 0x151);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_MoveTo) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_goalEntity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_nextGoalEntity) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_bReachedFinalGoal) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorInvade, m_bRequireReachingEndPath) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::CDOTABehaviorInvade) == 0x158);
+        static_assert(sizeof(source2sdk::server::CDOTABehaviorInvade) == 0x_);
     };
 };

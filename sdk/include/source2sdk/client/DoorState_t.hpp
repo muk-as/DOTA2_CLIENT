@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DoorState_t : std::uint32_t
         {
             DOOR_STATE_CLOSED = 0x0,

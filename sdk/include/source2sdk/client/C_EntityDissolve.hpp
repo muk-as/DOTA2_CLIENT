@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -38,36 +38,36 @@ namespace source2sdk
         class C_EntityDissolve : public source2sdk::client::C_BaseModelEntity
         {
         public:
-            uint8_t _pad0998[0x8]; // 0x998
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x9a0            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeInStart; // 0x9a4            
+            float m_flFadeInStart; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeInLength; // 0x9a8            
+            float m_flFadeInLength; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeOutModelStart; // 0x9ac            
+            float m_flFadeOutModelStart; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeOutModelLength; // 0x9b0            
+            float m_flFadeOutModelLength; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeOutStart; // 0x9b4            
+            float m_flFadeOutStart; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFadeOutLength; // 0x9b8            
-            source2sdk::entity2::GameTime_t m_flNextSparkTime; // 0x9bc            
+            float m_flFadeOutLength; // 0x_            
+            source2sdk::entity2::GameTime_t m_flNextSparkTime; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::EntityDisolveType_t m_nDissolveType; // 0x9c0            
+            source2sdk::client::EntityDisolveType_t m_nDissolveType; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDissolverOrigin; // 0x9c4            
+            Vector m_vDissolverOrigin; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nMagnitude; // 0x9d0            
-            bool m_bCoreExplode; // 0x9d4            
-            bool m_bLinkedToServerEnt; // 0x9d5            
-            uint8_t _pad09d6[0xa];
+            std::uint32_t m_nMagnitude; // 0x_            
+            bool m_bCoreExplode; // 0x_            
+            bool m_bLinkedToServerEnt; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EntityDissolve because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EntityDissolve) == 0x9e0);
+        static_assert(sizeof(source2sdk::client::C_EntityDissolve) == 0x_);
     };
 };

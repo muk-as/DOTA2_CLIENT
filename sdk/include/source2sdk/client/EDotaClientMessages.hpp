@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 120
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDotaClientMessages : std::uint32_t
         {
             DOTA_CM_MapLine = 0x12d,

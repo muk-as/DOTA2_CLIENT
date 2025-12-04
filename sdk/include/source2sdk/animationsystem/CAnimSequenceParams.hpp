@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         class CAnimSequenceParams
         {
         public:
-            float m_flFadeInTime; // 0x0            
-            float m_flFadeOutTime; // 0x4            
+            float m_flFadeInTime; // 0x_            
+            float m_flFadeOutTime; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimSequenceParams, m_flFadeInTime) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimSequenceParams, m_flFadeOutTime) == 0x4);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimSequenceParams, m_flFadeInTime) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimSequenceParams, m_flFadeOutTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimSequenceParams) == 0x8);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimSequenceParams) == 0x_);
     };
 };

@@ -14,27 +14,27 @@ namespace source2sdk
     namespace vphysics2
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct constraint_axislimit_t
         {
         public:
-            float flMinRotation; // 0x0            
-            float flMaxRotation; // 0x4            
-            float flMotorTargetAngSpeed; // 0x8            
-            float flMotorMaxTorque; // 0xc            
+            float flMinRotation; // 0x_            
+            float flMaxRotation; // 0x_            
+            float flMotorTargetAngSpeed; // 0x_            
+            float flMotorMaxTorque; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMinRotation) == 0x0);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMaxRotation) == 0x4);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMotorTargetAngSpeed) == 0x8);
-        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMotorMaxTorque) == 0xc);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMinRotation) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMaxRotation) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMotorTargetAngSpeed) == 0x_);
+        static_assert(offsetof(source2sdk::vphysics2::constraint_axislimit_t, flMotorMaxTorque) == 0x_);
         
-        static_assert(sizeof(source2sdk::vphysics2::constraint_axislimit_t) == 0x10);
+        static_assert(sizeof(source2sdk::vphysics2::constraint_axislimit_t) == 0x_);
     };
 };

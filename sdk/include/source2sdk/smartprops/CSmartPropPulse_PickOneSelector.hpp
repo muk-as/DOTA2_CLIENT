@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x68
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -41,14 +41,14 @@ namespace source2sdk
             // metadata: MPropertyGroupName "Handle Settings"
             // metadata: MPropertyReadonlyExpr
             // metadata: MPropertyDescription "Shape of the configuration handle to display."
-            source2sdk::smartprops::ConfigurationHandleShape_t m_HandleShape; // 0x48            
-            uint8_t _pad004c[0x4]; // 0x4c
-            source2sdk::pulse_runtime_lib::PulseSelectorOutflowList_t m_OutflowList; // 0x50            
+            source2sdk::smartprops::ConfigurationHandleShape_t m_HandleShape; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::pulse_runtime_lib::PulseSelectorOutflowList_t m_OutflowList; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropPulse_PickOneSelector because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_PickOneSelector) == 0x68);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_PickOneSelector) == 0x_);
     };
 };

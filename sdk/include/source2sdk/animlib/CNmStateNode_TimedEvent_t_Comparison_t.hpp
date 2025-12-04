@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CNmStateNode_TimedEvent_t_Comparison_t : std::uint8_t
         {
             LessThanEqual = 0x0,

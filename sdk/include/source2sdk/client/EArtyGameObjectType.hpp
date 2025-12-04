@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EArtyGameObjectType : std::uint8_t
         {
             k_eTypeObject = 0x0,

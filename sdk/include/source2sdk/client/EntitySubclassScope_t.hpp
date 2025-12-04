@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EntitySubclassScope_t : std::uint32_t
         {
             SUBCLASS_SCOPE_NONE = 0xffffffff,

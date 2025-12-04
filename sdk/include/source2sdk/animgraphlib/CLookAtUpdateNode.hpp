@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x160
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         class CLookAtUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            source2sdk::animgraphlib::LookAtOpFixedSettings_t m_opFixedSettings; // 0x70            
-            uint8_t _pad0140[0x8]; // 0x140
-            source2sdk::animgraphlib::AnimVectorSource m_target; // 0x148            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x14c            
-            source2sdk::animgraphlib::CAnimParamHandle m_weightParamIndex; // 0x14e            
-            bool m_bResetChild; // 0x150            
-            bool m_bLockWhenWaning; // 0x151            
-            uint8_t _pad0152[0xe];
+            source2sdk::animgraphlib::LookAtOpFixedSettings_t m_opFixedSettings; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animgraphlib::AnimVectorSource m_target; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x_            
+            source2sdk::animgraphlib::CAnimParamHandle m_weightParamIndex; // 0x_            
+            bool m_bResetChild; // 0x_            
+            bool m_bLockWhenWaning; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CLookAtUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CLookAtUpdateNode) == 0x160);
+        static_assert(sizeof(source2sdk::animgraphlib::CLookAtUpdateNode) == 0x_);
     };
 };

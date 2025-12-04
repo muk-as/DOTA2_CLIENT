@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,15 +25,15 @@ namespace source2sdk
         struct ParamSpanSample_t
         {
         public:
-            CAnimVariant m_value; // 0x0            
-            uint8_t _pad0011[0x3]; // 0x11
-            float m_flCycle; // 0x14            
+            CAnimVariant m_value; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flCycle; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::ParamSpanSample_t, m_value) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::ParamSpanSample_t, m_flCycle) == 0x14);
+        static_assert(offsetof(source2sdk::animgraphlib::ParamSpanSample_t, m_value) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::ParamSpanSample_t, m_flCycle) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::ParamSpanSample_t) == 0x18);
+        static_assert(sizeof(source2sdk::animgraphlib::ParamSpanSample_t) == 0x_);
     };
 };

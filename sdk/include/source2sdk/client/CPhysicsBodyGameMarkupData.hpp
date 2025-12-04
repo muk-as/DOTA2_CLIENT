@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MModelGameData
@@ -29,12 +29,12 @@ namespace source2sdk
             // metadata: MPropertyDescription "Physics Body Data By Bone Name"
             // m_PhysicsBodyMarkupByBoneName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<CUtlString,source2sdk::client::CPhysicsBodyGameMarkup> m_PhysicsBodyMarkupByBoneName;
-            char m_PhysicsBodyMarkupByBoneName[0x28]; // 0x0            
+            char m_PhysicsBodyMarkupByBoneName[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CPhysicsBodyGameMarkupData, m_PhysicsBodyMarkupByBoneName) == 0x0);
+        static_assert(offsetof(source2sdk::client::CPhysicsBodyGameMarkupData, m_PhysicsBodyMarkupByBoneName) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CPhysicsBodyGameMarkupData) == 0x28);
+        static_assert(sizeof(source2sdk::client::CPhysicsBodyGameMarkupData) == 0x_);
     };
 };

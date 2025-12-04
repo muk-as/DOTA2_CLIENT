@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x600
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,28 +30,28 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "num to emit"
             // metadata: MPropertyAttributeRange "1 1000"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nParticlesToEmit; // 0x1c8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nParticlesToEmit; // 0x_            
             // metadata: MPropertyFriendlyName "emission start time"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flStartTime; // 0x328            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flStartTime; // 0x_            
             // metadata: MPropertyFriendlyName "emission scale from parent particle events"
-            float m_flInitFromKilledParentParticles; // 0x488            
+            float m_flInitFromKilledParentParticles; // 0x_            
             // metadata: MPropertyFriendlyName "emission parent particle event type"
             // metadata: MPropertySuppressExpr "m_flInitFromKilledParentParticles == 0"
-            source2sdk::particles::EventTypeSelection_t m_nEventType; // 0x48c            
+            source2sdk::particles::EventTypeSelection_t m_nEventType; // 0x_            
             // metadata: MPropertyFriendlyName "emission scale from parent particle count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flParentParticleScale; // 0x490            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flParentParticleScale; // 0x_            
             // metadata: MPropertyFriendlyName "maximum emission per frame"
-            std::int32_t m_nMaxEmittedPerFrame; // 0x5f0            
+            std::int32_t m_nMaxEmittedPerFrame; // 0x_            
             // metadata: MPropertyFriendlyName "control point with snapshot data"
-            std::int32_t m_nSnapshotControlPoint; // 0x5f4            
+            std::int32_t m_nSnapshotControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "snapshot subset"
             // metadata: MPropertySuppressExpr "m_nSnapshotControlPoint < 0"
-            CUtlString m_strSnapshotSubset; // 0x5f8            
+            CUtlString m_strSnapshotSubset; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_InstantaneousEmitter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_InstantaneousEmitter) == 0x600);
+        static_assert(sizeof(source2sdk::particles::C_OP_InstantaneousEmitter) == 0x_);
     };
 };

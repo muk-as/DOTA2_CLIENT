@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x68
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MNetworkVarNames "uint16_t m_DamageLevelTakenByHitGroup"
@@ -34,27 +34,27 @@ namespace source2sdk
         class CDestructiblePartsSystemComponent
         {
         public:
-            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x0            
-            uint8_t _pad0028[0x20]; // 0x28
+            source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDamageLevelTakenByHitGroupChanged"
             // m_DamageLevelTakenByHitGroup has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<std::uint16_t> m_DamageLevelTakenByHitGroup;
-            char m_DamageLevelTakenByHitGroup[0x18]; // 0x48            
+            char m_DamageLevelTakenByHitGroup[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseModelEntity> m_hOwner;
-            char m_hOwner[0x4]; // 0x60            
+            char m_hOwner[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nLastHitDamageLevel; // 0x64            
+            std::int32_t m_nLastHitDamageLevel; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, __m_pChainEntity) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_DamageLevelTakenByHitGroup) == 0x48);
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_hOwner) == 0x60);
-        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_nLastHitDamageLevel) == 0x64);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, __m_pChainEntity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_DamageLevelTakenByHitGroup) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_hOwner) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDestructiblePartsSystemComponent, m_nLastHitDamageLevel) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDestructiblePartsSystemComponent) == 0x68);
+        static_assert(sizeof(source2sdk::client::CDestructiblePartsSystemComponent) == 0x_);
     };
 };

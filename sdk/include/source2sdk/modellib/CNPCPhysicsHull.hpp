@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -31,40 +31,40 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Name"
             // metadata: MPropertySuppressField
-            CGlobalSymbol m_sName; // 0x0            
+            CGlobalSymbol m_sName; // 0x_            
             // metadata: MPropertyFriendlyName "Type"
-            source2sdk::modellib::NPCPhysicsHullType_t m_eType; // 0x8            
+            source2sdk::modellib::NPCPhysicsHullType_t m_eType; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGroundCapsule && m_eType != eCenteredCapsule"
             // metadata: MPropertyFriendlyName "Height"
-            float m_flCapsuleHeight; // 0xc            
+            float m_flCapsuleHeight; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule"
             // metadata: MPropertyFriendlyName "Radius"
-            float m_flCapsuleRadius; // 0x10            
+            float m_flCapsuleRadius; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGenericCapsule"
             // metadata: MPropertyFriendlyName "Center 1"
-            Vector m_vCapsuleCenter1; // 0x14            
+            Vector m_vCapsuleCenter1; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGenericCapsule"
             // metadata: MPropertyFriendlyName "Center 2"
-            Vector m_vCapsuleCenter2; // 0x20            
+            Vector m_vCapsuleCenter2; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGroundBox"
             // metadata: MPropertyFriendlyName "Height"
-            float m_flGroundBoxHeight; // 0x2c            
+            float m_flGroundBoxHeight; // 0x_            
             // metadata: MPropertySuppressExpr "m_eType != eGroundBox"
             // metadata: MPropertyFriendlyName "Width"
-            float m_flGroundBoxWidth; // 0x30            
-            uint8_t _pad0034[0x4];
+            float m_flGroundBoxWidth; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_sName) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_eType) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flCapsuleHeight) == 0xc);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flCapsuleRadius) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_vCapsuleCenter1) == 0x14);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_vCapsuleCenter2) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flGroundBoxHeight) == 0x2c);
-        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flGroundBoxWidth) == 0x30);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_sName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_eType) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flCapsuleHeight) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flCapsuleRadius) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_vCapsuleCenter1) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_vCapsuleCenter2) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flGroundBoxHeight) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CNPCPhysicsHull, m_flGroundBoxWidth) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CNPCPhysicsHull) == 0x38);
+        static_assert(sizeof(source2sdk::modellib::CNPCPhysicsHull) == 0x_);
     };
 };

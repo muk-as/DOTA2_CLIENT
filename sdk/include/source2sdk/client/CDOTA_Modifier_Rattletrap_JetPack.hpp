@@ -26,37 +26,37 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18f8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rattletrap_JetPack : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t m_nMovementSpeed; // 0x1878            
-            std::int32_t bonus_speed; // 0x187c            
-            float turn_rate; // 0x1880            
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x1884            
-            float tick_interval; // 0x1888            
-            float m_flFacingTarget; // 0x188c            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1890            
-            uint8_t _pad1894[0x4]; // 0x1894
+            std::int32_t m_nMovementSpeed; // 0x_            
+            std::int32_t bonus_speed; // 0x_            
+            float turn_rate; // 0x_            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
+            float tick_interval; // 0x_            
+            float m_flFacingTarget; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_flTurnHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_flTurnHistory;
-            char m_flTurnHistory[0x18]; // 0x1898            
+            char m_flTurnHistory[0x_]; // 0x_            
             // m_vecHeroesHitLastRicochet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecHeroesHitLastRicochet;
-            char m_vecHeroesHitLastRicochet[0x18]; // 0x18b0            
+            char m_vecHeroesHitLastRicochet[0x_]; // 0x_            
             // m_vecHeroesCredited has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecHeroesCredited;
-            char m_vecHeroesCredited[0x18]; // 0x18c8            
+            char m_vecHeroesCredited[0x_]; // 0x_            
             // m_vecHeroesHitCurrentRicochet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecHeroesHitCurrentRicochet;
-            char m_vecHeroesHitCurrentRicochet[0x18]; // 0x18e0            
+            char m_vecHeroesHitCurrentRicochet[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Rattletrap_JetPack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_JetPack) == 0x18f8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_JetPack) == 0x_);
     };
 };

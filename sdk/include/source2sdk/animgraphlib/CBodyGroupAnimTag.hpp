@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x78
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         class CBodyGroupAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
         public:
-            uint8_t _pad0050[0x8]; // 0x50
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Priority"
-            std::int32_t m_nPriority; // 0x58            
-            uint8_t _pad005c[0x4]; // 0x5c
+            std::int32_t m_nPriority; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Body Group Settings"
             // m_bodyGroupSettings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CBodyGroupSetting> m_bodyGroupSettings;
-            char m_bodyGroupSettings[0x18]; // 0x60            
+            char m_bodyGroupSettings[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBodyGroupAnimTag because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CBodyGroupAnimTag) == 0x78);
+        static_assert(sizeof(source2sdk::animgraphlib::CBodyGroupAnimTag) == 0x_);
     };
 };

@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x700
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,28 +27,28 @@ namespace source2sdk
         class CDOTA_Ability_Kez_Echo_Slash : public source2sdk::client::C_DOTA_Ability_Kez_BaseAbility
         {
         public:
-            Vector m_vInitialDirection; // 0x690            
-            Vector m_vStartPos; // 0x69c            
-            uint8_t _pad06a8[0x8]; // 0x6a8
-            CTransform m_InitialTransform; // 0x6b0            
-            float katana_radius; // 0x6d0            
-            float katana_distance; // 0x6d4            
-            float travel_distance; // 0x6d8            
-            std::int32_t katana_strikes; // 0x6dc            
-            float katana_echo_damage; // 0x6e0            
-            float strike_interval; // 0x6e4            
-            float effect_duration; // 0x6e8            
-            std::int32_t m_nStrikesLeft; // 0x6ec            
-            source2sdk::entity2::GameTime_t m_NextStrikeTime; // 0x6f0            
-            bool m_bFlutter; // 0x6f4            
-            uint8_t _pad06f5[0x3]; // 0x6f5
-            source2sdk::client::ParticleIndex_t m_nFXCast; // 0x6f8            
-            uint8_t _pad06fc[0x4];
+            Vector m_vInitialDirection; // 0x_            
+            Vector m_vStartPos; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_InitialTransform; // 0x_            
+            float katana_radius; // 0x_            
+            float katana_distance; // 0x_            
+            float travel_distance; // 0x_            
+            std::int32_t katana_strikes; // 0x_            
+            float katana_echo_damage; // 0x_            
+            float strike_interval; // 0x_            
+            float effect_duration; // 0x_            
+            std::int32_t m_nStrikesLeft; // 0x_            
+            source2sdk::entity2::GameTime_t m_NextStrikeTime; // 0x_            
+            bool m_bFlutter; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::ParticleIndex_t m_nFXCast; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Kez_Echo_Slash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Kez_Echo_Slash) == 0x700);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Kez_Echo_Slash) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class CNmCurrentSyncEventNode_InfoType_t : std::uint8_t
         {
             IndexAndPercentage = 0x0,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,13 +25,13 @@ namespace source2sdk
         struct MaterialParamInt_t : public source2sdk::materialsystem2::MaterialParam_t
         {
         public:
-            std::int32_t m_nValue; // 0x8            
-            uint8_t _pad000c[0x4];
+            std::int32_t m_nValue; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in MaterialParamInt_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::materialsystem2::MaterialParamInt_t) == 0x10);
+        static_assert(sizeof(source2sdk::materialsystem2::MaterialParamInt_t) == 0x_);
     };
 };

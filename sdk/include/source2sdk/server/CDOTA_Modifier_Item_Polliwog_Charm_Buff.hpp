@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Polliwog_Charm_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float regen_boost; // 0x1878            
-            float water_movespeed; // 0x187c            
-            bool m_bInWater; // 0x1880            
-            uint8_t _pad1881[0x3]; // 0x1881
-            float m_fUseSpeed; // 0x1884            
+            float regen_boost; // 0x_            
+            float water_movespeed; // 0x_            
+            bool m_bInWater; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_fUseSpeed; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Polliwog_Charm_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Polliwog_Charm_Buff) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Polliwog_Charm_Buff) == 0x_);
     };
 };

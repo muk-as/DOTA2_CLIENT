@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EDOTADraftTriviaAnswerResult : std::uint32_t
         {
             k_EDOTADraftTriviaAnswerResult_Success = 0x0,

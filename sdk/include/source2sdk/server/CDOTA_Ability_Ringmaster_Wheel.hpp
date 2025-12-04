@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x620
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,20 +33,20 @@ namespace source2sdk
         class CDOTA_Ability_Ringmaster_Wheel : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vStartPos; // 0x5c0            
-            std::int32_t min_range; // 0x5cc            
-            float mesmerize_radius; // 0x5d0            
-            float knockback_radius; // 0x5d4            
-            source2sdk::server::CountdownTimer m_PathTimer; // 0x5d8            
-            uint8_t _pad05f0[0x18]; // 0x5f0
+            Vector m_vStartPos; // 0x_            
+            std::int32_t min_range; // 0x_            
+            float mesmerize_radius; // 0x_            
+            float knockback_radius; // 0x_            
+            source2sdk::server::CountdownTimer m_PathTimer; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hPushedEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hPushedEntities;
-            char m_hPushedEntities[0x18]; // 0x608            
+            char m_hPushedEntities[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Ringmaster_Wheel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_Wheel) == 0x620);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_Wheel) == 0x_);
     };
 };

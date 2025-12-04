@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Harpoon_Pull : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vDirection; // 0x1878            
-            float m_flEndTime; // 0x1884            
-            float m_flCurTime; // 0x1888            
-            float m_flDistance; // 0x188c            
+            Vector m_vDirection; // 0x_            
+            float m_flEndTime; // 0x_            
+            float m_flCurTime; // 0x_            
+            float m_flDistance; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Harpoon_Pull because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Harpoon_Pull) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Harpoon_Pull) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x88
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,12 +29,12 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Default Value"
-            CGlobalSymbol m_defaultValue; // 0x80            
+            CGlobalSymbol m_defaultValue; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSymbolAnimParameter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CSymbolAnimParameter) == 0x88);
+        static_assert(sizeof(source2sdk::animgraphlib::CSymbolAnimParameter) == 0x_);
     };
 };

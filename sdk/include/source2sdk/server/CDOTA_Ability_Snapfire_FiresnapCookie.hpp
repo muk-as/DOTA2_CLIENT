@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,17 +34,17 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5c0            
-            uint8_t _pad05c4[0x14]; // 0x5c4
-            std::int32_t projectile_speed; // 0x5d8            
-            float pre_hop_duration; // 0x5dc            
-            float cast_on_ally_gesture_time; // 0x5e0            
-            uint8_t _pad05e4[0x4];
+            char m_hTarget[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t projectile_speed; // 0x_            
+            float pre_hop_duration; // 0x_            
+            float cast_on_ally_gesture_time; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Snapfire_FiresnapCookie because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Snapfire_FiresnapCookie) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Snapfire_FiresnapCookie) == 0x_);
     };
 };

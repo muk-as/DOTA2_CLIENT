@@ -15,21 +15,21 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CRandStopwatch : public source2sdk::client::CStopwatchBase
         {
         public:
-            float m_flMinInterval; // 0xc            
-            float m_flMaxInterval; // 0x10            
+            float m_flMinInterval; // 0x_            
+            float m_flMaxInterval; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CRandStopwatch because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CRandStopwatch) == 0x14);
+        static_assert(sizeof(source2sdk::client::CRandStopwatch) == 0x_);
     };
 };

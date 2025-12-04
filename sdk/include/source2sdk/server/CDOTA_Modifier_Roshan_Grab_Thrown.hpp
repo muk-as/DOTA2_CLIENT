@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18d0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Roshan_Grab_Thrown : public source2sdk::server::CDOTA_Modifier_Knockback
         {
         public:
-            float m_flDamage; // 0x18b0            
-            QAngle m_vStartAngle; // 0x18b4            
-            QAngle m_vEndAngle; // 0x18c0            
-            float m_flAngleAnimDuration; // 0x18cc            
+            float m_flDamage; // 0x_            
+            QAngle m_vStartAngle; // 0x_            
+            QAngle m_vEndAngle; // 0x_            
+            float m_flAngleAnimDuration; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Roshan_Grab_Thrown because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Roshan_Grab_Thrown) == 0x18d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Roshan_Grab_Thrown) == 0x_);
     };
 };

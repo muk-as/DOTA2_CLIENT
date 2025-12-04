@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x1
-        // Alignment: 0x1
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x3
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,8 +26,8 @@ namespace source2sdk
         class CTransitionUpdateData
         {
         public:
-            std::uint8_t m_srcStateIndex; // 0x0            
-            std::uint8_t m_destStateIndex; // 0x1            
+            std::uint8_t m_srcStateIndex; // 0x_            
+            std::uint8_t m_destStateIndex; // 0x_            
             // start of bitfield block
             uint8_t m_nHandshakeMaskToDisableFirst: 7;
             uint8_t m_bDisabled: 1;
@@ -35,11 +35,11 @@ namespace source2sdk
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CTransitionUpdateData, m_srcStateIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CTransitionUpdateData, m_destStateIndex) == 0x1);
+        static_assert(offsetof(source2sdk::animgraphlib::CTransitionUpdateData, m_srcStateIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CTransitionUpdateData, m_destStateIndex) == 0x_);
         // Cannot assert offset of bitfield CTransitionUpdateData::m_nHandshakeMaskToDisableFirst
         // Cannot assert offset of bitfield CTransitionUpdateData::m_bDisabled
         
-        static_assert(sizeof(source2sdk::animgraphlib::CTransitionUpdateData) == 0x3);
+        static_assert(sizeof(source2sdk::animgraphlib::CTransitionUpdateData) == 0x_);
     };
 };

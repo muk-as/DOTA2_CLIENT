@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DestructiblePartDestructionDeathBehavior_t : std::uint32_t
         {
             // MPropertyDescription "Does not kill the entity when the part is destroyed"

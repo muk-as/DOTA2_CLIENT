@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,15 +26,15 @@ namespace source2sdk
         class FollowAttachmentData
         {
         public:
-            std::int32_t m_boneIndex; // 0x0            
-            source2sdk::modellib::AttachmentHandle_t m_attachmentHandle; // 0x4            
-            uint8_t _pad0005[0x3];
+            std::int32_t m_boneIndex; // 0x_            
+            source2sdk::modellib::AttachmentHandle_t m_attachmentHandle; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::FollowAttachmentData, m_boneIndex) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::FollowAttachmentData, m_attachmentHandle) == 0x4);
+        static_assert(offsetof(source2sdk::animationsystem::FollowAttachmentData, m_boneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::FollowAttachmentData, m_attachmentHandle) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::FollowAttachmentData) == 0x8);
+        static_assert(sizeof(source2sdk::animationsystem::FollowAttachmentData) == 0x_);
     };
 };

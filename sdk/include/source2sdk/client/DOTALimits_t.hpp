@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTALimits_t : std::uint32_t
         {
             // MScriptDescription "Max number of players per team. Max number of players connected to the server including spectators."

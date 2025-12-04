@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x250
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,38 +32,38 @@ namespace source2sdk
         public:
             // metadata: MPropertyDescription "Name of the model resource (.vmdl) to place."
             // metadata: MPropertyAutoRebuildOnChange
-            CSmartPropAttributeModelName m_sModelName; // 0x88            
+            CSmartPropAttributeModelName m_sModelName; // 0x_            
             // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor( MaterialGroup:m_sModelName )"
             // metadata: MPropertyFriendlyName "Material Group"
             // metadata: MPropertyDescription "Specifies the name of the material group (skin) to use when displaying the specified model."
-            CSmartPropAttributeMaterialGroup m_MaterialGroupName; // 0xc8            
+            CSmartPropAttributeMaterialGroup m_MaterialGroupName; // 0x_            
             // metadata: MPropertyDescription "If enabled the model will be rendered as a detail object, which is faster for placing many small objects and has fade out functionality, but may have different lighting characteristics. Detail object models support only uniform scale and will use the largest component of the scale value."
-            CSmartPropAttributeBool m_bDetailObject; // 0x108            
+            CSmartPropAttributeBool m_bDetailObject; // 0x_            
             // metadata: MPropertySuppressExpr "m_bDetailObject == true"
             // metadata: MPropertyDescription "Scale factor (may be non-uniform) to be applied directly to the model (in the model's local space)."
-            CSmartPropAttributeVector m_vModelScale; // 0x148            
+            CSmartPropAttributeVector m_vModelScale; // 0x_            
             // metadata: MPropertyFriendlyName "Rigid Deformation Only"
             // metadata: MPropertySuppressExpr "m_bDetailObject == true"
             // metadata: MPropertyDescription "If enabled, only the transform of the model will be modified by any active deformer, the vertices of the model will not be changed by the deformer."
-            CSmartPropAttributeBool m_bRigidDeformation; // 0x188            
+            CSmartPropAttributeBool m_bRigidDeformation; // 0x_            
             // metadata: MPropertyFriendlyName "Model Scale"
             // metadata: MPropertySuppressExpr "m_bDetailObject == false"
             // metadata: MPropertyDescription "Uniform scale to be applied to the model, certain properties like detail object mean only uniform scale may be applied to the model."
-            CSmartPropAttributeFloat m_flUniformModelScale; // 0x1c8            
+            CSmartPropAttributeFloat m_flUniformModelScale; // 0x_            
             // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor( LODLevel:m_sModelName )"
             // metadata: MPropertySuppressExpr "m_bDetailObject == true"
             // metadata: MPropertyDescription "Select model LOD level. The default Auto LOD means the lod will be picked based on the size of the model on screen. If a specific level is selected, then that lod level will always be used regardless of the size of the model on screen."
-            CSmartPropAttributeInt m_nLodLevel; // 0x208            
+            CSmartPropAttributeInt m_nLodLevel; // 0x_            
             // metadata: MPropertyFriendlyName "Fade Level"
             // metadata: MPropertySuppressExpr "m_bDetailObject == false"
             // metadata: MPropertyDescription "Controls the size at which a model marked as a detail object will fade out."
-            source2sdk::smartprops::SmartPropDetailFadeLevel_t m_nDetailObjectFadeLevel; // 0x248            
-            uint8_t _pad024c[0x4];
+            source2sdk::smartprops::SmartPropDetailFadeLevel_t m_nDetailObjectFadeLevel; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropElement_Model because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_Model) == 0x250);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropElement_Model) == 0x_);
     };
 };

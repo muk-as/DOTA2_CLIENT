@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_FalconRush_Intrinsic : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float base_attack_rate; // 0x1878            
-            std::int32_t attack_speed_factor; // 0x187c            
-            float katana_attack_rate_penalty; // 0x1880            
-            float m_flAttackRate; // 0x1884            
-            bool m_bCanGenerateImage; // 0x1888            
-            uint8_t _pad1889[0x1f];
+            float base_attack_rate; // 0x_            
+            std::int32_t attack_speed_factor; // 0x_            
+            float katana_attack_rate_penalty; // 0x_            
+            float m_flAttackRate; // 0x_            
+            bool m_bCanGenerateImage; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_FalconRush_Intrinsic because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_FalconRush_Intrinsic) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_FalconRush_Intrinsic) == 0x_);
     };
 };

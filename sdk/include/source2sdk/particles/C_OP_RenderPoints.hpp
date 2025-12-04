@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x218
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,12 +30,12 @@ namespace source2sdk
         public:
             // m_hMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hMaterial;
-            char m_hMaterial[0x8]; // 0x210            
+            char m_hMaterial[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RenderPoints because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RenderPoints) == 0x218);
+        static_assert(sizeof(source2sdk::particles::C_OP_RenderPoints) == 0x_);
     };
 };

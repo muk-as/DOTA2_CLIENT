@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,21 +34,21 @@ namespace source2sdk
         class C_DOTA_Ability_LoneDruid_SpiritBear : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            bool m_bLevelChanged; // 0x688            
-            uint8_t _pad0689[0x3]; // 0x689
+            bool m_bLevelChanged; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hBear has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hBear;
-            char m_hBear[0x4]; // 0x68c            
+            char m_hBear[0x_]; // 0x_            
             // m_hPreBear has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hPreBear;
-            char m_hPreBear[0x4]; // 0x690            
-            uint8_t _pad0694[0x4];
+            char m_hPreBear[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_LoneDruid_SpiritBear because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_LoneDruid_SpiritBear) == 0x698);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_LoneDruid_SpiritBear) == 0x_);
     };
 };

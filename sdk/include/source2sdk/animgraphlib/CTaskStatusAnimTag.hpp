@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,11 +28,11 @@ namespace source2sdk
         class CTaskStatusAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
         public:
-            uint8_t _pad0050[0x8];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animgraphlib::CTaskStatusAnimTag) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CTaskStatusAnimTag) == 0x_);
     };
 };

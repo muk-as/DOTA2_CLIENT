@@ -15,9 +15,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -31,6 +31,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animgraphlib::CLeafUpdateNode) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CLeafUpdateNode) == 0x_);
     };
 };

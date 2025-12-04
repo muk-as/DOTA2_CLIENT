@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class MeshDrawPrimitiveFlags_t : std::uint32_t
         {
             MESH_DRAW_FLAGS_NONE = 0x0,

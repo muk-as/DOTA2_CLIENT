@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 14
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class RenderPrimitiveType_t : std::uint32_t
         {
             RENDER_PRIM_POINTS = 0x0,

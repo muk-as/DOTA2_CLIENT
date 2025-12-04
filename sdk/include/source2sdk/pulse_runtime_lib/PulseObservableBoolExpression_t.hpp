@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace pulse_runtime_lib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x78
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,20 +27,20 @@ namespace source2sdk
         struct PulseObservableBoolExpression_t
         {
         public:
-            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_EvaluateConnection; // 0x0            
+            source2sdk::pulse_runtime_lib::CPulse_OutflowConnection m_EvaluateConnection; // 0x_            
             // m_DependentObservableVars has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::pulse_runtime_lib::PulseRuntimeVarIndex_t> m_DependentObservableVars;
-            char m_DependentObservableVars[0x18]; // 0x48            
+            char m_DependentObservableVars[0x_]; // 0x_            
             // m_DependentObservableBlackboardReferences has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t> m_DependentObservableBlackboardReferences;
-            char m_DependentObservableBlackboardReferences[0x18]; // 0x60            
+            char m_DependentObservableBlackboardReferences[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_EvaluateConnection) == 0x0);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_DependentObservableVars) == 0x48);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_DependentObservableBlackboardReferences) == 0x60);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_EvaluateConnection) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_DependentObservableVars) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t, m_DependentObservableBlackboardReferences) == 0x_);
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t) == 0x78);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseObservableBoolExpression_t) == 0x_);
     };
 };

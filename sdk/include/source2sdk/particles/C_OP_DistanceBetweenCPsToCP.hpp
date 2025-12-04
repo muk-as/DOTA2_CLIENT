@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x280
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,42 +29,42 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "starting control point"
-            std::int32_t m_nStartCP; // 0x1c8            
+            std::int32_t m_nStartCP; // 0x_            
             // metadata: MPropertyFriendlyName "ending control point"
-            std::int32_t m_nEndCP; // 0x1cc            
+            std::int32_t m_nEndCP; // 0x_            
             // metadata: MPropertyFriendlyName "output control point"
-            std::int32_t m_nOutputCP; // 0x1d0            
+            std::int32_t m_nOutputCP; // 0x_            
             // metadata: MPropertyFriendlyName "output control point field"
-            std::int32_t m_nOutputCPField; // 0x1d4            
+            std::int32_t m_nOutputCPField; // 0x_            
             // metadata: MPropertyFriendlyName "only set distance once"
-            bool m_bSetOnce; // 0x1d8            
-            uint8_t _pad01d9[0x3]; // 0x1d9
+            bool m_bSetOnce; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "distance minimum"
-            float m_flInputMin; // 0x1dc            
+            float m_flInputMin; // 0x_            
             // metadata: MPropertyFriendlyName "distance maximum"
-            float m_flInputMax; // 0x1e0            
+            float m_flInputMax; // 0x_            
             // metadata: MPropertyFriendlyName "output minimum"
-            float m_flOutputMin; // 0x1e4            
+            float m_flOutputMin; // 0x_            
             // metadata: MPropertyFriendlyName "output maximum"
-            float m_flOutputMax; // 0x1e8            
+            float m_flOutputMax; // 0x_            
             // metadata: MPropertyFriendlyName "maximum trace length"
-            float m_flMaxTraceLength; // 0x1ec            
+            float m_flMaxTraceLength; // 0x_            
             // metadata: MPropertyFriendlyName "LOS Failure Scale"
-            float m_flLOSScale; // 0x1f0            
+            float m_flLOSScale; // 0x_            
             // metadata: MPropertyFriendlyName "ensure line of sight"
-            bool m_bLOS; // 0x1f4            
+            bool m_bLOS; // 0x_            
             // metadata: MPropertyFriendlyName "LOS collision group"
-            char m_CollisionGroupName[128]; // 0x1f5            
-            uint8_t _pad0275[0x3]; // 0x275
+            char m_CollisionGroupName[128]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Trace Set"
-            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x278            
+            source2sdk::particles::ParticleTraceSet_t m_nTraceSet; // 0x_            
             // metadata: MPropertyFriendlyName "set parent"
-            source2sdk::particles::ParticleParentSetMode_t m_nSetParent; // 0x27c            
+            source2sdk::particles::ParticleParentSetMode_t m_nSetParent; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_DistanceBetweenCPsToCP because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_DistanceBetweenCPsToCP) == 0x280);
+        static_assert(sizeof(source2sdk::particles::C_OP_DistanceBetweenCPsToCP) == 0x_);
     };
 };

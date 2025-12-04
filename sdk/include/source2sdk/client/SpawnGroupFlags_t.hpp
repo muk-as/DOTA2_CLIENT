@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class SpawnGroupFlags_t : std::uint32_t
         {
             SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE = 0x1,

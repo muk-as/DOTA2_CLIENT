@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nian_EruptionThinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t explosion_radius; // 0x1878            
-            float damage_interval; // 0x187c            
-            std::int32_t damage; // 0x1880            
-            std::int32_t n_FXIndex; // 0x1884            
-            uint8_t _pad1888[0x18];
+            std::int32_t explosion_radius; // 0x_            
+            float damage_interval; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t n_FXIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Nian_EruptionThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nian_EruptionThinker) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nian_EruptionThinker) == 0x_);
     };
 };

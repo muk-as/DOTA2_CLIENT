@@ -15,26 +15,26 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x838
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CMarkupVolumeTagged_Nav : public source2sdk::server::CMarkupVolumeTagged
         {
         public:
-            source2sdk::server::NavScopeFlags_t m_nScopes; // 0x830            
-            uint8_t _pad0831[0x7];
+            source2sdk::server::NavScopeFlags_t m_nScopes; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // CUtlSymbolLarge navProperty_NavAttributes; // 0x7fffffff
+            // CUtlSymbolLarge navProperty_NavAttributes; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMarkupVolumeTagged_Nav because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMarkupVolumeTagged_Nav) == 0x838);
+        static_assert(sizeof(source2sdk::server::CMarkupVolumeTagged_Nav) == 0x_);
     };
 };

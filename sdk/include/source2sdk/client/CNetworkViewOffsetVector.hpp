@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has Trivial Destructor
         // 
         // static metadata: MNetworkVarsAtomic
@@ -24,35 +24,35 @@ namespace source2sdk
         class CNetworkViewOffsetVector
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "-64,000000"
             // metadata: MNetworkMaxValue "64,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-            CNetworkedQuantizedFloat m_vecX; // 0x10            
+            CNetworkedQuantizedFloat m_vecX; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "-64,000000"
             // metadata: MNetworkMaxValue "64,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-            CNetworkedQuantizedFloat m_vecY; // 0x18            
+            CNetworkedQuantizedFloat m_vecY; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "20"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "128,000000"
             // metadata: MNetworkEncodeFlags "4"
             // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-            CNetworkedQuantizedFloat m_vecZ; // 0x20            
+            CNetworkedQuantizedFloat m_vecZ; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecX) == 0x10);
-        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecY) == 0x18);
-        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecZ) == 0x20);
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecX) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecY) == 0x_);
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecZ) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CNetworkViewOffsetVector) == 0x28);
+        static_assert(sizeof(source2sdk::client::CNetworkViewOffsetVector) == 0x_);
     };
 };

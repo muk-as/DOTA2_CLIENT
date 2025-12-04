@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,18 +28,18 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Priority Value, typically 0.0 to 1.0"
-            CUtlString m_priorityValue; // 0x18            
+            CUtlString m_priorityValue; // 0x_            
             // metadata: MPropertyFriendlyName "Priority-Based Volume Multiplier, 0.0 to 1.0"
-            CUtlString m_priorityVolumeScalar; // 0x20            
+            CUtlString m_priorityVolumeScalar; // 0x_            
             // metadata: MPropertyFriendlyName "Contribute to the priority system, but volume is unaffected by it (bool)"
-            CUtlString m_priorityContributeButDontRead; // 0x28            
+            CUtlString m_priorityContributeButDontRead; // 0x_            
             // metadata: MPropertyFriendlyName "Don't contribute to the priority system, but volume is affected by it (bool)"
-            CUtlString m_bPriorityReadButDontContribute; // 0x30            
+            CUtlString m_bPriorityReadButDontContribute; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSosGroupActionSoundeventPrioritySchema because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventPrioritySchema) == 0x38);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventPrioritySchema) == 0x_);
     };
 };

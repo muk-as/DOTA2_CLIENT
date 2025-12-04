@@ -15,31 +15,31 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x510
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CCredits : public source2sdk::server::CPointEntity
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OnCreditsDone; // 0x4e0            
-            bool m_bRolledOutroCredits; // 0x508            
-            uint8_t _pad0509[0x3]; // 0x509
-            float m_flLogoLength; // 0x50c            
+            source2sdk::entity2::CEntityIOOutput m_OnCreditsDone; // 0x_            
+            bool m_bRolledOutroCredits; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flLogoLength; // 0x_            
             
             // Datamap fields:
-            // void InputRollCredits; // 0x0
-            // void InputRollOutroCredits; // 0x0
-            // void InputShowLogo; // 0x0
-            // float InputSetLogoLength; // 0x0
+            // void InputRollCredits; // 0x_
+            // void InputRollOutroCredits; // 0x_
+            // void InputShowLogo; // 0x_
+            // float InputSetLogoLength; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CCredits because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CCredits) == 0x510);
+        static_assert(sizeof(source2sdk::server::CCredits) == 0x_);
     };
 };

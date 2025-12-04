@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class CDOTA_Ability_Grimstroke_SoulChain : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float chain_duration; // 0x688            
-            float chain_latch_radius; // 0x68c            
-            float creep_duration_pct; // 0x690            
-            uint8_t _pad0694[0x4];
+            float chain_duration; // 0x_            
+            float chain_latch_radius; // 0x_            
+            float creep_duration_pct; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Grimstroke_SoulChain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Grimstroke_SoulChain) == 0x698);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Grimstroke_SoulChain) == 0x_);
     };
 };

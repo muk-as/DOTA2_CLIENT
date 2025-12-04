@@ -14,9 +14,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "float m_flKillability"
@@ -25,17 +25,17 @@ namespace source2sdk
         struct DOTAThreatLevelInfo_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flKillability; // 0x30            
+            float m_flKillability; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nEntIndex; // 0x34            
+            std::int32_t m_nEntIndex; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::DOTAThreatLevelInfo_t, m_flKillability) == 0x30);
-        static_assert(offsetof(source2sdk::server::DOTAThreatLevelInfo_t, m_nEntIndex) == 0x34);
+        static_assert(offsetof(source2sdk::server::DOTAThreatLevelInfo_t, m_flKillability) == 0x_);
+        static_assert(offsetof(source2sdk::server::DOTAThreatLevelInfo_t, m_nEntIndex) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::DOTAThreatLevelInfo_t) == 0x38);
+        static_assert(sizeof(source2sdk::server::DOTAThreatLevelInfo_t) == 0x_);
     };
 };

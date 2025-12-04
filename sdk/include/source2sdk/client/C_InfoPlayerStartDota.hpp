@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bDisabled; // 0x5e8            
-            uint8_t _pad05e9[0x7];
+            bool m_bDisabled; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_InfoPlayerStartDota because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_InfoPlayerStartDota) == 0x5f0);
+        static_assert(sizeof(source2sdk::client::C_InfoPlayerStartDota) == 0x_);
     };
 };

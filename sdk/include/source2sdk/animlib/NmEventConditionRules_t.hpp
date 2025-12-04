@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 9
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class NmEventConditionRules_t : std::uint8_t
         {
             LimitSearchToSourceState = 0x0,

@@ -14,27 +14,27 @@ namespace source2sdk
     namespace mathlib_extended
     {
         // Registered alignment: unknown
-        // Alignment: 0x10
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class FourQuaternions
         {
         public:
-            fltx4 x; // 0x0            
-            fltx4 y; // 0x10            
-            fltx4 z; // 0x20            
-            fltx4 w; // 0x30            
+            fltx4 x; // 0x_            
+            fltx4 y; // 0x_            
+            fltx4 z; // 0x_            
+            fltx4 w; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, x) == 0x0);
-        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, y) == 0x10);
-        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, z) == 0x20);
-        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, w) == 0x30);
+        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, x) == 0x_);
+        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, y) == 0x_);
+        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, z) == 0x_);
+        static_assert(offsetof(source2sdk::mathlib_extended::FourQuaternions, w) == 0x_);
         
-        static_assert(sizeof(source2sdk::mathlib_extended::FourQuaternions) == 0x40);
+        static_assert(sizeof(source2sdk::mathlib_extended::FourQuaternions) == 0x_);
     };
 };

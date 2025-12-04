@@ -14,38 +14,38 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x528
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CPhysicsSpring : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04e0[0x8]; // 0x4e0
-            float m_flFrequency; // 0x4e8            
-            float m_flDampingRatio; // 0x4ec            
-            float m_flRestLength; // 0x4f0            
-            uint8_t _pad04f4[0x4]; // 0x4f4
-            CUtlSymbolLarge m_nameAttachStart; // 0x4f8            
-            CUtlSymbolLarge m_nameAttachEnd; // 0x500            
-            Vector m_start; // 0x508            
-            Vector m_end; // 0x514            
-            std::uint32_t m_teleportTick; // 0x520            
-            uint8_t _pad0524[0x4];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flFrequency; // 0x_            
+            float m_flDampingRatio; // 0x_            
+            float m_flRestLength; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_nameAttachStart; // 0x_            
+            CUtlSymbolLarge m_nameAttachEnd; // 0x_            
+            Vector m_start; // 0x_            
+            Vector m_end; // 0x_            
+            std::uint32_t m_teleportTick; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pSpringJoint; // 0x4e0
-            // float InputSetFrequency; // 0x0
-            // float InputSetDampingRatio; // 0x0
-            // float InputSetRestLength; // 0x0
+            // void m_pSpringJoint; // 0x_
+            // float InputSetFrequency; // 0x_
+            // float InputSetDampingRatio; // 0x_
+            // float InputSetRestLength; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPhysicsSpring because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysicsSpring) == 0x528);
+        static_assert(sizeof(source2sdk::server::CPhysicsSpring) == 0x_);
     };
 };

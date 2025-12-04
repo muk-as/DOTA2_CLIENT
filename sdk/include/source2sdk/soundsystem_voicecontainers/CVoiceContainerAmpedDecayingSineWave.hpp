@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,13 +30,13 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Attenuation Amount (dB)"
             // metadata: MPropertyDescription "The amount of attenuation ."
-            float m_flGainAmount; // 0xc0            
-            uint8_t _pad00c4[0x4];
+            float m_flGainAmount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerAmpedDecayingSineWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerAmpedDecayingSineWave) == 0xc8);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerAmpedDecayingSineWave) == 0x_);
     };
 };

@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1190
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,29 +30,29 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1c8            
-            uint8_t _pad01cc[0x4]; // 0x1cc
+            std::int32_t m_nControlPointNumber; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "random speed min"
-            source2sdk::particleslib::CPerParticleFloatInput m_fSpeedMin; // 0x1d0            
+            source2sdk::particleslib::CPerParticleFloatInput m_fSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "random speed max"
-            source2sdk::particleslib::CPerParticleFloatInput m_fSpeedMax; // 0x330            
+            source2sdk::particleslib::CPerParticleFloatInput m_fSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "speed in local coordinate system min"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_LocalCoordinateSystemSpeedMin; // 0x490            
+            source2sdk::particleslib::CPerParticleVecInput m_LocalCoordinateSystemSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "speed in local coordinate system max"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_LocalCoordinateSystemSpeedMax; // 0xb08            
+            source2sdk::particleslib::CPerParticleVecInput m_LocalCoordinateSystemSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "Ignore delta time (RenderTrails)"
-            bool m_bIgnoreDT; // 0x1180            
-            uint8_t _pad1181[0x3]; // 0x1181
+            bool m_bIgnoreDT; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Random number generator controls"
-            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0x1184            
-            uint8_t _pad118c[0x4];
+            source2sdk::particles::CRandomNumberGeneratorParameters m_randomnessParameters; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_VelocityRandom because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_VelocityRandom) == 0x1190);
+        static_assert(sizeof(source2sdk::particles::C_INIT_VelocityRandom) == 0x_);
     };
 };

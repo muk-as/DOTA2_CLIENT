@@ -31,10 +31,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1b30
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -52,47 +52,47 @@ namespace source2sdk
         class CDOTA_BaseNPC_AghsFort_Watch_Tower : public source2sdk::client::C_DOTA_BaseNPC_Building
         {
         public:
-            std::int32_t m_nOptionNumber; // 0x1ab8            
-            float m_flMovePlayersRadius; // 0x1abc            
-            source2sdk::client::CDOTA_BaseNPC_AghsFort_Watch_Tower_ExitDirection_t m_nExitDirection; // 0x1ac0            
-            Vector m_vExitLocation; // 0x1ac4            
-            std::int32_t m_nPathSelectedID; // 0x1ad0            
+            std::int32_t m_nOptionNumber; // 0x_            
+            float m_flMovePlayersRadius; // 0x_            
+            source2sdk::client::CDOTA_BaseNPC_AghsFort_Watch_Tower_ExitDirection_t m_nExitDirection; // 0x_            
+            Vector m_vExitLocation; // 0x_            
+            std::int32_t m_nPathSelectedID; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nEncounterType; // 0x1ad4            
+            std::int32_t m_nEncounterType; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsEliteEncounter; // 0x1ad8            
+            bool m_bIsEliteEncounter; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsAscensionLevelPicker; // 0x1ad9            
-            uint8_t _pad1ada[0x6]; // 0x1ada
+            bool m_bIsAscensionLevelPicker; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_strEncounterName; // 0x1ae0            
+            CUtlSymbolLarge m_strEncounterName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_strAscensionAbilities; // 0x1ae8            
+            CUtlSymbolLarge m_strAscensionAbilities; // 0x_            
             // metadata: MNetworkEnable
             // m_hEffigy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEffigy;
-            char m_hEffigy[0x4]; // 0x1af0            
-            float m_flYaw; // 0x1af4            
-            float m_flStartTime; // 0x1af8            
-            source2sdk::entity2::GameTime_t m_flCursorEnterTime; // 0x1afc            
-            bool m_bShowingTooltip; // 0x1b00            
-            uint8_t _pad1b01[0x1b]; // 0x1b01
-            float m_flLastUpdateTime; // 0x1b1c            
-            source2sdk::client::ParticleIndex_t m_nChannellingParticle; // 0x1b20            
+            char m_hEffigy[0x_]; // 0x_            
+            float m_flYaw; // 0x_            
+            float m_flStartTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_flCursorEnterTime; // 0x_            
+            bool m_bShowingTooltip; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flLastUpdateTime; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nChannellingParticle; // 0x_            
             // metadata: MNetworkEnable
             // m_hRoomGate has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBaseAnimatingActivity> m_hRoomGate;
-            char m_hRoomGate[0x4]; // 0x1b24            
+            char m_hRoomGate[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsBeingChanneled; // 0x1b28            
-            uint8_t _pad1b29[0x3]; // 0x1b29
+            bool m_bIsBeingChanneled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flGoalCaptureProgress; // 0x1b2c            
+            float m_flGoalCaptureProgress; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_AghsFort_Watch_Tower because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x1b30);
+        static_assert(sizeof(source2sdk::client::CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x_);
     };
 };

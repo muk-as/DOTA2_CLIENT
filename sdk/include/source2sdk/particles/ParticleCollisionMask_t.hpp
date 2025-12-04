@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 8
-        // Size: 0x8
+        // Size: 0x_
         enum class ParticleCollisionMask_t : std::uint64_t
         {
             // MPropertyFriendlyName "Mask All"

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 20
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class RenderFx_t : std::uint8_t
         {
             kRenderFxNone = 0x0,

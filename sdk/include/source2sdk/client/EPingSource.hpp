@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EPingSource : std::uint32_t
         {
             k_ePingSource_Default = 0x0,

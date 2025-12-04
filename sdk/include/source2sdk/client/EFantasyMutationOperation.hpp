@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EFantasyMutationOperation : std::uint32_t
         {
             k_eFantasyMutationOperation_RollEverything = 0x0,

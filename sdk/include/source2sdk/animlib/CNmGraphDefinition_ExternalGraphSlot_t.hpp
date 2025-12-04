@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,15 +25,15 @@ namespace source2sdk
         struct CNmGraphDefinition_ExternalGraphSlot_t
         {
         public:
-            std::int16_t m_nNodeIdx; // 0x0            
-            uint8_t _pad0002[0x6]; // 0x2
-            CGlobalSymbol m_slotID; // 0x8            
+            std::int16_t m_nNodeIdx; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CGlobalSymbol m_slotID; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t, m_nNodeIdx) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t, m_slotID) == 0x8);
+        static_assert(offsetof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t, m_nNodeIdx) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t, m_slotID) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t) == 0x10);
+        static_assert(sizeof(source2sdk::animlib::CNmGraphDefinition_ExternalGraphSlot_t) == 0x_);
     };
 };

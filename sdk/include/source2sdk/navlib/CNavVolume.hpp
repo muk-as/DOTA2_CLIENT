@@ -14,21 +14,21 @@ namespace source2sdk
     namespace navlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x70
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
         class CNavVolume
         {
         public:
-            uint8_t _pad0000[0x70];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::navlib::CNavVolume) == 0x70);
+        static_assert(sizeof(source2sdk::navlib::CNavVolume) == 0x_);
     };
 };

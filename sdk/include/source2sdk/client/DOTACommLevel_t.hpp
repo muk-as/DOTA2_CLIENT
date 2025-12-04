@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTACommLevel_t : std::uint32_t
         {
             DOTA_COMM_LEVEL_NONE = 0x0,

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,26 +29,26 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x5e8            
+            bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBlockFoW; // 0x5e9            
+            bool m_bBlockFoW; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bBlockNav; // 0x5ea            
-            uint8_t _pad05eb[0x1]; // 0x5eb
-            std::uint32_t m_unOccluderID; // 0x5ec            
-            bool m_bBlockingGridNav; // 0x5f0            
-            bool m_bPrevEnabled; // 0x5f1            
-            uint8_t _pad05f2[0x6];
+            bool m_bBlockNav; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_unOccluderID; // 0x_            
+            bool m_bBlockingGridNav; // 0x_            
+            bool m_bPrevEnabled; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // bool StartDisabled; // 0x7fffffff
-            // bool block_fow; // 0x7fffffff
-            // bool block_nav; // 0x7fffffff
+            // bool StartDisabled; // 0x_
+            // bool block_fow; // 0x_
+            // bool block_nav; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_SimpleObstruction because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_SimpleObstruction) == 0x5f8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_SimpleObstruction) == 0x_);
     };
 };

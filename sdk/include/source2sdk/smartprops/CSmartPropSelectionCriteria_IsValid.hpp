@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x50
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,12 +32,12 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Valid When"
             // metadata: MPropertyDescription "Expression to evaluate to determine if this choice is currently valid."
             // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor(expression)"
-            CUtlString m_Expression; // 0x48            
+            CUtlString m_Expression; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropSelectionCriteria_IsValid because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropSelectionCriteria_IsValid) == 0x50);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropSelectionCriteria_IsValid) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class CDOTA_Ability_Axe_One_Man_Army : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float radius; // 0x688            
-            float bonus_linger_duration; // 0x68c            
-            source2sdk::entity2::GameTime_t m_startDecayTime; // 0x690            
-            uint8_t _pad0694[0x4];
+            float radius; // 0x_            
+            float bonus_linger_duration; // 0x_            
+            source2sdk::entity2::GameTime_t m_startDecayTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Axe_One_Man_Army because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Axe_One_Man_Army) == 0x698);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Axe_One_Man_Army) == 0x_);
     };
 };

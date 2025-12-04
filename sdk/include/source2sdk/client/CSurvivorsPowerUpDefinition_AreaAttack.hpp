@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x868
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,19 +29,19 @@ namespace source2sdk
         class CSurvivorsPowerUpDefinition_AreaAttack : public source2sdk::client::CSurvivorsPowerUpDefinition
         {
         public:
-            source2sdk::client::ESurvivorsAreaAttackOrigin m_eOrigin; // 0x6a0            
-            float m_flRemoveParticleTimeDelay; // 0x6a4            
+            source2sdk::client::ESurvivorsAreaAttackOrigin m_eOrigin; // 0x_            
+            float m_flRemoveParticleTimeDelay; // 0x_            
             // m_sParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sParticle;
-            char m_sParticle[0xe0]; // 0x6a8            
+            char m_sParticle[0x_]; // 0x_            
             // m_sHitImpactParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sHitImpactParticle;
-            char m_sHitImpactParticle[0xe0]; // 0x788            
+            char m_sHitImpactParticle[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_AreaAttack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_AreaAttack) == 0x868);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_AreaAttack) == 0x_);
     };
 };

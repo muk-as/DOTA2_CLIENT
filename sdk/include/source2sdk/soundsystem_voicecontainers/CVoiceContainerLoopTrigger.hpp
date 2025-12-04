@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xe0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,17 +30,17 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Vsnd Reference"
-            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_sound; // 0xb8            
-            float m_flRetriggerTimeMin; // 0xd0            
-            float m_flRetriggerTimeMax; // 0xd4            
-            float m_flFadeTime; // 0xd8            
-            bool m_bCrossFade; // 0xdc            
-            uint8_t _pad00dd[0x3];
+            source2sdk::soundsystem_voicecontainers::CSoundContainerReference m_sound; // 0x_            
+            float m_flRetriggerTimeMin; // 0x_            
+            float m_flRetriggerTimeMax; // 0x_            
+            float m_flFadeTime; // 0x_            
+            bool m_bCrossFade; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CVoiceContainerLoopTrigger because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerLoopTrigger) == 0xe0);
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CVoiceContainerLoopTrigger) == 0x_);
     };
 };

@@ -14,9 +14,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         // MNetworkNoBase
@@ -28,21 +28,21 @@ namespace source2sdk
         class EngineCountdownTimer
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_duration; // 0x8            
+            float m_duration; // 0x_            
             // metadata: MNetworkEnable
-            float m_timestamp; // 0xc            
+            float m_timestamp; // 0x_            
             // metadata: MNetworkEnable
-            float m_timescale; // 0x10            
-            uint8_t _pad0014[0x4];
+            float m_timescale; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_duration) == 0x8);
-        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_timestamp) == 0xc);
-        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_timescale) == 0x10);
+        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_duration) == 0x_);
+        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_timestamp) == 0x_);
+        static_assert(offsetof(source2sdk::server::EngineCountdownTimer, m_timescale) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::EngineCountdownTimer) == 0x18);
+        static_assert(sizeof(source2sdk::server::EngineCountdownTimer) == 0x_);
     };
 };

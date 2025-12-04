@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace scenesystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_PreLayer) == 0x30);
+        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_PreLayer) == 0x_);
     };
 };

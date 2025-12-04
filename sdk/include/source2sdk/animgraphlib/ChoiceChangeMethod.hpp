@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ChoiceChangeMethod : std::uint32_t
         {
             OnReset = 0x0,

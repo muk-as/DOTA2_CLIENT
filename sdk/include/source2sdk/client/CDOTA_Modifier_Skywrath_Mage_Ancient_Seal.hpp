@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Skywrath_Mage_Ancient_Seal : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t resist_debuff; // 0x1878            
-            uint8_t _pad187c[0x4];
+            std::int32_t resist_debuff; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Skywrath_Mage_Ancient_Seal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Skywrath_Mage_Ancient_Seal) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Skywrath_Mage_Ancient_Seal) == 0x_);
     };
 };

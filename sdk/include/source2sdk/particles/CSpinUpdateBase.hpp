@@ -15,9 +15,9 @@ namespace source2sdk
     namespace particles
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1c0
+        // Size: 0x_
         // Has VTable
         // Is Abstract
         // Construct allowed
@@ -31,6 +31,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::particles::CSpinUpdateBase) == 0x1c0);
+        static_assert(sizeof(source2sdk::particles::CSpinUpdateBase) == 0x_);
     };
 };

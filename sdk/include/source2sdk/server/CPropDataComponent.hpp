@@ -15,32 +15,32 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x40
+        // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CPropDataComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
-            uint8_t _pad0008[0x8]; // 0x8
-            float m_flDmgModBullet; // 0x10            
-            float m_flDmgModClub; // 0x14            
-            float m_flDmgModExplosive; // 0x18            
-            float m_flDmgModFire; // 0x1c            
-            CUtlSymbolLarge m_iszPhysicsDamageTableName; // 0x20            
-            CUtlSymbolLarge m_iszBasePropData; // 0x28            
-            std::int32_t m_nInteractions; // 0x30            
-            bool m_bSpawnMotionDisabled; // 0x34            
-            uint8_t _pad0035[0x3]; // 0x35
-            std::int32_t m_nDisableTakePhysicsDamageSpawnFlag; // 0x38            
-            std::int32_t m_nMotionDisabledSpawnFlag; // 0x3c            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flDmgModBullet; // 0x_            
+            float m_flDmgModClub; // 0x_            
+            float m_flDmgModExplosive; // 0x_            
+            float m_flDmgModFire; // 0x_            
+            CUtlSymbolLarge m_iszPhysicsDamageTableName; // 0x_            
+            CUtlSymbolLarge m_iszBasePropData; // 0x_            
+            std::int32_t m_nInteractions; // 0x_            
+            bool m_bSpawnMotionDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nDisableTakePhysicsDamageSpawnFlag; // 0x_            
+            std::int32_t m_nMotionDisabledSpawnFlag; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPropDataComponent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPropDataComponent) == 0x40);
+        static_assert(sizeof(source2sdk::server::CPropDataComponent) == 0x_);
     };
 };

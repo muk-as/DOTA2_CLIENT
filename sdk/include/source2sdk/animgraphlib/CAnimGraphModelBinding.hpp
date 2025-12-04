@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         class CAnimGraphModelBinding
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            CUtlString m_modelName; // 0x8            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_modelName; // 0x_            
             // m_pSharedData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CSmartPtr<source2sdk::animgraphlib::CAnimUpdateSharedData> m_pSharedData;
-            char m_pSharedData[0x8]; // 0x10            
-            uint8_t _pad0018[0x10];
+            char m_pSharedData[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphModelBinding, m_modelName) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphModelBinding, m_pSharedData) == 0x10);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphModelBinding, m_modelName) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimGraphModelBinding, m_pSharedData) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphModelBinding) == 0x28);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimGraphModelBinding) == 0x_);
     };
 };

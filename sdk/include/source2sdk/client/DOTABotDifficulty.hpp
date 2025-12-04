@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTABotDifficulty : std::uint32_t
         {
             BOT_DIFFICULTY_PASSIVE = 0x0,

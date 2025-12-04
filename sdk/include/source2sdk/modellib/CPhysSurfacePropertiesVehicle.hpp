@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,15 +26,15 @@ namespace source2sdk
         {
         public:
             // metadata: MKV3TransferName "wheeldrag"
-            float m_wheelDrag; // 0x0            
+            float m_wheelDrag; // 0x_            
             // metadata: MKV3TransferName "wheelfrictionscale"
-            float m_wheelFrictionScale; // 0x4            
+            float m_wheelFrictionScale; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesVehicle, m_wheelDrag) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesVehicle, m_wheelFrictionScale) == 0x4);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesVehicle, m_wheelDrag) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesVehicle, m_wheelFrictionScale) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesVehicle) == 0x8);
+        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesVehicle) == 0x_);
     };
 };

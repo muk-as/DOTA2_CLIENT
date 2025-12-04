@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -28,22 +28,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Unique identifier for the Shape"
-            source2sdk::client::FantasyGemShape_t m_unShapeID; // 0x0            
-            uint8_t _pad0001[0x3]; // 0x1
+            source2sdk::client::FantasyGemShape_t m_unShapeID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyDescription "Maps the shape to it's code behavior."
-            source2sdk::client::EFantasyShapeBehavior m_eShapeBehavior; // 0x4            
+            source2sdk::client::EFantasyShapeBehavior m_eShapeBehavior; // 0x_            
             // metadata: MPropertyDescription "Localization token for the name of the shape"
-            CUtlString m_sLocName; // 0x8            
+            CUtlString m_sLocName; // 0x_            
             // metadata: MPropertyDescription "Localization token for explaining what the shape does"
-            CUtlString m_sLocExplanation; // 0x10            
+            CUtlString m_sLocExplanation; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_unShapeID) == 0x0);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_eShapeBehavior) == 0x4);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_sLocName) == 0x8);
-        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_sLocExplanation) == 0x10);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_unShapeID) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_eShapeBehavior) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_sLocName) == 0x_);
+        static_assert(offsetof(source2sdk::client::FantasyCraftingShapeData_t, m_sLocExplanation) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FantasyCraftingShapeData_t) == 0x18);
+        static_assert(sizeof(source2sdk::client::FantasyCraftingShapeData_t) == 0x_);
     };
 };

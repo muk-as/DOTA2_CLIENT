@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 16
         // Alignment: 8
-        // Size: 0x8
+        // Size: 0x_
         enum class TakeDamageFlags_t : std::uint64_t
         {
             DFLAG_NONE = 0x0,

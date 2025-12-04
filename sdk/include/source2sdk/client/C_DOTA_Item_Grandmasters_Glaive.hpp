@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x730
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,13 +29,13 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGrandmastersStatChanged"
-            std::int32_t m_iStat; // 0x728            
-            uint8_t _pad072c[0x4];
+            std::int32_t m_iStat; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Grandmasters_Glaive because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Grandmasters_Glaive) == 0x730);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Grandmasters_Glaive) == 0x_);
     };
 };

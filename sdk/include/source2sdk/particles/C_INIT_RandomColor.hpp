@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x210
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,34 +28,34 @@ namespace source2sdk
         class C_INIT_RandomColor : public source2sdk::particles::CParticleFunctionInitializer
         {
         public:
-            uint8_t _pad01c8[0x1c]; // 0x1c8
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "color1"
-            Color m_ColorMin; // 0x1e4            
+            Color m_ColorMin; // 0x_            
             // metadata: MPropertyFriendlyName "color2"
-            Color m_ColorMax; // 0x1e8            
+            Color m_ColorMax; // 0x_            
             // metadata: MPropertyFriendlyName "tint clamp min"
-            Color m_TintMin; // 0x1ec            
+            Color m_TintMin; // 0x_            
             // metadata: MPropertyFriendlyName "tint clamp max"
-            Color m_TintMax; // 0x1f0            
+            Color m_TintMax; // 0x_            
             // metadata: MPropertyFriendlyName "tint perc"
-            float m_flTintPerc; // 0x1f4            
+            float m_flTintPerc; // 0x_            
             // metadata: MPropertyFriendlyName "tint update movement threshold"
-            float m_flUpdateThreshold; // 0x1f8            
+            float m_flUpdateThreshold; // 0x_            
             // metadata: MPropertyFriendlyName "tint control point"
-            std::int32_t m_nTintCP; // 0x1fc            
+            std::int32_t m_nTintCP; // 0x_            
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x200            
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "tint blend mode"
-            source2sdk::particles::ParticleColorBlendMode_t m_nTintBlendMode; // 0x204            
+            source2sdk::particles::ParticleColorBlendMode_t m_nTintBlendMode; // 0x_            
             // metadata: MPropertyFriendlyName "light amplification amount"
-            float m_flLightAmplification; // 0x208            
-            uint8_t _pad020c[0x4];
+            float m_flLightAmplification; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_RandomColor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_RandomColor) == 0x210);
+        static_assert(sizeof(source2sdk::particles::C_INIT_RandomColor) == 0x_);
     };
 };

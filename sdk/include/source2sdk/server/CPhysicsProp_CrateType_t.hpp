@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CPhysicsProp_CrateType_t : std::uint32_t
         {
             CRATE_SPECIFIC_ITEM = 0x0,

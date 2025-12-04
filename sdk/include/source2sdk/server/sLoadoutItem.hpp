@@ -15,29 +15,29 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class sLoadoutItem
         {
         public:
-            CUtlSymbolLarge name; // 0x0            
-            std::int32_t iFlags; // 0x8            
-            source2sdk::client::AbilityID_t iAbilityID; // 0xc            
-            bool bPurchased; // 0x10            
-            bool bPregame; // 0x11            
-            uint8_t _pad0012[0x6];
+            CUtlSymbolLarge name; // 0x_            
+            std::int32_t iFlags; // 0x_            
+            source2sdk::client::AbilityID_t iAbilityID; // 0x_            
+            bool bPurchased; // 0x_            
+            bool bPregame; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::sLoadoutItem, name) == 0x0);
-        static_assert(offsetof(source2sdk::server::sLoadoutItem, iFlags) == 0x8);
-        static_assert(offsetof(source2sdk::server::sLoadoutItem, iAbilityID) == 0xc);
-        static_assert(offsetof(source2sdk::server::sLoadoutItem, bPurchased) == 0x10);
-        static_assert(offsetof(source2sdk::server::sLoadoutItem, bPregame) == 0x11);
+        static_assert(offsetof(source2sdk::server::sLoadoutItem, name) == 0x_);
+        static_assert(offsetof(source2sdk::server::sLoadoutItem, iFlags) == 0x_);
+        static_assert(offsetof(source2sdk::server::sLoadoutItem, iAbilityID) == 0x_);
+        static_assert(offsetof(source2sdk::server::sLoadoutItem, bPurchased) == 0x_);
+        static_assert(offsetof(source2sdk::server::sLoadoutItem, bPregame) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::sLoadoutItem) == 0x18);
+        static_assert(sizeof(source2sdk::server::sLoadoutItem) == 0x_);
     };
 };

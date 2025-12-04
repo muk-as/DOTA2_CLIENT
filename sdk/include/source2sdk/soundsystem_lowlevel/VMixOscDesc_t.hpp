@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem_lowlevel
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -27,20 +27,20 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Type"
-            source2sdk::soundsystem_lowlevel::VMixLFOShape_t oscType; // 0x0            
+            source2sdk::soundsystem_lowlevel::VMixLFOShape_t oscType; // 0x_            
             // metadata: MPropertyFriendlyName "Frequency (Hz)"
             // metadata: MPropertyAttributeRange "0.1 16000"
-            float m_freq; // 0x4            
+            float m_freq; // 0x_            
             // metadata: MPropertyFriendlyName "Phase (degrees)"
             // metadata: MPropertyAttributeRange "0 360"
-            float m_flPhase; // 0x8            
+            float m_flPhase; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, oscType) == 0x0);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, m_freq) == 0x4);
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, m_flPhase) == 0x8);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, oscType) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, m_freq) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t, m_flPhase) == 0x_);
         
-        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t) == 0xc);
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixOscDesc_t) == 0x_);
     };
 };

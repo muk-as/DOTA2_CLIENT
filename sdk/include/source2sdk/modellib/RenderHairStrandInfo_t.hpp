@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         // Construct allowed
@@ -26,24 +26,24 @@ namespace source2sdk
         struct RenderHairStrandInfo_t
         {
         public:
-            std::uint32_t m_nGuideHairIndices_nSurfaceTriIndex[2]; // 0x0            
-            std::uint16_t m_vGuideBary_vBaseBary[4]; // 0x8            
-            std::uint16_t m_vRootOffset_flLengthScale[4]; // 0x10            
-            std::uint16_t m_nPackedBaseUv[2]; // 0x18            
-            std::uint32_t m_nPackedSurfaceNormalOs; // 0x1c            
-            std::uint32_t m_nPackedSurfaceTangentOs; // 0x20            
-            std::uint32_t m_nDataOffset_Segments; // 0x24            
+            std::uint32_t m_nGuideHairIndices_nSurfaceTriIndex[2]; // 0x_            
+            std::uint16_t m_vGuideBary_vBaseBary[4]; // 0x_            
+            std::uint16_t m_vRootOffset_flLengthScale[4]; // 0x_            
+            std::uint16_t m_nPackedBaseUv[2]; // 0x_            
+            std::uint32_t m_nPackedSurfaceNormalOs; // 0x_            
+            std::uint32_t m_nPackedSurfaceTangentOs; // 0x_            
+            std::uint32_t m_nDataOffset_Segments; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nGuideHairIndices_nSurfaceTriIndex) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_vGuideBary_vBaseBary) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_vRootOffset_flLengthScale) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedBaseUv) == 0x18);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedSurfaceNormalOs) == 0x1c);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedSurfaceTangentOs) == 0x20);
-        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nDataOffset_Segments) == 0x24);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nGuideHairIndices_nSurfaceTriIndex) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_vGuideBary_vBaseBary) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_vRootOffset_flLengthScale) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedBaseUv) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedSurfaceNormalOs) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nPackedSurfaceTangentOs) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderHairStrandInfo_t, m_nDataOffset_Segments) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::RenderHairStrandInfo_t) == 0x28);
+        static_assert(sizeof(source2sdk::modellib::RenderHairStrandInfo_t) == 0x_);
     };
 };

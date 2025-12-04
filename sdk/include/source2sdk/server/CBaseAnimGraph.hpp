@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa80
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -41,44 +41,44 @@ namespace source2sdk
         class CBaseAnimGraph : public source2sdk::server::CBaseModelEntity
         {
         public:
-            uint8_t _pad07f0[0x80]; // 0x7f0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x870            
-            uint8_t _pad0871[0x7]; // 0x871
-            source2sdk::client::IChoreoServices* m_pChoreoServices; // 0x878            
+            bool m_bInitiallyPopulateInterpHistory; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::IChoreoServices* m_pChoreoServices; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAnimGraphUpdateEnabled; // 0x880            
-            uint8_t _pad0881[0x3]; // 0x881
-            float m_flMaxSlopeDistance; // 0x884            
-            Vector m_vLastSlopeCheckPos; // 0x888            
-            bool m_bAnimationUpdateScheduled; // 0x894            
-            uint8_t _pad0895[0x3]; // 0x895
+            bool m_bAnimGraphUpdateEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flMaxSlopeDistance; // 0x_            
+            Vector m_vLastSlopeCheckPos; // 0x_            
+            bool m_bAnimationUpdateScheduled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            Vector m_vecForce; // 0x898            
+            Vector m_vecForce; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nForceBone; // 0x8a4            
-            uint8_t _pad08a8[0x10]; // 0x8a8
+            std::int32_t m_nForceBone; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::server::PhysicsRagdollPose_t m_RagdollPose; // 0x8b8            
+            source2sdk::server::PhysicsRagdollPose_t m_RagdollPose; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollEnabledChanged"
-            bool m_bRagdollEnabled; // 0x8e0            
+            bool m_bRagdollEnabled; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
-            bool m_bRagdollClientSide; // 0x8e1            
-            uint8_t _pad08e2[0x19e];
+            bool m_bRagdollClientSide; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pMainGraphController; // 0x868
-            // void CBaseAnimGraphChoreoServicesThink; // 0x0
-            // float InputSetPlaybackRate; // 0x0
-            // CUtlSymbolLarge InputSetBodyGroup; // 0x0
-            // void InputBecomeRagdoll; // 0x0
+            // void m_pMainGraphController; // 0x_
+            // void CBaseAnimGraphChoreoServicesThink; // 0x_
+            // float InputSetPlaybackRate; // 0x_
+            // CUtlSymbolLarge InputSetBodyGroup; // 0x_
+            // void InputBecomeRagdoll; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseAnimGraph because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseAnimGraph) == 0xa80);
+        static_assert(sizeof(source2sdk::server::CBaseAnimGraph) == 0x_);
     };
 };

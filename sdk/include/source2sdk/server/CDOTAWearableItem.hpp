@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9f8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -69,23 +69,23 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bOwnerModelChanged; // 0x9f0            
+            bool m_bOwnerModelChanged; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsGeneratingEconItem; // 0x9f1            
+            bool m_bIsGeneratingEconItem; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsItemVisibleOnGeneratedEntity; // 0x9f2            
+            bool m_bIsItemVisibleOnGeneratedEntity; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnHideWearableButDrawAdditionalWearablesChanged"
-            bool m_bHideWearableButDrawAdditionalWearables; // 0x9f3            
+            bool m_bHideWearableButDrawAdditionalWearables; // 0x_            
             // metadata: MNetworkEnable
             // m_hAdditionalWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseAnimatingActivity> m_hAdditionalWearable;
-            char m_hAdditionalWearable[0x4]; // 0x9f4            
+            char m_hAdditionalWearable[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAWearableItem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAWearableItem) == 0x9f8);
+        static_assert(sizeof(source2sdk::server::CDOTAWearableItem) == 0x_);
     };
 };

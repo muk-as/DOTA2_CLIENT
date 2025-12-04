@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1878
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_VengefulSpirit_WaveOfTerror_Fear : public source2sdk::client::CDOTA_Modifier_Fear
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_VengefulSpirit_WaveOfTerror_Fear) == 0x1878);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_VengefulSpirit_WaveOfTerror_Fear) == 0x_);
     };
 };

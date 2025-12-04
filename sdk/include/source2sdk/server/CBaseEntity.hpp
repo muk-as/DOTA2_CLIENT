@@ -48,10 +48,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4e0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -109,254 +109,254 @@ namespace source2sdk
             // metadata: MNetworkAlias "CBodyComponent"
             // metadata: MNetworkTypeAlias "CBodyComponent"
             // metadata: MNetworkPriority "48"
-            source2sdk::server::CBodyComponent* m_CBodyComponent; // 0x38            
-            source2sdk::client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x40            
-            uint8_t _pad0208[0x40]; // 0x208
+            source2sdk::server::CBodyComponent* m_CBodyComponent; // 0x_            
+            source2sdk::client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_aThinkFunctions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::thinkfunc_t> m_aThinkFunctions;
-            char m_aThinkFunctions[0x18]; // 0x248            
-            std::int32_t m_iCurrentThinkContext; // 0x260            
-            source2sdk::entity2::GameTick_t m_nLastThinkTick; // 0x264            
-            bool m_bDisabledContextThinks; // 0x268            
-            uint8_t _pad0269[0xf]; // 0x269
+            char m_aThinkFunctions[0x_]; // 0x_            
+            std::int32_t m_iCurrentThinkContext; // 0x_            
+            source2sdk::entity2::GameTick_t m_nLastThinkTick; // 0x_            
+            bool m_bDisabledContextThinks; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_isSteadyState has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CTypedBitVec<64> m_isSteadyState;
-            char m_isSteadyState[0x8]; // 0x278            
-            float m_lastNetworkChange; // 0x280            
-            uint8_t _pad0284[0xc]; // 0x284
+            char m_isSteadyState[0x_]; // 0x_            
+            float m_lastNetworkChange; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_ResponseContexts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::ResponseContext_t> m_ResponseContexts;
-            char m_ResponseContexts[0x18]; // 0x290            
-            CUtlSymbolLarge m_iszResponseContext; // 0x2a8            
-            uint8_t _pad02b0[0x20]; // 0x2b0
+            char m_ResponseContexts[0x_]; // 0x_            
+            CUtlSymbolLarge m_iszResponseContext; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "ClampHealth"
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iHealth; // 0x2d0            
+            std::int32_t m_iHealth; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iMaxHealth; // 0x2d4            
+            std::int32_t m_iMaxHealth; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"
-            std::uint8_t m_lifeState; // 0x2d8            
-            uint8_t _pad02d9[0x3]; // 0x2d9
-            float m_flDamageAccumulator; // 0x2dc            
+            std::uint8_t m_lifeState; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flDamageAccumulator; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::DamageOptions_t m_takedamage; // 0x2e0            
+            source2sdk::client::DamageOptions_t m_takedamage; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTakesDamage; // 0x2e1            
-            uint8_t _pad02e2[0x6]; // 0x2e2
+            bool m_bTakesDamage; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::TakeDamageFlags_t m_nTakeDamageFlags; // 0x2e8            
+            source2sdk::client::TakeDamageFlags_t m_nTakeDamageFlags; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::EntityPlatformTypes_t m_nPlatformType; // 0x2f0            
-            uint8_t _pad02f1[0x1]; // 0x2f1
+            source2sdk::client::EntityPlatformTypes_t m_nPlatformType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::client::MoveCollide_t m_MoveCollide; // 0x2f2            
+            source2sdk::client::MoveCollide_t m_MoveCollide; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::MoveType_t m_MoveType; // 0x2f3            
-            source2sdk::client::MoveType_t m_nActualMoveType; // 0x2f4            
-            std::uint8_t m_nWaterTouch; // 0x2f5            
-            std::uint8_t m_nSlimeTouch; // 0x2f6            
-            bool m_bRestoreInHierarchy; // 0x2f7            
-            CUtlSymbolLarge m_target; // 0x2f8            
+            source2sdk::client::MoveType_t m_MoveType; // 0x_            
+            source2sdk::client::MoveType_t m_nActualMoveType; // 0x_            
+            std::uint8_t m_nWaterTouch; // 0x_            
+            std::uint8_t m_nSlimeTouch; // 0x_            
+            bool m_bRestoreInHierarchy; // 0x_            
+            CUtlSymbolLarge m_target; // 0x_            
             // m_hDamageFilter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseFilter> m_hDamageFilter;
-            char m_hDamageFilter[0x4]; // 0x300            
-            uint8_t _pad0304[0x4]; // 0x304
-            CUtlSymbolLarge m_iszDamageFilterName; // 0x308            
-            float m_flMoveDoneTime; // 0x310            
+            char m_hDamageFilter[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszDamageFilterName; // 0x_            
+            float m_flMoveDoneTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkSendProxyRecipientsFilter
-            CUtlStringToken m_nSubclassID; // 0x314            
-            uint8_t _pad0318[0x8]; // 0x318
+            CUtlStringToken m_nSubclassID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "0"
             // metadata: MNetworkSerializer "animTimeSerializer"
             // metadata: MNetworkSendProxyRecipientsFilter
-            float m_flAnimTime; // 0x320            
+            float m_flAnimTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "1"
             // metadata: MNetworkSerializer "simulationTimeSerializer"
             // metadata: MNetworkSendProxyRecipientsFilter
-            float m_flSimulationTime; // 0x324            
+            float m_flSimulationTime; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flCreateTime; // 0x328            
+            source2sdk::entity2::GameTime_t m_flCreateTime; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bClientSideRagdoll; // 0x32c            
+            bool m_bClientSideRagdoll; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_ubInterpolationFrame; // 0x32d            
-            uint8_t _pad032e[0x2]; // 0x32e
-            Vector m_vPrevVPhysicsUpdatePos; // 0x330            
+            std::uint8_t m_ubInterpolationFrame; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vPrevVPhysicsUpdatePos; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_iTeamNum; // 0x33c            
-            uint8_t _pad033d[0x3]; // 0x33d
-            CUtlSymbolLarge m_iGlobalname; // 0x340            
-            std::int32_t m_iSentToClients; // 0x348            
+            std::uint8_t m_iTeamNum; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iGlobalname; // 0x_            
+            std::int32_t m_iSentToClients; // 0x_            
             // metadata: MNetworkEnable
-            float m_flSpeed; // 0x34c            
-            CUtlString m_sUniqueHammerID; // 0x350            
+            float m_flSpeed; // 0x_            
+            CUtlString m_sUniqueHammerID; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_spawnflags; // 0x358            
+            std::uint32_t m_spawnflags; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::entity2::GameTick_t m_nNextThinkTick; // 0x35c            
-            std::int32_t m_nSimulationTick; // 0x360            
-            uint8_t _pad0364[0x4]; // 0x364
-            source2sdk::entity2::CEntityIOOutput m_OnKilled; // 0x368            
+            source2sdk::entity2::GameTick_t m_nNextThinkTick; // 0x_            
+            std::int32_t m_nSimulationTick; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::CEntityIOOutput m_OnKilled; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
-            std::uint32_t m_fFlags; // 0x390            
-            Vector m_vecAbsVelocity; // 0x394            
+            std::uint32_t m_fFlags; // 0x_            
+            Vector m_vecAbsVelocity; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             // metadata: MNetworkPriority "32"
-            source2sdk::client::CNetworkVelocityVector m_vecVelocity; // 0x3a0            
-            uint8_t _pad03c8[0x8]; // 0x3c8
-            std::int32_t m_nPushEnumCount; // 0x3d0            
-            uint8_t _pad03d4[0x4]; // 0x3d4
-            source2sdk::server::CCollisionProperty* m_pCollision; // 0x3d8            
+            source2sdk::client::CNetworkVelocityVector m_vecVelocity; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nPushEnumCount; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CCollisionProperty* m_pCollision; // 0x_            
             // metadata: MNetworkEnable
             // m_hEffectEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEffectEntity;
-            char m_hEffectEntity[0x4]; // 0x3e0            
+            char m_hEffectEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // m_hOwnerEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOwnerEntity;
-            char m_hOwnerEntity[0x4]; // 0x3e4            
+            char m_hOwnerEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnEffectsChanged"
-            std::uint32_t m_fEffects; // 0x3e8            
+            std::uint32_t m_fEffects; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
             // m_hGroundEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hGroundEntity;
-            char m_hGroundEntity[0x4]; // 0x3ec            
+            char m_hGroundEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
-            std::int32_t m_nGroundBodyIndex; // 0x3f0            
+            std::int32_t m_nGroundBodyIndex; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "4,000000"
             // metadata: MNetworkEncodeFlags "1"
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            float m_flFriction; // 0x3f4            
+            float m_flFriction; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            float m_flElasticity; // 0x3f8            
+            float m_flElasticity; // 0x_            
             // metadata: MNetworkEnable
-            float m_flGravityScale; // 0x3fc            
+            float m_flGravityScale; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            float m_flTimeScale; // 0x400            
+            float m_flTimeScale; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "Water"
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkEncodeFlags "8"
-            float m_flWaterLevel; // 0x404            
+            float m_flWaterLevel; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bGravityDisabled; // 0x408            
+            bool m_bGravityDisabled; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAnimatedEveryTick; // 0x409            
-            uint8_t _pad040a[0x2]; // 0x40a
-            float m_flActualGravityScale; // 0x40c            
-            bool m_bGravityActuallyDisabled; // 0x410            
-            bool m_bDisableLowViolence; // 0x411            
-            std::uint8_t m_nWaterType; // 0x412            
-            uint8_t _pad0413[0x1]; // 0x413
-            std::int32_t m_iEFlags; // 0x414            
-            source2sdk::entity2::CEntityIOOutput m_OnUser1; // 0x418            
-            source2sdk::entity2::CEntityIOOutput m_OnUser2; // 0x440            
-            source2sdk::entity2::CEntityIOOutput m_OnUser3; // 0x468            
-            source2sdk::entity2::CEntityIOOutput m_OnUser4; // 0x490            
-            std::int32_t m_iInitialTeamNum; // 0x4b8            
+            bool m_bAnimatedEveryTick; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flActualGravityScale; // 0x_            
+            bool m_bGravityActuallyDisabled; // 0x_            
+            bool m_bDisableLowViolence; // 0x_            
+            std::uint8_t m_nWaterType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_iEFlags; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnUser1; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnUser2; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnUser3; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnUser4; // 0x_            
+            std::int32_t m_iInitialTeamNum; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x4bc            
-            QAngle m_vecAngVelocity; // 0x4c0            
-            bool m_bNetworkQuantizeOriginAndAngles; // 0x4cc            
-            bool m_bLagCompensate; // 0x4cd            
-            uint8_t _pad04ce[0x2]; // 0x4ce
+            source2sdk::entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x_            
+            QAngle m_vecAngVelocity; // 0x_            
+            bool m_bNetworkQuantizeOriginAndAngles; // 0x_            
+            bool m_bLagCompensate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_pBlocker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_pBlocker;
-            char m_pBlocker[0x4]; // 0x4d0            
-            float m_flLocalTime; // 0x4d4            
-            float m_flVPhysicsUpdateLocalTime; // 0x4d8            
+            char m_pBlocker[0x_]; // 0x_            
+            float m_flLocalTime; // 0x_            
+            float m_flVPhysicsUpdateLocalTime; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::BloodType m_nBloodType; // 0x4dc            
+            source2sdk::client::BloodType m_nBloodType; // 0x_            
             
             // Datamap fields:
-            // CUtlSymbolLarge m_iszPrivateVScripts; // 0x8
-            // void m_CScriptComponent; // 0x30
-            // CUtlSymbolLarge subclass_name; // 0x7fffffff
-            // void m_pSubclassVData; // 0x318
-            // void* m_think; // 0x288
-            // void* m_pfnTouch; // 0x2b0
-            // void* m_pfnUse; // 0x2b8
-            // void* m_pfnBlocked; // 0x2c0
-            // void* m_pfnMoveDone; // 0x2c8
-            // int32_t InputSetTeam; // 0x0
-            // void InputKill; // 0x0
-            // void InputKillHierarchy; // 0x0
-            // void InputKillConstrained; // 0x0
-            // int32_t InputUse; // 0x0
-            // bool InputAlternativeSorting; // 0x0
-            // CUtlSymbolLarge InputSetParent; // 0x0
-            // CUtlSymbolLarge InputSetParentAttachment; // 0x0
-            // CUtlSymbolLarge InputSetParentAttachmentMaintainOffset; // 0x0
-            // void InputClearParent; // 0x0
-            // CUtlSymbolLarge InputFollowEntity; // 0x0
-            // CUtlSymbolLarge InputSetDamageFilter; // 0x0
-            // void InputEnableDamageForces; // 0x0
-            // void InputDisableDamageForces; // 0x0
-            // CUtlSymbolLarge InputDispatchResponse; // 0x0
-            // CUtlSymbolLarge InputAddContext; // 0x0
-            // CUtlSymbolLarge InputRemoveContext; // 0x0
-            // void InputClearContext; // 0x0
-            // CUtlSymbolLarge InputAddAttribute; // 0x0
-            // CUtlSymbolLarge InputRemoveAttribute; // 0x0
-            // void InputDisableShadow; // 0x0
-            // void InputEnableShadow; // 0x0
-            // CUtlSymbolLarge InputFireUser1; // 0x0
-            // CUtlSymbolLarge InputFireUser2; // 0x0
-            // CUtlSymbolLarge InputFireUser3; // 0x0
-            // CUtlSymbolLarge InputFireUser4; // 0x0
-            // CUtlSymbolLarge InputChangeSubclass; // 0x0
-            // void InputPlatformEnable; // 0x0
-            // void InputPlatformDisable; // 0x0
-            // void InputPlatformFollowYaw; // 0x0
-            // void InputPlatformIgnoreYaw; // 0x0
-            // void CBaseEntitySUB_Remove; // 0x0
-            // void CBaseEntitySUB_RemoveIfUncarried; // 0x0
-            // void CBaseEntitySUB_DoNothing; // 0x0
-            // void CBaseEntitySUB_Vanish; // 0x0
-            // void CBaseEntitySUB_CallUseToggle; // 0x0
-            // void CBaseEntitySUB_KillSelf; // 0x0
-            // void CBaseEntitySUB_KillSelfIfUncarried; // 0x0
-            // void CBaseEntityFakeScriptThinkFunc; // 0x0
-            // void CBaseEntityClearNavIgnoreContentsThink; // 0x0
-            // void m_pGameSceneNode; // 0x270
-            // void m_nEntityType; // 0x2f1
-            // QAngle angles; // 0x7fffffff
-            // Vector origin; // 0x7fffffff
-            // CStrongHandle< InfoForResourceTypeCModel > model; // 0x7fffffff
-            // CUtlString ownername; // 0x7fffffff
-            // int32_t disableshadows; // 0x7fffffff
-            // int32_t disablereceiveshadows; // 0x7fffffff
-            // int32_t nodamageforces; // 0x7fffffff
-            // float angle; // 0x7fffffff
+            // CUtlSymbolLarge m_iszPrivateVScripts; // 0x_
+            // void m_CScriptComponent; // 0x_
+            // CUtlSymbolLarge subclass_name; // 0x_
+            // void m_pSubclassVData; // 0x_
+            // void* m_think; // 0x_
+            // void* m_pfnTouch; // 0x_
+            // void* m_pfnUse; // 0x_
+            // void* m_pfnBlocked; // 0x_
+            // void* m_pfnMoveDone; // 0x_
+            // int32_t InputSetTeam; // 0x_
+            // void InputKill; // 0x_
+            // void InputKillHierarchy; // 0x_
+            // void InputKillConstrained; // 0x_
+            // int32_t InputUse; // 0x_
+            // bool InputAlternativeSorting; // 0x_
+            // CUtlSymbolLarge InputSetParent; // 0x_
+            // CUtlSymbolLarge InputSetParentAttachment; // 0x_
+            // CUtlSymbolLarge InputSetParentAttachmentMaintainOffset; // 0x_
+            // void InputClearParent; // 0x_
+            // CUtlSymbolLarge InputFollowEntity; // 0x_
+            // CUtlSymbolLarge InputSetDamageFilter; // 0x_
+            // void InputEnableDamageForces; // 0x_
+            // void InputDisableDamageForces; // 0x_
+            // CUtlSymbolLarge InputDispatchResponse; // 0x_
+            // CUtlSymbolLarge InputAddContext; // 0x_
+            // CUtlSymbolLarge InputRemoveContext; // 0x_
+            // void InputClearContext; // 0x_
+            // CUtlSymbolLarge InputAddAttribute; // 0x_
+            // CUtlSymbolLarge InputRemoveAttribute; // 0x_
+            // void InputDisableShadow; // 0x_
+            // void InputEnableShadow; // 0x_
+            // CUtlSymbolLarge InputFireUser1; // 0x_
+            // CUtlSymbolLarge InputFireUser2; // 0x_
+            // CUtlSymbolLarge InputFireUser3; // 0x_
+            // CUtlSymbolLarge InputFireUser4; // 0x_
+            // CUtlSymbolLarge InputChangeSubclass; // 0x_
+            // void InputPlatformEnable; // 0x_
+            // void InputPlatformDisable; // 0x_
+            // void InputPlatformFollowYaw; // 0x_
+            // void InputPlatformIgnoreYaw; // 0x_
+            // void CBaseEntitySUB_Remove; // 0x_
+            // void CBaseEntitySUB_RemoveIfUncarried; // 0x_
+            // void CBaseEntitySUB_DoNothing; // 0x_
+            // void CBaseEntitySUB_Vanish; // 0x_
+            // void CBaseEntitySUB_CallUseToggle; // 0x_
+            // void CBaseEntitySUB_KillSelf; // 0x_
+            // void CBaseEntitySUB_KillSelfIfUncarried; // 0x_
+            // void CBaseEntityFakeScriptThinkFunc; // 0x_
+            // void CBaseEntityClearNavIgnoreContentsThink; // 0x_
+            // void m_pGameSceneNode; // 0x_
+            // void m_nEntityType; // 0x_
+            // QAngle angles; // 0x_
+            // Vector origin; // 0x_
+            // CStrongHandle< InfoForResourceTypeCModel > model; // 0x_
+            // CUtlString ownername; // 0x_
+            // int32_t disableshadows; // 0x_
+            // int32_t disablereceiveshadows; // 0x_
+            // int32_t nodamageforces; // 0x_
+            // float angle; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseEntity) == 0x4e0);
+        static_assert(sizeof(source2sdk::server::CBaseEntity) == 0x_);
     };
 };

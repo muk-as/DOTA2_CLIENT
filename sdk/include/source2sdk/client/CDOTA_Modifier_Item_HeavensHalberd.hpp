@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_HeavensHalberd : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_health; // 0x1878            
-            float bonus_health_regen; // 0x187c            
-            std::int32_t block_damage_ranged; // 0x1880            
-            std::int32_t block_damage_melee; // 0x1884            
-            std::int32_t block_chance; // 0x1888            
-            std::int32_t bonus_all_stats; // 0x188c            
+            std::int32_t bonus_health; // 0x_            
+            float bonus_health_regen; // 0x_            
+            std::int32_t block_damage_ranged; // 0x_            
+            std::int32_t block_damage_melee; // 0x_            
+            std::int32_t block_chance; // 0x_            
+            std::int32_t bonus_all_stats; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_HeavensHalberd because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_HeavensHalberd) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_HeavensHalberd) == 0x_);
     };
 };

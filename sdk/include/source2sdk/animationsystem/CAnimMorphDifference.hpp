@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,12 +24,12 @@ namespace source2sdk
         class CAnimMorphDifference
         {
         public:
-            CBufferString m_name; // 0x0            
+            CBufferString m_name; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimMorphDifference, m_name) == 0x0);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimMorphDifference, m_name) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimMorphDifference) == 0x10);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimMorphDifference) == 0x_);
     };
 };

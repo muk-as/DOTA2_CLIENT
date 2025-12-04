@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,21 +25,21 @@ namespace source2sdk
         struct FeSphereRigid_t
         {
         public:
-            fltx4 vSphere; // 0x0            
-            std::uint16_t nNode; // 0x10            
-            std::uint16_t nCollisionMask; // 0x12            
-            std::uint16_t nVertexMapIndex; // 0x14            
-            std::uint16_t nFlags; // 0x16            
-            uint8_t _pad0018[0x8];
+            fltx4 vSphere; // 0x_            
+            std::uint16_t nNode; // 0x_            
+            std::uint16_t nCollisionMask; // 0x_            
+            std::uint16_t nVertexMapIndex; // 0x_            
+            std::uint16_t nFlags; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, vSphere) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nNode) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nCollisionMask) == 0x12);
-        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nVertexMapIndex) == 0x14);
-        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nFlags) == 0x16);
+        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, vSphere) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nNode) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nCollisionMask) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nVertexMapIndex) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeSphereRigid_t, nFlags) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeSphereRigid_t) == 0x20);
+        static_assert(sizeof(source2sdk::physicslib::FeSphereRigid_t) == 0x_);
     };
 };

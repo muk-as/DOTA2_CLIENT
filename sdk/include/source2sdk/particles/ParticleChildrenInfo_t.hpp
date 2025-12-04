@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,26 +29,26 @@ namespace source2sdk
             // metadata: MPropertySuppressField
             // m_ChildRef has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_ChildRef;
-            char m_ChildRef[0x8]; // 0x0            
+            char m_ChildRef[0x_]; // 0x_            
             // metadata: MPropertyFriendlyName "delay"
-            float m_flDelay; // 0x8            
+            float m_flDelay; // 0x_            
             // metadata: MPropertyFriendlyName "end cap effect"
-            bool m_bEndCap; // 0xc            
+            bool m_bEndCap; // 0x_            
             // metadata: MPropertySuppressField
-            bool m_bDisableChild; // 0xd            
-            uint8_t _pad000e[0x2]; // 0xe
+            bool m_bDisableChild; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "disable at detail levels below"
-            source2sdk::particles::ParticleDetailLevel_t m_nDetailLevel; // 0x10            
-            uint8_t _pad0014[0xc];
+            source2sdk::particles::ParticleDetailLevel_t m_nDetailLevel; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_ChildRef) == 0x0);
-        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_flDelay) == 0x8);
-        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_bEndCap) == 0xc);
-        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_bDisableChild) == 0xd);
-        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_nDetailLevel) == 0x10);
+        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_ChildRef) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_flDelay) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_bEndCap) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_bDisableChild) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticleChildrenInfo_t, m_nDetailLevel) == 0x_);
         
-        static_assert(sizeof(source2sdk::particles::ParticleChildrenInfo_t) == 0x20);
+        static_assert(sizeof(source2sdk::particles::ParticleChildrenInfo_t) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,24 +26,24 @@ namespace source2sdk
         class CSeqAutoLayer
         {
         public:
-            std::int16_t m_nLocalReference; // 0x0            
-            std::int16_t m_nLocalPose; // 0x2            
-            source2sdk::animationsystem::CSeqAutoLayerFlag m_flags; // 0x4            
-            float m_start; // 0xc            
-            float m_peak; // 0x10            
-            float m_tail; // 0x14            
-            float m_end; // 0x18            
+            std::int16_t m_nLocalReference; // 0x_            
+            std::int16_t m_nLocalPose; // 0x_            
+            source2sdk::animationsystem::CSeqAutoLayerFlag m_flags; // 0x_            
+            float m_start; // 0x_            
+            float m_peak; // 0x_            
+            float m_tail; // 0x_            
+            float m_end; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_nLocalReference) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_nLocalPose) == 0x2);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_flags) == 0x4);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_start) == 0xc);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_peak) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_tail) == 0x14);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_end) == 0x18);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_nLocalReference) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_nLocalPose) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_flags) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_start) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_peak) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_tail) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqAutoLayer, m_end) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CSeqAutoLayer) == 0x1c);
+        static_assert(sizeof(source2sdk::animationsystem::CSeqAutoLayer) == 0x_);
     };
 };

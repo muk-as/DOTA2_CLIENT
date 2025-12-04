@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Magnataur_Solid_Core : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float knockback_reduction; // 0x1878            
-            float slow_resistance; // 0x187c            
+            float knockback_reduction; // 0x_            
+            float slow_resistance; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Magnataur_Solid_Core because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Magnataur_Solid_Core) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Magnataur_Solid_Core) == 0x_);
     };
 };

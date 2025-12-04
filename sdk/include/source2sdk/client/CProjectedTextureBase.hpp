@@ -21,9 +21,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x2e0
+        // Size: 0x_
         // Has VTable
         // MDisableDataDescValidation
         // 
@@ -61,115 +61,115 @@ namespace source2sdk
         class CProjectedTextureBase
         {
         public:
-            uint8_t _pad0000[0xc]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hTargetEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTargetEntity;
-            char m_hTargetEntity[0x4]; // 0xc            
+            char m_hTargetEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bState; // 0x10            
+            bool m_bState; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bAlwaysUpdate; // 0x11            
-            uint8_t _pad0012[0x2]; // 0x12
+            bool m_bAlwaysUpdate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flLightFOV; // 0x14            
+            float m_flLightFOV; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEnableShadows; // 0x18            
+            bool m_bEnableShadows; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bSimpleProjection; // 0x19            
+            bool m_bSimpleProjection; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bLightOnlyTarget; // 0x1a            
+            bool m_bLightOnlyTarget; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bLightWorld; // 0x1b            
+            bool m_bLightWorld; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bCameraSpace; // 0x1c            
-            uint8_t _pad001d[0x3]; // 0x1d
+            bool m_bCameraSpace; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flBrightnessScale; // 0x20            
+            float m_flBrightnessScale; // 0x_            
             // metadata: MNetworkEnable
-            Color m_LightColor; // 0x24            
+            Color m_LightColor; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntensity; // 0x28            
+            float m_flIntensity; // 0x_            
             // metadata: MNetworkEnable
-            float m_flLinearAttenuation; // 0x2c            
+            float m_flLinearAttenuation; // 0x_            
             // metadata: MNetworkEnable
-            float m_flQuadraticAttenuation; // 0x30            
+            float m_flQuadraticAttenuation; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bVolumetric; // 0x34            
-            uint8_t _pad0035[0x3]; // 0x35
+            bool m_bVolumetric; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flVolumetricIntensity; // 0x38            
+            float m_flVolumetricIntensity; // 0x_            
             // metadata: MNetworkEnable
-            float m_flNoiseStrength; // 0x3c            
+            float m_flNoiseStrength; // 0x_            
             // metadata: MNetworkEnable
-            float m_flFlashlightTime; // 0x40            
+            float m_flFlashlightTime; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nNumPlanes; // 0x44            
+            std::uint32_t m_nNumPlanes; // 0x_            
             // metadata: MNetworkEnable
-            float m_flPlaneOffset; // 0x48            
+            float m_flPlaneOffset; // 0x_            
             // metadata: MNetworkEnable
-            float m_flColorTransitionTime; // 0x4c            
+            float m_flColorTransitionTime; // 0x_            
             // metadata: MNetworkEnable
-            float m_flAmbient; // 0x50            
+            float m_flAmbient; // 0x_            
             // metadata: MNetworkEnable
-            char m_SpotlightTextureName[512]; // 0x54            
+            char m_SpotlightTextureName[512]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nSpotlightTextureFrame; // 0x254            
+            std::int32_t m_nSpotlightTextureFrame; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nShadowQuality; // 0x258            
+            std::uint32_t m_nShadowQuality; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "16"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "500,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_flNearZ; // 0x25c            
+            float m_flNearZ; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "18"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1500,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_flFarZ; // 0x260            
+            float m_flFarZ; // 0x_            
             // metadata: MNetworkEnable
-            float m_flProjectionSize; // 0x264            
+            float m_flProjectionSize; // 0x_            
             // metadata: MNetworkEnable
-            float m_flRotation; // 0x268            
+            float m_flRotation; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFlipHorizontal; // 0x26c            
-            uint8_t _pad026d[0x73];
+            bool m_bFlipHorizontal; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_hTargetEntity) == 0xc);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bState) == 0x10);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bAlwaysUpdate) == 0x11);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flLightFOV) == 0x14);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bEnableShadows) == 0x18);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bSimpleProjection) == 0x19);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bLightOnlyTarget) == 0x1a);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bLightWorld) == 0x1b);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bCameraSpace) == 0x1c);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flBrightnessScale) == 0x20);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_LightColor) == 0x24);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flIntensity) == 0x28);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flLinearAttenuation) == 0x2c);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flQuadraticAttenuation) == 0x30);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bVolumetric) == 0x34);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flVolumetricIntensity) == 0x38);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flNoiseStrength) == 0x3c);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flFlashlightTime) == 0x40);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nNumPlanes) == 0x44);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flPlaneOffset) == 0x48);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flColorTransitionTime) == 0x4c);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flAmbient) == 0x50);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_SpotlightTextureName) == 0x54);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nSpotlightTextureFrame) == 0x254);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nShadowQuality) == 0x258);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flNearZ) == 0x25c);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flFarZ) == 0x260);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flProjectionSize) == 0x264);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flRotation) == 0x268);
-        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bFlipHorizontal) == 0x26c);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_hTargetEntity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bState) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bAlwaysUpdate) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flLightFOV) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bEnableShadows) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bSimpleProjection) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bLightOnlyTarget) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bLightWorld) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bCameraSpace) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flBrightnessScale) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_LightColor) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flIntensity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flLinearAttenuation) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flQuadraticAttenuation) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bVolumetric) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flVolumetricIntensity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flNoiseStrength) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flFlashlightTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nNumPlanes) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flPlaneOffset) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flColorTransitionTime) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flAmbient) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_SpotlightTextureName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nSpotlightTextureFrame) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_nShadowQuality) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flNearZ) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flFarZ) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flProjectionSize) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_flRotation) == 0x_);
+        static_assert(offsetof(source2sdk::client::CProjectedTextureBase, m_bFlipHorizontal) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CProjectedTextureBase) == 0x2e0);
+        static_assert(sizeof(source2sdk::client::CProjectedTextureBase) == 0x_);
     };
 };

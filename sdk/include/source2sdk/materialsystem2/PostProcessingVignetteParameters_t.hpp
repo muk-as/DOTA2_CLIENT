@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x24
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,22 +25,22 @@ namespace source2sdk
         struct PostProcessingVignetteParameters_t
         {
         public:
-            float m_flVignetteStrength; // 0x0            
-            Vector2D m_vCenter; // 0x4            
-            float m_flRadius; // 0xc            
-            float m_flRoundness; // 0x10            
-            float m_flFeather; // 0x14            
-            Vector m_vColorTint; // 0x18            
+            float m_flVignetteStrength; // 0x_            
+            Vector2D m_vCenter; // 0x_            
+            float m_flRadius; // 0x_            
+            float m_flRoundness; // 0x_            
+            float m_flFeather; // 0x_            
+            Vector m_vColorTint; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flVignetteStrength) == 0x0);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_vCenter) == 0x4);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flRadius) == 0xc);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flRoundness) == 0x10);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flFeather) == 0x14);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_vColorTint) == 0x18);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flVignetteStrength) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_vCenter) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flRadius) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flRoundness) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_flFeather) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t, m_vColorTint) == 0x_);
         
-        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t) == 0x24);
+        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingVignetteParameters_t) == 0x_);
     };
 };

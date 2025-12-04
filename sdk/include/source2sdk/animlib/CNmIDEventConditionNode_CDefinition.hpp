@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,17 +27,17 @@ namespace source2sdk
         class CNmIDEventConditionNode_CDefinition : public source2sdk::animlib::CNmBoolValueNode_CDefinition
         {
         public:
-            std::int16_t m_nSourceStateNodeIdx; // 0x10            
-            uint8_t _pad0012[0x2]; // 0x12
-            source2sdk::animlib::CNmBitFlags m_eventConditionRules; // 0x14            
+            std::int16_t m_nSourceStateNodeIdx; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animlib::CNmBitFlags m_eventConditionRules; // 0x_            
             // m_eventIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<CGlobalSymbol,5> m_eventIDs;
-            char m_eventIDs[0x40]; // 0x18            
+            char m_eventIDs[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmIDEventConditionNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmIDEventConditionNode_CDefinition) == 0x58);
+        static_assert(sizeof(source2sdk::animlib::CNmIDEventConditionNode_CDefinition) == 0x_);
     };
 };

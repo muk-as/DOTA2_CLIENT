@@ -18,9 +18,9 @@ namespace source2sdk
     namespace animgraphlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // 
         // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
@@ -29,32 +29,32 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Target Source"
             // metadata: MPropertyAutoRebuildOnChange
-            source2sdk::animgraphlib::IKTargetSource m_TargetSource; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
+            source2sdk::animgraphlib::IKTargetSource m_TargetSource; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Bone"
             // metadata: MPropertyAttrStateCallback
-            source2sdk::animgraphlib::IKBoneNameAndIndex_t m_Bone; // 0x8            
+            source2sdk::animgraphlib::IKBoneNameAndIndex_t m_Bone; // 0x_            
             // metadata: MPropertyFriendlyName "Animgraph Position Parameter"
             // metadata: MPropertyAttributeChoiceName "VectorParameter"
             // metadata: MPropertyAttrStateCallback
-            source2sdk::modellib::AnimParamID m_AnimgraphParameterNamePosition; // 0x18            
+            source2sdk::modellib::AnimParamID m_AnimgraphParameterNamePosition; // 0x_            
             // metadata: MPropertyFriendlyName "Animgraph Orientation Parameter"
             // metadata: MPropertyAttributeChoiceName "QuaternionParameter"
             // metadata: MPropertyAttrStateCallback
-            source2sdk::modellib::AnimParamID m_AnimgraphParameterNameOrientation; // 0x1c            
+            source2sdk::modellib::AnimParamID m_AnimgraphParameterNameOrientation; // 0x_            
             // metadata: MPropertyFriendlyName "Target Coords"
             // metadata: MPropertyAttrStateCallback
-            source2sdk::animgraphlib::IKTargetCoordinateSystem m_TargetCoordSystem; // 0x20            
-            uint8_t _pad0024[0x4];
+            source2sdk::animgraphlib::IKTargetCoordinateSystem m_TargetCoordSystem; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_TargetSource) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_Bone) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_AnimgraphParameterNamePosition) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_AnimgraphParameterNameOrientation) == 0x1c);
-        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_TargetCoordSystem) == 0x20);
+        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_TargetSource) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_Bone) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_AnimgraphParameterNamePosition) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_AnimgraphParameterNameOrientation) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::IKTargetSettings_t, m_TargetCoordSystem) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::IKTargetSettings_t) == 0x28);
+        static_assert(sizeof(source2sdk::animgraphlib::IKTargetSettings_t) == 0x_);
     };
 };

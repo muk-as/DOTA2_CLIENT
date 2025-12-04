@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x8
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,14 +25,14 @@ namespace source2sdk
         struct NmCompressionSettings_t_QuantizationRange_t
         {
         public:
-            float m_flRangeStart; // 0x0            
-            float m_flRangeLength; // 0x4            
+            float m_flRangeStart; // 0x_            
+            float m_flRangeLength; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t, m_flRangeStart) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t, m_flRangeLength) == 0x4);
+        static_assert(offsetof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t, m_flRangeStart) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t, m_flRangeLength) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t) == 0x8);
+        static_assert(sizeof(source2sdk::animlib::NmCompressionSettings_t_QuantizationRange_t) == 0x_);
     };
 };

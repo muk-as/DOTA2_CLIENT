@@ -26,46 +26,46 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1910
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_CrystalMaiden_FreezingField : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            std::int32_t damage; // 0x187c            
-            std::int32_t bonus_armor; // 0x1880            
-            float explosion_interval; // 0x1884            
-            float shard_bonus_explosion; // 0x1888            
-            float explosion_radius; // 0x188c            
-            float slow_duration; // 0x1890            
-            std::int32_t explosion_min_dist; // 0x1894            
-            float explosion_max_dist; // 0x1898            
-            float frostbite_delay; // 0x189c            
-            source2sdk::entity2::GameTime_t m_fLastTick; // 0x18a0            
-            float m_fTimeAccumulator; // 0x18a4            
-            std::int32_t m_iExplosionCount; // 0x18a8            
-            std::int32_t m_iExplosionTotalCount; // 0x18ac            
-            std::int32_t m_iExplosionQuadrant; // 0x18b0            
-            std::int32_t m_iExplosionDistance; // 0x18b4            
-            std::int32_t shard_self_movement_speed_slow_pct; // 0x18b8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18bc            
-            uint8_t _pad18c0[0x18]; // 0x18c0
+            float radius; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t bonus_armor; // 0x_            
+            float explosion_interval; // 0x_            
+            float shard_bonus_explosion; // 0x_            
+            float explosion_radius; // 0x_            
+            float slow_duration; // 0x_            
+            std::int32_t explosion_min_dist; // 0x_            
+            float explosion_max_dist; // 0x_            
+            float frostbite_delay; // 0x_            
+            source2sdk::entity2::GameTime_t m_fLastTick; // 0x_            
+            float m_fTimeAccumulator; // 0x_            
+            std::int32_t m_iExplosionCount; // 0x_            
+            std::int32_t m_iExplosionTotalCount; // 0x_            
+            std::int32_t m_iExplosionQuadrant; // 0x_            
+            std::int32_t m_iExplosionDistance; // 0x_            
+            std::int32_t shard_self_movement_speed_slow_pct; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitEntities;
-            char m_hHitEntities[0x18]; // 0x18d8            
+            char m_hHitEntities[0x_]; // 0x_            
             // m_hHitHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitHeroes;
-            char m_hHitHeroes[0x18]; // 0x18f0            
-            bool m_bHitInvisibleHero; // 0x1908            
-            bool m_bColdComfortActive; // 0x1909            
-            uint8_t _pad190a[0x2]; // 0x190a
-            std::int32_t can_move; // 0x190c            
+            char m_hHitHeroes[0x_]; // 0x_            
+            bool m_bHitInvisibleHero; // 0x_            
+            bool m_bColdComfortActive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t can_move; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_CrystalMaiden_FreezingField because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_FreezingField) == 0x1910);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_FreezingField) == 0x_);
     };
 };

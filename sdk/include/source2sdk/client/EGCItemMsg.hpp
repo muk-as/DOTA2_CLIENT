@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 133
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class EGCItemMsg : std::uint32_t
         {
             k_EMsgGCBase = 0x3e8,

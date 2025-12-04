@@ -14,23 +14,23 @@ namespace source2sdk
     namespace navlib
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct NavGravity_t
         {
         public:
-            Vector m_vGravity; // 0x0            
-            bool m_bDefault; // 0xc            
-            uint8_t _pad000d[0x3];
+            Vector m_vGravity; // 0x_            
+            bool m_bDefault; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::navlib::NavGravity_t, m_vGravity) == 0x0);
-        static_assert(offsetof(source2sdk::navlib::NavGravity_t, m_bDefault) == 0xc);
+        static_assert(offsetof(source2sdk::navlib::NavGravity_t, m_vGravity) == 0x_);
+        static_assert(offsetof(source2sdk::navlib::NavGravity_t, m_bDefault) == 0x_);
         
-        static_assert(sizeof(source2sdk::navlib::NavGravity_t) == 0x10);
+        static_assert(sizeof(source2sdk::navlib::NavGravity_t) == 0x_);
     };
 };

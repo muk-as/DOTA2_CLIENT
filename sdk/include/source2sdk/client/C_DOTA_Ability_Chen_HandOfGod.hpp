@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6a0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,12 +25,12 @@ namespace source2sdk
         class C_DOTA_Ability_Chen_HandOfGod : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            uint8_t _pad0688[0x18];
+            uint8_t _pad_[0x_];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Chen_HandOfGod) == 0x6a0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Chen_HandOfGod) == 0x_);
     };
 };

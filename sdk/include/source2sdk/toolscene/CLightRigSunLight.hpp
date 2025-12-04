@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace toolscene
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x54
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,17 +26,17 @@ namespace source2sdk
         class CLightRigSunLight : public source2sdk::toolscene::CLightRigLight
         {
         public:
-            float m_flShadowCascadeDistance0; // 0x40            
-            float m_flShadowCascadeDistance1; // 0x44            
-            float m_flShadowCascadeDistance2; // 0x48            
-            float m_flShadowCascadeDistance3; // 0x4c            
-            bool m_bCastShadows; // 0x50            
-            uint8_t _pad0051[0x3];
+            float m_flShadowCascadeDistance0; // 0x_            
+            float m_flShadowCascadeDistance1; // 0x_            
+            float m_flShadowCascadeDistance2; // 0x_            
+            float m_flShadowCascadeDistance3; // 0x_            
+            bool m_bCastShadows; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CLightRigSunLight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::toolscene::CLightRigSunLight) == 0x54);
+        static_assert(sizeof(source2sdk::toolscene::CLightRigSunLight) == 0x_);
     };
 };

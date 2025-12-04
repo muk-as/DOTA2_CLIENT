@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,14 +30,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Minimum rotation range"
-            CSmartPropAttributeAngles m_vRandomRotationMin; // 0x50            
+            CSmartPropAttributeAngles m_vRandomRotationMin; // 0x_            
             // metadata: MPropertyDescription "Maximum rotation range"
-            CSmartPropAttributeAngles m_vRandomRotationMax; // 0x90            
+            CSmartPropAttributeAngles m_vRandomRotationMax; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_RandomRotation because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RandomRotation) == 0xd0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RandomRotation) == 0x_);
     };
 };

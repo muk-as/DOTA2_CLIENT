@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,13 +26,13 @@ namespace source2sdk
         struct RnCapsuleDesc_t : public source2sdk::physicslib::RnShapeDesc_t
         {
         public:
-            source2sdk::physicslib::RnCapsule_t m_Capsule; // 0x18            
-            uint8_t _pad0034[0x4];
+            source2sdk::physicslib::RnCapsule_t m_Capsule; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in RnCapsuleDesc_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::physicslib::RnCapsuleDesc_t) == 0x38);
+        static_assert(sizeof(source2sdk::physicslib::RnCapsuleDesc_t) == 0x_);
     };
 };

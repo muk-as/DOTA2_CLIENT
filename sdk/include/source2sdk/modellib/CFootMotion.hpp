@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,17 +27,17 @@ namespace source2sdk
         public:
             // m_strides has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::CFootStride> m_strides;
-            char m_strides[0x18]; // 0x0            
-            CUtlString m_name; // 0x18            
-            bool m_bAdditive; // 0x20            
-            uint8_t _pad0021[0x7];
+            char m_strides[0x_]; // 0x_            
+            CUtlString m_name; // 0x_            
+            bool m_bAdditive; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_strides) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_name) == 0x18);
-        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_bAdditive) == 0x20);
+        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_strides) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CFootMotion, m_bAdditive) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CFootMotion) == 0x28);
+        static_assert(sizeof(source2sdk::modellib::CFootMotion) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x210
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,27 +32,27 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Position of origin point."
-            CSmartPropAttributeVector m_vOriginPos; // 0x50            
+            CSmartPropAttributeVector m_vOriginPos; // 0x_            
             // metadata: MPropertyDescription "position of target point."
-            CSmartPropAttributeVector m_vTargetPos; // 0x90            
+            CSmartPropAttributeVector m_vTargetPos; // 0x_            
             // metadata: MPropertyDescription "position of up point."
-            CSmartPropAttributeVector m_vUpPos; // 0xd0            
+            CSmartPropAttributeVector m_vUpPos; // 0x_            
             // metadata: MPropertyDescription "Coefficient to modulate the rotation"
-            CSmartPropAttributeFloat m_flWeight; // 0x110            
+            CSmartPropAttributeFloat m_flWeight; // 0x_            
             // metadata: MPropertyGroupName "Input Coordinate Space"
             // metadata: MPropertyDescription "Space in which the origin position is defined."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_OriginSpace; // 0x150            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_OriginSpace; // 0x_            
             // metadata: MPropertyGroupName "Input Coordinate Space"
             // metadata: MPropertyDescription "Space in which the target position is defined."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_TargetSpace; // 0x190            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_TargetSpace; // 0x_            
             // metadata: MPropertyGroupName "Input Coordinate Space"
             // metadata: MPropertyDescription "Space in which the up target is defined."
-            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpSpace; // 0x1d0            
+            source2sdk::smartprops::CSmartPropAttributeCoordinateSpace m_UpSpace; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropOperation_RotateTowards because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RotateTowards) == 0x210);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropOperation_RotateTowards) == 0x_);
     };
 };

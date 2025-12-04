@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,25 +27,25 @@ namespace source2sdk
         class CSeqSynthAnimDesc
         {
         public:
-            CBufferString m_sName; // 0x0            
-            source2sdk::animationsystem::CSeqSeqDescFlag m_flags; // 0x10            
-            uint8_t _pad001b[0x1]; // 0x1b
-            source2sdk::animationsystem::CSeqTransition m_transition; // 0x1c            
-            std::int16_t m_nLocalBaseReference; // 0x24            
-            std::int16_t m_nLocalBoneMask; // 0x26            
+            CBufferString m_sName; // 0x_            
+            source2sdk::animationsystem::CSeqSeqDescFlag m_flags; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::animationsystem::CSeqTransition m_transition; // 0x_            
+            std::int16_t m_nLocalBaseReference; // 0x_            
+            std::int16_t m_nLocalBoneMask; // 0x_            
             // m_activityArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animationsystem::CAnimActivity> m_activityArray;
-            char m_activityArray[0x18]; // 0x28            
+            char m_activityArray[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_sName) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_flags) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_transition) == 0x1c);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_nLocalBaseReference) == 0x24);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_nLocalBoneMask) == 0x26);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_activityArray) == 0x28);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_sName) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_flags) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_transition) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_nLocalBaseReference) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_nLocalBoneMask) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqSynthAnimDesc, m_activityArray) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CSeqSynthAnimDesc) == 0x40);
+        static_assert(sizeof(source2sdk::animationsystem::CSeqSynthAnimDesc) == 0x_);
     };
 };

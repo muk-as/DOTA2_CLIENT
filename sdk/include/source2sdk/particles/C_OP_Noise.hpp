@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,23 +29,23 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "output field"
             // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x1c0            
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldOutput; // 0x_            
             // metadata: MPropertyFriendlyName "output minimum"
-            float m_flOutputMin; // 0x1c4            
+            float m_flOutputMin; // 0x_            
             // metadata: MPropertyFriendlyName "output maximum"
-            float m_flOutputMax; // 0x1c8            
+            float m_flOutputMax; // 0x_            
             // metadata: MPropertyFriendlyName "noise coordinate scale"
-            float m_fl4NoiseScale; // 0x1cc            
+            float m_fl4NoiseScale; // 0x_            
             // metadata: MPropertyFriendlyName "additive"
-            bool m_bAdditive; // 0x1d0            
-            uint8_t _pad01d1[0x3]; // 0x1d1
+            bool m_bAdditive; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Noise animation time scale"
-            float m_flNoiseAnimationTimeScale; // 0x1d4            
+            float m_flNoiseAnimationTimeScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_Noise because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_Noise) == 0x1d8);
+        static_assert(sizeof(source2sdk::particles::C_OP_Noise) == 0x_);
     };
 };

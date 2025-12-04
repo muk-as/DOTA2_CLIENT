@@ -14,30 +14,30 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct TimedTeamStats_t
         {
         public:
-            std::uint32_t m_nTime; // 0x0            
-            std::uint16_t m_nEnemyTowerStatus; // 0x4            
-            std::uint16_t m_nEnemyBarracksStatus; // 0x6            
-            std::uint8_t m_nEnemyTowersKilled; // 0x8            
-            std::uint8_t m_nEnemyBarracksKilled; // 0x9            
-            uint8_t _pad000a[0x2];
+            std::uint32_t m_nTime; // 0x_            
+            std::uint16_t m_nEnemyTowerStatus; // 0x_            
+            std::uint16_t m_nEnemyBarracksStatus; // 0x_            
+            std::uint8_t m_nEnemyTowersKilled; // 0x_            
+            std::uint8_t m_nEnemyBarracksKilled; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nTime) == 0x0);
-        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyTowerStatus) == 0x4);
-        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyBarracksStatus) == 0x6);
-        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyTowersKilled) == 0x8);
-        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyBarracksKilled) == 0x9);
+        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nTime) == 0x_);
+        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyTowerStatus) == 0x_);
+        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyBarracksStatus) == 0x_);
+        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyTowersKilled) == 0x_);
+        static_assert(offsetof(source2sdk::server::TimedTeamStats_t, m_nEnemyBarracksKilled) == 0x_);
         
-        static_assert(sizeof(source2sdk::server::TimedTeamStats_t) == 0xc);
+        static_assert(sizeof(source2sdk::server::TimedTeamStats_t) == 0x_);
     };
 };

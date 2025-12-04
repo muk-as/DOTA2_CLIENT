@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1f20
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,15 +30,15 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetAngle; // 0x1f18            
+            std::int32_t m_nTargetAngle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetRange; // 0x1f1c            
+            std::int32_t m_nTargetRange; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_Razor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Razor) == 0x1f20);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Razor) == 0x_);
     };
 };

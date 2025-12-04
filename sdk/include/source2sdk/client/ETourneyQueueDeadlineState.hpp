@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 7
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ETourneyQueueDeadlineState : std::uint32_t
         {
             k_ETourneyQueueDeadlineState_Normal = 0x0,

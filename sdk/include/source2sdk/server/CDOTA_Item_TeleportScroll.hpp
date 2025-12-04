@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,19 +35,19 @@ namespace source2sdk
         public:
             // m_hTeleportTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTeleportTarget;
-            char m_hTeleportTarget[0x4]; // 0x690            
-            source2sdk::client::ParticleIndex_t m_nFXOrigin; // 0x694            
-            source2sdk::client::ParticleIndex_t m_nFXDestination; // 0x698            
-            Vector m_vDestination; // 0x69c            
-            std::int32_t m_iMinDistance; // 0x6a8            
-            float m_flBaseTeleportTime; // 0x6ac            
-            float m_flExtraTeleportTime; // 0x6b0            
-            uint8_t _pad06b4[0x4];
+            char m_hTeleportTarget[0x_]; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXOrigin; // 0x_            
+            source2sdk::client::ParticleIndex_t m_nFXDestination; // 0x_            
+            Vector m_vDestination; // 0x_            
+            std::int32_t m_iMinDistance; // 0x_            
+            float m_flBaseTeleportTime; // 0x_            
+            float m_flExtraTeleportTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_TeleportScroll because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_TeleportScroll) == 0x6b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_TeleportScroll) == 0x_);
     };
 };

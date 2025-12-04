@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace soundsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,24 +28,24 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Minimum Nearby Soundevents"
-            std::int32_t m_nMinNearby; // 0x18            
+            std::int32_t m_nMinNearby; // 0x_            
             // metadata: MPropertyFriendlyName "Search Radius to Cluster Soundevents"
-            float m_flClusterEpsilon; // 0x1c            
+            float m_flClusterEpsilon; // 0x_            
             // metadata: MPropertyFriendlyName "'Should Play' Opvar Name"
-            CUtlString m_shouldPlayOpvar; // 0x20            
+            CUtlString m_shouldPlayOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "'Should Play Cluster Child' Opvar Name"
-            CUtlString m_shouldPlayClusterChild; // 0x28            
+            CUtlString m_shouldPlayClusterChild; // 0x_            
             // metadata: MPropertyFriendlyName "Cluster Size Opvar Name"
-            CUtlString m_clusterSizeOpvar; // 0x30            
+            CUtlString m_clusterSizeOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "'Group Box Mins' Opvar Name"
-            CUtlString m_groupBoundingBoxMinsOpvar; // 0x38            
+            CUtlString m_groupBoundingBoxMinsOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "'Group Box Maxs' Opvar Name"
-            CUtlString m_groupBoundingBoxMaxsOpvar; // 0x40            
+            CUtlString m_groupBoundingBoxMaxsOpvar; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSosGroupActionSoundeventClusterSchema because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventClusterSchema) == 0x48);
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionSoundeventClusterSchema) == 0x_);
     };
 };

@@ -24,10 +24,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x860
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -50,76 +50,76 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hSpriteMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hSpriteMaterial;
-            char m_hSpriteMaterial[0x8]; // 0x7f0            
+            char m_hSpriteMaterial[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_hAttachedToEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAttachedToEntity;
-            char m_hAttachedToEntity[0x4]; // 0x7f8            
+            char m_hAttachedToEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::modellib::AttachmentHandle_t m_nAttachment; // 0x7fc            
-            uint8_t _pad07fd[0x3]; // 0x7fd
+            source2sdk::modellib::AttachmentHandle_t m_nAttachment; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "60,000000"
             // metadata: MNetworkEncodeFlags "2"
-            float m_flSpriteFramerate; // 0x800            
+            float m_flSpriteFramerate; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "20"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "256,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_flFrame; // 0x804            
-            source2sdk::entity2::GameTime_t m_flDieTime; // 0x808            
-            uint8_t _pad080c[0xc]; // 0x80c
+            float m_flFrame; // 0x_            
+            source2sdk::entity2::GameTime_t m_flDieTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint32_t m_nBrightness; // 0x818            
+            std::uint32_t m_nBrightness; // 0x_            
             // metadata: MNetworkEnable
-            float m_flBrightnessDuration; // 0x81c            
+            float m_flBrightnessDuration; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpriteScaleChanged"
-            float m_flSpriteScale; // 0x820            
+            float m_flSpriteScale; // 0x_            
             // metadata: MNetworkEnable
-            float m_flScaleDuration; // 0x824            
+            float m_flScaleDuration; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bWorldSpaceScale; // 0x828            
-            uint8_t _pad0829[0x3]; // 0x829
+            bool m_bWorldSpaceScale; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "6"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "64,000000"
             // metadata: MNetworkEncodeFlags "2"
-            float m_flGlowProxySize; // 0x82c            
+            float m_flGlowProxySize; // 0x_            
             // metadata: MNetworkEnable
-            float m_flHDRColorScale; // 0x830            
-            source2sdk::entity2::GameTime_t m_flLastTime; // 0x834            
-            float m_flMaxFrame; // 0x838            
-            float m_flStartScale; // 0x83c            
-            float m_flDestScale; // 0x840            
-            source2sdk::entity2::GameTime_t m_flScaleTimeStart; // 0x844            
-            std::int32_t m_nStartBrightness; // 0x848            
-            std::int32_t m_nDestBrightness; // 0x84c            
-            source2sdk::entity2::GameTime_t m_flBrightnessTimeStart; // 0x850            
-            std::int32_t m_nSpriteWidth; // 0x854            
-            std::int32_t m_nSpriteHeight; // 0x858            
-            uint8_t _pad085c[0x4];
+            float m_flHDRColorScale; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastTime; // 0x_            
+            float m_flMaxFrame; // 0x_            
+            float m_flStartScale; // 0x_            
+            float m_flDestScale; // 0x_            
+            source2sdk::entity2::GameTime_t m_flScaleTimeStart; // 0x_            
+            std::int32_t m_nStartBrightness; // 0x_            
+            std::int32_t m_nDestBrightness; // 0x_            
+            source2sdk::entity2::GameTime_t m_flBrightnessTimeStart; // 0x_            
+            std::int32_t m_nSpriteWidth; // 0x_            
+            std::int32_t m_nSpriteHeight; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void CSpriteAnimateThink; // 0x0
-            // void CSpriteExpandThink; // 0x0
-            // void CSpriteAnimateUntilDead; // 0x0
-            // void CSpriteBeginFadeOutThink; // 0x0
-            // void InputHideSprite; // 0x0
-            // void InputShowSprite; // 0x0
-            // void InputToggleSprite; // 0x0
-            // float InputColorRedValue; // 0x0
-            // float InputColorGreenValue; // 0x0
-            // float InputColorBlueValue; // 0x0
+            // void CSpriteAnimateThink; // 0x_
+            // void CSpriteExpandThink; // 0x_
+            // void CSpriteAnimateUntilDead; // 0x_
+            // void CSpriteBeginFadeOutThink; // 0x_
+            // void InputHideSprite; // 0x_
+            // void InputShowSprite; // 0x_
+            // void InputToggleSprite; // 0x_
+            // float InputColorRedValue; // 0x_
+            // float InputColorGreenValue; // 0x_
+            // float InputColorBlueValue; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSprite because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSprite) == 0x860);
+        static_assert(sizeof(source2sdk::server::CSprite) == 0x_);
     };
 };

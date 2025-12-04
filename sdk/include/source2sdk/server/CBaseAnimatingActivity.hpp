@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x800
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,22 +28,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bShouldAnimateDuringGameplayPause; // 0x7f0            
+            bool m_bShouldAnimateDuringGameplayPause; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x7f1            
-            bool m_bAnimationUpdateScheduled; // 0x7f2            
-            uint8_t _pad07f3[0x5]; // 0x7f3
+            bool m_bInitiallyPopulateInterpHistory; // 0x_            
+            bool m_bAnimationUpdateScheduled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_pSuppressedAnimEventTags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString>* m_pSuppressedAnimEventTags;
-            char m_pSuppressedAnimEventTags[0x8]; // 0x7f8            
+            char m_pSuppressedAnimEventTags[0x_]; // 0x_            
             
             // Datamap fields:
-            // float InputSetPlaybackRate; // 0x0
+            // float InputSetPlaybackRate; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseAnimatingActivity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseAnimatingActivity) == 0x800);
+        static_assert(sizeof(source2sdk::server::CBaseAnimatingActivity) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,21 +26,21 @@ namespace source2sdk
         class C_DOTA_Ability_VengefulSpirit_WaveOfTerror : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float wave_width; // 0x688            
-            float wave_speed; // 0x68c            
-            std::int32_t m_iProjectile; // 0x690            
-            float vision_aoe; // 0x694            
-            float vision_duration; // 0x698            
-            std::int32_t steal_pct; // 0x69c            
-            float damage; // 0x6a0            
-            std::int32_t m_nNumHeroesHit; // 0x6a4            
-            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x6a8            
-            uint8_t _pad06c0[0x18];
+            float wave_width; // 0x_            
+            float wave_speed; // 0x_            
+            std::int32_t m_iProjectile; // 0x_            
+            float vision_aoe; // 0x_            
+            float vision_duration; // 0x_            
+            std::int32_t steal_pct; // 0x_            
+            float damage; // 0x_            
+            std::int32_t m_nNumHeroesHit; // 0x_            
+            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_VengefulSpirit_WaveOfTerror because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_VengefulSpirit_WaveOfTerror) == 0x6d8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_VengefulSpirit_WaveOfTerror) == 0x_);
     };
 };

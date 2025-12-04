@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa10
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,31 +28,31 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "X Dimension Count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nXCount; // 0x1c8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nXCount; // 0x_            
             // metadata: MPropertyFriendlyName "Y Dimension Count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nYCount; // 0x328            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nYCount; // 0x_            
             // metadata: MPropertyFriendlyName "Z Dimension Count"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nZCount; // 0x488            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nZCount; // 0x_            
             // metadata: MPropertyFriendlyName "X Dimension Spacing"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nXSpacing; // 0x5e8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nXSpacing; // 0x_            
             // metadata: MPropertyFriendlyName "Y Dimension Spacing"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nYSpacing; // 0x748            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nYSpacing; // 0x_            
             // metadata: MPropertyFriendlyName "Z Dimension Spacing"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_nZSpacing; // 0x8a8            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_nZSpacing; // 0x_            
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0xa08            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "use local space"
-            bool m_bLocalSpace; // 0xa0c            
+            bool m_bLocalSpace; // 0x_            
             // metadata: MPropertyFriendlyName "center around control point"
-            bool m_bCenter; // 0xa0d            
+            bool m_bCenter; // 0x_            
             // metadata: MPropertyFriendlyName "hollow"
-            bool m_bHollow; // 0xa0e            
-            uint8_t _pad0a0f[0x1];
+            bool m_bHollow; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateOnGrid because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnGrid) == 0xa10);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateOnGrid) == 0x_);
     };
 };

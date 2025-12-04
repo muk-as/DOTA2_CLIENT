@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xbe8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,31 +28,31 @@ namespace source2sdk
         class CSurvivorsPowerUpDefinition_LandMine : public source2sdk::client::CSurvivorsPowerUpDefinition
         {
         public:
-            float m_flScepterVacuumRadius; // 0x6a0            
-            float m_flScepterVacuumDistance; // 0x6a4            
+            float m_flScepterVacuumRadius; // 0x_            
+            float m_flScepterVacuumDistance; // 0x_            
             // m_sParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sParticle;
-            char m_sParticle[0xe0]; // 0x6a8            
+            char m_sParticle[0x_]; // 0x_            
             // m_sExplosionParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sExplosionParticle;
-            char m_sExplosionParticle[0xe0]; // 0x788            
+            char m_sExplosionParticle[0x_]; // 0x_            
             // m_sStasisTrapParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sStasisTrapParticle;
-            char m_sStasisTrapParticle[0xe0]; // 0x868            
+            char m_sStasisTrapParticle[0x_]; // 0x_            
             // m_sStasisTrapExplosion has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sStasisTrapExplosion;
-            char m_sStasisTrapExplosion[0xe0]; // 0x948            
+            char m_sStasisTrapExplosion[0x_]; // 0x_            
             // m_sRemoteMineParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sRemoteMineParticle;
-            char m_sRemoteMineParticle[0xe0]; // 0xa28            
+            char m_sRemoteMineParticle[0x_]; // 0x_            
             // m_sRemoteMineExplosion has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sRemoteMineExplosion;
-            char m_sRemoteMineExplosion[0xe0]; // 0xb08            
+            char m_sRemoteMineExplosion[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_LandMine because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_LandMine) == 0xbe8);
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUpDefinition_LandMine) == 0x_);
     };
 };

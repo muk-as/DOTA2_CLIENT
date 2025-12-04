@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,21 +25,21 @@ namespace source2sdk
         struct PingParticleInfo_t
         {
         public:
-            float m_flDuration; // 0x0            
-            float m_flRadius; // 0x4            
-            float m_flVerticalOffset; // 0x8            
-            float m_flBonusVerticalOffsetFromTargetEntity; // 0xc            
-            bool m_bShowDotaPlusBadge; // 0x10            
-            uint8_t _pad0011[0x3];
+            float m_flDuration; // 0x_            
+            float m_flRadius; // 0x_            
+            float m_flVerticalOffset; // 0x_            
+            float m_flBonusVerticalOffsetFromTargetEntity; // 0x_            
+            bool m_bShowDotaPlusBadge; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flDuration) == 0x0);
-        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flRadius) == 0x4);
-        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flVerticalOffset) == 0x8);
-        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flBonusVerticalOffsetFromTargetEntity) == 0xc);
-        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_bShowDotaPlusBadge) == 0x10);
+        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flDuration) == 0x_);
+        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flRadius) == 0x_);
+        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flVerticalOffset) == 0x_);
+        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_flBonusVerticalOffsetFromTargetEntity) == 0x_);
+        static_assert(offsetof(source2sdk::client::PingParticleInfo_t, m_bShowDotaPlusBadge) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::PingParticleInfo_t) == 0x14);
+        static_assert(sizeof(source2sdk::client::PingParticleInfo_t) == 0x_);
     };
 };

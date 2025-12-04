@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,31 +29,31 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::sky3dparams_t m_skyboxData; // 0x5e8            
+            source2sdk::client::sky3dparams_t m_skyboxData; // 0x_            
             // metadata: MNetworkEnable
-            CUtlStringToken m_skyboxSlotToken; // 0x678            
-            bool m_bUseAngles; // 0x67c            
-            uint8_t _pad067d[0x3]; // 0x67d
-            source2sdk::client::C_SkyCamera* m_pNext; // 0x680            
+            CUtlStringToken m_skyboxSlotToken; // 0x_            
+            bool m_bUseAngles; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::C_SkyCamera* m_pNext; // 0x_            
             
             // Datamap fields:
-            // int16_t m_skyboxData.scale; // 0x5f0
-            // Vector m_skyboxData.origin; // 0x5f4
-            // bool m_skyboxData.bClip3DSkyBoxNearToWorldFar; // 0x600
-            // float m_skyboxData.flClip3DSkyBoxNearToWorldFarOffset; // 0x604
-            // bool m_skyboxData.fog.enable; // 0x66c
-            // bool m_skyboxData.fog.blend; // 0x66d
-            // Vector m_skyboxData.fog.dirPrimary; // 0x610
-            // Color m_skyboxData.fog.colorPrimary; // 0x61c
-            // Color m_skyboxData.fog.colorSecondary; // 0x620
-            // float m_skyboxData.fog.start; // 0x62c
-            // float m_skyboxData.fog.end; // 0x630
-            // float m_skyboxData.fog.maxdensity; // 0x638
+            // int16_t m_skyboxData.scale; // 0x_
+            // Vector m_skyboxData.origin; // 0x_
+            // bool m_skyboxData.bClip3DSkyBoxNearToWorldFar; // 0x_
+            // float m_skyboxData.flClip3DSkyBoxNearToWorldFarOffset; // 0x_
+            // bool m_skyboxData.fog.enable; // 0x_
+            // bool m_skyboxData.fog.blend; // 0x_
+            // Vector m_skyboxData.fog.dirPrimary; // 0x_
+            // Color m_skyboxData.fog.colorPrimary; // 0x_
+            // Color m_skyboxData.fog.colorSecondary; // 0x_
+            // float m_skyboxData.fog.start; // 0x_
+            // float m_skyboxData.fog.end; // 0x_
+            // float m_skyboxData.fog.maxdensity; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_SkyCamera because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_SkyCamera) == 0x688);
+        static_assert(sizeof(source2sdk::client::C_SkyCamera) == 0x_);
     };
 };

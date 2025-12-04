@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x4
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,12 +26,12 @@ namespace source2sdk
         class AnimNodeID
         {
         public:
-            std::uint32_t m_id; // 0x0            
+            std::uint32_t m_id; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::AnimNodeID, m_id) == 0x0);
+        static_assert(offsetof(source2sdk::modellib::AnimNodeID, m_id) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::AnimNodeID) == 0x4);
+        static_assert(sizeof(source2sdk::modellib::AnimNodeID) == 0x_);
     };
 };

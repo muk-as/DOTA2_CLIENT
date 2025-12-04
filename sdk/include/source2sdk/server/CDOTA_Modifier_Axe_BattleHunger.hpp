@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Axe_BattleHunger : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage_per_second; // 0x1878            
-            std::int32_t slow; // 0x187c            
-            std::int32_t armor_change; // 0x1880            
-            bool should_stack; // 0x1884            
-            uint8_t _pad1885[0x3];
+            std::int32_t damage_per_second; // 0x_            
+            std::int32_t slow; // 0x_            
+            std::int32_t armor_change; // 0x_            
+            bool should_stack; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Axe_BattleHunger because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Axe_BattleHunger) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Axe_BattleHunger) == 0x_);
     };
 };

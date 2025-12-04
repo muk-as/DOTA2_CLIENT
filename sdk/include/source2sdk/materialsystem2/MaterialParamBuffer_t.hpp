@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x18
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,12 +25,12 @@ namespace source2sdk
         struct MaterialParamBuffer_t : public source2sdk::materialsystem2::MaterialParam_t
         {
         public:
-            CUtlBinaryBlock m_value; // 0x8            
+            CUtlBinaryBlock m_value; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in MaterialParamBuffer_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::materialsystem2::MaterialParamBuffer_t) == 0x18);
+        static_assert(sizeof(source2sdk::materialsystem2::MaterialParamBuffer_t) == 0x_);
     };
 };

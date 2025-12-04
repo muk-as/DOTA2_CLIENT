@@ -15,9 +15,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x178
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTABehaviorCreatureCompanion : public source2sdk::server::CDOTABehaviorCompanion
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTABehaviorCreatureCompanion) == 0x178);
+        static_assert(sizeof(source2sdk::server::CDOTABehaviorCreatureCompanion) == 0x_);
     };
 };

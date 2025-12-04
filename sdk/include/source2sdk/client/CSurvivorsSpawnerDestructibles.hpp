@@ -15,21 +15,21 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x180
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsSpawnerDestructibles : public source2sdk::client::CSurvivorsSpawner
         {
         public:
-            float m_flMinimumDistanceBetween; // 0x178            
-            float m_flDestroyDistance; // 0x17c            
+            float m_flMinimumDistanceBetween; // 0x_            
+            float m_flDestroyDistance; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsSpawnerDestructibles because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsSpawnerDestructibles) == 0x180);
+        static_assert(sizeof(source2sdk::client::CSurvivorsSpawnerDestructibles) == 0x_);
     };
 };

@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1678
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -48,81 +48,81 @@ namespace source2sdk
         class C_EnvLightProbeVolume : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e8[0xff8]; // 0x5e8
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_AmbientCube has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_AmbientCube;
-            char m_Entity_hLightProbeTexture_AmbientCube[0x8]; // 0x15e0            
+            char m_Entity_hLightProbeTexture_AmbientCube[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SDF has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SDF;
-            char m_Entity_hLightProbeTexture_SDF[0x8]; // 0x15e8            
+            char m_Entity_hLightProbeTexture_SDF[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_DC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_DC;
-            char m_Entity_hLightProbeTexture_SH2_DC[0x8]; // 0x15f0            
+            char m_Entity_hLightProbeTexture_SH2_DC[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_R has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_R;
-            char m_Entity_hLightProbeTexture_SH2_R[0x8]; // 0x15f8            
+            char m_Entity_hLightProbeTexture_SH2_R[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_G has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_G;
-            char m_Entity_hLightProbeTexture_SH2_G[0x8]; // 0x1600            
+            char m_Entity_hLightProbeTexture_SH2_G[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeTexture_SH2_B has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture_SH2_B;
-            char m_Entity_hLightProbeTexture_SH2_B[0x8]; // 0x1608            
+            char m_Entity_hLightProbeTexture_SH2_B[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeDirectLightIndicesTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightIndicesTexture;
-            char m_Entity_hLightProbeDirectLightIndicesTexture[0x8]; // 0x1610            
+            char m_Entity_hLightProbeDirectLightIndicesTexture[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeDirectLightScalarsTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightScalarsTexture;
-            char m_Entity_hLightProbeDirectLightScalarsTexture[0x8]; // 0x1618            
+            char m_Entity_hLightProbeDirectLightScalarsTexture[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // m_Entity_hLightProbeDirectLightShadowsTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightShadowsTexture;
-            char m_Entity_hLightProbeDirectLightShadowsTexture[0x8]; // 0x1620            
+            char m_Entity_hLightProbeDirectLightShadowsTexture[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_Entity_vBoxMins; // 0x1628            
+            Vector m_Entity_vBoxMins; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_Entity_vBoxMaxs; // 0x1634            
+            Vector m_Entity_vBoxMaxs; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bMoveable; // 0x1640            
-            uint8_t _pad1641[0x3]; // 0x1641
+            bool m_Entity_bMoveable; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nHandshake; // 0x1644            
+            std::int32_t m_Entity_nHandshake; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nPriority; // 0x1648            
+            std::int32_t m_Entity_nPriority; // 0x_            
             // metadata: MNetworkEnable
-            bool m_Entity_bStartDisabled; // 0x164c            
-            uint8_t _pad164d[0x3]; // 0x164d
+            bool m_Entity_bStartDisabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeSizeX; // 0x1650            
+            std::int32_t m_Entity_nLightProbeSizeX; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeSizeY; // 0x1654            
+            std::int32_t m_Entity_nLightProbeSizeY; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeSizeZ; // 0x1658            
+            std::int32_t m_Entity_nLightProbeSizeZ; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeAtlasX; // 0x165c            
+            std::int32_t m_Entity_nLightProbeAtlasX; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeAtlasY; // 0x1660            
+            std::int32_t m_Entity_nLightProbeAtlasY; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_Entity_nLightProbeAtlasZ; // 0x1664            
-            uint8_t _pad1668[0x9]; // 0x1668
+            std::int32_t m_Entity_nLightProbeAtlasZ; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_Entity_bEnabled; // 0x1671            
-            uint8_t _pad1672[0x6];
+            bool m_Entity_bEnabled; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_Entity_pSceneObject; // 0x1668
+            // void m_Entity_pSceneObject; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EnvLightProbeVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EnvLightProbeVolume) == 0x1678);
+        static_assert(sizeof(source2sdk::client::C_EnvLightProbeVolume) == 0x_);
     };
 };

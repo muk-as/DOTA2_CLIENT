@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace pulse_system
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1b0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -32,16 +32,16 @@ namespace source2sdk
         {
         public:
             // metadata: MPulseCellOutflow_IsDefault
-            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_Out1; // 0x48            
-            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild1; // 0x90            
-            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild2; // 0xd8            
-            source2sdk::pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume1; // 0x120            
-            source2sdk::pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume2; // 0x168            
+            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_Out1; // 0x_            
+            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild1; // 0x_            
+            source2sdk::pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild2; // 0x_            
+            source2sdk::pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume1; // 0x_            
+            source2sdk::pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume2; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_Test_MultiOutflow_WithParams_Yielding because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding) == 0x1b0);
+        static_assert(sizeof(source2sdk::pulse_system::CPulseCell_Test_MultiOutflow_WithParams_Yielding) == 0x_);
     };
 };

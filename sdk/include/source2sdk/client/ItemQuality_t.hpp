@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 8
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ItemQuality_t : std::uint32_t
         {
             DOTA_ITEM_QUALITY_CONSUMABLE = 0x0,

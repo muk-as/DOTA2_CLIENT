@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 5
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_PlayerDraftState : std::uint32_t
         {
             DOTA_PLAYERDRAFT_STATE_INACTIVE = 0x0,

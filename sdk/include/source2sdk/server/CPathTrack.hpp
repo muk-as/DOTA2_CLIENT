@@ -16,39 +16,39 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x538
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CPathTrack : public source2sdk::server::CPointEntity
         {
         public:
-            source2sdk::server::CPathTrack* m_pnext; // 0x4e0            
-            source2sdk::server::CPathTrack* m_pprevious; // 0x4e8            
-            source2sdk::server::CPathTrack* m_paltpath; // 0x4f0            
-            float m_flRadius; // 0x4f8            
-            float m_length; // 0x4fc            
-            CUtlSymbolLarge m_altName; // 0x500            
-            std::int32_t m_nIterVal; // 0x508            
-            source2sdk::server::TrackOrientationType_t m_eOrientationType; // 0x50c            
-            source2sdk::entity2::CEntityIOOutput m_OnPass; // 0x510            
+            source2sdk::server::CPathTrack* m_pnext; // 0x_            
+            source2sdk::server::CPathTrack* m_pprevious; // 0x_            
+            source2sdk::server::CPathTrack* m_paltpath; // 0x_            
+            float m_flRadius; // 0x_            
+            float m_length; // 0x_            
+            CUtlSymbolLarge m_altName; // 0x_            
+            std::int32_t m_nIterVal; // 0x_            
+            source2sdk::server::TrackOrientationType_t m_eOrientationType; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnPass; // 0x_            
             
             // Datamap fields:
-            // void InputPass; // 0x0
-            // void InputEnableAlternatePath; // 0x0
-            // void InputDisableAlternatePath; // 0x0
-            // void InputToggleAlternatePath; // 0x0
-            // void InputEnablePath; // 0x0
-            // void InputDisablePath; // 0x0
-            // void InputTogglePath; // 0x0
+            // void InputPass; // 0x_
+            // void InputEnableAlternatePath; // 0x_
+            // void InputDisableAlternatePath; // 0x_
+            // void InputToggleAlternatePath; // 0x_
+            // void InputEnablePath; // 0x_
+            // void InputDisablePath; // 0x_
+            // void InputTogglePath; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPathTrack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPathTrack) == 0x538);
+        static_assert(sizeof(source2sdk::server::CPathTrack) == 0x_);
     };
 };

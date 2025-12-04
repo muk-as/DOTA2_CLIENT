@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class VPhysXConstraintParams_t_EnumFlags0_t : std::uint32_t
         {
             FLAG0_SHIFT_INTERPENETRATE = 0x0,

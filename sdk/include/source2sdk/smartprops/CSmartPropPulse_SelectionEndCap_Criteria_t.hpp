@@ -14,24 +14,24 @@ namespace source2sdk
     namespace smartprops
     {
         // Registered alignment: unknown
-        // Alignment: 0x1
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x2
+        // Size: 0x_
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct CSmartPropPulse_SelectionEndCap_Criteria_t
         {
         public:
             // metadata: MPropertyDescription "Is this an element which should be placed at the start of the line."
-            bool m_bStart; // 0x0            
+            bool m_bStart; // 0x_            
             // metadata: MPropertyDescription "Is this an element which should be placed at the end of the line."
-            bool m_bEnd; // 0x1            
+            bool m_bEnd; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t, m_bStart) == 0x0);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t, m_bEnd) == 0x1);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t, m_bStart) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t, m_bEnd) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t) == 0x2);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropPulse_SelectionEndCap_Criteria_t) == 0x_);
     };
 };

@@ -14,21 +14,21 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         #pragma pack(push, 1)
         struct CWorldCompositionChunkReferenceElement_t
         {
         public:
-            CUtlString m_strMapToLoad; // 0x0            
-            CUtlString m_strLandmarkName; // 0x8            
+            CUtlString m_strMapToLoad; // 0x_            
+            CUtlString m_strLandmarkName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CWorldCompositionChunkReferenceElement_t, m_strMapToLoad) == 0x0);
-        static_assert(offsetof(source2sdk::client::CWorldCompositionChunkReferenceElement_t, m_strLandmarkName) == 0x8);
+        static_assert(offsetof(source2sdk::client::CWorldCompositionChunkReferenceElement_t, m_strMapToLoad) == 0x_);
+        static_assert(offsetof(source2sdk::client::CWorldCompositionChunkReferenceElement_t, m_strLandmarkName) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CWorldCompositionChunkReferenceElement_t) == 0x10);
+        static_assert(sizeof(source2sdk::client::CWorldCompositionChunkReferenceElement_t) == 0x_);
     };
 };

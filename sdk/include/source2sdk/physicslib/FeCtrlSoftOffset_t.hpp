@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,18 +25,18 @@ namespace source2sdk
         struct FeCtrlSoftOffset_t
         {
         public:
-            std::uint16_t nCtrlParent; // 0x0            
-            std::uint16_t nCtrlChild; // 0x2            
-            Vector vOffset; // 0x4            
-            float flAlpha; // 0x10            
+            std::uint16_t nCtrlParent; // 0x_            
+            std::uint16_t nCtrlChild; // 0x_            
+            Vector vOffset; // 0x_            
+            float flAlpha; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, nCtrlParent) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, nCtrlChild) == 0x2);
-        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, vOffset) == 0x4);
-        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, flAlpha) == 0x10);
+        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, nCtrlParent) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, nCtrlChild) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, vOffset) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::FeCtrlSoftOffset_t, flAlpha) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::FeCtrlSoftOffset_t) == 0x14);
+        static_assert(sizeof(source2sdk::physicslib::FeCtrlSoftOffset_t) == 0x_);
     };
 };

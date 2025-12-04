@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1f28
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,26 +31,26 @@ namespace source2sdk
         class CDOTA_Unit_Hero_Spectre : public source2sdk::server::CDOTA_BaseNPC_Hero
         {
         public:
-            bool m_bArcanaKillstreakCompleted; // 0x1f18            
+            bool m_bArcanaKillstreakCompleted; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-            std::uint8_t m_unCurrentArcanaKillStreak; // 0x1f19            
+            std::uint8_t m_unCurrentArcanaKillStreak; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-            std::uint8_t m_unBestArcanaKillStreak; // 0x1f1a            
-            uint8_t _pad1f1b[0x1]; // 0x1f1b
+            std::uint8_t m_unBestArcanaKillStreak; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-            source2sdk::client::PlayerID_t m_nVictimPlayerID; // 0x1f1c            
+            source2sdk::client::PlayerID_t m_nVictimPlayerID; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-            bool m_bArcanaKillstreakRecordBroken; // 0x1f20            
-            uint8_t _pad1f21[0x7];
+            bool m_bArcanaKillstreakRecordBroken; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_Spectre because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Spectre) == 0x1f28);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Spectre) == 0x_);
     };
 };

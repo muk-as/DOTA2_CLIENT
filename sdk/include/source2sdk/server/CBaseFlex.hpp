@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x890
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -37,26 +37,26 @@ namespace source2sdk
             // metadata: MNetworkEncodeFlags "1"
             // m_flexWeight has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<float> m_flexWeight;
-            char m_flexWeight[0x18]; // 0x800            
+            char m_flexWeight[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_vLookTargetPosition; // 0x818            
+            Vector m_vLookTargetPosition; // 0x_            
             // metadata: MNetworkEnable
-            bool m_blinktoggle; // 0x824            
-            uint8_t _pad0825[0x53]; // 0x825
-            source2sdk::entity2::GameTime_t m_flAllowResponsesEndTime; // 0x878            
-            source2sdk::entity2::GameTime_t m_flLastFlexAnimationTime; // 0x87c            
-            source2sdk::client::SceneEventId_t m_nNextSceneEventId; // 0x880            
-            bool m_bUpdateLayerPriorities; // 0x884            
-            uint8_t _pad0885[0xb];
+            bool m_blinktoggle; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_flAllowResponsesEndTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastFlexAnimationTime; // 0x_            
+            source2sdk::client::SceneEventId_t m_nNextSceneEventId; // 0x_            
+            bool m_bUpdateLayerPriorities; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void CBaseFlexProcessSceneEventsThink; // 0x0
+            // void CBaseFlexProcessSceneEventsThink; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseFlex because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseFlex) == 0x890);
+        static_assert(sizeof(source2sdk::server::CBaseFlex) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x48
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,24 +24,24 @@ namespace source2sdk
         class CAnimBone
         {
         public:
-            CBufferString m_name; // 0x0            
-            std::int32_t m_parent; // 0x10            
-            Vector m_pos; // 0x14            
-            QuaternionStorage m_quat; // 0x20            
-            float m_scale; // 0x30            
-            QuaternionStorage m_qAlignment; // 0x34            
-            std::int32_t m_flags; // 0x44            
+            CBufferString m_name; // 0x_            
+            std::int32_t m_parent; // 0x_            
+            Vector m_pos; // 0x_            
+            QuaternionStorage m_quat; // 0x_            
+            float m_scale; // 0x_            
+            QuaternionStorage m_qAlignment; // 0x_            
+            std::int32_t m_flags; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_name) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_parent) == 0x10);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_pos) == 0x14);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_quat) == 0x20);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_scale) == 0x30);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_qAlignment) == 0x34);
-        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_flags) == 0x44);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_parent) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_pos) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_quat) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_scale) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_qAlignment) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CAnimBone, m_flags) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CAnimBone) == 0x48);
+        static_assert(sizeof(source2sdk::animationsystem::CAnimBone) == 0x_);
     };
 };

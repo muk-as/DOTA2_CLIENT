@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace animationsystem
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,19 +25,19 @@ namespace source2sdk
         class CSeqIKLock
         {
         public:
-            float m_flPosWeight; // 0x0            
-            float m_flAngleWeight; // 0x4            
-            std::int16_t m_nLocalBone; // 0x8            
-            bool m_bBonesOrientedAlongPositiveX; // 0xa            
-            uint8_t _pad000b[0x1];
+            float m_flPosWeight; // 0x_            
+            float m_flAngleWeight; // 0x_            
+            std::int16_t m_nLocalBone; // 0x_            
+            bool m_bBonesOrientedAlongPositiveX; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_flPosWeight) == 0x0);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_flAngleWeight) == 0x4);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_nLocalBone) == 0x8);
-        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_bBonesOrientedAlongPositiveX) == 0xa);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_flPosWeight) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_flAngleWeight) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_nLocalBone) == 0x_);
+        static_assert(offsetof(source2sdk::animationsystem::CSeqIKLock, m_bBonesOrientedAlongPositiveX) == 0x_);
         
-        static_assert(sizeof(source2sdk::animationsystem::CSeqIKLock) == 0xc);
+        static_assert(sizeof(source2sdk::animationsystem::CSeqIKLock) == 0x_);
     };
 };

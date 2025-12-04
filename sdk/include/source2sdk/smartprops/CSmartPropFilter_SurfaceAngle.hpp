@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,14 +30,14 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Minimum slope on which the target will be placed. Slope is a [ 0, 180 ] value of the surface normal rotation from up such that 0 is a horizontal surface (floor), 90 is a vertical surface (wall), 180 is horizontal upside down surface (ceiling)."
-            CSmartPropAttributeFloat m_flSurfaceSlopeMin; // 0x50            
+            CSmartPropAttributeFloat m_flSurfaceSlopeMin; // 0x_            
             // metadata: MPropertyDescription "Maximum slope on which the target will be placed."
-            CSmartPropAttributeFloat m_flSurfaceSlopeMax; // 0x90            
+            CSmartPropAttributeFloat m_flSurfaceSlopeMax; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropFilter_SurfaceAngle because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropFilter_SurfaceAngle) == 0xd0);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropFilter_SurfaceAngle) == 0x_);
     };
 };

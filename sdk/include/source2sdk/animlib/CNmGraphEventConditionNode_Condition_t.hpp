@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -26,15 +26,15 @@ namespace source2sdk
         struct CNmGraphEventConditionNode_Condition_t
         {
         public:
-            CGlobalSymbol m_eventID; // 0x0            
-            source2sdk::animlib::NmGraphEventTypeCondition_t m_eventTypeCondition; // 0x8            
-            uint8_t _pad0009[0x7];
+            CGlobalSymbol m_eventID; // 0x_            
+            source2sdk::animlib::NmGraphEventTypeCondition_t m_eventTypeCondition; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t, m_eventID) == 0x0);
-        static_assert(offsetof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t, m_eventTypeCondition) == 0x8);
+        static_assert(offsetof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t, m_eventID) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t, m_eventTypeCondition) == 0x_);
         
-        static_assert(sizeof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t) == 0x10);
+        static_assert(sizeof(source2sdk::animlib::CNmGraphEventConditionNode_Condition_t) == 0x_);
     };
 };

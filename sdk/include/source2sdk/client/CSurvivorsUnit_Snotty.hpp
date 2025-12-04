@@ -16,26 +16,26 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x360
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CSurvivorsUnit_Snotty : public source2sdk::client::CSurvivorsEnemy
         {
         public:
-            float m_flRotationSpeedDeg; // 0x338            
-            float m_flRotationDist; // 0x33c            
-            float m_flDegCur; // 0x340            
-            float m_flLastPickupRadius; // 0x344            
-            uint8_t _pad0348[0x10]; // 0x348
-            source2sdk::client::SurvivorsPowerUpID_t m_nPowerUpID; // 0x358            
-            uint8_t _pad035c[0x4];
+            float m_flRotationSpeedDeg; // 0x_            
+            float m_flRotationDist; // 0x_            
+            float m_flDegCur; // 0x_            
+            float m_flLastPickupRadius; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::SurvivorsPowerUpID_t m_nPowerUpID; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSurvivorsUnit_Snotty because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CSurvivorsUnit_Snotty) == 0x360);
+        static_assert(sizeof(source2sdk::client::CSurvivorsUnit_Snotty) == 0x_);
     };
 };

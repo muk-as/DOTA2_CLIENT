@@ -14,9 +14,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x2a0
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "Color m_LightColor"
@@ -32,44 +32,44 @@ namespace source2sdk
         class CDeferredLightBase
         {
         public:
-            uint8_t _pad0000[0x10]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            Color m_LightColor; // 0x10            
+            Color m_LightColor; // 0x_            
             // metadata: MNetworkEnable
-            float m_flIntensity; // 0x14            
+            float m_flIntensity; // 0x_            
             // metadata: MNetworkEnable
-            float m_flLightSize; // 0x18            
+            float m_flLightSize; // 0x_            
             // metadata: MNetworkEnable
-            float m_flSpotFoV; // 0x1c            
+            float m_flSpotFoV; // 0x_            
             // metadata: MNetworkEnable
-            QAngle m_vLightDirection; // 0x20            
+            QAngle m_vLightDirection; // 0x_            
             // metadata: MNetworkEnable
-            float m_flStartFalloff; // 0x2c            
+            float m_flStartFalloff; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDistanceFalloff; // 0x30            
+            float m_flDistanceFalloff; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_nFlags; // 0x34            
+            std::uint32_t m_nFlags; // 0x_            
             // metadata: MNetworkEnable
-            char m_ProjectedTextureName[512]; // 0x38            
-            uint8_t _pad0238[0x68];
+            char m_ProjectedTextureName[512]; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // float m_flAnimatedNoiseFrequency; // 0x25c
-            // float m_flAnimatedNoiseSpeed; // 0x260
-            // float m_flAnimatedNoiseMin; // 0x264
+            // float m_flAnimatedNoiseFrequency; // 0x_
+            // float m_flAnimatedNoiseSpeed; // 0x_
+            // float m_flAnimatedNoiseMin; // 0x_
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_LightColor) == 0x10);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flIntensity) == 0x14);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flLightSize) == 0x18);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flSpotFoV) == 0x1c);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_vLightDirection) == 0x20);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flStartFalloff) == 0x2c);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flDistanceFalloff) == 0x30);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_nFlags) == 0x34);
-        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_ProjectedTextureName) == 0x38);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_LightColor) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flIntensity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flLightSize) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flSpotFoV) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_vLightDirection) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flStartFalloff) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_flDistanceFalloff) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_nFlags) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDeferredLightBase, m_ProjectedTextureName) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDeferredLightBase) == 0x2a0);
+        static_assert(sizeof(source2sdk::client::CDeferredLightBase) == 0x_);
     };
 };

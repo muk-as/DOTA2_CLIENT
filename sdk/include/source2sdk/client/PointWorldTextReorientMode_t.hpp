@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PointWorldTextReorientMode_t : std::uint32_t
         {
             POINT_WORLD_TEXT_REORIENT_NONE = 0x0,

@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x1e78
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,29 +30,29 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "noise type"
-            source2sdk::particles::ParticleDirectionNoiseType_t m_nNoiseType; // 0x1d0            
-            uint8_t _pad01d4[0x4]; // 0x1d4
+            source2sdk::particles::ParticleDirectionNoiseType_t m_nNoiseType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "noise frequency"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecNoiseFreq; // 0x1d8            
+            source2sdk::particleslib::CPerParticleVecInput m_vecNoiseFreq; // 0x_            
             // metadata: MPropertyFriendlyName "noise amplitude"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecNoiseScale; // 0x850            
+            source2sdk::particleslib::CPerParticleVecInput m_vecNoiseScale; // 0x_            
             // metadata: MPropertyFriendlyName "offset"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecOffset; // 0xec8            
+            source2sdk::particleslib::CPerParticleVecInput m_vecOffset; // 0x_            
             // metadata: MPropertyFriendlyName "offset rate"
             // metadata: MVectorIsCoordinate
-            source2sdk::particleslib::CPerParticleVecInput m_vecOffsetRate; // 0x1540            
+            source2sdk::particleslib::CPerParticleVecInput m_vecOffsetRate; // 0x_            
             // metadata: MPropertyFriendlyName "worley seed"
-            source2sdk::particleslib::CPerParticleFloatInput m_flWorleySeed; // 0x1bb8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flWorleySeed; // 0x_            
             // metadata: MPropertyFriendlyName "worley jitter"
-            source2sdk::particleslib::CPerParticleFloatInput m_flWorleyJitter; // 0x1d18            
+            source2sdk::particleslib::CPerParticleFloatInput m_flWorleyJitter; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_CurlNoiseForce because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_CurlNoiseForce) == 0x1e78);
+        static_assert(sizeof(source2sdk::particles::C_OP_CurlNoiseForce) == 0x_);
     };
 };

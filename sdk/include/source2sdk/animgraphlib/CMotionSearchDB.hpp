@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xb8
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,18 +27,18 @@ namespace source2sdk
         class CMotionSearchDB
         {
         public:
-            source2sdk::animgraphlib::CMotionSearchNode m_rootNode; // 0x0            
-            source2sdk::animgraphlib::CProductQuantizer m_residualQuantizer; // 0x80            
+            source2sdk::animgraphlib::CMotionSearchNode m_rootNode; // 0x_            
+            source2sdk::animgraphlib::CProductQuantizer m_residualQuantizer; // 0x_            
             // m_codeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::MotionDBIndex> m_codeIndices;
-            char m_codeIndices[0x18]; // 0xa0            
+            char m_codeIndices[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_rootNode) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_residualQuantizer) == 0x80);
-        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_codeIndices) == 0xa0);
+        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_rootNode) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_residualQuantizer) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CMotionSearchDB, m_codeIndices) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMotionSearchDB) == 0xb8);
+        static_assert(sizeof(source2sdk::animgraphlib::CMotionSearchDB) == 0x_);
     };
 };

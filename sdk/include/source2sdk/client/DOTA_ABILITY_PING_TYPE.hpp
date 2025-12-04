@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 16
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_ABILITY_PING_TYPE : std::uint32_t
         {
             ABILITY_PING_READY = 0x1,

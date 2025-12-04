@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x630
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,33 +30,33 @@ namespace source2sdk
         class CInfoWorldLayer : public source2sdk::client::C_BaseEntity
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_pOutputOnEntitiesSpawned; // 0x5e8            
+            source2sdk::entity2::CEntityIOOutput m_pOutputOnEntitiesSpawned; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_worldName; // 0x610            
+            CUtlSymbolLarge m_worldName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_layerName; // 0x618            
+            CUtlSymbolLarge m_layerName; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bWorldLayerVisible; // 0x620            
+            bool m_bWorldLayerVisible; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bEntitiesSpawned; // 0x621            
-            bool m_bCreateAsChildSpawnGroup; // 0x622            
-            uint8_t _pad0623[0x1]; // 0x623
-            std::uint32_t m_hLayerSpawnGroup; // 0x624            
-            bool m_bWorldLayerActuallyVisible; // 0x628            
-            uint8_t _pad0629[0x7];
+            bool m_bEntitiesSpawned; // 0x_            
+            bool m_bCreateAsChildSpawnGroup; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_hLayerSpawnGroup; // 0x_            
+            bool m_bWorldLayerActuallyVisible; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void ShowWorldLayer; // 0x0
-            // void HideWorldLayer; // 0x0
-            // void SpawnEntities; // 0x0
-            // void DestroyEntities; // 0x0
-            // void ShowWorldLayerAndSpawnEntities; // 0x0
-            // void HideWorldLayerAndDestroyEntities; // 0x0
+            // void ShowWorldLayer; // 0x_
+            // void HideWorldLayer; // 0x_
+            // void SpawnEntities; // 0x_
+            // void DestroyEntities; // 0x_
+            // void ShowWorldLayerAndSpawnEntities; // 0x_
+            // void HideWorldLayerAndDestroyEntities; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CInfoWorldLayer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CInfoWorldLayer) == 0x630);
+        static_assert(sizeof(source2sdk::client::CInfoWorldLayer) == 0x_);
     };
 };

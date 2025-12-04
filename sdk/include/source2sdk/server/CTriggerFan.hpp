@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa70
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -46,56 +46,56 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vFanOrigin; // 0x9c0            
+            Vector m_vFanOrigin; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vFanOriginOffset; // 0x9cc            
+            Vector m_vFanOriginOffset; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vFanEnd; // 0x9d8            
+            Vector m_vFanEnd; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vNoiseDirectionTarget; // 0x9e4            
+            Vector m_vNoiseDirectionTarget; // 0x_            
             // metadata: MNetworkEnable
-            Vector m_vDirection; // 0x9f0            
+            Vector m_vDirection; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPushTowardsInfoTarget; // 0x9fc            
+            bool m_bPushTowardsInfoTarget; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bPushAwayFromInfoTarget; // 0x9fd            
-            uint8_t _pad09fe[0x2]; // 0x9fe
+            bool m_bPushAwayFromInfoTarget; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            Quaternion m_qNoiseDelta; // 0xa00            
+            Quaternion m_qNoiseDelta; // 0x_            
             // metadata: MNetworkEnable
             // m_hInfoFan has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CInfoFan> m_hInfoFan;
-            char m_hInfoFan[0x4]; // 0xa10            
+            char m_hInfoFan[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            float m_flForce; // 0xa14            
+            float m_flForce; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFalloff; // 0xa18            
-            uint8_t _pad0a19[0x7]; // 0xa19
+            bool m_bFalloff; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            source2sdk::server::CountdownTimer m_RampTimer; // 0xa20            
-            CUtlSymbolLarge m_iszInfoFan; // 0xa38            
-            float m_flRopeForceScale; // 0xa40            
-            float m_flParticleForceScale; // 0xa44            
-            float m_flPlayerForce; // 0xa48            
-            bool m_bPlayerWindblock; // 0xa4c            
-            uint8_t _pad0a4d[0x3]; // 0xa4d
-            float m_flNPCForce; // 0xa50            
-            float m_flRampTime; // 0xa54            
-            float m_fNoiseDegrees; // 0xa58            
-            float m_fNoiseSpeed; // 0xa5c            
-            bool m_bPushPlayer; // 0xa60            
-            bool m_bRampDown; // 0xa61            
-            uint8_t _pad0a62[0x2]; // 0xa62
-            std::int32_t m_nManagerFanIdx; // 0xa64            
-            uint8_t _pad0a68[0x8];
+            source2sdk::server::CountdownTimer m_RampTimer; // 0x_            
+            CUtlSymbolLarge m_iszInfoFan; // 0x_            
+            float m_flRopeForceScale; // 0x_            
+            float m_flParticleForceScale; // 0x_            
+            float m_flPlayerForce; // 0x_            
+            bool m_bPlayerWindblock; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flNPCForce; // 0x_            
+            float m_flRampTime; // 0x_            
+            float m_fNoiseDegrees; // 0x_            
+            float m_fNoiseSpeed; // 0x_            
+            bool m_bPushPlayer; // 0x_            
+            bool m_bRampDown; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nManagerFanIdx; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void CTriggerFanPushThink; // 0x0
+            // void CTriggerFanPushThink; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerFan because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerFan) == 0xa70);
+        static_assert(sizeof(source2sdk::server::CTriggerFan) == 0x_);
     };
 };

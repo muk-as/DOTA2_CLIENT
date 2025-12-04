@@ -16,10 +16,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x4a8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,28 +30,28 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "plane point"
             // metadata: MVectorIsCoordinate
-            Vector m_PointOnPlane; // 0x1c0            
+            Vector m_PointOnPlane; // 0x_            
             // metadata: MPropertyFriendlyName "plane normal"
-            Vector m_PlaneNormal; // 0x1cc            
+            Vector m_PlaneNormal; // 0x_            
             // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x1d8            
+            std::int32_t m_nControlPointNumber; // 0x_            
             // metadata: MPropertyFriendlyName "global origin"
-            bool m_bGlobalOrigin; // 0x1dc            
+            bool m_bGlobalOrigin; // 0x_            
             // metadata: MPropertyFriendlyName "global normal"
-            bool m_bGlobalNormal; // 0x1dd            
-            uint8_t _pad01de[0x2]; // 0x1de
+            bool m_bGlobalNormal; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "radius scale"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRadiusScale; // 0x1e0            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRadiusScale; // 0x_            
             // metadata: MPropertyFriendlyName "falloff distance from control point"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaximumDistanceToCP; // 0x340            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flMaximumDistanceToCP; // 0x_            
             // metadata: MPropertyFriendlyName "use old code"
-            bool m_bUseOldCode; // 0x4a0            
-            uint8_t _pad04a1[0x7];
+            bool m_bUseOldCode; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_PlanarConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_PlanarConstraint) == 0x4a8);
+        static_assert(sizeof(source2sdk::particles::C_OP_PlanarConstraint) == 0x_);
     };
 };

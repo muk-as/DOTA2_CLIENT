@@ -20,9 +20,9 @@ namespace source2sdk
     namespace server
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x3f8
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "HSequence m_hSequence"
@@ -39,28 +39,28 @@ namespace source2sdk
         class CBaseAnimGraphController : public source2sdk::client::CSkeletonAnimationController
         {
         public:
-            uint8_t _pad0010[0x8]; // 0x10
-            bool m_bSequenceFinished; // 0x18            
-            uint8_t _pad0019[0x3]; // 0x19
-            float m_flSoundSyncTime; // 0x1c            
-            std::uint32_t m_nActiveIKChainMask; // 0x20            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bSequenceFinished; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flSoundSyncTime; // 0x_            
+            std::uint32_t m_nActiveIKChainMask; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkChangeCallback "OnNetworkedSequenceChanged"
             // metadata: MNetworkPriority "32"
-            source2sdk::animationsystem::HSequence m_hSequence; // 0x24            
+            source2sdk::animationsystem::HSequence m_hSequence; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNetworkedAnimationChanged"
             // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flSeqStartTime; // 0x28            
+            source2sdk::entity2::GameTime_t m_flSeqStartTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNetworkedAnimationChanged"
             // metadata: MNetworkPriority "32"
-            float m_flSeqFixedCycle; // 0x2c            
+            float m_flSeqFixedCycle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNetworkedAnimationChanged"
             // metadata: MNetworkPriority "32"
-            source2sdk::client::AnimLoopMode_t m_nAnimLoopMode; // 0x30            
+            source2sdk::client::AnimLoopMode_t m_nAnimLoopMode; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "10"
             // metadata: MNetworkMinValue "0,000000"
@@ -68,46 +68,46 @@ namespace source2sdk
             // metadata: MNetworkEncodeFlags "8"
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkChangeCallback "OnNetworkedAnimationChanged"
-            CNetworkedQuantizedFloat m_flPlaybackRate; // 0x34            
-            uint8_t _pad003c[0x4]; // 0x3c
-            source2sdk::client::SequenceFinishNotifyState_t m_nNotifyState; // 0x40            
-            uint8_t _pad0041[0x1]; // 0x41
-            bool m_bNetworkedAnimationInputsChanged; // 0x42            
-            bool m_bNetworkedSequenceChanged; // 0x43            
-            bool m_bLastUpdateSkipped; // 0x44            
-            uint8_t _pad0045[0x3]; // 0x45
-            source2sdk::entity2::GameTime_t m_flPrevAnimUpdateTime; // 0x48            
-            uint8_t _pad004c[0x334]; // 0x4c
+            CNetworkedQuantizedFloat m_flPlaybackRate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::SequenceFinishNotifyState_t m_nNotifyState; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bNetworkedAnimationInputsChanged; // 0x_            
+            bool m_bNetworkedSequenceChanged; // 0x_            
+            bool m_bLastUpdateSkipped; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::entity2::GameTime_t m_flPrevAnimUpdateTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "AG2_OnAnimGraphDefinitionOrModeChanged"
             // m_hGraphDefinitionAG2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmGraphDefinition> m_hGraphDefinitionAG2;
-            char m_hGraphDefinitionAG2[0x8]; // 0x380            
+            char m_hGraphDefinitionAG2[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "AG2_OnAnimGraphDefinitionOrModeChanged"
-            bool m_bIsUsingAG2; // 0x388            
-            uint8_t _pad0389[0x7]; // 0x389
+            bool m_bIsUsingAG2; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_serializedPoseRecipeAG2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<std::uint8_t> m_serializedPoseRecipeAG2;
-            char m_serializedPoseRecipeAG2[0x18]; // 0x390            
+            char m_serializedPoseRecipeAG2[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nSerializePoseRecipeSizeAG2; // 0x3a8            
+            std::int32_t m_nSerializePoseRecipeSizeAG2; // 0x_            
             // metadata: MNetworkEnable
-            std::uint8_t m_nGraphCreationFlagsAG2; // 0x3ac            
-            uint8_t _pad03ad[0x43]; // 0x3ad
+            std::uint8_t m_nGraphCreationFlagsAG2; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nServerGraphDefReloadCountAG2; // 0x3f0            
-            uint8_t _pad03f4[0x4];
+            std::int32_t m_nServerGraphDefReloadCountAG2; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pAnimGraphInstance; // 0x2e8
-            // float m_flCachedSequenceCycleRate; // 0x3c
+            // void m_pAnimGraphInstance; // 0x_
+            // float m_flCachedSequenceCycleRate; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBaseAnimGraphController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseAnimGraphController) == 0x3f8);
+        static_assert(sizeof(source2sdk::server::CBaseAnimGraphController) == 0x_);
     };
 };

@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9d8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,20 +29,20 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            CUtlString m_strStartTouchEventName; // 0x9c0            
+            CUtlString m_strStartTouchEventName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlString m_strEndTouchEventName; // 0x9c8            
+            CUtlString m_strEndTouchEventName; // 0x_            
             // metadata: MNetworkEnable
-            CUtlString m_strTriggerID; // 0x9d0            
+            CUtlString m_strTriggerID; // 0x_            
             
             // Datamap fields:
-            // CUtlSymbolLarge InputSetStartTouchEvent; // 0x0
-            // CUtlSymbolLarge InputSetEndTouchEvent; // 0x0
+            // CUtlSymbolLarge InputSetStartTouchEvent; // 0x_
+            // CUtlSymbolLarge InputSetEndTouchEvent; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerGameEvent because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerGameEvent) == 0x9d8);
+        static_assert(sizeof(source2sdk::server::CTriggerGameEvent) == 0x_);
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 15
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_GC_TEAM : std::uint32_t
         {
             DOTA_GC_TEAM_GOOD_GUYS = 0x0,

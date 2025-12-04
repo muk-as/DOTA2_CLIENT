@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,21 +25,21 @@ namespace source2sdk
         struct RenderSkeletonBone_t
         {
         public:
-            CUtlString m_boneName; // 0x0            
-            CUtlString m_parentName; // 0x8            
-            matrix3x4_t m_invBindPose; // 0x10            
-            source2sdk::modellib::SkeletonBoneBounds_t m_bbox; // 0x40            
-            float m_flSphereRadius; // 0x58            
-            uint8_t _pad005c[0x4];
+            CUtlString m_boneName; // 0x_            
+            CUtlString m_parentName; // 0x_            
+            matrix3x4_t m_invBindPose; // 0x_            
+            source2sdk::modellib::SkeletonBoneBounds_t m_bbox; // 0x_            
+            float m_flSphereRadius; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_boneName) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_parentName) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_invBindPose) == 0x10);
-        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_bbox) == 0x40);
-        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_flSphereRadius) == 0x58);
+        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_boneName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_parentName) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_invBindPose) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_bbox) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::RenderSkeletonBone_t, m_flSphereRadius) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::RenderSkeletonBone_t) == 0x60);
+        static_assert(sizeof(source2sdk::modellib::RenderSkeletonBone_t) == 0x_);
     };
 };

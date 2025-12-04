@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class RenderBufferFlags_t : std::uint32_t
         {
             RENDER_BUFFER_USAGE_VERTEX_BUFFER = 0x1,

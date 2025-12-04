@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xd8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -28,25 +28,25 @@ namespace source2sdk
         class CEnumAnimParameter : public source2sdk::animgraphlib::CConcreteAnimParameter
         {
         public:
-            uint8_t _pad0080[0x8]; // 0x80
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Default Value"
-            std::uint8_t m_defaultValue; // 0x88            
-            uint8_t _pad0089[0x7]; // 0x89
+            std::uint8_t m_defaultValue; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Values"
             // metadata: MPropertyAttrChangeCallback
             // m_enumOptions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString> m_enumOptions;
-            char m_enumOptions[0x18]; // 0x90            
+            char m_enumOptions[0x_]; // 0x_            
             // metadata: MPropertySuppressField
             // m_vecEnumReferenced has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint64_t> m_vecEnumReferenced;
-            char m_vecEnumReferenced[0x18]; // 0xa8            
-            uint8_t _pad00c0[0x18];
+            char m_vecEnumReferenced[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnumAnimParameter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CEnumAnimParameter) == 0xd8);
+        static_assert(sizeof(source2sdk::animgraphlib::CEnumAnimParameter) == 0x_);
     };
 };

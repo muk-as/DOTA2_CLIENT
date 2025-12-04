@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_MOTION_CONTROLLER_PRIORITY : std::uint32_t
         {
             DOTA_MOTION_CONTROLLER_PRIORITY_LOWEST = 0x0,

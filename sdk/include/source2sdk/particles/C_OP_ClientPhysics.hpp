@@ -17,10 +17,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x500
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,44 +31,44 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "client physics type"
             // metadata: MPropertyAttributeEditor "VDataChoice( scripts/misc.vdata!generic_physics_particle_spawner )"
-            CUtlString m_strPhysicsType; // 0x210            
+            CUtlString m_strPhysicsType; // 0x_            
             // metadata: MPropertyFriendlyName "start all physics asleep"
-            bool m_bStartAsleep; // 0x218            
-            uint8_t _pad0219[0x7]; // 0x219
+            bool m_bStartAsleep; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Player Wake Radius"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flPlayerWakeRadius; // 0x220            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flPlayerWakeRadius; // 0x_            
             // metadata: MPropertyFriendlyName "Vehicle Wake Radius"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flVehicleWakeRadius; // 0x380            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flVehicleWakeRadius; // 0x_            
             // metadata: MPropertyFriendlyName "use high quality simulation"
-            bool m_bUseHighQualitySimulation; // 0x4e0            
-            uint8_t _pad04e1[0x3]; // 0x4e1
+            bool m_bUseHighQualitySimulation; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "max particle count"
-            std::int32_t m_nMaxParticleCount; // 0x4e4            
+            std::int32_t m_nMaxParticleCount; // 0x_            
             // metadata: MPropertyFriendlyName "prevent spawning in exclusion volumes"
             // metadata: MPropertySuppressExpr "m_bKillParticles == true"
-            bool m_bRespectExclusionVolumes; // 0x4e8            
+            bool m_bRespectExclusionVolumes; // 0x_            
             // metadata: MPropertyFriendlyName "kill physics particles"
-            bool m_bKillParticles; // 0x4e9            
+            bool m_bKillParticles; // 0x_            
             // metadata: MPropertyFriendlyName "delete physics sim when stopped"
             // metadata: MPropertySuppressExpr "m_bKillParticles == false"
-            bool m_bDeleteSim; // 0x4ea            
-            uint8_t _pad04eb[0x1]; // 0x4eb
+            bool m_bDeleteSim; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "control point (for finding nearest sim)"
             // metadata: MPropertySuppressExpr "m_bKillParticles == true"
-            std::int32_t m_nControlPoint; // 0x4ec            
+            std::int32_t m_nControlPoint; // 0x_            
             // metadata: MPropertyFriendlyName "specific sim id"
             // metadata: MPropertySuppressExpr "m_bKillParticles == true"
-            std::int32_t m_nForcedSimId; // 0x4f0            
+            std::int32_t m_nForcedSimId; // 0x_            
             // metadata: MPropertyFriendlyName "tint blend (color vs prop group gradient)"
-            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x4f4            
+            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x_            
             // metadata: MPropertyFriendlyName "forced status effect flags"
-            source2sdk::particles::ParticleAttrBoxFlags_t m_nForcedStatusEffects; // 0x4f8            
-            uint8_t _pad04fc[0x4];
+            source2sdk::particles::ParticleAttrBoxFlags_t m_nForcedStatusEffects; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_ClientPhysics because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_ClientPhysics) == 0x500);
+        static_assert(sizeof(source2sdk::particles::C_OP_ClientPhysics) == 0x_);
     };
 };

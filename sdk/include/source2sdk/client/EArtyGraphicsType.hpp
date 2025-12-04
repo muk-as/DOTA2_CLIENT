@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 6
         // Alignment: 1
-        // Size: 0x1
+        // Size: 0x_
         enum class EArtyGraphicsType : std::uint8_t
         {
             k_eSprite = 0x0,

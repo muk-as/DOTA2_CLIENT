@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x628
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,48 +40,48 @@ namespace source2sdk
         class CDOTATeam : public source2sdk::server::CTeam
         {
         public:
-            uint8_t _pad0598[0x10]; // 0x598
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_iHeroKills; // 0x5a8            
+            std::int32_t m_iHeroKills; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iTowerKills; // 0x5ac            
+            std::int32_t m_iTowerKills; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iBarracksKills; // 0x5b0            
+            std::int32_t m_iBarracksKills; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unTournamentTeamID; // 0x5b4            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkEncoder "fixed64"
-            std::uint64_t m_ulTeamLogo; // 0x5b8            
+            std::uint32_t m_unTournamentTeamID; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
-            std::uint64_t m_ulTeamBaseLogo; // 0x5c0            
+            std::uint64_t m_ulTeamLogo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
-            std::uint64_t m_ulTeamBannerLogo; // 0x5c8            
+            std::uint64_t m_ulTeamBaseLogo; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTeamComplete; // 0x5d0            
+            // metadata: MNetworkEncoder "fixed64"
+            std::uint64_t m_ulTeamBannerLogo; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTeamIsHomeTeam; // 0x5d1            
+            bool m_bTeamComplete; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTeamCanSeeExactRoshanTimer; // 0x5d2            
+            bool m_bTeamIsHomeTeam; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bTeamCanSeeNextPowerRune; // 0x5d3            
-            std::int32_t m_nTeamCanSeeNextPowerRuneRefs; // 0x5d4            
+            bool m_bTeamCanSeeExactRoshanTimer; // 0x_            
             // metadata: MNetworkEnable
-            Color m_CustomHealthbarColor; // 0x5d8            
+            bool m_bTeamCanSeeNextPowerRune; // 0x_            
+            std::int32_t m_nTeamCanSeeNextPowerRuneRefs; // 0x_            
             // metadata: MNetworkEnable
-            char m_szTag[33]; // 0x5dc            
-            uint8_t _pad05fd[0x3]; // 0x5fd
-            std::int32_t m_event_lobby_updated; // 0x600            
-            std::int32_t m_nKillStreak; // 0x604            
-            std::int32_t m_iRecentKillCount; // 0x608            
-            std::int32_t m_iRandomNumber; // 0x60c            
-            source2sdk::server::CountdownTimer m_RecentHeroKillTimer; // 0x610            
+            Color m_CustomHealthbarColor; // 0x_            
+            // metadata: MNetworkEnable
+            char m_szTag[33]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_event_lobby_updated; // 0x_            
+            std::int32_t m_nKillStreak; // 0x_            
+            std::int32_t m_iRecentKillCount; // 0x_            
+            std::int32_t m_iRandomNumber; // 0x_            
+            source2sdk::server::CountdownTimer m_RecentHeroKillTimer; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTATeam because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTATeam) == 0x628);
+        static_assert(sizeof(source2sdk::server::CDOTATeam) == 0x_);
     };
 };

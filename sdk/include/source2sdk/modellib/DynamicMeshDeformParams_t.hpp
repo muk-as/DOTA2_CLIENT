@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xc
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,21 +25,21 @@ namespace source2sdk
         struct DynamicMeshDeformParams_t
         {
         public:
-            float m_flTensionCompressScale; // 0x0            
-            float m_flTensionStretchScale; // 0x4            
-            bool m_bRecomputeSmoothNormalsAfterAnimation; // 0x8            
-            bool m_bComputeDynamicMeshTensionAfterAnimation; // 0x9            
-            bool m_bSmoothNormalsAcrossUvSeams; // 0xa            
-            uint8_t _pad000b[0x1];
+            float m_flTensionCompressScale; // 0x_            
+            float m_flTensionStretchScale; // 0x_            
+            bool m_bRecomputeSmoothNormalsAfterAnimation; // 0x_            
+            bool m_bComputeDynamicMeshTensionAfterAnimation; // 0x_            
+            bool m_bSmoothNormalsAcrossUvSeams; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_flTensionCompressScale) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_flTensionStretchScale) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bRecomputeSmoothNormalsAfterAnimation) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bComputeDynamicMeshTensionAfterAnimation) == 0x9);
-        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bSmoothNormalsAcrossUvSeams) == 0xa);
+        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_flTensionCompressScale) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_flTensionStretchScale) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bRecomputeSmoothNormalsAfterAnimation) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bComputeDynamicMeshTensionAfterAnimation) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::DynamicMeshDeformParams_t, m_bSmoothNormalsAcrossUvSeams) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::DynamicMeshDeformParams_t) == 0xc);
+        static_assert(sizeof(source2sdk::modellib::DynamicMeshDeformParams_t) == 0x_);
     };
 };

@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x6d0
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,20 +34,20 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x688            
-            float duration; // 0x6a0            
-            std::int32_t speed; // 0x6a4            
-            float damage; // 0x6a8            
-            float range; // 0x6ac            
-            std::int32_t projectile_count; // 0x6b0            
-            std::int32_t projectile_width; // 0x6b4            
-            float neutral_shared_cooldown; // 0x6b8            
-            uint8_t _pad06bc[0x14];
+            char hAlreadyHitList[0x_]; // 0x_            
+            float duration; // 0x_            
+            std::int32_t speed; // 0x_            
+            float damage; // 0x_            
+            float range; // 0x_            
+            std::int32_t projectile_count; // 0x_            
+            std::int32_t projectile_width; // 0x_            
+            float neutral_shared_cooldown; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Frogmen_CongregationOfTheDeep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Frogmen_CongregationOfTheDeep) == 0x6d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Frogmen_CongregationOfTheDeep) == 0x_);
     };
 };

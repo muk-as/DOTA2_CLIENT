@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x28
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,21 +25,21 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Option Value Name"
-            CUtlString m_Name; // 0x0            
+            CUtlString m_Name; // 0x_            
             // metadata: MPropertyFriendlyName "Option Display Name"
-            CUtlString m_DisplayName; // 0x8            
+            CUtlString m_DisplayName; // 0x_            
             // metadata: MPropertyAutoExpandSelf
             // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor(VariableValue)"
             // m_VariableValues has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CSmartPropAttributeVariableValue> m_VariableValues;
-            char m_VariableValues[0x18]; // 0x10            
+            char m_VariableValues[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_Name) == 0x0);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_DisplayName) == 0x8);
-        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_VariableValues) == 0x10);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_Name) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_DisplayName) == 0x_);
+        static_assert(offsetof(source2sdk::smartprops::CSmartPropChoiceOption, m_VariableValues) == 0x_);
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropChoiceOption) == 0x28);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropChoiceOption) == 0x_);
     };
 };

@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace materialsystem2
     {
-        // Registered alignment: 0x4
-        // Alignment: 0x4
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x14
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,20 +25,20 @@ namespace source2sdk
         struct PostProcessingLocalContrastParameters_t
         {
         public:
-            float m_flLocalContrastStrength; // 0x0            
-            float m_flLocalContrastEdgeStrength; // 0x4            
-            float m_flLocalContrastVignetteStart; // 0x8            
-            float m_flLocalContrastVignetteEnd; // 0xc            
-            float m_flLocalContrastVignetteBlur; // 0x10            
+            float m_flLocalContrastStrength; // 0x_            
+            float m_flLocalContrastEdgeStrength; // 0x_            
+            float m_flLocalContrastVignetteStart; // 0x_            
+            float m_flLocalContrastVignetteEnd; // 0x_            
+            float m_flLocalContrastVignetteBlur; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastStrength) == 0x0);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastEdgeStrength) == 0x4);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteStart) == 0x8);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteEnd) == 0xc);
-        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteBlur) == 0x10);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastStrength) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastEdgeStrength) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteStart) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteEnd) == 0x_);
+        static_assert(offsetof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t, m_flLocalContrastVignetteBlur) == 0x_);
         
-        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t) == 0x14);
+        static_assert(sizeof(source2sdk::materialsystem2::PostProcessingLocalContrastParameters_t) == 0x_);
     };
 };

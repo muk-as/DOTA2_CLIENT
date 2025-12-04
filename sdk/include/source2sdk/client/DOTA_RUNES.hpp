@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_RUNES : std::uint32_t
         {
             DOTA_RUNE_INVALID = 0xffffffff,

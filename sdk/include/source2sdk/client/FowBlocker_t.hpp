@@ -15,9 +15,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x48
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "float m_flMinX"
@@ -30,30 +30,30 @@ namespace source2sdk
         struct FowBlocker_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            float m_flMinX; // 0x30            
+            float m_flMinX; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxX; // 0x34            
+            float m_flMaxX; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMinY; // 0x38            
+            float m_flMinY; // 0x_            
             // metadata: MNetworkEnable
-            float m_flMaxY; // 0x3c            
+            float m_flMaxY; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::FowBlockerShape_t m_fowBlockerShape; // 0x40            
+            source2sdk::client::FowBlockerShape_t m_fowBlockerShape; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bClearRegion; // 0x44            
-            uint8_t _pad0045[0x3];
+            bool m_bClearRegion; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMinX) == 0x30);
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMaxX) == 0x34);
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMinY) == 0x38);
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMaxY) == 0x3c);
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_fowBlockerShape) == 0x40);
-        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_bClearRegion) == 0x44);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMinX) == 0x_);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMaxX) == 0x_);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMinY) == 0x_);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_flMaxY) == 0x_);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_fowBlockerShape) == 0x_);
+        static_assert(offsetof(source2sdk::client::FowBlocker_t, m_bClearRegion) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::FowBlocker_t) == 0x48);
+        static_assert(sizeof(source2sdk::client::FowBlocker_t) == 0x_);
     };
 };

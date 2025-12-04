@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 67
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class CMsgBattleReport_HighlightType : std::uint32_t
         {
             // MPropertySuppressEnumerator

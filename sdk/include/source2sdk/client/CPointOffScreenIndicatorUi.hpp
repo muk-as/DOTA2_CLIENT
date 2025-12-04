@@ -21,10 +21,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xc10
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,16 +32,16 @@ namespace source2sdk
         class CPointOffScreenIndicatorUi : public source2sdk::client::C_PointClientUIWorldPanel
         {
         public:
-            bool m_bBeenEnabled; // 0xc00            
-            bool m_bHide; // 0xc01            
-            uint8_t _pad0c02[0x2]; // 0xc02
-            float m_flSeenTargetTime; // 0xc04            
-            source2sdk::client::C_PointClientUIWorldPanel* m_pTargetPanel; // 0xc08            
+            bool m_bBeenEnabled; // 0x_            
+            bool m_bHide; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flSeenTargetTime; // 0x_            
+            source2sdk::client::C_PointClientUIWorldPanel* m_pTargetPanel; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPointOffScreenIndicatorUi because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPointOffScreenIndicatorUi) == 0xc10);
+        static_assert(sizeof(source2sdk::client::CPointOffScreenIndicatorUi) == 0x_);
     };
 };

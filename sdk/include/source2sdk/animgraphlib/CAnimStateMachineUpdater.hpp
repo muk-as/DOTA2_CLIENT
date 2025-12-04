@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x58
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,23 +27,23 @@ namespace source2sdk
         class CAnimStateMachineUpdater
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // m_states has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CStateUpdateData> m_states;
-            char m_states[0x18]; // 0x8            
+            char m_states[0x_]; // 0x_            
             // m_transitions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CTransitionUpdateData> m_transitions;
-            char m_transitions[0x18]; // 0x20            
-            uint8_t _pad0038[0x18]; // 0x38
-            std::int32_t m_startStateIndex; // 0x50            
-            uint8_t _pad0054[0x4];
+            char m_transitions[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_startStateIndex; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_states) == 0x8);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_transitions) == 0x20);
-        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_startStateIndex) == 0x50);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_states) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_transitions) == 0x_);
+        static_assert(offsetof(source2sdk::animgraphlib::CAnimStateMachineUpdater, m_startStateIndex) == 0x_);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CAnimStateMachineUpdater) == 0x58);
+        static_assert(sizeof(source2sdk::animgraphlib::CAnimStateMachineUpdater) == 0x_);
     };
 };

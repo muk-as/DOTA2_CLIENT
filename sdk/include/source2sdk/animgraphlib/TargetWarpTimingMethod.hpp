@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class TargetWarpTimingMethod : std::uint32_t
         {
             // MPropertyFriendlyName "Reach destination when root motion ends"

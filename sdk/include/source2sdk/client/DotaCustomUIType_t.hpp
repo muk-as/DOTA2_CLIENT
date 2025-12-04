@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 10
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DotaCustomUIType_t : std::uint32_t
         {
             DOTA_CUSTOM_UI_TYPE_HUD = 0x0,

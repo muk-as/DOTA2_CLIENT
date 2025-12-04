@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -29,15 +29,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_nNumPoints; // 0x30            
+            std::int32_t m_nNumPoints; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnFacelessVoidArcanaChanged"
-            source2sdk::entity2::GameTime_t m_flShowPopupTime; // 0x34            
+            source2sdk::entity2::GameTime_t m_flShowPopupTime; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_ArcanaDataEntity_FacelessVoid because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_ArcanaDataEntity_FacelessVoid) == 0x38);
+        static_assert(sizeof(source2sdk::client::CDOTA_ArcanaDataEntity_FacelessVoid) == 0x_);
     };
 };

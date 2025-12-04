@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 3
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PingConfirmationIconType : std::uint32_t
         {
             PING_CONFIRMATION_STATE_ICON_TYPE_ATTACK = 0x0,

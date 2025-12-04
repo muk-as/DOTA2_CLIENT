@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x10
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,14 +25,14 @@ namespace source2sdk
         class CDOTAEventActionGrantAndClaimPair
         {
         public:
-            CUtlString m_sEventActionGrant; // 0x0            
-            CUtlString m_sEventActionClaim; // 0x8            
+            CUtlString m_sEventActionGrant; // 0x_            
+            CUtlString m_sEventActionClaim; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CDOTAEventActionGrantAndClaimPair, m_sEventActionGrant) == 0x0);
-        static_assert(offsetof(source2sdk::client::CDOTAEventActionGrantAndClaimPair, m_sEventActionClaim) == 0x8);
+        static_assert(offsetof(source2sdk::client::CDOTAEventActionGrantAndClaimPair, m_sEventActionGrant) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDOTAEventActionGrantAndClaimPair, m_sEventActionClaim) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CDOTAEventActionGrantAndClaimPair) == 0x10);
+        static_assert(sizeof(source2sdk::client::CDOTAEventActionGrantAndClaimPair) == 0x_);
     };
 };

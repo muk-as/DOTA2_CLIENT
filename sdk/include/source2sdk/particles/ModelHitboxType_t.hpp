@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class ModelHitboxType_t : std::uint32_t
         {
             MODEL_HITBOX_TYPE_STANDARD = 0x0,

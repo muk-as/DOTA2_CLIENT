@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x_
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -25,16 +25,16 @@ namespace source2sdk
         class CRenderBufferBinding
         {
         public:
-            std::uint64_t m_hBuffer; // 0x0            
-            uint8_t _pad0008[0x8]; // 0x8
-            std::uint32_t m_nBindOffsetBytes; // 0x10            
-            uint8_t _pad0014[0xc];
+            std::uint64_t m_hBuffer; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::uint32_t m_nBindOffsetBytes; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CRenderBufferBinding, m_hBuffer) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CRenderBufferBinding, m_nBindOffsetBytes) == 0x10);
+        static_assert(offsetof(source2sdk::modellib::CRenderBufferBinding, m_hBuffer) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CRenderBufferBinding, m_nBindOffsetBytes) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CRenderBufferBinding) == 0x20);
+        static_assert(sizeof(source2sdk::modellib::CRenderBufferBinding) == 0x_);
     };
 };

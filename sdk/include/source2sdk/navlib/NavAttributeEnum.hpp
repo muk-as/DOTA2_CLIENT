@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 21
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class NavAttributeEnum : std::uint32_t
         {
             NAV_MESH_AVOID = 0x80,

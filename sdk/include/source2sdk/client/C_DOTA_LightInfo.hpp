@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x9b8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class C_DOTA_LightInfo : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad05e8[0x3d0];
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_LightInfo) == 0x9b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_LightInfo) == 0x_);
     };
 };

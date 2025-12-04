@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 12
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DotaGestureSlot_t : std::uint32_t
         {
             GESTURE_SLOT_NONE = 0xffffffff,

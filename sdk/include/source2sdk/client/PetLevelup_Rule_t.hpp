@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class PetLevelup_Rule_t : std::uint32_t
         {
             PETLEVELFROM_NOTHING = 0x0,

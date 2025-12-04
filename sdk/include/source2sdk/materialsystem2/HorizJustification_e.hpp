@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 4
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class HorizJustification_e : std::uint32_t
         {
             HORIZ_JUSTIFICATION_LEFT = 0x0,

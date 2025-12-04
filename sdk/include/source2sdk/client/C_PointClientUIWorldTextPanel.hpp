@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace client
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xe00
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -27,17 +27,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_messageText[512]; // 0xc00            
+            char m_messageText[512]; // 0x_            
             
             // Datamap fields:
-            // void InputToggle; // 0x0
-            // CUtlSymbolLarge InputSetMessage; // 0x0
-            // int32_t InputSetIntMessage; // 0x0
+            // void InputToggle; // 0x_
+            // CUtlSymbolLarge InputSetMessage; // 0x_
+            // int32_t InputSetIntMessage; // 0x_
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PointClientUIWorldTextPanel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PointClientUIWorldTextPanel) == 0xe00);
+        static_assert(sizeof(source2sdk::client::C_PointClientUIWorldTextPanel) == 0x_);
     };
 };

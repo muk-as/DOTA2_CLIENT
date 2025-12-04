@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 20
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class Fantasy_Scoring : std::uint32_t
         {
             FANTASY_SCORING_KILLS = 0x0,

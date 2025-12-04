@@ -14,23 +14,23 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x4
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x18
+        // Size: 0x_
         #pragma pack(push, 1)
         class CBreakableStageHelper
         {
         public:
-            uint8_t _pad0000[0x8]; // 0x0
-            std::int32_t m_nCurrentStage; // 0x8            
-            std::int32_t m_nStageCount; // 0xc            
-            uint8_t _pad0010[0x8];
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nCurrentStage; // 0x_            
+            std::int32_t m_nStageCount; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::CBreakableStageHelper, m_nCurrentStage) == 0x8);
-        static_assert(offsetof(source2sdk::client::CBreakableStageHelper, m_nStageCount) == 0xc);
+        static_assert(offsetof(source2sdk::client::CBreakableStageHelper, m_nCurrentStage) == 0x_);
+        static_assert(offsetof(source2sdk::client::CBreakableStageHelper, m_nStageCount) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::CBreakableStageHelper) == 0x18);
+        static_assert(sizeof(source2sdk::client::CBreakableStageHelper) == 0x_);
     };
 };

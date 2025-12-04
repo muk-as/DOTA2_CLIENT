@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x220
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -30,22 +30,22 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "maximum distance"
-            float m_fMaxDistance; // 0x1c8            
+            float m_fMaxDistance; // 0x_            
             // metadata: MPropertyFriendlyName "particles to map from start to end"
-            float m_flNumToAssign; // 0x1cc            
+            float m_flNumToAssign; // 0x_            
             // metadata: MPropertyFriendlyName "restart behavior (0 = bounce, 1 = loop )"
-            bool m_bLoop; // 0x1d0            
+            bool m_bLoop; // 0x_            
             // metadata: MPropertyFriendlyName "use sequential CP pairs between start and end point"
-            bool m_bCPPairs; // 0x1d1            
+            bool m_bCPPairs; // 0x_            
             // metadata: MPropertyFriendlyName "save offset"
-            bool m_bSaveOffset; // 0x1d2            
-            uint8_t _pad01d3[0xd]; // 0x1d3
-            source2sdk::particles::CPathParameters m_PathParams; // 0x1e0            
+            bool m_bSaveOffset; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::particles::CPathParameters m_PathParams; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_INIT_CreateSequentialPath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_INIT_CreateSequentialPath) == 0x220);
+        static_assert(sizeof(source2sdk::particles::C_INIT_CreateSequentialPath) == 0x_);
     };
 };

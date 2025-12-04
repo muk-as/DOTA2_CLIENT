@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTA_ITEM_STATE : std::uint32_t
         {
             DOTA_ITEM_NEEDS_EQUIPPED = 0x0,

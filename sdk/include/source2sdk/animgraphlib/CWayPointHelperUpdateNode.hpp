@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace animgraphlib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x80
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -26,18 +26,18 @@ namespace source2sdk
         class CWayPointHelperUpdateNode : public source2sdk::animgraphlib::CUnaryUpdateNode
         {
         public:
-            uint8_t _pad0070[0x4]; // 0x70
-            float m_flStartCycle; // 0x74            
-            float m_flEndCycle; // 0x78            
-            bool m_bOnlyGoals; // 0x7c            
-            bool m_bPreventOvershoot; // 0x7d            
-            bool m_bPreventUndershoot; // 0x7e            
-            uint8_t _pad007f[0x1];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flStartCycle; // 0x_            
+            float m_flEndCycle; // 0x_            
+            bool m_bOnlyGoals; // 0x_            
+            bool m_bPreventOvershoot; // 0x_            
+            bool m_bPreventUndershoot; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CWayPointHelperUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CWayPointHelperUpdateNode) == 0x80);
+        static_assert(sizeof(source2sdk::animgraphlib::CWayPointHelperUpdateNode) == 0x_);
     };
 };

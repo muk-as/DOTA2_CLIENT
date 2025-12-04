@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Seasonal_TI11_CongaLineSlow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flMaxSpeed; // 0x1878            
-            uint8_t _pad187c[0x4];
+            float m_flMaxSpeed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Seasonal_TI11_CongaLineSlow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Seasonal_TI11_CongaLineSlow) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Seasonal_TI11_CongaLineSlow) == 0x_);
     };
 };

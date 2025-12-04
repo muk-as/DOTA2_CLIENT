@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace modellib
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0x38
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -24,22 +24,22 @@ namespace source2sdk
         class CMorphBundleData
         {
         public:
-            float m_flULeftSrc; // 0x0            
-            float m_flVTopSrc; // 0x4            
+            float m_flULeftSrc; // 0x_            
+            float m_flVTopSrc; // 0x_            
             // m_offsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_offsets;
-            char m_offsets[0x18]; // 0x8            
+            char m_offsets[0x_]; // 0x_            
             // m_ranges has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_ranges;
-            char m_ranges[0x18]; // 0x20            
+            char m_ranges[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_flULeftSrc) == 0x0);
-        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_flVTopSrc) == 0x4);
-        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_offsets) == 0x8);
-        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_ranges) == 0x20);
+        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_flULeftSrc) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_flVTopSrc) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_offsets) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CMorphBundleData, m_ranges) == 0x_);
         
-        static_assert(sizeof(source2sdk::modellib::CMorphBundleData) == 0x38);
+        static_assert(sizeof(source2sdk::modellib::CMorphBundleData) == 0x_);
     };
 };

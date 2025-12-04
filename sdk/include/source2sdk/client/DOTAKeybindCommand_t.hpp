@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 252
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class DOTAKeybindCommand_t : std::uint32_t
         {
             DOTA_KEYBIND_NONE = 0x0,

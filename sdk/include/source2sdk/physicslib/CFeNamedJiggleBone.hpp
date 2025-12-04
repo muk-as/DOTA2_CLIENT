@@ -14,10 +14,10 @@ namespace source2sdk
 {
     namespace physicslib
     {
-        // Registered alignment: 0x10
-        // Alignment: 0x10
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xd0
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,19 +25,19 @@ namespace source2sdk
         class CFeNamedJiggleBone
         {
         public:
-            CUtlString m_strParentBone; // 0x0            
-            uint8_t _pad0008[0x8]; // 0x8
-            CTransform m_transform; // 0x10            
-            std::uint32_t m_nJiggleParent; // 0x30            
-            source2sdk::physicslib::CFeJiggleBone m_jiggleBone; // 0x34            
+            CUtlString m_strParentBone; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_transform; // 0x_            
+            std::uint32_t m_nJiggleParent; // 0x_            
+            source2sdk::physicslib::CFeJiggleBone m_jiggleBone; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_strParentBone) == 0x0);
-        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_transform) == 0x10);
-        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_nJiggleParent) == 0x30);
-        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_jiggleBone) == 0x34);
+        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_strParentBone) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_transform) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_nJiggleParent) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::CFeNamedJiggleBone, m_jiggleBone) == 0x_);
         
-        static_assert(sizeof(source2sdk::physicslib::CFeNamedJiggleBone) == 0xd0);
+        static_assert(sizeof(source2sdk::physicslib::CFeNamedJiggleBone) == 0x_);
     };
 };

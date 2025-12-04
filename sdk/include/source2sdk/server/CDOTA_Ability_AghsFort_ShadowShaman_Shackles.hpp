@@ -22,10 +22,10 @@ namespace source2sdk
 {
     namespace server
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -38,13 +38,13 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hShackleTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hShackleTarget;
-            char m_hShackleTarget[0x4]; // 0x5c0            
-            source2sdk::client::ParticleIndex_t nShackleFXIndex; // 0x5c4            
+            char m_hShackleTarget[0x_]; // 0x_            
+            source2sdk::client::ParticleIndex_t nShackleFXIndex; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_ShadowShaman_Shackles because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_ShadowShaman_Shackles) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_ShadowShaman_Shackles) == 0x_);
     };
 };

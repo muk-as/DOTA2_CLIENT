@@ -15,10 +15,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0x428
+        // Size: 0x_
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,19 +27,19 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Radius calculation mode"
-            source2sdk::particles::ParticleMassMode_t m_nMassMode; // 0x0            
-            uint8_t _pad0004[0x4]; // 0x4
+            source2sdk::particles::ParticleMassMode_t m_nMassMode; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Radius input"
-            source2sdk::particleslib::CPerParticleFloatInput m_flRadius; // 0x8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flRadius; // 0x_            
             // metadata: MPropertyFriendlyName "Nominal radius value"
-            source2sdk::particleslib::CPerParticleFloatInput m_flNominalRadius; // 0x168            
+            source2sdk::particleslib::CPerParticleFloatInput m_flNominalRadius; // 0x_            
             // metadata: MPropertyFriendlyName "Scale to apply to result"
-            source2sdk::particleslib::CPerParticleFloatInput m_flScale; // 0x2c8            
+            source2sdk::particleslib::CPerParticleFloatInput m_flScale; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CParticleMassCalculationParameters because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::CParticleMassCalculationParameters) == 0x428);
+        static_assert(sizeof(source2sdk::particles::CParticleMassCalculationParameters) == 0x_);
     };
 };

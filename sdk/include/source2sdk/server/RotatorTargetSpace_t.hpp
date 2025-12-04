@@ -15,7 +15,7 @@ namespace source2sdk
     {
         // Enumerator count: 2
         // Alignment: 4
-        // Size: 0x4
+        // Size: 0x_
         enum class RotatorTargetSpace_t : std::uint32_t
         {
             ROTATOR_TARGET_WORLDSPACE = 0x0,

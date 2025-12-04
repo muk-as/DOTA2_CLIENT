@@ -18,10 +18,10 @@ namespace source2sdk
 {
     namespace particles
     {
-        // Registered alignment: 0x8
-        // Alignment: 0x8
+        // Registered alignment: 0x_
+        // Alignment: 0x_
         // Standard-layout class: false
-        // Size: 0xa60
+        // Size: 0x_
         // Has VTable
         // Construct allowed
         // 
@@ -31,27 +31,27 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "Variable"
-            source2sdk::particleslib::CParticleVariableRef m_variableReference; // 0x1c8            
+            source2sdk::particleslib::CParticleVariableRef m_variableReference; // 0x_            
             // metadata: MPropertyFriendlyName "Value"
             // metadata: MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_TRANSFORM"
-            source2sdk::particleslib::CParticleTransformInput m_transformInput; // 0x208            
+            source2sdk::particleslib::CParticleTransformInput m_transformInput; // 0x_            
             // metadata: MPropertyFriendlyName "Position Offset"
             // metadata: MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_TRANSFORM"
-            Vector m_positionOffset; // 0x270            
+            Vector m_positionOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Rotation Offset"
             // metadata: MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_TRANSFORM"
-            QAngle m_rotationOffset; // 0x27c            
+            QAngle m_rotationOffset; // 0x_            
             // metadata: MPropertyFriendlyName "Value"
             // metadata: MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_VEC3"
-            source2sdk::particleslib::CParticleCollectionVecInput m_vecInput; // 0x288            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecInput; // 0x_            
             // metadata: MPropertyFriendlyName "Value"
             // metadata: MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_FLOAT"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_floatInput; // 0x900            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_floatInput; // 0x_            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_SetVariable because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_SetVariable) == 0xa60);
+        static_assert(sizeof(source2sdk::particles::C_OP_SetVariable) == 0x_);
     };
 };

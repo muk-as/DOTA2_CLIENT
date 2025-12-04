@@ -17,9 +17,9 @@ namespace source2sdk
     namespace client
     {
         // Registered alignment: unknown
-        // Alignment: 0x8
+        // Alignment: 0x_
         // Standard-layout class: true
-        // Size: 0xf0
+        // Size: 0x_
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "bool m_bIsValid"
@@ -59,127 +59,127 @@ namespace source2sdk
         struct PlayerResourcePlayerData_t
         {
         public:
-            uint8_t _pad0000[0x30]; // 0x0
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            bool m_bIsValid; // 0x30            
-            uint8_t _pad0031[0x7]; // 0x31
+            bool m_bIsValid; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerDataPlayerNamesChanged"
-            CUtlSymbolLarge m_iszPlayerName; // 0x38            
+            CUtlSymbolLarge m_iszPlayerName; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerDataTeamChanged"
-            std::int32_t m_iPlayerTeam; // 0x40            
+            std::int32_t m_iPlayerTeam; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bFullyJoinedServer; // 0x44            
+            bool m_bFullyJoinedServer; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerDataFakeClientChanged"
-            bool m_bFakeClient; // 0x45            
+            bool m_bFakeClient; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsBroadcaster; // 0x46            
-            uint8_t _pad0047[0x1]; // 0x47
+            bool m_bIsBroadcaster; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint32_t m_iBroadcasterChannel; // 0x48            
+            std::uint32_t m_iBroadcasterChannel; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_iBroadcasterChannelSlot; // 0x4c            
+            std::uint32_t m_iBroadcasterChannelSlot; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsBroadcasterChannelCameraman; // 0x50            
-            uint8_t _pad0051[0x3]; // 0x51
+            bool m_bIsBroadcasterChannelCameraman; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerDataPlayerConnectionStateChanged"
-            std::int32_t m_iConnectionState; // 0x54            
+            std::int32_t m_iConnectionState; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnPlayerDataPlayerSteamIDsChanged"
-            std::uint64_t m_iPlayerSteamID; // 0x58            
+            std::uint64_t m_iPlayerSteamID; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::DOTATeam_t m_eCoachTeam; // 0x60            
-            uint8_t _pad0064[0x4]; // 0x64
+            source2sdk::client::DOTATeam_t m_eCoachTeam; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerDataPlayerCoachedPlayerIDsChanged"
             // m_vecPrivateCoachPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<source2sdk::client::PlayerID_t> m_vecPrivateCoachPlayerIDs;
-            char m_vecPrivateCoachPlayerIDs[0x18]; // 0x68            
+            char m_vecPrivateCoachPlayerIDs[0x_]; // 0x_            
             // metadata: MNetworkEnable
-            std::uint32_t m_unCoachRating; // 0x80            
+            std::uint32_t m_unCoachRating; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::DOTATeam_t m_eLiveSpectatorTeam; // 0x84            
+            source2sdk::client::DOTATeam_t m_eLiveSpectatorTeam; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nLiveSpectatorSpectatedHeroIndex; // 0x88            
+            std::int32_t m_nLiveSpectatorSpectatedHeroIndex; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsPlusSubscriber; // 0x8c            
+            bool m_bIsPlusSubscriber; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bWasMVPLastGame; // 0x8d            
+            bool m_bWasMVPLastGame; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::CavernCrawlMapVariant_t m_nCavernCrawlMapVariant; // 0x8e            
-            uint8_t _pad008f[0x1]; // 0x8f
+            source2sdk::client::CavernCrawlMapVariant_t m_nCavernCrawlMapVariant; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_eAccoladeType[3]; // 0x90            
-            uint8_t _pad009c[0x4]; // 0x9c
+            std::int32_t m_eAccoladeType[3]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::uint64_t m_unAccoladeData[3]; // 0xa0            
+            std::uint64_t m_unAccoladeData[3]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iRankTier; // 0xb8            
+            std::int32_t m_iRankTier; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iLeaderboardRank; // 0xbc            
+            std::int32_t m_iLeaderboardRank; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_eMmrBoostType; // 0xc0            
+            std::int32_t m_eMmrBoostType; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iTitle; // 0xc4            
+            std::int32_t m_iTitle; // 0x_            
             // metadata: MNetworkEnable
-            std::uint64_t m_unFavTeamPacked; // 0xc8            
+            std::uint64_t m_unFavTeamPacked; // 0x_            
             // metadata: MNetworkEnable
-            CPlayerSlot m_nPlayerSlot; // 0xd0            
+            CPlayerSlot m_nPlayerSlot; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bIsBot; // 0xd4            
+            bool m_bIsBot; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bHasNeutralTier[5]; // 0xd5            
+            bool m_bHasNeutralTier[5]; // 0x_            
             // metadata: MNetworkEnable
-            bool m_bHasRedeemedNeutralTier[5]; // 0xda            
-            uint8_t _pad00df[0x1]; // 0xdf
+            bool m_bHasRedeemedNeutralTier[5]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nCommLevel; // 0xe0            
+            std::int32_t m_nCommLevel; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_nBehaviorLevel; // 0xe4            
+            std::int32_t m_nBehaviorLevel; // 0x_            
             // metadata: MNetworkEnable
-            float m_flLastCommsTime; // 0xe8            
-            uint8_t _pad00ec[0x4];
+            float m_flLastCommsTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsValid) == 0x30);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iszPlayerName) == 0x38);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iPlayerTeam) == 0x40);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bFullyJoinedServer) == 0x44);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bFakeClient) == 0x45);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBroadcaster) == 0x46);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iBroadcasterChannel) == 0x48);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iBroadcasterChannelSlot) == 0x4c);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBroadcasterChannelCameraman) == 0x50);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iConnectionState) == 0x54);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iPlayerSteamID) == 0x58);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eCoachTeam) == 0x60);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_vecPrivateCoachPlayerIDs) == 0x68);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unCoachRating) == 0x80);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eLiveSpectatorTeam) == 0x84);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nLiveSpectatorSpectatedHeroIndex) == 0x88);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsPlusSubscriber) == 0x8c);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bWasMVPLastGame) == 0x8d);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nCavernCrawlMapVariant) == 0x8e);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eAccoladeType) == 0x90);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unAccoladeData) == 0xa0);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iRankTier) == 0xb8);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iLeaderboardRank) == 0xbc);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eMmrBoostType) == 0xc0);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iTitle) == 0xc4);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unFavTeamPacked) == 0xc8);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nPlayerSlot) == 0xd0);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBot) == 0xd4);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bHasNeutralTier) == 0xd5);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bHasRedeemedNeutralTier) == 0xda);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nCommLevel) == 0xe0);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nBehaviorLevel) == 0xe4);
-        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_flLastCommsTime) == 0xe8);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsValid) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iszPlayerName) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iPlayerTeam) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bFullyJoinedServer) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bFakeClient) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBroadcaster) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iBroadcasterChannel) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iBroadcasterChannelSlot) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBroadcasterChannelCameraman) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iConnectionState) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iPlayerSteamID) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eCoachTeam) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_vecPrivateCoachPlayerIDs) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unCoachRating) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eLiveSpectatorTeam) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nLiveSpectatorSpectatedHeroIndex) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsPlusSubscriber) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bWasMVPLastGame) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nCavernCrawlMapVariant) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eAccoladeType) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unAccoladeData) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iRankTier) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iLeaderboardRank) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_eMmrBoostType) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_iTitle) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_unFavTeamPacked) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nPlayerSlot) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bIsBot) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bHasNeutralTier) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_bHasRedeemedNeutralTier) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nCommLevel) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_nBehaviorLevel) == 0x_);
+        static_assert(offsetof(source2sdk::client::PlayerResourcePlayerData_t, m_flLastCommsTime) == 0x_);
         
-        static_assert(sizeof(source2sdk::client::PlayerResourcePlayerData_t) == 0xf0);
+        static_assert(sizeof(source2sdk::client::PlayerResourcePlayerData_t) == 0x_);
     };
 };
