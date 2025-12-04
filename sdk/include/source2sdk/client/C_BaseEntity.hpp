@@ -132,6 +132,7 @@ namespace source2sdk
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"
             std::int32_t m_iHealth; // 0x_            
+            float m_flDamageAccumulator; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"

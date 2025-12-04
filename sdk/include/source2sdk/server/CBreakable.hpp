@@ -65,6 +65,7 @@ namespace source2sdk
             CUtlSymbolLarge m_iszPropData; // 0x_            
             float m_impactEnergyScale; // 0x_            
             source2sdk::server::EOverrideBlockLOS_t m_nOverrideBlockLOS; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnStartDeath; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnBreak; // 0x_            
             // m_OnHealthChanged has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<float> m_OnHealthChanged;
@@ -90,6 +91,7 @@ namespace source2sdk
             // Vector masscenteroffset; // 0x_
             // float massScale; // 0x_
             // float buoyancyscale; // 0x_
+            // float fluiddragscale; // 0x_
         };
         #pragma pack(pop)
         

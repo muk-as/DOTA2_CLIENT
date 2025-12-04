@@ -22,7 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Soundevent Min/Max Values"
         #pragma pack(push, 1)
         class CSosGroupActionSoundeventMinMaxValuesSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
@@ -49,6 +49,7 @@ namespace source2sdk
             CUtlString m_strMinValueName; // 0x_            
             // metadata: MPropertyFriendlyName "Max value property name"
             CUtlString m_strMaxValueName; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

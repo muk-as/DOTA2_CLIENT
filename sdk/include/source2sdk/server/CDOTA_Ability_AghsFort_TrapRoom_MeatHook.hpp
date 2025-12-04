@@ -34,7 +34,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            Vector m_vProjectileLocation; // 0x_            
+            VectorWS m_vProjectileLocation; // 0x_            
             float hook_speed; // 0x_            
             std::int32_t hook_width; // 0x_            
             std::int32_t hook_distance; // 0x_            
@@ -44,8 +44,8 @@ namespace source2sdk
             // m_hVictim has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hVictim;
             char m_hVictim[0x_]; // 0x_            
-            Vector m_vTargetPosition; // 0x_            
-            Vector m_vCasterPosition; // 0x_            
+            VectorWS m_vTargetPosition; // 0x_            
+            VectorWS m_vCasterPosition; // 0x_            
             bool m_bChainDetached; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x_            

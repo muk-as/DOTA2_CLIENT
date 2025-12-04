@@ -24,7 +24,7 @@ namespace source2sdk
         class CPhysPulley : public source2sdk::server::CPhysConstraint
         {
         public:
-            Vector m_position2; // 0x_            
+            VectorWS m_position2; // 0x_            
             Vector m_offset[2]; // 0x_            
             float m_addLength; // 0x_            
             float m_gearRatio; // 0x_            

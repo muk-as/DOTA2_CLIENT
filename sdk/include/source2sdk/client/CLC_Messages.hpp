@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 15
+        // Enumerator count: 14
         // Alignment: 4
         // Size: 0x_
         enum class CLC_Messages : std::uint32_t
@@ -23,7 +23,6 @@ namespace source2sdk
             clc_VoiceData = 0x16,
             clc_BaselineAck = 0x17,
             clc_RespondCvarValue = 0x19,
-            clc_FileCRCCheck = 0x1a,
             clc_LoadingProgress = 0x1b,
             clc_SplitPlayerConnect = 0x1c,
             clc_SplitPlayerDisconnect = 0x1e,

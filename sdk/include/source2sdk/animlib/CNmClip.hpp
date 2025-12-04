@@ -7,6 +7,7 @@
 #include "source2sdk/animlib/CNmRootMotionData.hpp"
 #include "source2sdk/animlib/CNmSyncTrack.hpp"
 #include "source2sdk/animlib/NmCompressionSettings_t.hpp"
+#include "source2sdk/animlib/NmFloatCurveCompressionSettings_t.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -41,6 +42,18 @@ namespace source2sdk
             // m_compressedPoseOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_compressedPoseOffsets;
             char m_compressedPoseOffsets[0x_]; // 0x_            
+            // m_floatCurveIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CGlobalSymbol> m_floatCurveIDs;
+            char m_floatCurveIDs[0x_]; // 0x_            
+            // m_floatCurveDefs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::animlib::NmFloatCurveCompressionSettings_t> m_floatCurveDefs;
+            char m_floatCurveDefs[0x_]; // 0x_            
+            // m_compressedFloatCurveData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<std::uint16_t> m_compressedFloatCurveData;
+            char m_compressedFloatCurveData[0x_]; // 0x_            
+            // m_compressedFloatCurveOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<std::uint32_t> m_compressedFloatCurveOffsets;
+            char m_compressedFloatCurveOffsets[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_secondaryAnimations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<source2sdk::animlib::CNmClip*,1> m_secondaryAnimations;
@@ -66,6 +79,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseData) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_trackCompressionSettings) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedPoseOffsets) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_floatCurveIDs) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_floatCurveDefs) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedFloatCurveData) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_compressedFloatCurveOffsets) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_secondaryAnimations) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_rootMotion) == 0x_);

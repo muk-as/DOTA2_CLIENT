@@ -212,9 +212,6 @@ namespace source2sdk
             CUtlString m_strCustomHexModel; // 0x_            
             source2sdk::client::ParticleIndex_t m_nKillStreakFX; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            // m_AbilitiesPendingDelete has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AbilitiesPendingDelete;
-            char m_AbilitiesPendingDelete[0x_]; // 0x_            
             // m_vecItemPurchaseHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::sAcquireHistory> m_vecItemPurchaseHistory;
             char m_vecItemPurchaseHistory[0x_]; // 0x_            

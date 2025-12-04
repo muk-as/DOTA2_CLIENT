@@ -14,9 +14,9 @@ namespace source2sdk
     namespace modellib
     {
         // Enumerator count: 4
-        // Alignment: 4
+        // Alignment: 1
         // Size: 0x_
-        enum class InputLayoutVariation_t : std::uint32_t
+        enum class InputLayoutVariation_t : std::uint8_t
         {
             INPUT_LAYOUT_VARIATION_DEFAULT = 0x0,
             INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID = 0x1,

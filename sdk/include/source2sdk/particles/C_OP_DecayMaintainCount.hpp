@@ -33,6 +33,10 @@ namespace source2sdk
             float m_flDecayDelay; // 0x_            
             // metadata: MPropertyFriendlyName "snapshot control point for count"
             std::int32_t m_nSnapshotControlPoint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "snapshot subset"
+            // metadata: MPropertySuppressExpr "m_nSnapshotControlPoint < 0"
+            CUtlString m_strSnapshotSubset; // 0x_            
             // metadata: MPropertyFriendlyName "decay on lifespan"
             bool m_bLifespanDecay; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

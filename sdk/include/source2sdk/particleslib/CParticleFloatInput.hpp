@@ -32,8 +32,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MClassIsParticleFloat
-        // static metadata: MParticleCustomFieldDefaultValue
+        // static metadata: MCustomFGDMetadata "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleFloatInputDefaultTestFunc' }"
         #pragma pack(push, 1)
         class CParticleFloatInput : public source2sdk::particleslib::CParticleInput
         {
@@ -47,6 +46,8 @@ namespace source2sdk
             source2sdk::particles::ParticleAttributeIndex_t m_nScalarAttribute; // 0x_            
             source2sdk::particles::ParticleAttributeIndex_t m_nVectorAttribute; // 0x_            
             std::int32_t m_nVectorComponent; // 0x_            
+            bool m_bReverseOrder; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             float m_flRandomMin; // 0x_            
             float m_flRandomMax; // 0x_            
             bool m_bHasRandomSignFlip; // 0x_            
@@ -54,6 +55,7 @@ namespace source2sdk
             std::int32_t m_nRandomSeed; // 0x_            
             source2sdk::particleslib::ParticleFloatRandomMode_t m_nRandomMode; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            CUtlString m_strSnapshotSubset; // 0x_            
             float m_flLOD0; // 0x_            
             float m_flLOD1; // 0x_            
             float m_flLOD2; // 0x_            

@@ -3,7 +3,6 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/pulse_runtime_lib/PulseValueType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particleslib
@@ -26,9 +25,10 @@ namespace source2sdk
         class CParticleVariableRef
         {
         public:
+            // metadata: MFgdFromSchemaCompletelySkipField
             CKV3MemberNameWithStorage m_variableName; // 0x_            
-            source2sdk::pulse_runtime_lib::PulseValueType_t m_variableType; // 0x_            
-            uint8_t _pad_[0x_];
+            // metadata: MFgdFromSchemaCompletelySkipField
+            CPulseValueFullType m_variableType; // 0x_            
         };
         #pragma pack(pop)
         

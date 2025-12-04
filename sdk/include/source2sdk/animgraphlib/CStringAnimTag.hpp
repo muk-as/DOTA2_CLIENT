@@ -23,7 +23,6 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Internal Tag"
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CStringAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {

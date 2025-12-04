@@ -41,6 +41,7 @@ namespace source2sdk
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBasePlayerWeapon>> m_hMyWeapons;
             char m_hMyWeapons[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnActiveWeaponChanged"
             // m_hActiveWeapon has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBasePlayerWeapon> m_hActiveWeapon;
             char m_hActiveWeapon[0x_]; // 0x_            
@@ -50,6 +51,7 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBasePlayerWeapon> m_hLastWeapon;
             char m_hLastWeapon[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnReserveAmmoChanged"
             std::uint16_t m_iAmmo[32]; // 0x_            
             bool m_bPreventWeaponPickup; // 0x_            
             uint8_t _pad_[0x_];

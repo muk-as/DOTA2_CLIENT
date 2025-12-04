@@ -25,7 +25,6 @@ namespace source2sdk
         // 
         // static metadata: MNetworkUserGroupProxy "CDOTAPlayerPawn"
         // static metadata: MNetworkExcludeByName "m_angRotation"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flPlaybackRate"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"

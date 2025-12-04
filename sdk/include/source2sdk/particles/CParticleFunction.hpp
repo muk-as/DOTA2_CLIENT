@@ -94,7 +94,6 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "operator help and notes"
             // metadata: MParticleHelpField
-            // metadata: MParticleAdvancedField
             // metadata: MPropertySortPriority "-100"
             CUtlString m_Notes; // 0x_            
             uint8_t _pad_[0x_];

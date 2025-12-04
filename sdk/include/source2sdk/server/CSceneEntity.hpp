@@ -57,7 +57,6 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszSceneFile; // 0x_            
-            CUtlSymbolLarge m_iszResumeSceneFile; // 0x_            
             CUtlSymbolLarge m_iszTarget1; // 0x_            
             CUtlSymbolLarge m_iszTarget2; // 0x_            
             CUtlSymbolLarge m_iszTarget3; // 0x_            
@@ -112,10 +111,6 @@ namespace source2sdk
             float m_flAutomationDelay; // 0x_            
             float m_flAutomationTime; // 0x_            
             std::int32_t m_nSpeechPriority; // 0x_            
-            // m_hWaitingForThisResumeScene has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::server::CBaseEntity> m_hWaitingForThisResumeScene;
-            char m_hWaitingForThisResumeScene[0x_]; // 0x_            
-            bool m_bWaitingForResumeScene; // 0x_            
             bool m_bPausedViaInput; // 0x_            
             bool m_bPauseAtNextInterrupt; // 0x_            
             bool m_bWaitingForActor; // 0x_            
@@ -123,6 +118,7 @@ namespace source2sdk
             bool m_bInterruptedActorsScenes; // 0x_            
             bool m_bBreakOnNonIdle; // 0x_            
             bool m_bSceneFinished; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hActorList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseFlex>> m_hActorList;
@@ -131,7 +127,6 @@ namespace source2sdk
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hRemoveActorList;
             char m_hRemoveActorList[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            std::int32_t m_nSceneFlushCounter; // 0x_            
             // metadata: MNetworkEnable
             std::uint16_t m_nSceneStringIndex; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
@@ -140,7 +135,6 @@ namespace source2sdk
             source2sdk::entity2::CEntityIOOutput m_OnCanceled; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnPaused; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnResumed; // 0x_            
-            source2sdk::entity2::CEntityIOOutput m_OnTrigger[16]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_hInterruptScene has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CSceneEntity> m_hInterruptScene;
@@ -181,27 +175,10 @@ namespace source2sdk
             // float InputPitchShiftPlayback; // 0x_
             // CUtlSymbolLarge InputInterjectResponse; // 0x_
             // void InputStopWaitingForActor; // 0x_
-            // int32_t InputTriggerEvent; // 0x_
             // CUtlSymbolLarge InputSetTarget1; // 0x_
             // CUtlSymbolLarge InputSetTarget2; // 0x_
             // void InputScriptPlayerDeath; // 0x_
             // void InputPauseAtNextInterrupt; // 0x_
-            // void m_OnTrigger[ 0 ]; // 0x_
-            // void m_OnTrigger[ 1 ]; // 0x_
-            // void m_OnTrigger[ 2 ]; // 0x_
-            // void m_OnTrigger[ 3 ]; // 0x_
-            // void m_OnTrigger[ 4 ]; // 0x_
-            // void m_OnTrigger[ 5 ]; // 0x_
-            // void m_OnTrigger[ 6 ]; // 0x_
-            // void m_OnTrigger[ 7 ]; // 0x_
-            // void m_OnTrigger[ 8 ]; // 0x_
-            // void m_OnTrigger[ 9 ]; // 0x_
-            // void m_OnTrigger[ 10 ]; // 0x_
-            // void m_OnTrigger[ 11 ]; // 0x_
-            // void m_OnTrigger[ 12 ]; // 0x_
-            // void m_OnTrigger[ 13 ]; // 0x_
-            // void m_OnTrigger[ 14 ]; // 0x_
-            // void m_OnTrigger[ 15 ]; // 0x_
         };
         #pragma pack(pop)
         

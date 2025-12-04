@@ -23,7 +23,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CAnimParameterBase
         {
@@ -37,8 +36,10 @@ namespace source2sdk
             // metadata: MPropertySortPriority "-100"
             CUtlString m_sComment; // 0x_            
             // metadata: MPropertyReadOnly
+            // metadata: MPropertySortPriority "-90"
             CUtlString m_group; // 0x_            
             // metadata: MPropertyReadOnly
+            // metadata: MPropertySortPriority "-90"
             source2sdk::modellib::AnimParamID m_id; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertySuppressField

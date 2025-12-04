@@ -34,10 +34,13 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyFriendlyName "project on characters"
+            // metadata: MPropertySuppressExpr "mod != dota"
             bool m_bProjectCharacter; // 0x_            
             // metadata: MPropertyFriendlyName "project on world"
+            // metadata: MPropertySuppressExpr "mod != dota"
             bool m_bProjectWorld; // 0x_            
             // metadata: MPropertyFriendlyName "project on water"
+            // metadata: MPropertySuppressExpr "mod != dota"
             bool m_bProjectWater; // 0x_            
             // metadata: MPropertyFriendlyName "flip horizontal"
             bool m_bFlipHorizontal; // 0x_            

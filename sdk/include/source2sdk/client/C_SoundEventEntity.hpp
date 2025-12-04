@@ -53,7 +53,8 @@ namespace source2sdk
             // Datamap fields:
             // CUtlSymbolLarge InputSetSoundName; // 0x_
             // CUtlSymbolLarge InputSetSourceEntity; // 0x_
-            // CUtlSymbolLarge InputStartSound; // 0x_
+            // CUtlSymbolLarge InputStartSoundOnAllClients; // 0x_
+            // int32_t InputStartSoundOnSingleClient; // 0x_
             // bool InputPauseSound; // 0x_
             // bool InputUnPauseSound; // 0x_
             // void InputStopSound; // 0x_

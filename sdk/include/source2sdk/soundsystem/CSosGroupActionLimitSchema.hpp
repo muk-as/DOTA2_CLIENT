@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/soundsystem/CSosGroupActionSchema.hpp"
-#include "source2sdk/soundsystem/SosActionSortType_t.hpp"
+#include "source2sdk/soundsystem/SosActionLimitSortType_t.hpp"
 #include "source2sdk/soundsystem/SosActionStopType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -24,17 +24,17 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Limiter"
         #pragma pack(push, 1)
         class CSosGroupActionLimitSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
         public:
-            // metadata: MPropertyFriendlyName "Max Count"
             std::int32_t m_nMaxCount; // 0x_            
-            // metadata: MPropertyFriendlyName "Stop Type"
             source2sdk::soundsystem::SosActionStopType_t m_nStopType; // 0x_            
-            // metadata: MPropertyFriendlyName "Sort Type"
-            source2sdk::soundsystem::SosActionSortType_t m_nSortType; // 0x_            
+            source2sdk::soundsystem::SosActionLimitSortType_t m_nSortType; // 0x_            
+            bool m_bStopImmediate; // 0x_            
+            // metadata: MPropertyFriendlyName "Count Stopped Events"
+            bool m_bCountStopped; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

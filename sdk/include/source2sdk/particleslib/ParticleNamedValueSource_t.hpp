@@ -4,7 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particleslib/ParticleNamedValueConfiguration_t.hpp"
-#include "source2sdk/pulse_runtime_lib/PulseValueType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particleslib
@@ -29,14 +28,10 @@ namespace source2sdk
             CUtlString m_Name; // 0x_            
             bool m_IsPublic; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            // metadata: MPropertySuppressField
-            source2sdk::pulse_runtime_lib::PulseValueType_t m_ValueType; // 0x_            
-            // metadata: MPropertySuppressField
+            // metadata: MFgdFromSchemaCompletelySkipField
+            CPulseValueFullType m_ValueType; // 0x_            
+            // metadata: MFgdFromSchemaCompletelySkipField
             source2sdk::particleslib::ParticleNamedValueConfiguration_t m_DefaultConfig; // 0x_            
-            // metadata: MPropertySuppressField
-            // m_NamedConfigs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<source2sdk::particleslib::ParticleNamedValueConfiguration_t> m_NamedConfigs;
-            char m_NamedConfigs[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
@@ -44,7 +39,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_IsPublic) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_ValueType) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_DefaultConfig) == 0x_);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueSource_t, m_NamedConfigs) == 0x_);
         
         static_assert(sizeof(source2sdk::particleslib::ParticleNamedValueSource_t) == 0x_);
     };

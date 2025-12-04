@@ -18,13 +18,12 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has VTable
-        // 
-        // static metadata: MPulseInternal_IsCursor
         #pragma pack(push, 1)
         class CPulseExecCursor
         {
         public:
             uint8_t _pad_[0x_];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         

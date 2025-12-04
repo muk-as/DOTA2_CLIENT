@@ -39,7 +39,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            CTransform m_nodeToWorld; // 0x_            
+            CTransformWS m_nodeToWorld; // 0x_            
             source2sdk::entity2::CEntityInstance* m_pOwner; // 0x_            
             source2sdk::server::CGameSceneNode* m_pParent; // 0x_            
             source2sdk::server::CGameSceneNode* m_pChild; // 0x_            
@@ -66,7 +66,7 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "gameSceneNodeLocalScaleChanged"
             // metadata: MNetworkPriority "32"
             float m_flScale; // 0x_            
-            Vector m_vecAbsOrigin; // 0x_            
+            VectorWS m_vecAbsOrigin; // 0x_            
             QAngle m_angAbsRotation; // 0x_            
             float m_flAbsScale; // 0x_            
             std::int16_t m_nParentAttachmentOrBone; // 0x_            

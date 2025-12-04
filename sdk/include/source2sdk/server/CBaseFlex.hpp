@@ -24,7 +24,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MNetworkVarNames "float32 m_flexWeight"
-        // static metadata: MNetworkVarNames "Vector m_vLookTargetPosition"
+        // static metadata: MNetworkVarNames "VectorWS m_vLookTargetPosition"
         // static metadata: MNetworkVarNames "bool m_blinktoggle"
         #pragma pack(push, 1)
         class CBaseFlex : public source2sdk::server::CBaseAnimatingOverlay
@@ -40,7 +40,7 @@ namespace source2sdk
             char m_flexWeight[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_vLookTargetPosition; // 0x_            
+            VectorWS m_vLookTargetPosition; // 0x_            
             // metadata: MNetworkEnable
             bool m_blinktoggle; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

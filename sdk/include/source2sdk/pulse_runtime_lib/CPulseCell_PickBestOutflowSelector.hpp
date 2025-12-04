@@ -24,17 +24,10 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Select Best Exit"
         // static metadata: MPropertyDescription "Evaluate the requirements of each connected node"
-        // static metadata: MPulseCell_WithNoDefaultOutflow
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/requirements.png"
         // static metadata: MPulseEditorCanvasItemSpecKV3
-        // static metadata: MPulseSelectorHasSpecificity
-        // static metadata: MPulseSelectorAllowRequirementCriteria
-        // static metadata: MPulseSelectorAllowRequirementCriteria
         #pragma pack(push, 1)
         class CPulseCell_PickBestOutflowSelector : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow
         {

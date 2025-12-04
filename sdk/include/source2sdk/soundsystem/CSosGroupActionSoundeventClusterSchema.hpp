@@ -22,7 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Soundevent Cluster"
         #pragma pack(push, 1)
         class CSosGroupActionSoundeventClusterSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
@@ -41,6 +41,7 @@ namespace source2sdk
             CUtlString m_groupBoundingBoxMinsOpvar; // 0x_            
             // metadata: MPropertyFriendlyName "'Group Box Maxs' Opvar Name"
             CUtlString m_groupBoundingBoxMaxsOpvar; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

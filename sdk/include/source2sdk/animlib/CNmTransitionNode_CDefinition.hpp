@@ -32,11 +32,11 @@ namespace source2sdk
         public:
             std::int16_t m_nTargetStateNodeIdx; // 0x_            
             std::int16_t m_nDurationOverrideNodeIdx; // 0x_            
-            std::int16_t m_syncEventOffsetOverrideNodeIdx; // 0x_            
+            std::int16_t m_timeOffsetOverrideNodeIdx; // 0x_            
             std::int16_t m_startBoneMaskNodeIdx; // 0x_            
             float m_flDuration; // 0x_            
             source2sdk::animlib::NmPercent_t m_boneMaskBlendInTimePercentage; // 0x_            
-            float m_syncEventOffset; // 0x_            
+            float m_flTimeOffset; // 0x_            
             source2sdk::animlib::CNmBitFlags m_transitionOptions; // 0x_            
             std::int16_t m_targetSyncIDNodeIdx; // 0x_            
             source2sdk::animlib::NmEasingOperation_t m_blendWeightEasing; // 0x_            

@@ -29,10 +29,7 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
-        // static metadata: MNetworkVarNames "Vector m_vFanOrigin"
         // static metadata: MNetworkVarNames "Vector m_vFanOriginOffset"
-        // static metadata: MNetworkVarNames "Vector m_vFanEnd"
-        // static metadata: MNetworkVarNames "Vector m_vNoiseDirectionTarget"
         // static metadata: MNetworkVarNames "Vector m_vDirection"
         // static metadata: MNetworkVarNames "bool m_bPushTowardsInfoTarget"
         // static metadata: MNetworkVarNames "bool m_bPushAwayFromInfoTarget"
@@ -46,13 +43,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vFanOrigin; // 0x_            
-            // metadata: MNetworkEnable
             Vector m_vFanOriginOffset; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vFanEnd; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vNoiseDirectionTarget; // 0x_            
             // metadata: MNetworkEnable
             Vector m_vDirection; // 0x_            
             // metadata: MNetworkEnable

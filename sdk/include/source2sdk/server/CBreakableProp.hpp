@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/BaseExplosionTypes_t.hpp"
 #include "source2sdk/client/BreakableContentsType_t.hpp"
 #include "source2sdk/client/PerformanceMode_t.hpp"
 #include "source2sdk/entity2/CEntityIOOutput.hpp"
@@ -75,7 +76,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             float m_explodeDamage; // 0x_            
             float m_explodeRadius; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::client::BaseExplosionTypes_t m_nExplosionType; // 0x_            
             float m_explosionDelay; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_explosionBuildupSound; // 0x_            
@@ -105,7 +106,6 @@ namespace source2sdk
             // void InputDisablePuntSound; // 0x_
             // void CBreakablePropBreakThink; // 0x_
             // void CBreakablePropRampToDefaultFadeScale; // 0x_
-            // uint32_t m_nExplosionType; // 0x_
         };
         #pragma pack(pop)
         

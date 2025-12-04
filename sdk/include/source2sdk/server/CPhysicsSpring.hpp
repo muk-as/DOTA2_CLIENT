@@ -31,16 +31,19 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_nameAttachStart; // 0x_            
             CUtlSymbolLarge m_nameAttachEnd; // 0x_            
-            Vector m_start; // 0x_            
-            Vector m_end; // 0x_            
+            VectorWS m_start; // 0x_            
+            VectorWS m_end; // 0x_            
             std::uint32_t m_teleportTick; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
             // void m_pSpringJoint; // 0x_
+            // float lengthscale; // 0x_
             // float InputSetFrequency; // 0x_
             // float InputSetDampingRatio; // 0x_
             // float InputSetRestLength; // 0x_
+            // float InputAddRestLength; // 0x_
+            // float InputRemoveRestLength; // 0x_
         };
         #pragma pack(pop)
         

@@ -48,6 +48,7 @@ namespace source2sdk
             float m_torqueLimit; // 0x_            
             float m_minTeleportDistance; // 0x_            
             bool m_bSnapObjectPositions; // 0x_            
+            bool m_bTreatEntity1AsInfiniteMass; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::CEntityIOOutput m_OnBreak; // 0x_            
             

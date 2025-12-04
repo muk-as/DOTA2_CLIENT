@@ -4,7 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CPlayer_MovementServices.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -22,12 +21,6 @@ namespace source2sdk
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "float32 m_flFallVelocity"
-        // static metadata: MNetworkVarNames "bool m_bInCrouch"
-        // static metadata: MNetworkVarNames "uint32 m_nCrouchState"
-        // static metadata: MNetworkVarNames "GameTime_t m_flCrouchTransitionStartTime"
-        // static metadata: MNetworkVarNames "bool m_bDucked"
-        // static metadata: MNetworkVarNames "bool m_bDucking"
-        // static metadata: MNetworkVarNames "bool m_bInDuckJump"
         #pragma pack(push, 1)
         class CPlayer_MovementServices_Humanoid : public source2sdk::client::CPlayer_MovementServices
         {
@@ -39,26 +32,6 @@ namespace source2sdk
             // metadata: MNetworkMaxValue "4096,000000"
             // metadata: MNetworkEncodeFlags "4"
             float m_flFallVelocity; // 0x_            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            bool m_bInCrouch; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            std::uint32_t m_nCrouchState; // 0x_            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            source2sdk::entity2::GameTime_t m_flCrouchTransitionStartTime; // 0x_            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            bool m_bDucked; // 0x_            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            bool m_bDucking; // 0x_            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-            bool m_bInDuckJump; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             Vector m_groundNormal; // 0x_            
             float m_flSurfaceFriction; // 0x_            
             CUtlStringToken m_surfaceProps; // 0x_            

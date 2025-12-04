@@ -22,6 +22,7 @@ namespace source2sdk
             IKTARGETCOORDINATESYSTEM_WorldSpace = 0x0,
             // MPropertyFriendlyName "Model Space"
             IKTARGETCOORDINATESYSTEM_ModelSpace = 0x1,
+            // MPropertySuppressEnumerator
             IKTARGETCOORDINATESYSTEM_COUNT = 0x2,
         };
     };

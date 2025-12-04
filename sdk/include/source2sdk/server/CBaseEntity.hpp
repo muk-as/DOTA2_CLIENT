@@ -75,6 +75,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "MoveCollide_t m_MoveCollide"
         // static metadata: MNetworkVarNames "MoveType_t m_MoveType"
         // static metadata: MNetworkVarNames "EntitySubclassID_t m_nSubclassID"
+        // static metadata: MNetworkUserGroupProxy "CBaseEntity"
         // static metadata: MNetworkVarNames "float32 m_flAnimTime"
         // static metadata: MNetworkVarNames "float32 m_flSimulationTime"
         // static metadata: MNetworkVarNames "GameTime_t m_flCreateTime"
@@ -174,7 +175,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "0"
             // metadata: MNetworkSerializer "animTimeSerializer"
-            // metadata: MNetworkSendProxyRecipientsFilter
+            // metadata: MNetworkUserGroup "AnimTime"
             float m_flAnimTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "1"

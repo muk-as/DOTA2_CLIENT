@@ -23,9 +23,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Wait For Cursors With Tag"
         // static metadata: MPropertyDescription "Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/cursor_tag.png"

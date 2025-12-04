@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 120
+        // Enumerator count: 123
         // Alignment: 4
         // Size: 0x_
         enum class EDotaClientMessages : std::uint32_t
@@ -138,6 +138,9 @@ namespace source2sdk
             DOTA_CM_SuggestItemRefresh = 0x338,
             DOTA_CM_SuggestItemVariantRequest = 0x339,
             DOTA_CM_SuggestItemVariantSelect = 0x33a,
+            DOTA_CM_MonsterHunter_SelectInvestigation = 0x33b,
+            DOTA_CM_MonsterHunter_HuntAlert = 0x33c,
+            DOTA_CM_AbilitySpecificChannelRequiresHalt = 0x33d,
         };
     };
 };

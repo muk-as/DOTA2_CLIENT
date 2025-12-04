@@ -13,10 +13,10 @@ namespace source2sdk
 {
     namespace navlib
     {
-        // Enumerator count: 21
-        // Alignment: 4
+        // Enumerator count: 20
+        // Alignment: 8
         // Size: 0x_
-        enum class NavAttributeEnum : std::uint32_t
+        enum class NavAttributeEnum : std::uint64_t
         {
             NAV_MESH_AVOID = 0x80,
             NAV_MESH_STAIRS = 0x1000,
@@ -26,7 +26,6 @@ namespace source2sdk
             NAV_MESH_CRAWL_HEIGHT = 0x40000,
             NAV_MESH_CROUCH = 0x10000,
             NAV_MESH_JUMP = 0x2,
-            NAV_MESH_PRECISE = 0x4,
             NAV_MESH_NO_JUMP = 0x8,
             NAV_MESH_STOP = 0x10,
             NAV_MESH_RUN = 0x20,
@@ -38,7 +37,7 @@ namespace source2sdk
             NAV_MESH_NO_MERGE = 0x2000,
             NAV_MESH_OBSTACLE_TOP = 0x4000,
             NAV_ATTR_FIRST_GAME_INDEX = 0x13,
-            NAV_ATTR_LAST_INDEX = 0x1f,
+            NAV_ATTR_LAST_INDEX = 0x3f,
         };
     };
 };

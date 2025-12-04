@@ -24,7 +24,7 @@ namespace source2sdk
         class CPhysicsPropRespawnable : public source2sdk::server::CPhysicsProp
         {
         public:
-            Vector m_vOriginalSpawnOrigin; // 0x_            
+            VectorWS m_vOriginalSpawnOrigin; // 0x_            
             QAngle m_vOriginalSpawnAngles; // 0x_            
             Vector m_vOriginalMins; // 0x_            
             Vector m_vOriginalMaxs; // 0x_            

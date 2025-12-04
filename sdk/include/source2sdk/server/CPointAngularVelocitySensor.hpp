@@ -43,7 +43,7 @@ namespace source2sdk
             float m_flFireInterval; // 0x_            
             float m_flLastAngVelocity; // 0x_            
             QAngle m_lastOrientation; // 0x_            
-            Vector m_vecAxis; // 0x_            
+            VectorWS m_vecAxis; // 0x_            
             bool m_bUseHelper; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_AngularVelocity has a template type with potentially unknown template parameters. You can try uncommenting the field below.

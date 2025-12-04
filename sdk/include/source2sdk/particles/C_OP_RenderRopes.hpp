@@ -106,6 +106,13 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Closed loop"
             bool m_bClosedLoop; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "attribute to use for rope segment id"
+            // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
+            source2sdk::particles::ParticleAttributeIndex_t m_nSplitField; // 0x_            
+            // metadata: MPropertyFriendlyName "sort by rope segment id"
+            // metadata: MPropertySuppressExpr "m_nSplitField == PARTICLE_ATTRIBUTE_UNUSED"
+            bool m_bSortBySegmentID; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "Orientation"
             // metadata: MPropertyFriendlyName "orientation_type"
             // metadata: MPropertySortPriority "750"

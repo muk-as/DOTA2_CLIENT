@@ -134,7 +134,7 @@ namespace source2sdk
             // CUtlVector<source2sdk::server::CDOTABaseAbility*> m_Build;
             char m_Build[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            float m_fModeDesires[27]; // 0x_            
+            float m_fModeDesires[28]; // 0x_            
             std::int32_t m_iPreviousBotModeType; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::GameTime_t m_fPendingActionExecuteTime; // 0x_            

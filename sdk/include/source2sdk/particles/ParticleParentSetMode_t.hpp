@@ -23,7 +23,7 @@ namespace source2sdk
             // MPropertyFriendlyName "Set Immediate Parent, Self, and Children"
             PARTICLE_SET_PARENT_IMMEDIATE = 0x1,
             // MPropertyFriendlyName "Set Root of Particle System Downward"
-            PARTICLE_SET_PARENT_ROOT = 0x1,
+            PARTICLE_SET_PARENT_ROOT = 0x2,
         };
     };
 };

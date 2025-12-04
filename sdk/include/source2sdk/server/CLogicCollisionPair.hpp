@@ -26,6 +26,7 @@ namespace source2sdk
         public:
             CUtlSymbolLarge m_nameAttach1; // 0x_            
             CUtlSymbolLarge m_nameAttach2; // 0x_            
+            bool m_includeHierarchy; // 0x_            
             bool m_supportMultipleEntitiesWithSameName; // 0x_            
             bool m_disabled; // 0x_            
             bool m_succeeded; // 0x_            

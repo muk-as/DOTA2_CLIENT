@@ -19,14 +19,12 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Is Abstract
-        // 
-        // static metadata: MPulseInstanceDomainInfo
-        // static metadata: MPulseDomainHiddenInTool
         #pragma pack(push, 1)
         class CBasePulseGraphInstance
         {
         public:
             uint8_t _pad_[0x_];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         

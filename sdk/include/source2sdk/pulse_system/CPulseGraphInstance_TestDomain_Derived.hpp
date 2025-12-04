@@ -19,12 +19,6 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // 
-        // static metadata: MPulseInstanceDomainInfo
-        // static metadata: MPulseDomainHookInfo
-        // static metadata: MPulseDomainScopeInfo
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseDomainHiddenInTool
         #pragma pack(push, 1)
         class CPulseGraphInstance_TestDomain_Derived : public source2sdk::pulse_system::CPulseGraphInstance_TestDomain
         {

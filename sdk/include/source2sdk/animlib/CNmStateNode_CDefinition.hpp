@@ -48,7 +48,7 @@ namespace source2sdk
             std::int16_t m_nLayerRootMotionWeightNodeIdx; // 0x_            
             std::int16_t m_nLayerBoneMaskNodeIdx; // 0x_            
             bool m_bIsOffState; // 0x_            
-            uint8_t _pad_[0x_];
+            bool m_bUseActualElapsedTimeInStateForTimedEvents; // 0x_            
         };
         #pragma pack(pop)
         

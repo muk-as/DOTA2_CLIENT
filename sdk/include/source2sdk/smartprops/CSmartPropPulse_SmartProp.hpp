@@ -23,9 +23,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "SmartPropEval"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Smart Prop Reference"
         #pragma pack(push, 1)
         class CSmartPropPulse_SmartProp : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow
@@ -35,9 +32,6 @@ namespace source2sdk
             // m_hSmartProp has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCSmartProp> m_hSmartProp;
             char m_hSmartProp[0x_]; // 0x_            
-            // metadata: MPropertyDescription "If enabled, any changes made to the evaluation state by the target smart prop (as well as modifiers) will only apply locally and will not affect the evaluation state of the parent. Disabling this will allow modifications to the evaluation state by the referenced smart prop to apply the current state of the of the parent. For example if the referenced smart prop applies a transform and you want the transform to affect the elements in the parent after this element, then you should disable local evaluation state."
-            bool m_bLocalEvaluationState; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

@@ -25,8 +25,9 @@ namespace source2sdk
         struct ParticleControlPointDriver_t
         {
         public:
-            std::int32_t m_iControlPoint; // 0x_            
+            ParticleParamID_t m_iControlPoint; // 0x_            
             source2sdk::animationsystem::ParticleAttachment_t m_iAttachType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CUtlString m_attachmentName; // 0x_            
             Vector m_vecOffset; // 0x_            
             QAngle m_angOffset; // 0x_            

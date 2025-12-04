@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Enumerator count: 8
+        // Enumerator count: 10
         // Alignment: 1
         // Size: 0x_
         enum class CNmTransitionNode_TransitionOptions_t : std::uint8_t
@@ -26,6 +26,8 @@ namespace source2sdk
             MatchSyncEventID = 0x5,
             MatchSyncEventPercentage = 0x6,
             PreferClosestSyncEventID = 0x7,
+            MatchTimeInSeconds = 0x8,
+            OffsetTimeInSeconds = 0x9,
         };
     };
 };

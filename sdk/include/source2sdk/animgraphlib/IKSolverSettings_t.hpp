@@ -20,8 +20,6 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has Trivial Destructor
-        // 
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         struct IKSolverSettings_t
         {

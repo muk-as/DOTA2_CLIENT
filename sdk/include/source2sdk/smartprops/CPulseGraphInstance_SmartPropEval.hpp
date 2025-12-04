@@ -14,24 +14,17 @@ namespace source2sdk
 {
     namespace smartprops
     {
-        // Registered alignment: 0x_
+        // Registered alignment: unknown
         // Alignment: 0x_
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // Construct allowed
-        // 
-        // static metadata: MPulseInstanceDomainInfo
-        // static metadata: MPulseDomainHookInfo
-        // static metadata: MPulseDomainScopeInfo
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseDomainHiddenInTool
-        // static metadata: MPulseDomainOptInFeatureTag
         #pragma pack(push, 1)
         class CPulseGraphInstance_SmartPropEval : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {
         public:
             uint8_t _pad_[0x_];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         

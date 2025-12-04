@@ -23,14 +23,10 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "TestDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         #pragma pack(push, 1)
         class CPulseCell_TestWaitWithCursorState : public source2sdk::pulse_runtime_lib::CPulseCell_BaseYieldingInflow
         {
         public:
-            // metadata: MPulseCellOutflow_IsDefault
             source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_WakeResume; // 0x_            
             source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_WakeCancel; // 0x_            
             source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_WakeFail; // 0x_            

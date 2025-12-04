@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 967
+        // Enumerator count: 993
         // Alignment: 4
         // Size: 0x_
         enum class EDOTAGCMsg : std::uint32_t
@@ -979,8 +979,34 @@ namespace source2sdk
             k_EMsgClientToGCCraftworksDevModifyComponents = 0x233c,
             k_EMsgClientToGCCraftworksDevModifyComponentsResponse = 0x233d,
             k_EMsgSignOutCraftworks = 0x233e,
+            k_EMsgClientToGCMonsterHunterGetUserData = 0x233f,
+            k_EMsgClientToGCMonsterHunterGetUserDataResponse = 0x2340,
+            k_EMsgClientToGCMonsterHunterClaimReward = 0x2341,
+            k_EMsgClientToGCMonsterHunterClaimRewardResponse = 0x2342,
+            k_EMsgClientToGCMonsterHunterTradeMaterials = 0x2343,
+            k_EMsgClientToGCMonsterHunterTradeMaterialsResponse = 0x2344,
+            k_EMsgClientToGCMonsterHunterGiftMaterials = 0x2345,
+            k_EMsgClientToGCMonsterHunterGiftMaterialsResponse = 0x2346,
+            k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriend = 0x2347,
+            k_EMsgClientToGCMonsterHunterRequestMaterialsNeededByFriendResponse = 0x2348,
+            k_EMsgClientToGCMonsterHunterDevResetAll = 0x2349,
+            k_EMsgClientToGCMonsterHunterDevResetAllResponse = 0x234a,
+            k_EMsgClientToGCMonsterHunterDevGrantMaterials = 0x234b,
+            k_EMsgClientToGCMonsterHunterDevGrantMaterialsResponse = 0x234c,
+            k_EMsgClientToGCMonsterHunterDevClearInventory = 0x234d,
+            k_EMsgClientToGCMonsterHunterDevClearInventoryResponse = 0x234e,
+            k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewards = 0x234f,
+            k_EMsgClientToGCMonsterHunterDevClaimInvestigationRewardsResponse = 0x2350,
+            k_EMsgGCToClientMonsterHunterUserDataUpdated = 0x2351,
+            k_EMsgSignOutMonsterHunter = 0x2352,
             k_EMsgClientToGCClaimGatedEvent = 0x2353,
             k_EMsgClientToGCClaimGatedEventResponse = 0x2354,
+            k_EMsgClientToGCMonsterHunterDevModifyHeroCodex = 0x2355,
+            k_EMsgClientToGCMonsterHunterDevModifyHeroCodexResponse = 0x2356,
+            k_EMsgClientToGCMonsterHunterClaimCodexReward = 0x2357,
+            k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse = 0x2358,
+            k_EMsgClientToGCMonsterHunterClaimSetReward = 0x2359,
+            k_EMsgClientToGCMonsterHunterClaimSetRewardResponse = 0x235a,
             k_EMsgClientToGCGetEventRanking = 0x2393,
             k_EMsgClientToGCGetEventRankingResponse = 0x2394,
             k_EMsgClientToGCGetEventCoupon = 0x2395,

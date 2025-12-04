@@ -34,7 +34,7 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
             char m_hTarget[0x_]; // 0x_            
             float m_flPredictedTotalTime; // 0x_            
-            Vector m_vStartPosition; // 0x_            
+            VectorWS m_vStartPosition; // 0x_            
             float m_flCurrentTimeHoriz; // 0x_            
             float m_flCurrentTimeVert; // 0x_            
             bool m_bHorizontalMotionInterrupted; // 0x_            
@@ -42,7 +42,7 @@ namespace source2sdk
             bool m_bTargetTeleported; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vHorizontalVelocity; // 0x_            
-            Vector m_vLastKnownTargetPosition; // 0x_            
+            VectorWS m_vLastKnownTargetPosition; // 0x_            
             float m_flInitialVelocityZ; // 0x_            
             bool m_bDone; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

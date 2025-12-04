@@ -28,9 +28,11 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
+        // static metadata: MEntityAllowsPortraitWorldSpawn
         // static metadata: MNetworkVarNames "bool m_bDisabled"
         // static metadata: MNetworkVarNames "int m_nResolutionX"
         // static metadata: MNetworkVarNames "int m_nResolutionY"
+        // static metadata: MNetworkVarNames "string_t m_szPanelType"
         // static metadata: MNetworkVarNames "string_t m_szLayoutFileName"
         // static metadata: MNetworkVarNames "string_t m_RenderAttrName"
         // static metadata: MNetworkVarNames "CHandle< C_BaseModelEntity > m_TargetEntities"
@@ -49,6 +51,8 @@ namespace source2sdk
             std::int32_t m_nResolutionY; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            CUtlSymbolLarge m_szPanelType; // 0x_            
+            // metadata: MNetworkEnable
             CUtlSymbolLarge m_szLayoutFileName; // 0x_            
             // metadata: MNetworkEnable
             CUtlSymbolLarge m_RenderAttrName; // 0x_            
@@ -63,9 +67,19 @@ namespace source2sdk
             // m_vecCSSClasses has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CUtlSymbolLarge> m_vecCSSClasses;
             char m_vecCSSClasses[0x_]; // 0x_            
+            CUtlSymbolLarge m_szTargetsName; // 0x_            
+            // m_AdditionalTargetEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::client::C_BaseModelEntity>> m_AdditionalTargetEntities;
+            char m_AdditionalTargetEntities[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             bool m_bCheckCSSClasses; // 0x_            
             uint8_t _pad_[0x_];
+            
+            // Datamap fields:
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
+            // CUtlSymbolLarge InputAddCSSClass; // 0x_
+            // CUtlSymbolLarge InputRemoveCSSClass; // 0x_
         };
         #pragma pack(pop)
         

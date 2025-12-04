@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -39,7 +40,7 @@ namespace source2sdk
             std::int32_t iAssetIndex; // 0x_            
             float ranged_splash_radius; // 0x_            
             float ranged_splash_damage_pct; // 0x_            
-            uint8_t _pad_[0x_];
+            source2sdk::client::ParticleIndex_t m_nAmbientParticleFX; // 0x_            
         };
         #pragma pack(pop)
         

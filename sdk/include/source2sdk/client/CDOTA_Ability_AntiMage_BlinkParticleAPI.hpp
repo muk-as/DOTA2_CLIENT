@@ -19,10 +19,7 @@ namespace source2sdk
         // Size: 0x_
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseProvideFeatureTag "8"
-        // static metadata: MPulseDomainHookInfo
-        // static metadata: MParticleDomainTag "CDOTA_Ability_AntiMage_BlinkParticleAPI Antimage Blink Ability"
+        // static metadata: MCustomFGDMetadata "{ particle_domain_ui_name = 'Antimage Blink Ability' particle_domain_internal_name = 'CDOTA_Ability_AntiMage_BlinkParticleAPI'  }"
         #pragma pack(push, 1)
         class CDOTA_Ability_AntiMage_BlinkParticleAPI
         {

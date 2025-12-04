@@ -29,7 +29,7 @@ namespace source2sdk
             // CUtlVector<std::int32_t> m_vFXIndices;
             char m_vFXIndices[0x_]; // 0x_            
             // m_vLocations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<Vector> m_vLocations;
+            // CUtlVector<VectorWS> m_vLocations;
             char m_vLocations[0x_]; // 0x_            
         };
         #pragma pack(pop)

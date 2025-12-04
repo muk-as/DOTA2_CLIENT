@@ -21,7 +21,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MPropertyEditClassAsString
         #pragma pack(push, 1)
         class AnimComponentID
         {

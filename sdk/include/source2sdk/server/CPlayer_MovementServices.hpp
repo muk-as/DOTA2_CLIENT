@@ -54,7 +54,6 @@ namespace source2sdk
             float m_flUpMove; // 0x_            
             Vector m_vecLastMovementImpulses; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            QAngle m_vecLastFinishTickViewAngles; // 0x_            
             QAngle m_vecOldViewAngles; // 0x_            
             uint8_t _pad_[0x_];
             

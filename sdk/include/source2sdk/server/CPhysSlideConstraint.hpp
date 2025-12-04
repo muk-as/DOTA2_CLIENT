@@ -26,7 +26,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            Vector m_axisEnd; // 0x_            
+            VectorWS m_axisEnd; // 0x_            
             float m_slideFriction; // 0x_            
             float m_systemLoadScale; // 0x_            
             float m_initialOffset; // 0x_            

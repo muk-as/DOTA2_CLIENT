@@ -8,6 +8,7 @@
 #include "source2sdk/particles/ParticleLightingQuality_t.hpp"
 #include "source2sdk/particles/ParticleOrientationChoiceList_t.hpp"
 #include "source2sdk/particleslib/CParticleCollectionRendererFloatInput.hpp"
+#include "source2sdk/particleslib/CParticleCollectionRendererVecInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -34,6 +35,10 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "sequence id override"
             // metadata: MPropertySortPriority "500"
             source2sdk::particleslib::CParticleCollectionRendererFloatInput m_nSequenceOverride; // 0x_            
+            // metadata: MPropertyFriendlyName "Sequence Numbers Are Indices (Tools Particles Only)"
+            // metadata: MParticleAdvancedField
+            bool m_bSequenceNumbersAreRawSequenceIndices; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "Orientation"
             // metadata: MPropertyFriendlyName "orientation type"
             // metadata: MPropertySortPriority "750"
@@ -122,6 +127,10 @@ namespace source2sdk
             // metadata: MPropertySuppressExpr "mod != hlx"
             source2sdk::particles::ParticleLightingQuality_t m_nLightingMode; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "lighting override"
+            // metadata: MPropertySortPriority "400"
+            // metadata: MPropertySuppressExpr "m_nLightingMode != PARTICLE_LIGHTING_OVERRIDE_POSITION && m_nLightingMode != PARTICLE_LIGHTING_OVERRIDE_COLOR && m_nLightingMode != PARTICLE_LIGHTING_ADD_EXTRA_LIGHT"
+            source2sdk::particleslib::CParticleCollectionRendererVecInput m_vecLightingOverride; // 0x_            
             // metadata: MPropertyFriendlyName "vertex lighting tessellation (0-5)"
             // metadata: MPropertyAttributeRange "0 5"
             // metadata: MPropertySortPriority "400"

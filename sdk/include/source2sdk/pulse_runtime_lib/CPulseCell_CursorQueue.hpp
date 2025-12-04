@@ -22,9 +22,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Cursor Queue"
         // static metadata: MPropertyDescription "Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete."
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/cursor_wait_zone.png"

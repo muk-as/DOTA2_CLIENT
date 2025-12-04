@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/client/CDOTA_Modifier_Tutorial_Sleep.hpp"
+#include "source2sdk/client/CDOTA_Modifier_Stunned.hpp"
 namespace source2sdk
 {
     namespace client
@@ -27,7 +27,7 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
-        class CDOTA_Modifier_ARDM_NewHero : public source2sdk::client::CDOTA_Modifier_Tutorial_Sleep
+        class CDOTA_Modifier_ARDM_NewHero : public source2sdk::client::CDOTA_Modifier_Stunned
         {
         public:
             // m_hOldHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.

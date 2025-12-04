@@ -56,6 +56,8 @@ namespace source2sdk
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_szMuzzleFlashParticle;
             char m_szMuzzleFlashParticle[0x_]; // 0x_            
             // metadata: MPropertyDescription "Effect Config for Muzzle Flash - if set, will use this config specified in the particle effect, using whatever CP configuration is specified there, vdata muzzleflash attachment will be ignored"
+            // metadata: MPropertyAttributeEditor "ParticleConfigName()"
+            // metadata: MPropertyEditContextOverrideKey
             CUtlString m_szMuzzleFlashParticleConfig; // 0x_            
             // metadata: MPropertyDescription "Barrel smoke after firing this weapon"
             // m_szBarrelSmokeParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
@@ -97,6 +99,8 @@ namespace source2sdk
             bool m_bReserveAmmoAsClips; // 0x_            
             // metadata: MPropertyDescription "Regardless of ammo position, we'll always use clip1 as where our bullets come from"
             bool m_bTreatAsSingleClip; // 0x_            
+            // metadata: MPropertyDescription "Indicates whether to keep any loaded ammo in the weapon on reload"
+            bool m_bKeepLoadedAmmo; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "UI"
             // metadata: MPropertyDescription "This value used to determine this weapon's importance in autoselection"
@@ -145,6 +149,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_iDefaultClip2) == 0x_);
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_bReserveAmmoAsClips) == 0x_);
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_bTreatAsSingleClip) == 0x_);
+        static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_bKeepLoadedAmmo) == 0x_);
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_iWeight) == 0x_);
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_bAutoSwitchTo) == 0x_);
         static_assert(offsetof(source2sdk::server::CBasePlayerWeaponVData, m_bAutoSwitchFrom) == 0x_);

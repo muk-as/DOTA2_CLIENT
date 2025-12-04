@@ -22,12 +22,11 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Time Limiter"
         #pragma pack(push, 1)
         class CSosGroupActionTimeLimitSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
         public:
-            // metadata: MPropertyFriendlyName "Max Time"
             float m_flMaxDuration; // 0x_            
             uint8_t _pad_[0x_];
         };

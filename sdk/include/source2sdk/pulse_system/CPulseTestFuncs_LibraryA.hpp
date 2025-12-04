@@ -20,7 +20,6 @@ namespace source2sdk
         // Has Trivial Constructor
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseLibraryBindings
         // static metadata: MPropertyDescription "Library for interacting with a few global test values."
         #pragma pack(push, 1)
         class CPulseTestFuncs_LibraryA

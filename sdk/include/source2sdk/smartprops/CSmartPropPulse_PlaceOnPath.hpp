@@ -23,15 +23,9 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "SmartPropEval"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Place On Path"
-        // static metadata: MPulseCell_WithNoDefaultOutflow
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/requirements.png"
         // static metadata: MPulseEditorCanvasItemSpecKV3
-        // static metadata: MPulseSelectorAllowRequirementCriteria
-        // static metadata: MPulseSelectorAllowRequirementCriteria
         #pragma pack(push, 1)
         class CSmartPropPulse_PlaceOnPath : public source2sdk::smartprops::CSmartPropPulse_BaseQueryableFlow
         {

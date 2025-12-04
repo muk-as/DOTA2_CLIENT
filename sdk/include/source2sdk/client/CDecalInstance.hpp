@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/DecalFlags_t.hpp"
+#include "source2sdk/client/DecalMode_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeIMaterial2.hpp"
 namespace source2sdk
@@ -40,6 +41,7 @@ namespace source2sdk
             // CHandle<source2sdk::client::C_BaseEntity> m_hEntity;
             char m_hEntity[0x_]; // 0x_            
             std::int32_t m_nBoneIndex; // 0x_            
+            std::int32_t m_nTriangleIndex; // 0x_            
             Vector m_vPositionLS; // 0x_            
             Vector m_vNormalLS; // 0x_            
             Vector m_vSAxisLS; // 0x_            
@@ -48,20 +50,21 @@ namespace source2sdk
             float m_flWidth; // 0x_            
             float m_flHeight; // 0x_            
             float m_flDepth; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransformWS m_transform; // 0x_            
             float m_flAnimationScale; // 0x_            
-            float m_flAnimationLifeSpan; // 0x_            
+            float m_flAnimationStartTime; // 0x_            
             source2sdk::entity2::GameTime_t m_flPlaceTime; // 0x_            
             float m_flFadeStartTime; // 0x_            
             float m_flFadeDuration; // 0x_            
             float m_flLightingOriginOffset; // 0x_            
-            std::int32_t m_nVBSlot; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flBoundingRadiusSqr; // 0x_            
             std::int16_t m_nSequenceIndex; // 0x_            
             bool m_bIsAdjacent; // 0x_            
             bool m_bDoDecalLightmapping; // 0x_            
-            source2sdk::client::CDecalInstance* m_pNext; // 0x_            
-            source2sdk::client::CDecalInstance* m_pPrev; // 0x_            
+            source2sdk::client::DecalMode_t m_nSkinnedModelMode; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
             // void m_hProjectedDecal; // 0x_
@@ -73,6 +76,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_sSequenceName) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_hEntity) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_nBoneIndex) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDecalInstance, m_nTriangleIndex) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_vPositionLS) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_vNormalLS) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_vSAxisLS) == 0x_);
@@ -81,19 +85,18 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flWidth) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flHeight) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flDepth) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDecalInstance, m_transform) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flAnimationScale) == 0x_);
-        static_assert(offsetof(source2sdk::client::CDecalInstance, m_flAnimationLifeSpan) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDecalInstance, m_flAnimationStartTime) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flPlaceTime) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flFadeStartTime) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flFadeDuration) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flLightingOriginOffset) == 0x_);
-        static_assert(offsetof(source2sdk::client::CDecalInstance, m_nVBSlot) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_flBoundingRadiusSqr) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_nSequenceIndex) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_bIsAdjacent) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_bDoDecalLightmapping) == 0x_);
-        static_assert(offsetof(source2sdk::client::CDecalInstance, m_pNext) == 0x_);
-        static_assert(offsetof(source2sdk::client::CDecalInstance, m_pPrev) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDecalInstance, m_nSkinnedModelMode) == 0x_);
         
         static_assert(sizeof(source2sdk::client::CDecalInstance) == 0x_);
     };

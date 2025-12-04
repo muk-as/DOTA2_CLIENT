@@ -24,7 +24,7 @@ namespace source2sdk
         class CPhysTorque : public source2sdk::server::CPhysForce
         {
         public:
-            Vector m_axis; // 0x_            
+            VectorWS m_axis; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

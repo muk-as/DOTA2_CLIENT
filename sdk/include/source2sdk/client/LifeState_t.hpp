@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 5
+        // Enumerator count: 6
         // Alignment: 4
         // Size: 0x_
         enum class LifeState_t : std::uint32_t
@@ -23,6 +23,7 @@ namespace source2sdk
             LIFE_DEAD = 0x2,
             LIFE_RESPAWNABLE = 0x3,
             LIFE_RESPAWNING = 0x4,
+            NUM_LIFESTATES = 0x5,
         };
     };
 };

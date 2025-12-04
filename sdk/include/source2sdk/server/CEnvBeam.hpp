@@ -49,7 +49,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszSpriteName; // 0x_            
             std::int32_t m_frameStart; // 0x_            
-            Vector m_vEndPointWorld; // 0x_            
+            VectorWS m_vEndPointWorld; // 0x_            
             Vector m_vEndPointRelative; // 0x_            
             float m_radius; // 0x_            
             source2sdk::server::Touch_t m_TouchType; // 0x_            

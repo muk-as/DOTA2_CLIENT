@@ -60,7 +60,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float32 m_flFrame"
         // static metadata: MNetworkVarNames "BeamClipStyle_t m_nClipStyle"
         // static metadata: MNetworkVarNames "bool m_bTurnedOff"
-        // static metadata: MNetworkVarNames "Vector m_vecEndPos"
+        // static metadata: MNetworkVarNames "VectorWS m_vecEndPos"
         #pragma pack(push, 1)
         class CBeam : public source2sdk::server::CBaseModelEntity
         {
@@ -144,7 +144,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            Vector m_vecEndPos; // 0x_            
+            VectorWS m_vecEndPos; // 0x_            
             // m_hEndEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEndEntity;
             char m_hEndEntity[0x_]; // 0x_            

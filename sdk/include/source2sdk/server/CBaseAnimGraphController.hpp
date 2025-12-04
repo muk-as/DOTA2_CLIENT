@@ -33,8 +33,10 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bIsUsingAG2"
         // static metadata: MNetworkVarNames "uint8 m_serializedPoseRecipeAG2"
         // static metadata: MNetworkVarNames "int m_nSerializePoseRecipeSizeAG2"
+        // static metadata: MNetworkVarNames "int m_nSerializePoseRecipeVersionAG2"
         // static metadata: MNetworkVarNames "uint8 m_nGraphCreationFlagsAG2"
         // static metadata: MNetworkVarNames "int m_nServerGraphDefReloadCountAG2"
+        // static metadata: MNetworkVarNames "int m_nServerSerializationContextIteration"
         #pragma pack(push, 1)
         class CBaseAnimGraphController : public source2sdk::client::CSkeletonAnimationController
         {
@@ -94,10 +96,14 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_nSerializePoseRecipeSizeAG2; // 0x_            
             // metadata: MNetworkEnable
+            std::int32_t m_nSerializePoseRecipeVersionAG2; // 0x_            
+            // metadata: MNetworkEnable
             std::uint8_t m_nGraphCreationFlagsAG2; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             std::int32_t m_nServerGraphDefReloadCountAG2; // 0x_            
+            // metadata: MNetworkEnable
+            std::int32_t m_nServerSerializationContextIteration; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:

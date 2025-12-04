@@ -43,7 +43,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
             // metadata: MNetworkChangeCallback "OnViewTargetChanged"
-            Vector m_vLookTargetPosition; // 0x_            
+            VectorWS m_vLookTargetPosition; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             bool m_blinktoggle; // 0x_            

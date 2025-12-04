@@ -25,8 +25,11 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            bool m_bUseParentedPath; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             float m_flDistMinSqr; // 0x_            
             float m_flDistMaxSqr; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszPathCornerEntityName; // 0x_            
             
             // Datamap fields:

@@ -5,6 +5,7 @@
 #include <cstdint>
 #include "source2sdk/client/AmmoIndex_t.hpp"
 #include "source2sdk/client/DamageTypes_t.hpp"
+#include "source2sdk/client/DestructibleHitGroupToDestroy_t.hpp"
 #include "source2sdk/client/HitGroup_t.hpp"
 #include "source2sdk/client/TakeDamageFlags_t.hpp"
 namespace source2sdk
@@ -35,8 +36,8 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vecDamageForce; // 0x_            
-            Vector m_vecDamagePosition; // 0x_            
-            Vector m_vecReportedPosition; // 0x_            
+            VectorWS m_vecDamagePosition; // 0x_            
+            VectorWS m_vecReportedPosition; // 0x_            
             Vector m_vecDamageDirection; // 0x_            
             // m_hInflictor has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hInflictor;
@@ -66,6 +67,9 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::HitGroup_t m_iHitGroupId; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // m_nDestructibleHitGroupsToForceDestroy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::client::DestructibleHitGroupToDestroy_t> m_nDestructibleHitGroupsToForceDestroy;
+            char m_nDestructibleHitGroupsToForceDestroy[0x_]; // 0x_            
             bool m_bInTakeDamageFlow; // 0x_            
             uint8_t _pad_[0x_];
             
@@ -96,6 +100,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_flCombatLogCreditFactor) == 0x_);
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iRecord) == 0x_);
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_iHitGroupId) == 0x_);
+        static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_nDestructibleHitGroupsToForceDestroy) == 0x_);
         static_assert(offsetof(source2sdk::client::CTakeDamageInfo, m_bInTakeDamageFlow) == 0x_);
         
         static_assert(sizeof(source2sdk::client::CTakeDamageInfo) == 0x_);

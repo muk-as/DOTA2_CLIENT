@@ -19,9 +19,6 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // 
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseInternal_IsCursor
         #pragma pack(push, 1)
         class CPulseTurtleGraphicsCursor : public source2sdk::pulse_runtime_lib::CPulseExecCursor
         {

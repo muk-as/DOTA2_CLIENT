@@ -18,8 +18,6 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has Trivial Destructor
-        // 
-        // static metadata: MPropertyEditClassAsString
         #pragma pack(push, 1)
         class CAnimEnum
         {

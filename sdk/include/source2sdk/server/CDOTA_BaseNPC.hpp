@@ -70,7 +70,6 @@ namespace source2sdk
         // 
         // static metadata: MNetworkExcludeByName "m_bIsIllusion"
         // static metadata: MNetworkExcludeByName "m_blinktoggle"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -437,7 +436,7 @@ namespace source2sdk
             // m_hActiveAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hActiveAbility;
             char m_hActiveAbility[0x_]; // 0x_            
-            Vector m_vCursorLocation; // 0x_            
+            VectorWS m_vCursorLocation; // 0x_            
             // m_hCursorTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCursorTarget;
             char m_hCursorTarget[0x_]; // 0x_            
@@ -580,7 +579,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::GameTick_t m_nFoWFadeStartTime[15]; // 0x_            
             std::int32_t m_nFOWVisibilityRadius; // 0x_            
-            Vector m_vFOWOriginOverride; // 0x_            
+            VectorWS m_vFOWOriginOverride; // 0x_            
             std::int32_t m_iTeamViewerID; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlString m_strLastKillerAbility; // 0x_            
@@ -637,7 +636,10 @@ namespace source2sdk
             bool m_bShouldComputeRemainingPathLength; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flRemainingPathLength; // 0x_            
-            uint8_t _pad_[0x_];
+            uint8_t _pad_[0x_]; // 0x_
+            // m_AbilitiesPendingDelete has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AbilitiesPendingDelete;
+            char m_AbilitiesPendingDelete[0x_]; // 0x_            
             
             // Datamap fields:
             // CUtlSymbolLarge Input_MoveTo; // 0x_

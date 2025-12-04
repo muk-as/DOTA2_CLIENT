@@ -65,7 +65,7 @@ namespace source2sdk
             kEconItemOrigin_CompendiumGift = 0x2b,
             kEconItemOrigin_CandyShopPurchase = 0x2c,
             kEconItemOrigin_Transmuted = 0x2d,
-            kEconItemOrigin_PruchaseWithCharges = 0x2e,
+            kEconItemOrigin_PurchaseWithCharges = 0x2e,
             kEconItemOrigin_Max = 0x2f,
         };
     };

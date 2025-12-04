@@ -33,6 +33,8 @@ namespace source2sdk
             CSmartPropAttributeFloat m_flRandomScaleMin; // 0x_            
             // metadata: MPropertyDescription "Maximum scale range"
             CSmartPropAttributeFloat m_flRandomScaleMax; // 0x_            
+            // metadata: MPropertyDescription "If non-zero, specifies the increment to which the randomly selected scale value will be snapped. Note that the snap value is absolute, not relative to the min or max, but if the min or max are not multiples of the snap value they can still be selected."
+            CSmartPropAttributeFloat m_flSnapIncrement; // 0x_            
         };
         #pragma pack(pop)
         

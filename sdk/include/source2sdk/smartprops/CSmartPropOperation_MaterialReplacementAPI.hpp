@@ -19,12 +19,11 @@ namespace source2sdk
         // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
-        // 
-        // static metadata: MPulseLibraryBindings
         #pragma pack(push, 1)
         class CSmartPropOperation_MaterialReplacementAPI
         {
         public:
+            // No schema binary for binding
         };
         #pragma pack(pop)
         

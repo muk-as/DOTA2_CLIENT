@@ -27,7 +27,8 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "Animgraph Navlink Type"
             // metadata: MPropertyDescription "The value of the 'e_navlink_type' or 'e_navlink_type_shared' parameter that should be set on the NPC's animgraph as it starts a 'navlink' movement handshake."
-            // metadata: MPropertyAttributeEditor "VDataAnimGraphParamEnumValue( m_sToolsOnlyOwnerModelName; literal; e_navlink_type; e_navlink_type_shared )"
+            // metadata: MPropertyAttributeEditor "AnimGraphParamEnumValue()"
+            // metadata: MPropertyEditContextOverrideValue
             CGlobalSymbol m_sAnimGraphNavlinkType; // 0x_            
             // metadata: MPropertyFriendlyName "Alignment Degrees"
             // metadata: MPropertyDescription "Amount of angular slack the animation has when aligning to the navlink. 0 indicates that it must be strictly aligned."

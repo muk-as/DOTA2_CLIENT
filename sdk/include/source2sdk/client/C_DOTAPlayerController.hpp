@@ -52,7 +52,6 @@ namespace source2sdk
         // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_angRotation"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flPlaybackRate"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -151,8 +150,8 @@ namespace source2sdk
             bool m_bAutoPurchaseItems; // 0x_            
             bool m_bDisableHUDErrorMessages; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            std::int32_t m_iMouseDragStartX; // 0x_            
-            std::int32_t m_iMouseDragStartY; // 0x_            
+            float m_flMouseDragStartX; // 0x_            
+            float m_flMouseDragStartY; // 0x_            
             std::int32_t m_nWeatherType; // 0x_            
             bool m_bDynamicWeatherSystemActive; // 0x_            
             bool m_bDynamicSoundHandled; // 0x_            

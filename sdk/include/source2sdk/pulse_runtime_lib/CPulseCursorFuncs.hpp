@@ -20,7 +20,6 @@ namespace source2sdk
         // Has Trivial Constructor
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseLibraryBindings
         // static metadata: MPropertyDescription "Library for interacting with pulse cursors."
         #pragma pack(push, 1)
         class CPulseCursorFuncs

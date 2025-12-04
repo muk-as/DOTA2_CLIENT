@@ -47,6 +47,7 @@ namespace source2sdk
             std::int32_t m_iWaves; // 0x_            
             bool m_bFirstWave; // 0x_            
             bool m_bShouldSpawnStrongCreep; // 0x_            
+            bool m_bEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_Units has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC>> m_Units;

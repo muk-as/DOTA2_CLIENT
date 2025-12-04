@@ -27,7 +27,7 @@ namespace source2sdk
         {
         public:
             std::int32_t m_nEffectorBoneIdx; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nEffectorTargetBoneIdx; // 0x_            
             CTransform m_targetTransform; // 0x_            
             std::int32_t m_nNumBonesInChain; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

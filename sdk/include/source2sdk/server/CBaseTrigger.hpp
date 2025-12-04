@@ -57,6 +57,7 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBaseFilter> m_hFilter;
             char m_hFilter[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnNetworkedDisableChanged"
             bool m_bDisabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             bool m_bUseAsyncQueries; // 0x_            

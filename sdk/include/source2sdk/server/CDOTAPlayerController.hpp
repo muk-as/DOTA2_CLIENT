@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/AbilityID_t.hpp"
 #include "source2sdk/client/PlayerID_t.hpp"
 #include "source2sdk/client/ShopItemViewMode_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
@@ -35,7 +36,6 @@ namespace source2sdk
         // 
         // static metadata: MNetworkUserGroupProxy "CDOTAPlayerController"
         // static metadata: MNetworkExcludeByName "m_angRotation"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flPlaybackRate"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -157,6 +157,10 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             bool m_bTeleportRequiresHalt; // 0x_            
             bool m_bChannelRequiresHalt; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // m_mapAbilitySpecificChannelRequiresHalt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlOrderedMap<source2sdk::client::AbilityID_t,bool> m_mapAbilitySpecificChannelRequiresHalt;
+            char m_mapAbilitySpecificChannelRequiresHalt[0x_]; // 0x_            
             bool m_bInteractionChannelsRequiresHalt; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

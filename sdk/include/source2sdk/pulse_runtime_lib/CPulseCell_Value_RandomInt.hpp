@@ -22,9 +22,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Random Integer"
         // static metadata: MPropertyDescription "Generate a random integer between min and max (inclusive)"
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/exit_cycle_random.png"

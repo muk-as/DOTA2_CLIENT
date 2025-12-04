@@ -35,7 +35,7 @@ namespace source2sdk
             Vector m_vLeftControl; // 0x_            
             Vector m_vRightControl; // 0x_            
             Vector m_vTargetLoc; // 0x_            
-            Vector m_vOriginalTargetLoc; // 0x_            
+            VectorWS m_vOriginalTargetLoc; // 0x_            
             Vector m_vSourceLoc; // 0x_            
             float m_flBuffDuration; // 0x_            
             source2sdk::entity2::GameTime_t m_flBuffDieTime; // 0x_            

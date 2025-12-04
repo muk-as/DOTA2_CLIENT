@@ -28,6 +28,7 @@ namespace source2sdk
             bool m_bSetAnimation; // 0x_            
             bool m_bUseSwimAnimations; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nIdleActivity; // 0x_            
             std::int32_t m_nRunActivity; // 0x_            
             float m_flTargetDist; // 0x_            
             bool m_bIsDirectional; // 0x_            
@@ -39,6 +40,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_repathTimer) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_bSetAnimation) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_bUseSwimAnimations) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_nIdleActivity) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_nRunActivity) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_flTargetDist) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTABehaviorMoveTo, m_bIsDirectional) == 0x_);

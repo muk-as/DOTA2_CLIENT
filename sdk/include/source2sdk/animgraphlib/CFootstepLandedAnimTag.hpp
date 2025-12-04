@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/animgraphlib/CAnimTagBase.hpp"
+#include "source2sdk/animgraphlib/FootstepJumpPhase_t.hpp"
 #include "source2sdk/animgraphlib/FootstepLandedFootSoundType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -24,7 +25,6 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "FootstepLanded Tag"
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         #pragma pack(push, 1)
         class CFootstepLandedAnimTag : public source2sdk::animgraphlib::CAnimTagBase
         {
@@ -41,6 +41,9 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "Bone Name"
             // metadata: MPropertyAttributeChoiceName "Bone"
             CUtlString m_BoneName; // 0x_            
+            // metadata: MPropertyFriendlyName "Jump Phase"
+            source2sdk::animgraphlib::FootstepJumpPhase_t m_footstepJumpPhase; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

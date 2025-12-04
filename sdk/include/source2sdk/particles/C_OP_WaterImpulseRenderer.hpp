@@ -37,9 +37,15 @@ namespace source2sdk
             source2sdk::particleslib::CPerParticleFloatInput m_flMagnitude; // 0x_            
             // metadata: MPropertyFriendlyName "impulse wave roundness"
             source2sdk::particleslib::CPerParticleFloatInput m_flShape; // 0x_            
+            // metadata: MPropertyFriendlyName "impulse wind speed (when wind is true)"
+            source2sdk::particleslib::CPerParticleFloatInput m_flWindSpeed; // 0x_            
+            // metadata: MPropertyFriendlyName "impulse wobble radius"
+            source2sdk::particleslib::CPerParticleFloatInput m_flWobble; // 0x_            
+            // metadata: MPropertyFriendlyName "impulse is wind"
+            bool m_bIsRadialWind; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "event type"
             source2sdk::particles::EventTypeSelection_t m_nEventType; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

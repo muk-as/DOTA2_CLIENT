@@ -29,10 +29,7 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
-        // static metadata: MNetworkVarNames "Vector m_vFanOrigin"
         // static metadata: MNetworkVarNames "Vector m_vFanOriginOffset"
-        // static metadata: MNetworkVarNames "Vector m_vFanEnd"
-        // static metadata: MNetworkVarNames "Vector m_vNoiseDirectionTarget"
         // static metadata: MNetworkVarNames "Vector m_vDirection"
         // static metadata: MNetworkVarNames "bool m_bPushTowardsInfoTarget"
         // static metadata: MNetworkVarNames "bool m_bPushAwayFromInfoTarget"
@@ -46,13 +43,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vFanOrigin; // 0x_            
-            // metadata: MNetworkEnable
             Vector m_vFanOriginOffset; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vFanEnd; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vNoiseDirectionTarget; // 0x_            
             // metadata: MNetworkEnable
             Vector m_vDirection; // 0x_            
             // metadata: MNetworkEnable
@@ -73,6 +64,10 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             source2sdk::server::CountdownTimer m_RampTimer; // 0x_            
+            VectorWS m_vFanOriginWS; // 0x_            
+            Vector m_vFanOriginLS; // 0x_            
+            Vector m_vFanEndLS; // 0x_            
+            Vector m_vNoiseDirectionTarget; // 0x_            
             CUtlSymbolLarge m_iszInfoFan; // 0x_            
             float m_flRopeForceScale; // 0x_            
             float m_flParticleForceScale; // 0x_            

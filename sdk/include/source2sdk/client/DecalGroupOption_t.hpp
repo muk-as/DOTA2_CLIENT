@@ -30,13 +30,21 @@ namespace source2sdk
             char m_hMaterial[0x_]; // 0x_            
             CGlobalSymbol m_sSequenceName; // 0x_            
             float m_flProbability; // 0x_            
-            uint8_t _pad_[0x_];
+            bool m_bEnableAngleBetweenNormalAndGravityRange; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertySuppressExpr "m_bEnableAngleBetweenNormalAndGravityRange == 0"
+            float m_flMinAngleBetweenNormalAndGravity; // 0x_            
+            // metadata: MPropertySuppressExpr "m_bEnableAngleBetweenNormalAndGravityRange == 0"
+            float m_flMaxAngleBetweenNormalAndGravity; // 0x_            
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_hMaterial) == 0x_);
         static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_sSequenceName) == 0x_);
         static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_flProbability) == 0x_);
+        static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_bEnableAngleBetweenNormalAndGravityRange) == 0x_);
+        static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_flMinAngleBetweenNormalAndGravity) == 0x_);
+        static_assert(offsetof(source2sdk::client::DecalGroupOption_t, m_flMaxAngleBetweenNormalAndGravity) == 0x_);
         
         static_assert(sizeof(source2sdk::client::DecalGroupOption_t) == 0x_);
     };

@@ -27,9 +27,9 @@ namespace source2sdk
         public:
             CUtlString m_ConfigName; // 0x_            
             KeyValues3 m_ConfigValue; // 0x_            
+            CUtlString m_BoundValuePath; // 0x_            
             source2sdk::animationsystem::ParticleAttachment_t m_iAttachType; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            CUtlString m_BoundEntityPath; // 0x_            
             CUtlString m_strEntityScope; // 0x_            
             CUtlString m_strAttachmentName; // 0x_            
         };
@@ -37,8 +37,8 @@ namespace source2sdk
         
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_ConfigName) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_ConfigValue) == 0x_);
+        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_BoundValuePath) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_iAttachType) == 0x_);
-        static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_BoundEntityPath) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_strEntityScope) == 0x_);
         static_assert(offsetof(source2sdk::particleslib::ParticleNamedValueConfiguration_t, m_strAttachmentName) == 0x_);
         

@@ -24,10 +24,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
-        // static metadata: MPulseProvideFeatureTag "1"
         // static metadata: MPropertyFriendlyName "Play Sequence"
         // static metadata: MPropertyDescription "Play the specified animation sequence on a NON-ANIMGRAPH entity, and wait for it to complete."
         #pragma pack(push, 1)
@@ -36,9 +32,7 @@ namespace source2sdk
         public:
             // metadata: MPropertyAttributeSuggestionName "pulse_model_sequence_name"
             CUtlString m_SequenceName; // 0x_            
-            // metadata: MPulseDocCustomAttr
             source2sdk::pulse_runtime_lib::PulseNodeDynamicOutflows_t m_PulseAnimEvents; // 0x_            
-            // metadata: MPulseCellOutflow_IsDefault
             source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnFinished; // 0x_            
             source2sdk::pulse_runtime_lib::CPulse_ResumePoint m_OnCanceled; // 0x_            
         };

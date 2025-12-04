@@ -53,13 +53,20 @@ namespace source2sdk
             source2sdk::particleslib::CPerParticleFloatInput m_flDecalSize; // 0x_            
             // metadata: MPropertyFriendlyName "Decal Group Choice Index"
             // metadata: MPropertySuppressExpr "m_bRandomlySelectDecalInGroup == false"
-            source2sdk::particleslib::CPerParticleFloatInput m_nDecalSequenceIndex; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_nDecalGroupIndex; // 0x_            
+            // metadata: MPropertyFriendlyName "Decal Rotation"
+            // metadata: MPropertySuppressExpr "m_bRandomDecalRotation == true"
+            source2sdk::particleslib::CPerParticleFloatInput m_flDecalRotation; // 0x_            
             // metadata: MPropertyFriendlyName "Decal Modulation Color"
             source2sdk::particleslib::CPerParticleVecInput m_vModulationColor; // 0x_            
             // metadata: MPropertyFriendlyName "Use Game's Default Decal Size"
             bool m_bUseGameDefaultDecalSize; // 0x_            
+            // metadata: MPropertyFriendlyName "Randomly Rotate Decal"
+            bool m_bRandomDecalRotation; // 0x_            
             // metadata: MPropertyFriendlyName "Randomly Select Decal in Decal Group"
             bool m_bRandomlySelectDecalInGroup; // 0x_            
+            // metadata: MPropertyFriendlyName "Dont Apply Decals to Owner"
+            bool m_bNoDecalsOnOwner; // 0x_            
             // metadata: MPropertyFriendlyName "Debug Traces"
             bool m_bVisualizeTraces; // 0x_            
             uint8_t _pad_[0x_];

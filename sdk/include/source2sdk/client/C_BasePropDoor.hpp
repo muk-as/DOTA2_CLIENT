@@ -23,7 +23,6 @@ namespace source2sdk
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByName "m_flexWeight"
         // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"

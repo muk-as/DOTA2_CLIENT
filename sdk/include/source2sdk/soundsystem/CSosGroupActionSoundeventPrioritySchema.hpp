@@ -22,7 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Soundevent Priority"
         #pragma pack(push, 1)
         class CSosGroupActionSoundeventPrioritySchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
@@ -35,6 +35,7 @@ namespace source2sdk
             CUtlString m_priorityContributeButDontRead; // 0x_            
             // metadata: MPropertyFriendlyName "Don't contribute to the priority system, but volume is affected by it (bool)"
             CUtlString m_bPriorityReadButDontContribute; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

@@ -85,7 +85,10 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "maximum steps between particles"
             std::int32_t m_nMaxTesselation; // 0x_            
             // metadata: MPropertyFriendlyName "roundness factor"
+            // metadata: MPropertyAttributeRange "0 3"
             std::int32_t m_nRoundness; // 0x_            
+            // metadata: MPropertyFriendlyName "force roundness factor fixed"
+            bool m_nForceRoundnessFixed; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "diffuse lighting origin"
             // metadata: MParticleInputOptional

@@ -24,7 +24,6 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPulseEditorHeaderIcon "tools/images/pulse_editor/inflow_statecell.png"
-        // static metadata: MPulseCell_WithNoDefaultOutflow
         #pragma pack(push, 1)
         class CPulseCell_BaseState : public source2sdk::pulse_runtime_lib::CPulseCell_BaseYieldingInflow
         {

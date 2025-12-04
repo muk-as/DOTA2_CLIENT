@@ -22,8 +22,8 @@ namespace source2sdk
         // Has VTable
         // Has Trivial Destructor
         // 
-        // static metadata: MNetworkVarNames "Vector m_vOrigin"
-        // static metadata: MNetworkVarNames "Vector m_vStart"
+        // static metadata: MNetworkVarNames "VectorWS m_vOrigin"
+        // static metadata: MNetworkVarNames "VectorWS m_vStart"
         // static metadata: MNetworkVarNames "Vector m_vNormal"
         // static metadata: MNetworkVarNames "QAngle m_vAngles"
         // static metadata: MNetworkVarNames "CEntityHandle m_hEntity"
@@ -50,10 +50,10 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord_integral"
-            Vector m_vOrigin; // 0x_            
+            VectorWS m_vOrigin; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord_integral"
-            Vector m_vStart; // 0x_            
+            VectorWS m_vStart; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "normal"
             Vector m_vNormal; // 0x_            

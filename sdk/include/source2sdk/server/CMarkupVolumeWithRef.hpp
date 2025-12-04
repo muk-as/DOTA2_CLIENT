@@ -28,7 +28,7 @@ namespace source2sdk
             bool m_bUseRef; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vRefPosEntitySpace; // 0x_            
-            Vector m_vRefPosWorldSpace; // 0x_            
+            VectorWS m_vRefPosWorldSpace; // 0x_            
             float m_flRefDot; // 0x_            
         };
         #pragma pack(pop)

@@ -33,7 +33,7 @@ namespace source2sdk
         {
         public:
             float m_flWidth; // 0x_            
-            Vector m_vLocatorOffset; // 0x_            
+            VectorWS m_vLocatorOffset; // 0x_            
             QAngle m_qLocatorAnglesOffset; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_strMovementForward; // 0x_            
@@ -56,6 +56,7 @@ namespace source2sdk
             // Datamap fields:
             // void InputEnable; // 0x_
             // void InputDisable; // 0x_
+            // void InputUpdate; // 0x_
         };
         #pragma pack(pop)
         

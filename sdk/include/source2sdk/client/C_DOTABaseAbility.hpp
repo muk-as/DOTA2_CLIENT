@@ -37,7 +37,6 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByName "m_cellX"
         // static metadata: MNetworkExcludeByName "m_cellY"
         // static metadata: MNetworkExcludeByName "m_cellZ"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -198,7 +197,9 @@ namespace source2sdk
             // m_pReflectionSourceAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_pReflectionSourceAbility;
             char m_pReflectionSourceAbility[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             float m_flLastCastClickTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

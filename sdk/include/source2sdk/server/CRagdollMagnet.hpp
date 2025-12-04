@@ -28,7 +28,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             float m_radius; // 0x_            
             float m_force; // 0x_            
-            Vector m_axis; // 0x_            
+            VectorWS m_axis; // 0x_            
             
             // Datamap fields:
             // void InputEnable; // 0x_

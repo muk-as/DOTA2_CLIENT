@@ -34,6 +34,8 @@ namespace source2sdk
             std::int32_t slow_resist; // 0x_            
             float rush_speed; // 0x_            
             float rush_range; // 0x_            
+            float base_attack_rate; // 0x_            
+            float attack_speed_factor; // 0x_            
             float break_range; // 0x_            
             bool m_bInRush; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

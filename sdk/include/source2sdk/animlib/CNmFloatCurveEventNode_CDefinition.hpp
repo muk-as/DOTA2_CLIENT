@@ -28,8 +28,11 @@ namespace source2sdk
         {
         public:
             CGlobalSymbol m_eventID; // 0x_            
+            std::int16_t m_nDefaultNodeIdx; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             float m_flDefaultValue; // 0x_            
             source2sdk::animlib::CNmBitFlags m_eventConditionRules; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

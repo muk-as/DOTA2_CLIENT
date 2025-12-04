@@ -34,7 +34,7 @@ namespace source2sdk
             source2sdk::server::RelativeLocationType_t m_Type; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vRelativeOffset; // 0x_            
-            Vector m_vWorldSpacePos; // 0x_            
+            VectorWS m_vWorldSpacePos; // 0x_            
             // m_hEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEntity;
             char m_hEntity[0x_]; // 0x_            

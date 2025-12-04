@@ -25,10 +25,8 @@ namespace source2sdk
         public:
             std::int32_t movespeed_slow; // 0x_            
             std::int32_t attackspeed_slow; // 0x_            
-            std::int32_t disable_vision; // 0x_            
             float invisible_damage_pers; // 0x_            
             float invisible_damage_tickrate; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

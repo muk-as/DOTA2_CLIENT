@@ -38,7 +38,6 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByName "m_cellX"
         // static metadata: MNetworkExcludeByName "m_cellY"
         // static metadata: MNetworkExcludeByName "m_cellZ"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"

@@ -4,6 +4,8 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionInitializer.hpp"
+#include "source2sdk/particles/ParticleAttributeIndex_t.hpp"
+#include "source2sdk/particles/ParticleSetMethod_t.hpp"
 #include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -34,6 +36,20 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "lifespan overlap percentage"
             source2sdk::particleslib::CPerParticleFloatInput m_flLifespanOverlap; // 0x_            
+            // metadata: MPropertyFriendlyName "attribute to modify"
+            // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
+            source2sdk::particles::ParticleAttributeIndex_t m_nFieldModify; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "modify amount"
+            // metadata: MPropertySuppressExpr "m_nFieldOutput == PARTICLE_ATTRIBUTE_UNUSED"
+            source2sdk::particleslib::CPerParticleFloatInput m_flModify; // 0x_            
+            // metadata: MPropertyFriendlyName "set value method"
+            // metadata: MPropertySuppressExpr "m_nFieldOutput == PARTICLE_ATTRIBUTE_UNUSED"
+            source2sdk::particles::ParticleSetMethod_t m_nSetMethod; // 0x_            
+            // metadata: MPropertyFriendlyName "use neighbor value for modify base"
+            // metadata: MPropertySuppressExpr "m_nFieldOutput == PARTICLE_ATTRIBUTE_UNUSED"
+            bool m_bUseNeighbor; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

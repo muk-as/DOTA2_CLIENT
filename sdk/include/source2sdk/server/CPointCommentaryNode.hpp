@@ -74,7 +74,7 @@ namespace source2sdk
             bool m_bPreventChangesWhileMoving; // 0x_            
             bool m_bDisabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            Vector m_vecTeleportOrigin; // 0x_            
+            VectorWS m_vecTeleportOrigin; // 0x_            
             source2sdk::entity2::GameTime_t m_flAbortedPlaybackAt; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStarted; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStopped; // 0x_            

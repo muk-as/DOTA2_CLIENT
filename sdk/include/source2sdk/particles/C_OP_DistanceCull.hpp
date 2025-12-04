@@ -5,6 +5,7 @@
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionOperator.hpp"
 #include "source2sdk/particles/ParticleAttributeIndex_t.hpp"
+#include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -33,14 +34,13 @@ namespace source2sdk
             // metadata: MVectorIsCoordinate
             Vector m_vecPointOffset; // 0x_            
             // metadata: MPropertyFriendlyName "cull distance"
-            float m_flDistance; // 0x_            
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flDistance; // 0x_            
             // metadata: MPropertyFriendlyName "cull inside instead of outside"
             bool m_bCullInside; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Attribute to Test"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
             source2sdk::particles::ParticleAttributeIndex_t m_nAttribute; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

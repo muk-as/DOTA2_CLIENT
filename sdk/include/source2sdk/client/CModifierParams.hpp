@@ -75,9 +75,9 @@ namespace source2sdk
             std::int32_t nCost; // 0x_            
             std::int32_t nHealthCost; // 0x_            
             std::int32_t nOrdertype; // 0x_            
-            Vector vOldLoc; // 0x_            
-            Vector vNewLoc; // 0x_            
-            Vector vCastLocation; // 0x_            
+            VectorWS vOldLoc; // 0x_            
+            VectorWS vNewLoc; // 0x_            
+            VectorWS vCastLocation; // 0x_            
             bool bCraniumBasherTested; // 0x_            
             bool bMKBTested; // 0x_            
             bool bOctarineTested; // 0x_            

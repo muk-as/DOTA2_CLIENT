@@ -17,13 +17,12 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
-        // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct DotaModifierPathNode_t
         {
         public:
-            Vector m_vPosition; // 0x_            
+            VectorWS m_vPosition; // 0x_            
             float m_flRadius; // 0x_            
             float m_flDistToNext; // 0x_            
             std::int32_t m_nMoveSpeedType; // 0x_            

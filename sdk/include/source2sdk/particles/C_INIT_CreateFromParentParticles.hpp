@@ -37,6 +37,8 @@ namespace source2sdk
             std::int32_t m_nRandomSeed; // 0x_            
             // metadata: MPropertyFriendlyName "sub frame interpolation"
             bool m_bSubFrame; // 0x_            
+            // metadata: MPropertyFriendlyName "set rope segment id"
+            bool m_bSetRopeSegmentID; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

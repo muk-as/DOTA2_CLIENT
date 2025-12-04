@@ -36,6 +36,8 @@ namespace source2sdk
             std::int32_t m_nNumControlPoints; // 0x_            
             // metadata: MPropertyFriendlyName "first particle to copy"
             std::int32_t m_nFirstSourcePoint; // 0x_            
+            // metadata: MPropertyFriendlyName "reverse order"
+            bool m_bReverse; // 0x_            
             // metadata: MPropertyFriendlyName "set orientation"
             bool m_bSetOrientation; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

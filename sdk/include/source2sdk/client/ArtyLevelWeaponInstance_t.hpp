@@ -29,14 +29,11 @@ namespace source2sdk
             CUtlString m_szName; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nReloads; // 0x_            
-            std::int32_t m_nPointsPerShot; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_szName) == 0x_);
         static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nReloads) == 0x_);
-        static_assert(offsetof(source2sdk::client::ArtyLevelWeaponInstance_t, m_nPointsPerShot) == 0x_);
         
         static_assert(sizeof(source2sdk::client::ArtyLevelWeaponInstance_t) == 0x_);
     };

@@ -22,6 +22,7 @@ namespace source2sdk
             IKTARGETSOURCE_Bone = 0x0,
             // MPropertyFriendlyName "Animgraph Parameter"
             IKTARGETSOURCE_AnimgraphParameter = 0x1,
+            // MPropertySuppressEnumerator
             IKTARGETSOURCE_COUNT = 0x2,
         };
     };

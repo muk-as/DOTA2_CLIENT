@@ -22,13 +22,8 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "BaseDomain"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Limit Count"
         // static metadata: MPropertyDescription "Skip this node after the limit. Check Type does not apply, the limit will always be checked."
-        // static metadata: MPulseRequirementPass
-        // static metadata: MPulseRequirementSummaryExpr
         #pragma pack(push, 1)
         class CPulseCell_LimitCount : public source2sdk::pulse_runtime_lib::CPulseCell_BaseRequirement
         {

@@ -43,6 +43,7 @@ namespace source2sdk
             source2sdk::modellib::AttachmentHandle_t m_hLerpTargetAttachment; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flLerpDuration; // 0x_            
+            bool m_bAttachedEntityWasParented; // 0x_            
             bool m_bLerpRestoreMoveType; // 0x_            
             bool m_bSingleLerpObject; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
@@ -58,10 +59,12 @@ namespace source2sdk
             char m_hEntityToWaitForDisconnect[0x_]; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnLerpStarted; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnLerpFinished; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnDetached; // 0x_            
             
             // Datamap fields:
             // void CTriggerLerpObjectLerpThink; // 0x_
             // void CTriggerLerpObjectUnsetWaitForEntity; // 0x_
+            // void CTriggerLerpObjectAttachedEntityThink; // 0x_
         };
         #pragma pack(pop)
         

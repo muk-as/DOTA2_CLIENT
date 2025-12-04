@@ -22,7 +22,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Count Envelope"
         #pragma pack(push, 1)
         class CSosGroupActionMemberCountEnvelopeSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {

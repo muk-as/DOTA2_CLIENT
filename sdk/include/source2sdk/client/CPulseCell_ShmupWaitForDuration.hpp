@@ -23,9 +23,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "PanoramaPanel"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPropertyFriendlyName "Shmup Wait For Duration"
         #pragma pack(push, 1)
         class CPulseCell_ShmupWaitForDuration : public source2sdk::pulse_runtime_lib::CPulseCell_BaseYieldingInflow

@@ -32,7 +32,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             float m_Radius; // 0x_            
             Vector m_vSpotlightDir; // 0x_            
-            Vector m_vSpotlightOrg; // 0x_            
+            VectorWS m_vSpotlightOrg; // 0x_            
         };
         #pragma pack(pop)
         

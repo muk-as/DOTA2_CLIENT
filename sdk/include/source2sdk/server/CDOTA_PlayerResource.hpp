@@ -92,19 +92,19 @@ namespace source2sdk
             char m_vecPendingTreeModelChanges[0x_]; // 0x_            
             float m_flClaimedFarm[24]; // 0x_            
             float m_flEarnedCreepFarm[24]; // 0x_            
-            std::int32_t m_iScaledPlayerDamage[24]; // 0x_            
-            std::int32_t m_iScaledTowerDamage[24]; // 0x_            
+            float m_flScaledPlayerDamage[24]; // 0x_            
+            float m_flScaledTowerDamage[24]; // 0x_            
             std::int32_t m_iScaledHealing[24]; // 0x_            
             std::int32_t m_iSupportAbilityValue[24]; // 0x_            
             std::int32_t m_nNumMouseClickCastOrders[24]; // 0x_            
             float m_flTimeWithUnspentSkillPoints[24]; // 0x_            
-            std::int32_t m_iRawPlayerDamage[24]; // 0x_            
-            std::int32_t m_iRawTowerDamage[24]; // 0x_            
-            std::int32_t m_iRawHealing[24]; // 0x_            
-            std::int32_t m_iRawPlayerDamageReceivedPreReduction[3][24]; // 0x_            
-            std::int32_t m_iRawPlayerDamageReceivedPostReduction[3][24]; // 0x_            
-            std::int32_t m_iTotalPlayerDamageMatrix[24][24]; // 0x_            
-            std::int32_t m_iRawPlayerDamageMatrix[24][24]; // 0x_            
+            float m_flRawPlayerDamage[24]; // 0x_            
+            float m_flRawTowerDamage[24]; // 0x_            
+            float m_flRawHealing[24]; // 0x_            
+            float m_flRawPlayerDamageReceivedPreReduction[3][24]; // 0x_            
+            float m_flRawPlayerDamageReceivedPostReduction[3][24]; // 0x_            
+            float m_flTotalPlayerDamageMatrix[24][24]; // 0x_            
+            float m_flRawPlayerDamageMatrix[24][24]; // 0x_            
             std::int32_t m_iAssistsMatrix[24][24]; // 0x_            
             std::int32_t m_iTimeLastSeen[24]; // 0x_            
             std::int32_t m_iTotalDisconnectedTime[24]; // 0x_            
@@ -125,12 +125,12 @@ namespace source2sdk
             float m_flTimeOfLastItemPurchase[24]; // 0x_            
             float m_flTimeOfLastConsumablePurchase[24]; // 0x_            
             float m_flTimeOfLastDeath[24]; // 0x_            
-            std::int32_t m_iTowerDamageTaken[24]; // 0x_            
-            std::int32_t m_iCreepDamageTaken[24]; // 0x_            
-            std::int32_t m_iHeroDamageTaken[24]; // 0x_            
-            std::int32_t m_iTotalTowerDamageTaken[24]; // 0x_            
-            std::int32_t m_iTotalCreepDamageTaken[24]; // 0x_            
-            std::int32_t m_iTotalHeroDamageTaken[24]; // 0x_            
+            float m_flTowerDamageTaken[24]; // 0x_            
+            float m_flCreepDamageTaken[24]; // 0x_            
+            float m_flHeroDamageTaken[24]; // 0x_            
+            float m_flTotalTowerDamageTaken[24]; // 0x_            
+            float m_flTotalCreepDamageTaken[24]; // 0x_            
+            float m_flTotalHeroDamageTaken[24]; // 0x_            
             std::int32_t m_iRank[24]; // 0x_            
             std::int32_t m_iRankUncertainty[24]; // 0x_            
             bool m_bRankCalibrated[24]; // 0x_            

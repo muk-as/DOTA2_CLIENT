@@ -5,6 +5,7 @@
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionInitializer.hpp"
 #include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
+#include "source2sdk/particleslib/CPerParticleVecInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -27,9 +28,18 @@ namespace source2sdk
         class C_INIT_VelocityRadialRandom : public source2sdk::particles::CParticleFunctionInitializer
         {
         public:
-            // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x_            
+            // metadata: MPropertyFriendlyName "per-particle center point"
+            bool m_bPerParticleCenter; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "control point number"
+            // metadata: MPropertySuppressExpr "m_bPerParticleCenter == true"
+            std::int32_t m_nControlPointNumber; // 0x_            
+            // metadata: MPropertyFriendlyName "radial center point"
+            // metadata: MPropertySuppressExpr "m_bPerParticleCenter == false"
+            source2sdk::particleslib::CPerParticleVecInput m_vecPosition; // 0x_            
+            // metadata: MPropertyFriendlyName "radial center forward"
+            // metadata: MPropertySuppressExpr "m_bPerParticleCenter == false"
+            source2sdk::particleslib::CPerParticleVecInput m_vecFwd; // 0x_            
             // metadata: MPropertyFriendlyName "random speed min"
             source2sdk::particleslib::CPerParticleFloatInput m_fSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "random speed max"

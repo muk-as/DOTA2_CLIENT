@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionOperator.hpp"
+#include "source2sdk/particleslib/CParticleCollectionVecInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -28,9 +29,9 @@ namespace source2sdk
         public:
             // metadata: MPropertyFriendlyName "control point for point on plane"
             std::int32_t m_nPlaneControlPoint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "plane normal"
-            // metadata: MVectorIsCoordinate
-            Vector m_vecPlaneDirection; // 0x_            
+            source2sdk::particleslib::CParticleCollectionVecInput m_vecPlaneDirection; // 0x_            
             // metadata: MPropertyFriendlyName "use local space"
             bool m_bLocalSpace; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

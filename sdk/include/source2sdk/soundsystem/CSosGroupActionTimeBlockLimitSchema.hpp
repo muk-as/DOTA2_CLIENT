@@ -22,14 +22,12 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Timed Block Limiter"
         #pragma pack(push, 1)
         class CSosGroupActionTimeBlockLimitSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
         public:
-            // metadata: MPropertyFriendlyName "Max Count"
             std::int32_t m_nMaxCount; // 0x_            
-            // metadata: MPropertyFriendlyName "Max Time"
             float m_flMaxDuration; // 0x_            
         };
         #pragma pack(pop)

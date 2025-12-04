@@ -50,7 +50,7 @@ namespace source2sdk
             bool m_bAnimGraphUpdateEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flMaxSlopeDistance; // 0x_            
-            Vector m_vLastSlopeCheckPos; // 0x_            
+            VectorWS m_vLastSlopeCheckPos; // 0x_            
             bool m_bAnimationUpdateScheduled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -66,14 +66,16 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
             bool m_bRagdollClientSide; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CTransform m_xParentedRagdollRootInEntitySpace; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
             // void m_pMainGraphController; // 0x_
+            // void m_pRagdollControl; // 0x_
             // void CBaseAnimGraphChoreoServicesThink; // 0x_
             // float InputSetPlaybackRate; // 0x_
             // CUtlSymbolLarge InputSetBodyGroup; // 0x_
-            // void InputBecomeRagdoll; // 0x_
         };
         #pragma pack(pop)
         

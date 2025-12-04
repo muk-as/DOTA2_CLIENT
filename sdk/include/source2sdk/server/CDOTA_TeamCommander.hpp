@@ -106,7 +106,7 @@ namespace source2sdk
             float m_fHeroSelectionTimes[24]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vBaseLocation; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            Vector m_vPregameGatherLocation; // 0x_            
             // m_AllUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_AllUnits;
             char m_AllUnits[0x_]; // 0x_            
@@ -226,6 +226,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vRoamTargetLoc) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_fHeroSelectionTimes) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vBaseLocation) == 0x_);
+        static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_vPregameGatherLocation) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllUnits) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedUnits) == 0x_);
         static_assert(offsetof(source2sdk::server::CDOTA_TeamCommander, m_AllAlliedHeroes) == 0x_);

@@ -119,11 +119,9 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             std::int32_t m_nExplicitImageLayout; // 0x_            
-            uint8_t _pad_[0x_];
             
             // Datamap fields:
             // CUtlSymbolLarge css_class; // 0x_
-            // CStrongHandle< InfoForResourceTypeIMaterial2 > m_hPanelOverrideMaterial; // 0x_
         };
         #pragma pack(pop)
         

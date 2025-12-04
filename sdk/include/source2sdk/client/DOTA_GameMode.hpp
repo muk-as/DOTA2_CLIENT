@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 26
+        // Enumerator count: 27
         // Alignment: 4
         // Size: 0x_
         enum class DOTA_GameMode : std::uint32_t
@@ -44,6 +44,7 @@ namespace source2sdk
             DOTA_GAMEMODE_TURBO = 0x17,
             DOTA_GAMEMODE_MUTATION = 0x18,
             DOTA_GAMEMODE_COACHES_CHALLENGE = 0x19,
+            DOTA_GAMEMODE_BOT_CHALLENGE = 0x1a,
         };
     };
 };

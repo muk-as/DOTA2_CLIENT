@@ -40,7 +40,7 @@ namespace source2sdk
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
             char m_hTarget[0x_]; // 0x_            
-            Vector m_vTargetPos; // 0x_            
+            VectorWS m_vTargetPos; // 0x_            
             float m_flSpeed; // 0x_            
             bool m_bTargetingEntity; // 0x_            
             bool m_bGroundToTree; // 0x_            

@@ -19,10 +19,7 @@ namespace source2sdk
         // Size: 0x_
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseProvideFeatureTag "8"
-        // static metadata: MPulseDomainHookInfo
-        // static metadata: MParticleDomainTag "C_DOTA_LinearProjectileInfoParticleAPI Linear Projectile"
+        // static metadata: MCustomFGDMetadata "{ particle_domain_ui_name = 'Linear Projectile' particle_domain_internal_name = 'C_DOTA_LinearProjectileInfoParticleAPI'  }"
         #pragma pack(push, 1)
         class C_DOTA_LinearProjectileInfoParticleAPI
         {

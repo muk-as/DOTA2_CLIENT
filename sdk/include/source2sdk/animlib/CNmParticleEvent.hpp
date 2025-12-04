@@ -37,6 +37,8 @@ namespace source2sdk
             char m_hParticleSystem[0x_]; // 0x_            
             CUtlString m_tags; // 0x_            
             bool m_bStopImmediately; // 0x_            
+            bool m_bDetachFromOwner; // 0x_            
+            bool m_bPlayEndCap; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlString m_attachmentPoint0; // 0x_            
             source2sdk::animationsystem::ParticleAttachment_t m_attachmentType0; // 0x_            
@@ -46,9 +48,6 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             CUtlString m_config; // 0x_            
             CUtlString m_effectForConfig; // 0x_            
-            bool m_bDetachFromOwner; // 0x_            
-            bool m_bPlayEndCap; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

@@ -20,15 +20,20 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "uint32 m_unRandomSeed"
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_Fort : public source2sdk::server::CDOTA_BaseNPC_Building
         {
         public:
+            // metadata: MNetworkEnable
+            std::uint32_t m_unRandomSeed; // 0x_            
             uint8_t _pad_[0x_];
-            // No schema binary for binding
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_BaseNPC_Fort because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x_);
     };

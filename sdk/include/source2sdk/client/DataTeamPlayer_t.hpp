@@ -88,8 +88,10 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_iCampsStacked"
         // static metadata: MNetworkVarNames "int m_iRunePickups"
         // static metadata: MNetworkVarNames "int m_iGoldSpentOnSupport"
-        // static metadata: MNetworkVarNames "int m_iHeroDamage"
-        // static metadata: MNetworkVarNames "int m_iTowerDamage"
+        // static metadata: MNetworkReplayCompatField "m_iHeroDamage"
+        // static metadata: MNetworkVarNames "float m_flHeroDamage"
+        // static metadata: MNetworkReplayCompatField "m_iTowerDamage"
+        // static metadata: MNetworkVarNames "float m_flTowerDamage"
         // static metadata: MNetworkVarNames "int m_iWardsPurchased"
         // static metadata: MNetworkVarNames "int m_iWardsDestroyed"
         // static metadata: MNetworkVarNames "CDOTA_UnitInventory m_PreGameInventory"
@@ -105,10 +107,14 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedNeutralEnhancements"
         // static metadata: MNetworkVarNames "HeroID_t m_iSuggestedHeroes"
         // static metadata: MNetworkVarNames "float m_flSuggestedHeroesWeights"
-        // static metadata: MNetworkVarNames "int m_iDamageByTypeReceivedPreReduction"
-        // static metadata: MNetworkVarNames "int m_iDamageByTypeReceivedPostReduction"
-        // static metadata: MNetworkVarNames "int m_iOutgoingDamageByTypePreReduction"
-        // static metadata: MNetworkVarNames "int m_iOutgoingDamageByTypePostReduction"
+        // static metadata: MNetworkReplayCompatField "m_iDamageByTypeReceivedPreReduction"
+        // static metadata: MNetworkVarNames "float m_flDamageByTypeReceivedPreReduction"
+        // static metadata: MNetworkReplayCompatField "m_iDamageByTypeReceivedPostReduction"
+        // static metadata: MNetworkVarNames "float m_flDamageByTypeReceivedPostReduction"
+        // static metadata: MNetworkReplayCompatField "m_iOutgoingDamageByTypePreReduction"
+        // static metadata: MNetworkVarNames "float m_flOutgoingDamageByTypePreReduction"
+        // static metadata: MNetworkReplayCompatField "m_iOutgoingDamageByTypePostReduction"
+        // static metadata: MNetworkVarNames "float m_flOutgoingDamageByTypePostReduction"
         // static metadata: MNetworkVarNames "OverworldID_t m_uSelectedOverworldID"
         // static metadata: MNetworkVarNames "OverworldTokenID_t m_uSelectedOverworldTokenRewards"
         // static metadata: MNetworkVarNames "int m_iCommandsIssued"
@@ -248,9 +254,9 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_iGoldSpentOnSupport; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iHeroDamage; // 0x_            
+            float m_flHeroDamage; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iTowerDamage; // 0x_            
+            float m_flTowerDamage; // 0x_            
             // metadata: MNetworkEnable
             std::int32_t m_iWardsPurchased; // 0x_            
             // metadata: MNetworkEnable
@@ -290,13 +296,13 @@ namespace source2sdk
             // metadata: MNetworkEnable
             float m_flSuggestedHeroesWeights[10]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageByTypeReceivedPreReduction[3]; // 0x_            
+            float m_flDamageByTypeReceivedPreReduction[3]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageByTypeReceivedPostReduction[3]; // 0x_            
+            float m_flDamageByTypeReceivedPostReduction[3]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iOutgoingDamageByTypePreReduction[3]; // 0x_            
+            float m_flOutgoingDamageByTypePreReduction[3]; // 0x_            
             // metadata: MNetworkEnable
-            std::int32_t m_iOutgoingDamageByTypePostReduction[3]; // 0x_            
+            float m_flOutgoingDamageByTypePostReduction[3]; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::OverworldID_t m_uSelectedOverworldID; // 0x_            
             // metadata: MNetworkEnable
@@ -396,8 +402,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCampsStacked) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iRunePickups) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnSupport) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iHeroDamage) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTowerDamage) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flHeroDamage) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flTowerDamage) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsPurchased) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsDestroyed) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_PreGameInventory) == 0x_);
@@ -413,10 +419,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralEnhancements) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedHeroes) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flSuggestedHeroesWeights) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPreReduction) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPostReduction) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePreReduction) == 0x_);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePostReduction) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flDamageByTypeReceivedPreReduction) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flDamageByTypeReceivedPostReduction) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flOutgoingDamageByTypePreReduction) == 0x_);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flOutgoingDamageByTypePostReduction) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldID) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldTokenRewards) == 0x_);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCommandsIssued) == 0x_);

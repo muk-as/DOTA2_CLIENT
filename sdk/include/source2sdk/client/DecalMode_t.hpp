@@ -13,14 +13,18 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 4
+        // Enumerator count: 6
         // Alignment: 1
         // Size: 0x_
         enum class DecalMode_t : std::uint8_t
         {
+            kDecalInvalid = 0xff,
             kDecalBlood = 0x0,
             kDecalCloak = 0x1,
-            kDecalMax = 0x2,
+            kDecalCloakDamage = 0x2,
+            // MPropertySuppressEnumerator
+            kDecalMax = 0x3,
+            // MPropertySuppressEnumerator
             kDecalDefault = 0x0,
         };
     };

@@ -37,9 +37,7 @@ namespace source2sdk
             std::int32_t speed; // 0x_            
             float length_buffer; // 0x_            
             float range; // 0x_            
-            std::int32_t m_iDefaultCastRange; // 0x_            
             std::int32_t pierces_immunity; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hHitEntities;
             char m_hHitEntities[0x_]; // 0x_            

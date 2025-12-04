@@ -20,7 +20,6 @@ namespace source2sdk
         // Has Trivial Constructor
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseLibraryBindings
         // static metadata: MPropertyFriendlyName "GameParticleManager"
         #pragma pack(push, 1)
         class CPulseFuncs_GameParticleManager

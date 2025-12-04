@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 21
+        // Enumerator count: 23
         // Alignment: 4
         // Size: 0x_
         enum class ETEProtobufIds : std::uint32_t
@@ -26,6 +26,8 @@ namespace source2sdk
             TE_BeamRingId = 0x195,
             TE_BubblesId = 0x198,
             TE_BubbleTrailId = 0x199,
+            TE_DecalId = 0x19a,
+            TE_WorldDecalId = 0x19b,
             TE_EnergySplashId = 0x19c,
             TE_FizzId = 0x19d,
             TE_ShatterSurfaceId = 0x19e,

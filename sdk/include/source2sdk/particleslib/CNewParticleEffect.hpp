@@ -50,20 +50,24 @@ namespace source2sdk
             source2sdk::particles::IParticleCollection* m_pParticles; // 0x_            
             char* m_pDebugName; // 0x_            
             // start of bitfield block
-            uint16_t m_bDontRemove: 1;
-            uint16_t m_bRemove: 1;
-            uint16_t m_bNeedsBBoxUpdate: 1;
-            uint16_t m_bIsFirstFrame: 1;
-            uint16_t m_bAutoUpdateBBox: 1;
-            uint16_t m_bAllocated: 1;
-            uint16_t m_bSimulate: 1;
-            uint16_t m_bShouldPerformCullCheck: 1;
-            uint16_t m_bForceNoDraw: 1;
-            uint16_t m_bSuppressScreenSpaceEffect: 1;
-            uint16_t m_bShouldSave: 1;
-            uint16_t m_bShouldSimulateDuringGamePaused: 1;
-            uint16_t m_bShouldCheckFoW: 1;
-            // end of bitfield block// 13 bits
+            uint32_t m_bDontRemove: 1;
+            uint32_t m_bRemove: 1;
+            uint32_t m_bNeedsBBoxUpdate: 1;
+            uint32_t m_bIsFirstFrame: 1;
+            uint32_t m_bAutoUpdateBBox: 1;
+            uint32_t m_bAllocated: 1;
+            uint32_t m_bSimulate: 1;
+            uint32_t m_bShouldPerformCullCheck: 1;
+            uint32_t m_bForceNoDraw: 1;
+            uint32_t m_bSuppressScreenSpaceEffect: 1;
+            uint32_t m_bShouldSave: 1;
+            uint32_t m_bShouldSimulateDuringGamePaused: 1;
+            uint32_t m_bShouldCheckFoW: 1;
+            uint32_t m_bIsAsyncCreate: 1;
+            uint32_t m_bFreezeTransitionActive: 1;
+            uint32_t m_bFreezeTargetState: 1;
+            uint32_t m_bCanFreeze: 1;
+            // end of bitfield block// 17 bits
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vSortOrigin; // 0x_            
             float m_flScale; // 0x_            
@@ -73,10 +77,6 @@ namespace source2sdk
             float m_flFreezeTransitionStart; // 0x_            
             float m_flFreezeTransitionDuration; // 0x_            
             float m_flFreezeTransitionOverride; // 0x_            
-            bool m_bFreezeTransitionActive; // 0x_            
-            bool m_bFreezeTargetState; // 0x_            
-            bool m_bCanFreeze; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             Vector m_LastMin; // 0x_            
             Vector m_LastMax; // 0x_            
             CSplitScreenSlot m_nSplitScreenUser; // 0x_            

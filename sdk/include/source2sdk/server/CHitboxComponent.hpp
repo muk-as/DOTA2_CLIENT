@@ -19,15 +19,12 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // 
-        // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
         #pragma pack(push, 1)
         class CHitboxComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
+            float m_flBoundsExpandRadius; // 0x_            
         };
         #pragma pack(pop)
         

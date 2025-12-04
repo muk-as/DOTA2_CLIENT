@@ -25,8 +25,7 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MClassIsParticleVec
-        // static metadata: MParticleCustomFieldDefaultValue
+        // static metadata: MCustomFGDMetadata "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleVecInputDefaultTestFunc' }"
         #pragma pack(push, 1)
         class CParticleVecInput : public source2sdk::particleslib::CParticleInput
         {

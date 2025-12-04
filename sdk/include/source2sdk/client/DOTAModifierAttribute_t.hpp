@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 6
+        // Enumerator count: 7
         // Alignment: 4
         // Size: 0x_
         enum class DOTAModifierAttribute_t : std::uint32_t
@@ -24,6 +24,7 @@ namespace source2sdk
             MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE = 0x4,
             MODIFIER_ATTRIBUTE_AURA_PRIORITY = 0x8,
             MODIFIER_ATTRIBUTE_IGNORE_DODGE = 0x10,
+            MODIFIER_ATTRIBUTE_DUPLICATED = 0x20,
         };
     };
 };

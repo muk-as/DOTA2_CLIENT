@@ -44,7 +44,7 @@ namespace source2sdk
             bool m_bAnimGraphUpdateEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flMaxSlopeDistance; // 0x_            
-            Vector m_vLastSlopeCheckPos; // 0x_            
+            VectorWS m_vLastSlopeCheckPos; // 0x_            
             bool m_bAnimationUpdateScheduled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -68,6 +68,7 @@ namespace source2sdk
             
             // Datamap fields:
             // void m_pMainGraphController; // 0x_
+            // void m_pRagdollControl; // 0x_
             // float InputSetPlaybackRate; // 0x_
             // CUtlSymbolLarge InputSetBodyGroup; // 0x_
             // bool InputDisableAnimEventSounds; // 0x_

@@ -18,14 +18,12 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has Trivial Destructor
-        // 
-        // static metadata: MPulseLibraryBindings
-        // static metadata: MPulseProvideFeatureTag "16"
         #pragma pack(push, 1)
         class FakeEntityDerivedA_tAPI
         {
         public:
             uint8_t _pad_[0x_];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         

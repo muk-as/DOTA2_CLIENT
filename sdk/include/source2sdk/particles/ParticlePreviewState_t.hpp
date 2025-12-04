@@ -44,6 +44,7 @@ namespace source2sdk
             bool m_bShouldDrawAttachmentNames; // 0x_            
             bool m_bShouldDrawControlPointAxes; // 0x_            
             bool m_bAnimationNonLooping; // 0x_            
+            bool m_bSequenceNameIsAnimClipPath; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             Vector m_vecPreviewGravity; // 0x_            
             uint8_t _pad_[0x_];
@@ -65,6 +66,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::particles::ParticlePreviewState_t, m_bShouldDrawAttachmentNames) == 0x_);
         static_assert(offsetof(source2sdk::particles::ParticlePreviewState_t, m_bShouldDrawControlPointAxes) == 0x_);
         static_assert(offsetof(source2sdk::particles::ParticlePreviewState_t, m_bAnimationNonLooping) == 0x_);
+        static_assert(offsetof(source2sdk::particles::ParticlePreviewState_t, m_bSequenceNameIsAnimClipPath) == 0x_);
         static_assert(offsetof(source2sdk::particles::ParticlePreviewState_t, m_vecPreviewGravity) == 0x_);
         
         static_assert(sizeof(source2sdk::particles::ParticlePreviewState_t) == 0x_);

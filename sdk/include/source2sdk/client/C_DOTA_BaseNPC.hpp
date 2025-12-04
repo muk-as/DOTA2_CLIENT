@@ -62,7 +62,6 @@ namespace source2sdk
         // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_blinktoggle"
-        // static metadata: MNetworkExcludeByName "m_flAnimTime"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -229,6 +228,7 @@ namespace source2sdk
             bool m_bHasColorGem; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::ParticleIndex_t m_nFXDeniableIndex; // 0x_            
+            std::int32_t m_nCustomHealthbarStyle; // 0x_            
             // metadata: MNetworkEnable
             std::int32_t m_iMoveSpeed; // 0x_            
             std::int32_t m_iBaseAttackSpeed; // 0x_            

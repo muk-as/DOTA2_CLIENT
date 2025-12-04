@@ -42,7 +42,7 @@ namespace source2sdk
             char m_hTeleportTarget[0x_]; // 0x_            
             source2sdk::client::ParticleIndex_t m_nFXOrigin; // 0x_            
             source2sdk::client::ParticleIndex_t m_nFXDestination; // 0x_            
-            Vector m_vDestination; // 0x_            
+            VectorWS m_vDestination; // 0x_            
             std::int32_t m_iMinDistance; // 0x_            
             float m_flBaseTeleportTime; // 0x_            
         };

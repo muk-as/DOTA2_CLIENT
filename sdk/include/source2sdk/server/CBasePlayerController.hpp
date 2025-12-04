@@ -114,6 +114,7 @@ namespace source2sdk
             // const char * playername; // 0x_
             // bool reserving; // 0x_
             // void m_pCurrentCommand; // 0x_
+            // int32_t m_nFramePerfSamplesTotalReceived; // 0x_
             // int32_t m_ePlayerControllerKickPolicyMask; // 0x_
             // void m_LastCmd; // 0x_
             // void m_nLastRealCommandNumberExecuted; // 0x_

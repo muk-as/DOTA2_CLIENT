@@ -28,6 +28,7 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Model used by the tools only to populate comboboxes for things like animgraph parameter pickers"
+            // metadata: MPropertyProvidesEditContextString
             // m_sToolsOnlyOwnerModelName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_sToolsOnlyOwnerModelName;
             char m_sToolsOnlyOwnerModelName[0x_]; // 0x_            

@@ -56,6 +56,14 @@ namespace source2sdk
             Quaternion m_qLSOrientation; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnRotationStarted; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnRotationCompleted; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOscillate; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOscillateStartArrive; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOscillateStartDepart; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOscillateEndArrive; // 0x_            
+            source2sdk::entity2::CEntityIOOutput m_OnOscillateEndDepart; // 0x_            
+            bool m_bOscillateDepart; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nOscillateCount; // 0x_            
             source2sdk::server::CFuncRotator_Rotate_t m_eRotateType; // 0x_            
             source2sdk::server::CFuncRotator_Rotate_t m_ePrevRotateType; // 0x_            
             bool m_bHasTargetOverride; // 0x_            
@@ -87,10 +95,12 @@ namespace source2sdk
             // void InputStartReverse; // 0x_
             // void InputReturnToPreviousOrientation; // 0x_
             // void InputReturnToInitialOrientation; // 0x_
+            // int32_t InputSetRotateType; // 0x_
             // float InputPitch; // 0x_
             // float InputYaw; // 0x_
             // float InputRoll; // 0x_
             // CUtlSymbolLarge InputSetRotatorTarget; // 0x_
+            // float InputSetSpeed; // 0x_
             // void CFuncRotatorRotateThink; // 0x_
         };
         #pragma pack(pop)

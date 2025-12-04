@@ -28,9 +28,11 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
+        // static metadata: MEntityAllowsPortraitWorldSpawn
         // static metadata: MNetworkVarNames "bool m_bDisabled"
         // static metadata: MNetworkVarNames "int m_nResolutionX"
         // static metadata: MNetworkVarNames "int m_nResolutionY"
+        // static metadata: MNetworkVarNames "string_t m_szPanelType"
         // static metadata: MNetworkVarNames "string_t m_szLayoutFileName"
         // static metadata: MNetworkVarNames "string_t m_RenderAttrName"
         // static metadata: MNetworkVarNames "CHandle< CBaseModelEntity > m_TargetEntities"
@@ -48,6 +50,8 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_nResolutionY; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            CUtlSymbolLarge m_szPanelType; // 0x_            
             // metadata: MNetworkEnable
             CUtlSymbolLarge m_szLayoutFileName; // 0x_            
             // metadata: MNetworkEnable

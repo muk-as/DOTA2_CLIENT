@@ -52,9 +52,6 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "bias in local system"
             bool m_bLocalCoords; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            // metadata: MPropertyFriendlyName "randomly distribution growth time"
-            float m_flEndCPGrowthTime; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "speed in local coordinate system min"
             // metadata: MVectorIsCoordinate
             source2sdk::particleslib::CPerParticleVecInput m_LocalCoordinateSystemSpeedMin; // 0x_            

@@ -22,9 +22,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: MCellForDomain "SmartPropEval"
-        // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo ""
         // static metadata: MPulseFunctionHiddenInTool
         #pragma pack(push, 1)
         class CSmartPropPulse_BaseQueryableFlow : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow

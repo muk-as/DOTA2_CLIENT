@@ -24,7 +24,7 @@ namespace source2sdk
 {
     namespace client
     {
-        struct CDestructiblePartsSystemComponent;
+        struct CDestructiblePartsComponent;
     };
 };
 namespace source2sdk
@@ -53,7 +53,7 @@ namespace source2sdk
         // 
         // static metadata: MNetworkVarNames "CRenderComponent::Storage_t m_CRenderComponent"
         // static metadata: MNetworkVarNames "CHitboxComponent::Storage_t m_CHitboxComponent"
-        // static metadata: MNetworkVarNames "CDestructiblePartsSystemComponent * m_pDestructiblePartsSystemComponent"
+        // static metadata: MNetworkVarNames "CDestructiblePartsComponent * m_pDestructiblePartsSystemComponent"
         // static metadata: MNetworkVarNames "RenderMode_t m_nRenderMode"
         // static metadata: MNetworkVarNames "RenderFx_t m_nRenderFX"
         // static metadata: MNetworkVarNames "Color m_clrRender"
@@ -71,11 +71,10 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_nAddDecal"
         // static metadata: MNetworkVarNames "Vector m_vDecalPosition"
         // static metadata: MNetworkVarNames "Vector m_vDecalForwardAxis"
-        // static metadata: MNetworkVarNames "float m_flDecalHealBloodRate"
-        // static metadata: MNetworkVarNames "float m_flDecalHealHeightRate"
         // static metadata: MNetworkVarNames "DecalMode_t m_nDecalMode"
         // static metadata: MNetworkVarNames "DecalMode_t m_nRequiredDecalMode"
         // static metadata: MNetworkVarNames "CHandle< C_BaseModelEntity > m_ConfigEntitiesToPropagateMaterialDecalsTo"
+        // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
         #pragma pack(push, 1)
         class C_BaseModelEntity : public source2sdk::client::C_BaseEntity
         {
@@ -91,11 +90,12 @@ namespace source2sdk
             // metadata: MNetworkTypeAlias "CHitboxComponent"
             source2sdk::client::CHitboxComponent m_CHitboxComponent; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::client::CDestructiblePartsSystemComponent* m_pDestructiblePartsSystemComponent; // 0x_            
+            // metadata: MNetworkTypeAlias "CDestructiblePartsSystemComponent*"
+            source2sdk::client::CDestructiblePartsComponent* m_pDestructiblePartsSystemComponent; // 0x_            
             source2sdk::client::HitGroup_t m_LastHitGroup; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CGlobalSymbol m_sLastDamageSourceName; // 0x_            
-            Vector m_vLastDamagePosition; // 0x_            
+            VectorWS m_vLastDamagePosition; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             bool m_bInitModelEffects; // 0x_            
             bool m_bIsStaticProp; // 0x_            
@@ -152,10 +152,6 @@ namespace source2sdk
             // metadata: MNetworkEnable
             Vector m_vDecalForwardAxis; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDecalHealBloodRate; // 0x_            
-            // metadata: MNetworkEnable
-            float m_flDecalHealHeightRate; // 0x_            
-            // metadata: MNetworkEnable
             source2sdk::client::DecalMode_t m_nDecalMode; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::DecalMode_t m_nRequiredDecalMode; // 0x_            
@@ -174,9 +170,14 @@ namespace source2sdk
             source2sdk::client::CClientAlphaProperty* m_pClientAlphaProperty; // 0x_            
             Color m_ClientOverrideTint; // 0x_            
             bool m_bUseClientOverrideTint; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnDisabledHitgroupsChanged"
+            std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
+            // void m_bvDisabledHitGroups; // 0x_
             // void m_bodyGroupChoices; // 0x_
             // int32_t InputAlpha; // 0x_
             // Color InputColor; // 0x_

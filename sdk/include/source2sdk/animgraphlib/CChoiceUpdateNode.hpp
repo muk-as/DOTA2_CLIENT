@@ -30,6 +30,7 @@ namespace source2sdk
         class CChoiceUpdateNode : public source2sdk::animgraphlib::CAnimUpdateNodeBase
         {
         public:
+            uint8_t _pad_[0x_]; // 0x_
             // m_children has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::CAnimUpdateNodeRef> m_children;
             char m_children[0x_]; // 0x_            

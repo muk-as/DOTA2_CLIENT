@@ -26,6 +26,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "string_t m_iszOpvarName"
         // static metadata: MNetworkVarNames "int m_iOpvarIndex"
         // static metadata: MNetworkVarNames "bool m_bUseAutoCompare"
+        // static metadata: MNetworkVarNames "bool m_bFastRefresh"
         #pragma pack(push, 1)
         class C_SoundOpvarSetPointBase : public source2sdk::client::C_BaseEntity
         {
@@ -40,6 +41,8 @@ namespace source2sdk
             std::int32_t m_iOpvarIndex; // 0x_            
             // metadata: MNetworkEnable
             bool m_bUseAutoCompare; // 0x_            
+            // metadata: MNetworkEnable
+            bool m_bFastRefresh; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

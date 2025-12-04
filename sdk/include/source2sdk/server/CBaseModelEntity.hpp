@@ -19,7 +19,7 @@ namespace source2sdk
 {
     namespace server
     {
-        struct CDestructiblePartsSystemComponent;
+        struct CDestructiblePartsComponent;
     };
 };
 namespace source2sdk
@@ -48,7 +48,7 @@ namespace source2sdk
         // 
         // static metadata: MNetworkVarNames "CRenderComponent::Storage_t m_CRenderComponent"
         // static metadata: MNetworkVarNames "CHitboxComponent::Storage_t m_CHitboxComponent"
-        // static metadata: MNetworkVarNames "CDestructiblePartsSystemComponent * m_pDestructiblePartsSystemComponent"
+        // static metadata: MNetworkVarNames "CDestructiblePartsComponent * m_pDestructiblePartsSystemComponent"
         // static metadata: MNetworkVarNames "RenderMode_t m_nRenderMode"
         // static metadata: MNetworkVarNames "RenderFx_t m_nRenderFX"
         // static metadata: MNetworkVarNames "Color m_clrRender"
@@ -66,12 +66,11 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_nAddDecal"
         // static metadata: MNetworkVarNames "Vector m_vDecalPosition"
         // static metadata: MNetworkVarNames "Vector m_vDecalForwardAxis"
-        // static metadata: MNetworkVarNames "float m_flDecalHealBloodRate"
-        // static metadata: MNetworkVarNames "float m_flDecalHealHeightRate"
         // static metadata: MNetworkVarNames "DecalMode_t m_nDecalMode"
         // static metadata: MNetworkVarNames "DecalMode_t m_nRequiredDecalMode"
         // static metadata: MNetworkVarNames "CHandle< CBaseModelEntity > m_ConfigEntitiesToPropagateMaterialDecalsTo"
         // static metadata: MNetworkVarNames "CNetworkViewOffsetVector m_vecViewOffset"
+        // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
         #pragma pack(push, 1)
         class CBaseModelEntity : public source2sdk::server::CBaseEntity
         {
@@ -97,11 +96,12 @@ namespace source2sdk
             std::int32_t m_nDestructiblePartInitialStateDestructed3_PartIndex; // 0x_            
             std::int32_t m_nDestructiblePartInitialStateDestructed4_PartIndex; // 0x_            
             // metadata: MNetworkEnable
-            source2sdk::server::CDestructiblePartsSystemComponent* m_pDestructiblePartsSystemComponent; // 0x_            
+            // metadata: MNetworkTypeAlias "CDestructiblePartsSystemComponent*"
+            source2sdk::server::CDestructiblePartsComponent* m_pDestructiblePartsSystemComponent; // 0x_            
             source2sdk::client::HitGroup_t m_LastHitGroup; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CGlobalSymbol m_sLastDamageSourceName; // 0x_            
-            Vector m_vLastDamagePosition; // 0x_            
+            VectorWS m_vLastDamagePosition; // 0x_            
             source2sdk::entity2::GameTime_t m_flDissolveStartTime; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnIgnite; // 0x_            
             std::int32_t m_iViewerID; // 0x_            
@@ -152,10 +152,6 @@ namespace source2sdk
             // metadata: MNetworkEnable
             Vector m_vDecalForwardAxis; // 0x_            
             // metadata: MNetworkEnable
-            float m_flDecalHealBloodRate; // 0x_            
-            // metadata: MNetworkEnable
-            float m_flDecalHealHeightRate; // 0x_            
-            // metadata: MNetworkEnable
             source2sdk::client::DecalMode_t m_nDecalMode; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::DecalMode_t m_nRequiredDecalMode; // 0x_            
@@ -169,9 +165,14 @@ namespace source2sdk
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
             source2sdk::client::CNetworkViewOffsetVector m_vecViewOffset; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnDisabledHitgroupsChanged"
+            std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
+            // void m_bvDisabledHitGroups; // 0x_
             // void m_bodyGroupChoices; // 0x_
             // int32_t InputAlpha; // 0x_
             // Color InputColor; // 0x_

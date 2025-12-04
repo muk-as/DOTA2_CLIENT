@@ -34,9 +34,9 @@ namespace source2sdk
         public:
             Vector m_vLeftControl; // 0x_            
             Vector m_vRightControl; // 0x_            
-            Vector m_vTargetLoc; // 0x_            
-            Vector m_vOriginalTargetLoc; // 0x_            
-            Vector m_vSourceLoc; // 0x_            
+            VectorWS m_vTargetLoc; // 0x_            
+            VectorWS m_vOriginalTargetLoc; // 0x_            
+            VectorWS m_vSourceLoc; // 0x_            
             bool m_bGroundTargeted; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flTravelDuration; // 0x_            

@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/soundsystem/CSosGroupActionSchema.hpp"
-#include "source2sdk/soundsystem/SosActionSortType_t.hpp"
+#include "source2sdk/soundsystem/SosActionSetParamSortType_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem
@@ -23,22 +23,18 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
+        // static metadata: MPropertyFriendlyName "Set Sound Event Parameter"
         #pragma pack(push, 1)
         class CSosGroupActionSetSoundeventParameterSchema : public source2sdk::soundsystem::CSosGroupActionSchema
         {
         public:
-            // metadata: MPropertyFriendlyName "Max Count"
             std::int32_t m_nMaxCount; // 0x_            
-            // metadata: MPropertyFriendlyName "Minimum Value"
             float m_flMinValue; // 0x_            
-            // metadata: MPropertyFriendlyName "Maximum Value"
             float m_flMaxValue; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Parameter Name"
             CUtlString m_opvarName; // 0x_            
-            // metadata: MPropertyFriendlyName "Sort Type"
-            source2sdk::soundsystem::SosActionSortType_t m_nSortType; // 0x_            
+            source2sdk::soundsystem::SosActionSetParamSortType_t m_nSortType; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

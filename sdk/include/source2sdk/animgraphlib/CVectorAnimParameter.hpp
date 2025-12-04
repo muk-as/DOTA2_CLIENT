@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/animgraphlib/AnimParamVectorType_t.hpp"
 #include "source2sdk/animgraphlib/CConcreteAnimParameter.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -21,7 +22,6 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         // 
-        // static metadata: M_LEGACY_OptInToSchemaPropertyDomain
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Vector Parameter"
         #pragma pack(push, 1)
@@ -32,6 +32,9 @@ namespace source2sdk
             Vector m_defaultValue; // 0x_            
             // metadata: MPropertyFriendlyName "Interpolate"
             bool m_bInterpolate; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "Vector Type"
+            source2sdk::animgraphlib::AnimParamVectorType_t m_vectorType; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

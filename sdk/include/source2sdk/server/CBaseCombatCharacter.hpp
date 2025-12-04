@@ -44,7 +44,6 @@ namespace source2sdk
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CEconWearable>> m_hMyWearables;
             char m_hMyWearables[0x_]; // 0x_            
             float m_impactEnergyScale; // 0x_            
-            std::int32_t m_nMinVehicleDamageToTempRagdoll; // 0x_            
             bool m_bApplyStressDamage; // 0x_            
             bool m_bDeathEventsDispatched; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
@@ -57,7 +56,6 @@ namespace source2sdk
             source2sdk::server::CMovementStatsProperty m_movementStats; // 0x_            
             
             // Datamap fields:
-            // void InputBecomeServerRagdoll; // 0x_
             // CUtlSymbolLarge InputSetRelationship; // 0x_
         };
         #pragma pack(pop)

@@ -24,8 +24,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyCustomEditor "TransformInput()"
-        // static metadata: MClassIsParticleTransform
-        // static metadata: MParticleCustomFieldDefaultValue
+        // static metadata: MCustomFGDMetadata "{ KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }"
         #pragma pack(push, 1)
         class CParticleTransformInput : public source2sdk::particleslib::CParticleInput
         {

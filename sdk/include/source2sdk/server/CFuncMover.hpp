@@ -56,7 +56,9 @@ namespace source2sdk
             // m_hPathMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CPathMover> m_hPathMover;
             char m_hPathMover[0x_]; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            // m_hPrevPathMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CPathMover> m_hPrevPathMover;
+            char m_hPrevPathMover[0x_]; // 0x_            
             CUtlSymbolLarge m_iszPathNodeStart; // 0x_            
             CUtlSymbolLarge m_iszPathNodeEnd; // 0x_            
             source2sdk::server::CFuncMover_Move_t m_eMoveType; // 0x_            
@@ -169,7 +171,7 @@ namespace source2sdk
             // float InputSetFollowDistance; // 0x_
             // float InputSetFollowMinimumSpeed; // 0x_
             // float InputSetTimeToTraverseToNextNode; // 0x_
-            // void CFuncMoverMoveThink; // 0x_
+            // int32_t InputSetMoveType; // 0x_
             // void CFuncMoverLerpToNewPosition; // 0x_
         };
         #pragma pack(pop)
