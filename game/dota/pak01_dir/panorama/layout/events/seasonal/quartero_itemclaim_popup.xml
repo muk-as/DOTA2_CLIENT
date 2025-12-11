@@ -1,0 +1,69 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/seasonal/quartero_itemclaim_popup.vcss_c" />
+		<include src="s2r://panorama/styles/hero_loadout_background_images.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/events/quartero_itemclaim_popup.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="ChoiceItem">
+			<Panel class="ChoiceItem">
+				<Panel id="HeroLoadoutBackgroundImageContainer">
+					<Image id="HeroLoadoutBackgroundImage" class="PanelBackground" hittest="false" />
+				</Panel>
+				<Panel class="ModelPreviewContainer">
+					<DOTAUIEconSetPreview id="ModelPreview" hittest="false" hittestchildren="false" />
+				</Panel>
+				<Panel class="ChoiceItemInnerShadow" hittest="false" />
+				<DOTAParticleScenePanel id="RarityFX" particleName="particles/ui/dota_hud_armory_selection.vpcf" cameraOrigin="800 0 0" lookAt="0 0 0" fov="7" squarePixels="true" />
+				<Label class="ArcanaLabel TitleSmall" text="#Rarity_Arcana" />
+				<Label class="ImmortalLabel TitleSmall" text="#Rarity_Immortal" />
+				<Panel class="ChoiceItemBorder" hittest="false" />
+				<Panel class="ItemRarityContainer">
+					<Panel class="ItemRarityBackgroundColor" hittest="false" />
+					<Panel class="ItemRarityContainerOverlay" hittest="false" />
+				</Panel>
+				<Panel class="ItemInfo">
+					<Label class="HeroName LabelSmall" text="{s:hero_name}" />
+					<Label class="ItemName" text="#DOTA_econ_item_details_item_name" />
+					<Button class="ButtonPrimary Gold" id="ClaimButton">
+						<Label text="#DOTA_Compendium2025_ItemChoice_ButtonLabel" />
+					</Button>
+					<Panel class="HorizontalRule OwnedOnly" />
+					<Label class="AlreadyOwned OwnedOnly LabelLarge" text="#DOTA_Compendium2025_ItemChoice_AlreadyOwned" onmouseover="UIShowTextTooltip( &apos;#DOTA_StoreItem_AlreadyOwned&apos; )" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+				<Button id="InfoButton" onmouseover="UIShowTextTooltip( #Notification_ViewDetails )" onmouseout="UIHideTextTooltip()">
+					<Image class="InfoIconImage" src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Button>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTADBPopupQuarteroItemClaimPopup popupbackground="dim" oncancel="UIPopupButtonClicked()" class="Season_Winter2025">
+		<Panel class="TopDash" />
+		<Panel class="PopupContents">
+			<Panel class="BackgroundImage" />
+			<Panel class="PopupBorder" hittest="false" />
+			<DOTAParticleScenePanel class="BackgroundFX" hittest="false" particleName="particles/ui/events/quartero/quartero_rewardline_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+			<Panel class="PageHeaderContainer">
+				<Label class="PageTitle" text="#DOTA_Compendium2025_ItemChoice_Title" />
+				<Label class="PageSubtitle BodyMedium" text="#DOTA_Compendium2025_ItemChoice_SubTitle" />
+				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel class="ContentsContainer">
+				<Image id="QuarteroArtStandard" class="QuarteroArt" hittest="false" defaultsrc="s2r://panorama/images/events/seasonal/visual_novel/portraits/quartero_winter_2025/choosereward_quartero_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image id="QuarteroArtHighValue" class="QuarteroArt" hittest="false" defaultsrc="s2r://panorama/images/events/seasonal/visual_novel/portraits/quartero_winter_2025/choosereward_quartero_gold_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel id="ItemContainer" />
+			</Panel>
+			<ToggleButton id="OwnedToggle" class="AllowDuplicatesCheckbox" text="#DOTA_Compendium2025_ItemChoice_AllowDuplicates" onactivate="PlaySoundEffect( quartero.allow_duplicates.toggle ) DOTAQuarteroToggleOwnedItems()" />
+		</Panel>
+		<Panel class="TopDash" />
+	</DOTADBPopupQuarteroItemClaimPopup>
+</root>

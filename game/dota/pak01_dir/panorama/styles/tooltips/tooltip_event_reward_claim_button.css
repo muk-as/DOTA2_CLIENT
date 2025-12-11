@@ -1,22 +1,47 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
-#RewardTooltip #LeftArrow
+.Season_Fall2025 #Contents
 {
-	background-image: url("s2r://panorama/images/tooltips/tooltip_arrow_left_png.vtex");
-	wash-color: #2c2720;
-	margin-right: -5px;
+	background-color: #2d2a21;
 }
 
-#RewardTooltip #RightArrow
+.Season_Fall2025 #RewardText
 {
-	background-image: url("s2r://panorama/images/tooltips/tooltip_arrow_right_png.vtex");
-	wash-color: #2c2720;
-	margin-left: -2px;
+	color: gradient( linear, 0% 30%, 0% 140%, from( #fff0d8 ), to( #bf9e71 ) );
+}
+
+.Season_Fall2025 #RewardClaimableAtText,.Season_Fall2025 #DialogReplayableText
+{
+	color: gradient( linear, 0% 50%, 0% 100%, from( #FCD69C ), to( rgb(177, 152, 113)) );
+}
+
+.Season_Fall2025 #RewardClaimableText
+{
+	text-shadow: 0px 0px 12px rgba(255, 208, 99, 0.5);
+}
+
+.Season_Winter2025 #Contents
+{
+	background-color: #1d282e;
+}
+
+.Season_Winter2025 #RewardText
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #dff9ff ) );
+}
+
+.Season_Winter2025 #RewardClaimableAtText,.Season_Winter2025 #DialogReplayableText
+{
+	color: gradient( linear, 0% 30%, 0% 140%, from( #acdfff ), to( #74a7d8 ) );
+}
+
+.Season_Winter2025 #RewardClaimableText
+{
+	text-shadow: 0px 0px 12px rgba(99, 193, 255, 0.5);
 }
 
 #Contents
 {
-	background-color: #2d2a21;
 	box-shadow: 0px 0px 10px 10.0 #000000;
 	padding: 10px;
 	width: 300px;
@@ -28,12 +53,11 @@
 	width: 100%;
 	font-family: titleFont;
 	text-align: center;
-	color: gradient( linear, 0% 50%, 0% 100%, from( #FCD69C ), to( rgb(177, 152, 113)) );
 	font-size: 18px;
 	font-weight: normal;
 	vertical-align: top;
 	letter-spacing: 0.25px;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 0px 2px 12px black;
 	margin-bottom: 5px;
 }
 
@@ -47,7 +71,7 @@
 	font-weight: normal;
 	vertical-align: top;
 	letter-spacing: 0.25px;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 0px 2px 8px black;
 	margin-bottom: 5px;
 	visibility: collapse;
 }
@@ -67,7 +91,7 @@
 	font-weight: normal;
 	vertical-align: top;
 	letter-spacing: 0.25px;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 0px 2px 8px black;
 	margin-bottom: 5px;
 	visibility: collapse;
 }
@@ -89,11 +113,6 @@
 .HasImage #Contents #ImageContainer,.HasVideo #Contents #ImageContainer
 {
 	visibility: visible;
-}
-
-.IsItemReward.HasImage #Contents #ImageContainer
-{
-	visibility: collapse;
 }
 
 #Contents #ImageContainer #RewardImage
@@ -121,15 +140,31 @@
 	visibility: visible;
 }
 
+#Contents #ImageContainer .HighValueFX
+{
+	width: 100%;
+	height: width-percentage( 67% );
+	vertical-align: center;
+	-s2-mix-blend-mode: screen;
+	opacity-mask: url("s2r://panorama/images/events/seasonal/masks/antique_fx_mask_psd.vtex");
+	brightness: 2;
+	visibility: collapse;
+}
+
+.HighValue #Contents #ImageContainer .HighValueFX
+{
+	visibility: visible;
+}
+
 #Contents #RewardClaimableText
 {
 	width: 100%;
 	text-align: center;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: bold;
-	letter-spacing: 1.25px;
-	color: #e2d3bc;
-	text-shadow: 1px 1px 2px black;
+	letter-spacing: 1.5px;
+	color: gradient( linear, 0% 30%, 0% 140%, from( #fbe4c2 ), to( #6B5C46 ) );
+	color: white;
 	vertical-align: top;
 	visibility: collapse;
 }
@@ -137,18 +172,21 @@
 .Claimable #Contents #RewardClaimableText
 {
 	visibility: visible;
+	animation-name: GlowRewardClaimableText;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
 }
 
 #Contents #DialogReplayableText
 {
 	width: 100%;
 	text-align: center;
-	font-family: titleFont;
-	font-size: 11px;
-	letter-spacing: 1.7px;
-	color: #b9a486;
+	font-size: 13px;
+	letter-spacing: 1.5px;
 	font-weight: normal;
 	vertical-align: top;
+	text-shadow: 0px 2px 8px black;
 	visibility: collapse;
 }
 
@@ -159,14 +197,21 @@
 
 #Contents #RewardClaimedText
 {
-	width: 100%;
+	background-image: url("s2r://panorama/images/control_icons/24px/check.vsvg");
+	background-size: 14px;
+	background-position: 0px 1px;
+	background-repeat: no-repeat;
+	padding-left: 16px;
+	horizontal-align: center;
 	text-align: center;
-	font-family: titleFont;
-	font-size: 11px;
-	letter-spacing: 1.7px;
-	color: #b9a486;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	color: white;
+	wash-color: #6ec187;
 	font-weight: normal;
 	vertical-align: top;
+	text-shadow: 0px 2px 8px black;
+	margin-bottom: 2px;
 	visibility: collapse;
 }
 
@@ -179,16 +224,29 @@
 {
 	width: 100%;
 	text-align: center;
-	font-family: titleFont;
-	font-size: 11px;
-	letter-spacing: 1.7px;
-	color: gradient( linear, 0% 30%, 0% 140%, from( #fbe4c2 ), to( #6B5C46 ) );
+	font-size: 13px;
+	letter-spacing: 1.5px;
 	font-weight: normal;
 	vertical-align: top;
+	text-shadow: 0px 2px 8px black;
 }
 
 .Claimable #Contents #RewardClaimableAtText,.AlreadyClaimed #Contents #RewardClaimableAtText
 {
 	visibility: collapse;
+}
+
+@keyframes 'GlowRewardClaimableText'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	100%
+	{
+		brightness: 2;
+	}
+	
 }
 

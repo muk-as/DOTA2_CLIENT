@@ -1,5 +1,52 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
+.Season_Fall2025 #node_background
+{
+	background-color: rgb(14, 11, 9);
+}
+
+.Season_Fall2025 #node_outline
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffdbaa ), to( #c69653 ) );
+}
+
+.Season_Fall2025 .Claimable #node_background,.Season_Fall2025 .ClaimableAfterward #node_background
+{
+	background-color: gradient( linear, 0% 20%, 0% 80%, from( #a27424 ), to( #ffc34b ) );
+}
+
+.Season_Fall2025 #reward_level_text
+{
+	color: gradient(linear, 0% 30%, 0% 80%, from(#c9ae84), to(#937a54));
+}
+
+DOTAEventRewardClaimButton.Season_Fall2025:not(.Achieved) .ShardsIcon
+{
+	visibility: visible;
+}
+
+.Season_Winter2025 #node_background
+{
+	background-color: rgb(9, 10, 14);
+}
+
+.Season_Winter2025 #node_outline
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #efe7c0 ), to( #606046 ) );
+}
+
+.Season_Winter2025 .Claimable #node_background,.Season_Winter2025 .ClaimableAfterward #node_background
+{
+	background-color: gradient( linear, 0% 10%, 0% 90%, from( #193640 ), color-stop( 0.5, #33687a ), to( #458fae ) );
+}
+
+.Season_Winter2025 #reward_level_text
+{
+	color: gradient(linear, 0% 30%, 0% 80%, from(#d6d3af), to(#9c9980));
+}
+
+@define OffsetVertical: -32px;
+@define OffsetHorizontal: -9px;
 DOTAEventRewardClaimButton
 {
 	tooltip-position: bottom;
@@ -41,6 +88,11 @@ DOTAEventRewardClaimButton.Replayable:hover
 	brightness: 1.2;
 }
 
+DOTAEventRewardClaimButton.HighValue:not(.AlreadyClaimed)
+{
+	margin-right: 4px;
+}
+
 .ButtonContainer
 {
 	width: 36px;
@@ -49,16 +101,33 @@ DOTAEventRewardClaimButton.Replayable:hover
 	overflow: noclip;
 }
 
+.ShardsIcon
+{
+	width: 16px;
+	height: 16px;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 3px;
+	visibility: collapse;
+	background-image: dotaPlusCurrencySmallIcon;
+	background-size: contain;
+	background-position: center;
+}
+
 #reward_level_text
 {
 	horizontal-align: center;
 	vertical-align: center;
-	color: gradient(linear, 0% 30%, 0% 80%, from(#c9ae84), to(#937a54));
 	text-shadow: 0px 2px 8px 4 rgba(0, 0, 0, 0.2);
 	font-size: 16px;
 	text-align: center;
 	transition-property: brightness;
 	transition-duration: 0.15s;
+}
+
+.HighValue:not(.AlreadyClaimed) #reward_level_text
+{
+	font-size: 22px;
 }
 
 .Claimable #reward_level_text
@@ -68,12 +137,11 @@ DOTAEventRewardClaimButton.Replayable:hover
 
 .AlreadyClaimed #reward_level_text
 {
-	color: gradient(linear, 0% 30%, 0% 80%, from(#ffe7c1), to(#cbaa78));
+	color: rgb(184, 255, 225);
 }
 
 .ClaimableAfterward #reward_level_text
 {
-	color: gradient(linear, 0% 30%, 0% 80%, from(#ffe7c1), to(#cbaa78));
 	color: white;
 }
 
@@ -82,16 +150,41 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 	visibility: visible;
 }
 
+.HighValueFX
+{
+	width: 130%;
+	width: 44px;
+	transform: rotateZ(180deg);
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
+	opacity-mask: url("s2r://panorama/images/events/seasonal/icons/event_reward_button_outline_big_mask_png.vtex");
+	-s2-mix-blend-mode: screen;
+	brightness: 3;
+	visibility: collapse;
+}
+
+.HighValue:not(.AlreadyClaimed) .HighValueFX
+{
+	visibility: visible;
+}
+
 #node_background
 {
 	horizontal-align: center;
 	vertical-align: center;
-	background-color: rgba(0, 0, 0, 0.6);
 	width: 36px;
 	height: 36px;
-	opacity-mask: url("s2r://panorama/images/events/quartero_fall/event_reward_button_mask_png.vtex");
-	transition-property: brightness;
+	opacity-mask: url("s2r://panorama/images/events/seasonal/icons/event_reward_button_mask_png.vtex");
+	transition-property: brightness, background-color;
 	transition-duration: 0.15s;
+}
+
+.HighValue:not(.AlreadyClaimed) #node_background
+{
+	width: 44px;
+	height: 44px;
 }
 
 .Claimable:hover #node_background
@@ -106,13 +199,52 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 
 .Claimable #node_background
 {
-	background-color: gradient( linear, 0% 20%, 0% 80%, from( #a27424 ), to( #ffc34b ) );
+	brightness: 1.2;
 }
 
 .ClaimableAfterward #node_background
 {
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #926820 ), to( #f3bb4c ) );
 	brightness: 0.2;
+}
+
+#node_outline
+{
+	width: 36px;
+	height: 36px;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 1px 4px black;
+	background-image: url("s2r://panorama/images/events/seasonal/icons/event_reward_button_outline_png.vtex");
+	background-size: cover;
+	transition-property: brightness;
+	transition-duration: 0.15s;
+	brightness: 0.2;
+}
+
+.HighValue:not(.AlreadyClaimed) #node_outline
+{
+	width: 44px;
+	height: 44px;
+	background-image: url("s2r://panorama/images/events/seasonal/icons/event_reward_button_outline_big_png.vtex");
+	brightness: 2;
+	img-shadow: 0px 0px 10px rgba(255, 195, 138, 0.3);
+}
+
+.Claimable #node_outline
+{
+	img-shadow: none;
+	brightness: 2;
+}
+
+.ClaimableAfterward #node_outline
+{
+	brightness: 1;
+}
+
+.AlreadyClaimed #node_outline
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #7dc793 ), to( #406d48 ) );
+	brightness: 1;
 }
 
 .CheckIconContainer
@@ -123,7 +255,7 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 	border-radius: 50%;
 	padding: 3px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #191510 ), to( #000000 ) );
-	border: 1px solid rgba(255, 216, 138, 0.05);
+	border: 1px solid rgba(206, 255, 225, 0.05);
 	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.8);
 }
 
@@ -142,6 +274,12 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 {
 	horizontal-align: right;
 	vertical-align: bottom;
+}
+
+.HighValue:not(.AlreadyClaimed) .DialogueIconContainer
+{
+	x: 4px;
+	y: 2px;
 }
 
 .DialogueIconContainer .DialogueIcon,.DialogueIconContainer .DialogueIconClaimable
@@ -167,35 +305,6 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 	visibility: visible;
 }
 
-#node_outline
-{
-	width: 36px;
-	height: 36px;
-	horizontal-align: center;
-	vertical-align: center;
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #9d815a ), to( #503f28 ) );
-	img-shadow: 0px 1px 4px black;
-	transition-property: brightness;
-	transition-duration: 0.15s;
-}
-
-.Claimable #node_outline
-{
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffdbaa ), to( #ffcb82 ) );
-	img-shadow: none;
-	brightness: 1.6;
-}
-
-.ClaimableAfterward #node_outline
-{
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffdbaa ), to( #a57e48 ) );
-}
-
-.AlreadyClaimed #node_outline
-{
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffdbaa ), to( #614f36 ) );
-}
-
 #background_particles
 {
 	horizontal-align: center;
@@ -203,6 +312,7 @@ DOTAEventRewardClaimButton:hover #reward_level_text
 	width: 300%;
 	height: 300%;
 	visibility: collapse;
+	-s2-mix-blend-mode: screen;
 }
 
 .Claimable #background_particles

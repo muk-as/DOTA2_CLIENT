@@ -2,25 +2,27 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_background_seasonal_reward_line_shared.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_background_seasonal_reward_line_fall_2025.vcss_c" />
 	</styles>
 	<scripts>
 		<include src="s2r://panorama/scripts/dashboard_background_seasonal_reward_line_fall_2025.vts_c" />
 	</scripts>
-	<Panel class="SeasonalRewardLineFall2025Background">
+	<Panel class="SeasonalRewardLineBackground">
 		<DOTAFrontpageSeasonalRewards id="SeasonalRewardsDB" eventID="EVENT_ID_FALL_2025" easterLinesNovel="seasonal_quartero" easterLinesChapter="generic">
-			<Image class="BackgroundImage" src="s2r://panorama/images/events/seasonal/backgrounds/fall_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			<Panel class="TempVDPIHack" />
+			<Image class="BackgroundImage" scaling="stretch-to-fit-preserve-aspect" />
 			<Panel id="ContentsContainer">
 				<Panel class="EventFramingContainer">
-					<Image class="EventFraming Left" src="s2r://panorama/images/events/quartero_fall/event_framing_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-					<Image class="EventFraming Right" src="s2r://panorama/images/events/quartero_fall/event_framing_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="EventFraming Left" src="s2r://panorama/images/events/seasonal/artwork/event_framing_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="EventFraming Right" src="s2r://panorama/images/events/seasonal/artwork/event_framing_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				</Panel>
 				<DOTAParticleScenePanel class="TopRightGodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
 				<DOTAParticleScenePanel class="ParticleWindowBG" hittest="false" particleName="particles/ui/ui_autumn_leaves_fullscreen.vpcf" renderdeferred="true" particleonly="false" renderDepth="true" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="90" />
 				<Panel id="ForegroundContainer">
-					<Image class="BackgroundImageGlow" src="s2r://panorama/images/backgrounds/cc2024_dashboard_backround_glow_png.vtex" />
 					<DOTAParticleScenePanel class="SmokeFXBottom" particleName="particles/ui/events/seasonal/smoke.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 200 0" lookAt="0 0 0" fov="30" squarePixels="true" />
-					<Image class="FloorBackgroundImage" src="s2r://panorama/images/events/seasonal/backgrounds/floor_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="FloorBackgroundImage" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="BackgroundImageGlow" />
 					<Panel class="HeroesSceneModels">
 						<Panel id="WitchDoctorRewardDetailsContainer" class="RewardDetailsContainer">
 							<Panel class="HeroShadow" />
@@ -85,24 +87,8 @@
 						</Panel>
 					</Panel>
 					<Panel class="OtherRewardsContainer">
-						<Panel id="ParticleRewardsContainer">
-							<Label id="ParticleRewardsText" text="#DOTA_Fall2025_SeasonalParticlesTitle" />
-							<Panel id="ParticleRewardsButtonContainer" class="RewardButtonContainer">
-								<DOTAEventRewardClaimButton id="reward_fx_01" actionID="20001" />
-								<DOTAEventRewardClaimButton id="reward_fx_02" actionID="20002" />
-								<DOTAEventRewardClaimButton id="reward_fx_03" actionID="20003" />
-								<DOTAEventRewardClaimButton id="reward_fx_04" actionID="20004" />
-								<DOTAEventRewardClaimButton id="reward_fx_05" actionID="20005" />
-								<DOTAEventRewardClaimButton id="reward_fx_06" actionID="20006" />
-								<DOTAEventRewardClaimButton id="reward_fx_07" actionID="20007" />
-								<DOTAEventRewardClaimButton id="reward_fx_08" actionID="20008" />
-								<DOTAEventRewardClaimButton id="reward_fx_09" actionID="20009" />
-								<DOTAEventRewardClaimButton id="reward_fx_10" actionID="20010" />
-								<DOTAEventRewardClaimButton id="reward_fx_11" actionID="20011" />
-							</Panel>
-						</Panel>
 						<Panel id="RandomRewardsContainer">
-							<Label id="RandomRewardsText" text="#DOTA_Fall2025_RandomHeroSets" />
+							<Label id="RandomRewardsText" class="RewardCategoryTitles" text="#DOTA_Fall2025_RandomHeroSets" />
 							<Panel id="RandomRewardsButtonContainer" class="RewardButtonContainer">
 								<DOTAEventRewardClaimButton id="random_reward_1" actionID="30001" />
 								<DOTAEventRewardClaimButton id="random_reward_2" actionID="30002" />
@@ -114,19 +100,17 @@
 						</Panel>
 					</Panel>
 					<Panel id="TimeLeft">
-						<Panel class="Dash Left" />
 						<Label id="TimeLeftLabel" class="TimeLeftLabels" text="#DOTA_Seasonal_Fall_2025_Ends_On" />
 						<Label id="TimeLeftDate" class="TimeLeftLabels" text="{t:l:event_end_date}" />
 						<Label id="Completed" class="TimeLeftLabels" text="#DOTA_SeasonPass_Rewards_Ended" />
-						<Panel class="Dash Right" />
 					</Panel>
 					<DOTAScenePanel class="RewardsForegroundFX" map="scenes/fall_2025_rewardfx" camera="camera_1" antialias="true" particleonly="false" hittest="false" />
 					<Panel class="TitleAndLogo">
-						<Image id="QuarteroLogoPortrait" src="s2r://panorama/images/events/seasonal/quartero_logo_portrait_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Image id="QuarteroLogoPortrait" src="s2r://panorama/images/events/seasonal/artwork/quartero_logo_portrait_fall_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 						<Panel class="QuarteroEasterEggHitBox" onactivate="DOTAFrontPageSeasonalRewardsQuarteroEaster()" onmouseover="DOTAFrontPageSeasonalRewardsQuarteroFaceMouseOver();" onmouseout="DOTAFrontPageSeasonalRewardsQuarteroFaceMouseOut();" />
 						<Panel class="TitleContainer">
 							<Label id="SeasonTitle" class="TitleMedium" html="true" text="#DOTA_Reward_Line_Fall_2025_Title" onactivate="DOTAShowSplashAdPopup( &apos;seasonal_fall_2025&apos; )" />
-							<Label class="IntroText" html="true" text="#DOTA_Seasonal_Fall_2025_Description" />
+							<Label id="IntroText" class="RewardCategoryTitles" html="true" text="#DOTA_Past_Seasonal_Event_Claim_Text" />
 						</Panel>
 						<DOTAEventStatus class="Quartero" eventID="EVENT_ID_FALL_2025" />
 					</Panel>

@@ -22,7 +22,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE = 0x0,
             // MScriptDescription "GetModifierPreAttack_BonusDamage_Proc GetModifierPreAttack_BonusDamage_Target"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET = 0x1,
-            // MScriptDescription "m GetModifierPreAttack_BonusDamage_Proc"
+            // MScriptDescription " GetModifierPreAttack_BonusDamage_Proc"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC = 0x2,
             // MScriptDescription "GetModifierBaseAttack_BonusDamage GetModifierPreAttack_BonusDamagePostCrit"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT = 0x3,
@@ -48,7 +48,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_INVISIBILITY_LEVEL = 0xd,
             // MScriptDescription "GetModifierPersistentInvisibility GetModifierInvisibilityAttackBehaviorException"
             MODIFIER_PROPERTY_INVISIBILITY_ATTACK_BEHAVIOR_EXCEPTION = 0xe,
-            // MScriptDescription "n GetModifierPersistentInvisibility"
+            // MScriptDescription " GetModifierPersistentInvisibility"
             MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY = 0xf,
             // MScriptDescription "GetModifierMoveSpeedOverride GetModifierMoveSpeedBonus_Constant"
             MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT = 0x10,
@@ -98,7 +98,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT = 0x26,
             // MScriptDescription "gold_amount GetModifierBaseAttackTimeConstant_Adjust"
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST = 0x27,
-            // MScriptDescription "p GetModifierBaseAttackTimePercentage"
+            // MScriptDescription " GetModifierBaseAttackTimePercentage"
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE = 0x28,
             // MScriptDescription "GetModifierBonusDamageOutgoing_Percentage GetModifierAttackPointConstant"
             MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT = 0x29,
@@ -116,7 +116,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_CREEP = 0x2f,
             // MScriptDescription "GetModifierSpellAmplify_PercentageUnique GetModifierSpellAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE = 0x30,
-            // MScriptDescription "Pq GetModifierSpellAmplify_PercentageUnique"
+            // MScriptDescription "P GetModifierSpellAmplify_PercentageUnique"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE = 0x31,
             // MScriptDescription "GetModifierHealAmplify_PercentageSource GetModifierSpellAmplify_PercentageTarget"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET = 0x32,
@@ -142,7 +142,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE = 0x3c,
             // MScriptDescription "GetModifierBaseDamageOutgoing_PercentageUnique GetModifierBaseDamageOutgoing_Percentage"
             MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE = 0x3d,
-            // MScriptDescription "0r GetModifierBaseDamageOutgoing_PercentageUnique"
+            // MScriptDescription "0 GetModifierBaseDamageOutgoing_PercentageUnique"
             MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE = 0x3e,
             // MScriptDescription "GetModifierIncomingPhysicalDamage_Percentage GetModifierIncomingDamage_Percentage"
             MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE = 0x3f,
@@ -276,7 +276,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE = 0x7f,
             // MScriptDescription "GetModifierPercentageCasttime GetModifierPercentageCooldownOngoing"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING = 0x80,
-            // MScriptDescription "v GetModifierPercentageCasttime"
+            // MScriptDescription " GetModifierPercentageCasttime"
             MODIFIER_PROPERTY_CASTTIME_PERCENTAGE = 0x81,
             // MScriptDescription "GetModifierPercentageManacost GetModifierPercentageAttackAnimTime"
             MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE = 0x82,
@@ -340,7 +340,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MIN_HEALTH = 0x9f,
             // MScriptDescription "GetAbsoluteNoDamagePhysical GetMinMana"
             MODIFIER_PROPERTY_MIN_MANA = 0xa0,
-            // MScriptDescription " y GetAbsoluteNoDamagePhysical"
+            // MScriptDescription "  GetAbsoluteNoDamagePhysical"
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL = 0xa1,
             // MScriptDescription "GetAbsoluteNoDamagePure GetAbsoluteNoDamageMagical"
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL = 0xa2,
