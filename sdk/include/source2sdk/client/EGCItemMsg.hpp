@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 133
+        // Enumerator count: 135
         // Alignment: 4
         // Size: 0x_
         enum class EGCItemMsg : std::uint32_t
@@ -151,6 +151,8 @@ namespace source2sdk
             k_EMsgClientToGCPurchaseChargeCostItemsResponse = 0xa38,
             k_EMsgClientToGCCancelUnfinalizedTransactions = 0xa39,
             k_EMsgClientToGCCancelUnfinalizedTransactionsResponse = 0xa3a,
+            k_EMsgClientToGCRecycleMultipleItems = 0xa3b,
+            k_EMsgClientToGCRecycleMultipleItemsResponse = 0xa3c,
         };
     };
 };

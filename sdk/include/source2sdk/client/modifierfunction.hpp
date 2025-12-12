@@ -116,7 +116,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_CREEP = 0x2f,
             // MScriptDescription "GetModifierSpellAmplify_PercentageUnique GetModifierSpellAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE = 0x30,
-            // MScriptDescription "P GetModifierSpellAmplify_PercentageUnique"
+            // MScriptDescription " GetModifierSpellAmplify_PercentageUnique"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE = 0x31,
             // MScriptDescription "GetModifierHealAmplify_PercentageSource GetModifierSpellAmplify_PercentageTarget"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET = 0x32,
@@ -142,7 +142,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE = 0x3c,
             // MScriptDescription "GetModifierBaseDamageOutgoing_PercentageUnique GetModifierBaseDamageOutgoing_Percentage"
             MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE = 0x3d,
-            // MScriptDescription "0 GetModifierBaseDamageOutgoing_PercentageUnique"
+            // MScriptDescription " GetModifierBaseDamageOutgoing_PercentageUnique"
             MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE = 0x3e,
             // MScriptDescription "GetModifierIncomingPhysicalDamage_Percentage GetModifierIncomingDamage_Percentage"
             MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE = 0x3f,
@@ -340,7 +340,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MIN_HEALTH = 0x9f,
             // MScriptDescription "GetAbsoluteNoDamagePhysical GetMinMana"
             MODIFIER_PROPERTY_MIN_MANA = 0xa0,
-            // MScriptDescription "  GetAbsoluteNoDamagePhysical"
+            // MScriptDescription "0 GetAbsoluteNoDamagePhysical"
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL = 0xa1,
             // MScriptDescription "GetAbsoluteNoDamagePure GetAbsoluteNoDamageMagical"
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL = 0xa2,
@@ -526,7 +526,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL = 0xfc,
             // MScriptDescription "GetModifierAbilityLayout GetModifierOverrideAbilitySpecialValue"
             MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE = 0xfd,
-            // MScriptDescription " GetModifierAbilityLayout"
+            // MScriptDescription "  GetModifierAbilityLayout"
             MODIFIER_PROPERTY_ABILITY_LAYOUT = 0xfe,
             // MScriptDescription "OnKill OnDominated"
             MODIFIER_EVENT_ON_DOMINATED = 0xff,
@@ -576,7 +576,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE = 0x115,
             // MScriptDescription "OnPreDebuffApplied OnAttemptProjectileDodge"
             MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE = 0x116,
-            // MScriptDescription " OnPreDebuffApplied"
+            // MScriptDescription "P OnPreDebuffApplied"
             MODIFIER_EVENT_ON_PREDEBUFF_APPLIED = 0x117,
             // MScriptDescription "GetModifierSpellRedirectTarget GetModifierPercentageCooldownStacking"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING = 0x118,
@@ -708,7 +708,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ADDITIONAL_NEUTRAL_ITEM_DROPS = 0x157,
             // MScriptDescription "GetModifierHPRegenMultiplierPreAmplification GetModifierKillStreakBonusGoldPercentage"
             MODIFIER_PROPERTY_KILL_STREAK_BONUS_GOLD_PERCENTAGE = 0x158,
-            // MScriptDescription "GetModifierHeroFacetOverride GetModifierHPRegenMultiplierPreAmplification"
+            // MScriptDescription "GetModifierHPRegenMultiplierPreAmplification"
             MODIFIER_PROPERTY_HP_REGEN_MULTIPLIER_PRE_AMPLIFICATION = 0x159,
             // MScriptDescription "m_bHideOnKill GetModifierHeroFacetOverride"
             MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x15a,
@@ -746,7 +746,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PHYSICAL_LIFESTEAL = 0x16a,
             // MScriptDescription "OnPureDamageCalculated GetModifierProperty_MagicalLifesteal"
             MODIFIER_PROPERTY_MAGICAL_LIFESTEAL = 0x16b,
-            // MScriptDescription "p OnPureDamageCalculated"
+            // MScriptDescription "5 OnPureDamageCalculated"
             MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED = 0x16c,
             // MScriptDescription "GetModifierNeutralEnhancementOptions GetModifierNeutralTrinketOptions"
             MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS = 0x16d,
