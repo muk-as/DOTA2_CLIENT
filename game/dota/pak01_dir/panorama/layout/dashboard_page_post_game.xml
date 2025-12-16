@@ -118,7 +118,7 @@
 			<Panel class="DetailsTableHeader">
 				<DOTAHeroImage id="DetailsDamageHeroSource" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
 				<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
-				<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+				<Label id="DamageTotalColumnHeader" class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowBasic">
@@ -169,9 +169,10 @@
 			</Panel>
 		</snippet>
 		<snippet name="DetailsBuffTableHeader">
-			<Panel class="DetailsBuffHeader">
+			<Panel class="DetailsTableHeader">
 				<DOTAHeroImage id="DetailsBuffHeroSource" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
 				<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
+				<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsBuffTableRowAbility">
@@ -1199,7 +1200,14 @@
 					</Panel>
 					<Panel id="DetailsMVP" class="DetailsPanel" />
 					<Panel id="DetailsBuff" class="DetailsPanel">
-						<Panel id="DetailsBuffTable" />
+						<Panel id="DetailsDebuffsTable" class="DetailsTable" />
+						<Panel id="DetailsBuffsTable" class="DetailsTable" />
+						<Panel id="DetailsSelfBuffsTable" class="DetailsTable" />
+						<Panel id="BuffDisplayOptionsContainer">
+							<Label text="#DOTA_PlusPostGame_DebuffsFilter_Label" />
+							<RadioButton class="BuffDisplayOption" group="Direction" text="#DOTA_PlusPostGame_DebuffsFilter_Duration" onactivate="DOTAPostGameChangeBuffsViewMode( 0 )" selected="true" />
+							<RadioButton class="BuffDisplayOption" group="Direction" text="#DOTA_PlusPostGame_DebuffsFilter_Count" onactivate="DOTAPostGameChangeBuffsViewMode( 1 )" />
+						</Panel>
 					</Panel>
 					<Panel id="DetailsPersonalPerf" class="DetailsPanel">
 						<Panel id="GraphLabels">

@@ -49,7 +49,7 @@ function AnimateTokenProgress(panel, actions, data, hero_id) {
         var strTokenCountString = '' + flHalvedTokenCount;
         tokenPanel.SetDialogVariable("token_count_string", strTokenCountString);
         tokenPanel.SetDialogVariableLocString("token_name", token.token_name);
-        var uiToken = tokenPanel.FindChildInLayoutFile("CrownfallToken");
+        var uiToken = tokenPanel.FindChildInLayoutFile("OverworldToken");
         uiToken.overworld_id = data.overworld_id;
         uiToken.token_id = token.token_id;
     }
@@ -97,7 +97,7 @@ function AnimateTokenProgress(panel, actions, data, hero_id) {
         var bSnippetLoaded = tokenPanel.BLoadLayoutSnippet("CrownfallRewardTokenContainer");
         if (!bSnippetLoaded)
             continue;
-        var uiToken = tokenPanel.FindChildInLayoutFile("CrownfallToken");
+        var uiToken = tokenPanel.FindChildInLayoutFile("OverworldToken");
         uiToken.overworld_id = data.overworld_id;
         uiToken.token_id = token.token_id;
     }

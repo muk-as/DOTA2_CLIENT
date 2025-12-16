@@ -7,52 +7,27 @@
 	<scripts>
 		<include src="s2r://panorama/scripts/hud_hero_demo.vjs_c" />
 	</scripts>
+	<snippets>
+		<snippet name="NeutralSpawner">
+			<Button class="NeutralSpawnButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnNeutral, )">
+				<Image id="NeutralImage" class="NeutralImage" src="s2r://panorama/images/heroes/npc_dota_neutral_kobold_taskmaster_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+			</Button>
+		</snippet>
+	</snippets>
 	<Panel hittest="false" class="CustomHudRoot">
 		<Panel id="SelectHeroContainer" acceptsfocus="true" oncancel="EscapeHeroPickerSearch()">
 			<DOTAUIHeroPicker id="HeroPicker" />
 			<Button id="CancelButton" class="CloseButton" acceptsjoyfocus="true" onactivate="CloseHeroPicker()" />
 		</Panel>
-		<Panel class="ControlPanel">
-			<Panel class="ControlPanelContainer">
-				<Panel id="Header">
-					<Panel class="HeroImageContainer">
-						<DOTAHeroImage id="PlayerHeroImage" heroimagestyle="landscape" />
-						<DOTAUIHeroFacetDropdown id="HeroFacetDropdown" class="Small" />
-					</Panel>
-					<Panel class="HeroDemoTextContainer">
-						<Panel class="HeroDemoNameContainer">
-							<Label id="HeroDemoHeroName" text="{s:hero_name}" />
-						</Panel>
-						<TextButton class="ChangeLoadoutButton" acceptsjoyfocus="true" onactivate="DOTAShowDashboardPage( DOTAShowDemoHeroPage() )" text="#SelectCosmetics_Button" />
-					</Panel>
-					<Button id="PlayerHeroPickerButton" class="HeroPickerArrow" onactivate="ToggleHeroPicker( true )" />
-				</Panel>
-				<Panel id="SpawnUnitsCategory" class="Category">
-					<Label class="CategoryHeader" text="#SpawnUnits_ButtonCategory" />
+		<Panel class="AdvancedSettingsContainer" acceptsfocus="true" hittest="false">
+			<Button id="CloseButton" class="ButtonPrimary Small DarkGrey" onactivate="CloseAdvancedSettings()">
+				<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+			</Button>
+			<Panel id="AdvancedSpawnSettings" class="AdvancedSettings" acceptsfocus="true">
+				<Panel id="StateCategory" class="AdvancedCategory">
+					<Label class="CategoryHeader" text="#Runes_ButtonCategory" />
 					<Panel class="CategoryButtonContainer">
-						<Panel class="HeroDetailsContainer">
-							<Panel id="SpawnHeroButton" class="Row DemoButton" onactivate="ToggleHeroPicker( false )" acceptsjoyfocus="true">
-								<DOTAHeroImage id="HeroPickerImage" class="HeroImage" heroimagestyle="landscape" />
-								<Label id="SpawnHeroName" text="{s:hero_name}" />
-								<Panel class="HeroPickerArrow" />
-							</Panel>
-							<DOTAUIHeroFacetPicker id="SpawnHeroFacetPicker" autoselect="true" class="Compact" />
-						</Panel>
-						<Panel class="Row">
-							<Button id="SpawnAllyButton" class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnAllyButtonPressed )">
-								<Label text="#Ally_Button" />
-							</Button>
-							<Button id="SpawnEnemyButton" class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnEnemyButtonPressed )">
-								<Label text="#Enemy_Button" />
-							</Button>
-						</Panel>
-						<Panel class="HorizontalRule" />
-						<Panel class="Row">
-							<Button class="DemoButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( DummyTargetButtonPressed )">
-								<Label text="#DummyTarget_Button" />
-							</Button>
-						</Panel>
-						<Panel class="Row">
+						<Panel class="RunesContainer">
 							<Button class="RuneButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnRuneDoubleDamagePressed )" onmouseover="MouseOverRune( &apos;RuneEmoticonDoubleDamage&apos;, &apos;#DOTA_HUD_Rune_DoubleDamage&apos; )" onmouseout="MouseOutRune( &apos;RuneEmoticonDoubleDamage&apos; )">
 								<DOTAEmoticon id="RuneEmoticonDoubleDamage" alias="doubledamage" animating="false" />
 							</Button>
@@ -83,90 +58,247 @@
 						</Panel>
 					</Panel>
 				</Panel>
-				<Panel id="EditUnitsCategory" class="Category">
-					<Label class="CategoryHeader" text="#EditUnits_ButtonCategory" />
+				<Panel id="StateCategory" class="AdvancedCategory">
+					<Panel class="HorizontalRule" />
+					<Label class="CategoryHeader" text="#Creeps_Title" />
+					<Panel style="height: 4px;" />
 					<Panel class="CategoryButtonContainer">
-						<Panel class="Row">
-							<Button id="LevelUpSelectedHeroesButton" class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="LevelUpSelectedHeroes()">
-								<Label text="#LevelUpSelectedHeroes_Button" />
-							</Button>
-							<Button class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="MaxLevelUpSelectedHeroes()">
-								<Label text="#MaxLevelUpSelectedHeroes_Button" />
-							</Button>
-						</Panel>
-						<Panel class="Row">
-							<Button class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="ScepterSelectedHeroes()">
-								<Label text="#ScepterSelectedHeroes_Button" />
-							</Button>
-							<Button class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="ShardSelectedHeroes()">
-								<Label text="#ShardSelectedHeroes_Button" />
-							</Button>
-						</Panel>
-						<Panel class="Row">
-							<Button class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="InvulnerableOn()">
-								<Label text="#InvulnOn_Button" />
-							</Button>
-							<Button class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="InvulnerableOff()">
-								<Label text="#InvulnOff_Button" />
-							</Button>
-						</Panel>
-						<Panel class="Row">
-							<Button class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="ResetSelectedHeroes()">
-								<Label text="#Reset_Button" />
-							</Button>
-							<Button class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="RemoveSelectedHeroes()">
-								<Label text="#RemoveSpawns_Button" />
-							</Button>
-						</Panel>
+						<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnSingleCreepWaveButtonPressed )" onmouseover="UIShowTextTooltip( #SpawnSingleCreepWave_Tooltip )" onmouseout="UIHideTextTooltip()">
+							<Label text="#SpawnCreepWave_Button" />
+						</Button>
 					</Panel>
 				</Panel>
-				<Panel id="GlobalCategory" class="Category">
-					<Label class="CategoryHeader" text="#Global_ButtonCategory" />
+				<Panel id="StateCategory" class="AdvancedCategory">
+					<Panel class="HorizontalRule" />
+					<Label class="CategoryHeader" text="#Neutrals_ButtonCategory" />
+					<Panel class="CreepsContainer">
+						<Label class="SubtitleHeader" text="#SmallCamps_Title" />
+						<Panel id="SmallCampsContainer" class="NeutralsSpawningContainer" />
+					</Panel>
+					<Panel class="CreepsContainer">
+						<Label class="SubtitleHeader" text="#MediumCamps_Title" />
+						<Panel id="MediumCampsContainer" class="NeutralsSpawningContainer" />
+					</Panel>
+					<Panel class="CreepsContainer">
+						<Label class="SubtitleHeader" text="#LargeCamps_Title" />
+						<Panel id="LargeCampsContainer" class="NeutralsSpawningContainer" />
+					</Panel>
+					<Panel class="CreepsContainer">
+						<Label class="SubtitleHeader" text="#AncientCamps_Title" />
+						<Panel id="AncientCampsContainer" class="NeutralsSpawningContainer" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="AdvancedUnitSettings" class="AdvancedSettings" acceptsfocus="true" />
+			<Panel id="AdvancedGlobalSettings" class="AdvancedSettings" acceptsfocus="true">
+				<Panel id="StateCategory" class="Category">
+					<Label class="CategoryHeader" text="#AdditionalSettings_Title" />
+					<Panel class="CategoryButtonContainer">
+						<Panel style="height: 4px;" />
+						<ToggleButton id="AllVisionButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( AllVisionButtonPressed )">
+							<Label class="GlobalSettingsLabel" text="#AllVision_Button" />
+						</ToggleButton>
+						<ToggleButton id="EnableXPButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( EnableXPButtonPressed )">
+							<Label class="GlobalSettingsLabel" text="#EnableXP_Button" />
+						</ToggleButton>
+						<ToggleButton id="EnableRegenButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( EnableRegenButtonPressed )">
+							<Label class="GlobalSettingsLabel" text="#EnableRegen_Button" />
+						</ToggleButton>
+						<Panel style="height: 4px;" />
+					</Panel>
+				</Panel>
+				<Panel id="StateCategory" class="AdvancedCategory TimeScaleCategory">
+					<Panel class="HorizontalRule" />
+					<Label class="CategoryHeader" text="#TimeScale_Title" />
 					<Panel class="CategoryButtonContainer">
 						<Panel class="Row">
-							<ToggleButton id="FreeSpellsButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( FreeSpellsButtonPressed )">
-								<Label text="#FreeSpells_Button" />
-							</ToggleButton>
-							<Button id="RefreshButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( RefreshButtonPressed )" onmouseover="UIShowTextTooltip( #Refresh_Button )" onmouseout="UIHideTextTooltip()">
-								<Panel class="RefreshIcon" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( ChangeSpeedStep, -1 )" onmouseover="UIShowTextTooltip( #SpeedDecrement_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Image src="s2r://panorama/images/control_icons/24px/minus.vsvg" />
 							</Button>
-						</Panel>
-						<Panel class="Row">
-							<ToggleButton id="SpawnCreepsButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnCreepsButtonPressed )">
-								<Label text="#SpawnCreeps_Button" />
-							</ToggleButton>
-							<Button id="SingleCreepWaveButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnSingleCreepWaveButtonPressed )" onmouseover="UIShowTextTooltip( #SpawnSingleCreepWave_Tooltip )" onmouseout="UIHideTextTooltip()">
-								<Panel class="PlusIcon" />
+							<Panel style="width: 4px;" />
+							<Button id="SpeedResetButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( ChangeSpeedStep, 0 )" onmouseover="UIShowTextTooltip( #SpeedReset_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Label text="{s:speed}" />
 							</Button>
-						</Panel>
-						<Panel class="Row">
-							<ToggleButton id="TowersEnabledButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( TowersEnabledButtonPressed )">
-								<Label text="#TowersEnabled_Button" />
-							</ToggleButton>
-						</Panel>
-						<Panel class="Row">
-							<ToggleButton id="NightEnabledButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( ToggleDayNight )">
-								<Label text="#NightEnable_Button" />
-							</ToggleButton>
+							<Panel style="width: 4px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( ChangeSpeedStep, 1 )" onmouseover="UIShowTextTooltip( #SpeedIncrement_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Image src="s2r://panorama/images/control_icons/24px/plus.vsvg" />
+							</Button>
 						</Panel>
 					</Panel>
 				</Panel>
 				<Panel id="StateCategory" class="Category">
+					<Panel class="HorizontalRule" />
 					<Label class="CategoryHeader" text="#GameState_ButtonCategory" />
 					<Panel class="CategoryButtonContainer">
 						<Panel class="Row">
-							<Button id="SaveStateButton" class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="SaveState()">
+							<Button id="SaveStateButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="SaveState()">
 								<Label text="#SaveState_Button" />
 							</Button>
-							<Button id="RestoreStateButton" class="DemoButton RightButton" acceptsjoyfocus="true" onactivate="RestoreState()">
+							<Panel style="width: 4px;" />
+							<Button id="RestoreStateButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="RestoreState()">
 								<Label text="#RestoreState_Button" />
 							</Button>
 						</Panel>
 					</Panel>
 				</Panel>
+			</Panel>
+			<Panel id="AdvancedPartySettings" class="AdvancedSettings" acceptsfocus="true">
+				<Panel id="StateCategory" class="AdvancedCategory TimeScaleCategory">
+					<Label class="CategoryHeader" text="#JoinPermissions_Title" />
+					<Panel class="CategoryButtonContainer">
+						<Panel class="Row">
+							<DropDown id="JoinPermissionsDropDown" oninputsubmit="JoinPermissionsPopupChanged()">
+								<Label id="inviteonly" text="#InviteOnly_Button" onmouseover="UIShowTextTooltip( #InviteOnly_Tooltip )" onmouseout="UIHideTextTooltip()" />
+								<Label id="allfriends" text="#AllFriends_Button" onmouseover="UIShowTextTooltip( #AllFriends_Tooltip )" onmouseout="UIHideTextTooltip()" />
+							</DropDown>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="ControlPanel">
+			<Panel class="ControlPanelContainer">
+				<Panel id="SpawnUnitsCategory" class="Category">
+					<Panel class="CategoryHeaderContainer">
+						<Label class="CategoryHeader" text="#SpawnUnits_ButtonCategory" />
+						<Button class="AdvancedButton ButtonPrimary Small DarkGrey" onactivate="ToggleAdvancedSettings(0)">
+							<Label text="#DOTA_More" />
+							<Image class="AdvancedButtonArrow" src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" />
+						</Button>
+					</Panel>
+					<Panel class="CategoryButtonContainer">
+						<Panel class="HeroDetailsContainer">
+							<Panel id="SpawnHeroButton" onactivate="ToggleHeroPicker( false )" acceptsjoyfocus="true">
+								<DOTAHeroImage id="HeroPickerImage" class="HeroImage" heroimagestyle="landscape" />
+								<Label id="SpawnHeroName" text="{s:hero_name}" />
+								<Image class="HeroPickerArrow" src="s2r://panorama/images/control_icons/24px/caret_down.vsvg" />
+							</Panel>
+							<DOTAUIHeroFacetPicker id="SpawnHeroFacetPicker" autoselect="true" class="Compact" />
+						</Panel>
+						<Panel class="Row">
+							<Button id="SpawnSelfButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="SpawnSelf()">
+								<Label text="#ChangeMyHero_Button" />
+							</Button>
+						</Panel>
+						<Panel class="Row">
+							<Button id="SpawnAllyButton" class="ButtonPrimary RadiantGreen FillWidth" acceptsjoyfocus="true" onactivate="SpawnAlly()">
+								<Label text="#Ally_Button" />
+							</Button>
+							<Panel style="width: 1px;" />
+							<Button id="SpawnEnemyButton" class="ButtonPrimary DireRed FillWidth" acceptsjoyfocus="true" onactivate="SpawnEnemy()">
+								<Label text="#Enemy_Button" />
+							</Button>
+							<Panel style="width: 1px;" />
+							<Button id="SpawnDummyButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( DummyTargetButtonPressed )">
+								<Label text="#DummyTarget_Button" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="HorizontalRule" />
+				<Panel id="EditUnitsCategory" class="Category">
+					<Panel class="CategoryHeaderContainer">
+						<Label class="CategoryHeader" text="#EditUnits_ButtonCategory" />
+					</Panel>
+					<Panel class="CategoryButtonContainer">
+						<Panel class="Row">
+							<Button id="LevelUpSelectedHeroesButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="LevelUpSelectedHeroes()">
+								<Label text="#LevelUpSelectedHeroes_Button" />
+							</Button>
+							<Panel style="width: 1px;" />
+							<Button id="LevelMaxSelectedHeroesButton" class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="MaxLevelUpSelectedHeroes()">
+								<Label text="#MaxLevelUpSelectedHeroes_Button" />
+							</Button>
+						</Panel>
+						<Panel class="Row">
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="ToggleInvulnerability()">
+								<Label text="#Invuln_Button" />
+							</Button>
+							<Panel style="width: 6px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="ScepterSelectedHeroes()">
+								<Label text="#ScepterSelectedHeroes_Button" />
+							</Button>
+							<Panel style="width: 6px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="ShardSelectedHeroes()">
+								<Label text="#ShardSelectedHeroes_Button" />
+							</Button>
+						</Panel>
+						<Panel class="Row">
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="ChangeTeam()">
+								<Label text="#SwapTeam_Button" />
+							</Button>
+							<Panel style="width: 6px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="ResetSelectedHeroes()">
+								<Label text="#Reset_Button" />
+							</Button>
+							<Panel style="width: 6px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="RemoveSelectedHeroes()">
+								<Label text="#RemoveSpawns_Button" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="HorizontalRule" />
+				<Panel id="GlobalCategory" class="Category">
+					<Panel class="CategoryHeaderContainer">
+						<Label class="CategoryHeader" text="#Global_ButtonCategory" />
+						<Button class="AdvancedButton ButtonPrimary Small DarkGrey" onactivate="ToggleAdvancedSettings(2)">
+							<Label text="#DOTA_More" />
+							<Image class="AdvancedButtonArrow" src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" />
+						</Button>
+					</Panel>
+					<Panel class="CategoryButtonContainer">
+						<Panel class="CheckboxesContainer">
+							<Panel class="Row CenterHorizontally">
+								<ToggleButton id="FreeSpellsButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( FreeSpellsButtonPressed )">
+									<Label class="GlobalSettingsLabel" text="#FreeSpells_Button" />
+								</ToggleButton>
+								<ToggleButton id="SpawnCreepsButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnCreepsButtonPressed )">
+									<Label class="GlobalSettingsLabel" text="#SpawnCreeps_Button" />
+								</ToggleButton>
+							</Panel>
+							<Panel class="Row CenterHorizontally">
+								<ToggleButton id="TowersEnabledButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( TowersEnabledButtonPressed )">
+									<Label class="GlobalSettingsLabel" text="#TowersEnabled_Button" />
+								</ToggleButton>
+								<ToggleButton id="NightEnabledButton" class="DemoToggleButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( ToggleDayNight )">
+									<Label class="GlobalSettingsLabel" text="#NightEnable_Button" />
+								</ToggleButton>
+							</Panel>
+						</Panel>
+						<Panel class="Row">
+							<Label class="InlineButtonLabel" text="#Refresh_Title" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( RefreshSpellsButtonPressed )">
+								<Label text="#RefreshSpells_Button" />
+							</Button>
+							<Panel style="width: 6px;" />
+							<Button class="ButtonPrimary FillWidth" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( RefreshHealthButtonPressed )">
+								<Label text="#RefreshHealth_Button" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="HorizontalRule" id="MultiplayerCategoryRule" />
+				<Panel id="MultiplayerCategory" class="Category">
+					<Panel class="CategoryHeaderContainer">
+						<Label class="CategoryHeader" text="#GameState_Multiplayer" />
+						<Button class="AdvancedButton ButtonPrimary Small DarkGrey" onactivate="ToggleAdvancedSettings(3)">
+							<Label text="#DOTA_More" />
+							<Image class="AdvancedButtonArrow" src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" />
+						</Button>
+					</Panel>
+					<Panel class="CategoryButtonContainer">
+						<Panel class="Row">
+							<DOTASettingsCheckbox convar="dota_hero_demo_allow_connections" text="#DemoWithFriends_Button" />
+							<Panel class="HelpIcon" onmouseover="UIShowTextTooltip( #DemoWithFriends_Tooltip )" onmouseout="UIHideTextTooltip()" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="HorizontalRule" />
 				<Panel id="Footer">
-					<TextButton class="DemoButton LeftButton PauseButton" acceptsjoyfocus="true" text="#PauseDemo_Button" onactivate="FireCustomGameEvent_Str( PauseButtonPressed )" />
-					<TextButton class="DemoButton RightButton QuitButton" acceptsjoyfocus="true" text="#QuitDemo_Button" onactivate="FireCustomGameEvent_Str( LeaveButtonPressed )" />
+					<TextButton class="ButtonPrimary PauseButton" acceptsjoyfocus="true" text="#PauseDemo_Button" onactivate="FireCustomGameEvent_Str( PauseButtonPressed )" />
+					<Panel style="width: 6px;" />
+					<TextButton class="ButtonPrimary DireRed QuitButton" acceptsjoyfocus="true" text="#QuitDemo_Button" onactivate="Disconnect()" />
 				</Panel>
 			</Panel>
 			<Panel id="ControlPanelSlideThumbContainer" require-composition-layer="true">

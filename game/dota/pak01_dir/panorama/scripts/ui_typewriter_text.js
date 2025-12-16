@@ -375,7 +375,7 @@ function GoToNextStep() {
 
 function OnTextChanged(parentPanel, strText, strVoice, flDelay, flSoundDelay, bInstant, flCharacterDelay, flVODuration ) {
 
-    var textLabel = parentPanel.FindChildInLayoutFile("TypewriterLabel");
+    var textLabel = parentPanel.FindChildInLayoutFile("OldTypewriterLabel");
     g_typeWriterEffect.m_nCharacterIndex = 0;
     // Adding a space at the end keeps word-wrap stable for the last word of the sentence.
     g_typeWriterEffect.m_strText = strText + " ";

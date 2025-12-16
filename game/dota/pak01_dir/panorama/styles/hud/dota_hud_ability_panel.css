@@ -636,6 +636,11 @@ DOTAAbilityPanel.Hidden
 	visibility: visible;
 }
 
+.largo_song_fight_song.ability_phase #Cooldown,.largo_song_double_time.ability_phase #Cooldown,.largo_song_good_vibrations.ability_phase #Cooldown,.largo_song_fight_song.in_cooldown #Cooldown,.largo_song_double_time.in_cooldown #Cooldown,.largo_song_good_vibrations.in_cooldown #Cooldown
+{
+	visibility: collapse;
+}
+
 .ability_muted #CooldownTimer
 {
 	color:red;
@@ -1162,6 +1167,11 @@ DOTAAbilityPanel.Hidden
 		opacity: 1.0;
 	}
 	
+}
+
+.largo_song_fight_song #Shine,.largo_song_double_time #Shine,.largo_song_good_vibrations #Shine
+{
+	visibility: collapse;
 }
 
 .InventoryItem #AbilityImage
@@ -1868,6 +1878,19 @@ DOTAAbilityPanel.Hidden
 	contrast: 1;
 	saturation: .6;
 	wash-color: #00000044;
+}
+
+.Reborn .can_cast_again.largo_song_fight_song #AbilityButton,.Reborn .can_cast_again.largo_song_double_time #AbilityButton,.Reborn .can_cast_again.largo_song_good_vibrations #AbilityButton
+{
+	pre-transform-scale2d: 1;
+}
+
+.Reborn .can_cast_again.largo_song_fight_song #AbilityImage,.Reborn .can_cast_again.largo_song_double_time #AbilityImage,.Reborn .can_cast_again.largo_song_good_vibrations #AbilityImage
+{
+	pre-transform-scale2d: 1;
+	contrast: 1;
+	saturation: 1;
+	wash-color: #00000000;
 }
 
 .Reborn .can_cast_again.InventoryItem #AbilityButton
@@ -2998,5 +3021,106 @@ DOTAAbilityPanel.Hidden
 #KezWeaponButton.Hidden
 {
 	visibility: collapse;
+}
+
+#LargoSongsButton
+{
+	horizontal-align: center;
+	padding-top: 2px;
+	width: 48px;
+	margin-top: 65px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+	transition-property: brightness, transform;
+	transition-duration: 0.05s;
+}
+
+#LargoSongsButton .LargoSong
+{
+	width: 100%;
+	transition-property: brightness, transform;
+	transition-duration: 0.1s;
+}
+
+#LargoSongsButton .LargoSong:hover
+{
+	brightness: 2;
+	transform: translateY( -2px );
+}
+
+#LargoSongsButton:active
+{
+	brightness: 0.5;
+	transform: scale3d( 0.96, 0.96, 1 );
+}
+
+#LargoSongsButton.Hidden
+{
+	visibility: collapse;
+}
+
+#HiddenAbilityContainer
+{
+	opacity: 0;
+	visibility: collapse;
+	width: 100%;
+	height: 50px;
+	background-image: url("s2r://panorama/images/hud/reborn/active_ability_border_psd.vtex");
+	background-size: 33px 33px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+#HiddenAbilityContainer.ShowHiddenAbility.in_cooldown
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+#HiddenAbilityImage
+{
+	width: 30px;
+	height: 30px;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+#HiddenAbilityContainer.in_cooldown #HiddenAbilityImage
+{
+	wash-color: #00000044;
+}
+
+#HiddenAbilityCooldown
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+	margin: 5px;
+}
+
+#HiddenAbilityContainer.in_cooldown #HiddenAbilityCooldown
+{
+	visibility: visible;
+}
+
+#HiddenAbilityCooldownOverlay
+{
+	width: 30px;
+	height: 30px;
+	horizontal-align: center;
+	vertical-align: middle;
+	background-color: #000000dc;
+}
+
+#HiddenAbilityCooldownTimer
+{
+	color: white;
+	font-size: 16px;
+	text-shadow: 0px 0px 6px 6 #000000;
+	width: 100%;
+	text-align: center;
+	vertical-align: center;
+	text-overflow: shrink;
 }
 

@@ -7,8 +7,8 @@
 0[A\A]A^A
 0x%08X
 0x%08X %s
-0و0ط0ئ0
 0耀0耀0耀0
+10CNameIndex
 10CRnContact
 10CRnLinkage
 10CRnVehicle
@@ -63,6 +63,7 @@
 14CTraceTriangle
 14IErrorListener
 14IFnPhysicsBody
+14IPhysNameIndex
 14s %-30s[%u]%s
 15CBaseConstraint
 15CFeAgglomerator
@@ -174,6 +175,7 @@
 22IPhysAggregateInstance
 22IPhysicsCharacterProxy
 22IPhysicsRagdollControl
+22IVDataResourceListener
 23CFnPhysicsHullShapeImpl
 23CFnPhysicsJointBaseImplI18IFnPhysicsAnyJointE
 23CFnPhysicsJointBaseImplI19IFnPhysicsWeldJointE
@@ -245,10 +247,8 @@
 29CBoneConstraintPoseSpaceMorph
 29CSchemaRegistration_vphysics2
 29CSoftbodyEffectDampenVelocity
-2Mc4$A
 2_BONE_IK
 2d.  %16llx - %s%s
-2fA3A2f
 30CModelConfigElement_RandomPick
 30CPhysicsAbsoluteRagdollControl
 30CSchemaRegistration_physicslib
@@ -256,10 +256,10 @@
 30IPhysSurfacePropertyController
 30IStackTranslationHelperFactory
 31CModelConfigElement_RandomColor
-31CVPhysics2SurfaceProperyManager
 32CModelConfigElement_SetBodygroup
 32CResourceStreamUnalignedGrowable
 32CVPhysPtrUtlVectorSaveRestoreOps
+32CVPhysics2SurfacePropertyManager
 3333333
 33333333H
 33CBaseIntrospectedToKV3TypeManager
@@ -273,18 +273,16 @@
 37CTypesafeIntrospectedToKV3TypeManagerILy495958126710E21VPhysXAggregateData_tE
 38CDefaultKV3TransferResourceTypeManagerILy440006964086EE
 38CStackTranslationHelper_VirtualMachine
+39CIntersectionDictionaryResourceListener
 3AWAVRPI
 3f behind, %d nodes, FeModel %s bytes, %s
 4$H;t
-4.Y04v
 41CModuleMetadataProvider_ResourceManifests
 44CStackTranslationHelperModuleMappingListener
 48CModelConfigElement_SetBodygroupOnAttachedModels
 4] Touch Found
 4g,%.4g
 5%YA1i
-5&YA1A
-5,¸Yi
 52CModelConfigElement_SetMaterialGroupOnAttachedModels
 7CRnLink
 7CRnRope
@@ -302,15 +300,14 @@
 99ccff;">Should <b>Not</b> Collide
 9CIkSolver
 9CTraceOBB
+9D9:u0H
 9IIkSolver
 9ISequence
-A"T$Pt
 A0D;(t#H
-A2fA3G2f
 A9@0t0H
+A9\$8
 A9\$8fA
-A9^`~1I
-A;T$X
+A9w u
 A;T$xr
 AABB_t
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
@@ -321,6 +318,7 @@ ATSLc
 ATSLc'H
 ATTACHMENT_INFLUENCE_FLAGS_NONE
 AUATE1
+AUATI
 AUATLc
 AUATS1
 AUATS97H
@@ -328,6 +326,7 @@ AUATSH
 AUATSL
 AUATUS
 AUATUSH
+AUATfH
 AVATE1
 AVAUAT
 AVAUATA
@@ -335,7 +334,6 @@ AVAUATE1
 AVAUATI
 AVAUATL
 AVAUATLc
-AVAUATM
 AVAUATS
 AVAUATSD
 AVAUATSH
@@ -360,7 +358,6 @@ AWAVAUATSH
 AWAVAUATSHc
 AWAVAUATSL
 AWAVAUATUSH
-AWAVAUE1
 AWAVAUI
 AWAVAUL
 AWAVAULc
@@ -370,11 +367,11 @@ AWAVMc
 AWAVRH
 A\A]A
 A\A]A^A
+A\A]A^A_]ÐLc6E
 A\A]A^A_]ÐLc{HE1
 A\A]A^A_ÐAWH
 A\A]A^Hi
 A\A]H
-A\A]L
 A\A^A
 A]A^A
 Accelerate
@@ -385,8 +382,7 @@ Aggregate Count
 AhA;A8
 AirToCloth
 AlignedByteArray not properly aligned
-All Groups
-All Layers
+All %s
 Ang Velocity: %.2f, %.2f, %.2f
 Angle: %.1f
 AnimComponentID
@@ -410,18 +406,19 @@ Assuming parameter -sdk
 AttachObject called on motion controller with this object already attached
 AttachmentHandle_t
 Authu
+Available %s
 Available Collision Functions
-Available Collision Groups
-Available Interaction Layers
 Available debug layers
+B8thIc
 B@HcR8H
-B@HcR8I
 BEVEL_GEAR_FAST_JOINT
-BJ Bb
 BLEND_PREALIGNED
 BODY_DYNAMIC
 BODY_KEYFRAMED
 BODY_STATIC
+BPH#CXH
+BXH9FXH
+B`L#k`H#CPI
 Bad FLC data for resource '%s': %s
 Bad KV3 data for resource '%s': %s
 BakedLODBuilderMgr001
@@ -449,9 +446,10 @@ Build Mass Unit Test centroid/floating-point-induced Max error: %f, %f, %f
 Bytes %-30s[body
 C$HcS0D9
 C(E9e
+C09CHD
 C8Hc>H
 C@HcS8H
-C@HcS8L
+C@HcS8I
 CAimConstraint
 CAnimAttachment
 CAnimCycle
@@ -502,10 +500,12 @@ CMaterialDrawDescriptor
 CMaterialDrawDescriptor::RigidMeshPart_t
 CMemAllocSystemInitialize
 CMeshletDescriptor
+CModelAnimGraph2Identifier
 CModelAnimName
 CModelAnimNameWithDeltas
 CModelAttachmentName
 CModelBodyGroupName
+CModelBoneName
 CModelConfig
 CModelConfigElement
 CModelConfigElement_AttachedModel
@@ -549,6 +549,7 @@ CRenderMesh
 CRenderSkeleton
 CResourceStreamFixed: trying to write past the end of allocated memory (new commit %u, allocated %u
 CSceneObjectData
+CSceneObjectData::RTProxyDrawDescriptor_t
 CStrongHandle
 CStrongHandleCopyable
 CTSQueue corruption
@@ -559,11 +560,13 @@ CUtlLeanVector
 CUtlLeanVectorFixedGrowable
 CUtlLinkedList overflow! (exhausted index range
 CUtlString
+CUtlStringToken
 CUtlSymbolTableLarge element limit of %u exceeded
 CUtlVector
 CUtlVectorSIMDPaddedVector
 CVPhys2World - Dumped World '%s
 CVPhysXSurfacePropertiesList
+CXHcSPH
 Can <b>Not</b> Hit: %s
 Can <b>Not</b> Hit: Dynamic <font color="blue">body</font
 Can <b>Not</b> Hit: Keyframed <font color="blue">body</font
@@ -574,6 +577,7 @@ Can't restore aggregate state, different part count
 Can't restore ragdoll control, different body count
 CanTranslatePointer
 Cannot allocate abstract class
+Cannot convert KV3 type '%s' (%u) to a string token
 Cannot save file %s
 Cannot save file %s, stopping snapshot dumping
 Cannot start streaming to physics debugger: please connect to VConsole2 first
@@ -587,8 +591,7 @@ Cast of %s loses value information (returning %s
 CastSphereSATParams_t
 Center 1
 Center 2
-ChHcS`I
-ChHcs`H
+ChHcS`H
 CharacterSetBuild
 Choppiness
 Class data is a '%s', not a table
@@ -596,13 +599,14 @@ Class does not allow allocation from its schema binding
 ClientToolsInfo_001
 Cloth
 CollGroup=%d
+Collision Groups
 Collision disabled by owner ID %08x ignored matching shape (OWNER:%08x, ENTITY:%08x
 Collision filtering: Cannot allocate name '%s' already used %d names
 Collision group pair flags=%d. Pair Interacts
 Collision group pair flags=0. Will not collide
-CollisionGroups
+CollisionDetailLayerInfo_t
+CollisionDetailLayerInfo_t::Name_t
 CommandLine
-Common interaction flags
 Compared Bodies
 Complex
 ConditionallySolid
@@ -620,30 +624,29 @@ CovMatrix3
 Create Flags
 CreateInterface
 Currently allocated agg data
-D$(Mct
-D$4tUHc
-D$<t=Hk
+C宿C槃C槃C桐C
 D$@IcT$8L
 D$@LcpTK
 D$@LcxTK
-D$At	A
+D$HIcF
 D$LtUHc
+D$XIcT$`L
 D$Yt0A
+D$\tFH
 D$\tJH
-D$\t]Hc
-D$hIcT$`H
-D$rA8Frt
-D$tt*H
+D$\taHc
+D$hIcT$`f
+D$vA8Fvt
 D9	u,H
 D9.sDL
 D9k`~VH
-D9p`~2H
 D;(}sIc
-D;I0}|E
 D;c@}OH
 D;s0}}E
+D;s8|ЋKPH
 D;s`}xE
 DATAHcH
+DF128
 DOT_TO_MORPH
 DWARF_SYMBOL_PATH
 DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY
@@ -654,7 +657,9 @@ D_THICK_LINES
 Damping %.2f linear, %.2f angular
 Default
 DemoUpconverterVersion001
+Description
 DestroyDebugSceneObject: pSceneObject ( %p ) has already been deleted
+Detail Layers
 DevMsg
 Different physics worlds have different debug draw filters
 Disabled
@@ -666,19 +671,20 @@ Dynamic
 DynamicContinuousContactBehavior_t
 DynamicMeshDeformParams_t
 E(D9s
-E0A9EH
-E0A;EH
 E8IcU
 E97~7I
 E9e`~gI
 E9f0Lc
+E9ĉщP
 E;l$0u
-E;l$8
-E;oH}VIc_`A9_p
 E@IcU8L
+EPIcUHH
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
+ETA;EP
 EXPORTSYSTEM_INTERFACE_VERSION_001
+E\IcuXH
+E`IcUXH
 EarlyInit_Tier0
 EconItemToolModel_001
 EhIcU`L
@@ -690,14 +696,12 @@ EnsureCapacity
 EnsureElementCapacity
 EnsureMemberCapacity
 EnsureUnusedCapacity
-Excluded flags exist
+EpIcUhH
+Excluded Interaction flags exist
 Expected an array with two elements when loading a std::pair
 ExtractModuleMetadata
 ExtrudeReplaceHull failed to build new convex hull with extrusion %f
-E=S58
-F,tFIc
-FDtZHc
-FHIcG
+FHIcE
 FIc}$H
 FLAG0_SHIFT_BREAKABLE_FORCE
 FLAG0_SHIFT_BREAKABLE_TORQUE
@@ -776,9 +780,6 @@ FLEX_OP_SIN
 FLEX_OP_SQRT
 FLEX_OP_SUB
 FORCED
-F\IcvXH
-F`9G`~QH
-F`HcvXH
 Face %d
 Face Fit
 Face Reprojection
@@ -816,6 +817,7 @@ FeMorphLayerDepr_t
 FeNodeBase_t
 FeNodeIntegrator_t
 FeNodeReverseOffset_t
+FeNodeStrayBox_t
 FeNodeWindBase_t
 FeProxyVertexMap_t
 FeQuad_t
@@ -843,12 +845,10 @@ FeVertexMapBuild_t
 FeVertexMapDesc_t
 FeWeightedNode_t
 FeWorldCollisionParams_t
-FhHcV`I
 FindLessOrEqual
 Finished trace recording
 FixupResourceName: Illegal full path passed in ("%s
 FixupResourceName: Illegal path, missing extension passed in ("%s
-FlIcVh
 FlattenedSerializersVersion001
 FlexOpCode_t
 Float
@@ -861,11 +861,11 @@ FourCovMatrices3
 FourQuaternions
 FourVectors
 FourVectors2D
+Friendly Name
 Fully Rigid
 G I9G
 G@Hc@0
 G@HcW8H
-G@HcW8L
 G@IcG8I
 G@IcW8H
 GCC: (SteamRT 14.2.0-19~steamrt3.1+bsrt3.1) 14.2.0
@@ -881,6 +881,7 @@ GLIBC_2.3.2
 GLOBAL
 GPIcUHHc
 GPIcWHH
+GXI;G
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameUIService_001
@@ -898,39 +899,45 @@ H9yhH
 H;C`t8H;Cht2H
 H;J8slff
 H;{Ht
-H<HcP8
 HELPER_BONE
 HITGROUP_INVALID
+HIcNpIc
 HLcgHD
 H[A\A
 H[A\A]A^A
 H[A\A]H
 HammerMapLoader001
-Has Interaction due to %s Collision Group Always
-Hc	AWj
+Has common interaction flags
+Has interaction due to %s Collision Group Always
 Hc7Hi
-Hc7LcO
+Hc=5W5
 Hc@8M
-HcAXA9
+HcBXA9
+HcC0HcS4E
 HcC@A9
+HcF8H
 HcG Hi
 HcG8L
 HcG@H
-HcH8Ic
+HcK8A9
 HcS0D9
 HcShA9
 Height
 HelpSystem_001
-HhHc@`H
 Hierarchy id is the same on both shapes (%d
 HostStateMgr001
-Hpt}A9
+How name is displayed in tools
+How the detail layer is meant to be used
+I	G`fA
+I#BPH#KPH
 I#D$8t
-I#L$PA
+I#}XL
 I9|$`HcB
-I;T$0t
+I;~Ht
 IBphys
+IKV3TransferInterface_AllowRawStringTokenTransfer
 IKV3TransferInterface_ResourceLoad
+IKV3TransferInterface_ResourceSave
 INPUT_LAYOUT_VARIATION_DEFAULT
 INPUT_LAYOUT_VARIATION_MAX
 INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID
@@ -938,6 +945,7 @@ INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID
 INVALID
 IPhysicsPlayerController
 IPulseSystem_001
+IS NOT
 ITM_RU1
 ITM_RU8
 ITM_addUserCommitAction
@@ -945,31 +953,33 @@ ITM_deregisterTMCloneTable
 ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
-IcD$ H
-IcD$(A9
+Ic4$Hc
 IcD$0H
 IcD$0Hi
-IcD$0M
 IcD$81
-IcD$8H
 IcD$8I
 IcD$8L
 IcD$HA9
-IcD$Hf
-IcD$XM
 IcE8L
-IcEHA9
-IcGHA9
 IcL$<L
 IcL$HI
 IcMPIc
 IcM`E1
 IcO Ic
 IcP8H
+IcT$8I
+IcT$<I
+IcT$HA9
+IcT$HI
+IcT$`9
 IcV8H
+Ic\$01
 Ic\$0A
-Ic\$4A
 Ic\$8H
+Ic\$H1
+Ic\$P1
+Ic\$PA
+Ic\$d1
 Ic\$pA
 Ic\$xA
 Ict$(H
@@ -977,7 +987,6 @@ Ict$HA
 Ic|$0H
 Ic|$HH
 Ignore Entity 0x%X
-Ignore for Hitbox on %s, interacts with Hitbox on the other
 Imaginary
 Inconsistent collision attribute index array of size %d, expected %d (number of shapes
 Incremental Face Reduction
@@ -985,6 +994,8 @@ Incremental Vertex Reduction
 Inert VModuleMetadata
 InfoForResourceTypeCAnimationGroup
 InfoForResourceTypeCModel
+InfoForResourceTypeCNmGraphDefinition
+InfoForResourceTypeCNmSkeleton
 InfoForResourceTypeCPhysAggregateData
 InfoForResourceTypeCRenderMesh
 InfoForResourceTypeCSequenceGroupData
@@ -1000,20 +1011,21 @@ InsertBeforeGetPtr
 InsertIfNotFound
 InsertMultipleBefore
 InstallSchemaBindings
+Instant Stop
 Interact-as-exclude: excluded as-layers
 Interact-as-exclude: not excluded. All tests passed. These shapes should Collide
 Interact-as-with test fails: there no common interaction layers found in the shapes
 Interact-as-with test passes, common layers
 Interaction Analysis
-InteractionLayers
+Interaction Layers
 Invalid
+Invalid %s %s
 Invalid blob for %s (%d,%d
 Invalid collision attr index %u, must be below %d
 Invalid collision attribute palette entry %u, expected below %d
-Invalid collision group %s
-Invalid interaction layer %s
 Invalid layer %s
 IsSelected
+J8I9M8r
 JArray
 JIGGLE_BONE
 JOINT_AXIS_COUNT
@@ -1027,46 +1039,45 @@ JOINT_FLAGS_USE_BLOCK_SOLVER
 JOINT_MOTION_COUNT
 JOINT_MOTION_FREE
 JOINT_MOTION_LOCKED
-J`A9N
-J`A9O
 Jc4!H
-JcD809
+JcD009
 JcL)pH
 Jf3FJ
 Jf3GJ
-JhHcJ`I
 Joint changed type from %d to %d, skipping
 JointAxis_t
 JointMotion_t
 Joints
 Joints: %d
-K[A\A]A
-K`HcCP9
 KeyValueCache001
 KeyValues3
 Keyframed
 Keyframed vs Keyframed
 Keyframed vs Static
 KhHcC`H
-L$$tZHc
-L$,Ic
 L$Xt&I
-L;'t4I
+LLc`H
 LOG_GENERAL
 LOG_SYMBOLS
 Lc0Lch
 Lc2Lcj
+Lc5Q	B
 LcGHHcw0L
-LchHLc`L
+Lcf,A
 Lco8D
 Lcw`J
+Lc{HA
 Lc{HA9
+Lc{HMc
+Lc{`A
+Lc{`Mc
+Lc{xA
+Lc{xMc
 Linkage
 Linkage %d collision disabled. Do Not Collide
 LoadOwningPointer failed for '%s
 LoadOwningPointer failed for '%s' (%s
 LoadPhysicsDebugMaterials
-LoadSurfaceProperties
 LoadVelocityConstraints
 Local anchors: {%g,%g,%g}, {%g,%g,%g
 LocalSpace
@@ -1079,9 +1090,17 @@ LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
 LoggingSystem_SetChannelIndent
-M#MXM
+M+D$0I
+M4Na\:¥Fj
 MATCHFRAMEWORK_001
 MAtomicTransfersAsPlainString
+MESH_BUFFER_USAGE_ADJACENCY
+MESH_BUFFER_USAGE_IB
+MESH_BUFFER_USAGE_MESHLET_TRIS
+MESH_BUFFER_USAGE_NONE
+MESH_BUFFER_USAGE_RT_PROXY
+MESH_BUFFER_USAGE_VB
+MESH_BUFFER_USAGE_VERTEX_ALBEDO
 MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS
 MESH_DRAW_FLAGS_DRAW_LAST
 MESH_DRAW_FLAGS_NONE
@@ -1116,11 +1135,13 @@ MORPH_FLEXCONTROLLER_REMAP_NWAY
 MORPH_FLEXCONTROLLER_REMAP_PASSTHRU
 MOUSE_JOINT
 MPropertyCustomEditor
+MPropertyDescription
 MPropertyFriendlyName
 MPropertySuppressEnumerator
 MPropertySuppressExpr
 MPropertySuppressField
-MXIcEPM
+MVDataOutlinerLeafNameFn
+MVDataRoot
 MakeGlobalSymbol
 MapListService_001
 Mass Priority Shift %d
@@ -1130,17 +1151,21 @@ MaterialUtils_001
 MaxCell
 MaxSpeed
 Mc!IcY
+Mc4$Mc
+McD$$A
 McQHIcyL
+Mce0Hc
 Mce8E1
-Mce`A
-Mce`Mc
 Mcg4Ic_0H
+Mcl$(1
+Mct$ 1
+Mct$@1
+Mct$D1
+Mct$`1
+Mct$h1
 Mcw fH
+Mc|$HM
 Mc|$PA
-Mc}HA
-Mc}HMc
-Mc}xA
-Mc}xMc
 Medium
 MemAlloc_AllocFunc
 MemAlloc_FreeFunc
@@ -1156,6 +1181,8 @@ MeshUtils001
 Meshes
 Missing animation bone %s. It is needed to drive cloth
 Missing required transfer interface: %s
+ModelAnimGraph2Identifier
+ModelAnimGraph2Ref_t
 ModelAnimName
 ModelAnimNameWithDeltas
 ModelAttachmentName
@@ -1163,24 +1190,32 @@ ModelBodyGroupName
 ModelBoneFlexComponent_t
 ModelBoneFlexDriverControl_t
 ModelBoneFlexDriver_t
+ModelBoneName
 ModelConfigAttachmentType_t
 ModelDocUtils001
 ModelEmbeddedMesh_t
 ModelMaterialGroupName
 ModelMeshBufferData_t
+ModelMeshBufferUsage_t
 ModelSkeletonData_t
 ModelSkeletonData_t::BoneFlags_t
 MorphBundleType_t
 MorphFlexControllerRemapType_t
 Motion Controllers
 MotionController Async Update
+MovementCapability_t
 MovementGaitId_t
 N0HcP
 N10__cxxabiv115__forced_unwindE
 N10__cxxabiv117__class_type_infoE
+N10__cxxabiv117__pbase_type_infoE
 N10__cxxabiv119__foreign_exceptionE
+N10__cxxabiv119__pointer_type_infoE
+N10__cxxabiv120__function_type_infoE
 N10__cxxabiv120__si_class_type_infoE
 N10__cxxabiv121__vmi_class_type_infoE
+N10__cxxabiv123__fundamental_type_infoE
+N10__cxxabiv129__pointer_to_member_type_infoE
 N12_GLOBAL__N_121system_error_categoryE
 N12_GLOBAL__N_122generic_error_categoryE
 N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN19CVPhysics2Interface13ConvertBodiesER10CUtlVectorI16PhysicsBodyDef_ti25CUtlVectorMemory_GrowableIS4_iLm0EEEPK21VPhysXAggregateData_tEUliE_EviiPKcOT0_ii13JobPriority_tQ14is_invocable_vISF_JiEEEUliE_EE
@@ -1219,12 +1254,12 @@ Next edge error %.1f inch, collapse angle %.1f deg
 No DATA block for resource
 No DATA block for resource '%s
 No Reason To Hit
-No Touch event enabled on %s: GetCollisionFunctionMask() = {<font color = "cyan">%d</font>, <font color = "green">%d</font>} does not include FCOLLISION_FUNC_ENABLE_TOUCH_EVENT = %d
 No closing */ before end of file
 No common interaction as-with flags, so interactions disabled
 No contact now
+No interaction for Hitbox on %s, interacts with Hitbox on the other
 No interactions allowed between keyframed vs keyframed or keyframed vs static - unless the collision groups specify touch reports only (e.g. a trigger interaction
-No matching exclude flags
+No matching excluded interaction flags
 No matching interaction layers
 No shared pair flags on the following collision groups
 Non-dynamics
@@ -1237,27 +1272,43 @@ Notify Lost
 Notify Persist
 O,t(Hk
 O@HcG8H
-O@Icw8A9
 ODt+Hi
+ODtyHc
+OPIcGHL
 ORIENT
 ORIGIN
 O\t+Hi
 Object: %s
 OldFeEdge_t
+Only query can use this layer, not collision
 Operation
 OverrideColor
 OverrideColorFactor
-P HcS
+P HcSp
 P HcSx
 P IcV8
 P [A\A]A
-P0A3Q0
 PARENT
+PDF128
+PDF16
+PDF16b
+PDF32
+PDF32x
+PDF64
+PDF64x
+PHcCHHcM
 PIcEHH
+PKDF128
+PKDF16
+PKDF16b
+PKDF32
+PKDF32x
+PKDF64
+PKDF64x
 POSE_SPACE_BONE
 POSE_SPACE_MORPH
 PPE;|$x
-PPHcHHH
+PPHcHHL
 PRISMATIC_JOINT
 PRISMATIC_WELD_FUSED_JOINT
 PULLEY
@@ -1269,6 +1320,7 @@ PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
 ParallelForSharedCode
+Parent detail layers automatically include the child layer
 ParentAttachmentName
 ParticleSystemMgr003
 PermModelDataAnimatedMaterialAttribute_t
@@ -1276,7 +1328,7 @@ PermModelData_t
 PermModelExtPart_t
 PermModelInfo_t
 PermModelInfo_t::FlagEnum
-PhHc@`H
+PhHcH`I
 PhysFeModelDesc_t
 PhysShapeMarkup_t
 PhysSoftbodyDesc_t
@@ -1300,6 +1352,7 @@ PhysicsSpringJointSave_t
 PhysicsWeldJointSave_t
 PhysicsWheelJointSave_t
 PhysicsWorld 0x%p->0x%p %s
+Planted Turn
 Plat_CPUTickFrequency
 Plat_FatalError
 Plat_FloatTime
@@ -1323,7 +1376,7 @@ Projectile
 PropertyEditorSystem_001
 Pu;ff
 PushBack
-Q<HcQ8A9
+Q2fA3W2f
 QAngle
 QUAT_ORTHOTWIST_JOINT
 Quadric Error Metric
@@ -1331,6 +1384,8 @@ Quaternion
 QuaternionStorage
 Query and shape in hierarchy id=%d
 Query ignored this shape by owner ID. query(%08x, %08x) shape owner:%08x, shape entity:%08x
+Query is not part of shape target detail layer '%s
+R LccHL
 RENDERMESH_SLOT_INVALID
 RENDERMESH_SLOT_PER_INSTANCE
 RENDERMESH_SLOT_PER_VERTEX
@@ -1376,9 +1431,7 @@ RESOURCE_TYPE_PHYSICSDATA_INTERNAL
 RESOURCE_TYPE_VPHYSX_SURFACE_PROPERTIES
 REVOLUTE_JOINT
 REVOLUTE_WELD_FUSED_JOINT
-RHcP@H
 ROTATION
-R`H#G`H#WPH
 Radius
 RagdollBodies
 Raise ground by this much for all cloth that traces the ground; should be 0 ideally
@@ -1453,13 +1506,13 @@ RnWing_t
 Rubikon Release No-Names non-SIMD
 Rubikon%s
 S8H+S0H
-S@HcC8L
 S@HcK8L
+SHHcK@Hc
 SPHERICAL_JOINT
 SPLINE_JOINT
 SPRING
 SSE and SSE2 are required
-Same EntityID=%u on both shapes
+Same EntityID=%u on both shapes. Disabling all touch events
 Saving snapshots starting from Frame %u into '%s
 SceneSystem_002
 SceneUtils_001
@@ -1478,6 +1531,7 @@ Set up debug-draw of physics internal state
 SetTotalMass(%g): Invalid argument
 Shape
 Shape ignored this query by owner ID. shape owner ID: %08x, query owners:%08x, %08x, shape entities:%08x, %08x
+Shape is not part of query target detail layer '%s
 Shape1
 Shape2
 Shared pair flags exist for the following collision groups
@@ -1489,6 +1543,7 @@ Should we straighten face island if the displacement is this much? (inches
 Should we try to straighten an island of faces deviating from their average normal (tangent
 Should we try to straighten two faces connected to this edge? (tangent
 ShouldCollide tests passed
+Shuffle
 Sh}t1
 Simplify algorithm '%s' could not simplify hull
 SimplifyMesh (%.3f) (v=%d,t=%d) to (v=%d,t=%d
@@ -1505,6 +1560,7 @@ Softbody #%d %s.%d %s (%.4g,%.4g
 SoftbodyProcessor
 Solid Contact
 Solid Contacts: <font color = "cyan">%s</font>, <font color = "green">%s</font
+Solid contact but %s has solid contacts disabled. Disabling all collision
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
@@ -1559,6 +1615,7 @@ SteamAudio001
 Stiffness
 StopEffects
 Stopping saving snapshots at Frame %u into '%s
+Strafe
 StreamToPhysicsDebugger: Stream started
 StreamToPhysicsDebugger: Stream stoped
 StreamToPhysicsDebugger: already not streaming
@@ -1566,10 +1623,12 @@ StreamToPhysicsDebugger: already streaming
 Strength
 Surface properties are not loaded
 SurfacePropertiesList
-SurfacePropertiesStartup
 Suspicious: there is a joint between these two bodies
 SxsxK
-T$PH9U
+T$$tZHc
+T$8A9E
+T$@IcD$8I
+T$hHc2
 TILT_TWIST
 TLS init function for
 TLS wrapper function for
@@ -1605,14 +1664,12 @@ Undefined
 Unexpected Keyword %s
 Unexpected end of buffer @%p, payload %d bytes, %d extra bytes at the end
 Unknown
-Unknown interaction layer: %s
 UnloadModulesInTargetRange
 Unsupported KV3 basic type '%s' (%d
 Unsupported version %d for resource '%s' (Expected %d
 UpdateJointsParallel
 Usage: phys_debug_draw [options
-Used Groups
-Used Layers
+Used %s
 UtlVectorMemory_Alloc
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
@@ -1623,6 +1680,9 @@ VAvi001
 VBik001
 VBphys
 VConComm001
+VERTEX_ALBEDO_565
+VERTEX_ALBEDO_8888
+VERTEX_ALBEDO_NONE
 VEngineCvar007
 VFileSystem017
 VMaterialSystem2_001
@@ -1640,6 +1700,7 @@ VPhysXJoint_t
 VPhysXJoint_t::Flags_t
 VPhysXRange_t
 VPhysics2ShapeDef_t
+VPhysics2Startup
 VPhysics2SurfacePropLoader
 VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
@@ -1725,6 +1786,7 @@ Vector4D
 VectorAligned
 Velocity: %.2f, %.2f, %.2f
 Version
+VertexAlbedoFormat_t
 VertexColorPos_t
 VertexMap
 VertexPositionColor_t
@@ -1749,7 +1811,6 @@ WP~?Hcs
 W`Hcq(HcI,L
 WakeBodiesFromAppliedForces
 Warning
-Will report touch events
 WireframeEmit
 World @%p has %d bodies, %d softbodies, %d joints, %d null joints, %d solver contacts, %d report contacts, %d entity pairs
 World @%p has %d softbodies
@@ -1758,9 +1819,10 @@ WorldRendererMgr001
 X@HcP8L
 X[A\A
 X[A\A]A^A
-XhHc@`L
+Y0D9{H
 YA1AUATSH
 YA1E1
+Z U+7
 Z10DevWarningPKcz
 Z13DebugPrintKV3PK10KeyValues3
 Z13SaveKV3AsJSONPK10KeyValues3P10CUtlStringS3
@@ -1775,6 +1837,7 @@ Z20g_nSequentialIndicesIDv4_fE
 Z20g_nSequentialIndicesIDv4_iE
 Z20g_nSequentialIndicesIfE
 Z20g_nSequentialIndicesIiE
+Z21ThreadAtomicNotifyOnePj
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z23_txnal_cow_string_c_strPKv
@@ -1788,7 +1851,7 @@ Z30RestorePhysicsMotionControllerRK19physrestoreparams_tPP24IPhysicsMotionContro
 Z35_txnal_cow_string_C1_for_exceptionsPvPKcS
 Z6DevMsgPKcz
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
-Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
+Z7LoadKV3P9CKV3ArenaP10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
 Z9V_strnlenPKci
 ZGTtNKSt11logic_error4whatEv
 ZGTtNKSt13bad_exception4whatEv
@@ -1898,10 +1961,19 @@ ZN10__cxxabiv117__class_type_info16__dyncast_resultC2Ei
 ZN10__cxxabiv117__class_type_infoD0Ev
 ZN10__cxxabiv117__class_type_infoD1Ev
 ZN10__cxxabiv117__class_type_infoD2Ev
+ZN10__cxxabiv117__pbase_type_infoD0Ev
+ZN10__cxxabiv117__pbase_type_infoD1Ev
+ZN10__cxxabiv117__pbase_type_infoD2Ev
 ZN10__cxxabiv119__foreign_exceptionD0Ev
 ZN10__cxxabiv119__foreign_exceptionD1Ev
 ZN10__cxxabiv119__foreign_exceptionD2Ev
+ZN10__cxxabiv119__pointer_type_infoD0Ev
+ZN10__cxxabiv119__pointer_type_infoD1Ev
+ZN10__cxxabiv119__pointer_type_infoD2Ev
 ZN10__cxxabiv119__terminate_handlerE
+ZN10__cxxabiv120__function_type_infoD0Ev
+ZN10__cxxabiv120__function_type_infoD1Ev
+ZN10__cxxabiv120__function_type_infoD2Ev
 ZN10__cxxabiv120__si_class_type_infoD0Ev
 ZN10__cxxabiv120__si_class_type_infoD1Ev
 ZN10__cxxabiv120__si_class_type_infoD2Ev
@@ -1909,12 +1981,19 @@ ZN10__cxxabiv120__unexpected_handlerE
 ZN10__cxxabiv121__vmi_class_type_infoD0Ev
 ZN10__cxxabiv121__vmi_class_type_infoD1Ev
 ZN10__cxxabiv121__vmi_class_type_infoD2Ev
+ZN10__cxxabiv123__fundamental_type_infoD0Ev
+ZN10__cxxabiv123__fundamental_type_infoD1Ev
+ZN10__cxxabiv123__fundamental_type_infoD2Ev
+ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev
+ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev
+ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev
 ZN11CTSListBase11InternalPopEv
 ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
 ZN11IThreadPool17QueueJobWithFlagsIR24CMotionControllerUpdaterEE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
 ZN11IThreadPool17QueueJobWithFlagsIZN26CMultiworldSoftbodyStepperC4EPP11CRnSoftbodyifiEUlvE_EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
+ZN12CAtomicMutex11AcquireLockEy
 ZN12CDwarfModule19GetValveSymbolPathsEP13CBufferString
 ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadedJob5AbortEb
@@ -1966,6 +2045,7 @@ ZN17CThreadSyncObjectD2Ev
 ZN19CVDwarfSymbolModule19OpenAndParseSymbolsEPKcjS1
 ZN19CVDwarfSymbolModule4InitEPKcj21VWMD_CPU_ARCHITECTUREyy27StackTools_ModuleIDFormat_tPKvi
 ZN19CVDwarfSymbolModuleC1Ev
+ZN19CVPhysics2Interface4InitEvEUlvE
 ZN20CPhysDataTypeManager16AllocateResourceEPK21ResourceBindingBase_t12ResourceId_tPK20ResourceFileHeader_tP29IRD_RegisterResourceDataUtilsE15CAllocatorUtils
 ZN21CCountedStringPool_CIC1Ev
 ZN21CCountedStringPool_CID1Ev
@@ -1979,19 +2059,19 @@ ZN22CThreadRWLock_FastRead27HaveWriteLock_BlockReadsNowEb
 ZN22CThreadRWLock_FastReadC1Ev
 ZN23CUtlFilenameSymbolTable17FindOrAddFileNameEPKc
 ZN23CUtlFilenameSymbolTable6StringERKjP13CBufferString
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE0
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE1
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE2
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE3
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE0
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE1
-ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE2
-ZN30CPhysicsAbsoluteRagdollControl20UpdateBodiesParallelEPK10CTransformfR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE
-ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE
-ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE0
-ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CThreadMutexEUlvE1
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE0
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE1
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE2
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointAbsoluteEiifbPKiPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE3
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE0
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE1
+ZN30CPhysicsAbsoluteRagdollControl19UpdateJointRelativeEiiffPK10CTransformRK17RnCollisionAttr_tRbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE2
+ZN30CPhysicsAbsoluteRagdollControl20UpdateBodiesParallelEPK10CTransformfR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE
+ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE
+ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE0
+ZN30CPhysicsAbsoluteRagdollControl20UpdateJointsParallelEiP21CPhysicsRagdollWeightPKiPK10CTransformfbR27CUtlLeanVectorFixedGrowableISt8functionIFvvEELt100Ei18CMemAllocAllocatorER12CAtomicMutexEUlvE1
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy495958126710E21VPhysXAggregateData_tE15AllocateAndLoadER23CKV3TransferLoadContextPK21ResourceBindingBase_tP29IRD_RegisterResourceDataUtilsE15CAllocatorUtils
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy495958126710E21VPhysXAggregateData_tE24DeallocateDestroyCleanupEPvP25IResourceDeallocatorUtilsE17CDeallocatorUtils
 ZN8CRnWorld18BeginRopeAsyncJobsEbEUlvE
@@ -2063,6 +2143,11 @@ ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PPv
 ZNK10__cxxabiv117__class_type_info12__do_dyncastElNS0_10__sub_kindEPKS0_PKvS3_S5_RNS0_16__dyncast_resultE
 ZNK10__cxxabiv117__class_type_info17__find_public_srcElPKvPKS0_S2
 ZNK10__cxxabiv117__class_type_info20__do_find_public_srcElPKvPKS0_S2
+ZNK10__cxxabiv117__pbase_type_info10__do_catchEPKSt9type_infoPPvj
+ZNK10__cxxabiv117__pbase_type_info15__pointer_catchEPKS0_PPvj
+ZNK10__cxxabiv119__pointer_type_info14__is_pointer_pEv
+ZNK10__cxxabiv119__pointer_type_info15__pointer_catchEPKNS_17__pbase_type_infoEPPvj
+ZNK10__cxxabiv120__function_type_info15__is_function_pEv
 ZNK10__cxxabiv120__si_class_type_info11__do_upcastEPKNS_17__class_type_infoEPKvRNS1_15__upcast_resultE
 ZNK10__cxxabiv120__si_class_type_info12__do_dyncastElNS_17__class_type_info10__sub_kindEPKS1_PKvS4_S6_RNS1_16__dyncast_resultE
 ZNK10__cxxabiv120__si_class_type_info20__do_find_public_srcElPKvPKNS_17__class_type_infoES2
@@ -2072,6 +2157,7 @@ ZNK10__cxxabiv121__vmi_class_type_info20__do_find_public_srcElPKvPKNS_17__class_
 ZNK10__cxxabiv122__base_class_type_info13__is_public_pEv
 ZNK10__cxxabiv122__base_class_type_info14__is_virtual_pEv
 ZNK10__cxxabiv122__base_class_type_info8__offsetEv
+ZNK10__cxxabiv129__pointer_to_member_type_info15__pointer_catchEPKNS_17__pbase_type_infoEPPvj
 ZNK13CVertexKDTree14FindVertsInBoxER23CUtlVectorFixedGrowableIPKfLm64EiERK5Vec3DIfES8_i
 ZNK14CRnMeshContact7FindTOIERK9RnSweep_tS2_fEUliiE
 ZNK15CUtlSymbolTable4FindEPKc
@@ -2243,6 +2329,7 @@ ZNKSt9type_info14__is_pointer_pEv
 ZNKSt9type_info15__is_function_pEv
 ZNKSt9type_info4nameEv
 ZNKSt9type_infoeqERKS
+ZNKSt9type_infoneERKS
 ZNSs10_S_compareEmm
 ZNSs12_Alloc_hiderC1EOS
 ZNSs12_Alloc_hiderC1EPcRKSaIcE
@@ -2572,6 +2659,8 @@ ZNSt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_strin
 ZNSt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEC2ES9
 ZNSt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPcSsEEEC1ES3
 ZNSt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPcSsEEEC2ES3
+ZNSt17_Function_handlerIFyvEPS0_E10_M_managerERSt9_Any_dataRKS3_St18_Manager_operation
+ZNSt17_Function_handlerIFyvEPS0_E9_M_invokeERKSt9_Any_data
 ZNSt17bad_function_callC1Ev
 ZNSt17bad_function_callC2Ev
 ZNSt17bad_function_callD0Ev
@@ -2762,7 +2851,6 @@ ZNSt9exceptionaSEOS
 ZNSt9type_infoD0Ev
 ZNSt9type_infoD1Ev
 ZNSt9type_infoD2Ev
-ZNV16CThreadSpinMutex4LockEPKciyj
 ZSt10__sv_checkmmPKc
 ZSt10unexpectedv
 ZSt11__addressofIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEPT_RS7
@@ -2820,15 +2908,104 @@ ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8
 ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ES3_RKS6
 ZTH28g_pThreadLocalStackAllocator
 ZTI17CThreadSyncObject
+ZTIDF128
+ZTIDF16
+ZTIDF16b
+ZTIDF32
+ZTIDF32x
+ZTIDF64
+ZTIDF64x
+ZTIDd
+ZTIDe
+ZTIDf
+ZTIDi
+ZTIDn
+ZTIDs
+ZTIDu
+ZTIFyvE
 ZTIN10__cxxabiv115__forced_unwindE
 ZTIN10__cxxabiv117__class_type_infoE
+ZTIN10__cxxabiv117__pbase_type_infoE
 ZTIN10__cxxabiv119__foreign_exceptionE
+ZTIN10__cxxabiv119__pointer_type_infoE
+ZTIN10__cxxabiv120__function_type_infoE
 ZTIN10__cxxabiv120__si_class_type_infoE
 ZTIN10__cxxabiv121__vmi_class_type_infoE
+ZTIN10__cxxabiv123__fundamental_type_infoE
+ZTIN10__cxxabiv129__pointer_to_member_type_infoE
 ZTIN9__gnu_cxx20recursive_init_errorE
 ZTIN9__gnu_cxx24__concurrence_lock_errorE
 ZTIN9__gnu_cxx26__concurrence_unlock_errorE
 ZTINSt3_V214error_categoryE
+ZTIPDF128
+ZTIPDF16
+ZTIPDF16b
+ZTIPDF32
+ZTIPDF32x
+ZTIPDF64
+ZTIPDF64x
+ZTIPDd
+ZTIPDe
+ZTIPDf
+ZTIPDi
+ZTIPDn
+ZTIPDs
+ZTIPDu
+ZTIPFyvE
+ZTIPKDF128
+ZTIPKDF16
+ZTIPKDF16b
+ZTIPKDF32
+ZTIPKDF32x
+ZTIPKDF64
+ZTIPKDF64x
+ZTIPKDd
+ZTIPKDe
+ZTIPKDf
+ZTIPKDi
+ZTIPKDn
+ZTIPKDs
+ZTIPKDu
+ZTIPKa
+ZTIPKb
+ZTIPKc
+ZTIPKd
+ZTIPKe
+ZTIPKf
+ZTIPKg
+ZTIPKh
+ZTIPKi
+ZTIPKj
+ZTIPKl
+ZTIPKm
+ZTIPKn
+ZTIPKo
+ZTIPKs
+ZTIPKt
+ZTIPKv
+ZTIPKw
+ZTIPKx
+ZTIPKy
+ZTIPa
+ZTIPb
+ZTIPc
+ZTIPd
+ZTIPe
+ZTIPf
+ZTIPg
+ZTIPh
+ZTIPi
+ZTIPj
+ZTIPl
+ZTIPm
+ZTIPn
+ZTIPo
+ZTIPs
+ZTIPt
+ZTIPv
+ZTIPw
+ZTIPx
+ZTIPy
 ZTISt10bad_typeid
 ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt11logic_error
@@ -2850,15 +3027,104 @@ ZTISt8bad_cast
 ZTISt9bad_alloc
 ZTISt9exception
 ZTISt9type_info
+ZTSDF128
+ZTSDF16
+ZTSDF16b
+ZTSDF32
+ZTSDF32x
+ZTSDF64
+ZTSDF64x
+ZTSDd
+ZTSDe
+ZTSDf
+ZTSDi
+ZTSDn
+ZTSDs
+ZTSDu
+ZTSFyvE
 ZTSN10__cxxabiv115__forced_unwindE
 ZTSN10__cxxabiv117__class_type_infoE
+ZTSN10__cxxabiv117__pbase_type_infoE
 ZTSN10__cxxabiv119__foreign_exceptionE
+ZTSN10__cxxabiv119__pointer_type_infoE
+ZTSN10__cxxabiv120__function_type_infoE
 ZTSN10__cxxabiv120__si_class_type_infoE
 ZTSN10__cxxabiv121__vmi_class_type_infoE
+ZTSN10__cxxabiv123__fundamental_type_infoE
+ZTSN10__cxxabiv129__pointer_to_member_type_infoE
 ZTSN9__gnu_cxx20recursive_init_errorE
 ZTSN9__gnu_cxx24__concurrence_lock_errorE
 ZTSN9__gnu_cxx26__concurrence_unlock_errorE
 ZTSNSt3_V214error_categoryE
+ZTSPDF128
+ZTSPDF16
+ZTSPDF16b
+ZTSPDF32
+ZTSPDF32x
+ZTSPDF64
+ZTSPDF64x
+ZTSPDd
+ZTSPDe
+ZTSPDf
+ZTSPDi
+ZTSPDn
+ZTSPDs
+ZTSPDu
+ZTSPFyvE
+ZTSPKDF128
+ZTSPKDF16
+ZTSPKDF16b
+ZTSPKDF32
+ZTSPKDF32x
+ZTSPKDF64
+ZTSPKDF64x
+ZTSPKDd
+ZTSPKDe
+ZTSPKDf
+ZTSPKDi
+ZTSPKDn
+ZTSPKDs
+ZTSPKDu
+ZTSPKa
+ZTSPKb
+ZTSPKc
+ZTSPKd
+ZTSPKe
+ZTSPKf
+ZTSPKg
+ZTSPKh
+ZTSPKi
+ZTSPKj
+ZTSPKl
+ZTSPKm
+ZTSPKn
+ZTSPKo
+ZTSPKs
+ZTSPKt
+ZTSPKv
+ZTSPKw
+ZTSPKx
+ZTSPKy
+ZTSPa
+ZTSPb
+ZTSPc
+ZTSPd
+ZTSPe
+ZTSPf
+ZTSPg
+ZTSPh
+ZTSPi
+ZTSPj
+ZTSPl
+ZTSPm
+ZTSPn
+ZTSPo
+ZTSPs
+ZTSPt
+ZTSPv
+ZTSPw
+ZTSPx
+ZTSPy
 ZTSSt10bad_typeid
 ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTSSt11logic_error
@@ -2882,9 +3148,14 @@ ZTSSt9exception
 ZTSSt9type_info
 ZTVN10__cxxabiv115__forced_unwindE
 ZTVN10__cxxabiv117__class_type_infoE
+ZTVN10__cxxabiv117__pbase_type_infoE
 ZTVN10__cxxabiv119__foreign_exceptionE
+ZTVN10__cxxabiv119__pointer_type_infoE
+ZTVN10__cxxabiv120__function_type_infoE
 ZTVN10__cxxabiv120__si_class_type_infoE
 ZTVN10__cxxabiv121__vmi_class_type_infoE
+ZTVN10__cxxabiv123__fundamental_type_infoE
+ZTVN10__cxxabiv129__pointer_to_member_type_infoE
 ZTVN9__gnu_cxx20recursive_init_errorE
 ZTVN9__gnu_cxx24__concurrence_lock_errorE
 ZTVN9__gnu_cxx26__concurrence_unlock_errorE
@@ -2946,7 +3217,6 @@ adult male human
 alignof
 allocator
 always
-and adding Touch Persist flag, because one of the shapes enables it
 angular_damping_ratio
 angular_frequency
 angularburst
@@ -2964,7 +3234,7 @@ b>No</b>-contact Information
 b>Non</b>-interaction Analysis
 b>Persists</b><i>(that's expensive)</i
 b>Trigger</b> Touch
-bA;EX
+bA;WX
 background-color:#434343
 bad_function_call
 bag of sugar
@@ -3001,6 +3271,7 @@ blocklos
 blocksound
 bmit fulH
 bodies
+body.cpp
 bodyMassScale
 boolean
 both sides of collision in the same hierarchy must have self-collision and solid contacts enabled. Intersection disabled
@@ -3033,8 +3304,9 @@ cloth
 cloth_filter_transform_stateless
 cloth_ground_plane_thickness
 co_await
+coarse
 collisionGroup
-collisionGroup, interactAs, interactWith, interactExclude} #FFFFFFFF
+collisionGroup, interactAs, interactWith, interactExclude, targetDetailLayer, includedDetailLayers} #FFFFFFFF
 collision_group_override
 comment
 common/stackhelpers/stackhelpers_vsymbolmodule_translation.cpp
@@ -3055,6 +3327,8 @@ covariant return thunk to
 cxa_allocate_dependent_exception
 cxa_allocate_exception
 cxa_atexit
+cxa_bad_cast
+cxa_bad_typeid
 cxa_begin_catch
 cxa_call_terminate
 cxa_call_unexpected
@@ -3074,6 +3348,7 @@ cxa_init_primary_exception
 cxa_pure_virtual
 cxa_rethrow
 cxa_throw
+cxa_throw_bad_array_new_length
 d %d %d
 d %d %d %d
 d bones found and initialized
@@ -3126,11 +3401,17 @@ eGenericCapsule
 eGroundBox
 eGroundCapsule
 eHolster
+eIdleTurn
+eInstantStop
 eInvalid
 eMedium
 eMoveWithGait
 eObsoleteBackCompat1
 eObsoleteBackCompat2
+ePlantedTurn
+eShuffle
+eStart
+eStrafe
 eTeleport
 eVeryFast
 eWaitFacing
@@ -3152,15 +3433,13 @@ f4Slack
 f4Weight0
 f4Weights
 fA3@"f
-fA3A"f
-fA3B"f
-fA3B2L
+fA3@2D
+fA9<Pu
 fA;D$p
+fA;t$(t
 fD3Y"fA
-fD3x2fA
-fD;cTr
-fE;L$(t
 fF#4FtsI
+f`IcFXM
 fademaxdist
 fademindist
 fadetime
@@ -3225,12 +3504,11 @@ flc_lines
 float128
 float32
 float64
-fnphysicsworldimpl.cpp
 font color="%s">%s</font
 font color="blue">%s</font
-font color="cyan">Left</font
 font color="cyan">Query</font
-font color="green">Right</font
+font color="cyan">Right</font
+font color="green">Left</font
 font color="green">[C]</font
 font color="red">Face is connected to itself, cannot dissolve</font
 font color="red">[x]</font
@@ -3244,7 +3522,6 @@ found pointer in module '%s
 friction
 friend
 fwrite
-fxA;_p
 g_bUpdateStringTokenDatabase
 g_flConfigMaxCoord
 g_pMemAlloc
@@ -3256,6 +3533,7 @@ gcclibcxx_demangle_callback
 generic
 get module name
 getentropy
+gg~lL
 gh spaceH
 ghIcG`I
 glibcxx.eh_pool
@@ -3275,15 +3553,11 @@ gxx_personality_v0
 hA]A^A_]H
 hHc@`I
 hHcG`M
-hI9}`H
 h[A\A]A^A
-h[A\fH
 halfEdges %d,%d faces %d,%d angle %.1f deg
 hardware
 health
 helpers/world_helper.cpp
-helpers/world_helper.inl
-hhHcPdL
 hidden
 hidden alias for
 hingeAxis
@@ -3293,13 +3567,12 @@ hullivr_edge_merge_tan
 hullivr_faceisland_merge_disp
 hullivr_faceisland_merge_tan
 hullivr_version
-i0E9uH
-iA;D$p
-iPIcAHM
+ihIcA`I
 impactHardThreshold
 impacthard
 impactsoft
 in_vehicle
+includedDetailLayers
 inertia_boxes
 init_array
 initializer for module
@@ -3310,6 +3583,7 @@ interactWith
 interactive
 interactive_debris
 interacts-as
+intersectiondictionary.cpp
 invalid
 is <b><font color="red">inconsistent</font></b> with actual collision group
 isActive
@@ -3318,9 +3592,11 @@ java resource
 joints
 joints[%d
 keyframed_bodies
+keyvalues3.cpp
 khHcC`M
 l bug reH
 l$hIcD$`I
+lP¦Zs
 ladder
 lambda
 large car
@@ -3385,6 +3661,7 @@ m_CollisionAttrib.m_nInteractsExclude
 m_CollisionAttrib.m_nInteractsWith
 m_CollisionAttrib.m_nOwnerIdsToIgnore[ 0
 m_CollisionAttrib.m_nOwnerIdsToIgnore[ 1
+m_CollisionAttrib.m_nTargetDetailLayer
 m_CollisionAttributeIndices
 m_CollisionGroup
 m_CollisionGroupString
@@ -3403,6 +3680,8 @@ m_CtrlOsOffsets
 m_CtrlSoftOffsets
 m_CullingData
 m_Data
+m_DetailLayerStrings
+m_DetailLayers
 m_Distances
 m_DynKinLinks
 m_DynNodeFriction
@@ -3477,6 +3756,7 @@ m_NodeBases
 m_NodeCollisionRadii
 m_NodeIntegrator
 m_NodeInvMasses
+m_NodeStrayBoxes
 m_Nodes
 m_OpCode
 m_PackedAABB
@@ -3535,19 +3815,18 @@ m_WorldCollisionNodes
 m_WorldCollisionParams
 m_aAngOffset
 m_anchor
+m_animGraph2Refs
 m_ankleBoneIndex
 m_ankleBoneName
 m_attachments
 m_audioParams
 m_audioSounds
 m_axes
-m_bAcceptParentMaterialDrivenDecals
 m_bActiveInEditorByDefault
 m_bAdditive
 m_bAllowMissingBodies
 m_bBakedTwoSided
 m_bBoneMergeFlex
-m_bBuoyancyDragEnabled
 m_bCanBatchWithDynamicShaderConstants
 m_bClamp
 m_bCompressedZSTD
@@ -3591,18 +3870,20 @@ m_bIsEnabled
 m_bIsLinearConstraintDisabled
 m_bIsLinearConstraintEnabled
 m_bIsNotMatchedToMaterial
+m_bIsQueryOnly
 m_bIsRigid
 m_bIsTautLineEnabled
 m_bMeshoptCompressed
 m_bMeshoptIndexSequence
 m_bNeedsSort
 m_bNoShadow
+m_bNotPickable
 m_bOnlyShadow
 m_bOverrideMassCenter
 m_bPredicted
 m_bRecomputeSmoothNormalsAfterAnimation
 m_bRequiresDynamicBodies
-m_bSimulateOnlyOnFinalTick
+m_bSimulateOncePerFrame
 m_bSleeping
 m_bSmoothNormalsAcrossUvSeams
 m_bSolidCollisionAtZeroWeight
@@ -3655,6 +3936,7 @@ m_depth_elems
 m_description
 m_drawBounds
 m_drawCalls
+m_drawDesc
 m_driveDampingSlerp
 m_driveDampingSwing
 m_driveDampingTwist
@@ -3682,11 +3964,12 @@ m_flAlongDamping
 m_flAlongStiffness
 m_flAlpha
 m_flAngleLimit
-m_flAngularBuoyancyDrag
 m_flAngularDamping
 m_flAngularDampingRatio
 m_flAngularDampingRatios
 m_flAngularDrag
+m_flAngularDragScale
+m_flAngularFluidDragScale
 m_flAngularFrequencies
 m_flAngularFrequency
 m_flBaseDamping
@@ -3703,7 +3986,7 @@ m_flBaseStiffness
 m_flBaseUpFriction
 m_flBendingStiffness
 m_flBindPoseDirectionMS
-m_flBuoyancyFactor
+m_flBuoyancyScale
 m_flCapsuleHeight
 m_flCapsuleRadius
 m_flCurTime
@@ -3738,11 +4021,12 @@ m_flInertiaScale
 m_flInertiaScaleInv
 m_flInternalPressure
 m_flLength
-m_flLinearBuoyancyDrag
 m_flLinearDamping
 m_flLinearDampingRatio
 m_flLinearDampingRatios
 m_flLinearDrag
+m_flLinearDragScale
+m_flLinearFluidDragScale
 m_flLinearFrequencies
 m_flLinearFrequency
 m_flLinkStretchToDisableCollision
@@ -3879,6 +4163,7 @@ m_goalAngularVelocity
 m_goalOrientation
 m_goalPosition
 m_hBuffer
+m_hGraph
 m_hModel
 m_hSimParamsMat
 m_hairPositionOffsets
@@ -3915,6 +4200,7 @@ m_linearLimitValue
 m_localSpaceTransforms
 m_lodBoneCounts
 m_lodGroupSwitchDistances
+m_mWorldFromLocal
 m_material
 m_materialGroups
 m_materials
@@ -3953,6 +4239,7 @@ m_nBoneIndex
 m_nBoneNameHash
 m_nBoneWeightCount
 m_nBoxRigidIndex
+m_nBufferUsage
 m_nCallbackFlags
 m_nChild
 m_nChildren
@@ -3995,6 +4282,7 @@ m_nGuideHairIndices_nSurfaceTriIndex
 m_nHairCount
 m_nHeight
 m_nHitBoxIndex
+m_nIncludeDetailLayerCount
 m_nIndex
 m_nIndex0
 m_nIndex1
@@ -4015,6 +4303,7 @@ m_nMinVelocityIterations
 m_nMorphBlock
 m_nMotorMode
 m_nNameHash
+m_nNameToken
 m_nNext
 m_nNode
 m_nNodeBaseJiggleboneDependsCount
@@ -4082,6 +4371,10 @@ m_nTwin
 m_nType
 m_nUpType
 m_nVBIBBlock
+m_nVertexAlbedoFormat
+m_nVertexAlbedoOffset
+m_nVertexAlbedoStride
+m_nVertexAlbedoVB
 m_nVertexCount
 m_nVertexMapHash
 m_nVertexOffset
@@ -4151,12 +4444,18 @@ m_rnShape
 m_rolling
 m_roughThreshold
 m_roughnessFactor
+m_rtProxyDrawCalls
 m_sAttachmentName
 m_sBoneName
 m_sDebugName
+m_sDescription
+m_sFriendlyName
 m_sHitGroup
+m_sIdentifier
 m_sMorphChannelName
 m_sName
+m_sNameString
+m_sParentDetailLayer
 m_sSurfaceProperty
 m_sTargetBoneName
 m_sTargetMorph
@@ -4262,6 +4561,7 @@ m_vViewMax
 m_vViewMin
 m_vecCenter
 m_vecLastAwakeNodeForces
+m_vecNmSkeletonRefs
 m_vecNodeFlags
 m_vecNodeForces
 m_vecNodeMassesInv
@@ -4269,6 +4569,7 @@ m_vecNodePositions
 m_vecNodeVelocities
 m_vecPrevNodeTargets
 m_vecSize
+m_vecSubtreeDetailLayers
 m_vehicleParams
 m_vertexBuffers
 m_wheelDrag
@@ -4313,7 +4614,6 @@ morph_texture
 motiondisabled
 mt19937
 multiplayer_break
-n@Icw8A9
 nBegin
 nBeginDynamic
 nBoneCtrl
@@ -4354,7 +4654,8 @@ nVertexMapIndex
 nVertexNode
 nVirtElem
 nWeight
-nhATSH
+n`IcFXM
+nameindex.cpp
 no failure reason set
 nodraw
 nodraw | off              - draw nothing
@@ -4365,6 +4666,7 @@ nonlocal
 normal
 not                       - invert filter
 not enouH
+not_pickable
 note.gnu.build-id
 note.stapsdt
 npc_actor
@@ -4382,7 +4684,6 @@ org/bugsH
 orientation
 other
 other                     - draw other world(s) - useful in tools
-p0E9nP
 p8}'UHc
 p: %s
 p< tgv]<0uIL
@@ -4430,7 +4731,6 @@ phys_debug_draw
 phys_min_motion_controller_count_to_run_in_job
 phys_res
 phys_step_threaded
-physaggregatedata.cpp
 physib
 physics
 physics ConComm: ignoring world %p draw filter
@@ -4461,14 +4761,9 @@ ptestbed
 pthread_cond_broadcast
 pthread_cond_wait
 pthread_key_create
-pthread_mutex_destroy
-pthread_mutex_init
 pthread_mutex_lock
 pthread_mutex_unlock
-pthread_mutexattr_init
-pthread_mutexattr_settype
 pthread_once
-public/scenesystem/vertexformat.h
 public/tier0/tslist.h
 public/tier0/utlatomicaddvector.h
 public/tier0/utldict.h
@@ -4480,7 +4775,6 @@ pz_clip
 qAdjust
 qangle
 r8I9v8r
-rPHcJHL
 race horse
 radius
 ragdoll
@@ -4521,28 +4815,31 @@ rodata.cst8
 rodata.str1.1
 rodata.str1.8
 rolling
+rubikon/body.inl
 s %f %f %f %f %f %f %f %f %f
 s %g %g %g %g %g %g %g %g %g
+s %s included in target detail layer '%s' of %s
+s (%s
 s (Color
 s (Material
 s 0x%llX
 s 0x%llX - 0x%llX, except %s
 s F=%d V=%d hE=%d
-s NameIndex:PreacquireName( %x ) without name string
+s NameIndex:AcquirePreindexedName( %x ) without name string
 s allocation count overflow
 s allocation count overflow( %llu + %llu > %llu
 s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
 s and %s
-s called on a pool context (no root available
-s could not allocate (pre-acquire) layer name '%s'. It was expected to be #%d. %d names already used
-s has solid contacts disabled - no resolve
+s called on a pool arena (no root available
+s could not allocate (pre-acquire) name '%s'. It was expected to be #%d. %d names already used
+s does not include FCOLLISION_FUNC_ENABLE_TOUCH_EVENT. Disabling all touch events
+s has FCOLLISION_FUNC_ENABLE_TOUCH_PERSISTS. Adding persistent touch events
 s verts, %s faces, %s edges
 s verts, %s tris, %s nodes
 s%s.traces.txt
 s(): Bone referenced by collision mesh not found in render skeleton. Skipping collision mesh
 s(HcC A9
-s4HcK0
 s8HcC09
 s: %s
 s: __pos (which is %zu) > __size (which is %zu
@@ -4555,6 +4852,7 @@ s: invalid nSize %lld
 s: max element overflow, cur count %u + %u
 s: member count overflow (%u
 s: no space for allocation of %u
+s@HcK8A9
 s@HcS8H
 sPHcSHH
 s_color
@@ -4563,11 +4861,11 @@ scale=%g
 scrapeRoughThreshold
 scraperough
 scrapesmooth
+scripts/collision_detail_layers.vdata
 secure_getenv
 server
 server                    - draw server world(s
 serverentityonclient
-shHcC`L
 shape_edges
 shapes
 shstrtab
@@ -4646,45 +4944,50 @@ syscall
 system
 t!H90u
 t";WPs
-t#A"L$sA
-t$4IcL$0
+t"AiT
 t$8IcD$09
-t$8Ic\$lA
 t$@IcD$8L
-t%Mc)E
-t&M;0t!Lcz
-t,IcL? H
-t.L;8u
-t.Mco(D
-t.Mco@D
+t(L;(t#Mc
+t+JcL? H
+t.Mcf@D
+t.McfXD
 t0HcG H
+t2Lcs@D
+t2LcsXD
 t4IcD$0
 t4IcVHA
 t4L9"u
+t7Mcf(D
 t7`ff
 t8HcG H
 t9H;P u3H
 t9[A\A]A
 t:Mcl$HLc{HE
 t:Mcl$`Lc{`E
+t;Lcs(D
+t@Lco0H
 tCIcG A
+tG[A\A]A
 tJHcq L
 tK;WPsFH
 tK[A\A]A
-tMA3G0
 tMMc&I
+tRA3W0
 tSIcOPD9
+tS[A\A]A
+tYLc@`E
 tZM9 tUM9
 table
 table width="100
 table: %u members
 table></tt></small
 tangent
+targetDetailLayer
 targetNodes
 target_velocity
+tcL	3I
 td colspan=%d style="%s%s
 tdata
-teIcG0A9
 template
 template parameter object for
 terminate called after throwing an instance of
@@ -4693,11 +4996,11 @@ terminate called without an active exception
 testbed
 texcoord
 text-align: right
-thIcT$HA9
 the Earth
 thickness
 throw
-tiIcGHA9
+tkIcW0A9
+tkIcWHA9
 tls_get_addr
 tmFrame
 tmFrame2
@@ -4719,8 +5022,7 @@ transparent 128           - draw transparent (0-255
 trigger
 triggers
 trigger|nav|clip          - draw corresponding tool materials
-tsIcD$`A9
-tu;C`spH
+tv;C`L
 twist_limit
 type %u, version %u, total size %u. %d data headers
 typeinfo fn for
@@ -4728,11 +5030,10 @@ typeinfo for
 typeinfo name for
 typename
 u.rnsave
-u9IcV8
+u0D;c
 u:0x%08X
 u:0x%08X*/ "%s
 uSfA3E"f
-uVfA3E"f
 u] comm %u.%u(%u) data %u
 ueH9F u_L9P
 uint16
@@ -4741,7 +5042,6 @@ uint64
 ul><li><font color="cyan">"%s"(%d)</font></li><li><font color="green">"%s"(%d)</font></li></ul
 unable to register all schema data: %s
 undefined
-universaltranslator.cpp
 unknown
 unknown KV3 basic type '%s' (%d
 unload %s 0x%llX - 0x%llX
@@ -4755,8 +5055,11 @@ unsigned long long
 unsigned short
 unsupported
 use_block_solver
+uxD;cp
+uxLck
 űCTE1
-vA;D$8
+v0D;k
+v9Mоl
 vCenter
 vCenterOfMass
 vLocalMax
@@ -4765,6 +5068,7 @@ vOffset
 vShape
 vSphere
 vV<0uJI
+vXHcPdI
 vb phys
 vector
 vector2
@@ -4776,8 +5080,9 @@ vehicleclip
 vehicleparams
 very_fast
 virtual thunk to
-vmatL
 vmat_c
+vnmgraphH
+vnmskel
 volatile
 vphys2_debug.cpp
 vphys2_world.cpp
@@ -4789,16 +5094,18 @@ vphysics_save_motioncontroller_t
 vphysics_save_ragdoll_control_t
 vtable for
 w 1ҐIc
+w 9s u
+w A9u u
+w AUATI
 w&HcC
 w(Hcx Lc
+w@HcG8I
 w@IcGtIcWp
-wHAUATI
 w[<gvPH
 wakeup
 wchar_t
 weapon
 whAUATSH
-whIcG`I
 wheeldrag
 wheelfrictionscale
 width:1%;max-width:1
@@ -4807,19 +5114,21 @@ wireframe
 wireframe                 - draw wireframe
 with collision disabled. Do Not Collide
 with collision enabled
-world.cpp
-world.cpp:1643
-world.cpp:1799
-world.cpp:2166
+world.cpp:1672
+world.cpp:1828
+world.cpp:2195
 worldAxisDirection
 worldGeometry
 worldPosition
-x0A9<$~*M
-xIcD$pL
-xIcD$pM
+x(E9o(~"I
+x0E9wP
+xCD;=DO
 xIcD$t
 x[A\A
 x[A\A]A^A
+z&PL,E
 z8H9y8
 z8H9y8r
+zPH9~Pu
 zf#C4t
+zv@8~vu

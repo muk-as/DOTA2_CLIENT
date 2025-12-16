@@ -679,7 +679,7 @@ DOTADashboard.GCStatusScary #TopBarStatusBar.ShowSpinner #TopBarStatusSpinner
 	flow-children: none;
 }
 
-#DOTAReturnToGameButton,#DOTAReturnToPostGameButton
+#DOTAReturnToGameButton
 {
 	width: 62px;
 	height: 57px;
@@ -695,13 +695,7 @@ DOTADashboard.GCStatusScary #TopBarStatusBar.ShowSpinner #TopBarStatusSpinner
 	transition-timing-function: ease-out;
 }
 
-#DOTAReturnToPostGameButton
-{
-	background-image: url("s2r://panorama/images/icon_dota_logo_psd.vtex");
-	background-size: 24px;
-}
-
-#DOTAReturnToGameButton:hover,#DOTAReturnToPostGameButton:hover
+#DOTAReturnToGameButton:hover
 {
 	wash-color: #9999aa;
 }
@@ -711,12 +705,71 @@ DOTADashboard.IsInGame #DOTAReturnToGameButton
 	opacity: 1;
 }
 
-DOTADashboard.IsInPostGame #DOTAReturnToPostGameButton
+#LeftTopBarPostGame
+{
+	width: 60px;
+	height: 60.5px;
+	background-image: none;
+	opacity: 0;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_softer_png.vtex") 0.5;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 60% 60%, from( #9ba9f100 ), color-stop(0.3, #afbaf100 ), to( #afbaf100 ) );
+	border-bottom: 2px solid rgba(168, 206, 255, 0);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF55 ), color-stop(0.5, #FFFFFF ), to( #FFFFFF55 ) );
+	transition-property: background-color, wash-color, border;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+#LeftTopBarPostGame .RadioBox
+{
+	background-color: none;
+	border-radius: 0px;
+	border: 0px;
+	width: 100%;
+	height: 100%;
+	box-shadow: none;
+	background-image: url("s2r://panorama/images/icon_dota_logo_psd.vtex");
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-top: 2px;
+	wash-color: #565b65;
+	img-shadow: 0px 1px 6px black;
+	transition-property: background-color, wash-color, img-shadow;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+#LeftTopBarPostGame:hover
+{
+	wash-color: #ffffff;
+}
+
+#LeftTopBarPostGame:hover .RadioBox
+{
+	wash-color: #aebdcd;
+}
+
+#LeftTopBarPostGame:selected
+{
+	background-color: gradient( radial, 50% 50%, 0% 0%, 60% 90%, from( #95adecd2 ), color-stop(0.3, #95adec60 ), to( #afbaf103 ) );
+	border-bottom: 2px solid rgba(168, 206, 255, 0.1);
+}
+
+#LeftTopBarPostGame:selected .RadioBox
+{
+	wash-color: #ffffff;
+	img-shadow: 0px 0px 12px rgb(136, 166, 232);
+}
+
+DOTADashboard.IsInPostGame #LeftTopBarPostGame
 {
 	opacity: 1;
 }
 
-DOTADashboard.IsInGame #DOTAReturnToPostGameButton
+DOTADashboard.IsInGame #LeftTopBarPostGame
 {
 	opacity: 0;
 }
@@ -3783,5 +3836,30 @@ DOTADashboard.InReadyUpState DOTAParty
 .GCStatusVisible #WatchMenu
 {
 	transform: translateY( 32px );
+}
+
+DOTADashboard.PopupBackgroundVisualNovel #DashboardForeground,DOTADashboard.PopupBackgroundVisualNovel #PartySearch
+{
+	blur: gaussian( 2px );
+	wash-color: #657b7baa;
+	brightness: 0.7;
+	transition-delay: 0s;
+	transition-duration: 0.3s;
+}
+
+DOTADashboard.PopupBackgroundVisualNovel #TopBar,DOTADashboard.PopupBackgroundVisualNovel #TopBarSecondaryContainer
+{
+	transform: translateY( -150px );
+	opacity: 0;
+	transition-delay: 0s;
+	transition-duration: 0.3s;
+}
+
+DOTADashboard.PopupBackgroundVisualNovel #Chat,DOTADashboard.PopupBackgroundVisualNovel #SocialControls,DOTADashboard.PopupBackgroundVisualNovel #Play,DOTADashboard.PopupBackgroundVisualNovel #FriendMenu
+{
+	transform: translateY( 350px );
+	opacity: 0;
+	transition-delay: 0s;
+	transition-duration: 0.3s;
 }
 

@@ -1,0 +1,92 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/leaf_pages/dashboard_page_debut_styles.vcss_c" />
+		<include src="s2r://panorama/styles/leaf_pages/dashboard_page_debut_largo.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/leaf_pages/dashboard_page_debut_largo.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="ModelSnippet">
+			<Panel>
+				<DOTAScenePanel id="ModelBackground" class="Initialize" map="backgrounds/hero_showcase_bard_frog" camera="hero_camera" light="hero_light" renderdeferred="true" rotateonhover="true" rotateonmousemove="true" yawmin="0" yawmax="0" pitchmin="0" pitchmax="0" antialias="true" particleonly="false" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAReferencePage class="DashboardPage" onnavigatedto="StartLargoDebut()" onnavigatedaway="ResetLargoDebut()" oncancel="SkipDebutVideo()" onload="LoadLargoLogo()">
+		<Panel id="MainContainer" hittest="false">
+			<Panel id="ModelContainer" hittest="false" />
+			<Panel class="PageShadow Left" />
+			<Panel class="PageShadow Right" />
+			<Panel id="OverlayButtons">
+				<Button id="Frogling1" onactivate="LargoDebutTrigger( &apos;frogling_1&apos; )" />
+				<Button id="Frogling2" onactivate="LargoDebutTrigger( &apos;frogling_2&apos; )" />
+				<Button id="Frogling3" onactivate="LargoDebutTrigger( &apos;frogling_3&apos; )" />
+				<Button id="Largo" onactivate="LargoDebutTrigger( &apos;largo&apos; )" />
+			</Panel>
+			<Panel id="ControlButtonsContainer" />
+			<Panel id="BottomGradient" hittest="false" />
+			<Panel id="DebutInformation" hittest="false">
+				<Panel id="InformationBody" class="TopBottomFlow" hittest="false">
+					<Panel id="TitleContainer" hittest="false">
+						<Panel class="Title" hittest="false" />
+					</Panel>
+					<Panel id="ScrollPanel" class="TopBottomFlow">
+						<Panel id="HeroSubtitle">
+							<Label class="RoleLabel" id="Melee" text="#DOTA_AttackCapability_Melee" />
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Support" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Support )" onmouseout="UIHideTextTooltip()" />
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Disabler" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Disabler )" onmouseout="UIHideTextTooltip()" />
+							<Label class="RoleLabel" text="#DOTA_HeroRole_Durable" onmouseover="UIShowTextTooltip( #DOTA_HeroRole_Description_Durable )" onmouseout="UIHideTextTooltip()" />
+						</Panel>
+						<Panel class="AttributeComplexityContainer">
+							<Panel class="Dash Left" />
+							<Image class="PrimaryAttribute" src="s2r://panorama/images/control_icons/24px/attribute_strength.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="HeroComplexity">
+								<Image class="HeroComplexityPip" src="s2r://panorama/images/control_icons/24px/hero_complexity_full.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="HeroComplexityPip" src="s2r://panorama/images/control_icons/24px/hero_complexity_full.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="HeroComplexityPip" src="s2r://panorama/images/control_icons/24px/hero_complexity_empty.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+							<Panel class="Dash Right" />
+						</Panel>
+						<Panel id="AbilityIcons">
+							<Panel id="InnateAbility" class="InnateIcon" onmouseover="DOTAShowInnateTooltip( 155, 0 )" onmouseout="DOTAHideInnateTooltip()" />
+							<DOTAAbilityImage abilityname="largo_catchy_lick" showtooltip="true" />
+							<DOTAAbilityImage abilityname="largo_frogstomp" showtooltip="true" />
+							<DOTAAbilityImage abilityname="largo_croak_of_genius" showtooltip="true" />
+							<DOTAAbilityImage abilityname="largo_amphibian_rhapsody" showtooltip="true" />
+							<Panel id="Talent" class="StatBranch" onmouseover="DOTAHUDShowHeroStatBranchTooltip( 155, 0 )" onmouseout="DOTAHUDHideStatBranchTooltip()" />
+							<Panel id="ScepterDetails" class="ScepterDetails" onmouseover="DOTAHUDShowAghsStatusTooltip( 155, 0 )" onmouseout="DOTAHUDHideAghsStatusTooltip()" />
+						</Panel>
+						<Panel id="UltiPlaylistHeader">
+							<Label id="UltiPlaylistLabel" text="#DOTA_HUD_LargoSong_Header" hittest="false" />
+						</Panel>
+						<Panel id="UltiPlaylistIcons">
+							<DOTAAbilityImage id="Song1" abilityname="largo_song_fight_song" src="s2r://panorama/images/spellicons/largo_song_fight_song_png.vtex" onmouseover="$.DispatchEvent(&apos;DOTAShowAbilityTooltip&apos;, $(&apos;#Song1&apos;), &apos;largo_song_fight_song&apos;); LargoDebutUpdateAbilityImage( &apos;#Song1&apos;, &apos;file://{images}/spellicons/largo_song_fight_song_rhythm.png&apos; )" onmouseout="$.DispatchEvent( &apos;DOTAHideAbilityTooltip&apos;, $(&apos;#Song1&apos;)); LargoDebutUpdateAbilityImage( &apos;#Song1&apos;, &apos;file://{images}/spellicons/largo_song_fight_song.png&apos; )" />
+							<DOTAAbilityImage id="Song2" abilityname="largo_song_double_time" src="s2r://panorama/images/spellicons/largo_song_double_time_png.vtex" onmouseover="$.DispatchEvent(&apos;DOTAShowAbilityTooltip&apos;, $(&apos;#Song2&apos;), &apos;largo_song_double_time&apos;); LargoDebutUpdateAbilityImage( &apos;#Song2&apos;, &apos;file://{images}/spellicons/largo_song_double_time_rhythm.png&apos; )" onmouseout="$.DispatchEvent( &apos;DOTAHideAbilityTooltip&apos;, $(&apos;#Song2&apos;)); LargoDebutUpdateAbilityImage( &apos;#Song2&apos;, &apos;file://{images}/spellicons/largo_song_double_time.png&apos; )" />
+							<DOTAAbilityImage id="Song3" abilityname="largo_song_good_vibrations" src="s2r://panorama/images/spellicons/largo_song_good_vibrations_png.vtex" onmouseover="$.DispatchEvent(&apos;DOTAShowAbilityTooltip&apos;, $(&apos;#Song3&apos;), &apos;largo_song_good_vibrations&apos;);LargoDebutUpdateAbilityImage( &apos;#Song3&apos;, &apos;file://{images}/spellicons/largo_song_good_vibrations_rhythm.png&apos; )" onmouseout="$.DispatchEvent( &apos;DOTAHideAbilityTooltip&apos;, $(&apos;#Song3&apos;)); LargoDebutUpdateAbilityImage( &apos;#Song3&apos;, &apos;file://{images}/spellicons/largo_song_good_vibrations.png&apos; )" />
+						</Panel>
+						<Label id="HeroLore" text="#npc_dota_hero_largo_lore" hittest="false" />
+					</Panel>
+					<Panel id="HeroButtons">
+						<Panel id="DemoButtons">
+							<DemoModeButton id="DemoHeroButton" category="#npc_dota_hero_largo" onactivate="DOTADemoHero( npc_dota_hero_largo, 0)" />
+							<TextButton class="DefaultButton FixedSize" onactivate="DOTAGoToHeroPage( 155 );" text="#DOTA_HeroDemo_Button_ToLoadout" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="LogoFull" hittest="none" />
+			</Panel>
+			<Panel id="MovieContainer">
+				<Movie id="LargoDebutMovie" src="file://{resources}/videos/promo/largo_debut.webm" repeat="false" controls="none" hittest="false" />
+			</Panel>
+			<Button class="CloseButton" onactivate="SkipDebutVideo()" />
+		</Panel>
+	</DOTAReferencePage>
+</root>

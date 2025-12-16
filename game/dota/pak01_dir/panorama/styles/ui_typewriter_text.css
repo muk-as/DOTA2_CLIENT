@@ -12,7 +12,7 @@ DOTATypewriterText
 	height: 100%;
 }
 
-#TypewriterLabel
+#OldTypewriterLabel
 {
 	min-height: 5px;
 	width: 100%;
@@ -26,9 +26,70 @@ DOTATypewriterText
 	brightness: 0.5;
 }
 
-#TypewriterLabel i
+.UseSplitLabel #OldTypewriterLabel
+{
+	visibility: collapse;
+}
+
+#OldTypewriterLabel i
 {
 	font-family: Radiance;
+}
+
+#SplitLabelCursorContainer
+{
+	width: 54px;
+	height: 54px;
+	visibility: collapse;
+	transform: translateY( -60px );
+	overflow: noclip;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .3s;
+	transition-delay: 0.1s;
+}
+
+.UseSplitLabel #SplitLabelCursorContainer,.UseBothStylesLabels #SplitLabelCursorContainer
+{
+	visibility: visible;
+}
+
+.Animating #SplitLabelCursorContainer
+{
+	opacity: 1;
+}
+
+#SplitLabelCursorContainer #SplitLabelCursorImage
+{
+	width: 48px;
+	height: 48px;
+	ignore-parent-flow: true;
+	transition-property: opacity, transform;
+	transition-duration: .4s;
+	overflow: noclip;
+	vertical-align: bottom;
+	transform-origin: 50% 50%;
+}
+
+.AnimateSplitLabelCursor #SplitLabelCursorContainer #SplitLabelCursorImage
+{
+	animation-name: NewSquash;
+	animation-duration: 0.15s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'NewSquash'
+{
+	33%
+	{
+		transform:scaleX(1) scaleY( 1.4 );
+	}
+	
+	66%
+	{
+		transform:scaleX(1.6) scaleY( 0.8 );
+	}
+	
 }
 
 #Cursor
@@ -36,6 +97,11 @@ DOTATypewriterText
 	width: 1px;
 	height: 26px;
 	overflow: noclip;
+}
+
+.UseSplitLabel #Cursor
+{
+	visibility: collapse;
 }
 
 #Cursor #CursorImage
@@ -59,16 +125,6 @@ DOTATypewriterText
 	animation-name: Squash;
 	animation-duration: 0.15s;
 	animation-iteration-count: infinite;
-}
-
-DOTATypewriterText.QuarteroBubble #Cursor
-{
-	transform: translateY( 4px );
-}
-
-DOTATypewriterText.QuarteroBubble #Cursor #CursorImage
-{
-	ui-scale: 50%;
 }
 
 .HideText
@@ -106,18 +162,18 @@ DOTATypewriterText.QuarteroBubble #Cursor #CursorImage
 	
 }
 
-.BoldText DOTATypewriterText.Crownfall #TypewriterLabel,.BoldText DOTATypewriterText.MonsterHunter #TypewriterLabel
+.BoldText DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	font-weight: bold;
 }
 
-.SmallText DOTATypewriterText.Crownfall #TypewriterLabel,.SmallText DOTATypewriterText.MonsterHunter #TypewriterLabel
+.SmallText DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	font-size: 26px;
 	transform: skewX( -3deg);
 }
 
-.EncounterDialogue DOTATypewriterText.Crownfall #TypewriterLabel,.EncounterDialogue DOTATypewriterText.MonsterHunter #TypewriterLabel
+.EncounterDialogue DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	vertical-align: center;
 	font-size: 30px;
@@ -125,93 +181,183 @@ DOTATypewriterText.QuarteroBubble #Cursor #CursorImage
 	margin-right: 120px;
 }
 
-.Act3 DOTATypewriterText.Crownfall #TypewriterLabel,.Act3 DOTATypewriterText.MonsterHunter #TypewriterLabel
+.Act3 DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	opacity: 0.6;
 	brightness: 1;
 }
 
-#ChatterContainer DOTATypewriterText.Crownfall #TypewriterLabel,#ChatterContainer DOTATypewriterText.MonsterHunter #TypewriterLabel
+#ChatterContainer DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	text-shadow: 0px 2px 16px 2 black;
 }
 
-.TopUpdated .Top DOTATypewriterText.Crownfall #TypewriterLabel,.BottomUpdated .Bottom DOTATypewriterText.Crownfall #TypewriterLabel,.TopUpdated .Top DOTATypewriterText.MonsterHunter #TypewriterLabel,.BottomUpdated .Bottom DOTATypewriterText.MonsterHunter #TypewriterLabel
+.TopUpdated .Top DOTATypewriterText.Crownfall #OldTypewriterLabel,.BottomUpdated .Bottom DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	brightness: 1.0;
 	opacity: 1.0;
 }
 
-.VN_TEXT_COLOR_GRAY DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_GRAY DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_GRAY DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(200, 213, 227);
 	letter-spacing: 1px;
 }
 
-.VN_TEXT_COLOR_BLUE DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_BLUE DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_BLUE DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(157, 193, 232);
 	letter-spacing: 1px;
 }
 
-.VN_TEXT_COLOR_GREEN DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_GREEN DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_GREEN DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(130, 212, 123);
 	letter-spacing: 1px;
 }
 
-.VN_TEXT_COLOR_RED DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_RED DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_RED DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(233, 152, 152);
 	letter-spacing: 1px;
 }
 
-.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(218, 225, 233);
 }
 
-.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(164, 173, 182);
 }
 
-.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(183, 98, 98);
 }
 
-.VN_TEXT_COLOR_ORANGE DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_ORANGE DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_ORANGE DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(231, 132, 80);
 }
 
-.VN_TEXT_COLOR_WHITE DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_WHITE DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_WHITE DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(255, 255, 255);
 }
 
-.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(166, 208, 232);
 }
 
-.VN_TEXT_COLOR_PURPLE DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_PURPLE DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_PURPLE DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(196, 136, 210);
 }
 
-.VN_TEXT_COLOR_YELLOW DOTATypewriterText.Crownfall #TypewriterLabel,.VN_TEXT_COLOR_YELLOW DOTATypewriterText.MonsterHunter #TypewriterLabel
+.VN_TEXT_COLOR_YELLOW DOTATypewriterText.Crownfall #OldTypewriterLabel
 {
 	color: rgb(225, 212, 96);
 }
 
-DOTATypewriterText.MonsterHunter #TypewriterLabel
+DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: #111;
+}
+
+.BoldText DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.BoldText DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.BoldText DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	font-weight: bold;
+}
+
+.SmallText DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.SmallText DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.SmallText DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	font-size: 26px;
+	transform: skewX( -3deg);
+}
+
+#ChatterContainer DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,#ChatterContainer DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,#ChatterContainer DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	text-shadow: 0px 2px 16px 2 black;
+}
+
+.TopUpdated .Top DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.BottomUpdated .Bottom DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.TopUpdated .Top DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.BottomUpdated .Bottom DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.TopUpdated .Top DOTATypewriterText.DarkCarnival #OldTypewriterLabel,.BottomUpdated .Bottom DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	brightness: 1.0;
+}
+
+.VN_TEXT_COLOR_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_GRAY DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(200, 213, 227);
+	letter-spacing: 1px;
+}
+
+.VN_TEXT_COLOR_BLUE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_BLUE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_BLUE DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(157, 193, 232);
+	letter-spacing: 1px;
+}
+
+.VN_TEXT_COLOR_GREEN DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_GREEN DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_GREEN DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(130, 212, 123);
+	letter-spacing: 1px;
+}
+
+.VN_TEXT_COLOR_RED DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_RED DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_RED DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(233, 152, 152);
+	letter-spacing: 1px;
+}
+
+.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_LIGHT_GRAY DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(218, 225, 233);
+}
+
+.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_DARK_GRAY DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(164, 173, 182);
+}
+
+.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_DARK_RED DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(183, 98, 98);
+}
+
+.VN_TEXT_COLOR_ORANGE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_ORANGE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_ORANGE DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(231, 132, 80);
+}
+
+.VN_TEXT_COLOR_WHITE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_WHITE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_WHITE DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(255, 255, 255);
+}
+
+.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_LIGHT_BLUE DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(166, 208, 232);
+}
+
+.VN_TEXT_COLOR_PURPLE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_PURPLE DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_PURPLE DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(196, 136, 210);
+}
+
+.VN_TEXT_COLOR_YELLOW DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #InnerLabel,.VN_TEXT_COLOR_YELLOW DOTATypewriterText.DarkCarnival #TypewriterSplitLabel #SlicedLabel,.VN_TEXT_COLOR_YELLOW DOTATypewriterText.DarkCarnival #OldTypewriterLabel
+{
+	color: rgb(225, 212, 96);
+}
+
+DOTATypewriterText.MonsterHunter #OldTypewriterLabel
 {
 	color: #212020;
 }
 
-DOTATypewriterText.Frostivus2024 #TypewriterLabel
+DOTATypewriterText.Frostivus2024 #OldTypewriterLabel
 {
 	font-size: 24px;
 	color: #111;
@@ -231,13 +377,18 @@ DOTATypewriterText.TypewriterTest
 	border: 1px solid green;
 }
 
-DOTATypewriterText.TypewriterTest #TypewriterLabel
+DOTATypewriterText.TypewriterTest #OldTypewriterLabel
 {
 	border: 1px solid green;
 	color: white;
 }
 
-DOTATypewriterText.Quartero #TypewriterLabel
+DOTATypewriterText.Quartero
+{
+	horizontal-align: center;
+}
+
+DOTATypewriterText.Quartero #OldTypewriterLabel
 {
 	vertical-align: top;
 	margin-top: 20px;
@@ -245,7 +396,52 @@ DOTATypewriterText.Quartero #TypewriterLabel
 	text-align: center;
 }
 
-DOTATypewriterText.QuarteroBubble #TypewriterLabel
+DOTATypewriterText.Quartero.UseBothStylesLabels #OldTypewriterLabel
+{
+	opacity: 0.3;
+	wash-color: yellow;
+}
+
+DOTATypewriterText.Quartero #SplitLabelCursorContainer
+{
+	transform: translateY( -32px ) translateX( 20px );
+}
+
+DOTATypewriterText.Quartero #TypewriterSplitLabel
+{
+	horizontal-align: center;
+}
+
+DOTATypewriterText.Quartero #TypewriterSplitLabel #SlicedLabel,DOTATypewriterText.Quartero #TypewriterSplitLabel #InnerLabel
+{
+	vertical-align: top;
+	margin-top: 20px;
+	font-size: 32px;
+	text-align: center;
+	horizontal-align: center;
+}
+
+DOTATypewriterText.QuarteroBubble #SplitLabelCursorContainer
+{
+	transform: translateY( -55px ) scale3d( 0.5, 0.5, 1.0 );
+}
+
+DOTATypewriterText.QuarteroBubble #Cursor
+{
+	transform: translateY( 4px );
+}
+
+DOTATypewriterText.QuarteroBubble #Cursor #CursorImage
+{
+	ui-scale: 50%;
+}
+
+DOTATypewriterText.QuarteroBubble #TypewriterSplitLabel #SlicedLabel,DOTATypewriterText.QuarteroBubble #TypewriterSplitLabel #InnerLabel
+{
+	font-size: 16px;
+}
+
+DOTATypewriterText.QuarteroBubble #OldTypewriterLabel
 {
 	width: 100%;
 	height: 100%;
@@ -258,10 +454,207 @@ DOTATypewriterText.QuarteroBubble #TypewriterLabel
 	text-overflow: shrink;
 	opacity: 1;
 	brightness: 0.8;
+	horizontal-align: center;
+}
+
+DOTATypewriterText.QuarteroBubble.UseBothStylesLabels #OldTypewriterLabel
+{
+	wash-color: #4f4b0f;
+	opacity: 0.2;
 }
 
 .Language_schinese .InlineImage.HeroIcon,.Language_tchinese .InlineImage.HeroIcon
 {
 	margin-bottom: 8px;
+}
+
+#SlicedLabel,#InnerLabel
+{
+	font-family: Reaver;
+	color: rgb(236, 236, 236);
+	font-size: 28px;
+}
+
+#TypewriterSplitLabel
+{
+	vertical-align: middle;
+	visibility: collapse;
+	overflow: squish;
+}
+
+.UseSplitLabel #TypewriterSplitLabel,.UseBothStylesLabels #TypewriterSplitLabel
+{
+	visibility: visible;
+}
+
+#TypewriterSplitLabel Label
+{
+	text-overflow: shrink;
+}
+
+#TypewriterSplitLabel #SlicedContainer #SlicedLabel
+{
+	letter-spacing: 4px;
+}
+
+#TypewriterSplitLabel #SlicedContainer #SlicedLabel .Wiggle
+{
+	color: #ff3a3a;
+	text-shadow: 1px 1px black;
+}
+
+#TypewriterSplitLabel #SlicedContainer #SlicedLabel .Whoozy
+{
+	color: #1e5e72;
+}
+
+#TypewriterSplitLabel #ImageSlices Image
+{
+	opacity: 0.0001;
+	transition-property: opacity;
+	transition-duration: 0.03s;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice
+{
+	opacity: 1;
+	animation-name: DefaultSliceAnim;
+	animation-iteration-count: 1;
+	animation-duration: 0.06s;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.Wiggle
+{
+	animation-name: Wiggle;
+	animation-duration: 0.1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.Wiggle.Odd
+{
+	animation-delay: 0.05s;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.Sigh
+{
+	animation-name: Swoosh;
+	animation-duration: 2.5s;
+	animation-delay: 0.05s;
+	animation-iteration-count: 1;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.Whoozy
+{
+	animation-name: Sway;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.Whoozy.Odd
+{
+	animation-delay: 0.1s;
+}
+
+#TypewriterSplitLabel #ImageSlices Image.ShowSlice.QuestionMark
+{
+	transform-origin: 50% 90%;
+	animation-name: QuestionMark;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes 'QuestionMark'
+{
+	0%
+	{
+		transform: rotateZ( 1deg ) translateY( -1px );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -1deg ) ;
+	}
+	
+}
+
+@keyframes 'Sway'
+{
+	0%
+	{
+		transform: translateX( -0.5px ) rotateZ( -8deg ) scale3d( 0.84, 1, 1);
+	}
+	
+	100%
+	{
+		transform: translateX( 0px ) rotateZ( 8deg );
+	}
+	
+}
+
+@keyframes 'Swoosh'
+{
+	20%
+	{
+		transform: translateY( -4px );
+		opacity: 1;
+	}
+	
+	80%
+	{
+		transform: translateY( 3px ) scale3d( 0.95, 0.95, 1 );
+		opacity: 0.9;
+	}
+	
+}
+
+@keyframes 'DefaultSliceAnim'
+{
+	0%
+	{
+		opacity: 0.5;
+		transform: scale3d( 0.1, 0.1, 1 ) ;
+	}
+	
+	70%
+	{
+		transform: scale3d( 1.04, 1.1, 1 ) translateY( 2px );
+	}
+	
+}
+
+@keyframes 'Jump'
+{
+	100%
+	{
+		transform: translateY( -15px );
+	}
+	
+}
+
+@keyframes 'Wiggle'
+{
+	0%
+	{
+		transform: rotateZ( 1deg ) translateX( 1px );
+	}
+	
+	33%
+	{
+		transform: translateY( 1.5px ) rotateZ( -2deg );
+	}
+	
+	6%
+	{
+		transform: translateY( -1.5px ) rotateZ( 2deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -1deg ) translateX( -0.5px );
+	}
+	
 }
 

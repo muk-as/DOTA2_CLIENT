@@ -1,0 +1,128 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTATormentorTimer
+{
+	tooltip-position: left;
+	visibility: visible;
+	height: 70px;
+	width: 70px;
+	background-image: url("s2r://panorama/images/hud/reborn/tormentor_timer_bg_v2_png.vtex");
+	background-size: cover;
+}
+
+.TormentorTimerContents
+{
+	width: 42px;
+	height: 42px;
+	margin-left: 6px;
+	margin-top: 4px;
+	overflow: clip;
+	background-color: black;
+	border-radius: 50%;
+	box-shadow: -1px 1px 4px -0.5px rgba(241, 247, 255, 0.06);
+	transition-property: brightness;
+	transition-duration: 0.25s;
+}
+
+.HUDFlipped .TormentorTimerContents
+{
+	transform: scaleX( -1 );
+	box-shadow: 1px 1px 4px -0.5px rgba(241, 247, 255, 0.06);
+}
+
+#TormentorIconBackground
+{
+	width: 100%;
+	height: width-percentage(100%);
+	border-radius: 50%;
+}
+
+#TormentorIcon
+{
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	y: 1px;
+	transition-property: brightness, pre-transform-scale2d, wash-color, saturation;
+	transition-duration: 0.25s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-duration: 0.5s;
+}
+
+.TormentorTop #TormentorIcon
+{
+	background-image: url("s2r://panorama/images/hud/tormentor_timer_icon_dire_png.vtex");
+}
+
+.TormentorBottom #TormentorIcon
+{
+	background-image: url("s2r://panorama/images/hud/tormentor_timer_icon_radiant_png.vtex");
+}
+
+DOTATormentorTimer:hover .TormentorTimerContents
+{
+	brightness: 2;
+}
+
+.TormentorAlive #TormentorIcon
+{
+	img-shadow: 0px 4px 16px 2 black;
+	wash-color: white;
+}
+
+.TormentorAlive #TormentorIconBackground
+{
+	box-shadow: inset 0px 1px 4px -1px rgba(0, 0, 0, 0.3);
+	background-color: gradient( radial, 50% 45%, 0% 0%, 58% 58%, from( #a5ff8422 ), color-stop( 0.5, #afff8417 ), to( #FFFFFF00 ) );
+}
+
+.TormentorRespawning #TormentorTimerRadial
+{
+	visibility: visible;
+}
+
+.TormentorRespawning #TormentorIcon,.TormentorHasNotSpawned #TormentorIcon
+{
+	saturation: 0;
+	brightness: 0.4;
+	contrast: 1.03;
+	opacity-brush: gradient(linear, 0% 10%, 30% 90%, from( #ffffff ), to( #000000 ) );
+	wash-color: rgb(234, 248, 255);
+}
+
+.TormentorRespawning #TormentorIconBackground,.TormentorHasNotSpawned #TormentorIconBackground
+{
+	background-color: gradient(radial, 50% 65%, 0% 0%, 55% 55%, from( #d4ecff30 ), color-stop( 0.5, #c5d5ff15 ), to( #67BBFF00 ) );
+}
+
+.TormentorRespawning #TormentorTimerRadial,.TormentorHasNotSpawned #TormentorTimerRadial
+{
+	visibility: visible;
+}
+
+.SeeExactTimer #RoshanTimerText
+{
+	visibility: visible;
+}
+
+#TormentorTimerRadial
+{
+	width: 39px;
+	height: width-percentage(100%);
+	background-color: #00000000;
+	border: 1.8px solid white;
+	border-brush: gradient(linear, 0% 0%, 0% 100%, from( #9fb0c9 ), to( #5f6e85 ) );
+	opacity: 0.8;
+	border-radius: 50%;
+	z-index: 0;
+	horizontal-align: center;
+	vertical-align: center;
+	transition-property: border;
+	transition-duration: .32s;
+	visibility: collapse;
+}
+

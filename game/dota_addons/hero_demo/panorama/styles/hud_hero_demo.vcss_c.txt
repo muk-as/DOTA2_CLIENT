@@ -1,5 +1,9 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
+@define topOffset: 116px;
+@define panelWidth: 280px;
+@define panelHeight: 605px;
+@define conncetedClientPanelHeight: 530px;
 .CustomHudRoot
 {
 	width: 100%;
@@ -13,40 +17,78 @@
 	width: 100%;
 }
 
+.ButtonPrimary:not(.Small)
+{
+	height: 30px;
+}
+
+.ButtonPrimary:not(.Small) Label
+{
+	font-size: 15px;
+	line-height: 19px;
+	letter-spacing: 1px;
+}
+
+.ButtonPrimary:not(.Small) Image
+{
+	horizontal-align: center;
+	width: 16px;
+	height: 16px;
+}
+
+.AdvancedButton Label
+{
+	color: LightestGrey;
+}
+
 .ControlPanel
 {
-	transform: translateX( 0% ) translateY( -100px );
 	vertical-align: top;
 	horizontal-align: left;
 	flow-children: right;
-	padding-top: 155px;
-	padding-bottom: 10px;
+	margin-top: topOffset;
 	transition-property: background-color, transform;
-	transition-duration: 0.35s;
+	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.Minimized .ControlPanel
+{
+	transform: translateX( -280px );
 }
 
 .HUDFlipped .ControlPanel
 {
 	horizontal-align: right;
 	flow-children: left;
-	transform: translateX( 0% ) translateY( -100px );
-	margin-right: -4px;
+}
+
+.HUDFlipped .Minimized .ControlPanel
+{
+	transform: translateX( 280px );
 }
 
 .ControlPanelContainer
 {
 	width: 280px;
-	max-height: 785px;
+	height: panelHeight;
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 70% 0%, from( #111111 ), to( #222222 ) );
-	box-shadow: #000000AA 2px 2px 8px;
 	overflow: squish scroll;
+	background-color: #1d1f20;
+	background-color: gradient( linear, 100% 0%, 0% 0%, from( #202325 ), to( #1a1c1e ) );
+	border: 1px solid black;
+	z-index: 2;
 }
 
 .HUDFlipped .ControlPanelContainer
 {
-	horizontal-align: right;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #202325 ), to( #1a1c1e ) );
+}
+
+.ConnectedClient .ControlPanelContainer
+{
+	height: conncetedClientPanelHeight;
 }
 
 #ControlPanelSlideThumbContainer
@@ -122,16 +164,6 @@
 	wash-color: white;
 }
 
-.Minimized .ControlPanel
-{
-	transform: translateX( -280px ) translateY( -100px );
-}
-
-.HUDFlipped .Minimized .ControlPanel
-{
-	transform: translateX( 280px ) translateY( -100px );
-}
-
 #Header
 {
 	flow-children: right;
@@ -153,33 +185,6 @@
 	width: fill-parent-flow( 1.0 );
 	margin: 0px 6px;
 	vertical-align: middle;
-}
-
-.HeroPickerArrow
-{
-	height: 100%;
-	width: 24px;
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
-	background-size: 14px 20px;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#Header .HeroPickerArrow
-{
-	background-color: #3e4752;
-	transition-property: brightness;
-	transition-duration: 0.2s;
-}
-
-#Header .HeroPickerArrow:hover
-{
-	brightness: 2.0;
-}
-
-#Header .HeroPickerArrow:active
-{
-	brightness: 1.5;
 }
 
 .ChangeLoadoutButton
@@ -218,70 +223,145 @@
 	text-shadow: 0px 2px 8px black;
 }
 
-#HeroPickerImage
-{
-	height: 30px;
-	width: height-percentage( 177.77% );
-}
-
-#SpawnHeroButton
-{
-	flow-children: right;
-}
-
-#SpawnHeroButton .HeroPickerArrow
-{
-	background-size: 12px 18px;
-	background-position: right center;
-	wash-color: #D8DADE;
-}
-
-#SpawnHeroName
-{
-	width: fill-parent-flow( 1.0 );
-	padding: 0px;
-	vertical-align: middle;
-	margin: 0px 6px;
-	font-size: 16px;
-	text-overflow: shrink;
-}
-
 .HorizontalRule
 {
 	width: 100%;
+	horizontal-align: center;
 	height: 1px;
 	background-color: #4e515599;
-	margin: 6px 0px;
+	margin: 4px 12px;
+	margin-bottom: 0px;
 }
 
 .Category
 {
 	width: 100%;
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2f31 ), to( hsv-transform( #2d2f31, 0.0, 1.0, 0.4 ) ) );
-	box-shadow: fill #00000011 1px 1px 8px 1px ;
 	margin: 6px 12px 0px 12px;
-	border: 1px solid rgba(255, 255, 255, 0.015);
-	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.5);
 }
 
-.CategoryHeader
+.AdvancedCategory
 {
 	width: 100%;
+	flow-children: down;
+	margin: 4px 6px;
+}
+
+.AdvancedCategory .HorizontalRule
+{
+	margin: 6px 0px;
+}
+
+.TimeScaleCategory Button
+{
+	tooltip-position: top;
+}
+
+.CategoryHeaderContainer
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 6px;
+}
+
+.CategoryHeaderContainer .CategoryHeader
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
 	font-size: 15px;
 	color: whitesmoke;
 	font-weight: semi-bold;
 	text-shadow: 0px 2px 10px black;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	padding: 6px 6px 0px 6px;
+	margin-right: 4px;
+}
+
+.CategoryHeaderContainer .AdvancedButton
+{
+	vertical-align: center;
+}
+
+.CategoryHeaderContainer .AdvancedButton .AdvancedButtonArrow
+{
+	height: 14px;
+	width: 14px;
+	margin: 0px;
+	margin-left: 0px;
+	margin-right: -2px;
+}
+
+.HUDFlipped .CategoryHeaderContainer .AdvancedButton
+{
+	flow-children: left;
+}
+
+.HUDFlipped .CategoryHeaderContainer .AdvancedButton .AdvancedButtonArrow
+{
+	transform: scaleX( -1 );
+	margin-left: -2px;
+	margin-right: 0px;
+}
+
+.CategoryHeader
+{
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: whitesmoke;
+	text-shadow: 0px 2px 10px black;
+}
+
+.SubtitleHeader
+{
+	font-size: 16px;
+	color: LightGrey;
+	text-shadow: 0px 1px 6px black;
+	margin-bottom: 2px;
 }
 
 .CategoryButtonContainer
 {
 	flow-children: down;
 	width: 100%;
-	padding: 3px 6px 3px 6px;
+}
+
+.InlineButtonLabel
+{
+	color: whitesmoke;
+	opacity: 0.8;
+	text-shadow: 0px 1px 4px #000000;
+	vertical-align: center;
+	font-size: 16px;
+	margin-right: 4px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.CheckboxesContainer
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 2px;
+}
+
+.CheckboxesContainer .Row
+{
+	margin: 0px 0px 4px;
+}
+
+.CreepsContainer
+{
+	flow-children: down;
+	width: 100%;
+	margin: 2px 0px;
+}
+
+.RunesContainer
+{
+	flow-children: right;
+	margin: 6px 0px 2px;
 }
 
 .Row
@@ -289,6 +369,17 @@
 	flow-children: right;
 	width: 100%;
 	margin: 3px 0px;
+}
+
+.Row Button
+{
+	width: fill-parent-flow(1);
+	padding: 0px;
+}
+
+.CenterHorizontally
+{
+	horizontal-align: center;
 }
 
 .DemoButton
@@ -318,6 +409,7 @@
 	font-weight: normal;
 	text-overflow: shrink;
 	letter-spacing: 1px;
+	text-align: center;
 }
 
 #SingleCreepWaveButton
@@ -327,14 +419,13 @@
 	margin-left: 6px;
 }
 
-#SingleCreepWaveButton .PlusIcon
+.ControlIcon
 {
 	width: 20px;
 	height: 20px;
 	vertical-align: middle;
 	horizontal-align: center;
 	wash-color: #D8DADE;
-	background-image: url("s2r://panorama/images/control_icons/plus_png.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -342,9 +433,44 @@
 	transition-duration: 0.2s;
 }
 
-#SingleCreepWaveButton:hover .PlusIcon
+.ControlIcon:hover
 {
 	wash-color: #fff;
+}
+
+.FreeSpellsIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/unusual.vsvg");
+}
+
+.CreepsIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/creeps.vsvg");
+}
+
+.TowersIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/towers.vsvg");
+}
+
+.NightIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/brightness.vsvg");
+}
+
+.AllVisionIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/spectator_hot_keys.vsvg");
+}
+
+.DisableXPIcon
+{
+	background-image: url("s2r://panorama/images/hud/facets/icons/xp_png.vtex");
+}
+
+.DisableRegenIcon
+{
+	background-image: url("s2r://panorama/images/hud/facets/icons/healing_png.vtex");
 }
 
 #RefreshButton
@@ -398,39 +524,29 @@
 	margin-right: 3px;
 }
 
-.RightButton
-{
-	margin-left: 3px;
-}
-
 #SpawnAllyButton
 {
-	background-color: #42705B;
-	border: 1px solid #4e9e7a;
-	transition-property: background-color, border;
-	transition-duration: 0.15s;
-	transition-timing-function: ease-in-out;
-}
-
-#SpawnAllyButton:hover
-{
-	background-color: gradient( linear, 0% 0%, 70% 0%, from( #3cc486 ), to( #259c67 ) );
-	border: 1px solid #3feb9d;
+	border-radius: 3px 0px 0px 3px;
 }
 
 #SpawnEnemyButton
 {
-	background-color: #6D4A4E;
-	border: 1px solid #9b6369;
-	transition-property: background-color, border;
-	transition-duration: 0.15s;
-	transition-timing-function: ease-in-out;
+	border-radius: 0px;
 }
 
-#SpawnEnemyButton:hover
+#SpawnDummyButton
 {
-	background-color: gradient( linear, 0% 0%, 70% 0%, from( #be4f5c ), to( #913943 ) );
-	border: 1px solid #eb5f70;
+	border-radius: 0px 3px 3px 0px;
+}
+
+#LevelUpSelectedHeroesButton
+{
+	border-radius: 3px 0px 0px 3px;
+}
+
+#LevelMaxSelectedHeroesButton
+{
+	border-radius: 0px 3px 3px 0px;
 }
 
 .RuneButton
@@ -499,7 +615,7 @@
 	opacity: 0.0;
 	transform: translateX( -60px ) translateY( -100px );
 	transition-property: opacity, transform;
-	transition-duration: 0.2s;
+	transition-duration: 0.0s;
 }
 
 .HUDFlipped #SelectHeroContainer
@@ -513,7 +629,8 @@
 #SelectHeroContainer.HeroPickerVisible
 {
 	opacity: 1.0;
-	transform: translateX( 0px ) translateY( -100px );
+	transform: translateX( 0px ) translateY( -98px );
+	z-index: 10;
 }
 
 #SelectHeroContainer.PickMainHero
@@ -540,60 +657,158 @@
 	padding-top: 3px;
 }
 
-.DemoToggleButton
+.AdvancedSettingsContainer
 {
-	width: fill-parent-flow( 1.0 );
+	width: 290px;
+	overflow: clip;
+	z-index: 1;
+	margin-top: topOffset;
+	horizontal-align: left;
+	margin-left: 280px;
 }
 
-.DemoToggleButton Label
+.HUDFlipped .AdvancedSettingsContainer
 {
-	letter-spacing: 1px;
-	color: #D8DADE;
+	horizontal-align: right;
+	margin-right: 280px;
+}
+
+#CloseButton
+{
+	horizontal-align: right;
+	ignore-parent-flow: true;
+	margin: 8px;
+	margin-right: 12px;
+	z-index: 3;
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-delay: 0.15s;
+}
+
+#CloseButton Image
+{
+	width: 14px;
+	height: 14px;
+}
+
+.HUDFlipped #CloseButton
+{
+	horizontal-align: right;
+}
+
+#CloseButton.Visible
+{
+	opacity: 1.0;
+	transition-delay: 0s;
+	transition-duration: 0.05s;
+}
+
+.AdvancedSettings
+{
+	flow-children: down;
+	horizontal-align: left;
+	min-width: 280px;
+	height: panelHeight;
+	overflow: squish scroll;
+	padding: 6px;
+	background-color: #131414;
+	opacity: 0.0;
+	z-index: 1;
+	border: 1px solid black;
+	border-right: 1px;
+	border-left: 0px;
+	transition-property: opacity, transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transform: translateX( -24px );
+}
+
+.HUDFlipped .AdvancedSettings
+{
+	transform: translateX( 24px );
+	border-right: 0px;
+	border-left: 1px;
+	horizontal-align: right;
+}
+
+.ConnectedClient .AdvancedSettings
+{
+	height: conncetedClientPanelHeight;
+}
+
+.AdvancedSettings.AdvancedSettingsVisible
+{
+	opacity: 1.0;
+	transform: translateX( 0px );
+}
+
+.AdvancedSettings VerticalScrollBar
+{
+	width: 4px;
+}
+
+.NeutralContainer
+{
+	width: fit-children;
+}
+
+.NeutralRow
+{
+	width: fit-children;
+}
+
+.NeutralSpawnButton
+{
+	tooltip-position: top;
+	margin-right: 4px;
+	margin-bottom: 4px;
+}
+
+.NeutralsSpawningContainer
+{
+	flow-children: right-wrap;
+}
+
+.NeutralImage
+{
+	width: 58px;
+	height: width-percentage( 56.25% );
+}
+
+.NeutralSpacer
+{
+	width: 30px;
+	height: 30px;
+}
+
+.CustomHudRoot ToggleButton,.CustomHudRoot DOTASettingsCheckbox
+{
+	width: fill-parent-flow( 1.0 );
+	tooltip-position: top;
+	padding: 0px;
+}
+
+.CustomHudRoot ToggleButton Label,.CustomHudRoot DOTASettingsCheckbox Label
+{
+	letter-spacing: 0.5px;
+	color: LighterGrey;
+	margin-top: -1px;
+	margin-bottom: 1px;
+	font-size: 17px;
 }
 
 #Footer
 {
 	flow-children: right;
-	height: 30px;
 	width: 100%;
-	margin: 12px;
+	margin: 8px 12px;
 }
 
-#Footer .DemoButton
+#Footer TextButton
 {
-	height: 100%;
-	width: fill-parent-flow( 1.0 );
-}
-
-#Footer .DemoButton.LeftButton
-{
-	margin-right: 6px;
-}
-
-#Footer .DemoButton.RightButton
-{
-	margin-left: 6px;
-}
-
-.DemoButton.QuitButton
-{
-	background-color: #9E393C;
-	border: 1px solid #b64548;
-	box-shadow: 0px 0px 8px #6e070a00;
-}
-
-.DemoButton.QuitButton:hover
-{
-	background-color: #da5458;
-	background-color: gradient( linear, 0% 0%, 70% 0%, from( #da5458 ), to( #9E393C ) );
-	border: 1px solid #da5458;
-	box-shadow: 0px 0px 8px #94080d3f;
-}
-
-.DemoButton.QuitButton:active
-{
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #aa8888 ), to( #ffaaaa ) );
-	pre-transform-scale2d: 1.02;
+	width: fill-parent-flow(1);
 }
 
 .SpeedControlButton
@@ -627,8 +842,7 @@
 	flow-children: down;
 	margin-bottom: 3px;
 	border: 1px solid #4e515599;
-	border-radius: 6px;
-	background-color:#0009;
+	background-color: #0009;
 }
 
 .HeroDetailsContainer #SpawnHeroButton
@@ -636,11 +850,77 @@
 	margin: 4px 6px;
 	margin-top: 6px;
 	border-radius: 3px;
+	flow-children: right;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373F43 ), to( #21272A ) );
+	border: 1px solid white;
+	border-brush: WhiteGradientBorderSoft;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+	transition-property: background-color, brightness;
+	transition-duration: 0.1s;
+}
+
+.HeroDetailsContainer #SpawnHeroButton:hover
+{
+	background-color: LightGreyGradientBackgroundColor;
+}
+
+.HeroDetailsContainer #SpawnHeroButton:active
+{
+	background-color: LightGreyGradientBackgroundColor_Inverted;
+	brightness: 0.6;
+}
+
+.HeroDetailsContainer #SpawnHeroButton:active Label
+{
+	transform: translateY( 0.5px );
+}
+
+.HeroDetailsContainer #SpawnHeroButton #HeroPickerImage
+{
+	height: 34px;
+	width: height-percentage( 177.77% );
+}
+
+.HeroDetailsContainer #SpawnHeroButton #SpawnHeroName
+{
+	font-family: titleFont;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: semi-bold;
+	color: whitesmoke;
+	text-shadow: 0px 1px 6px black;
+	width: fill-parent-flow( 1.0 );
+	padding: 0px;
+	vertical-align: middle;
+	margin: 0px 6px;
+	height: 22px;
+	font-size: 15px;
+	text-overflow: shrink;
+	text-align: left;
+	transition-property: transform;
+	transition-duration: 0.1s;
+}
+
+.HeroDetailsContainer #SpawnHeroButton .HeroPickerArrow
+{
+	vertical-align: center;
+	margin-right: 4px;
+	wash-color: #D8DADE;
+	width: 16px;
+	height: 16px;
 }
 
 .HeroDetailsContainer #SpawnHeroFacetPicker
 {
 	margin: 2px 3px;
 	margin-bottom: 6px;
+	horizontal-align: center;
+	width: 100%;
+}
+
+.GlobalSettingsLabel
+{
+	font-size: 16px;
+	color: whitesmoke;
 }
 

@@ -5320,7 +5320,7 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 {
 	margin-top: 16px;
 	margin-left: 0px;
-	margin-right: 32px;
+	margin-right: 16px;
 	margin-bottom: 4px;
 	flow-children: down;
 	padding: 18px 20px;
@@ -5588,9 +5588,11 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 
 #DetailsBuff
 {
-	flow-children: down;
-	width: 100%;
+	flow-children: right;
+	width: fit-children;
+	overflow: scroll clip;
 	padding-left: 370px;
+	horizontal-align: left;
 }
 
 #DetailsBuffTable
@@ -5604,6 +5606,24 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 }
 
 #DetailsBuffTableRows
+{
+	flow-children: down;
+	overflow: clip scroll;
+	max-height: 561px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+
+#DetailsDebuffTableRows
+{
+	flow-children: down;
+	overflow: clip scroll;
+	max-height: 561px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+}
+
+#DetailsSelfBuffTableRows
 {
 	flow-children: down;
 	overflow: clip scroll;
@@ -5640,11 +5660,6 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	width: 78px;
 	height: 78px;
 	margin-right: 10px;
-}
-
-.DetailsBuffRow Image,.DetailsBuffRow DOTAAbilityImage
-{
-	margin-right: 25px;
 }
 
 .DetailsBuffRow Label
@@ -6963,17 +6978,7 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 	wash-color: black;
 }
 
-.GraphsVisible.GraphPlayerLevel .LobbyTeamIconDefault,.GraphsVisible.GraphPlayerNetWorth .LobbyTeamIconDefault,.GraphsVisible.GraphPlayerHeroDamage .LobbyTeamIconDefault,.PlusPerPlayerVisible .LobbyTeamIconDefault,.GraphsVisible.GraphPlayerNetWorth .LobbyTeamIcon,.GraphsVisible.GraphPlayerHeroDamage .LobbyTeamIcon,.GraphsVisible.GraphPlayerLevel .LobbyTeamIcon,.PlusPerPlayerVisible .LobbyTeamIcon
-{
-	opacity:0;
-}
-
 .PlayerData
-{
-	transform: translateX(-42px);
-}
-
-.GraphsVisible.GraphPlayerLevel .WinnerPanel,.GraphsVisible.GraphPlayerNetWorth .WinnerPanel,.GraphsVisible.GraphPlayerHeroDamage .WinnerPanel,.PlusPerPlayerVisible .WinnerPanel,.GraphsVisible.GraphPlayerLevel .SlidingName,.GraphsVisible.GraphPlayerNetWorth .SlidingName,.GraphsVisible.GraphPlayerHeroDamage .SlidingName,.PlusPerPlayerVisible .SlidingName
 {
 	transform: translateX(-42px);
 }
@@ -8906,5 +8911,40 @@ DOTAPostGameOverviewHeroContainer #RankTierContainer
 .IsAghs #UseShardsButton
 {
 	visibility: collapse;
+}
+
+#BuffDisplayOptionsContainer
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	ignore-parent-flow: true;
+	flow-children: right;
+	margin-left: 20px;
+	margin-bottom: 22px;
+	padding-top: 12px;
+	width: 500px;
+	border-top: 1px solid rgba(255, 255, 255, 0.053);
+	border-brush: gradient(linear, 0% 0%, 100% 0%, from(#FFFFFFFF), to(#FFFFFF00));
+}
+
+#BuffDisplayOptionsContainer RadioButton
+{
+	margin: 0px 6px;
+}
+
+#BuffAbilityImage
+{
+	border-radius: 50%;
+	box-shadow: none;
+}
+
+#BuffAbilityImage.IsDebuff
+{
+	border: 3px solid #e43c10;
+}
+
+#BuffAbilityImage.IsBuff
+{
+	border: 3px solid #8bdd4f;
 }
 

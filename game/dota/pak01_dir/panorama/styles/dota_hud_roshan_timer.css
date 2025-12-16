@@ -6,21 +6,40 @@ DOTARoshanTimer
 	visibility: visible;
 	height: 70px;
 	width: 70px;
-	background-image: url("s2r://panorama/images/hud/reborn/roshan_timer_bg_psd.vtex");
+	background-image: url("s2r://panorama/images/hud/reborn/roshan_timer_bg_v2_png.vtex");
 	background-size: cover;
+}
+
+DOTARoshanTimer:hover .RoshanTimerContents
+{
+	brightness: 2;
+}
+
+.RoshanTimerContents
+{
+	width: 42px;
+	height: 42px;
+	margin-left: 6px;
+	margin-top: 23px;
+	overflow: clip;
+	background-color: black;
+	border-radius: 50%;
+	box-shadow: -1px 1px 4px -0.5px rgba(241, 247, 255, 0.06);
+	transition-property: brightness;
+	transition-duration: 0.25s;
+}
+
+.HUDFlipped .RoshanTimerContents
+{
+	transform: scaleX( -1 );
+	box-shadow: 1px 1px 4px -0.5px rgba(241, 247, 255, 0.06);
 }
 
 #RoshanIconBackground
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_roshan_timerbackground_psd.vtex");
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 42px;
-	height: 42px;
-	margin-left: 6px;
-	margin-top: 8px;
-	transition-property: brightness, background-image;
-	transition-duration: 0.25s;
+	width: 100%;
+	height: width-percentage(100%);
+	border-radius: 50%;
 }
 
 #RoshanIcon
@@ -28,10 +47,12 @@ DOTARoshanTimer
 	background-image: url("s2r://panorama/images/hud/reborn/roshan_timer_roshan_psd.vtex");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: 40px;
-	height: 40px;
-	margin-left: 7px;
-	margin-top: 6px;
+	width: 36px;
+	height: width-percentage(100%);
+	margin-bottom: 2px;
+	horizontal-align: center;
+	vertical-align: center;
+	texture-sampling: point;
 	transition-property: brightness, pre-transform-scale2d, wash-color, saturation;
 	transition-duration: 0.25s;
 	animation-timing-function: ease-in-out;
@@ -56,24 +77,15 @@ DOTARoshanTimer
 	margin-right: 18px;
 }
 
-DOTARoshanTimer:hover #RoshanIcon
-{
-	brightness: 1.7;
-}
-
-DOTARoshanTimer:active #RoshanIcon
-{
-	brightness: 1.0;
-}
-
 .RoshanAlive #RoshanIcon
 {
-	transform: scale3d(0.9, 0.9, 1.0);
+	brightness: 1;
+	saturation: 1;
 }
 
 .RoshanAlive #RoshanIconBackground
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_roshan_timerbackground_psd.vtex");
+	background-color: gradient( radial, 50% 45%, 0% 0%, 58% 58%, from( #a5ff8422 ), color-stop( 0.5, #afff8417 ), to( #FFFFFF00 ) );
 }
 
 .RoshanAlive #RoshanTimerText
@@ -81,16 +93,41 @@ DOTARoshanTimer:active #RoshanIcon
 	visibility: collapse;
 }
 
+.RoshanAlive #RoshanTimerRadial
+{
+	visibility: collapse;
+}
+
+.RoshanVariableTimer #RoshanIcon
+{
+	saturation: 0;
+	brightness: 0.6;
+	contrast: 1.04;
+	wash-color: rgb(255, 250, 234);
+}
+
+.RoshanVariableTimer #RoshanIconBackground
+{
+	background-color: gradient( radial, 50% 45%, 0% 0%, 58% 58%, from( #ffd15122 ), color-stop( 0.5, #ffd15122 ), to( #FFFFFF00 ) );
+}
+
+.RoshanVariableTimer #RoshanTimerRadial
+{
+	border-brush: gradient(linear, 0% 0%, 0% 100%, from( #ddcb91 ), to( #b09a53 ) );
+}
+
 .RoshanBaseTimer #RoshanIcon
 {
-	wash-color: #a00a;
 	saturation: 0;
-	transform: scale3d(0.9, 0.9, 1.0);
+	brightness: 0.6;
+	contrast: 1.04;
+	wash-color: rgb(234, 234, 255);
 }
 
 .RoshanBaseTimer #RoshanIconBackground
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_roshan_timerbackground_basetimer_psd.vtex");
+	background-color: gradient(radial, 50% 65%, 0% 0%, 55% 55%, from( #d4ecff30 ), color-stop( 0.5, #c5d5ff15 ), to( #67BBFF00 ) );
+	box-shadow: inset 0px 1px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .RoshanBaseTimer #RoshanTimerText
@@ -105,24 +142,20 @@ DOTARoshanTimer:active #RoshanIcon
 
 .RoshanVariableTimer #RoshanIcon
 {
-	wash-color: #FFC300;
-	transform: scale3d(0.9, 0.9, 1.0);
+	saturation: 0;
+	brightness: 0.6;
+	contrast: 1.04;
+	wash-color: rgb(255, 251, 234);
 }
 
 .RoshanVariableTimer #RoshanIconBackground
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_roshan_timerbackground_variabletimer_psd.vtex");
+	background-color: gradient( radial, 50% 45%, 0% 0%, 58% 58%, from( #ffd68427 ), color-stop( 0.5, #ffd4841c ), to( #FFFFFF00 ) );
 }
 
 .RoshanVariableTimer #RoshanTimerText
 {
 	visibility: collapse;
-}
-
-.RoshanVariableTimer #RoshanTimerRadial
-{
-	border: 2px solid #eaea1f84;
-	visibility: visible;
 }
 
 .SeeExactTimer #RoshanTimerText
@@ -132,23 +165,16 @@ DOTARoshanTimer:active #RoshanIcon
 
 #RoshanTimerRadial
 {
-	width: 42px;
-	height: 42px;
+	width: 39px;
+	height: width-percentage(100%);
 	background-color: #00000000;
-	border: 2px solid #9E2825;
-	background-size: 100% 100%;
+	border: 1.8px solid white;
+	border-brush: gradient(linear, 0% 0%, 0% 100%, from( #9fb0c9 ), to( #5f6e85 ) );
+	opacity: 0.8;
 	border-radius: 50%;
-	margin-left: 6px;
-	margin-top: 8px;
-	visibility: collapse;
 	z-index: 0;
-	transition-property: border;
-	transition-duration: .32s;
-}
-
-.RoshanVisibleTimer #RoshanTimerRadial
-{
-	border-color: #CF9300;
+	horizontal-align: center;
+	vertical-align: center;
 }
 
 @keyframes 'RoshanReady'
