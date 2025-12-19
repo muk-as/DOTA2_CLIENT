@@ -174,12 +174,17 @@ function ToggleAdvancedSettings( nPanel )
 	$('#AdvancedGlobalSettings').SetHasClass('AdvancedSettingsVisible', bAdvancedGlobalSettingsVisible);
 	$('#AdvancedPartySettings').SetHasClass('AdvancedSettingsVisible', bAdvancedMultiplayerSettingsVisible);
 
-	$('#CloseButton').SetHasClass("Visible", bAdvancedSpawnSettingsVisible || 
+	let bAnyAdvancedSettingsVisible = bAdvancedSpawnSettingsVisible || 
 										bAdvancedUnitSettingsVisible || 
 										bAdvancedGlobalSettingsVisible || 
-										bAdvancedMultiplayerSettingsVisible);
+										bAdvancedMultiplayerSettingsVisible;
 
-	Game.EmitSound( "UI.Button.Pressed" );
+	$('#CloseButton').SetHasClass("Visible", bAnyAdvancedSettingsVisible );
+
+	if ( bAnyAdvancedSettingsVisible )
+	{
+		$('#AdvancedSettingsContainer').SetFocus();
+	}
 }
 
 function CloseAdvancedSettings()
@@ -226,8 +231,6 @@ function SetHeroPickerVisible( bVisible )
 
 function SwitchToNewHero( nHeroID, nHeroVariant )
 {
-	// Game.EmitSound( "UI.Button.Pressed" );
-
 	$.Msg( 'SwitchToNewHero - Hero = ' + nHeroID + ', Variant = ' + nHeroVariant );
 
 	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
@@ -377,11 +380,6 @@ function ChangeTeam()
 	
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'ChangeTeamButtonPressed', String( entindex ) );	
 	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
 }
 
 function ToggleCategoryVisibility( str )
@@ -423,15 +421,6 @@ function RemoveSelectedHeroes()
 		bDeletionAttempted = true;
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'RemoveHeroButtonPressed', String( entindex ) );
 	}
-
-	if ( bDeletionAttempted )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
-	else
-	{
-		Game.EmitSound( "General.Cancel" );
-	}
 }
 
 function ToggleInvulnerability()
@@ -468,11 +457,6 @@ function InvulnerableOn()
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'InvulnOnHero', String( entindex ) );
 	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
 }
 
 function InvulnerableOff()
@@ -490,11 +474,6 @@ function InvulnerableOff()
 			continue;
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'InvulnOffHero', String( entindex ) );
-	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
 	}
 }
 
@@ -514,11 +493,6 @@ function LevelUpSelectedHeroes()
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'LevelUpHero', String( entindex ) );
 	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
 }
 
 function MaxLevelUpSelectedHeroes()
@@ -536,11 +510,6 @@ function MaxLevelUpSelectedHeroes()
             continue;
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'MaxLevelUpHero', String( entindex ) );
-	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
 	}
 }
 
@@ -560,11 +529,6 @@ function ResetSelectedHeroes()
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'ResetHero', String( entindex ) );
 	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
 }
 
 function ShardSelectedHeroes()
@@ -583,11 +547,6 @@ function ShardSelectedHeroes()
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'ShardHero', String( entindex ) );
 	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
-	}
 }
 
 function ScepterSelectedHeroes()
@@ -605,11 +564,6 @@ function ScepterSelectedHeroes()
             continue;
 
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'ScepterHero', String( entindex ) );
-	}
-
-	if ( numEntities > 0 )
-	{
-		Game.EmitSound( "UI.Button.Pressed" );
 	}
 }
 
