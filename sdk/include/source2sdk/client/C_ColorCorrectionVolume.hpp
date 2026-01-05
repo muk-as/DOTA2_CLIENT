@@ -21,7 +21,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "bool m_bEnabled"
         // static metadata: MNetworkVarNames "float m_MaxWeight"
@@ -32,22 +31,34 @@ namespace source2sdk
         class C_ColorCorrectionVolume : public source2sdk::client::C_BaseTrigger
         {
         public:
+            // metadata: MNotSaved
             float m_LastEnterWeight; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_LastEnterTime; // 0x_            
+            // metadata: MNotSaved
             float m_LastExitWeight; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_LastExitTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_MaxWeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_FadeDuration; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_Weight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_lookupFilename[512]; // 0x_            
             uint8_t _pad_[0x_];
+            
+            // Datamap fields:
+            // void m_lookupFilename; // 0x_
         };
         #pragma pack(pop)
         

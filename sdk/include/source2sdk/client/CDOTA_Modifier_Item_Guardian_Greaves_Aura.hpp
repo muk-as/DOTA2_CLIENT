@@ -24,9 +24,7 @@ namespace source2sdk
         {
         public:
             float aura_health_regen; // 0x_            
-            float aura_armor; // 0x_            
             float aura_health_regen_bonus; // 0x_            
-            float aura_armor_bonus; // 0x_            
             float aura_mana_regen; // 0x_            
             float aura_mana_regen_bonus; // 0x_            
             std::int32_t aura_bonus_threshold; // 0x_            

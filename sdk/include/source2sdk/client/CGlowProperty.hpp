@@ -32,27 +32,36 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             Vector m_fGlowColor; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGlowTypeChanged"
             std::int32_t m_iGlowType; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_iGlowTeam; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_nGlowRange; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_nGlowRangeMin; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGlowColorChanged"
+            // metadata: MNotSaved
             Color m_glowColorOverride; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bFlashing; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flGlowTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flGlowStartTime; // 0x_            
+            // metadata: MNotSaved
             bool m_bGlowing; // 0x_            
             uint8_t _pad_[0x_];
         };

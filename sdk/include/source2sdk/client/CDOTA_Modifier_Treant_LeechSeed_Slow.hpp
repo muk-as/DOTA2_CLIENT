@@ -23,8 +23,12 @@ namespace source2sdk
         class CDOTA_Modifier_Treant_LeechSeed_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movement_slow; // 0x_            
-            uint8_t _pad_[0x_];
+            float movement_slow; // 0x_            
+            float radius; // 0x_            
+            std::int32_t projectile_speed; // 0x_            
+            std::int32_t healing_pulse_count; // 0x_            
+            std::int32_t max_heal_units; // 0x_            
+            float flat_heal; // 0x_            
         };
         #pragma pack(pop)
         

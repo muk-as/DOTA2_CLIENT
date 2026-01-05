@@ -32,6 +32,7 @@ namespace source2sdk
         {
         public:
             WorldGroupId_t m_worldGroupId; // 0x_            
+            // metadata: MNotSaved
             // m_hSkyCamera has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_SkyCamera> m_hSkyCamera;
             char m_hSkyCamera[0x_]; // 0x_            

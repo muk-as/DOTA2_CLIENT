@@ -25,9 +25,7 @@ namespace source2sdk
         {
         public:
             std::int32_t m_nDamageAbsorbed; // 0x_            
-            float damage_barrier_base; // 0x_            
-            float damage_barrier_per_level; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            float damage_barrier; // 0x_            
             // m_flExpirationTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::entity2::GameTime_t> m_flExpirationTimes;
             char m_flExpirationTimes[0x_]; // 0x_            

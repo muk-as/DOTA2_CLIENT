@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/modellib/MaterialGroup_t.hpp"
+#include "source2sdk/modellib/ModelAnimGraph2Ref_t.hpp"
 #include "source2sdk/modellib/ModelBoneFlexDriver_t.hpp"
 #include "source2sdk/modellib/ModelSkeletonData_t.hpp"
 #include "source2sdk/modellib/PermModelDataAnimatedMaterialAttribute_t.hpp"
@@ -11,6 +12,7 @@
 #include "source2sdk/modellib/PermModelInfo_t.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCAnimationGroup.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCModel.hpp"
+#include "source2sdk/resourcesystem/InfoForResourceTypeCNmSkeleton.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCPhysAggregateData.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCRenderMesh.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCSequenceGroupData.hpp"
@@ -101,6 +103,12 @@ namespace source2sdk
             // m_AnimatedMaterialAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::modellib::PermModelDataAnimatedMaterialAttribute_t> m_AnimatedMaterialAttributes;
             char m_AnimatedMaterialAttributes[0x_]; // 0x_            
+            // m_animGraph2Refs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::modellib::ModelAnimGraph2Ref_t> m_animGraph2Refs;
+            char m_animGraph2Refs[0x_]; // 0x_            
+            // m_vecNmSkeletonRefs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCNmSkeleton>> m_vecNmSkeletonRefs;
+            char m_vecNmSkeletonRefs[0x_]; // 0x_            
         };
         #pragma pack(pop)
         
@@ -127,6 +135,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::PermModelData_t, m_BodyGroupsHiddenInTools) == 0x_);
         static_assert(offsetof(source2sdk::modellib::PermModelData_t, m_refAnimIncludeModels) == 0x_);
         static_assert(offsetof(source2sdk::modellib::PermModelData_t, m_AnimatedMaterialAttributes) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PermModelData_t, m_animGraph2Refs) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::PermModelData_t, m_vecNmSkeletonRefs) == 0x_);
         
         static_assert(sizeof(source2sdk::modellib::PermModelData_t) == 0x_);
     };

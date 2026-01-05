@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
+#include "source2sdk/client/FowCustomTeams_t.hpp"
 namespace source2sdk
 {
     namespace particleslib
@@ -27,6 +28,8 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "FowCustomTeams_t m_nFoWTeam"
         #pragma pack(push, 1)
         class CDOTA_NPC_Observer_Ward : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
@@ -35,7 +38,8 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::particleslib::CNewParticleEffect* m_pVisionRangeFX; // 0x_            
             std::int32_t m_nPreviewViewer; // 0x_            
-            uint8_t _pad_[0x_];
+            // metadata: MNetworkEnable
+            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x_            
         };
         #pragma pack(pop)
         

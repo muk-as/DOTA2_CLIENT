@@ -32,7 +32,9 @@ namespace source2sdk
             float m_flTimeoutInterval; // 0x_            
             bool m_bAsynchronouslySpawnEntities; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::PointTemplateClientOnlyEntityBehavior_t m_clientOnlyEntityBehavior; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::PointTemplateOwnerSpawnGroupType_t m_ownerSpawnGroupType; // 0x_            
             // m_createdSpawnGroupHandles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint32_t> m_createdSpawnGroupHandles;
@@ -40,7 +42,9 @@ namespace source2sdk
             // m_SpawnedEntityHandles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityHandle> m_SpawnedEntityHandles;
             char m_SpawnedEntityHandles[0x_]; // 0x_            
+            // metadata: MNotSaved
             HSCRIPT m_ScriptSpawnCallback; // 0x_            
+            // metadata: MNotSaved
             HSCRIPT m_ScriptCallbackScope; // 0x_            
         };
         #pragma pack(pop)

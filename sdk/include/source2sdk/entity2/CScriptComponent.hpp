@@ -19,12 +19,12 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CScriptComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CUtlSymbolLarge m_scriptClassName; // 0x_            
         };
         #pragma pack(pop)

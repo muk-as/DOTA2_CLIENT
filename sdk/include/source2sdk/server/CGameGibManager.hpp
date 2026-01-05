@@ -27,8 +27,10 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             bool m_bAllowNewGibs; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_iCurrentMaxPieces; // 0x_            
             std::int32_t m_iMaxPieces; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iLastFrame; // 0x_            
             
             // Datamap fields:

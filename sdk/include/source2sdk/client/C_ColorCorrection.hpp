@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // MNetworkNoBase
         // 
         // static metadata: MNetworkIncludeByUserGroup "Origin"
@@ -39,38 +38,65 @@ namespace source2sdk
         class C_ColorCorrection : public source2sdk::client::C_BaseEntity
         {
         public:
+            // metadata: MNotSaved
             Vector m_vecOrigin; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_MinFalloff; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_MaxFalloff; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeInDuration; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeOutDuration; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flMaxWeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flCurWeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_netlookupFilename[512]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bMaster; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bClientSide; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bExclusive; // 0x_            
+            // metadata: MNotSaved
             bool m_bEnabledOnClient[1]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flCurWeightOnClient[1]; // 0x_            
+            // metadata: MNotSaved
             bool m_bFadingIn[1]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flFadeStartWeight[1]; // 0x_            
+            // metadata: MNotSaved
             float m_flFadeStartTime[1]; // 0x_            
+            // metadata: MNotSaved
             float m_flFadeDuration[1]; // 0x_            
             uint8_t _pad_[0x_];
+            
+            // Datamap fields:
+            // bool m_bEnabledOnClient; // 0x_
+            // float m_flCurWeightOnClient; // 0x_
+            // bool m_bFadingIn; // 0x_
+            // float m_flFadeStartWeight; // 0x_
+            // float m_flFadeStartTime; // 0x_
+            // float m_flFadeDuration; // 0x_
+            // void m_netlookupFilename; // 0x_
         };
         #pragma pack(pop)
         

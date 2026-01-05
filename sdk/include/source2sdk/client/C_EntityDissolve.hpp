@@ -22,7 +22,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "GameTime_t m_flStartTime"
         // static metadata: MNetworkVarNames "float32 m_flFadeInStart"
@@ -40,27 +39,40 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeInStart; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeInLength; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeOutModelStart; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeOutModelLength; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeOutStart; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFadeOutLength; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flNextSparkTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::EntityDisolveType_t m_nDissolveType; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             Vector m_vDissolverOrigin; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint32_t m_nMagnitude; // 0x_            
+            // metadata: MNotSaved
             bool m_bCoreExplode; // 0x_            
+            // metadata: MNotSaved
             bool m_bLinkedToServerEnt; // 0x_            
             uint8_t _pad_[0x_];
         };

@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CBaseAnimatingActivity.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -26,7 +27,7 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
         // static metadata: MNetworkExcludeByName "m_flSimulationTime"
         // static metadata: MNetworkVarNames "int m_iRuneType"
-        // static metadata: MNetworkVarNames "float m_flRuneTime"
+        // static metadata: MNetworkVarNames "GameTime_t m_flRuneTime"
         // static metadata: MNetworkVarNames "int m_nMapLocationTeam"
         // static metadata: MNetworkVarNames "char m_szLocation"
         #pragma pack(push, 1)
@@ -37,7 +38,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_iRuneType; // 0x_            
             // metadata: MNetworkEnable
-            float m_flRuneTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_flRuneTime; // 0x_            
             // metadata: MNetworkEnable
             std::int32_t m_nMapLocationTeam; // 0x_            
             // metadata: MNetworkEnable

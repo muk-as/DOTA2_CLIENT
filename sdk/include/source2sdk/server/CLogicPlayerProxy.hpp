@@ -32,16 +32,16 @@ namespace source2sdk
         class CLogicPlayerProxy : public source2sdk::server::CLogicalEntity
         {
         public:
-            // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::server::CBaseEntity> m_hPlayer;
-            char m_hPlayer[0x_]; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::CEntityIOOutput m_PlayerHasAmmo; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_PlayerHasNoAmmo; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_PlayerDied; // 0x_            
             // m_RequestedPlayerHealth has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<std::int32_t> m_RequestedPlayerHealth;
             char m_RequestedPlayerHealth[0x_]; // 0x_            
+            // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hPlayer;
+            char m_hPlayer[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

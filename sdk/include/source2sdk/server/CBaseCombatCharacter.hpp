@@ -40,6 +40,7 @@ namespace source2sdk
             bool m_bForceServerRagdoll; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hMyWearables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CEconWearable>> m_hMyWearables;
             char m_hMyWearables[0x_]; // 0x_            
@@ -47,6 +48,7 @@ namespace source2sdk
             bool m_bApplyStressDamage; // 0x_            
             bool m_bDeathEventsDispatched; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             // m_pVecRelationships has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::RelationshipOverride_t>* m_pVecRelationships;
             char m_pVecRelationships[0x_]; // 0x_            
@@ -57,6 +59,9 @@ namespace source2sdk
             
             // Datamap fields:
             // CUtlSymbolLarge InputSetRelationship; // 0x_
+            // void m_hLastValidNavArea; // 0x_
+            // void m_hCurrentNavArea; // 0x_
+            // void m_hCurrentNavAreaBlocked; // 0x_
         };
         #pragma pack(pop)
         

@@ -113,16 +113,20 @@ namespace source2sdk
             source2sdk::server::CBodyComponent* m_CBodyComponent; // 0x_            
             source2sdk::client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
             // m_aThinkFunctions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::thinkfunc_t> m_aThinkFunctions;
             char m_aThinkFunctions[0x_]; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iCurrentThinkContext; // 0x_            
             source2sdk::entity2::GameTick_t m_nLastThinkTick; // 0x_            
             bool m_bDisabledContextThinks; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             // m_isSteadyState has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CTypedBitVec<64> m_isSteadyState;
             char m_isSteadyState[0x_]; // 0x_            
+            // metadata: MNotSaved
             float m_lastNetworkChange; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_ResponseContexts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
@@ -158,7 +162,9 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::client::MoveType_t m_MoveType; // 0x_            
             source2sdk::client::MoveType_t m_nActualMoveType; // 0x_            
+            // metadata: MNotSaved
             std::uint8_t m_nWaterTouch; // 0x_            
+            // metadata: MNotSaved
             std::uint8_t m_nSlimeTouch; // 0x_            
             bool m_bRestoreInHierarchy; // 0x_            
             CUtlSymbolLarge m_target; // 0x_            
@@ -194,6 +200,7 @@ namespace source2sdk
             std::uint8_t m_iTeamNum; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iGlobalname; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iSentToClients; // 0x_            
             // metadata: MNetworkEnable
             float m_flSpeed; // 0x_            
@@ -216,8 +223,10 @@ namespace source2sdk
             // metadata: MNetworkPriority "32"
             source2sdk::client::CNetworkVelocityVector m_vecVelocity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nPushEnumCount; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::server::CCollisionProperty* m_pCollision; // 0x_            
             // metadata: MNetworkEnable
             // m_hEffectEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.

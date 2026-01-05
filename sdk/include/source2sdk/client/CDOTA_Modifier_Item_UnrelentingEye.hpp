@@ -25,8 +25,6 @@ namespace source2sdk
         public:
             float max_slow_res; // 0x_            
             float hero_reduction; // 0x_            
-            float hero_check_radius; // 0x_            
-            float status_res_pct_increase_per_hero; // 0x_            
             std::int32_t m_nNearbyEnemyHeroes; // 0x_            
             uint8_t _pad_[0x_];
         };

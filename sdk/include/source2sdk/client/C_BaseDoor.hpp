@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "bool m_bIsUsable"
         #pragma pack(push, 1)
@@ -28,6 +27,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bIsUsable; // 0x_            
             uint8_t _pad_[0x_];
         };

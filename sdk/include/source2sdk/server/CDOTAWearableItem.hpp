@@ -33,7 +33,6 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
         // static metadata: MNetworkExcludeByName "m_flexWeight"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByName "m_vLookTargetPosition"
         // static metadata: MNetworkExcludeByName "m_baseLayer.m_hSequence"
         // static metadata: MNetworkExcludeByName "m_nForceBone"

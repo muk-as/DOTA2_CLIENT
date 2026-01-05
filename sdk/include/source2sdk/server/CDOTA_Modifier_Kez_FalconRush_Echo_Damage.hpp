@@ -23,8 +23,10 @@ namespace source2sdk
         class CDOTA_Modifier_Kez_FalconRush_Echo_Damage : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t echo_damage; // 0x_            
-            uint8_t _pad_[0x_];
+            std::int32_t base_echo_damage; // 0x_            
+            std::int32_t echo_proc_chance_reduction; // 0x_            
+            std::int32_t bonus_damage_per_feather; // 0x_            
+            std::int32_t m_nFeathers; // 0x_            
         };
         #pragma pack(pop)
         

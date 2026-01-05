@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 30
+        // Enumerator count: 31
         // Alignment: 4
         // Size: 0x_
         enum class SVC_Messages : std::uint32_t
@@ -48,6 +48,7 @@ namespace source2sdk
             svc_Broadcast_Command = 0x4a,
             svc_HltvFixupOperatorStatus = 0x4b,
             svc_UserCmds = 0x4c,
+            svc_NextMsgPredicted = 0x4d,
         };
     };
 };

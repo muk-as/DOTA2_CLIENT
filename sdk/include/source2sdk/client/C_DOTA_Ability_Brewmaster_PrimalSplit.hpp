@@ -33,7 +33,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hPrimary"
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hSecondary"
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hTertiary"
-        // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hFourth"
         #pragma pack(push, 1)
         class C_DOTA_Ability_Brewmaster_PrimalSplit : public source2sdk::client::C_DOTABaseAbility
         {
@@ -50,15 +49,11 @@ namespace source2sdk
             // m_hTertiary has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTertiary;
             char m_hTertiary[0x_]; // 0x_            
-            // metadata: MNetworkEnable
-            // m_hFourth has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::client::C_BaseEntity> m_hFourth;
-            char m_hFourth[0x_]; // 0x_            
             source2sdk::entity2::GameTime_t m_fHurlBoulder_CooldownTime; // 0x_            
             source2sdk::entity2::GameTime_t m_fHDispelMagic_CooldownTime; // 0x_            
             source2sdk::entity2::GameTime_t m_fCyclone_CooldownTime; // 0x_            
             source2sdk::entity2::GameTime_t m_fWindWalk_CooldownTime; // 0x_            
-            source2sdk::entity2::GameTime_t m_fAstralPulse_CooldownTime; // 0x_            
+            bool m_bGainedScepterLevels; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

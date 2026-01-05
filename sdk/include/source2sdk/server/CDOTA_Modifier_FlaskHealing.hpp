@@ -25,8 +25,11 @@ namespace source2sdk
         public:
             std::int32_t health_regen; // 0x_            
             std::int32_t break_on_hero_damage; // 0x_            
+            bool half_heal; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             float m_fHealingDone; // 0x_            
             float m_fUseSpeed; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CUtlString m_sAbilityClassname; // 0x_            
         };
         #pragma pack(pop)

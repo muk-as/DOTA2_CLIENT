@@ -30,6 +30,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::fogparams_t m_fog; // 0x_            
             bool m_bUseAngles; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

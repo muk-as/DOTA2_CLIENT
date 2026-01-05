@@ -40,9 +40,9 @@ namespace source2sdk
             std::int32_t bonus_agility; // 0x_            
             float illusion_spawn_radius; // 0x_            
             float illusion_spawn_travel_distance; // 0x_            
+            float evasion; // 0x_            
             float m_flDistanceAccumulator; // 0x_            
             Vector m_vPreviousLocation; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

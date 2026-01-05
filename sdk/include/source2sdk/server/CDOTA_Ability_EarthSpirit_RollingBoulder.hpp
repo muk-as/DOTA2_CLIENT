@@ -39,9 +39,7 @@ namespace source2sdk
             std::int32_t destroy_stone; // 0x_            
             bool can_roll_over_allied_heroes; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            float allied_hero_multiplier; // 0x_            
             float allied_hero_distance; // 0x_            
-            float allied_hero_speed; // 0x_            
             source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            
             bool m_boulderSetposBool; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

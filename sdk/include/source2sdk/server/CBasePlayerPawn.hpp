@@ -135,23 +135,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_WeaponServices* m_pWeaponServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_ItemServices* m_pItemServices; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_AutoaimServices* m_pAutoaimServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_ObserverServices* m_pObserverServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_WaterServices* m_pWaterServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_UseServices* m_pUseServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_FlashlightServices* m_pFlashlightServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_CameraServices* m_pCameraServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::CPlayer_MovementServices* m_pMovementServices; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             QAngle v_angle; // 0x_            
@@ -167,9 +176,11 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_fNextSuicideTime; // 0x_            
             bool m_fInitHUD; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::server::CAI_Expresser* m_pExpresser; // 0x_            
             // metadata: MNetworkEnable
             // m_hController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
@@ -180,8 +191,11 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBasePlayerController> m_hDefaultController;
             char m_hDefaultController[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_fHltvReplayDelay; // 0x_            
+            // metadata: MNotSaved
             float m_fHltvReplayEnd; // 0x_            
+            // metadata: MNotSaved
             CEntityIndex m_iHltvReplayEntity; // 0x_            
             // m_sndOpvarLatchData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sndopvarlatchdata_t> m_sndOpvarLatchData;
@@ -189,9 +203,6 @@ namespace source2sdk
             
             // Datamap fields:
             // void m_hPawnListEntry; // 0x_
-            // void m_hLastValidNavArea; // 0x_
-            // void m_hCurrentNavArea; // 0x_
-            // void m_hCurrentNavAreaBlocked; // 0x_
             // CHandle< CBaseEntity > controller; // 0x_
             // int32_t InputSetHealth; // 0x_
             // bool InputSetHUDVisibility; // 0x_

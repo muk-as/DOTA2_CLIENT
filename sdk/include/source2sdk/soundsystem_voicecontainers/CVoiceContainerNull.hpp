@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem_voicecontainers
@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "Null Container"
         // static metadata: MPropertyDescription "Plays a single channel of silence."
         #pragma pack(push, 1)
-        class CVoiceContainerNull : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerNull : public source2sdk::soundsystem_voicecontainers::CVoiceContainerGenerator
         {
         public:
         };

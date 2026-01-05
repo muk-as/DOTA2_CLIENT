@@ -69,7 +69,6 @@ namespace source2sdk
         // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_bIsIllusion"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -422,6 +421,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::uint64_t m_iIsControllableByPlayer64; // 0x_            
             source2sdk::client::PlayerID_t m_nControllingPlayerID; // 0x_            
+            bool m_bControllableByAllPlayers; // 0x_            
             bool m_bRunAIWhenControllableByPlayer; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -525,6 +525,7 @@ namespace source2sdk
             bool m_bWakesNeutrals; // 0x_            
             bool m_bNeutralIgnore; // 0x_            
             bool m_bIdleAcquire; // 0x_            
+            bool m_bIdleAcquireForceSet; // 0x_            
             bool m_bCanFollowUnseenUnits; // 0x_            
             bool m_bExpired; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

@@ -23,7 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_Kunkka_Torrent : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t torrent_damage; // 0x_            
+            float torrent_damage; // 0x_            
             float damage_tick_interval; // 0x_            
             float percent_instant; // 0x_            
             float flDamagePerTick; // 0x_            

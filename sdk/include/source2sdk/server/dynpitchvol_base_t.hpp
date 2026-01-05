@@ -19,7 +19,6 @@ namespace source2sdk
         // Size: 0x_
         // Has Trivial Constructor
         // Has Trivial Destructor
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         struct dynpitchvol_base_t
         {

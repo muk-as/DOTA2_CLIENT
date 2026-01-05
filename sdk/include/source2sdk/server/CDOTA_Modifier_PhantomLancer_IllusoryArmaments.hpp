@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -24,9 +25,9 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            float bonus_to_base; // 0x_            
-            float bonus_to_base_illusions; // 0x_            
-            uint8_t _pad_[0x_];
+            float outgoing_floor; // 0x_            
+            float duration; // 0x_            
+            source2sdk::entity2::GameTime_t m_flExpireTime; // 0x_            
         };
         #pragma pack(pop)
         

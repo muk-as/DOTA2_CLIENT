@@ -42,13 +42,17 @@ namespace source2sdk
             // m_hEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEnt;
             char m_hEnt[0x_]; // 0x_            
+            // metadata: MNotSaved
             CEntityIndex m_soundEntityIndex; // 0x_            
+            // metadata: MNotSaved
             Vector m_soundOrigin; // 0x_            
             std::int32_t m_isPlaying; // 0x_            
             source2sdk::client::CCopyRecipientFilter m_Filter; // 0x_            
             float m_flCloseCaptionDuration; // 0x_            
+            // metadata: MNotSaved
             bool m_bUpdatedSoundOrigin; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CUtlSymbolLarge m_iszClassName; // 0x_            
             
             // Datamap fields:

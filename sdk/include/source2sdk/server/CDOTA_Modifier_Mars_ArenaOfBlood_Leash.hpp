@@ -26,7 +26,10 @@ namespace source2sdk
             float radius; // 0x_            
             float width; // 0x_            
             std::int32_t obscure_vision; // 0x_            
+            bool block_targeting; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             Vector m_vOriginLoc; // 0x_            
+            float reduced_vision_percent; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

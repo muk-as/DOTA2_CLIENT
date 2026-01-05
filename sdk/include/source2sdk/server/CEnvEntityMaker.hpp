@@ -32,7 +32,9 @@ namespace source2sdk
         class CEnvEntityMaker : public source2sdk::server::CPointEntity
         {
         public:
+            // metadata: MNotSaved
             Vector m_vecEntityMins; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecEntityMaxs; // 0x_            
             // m_hCurrentInstance has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCurrentInstance;

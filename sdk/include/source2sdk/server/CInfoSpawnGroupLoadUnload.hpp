@@ -35,8 +35,11 @@ namespace source2sdk
             CUtlString m_sFixedSpawnGroupName; // 0x_            
             float m_flTimeoutInterval; // 0x_            
             bool m_bAutoActivate; // 0x_            
+            // metadata: MNotSaved
             bool m_bUnloadingStarted; // 0x_            
+            // metadata: MNotSaved
             bool m_bQueueActiveSpawnGroupChange; // 0x_            
+            // metadata: MNotSaved
             bool m_bQueueFinishLoading; // 0x_            
             uint8_t _pad_[0x_];
             

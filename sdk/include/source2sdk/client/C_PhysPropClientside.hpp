@@ -22,15 +22,19 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class C_PhysPropClientside : public source2sdk::client::C_BreakableProp
         {
         public:
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flTouchDelta; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_fDeathTime; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecDamagePosition; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecDamageDirection; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::DamageTypes_t m_nDamageType; // 0x_            
             uint8_t _pad_[0x_];
             

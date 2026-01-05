@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/worldrenderer/AggregateInstanceStreamOnDiskData_t.hpp"
+#include "source2sdk/worldrenderer/AggregateRTProxySceneObject_t.hpp"
 #include "source2sdk/worldrenderer/AggregateSceneObject_t.hpp"
 #include "source2sdk/worldrenderer/AggregateVertexAlbedoStreamOnDiskData_t.hpp"
 #include "source2sdk/worldrenderer/BakedLightingInfo_t.hpp"
@@ -45,6 +46,9 @@ namespace source2sdk
             // m_clutterSceneObjects has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::worldrenderer::ClutterSceneObject_t> m_clutterSceneObjects;
             char m_clutterSceneObjects[0x_]; // 0x_            
+            // m_rtProxies has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::worldrenderer::AggregateRTProxySceneObject_t> m_rtProxies;
+            char m_rtProxies[0x_]; // 0x_            
             // m_extraVertexStreamOverrides has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::worldrenderer::ExtraVertexStreamOverride_t> m_extraVertexStreamOverrides;
             char m_extraVertexStreamOverrides[0x_]; // 0x_            
@@ -77,6 +81,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_visClusterMembership) == 0x_);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_aggregateSceneObjects) == 0x_);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_clutterSceneObjects) == 0x_);
+        static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_rtProxies) == 0x_);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_extraVertexStreamOverrides) == 0x_);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_materialOverrides) == 0x_);
         static_assert(offsetof(source2sdk::worldrenderer::WorldNode_t, m_extraVertexStreams) == 0x_);

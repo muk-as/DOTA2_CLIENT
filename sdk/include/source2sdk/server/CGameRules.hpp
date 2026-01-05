@@ -29,6 +29,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             char m_szQuestName[128]; // 0x_            
             std::int32_t m_nQuestPhase; // 0x_            

@@ -33,13 +33,13 @@ namespace source2sdk
             float damage; // 0x_            
             float attack_damage; // 0x_            
             std::int32_t procs_onhit_effects; // 0x_            
+            float slow_duration; // 0x_            
             Vector m_vDashPosition; // 0x_            
             Vector m_vFacePosition; // 0x_            
             Vector m_vEndpoint; // 0x_            
             Vector m_vSlashDir; // 0x_            
             std::int32_t m_nDashProjectileID; // 0x_            
             Vector m_vDashProjectileLocation; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

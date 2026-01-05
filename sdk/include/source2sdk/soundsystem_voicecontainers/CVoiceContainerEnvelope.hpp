@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/resourcesystem/InfoForResourceTypeCVoiceContainerBase.hpp"
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerDefault.hpp"
 namespace source2sdk
 {
     namespace soundsystem_voicecontainers
@@ -33,7 +33,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "Envelope VSND"
         // static metadata: MPropertyDescription "Plays sound with envelope."
         #pragma pack(push, 1)
-        class CVoiceContainerEnvelope : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerEnvelope : public source2sdk::soundsystem_voicecontainers::CVoiceContainerDefault
         {
         public:
             // metadata: MPropertyFriendlyName "Vsnd File"

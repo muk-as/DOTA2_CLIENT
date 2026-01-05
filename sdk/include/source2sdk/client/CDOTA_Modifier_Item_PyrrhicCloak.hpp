@@ -24,7 +24,7 @@ namespace source2sdk
         {
         public:
             float damage_pct; // 0x_            
-            uint8_t _pad_[0x_];
+            float max_distance; // 0x_            
         };
         #pragma pack(pop)
         

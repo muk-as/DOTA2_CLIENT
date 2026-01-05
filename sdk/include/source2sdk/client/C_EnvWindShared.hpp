@@ -26,7 +26,6 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has VTable
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "GameTime_t m_flStartTime"
         // static metadata: MNetworkVarNames "uint32 m_iWindSeed"
@@ -48,8 +47,10 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint32_t m_iWindSeed; // 0x_            
             // metadata: MNetworkEnable
             std::uint16_t m_iMinWind; // 0x_            
@@ -70,12 +71,16 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::uint16_t m_iGustDirChange; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint16_t m_iInitialWindDir; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flInitialWindSpeed; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
+            // metadata: MNotSaved
             Vector m_location; // 0x_            
+            // metadata: MNotSaved
             // m_hEntOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEntOwner;
             char m_hEntOwner[0x_]; // 0x_            

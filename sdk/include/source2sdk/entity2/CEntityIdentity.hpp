@@ -4,6 +4,13 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/networksystem/ChangeAccessorFieldPathIndex_t.hpp"
+namespace source2sdk
+{
+    namespace entity2
+    {
+        struct CEntityAttributeTable;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: entity2
@@ -18,6 +25,7 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
+        // Construct disallowed
         // 
         // static metadata: MNetworkVarNames "int32 m_nameStringableIndex"
         #pragma pack(push, 1)
@@ -26,24 +34,33 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // metadata: MNetworkChangeCallback "entityIdentityNameChanged"
             std::int32_t m_nameStringableIndex; // 0x_            
             CUtlSymbolLarge m_name; // 0x_            
+            // metadata: MNotSaved
             CUtlSymbolLarge m_designerName; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::uint32_t m_flags; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             WorldGroupId_t m_worldGroupId; // 0x_            
+            // metadata: MNotSaved
             std::uint32_t m_fDataObjectTypes; // 0x_            
+            // metadata: MNotSaved
             source2sdk::networksystem::ChangeAccessorFieldPathIndex_t m_PathIndex; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
+            source2sdk::entity2::CEntityAttributeTable* m_pAttributes; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::CEntityIdentity* m_pPrev; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::CEntityIdentity* m_pNext; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::CEntityIdentity* m_pPrevByClass; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::CEntityIdentity* m_pNextByClass; // 0x_            
-            
-            // Datamap fields:
-            // void m_pAttributes; // 0x_
         };
         #pragma pack(pop)
         
@@ -54,6 +71,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_worldGroupId) == 0x_);
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_fDataObjectTypes) == 0x_);
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_PathIndex) == 0x_);
+        static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_pAttributes) == 0x_);
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_pPrev) == 0x_);
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_pNext) == 0x_);
         static_assert(offsetof(source2sdk::entity2::CEntityIdentity, m_pPrevByClass) == 0x_);

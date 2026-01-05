@@ -17,8 +17,6 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
-        // Has VTable
-        // Is Abstract
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CAnimEventListenerBase

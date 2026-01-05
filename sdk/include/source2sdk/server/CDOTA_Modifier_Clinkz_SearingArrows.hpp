@@ -24,6 +24,8 @@ namespace source2sdk
         {
         public:
             std::int32_t damage_bonus; // 0x_            
+            std::int32_t skeleton_damage_pct; // 0x_            
+            float skeleton_range; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_InFlightAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_InFlightAttackRecords;

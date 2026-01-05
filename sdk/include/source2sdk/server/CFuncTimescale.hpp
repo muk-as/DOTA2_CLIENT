@@ -28,6 +28,7 @@ namespace source2sdk
             float m_flAcceleration; // 0x_            
             float m_flMinBlendRate; // 0x_            
             float m_flBlendDeltaMultiplier; // 0x_            
+            // metadata: MNotSaved
             bool m_isStarted; // 0x_            
             uint8_t _pad_[0x_];
             

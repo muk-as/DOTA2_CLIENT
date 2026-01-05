@@ -23,10 +23,12 @@ namespace source2sdk
         class CDOTA_Modifier_Silver_Edge_Debuff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            // No schema binary for binding
+            std::int32_t max_movement_speed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Modifier_Silver_Edge_Debuff because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Silver_Edge_Debuff) == 0x_);
     };

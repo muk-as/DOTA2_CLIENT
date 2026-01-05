@@ -22,7 +22,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "HMaterialStrong m_skyBoxFaces"
         // static metadata: MNetworkVarNames "HRenderTextureStrong m_hHeightFogTexture"
@@ -32,14 +31,17 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_skyBoxFaces has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_skyBoxFaces[6];
             char m_skyBoxFaces[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hHeightFogTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogTexture;
             char m_hHeightFogTexture[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hHeightFogMaskTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogMaskTexture;
             char m_hHeightFogMaskTexture[0x_]; // 0x_            

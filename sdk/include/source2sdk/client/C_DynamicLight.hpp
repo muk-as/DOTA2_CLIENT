@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "uint8 m_Flags"
         // static metadata: MNetworkVarNames "uint8 m_LightStyle"
@@ -34,25 +33,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint8_t m_Flags; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint8_t m_LightStyle; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_Radius; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_Exponent; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "360,000000"
+            // metadata: MNotSaved
             float m_InnerAngle; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "360,000000"
+            // metadata: MNotSaved
             float m_OuterAngle; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_SpotRadius; // 0x_            
             uint8_t _pad_[0x_];
         };

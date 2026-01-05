@@ -97,6 +97,7 @@ namespace source2sdk
             CUtlSymbolLarge m_iszOutputEntity3Name; // 0x_            
             CUtlSymbolLarge m_iszOutputEntity4Name; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hOutputEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseEntity>> m_hOutputEntities;
             char m_hOutputEntities[0x_]; // 0x_            

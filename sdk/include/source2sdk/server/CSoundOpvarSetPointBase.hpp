@@ -37,6 +37,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszSourceEntityName; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             Vector m_vLastPosition; // 0x_            
             float m_flRefreshTime; // 0x_            
             // metadata: MNetworkEnable

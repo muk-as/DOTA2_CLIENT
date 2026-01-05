@@ -29,19 +29,26 @@ namespace source2sdk
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
+        // static metadata: MNetworkVarNames "bool m_bRuleAncientsDuel"
         // static metadata: MNetworkVarNames "float m_flEndgameTime"
         #pragma pack(push, 1)
         class CDOTABotChallengeGameMode : public source2sdk::server::CDOTABaseGameMode
         {
         public:
+            bool m_bRuleMidLaneOnly; // 0x_            
+            bool m_bRuleEliteBotHeroes; // 0x_            
+            bool m_bRuleMeteorStaff; // 0x_            
             bool m_bHasStartedEndgame; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // m_hRadiantAncientNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hRadiantAncientNPC;
             char m_hRadiantAncientNPC[0x_]; // 0x_            
             // m_hDireAncientNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hDireAncientNPC;
             char m_hDireAncientNPC[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            bool m_bRuleAncientsDuel; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             float m_flEndgameTime; // 0x_            
         };

@@ -23,20 +23,21 @@ namespace source2sdk
         class CDOTA_Modifier_Brewmaster_DrunkenBrawler_Passive : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t dodge_chance; // 0x_            
-            std::int32_t crit_chance; // 0x_            
-            std::int32_t crit_multiplier; // 0x_            
-            std::int32_t attack_speed; // 0x_            
-            float active_multiplier; // 0x_            
-            std::int32_t stun_chance; // 0x_            
-            float bash_cooldown; // 0x_            
-            float stun_duration; // 0x_            
-            float slow_duration; // 0x_            
-            std::int32_t bonus_move_speed; // 0x_            
-            std::int32_t bonus_status_resist; // 0x_            
-            std::int32_t armor; // 0x_            
-            std::int32_t magic_resist; // 0x_            
-            float m_flLastBash; // 0x_            
+            float bonus_armor; // 0x_            
+            float magic_resist; // 0x_            
+            float dodge_chance; // 0x_            
+            float bonus_move_speed; // 0x_            
+            float crit_chance; // 0x_            
+            float crit_multiplier; // 0x_            
+            float attack_speed; // 0x_            
+            float brewed_up_duration; // 0x_            
+            float brewed_up_duration_extend; // 0x_            
+            float brewed_up_bonus; // 0x_            
+            bool m_bBrewedUp; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // m_InFlightAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<std::int16_t> m_InFlightAttackRecords;
+            char m_InFlightAttackRecords[0x_]; // 0x_            
         };
         #pragma pack(pop)
         

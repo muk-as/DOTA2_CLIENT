@@ -31,7 +31,9 @@ namespace source2sdk
             CUtlSymbolLarge m_soundEventName; // 0x_            
             bool m_bOverrideWithEvent; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_soundscapeIndex; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_soundscapeEntityListId; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_positionNames[8]; // 0x_            
@@ -41,6 +43,7 @@ namespace source2sdk
             bool m_bDisabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_soundscapeName; // 0x_            
+            // metadata: MNotSaved
             std::uint32_t m_soundEventHash; // 0x_            
             uint8_t _pad_[0x_];
             

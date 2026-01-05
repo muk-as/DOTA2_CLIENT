@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/server/CDOTA_Modifier_DebuffImmune.hpp"
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -20,10 +20,12 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
-        class CDOTA_Modifier_Brewmaster_SpellImmunity : public source2sdk::server::CDOTA_Modifier_DebuffImmune
+        class CDOTA_Modifier_Brewmaster_SpellImmunity : public source2sdk::client::CDOTA_Buff
         {
         public:
             float magic_resist; // 0x_            
+            float status_resist; // 0x_            
+            float slow_resist; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

@@ -31,9 +31,11 @@ namespace source2sdk
         {
         public:
             float damage_pct; // 0x_            
+            float max_distance; // 0x_            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
             char m_hTarget[0x_]; // 0x_            
+            std::int32_t m_nBuffSerialNumber; // 0x_            
         };
         #pragma pack(pop)
         

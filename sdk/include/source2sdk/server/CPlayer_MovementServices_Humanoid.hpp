@@ -27,13 +27,15 @@ namespace source2sdk
         public:
             float m_flStepSoundTime; // 0x_            
             // metadata: MNetworkEnable
-            // metadata: MNetworkBitCount "17"
             // metadata: MNetworkMinValue "-4096,000000"
             // metadata: MNetworkMaxValue "4096,000000"
             // metadata: MNetworkEncodeFlags "4"
+            // metadata: MNetworkBitCount "17"
             float m_flFallVelocity; // 0x_            
+            // metadata: MNotSaved
             Vector m_groundNormal; // 0x_            
             float m_flSurfaceFriction; // 0x_            
+            // metadata: MNotSaved
             CUtlStringToken m_surfaceProps; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nStepside; // 0x_            

@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/animlib/NmPercent_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -27,16 +28,16 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            float m_flStartTimeSeconds; // 0x_            
-            float m_flDurationSeconds; // 0x_            
+            source2sdk::animlib::NmPercent_t m_flStartTime; // 0x_            
+            source2sdk::animlib::NmPercent_t m_flDuration; // 0x_            
             CGlobalSymbol m_syncID; // 0x_            
             bool m_bClientOnly; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::animlib::CNmEvent, m_flStartTimeSeconds) == 0x_);
-        static_assert(offsetof(source2sdk::animlib::CNmEvent, m_flDurationSeconds) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmEvent, m_flStartTime) == 0x_);
+        static_assert(offsetof(source2sdk::animlib::CNmEvent, m_flDuration) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmEvent, m_syncID) == 0x_);
         static_assert(offsetof(source2sdk::animlib::CNmEvent, m_bClientOnly) == 0x_);
         

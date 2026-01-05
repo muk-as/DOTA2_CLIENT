@@ -24,9 +24,7 @@ namespace source2sdk
         {
         public:
             std::int32_t bonus_building_damage; // 0x_            
-            std::int32_t true_form_bonus_building_damage; // 0x_            
-            std::int32_t spell_resistance; // 0x_            
-            uint8_t _pad_[0x_];
+            std::int32_t bonus_damage_against_entangled; // 0x_            
         };
         #pragma pack(pop)
         

@@ -28,7 +28,7 @@ namespace source2sdk
         class CDestructiblePart_DamageLevel
         {
         public:
-            // metadata: MPropertyDescription "Name for this damage level."
+            // metadata: MPropertyDescription "Name for this damage level.  Presently only used for debugging/display - one day may be used in code to allow destroying by name."
             CUtlString m_sName; // 0x_            
             // metadata: MPropertyStartGroup "+Model Setup"
             // metadata: MPropertyDescription "Name of the breakable to trigger breaking on when health reaches zero."

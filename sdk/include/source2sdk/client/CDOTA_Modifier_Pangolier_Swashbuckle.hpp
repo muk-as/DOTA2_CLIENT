@@ -28,6 +28,7 @@ namespace source2sdk
             Vector m_vSpawnPos; // 0x_            
             Vector m_vStrikeDir; // 0x_            
             Vector m_vDashDir; // 0x_            
+            bool m_bApplyDamagePenalty; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

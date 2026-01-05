@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/CDOTA_Buff_Item.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -20,7 +20,7 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
-        class CDOTA_Modifier_Item_Rattlecage : public source2sdk::client::CDOTA_Buff
+        class CDOTA_Modifier_Item_Rattlecage : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
             std::int32_t m_iDamageTaken; // 0x_            

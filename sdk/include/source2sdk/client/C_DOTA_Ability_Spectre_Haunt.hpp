@@ -25,10 +25,12 @@ namespace source2sdk
         class C_DOTA_Ability_Spectre_Haunt : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            // No schema binary for binding
+            bool m_bScepterFearConsumed; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in C_DOTA_Ability_Spectre_Haunt because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Spectre_Haunt) == 0x_);
     };

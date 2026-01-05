@@ -19,6 +19,7 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
+        // Has Trivial Destructor
         #pragma pack(push, 1)
         class CAnimEventQueueListener : public source2sdk::client::CAnimEventListenerBase
         {

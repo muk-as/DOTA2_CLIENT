@@ -28,8 +28,10 @@ namespace source2sdk
             float m_flDistanceToPlayer; // 0x_            
             bool m_bForceNewLevelUnit; // 0x_            
             bool m_bCheckCough; // 0x_            
+            // metadata: MNotSaved
             bool m_bThinkDangerous; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flDangerousTime; // 0x_            
             uint8_t _pad_[0x_];
             

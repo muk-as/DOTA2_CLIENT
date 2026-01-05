@@ -24,7 +24,7 @@ namespace source2sdk
         {
         public:
             std::int32_t attack_damage; // 0x_            
-            uint8_t _pad_[0x_];
+            float damage_mult; // 0x_            
         };
         #pragma pack(pop)
         

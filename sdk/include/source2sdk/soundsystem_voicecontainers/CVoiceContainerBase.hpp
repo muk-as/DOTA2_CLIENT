@@ -21,11 +21,12 @@ namespace source2sdk
 {
     namespace soundsystem_voicecontainers
     {
-        // Registered alignment: 0x_
+        // Registered alignment: unknown
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
         // Has VTable
+        // Is Abstract
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults

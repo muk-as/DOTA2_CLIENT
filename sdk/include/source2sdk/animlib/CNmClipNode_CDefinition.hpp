@@ -28,11 +28,14 @@ namespace source2sdk
         public:
             std::int16_t m_nPlayInReverseValueNodeIdx; // 0x_            
             std::int16_t m_nResetTimeValueNodeIdx; // 0x_            
-            float m_flSpeedMultiplier; // 0x_            
-            std::int32_t m_nStartSyncEventOffset; // 0x_            
             bool m_bSampleRootMotion; // 0x_            
             bool m_bAllowLooping; // 0x_            
             std::int16_t m_nDataSlotIdx; // 0x_            
+            // m_graphEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVectorFixedGrowable<CGlobalSymbol,2> m_graphEvents;
+            char m_graphEvents[0x_]; // 0x_            
+            float m_flSpeedMultiplier; // 0x_            
+            std::int32_t m_nStartSyncEventOffset; // 0x_            
         };
         #pragma pack(pop)
         

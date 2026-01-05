@@ -46,6 +46,7 @@ namespace source2sdk
             CEntityHandle m_hSource; // 0x_            
             std::int32_t m_nEntityIndexSelection; // 0x_            
             // start of bitfield block
+            // metadata: MNotSaved
             uint8_t m_bClientSideOnly: 1;
             // end of bitfield block// 1 bits
             uint8_t _pad_[0x_];

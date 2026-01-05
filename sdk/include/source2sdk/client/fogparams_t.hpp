@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "Vector dirPrimary"
         // static metadata: MNetworkVarNames "Color colorPrimary"
@@ -59,9 +58,11 @@ namespace source2sdk
             Color colorSecondary; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             Color colorPrimaryLerpTo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             Color colorSecondaryLerpTo; // 0x_            
             // metadata: MNetworkEnable
             float start; // 0x_            
@@ -78,21 +79,27 @@ namespace source2sdk
             float HDRColorScale; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             float skyboxFogFactor; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             float skyboxFogFactorLerpTo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             float startLerpTo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             float endLerpTo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             float maxdensityLerpTo; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t lerptime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "FogController"
@@ -110,7 +117,9 @@ namespace source2sdk
             bool enable; // 0x_            
             // metadata: MNetworkEnable
             bool blend; // 0x_            
+            // metadata: MNotSaved
             bool m_bPadding2; // 0x_            
+            // metadata: MNotSaved
             bool m_bPadding; // 0x_            
         };
         #pragma pack(pop)

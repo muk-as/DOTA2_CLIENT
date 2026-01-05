@@ -128,6 +128,7 @@ namespace source2sdk
             char m_hRemoveActorList[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint16_t m_nSceneStringIndex; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::CEntityIOOutput m_OnStart; // 0x_            
@@ -140,10 +141,12 @@ namespace source2sdk
             // CHandle<source2sdk::server::CSceneEntity> m_hInterruptScene;
             char m_hInterruptScene[0x_]; // 0x_            
             std::int32_t m_nInterruptCount; // 0x_            
+            // metadata: MNotSaved
             bool m_bSceneMissing; // 0x_            
             bool m_bInterrupted; // 0x_            
             bool m_bCompletedEarly; // 0x_            
             bool m_bInterruptSceneFinished; // 0x_            
+            // metadata: MNotSaved
             bool m_bRestoring; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_hNotifySceneCompletion has a template type with potentially unknown template parameters. You can try uncommenting the field below.

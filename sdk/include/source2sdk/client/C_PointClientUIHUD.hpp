@@ -38,6 +38,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bCheckCSSClasses; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

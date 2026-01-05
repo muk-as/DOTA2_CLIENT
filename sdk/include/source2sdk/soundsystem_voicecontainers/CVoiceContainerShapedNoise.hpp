@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem_voicecontainers
@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "Wind Generator Container"
         // static metadata: MPropertyDescription "This is a synth meant to generate whoosh noises."
         #pragma pack(push, 1)
-        class CVoiceContainerShapedNoise : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerShapedNoise : public source2sdk::soundsystem_voicecontainers::CVoiceContainerGenerator
         {
         public:
             bool m_bUseCurveForFrequency; // 0x_            

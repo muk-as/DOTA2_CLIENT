@@ -29,6 +29,7 @@ namespace source2sdk
             CUtlSymbolLarge m_colorCorrectionName; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             bool m_bDisabled; // 0x_            
+            // metadata: MNotSaved
             bool m_bInFogVolumesList; // 0x_            
             uint8_t _pad_[0x_];
             

@@ -23,10 +23,8 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "float32 m_flexWeight"
-        // static metadata: MNetworkVarNames "bool m_blinktoggle"
         #pragma pack(push, 1)
         class C_BaseFlex : public source2sdk::client::C_BaseAnimatingOverlay
         {
@@ -45,24 +43,30 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "OnViewTargetChanged"
             VectorWS m_vLookTargetPosition; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            bool m_blinktoggle; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nLastFlexUpdateFrameCount; // 0x_            
+            // metadata: MNotSaved
             Vector m_CachedViewTarget; // 0x_            
             source2sdk::client::SceneEventId_t m_nNextSceneEventId; // 0x_            
-            std::int32_t m_iBlink; // 0x_            
-            float m_blinktime; // 0x_            
-            bool m_prevblinktoggle; // 0x_            
+            // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_iMouthAttachment; // 0x_            
+            // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_iEyeAttachment; // 0x_            
+            // metadata: MNotSaved
             bool m_bResetFlexWeightsOnModelChange; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nEyeOcclusionRendererBone; // 0x_            
+            // metadata: MNotSaved
             matrix3x4_t m_mEyeOcclusionRendererCameraToBoneTransform; // 0x_            
+            // metadata: MNotSaved
             Vector m_vEyeOcclusionRendererHalfExtent; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::C_BaseFlex_Emphasized_Phoneme m_PhonemeClasses[3]; // 0x_            
+            
+            // Datamap fields:
+            // void m_PhonemeClasses; // 0x_
         };
         #pragma pack(pop)
         

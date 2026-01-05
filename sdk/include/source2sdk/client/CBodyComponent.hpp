@@ -32,8 +32,10 @@ namespace source2sdk
         class CBodyComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
+            // metadata: MNotSaved
             source2sdk::client::CGameSceneNode* m_pSceneNode; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             uint8_t _pad_[0x_];
         };

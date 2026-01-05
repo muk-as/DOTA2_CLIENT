@@ -53,8 +53,10 @@ namespace source2sdk
             // metadata: MNetworkEnable
             bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bMaster; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bClientSide; // 0x_            
             // metadata: MNetworkEnable
             bool m_bExclusive; // 0x_            
@@ -66,6 +68,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             float m_flCurWeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_netlookupFilename[512]; // 0x_            
             CUtlSymbolLarge m_lookupFilename; // 0x_            
             

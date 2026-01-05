@@ -42,14 +42,20 @@ namespace source2sdk
             Color m_OldColor; // 0x_            
             float m_flOldStart; // 0x_            
             float m_flOldEnd; // 0x_            
+            // metadata: MNotSaved
             float m_flOldMaxDensity; // 0x_            
+            // metadata: MNotSaved
             float m_flOldHDRColorScale; // 0x_            
+            // metadata: MNotSaved
             float m_flOldFarZ; // 0x_            
             Color m_NewColor; // 0x_            
             float m_flNewStart; // 0x_            
             float m_flNewEnd; // 0x_            
+            // metadata: MNotSaved
             float m_flNewMaxDensity; // 0x_            
+            // metadata: MNotSaved
             float m_flNewHDRColorScale; // 0x_            
+            // metadata: MNotSaved
             float m_flNewFarZ; // 0x_            
         };
         #pragma pack(pop)

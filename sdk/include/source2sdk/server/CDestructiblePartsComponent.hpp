@@ -33,6 +33,7 @@ namespace source2sdk
         class CDestructiblePartsComponent
         {
         public:
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_vecDamageTakenByHitGroup has a template type with potentially unknown template parameters. You can try uncommenting the field below.
@@ -44,6 +45,10 @@ namespace source2sdk
             char m_hOwner[0x_]; // 0x_            
             // metadata: MNetworkEnable
             std::int32_t m_nLastHitDamageLevel; // 0x_            
+            uint8_t _pad_[0x_];
+            
+            // Datamap fields:
+            // void m_pAnimGraphDestructibleGraphController; // 0x_
         };
         #pragma pack(pop)
         

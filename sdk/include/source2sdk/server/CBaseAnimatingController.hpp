@@ -75,7 +75,6 @@ namespace source2sdk
             float m_flCachedSequenceCycleRate; // 0x_            
             float m_flCachedGroundSpeed; // 0x_            
             source2sdk::client::SequenceFinishNotifyState_t m_nNotifyState; // 0x_            
-            bool m_bHasEverDispatchedAnimEvents; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CSequenceTransitioner2 m_SequenceTransitioner; // 0x_            
         };

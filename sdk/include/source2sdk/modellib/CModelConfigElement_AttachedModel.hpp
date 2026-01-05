@@ -41,7 +41,7 @@ namespace source2sdk
             bool m_bBoneMergeFlex; // 0x_            
             bool m_bUserSpecifiedColor; // 0x_            
             bool m_bUserSpecifiedMaterialGroup; // 0x_            
-            bool m_bAcceptParentMaterialDrivenDecals; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CUtlString m_BodygroupOnOtherModels; // 0x_            
             CUtlString m_MaterialGroupOnOtherModels; // 0x_            
             uint8_t _pad_[0x_];

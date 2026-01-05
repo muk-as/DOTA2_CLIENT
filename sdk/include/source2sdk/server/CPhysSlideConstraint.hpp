@@ -37,6 +37,7 @@ namespace source2sdk
             float m_flMotorDampingRatio; // 0x_            
             bool m_bUseEntityPivot; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::server::ConstraintSoundInfo m_soundInfo; // 0x_            
             
             // Datamap fields:

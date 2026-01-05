@@ -23,7 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_Brewmaster_Void_Brawler_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movespeed; // 0x_            
+            std::int32_t slow_pct; // 0x_            
             float active_multiplier; // 0x_            
         };
         #pragma pack(pop)

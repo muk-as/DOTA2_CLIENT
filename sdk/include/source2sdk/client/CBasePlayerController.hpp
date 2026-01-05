@@ -54,11 +54,14 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::C_CommandContext m_CommandContext; // 0x_            
+            // metadata: MNotSaved
             std::uint64_t m_nInButtonsWhichAreToggles; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "1"
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             std::uint32_t m_nTickBase; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPawnChanged"
@@ -68,13 +71,17 @@ namespace source2sdk
             // metadata: MNetworkEnable
             bool m_bKnownTeamMismatch; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             // m_hPredictedPawn has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BasePlayerPawn> m_hPredictedPawn;
             char m_hPredictedPawn[0x_]; // 0x_            
+            // metadata: MNotSaved
             CSplitScreenSlot m_nSplitScreenSlot; // 0x_            
+            // metadata: MNotSaved
             // m_hSplitOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBasePlayerController> m_hSplitOwner;
             char m_hSplitOwner[0x_]; // 0x_            
+            // metadata: MNotSaved
             // m_hSplitScreenPlayers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::CBasePlayerController>> m_hSplitScreenPlayers;
             char m_hSplitScreenPlayers[0x_]; // 0x_            
@@ -82,15 +89,19 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnConnectionStateChanged"
+            // metadata: MNotSaved
             source2sdk::client::PlayerConnectedState m_iConnected; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerControllerNameChanged"
+            // metadata: MNotSaved
             char m_iszPlayerName[128]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnSteamIDChanged"
+            // metadata: MNotSaved
             std::uint64_t m_steamID; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsLocalPlayerController; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNoClipEnableChanged"

@@ -27,6 +27,8 @@ namespace source2sdk
         {
         public:
             CUtlString m_groupName; // 0x_            
+            std::int32_t m_nGroupValue; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

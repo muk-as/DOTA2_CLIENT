@@ -29,7 +29,6 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             source2sdk::server::CBaseAnimGraphController m_animationController; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

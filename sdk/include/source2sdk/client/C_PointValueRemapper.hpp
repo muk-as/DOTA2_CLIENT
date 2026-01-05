@@ -84,6 +84,7 @@ namespace source2sdk
             source2sdk::client::ValueRemapperOutputType_t m_nOutputType; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hOutputEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_hOutputEntities;
             char m_hOutputEntities[0x_]; // 0x_            

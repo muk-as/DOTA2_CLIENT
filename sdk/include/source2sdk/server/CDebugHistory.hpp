@@ -25,6 +25,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nNpcEvents; // 0x_            
             uint8_t _pad_[0x_];
         };

@@ -18,8 +18,6 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
-        // Has Trivial Constructor
-        // Has Trivial Destructor
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,13 +25,22 @@ namespace source2sdk
         struct VMixSubgraphSwitchDesc_t
         {
         public:
+            CUtlString m_name; // 0x_            
+            CUtlString m_effectName; // 0x_            
+            // m_subgraphs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CUtlString> m_subgraphs;
+            char m_subgraphs[0x_]; // 0x_            
             source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchInterpolationType_t m_interpolationMode; // 0x_            
             bool m_bOnlyTailsOnFadeOut; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flInterpolationTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_name) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_effectName) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_subgraphs) == 0x_);
         static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_interpolationMode) == 0x_);
         static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_bOnlyTailsOnFadeOut) == 0x_);
         static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixSubgraphSwitchDesc_t, m_flInterpolationTime) == 0x_);

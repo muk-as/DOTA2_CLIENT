@@ -30,7 +30,9 @@ namespace source2sdk
             std::int32_t overprotective_wisp_count; // 0x_            
             float heal_interval; // 0x_            
             std::int32_t overprotective_max_wisps; // 0x_            
-            uint8_t _pad_[0x_];
+            std::int32_t heal; // 0x_            
+            float heal_duration; // 0x_            
+            std::int32_t wisp_count; // 0x_            
         };
         #pragma pack(pop)
         

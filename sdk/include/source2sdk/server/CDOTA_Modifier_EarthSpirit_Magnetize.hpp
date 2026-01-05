@@ -40,7 +40,7 @@ namespace source2sdk
             bool magnetized_rocks_buff_self; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t magnetized_rocks_buff_self_duration; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t magnetize_self; // 0x_            
             // m_hExplodedRocks has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hExplodedRocks;
             char m_hExplodedRocks[0x_]; // 0x_            

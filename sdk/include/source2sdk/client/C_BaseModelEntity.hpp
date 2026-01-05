@@ -8,7 +8,7 @@
 #include "source2sdk/client/CHitboxComponent.hpp"
 #include "source2sdk/client/CNetworkViewOffsetVector.hpp"
 #include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/client/DecalMode_t.hpp"
+#include "source2sdk/client/DecalRtEncoding_t.hpp"
 #include "source2sdk/client/EntityRenderAttribute_t.hpp"
 #include "source2sdk/client/HitGroup_t.hpp"
 #include "source2sdk/client/RenderFx_t.hpp"
@@ -68,28 +68,30 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float32 m_flFadeScale"
         // static metadata: MNetworkVarNames "float32 m_flShadowStrength"
         // static metadata: MNetworkVarNames "uint8 m_nObjectCulling"
-        // static metadata: MNetworkVarNames "int m_nAddDecal"
-        // static metadata: MNetworkVarNames "Vector m_vDecalPosition"
-        // static metadata: MNetworkVarNames "Vector m_vDecalForwardAxis"
-        // static metadata: MNetworkVarNames "DecalMode_t m_nDecalMode"
-        // static metadata: MNetworkVarNames "DecalMode_t m_nRequiredDecalMode"
-        // static metadata: MNetworkVarNames "CHandle< C_BaseModelEntity > m_ConfigEntitiesToPropagateMaterialDecalsTo"
         // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
         #pragma pack(push, 1)
         class C_BaseModelEntity : public source2sdk::client::C_BaseEntity
         {
         public:
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "CRenderComponent"
-            // metadata: MNetworkAlias "CRenderComponent"
-            // metadata: MNetworkTypeAlias "CRenderComponent"
+            // metadata: MNotSaved
             source2sdk::client::CRenderComponent* m_CRenderComponent; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "CHitboxComponent"
             // metadata: MNetworkAlias "CHitboxComponent"
             // metadata: MNetworkTypeAlias "CHitboxComponent"
             source2sdk::client::CHitboxComponent m_CHitboxComponent; // 0x_            
+            source2sdk::client::HitGroup_t m_nDestructiblePartInitialStateDestructed0; // 0x_            
+            source2sdk::client::HitGroup_t m_nDestructiblePartInitialStateDestructed1; // 0x_            
+            source2sdk::client::HitGroup_t m_nDestructiblePartInitialStateDestructed2; // 0x_            
+            source2sdk::client::HitGroup_t m_nDestructiblePartInitialStateDestructed3; // 0x_            
+            source2sdk::client::HitGroup_t m_nDestructiblePartInitialStateDestructed4; // 0x_            
+            std::int32_t m_nDestructiblePartInitialStateDestructed0_PartIndex; // 0x_            
+            std::int32_t m_nDestructiblePartInitialStateDestructed1_PartIndex; // 0x_            
+            std::int32_t m_nDestructiblePartInitialStateDestructed2_PartIndex; // 0x_            
+            std::int32_t m_nDestructiblePartInitialStateDestructed3_PartIndex; // 0x_            
+            std::int32_t m_nDestructiblePartInitialStateDestructed4_PartIndex; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MPtrAutoallocate
             // metadata: MNetworkTypeAlias "CDestructiblePartsSystemComponent*"
             source2sdk::client::CDestructiblePartsComponent* m_pDestructiblePartsSystemComponent; // 0x_            
             source2sdk::client::HitGroup_t m_LastHitGroup; // 0x_            
@@ -97,13 +99,16 @@ namespace source2sdk
             CGlobalSymbol m_sLastDamageSourceName; // 0x_            
             VectorWS m_vLastDamagePosition; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bInitModelEffects; // 0x_            
+            // metadata: MNotSaved
+            bool m_bDoingModelEffects; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsStaticProp; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_iViewerID; // 0x_            
             std::int32_t m_iTeamVisibilityBitmask; // 0x_            
-            std::int32_t m_nLastAddDecal; // 0x_            
-            std::int32_t m_nDecalsAdded; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iOldHealth; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnRenderModeChanged"
@@ -144,22 +149,7 @@ namespace source2sdk
             float m_flShadowStrength; // 0x_            
             // metadata: MNetworkEnable
             std::uint8_t m_nObjectCulling; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            std::int32_t m_nAddDecal; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vDecalPosition; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vDecalForwardAxis; // 0x_            
-            // metadata: MNetworkEnable
-            source2sdk::client::DecalMode_t m_nDecalMode; // 0x_            
-            // metadata: MNetworkEnable
-            source2sdk::client::DecalMode_t m_nRequiredDecalMode; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            // m_ConfigEntitiesToPropagateMaterialDecalsTo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseModelEntity>> m_ConfigEntitiesToPropagateMaterialDecalsTo;
-            char m_ConfigEntitiesToPropagateMaterialDecalsTo[0x_]; // 0x_            
+            source2sdk::client::DecalRtEncoding_t m_nRequiredDecalRtEncoding; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
@@ -167,12 +157,16 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "OnViewOffsetChanged"
             source2sdk::client::CNetworkViewOffsetVector m_vecViewOffset; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::CClientAlphaProperty* m_pClientAlphaProperty; // 0x_            
+            // metadata: MNotSaved
             Color m_ClientOverrideTint; // 0x_            
+            // metadata: MNotSaved
             bool m_bUseClientOverrideTint; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDisabledHitgroupsChanged"
+            // metadata: MSaveOpsForField
             std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
             uint8_t _pad_[0x_];
             

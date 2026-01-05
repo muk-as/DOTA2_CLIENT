@@ -23,7 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_Pangolier_LuckyShot_Disarm : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t armor; // 0x_            
+            float armor; // 0x_            
             std::int32_t attack_slow; // 0x_            
         };
         #pragma pack(pop)

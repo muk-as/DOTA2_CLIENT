@@ -60,7 +60,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_bClientSideRagdoll"
         // static metadata: MNetworkExcludeByName "m_iMaxHealth"
@@ -72,6 +71,9 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByName "m_nTakeDamageFlags"
         // static metadata: MNetworkExcludeByName "m_vecAbsVelocity"
         // static metadata: MNetworkExcludeByName "m_flSpeed"
+        // static metadata: MNetworkExcludeByName "m_flWaterLevel"
+        // static metadata: MNetworkExcludeByName "m_flTimeScale"
+        // static metadata: MNetworkExcludeByName "m_vecBaseVelocity"
         // static metadata: MNetworkVarNames "CBodyComponent::Storage_t m_CBodyComponent"
         // static metadata: MNetworkVarNames "int32 m_iMaxHealth"
         // static metadata: MNetworkVarNames "int32 m_iHealth"
@@ -117,57 +119,80 @@ namespace source2sdk
             // metadata: MNetworkTypeAlias "CBodyComponent"
             // metadata: MNetworkPriority "48"
             source2sdk::client::CBodyComponent* m_CBodyComponent; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::GameTick_t m_nLastThinkTick; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::CGameSceneNode* m_pGameSceneNode; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CRenderComponent* m_pRenderComponent; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CCollisionProperty* m_pCollision; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             std::int32_t m_iMaxHealth; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "ClampHealth"
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"
             std::int32_t m_iHealth; // 0x_            
+            // metadata: MNotSaved
             float m_flDamageAccumulator; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkPriority "32"
+            // metadata: MNotSaved
             std::uint8_t m_lifeState; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::DamageOptions_t m_takedamage; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bTakesDamage; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::TakeDamageFlags_t m_nTakeDamageFlags; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::EntityPlatformTypes_t m_nPlatformType; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnInterpolationFrameChanged"
+            // metadata: MNotSaved
             std::uint8_t m_ubInterpolationFrame; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_hSceneObjectController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hSceneObjectController;
             char m_hSceneObjectController[0x_]; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nNoInterpolationTick; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nVisibilityNoInterpolationTick; // 0x_            
+            // metadata: MNotSaved
             float m_flProxyRandomValue; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iEFlags; // 0x_            
+            // metadata: MNotSaved
             std::uint8_t m_nWaterType; // 0x_            
+            // metadata: MNotSaved
             bool m_bInterpolateEvenWithNoModel; // 0x_            
+            // metadata: MNotSaved
             bool m_bPredictionEligible; // 0x_            
+            // metadata: MNotSaved
             bool m_bApplyLayerMatchIDToModel; // 0x_            
+            // metadata: MNotSaved
             CUtlStringToken m_tokLayerMatchID; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSubclassIDChanged"
             CUtlStringToken m_nSubclassID; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nSimulationTick; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_iCurrentThinkContext; // 0x_            
+            // metadata: MNotSaved
             // m_aThinkFunctions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::thinkfunc_t> m_aThinkFunctions;
             char m_aThinkFunctions[0x_]; // 0x_            
@@ -176,33 +201,46 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "0"
             // metadata: MNetworkSerializer "animTimeSerializer"
+            // metadata: MNotSaved
             float m_flAnimTime; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "1"
             // metadata: MNetworkSerializer "simulationTimeSerializer"
             // metadata: MNetworkChangeCallback "OnSimulationTimeChanged"
+            // metadata: MNotSaved
             float m_flSimulationTime; // 0x_            
             std::uint8_t m_nSceneObjectOverrideFlags; // 0x_            
+            // metadata: MNotSaved
             bool m_bHasSuccessfullyInterpolated; // 0x_            
+            // metadata: MNotSaved
             bool m_bHasAddedVarsToInterpolation; // 0x_            
+            // metadata: MNotSaved
             bool m_bRenderEvenWhenNotSuccessfullyInterpolated; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nInterpolationLatchDirtyFlags[2]; // 0x_            
+            // metadata: MNotSaved
             std::uint16_t m_ListEntry[11]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flCreateTime; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flSpeed; // 0x_            
+            // metadata: MNotSaved
             std::uint16_t m_EntClientFlags; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bClientSideRagdoll; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNetVarTeamNumChanged"
+            // metadata: MNotSaved
             std::uint8_t m_iTeamNum; // 0x_            
             // metadata: MNetworkEnable
             std::uint32_t m_spawnflags; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             source2sdk::entity2::GameTick_t m_nNextThinkTick; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -210,16 +248,19 @@ namespace source2sdk
             // metadata: MNetworkUserGroup "Player"
             // metadata: MNetworkChangeCallback "OnFlagsChanged"
             std::uint32_t m_fFlags; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecAbsVelocity; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkAlias "m_vecVelocity"
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             // metadata: MNetworkChangeCallback "OnServerVelocityChanged"
             // metadata: MNetworkPriority "32"
+            // metadata: MNotSaved
             source2sdk::client::CNetworkVelocityVector m_vecServerVelocity; // 0x_            
             source2sdk::client::CNetworkVelocityVector m_vecVelocity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hEffectEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEffectEntity;
             char m_hEffectEntity[0x_]; // 0x_            
@@ -229,6 +270,7 @@ namespace source2sdk
             // CHandle<source2sdk::client::C_BaseEntity> m_hOwnerEntity;
             char m_hOwnerEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::MoveCollide_t m_MoveCollide; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnMoveTypeChanged"
@@ -242,19 +284,23 @@ namespace source2sdk
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkEncodeFlags "8"
+            // metadata: MNotSaved
             float m_flWaterLevel; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnEffectsChanged"
+            // metadata: MNotSaved
             std::uint32_t m_fEffects; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
+            // metadata: MNotSaved
             // m_hGroundEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hGroundEntity;
             char m_hGroundEntity[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
+            // metadata: MNotSaved
             std::int32_t m_nGroundBodyIndex; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
@@ -262,18 +308,23 @@ namespace source2sdk
             // metadata: MNetworkMaxValue "4,000000"
             // metadata: MNetworkEncodeFlags "1"
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             float m_flFriction; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
+            // metadata: MNotSaved
             float m_flElasticity; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGravityUpdated"
+            // metadata: MNotSaved
             float m_flGravityScale; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
+            // metadata: MNotSaved
             float m_flTimeScale; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnInterpolationAmountChanged"
+            // metadata: MNotSaved
             bool m_bAnimatedEveryTick; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGravityUpdated"
@@ -281,33 +332,47 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnNavIgnoreChanged"
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x_            
+            // metadata: MNotSaved
             std::uint16_t m_hThink; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::uint8_t m_fBBoxVisFlags; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flActualGravityScale; // 0x_            
             bool m_bGravityActuallyDisabled; // 0x_            
+            // metadata: MNotSaved
             bool m_bPredictable; // 0x_            
             bool m_bRenderWithViewModels; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::int32_t m_nFirstPredictableCommand; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nLastPredictableCommand; // 0x_            
+            // metadata: MNotSaved
             // m_hOldMoveParent has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOldMoveParent;
             char m_hOldMoveParent[0x_]; // 0x_            
+            // metadata: MNotSaved
             source2sdk::particleslib::CParticleProperty m_Particles; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             QAngle m_vecAngVelocity; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_DataChangeEventRef; // 0x_            
+            // metadata: MNotSaved
             // m_dependencies has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityHandle> m_dependencies;
             char m_dependencies[0x_]; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nCreationTick; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bAnimTimeChanged; // 0x_            
+            // metadata: MNotSaved
             bool m_bSimulationTimeChanged; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CUtlString m_sUniqueHammerID; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::client::BloodType m_nBloodType; // 0x_            

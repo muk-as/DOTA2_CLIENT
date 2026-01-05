@@ -125,11 +125,6 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "diffuse lighting origin Control Point"
             // metadata: MPropertySortPriority "400"
             std::int32_t m_nLightingControlPoint; // 0x_            
-            // metadata: MPropertyFriendlyName "self illum per-particle"
-            // metadata: MPropertyAttributeChoiceName "particlefield_scalar"
-            // metadata: MPropertySortPriority "400"
-            // metadata: MPropertySuppressExpr "m_nOrientationType == PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL || m_nOrientationType == PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL"
-            source2sdk::particles::ParticleAttributeIndex_t m_nSelfIllumPerParticle; // 0x_            
             // metadata: MPropertyStartGroup "+Color and alpha adjustments"
             // metadata: MPropertyFriendlyName "output blend mode"
             // metadata: MPropertySortPriority "300"

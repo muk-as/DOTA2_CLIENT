@@ -38,8 +38,8 @@ namespace source2sdk
         class CDOTA_Modifier_Treant_EyesInTheForest_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
+            std::int32_t hits_to_kill; // 0x_            
             float vision_aoe; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CDOTA_Tree* m_Tree; // 0x_            
             // m_hTree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTree;

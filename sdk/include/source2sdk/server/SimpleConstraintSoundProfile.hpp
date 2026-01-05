@@ -3,7 +3,6 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/server/SimpleConstraintSoundProfile_SimpleConstraintsSoundProfileKeypoints_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -20,28 +19,25 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Has Trivial Destructor
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class SimpleConstraintSoundProfile
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            source2sdk::server::SimpleConstraintSoundProfile_SimpleConstraintsSoundProfileKeypoints_t eKeypoints; // 0x_            
-            float m_keyPoints[2]; // 0x_            
-            float m_reversalSoundThresholds[3]; // 0x_            
-            
-            // Datamap fields:
-            // float m_keyPoints[0]; // 0x_
-            // float m_keyPoints[1]; // 0x_
-            // float m_reversalSoundThresholds[0]; // 0x_
-            // float m_reversalSoundThresholds[1]; // 0x_
-            // float m_reversalSoundThresholds[2]; // 0x_
+            float m_flKeyPointMinSoundThreshold; // 0x_            
+            float m_flKeyPointMaxSoundThreshold; // 0x_            
+            float m_reversalSoundThresholdSmall; // 0x_            
+            float m_reversalSoundThresholdMedium; // 0x_            
+            float m_reversalSoundThresholdLarge; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, eKeypoints) == 0x_);
-        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_keyPoints) == 0x_);
-        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_reversalSoundThresholds) == 0x_);
+        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_flKeyPointMinSoundThreshold) == 0x_);
+        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_flKeyPointMaxSoundThreshold) == 0x_);
+        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_reversalSoundThresholdSmall) == 0x_);
+        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_reversalSoundThresholdMedium) == 0x_);
+        static_assert(offsetof(source2sdk::server::SimpleConstraintSoundProfile, m_reversalSoundThresholdLarge) == 0x_);
         
         static_assert(sizeof(source2sdk::server::SimpleConstraintSoundProfile) == 0x_);
     };

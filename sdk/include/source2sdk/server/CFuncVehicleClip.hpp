@@ -27,8 +27,8 @@ namespace source2sdk
             // Datamap fields:
             // void InputEnable; // 0x_
             // void InputDisable; // 0x_
-            // void InputEnable; // 0x_
-            // void InputDisable; // 0x_
+            // void InputSetSolid; // 0x_
+            // void InputSetNonsolid; // 0x_
             // No schema binary for binding
         };
         #pragma pack(pop)

@@ -57,6 +57,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "GameTime_t m_flSpawnedAt"
         // static metadata: MNetworkVarNames "bool m_bScriptDisableRespawns"
         // static metadata: MNetworkVarNames "int m_iPrimaryAttribute"
+        // static metadata: MNetworkVarNames "GameTime_t m_flLastDispellTime"
         // static metadata: MNetworkIncludeByName "m_flDeathTime"
         #pragma pack(push, 1)
         class C_DOTA_BaseNPC_Hero : public source2sdk::client::C_DOTA_BaseNPC_Additive
@@ -139,6 +140,12 @@ namespace source2sdk
             float m_flHealDecayRate; // 0x_            
             bool m_bIsFirstTimeHeal; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnLastDispellTimeChanged"
+            source2sdk::entity2::GameTime_t m_flLastDispellTime; // 0x_            
+            float m_flDispellAnimationAmount; // 0x_            
+            float m_flDeathAnimationAmount; // 0x_            
+            source2sdk::entity2::GameTime_t m_flLastDeathTime; // 0x_            
             source2sdk::entity2::GameTime_t m_flLastTreeShakeTime; // 0x_            
             source2sdk::client::CountdownTimer m_CenterOnHeroCooldownTimer; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

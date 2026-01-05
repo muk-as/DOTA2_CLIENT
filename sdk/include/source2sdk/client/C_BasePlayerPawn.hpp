@@ -126,23 +126,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_WeaponServices* m_pWeaponServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_ItemServices* m_pItemServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             source2sdk::client::CPlayer_AutoaimServices* m_pAutoaimServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_ObserverServices* m_pObserverServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_WaterServices* m_pWaterServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_UseServices* m_pUseServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_FlashlightServices* m_pFlashlightServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_CameraServices* m_pCameraServices; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::CPlayer_MovementServices* m_pMovementServices; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             QAngle v_angle; // 0x_            
@@ -157,16 +166,26 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecPredictionError; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flPredictionErrorTime; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             Vector m_vecLastCameraSetupLocalOrigin; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flLastCameraSetupTime; // 0x_            
+            // metadata: MNotSaved
             float m_flFOVSensitivityAdjust; // 0x_            
+            // metadata: MNotSaved
             float m_flMouseSensitivity; // 0x_            
+            // metadata: MNotSaved
             Vector m_vOldOrigin; // 0x_            
+            // metadata: MNotSaved
             float m_flOldSimulationTime; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nLastExecutedCommandNumber; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nLastExecutedCommandTick; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnControllerChanged"
@@ -177,6 +196,7 @@ namespace source2sdk
             // m_hDefaultController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBasePlayerController> m_hDefaultController;
             char m_hDefaultController[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsSwappingToPredictableController; // 0x_            
             uint8_t _pad_[0x_];
             

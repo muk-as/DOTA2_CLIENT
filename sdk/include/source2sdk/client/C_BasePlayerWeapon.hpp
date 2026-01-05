@@ -23,11 +23,10 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MNetworkExcludeByName "m_flexWeight"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
-        // static metadata: MNetworkIncludeByName "m_nNextThinkTick"
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
+        // static metadata: MNetworkIncludeByName "m_nNextThinkTick"
         // static metadata: MNetworkUserGroupProxy "CBasePlayerWeapon"
         // static metadata: MNetworkVarNames "GameTick_t m_nNextPrimaryAttackTick"
         // static metadata: MNetworkVarNames "float32 m_flNextPrimaryAttackTickRatio"

@@ -23,8 +23,8 @@ namespace source2sdk
         class CDOTA_Modifier_Enchantress_RabbleRouser : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t base_damage_amp; // 0x_            
-            std::int32_t damage_amp_per_level; // 0x_            
+            std::int32_t damage_amp; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

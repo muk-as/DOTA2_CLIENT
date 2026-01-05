@@ -28,6 +28,7 @@ namespace source2sdk
             float bonus_xp_kill; // 0x_            
             float bonus_xp_assist; // 0x_            
             float bonus_xp_assist_other; // 0x_            
+            float ally_multiplier; // 0x_            
             bool m_bBackstab; // 0x_            
             uint8_t _pad_[0x_];
         };

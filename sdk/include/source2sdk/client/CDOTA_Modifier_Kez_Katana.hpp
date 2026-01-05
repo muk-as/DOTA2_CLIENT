@@ -31,6 +31,7 @@ namespace source2sdk
             std::int32_t katana_swap_bonus_damage; // 0x_            
             float impale_duration; // 0x_            
             std::int32_t bleed_as_rupture_pct; // 0x_            
+            std::int32_t max_stacks; // 0x_            
             std::int32_t m_nBonusPreAttackDamage; // 0x_            
             bool m_bBackstab; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

@@ -19,11 +19,13 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has VTable
+        // Construct disallowed
         #pragma pack(push, 1)
         class CPlayerPawnComponent
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             uint8_t _pad_[0x_];
         };

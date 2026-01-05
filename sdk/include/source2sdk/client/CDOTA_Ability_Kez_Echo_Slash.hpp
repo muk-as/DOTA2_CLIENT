@@ -29,6 +29,7 @@ namespace source2sdk
         public:
             Vector m_vInitialDirection; // 0x_            
             Vector m_vStartPos; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CTransform m_InitialTransform; // 0x_            
             float katana_radius; // 0x_            
             float katana_distance; // 0x_            

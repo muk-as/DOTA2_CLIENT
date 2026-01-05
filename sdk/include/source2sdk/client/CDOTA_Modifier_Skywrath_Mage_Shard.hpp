@@ -24,9 +24,9 @@ namespace source2sdk
         {
         public:
             float stack_duration; // 0x_            
-            std::int32_t damage_barrier_base; // 0x_            
-            std::int32_t damage_barrier_per_level; // 0x_            
+            std::int32_t damage_barrier; // 0x_            
             float barrier_duration; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

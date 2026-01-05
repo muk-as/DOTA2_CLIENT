@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/DecalFlags_t.hpp"
-#include "source2sdk/client/DecalMode_t.hpp"
+#include "source2sdk/client/DecalRtEncoding_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeIMaterial2.hpp"
 namespace source2sdk
@@ -60,10 +60,12 @@ namespace source2sdk
             float m_flLightingOriginOffset; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flBoundingRadiusSqr; // 0x_            
+            // metadata: MNotSaved
             std::int16_t m_nSequenceIndex; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsAdjacent; // 0x_            
             bool m_bDoDecalLightmapping; // 0x_            
-            source2sdk::client::DecalMode_t m_nSkinnedModelMode; // 0x_            
+            source2sdk::client::DecalRtEncoding_t m_nDecalRtEncoding; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
@@ -96,7 +98,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_nSequenceIndex) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_bIsAdjacent) == 0x_);
         static_assert(offsetof(source2sdk::client::CDecalInstance, m_bDoDecalLightmapping) == 0x_);
-        static_assert(offsetof(source2sdk::client::CDecalInstance, m_nSkinnedModelMode) == 0x_);
+        static_assert(offsetof(source2sdk::client::CDecalInstance, m_nDecalRtEncoding) == 0x_);
         
         static_assert(sizeof(source2sdk::client::CDecalInstance) == 0x_);
     };

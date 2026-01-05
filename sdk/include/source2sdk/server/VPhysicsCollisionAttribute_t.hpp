@@ -26,6 +26,9 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "uint32 m_nEntityId"
         // static metadata: MNetworkVarNames "uint32 m_nOwnerId"
         // static metadata: MNetworkVarNames "uint16 m_nHierarchyId"
+        // static metadata: MNetworkVarNames "uint16 m_nDetailLayerMask"
+        // static metadata: MNetworkVarNames "uint8 m_nDetailLayerMaskType"
+        // static metadata: MNetworkVarNames "uint8 m_nTargetDetailLayer"
         // static metadata: MNetworkVarNames "uint8 m_nCollisionGroup"
         // static metadata: MNetworkVarNames "uint8 m_nCollisionFunctionMask"
         #pragma pack(push, 1)
@@ -46,10 +49,15 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::uint16_t m_nHierarchyId; // 0x_            
             // metadata: MNetworkEnable
+            std::uint16_t m_nDetailLayerMask; // 0x_            
+            // metadata: MNetworkEnable
+            std::uint8_t m_nDetailLayerMaskType; // 0x_            
+            // metadata: MNetworkEnable
+            std::uint8_t m_nTargetDetailLayer; // 0x_            
+            // metadata: MNetworkEnable
             std::uint8_t m_nCollisionGroup; // 0x_            
             // metadata: MNetworkEnable
             std::uint8_t m_nCollisionFunctionMask; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
@@ -59,6 +67,9 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nEntityId) == 0x_);
         static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nOwnerId) == 0x_);
         static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nHierarchyId) == 0x_);
+        static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nDetailLayerMask) == 0x_);
+        static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nDetailLayerMaskType) == 0x_);
+        static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nTargetDetailLayer) == 0x_);
         static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nCollisionGroup) == 0x_);
         static_assert(offsetof(source2sdk::server::VPhysicsCollisionAttribute_t, m_nCollisionFunctionMask) == 0x_);
         

@@ -221,7 +221,9 @@ namespace source2sdk
             // m_vecSuggestedWardLocationEffects has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_vecSuggestedWardLocationEffects;
             char m_vecSuggestedWardLocationEffects[0x_]; // 0x_            
-            source2sdk::client::C_DOTA_BaseNPC* m_pSmartCastNPC; // 0x_            
+            // m_hSmartCastNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hSmartCastNPC;
+            char m_hSmartCastNPC[0x_]; // 0x_            
             source2sdk::client::ParticleIndex_t m_nTeamSprayParticleIndex; // 0x_            
             source2sdk::client::ParticleIndex_t m_nScanCastIndicatorParticleIndex; // 0x_            
             bool m_bIsNextCastOrderFromMouseClick; // 0x_            

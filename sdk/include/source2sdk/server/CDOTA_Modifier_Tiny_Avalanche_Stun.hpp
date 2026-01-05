@@ -23,10 +23,12 @@ namespace source2sdk
         class CDOTA_Modifier_Tiny_Avalanche_Stun : public source2sdk::server::CDOTA_Modifier_Stunned
         {
         public:
-            // No schema binary for binding
+            float m_flAvalancheDuration; // 0x_            
+            float m_flAvalancheStartTime; // 0x_            
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Avalanche_Stun because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tiny_Avalanche_Stun) == 0x_);
     };

@@ -58,12 +58,17 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bForceRecreateNextUpdate; // 0x_            
+            // metadata: MNotSaved
             bool m_bMoveViewToPlayerNextThink; // 0x_            
+            // metadata: MNotSaved
             bool m_bCheckCSSClasses; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CTransform m_anchorDeltaTransform; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::CPointOffScreenIndicatorUi* m_pOffScreenIndicator; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

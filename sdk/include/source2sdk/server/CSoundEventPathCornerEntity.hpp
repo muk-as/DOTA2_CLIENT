@@ -35,6 +35,7 @@ namespace source2sdk
             bool m_bPlaying; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_vecCornerPairsNetworked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::SoundeventPathCornerPairNetworked_t> m_vecCornerPairsNetworked;
             char m_vecCornerPairsNetworked[0x_]; // 0x_            

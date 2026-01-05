@@ -56,6 +56,9 @@ namespace source2sdk
             // m_hParent has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hParent;
             char m_hParent[0x_]; // 0x_            
+            // m_hDuplicationSource has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hDuplicationSource;
+            char m_hDuplicationSource[0x_]; // 0x_            
             // m_hAuraOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAuraOwner;
             char m_hAuraOwner[0x_]; // 0x_            
@@ -80,6 +83,7 @@ namespace source2sdk
             source2sdk::entity2::GameTime_t m_flPreviousTick; // 0x_            
             float m_flThinkInterval; // 0x_            
             float m_flThinkTimeAccumulator; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // m_iParticles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTA_BuffParticle> m_iParticles;
             char m_iParticles[0x_]; // 0x_            

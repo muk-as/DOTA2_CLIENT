@@ -27,6 +27,8 @@ namespace source2sdk
             std::int32_t bonus_health; // 0x_            
             std::int32_t bonus_attackspeed; // 0x_            
             std::int32_t bonus_damage; // 0x_            
+            std::int32_t bonus_armor; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

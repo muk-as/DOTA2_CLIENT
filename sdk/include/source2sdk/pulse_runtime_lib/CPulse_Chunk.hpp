@@ -3,9 +3,9 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/pulse_runtime_lib/CPulse_InstructionDebug.hpp"
 #include "source2sdk/pulse_runtime_lib/CPulse_RegisterInfo.hpp"
 #include "source2sdk/pulse_runtime_lib/PGDInstruction_t.hpp"
-#include "source2sdk/pulse_runtime_lib/PulseDocNodeID_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: pulse_runtime_lib
@@ -33,16 +33,16 @@ namespace source2sdk
             // m_Registers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::pulse_runtime_lib::CPulse_RegisterInfo> m_Registers;
             char m_Registers[0x_]; // 0x_            
-            // m_InstructionEditorIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlLeanVector<source2sdk::pulse_runtime_lib::PulseDocNodeID_t> m_InstructionEditorIDs;
-            char m_InstructionEditorIDs[0x_]; // 0x_            
+            // m_InstructionDebugInfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlLeanVector<source2sdk::pulse_runtime_lib::CPulse_InstructionDebug> m_InstructionDebugInfos;
+            char m_InstructionDebugInfos[0x_]; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Instructions) == 0x_);
         static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_Registers) == 0x_);
-        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_InstructionEditorIDs) == 0x_);
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::CPulse_Chunk, m_InstructionDebugInfos) == 0x_);
         
         static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulse_Chunk) == 0x_);
     };

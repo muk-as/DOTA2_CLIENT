@@ -24,6 +24,8 @@ namespace source2sdk
         {
         public:
             std::int32_t bonus_health_regen; // 0x_            
+            std::int32_t bonus_magic_resistance_per_interval; // 0x_            
+            std::int32_t maximum_intervals; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

@@ -31,9 +31,11 @@ namespace source2sdk
         class CTriggerSndSosOpvar : public source2sdk::server::CBaseTrigger
         {
         public:
+            // metadata: MNotSaved
             // m_hTouchingPlayers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hTouchingPlayers;
             char m_hTouchingPlayers[0x_]; // 0x_            
+            // metadata: MNotSaved
             Vector m_flPosition; // 0x_            
             float m_flCenterSize; // 0x_            
             float m_flMinVal; // 0x_            
@@ -42,11 +44,16 @@ namespace source2sdk
             CUtlSymbolLarge m_stackName; // 0x_            
             CUtlSymbolLarge m_operatorName; // 0x_            
             bool m_bVolIs2D; // 0x_            
+            // metadata: MNotSaved
             char m_opvarNameChar[256]; // 0x_            
+            // metadata: MNotSaved
             char m_stackNameChar[256]; // 0x_            
+            // metadata: MNotSaved
             char m_operatorNameChar[256]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             Vector m_VecNormPos; // 0x_            
+            // metadata: MNotSaved
             float m_flNormCenterSize; // 0x_            
             uint8_t _pad_[0x_];
             

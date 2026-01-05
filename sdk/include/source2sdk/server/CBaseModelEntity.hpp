@@ -4,7 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CNetworkViewOffsetVector.hpp"
-#include "source2sdk/client/DecalMode_t.hpp"
 #include "source2sdk/client/HitGroup_t.hpp"
 #include "source2sdk/client/RenderFx_t.hpp"
 #include "source2sdk/client/RenderMode_t.hpp"
@@ -63,22 +62,13 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float32 m_flFadeScale"
         // static metadata: MNetworkVarNames "float32 m_flShadowStrength"
         // static metadata: MNetworkVarNames "uint8 m_nObjectCulling"
-        // static metadata: MNetworkVarNames "int m_nAddDecal"
-        // static metadata: MNetworkVarNames "Vector m_vDecalPosition"
-        // static metadata: MNetworkVarNames "Vector m_vDecalForwardAxis"
-        // static metadata: MNetworkVarNames "DecalMode_t m_nDecalMode"
-        // static metadata: MNetworkVarNames "DecalMode_t m_nRequiredDecalMode"
-        // static metadata: MNetworkVarNames "CHandle< CBaseModelEntity > m_ConfigEntitiesToPropagateMaterialDecalsTo"
         // static metadata: MNetworkVarNames "CNetworkViewOffsetVector m_vecViewOffset"
         // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
         #pragma pack(push, 1)
         class CBaseModelEntity : public source2sdk::server::CBaseEntity
         {
         public:
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "CRenderComponent"
-            // metadata: MNetworkAlias "CRenderComponent"
-            // metadata: MNetworkTypeAlias "CRenderComponent"
+            // metadata: MNotSaved
             source2sdk::server::CRenderComponent* m_CRenderComponent; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "CHitboxComponent"
@@ -96,6 +86,7 @@ namespace source2sdk
             std::int32_t m_nDestructiblePartInitialStateDestructed3_PartIndex; // 0x_            
             std::int32_t m_nDestructiblePartInitialStateDestructed4_PartIndex; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MPtrAutoallocate
             // metadata: MNetworkTypeAlias "CDestructiblePartsSystemComponent*"
             source2sdk::server::CDestructiblePartsComponent* m_pDestructiblePartsSystemComponent; // 0x_            
             source2sdk::client::HitGroup_t m_LastHitGroup; // 0x_            
@@ -146,28 +137,13 @@ namespace source2sdk
             std::uint8_t m_nObjectCulling; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
-            std::int32_t m_nAddDecal; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vDecalPosition; // 0x_            
-            // metadata: MNetworkEnable
-            Vector m_vDecalForwardAxis; // 0x_            
-            // metadata: MNetworkEnable
-            source2sdk::client::DecalMode_t m_nDecalMode; // 0x_            
-            // metadata: MNetworkEnable
-            source2sdk::client::DecalMode_t m_nRequiredDecalMode; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
-            // m_ConfigEntitiesToPropagateMaterialDecalsTo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseModelEntity>> m_ConfigEntitiesToPropagateMaterialDecalsTo;
-            char m_ConfigEntitiesToPropagateMaterialDecalsTo[0x_]; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
             // metadata: MNetworkUserGroup "Player"
             source2sdk::client::CNetworkViewOffsetVector m_vecViewOffset; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDisabledHitgroupsChanged"
+            // metadata: MSaveOpsForField
             std::uint32_t m_bvDisabledHitGroups[1]; // 0x_            
             uint8_t _pad_[0x_];
             
@@ -180,8 +156,8 @@ namespace source2sdk
             // void CBaseModelEntitySUB_DissolveIfUncarried; // 0x_
             // void InputIgnite; // 0x_
             // float InputIgniteLifetime; // 0x_
-            // int32_t InputIgnite; // 0x_
-            // float InputIgnite; // 0x_
+            // int32_t InputIgniteNumHitboxFires; // 0x_
+            // float InputIgniteHitboxFireScale; // 0x_
             // void InputExtinguish; // 0x_
             // CUtlString add_attribute; // 0x_
             // void CBaseModelEntitySUB_StartFadeOut; // 0x_

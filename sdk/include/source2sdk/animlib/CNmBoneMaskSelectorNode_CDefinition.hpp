@@ -28,7 +28,7 @@ namespace source2sdk
         public:
             std::int16_t m_defaultMaskNodeIdx; // 0x_            
             std::int16_t m_parameterValueNodeIdx; // 0x_            
-            bool m_switchDynamically; // 0x_            
+            bool m_bSwitchDynamically; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_maskNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorFixedGrowable<std::int16_t,7> m_maskNodeIndices;

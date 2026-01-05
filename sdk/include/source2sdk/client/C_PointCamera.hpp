@@ -104,6 +104,7 @@ namespace source2sdk
             float m_DegreesPerSecond; // 0x_            
             bool m_bIsOn; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::C_PointCamera* m_pNext; // 0x_            
             
             // Datamap fields:

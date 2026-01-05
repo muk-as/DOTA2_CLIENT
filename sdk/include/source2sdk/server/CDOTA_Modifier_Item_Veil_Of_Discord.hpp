@@ -24,9 +24,9 @@ namespace source2sdk
         {
         public:
             std::int32_t bonus_armor; // 0x_            
-            std::int32_t bonus_hp_regen; // 0x_            
+            float bonus_hp_regen; // 0x_            
             std::int32_t bonus_all_stats; // 0x_            
-            std::int32_t bonus_aoe; // 0x_            
+            float bonus_aoe; // 0x_            
         };
         #pragma pack(pop)
         

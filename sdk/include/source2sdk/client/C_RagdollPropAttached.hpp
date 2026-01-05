@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "uint32 m_boneIndexAttached"
         // static metadata: MNetworkVarNames "uint32 m_ragdollAttachedObjectIndex"
@@ -31,17 +30,24 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint32_t m_boneIndexAttached; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint32_t m_ragdollAttachedObjectIndex; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
+            // metadata: MNotSaved
             Vector m_attachmentPointBoneSpace; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
+            // metadata: MNotSaved
             Vector m_attachmentPointRagdollSpace; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecOffset; // 0x_            
+            // metadata: MNotSaved
             float m_parentTime; // 0x_            
+            // metadata: MNotSaved
             bool m_bHasParent; // 0x_            
             uint8_t _pad_[0x_];
         };

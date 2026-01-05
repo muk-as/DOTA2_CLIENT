@@ -26,12 +26,16 @@ namespace source2sdk
         class CPathTrack : public source2sdk::server::CPointEntity
         {
         public:
+            // metadata: MClassPtr
             source2sdk::server::CPathTrack* m_pnext; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathTrack* m_pprevious; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathTrack* m_paltpath; // 0x_            
             float m_flRadius; // 0x_            
             float m_length; // 0x_            
             CUtlSymbolLarge m_altName; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nIterVal; // 0x_            
             source2sdk::server::TrackOrientationType_t m_eOrientationType; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnPass; // 0x_            

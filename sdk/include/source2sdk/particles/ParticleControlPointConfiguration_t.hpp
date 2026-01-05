@@ -28,7 +28,7 @@ namespace source2sdk
         public:
             CUtlString m_name; // 0x_            
             // m_drivers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlLeanVector<source2sdk::particles::ParticleControlPointDriver_t> m_drivers;
+            // CUtlVector<source2sdk::particles::ParticleControlPointDriver_t> m_drivers;
             char m_drivers[0x_]; // 0x_            
             source2sdk::particles::ParticlePreviewState_t m_previewState; // 0x_            
         };

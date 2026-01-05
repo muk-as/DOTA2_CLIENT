@@ -31,6 +31,7 @@ namespace source2sdk
         class CItemGenericTriggerHelper : public source2sdk::server::CBaseModelEntity
         {
         public:
+            // metadata: MNotSaved
             // m_hParentItem has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CItemGeneric> m_hParentItem;
             char m_hParentItem[0x_]; // 0x_            

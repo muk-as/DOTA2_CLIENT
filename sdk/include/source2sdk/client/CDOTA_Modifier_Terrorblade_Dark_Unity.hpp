@@ -27,7 +27,7 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             float radius; // 0x_            
             std::int32_t inside_radius_bonus_damage_pct; // 0x_            
-            std::int32_t outside_radius_bonus_damage_pct; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

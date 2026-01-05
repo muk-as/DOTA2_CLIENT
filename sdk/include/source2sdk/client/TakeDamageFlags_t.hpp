@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 19
+        // Enumerator count: 20
         // Alignment: 8
         // Size: 0x_
         enum class TakeDamageFlags_t : std::uint64_t
@@ -36,9 +36,10 @@ namespace source2sdk
             DFLAG_SUPPRESS_BREAKABLES = 0x4000,
             DFLAG_FORCE_PHYSICS_FORCE = 0x8000,
             DFLAG_SUPPRESS_SCREENSPACE_DAMAGE_FX = 0x10000,
+            DFLAG_ALLOW_NON_AUTHORITATIVE = 0x20000,
             // MPropertySuppressEnumerator
             // MEnumeratorIsNotAFlag
-            DMG_LASTDFLAG = 0x10000,
+            DMG_LASTDFLAG = 0x20000,
         };
     };
 };

@@ -72,6 +72,7 @@ namespace source2sdk
             // CUtlVector<CHandle<source2sdk::client::C_BaseModelEntity>> m_AdditionalTargetEntities;
             char m_AdditionalTargetEntities[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bCheckCSSClasses; // 0x_            
             uint8_t _pad_[0x_];
             

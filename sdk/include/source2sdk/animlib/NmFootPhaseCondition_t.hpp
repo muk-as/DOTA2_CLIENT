@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Enumerator count: 6
+        // Enumerator count: 7
         // Alignment: 1
         // Size: 0x_
         enum class NmFootPhaseCondition_t : std::uint8_t
@@ -24,6 +24,7 @@ namespace source2sdk
             RightFootDown = 0x2,
             RightFootPassing = 0x3,
             RightPhase = 0x5,
+            None = 0x6,
         };
     };
 };

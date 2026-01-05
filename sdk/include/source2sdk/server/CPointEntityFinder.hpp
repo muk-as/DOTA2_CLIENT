@@ -40,6 +40,7 @@ namespace source2sdk
         class CPointEntityFinder : public source2sdk::server::CBaseEntity
         {
         public:
+            // metadata: MNotSaved
             // m_hEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEntity;
             char m_hEntity[0x_]; // 0x_            

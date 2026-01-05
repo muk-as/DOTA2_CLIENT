@@ -23,10 +23,10 @@ namespace source2sdk
         class CDOTA_Modifier_Luna_LunarBlessingAura : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_damage_per_level; // 0x_            
-            std::int32_t self_bonus_damage_per_level; // 0x_            
-            std::int32_t bonus_night_vision_self; // 0x_            
-            std::int32_t bonus_night_vision_per_level; // 0x_            
+            std::int32_t bonus_damage; // 0x_            
+            std::int32_t self_bonus_damage; // 0x_            
+            std::int32_t bonus_night_vision; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

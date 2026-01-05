@@ -95,6 +95,8 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             CUtlStringToken m_strScepterRequiredFacet; // 0x_            
             CUtlStringToken m_strShardRequiredFacet; // 0x_            
+            char* m_strSubAbilityNames; // 0x_            
+            bool m_bShowCooldownInTooltips; // 0x_            
             bool m_bSharedWithTeammates; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nCastRangeBuffer; // 0x_            
@@ -211,6 +213,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bHasShardUpgrade) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strScepterRequiredFacet) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strShardRequiredFacet) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strSubAbilityNames) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bShowCooldownInTooltips) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bSharedWithTeammates) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nCastRangeBuffer) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nSpecialAbilities) == 0x_);

@@ -23,10 +23,15 @@ namespace source2sdk
         class CDOTA_Modifier_Spectre_Spectral : public source2sdk::client::CDOTA_Buff
         {
         public:
-            // No schema binary for binding
+            std::int32_t speed_bonus; // 0x_            
+            std::int32_t radius; // 0x_            
+            float linger_time; // 0x_            
+            bool m_bSpeedBonus; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Modifier_Spectre_Spectral because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Spectre_Spectral) == 0x_);
     };

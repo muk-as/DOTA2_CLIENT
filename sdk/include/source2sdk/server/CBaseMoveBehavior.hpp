@@ -37,9 +37,13 @@ namespace source2sdk
             float m_flAnimEndTime; // 0x_            
             float m_flAverageSpeedAcrossFrame; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MClassPtr
             source2sdk::server::CPathKeyFrame* m_pCurrentKeyFrame; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathKeyFrame* m_pTargetKeyFrame; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathKeyFrame* m_pPreKeyFrame; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathKeyFrame* m_pPostKeyFrame; // 0x_            
             float m_flTimeIntoFrame; // 0x_            
             std::int32_t m_iDirection; // 0x_            

@@ -28,12 +28,15 @@ namespace source2sdk
             // m_Recipients has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CPlayerSlot> m_Recipients;
             char m_Recipients[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CPlayerSlot m_slotPlayerExcludedDueToPrediction; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::client::CCopyRecipientFilter, m_Flags) == 0x_);
         static_assert(offsetof(source2sdk::client::CCopyRecipientFilter, m_Recipients) == 0x_);
+        static_assert(offsetof(source2sdk::client::CCopyRecipientFilter, m_slotPlayerExcludedDueToPrediction) == 0x_);
         
         static_assert(sizeof(source2sdk::client::CCopyRecipientFilter) == 0x_);
     };

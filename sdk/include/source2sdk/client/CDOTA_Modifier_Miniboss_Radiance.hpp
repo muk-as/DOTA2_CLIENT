@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/CountdownTimer.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -24,7 +25,8 @@ namespace source2sdk
         {
         public:
             float aura_radius; // 0x_            
-            uint8_t _pad_[0x_];
+            float attack_timer_duration; // 0x_            
+            source2sdk::client::CountdownTimer m_LastAttackedTimer; // 0x_            
         };
         #pragma pack(pop)
         

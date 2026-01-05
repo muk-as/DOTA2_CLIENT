@@ -27,6 +27,8 @@ namespace source2sdk
             float bonus_health_regen; // 0x_            
             float bonus_mana_regen; // 0x_            
             std::int32_t creep_bonus_damage; // 0x_            
+            float bonus_xp_kill; // 0x_            
+            float bonus_xp_assist; // 0x_            
         };
         #pragma pack(pop)
         

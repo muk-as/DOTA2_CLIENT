@@ -24,6 +24,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
             // m_Value has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CVariantBase<source2sdk::entity2::CVariantDefaultAllocator> m_Value;
             char m_Value[0x_]; // 0x_            

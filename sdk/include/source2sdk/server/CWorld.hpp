@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CWorld : public source2sdk::server::CBaseModelEntity
         {

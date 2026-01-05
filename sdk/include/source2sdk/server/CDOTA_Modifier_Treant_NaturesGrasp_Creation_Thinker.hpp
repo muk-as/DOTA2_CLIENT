@@ -30,7 +30,6 @@ namespace source2sdk
             Vector m_vFinalLoc; // 0x_            
             std::int32_t m_iVineCount; // 0x_            
             std::int32_t m_iVinesIndex; // 0x_            
-            bool m_bFoundTree; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

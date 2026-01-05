@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 20
+        // Enumerator count: 18
         // Alignment: 1
         // Size: 0x_
         enum class RenderFx_t : std::uint8_t
@@ -32,12 +32,10 @@ namespace source2sdk
             kRenderFxStrobeFaster = 0xb,
             kRenderFxFlickerSlow = 0xc,
             kRenderFxFlickerFast = 0xd,
-            kRenderFxNoDissipation = 0xe,
-            kRenderFxFadeOut = 0xf,
-            kRenderFxFadeIn = 0x10,
-            kRenderFxPulseFastWider = 0x11,
-            kRenderFxGlowShell = 0x12,
-            kRenderFxMax = 0x13,
+            kRenderFxFadeOut = 0xe,
+            kRenderFxFadeIn = 0xf,
+            kRenderFxPulseFastWider = 0x10,
+            kRenderFxMax = 0x11,
         };
     };
 };

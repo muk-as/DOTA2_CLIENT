@@ -26,9 +26,7 @@ namespace source2sdk
             std::int32_t bonus_strength; // 0x_            
             std::int32_t bonus_agility; // 0x_            
             std::int32_t bonus_intellect; // 0x_            
-            std::int32_t bonus_mana; // 0x_            
-            float bonus_mana_regen; // 0x_            
-            std::int32_t bonus_cast_range; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

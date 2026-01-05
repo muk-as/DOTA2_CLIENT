@@ -31,10 +31,12 @@ namespace source2sdk
             // m_Tags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CGlobalSymbol> m_Tags;
             char m_Tags[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsGroup; // 0x_            
             bool m_bGroupByPrefab; // 0x_            
             bool m_bGroupByVolume; // 0x_            
             bool m_bGroupOtherGroups; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsInGroup; // 0x_            
             uint8_t _pad_[0x_];
         };

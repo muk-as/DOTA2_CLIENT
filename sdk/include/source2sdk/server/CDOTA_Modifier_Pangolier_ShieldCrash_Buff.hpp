@@ -29,11 +29,7 @@ namespace source2sdk
             std::int32_t m_nAbsorbRemaining; // 0x_            
             std::int32_t hero_shield; // 0x_            
             std::int32_t base_shield; // 0x_            
-            std::int32_t accummulated_value; // 0x_            
-            float parry_cooldown; // 0x_            
-            std::int32_t parry_chance; // 0x_            
-            std::int32_t parry_swashbuckles; // 0x_            
-            std::int32_t parry_damage_threshold; // 0x_            
+            std::int32_t accumulated_value; // 0x_            
             float effectiveness_pct; // 0x_            
             source2sdk::entity2::GameTime_t m_flLastParryTime; // 0x_            
             uint8_t _pad_[0x_];

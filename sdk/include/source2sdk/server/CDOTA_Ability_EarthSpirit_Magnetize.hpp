@@ -25,10 +25,10 @@ namespace source2sdk
         class CDOTA_Ability_EarthSpirit_Magnetize : public source2sdk::server::CDOTABaseAbility
         {
         public:
+            std::int32_t magnetize_self; // 0x_            
             float cast_radius; // 0x_            
             float rock_explosion_radius; // 0x_            
             float damage_duration; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

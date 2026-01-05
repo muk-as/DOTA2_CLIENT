@@ -26,6 +26,8 @@ namespace source2sdk
             std::int32_t bonus_armor; // 0x_            
             std::int32_t bonus_hp; // 0x_            
             float attack_speed_pct; // 0x_            
+            std::int32_t bonus_attack_damage; // 0x_            
+            std::int32_t bonus_slow_resistance; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

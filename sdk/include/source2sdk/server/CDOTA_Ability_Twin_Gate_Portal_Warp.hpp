@@ -35,7 +35,8 @@ namespace source2sdk
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
             char m_hTarget[0x_]; // 0x_            
-            uint8_t _pad_[0x_];
+            uint8_t _pad_[0x_]; // 0x_
+            float m_flManaCostProportion; // 0x_            
         };
         #pragma pack(pop)
         

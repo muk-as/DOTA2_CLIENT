@@ -22,14 +22,17 @@ namespace source2sdk
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
+        // static metadata: MNetworkVarNames "bool m_bRuleAncientsDuel"
         // static metadata: MNetworkVarNames "float m_flEndgameTime"
         #pragma pack(push, 1)
         class C_DOTABotChallengeGameMode : public source2sdk::client::C_DOTABaseGameMode
         {
         public:
             // metadata: MNetworkEnable
+            bool m_bRuleAncientsDuel; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
             float m_flEndgameTime; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

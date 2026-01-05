@@ -70,10 +70,19 @@ namespace source2sdk
             float m_flMuzzleSmokeTimeout; // 0x_            
             // metadata: MPropertyDescription "Barrel smoke decrement rate when not firing"
             float m_flMuzzleSmokeDecrementRate; // 0x_            
+            bool m_bGenerateMuzzleLight; // 0x_            
             // metadata: MPropertyStartGroup "Behavior"
             // metadata: MPropertyDescription "Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?"
             bool m_bLinkedCooldowns; // 0x_            
             source2sdk::client::ItemFlagTypes_t m_iFlags; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyDescription "This value used to determine this weapon's importance in autoselection"
+            std::int32_t m_iWeight; // 0x_            
+            // metadata: MPropertyFriendlyName "Safe To Auto-Switch To"
+            // metadata: MPropertyDescription "Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)"
+            bool m_bAutoSwitchTo; // 0x_            
+            // metadata: MPropertyFriendlyName "Safe To Auto-Switch Away From"
+            bool m_bAutoSwitchFrom; // 0x_            
             // metadata: MPropertyStartGroup "Ammo"
             // metadata: MPropertyAttributeEditor "VDataChoice( scripts/ammo.vdata )"
             // metadata: MPropertyCustomFGDType "string"
@@ -103,14 +112,6 @@ namespace source2sdk
             bool m_bKeepLoadedAmmo; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyStartGroup "UI"
-            // metadata: MPropertyDescription "This value used to determine this weapon's importance in autoselection"
-            std::int32_t m_iWeight; // 0x_            
-            // metadata: MPropertyFriendlyName "Safe To Auto-Switch To"
-            // metadata: MPropertyDescription "Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)"
-            bool m_bAutoSwitchTo; // 0x_            
-            // metadata: MPropertyFriendlyName "Safe To Auto-Switch Away From"
-            bool m_bAutoSwitchFrom; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::RumbleEffect_t m_iRumbleEffect; // 0x_            
             float m_flDropSpeed; // 0x_            
             // metadata: MPropertyFriendlyName "HUD Bucket"
@@ -139,8 +140,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_nMuzzleSmokeShotThreshold) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_flMuzzleSmokeTimeout) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_flMuzzleSmokeDecrementRate) == 0x_);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bGenerateMuzzleLight) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bLinkedCooldowns) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iFlags) == 0x_);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iWeight) == 0x_);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchTo) == 0x_);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchFrom) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_nPrimaryAmmoType) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_nSecondaryAmmoType) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iMaxClip1) == 0x_);
@@ -150,9 +155,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bReserveAmmoAsClips) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bTreatAsSingleClip) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bKeepLoadedAmmo) == 0x_);
-        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iWeight) == 0x_);
-        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchTo) == 0x_);
-        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchFrom) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iRumbleEffect) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_flDropSpeed) == 0x_);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iSlot) == 0x_);

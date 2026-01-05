@@ -43,6 +43,8 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "output component"
             // metadata: MPropertyAttributeChoiceName "vector_component"
             std::int32_t m_nOutVectorField; // 0x_            
+            // metadata: MPropertyFriendlyName "Interpolation"
+            source2sdk::particleslib::CParticleCollectionFloatInput m_flInterpolation; // 0x_            
         };
         #pragma pack(pop)
         

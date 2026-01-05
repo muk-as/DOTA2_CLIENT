@@ -23,6 +23,7 @@
 #include "source2sdk/physicslib/FeNodeBase_t.hpp"
 #include "source2sdk/physicslib/FeNodeIntegrator_t.hpp"
 #include "source2sdk/physicslib/FeNodeReverseOffset_t.hpp"
+#include "source2sdk/physicslib/FeNodeStrayBox_t.hpp"
 #include "source2sdk/physicslib/FeNodeWindBase_t.hpp"
 #include "source2sdk/physicslib/FeQuad_t.hpp"
 #include "source2sdk/physicslib/FeRigidColliderIndices_t.hpp"
@@ -137,6 +138,9 @@ namespace source2sdk
             // m_AntiTunnelTargetNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint16_t> m_AntiTunnelTargetNodes;
             char m_AntiTunnelTargetNodes[0x_]; // 0x_            
+            // m_NodeStrayBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::physicslib::FeNodeStrayBox_t> m_NodeStrayBoxes;
+            char m_NodeStrayBoxes[0x_]; // 0x_            
             // m_AxialEdges has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::FeAxialEdgeBend_t> m_AxialEdges;
             char m_AxialEdges[0x_]; // 0x_            
@@ -344,6 +348,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_DynKinLinks) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_AntiTunnelProbes) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_AntiTunnelTargetNodes) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_NodeStrayBoxes) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_AxialEdges) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_NodeInvMasses) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::PhysFeModelDesc_t, m_CtrlOffsets) == 0x_);

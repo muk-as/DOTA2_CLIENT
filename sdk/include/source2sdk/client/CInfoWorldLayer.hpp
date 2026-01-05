@@ -32,8 +32,10 @@ namespace source2sdk
         public:
             source2sdk::entity2::CEntityIOOutput m_pOutputOnEntitiesSpawned; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             CUtlSymbolLarge m_worldName; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             CUtlSymbolLarge m_layerName; // 0x_            
             // metadata: MNetworkEnable
             bool m_bWorldLayerVisible; // 0x_            
@@ -41,7 +43,9 @@ namespace source2sdk
             bool m_bEntitiesSpawned; // 0x_            
             bool m_bCreateAsChildSpawnGroup; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::uint32_t m_hLayerSpawnGroup; // 0x_            
+            // metadata: MNotSaved
             bool m_bWorldLayerActuallyVisible; // 0x_            
             uint8_t _pad_[0x_];
             

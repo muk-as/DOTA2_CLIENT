@@ -86,6 +86,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::uint8_t m_Subdiv; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::uint8_t m_nChangeCount; // 0x_            
             // metadata: MNetworkEnable
             std::int16_t m_RopeLength; // 0x_            

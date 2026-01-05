@@ -26,18 +26,16 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
-            std::uint8_t m_nRenderFX; // 0x_            
-            std::uint8_t m_nRenderMode; // 0x_            
-            // start of bitfield block
-            uint8_t m_bAlphaOverride: 1;
-            uint8_t m_bShadowAlphaOverride: 1;
-            uint8_t m_nReserved: 6;
-            // end of bitfield block// 8 bits
-            std::uint8_t m_nAlpha; // 0x_            
-            std::uint16_t m_nDesyncOffset; // 0x_            
-            std::uint16_t m_nReserved2; // 0x_            
             std::uint16_t m_nDistFadeStart; // 0x_            
             std::uint16_t m_nDistFadeEnd; // 0x_            
+            // start of bitfield block
+            uint32_t m_nDesyncOffset: 14;
+            uint32_t m_bAlphaOverride: 1;
+            uint32_t m_bShadowAlphaOverride: 1;
+            uint32_t m_nRenderMode: 3;
+            uint32_t m_nRenderFX: 5;
+            // end of bitfield block// 24 bits
+            std::uint8_t m_nAlpha; // 0x_            
             float m_flFadeScale; // 0x_            
             source2sdk::entity2::GameTime_t m_flRenderFxStartTime; // 0x_            
             float m_flRenderFxDuration; // 0x_            

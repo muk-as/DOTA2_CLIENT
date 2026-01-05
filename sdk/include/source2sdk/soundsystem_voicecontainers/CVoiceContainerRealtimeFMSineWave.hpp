@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerGenerator.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem_voicecontainers
@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "TESTBED: FM Synth Container"
         // static metadata: MPropertyDescription "Real time FM Synthesis"
         #pragma pack(push, 1)
-        class CVoiceContainerRealtimeFMSineWave : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerRealtimeFMSineWave : public source2sdk::soundsystem_voicecontainers::CVoiceContainerGenerator
         {
         public:
             // metadata: MPropertyFriendlyName "Frequency (Hz)"

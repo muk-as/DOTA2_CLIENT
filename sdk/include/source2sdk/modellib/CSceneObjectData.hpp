@@ -6,6 +6,7 @@
 #include "source2sdk/mathlib_extended/AABB_t.hpp"
 #include "source2sdk/modellib/CMaterialDrawDescriptor.hpp"
 #include "source2sdk/modellib/CMeshletDescriptor.hpp"
+#include "source2sdk/modellib/CSceneObjectData_RTProxyDrawDescriptor_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: modellib
@@ -38,6 +39,9 @@ namespace source2sdk
             // m_meshlets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlLeanVector<source2sdk::modellib::CMeshletDescriptor> m_meshlets;
             char m_meshlets[0x_]; // 0x_            
+            // m_rtProxyDrawCalls has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlLeanVector<source2sdk::modellib::CSceneObjectData_RTProxyDrawDescriptor_t> m_rtProxyDrawCalls;
+            char m_rtProxyDrawCalls[0x_]; // 0x_            
             Vector4D m_vTintColor; // 0x_            
             uint8_t _pad_[0x_];
         };
@@ -48,6 +52,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::CSceneObjectData, m_drawCalls) == 0x_);
         static_assert(offsetof(source2sdk::modellib::CSceneObjectData, m_drawBounds) == 0x_);
         static_assert(offsetof(source2sdk::modellib::CSceneObjectData, m_meshlets) == 0x_);
+        static_assert(offsetof(source2sdk::modellib::CSceneObjectData, m_rtProxyDrawCalls) == 0x_);
         static_assert(offsetof(source2sdk::modellib::CSceneObjectData, m_vTintColor) == 0x_);
         
         static_assert(sizeof(source2sdk::modellib::CSceneObjectData) == 0x_);

@@ -49,6 +49,7 @@ namespace source2sdk
             float m_flJointFriction; // 0x_            
             float m_flTransitionTime; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             VectorWS m_vPreSolveAnchorPos; // 0x_            
             source2sdk::entity2::GameTime_t m_StartTransitionTime; // 0x_            
             Vector m_vTangentSpaceAnchorAtTransitionStart; // 0x_            

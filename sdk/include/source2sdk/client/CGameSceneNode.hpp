@@ -39,10 +39,15 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CTransformWS m_nodeToWorld; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::CEntityInstance* m_pOwner; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CGameSceneNode* m_pParent; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CGameSceneNode* m_pChild; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::CGameSceneNode* m_pNextSibling; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -69,26 +74,43 @@ namespace source2sdk
             VectorWS m_vecAbsOrigin; // 0x_            
             QAngle m_angAbsRotation; // 0x_            
             float m_flAbsScale; // 0x_            
+            // metadata: MNotSaved
             Vector m_vecWrappedLocalOrigin; // 0x_            
+            // metadata: MNotSaved
             QAngle m_angWrappedLocalRotation; // 0x_            
+            // metadata: MNotSaved
             float m_flWrappedScale; // 0x_            
+            // metadata: MNotSaved
             std::int16_t m_nParentAttachmentOrBone; // 0x_            
+            // metadata: MNotSaved
             bool m_bDebugAbsOriginChanges; // 0x_            
             bool m_bDormant; // 0x_            
             bool m_bForceParentToBeNetworked; // 0x_            
             // start of bitfield block
+            // metadata: MNotSaved
             uint16_t m_bDirtyHierarchy: 1;
+            // metadata: MNotSaved
             uint16_t m_bDirtyBoneMergeInfo: 1;
+            // metadata: MNotSaved
             uint16_t m_bNetworkedPositionChanged: 1;
+            // metadata: MNotSaved
             uint16_t m_bNetworkedAnglesChanged: 1;
+            // metadata: MNotSaved
             uint16_t m_bNetworkedScaleChanged: 1;
+            // metadata: MNotSaved
             uint16_t m_bWillBeCallingPostDataUpdate: 1;
+            // metadata: MNotSaved
             uint16_t m_bBoneMergeFlex: 1;
+            // metadata: MNotSaved
             uint16_t m_nLatchAbsOrigin: 2;
+            // metadata: MNotSaved
             uint16_t m_bDirtyBoneMergeBoneToRoot: 1;
             // end of bitfield block// 10 bits
+            // metadata: MNotSaved
             std::uint8_t m_nHierarchicalDepth; // 0x_            
+            // metadata: MNotSaved
             std::uint8_t m_nHierarchyType; // 0x_            
+            // metadata: MNotSaved
             std::uint8_t m_nDoNotSetAnimTimeInInvalidatePhysicsCount; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -109,6 +131,7 @@ namespace source2sdk
             // void m_bNetworkedAnglesChanged; // -0x_
             // void m_bNetworkedScaleChanged; // -0x_
             // void m_bWillBeCallingPostDataUpdate; // -0x_
+            // void m_bBoneMergeFlex; // -0x_
             // void m_nLatchAbsOrigin; // -0x_
             // void m_bDirtyBoneMergeBoneToRoot; // -0x_
             // CHandle< CBaseEntity > parentname; // 0x_

@@ -4,13 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
-namespace source2sdk
-{
-    namespace server
-    {
-        struct CDOTA_TempTree;
-    };
-};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -31,16 +24,13 @@ namespace source2sdk
         {
         public:
             float damage_interval; // 0x_            
-            std::int32_t leech_damage; // 0x_            
-            std::int32_t movement_slow; // 0x_            
+            float leech_damage; // 0x_            
+            float movement_slow; // 0x_            
             float radius; // 0x_            
+            float leech_heal; // 0x_            
+            std::int32_t max_heal_units; // 0x_            
             std::int32_t projectile_speed; // 0x_            
-            bool ground_plant; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            // m_hTree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::server::CDOTA_TempTree> m_hTree;
-            char m_hTree[0x_]; // 0x_            
-            uint8_t _pad_[0x_];
+            float m_flAccumulatedDamage; // 0x_            
         };
         #pragma pack(pop)
         

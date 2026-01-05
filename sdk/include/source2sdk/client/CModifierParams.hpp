@@ -80,6 +80,7 @@ namespace source2sdk
             VectorWS vCastLocation; // 0x_            
             bool bCraniumBasherTested; // 0x_            
             bool bMKBTested; // 0x_            
+            bool bSpecialistTested; // 0x_            
             bool bOctarineTested; // 0x_            
             bool bHeartRegenApplied; // 0x_            
             bool bSangeAmpApplied; // 0x_            
@@ -120,6 +121,8 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             char* pszAbilitySpecialName; // 0x_            
             std::int32_t nAbilitySpecialLevel; // 0x_            
+            bool bAllowCopy; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // hattacker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hattacker;
             char hattacker[0x_]; // 0x_            
@@ -132,6 +135,9 @@ namespace source2sdk
             // inflictor has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> inflictor;
             char inflictor[0x_]; // 0x_            
+            // inflictor2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_DOTABaseAbility> inflictor2;
+            char inflictor2[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::CDOTA_Buff* pAddedBuff; // 0x_            
         };
@@ -168,6 +174,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CModifierParams, vCastLocation) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, bCraniumBasherTested) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, bMKBTested) == 0x_);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bSpecialistTested) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, bOctarineTested) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, bHeartRegenApplied) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, bSangeAmpApplied) == 0x_);
@@ -205,10 +212,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreTemporaryAttackSpeedModifiers) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, pszAbilitySpecialName) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, nAbilitySpecialLevel) == 0x_);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bAllowCopy) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, hattacker) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, htarget) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, hunit) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, inflictor) == 0x_);
+        static_assert(offsetof(source2sdk::client::CModifierParams, inflictor2) == 0x_);
         static_assert(offsetof(source2sdk::client::CModifierParams, pAddedBuff) == 0x_);
         
         static_assert(sizeof(source2sdk::client::CModifierParams) == 0x_);

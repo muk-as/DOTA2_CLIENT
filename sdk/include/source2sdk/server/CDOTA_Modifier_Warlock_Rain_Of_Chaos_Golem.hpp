@@ -26,7 +26,7 @@ namespace source2sdk
             std::int32_t bonus_magic_resistance; // 0x_            
             std::int32_t bonus_armor; // 0x_            
             std::int32_t bonus_slow_resistance; // 0x_            
-            uint8_t _pad_[0x_];
+            std::int32_t bonus_damage_resist; // 0x_            
         };
         #pragma pack(pop)
         

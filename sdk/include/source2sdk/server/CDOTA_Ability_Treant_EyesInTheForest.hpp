@@ -11,6 +11,13 @@ namespace source2sdk
         struct CBaseEntity;
     };
 };
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CDOTA_BaseNPC;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -35,6 +42,9 @@ namespace source2sdk
             // vTrees has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> vTrees;
             char vTrees[0x_]; // 0x_            
+            // m_vecEyes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC>> m_vecEyes;
+            char m_vecEyes[0x_]; // 0x_            
         };
         #pragma pack(pop)
         

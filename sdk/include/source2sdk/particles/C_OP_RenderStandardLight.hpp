@@ -13,6 +13,7 @@
 #include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 #include "source2sdk/particleslib/CParticleCollectionRendererFloatInput.hpp"
 #include "source2sdk/particleslib/CParticleCollectionVecInput.hpp"
+#include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -44,7 +45,7 @@ namespace source2sdk
             source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "intensity"
-            source2sdk::particleslib::CParticleCollectionFloatInput m_flIntensity; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_flIntensity; // 0x_            
             // metadata: MPropertyFriendlyName "cast shadows"
             // metadata: MPropertySuppressExpr "m_nLightType == PARTICLE_LIGHT_TYPE_FX"
             bool m_bCastShadows; // 0x_            

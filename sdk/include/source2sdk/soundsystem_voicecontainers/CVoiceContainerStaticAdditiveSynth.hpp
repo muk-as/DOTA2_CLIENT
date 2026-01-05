@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp"
 #include "source2sdk/soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth_CTone.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "Additive Synth Container"
         // static metadata: MPropertyDescription "This is a static additive synth that can scale components of the synth based on how many instances are running."
         #pragma pack(push, 1)
-        class CVoiceContainerStaticAdditiveSynth : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerStaticAdditiveSynth : public source2sdk::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator
         {
         public:
             // m_tones has a template type with potentially unknown template parameters. You can try uncommenting the field below.

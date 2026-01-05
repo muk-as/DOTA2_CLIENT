@@ -20,7 +20,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class C_TintController : public source2sdk::client::C_BaseEntity
         {

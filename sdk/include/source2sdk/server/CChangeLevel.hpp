@@ -31,6 +31,7 @@ namespace source2sdk
             bool m_bTouched; // 0x_            
             bool m_bNoTouch; // 0x_            
             bool m_bNewChapter; // 0x_            
+            // metadata: MNotSaved
             bool m_bOnChangeLevelFired; // 0x_            
             uint8_t _pad_[0x_];
             

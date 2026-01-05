@@ -97,6 +97,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -285,6 +286,7 @@ namespace source2sdk
             bool m_bUseSecondaryColor; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "MixedShadowsChanged"
+            // metadata: MNotSaved
             bool m_bMixedShadows; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

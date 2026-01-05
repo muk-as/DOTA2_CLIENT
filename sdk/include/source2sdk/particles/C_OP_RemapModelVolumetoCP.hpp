@@ -38,19 +38,19 @@ namespace source2sdk
             std::int32_t m_nOutControlPointMaxNumber; // 0x_            
             // metadata: MPropertyFriendlyName "output CP component"
             // metadata: MPropertyAttributeChoiceName "vector_component"
-            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"
+            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
             std::int32_t m_nField; // 0x_            
-            // metadata: MPropertyFriendlyName "input volume minimum in cubic units"
-            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"
+            // metadata: MPropertyFriendlyName "input volume minimum"
+            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
             float m_flInputMin; // 0x_            
-            // metadata: MPropertyFriendlyName "input volume maximum in cubic units"
-            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"
+            // metadata: MPropertyFriendlyName "input volume maximum"
+            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
             float m_flInputMax; // 0x_            
             // metadata: MPropertyFriendlyName "output minimum"
-            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"
+            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
             float m_flOutputMin; // 0x_            
             // metadata: MPropertyFriendlyName "output maximum"
-            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"
+            // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME && m_nBBoxType != BBOX_RADIUS"
             float m_flOutputMax; // 0x_            
             // metadata: MPropertyFriendlyName "check full bbox only"
             // metadata: MPropertySuppressExpr "m_nBBoxType != BBOX_VOLUME"

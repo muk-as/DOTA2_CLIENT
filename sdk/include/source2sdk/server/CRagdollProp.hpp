@@ -46,6 +46,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::ragdoll_t m_ragdoll; // 0x_            
             bool m_bStartDisabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
@@ -87,6 +88,7 @@ namespace source2sdk
             CUtlSymbolLarge m_strOriginClassName; // 0x_            
             CUtlSymbolLarge m_strSourceClassName; // 0x_            
             bool m_bHasBeenPhysgunned; // 0x_            
+            // metadata: MNotSaved
             bool m_bAllowStretch; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -97,17 +99,19 @@ namespace source2sdk
             float m_flBlendWeight; // 0x_            
             float m_flDefaultFadeScale; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             // m_ragdollMins has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> m_ragdollMins;
             char m_ragdollMins[0x_]; // 0x_            
+            // metadata: MNotSaved
             // m_ragdollMaxs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> m_ragdollMaxs;
             char m_ragdollMaxs[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bShouldDeleteActivationRecord; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_ragdoll.boneIndex; // 0x_
             // void InputEnableMotion; // 0x_
             // void InputDisableMotion; // 0x_
             // void InputTurnOn; // 0x_

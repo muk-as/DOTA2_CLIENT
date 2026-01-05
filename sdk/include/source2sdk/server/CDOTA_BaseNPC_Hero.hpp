@@ -65,6 +65,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_iRecentDamage"
         // static metadata: MNetworkVarNames "int m_iPrimaryAttribute"
         // static metadata: MNetworkVarNames "GameTime_t m_flDeathTime"
+        // static metadata: MNetworkVarNames "GameTime_t m_flLastDispellTime"
         // static metadata: MNetworkVarNames "int m_iAbilityPoints"
         // static metadata: MNetworkVarNames "int m_iTotalAbilityPoints"
         // static metadata: MNetworkVarNames "int m_iCurrentXP"
@@ -101,6 +102,8 @@ namespace source2sdk
             std::int32_t m_iPrimaryAttribute; // 0x_            
             // metadata: MNetworkEnable
             source2sdk::entity2::GameTime_t m_flDeathTime; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::entity2::GameTime_t m_flLastDispellTime; // 0x_            
             float m_flStrengthGain; // 0x_            
             float m_flAgilityGain; // 0x_            
             float m_flIntellectGain; // 0x_            
@@ -119,7 +122,6 @@ namespace source2sdk
             // CHandle<source2sdk::server::CBaseEntity> m_hLastHealEntity;
             char m_hLastHealEntity[0x_]; // 0x_            
             Vector m_vRespawnPosition; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // m_HeroDamageInfoArray has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CDOTA_BaseNPC_Hero_sHeroDamageInfo> m_HeroDamageInfoArray;
             char m_HeroDamageInfoArray[0x_]; // 0x_            

@@ -27,6 +27,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::uint16_t m_WindClothForceHandle; // 0x_            
             uint8_t _pad_[0x_];
             

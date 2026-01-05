@@ -3,9 +3,9 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/soundlevel_t.hpp"
 #include "source2sdk/server/CPointEntity.hpp"
 #include "source2sdk/server/dynpitchvol_t.hpp"
-#include "source2sdk/soundsystem/soundlevel_t.hpp"
 namespace source2sdk
 {
     namespace server
@@ -35,16 +35,18 @@ namespace source2sdk
         public:
             float m_radius; // 0x_            
             float m_flMaxRadius; // 0x_            
-            source2sdk::soundsystem::soundlevel_t m_iSoundLevel; // 0x_            
+            source2sdk::client::soundlevel_t m_iSoundLevel; // 0x_            
             source2sdk::server::dynpitchvol_t m_dpv; // 0x_            
             bool m_fActive; // 0x_            
             bool m_fLooping; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszSound; // 0x_            
             CUtlSymbolLarge m_sSourceEntName; // 0x_            
+            // metadata: MNotSaved
             // m_hSoundSource has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSoundSource;
             char m_hSoundSource[0x_]; // 0x_            
+            // metadata: MNotSaved
             CEntityIndex m_nSoundSourceEntIndex; // 0x_            
             uint8_t _pad_[0x_];
             

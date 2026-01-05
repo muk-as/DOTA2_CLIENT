@@ -24,13 +24,13 @@ namespace source2sdk
         {
         public:
             float bear_bat; // 0x_            
-            std::int32_t bear_magic_resistance; // 0x_            
             std::int32_t bonus_bear_hp; // 0x_            
             std::int32_t bear_movespeed; // 0x_            
             std::int32_t bonus_bear_armor; // 0x_            
             std::int32_t hp_gain_per_druid_level; // 0x_            
             std::int32_t damage_gain_per_druid_level; // 0x_            
             float model_scale; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

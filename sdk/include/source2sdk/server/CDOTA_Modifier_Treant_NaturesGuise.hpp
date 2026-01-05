@@ -4,7 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/server/CountdownTimer.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -24,9 +23,10 @@ namespace source2sdk
         class CDOTA_Modifier_Treant_NaturesGuise : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::server::CountdownTimer m_RevealTimer; // 0x_            
-            source2sdk::server::CountdownTimer m_InvisAttackTimer; // 0x_            
-            source2sdk::server::CountdownTimer m_CooldownTimer; // 0x_            
+            float grace_time; // 0x_            
+            float cooldown_time; // 0x_            
+            float radius; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

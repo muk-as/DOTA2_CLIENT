@@ -54,8 +54,11 @@ namespace source2sdk
             bool m_bRandomizeCycle; // 0x_            
             bool m_bStartDisabled; // 0x_            
             bool m_bFiredStartEndOutput; // 0x_            
+            // metadata: MNotSaved
             bool m_bForceNpcExclude; // 0x_            
+            // metadata: MNotSaved
             bool m_bCreateNonSolid; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsOverrideProp; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_iInitialGlowState; // 0x_            
@@ -76,12 +79,12 @@ namespace source2sdk
             // CUtlSymbolLarge InputSetAnimation; // 0x_
             // CUtlSymbolLarge InputSetAnimationNoReset; // 0x_
             // CUtlSymbolLarge InputSetIdleAnimation; // 0x_
-            // CUtlSymbolLarge InputSetIdleAnimationLooping; // 0x_
-            // CUtlSymbolLarge InputSetIdleAnimationNotLooping; // 0x_
+            // CUtlSymbolLarge InputSetDefaultAnimationLooping; // 0x_
+            // CUtlSymbolLarge InputSetDefaultAnimationNotLooping; // 0x_
             // void InputTurnOn; // 0x_
             // void InputTurnOff; // 0x_
-            // void InputTurnOn; // 0x_
-            // void InputTurnOff; // 0x_
+            // void InputEnable; // 0x_
+            // void InputDisable; // 0x_
             // void InputEnableCollision; // 0x_
             // void InputDisableCollision; // 0x_
             // float InputSetPlaybackRate; // 0x_

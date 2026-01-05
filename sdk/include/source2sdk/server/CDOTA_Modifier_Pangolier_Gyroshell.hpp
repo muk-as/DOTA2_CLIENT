@@ -35,6 +35,7 @@ namespace source2sdk
             std::int32_t mp_cost_per_second; // 0x_            
             float tick_interval; // 0x_            
             float forward_move_speed; // 0x_            
+            float move_speed_ramp_up_time; // 0x_            
             float turn_rate_boosted; // 0x_            
             float turn_rate; // 0x_            
             float hit_radius; // 0x_            
@@ -48,6 +49,7 @@ namespace source2sdk
             float jump_recover_time; // 0x_            
             float m_flTurnBoostProgress; // 0x_            
             float m_flFacingTarget; // 0x_            
+            std::int32_t m_nInitialMovespeed; // 0x_            
             bool m_bIsJumping; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x_            

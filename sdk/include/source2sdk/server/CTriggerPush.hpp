@@ -37,6 +37,7 @@ namespace source2sdk
             bool m_bUsePathSimple; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszPathSimpleName; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathSimple* m_PathSimple; // 0x_            
             std::uint32_t m_splinePushType; // 0x_            
             uint8_t _pad_[0x_];

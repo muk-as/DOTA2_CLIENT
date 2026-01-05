@@ -34,11 +34,13 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nBonusesCount; // 0x_            
             source2sdk::client::DOTASpecialAbilityBonus_t m_Bonuses[1]; // 0x_            
+            source2sdk::client::DOTASpecialAbilityBonus_t m_PerLevelUpBonus; // 0x_            
             source2sdk::client::DOTALevelingAbilityBonus_t m_ScepterBonus; // 0x_            
             source2sdk::client::DOTALevelingAbilityBonus_t m_ShardBonus; // 0x_            
             source2sdk::client::DOTAFacetAbilityBonus_t m_FacetBonus; // 0x_            
             CUtlStringToken m_strRequiredFacet; // 0x_            
             source2sdk::client::DAMAGE_TYPES m_nDamageTypeField; // 0x_            
+            std::uint8_t m_unLevelUpInterval; // 0x_            
             bool m_bSpellDamageField; // 0x_            
             bool m_bRequiresScepterField; // 0x_            
             bool m_bRequiresShardField; // 0x_            
@@ -57,11 +59,13 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_eDisplayType) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_nBonusesCount) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_Bonuses) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_PerLevelUpBonus) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_ScepterBonus) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_ShardBonus) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_FacetBonus) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_strRequiredFacet) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_nDamageTypeField) == 0x_);
+        static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_unLevelUpInterval) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_bSpellDamageField) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_bRequiresScepterField) == 0x_);
         static_assert(offsetof(source2sdk::client::DOTASpecialAbility_t, m_bRequiresShardField) == 0x_);

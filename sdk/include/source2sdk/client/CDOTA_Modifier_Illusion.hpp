@@ -29,6 +29,8 @@ namespace source2sdk
             std::int32_t incoming_damage; // 0x_            
             std::int32_t bounty_base; // 0x_            
             std::int32_t bounty_growth; // 0x_            
+            std::int32_t fixed_day_vision; // 0x_            
+            std::int32_t fixed_night_vision; // 0x_            
             CUtlString m_strIllusionType; // 0x_            
             char m_szIllusionLabel[64]; // 0x_            
             bool m_bHidden; // 0x_            

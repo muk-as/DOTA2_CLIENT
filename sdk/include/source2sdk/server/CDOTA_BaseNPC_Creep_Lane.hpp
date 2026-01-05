@@ -31,7 +31,6 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByName "m_bIsNeutralUnitType"
         // static metadata: MNetworkExcludeByName "m_bIsPhantom"
         // static metadata: MNetworkExcludeByName "m_bIsSummoned"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByName "m_fadeMaxDist"
         // static metadata: MNetworkExcludeByName "m_fadeMinDist"
         // static metadata: MNetworkExcludeByName "m_flElasticity"

@@ -39,6 +39,7 @@ namespace source2sdk
             // m_attachedObject has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_attachedObject;
             char m_attachedObject[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_wasRestored; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CConstantForceController m_integrator; // 0x_            

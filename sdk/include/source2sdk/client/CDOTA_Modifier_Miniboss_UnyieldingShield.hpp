@@ -25,12 +25,12 @@ namespace source2sdk
         class CDOTA_Modifier_Miniboss_UnyieldingShield : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage_absorb; // 0x_            
+            float damage_absorb; // 0x_            
             float regen_per_second; // 0x_            
             float regen_bonus_per_interval; // 0x_            
             bool smaller_shield; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            std::int32_t m_nDamageAbsorbed; // 0x_            
+            float m_flDamageAbsorbed; // 0x_            
             source2sdk::entity2::GameTime_t m_timeLastTick; // 0x_            
             source2sdk::client::ParticleIndex_t nFXIndex; // 0x_            
             std::int32_t m_nVisualTeam; // 0x_            

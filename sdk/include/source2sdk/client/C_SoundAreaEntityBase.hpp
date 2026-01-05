@@ -31,6 +31,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             bool m_bDisabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bWasEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

@@ -61,7 +61,6 @@ namespace source2sdk
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
         // static metadata: MNetworkExcludeByName "m_flEncodedController"
         // static metadata: MNetworkExcludeByName "m_flPoseParameter"
@@ -278,12 +277,15 @@ namespace source2sdk
             // m_vecAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_vecAbilities;
             char m_vecAbilities[0x_]; // 0x_            
+            // m_vecAbilitiesClientPrediction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecAbilitiesClientPrediction;
+            char m_vecAbilitiesClientPrediction[0x_]; // 0x_            
+            std::int32_t m_nLocalAbilityBarSequenceNumber; // 0x_            
             float m_flInvisibilityLevel; // 0x_            
             float m_flHullRadius; // 0x_            
             float m_flCollisionPadding; // 0x_            
             float m_flRingRadius; // 0x_            
             float m_flProjectileCollisionSize; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszUnitName; // 0x_            
             CUtlSymbolLarge m_iszUnitNameIconOverride; // 0x_            
             CUtlSymbolLarge m_iszParticleFolder; // 0x_            

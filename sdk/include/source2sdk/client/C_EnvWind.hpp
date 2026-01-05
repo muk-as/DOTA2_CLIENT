@@ -29,6 +29,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::C_EnvWindShared m_EnvWindShared; // 0x_            
         };
         #pragma pack(pop)

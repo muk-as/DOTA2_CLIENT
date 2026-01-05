@@ -26,7 +26,6 @@ namespace source2sdk
             float bonus_damage; // 0x_            
             std::int32_t radius; // 0x_            
             std::int32_t only_creep_allies_damage_pct; // 0x_            
-            bool illusions_can_apply; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

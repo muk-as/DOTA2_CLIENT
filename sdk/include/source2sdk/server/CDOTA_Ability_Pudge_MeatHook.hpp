@@ -49,6 +49,7 @@ namespace source2sdk
             Vector m_vTargetPosition; // 0x_            
             Vector m_vCasterPosition; // 0x_            
             bool m_bChainDetached; // 0x_            
+            bool m_bForceSetToPudgePosition; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x_            
             source2sdk::client::ParticleIndex_t m_iSecondaryChainParticle; // 0x_            

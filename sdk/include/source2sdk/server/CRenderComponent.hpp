@@ -20,19 +20,23 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CRenderComponent : public source2sdk::entity2::CEntityComponent
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bIsRenderingWithViewModels; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             std::uint32_t m_nSplitscreenFlags; // 0x_            
+            // metadata: MNotSaved
             bool m_bEnableRendering; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bInterpolationReadyToDraw; // 0x_            
             uint8_t _pad_[0x_];
         };

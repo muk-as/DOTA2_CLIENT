@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/resourcesystem/InfoForResourceTypeCVoiceContainerBase.hpp"
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem_voicecontainers
@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MPropertyFriendlyName "Tape Player"
         #pragma pack(push, 1)
-        class CVoiceContainerTapePlayer : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerTapePlayer : public source2sdk::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator
         {
         public:
             bool m_bShouldWraparound; // 0x_            

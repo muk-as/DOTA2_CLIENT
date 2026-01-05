@@ -25,6 +25,8 @@ namespace source2sdk
         public:
             std::int32_t status_resistance; // 0x_            
             std::int32_t max_movement_speed; // 0x_            
+            std::int32_t armor_reduction; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

@@ -50,6 +50,7 @@ namespace source2sdk
             CUtlSymbolLarge m_iszSpriteName; // 0x_            
             std::int32_t m_frameStart; // 0x_            
             VectorWS m_vEndPointWorld; // 0x_            
+            // metadata: MNotSaved
             Vector m_vEndPointRelative; // 0x_            
             float m_radius; // 0x_            
             source2sdk::server::Touch_t m_TouchType; // 0x_            

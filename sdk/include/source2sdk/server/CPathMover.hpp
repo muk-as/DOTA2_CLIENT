@@ -18,6 +18,13 @@ namespace source2sdk
         struct CMoverPathNode;
     };
 };
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CPathMoverEntitySpawner;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -45,6 +52,11 @@ namespace source2sdk
             // CUtlVector<CHandle<source2sdk::server::CFuncMover>> m_vecMovers;
             char m_vecMovers[0x_]; // 0x_            
             CTransform m_xInitialPathWorldToLocal; // 0x_            
+            // m_hMoverSpawner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CPathMoverEntitySpawner> m_hMoverSpawner;
+            char m_hMoverSpawner[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            CUtlSymbolLarge m_iszMoverSpawnerName; // 0x_            
         };
         #pragma pack(pop)
         

@@ -21,7 +21,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "string_t m_EffectName"
         // static metadata: MNetworkVarNames "bool m_bState"
@@ -29,11 +28,14 @@ namespace source2sdk
         class C_FuncElectrifiedVolume : public source2sdk::client::C_FuncBrush
         {
         public:
+            // metadata: MNotSaved
             source2sdk::client::ParticleIndex_t m_nAmbientEffect; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             CUtlSymbolLarge m_EffectName; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bState; // 0x_            
             uint8_t _pad_[0x_];
         };

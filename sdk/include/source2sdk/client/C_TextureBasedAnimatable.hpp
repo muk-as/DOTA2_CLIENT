@@ -52,6 +52,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             Vector m_vAnimationBoundsMax; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flStartTime; // 0x_            
             // metadata: MNetworkEnable
             float m_flStartFrame; // 0x_            

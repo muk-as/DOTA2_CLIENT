@@ -47,7 +47,9 @@ namespace source2sdk
             QAngle m_angStart; // 0x_            
             bool m_bStopAtStartPos; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             Vector m_vecClientOrigin; // 0x_            
+            // metadata: MNotSaved
             QAngle m_vecClientAngles; // 0x_            
             uint8_t _pad_[0x_];
             

@@ -33,6 +33,7 @@ namespace source2sdk
             CUtlSymbolLarge m_nameAttachEnd; // 0x_            
             VectorWS m_start; // 0x_            
             VectorWS m_end; // 0x_            
+            // metadata: MNotSaved
             std::uint32_t m_teleportTick; // 0x_            
             uint8_t _pad_[0x_];
             

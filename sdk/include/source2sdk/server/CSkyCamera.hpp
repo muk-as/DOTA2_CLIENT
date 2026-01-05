@@ -29,11 +29,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::server::sky3dparams_t m_skyboxData; // 0x_            
             // metadata: MNetworkEnable
             CUtlStringToken m_skyboxSlotToken; // 0x_            
             bool m_bUseAngles; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::server::CSkyCamera* m_pNext; // 0x_            
             
             // Datamap fields:

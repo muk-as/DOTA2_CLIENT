@@ -30,9 +30,7 @@ namespace source2sdk
         public:
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterPosition; // 0x_            
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterOrientation; // 0x_            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterSpineRotationWeight; // 0x_            
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterPelvisOffset; // 0x_            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParameterUseIK; // 0x_            
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterCameraOnly; // 0x_            
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDistance; // 0x_            
             source2sdk::animgraphlib::CAnimParamHandle m_hParameterWeaponDepenetrationDelta; // 0x_            

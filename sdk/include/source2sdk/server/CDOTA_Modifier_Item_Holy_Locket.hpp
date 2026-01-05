@@ -26,7 +26,7 @@ namespace source2sdk
             float aura_radius; // 0x_            
             std::int32_t bonus_health; // 0x_            
             std::int32_t bonus_mana; // 0x_            
-            std::int32_t heal_increase; // 0x_            
+            std::int32_t heal_increase_passive; // 0x_            
             std::int32_t bonus_all_stats; // 0x_            
             uint8_t _pad_[0x_];
         };

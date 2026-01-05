@@ -29,7 +29,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByUserGroup "LocalPlayerExclusive"
         // static metadata: MNetworkVarNames "CHandle<C_EconWearable > m_hMyWearables"
@@ -39,14 +38,20 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnWearablesChanged"
+            // metadata: MNotSaved
             // m_hMyWearables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_EconWearable>> m_hMyWearables;
             char m_hMyWearables[0x_]; // 0x_            
+            // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_leftFootAttachment; // 0x_            
+            // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_rightFootAttachment; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::C_BaseCombatCharacter_WaterWakeMode_t m_nWaterWakeMode; // 0x_            
+            // metadata: MNotSaved
             float m_flWaterWorldZ; // 0x_            
+            // metadata: MNotSaved
             float m_flWaterNextTraceTime; // 0x_            
             uint8_t _pad_[0x_];
         };

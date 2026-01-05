@@ -44,6 +44,7 @@ namespace source2sdk
             // m_hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOwner;
             char m_hOwner[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bSetFromDebugHistory; // 0x_            
             uint8_t _pad_[0x_];
         };

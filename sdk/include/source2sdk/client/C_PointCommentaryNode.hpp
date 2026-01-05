@@ -9,6 +9,13 @@ namespace source2sdk
 {
     namespace client
     {
+        struct CSoundPatch;
+    };
+};
+namespace source2sdk
+{
+    namespace client
+    {
         struct C_BaseEntity;
     };
 };
@@ -66,15 +73,15 @@ namespace source2sdk
             // metadata: MNetworkEnable
             bool m_bListenedTo; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
+            source2sdk::client::CSoundPatch* m_sndCommentary; // 0x_            
             // metadata: MNetworkEnable
             // m_hViewPosition has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hViewPosition;
             char m_hViewPosition[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bRestartAfterRestore; // 0x_            
             uint8_t _pad_[0x_];
-            
-            // Datamap fields:
-            // void m_sndCommentary; // 0x_
         };
         #pragma pack(pop)
         

@@ -26,7 +26,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MNetworkExcludeByName "m_flexWeight"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"
         // static metadata: MNetworkExcludeByName "m_animationController.m_flPlaybackRate"
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
@@ -57,12 +56,15 @@ namespace source2sdk
             bool m_bDroppedByPlayer; // 0x_            
             bool m_bTouchedByPlayer; // 0x_            
             bool m_bFirstCollisionAfterLaunch; // 0x_            
+            // metadata: MNotSaved
             bool m_bHasBeenAwakened; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsOverrideProp; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::entity2::GameTime_t m_flLastBurn; // 0x_            
             source2sdk::physicslib::DynamicContinuousContactBehavior_t m_nDynamicContinuousContactBehavior; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_fNextCheckDisableMotionContactsTime; // 0x_            
             std::int32_t m_iInitialGlowState; // 0x_            
             std::int32_t m_nGlowRange; // 0x_            
@@ -71,6 +73,9 @@ namespace source2sdk
             bool m_bShouldAutoConvertBackFromDebris; // 0x_            
             bool m_bMuteImpactEffects; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            bool m_bUpdateNavWhenMoving; // 0x_            
+            bool m_bForceNavObstacleCut; // 0x_            
+            bool m_bAllowObstacleConvexHullMerging; // 0x_            
             bool m_bAcceptDamageFromHeldObjects; // 0x_            
             bool m_bEnableUseOutput; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
@@ -104,9 +109,6 @@ namespace source2sdk
             // bool phys_start_asleep; // 0x_
             // void CPhysicsPropClearFlagsThink; // 0x_
             // int32_t m_nNavObstacleType; // 0x_
-            // bool m_bUpdateNavWhenMoving; // 0x_
-            // bool m_bForceNavObstacleCut; // 0x_
-            // bool m_bAllowObstacleConvexHullMerging; // 0x_
             // int32_t health; // 0x_
         };
         #pragma pack(pop)

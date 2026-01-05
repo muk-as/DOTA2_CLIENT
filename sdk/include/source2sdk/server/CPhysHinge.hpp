@@ -28,15 +28,18 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::server::ConstraintSoundInfo m_soundInfo; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_NotifyMinLimitReached; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_NotifyMaxLimitReached; // 0x_            
             bool m_bAtMinLimit; // 0x_            
             bool m_bAtMaxLimit; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::vphysics2::constraint_hingeparams_t m_hinge; // 0x_            
             float m_hingeFriction; // 0x_            
             float m_systemLoadScale; // 0x_            
+            // metadata: MNotSaved
             bool m_bIsAxisLocal; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flMinRotation; // 0x_            
@@ -46,7 +49,7 @@ namespace source2sdk
             float m_flMotorDampingRatio; // 0x_            
             float m_flAngleSpeed; // 0x_            
             float m_flAngleSpeedThreshold; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            float m_flLimitsDebugVisRotation; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnStartMoving; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnStopMoving; // 0x_            
             

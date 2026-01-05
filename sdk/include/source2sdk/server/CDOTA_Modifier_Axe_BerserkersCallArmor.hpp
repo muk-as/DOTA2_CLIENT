@@ -24,6 +24,8 @@ namespace source2sdk
         {
         public:
             std::int32_t bonus_armor; // 0x_            
+            std::int32_t bonus_armor_pct; // 0x_            
+            float m_flBonusArmorFromPct; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

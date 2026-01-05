@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 49
+        // Enumerator count: 50
         // Alignment: 8
         // Size: 0x_
         enum class DOTA_ABILITY_BEHAVIOR : std::uint64_t
@@ -67,6 +67,7 @@ namespace source2sdk
             DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE = 0x400000000000,
             DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE = 0x800000000000,
             DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM = 0x1000000000000,
+            DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI = 0x2000000000000,
         };
     };
 };

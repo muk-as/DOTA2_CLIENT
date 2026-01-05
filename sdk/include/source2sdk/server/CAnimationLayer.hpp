@@ -58,6 +58,7 @@ namespace source2sdk
             source2sdk::entity2::GameTime_t m_flKillStartTime; // 0x_            
             float m_flKillRate; // 0x_            
             source2sdk::entity2::GameTime_t m_flLayerSuppressChangeTime; // 0x_            
+            // metadata: MSaveOpsForField
             std::int32_t m_nActivity; // 0x_            
             std::int32_t m_nPriority; // 0x_            
             float m_flLastEventCycle; // 0x_            

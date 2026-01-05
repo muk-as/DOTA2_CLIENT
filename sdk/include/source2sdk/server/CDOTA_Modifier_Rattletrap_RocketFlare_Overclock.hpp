@@ -27,7 +27,7 @@ namespace source2sdk
             std::int32_t rocket_flare_offset_pct; // 0x_            
             std::int32_t rocket_flare_rockets; // 0x_            
             std::int32_t m_nRocketsFired; // 0x_            
-            std::int32_t radius; // 0x_            
+            float radius; // 0x_            
             Vector m_vOriginalTarget; // 0x_            
         };
         #pragma pack(pop)

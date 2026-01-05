@@ -23,12 +23,10 @@ namespace source2sdk
         class CDOTA_Modifier_Enchantress_RabbleRouser_Aura : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t base_damage_amp; // 0x_            
-            std::int32_t damage_amp_per_level; // 0x_            
+            // No schema binary for binding
         };
         #pragma pack(pop)
         
-        // Cannot assert offsets of fields in CDOTA_Modifier_Enchantress_RabbleRouser_Aura because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enchantress_RabbleRouser_Aura) == 0x_);
     };

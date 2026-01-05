@@ -35,6 +35,8 @@ namespace source2sdk
             bool m_bRespectLeash; // 0x_            
             bool m_bReversePolarity; // 0x_            
             bool m_bRelativeToGround; // 0x_            
+            bool m_bFindClearSpace; // 0x_            
+            bool m_bDestroyTreesOnRoute; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

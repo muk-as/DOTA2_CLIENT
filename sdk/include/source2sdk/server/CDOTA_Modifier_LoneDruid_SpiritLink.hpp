@@ -30,10 +30,10 @@ namespace source2sdk
         class CDOTA_Modifier_LoneDruid_SpiritLink : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_attack_speed; // 0x_            
+            std::int32_t bonus_movement_speed_druid; // 0x_            
+            std::int32_t bonus_movement_speed_bear; // 0x_            
             std::int32_t lifesteal_percent; // 0x_            
             std::int32_t armor; // 0x_            
-            std::int32_t armor_sharing; // 0x_            
             std::int32_t active_bonus; // 0x_            
             std::int32_t lifesteal_both_ways; // 0x_            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.

@@ -38,13 +38,13 @@ namespace source2sdk
             float m_flInertiaScaleInv; // 0x_            
             float m_flLinearDamping; // 0x_            
             float m_flAngularDamping; // 0x_            
-            float m_flLinearDrag; // 0x_            
-            float m_flAngularDrag; // 0x_            
-            float m_flLinearBuoyancyDrag; // 0x_            
-            float m_flAngularBuoyancyDrag; // 0x_            
+            float m_flLinearDragScale; // 0x_            
+            float m_flAngularDragScale; // 0x_            
+            float m_flLinearFluidDragScale; // 0x_            
+            float m_flAngularFluidDragScale; // 0x_            
             Vector m_vLastAwakeForceAccum; // 0x_            
             Vector m_vLastAwakeTorqueAccum; // 0x_            
-            float m_flBuoyancyFactor; // 0x_            
+            float m_flBuoyancyScale; // 0x_            
             float m_flGravityScale; // 0x_            
             float m_flTimeScale; // 0x_            
             std::int32_t m_nBodyType; // 0x_            
@@ -57,7 +57,7 @@ namespace source2sdk
             bool m_bSleeping; // 0x_            
             bool m_bIsContinuousEnabled; // 0x_            
             bool m_bDragEnabled; // 0x_            
-            bool m_bBuoyancyDragEnabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             Vector m_vGravity; // 0x_            
             bool m_bSpeculativeEnabled; // 0x_            
             bool m_bHasShadowController; // 0x_            
@@ -79,13 +79,13 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flInertiaScaleInv) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flLinearDamping) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flAngularDamping) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flLinearDrag) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flAngularDrag) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flLinearBuoyancyDrag) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flAngularBuoyancyDrag) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flLinearDragScale) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flAngularDragScale) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flLinearFluidDragScale) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flAngularFluidDragScale) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_vLastAwakeForceAccum) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_vLastAwakeTorqueAccum) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flBuoyancyFactor) == 0x_);
+        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flBuoyancyScale) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flGravityScale) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_flTimeScale) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_nBodyType) == 0x_);
@@ -98,7 +98,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bSleeping) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bIsContinuousEnabled) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bDragEnabled) == 0x_);
-        static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bBuoyancyDragEnabled) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_vGravity) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bSpeculativeEnabled) == 0x_);
         static_assert(offsetof(source2sdk::physicslib::RnBodyDesc_t, m_bHasShadowController) == 0x_);

@@ -45,41 +45,60 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bForceRecreateNextUpdate; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nTextWidthPx; // 0x_            
+            std::int32_t m_nTextHeightPx; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_messageText[512]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_FontName[64]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             char m_BackgroundMaterialName[64]; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bEnabled; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bFullbright; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flWorldUnitsPerPx; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flFontSize; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flDepthOffset; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bDrawBackground; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flBackgroundBorderWidth; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flBackgroundBorderHeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             float m_flBackgroundWorldToUV; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             Color m_Color; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::PointWorldTextJustifyHorizontal_t m_nJustifyHorizontal; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::PointWorldTextJustifyVertical_t m_nJustifyVertical; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::PointWorldTextReorientMode_t m_nReorientMode; // 0x_            
             
             // Datamap fields:

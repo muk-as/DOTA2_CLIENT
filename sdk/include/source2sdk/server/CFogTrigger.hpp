@@ -25,6 +25,7 @@ namespace source2sdk
         class CFogTrigger : public source2sdk::server::CBaseTrigger
         {
         public:
+            // metadata: MNotSaved
             source2sdk::server::fogparams_t m_fog; // 0x_            
             
             // Datamap fields:

@@ -47,7 +47,9 @@ namespace source2sdk
             source2sdk::client::ObserverMode_t m_iObserverLastMode; // 0x_            
             bool m_bForcedObserverMode; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flObserverChaseDistance; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flObserverChaseDistanceCalcTime; // 0x_            
         };
         #pragma pack(pop)

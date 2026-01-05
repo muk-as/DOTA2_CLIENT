@@ -91,6 +91,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bGrantedByFacet"
         // static metadata: MNetworkVarNames "bool m_bReflection"
         // static metadata: MNetworkVarNames "EHANDLE m_pReflectionSourceAbility"
+        // static metadata: MNetworkVarNames "EHANDLE m_hHiddenAbilityForDisplay"
         #pragma pack(push, 1)
         class CDOTABaseAbility : public source2sdk::server::CBaseEntity
         {
@@ -202,6 +203,10 @@ namespace source2sdk
             // m_pReflectionSourceAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_pReflectionSourceAbility;
             char m_pReflectionSourceAbility[0x_]; // 0x_            
+            // metadata: MNetworkEnable
+            // m_hHiddenAbilityForDisplay has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hHiddenAbilityForDisplay;
+            char m_hHiddenAbilityForDisplay[0x_]; // 0x_            
             // m_hReflectionCause has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hReflectionCause;
             char m_hReflectionCause[0x_]; // 0x_            

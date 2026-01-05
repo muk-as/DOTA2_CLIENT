@@ -39,6 +39,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::CNetworkVarChainer __m_pChainEntity; // 0x_            
             bool m_bTrackingTeamStats; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

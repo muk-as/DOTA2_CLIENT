@@ -33,7 +33,6 @@ namespace source2sdk
         // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_angRotation"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByName "m_cellX"
         // static metadata: MNetworkExcludeByName "m_cellY"
         // static metadata: MNetworkExcludeByName "m_cellZ"
@@ -86,6 +85,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bGrantedByFacet"
         // static metadata: MNetworkVarNames "bool m_bReflection"
         // static metadata: MNetworkVarNames "EHANDLE m_pReflectionSourceAbility"
+        // static metadata: MNetworkVarNames "EHANDLE m_hHiddenAbilityForDisplay"
         #pragma pack(push, 1)
         class C_DOTABaseAbility : public source2sdk::client::C_BaseEntity
         {
@@ -197,9 +197,12 @@ namespace source2sdk
             // m_pReflectionSourceAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_pReflectionSourceAbility;
             char m_pReflectionSourceAbility[0x_]; // 0x_            
+            // metadata: MNetworkEnable
+            // m_hHiddenAbilityForDisplay has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hHiddenAbilityForDisplay;
+            char m_hHiddenAbilityForDisplay[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flLastCastClickTime; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

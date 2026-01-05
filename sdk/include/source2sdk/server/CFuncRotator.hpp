@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/SolidType_t.hpp"
 #include "source2sdk/entity2/CEntityIOOutput.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/server/CBaseModelEntity.hpp"
@@ -15,6 +16,13 @@ namespace source2sdk
     namespace server
     {
         struct CBaseEntity;
+    };
+};
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CFuncMover;
     };
 };
 
@@ -87,6 +95,16 @@ namespace source2sdk
             // m_vecRotatorQueueHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::RotatorHistoryEntry_t> m_vecRotatorQueueHistory;
             char m_vecRotatorQueueHistory[0x_]; // 0x_            
+            source2sdk::client::SolidType_t m_eSolidType; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            // m_hSpeedFromMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CFuncMover> m_hSpeedFromMover;
+            char m_hSpeedFromMover[0x_]; // 0x_            
+            CUtlSymbolLarge m_iszSpeedFromMover; // 0x_            
+            float m_flSpeedScale; // 0x_            
+            float m_flMinYawRotation; // 0x_            
+            float m_flMaxYawRotation; // 0x_            
+            uint8_t _pad_[0x_];
             
             // Datamap fields:
             // void InputStart; // 0x_

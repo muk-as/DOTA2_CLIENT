@@ -26,7 +26,6 @@ namespace source2sdk
         {
         public:
             std::int32_t m_nCustomStackIndex; // 0x_            
-            float m_flVolume; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

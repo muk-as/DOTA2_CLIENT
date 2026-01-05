@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/resourcesystem/InfoForResourceTypeCVoiceContainerBase.hpp"
-#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerBase.hpp"
+#include "source2sdk/soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem_voicecontainers
@@ -26,7 +26,7 @@ namespace source2sdk
         // static metadata: MPropertyFriendlyName "Random Smapler Container"
         // static metadata: MPropertyDescription "Trash Synth"
         #pragma pack(push, 1)
-        class CVoiceContainerRandomSampler : public source2sdk::soundsystem_voicecontainers::CVoiceContainerBase
+        class CVoiceContainerRandomSampler : public source2sdk::soundsystem_voicecontainers::CVoiceContainerAsyncGenerator
         {
         public:
             float m_flAmplitude; // 0x_            

@@ -70,6 +70,7 @@ namespace source2sdk
             // m_nDestructibleHitGroupsToForceDestroy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::DestructibleHitGroupToDestroy_t> m_nDestructibleHitGroupsToForceDestroy;
             char m_nDestructibleHitGroupsToForceDestroy[0x_]; // 0x_            
+            // metadata: MNotSaved
             bool m_bInTakeDamageFlow; // 0x_            
             uint8_t _pad_[0x_];
             

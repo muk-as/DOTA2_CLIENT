@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace animlib
     {
-        // Enumerator count: 4
+        // Enumerator count: 5
         // Alignment: 1
         // Size: 0x_
         enum class NmTargetWarpRule_t : std::uint8_t
@@ -22,6 +22,8 @@ namespace source2sdk
             WarpZ = 0x1,
             WarpXYZ = 0x2,
             RotationOnly = 0x3,
+            // MPropertySuppressEnumerator
+            FixedSection = 0x4,
         };
     };
 };

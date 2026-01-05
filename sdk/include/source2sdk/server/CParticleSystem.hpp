@@ -67,11 +67,13 @@ namespace source2sdk
             // metadata: MNetworkEnable
             float m_flFreezeTransitionDuration; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_nStopType; // 0x_            
             // metadata: MNetworkEnable
             bool m_bAnimateDuringGameplayPause; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_iEffectIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_iEffectIndex;
             char m_iEffectIndex[0x_]; // 0x_            

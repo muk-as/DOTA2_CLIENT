@@ -20,13 +20,15 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class C_FuncTrackTrain : public source2sdk::client::C_BaseModelEntity
         {
         public:
+            // metadata: MNotSaved
             std::int32_t m_nLongAxis; // 0x_            
+            // metadata: MNotSaved
             float m_flRadius; // 0x_            
+            // metadata: MNotSaved
             float m_flLineLength; // 0x_            
             uint8_t _pad_[0x_];
         };

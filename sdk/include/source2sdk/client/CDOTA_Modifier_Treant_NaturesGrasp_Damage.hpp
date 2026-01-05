@@ -23,10 +23,10 @@ namespace source2sdk
         class CDOTA_Modifier_Treant_NaturesGrasp_Damage : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movement_slow; // 0x_            
-            std::int32_t damage_per_second; // 0x_            
+            float movement_slow; // 0x_            
+            float damage_per_second; // 0x_            
+            float creep_penalty; // 0x_            
             float tick_interval; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

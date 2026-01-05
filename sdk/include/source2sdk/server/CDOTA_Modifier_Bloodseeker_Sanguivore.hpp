@@ -25,7 +25,7 @@ namespace source2sdk
         public:
             std::int32_t base_heal; // 0x_            
             float half_bonus_aoe; // 0x_            
-            float heal_hp_pct_per_level; // 0x_            
+            float heal_hp_pct; // 0x_            
             std::int32_t creep_lifesteal_reduction_pct; // 0x_            
             std::int32_t deny_lifesteal_reduction_pct; // 0x_            
             std::int32_t pure_damage_lifesteal_pct; // 0x_            

@@ -23,7 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_Item_SpecialistsArray_ProcDamage : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t proc_bonus_damage; // 0x_            
+            std::int32_t proc_dmg_pct; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

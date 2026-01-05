@@ -25,7 +25,6 @@ namespace source2sdk
         public:
             std::int32_t damage_per_second; // 0x_            
             std::int32_t slow; // 0x_            
-            std::int32_t armor_change; // 0x_            
             bool should_stack; // 0x_            
             uint8_t _pad_[0x_];
         };

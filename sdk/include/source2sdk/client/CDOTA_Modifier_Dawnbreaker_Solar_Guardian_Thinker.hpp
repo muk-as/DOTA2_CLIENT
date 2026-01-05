@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/CDOTA_BuffParticle.hpp"
 #include "source2sdk/client/ParticleIndex_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
 
@@ -32,6 +33,7 @@ namespace source2sdk
             std::int32_t base_heal; // 0x_            
             std::int32_t effectiveness_pct; // 0x_            
             source2sdk::client::ParticleIndex_t m_nThinkerFXIndex; // 0x_            
+            source2sdk::client::CDOTA_BuffParticle m_ThinkerFXBuffParticle; // 0x_            
             bool bLanded; // 0x_            
             uint8_t _pad_[0x_];
         };

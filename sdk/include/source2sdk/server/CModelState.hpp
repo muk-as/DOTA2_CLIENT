@@ -19,6 +19,7 @@ namespace source2sdk
         // Standard-layout class: true
         // Size: 0x_
         // Has VTable
+        // Construct disallowed
         // 
         // static metadata: MNetworkVarNames "HModelStrong m_hModel"
         // static metadata: MNetworkVarNames "bool m_bClientClothCreationSuppressed"

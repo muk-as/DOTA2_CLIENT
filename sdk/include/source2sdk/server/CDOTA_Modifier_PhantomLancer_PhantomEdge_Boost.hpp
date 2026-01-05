@@ -40,9 +40,9 @@ namespace source2sdk
             std::int32_t bonus_agility; // 0x_            
             float illusion_spawn_radius; // 0x_            
             float illusion_spawn_travel_distance; // 0x_            
+            float evasion; // 0x_            
             float m_flDistanceAccumulator; // 0x_            
             Vector m_vPreviousLocation; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hHitEntities;
             char m_hHitEntities[0x_]; // 0x_            

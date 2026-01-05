@@ -19,6 +19,7 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
+        // Construct disallowed
         #pragma pack(push, 1)
         class CPathQueryComponent : public source2sdk::entity2::CEntityComponent
         {

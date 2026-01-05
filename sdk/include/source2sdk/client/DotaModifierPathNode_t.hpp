@@ -17,6 +17,7 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
+        // Has Trivial Constructor
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct DotaModifierPathNode_t

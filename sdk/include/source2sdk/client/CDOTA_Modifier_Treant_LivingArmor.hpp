@@ -24,7 +24,10 @@ namespace source2sdk
         {
         public:
             std::int32_t heal_per_second; // 0x_            
-            std::int32_t bonus_armor; // 0x_            
+            float damage_block_base; // 0x_            
+            float damage_block_loss; // 0x_            
+            float damage_block_threshold; // 0x_            
+            float passive_reset_cd; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

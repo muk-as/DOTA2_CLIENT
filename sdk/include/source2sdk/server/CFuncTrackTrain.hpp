@@ -43,7 +43,9 @@ namespace source2sdk
             QAngle m_angPrev; // 0x_            
             Vector m_controlMins; // 0x_            
             Vector m_controlMaxs; // 0x_            
+            // metadata: MNotSaved
             Vector m_lastBlockPos; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_lastBlockTick; // 0x_            
             float m_flVolume; // 0x_            
             float m_flBank; // 0x_            
@@ -71,12 +73,16 @@ namespace source2sdk
             source2sdk::entity2::CEntityIOOutput m_OnArrivedAtDestinationNode; // 0x_            
             bool m_bManualSpeedChanges; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flDesiredSpeed; // 0x_            
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flSpeedChangeTime; // 0x_            
             float m_flAccelSpeed; // 0x_            
             float m_flDecelSpeed; // 0x_            
+            // metadata: MNotSaved
             bool m_bAccelToSpeed; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::entity2::GameTime_t m_flNextMPSoundTime; // 0x_            
             uint8_t _pad_[0x_];
             

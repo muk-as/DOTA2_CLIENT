@@ -25,10 +25,12 @@ namespace source2sdk
         class C_DOTA_NPC_BaseBlocker : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            // No schema binary for binding
+            std::int32_t m_nPreviewViewer; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in C_DOTA_NPC_BaseBlocker because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::client::C_DOTA_NPC_BaseBlocker) == 0x_);
     };

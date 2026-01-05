@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionPreEmission.hpp"
+#include "source2sdk/particles/ParticleEntityPos_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -33,7 +34,9 @@ namespace source2sdk
             Vector m_vecCP1Pos; // 0x_            
             // metadata: MPropertyFriendlyName "use eye orientation"
             bool m_bOrientToEyes; // 0x_            
-            uint8_t _pad_[0x_];
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MPropertyFriendlyName "position to get"
+            source2sdk::particles::ParticleEntityPos_t m_nPosition; // 0x_            
         };
         #pragma pack(pop)
         

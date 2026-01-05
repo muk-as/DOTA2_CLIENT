@@ -22,7 +22,6 @@ namespace source2sdk
         // Construct allowed
         // 
         // static metadata: MNetworkExcludeByName "m_flexWeight"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"
         // static metadata: MNetworkExcludeByName "m_animationController.m_flPlaybackRate"
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
@@ -33,6 +32,7 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bAwake; // 0x_            
             uint8_t _pad_[0x_];
         };

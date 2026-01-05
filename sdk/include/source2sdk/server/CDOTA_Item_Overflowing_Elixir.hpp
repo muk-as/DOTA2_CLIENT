@@ -28,6 +28,8 @@ namespace source2sdk
         public:
             std::int32_t m_iStoredRuneType; // 0x_            
             source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x_            
+            source2sdk::entity2::GameTime_t m_fStoredRuneSpawnTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

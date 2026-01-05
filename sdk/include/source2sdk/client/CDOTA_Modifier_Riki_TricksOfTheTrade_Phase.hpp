@@ -41,12 +41,15 @@ namespace source2sdk
             // CHandle<source2sdk::client::C_BaseEntity> m_hPreviousTarget;
             char m_hPreviousTarget[0x_]; // 0x_            
             std::int32_t m_nSucceessiveHits; // 0x_            
-            std::int32_t damage_pct; // 0x_            
+            float attack_damage; // 0x_            
             std::int32_t agility_pct; // 0x_            
-            float creep_agility_multiplier; // 0x_            
-            float m_flMultiplier; // 0x_            
             float cooldown_reduction_per_creep_kill; // 0x_            
-            uint8_t _pad_[0x_];
+            float speed_per_attack; // 0x_            
+            float radius; // 0x_            
+            std::int32_t interval_targets; // 0x_            
+            bool pocket_riki_enabled; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            float base_attack_damage_pct; // 0x_            
         };
         #pragma pack(pop)
         

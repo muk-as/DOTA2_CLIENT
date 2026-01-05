@@ -25,18 +25,28 @@ namespace source2sdk
         public:
             std::uint8_t m_Type; // 0x_            
             char m_szResponseName[192]; // 0x_            
+            // metadata: MNotSaved
             char m_szMatchingRule[128]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::client::ResponseParams m_Params; // 0x_            
+            // metadata: MNotSaved
             float m_fMatchScore; // 0x_            
+            // metadata: MNotSaved
             bool m_bAnyMatchingRulesInCooldown; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             char* m_szSpeakerContext; // 0x_            
+            // metadata: MNotSaved
             char* m_szWorldContext; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::ResponseFollowup m_Followup; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             CUtlSymbol m_recipientFilter; // 0x_            
             uint8_t _pad_[0x_];
+            
+            // Datamap fields:
+            // void m_szMatchingRule; // 0x_
         };
         #pragma pack(pop)
         

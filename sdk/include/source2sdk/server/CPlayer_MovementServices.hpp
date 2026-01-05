@@ -30,11 +30,14 @@ namespace source2sdk
         public:
             std::int32_t m_nImpulse; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             source2sdk::client::CInButtonState m_nButtons; // 0x_            
             std::uint64_t m_nQueuedButtonDownMask; // 0x_            
             std::uint64_t m_nQueuedButtonChangeMask; // 0x_            
             std::uint64_t m_nButtonDoublePressed; // 0x_            
+            // metadata: MNotSaved
             std::uint32_t m_pButtonPressedCmdNumber[64]; // 0x_            
+            // metadata: MNotSaved
             std::uint32_t m_nLastCommandNumberProcessed; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable

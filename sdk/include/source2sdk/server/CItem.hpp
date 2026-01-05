@@ -34,6 +34,7 @@ namespace source2sdk
             source2sdk::entity2::CEntityIOOutput m_OnGlovePulled; // 0x_            
             VectorWS m_vOriginalSpawnOrigin; // 0x_            
             QAngle m_vOriginalSpawnAngles; // 0x_            
+            // metadata: MNotSaved
             bool m_bPhysStartAsleep; // 0x_            
             uint8_t _pad_[0x_];
             

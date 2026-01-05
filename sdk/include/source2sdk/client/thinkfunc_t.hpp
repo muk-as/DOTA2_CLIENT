@@ -24,6 +24,7 @@ namespace source2sdk
         {
         public:
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             HSCRIPT m_hFn; // 0x_            
             CUtlStringToken m_nContext; // 0x_            
             source2sdk::entity2::GameTick_t m_nNextThinkTick; // 0x_            

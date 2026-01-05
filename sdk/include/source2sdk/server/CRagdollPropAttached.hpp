@@ -41,6 +41,7 @@ namespace source2sdk
             Vector m_attachmentPointRagdollSpace; // 0x_            
             bool m_bShouldDetach; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             bool m_bShouldDeleteAttachedActivationRecord; // 0x_            
             uint8_t _pad_[0x_];
         };

@@ -32,7 +32,6 @@ namespace source2sdk
             std::uint16_t m_nProvidesFOWPositionForTeamValid; // 0x_            
             std::int32_t m_iBuffIndex; // 0x_            
             std::int32_t m_iLockRefCount; // 0x_            
-            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

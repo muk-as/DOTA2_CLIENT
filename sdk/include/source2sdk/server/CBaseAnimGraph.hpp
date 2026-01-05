@@ -3,8 +3,16 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CAnimGraphControllerManager.hpp"
 #include "source2sdk/server/CBaseModelEntity.hpp"
 #include "source2sdk/server/PhysicsRagdollPose_t.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct CAnimGraphControllerBase;
+    };
+};
 namespace source2sdk
 {
     namespace client
@@ -41,21 +49,30 @@ namespace source2sdk
         class CBaseAnimGraph : public source2sdk::server::CBaseModelEntity
         {
         public:
-            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
+            source2sdk::client::CAnimGraphControllerManager m_graphControllerManager; // 0x_            
+            // metadata: MSaveOpsForField
+            source2sdk::client::CAnimGraphControllerBase* m_pMainGraphController; // 0x_            
             // metadata: MNetworkEnable
             bool m_bInitiallyPopulateInterpHistory; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MSaveOpsForField
             source2sdk::client::IChoreoServices* m_pChoreoServices; // 0x_            
             // metadata: MNetworkEnable
             bool m_bAnimGraphUpdateEnabled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             float m_flMaxSlopeDistance; // 0x_            
+            // metadata: MNotSaved
             VectorWS m_vLastSlopeCheckPos; // 0x_            
+            std::uint32_t m_nAnimGraphUpdateId; // 0x_            
+            // metadata: MNotSaved
             bool m_bAnimationUpdateScheduled; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             Vector m_vecForce; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             std::int32_t m_nForceBone; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
@@ -65,13 +82,13 @@ namespace source2sdk
             bool m_bRagdollEnabled; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
+            // metadata: MNotSaved
             bool m_bRagdollClientSide; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CTransform m_xParentedRagdollRootInEntitySpace; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:
-            // void m_pMainGraphController; // 0x_
             // void m_pRagdollControl; // 0x_
             // void CBaseAnimGraphChoreoServicesThink; // 0x_
             // float InputSetPlaybackRate; // 0x_

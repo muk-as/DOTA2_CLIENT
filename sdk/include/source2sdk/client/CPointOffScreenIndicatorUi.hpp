@@ -27,15 +27,18 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         #pragma pack(push, 1)
         class CPointOffScreenIndicatorUi : public source2sdk::client::C_PointClientUIWorldPanel
         {
         public:
+            // metadata: MNotSaved
             bool m_bBeenEnabled; // 0x_            
+            // metadata: MNotSaved
             bool m_bHide; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flSeenTargetTime; // 0x_            
+            // metadata: MNotSaved
             source2sdk::client::C_PointClientUIWorldPanel* m_pTargetPanel; // 0x_            
         };
         #pragma pack(pop)

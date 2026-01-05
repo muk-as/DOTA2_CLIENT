@@ -25,8 +25,6 @@ namespace source2sdk
         public:
             float latch_range; // 0x_            
             float initial_latch_delay; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
-            bool m_bBonus; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

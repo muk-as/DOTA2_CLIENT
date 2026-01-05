@@ -39,12 +39,10 @@ namespace source2sdk
             // m_hTertiaryTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTertiaryTarget;
             char m_hTertiaryTarget[0x_]; // 0x_            
-            // m_hFourthTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::client::C_BaseEntity> m_hFourthTarget;
-            char m_hFourthTarget[0x_]; // 0x_            
             // m_hReturnBrewling has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hReturnBrewling;
             char m_hReturnBrewling[0x_]; // 0x_            
+            std::int32_t primal_split_cancel; // 0x_            
             std::int32_t m_nFXIndex; // 0x_            
         };
         #pragma pack(pop)

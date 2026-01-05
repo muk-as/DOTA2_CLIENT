@@ -23,11 +23,13 @@ namespace source2sdk
         class CDOTA_Modifier_Item_SpecialistsArray : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t all_stats; // 0x_            
-            std::int32_t bonus_damage; // 0x_            
-            std::int32_t proc_bonus_damage; // 0x_            
+            std::int32_t agility; // 0x_            
+            std::int32_t damage; // 0x_            
+            std::int32_t proc_chance; // 0x_            
+            std::int32_t proc_dmg_pct; // 0x_            
             std::int32_t count; // 0x_            
             std::int32_t secondary_target_range_bonus; // 0x_            
+            std::int32_t secondary_target_angle; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

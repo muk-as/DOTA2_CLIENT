@@ -28,7 +28,6 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkVarNames "bool m_ragEnabled"
         // static metadata: MNetworkVarNames "Vector m_ragPos"
@@ -42,17 +41,20 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "ragEnabledChanged"
+            // metadata: MNotSaved
             // m_ragEnabled has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<bool> m_ragEnabled;
             char m_ragEnabled[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
+            // metadata: MNotSaved
             // m_ragPos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_ragPos;
             char m_ragPos[0x_]; // 0x_            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "qangle"
             // metadata: MNetworkBitCount "13"
+            // metadata: MNotSaved
             // m_ragAngles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<QAngle> m_ragAngles;
             char m_ragAngles[0x_]; // 0x_            
@@ -61,17 +63,23 @@ namespace source2sdk
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkEncodeFlags "1"
+            // metadata: MNotSaved
             float m_flBlendWeight; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hRagdollSource has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hRagdollSource;
             char m_hRagdollSource[0x_]; // 0x_            
+            // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_iEyeAttachment; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNotSaved
             float m_flBlendWeightCurrent; // 0x_            
+            // metadata: MNotSaved
             // m_parentPhysicsBoneIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_parentPhysicsBoneIndices;
             char m_parentPhysicsBoneIndices[0x_]; // 0x_            
+            // metadata: MNotSaved
             // m_worldSpaceBoneComputationOrder has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_worldSpaceBoneComputationOrder;
             char m_worldSpaceBoneComputationOrder[0x_]; // 0x_            

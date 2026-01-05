@@ -25,6 +25,7 @@ namespace source2sdk
         class CScriptItem : public source2sdk::server::CItem
         {
         public:
+            // metadata: MNotSaved
             source2sdk::client::MoveType_t m_MoveTypeOverride; // 0x_            
             uint8_t _pad_[0x_];
         };

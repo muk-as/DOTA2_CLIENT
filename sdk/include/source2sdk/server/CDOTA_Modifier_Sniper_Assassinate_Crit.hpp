@@ -23,9 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_Sniper_Assassinate_Crit : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t scepter_crit_damage; // 0x_            
-            std::int32_t scatter_damage_pct; // 0x_            
-            bool is_secondary; // 0x_            
+            std::int32_t attack_factor; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

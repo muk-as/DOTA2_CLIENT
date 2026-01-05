@@ -130,6 +130,7 @@ namespace source2sdk
             source2sdk::entity2::CEntityIOOutput m_OnCancelSequence; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnCancelFailedSequence; // 0x_            
             source2sdk::entity2::CEntityIOOutput m_OnScriptEvent[8]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             CTransform m_matOtherToMain; // 0x_            
             // m_hInteractionMainEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hInteractionMainEntity;

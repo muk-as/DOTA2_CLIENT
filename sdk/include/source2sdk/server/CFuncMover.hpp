@@ -5,8 +5,10 @@
 #include <cstdint>
 #include "source2sdk/client/SolidType_t.hpp"
 #include "source2sdk/entity2/CEntityIOOutput.hpp"
+#include "source2sdk/entity2/GameTick_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/server/CBaseModelEntity.hpp"
+#include "source2sdk/server/CFuncMover_FollowConstraint_t.hpp"
 #include "source2sdk/server/CFuncMover_FollowEntityDirection_t.hpp"
 #include "source2sdk/server/CFuncMover_Move_t.hpp"
 #include "source2sdk/server/CFuncMover_OrientationUpdate_t.hpp"
@@ -64,7 +66,6 @@ namespace source2sdk
             source2sdk::server::CFuncMover_Move_t m_eMoveType; // 0x_            
             bool m_bIsReversing; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            Vector m_vTarget; // 0x_            
             float m_flStartSpeed; // 0x_            
             float m_flPathLocation; // 0x_            
             float m_flT; // 0x_            
@@ -76,6 +77,10 @@ namespace source2sdk
             float m_flTimeToReachMaxSpeed; // 0x_            
             float m_flDistanceToReachMaxSpeed; // 0x_            
             float m_flTimeToReachZeroSpeed; // 0x_            
+            float m_flComputedDistanceToReachMaxSpeed; // 0x_            
+            float m_flComputedDistanceToReachZeroSpeed; // 0x_            
+            float m_flStartCurveScale; // 0x_            
+            float m_flStopCurveScale; // 0x_            
             float m_flDistanceToReachZeroSpeed; // 0x_            
             source2sdk::entity2::GameTime_t m_flTimeMovementStart; // 0x_            
             source2sdk::entity2::GameTime_t m_flTimeMovementStop; // 0x_            
@@ -83,7 +88,8 @@ namespace source2sdk
             // CHandle<source2sdk::server::CMoverPathNode> m_hStopAtNode;
             char m_hStopAtNode[0x_]; // 0x_            
             float m_flPathLocationToBeginStop; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            float m_flPathLocationStart; // 0x_            
+            float m_flBeginStopT; // 0x_            
             CUtlSymbolLarge m_iszStartForwardSound; // 0x_            
             CUtlSymbolLarge m_iszLoopForwardSound; // 0x_            
             CUtlSymbolLarge m_iszStopForwardSound; // 0x_            
@@ -95,6 +101,7 @@ namespace source2sdk
             source2sdk::entity2::CEntityIOOutput m_OnMovementEnd; // 0x_            
             bool m_bStartAtClosestPoint; // 0x_            
             bool m_bStartAtEnd; // 0x_            
+            bool m_bStartFollowingClosestMover; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CFuncMover_OrientationUpdate_t m_eOrientationUpdate; // 0x_            
             source2sdk::entity2::GameTime_t m_flTimeStartOrientationChange; // 0x_            
@@ -143,13 +150,26 @@ namespace source2sdk
             bool m_bStartedMoving; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CFuncMover_FollowEntityDirection_t m_eFollowEntityDirection; // 0x_            
-            uint8_t _pad_[0x_];
+            // m_hFollowMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CFuncMover> m_hFollowMover;
+            char m_hFollowMover[0x_]; // 0x_            
+            CUtlSymbolLarge m_iszFollowMoverEntityName; // 0x_            
+            float m_flFollowMoverDistance; // 0x_            
+            float m_flFollowMoverCalculatedDistance; // 0x_            
+            float m_flFollowMoverSpringStrength; // 0x_            
+            bool m_bFollowConstraintsInitialized; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            source2sdk::server::CFuncMover_FollowConstraint_t m_eFollowConstraint; // 0x_            
+            float m_flFollowMoverSpeed; // 0x_            
+            float m_flFollowMoverVelocity; // 0x_            
+            source2sdk::entity2::GameTick_t m_nTickMovementRan; // 0x_            
             
             // Datamap fields:
             // void InputStart; // 0x_
             // void InputStartForward; // 0x_
             // void InputStartReverse; // 0x_
             // void InputStop; // 0x_
+            // void InputStopImmediate; // 0x_
             // void InputToggle; // 0x_
             // void InputToggleDirection; // 0x_
             // void InputPause; // 0x_
@@ -172,6 +192,8 @@ namespace source2sdk
             // float InputSetFollowMinimumSpeed; // 0x_
             // float InputSetTimeToTraverseToNextNode; // 0x_
             // int32_t InputSetMoveType; // 0x_
+            // CUtlSymbolLarge InputSetFollowMoverEntity; // 0x_
+            // void InputSetFollowMoverEntityToClosestOnSpline; // 0x_
             // void CFuncMoverLerpToNewPosition; // 0x_
         };
         #pragma pack(pop)

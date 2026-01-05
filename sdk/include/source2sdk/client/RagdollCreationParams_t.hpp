@@ -22,7 +22,9 @@ namespace source2sdk
         struct RagdollCreationParams_t
         {
         public:
+            // metadata: MNotSaved
             Vector m_vForce; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nForceBone; // 0x_            
             bool m_bForceCurrentWorldTransform; // 0x_            
             bool m_bUseLRURetirement; // 0x_            

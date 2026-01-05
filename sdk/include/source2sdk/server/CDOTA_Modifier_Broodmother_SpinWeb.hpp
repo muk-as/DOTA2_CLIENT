@@ -24,8 +24,8 @@ namespace source2sdk
         {
         public:
             std::int32_t health_regen; // 0x_            
-            std::int32_t bonus_movespeed; // 0x_            
-            std::int32_t bonus_movespeed_scepter; // 0x_            
+            std::int32_t break_move_cap; // 0x_            
+            float bonus_movespeed; // 0x_            
             float bonus_turn_rate; // 0x_            
             float flLastDamageTime; // 0x_            
             uint8_t _pad_[0x_];

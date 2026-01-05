@@ -38,6 +38,7 @@ namespace source2sdk
             float m_flOcclusionMax; // 0x_            
             float m_flValSetOnDisable; // 0x_            
             bool m_bSetValueOnDisable; // 0x_            
+            // metadata: MNotSaved
             bool m_bReloading; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nSimulationMode; // 0x_            
@@ -47,10 +48,15 @@ namespace source2sdk
             CEntityHandle m_hDynamicEntity; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             CUtlSymbolLarge m_iszDynamicEntityName; // 0x_            
+            // metadata: MNotSaved
             float m_flPathingDistanceNormFactor; // 0x_            
+            // metadata: MNotSaved
             Vector m_vPathingSourcePos; // 0x_            
+            // metadata: MNotSaved
             Vector m_vPathingListenerPos; // 0x_            
+            // metadata: MNotSaved
             Vector m_vPathingDirection; // 0x_            
+            // metadata: MNotSaved
             std::int32_t m_nPathingSourceIndex; // 0x_            
             uint8_t _pad_[0x_];
             

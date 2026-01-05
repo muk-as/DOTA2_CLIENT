@@ -25,6 +25,12 @@ namespace source2sdk
         public:
             std::int32_t bonus_brewling_hp; // 0x_            
             std::int32_t bonus_damage; // 0x_            
+            std::int32_t hp_per_attribute; // 0x_            
+            float dmg_per_attribute; // 0x_            
+            std::int32_t attribute_share_pct; // 0x_            
+            std::int32_t m_nBonusHP; // 0x_            
+            std::int32_t m_nBonusDamage; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         

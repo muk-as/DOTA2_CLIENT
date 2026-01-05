@@ -24,9 +24,7 @@ namespace source2sdk
         {
         public:
             std::int32_t m_nDamageAbsorbed; // 0x_            
-            float damage_barrier_base; // 0x_            
-            float damage_barrier_per_level; // 0x_            
-            uint8_t _pad_[0x_];
+            float damage_barrier; // 0x_            
         };
         #pragma pack(pop)
         

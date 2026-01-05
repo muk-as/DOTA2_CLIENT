@@ -39,8 +39,11 @@ namespace source2sdk
         class CFuncTrackChange : public source2sdk::server::CFuncPlatRot
         {
         public:
+            // metadata: MClassPtr
             source2sdk::server::CPathTrack* m_trackTop; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CPathTrack* m_trackBottom; // 0x_            
+            // metadata: MClassPtr
             source2sdk::server::CFuncTrackTrain* m_train; // 0x_            
             CUtlSymbolLarge m_trackTopName; // 0x_            
             CUtlSymbolLarge m_trackBottomName; // 0x_            

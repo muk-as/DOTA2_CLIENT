@@ -17,7 +17,6 @@ namespace source2sdk
         // Alignment: 0x_
         // Standard-layout class: true
         // Size: 0x_
-        // Has Trivial Destructor
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -25,13 +24,11 @@ namespace source2sdk
         struct VMixEffectChainDesc_t
         {
         public:
-            // metadata: MPropertyFriendlyName "Crossfade Time (s)"
-            // metadata: MPropertyAttributeRange "0.1 10"
-            float m_flCrossfadeTime; // 0x_            
+            CUtlString m_effectName; // 0x_            
         };
         #pragma pack(pop)
         
-        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixEffectChainDesc_t, m_flCrossfadeTime) == 0x_);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixEffectChainDesc_t, m_effectName) == 0x_);
         
         static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixEffectChainDesc_t) == 0x_);
     };

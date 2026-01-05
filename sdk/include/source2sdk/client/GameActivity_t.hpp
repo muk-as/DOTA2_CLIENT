@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 275
+        // Enumerator count: 279
         // Alignment: 4
         // Size: 0x_
         enum class GameActivity_t : std::uint32_t
@@ -292,7 +292,11 @@ namespace source2sdk
             ACT_DOTA_KEZ_KATANA_IMPALE_FAST = 0x6eb,
             ACT_DOTA_UNICYCLE = 0x6ec,
             ACT_DOTA_UNICYCLE_END = 0x6ed,
+            ACT_DOTA_LARGO_ULT_STRUM_SUCCESS = 0x6ee,
+            ACT_DOTA_LARGO_ULT_STRUM_FAIL = 0x6ef,
             ACT_DOTA_MVP_SCREEN = 0x6f0,
+            ACT_DOTA_LARGO_ULT_TOGGLE_ON = 0x6f1,
+            ACT_DOTA_LARGO_ULT_TOGGLE_OFF = 0x6f2,
         };
     };
 };

@@ -23,10 +23,6 @@ namespace source2sdk
         class CDOTA_Modifier_Kez_FalconRush_Intrinsic : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float base_attack_rate; // 0x_            
-            std::int32_t attack_speed_factor; // 0x_            
-            float katana_attack_rate_penalty; // 0x_            
-            float m_flAttackRate; // 0x_            
             bool m_bCanGenerateImage; // 0x_            
             uint8_t _pad_[0x_];
         };

@@ -25,12 +25,12 @@ namespace source2sdk
         class CMonsterHunterHeroCodexDefinition
         {
         public:
-            CUtlString m_strLocHeroName; // 0x_            
-            CUtlString m_strLocFieldNotes; // 0x_            
-            CUtlString m_strLocNonHeroName; // 0x_            
+            CVDataLocalizedToken m_strLocHeroName; // 0x_            
+            CVDataLocalizedToken m_strLocFieldNotes; // 0x_            
+            CVDataLocalizedToken m_strLocNonHeroName; // 0x_            
+            CVDataLocalizedToken m_strLocPersonaFieldNotes; // 0x_            
             CUtlString m_strNonHeroStickerName; // 0x_            
             CUtlString m_strNonHeroStickerDisplayName; // 0x_            
-            CUtlString m_strLocPersonaFieldNotes; // 0x_            
             bool m_bAlwaysUnlocked; // 0x_            
             bool m_bIsHero; // 0x_            
             bool m_bIsForeword; // 0x_            
@@ -46,9 +46,9 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strLocHeroName) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strLocFieldNotes) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strLocNonHeroName) == 0x_);
+        static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strLocPersonaFieldNotes) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strNonHeroStickerName) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strNonHeroStickerDisplayName) == 0x_);
-        static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_strLocPersonaFieldNotes) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_bAlwaysUnlocked) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_bIsHero) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterHeroCodexDefinition, m_bIsForeword) == 0x_);

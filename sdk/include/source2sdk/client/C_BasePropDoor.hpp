@@ -21,10 +21,8 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         // Construct allowed
-        // MClassHasEntityLimitedDataDesc
         // 
         // static metadata: MNetworkExcludeByName "m_flexWeight"
-        // static metadata: MNetworkExcludeByName "m_blinktoggle"
         // static metadata: MNetworkExcludeByUserGroup "m_flPoseParameter"
         // static metadata: MNetworkExcludeByName "m_animationController.m_flPlaybackRate"
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
@@ -41,21 +39,29 @@ namespace source2sdk
         public:
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             source2sdk::client::DoorState_t m_eDoorState; // 0x_            
+            // metadata: MNotSaved
             bool m_modelChanged; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bLocked; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bNoNPCs; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             Vector m_closedPosition; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             QAngle m_closedAngles; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             // m_hMaster has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BasePropDoor> m_hMaster;
             char m_hMaster[0x_]; // 0x_            
+            // metadata: MNotSaved
             Vector m_vWhereToSetLightingOrigin; // 0x_            
         };
         #pragma pack(pop)

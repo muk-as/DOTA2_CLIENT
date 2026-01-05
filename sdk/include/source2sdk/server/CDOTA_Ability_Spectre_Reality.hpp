@@ -4,6 +4,13 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/server/CDOTABaseAbility.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -25,10 +32,19 @@ namespace source2sdk
         class CDOTA_Ability_Spectre_Reality : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            // No schema binary for binding
+            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t may_target_shadow_step; // 0x_            
+            std::int32_t m_nProjectileID; // 0x_            
+            Vector m_vProjectileLocation; // 0x_            
+            Vector m_vIllusionLocation; // 0x_            
+            // m_hIllusion has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hIllusion;
+            char m_hIllusion[0x_]; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Ability_Spectre_Reality because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CDOTA_Ability_Spectre_Reality) == 0x_);
     };

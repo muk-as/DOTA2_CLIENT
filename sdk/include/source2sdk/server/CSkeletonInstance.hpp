@@ -20,7 +20,7 @@ namespace source2sdk
         // Standard-layout class: false
         // Size: 0x_
         // Has VTable
-        // MClassHasEntityLimitedDataDesc
+        // Construct disallowed
         // 
         // static metadata: MNetworkVarNames "CModelState m_modelState"
         // static metadata: MNetworkVarNames "bool m_bIsAnimationEnabled"
@@ -35,12 +35,16 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::server::CModelState m_modelState; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bIsAnimationEnabled; // 0x_            
             // metadata: MNetworkEnable
+            // metadata: MNotSaved
             bool m_bUseParentRenderBounds; // 0x_            
             bool m_bDisableSolidCollisionsForHierarchy; // 0x_            
             // start of bitfield block
+            // metadata: MNotSaved
             uint8_t m_bDirtyMotionType: 1;
+            // metadata: MNotSaved
             uint8_t m_bIsGeneratingLatchedParentSpaceState: 1;
             // end of bitfield block// 2 bits
             // metadata: MNetworkEnable
@@ -48,6 +52,8 @@ namespace source2sdk
             CUtlStringToken m_materialGroup; // 0x_            
             // metadata: MNetworkEnable
             std::uint8_t m_nHitboxSet; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
+            bool m_bForceServerConstraintsEnabled; // 0x_            
             uint8_t _pad_[0x_];
             
             // Datamap fields:

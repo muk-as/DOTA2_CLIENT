@@ -35,9 +35,9 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t destroy_if_target_is_dead; // 0x_            
             source2sdk::entity2::GameTime_t m_fStartAttackTime; // 0x_            
-            // hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CHandle<source2sdk::server::CBaseEntity> hTarget;
-            char hTarget[0x_]; // 0x_            
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
+            char m_hTarget[0x_]; // 0x_            
             bool m_bTargetIsAlive; // 0x_            
             uint8_t _pad_[0x_];
         };
