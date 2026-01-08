@@ -31,6 +31,8 @@ namespace source2sdk
             std::int32_t attack_projectile_speed_bonus; // 0x_            
             CUtlSymbolLarge m_iszRangedAttackEffect; // 0x_            
             CUtlSymbolLarge m_iszOriginalRangedAttackEffect; // 0x_            
+            float m_flCasterModelScale; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
