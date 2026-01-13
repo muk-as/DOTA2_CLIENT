@@ -30,7 +30,7 @@ namespace source2sdk
         class CDOTA_Modifier_Largo_CatchyLick_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t dispel_hp_regen; // 0x_            
+            float dispel_hp_regen; // 0x_            
             std::int32_t num_purged; // 0x_            
             // m_hDispelTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hDispelTarget;
