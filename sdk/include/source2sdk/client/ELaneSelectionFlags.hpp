@@ -27,7 +27,7 @@ namespace source2sdk
             k_ELaneSelectionFlagGroup_CORE = 0x7,
             k_ELaneSelectionFlagGroup_SUPPORT = 0x18,
             k_ELaneSelectionFlagGroup_ALL = 0x1f,
-            k_ELaneSelectionFlagGroup_HIGHDEMAND = 0xa,
+            k_ELaneSelectionFlagGroup_HIGHDEMAND = 0x12,
         };
     };
 };
