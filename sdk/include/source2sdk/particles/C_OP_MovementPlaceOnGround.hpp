@@ -7,6 +7,7 @@
 #include "source2sdk/particles/ParticleTraceMissBehavior_t.hpp"
 #include "source2sdk/particles/ParticleTraceSet_t.hpp"
 #include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
+#include "source2sdk/particleslib/CPerParticleVecInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -35,6 +36,8 @@ namespace source2sdk
             float m_flMaxTraceLength; // 0x_            
             // metadata: MPropertyFriendlyName "CP movement tolerance"
             float m_flTolerance; // 0x_            
+            // metadata: MPropertyFriendlyName "trace direction"
+            source2sdk::particleslib::CPerParticleVecInput m_vecTraceDir; // 0x_            
             // metadata: MPropertyFriendlyName "trace offset"
             float m_flTraceOffset; // 0x_            
             // metadata: MPropertyFriendlyName "interpolation rate"

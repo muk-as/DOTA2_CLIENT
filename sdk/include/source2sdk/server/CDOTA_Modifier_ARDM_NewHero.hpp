@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/server/CDOTA_Modifier_Stunned.hpp"
+#include "source2sdk/server/CDOTA_Modifier_Tutorial_Sleep.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -20,7 +20,7 @@ namespace source2sdk
         // Size: 0x_
         // Has VTable
         #pragma pack(push, 1)
-        class CDOTA_Modifier_ARDM_NewHero : public source2sdk::server::CDOTA_Modifier_Stunned
+        class CDOTA_Modifier_ARDM_NewHero : public source2sdk::server::CDOTA_Modifier_Tutorial_Sleep
         {
         public:
             // No schema binary for binding

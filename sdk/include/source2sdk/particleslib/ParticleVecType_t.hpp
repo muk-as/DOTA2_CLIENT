@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace particleslib
     {
-        // Enumerator count: 20
+        // Enumerator count: 21
         // Alignment: 4
         // Size: 0x_
         enum class ParticleVecType_t : std::uint32_t
@@ -25,19 +25,20 @@ namespace source2sdk
             PVEC_TYPE_PARTICLE_VECTOR = 0x3,
             PVEC_TYPE_PARTICLE_INITIAL_VECTOR = 0x4,
             PVEC_TYPE_PARTICLE_VELOCITY = 0x5,
-            PVEC_TYPE_CP_VALUE = 0x6,
-            PVEC_TYPE_CP_RELATIVE_POSITION = 0x7,
-            PVEC_TYPE_CP_RELATIVE_DIR = 0x8,
-            PVEC_TYPE_CP_RELATIVE_RANDOM_DIR = 0x9,
-            PVEC_TYPE_FLOAT_COMPONENTS = 0xa,
-            PVEC_TYPE_FLOAT_INTERP_CLAMPED = 0xb,
-            PVEC_TYPE_FLOAT_INTERP_OPEN = 0xc,
-            PVEC_TYPE_FLOAT_INTERP_GRADIENT = 0xd,
-            PVEC_TYPE_RANDOM_UNIFORM = 0xe,
-            PVEC_TYPE_RANDOM_UNIFORM_OFFSET = 0xf,
-            PVEC_TYPE_CP_DELTA = 0x10,
-            PVEC_TYPE_CLOSEST_CAMERA_POSITION = 0x11,
-            PVEC_TYPE_COUNT = 0x12,
+            PVEC_TYPE_PARTICLE_GRAVITY = 0x6,
+            PVEC_TYPE_CP_VALUE = 0x7,
+            PVEC_TYPE_CP_RELATIVE_POSITION = 0x8,
+            PVEC_TYPE_CP_RELATIVE_DIR = 0x9,
+            PVEC_TYPE_CP_RELATIVE_RANDOM_DIR = 0xa,
+            PVEC_TYPE_FLOAT_COMPONENTS = 0xb,
+            PVEC_TYPE_FLOAT_INTERP_CLAMPED = 0xc,
+            PVEC_TYPE_FLOAT_INTERP_OPEN = 0xd,
+            PVEC_TYPE_FLOAT_INTERP_GRADIENT = 0xe,
+            PVEC_TYPE_RANDOM_UNIFORM = 0xf,
+            PVEC_TYPE_RANDOM_UNIFORM_OFFSET = 0x10,
+            PVEC_TYPE_CP_DELTA = 0x11,
+            PVEC_TYPE_CLOSEST_CAMERA_POSITION = 0x12,
+            PVEC_TYPE_COUNT = 0x13,
         };
     };
 };

@@ -12,6 +12,7 @@
 04d%02d%02d%02d%02d%02dZ
 04x
 0<C'Q
+0s
 12sPublic Key Algorithm
 12sUnable to load Public Key\n
 14 (default
@@ -1113,6 +1114,8 @@ AV?$CEntitySpawner@VCDOTA_SimpleObstruction
 AV?$CEntitySpawner@VCDOTA_TempTree
 AV?$CEntitySpawner@VCDOTA_Unit_Announcer
 AV?$CEntitySpawner@VCDOTA_Unit_Courier
+AV?$CEntitySpawner@VCDotaQuest
+AV?$CEntitySpawner@VCDotaSubquestBase
 AV?$CEntitySpawner@VCDynamicProp
 AV?$CEntitySpawner@VCEntityBlocker
 AV?$CEntitySpawner@VCEntityDissolve
@@ -1173,6 +1176,8 @@ AV?$CEntitySpawnerBase@VCDOTA_SimpleObstruction
 AV?$CEntitySpawnerBase@VCDOTA_TempTree
 AV?$CEntitySpawnerBase@VCDOTA_Unit_Announcer
 AV?$CEntitySpawnerBase@VCDOTA_Unit_Courier
+AV?$CEntitySpawnerBase@VCDotaQuest
+AV?$CEntitySpawnerBase@VCDotaSubquestBase
 AV?$CEntitySpawnerBase@VCDynamicProp
 AV?$CEntitySpawnerBase@VCEntityBlocker
 AV?$CEntitySpawnerBase@VCEntityDissolve
@@ -1346,6 +1351,7 @@ AV?$CGameSystemReallocatingFactory@VCDOTAInGamePredictionGameSystem@@V1
 AV?$CGameSystemReallocatingFactory@VCDOTAPlayerResourceGameSystem@@V1
 AV?$CGameSystemReallocatingFactory@VCDOTAVScriptGameSystem@@V1
 AV?$CGameSystemReallocatingFactory@VCDOTA_ActiveModifiersList@@V1
+AV?$CGameSystemReallocatingFactory@VCDOTA_QuestSystem@@V1
 AV?$CGameSystemReallocatingFactory@VCDOTA_UnitFilterCache@@V1
 AV?$CGameSystemReallocatingFactory@VCDebugOverlayGameSystem@@V1
 AV?$CGameSystemReallocatingFactory@VCDecalGameSystem@@V1
@@ -1428,6 +1434,7 @@ AV?$CGameSystemStaticFactory@VCDOTA_ProjectileManager@@V1
 AV?$CGameSystemStaticFactory@VCDOTA_RealtimeCombatAnalyzer@@V1
 AV?$CGameSystemStaticFactory@VCDOTA_SuggestionManager_Learn@@V1
 AV?$CGameSystemStaticFactory@VCDOTA_TeleportTimerManager@@V1
+AV?$CGameSystemStaticFactory@VCDOTA_Tutorial@@V1
 AV?$CGameSystemStaticFactory@VCDecalEmitterSystem@@V1
 AV?$CGameSystemStaticFactory@VCDefaultResponseSystem@@VIResponseSystem
 AV?$CGameSystemStaticFactory@VCDirtySpatialPartitionEntityList@@V1
@@ -1491,6 +1498,7 @@ AV?$CHandle@VCDOTA_BaseNPC_Hero
 AV?$CHandle@VCDOTA_Item
 AV?$CHandle@VCDOTA_NeutralSpawner
 AV?$CHandle@VCDOTA_Unit_Courier
+AV?$CHandle@VCDotaSubquestBase
 AV?$CHandle@VCEconWearable
 AV?$CHandle@VCFogController
 AV?$CHandle@VCInfoFan
@@ -4569,10 +4577,13 @@ AV?$CModifierFactory@VCDOTA_Modifier_Tusk_WalrusKick_Slow
 AV?$CModifierFactory@VCDOTA_Modifier_Tusk_WalrusPunch
 AV?$CModifierFactory@VCDOTA_Modifier_Tusk_WalrusPunch_AirTime
 AV?$CModifierFactory@VCDOTA_Modifier_Tusk_WalrusPunch_Slow
+AV?$CModifierFactory@VCDOTA_Modifier_TutorialNPCBlocker
+AV?$CModifierFactory@VCDOTA_Modifier_TutorialNPCBlocker_Thinker
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_Disable_Healing
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_ForceAnimation
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_HideNPC
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_LowAttackPriority
+AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_Sleep
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_SpeechBubble
 AV?$CModifierFactory@VCDOTA_Modifier_Twin_Gate_FX
 AV?$CModifierFactory@VCDOTA_Modifier_Twin_Gate_Warp_Channel
@@ -5243,8 +5254,10 @@ AV?$CNetworkArrayBase@H$01HVNetworkVar_m_iCursor@CDOTAPlayerController
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_iCustomGameScore@CDOTAGameRules
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_nARDMHeroesRemaining@CDOTAGameRules
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_pReserveAmmo@CBasePlayerWeapon
+AV?$CNetworkArrayBase@H$01HVNetworkVar_m_pnTextReplaceValuesCDotaSubquestBase@CDotaSubquestBase
 AV?$CNetworkArrayBase@H$02HVNetworkVar_m_eAccoladeType@PlayerResourcePlayerData_t
 AV?$CNetworkArrayBase@H$03HVNetworkVar_m_iMusicOperatorVals@CDOTAPlayerController
+AV?$CNetworkArrayBase@H$03HVNetworkVar_m_pnTextReplaceValuesCDotaQuest@CDotaQuest
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_iMutations@CDOTAGameRules
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_iSuggestedLanes@CDOTA_DataNonSpectator
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_nCandyPointsReason@PlayerResourcePlayerEventData_t
@@ -5312,6 +5325,7 @@ AV?$CNetworkArrayBase@V?$CHandle@VCBaseEntity@@@@$0P@HVNetworkVar_m_hTeamForts@C
 AV?$CNetworkArrayBase@V?$CHandle@VCBaseEntity@@@@$0P@HVNetworkVar_m_hTeamFountains@CDOTAGameRules
 AV?$CNetworkArrayBase@V?$CHandle@VCBaseEntity@@@@$0P@HVNetworkVar_m_hTeamShops@CDOTAGameRules
 AV?$CNetworkArrayBase@V?$CHandle@VCBaseEntity@@@@$0P@HVNetworkVar_m_hWisdomShrines@CDOTAGameRules
+AV?$CNetworkArrayBase@V?$CHandle@VCDotaSubquestBase@@@@$07HVNetworkVar_m_hSubquests@CDotaQuest
 AV?$CNetworkArrayBase@V?$Vec2D@M@@$01HVNetworkVar_m_vDesiredWardPlacement@CDOTA_DataNonSpectator
 AV?$CNetworkArrayBase@V?$Vec2D@M@@$0GE@HVNetworkVar_m_vPossibleWardPlacement@CDOTA_DataNonSpectator
 AV?$CNetworkArrayBase@V?$Vec3D@M@@$03HVNetworkVar_m_vServerControlPoints@CParticleSystem
@@ -5451,9 +5465,15 @@ AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_Category@CDOTACustomShopItemInfo
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomHealthLabel@CDOTA_BaseNPC
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomShopName@CDOTACustomShopInfo
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomVictoryMessage@CDOTAGameRules
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_GuideStr@CDotaTutorialNetworker
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_LocalizationStr@CSpeechBubbleInfo
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_QuickBuyStr@CDotaTutorialNetworker
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_lobbyGameName@CDOTAGameRules
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszGameEndText@CDotaQuest
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszNetworkedSoundLoop@CDOTA_Unit_LoopingSound
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszQuestText@CDotaQuest
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszQuestTitle@CDotaQuest
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszSubquestText@CDotaSubquestBase
 AV?$CNetworkStringBase@$0CA@VNetworkVar_m_HeroStatueInscription@CDOTA_BaseNPC_Building
 AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_ProjectedTextureName@CEnvDeferredLight
 AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_lookupFilename@CColorCorrectionVolume
@@ -5466,6 +5486,8 @@ AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_szSnapshotFileName@CParticleSystem
 AV?$CNetworkStringBase@$0CB@VNetworkVar_m_szTag@CDOTATeam
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_BackgroundMaterialName@CPointWorldText
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_FontName@CPointWorldText
+AV?$CNetworkStringBase@$0EA@VNetworkVar_m_pszTextReplaceString@CDotaQuest
+AV?$CNetworkStringBase@$0EA@VNetworkVar_m_pszTextReplaceString@CDotaSubquestBase
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_szShopString@CDOTAPlayerController
 AV?$CNetworkStringBase@$0IA@VNetworkVar_m_iszPlayerName@CBasePlayerController
 AV?$CNetworkStringBase@$0IB@VNetworkVar_m_szTeamname@CTeam
@@ -5890,6 +5912,7 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nLightMapUniqueId@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nLightPathUniqueId@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nLiveSpectatorSpectatedHeroIndex@PlayerResourcePlayerData_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nLoadedPlayers@CDOTAGameRules
+AV?$CNetworkVarBase@HVNetworkVar_m_nLocationID@CDotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nLoopingSoundParity@CDOTA_Unit_LoopingSound
 AV?$CNetworkVarBase@HVNetworkVar_m_nMapLocationTeam@CDOTA_Item_Rune
 AV?$CNetworkVarBase@HVNetworkVar_m_nMaxLevelOverride@CDOTABaseAbility
@@ -5913,9 +5936,11 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerAssistFlags@CDOTAPlayerController
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerDraftActiveTeam@CDOTAGameRules
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerDraftPick@CDOTAGameRules
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerID@CDOTAPropPlusPlayerGuildBanner
+AV?$CNetworkVarBase@HVNetworkVar_m_nProgressBarHueShift@CDotaSubquestBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nQuasLevel@CDOTA_Ability_Invoker_InvokedBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nQueryID@CDOTA_CombatLogQueryProgress
 AV?$CNetworkVarBase@HVNetworkVar_m_nQueryRank@CDOTA_CombatLogQueryProgress
+AV?$CNetworkVarBase@HVNetworkVar_m_nQuestType@CDotaQuest
 AV?$CNetworkVarBase@HVNetworkVar_m_nRadiantSeriesWins@CDOTAGameRules
 AV?$CNetworkVarBase@HVNetworkVar_m_nRadius@TempViewerInfo_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nRandomSeedOffset@CAnimGraphNetworkedVariables
@@ -5941,6 +5966,7 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nShadowHeight@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShadowPriority@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShadowWidth@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShape@CEnvWindVolume
+AV?$CNetworkVarBase@HVNetworkVar_m_nShopState@CDotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nStockCount@CDOTACustomShopItemInfo
 AV?$CNetworkVarBase@HVNetworkVar_m_nStopType@CParticleSystem
 AV?$CNetworkVarBase@HVNetworkVar_m_nStyle@CLightComponent
@@ -5950,12 +5976,19 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nTargetChangeCount@CInfoOffscreenPanoramaText
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetFlags@CDOTA_NPC_WitchDoctor_Ward
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetRange@CDOTA_Unit_Hero_Razor
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetType@CDOTA_NPC_WitchDoctor_Ward
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskProgress@CDotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskSecondsRemianing@CDotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskSteps@CDotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nTeamBadGuysTopBarValue@CDOTABaseGameMode
 AV?$CNetworkVarBase@HVNetworkVar_m_nTeamGoodGuysTopBarValue@CDOTABaseGameMode
+AV?$CNetworkVarBase@HVNetworkVar_m_nTextReplaceValueVersion@CDotaQuest
+AV?$CNetworkVarBase@HVNetworkVar_m_nTextReplaceValueVersion@CDotaSubquestBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nTier@TierNeutralInfo_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nTopLevelItem@QuickBuySlot_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nTotalPausedTicks@CGameRules
 AV?$CNetworkVarBase@HVNetworkVar_m_nTotalSlotCountIncludingOverflow@InventoryQuickBuyState_t
+AV?$CNetworkVarBase@HVNetworkVar_m_nTutorialState@CDotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nUIState@CDotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nUpgradeGoal@CDOTA_Item
 AV?$CNetworkVarBase@HVNetworkVar_m_nUpgradeProgress@CDOTA_Item
 AV?$CNetworkVarBase@HVNetworkVar_m_nVisualTeam@CDOTA_Unit_Miniboss
@@ -6526,6 +6559,7 @@ AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vBoxProjectMaxs@CEnvCubemap
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vBoxProjectMins@CEnvCubemap
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@CEnvCombinedLightProbeVolume
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@CEnvCubemap
+AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_TargetLocation@CDotaTutorialNetworker
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAnimationBoundsMax@CTextureBasedAnimatable
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAnimationBoundsMin@CTextureBasedAnimatable
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vBoxMaxs@CEnvVolumetricFogController
@@ -6911,6 +6945,8 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bClientSideRagdoll@CBaseEntity
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCollapseToForcePoint@CTriggerPhysics
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCombinable@CDOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCombineLocked@CDOTA_Item
+AV?$CNetworkVarBase@_NVNetworkVar_m_bCompleted@CDotaQuest
+AV?$CNetworkVarBase@_NVNetworkVar_m_bCompleted@CDotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bConstrainBetweenEndpoints@CRopeKeyframe
 AV?$CNetworkVarBase@_NVNetworkVar_m_bConvertToDebrisWhenPossible@CTriggerPhysics
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCreepHeroPickup@CDOTA_Item
@@ -6996,6 +7032,8 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bHeightFogEnabled@CEnvCubemapFog
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHeroRespawnEnabled@CDOTAGameRules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHeroStatue@CDOTA_BaseNPC_Building
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@CDOTABaseAbility
+AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@CDotaQuest
+AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@CDotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideBlacklistedHeroes@CDOTAGameRules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideKillMessageHeaders@CDOTAGameRules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideWearableButDrawAdditionalWearables@CDOTAWearableItem
@@ -7066,6 +7104,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bListenedTo@CPointCommentaryNode
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLit@CPointClientUIWorldPanel
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLoop@CTextureBasedAnimatable
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLoseGoldOnDeath@CDOTABaseGameMode
+AV?$CNetworkVarBase@_NVNetworkVar_m_bLoseIfCompleted@CDotaQuest
 AV?$CNetworkVarBase@_NVNetworkVar_m_bManualRequest@CDOTACourierController
 AV?$CNetworkVarBase@_NVNetworkVar_m_bMarkForSell@CDOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bMarkedForBuy@QuickBuySlot_t
@@ -7133,6 +7172,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldAnimateDuringGameplayPause@CBaseAnima
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldDoFlyHeightVisual@CDOTA_BaseNPC
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldRespawn@CDOTA_Unit_SpiritBear
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShowOnMinimap@CDOTA_Item
+AV?$CNetworkVarBase@_NVNetworkVar_m_bShowProgressBar@CDotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStackable@CDOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStartDisabled@CEnvCubemapFog
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStartDisabled@CEnvSky
@@ -7191,6 +7231,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bVisibleWhenParentNoDraw@CPointClientUIWorld
 AV?$CNetworkVarBase@_NVNetworkVar_m_bVotingClosed@CDOTAInGamePredictionState
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWasMVPLastGame@PlayerResourcePlayerData_t
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWhiteListEnabled@CDOTAGameRules
+AV?$CNetworkVarBase@_NVNetworkVar_m_bWinIfCompleted@CDotaQuest
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWorldLayerVisible@CInfoWorldLayer
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWorldSpaceScale@CSprite
 AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_dirPrimary@fogparams_t
@@ -7420,6 +7461,7 @@ AV?$CUserMessagePB@$0BOC@VCDOTAUserMsg_NevermoreRequiem@@$00
 AV?$CUserMessagePB@$0BOD@VCDOTAUserMsg_OverheadEvent@@$00
 AV?$CUserMessagePB@$0BOE@VCDOTAUserMsg_SetNextAutobuyItem@@$00
 AV?$CUserMessagePB@$0BOF@VCDOTAUserMsg_SharedCooldown@@$00
+AV?$CUserMessagePB@$0BOH@VCDOTAUserMsg_TutorialTipInfo@@$00
 AV?$CUserMessagePB@$0BOI@VCDOTAUserMsg_UnitEvent@@$00
 AV?$CUserMessagePB@$0BOK@VCDOTAUserMsg_BotChat@@$00
 AV?$CUserMessagePB@$0BOL@VCDOTAUserMsg_HudError@@$00
@@ -7430,9 +7472,15 @@ AV?$CUserMessagePB@$0BPA@VCDOTAUserMsg_SwapVerify@@$00
 AV?$CUserMessagePB@$0BPB@VCDOTAUserMsg_WorldLine@@$00
 AV?$CUserMessagePB@$0BPD@VCDOTAUserMsg_ItemAlert@@$00
 AV?$CUserMessagePB@$0BPF@VCDOTAUserMsg_ChatWheel@@$00
+AV?$CUserMessagePB@$0BPI@VCDOTAUserMsg_TutorialRequestExp@@$00
+AV?$CUserMessagePB@$0BPJ@VCDOTAUserMsg_TutorialPingMinimap@@$00
 AV?$CUserMessagePB@$0BPK@VCDOTAUserMsg_GamerulesStateChanged@@$00
+AV?$CUserMessagePB@$0BPM@VCDOTAUserMsg_TutorialFade@@$00
+AV?$CUserMessagePB@$0BPN@VCDOTAUserMsg_AddQuestLogEntry@@$00
 AV?$CUserMessagePB@$0BPO@VCDOTAUserMsg_SendStatPopup@@$00
+AV?$CUserMessagePB@$0BPP@VCDOTAUserMsg_TutorialFinish@@$00
 AV?$CUserMessagePB@$0CAA@VCDOTAUserMsg_SendRoshanPopup@@$00
+AV?$CUserMessagePB@$0CAB@VCDOTAUserMsg_SendGenericToolTip@@$00
 AV?$CUserMessagePB@$0CAD@VCDOTAUserMsg_CustomMsg@@$00
 AV?$CUserMessagePB@$0CAG@VCDOTAUserMsg_TE_Projectile@@$00
 AV?$CUserMessagePB@$0CAH@VCDOTAUserMsg_TE_ProjectileLoc@@$00
@@ -7714,6 +7762,7 @@ AV?$CUtlVectorEmbeddedNetworkVar@VCHeroStatueLiked@@VNetworkVar_m_vecHeroStatueL
 AV?$CUtlVectorEmbeddedNetworkVar@VCHeroesPerPlayer@@VNetworkVar_m_vecAvailableHerosPerPlayerID@CDOTAGameRules@@$0?0VPlayerID_t
 AV?$CUtlVectorEmbeddedNetworkVar@VCHeroesPerPlayer@@VNetworkVar_m_vecDisabledRandomHerosByPlayerID@CDOTAGameRules@@$0?0VPlayerID_t
 AV?$CUtlVectorEmbeddedNetworkVar@VCHeroesPerPlayer@@VNetworkVar_m_vecLockedHerosByPlayerID@CDOTAGameRules@@$0?0VPlayerID_t
+AV?$CUtlVectorEmbeddedNetworkVar@VCSpeechBubbleInfo@@VNetworkVar_m_SpeechBubbles@CDotaTutorialNetworker@@$03H
 AV?$CUtlVectorEmbeddedNetworkVar@VCSpeechBubbleInfo@@VNetworkVar_m_SpeechBubbles@CSpeechBubbleManager@@$03H
 AV?$CUtlVectorPtrDataOps@V?$CUtlVector@URelationshipOverride_t@@HV?$CUtlVectorMemory_Growable@URelationshipOverride_t@@H$0A@@@@@$09$0A
 AV?$CUtlVectorPtrDataOps@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@$0DF@$0A
@@ -8866,6 +8915,7 @@ AVCDOTAUserMsg_AbilityPing_t
 AVCDOTAUserMsg_AbilitySteal
 AVCDOTAUserMsg_AbilitySteal_t
 AVCDOTAUserMsg_AddQuestLogEntry
+AVCDOTAUserMsg_AddQuestLogEntry_t
 AVCDOTAUserMsg_AghsStatusAlert
 AVCDOTAUserMsg_AghsStatusAlert_t
 AVCDOTAUserMsg_AllStarEvent
@@ -9077,6 +9127,7 @@ AVCDOTAUserMsg_SelectPenaltyGold
 AVCDOTAUserMsg_SelectPenaltyGold_t
 AVCDOTAUserMsg_SendFinalGold
 AVCDOTAUserMsg_SendGenericToolTip
+AVCDOTAUserMsg_SendGenericToolTip_t
 AVCDOTAUserMsg_SendRoshanPopup
 AVCDOTAUserMsg_SendRoshanPopup_t
 AVCDOTAUserMsg_SendRoshanSpectatorPhase
@@ -9136,11 +9187,16 @@ AVCDOTAUserMsg_TipAlert_t
 AVCDOTAUserMsg_TormentorTimer
 AVCDOTAUserMsg_TormentorTimer_t
 AVCDOTAUserMsg_TutorialFade
+AVCDOTAUserMsg_TutorialFade_t
 AVCDOTAUserMsg_TutorialFinish
+AVCDOTAUserMsg_TutorialFinish_t
 AVCDOTAUserMsg_TutorialMinimapPosition
 AVCDOTAUserMsg_TutorialPingMinimap
+AVCDOTAUserMsg_TutorialPingMinimap_t
 AVCDOTAUserMsg_TutorialRequestExp
+AVCDOTAUserMsg_TutorialRequestExp_t
 AVCDOTAUserMsg_TutorialTipInfo
+AVCDOTAUserMsg_TutorialTipInfo_t
 AVCDOTAUserMsg_UnitEvent
 AVCDOTAUserMsg_UnitEvent_AddGesture
 AVCDOTAUserMsg_UnitEvent_BloodImpact
@@ -11416,6 +11472,7 @@ AVCDOTA_BotMode_Attack_Windrunner
 AVCDOTA_BotMode_Attack_WitchDoctor
 AVCDOTA_BotMode_Attack_WitchDoctor_DeathWard
 AVCDOTA_BotMode_BotChallengeEndgame
+AVCDOTA_BotMode_Companion
 AVCDOTA_BotMode_DefendAlly
 AVCDOTA_BotMode_DefendAlly_Human
 AVCDOTA_BotMode_DefendTower
@@ -11446,6 +11503,7 @@ AVCDOTA_BotMode_Roshan_Human
 AVCDOTA_BotMode_Rune
 AVCDOTA_BotMode_SecretShop
 AVCDOTA_BotMode_TeamRoam
+AVCDOTA_BotMode_TutorialBoss
 AVCDOTA_BotMode_Ward
 AVCDOTA_Bot_AbilityUsage
 AVCDOTA_Bot_AbilityUsage_AbyssalBlade
@@ -11767,6 +11825,7 @@ AVCDOTA_DisplacementVisibility
 AVCDOTA_GameMechanic_AutoRecovery
 AVCDOTA_Grinder
 AVCDOTA_GuildBannerDynamic
+AVCDOTA_HeroTrigger
 AVCDOTA_Hero_Recorder
 AVCDOTA_Item
 AVCDOTA_ItemSpawner
@@ -15528,10 +15587,13 @@ AVCDOTA_Modifier_Tusk_WalrusKick_Slow
 AVCDOTA_Modifier_Tusk_WalrusPunch
 AVCDOTA_Modifier_Tusk_WalrusPunch_AirTime
 AVCDOTA_Modifier_Tusk_WalrusPunch_Slow
+AVCDOTA_Modifier_TutorialNPCBlocker
+AVCDOTA_Modifier_TutorialNPCBlocker_Thinker
 AVCDOTA_Modifier_Tutorial_Disable_Healing
 AVCDOTA_Modifier_Tutorial_ForceAnimation
 AVCDOTA_Modifier_Tutorial_HideNPC
 AVCDOTA_Modifier_Tutorial_LowAttackPriority
+AVCDOTA_Modifier_Tutorial_Sleep
 AVCDOTA_Modifier_Tutorial_SpeechBubble
 AVCDOTA_Modifier_Twin_Gate_FX
 AVCDOTA_Modifier_Twin_Gate_Warp_Channel
@@ -15813,6 +15875,7 @@ AVCDOTA_PhantomAssassin_Gravestone
 AVCDOTA_PlayerResource
 AVCDOTA_ProjectileManager
 AVCDOTA_PushWave
+AVCDOTA_QuestSystem
 AVCDOTA_RealtimeCombatAnalyzer
 AVCDOTA_RoshanSpawner
 AVCDOTA_ScriptedSpawner
@@ -15826,6 +15889,16 @@ AVCDOTA_TeleportTimerManager
 AVCDOTA_TempTree
 AVCDOTA_Tiny_ScepterTree
 AVCDOTA_Tree
+AVCDOTA_Tutorial
+AVCDOTA_TutorialBot_Hero_Axe
+AVCDOTA_TutorialBot_Hero_DragonKnight
+AVCDOTA_TutorialBot_Hero_Juggernaut
+AVCDOTA_TutorialBot_Hero_Keeper_Of_The_Light
+AVCDOTA_TutorialBot_Hero_Razor
+AVCDOTA_TutorialBot_Hero_SkeletonKing
+AVCDOTA_TutorialBot_Hero_Tidehunter
+AVCDOTA_TutorialBot_Hero_VengefulSpirit
+AVCDOTA_TutorialBot_Hero_WitchDoctor
 AVCDOTA_UnitFilterCache
 AVCDOTA_UnitInventory
 AVCDOTA_Unit_AghsFort_Creature_Batrider
@@ -16079,8 +16152,18 @@ AVCDotaMsg_PredictionResult
 AVCDotaMsg_PredictionResult_Prediction
 AVCDotaParticleRelay
 AVCDotaPointTemplateEntityFilter
+AVCDotaQuest
+AVCDotaQuestBase
 AVCDotaRespawnEntitiesFilter
 AVCDotaStatManager
+AVCDotaSubquestAbilityCastCount
+AVCDotaSubquestBase
+AVCDotaSubquestBuyItems
+AVCDotaSubquestEntityDeath
+AVCDotaSubquestPlayerStat
+AVCDotaSubquestTutorialEvent
+AVCDotaTutorialNPCBlocker
+AVCDotaTutorialNetworker
 AVCDynamicLight
 AVCDynamicNavConnectionsVolume
 AVCDynamicProp
@@ -19560,6 +19643,7 @@ BY04VAbilityID_t
 BY04_N
 BY05E
 BY07E
+BY07V?$CHandle@VCDotaSubquestBase
 BY07V?$Vec3D@M
 BY09C
 BY09E
@@ -20053,6 +20137,7 @@ Digital Signature
 DirName
 Directory
 Domain
+Dpw
 E-mail Protection
 EC PARAMETERS
 EC PRIVATE KEY
@@ -22703,6 +22788,7 @@ got next proto before a ccs
 got next proto without seeing extension
 group
 group2pkparameters failure
+h\fJ
 hash
 hashAlgorithm
 hashFunc

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 9
+        // Enumerator count: 10
         // Alignment: 4
         // Size: 0x_
         enum class ELaneSelectionFlags : std::uint32_t
@@ -27,6 +27,7 @@ namespace source2sdk
             k_ELaneSelectionFlagGroup_CORE = 0x7,
             k_ELaneSelectionFlagGroup_SUPPORT = 0x18,
             k_ELaneSelectionFlagGroup_ALL = 0x1f,
+            k_ELaneSelectionFlagGroup_HIGHDEMAND = 0xa,
         };
     };
 };

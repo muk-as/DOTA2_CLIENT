@@ -80,7 +80,10 @@ namespace source2sdk
             // bool InputSetAllowAutoAttack; // 0x_
             // bool InputSetAutomaticallyRespawn; // 0x_
             // bool InputSetPlayPostVictoryAnimation; // 0x_
+            // CUtlSymbolLarge InputFireTutorialAdvanceEvent; // 0x_
             // CUtlSymbolLarge InputSetSpawnPoint; // 0x_
+            // bool InputSetCompanion; // 0x_
+            // bool InputSetCompanionAttack; // 0x_
             // CUtlSymbolLarge InputTeleportToWaypoint; // 0x_
             // bool InputSetInvulnerable; // 0x_
             // int32_t InputSetHealth; // 0x_

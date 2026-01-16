@@ -27,11 +27,11 @@
 6U\fhy
 8&Kx
 8d
+8l
 8sIssuer Unique ID
 8sSubject Unique ID
 8sVersion: %lu (0x%lx)\n
 A
-A8
 AA Compromise
 AACompromise
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -2746,6 +2746,7 @@ AV?$CHandle@VC_DOTA_BaseNPC_Hero
 AV?$CHandle@VC_DOTA_Item
 AV?$CHandle@VC_DOTA_NeutralSpawner
 AV?$CHandle@VC_DOTA_Unit_Courier
+AV?$CHandle@VC_DotaSubquestBase
 AV?$CHandle@VC_EconWearable
 AV?$CHandle@VC_FogController
 AV?$CHandle@VC_IngameEvent_Base
@@ -5883,6 +5884,7 @@ AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_Disable_Healing
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_ForceAnimation
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_HideNPC
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_LowAttackPriority
+AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_Sleep
 AV?$CModifierFactory@VCDOTA_Modifier_Tutorial_SpeechBubble
 AV?$CModifierFactory@VCDOTA_Modifier_Twin_Gate_FX
 AV?$CModifierFactory@VCDOTA_Modifier_Twin_Gate_Warp_Channel
@@ -7121,8 +7123,10 @@ AV?$CNetworkArrayBase@H$01HVNetworkVar_m_iCursor@C_DOTAPlayerController
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_iCustomGameScore@C_DOTAGamerules
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_nARDMHeroesRemaining@C_DOTAGamerules
 AV?$CNetworkArrayBase@H$01HVNetworkVar_m_pReserveAmmo@C_BasePlayerWeapon
+AV?$CNetworkArrayBase@H$01HVNetworkVar_m_pnTextReplaceValuesCDotaSubquestBase@C_DotaSubquestBase
 AV?$CNetworkArrayBase@H$02HVNetworkVar_m_eAccoladeType@PlayerResourcePlayerData_t
 AV?$CNetworkArrayBase@H$03HVNetworkVar_m_iMusicOperatorVals@C_DOTAPlayerController
+AV?$CNetworkArrayBase@H$03HVNetworkVar_m_pnTextReplaceValuesCDotaQuest@C_DotaQuest
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_iMutations@C_DOTAGamerules
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_iSuggestedLanes@C_DOTA_DataNonSpectator
 AV?$CNetworkArrayBase@H$04HVNetworkVar_m_nCandyPointsReason@PlayerResourcePlayerEventData_t
@@ -7198,6 +7202,7 @@ AV?$CNetworkArrayBase@V?$CHandle@VC_BaseEntity@@@@$0P@HVNetworkVar_m_hTeamForts@
 AV?$CNetworkArrayBase@V?$CHandle@VC_BaseEntity@@@@$0P@HVNetworkVar_m_hTeamFountains@C_DOTAGamerules
 AV?$CNetworkArrayBase@V?$CHandle@VC_BaseEntity@@@@$0P@HVNetworkVar_m_hTeamShops@C_DOTAGamerules
 AV?$CNetworkArrayBase@V?$CHandle@VC_BaseEntity@@@@$0P@HVNetworkVar_m_hWisdomShrines@C_DOTAGamerules
+AV?$CNetworkArrayBase@V?$CHandle@VC_DotaSubquestBase@@@@$07HVNetworkVar_m_hSubquests@C_DotaQuest
 AV?$CNetworkArrayBase@V?$CStrongHandle@UInfoForResourceTypeIMaterial2@@@@$05HVNetworkVar_m_skyBoxFaces@C_World
 AV?$CNetworkArrayBase@V?$Vec2D@M@@$01HVNetworkVar_m_vDesiredWardPlacement@C_DOTA_DataNonSpectator
 AV?$CNetworkArrayBase@V?$Vec2D@M@@$0GE@HVNetworkVar_m_vPossibleWardPlacement@C_DOTA_DataNonSpectator
@@ -7339,9 +7344,15 @@ AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_Category@CDOTACustomShopItemInfo
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomHealthLabel@C_DOTA_BaseNPC
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomShopName@CDOTACustomShopInfo
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_CustomVictoryMessage@C_DOTAGamerules
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_GuideStr@C_DotaTutorialNetworker
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_LocalizationStr@C_SpeechBubbleInfo
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_QuickBuyStr@C_DotaTutorialNetworker
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_lobbyGameName@C_DOTAGamerules
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszGameEndText@C_DotaQuest
 AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszNetworkedSoundLoop@C_DOTA_Unit_LoopingSound
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszQuestText@C_DotaQuest
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszQuestTitle@C_DotaQuest
+AV?$CNetworkStringBase@$0BAA@VNetworkVar_m_pszSubquestText@C_DotaSubquestBase
 AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_ProjectedTextureName@CDeferredLightBase
 AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_lookupFilename@C_ColorCorrectionVolume
 AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_messageText@C_PointClientUIWorldTextPanel
@@ -7353,6 +7364,8 @@ AV?$CNetworkStringBase@$0CAA@VNetworkVar_m_szSnapshotFileName@C_ParticleSystem
 AV?$CNetworkStringBase@$0CB@VNetworkVar_m_szTag@C_DOTATeam
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_BackgroundMaterialName@C_PointWorldText
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_FontName@C_PointWorldText
+AV?$CNetworkStringBase@$0EA@VNetworkVar_m_pszTextReplaceString@C_DotaQuest
+AV?$CNetworkStringBase@$0EA@VNetworkVar_m_pszTextReplaceString@C_DotaSubquestBase
 AV?$CNetworkStringBase@$0EA@VNetworkVar_m_szShopString@C_DOTAPlayerController
 AV?$CNetworkStringBase@$0IA@VNetworkVar_m_iszPlayerName@CBasePlayerController
 AV?$CNetworkStringBase@$0IB@VNetworkVar_m_szTeamname@C_Team
@@ -7706,6 +7719,7 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nLightMapUniqueId@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nLightPathUniqueId@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nLiveSpectatorSpectatedHeroIndex@PlayerResourcePlayerData_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nLoadedPlayers@C_DOTAGamerules
+AV?$CNetworkVarBase@HVNetworkVar_m_nLocationID@C_DotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nLoopingSoundParity@C_DOTA_Unit_LoopingSound
 AV?$CNetworkVarBase@HVNetworkVar_m_nMapLocationTeam@C_DOTA_Item_Rune
 AV?$CNetworkVarBase@HVNetworkVar_m_nMaxLevelOverride@C_DOTABaseAbility
@@ -7729,9 +7743,11 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerAssistFlags@C_DOTAPlayerController
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerDraftActiveTeam@C_DOTAGamerules
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerDraftPick@C_DOTAGamerules
 AV?$CNetworkVarBase@HVNetworkVar_m_nPlayerID@CDOTAPropPlusPlayerGuildBanner
+AV?$CNetworkVarBase@HVNetworkVar_m_nProgressBarHueShift@C_DotaSubquestBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nQuasLevel@CDOTA_Ability_Invoker_InvokedBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nQueryID@C_DOTA_CombatLogQueryProgress
 AV?$CNetworkVarBase@HVNetworkVar_m_nQueryRank@C_DOTA_CombatLogQueryProgress
+AV?$CNetworkVarBase@HVNetworkVar_m_nQuestType@C_DotaQuest
 AV?$CNetworkVarBase@HVNetworkVar_m_nRadiantSeriesWins@C_DOTAGamerules
 AV?$CNetworkVarBase@HVNetworkVar_m_nRadius@TempViewerInfo_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nRandomSeedOffset@CAnimGraphNetworkedVariables
@@ -7758,6 +7774,7 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nShadowHeight@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShadowPriority@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShadowWidth@CLightComponent
 AV?$CNetworkVarBase@HVNetworkVar_m_nShape@C_EnvWindVolume
+AV?$CNetworkVarBase@HVNetworkVar_m_nShopState@C_DotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nStockCount@CDOTACustomShopItemInfo
 AV?$CNetworkVarBase@HVNetworkVar_m_nStopType@C_ParticleSystem
 AV?$CNetworkVarBase@HVNetworkVar_m_nStyle@CLightComponent
@@ -7767,13 +7784,20 @@ AV?$CNetworkVarBase@HVNetworkVar_m_nTargetChangeCount@CInfoOffscreenPanoramaText
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetFlags@C_DOTA_NPC_WitchDoctor_Ward
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetRange@C_DOTA_Unit_Hero_Razor
 AV?$CNetworkVarBase@HVNetworkVar_m_nTargetType@C_DOTA_NPC_WitchDoctor_Ward
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskProgress@C_DotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskSecondsRemianing@C_DotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nTaskSteps@C_DotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nTeamBadGuysTopBarValue@C_DOTABaseGameMode
 AV?$CNetworkVarBase@HVNetworkVar_m_nTeamGoodGuysTopBarValue@C_DOTABaseGameMode
+AV?$CNetworkVarBase@HVNetworkVar_m_nTextReplaceValueVersion@C_DotaQuest
+AV?$CNetworkVarBase@HVNetworkVar_m_nTextReplaceValueVersion@C_DotaSubquestBase
 AV?$CNetworkVarBase@HVNetworkVar_m_nTier@TierNeutralInfo_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nTopLevelItem@QuickBuySlot_t
 AV?$CNetworkVarBase@HVNetworkVar_m_nTotalEventPoints@C_DOTA_DataNonSpectator
 AV?$CNetworkVarBase@HVNetworkVar_m_nTotalPausedTicks@C_GameRules
 AV?$CNetworkVarBase@HVNetworkVar_m_nTotalSlotCountIncludingOverflow@InventoryQuickBuyState_t
+AV?$CNetworkVarBase@HVNetworkVar_m_nTutorialState@C_DotaTutorialNetworker
+AV?$CNetworkVarBase@HVNetworkVar_m_nUIState@C_DotaTutorialNetworker
 AV?$CNetworkVarBase@HVNetworkVar_m_nUpgradeGoal@C_DOTA_Item
 AV?$CNetworkVarBase@HVNetworkVar_m_nUpgradeProgress@C_DOTA_Item
 AV?$CNetworkVarBase@HVNetworkVar_m_nVisualTeam@C_DOTA_Unit_Miniboss
@@ -8363,6 +8387,7 @@ AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vBoxProjectMaxs@C_EnvCubema
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vBoxProjectMins@C_EnvCubemap
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@C_EnvCombinedLightProbeVolume
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@C_EnvCubemap
+AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_TargetLocation@C_DotaTutorialNetworker
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAnimationBoundsMax@C_TextureBasedAnimatable
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAnimationBoundsMin@C_TextureBasedAnimatable
 AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vBoxMaxs@C_EnvVolumetricFogController
@@ -8745,6 +8770,8 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bClientSideRagdoll@C_BaseEntity
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCollapseToForcePoint@C_TriggerPhysics
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCombinable@C_DOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCombineLocked@C_DOTA_Item
+AV?$CNetworkVarBase@_NVNetworkVar_m_bCompleted@C_DotaQuest
+AV?$CNetworkVarBase@_NVNetworkVar_m_bCompleted@C_DotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bConstrainBetweenEndpoints@C_RopeKeyframe
 AV?$CNetworkVarBase@_NVNetworkVar_m_bConvertToDebrisWhenPossible@C_TriggerPhysics
 AV?$CNetworkVarBase@_NVNetworkVar_m_bCreepHeroPickup@C_DOTA_Item
@@ -8829,6 +8856,8 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bHasUpgradeableAbilities@C_DOTA_BaseNPC
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHeightFogEnabled@C_EnvCubemapFog
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHeroRespawnEnabled@C_DOTAGamerules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@C_DOTABaseAbility
+AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@C_DotaQuest
+AV?$CNetworkVarBase@_NVNetworkVar_m_bHidden@C_DotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideBlacklistedHeroes@C_DOTAGamerules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideKillMessageHeaders@C_DOTAGamerules
 AV?$CNetworkVarBase@_NVNetworkVar_m_bHideWearableButDrawAdditionalWearables@C_DOTAWearableItem
@@ -8903,6 +8932,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bLit@C_PointClientUIWorldPanel
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLocked@C_BasePropDoor
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLoop@C_TextureBasedAnimatable
 AV?$CNetworkVarBase@_NVNetworkVar_m_bLoseGoldOnDeath@C_DOTABaseGameMode
+AV?$CNetworkVarBase@_NVNetworkVar_m_bLoseIfCompleted@C_DotaQuest
 AV?$CNetworkVarBase@_NVNetworkVar_m_bManualRequest@CDOTACourierController
 AV?$CNetworkVarBase@_NVNetworkVar_m_bMarkForSell@C_DOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bMarkedForBuy@QuickBuySlot_t
@@ -8972,6 +9002,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldAnimateDuringGameplayPause@CBaseAnima
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldDoFlyHeightVisual@C_DOTA_BaseNPC
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShouldRespawn@C_DOTA_Unit_SpiritBear
 AV?$CNetworkVarBase@_NVNetworkVar_m_bShowOnMinimap@C_DOTA_Item
+AV?$CNetworkVarBase@_NVNetworkVar_m_bShowProgressBar@C_DotaSubquestBase
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStackable@C_DOTA_Item
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStartDisabled@C_EnvCubemapFog
 AV?$CNetworkVarBase@_NVNetworkVar_m_bStartDisabled@C_EnvSky
@@ -9029,6 +9060,7 @@ AV?$CNetworkVarBase@_NVNetworkVar_m_bVisibleWhenParentNoDraw@C_PointClientUIWorl
 AV?$CNetworkVarBase@_NVNetworkVar_m_bVotingClosed@CDOTAInGamePredictionState
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWasMVPLastGame@PlayerResourcePlayerData_t
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWhiteListEnabled@C_DOTAGamerules
+AV?$CNetworkVarBase@_NVNetworkVar_m_bWinIfCompleted@C_DotaQuest
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWorldLayerVisible@CInfoWorldLayer
 AV?$CNetworkVarBase@_NVNetworkVar_m_bWorldSpaceScale@C_Sprite
 AV?$CNetworkVarBase@_NVNetworkVar_m_usable@C_BaseButton
@@ -10509,6 +10541,7 @@ AV?$C_UtlVectorEmbeddedNetworkVar@VCHeroesPerPlayer@@VNetworkVar_m_vecDisabledRa
 AV?$C_UtlVectorEmbeddedNetworkVar@VCHeroesPerPlayer@@VNetworkVar_m_vecLockedHerosByPlayerID@C_DOTAGamerules@@$0?0VPlayerID_t
 AV?$C_UtlVectorEmbeddedNetworkVar@VC_DOTA_CombatLogQueryProgress@@VNetworkVar_m_PlayerQueryIDs@C_IngameEvent_Base@@$0?0H
 AV?$C_UtlVectorEmbeddedNetworkVar@VC_EconItemAttribute@@VNetworkVar_m_Attributes@CAttributeList@@$0?0H
+AV?$C_UtlVectorEmbeddedNetworkVar@VC_SpeechBubbleInfo@@VNetworkVar_m_SpeechBubbles@C_DotaTutorialNetworker@@$03H
 AV?$C_UtlVectorEmbeddedNetworkVar@VC_SpeechBubbleInfo@@VNetworkVar_m_SpeechBubbles@C_SpeechBubbleManager@@$03H
 AV?$C_UtlVectorEmbeddedNetworkVar@VClientQuickBuyItemState@@VNetworkVar_m_vecClientQuickBuyState@C_DOTAPlayerController@@$0?0H
 AV?$GCClientJobLambda@V<lambda_1>@?1???$HandleAdminAction@VCMsgClientToGCShowcaseAdminConvictResponse@@V<lambda_1>@?1??EventConvict@CDOTA_DB_Page_ShowcaseAdminReportReview@@AEAA_NXZ@@CDOTA_DB_Page_ShowcaseAdminReportReview@@AEAAXPEBDV1?1??EventConvict@2@AEAA_NXZ@@Z@@GCSDK
@@ -18444,6 +18477,7 @@ AVCDOTA_Modifier_Tutorial_Disable_Healing
 AVCDOTA_Modifier_Tutorial_ForceAnimation
 AVCDOTA_Modifier_Tutorial_HideNPC
 AVCDOTA_Modifier_Tutorial_LowAttackPriority
+AVCDOTA_Modifier_Tutorial_Sleep
 AVCDOTA_Modifier_Tutorial_SpeechBubble
 AVCDOTA_Modifier_Twin_Gate_FX
 AVCDOTA_Modifier_Twin_Gate_Warp_Channel
@@ -25998,7 +26032,16 @@ AVC_DotaCoachingPeerGroup
 AVC_DotaLobbyPeerGroup
 AVC_DotaPartyPeerGroup
 AVC_DotaPeer2PeerInit
+AVC_DotaQuest
+AVC_DotaQuestBase
+AVC_DotaSubquestAbilityCastCount
+AVC_DotaSubquestBase
+AVC_DotaSubquestBuyItems
+AVC_DotaSubquestEntityDeath
+AVC_DotaSubquestPlayerStat
+AVC_DotaSubquestTutorialEvent
 AVC_DotaTree
+AVC_DotaTutorialNetworker
 AVC_DynamicLight
 AVC_DynamicProp
 AVC_DynamicPropAlias_cable_dynamic
@@ -26990,6 +27033,7 @@ BY04_N
 BY05E
 BY05V?$CStrongHandle@UInfoForResourceTypeIMaterial2
 BY07E
+BY07V?$CHandle@VC_DotaSubquestBase
 BY07V?$Vec3D@M
 BY09C
 BY09E
@@ -29127,6 +29171,7 @@ aux error
 b <= sizeof ctx->buf
 b <= sizeof ctx->final
 b!0
+b2
 b2i_PVK_bio
 b\b\b\b
 b\n\v\f

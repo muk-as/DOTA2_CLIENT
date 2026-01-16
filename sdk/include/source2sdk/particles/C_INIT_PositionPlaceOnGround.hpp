@@ -8,6 +8,7 @@
 #include "source2sdk/particles/ParticleTraceMissBehavior_t.hpp"
 #include "source2sdk/particles/ParticleTraceSet_t.hpp"
 #include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
+#include "source2sdk/particleslib/CPerParticleVecInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -34,6 +35,8 @@ namespace source2sdk
             source2sdk::particleslib::CPerParticleFloatInput m_flOffset; // 0x_            
             // metadata: MPropertyFriendlyName "max trace length"
             source2sdk::particleslib::CPerParticleFloatInput m_flMaxTraceLength; // 0x_            
+            // metadata: MPropertyFriendlyName "trace direction"
+            source2sdk::particleslib::CPerParticleVecInput m_vecTraceDir; // 0x_            
             // metadata: MPropertyFriendlyName "collision group"
             char m_CollisionGroupName[128]; // 0x_            
             // metadata: MPropertyFriendlyName "Trace Set"
@@ -44,8 +47,6 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "include water"
             // metadata: MPropertySuppressExpr "m_nTraceSet == PARTICLE_TRACE_SET_STATIC"
             bool m_bIncludeWater; // 0x_            
-            // metadata: MPropertyFriendlyName "set normal"
-            bool m_bSetNormal; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MPropertyFriendlyName "Attribute to Set"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
@@ -53,13 +54,13 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "set Previous XYZ only"
             // metadata: MPropertySuppressExpr "m_nAttribute != PARTICLE_ATTRIBUTE_XYZ"
             bool m_bSetPXYZOnly; // 0x_            
-            // metadata: MPropertyFriendlyName "Trace along particle normal"
-            bool m_bTraceAlongNormal; // 0x_            
+            // metadata: MPropertyFriendlyName "set attribute from ground normal"
+            bool m_bSetNormal; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
-            // metadata: MPropertyFriendlyName "Attribute for Trace Direction"
+            // metadata: MPropertyFriendlyName "Attribute to Set to Ground Normal"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            // metadata: MPropertySuppressExpr "!m_bTraceAlongNormal"
-            source2sdk::particles::ParticleAttributeIndex_t m_nTraceDirectionAttribute; // 0x_            
+            // metadata: MPropertySuppressExpr "!m_bSetNormal"
+            source2sdk::particles::ParticleAttributeIndex_t m_nGroundNormalAttribute; // 0x_            
             // metadata: MPropertyFriendlyName "Offset only if trace hit"
             bool m_bOffsetonColOnly; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
