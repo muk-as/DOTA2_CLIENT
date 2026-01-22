@@ -30,7 +30,7 @@ namespace source2sdk
             float status_resist; // 0x_            
             std::int32_t min_speed; // 0x_            
             std::int32_t max_speed; // 0x_            
-            std::int32_t max_hp_regen; // 0x_            
+            float max_hp_regen; // 0x_            
             float speed_toggle_time; // 0x_            
             std::int32_t m_nCurrentSpeed; // 0x_            
             std::int32_t m_nMaxHPRegen; // 0x_            

@@ -36,13 +36,59 @@ function Init()
 }
 Init();
 
+
+function OnCreepTypeSelected( nCreepType )
+{
+	let normalCreeps = [
+		"npc_dota_creep_goodguys_melee",
+		"npc_dota_creep_goodguys_ranged",
+		"npc_dota_creep_goodguys_flagbearer",
+		"npc_dota_goodguys_siege",
+	];
+
+	let superCreeps = [
+		"npc_dota_creep_goodguys_melee_upgraded",
+		"npc_dota_creep_goodguys_ranged_upgraded",
+		"npc_dota_creep_goodguys_flagbearer_upgraded",
+		"npc_dota_goodguys_siege_upgraded",
+	];
+
+	let megaCreeps = [
+		"npc_dota_creep_goodguys_melee_upgraded_mega",
+		"npc_dota_creep_goodguys_ranged_upgraded_mega",
+		"npc_dota_creep_goodguys_flagbearer_upgraded_mega",
+		"npc_dota_goodguys_siege_upgraded_mega",
+	];
+
+	if ( nCreepType === 1 )
+	{
+		FillCreepSpawningButtons($("#NormalCreepsContainer"), normalCreeps, superCreeps);
+	}
+	else if ( nCreepType === 2 )
+	{
+		FillCreepSpawningButtons($("#NormalCreepsContainer"), normalCreeps, megaCreeps);
+	}
+	else
+	{
+		FillCreepSpawningButtons($("#NormalCreepsContainer"), normalCreeps, normalCreeps);
+	}
+}
+
 function CreateNeutralSpawningButtons()
 {
+	let normalCreeps = [
+		"npc_dota_creep_goodguys_melee",
+		"npc_dota_creep_goodguys_ranged",
+		"npc_dota_creep_goodguys_flagbearer",
+		"npc_dota_goodguys_siege",
+	];
+
+	FillCreepSpawningButtons($("#NormalCreepsContainer"), normalCreeps, normalCreeps);
+
 	var smallCampNeutrals = [
 		"npc_dota_neutral_kobold",
 		"npc_dota_neutral_kobold_tunneler",
 		"npc_dota_neutral_kobold_taskmaster",
-
 		"npc_dota_neutral_forest_troll_berserker",
 		"npc_dota_neutral_forest_troll_high_priest",
 
@@ -138,7 +184,23 @@ function FillUnitSpawningButtons( container, vecNeutrals )
 		neutralPanel.SetPanelEvent( "onmouseover", () => {  $.DispatchEvent( "UIShowTextTooltip", neutralPanel, "#" + neutral ) } );
 		neutralPanel.SetPanelEvent( 'onmouseout', function () { $.DispatchEvent( 'UIHideTextTooltip', neutralPanel ); } );
 		neutralPanel.SetPanelEvent( 'onactivate', function () { $.DispatchEvent( 'FireCustomGameEvent_Str', neutralPanel, "SpawnUnitButtonPressed", neutral ); } );
-		$.Msg("what " + neutralPanel.id)
+	}
+}
+
+function FillCreepSpawningButtons( container, vecNeutrals, vecNeutralSpawnName )
+{
+	container.RemoveAndDeleteChildren();
+
+	for ( var i in vecNeutrals)
+	{
+		let neutral = vecNeutrals[i];
+		let neutralSpawn = vecNeutralSpawnName[i];
+		let neutralPanel = $.CreatePanel( "Panel", container, neutral);
+		neutralPanel.BLoadLayoutSnippet("NeutralSpawner");
+		neutralPanel.FindChildTraverse("NeutralImage").SetImage("file://{images}/heroes/" + neutral + ".png");
+		neutralPanel.SetPanelEvent( "onmouseover", () => {  $.DispatchEvent( "UIShowTextTooltip", neutralPanel, "#" + neutralSpawn ) } );
+		neutralPanel.SetPanelEvent( 'onmouseout', function () { $.DispatchEvent( 'UIHideTextTooltip', neutralPanel ); } );
+		neutralPanel.SetPanelEvent( 'onactivate', function () { $.DispatchEvent( 'FireCustomGameEvent_Str', neutralPanel, "SpawnUnitButtonPressed", neutralSpawn ); } );
 	}
 }
 

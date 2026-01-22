@@ -29,7 +29,7 @@ namespace source2sdk
             std::int32_t brewed_up_per_ability; // 0x_            
             std::int32_t brewed_up_per_proc; // 0x_            
             std::int32_t brewed_up_max_stack; // 0x_            
-            std::int32_t max_hp_regen; // 0x_            
+            float max_hp_regen; // 0x_            
             float brewed_up_min_speed; // 0x_            
             float brewed_up_max_speed; // 0x_            
             float speed_toggle_time; // 0x_            
