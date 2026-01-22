@@ -1,0 +1,81 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/monster_hunter_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/monster_hunter/popup_monster_hunter_purchase_universal_materials.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="PurchaseOption">
+			<Panel class="PurchaseOption">
+				<Panel id="Icon" class="OptionIcon">
+					<DOTAMonsterHunterMaterial id="Icon0" class="Smaller" hittest="false" hittestchildren="false" />
+					<DOTAMonsterHunterMaterial id="Icon1" class="Small" hittest="false" hittestchildren="false" />
+					<DOTAMonsterHunterMaterial id="Icon2" hittest="false" hittestchildren="false" />
+				</Panel>
+				<Panel class="DescriptionSection">
+					<Label class="PurchaseDescription" html="true" text="{s:purchase_description}" />
+					<Label class="PurchasePrice" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchasePriceEach" />
+				</Panel>
+				<Panel class="QuantitySection">
+					<Label class="Qty" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseQuantityAbbrev" />
+					<TextEntry id="QuantityTextEntry" textmode="numeric" multiline="false" />
+				</Panel>
+				<Panel id="ButtonMinus" class="RoundButton Minus">
+					<Image src="s2r://panorama/images/control_icons/24px/minus.vsvg" texture-width="48px" texture-height="48px" />
+				</Panel>
+				<Panel id="ButtonPlus" class="RoundButton Plus">
+					<Image src="s2r://panorama/images/control_icons/24px/plus.vsvg" texture-width="48px" texture-height="48px" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAMonsterHunterPurchaseUniversalMaterialsPopup allows_popups="1" class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="MainContentsContainer">
+			<Panel class="MainContents">
+				<Image class="PopupTopLeftTexture" src="s2r://panorama/images/events/monster_hunter/backgrounds/popup_texture_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="PopupBottomRightTexture" src="s2r://panorama/images/events/monster_hunter/backgrounds/popup_texture_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="SigilContainer">
+					<Image class="SigilBackground" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="SigilOutline" src="s2r://panorama/images/events/monster_hunter/artwork/dota_tribal_sigil_outline.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="InnerContents">
+					<Panel id="TitleEmblemContainer" class="TitleEmblemContainer Large">
+						<Panel class="MHEmblem Left" />
+						<Label class="Title MHTitleFont UltraLarge" text="#DOTA_MonsterHunter_UniversalMaterials_Title" />
+						<Panel class="MHEmblem Right" />
+					</Panel>
+					<Panel class="LongDash" />
+					<Label class="MHDisplayFont TitleDescription" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_Description" />
+					<Panel id="PurchaseOptionsContainer" />
+					<Panel class="PremiumNeededBlocker" onactivate="">
+						<Panel class="CenteredContent">
+							<Label text="#DOTA_MonsterHunter_RewardDetails_RequiresPremium" class="PremiumText MHTitleFont RequiresPremiumText" onactivate="MonsterHunterShowPremiumPopup();UIPopupButtonClicked()" />
+						</Panel>
+					</Panel>
+					<Panel class="PurchaseSummaryHeader">
+						<Panel class="Dash Left" />
+						<Label class="MHTitleFont Medium" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary" />
+						<Panel class="Dash Right" />
+					</Panel>
+					<Panel class="PurchaseSummaryContainer">
+						<Label class="PurchaseCommons PurchaseSummaryLine" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Common" />
+						<Label class="PurchaseUncommons PurchaseSummaryLine" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Uncommon" />
+						<Label class="PurchaseRares PurchaseSummaryLine" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_Rare" />
+						<Label class="PurchaseSuperRares PurchaseSummaryLine" html="true" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummary_SuperRare" />
+						<Label class="PurchaseSummaryNothingSelected" text="#DOTA_MonsterHunter_UniversalMaterials_PurchaseSummaryNothingSelected" />
+					</Panel>
+					<Panel class="ButtonRow">
+						<DOTAMonsterHunterButton id="PurchaseButton" class="PurchaseMaterials FillWidth" text="#DOTA_PurchaseMonsterHunterPremium_Purchase" onactivate="MonsterHunterUniversalMaterialsPurchase()" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			</Panel>
+		</Panel>
+	</DOTAMonsterHunterPurchaseUniversalMaterialsPopup>
+</root>

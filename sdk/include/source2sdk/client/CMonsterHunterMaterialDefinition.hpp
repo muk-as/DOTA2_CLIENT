@@ -35,6 +35,7 @@ namespace source2sdk
             CUtlString m_strName; // 0x_            
             // metadata: MPropertyDescription
             source2sdk::client::EMonsterHunterMaterialRarity m_eRarity; // 0x_            
+            bool m_bUniversal; // 0x_            
             bool m_bHidden; // 0x_            
             bool m_bDeprecated; // 0x_            
             uint8_t _pad_[0x_];
@@ -44,6 +45,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_unID) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_strName) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_eRarity) == 0x_);
+        static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_bUniversal) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_bHidden) == 0x_);
         static_assert(offsetof(source2sdk::client::CMonsterHunterMaterialDefinition, m_bDeprecated) == 0x_);
         

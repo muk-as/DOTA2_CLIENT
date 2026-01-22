@@ -75,7 +75,7 @@ namespace source2sdk
             std::int32_t m_event_lobby_updated; // 0x_            
             std::int32_t m_nKillStreak; // 0x_            
             std::int32_t m_iRecentKillCount; // 0x_            
-            std::int32_t m_iRandomNumber; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             source2sdk::server::CountdownTimer m_RecentHeroKillTimer; // 0x_            
         };
         #pragma pack(pop)

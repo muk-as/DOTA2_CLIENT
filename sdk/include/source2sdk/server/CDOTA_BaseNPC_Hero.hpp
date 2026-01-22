@@ -79,6 +79,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bCustomKillEffect"
         // static metadata: MNetworkVarNames "GameTime_t m_flSpawnedAt"
         // static metadata: MNetworkVarNames "EHANDLE m_hFacetAbilities"
+        // static metadata: MNetworkVarNames "int m_vecHiddenLoadoutSlots"
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_Hero : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
@@ -182,6 +183,10 @@ namespace source2sdk
             // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CBaseEntity>> m_hFacetAbilities;
             char m_hFacetAbilities[0x_]; // 0x_            
+            // metadata: MNetworkEnable
+            // m_vecHiddenLoadoutSlots has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CNetworkUtlVectorBase<std::int32_t> m_vecHiddenLoadoutSlots;
+            char m_vecHiddenLoadoutSlots[0x_]; // 0x_            
             source2sdk::server::CountdownTimer m_PurchaseItemTimer; // 0x_            
             source2sdk::server::CountdownTimer m_NeutralItemTimer; // 0x_            
             source2sdk::server::CountdownTimer m_RetrieveItemsFromStashTimer; // 0x_            

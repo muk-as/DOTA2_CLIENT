@@ -48,6 +48,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float m_flAgilityTotal"
         // static metadata: MNetworkVarNames "float m_flIntellectTotal"
         // static metadata: MNetworkVarNames "EHANDLE m_hFacetAbilities"
+        // static metadata: MNetworkVarNames "int m_vecHiddenLoadoutSlots"
         // static metadata: MNetworkVarNames "int m_iRecentDamage"
         // static metadata: MNetworkVarNames "PlayerID_t m_iPlayerID"
         // static metadata: MNetworkVarNames "HeroFacetKey_t m_iHeroFacetKey"
@@ -99,6 +100,11 @@ namespace source2sdk
             // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_hFacetAbilities;
             char m_hFacetAbilities[0x_]; // 0x_            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnHiddenLoadoutSlotsChanged"
+            // m_vecHiddenLoadoutSlots has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // C_NetworkUtlVectorBase<std::int32_t> m_vecHiddenLoadoutSlots;
+            char m_vecHiddenLoadoutSlots[0x_]; // 0x_            
             // metadata: MNetworkEnable
             std::int32_t m_iRecentDamage; // 0x_            
             float m_fPainFactor; // 0x_            

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 8
+        // Enumerator count: 9
         // Alignment: 4
         // Size: 0x_
         enum class EMonsterHunterMaterialsSource_t : std::uint32_t
@@ -26,6 +26,7 @@ namespace source2sdk
             MaterialTrader = 0x4,
             HolidayReward = 0x5,
             EarlyPremiumPassHolder = 0x6,
+            UniversalMaterials = 0x7,
         };
     };
 };

@@ -25,12 +25,10 @@ namespace source2sdk
         class C_DOTA_Unit_Hero_Skywrath_Mage : public source2sdk::client::C_DOTA_BaseNPC_Hero
         {
         public:
-            bool m_bArcanaEquipped; // 0x_            
-            uint8_t _pad_[0x_];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         
-        // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Skywrath_Mage because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Skywrath_Mage) == 0x_);
     };

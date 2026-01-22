@@ -42,6 +42,7 @@ namespace source2sdk
             // m_hMyWearables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_EconWearable>> m_hMyWearables;
             char m_hMyWearables[0x_]; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNotSaved
             source2sdk::modellib::AttachmentHandle_t m_leftFootAttachment; // 0x_            
             // metadata: MNotSaved
