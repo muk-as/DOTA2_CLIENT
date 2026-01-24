@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 15
+        // Enumerator count: 16
         // Alignment: 4
         // Size: 0x_
         enum class EMonsterHunterAuditAction : std::uint32_t
@@ -33,6 +33,7 @@ namespace source2sdk
             k_eMonsterHunterAuditAction_DevClaimInvestigationRewards = 0xc,
             k_eMonsterHunterAuditAction_HeroCodexUpdate = 0xd,
             k_eMonsterHunterAuditAction_EventActionReward = 0xe,
+            k_eMonsterHunterAuditAction_AutoCraft = 0xf,
         };
     };
 };
