@@ -100,7 +100,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST = 0x27,
             // MScriptDescription "GetModifierAttackPointConstant GetModifierBaseAttackTimePercentage"
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE = 0x28,
-            // MScriptDescription "P GetModifierAttackPointConstant"
+            // MScriptDescription " GetModifierAttackPointConstant"
             MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT = 0x29,
             // MScriptDescription "GetModifierDamageOutgoing_Percentage GetModifierBonusDamageOutgoing_Percentage"
             MODIFIER_PROPERTY_BONUSDAMAGEOUTGOING_PERCENTAGE = 0x2a,
@@ -126,7 +126,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET = 0x34,
             // MScriptDescription "GetModifierLifestealRegenAmplify_Percentage GetModifierHPRegenAmplify_Percentage"
             MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE = 0x35,
-            // MScriptDescription "0 GetModifierLifestealRegenAmplify_Percentage"
+            // MScriptDescription " GetModifierLifestealRegenAmplify_Percentage"
             MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x36,
             // MScriptDescription "GetModifierSpellLifestealRegenAmplify_Percentage_Unique GetModifierSpellLifestealRegenAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x37,
@@ -450,7 +450,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ORB_EFFECT = 0xd6,
             // MScriptDescription "OnDamageCalculated OnProcessCleave"
             MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xd7,
-            // MScriptDescription " OnDamageCalculated"
+            // MScriptDescription "p OnDamageCalculated"
             MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xd8,
             // MScriptDescription "OnAttacked OnMagicDamageCalculated"
             MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED = 0xd9,
@@ -534,7 +534,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE = 0x100,
             // MScriptDescription "OnDominated GetModifierAbilityLayout"
             MODIFIER_PROPERTY_ABILITY_LAYOUT = 0x101,
-            // MScriptDescription " OnDominated"
+            // MScriptDescription "P OnDominated"
             MODIFIER_EVENT_ON_DOMINATED = 0x102,
             // MScriptDescription "OnAssist OnKill"
             MODIFIER_EVENT_ON_KILL = 0x103,
@@ -788,7 +788,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ABILITY_SWAPPED = 0x17f,
             // MScriptDescription "GetModifierOverrideBaseDamage GetModifierOverrideCreepBounty"
             MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY = 0x180,
-            // MScriptDescription "  GetModifierOverrideBaseDamage"
+            // MScriptDescription "0 GetModifierOverrideBaseDamage"
             MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE = 0x181,
             // MScriptDescription "GetModifierOverrideUntargetableTo GetModifierOverrideUntargetableFrom"
             MODIFIER_PROPERTY_UNTARGETABLE_FROM = 0x182,
