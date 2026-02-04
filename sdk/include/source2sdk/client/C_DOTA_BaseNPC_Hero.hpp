@@ -36,6 +36,7 @@ namespace source2sdk
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
+        // static metadata: MNetworkVarNames "bool m_bDisableWearables"
         // static metadata: MNetworkVarNames "int m_iCurrentXP"
         // static metadata: MNetworkVarNames "int m_iAbilityPoints"
         // static metadata: MNetworkVarNames "int m_iTotalAbilityPoints"
@@ -64,6 +65,9 @@ namespace source2sdk
         class C_DOTA_BaseNPC_Hero : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
+            uint8_t _pad_[0x_]; // 0x_
+            // metadata: MNetworkEnable
+            bool m_bDisableWearables; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
@@ -95,7 +99,6 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
             float m_flIntellectTotal; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_hFacetAbilities;

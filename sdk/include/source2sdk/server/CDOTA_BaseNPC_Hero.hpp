@@ -75,6 +75,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "PlayerID_t m_iPlayerID"
         // static metadata: MNetworkVarNames "HeroFacetKey_t m_iHeroFacetKey"
         // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel"
+        // static metadata: MNetworkVarNames "bool m_bDisableWearables"
         // static metadata: MNetworkVarNames "bool m_bReincarnating"
         // static metadata: MNetworkVarNames "bool m_bCustomKillEffect"
         // static metadata: MNetworkVarNames "GameTime_t m_flSpawnedAt"
@@ -165,6 +166,7 @@ namespace source2sdk
             source2sdk::server::CountdownTimer m_MultipleLastHitTimer; // 0x_            
             std::int32_t m_iMultipleKillCount; // 0x_            
             float m_flKillStreakStartTime; // 0x_            
+            // metadata: MNetworkEnable
             bool m_bDisableWearables; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             // m_hTogglableWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
