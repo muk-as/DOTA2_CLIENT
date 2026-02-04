@@ -126,7 +126,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET = 0x34,
             // MScriptDescription "GetModifierLifestealRegenAmplify_Percentage GetModifierHPRegenAmplify_Percentage"
             MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE = 0x35,
-            // MScriptDescription " GetModifierLifestealRegenAmplify_Percentage"
+            // MScriptDescription "p GetModifierLifestealRegenAmplify_Percentage"
             MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x36,
             // MScriptDescription "GetModifierSpellLifestealRegenAmplify_Percentage_Unique GetModifierSpellLifestealRegenAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x37,
@@ -174,7 +174,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_TOTAL_PERCENTAGE = 0x4c,
             // MScriptDescription "GetModifierPhysicalArmorBonusUnique GetModifierPhysicalArmorBonus"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS = 0x4d,
-            // MScriptDescription " GetModifierPhysicalArmorBonusUnique"
+            // MScriptDescription "0 GetModifierPhysicalArmorBonusUnique"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE = 0x4e,
             // MScriptDescription "GetModifierPhysicalArmorBonusPost GetModifierPhysicalArmorBonusUniqueActive"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE = 0x4f,
@@ -208,7 +208,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT = 0x5d,
             // MScriptDescription "GetModifierHealthRegenPercentageUnique GetModifierHealthRegenPercentage"
             MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE = 0x5e,
-            // MScriptDescription " GetModifierHealthRegenPercentageUnique"
+            // MScriptDescription "0 GetModifierHealthRegenPercentageUnique"
             MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE_UNIQUE = 0x5f,
             // MScriptDescription "GetModifierManaBonus GetModifierHealthBonus"
             MODIFIER_PROPERTY_HEALTH_BONUS = 0x60,
@@ -348,7 +348,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL = 0xa3,
             // MScriptDescription "GetIsIllusion GetAbsoluteNoDamagePure"
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE = 0xa4,
-            // MScriptDescription " GetIsIllusion"
+            // MScriptDescription "  GetIsIllusion"
             MODIFIER_PROPERTY_IS_ILLUSION = 0xa5,
             // MScriptDescription "GetModifierStrongIllusion GetModifierIllusionLabel"
             MODIFIER_PROPERTY_ILLUSION_LABEL = 0xa6,
@@ -450,7 +450,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ORB_EFFECT = 0xd6,
             // MScriptDescription "OnDamageCalculated OnProcessCleave"
             MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xd7,
-            // MScriptDescription "p OnDamageCalculated"
+            // MScriptDescription " OnDamageCalculated"
             MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xd8,
             // MScriptDescription "OnAttacked OnMagicDamageCalculated"
             MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED = 0xd9,
@@ -534,7 +534,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE = 0x100,
             // MScriptDescription "OnDominated GetModifierAbilityLayout"
             MODIFIER_PROPERTY_ABILITY_LAYOUT = 0x101,
-            // MScriptDescription "P OnDominated"
+            // MScriptDescription " OnDominated"
             MODIFIER_EVENT_ON_DOMINATED = 0x102,
             // MScriptDescription "OnAssist OnKill"
             MODIFIER_EVENT_ON_KILL = 0x103,
@@ -668,7 +668,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABILITY_POINTS = 0x143,
             // MScriptDescription "GetModifierItemSellbackCost GetModifierBuybackPenaltyPercent"
             MODIFIER_PROPERTY_BUYBACK_PENALTY_PERCENT = 0x144,
-            // MScriptDescription " GetModifierItemSellbackCost"
+            // MScriptDescription "  GetModifierItemSellbackCost"
             MODIFIER_PROPERTY_ITEM_SELLBACK_COST = 0x145,
             // MScriptDescription "GetModifierFixedManaRegen GetModifierDisassembleAnything"
             MODIFIER_PROPERTY_DISASSEMBLE_ANYTHING = 0x146,
@@ -788,7 +788,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ABILITY_SWAPPED = 0x17f,
             // MScriptDescription "GetModifierOverrideBaseDamage GetModifierOverrideCreepBounty"
             MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY = 0x180,
-            // MScriptDescription "0 GetModifierOverrideBaseDamage"
+            // MScriptDescription " GetModifierOverrideBaseDamage"
             MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE = 0x181,
             // MScriptDescription "GetModifierOverrideUntargetableTo GetModifierOverrideUntargetableFrom"
             MODIFIER_PROPERTY_UNTARGETABLE_FROM = 0x182,

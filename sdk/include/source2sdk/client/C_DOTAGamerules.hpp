@@ -771,6 +771,7 @@ namespace source2sdk
             char m_RegionTriggerBoxes[0x_]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             double m_flLastPerfSampleTime; // 0x_            
+            uint8_t _pad_[0x_]; // 0x_
             double m_flLastPerfSampleSendTime; // 0x_            
             bool m_bDidSeeStrategyTime; // 0x_            
             uint8_t _pad_[0x_]; // 0x_

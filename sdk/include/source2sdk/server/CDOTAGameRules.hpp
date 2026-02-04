@@ -978,6 +978,7 @@ namespace source2sdk
             double m_flLastItemSuggestionRequestTime[15]; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             double m_flLastPerfSampleTime; // 0x_            
+            uint8_t _pad_[0x_];
         };
         #pragma pack(pop)
         
