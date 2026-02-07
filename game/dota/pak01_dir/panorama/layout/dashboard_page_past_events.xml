@@ -6,6 +6,12 @@
 		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_past_events.vcss_c" />
 	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/leaf_pages/dashboard_background_monster_hunter.vts_c" />
+	</scripts>
 	<DOTAPastEventsPage class="DashboardPage">
 		<Image id="BackgroundImage" scaling="stretch-to-fit-y-preserve-aspect" />
 		<Panel class="PastEventsWrapper">
@@ -13,7 +19,7 @@
 				<Label class="TitleMedium" text="#DOTA_PastEvents_Header" />
 			</Panel>
 			<Panel class="PastEventsContainer">
-				<Panel class="CrownfallEvent" onactivate="DOTAShowBPCrownfallArchivePage()">
+				<Panel class="PastEvent Crownfall" onactivate="DOTAShowBPCrownfallArchivePage()">
 					<Image class="CellBackground" />
 					<Panel class="CellBorder" />
 					<Panel class="HeroesSceneModels" hittest="false">
@@ -28,6 +34,26 @@
 						<Panel class="Dash Left" />
 						<Label class="GoldTitle" text="#DOTA_Crownfall_Archive" />
 						<Panel class="Dash Right" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="PastEventsContainer">
+				<Panel class="PastEvent MonsterHunter" onactivate="DOTAShowMonsterHunterPage()">
+					<Panel class="CellBorder" />
+					<DOTAScenePanel id="MonsterHunterScene" class="MonsterHunterScene" onload="PlayScene();" map="maps/events/monster_hunter/monster_hunter_past_event" hittest="false" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="true" camera="dashboard_camera_past_event" light="versus_light" antialias="true" pin-fov="vertical" rotateonmousemove="true" yawmin="-0.1" yawmax="0.1" pitchmin="0" pitchmax="0" />
+					<Panel class="Shade" />
+					<Panel class="LogoContainer">
+						<Panel class="LogoListBackgroundContainer">
+							<Panel class="LogoListBackground" />
+							<Image class="TitleEmblem Top" />
+							<Image class="TitleEmblem Bottom" />
+						</Panel>
+						<Panel class="LogoList">
+							<Image class="DotaLogo" src="s2r://panorama/images/events/monster_hunter/logos/dota_2_logo_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="DotaLogoCN" src="s2r://panorama/images/events/monster_hunter/logos/dota_2_logo_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="CrossIcon" src="s2r://panorama/images/events/monster_hunter/artwork/x_icon.vsvg" scaling="stretch-to-fit-preserve-aspect" texturewidth="48px" textureheight="48px" />
+							<Image class="MonsterHunterLogoHoriz" src="s2r://panorama/images/events/monster_hunter/logos/monster_hunter_logo_horiz_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
 					</Panel>
 				</Panel>
 			</Panel>
