@@ -6,27 +6,17 @@
 		<include src="s2r://panorama/styles/hud/dota_hud_game_end.vcss_c" />
 	</styles>
 	<DOTAGameEnd hittest="true">
-		<Panel id="WinLabelContainer" class="MonsterHunter">
-			<DOTAScenePanel class="VictoryFX" map="backgrounds/accept_popup_test" camera="shot_camera" hittest="false" particleonly="true" />
-			<Image class="Crest" src="s2r://panorama/images/events/monster_hunter/artwork/crest_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-			<Panel class="VictoryLabelContainer">
-				<Image class="Emblem Left" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" texturewidth="46px" textureheight="26px" scaling="stretch-to-fit-preserve-aspect" />
-				<Label id="VictoryLabel" text="{s:victory_title}" />
-				<Image class="Emblem Right" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_edge.vsvg" texturewidth="46px" textureheight="26px" scaling="stretch-to-fit-preserve-aspect" />
-			</Panel>
+		<Panel id="WinLabelContainer" hittest="false">
+			<DOTAScenePanel id="VictoryBackgroundScene" map="backgrounds/accept_popup_test" camera="shot_camera" hittest="false" particleonly="true" />
+			<Label id="VictoryLabel" class="TitleFont" text="{s:victory_title}" hittest="false" />
 		</Panel>
 		<Panel id="TeamChallengeImage" hittest="false" />
 		<Label id="TeamChallengeTitle" class="TitleFont" text="#DOTA_TeamChallenge_Title" hittest="false" />
 		<Label id="TeamChallengeLabel" class="TitleFont" text="{s:team_challenge_result_text}" hittest="false" />
 		<Label id="TeamChallengeReward" class="TitleFont" text="#DOTA_TeamChallenge_Reward" hittest="false" />
-		<Panel class="ContinueButtonContainer">
-			<Panel class="ContinueButtonArt">
-				<Image class="Emblem Top" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles_filled.vsvg" texturewidth="60px" textureheight="12px" scaling="stretch-to-fit-preserve-aspect" />
-				<Panel class="ContinueButtonBackground" />
-				<Image class="Emblem Bottom" src="s2r://panorama/images/events/monster_hunter/artwork/emblem_triangles_filled.vsvg" texturewidth="60px" textureheight="12px" scaling="stretch-to-fit-preserve-aspect" />
-			</Panel>
-			<DOTAMonsterHunterButton id="ContinueButton" class="FillWidth" text="#DOTA_Continue" onactivate="DOTAGameEndContinue()" />
-		</Panel>
+		<Button id="ContinueButton" class="LargeButton ButtonBevel" onactivate="DOTAGameEndContinue()">
+			<Label text="#DOTA_Continue" />
+		</Button>
 		<Label id="MatchSignoutDelayedLabel" text="#dota_game_end_signout_delayed" hittest="false" />
 	</DOTAGameEnd>
 </root>
