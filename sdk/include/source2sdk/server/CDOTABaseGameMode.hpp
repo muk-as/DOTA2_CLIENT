@@ -359,6 +359,7 @@ namespace source2sdk
             float m_flBountyRuneSpawnInterval; // 0x_            
             float m_flXPRuneSpawnInterval; // 0x_            
             float m_flThinkInterval; // 0x_            
+            std::int32_t m_nForcedHeroCapOnReset; // 0x_            
             uint8_t _pad_[0x_];
         };
         #pragma pack(pop)

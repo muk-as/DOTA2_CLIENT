@@ -74,6 +74,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bScriptDisableRespawns"
         // static metadata: MNetworkVarNames "PlayerID_t m_iPlayerID"
         // static metadata: MNetworkVarNames "HeroFacetKey_t m_iHeroFacetKey"
+        // static metadata: MNetworkVarNames "PlayerID_t m_iEconSpecifyingPlayerID"
         // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel"
         // static metadata: MNetworkVarNames "bool m_bDisableWearables"
         // static metadata: MNetworkVarNames "bool m_bReincarnating"
@@ -153,7 +154,8 @@ namespace source2sdk
             uint8_t _pad_[0x_]; // 0x_
             // metadata: MNetworkEnable
             source2sdk::client::HeroFacetKey_t m_iHeroFacetKey; // 0x_            
-            source2sdk::client::PlayerID_t m_iIllusionOriginalPlayerID; // 0x_            
+            // metadata: MNetworkEnable
+            source2sdk::client::PlayerID_t m_iEconSpecifyingPlayerID; // 0x_            
             source2sdk::client::HeroID_t m_iHeroID; // 0x_            
             // metadata: MNetworkEnable
             // m_hReplicatingOtherHeroModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
