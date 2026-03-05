@@ -4,6 +4,8 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionInitializer.hpp"
+#include "source2sdk/particleslib/CParticleTransformInput.hpp"
+#include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particles
@@ -26,18 +28,16 @@ namespace source2sdk
         class C_INIT_CreateSpiralSphere : public source2sdk::particles::CParticleFunctionInitializer
         {
         public:
-            // metadata: MPropertyFriendlyName "control point number"
-            std::int32_t m_nControlPointNumber; // 0x_            
-            // metadata: MPropertyFriendlyName "override CP (X/Y/Z *= radius/density/speed)"
-            std::int32_t m_nOverrideCP; // 0x_            
+            // metadata: MPropertyFriendlyName "input position transform"
+            source2sdk::particleslib::CParticleTransformInput m_TransformInput; // 0x_            
             // metadata: MPropertyFriendlyName "density"
-            std::int32_t m_nDensity; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_flDensity; // 0x_            
             // metadata: MPropertyFriendlyName "initial radius"
-            float m_flInitialRadius; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialRadius; // 0x_            
             // metadata: MPropertyFriendlyName "min initial speed"
-            float m_flInitialSpeedMin; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMin; // 0x_            
             // metadata: MPropertyFriendlyName "max initial speed"
-            float m_flInitialSpeedMax; // 0x_            
+            source2sdk::particleslib::CPerParticleFloatInput m_flInitialSpeedMax; // 0x_            
             // metadata: MPropertyFriendlyName "use particle count as density scale"
             bool m_bUseParticleCount; // 0x_            
             uint8_t _pad_[0x_];
