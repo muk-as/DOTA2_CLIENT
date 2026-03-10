@@ -62,6 +62,48 @@
 	background-image: url("s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_winter_png.vtex");
 }
 
+.Season_Spring2026 .MainContents
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A1B32 ), to( #0D0910 ) );
+}
+
+.Season_Spring2026 .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/seasonal/backgrounds/spring_background_psd.vtex");
+	blur: gaussian( 2px );
+	brightness: 0.5;
+}
+
+.Season_Spring2026 .InstructionText
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( #FFCCEA ), to( #CC8DB2 ) );
+}
+
+.Season_Spring2026 .InstructionIcon
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFCCEA ), to( #CC8DB2 ) );
+}
+
+.Season_Spring2026 #RewardLabel,.Season_Spring2026 #RewardTextHero
+{
+	color: #B298A8;
+}
+
+.Season_Spring2026 .PortraitBackgroundFrame
+{
+	background-image: url("s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_spring_psd.vtex");
+}
+
+#GroupContainer2
+{
+	visibility: collapse;
+}
+
+.ShowActor1.ShowActor2 #GroupContainer2
+{
+	visibility: visible;
+}
+
 DOTASeasonalVisualNovel
 {
 	horizontal-align: center;
@@ -136,17 +178,12 @@ DOTASeasonalVisualNovel.Hidden
 	y: -20%;
 }
 
-.CustomHeading
-{
-	visibility: collapse;
-}
-
 .VisualNovelBorderTop
 {
 	width: 1260px;
 	vertical-align: top;
 	horizontal-align: center;
-	margin-top:-10px;
+	margin-top: -10px;
 }
 
 .Dash
@@ -165,22 +202,84 @@ DOTASeasonalVisualNovel.Hidden
 {
 	flow-children: down;
 	horizontal-align: center;
-	vertical-align: top;
+	vertical-align: center;
 	width: 100%;
+	y: -80px;
 }
 
 .GroupContainer
 {
-	flow-children: down;
 	horizontal-align: center;
-	width: 100%;
-	margin-top: 0px;
+	height: 220px;
+	opacity: 0;
+}
+
+.GroupContainer .PortraitContainerLayered
+{
+	transition-property: opacity, position, transform, saturation, brightness, blur;
+	transition-duration: 0.2s;
+	brightness: 0.6;
+	saturation: 0.7;
+	blur: gaussian( 2 );
+}
+
+.GroupContainer .ActorTextContainer
+{
+	transition-property: opacity, position, blur;
+	transition-duration: 0.2s;
+	brightness: 0.6;
+	saturation: 0.7;
+	blur: gaussian( 2 );
+	padding: 4px;
+}
+
+.GroupContainer.Top
+{
+	flow-children: right;
+}
+
+.GroupContainer.Top .ActorTextContainer
+{
+	padding-right: 40px;
+}
+
+.ShowActor1 .GroupContainer.Top
+{
 	opacity: 1;
 }
 
-.EncounterDialogue .GroupContainer
+.GroupContainer.Bottom
 {
-	ignore-parent-flow: true;
+	flow-children: left;
+}
+
+.GroupContainer.Bottom .ActorTextContainer
+{
+	padding-left: 40px;
+}
+
+.ShowActor2 .GroupContainer.Bottom
+{
+	opacity: 1;
+}
+
+.TopUpdated .GroupContainer.Top .PortraitContainerLayered.PortraitOrder0,.BottomUpdated .GroupContainer.Bottom .PortraitContainerLayered.PortraitOrder0
+{
+	brightness: 1.0;
+	saturation: 1.0;
+	blur: none;
+}
+
+.TopUpdated .GroupContainer.Top .ActorTextContainer,.BottomUpdated .GroupContainer.Bottom .ActorTextContainer
+{
+	brightness: 1.0;
+	saturation: 1.0;
+	blur: none;
+}
+
+.NoPortraitBlur .GroupContainer.Top .PortraitContainerLayered.PortraitOrder0,.NoPortraitBlur .GroupContainer.Bottom .PortraitContainerLayered.PortraitOrder0
+{
+	blur: none;
 }
 
 .TypewriterLabel
@@ -190,11 +289,12 @@ DOTASeasonalVisualNovel.Hidden
 
 .ActorTextContainer
 {
-	width: 780px;
+	width: 740px;
 	height: 200px;
 	vertical-align: top;
 	horizontal-align: center;
-	vertical-align: top;
+	height: 200px;
+	vertical-align: center;
 	z-index: 1;
 }
 
@@ -203,10 +303,9 @@ DOTASeasonalVisualNovel.Hidden
 	opacity: 0.0;
 }
 
-.Top .ActorTextContainer
+.Top.Exiting .ActorTextContainer,.Bottom.Exiting .ActorTextContainer
 {
-	height: 200px;
-	vertical-align: top;
+	background-color: #0000;
 }
 
 .ActorTextContainer .MoreIndicator
@@ -244,6 +343,11 @@ DOTASeasonalVisualNovel.Hidden
 	visibility: collapse;
 }
 
+.ActorTextContainer DOTATypewriterText
+{
+	vertical-align: center;
+}
+
 @keyframes 'MoreIndicatorAnim'
 {
 	100%
@@ -257,11 +361,9 @@ DOTASeasonalVisualNovel.Hidden
 .PortraitGroup
 {
 	overflow: noclip;
-	horizontal-align: center;
-	vertical-align: top;
-	margin-top: -10px;
-	margin-bottom: -90px;
-	width: 370px;
+	vertical-align: center;
+	margin: 0px -48px;
+	width: 380px;
 	height: width-percentage( 100% );
 }
 
@@ -269,9 +371,6 @@ DOTASeasonalVisualNovel.Hidden
 {
 	width: 100%;
 	height: width-percentage( 100% );
-	animation-name: ShowPortrait;
-	animation-duration: 0.7s;
-	animation-timing-function: ease-out;
 }
 
 .PortraitGroup .PortraitContainerLayered .PortraitDropShadow
@@ -281,7 +380,7 @@ DOTASeasonalVisualNovel.Hidden
 	border-radius: 50%;
 	horizontal-align: center;
 	vertical-align: center;
-	box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.5);
 }
 
 .PortraitGroup .PortraitContainerLayered .PortraitBackgroundFrame
@@ -309,6 +408,247 @@ DOTASeasonalVisualNovel.Hidden
 .PortraitGroup .PortraitContainerLayered.Hidden
 {
 	visibility: collapse;
+}
+
+.PortraitGroup .PortraitContainerLayered.ExitingPortrait
+{
+	opacity: 0;
+}
+
+.PortraitGroup .PortraitContainerLayered.PortraitOrder0
+{
+	z-index: 4;
+}
+
+.PortraitGroup .PortraitContainerLayered.PortraitOrder1
+{
+	z-index: 3;
+}
+
+.PortraitGroup .PortraitContainerLayered.PortraitOrder2
+{
+	z-index: 2;
+}
+
+.PortraitGroup .PortraitContainerLayered.PortraitOrder3
+{
+	z-index: 1;
+}
+
+.PortraitGroup .PortraitContainerLayered.PortraitOrder1,.PortraitGroup .PortraitContainerLayered.PortraitOrder2,.PortraitGroup .PortraitContainerLayered.PortraitOrder3,.PortraitGroup .PortraitContainerLayered.PortraitOrder4
+{
+	saturation: 0.5;
+	brightness: 0.3;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.PortraitOrder1
+{
+	transform: translateX(-70px);
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.PortraitOrder1
+{
+	transform: translateX(70px);
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.PortraitOrder2
+{
+	transform: translateX( -140px);
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.PortraitOrder2
+{
+	transform: translateX( 140px);
+}
+
+.PortraitGroup .PortraitContainerLayered .ActorEffectOverlay
+{
+	width: 100%;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	background-size: cover;
+	transition-property: opacity, transform;
+	transition-duration: 1s;
+	margin-bottom: 20px;
+	opacity: 0;
+	overflow: noclip;
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay .ActorEffectOverlay
+{
+	opacity: 1;
+}
+
+.PortraitGroup .PortraitContainerLayered.ActorAnger .ActorEffectOverlay
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/effects/anger_png.vtex");
+}
+
+.PortraitGroup .PortraitContainerLayered.ActorAnxiety .ActorEffectOverlay
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/effects/anxiety_png.vtex");
+}
+
+.PortraitGroup .PortraitContainerLayered.ActorSweatDrop .ActorEffectOverlay
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/effects/sweatdrop_png.vtex");
+}
+
+.PortraitGroup .PortraitContainerLayered.Flipped .AnimationContainer .ActorPicture
+{
+	transform: scaleX(-1);
+}
+
+.PortraitGroup .PortraitContainerLayered .ActorEffectOverlay
+{
+	transform: translateY( -20px );
+}
+
+.PortraitGroup .PortraitContainerLayered.Flipped .ActorEffectOverlay
+{
+	transform: scaleX(-1) translateY( -20px );
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay .ActorEffectOverlay
+{
+	transform: translateY( 0 );
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay.Flipped .ActorEffectOverlay
+{
+	transform: scaleX(-1) translateY( 0 );
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay.Flipped.ActorAnger .ActorEffectOverlay
+{
+	animation-name: AnimAngerTop;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay.ActorAnger .ActorEffectOverlay
+{
+	animation-name: AnimAngerBottom;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay.ActorSweatDrop .ActorEffectOverlay
+{
+	animation-name: AnimSweatDrop;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+	animation-delay: 0.5s;
+}
+
+.PortraitGroup .PortraitContainerLayered.ShowActorEffectOverlay.Flipped.ActorSweatDrop .ActorEffectOverlay
+{
+	animation-name: AnimSweatDropFlipped;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered
+{
+	horizontal-align: right;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.EntranceRising
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.5s;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.ExitFalling
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.5s;
+	animation-direction: reverse;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.ExitRising
+{
+	animation-name: EntranceFalling;
+	animation-duration: 0.5s;
+	animation-direction: reverse;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.EntranceSlideFast
+{
+	animation-name: EntranceSlideTop;
+	animation-duration: 0.5s;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.EntranceSlideFast .PortraitDropShadow
+{
+	animation-name: EntranceSlideTop;
+	animation-duration: 0.5s;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.ExitSlideFast
+{
+	animation-direction: reverse;
+	animation-name: EntranceSlideTop;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered
+{
+	horizontal-align: left;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.EntranceRising
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.5s;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.ExitFalling
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.5s;
+	animation-direction: reverse;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.ExitRising
+{
+	animation-name: EntranceFalling;
+	animation-duration: 0.5s;
+	animation-direction: reverse;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.EntranceSlideFast
+{
+	animation-name: EntranceSlideBottom;
+	animation-duration: 0.5s;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.ExitSlideFast
+{
+	animation-direction: reverse;
+	animation-name: EntranceSlideBottom;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.PortraitGroup .PortraitContainerLayered.ShakePortrait
+{
+	animation-name: Shake;
+	animation-duration: 0.5s;
+	animation-iteration-count:1;
+}
+
+.PortraitGroup .PortraitContainerLayered.WeavePortrait
+{
+	animation-name: Weave;
+	animation-duration: 2.6s;
+	animation-iteration-count:1;
+}
+
+.PortraitGroup .PortraitContainerLayered.JitterPortrait
+{
+	animation-name: Jitter;
+	animation-duration: 0.1s;
+	animation-iteration-count:infinite;
 }
 
 @keyframes 'ShowPortrait'
@@ -408,78 +748,284 @@ DOTASeasonalVisualNovel.Hidden
 	margin-top: 30px;
 }
 
-#ComicContainer
+@keyframes 'Squash'
 {
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	blur: gaussian(2.0);
-	transition-property: opacity, blur;
-	transition-duration: 0.3s;
+	33%
+	{
+		transform:scaleX(1) scaleY( 1.4 );
+	}
+	
+	66%
+	{
+		transform:scaleX(1.6) scaleY( 0.8 );
+	}
+	
 }
 
-.ShowingComic #ComicContainer
+@keyframes 'Shake'
 {
-	blur: none;
-	opacity: 1;
+	0%
+	{
+		transform:translateX( -20px );
+	}
+	
+	10%
+	{
+		transform:translateX( 20px );
+	}
+	
+	20%
+	{
+		transform:translateX( -18px );
+	}
+	
+	30%
+	{
+		transform:translateX( 18px );
+	}
+	
+	40%
+	{
+		transform:translateX( -16px );
+	}
+	
+	50%
+	{
+		transform:translateX( 16px );
+	}
+	
+	60%
+	{
+		transform:translateX( -13px );
+	}
+	
+	70%
+	{
+		transform:translateX( 13px );
+	}
+	
+	80%
+	{
+		transform:translateX( -10px );
+	}
+	
+	90%
+	{
+		transform:translateX( 10px );
+	}
+	
+	100%
+	{
+		transform:translateX( -10px );
+	}
+	
 }
 
-#ComicContainer .ComicViewer
+@keyframes 'Jitter'
 {
-	width: 100%;
-	height: 100%;
+	0%
+	{
+		transform:translateX( -1px );
+	}
+	
+	50%
+	{
+		transform: translateX( 1px);
+	}
+	
+	100%
+	{
+		transform:translateX( -1px );
+	}
+	
 }
 
-#ComicContainer .ComicViewer #Book
+@keyframes 'Weave'
 {
-	margin-top: 0;
-	width: 100%;
-	height: width-percentage(58.7%);
+	0%
+	{
+		transform:translateX( 0px );
+	}
+	
+	25%
+	{
+		transform: translateX( 10px);
+	}
+	
+	50%
+	{
+		transform:translateX( 0px );
+	}
+	
+	75%
+	{
+		transform: translateX( 10px);
+	}
+	
+	100%
+	{
+		transform:translateX( 0px );
+	}
+	
 }
 
-#ComicContainer .ComicViewer #Book ComicViewerPage
+@keyframes 'Bob'
 {
-	width: 100%;
-	height: 100%;
+	0%
+	{
+		transform:translateY(0px);
+	}
+	
+	50%
+	{
+		transform:translateY(-10px);
+	}
+	
+	100%
+	{
+		transform:translateY(0px);
+	}
+	
 }
 
-.ComicBlocker
+@keyframes 'EntranceSlideTop'
 {
-	width: 100%;
-	height: 100%;
-	visibility: collapse;
+	0%
+	{
+		opacity: 0;
+		transform:translateX(-400px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX(0px);
+	}
+	
 }
 
-.PreventInput .ComicBlocker
+@keyframes 'EntranceSlideBottom'
 {
-	visibility: visible;
+	0%
+	{
+		opacity: 0;
+		transform:translateX(400px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX(0px);
+	}
+	
 }
 
-#ComicExternalContainer
+@keyframes 'EntranceRising'
 {
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition-property:opacity;
-	transition-duration: 0.5s;
-	transition-delay: 0.25s;
+	0%
+	{
+		opacity: 0;
+		transform:translateY(400px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateY(0px);
+	}
+	
 }
 
-.ShowExternalComic #ComicExternalContainer
+@keyframes 'EntranceFalling'
 {
-	opacity: 1;
+	0%
+	{
+		opacity: 0;
+		transform:translateY(-400px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateY(0px);
+	}
+	
 }
 
-#ComicExternalContainer #ExternalComicBackgroundPage
+@keyframes 'AnimAngerTop'
 {
-	blur: gaussian( 8px );
-	brightness: 0.3;
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( -0.5, 0.5, 1.0) translateX( 40px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( -1, 1, 1.0) translateX( 60px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( -1, 1, 1.0) translateX( 65px) translateY( -2px);
+	}
+	
 }
 
-#ComicExternalContainer #ShowExternalComicButton
+@keyframes 'AnimAngerBottom'
 {
-	horizontal-align: center;
-	vertical-align: center;
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( 0.5, 0.5, 1.0) translateX( -40px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( 1, 1, 1.0) translateX( -60px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( 1, 1, 1.0) translateX( -65px) translateY( -2px);
+	}
+	
+}
+
+@keyframes 'AnimSweatDrop'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY( -40px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: translateY( 0px);
+	}
+	
+}
+
+@keyframes 'AnimSweatDropFlipped'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY( -40px) scaleX( -1 );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: translateY( 0px) scaleX( -1 );
+	}
+	
 }
 
 .HideText
@@ -565,7 +1111,7 @@ DOTASeasonalVisualNovel.Hidden
 #ItemContents #ImageContainer
 {
 	width: 114px;
-	height: 124px;
+	height: 110px;
 	visibility: collapse;
 }
 

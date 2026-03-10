@@ -234,7 +234,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_STATS_INTELLECT_BONUS = 0x6a,
             // MScriptDescription "GetModifierBonusStats_Agility_Percentage GetModifierBonusStats_Strength_Percentage"
             MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE = 0x6b,
-            // MScriptDescription "  GetModifierBonusStats_Agility_Percentage"
+            // MScriptDescription "0 GetModifierBonusStats_Agility_Percentage"
             MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE = 0x6c,
             // MScriptDescription "GetModifierCastRangeBonus GetModifierBonusStats_Intellect_Percentage"
             MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE = 0x6d,
@@ -322,7 +322,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABSORB_SPELL = 0x96,
             // MScriptDescription "GetDisableAutoAttack GetReflectSpell"
             MODIFIER_PROPERTY_REFLECT_SPELL = 0x97,
-            // MScriptDescription " GetDisableAutoAttack"
+            // MScriptDescription " 0 GetDisableAutoAttack"
             MODIFIER_PROPERTY_DISABLE_AUTOATTACK = 0x98,
             // MScriptDescription "GetBonusDayVisionPercentage GetBonusDayVision"
             MODIFIER_PROPERTY_BONUS_DAY_VISION = 0x99,
@@ -374,7 +374,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK = 0xb0,
             // MScriptDescription "GetModifierUnitStatsNeedsRefresh GetOverrideAttackMagical"
             MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL = 0xb1,
-            // MScriptDescription "  GetModifierUnitStatsNeedsRefresh"
+            // MScriptDescription "0 GetModifierUnitStatsNeedsRefresh"
             MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH = 0xb2,
             // MScriptDescription "Unused Unused"
             MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER = 0xb3,
@@ -424,7 +424,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ORDER = 0xc9,
             // MScriptDescription "OnUnitMoved OnOrderReceived"
             MODIFIER_EVENT_ON_ORDER_RECEIVED = 0xca,
-            // MScriptDescription " OnUnitMoved"
+            // MScriptDescription "0 OnUnitMoved"
             MODIFIER_EVENT_ON_UNIT_MOVED = 0xcb,
             // MScriptDescription "OnAbilityExecuted OnAbilityStart"
             MODIFIER_EVENT_ON_ABILITY_START = 0xcc,
@@ -450,7 +450,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ORB_EFFECT = 0xd6,
             // MScriptDescription "OnDamageCalculated OnProcessCleave"
             MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xd7,
-            // MScriptDescription " OnDamageCalculated"
+            // MScriptDescription "0 OnDamageCalculated"
             MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xd8,
             // MScriptDescription "OnAttacked OnMagicDamageCalculated"
             MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED = 0xd9,
@@ -508,7 +508,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_IS_SHARD = 0xf3,
             // MScriptDescription "GetActivityTranslationModifiers GetModifierRadarCooldownReduction"
             MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION = 0xf4,
-            // MScriptDescription " GetActivityTranslationModifiers"
+            // MScriptDescription "0 GetActivityTranslationModifiers"
             MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS = 0xf5,
             // MScriptDescription "GetUnitLifetimeFraction GetAttackSound"
             MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND = 0xf6,
@@ -584,7 +584,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE = 0x119,
             // MScriptDescription "GetModifierPercentageCooldownStacking OnPreDebuffApplied"
             MODIFIER_EVENT_ON_PREDEBUFF_APPLIED = 0x11a,
-            // MScriptDescription "0 GetModifierPercentageCooldownStacking"
+            // MScriptDescription " 0 GetModifierPercentageCooldownStacking"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING = 0x11b,
             // MScriptDescription "GetModifierTurnRateConstant GetModifierSpellRedirectTarget"
             MODIFIER_PROPERTY_SPELL_REDIRECT_TARGET = 0x11c,
@@ -634,7 +634,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BECOME_AGILITY = 0x132,
             // MScriptDescription "GetModifierBecomeUniversal GetModifierBecomeIntelligence"
             MODIFIER_PROPERTY_BECOME_INTELLIGENCE = 0x133,
-            // MScriptDescription " 0 GetModifierBecomeUniversal"
+            // MScriptDescription "0 GetModifierBecomeUniversal"
             MODIFIER_PROPERTY_BECOME_UNIVERSAL = 0x134,
             // MScriptDescription "OnDamageHPLoss OnForceProcMagicStick"
             MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x135,
@@ -668,7 +668,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABILITY_POINTS = 0x143,
             // MScriptDescription "GetModifierItemSellbackCost GetModifierBuybackPenaltyPercent"
             MODIFIER_PROPERTY_BUYBACK_PENALTY_PERCENT = 0x144,
-            // MScriptDescription "0 GetModifierItemSellbackCost"
+            // MScriptDescription " GetModifierItemSellbackCost"
             MODIFIER_PROPERTY_ITEM_SELLBACK_COST = 0x145,
             // MScriptDescription "GetModifierFixedManaRegen GetModifierDisassembleAnything"
             MODIFIER_PROPERTY_DISASSEMBLE_ANYTHING = 0x146,
@@ -754,7 +754,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MAGICAL_LIFESTEAL = 0x16e,
             // MScriptDescription "GetModifierNeutralTrinketOptions OnPureDamageCalculated"
             MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED = 0x16f,
-            // MScriptDescription "00 GetModifierNeutralTrinketOptions"
+            // MScriptDescription "0 GetModifierNeutralTrinketOptions"
             MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS = 0x170,
             // MScriptDescription "GetModifierMoveSpeedMax_BonusConstant GetModifierNeutralEnhancementOptions"
             MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS = 0x171,
@@ -778,8 +778,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_UPGRADE_NEUTRAL_ARTIFACTS = 0x17a,
             // MScriptDescription "GetModifierPropertyConsumableUseSpeed GetModifierPropertySuppressInvalidMoveAttackOrders"
             MODIFIER_PROPERTY_SUPPRESS_INVALID_MOVE_ATTACK_ORDERS = 0x17b,
-            // MScriptDescription "�
-0�� GetModifierPropertyConsumableUseSpeed"
+            // MScriptDescription "0 GetModifierPropertyConsumableUseSpeed"
             MODIFIER_PROPERTY_CONSUMABLE_USE_SPEED = 0x17c,
             // MScriptDescription "OnModifierRefreshed GetRequiredLevel"
             MODIFIER_PROPERTY_REQUIRED_LEVEL = 0x17d,

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 32
+        // Enumerator count: 33
         // Alignment: 4
         // Size: 0x_
         enum class DOTAVisualNovelDialogueEffect_t : std::uint32_t
@@ -50,6 +50,7 @@ namespace source2sdk
             VN_DIALOGUE_EFFECT_PORTRAIT_JITTER = 0x10000000,
             VN_DIALOGUE_EFFECT_PORTRAIT_BORDER_FROZEN = 0x20000000,
             VN_DIALOGUE_EFFECT_PORTRAIT_SMALL = 0x40000000,
+            VN_DIALOGUE_EFFECT_PORTRAIT_NO_BLUR_OTHER = 0x80000000,
         };
     };
 };

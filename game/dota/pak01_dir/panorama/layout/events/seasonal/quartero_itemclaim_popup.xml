@@ -9,6 +9,7 @@
 	</styles>
 	<scripts>
 		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
 		<include src="s2r://panorama/scripts/events/quartero_itemclaim_popup.vts_c" />
 	</scripts>
 	<snippets>
@@ -44,7 +45,7 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<DOTADBPopupQuarteroItemClaimPopup popupbackground="dim" oncancel="UIPopupButtonClicked()" class="Season_Winter2025">
+	<DOTADBPopupQuarteroItemClaimPopup popupbackground="dim" oncancel="UIPopupButtonClicked()" class="Season_Spring2026" onload="StartActorPictureAnimation()">
 		<Panel class="TopDash" />
 		<Panel class="PopupContents">
 			<Panel class="BackgroundImage" />
@@ -60,9 +61,42 @@
 			<Panel class="ContentsContainer">
 				<Image id="QuarteroArtStandard" class="QuarteroArt" hittest="false" defaultsrc="s2r://panorama/images/events/seasonal/visual_novel/portraits/quartero_winter_2025/choosereward_quartero_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				<Image id="QuarteroArtHighValue" class="QuarteroArt" hittest="false" defaultsrc="s2r://panorama/images/events/seasonal/visual_novel/portraits/quartero_winter_2025/choosereward_quartero_gold_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
-				<Panel id="ItemContainer" />
+				<Panel class="TopBottomFlow">
+					<ToggleButton id="OwnedToggle" class="AllowDuplicatesCheckbox" text="#DOTA_Compendium2025_ItemChoice_AllowDuplicates" onactivate="PlaySoundEffect( quartero.allow_duplicates.toggle ) DOTAQuarteroToggleOwnedItems()" />
+					<Panel id="ItemContainer" />
+				</Panel>
 			</Panel>
-			<ToggleButton id="OwnedToggle" class="AllowDuplicatesCheckbox" text="#DOTA_Compendium2025_ItemChoice_AllowDuplicates" onactivate="PlaySoundEffect( quartero.allow_duplicates.toggle ) DOTAQuarteroToggleOwnedItems()" />
+			<Panel id="ClaimAsPointsPanel" class="Footer" onmouseover="ShardClaimOnMouseOver()" onmouseout="ShardClaimOnMouseOut()">
+				<Panel class="AlternateItemContainer">
+					<Panel class="AlternateItem">
+						<Panel class="TopBottomFlow">
+							<Label class="QuarteroDialog" text="Can&apos;t decide? Take some shards and be gone." />
+							<Panel class="LeftRightFlow">
+								<Image class="ShardsIcon" defaultsrc="s2r://panorama/images/game_modes/shards_icon_png.vtex" />
+								<Panel class="ItemInfo TopBottomFlow">
+									<Label class="LabelSmall" text="Shards" />
+									<Label id="PointsValue" class="ItemName" text="1,000" />
+								</Panel>
+								<Button class="ButtonPrimary Gold" id="PointsClaimButton">
+									<Label text="#DOTA_Compendium2025_ItemChoice_ButtonLabel" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="PortraitGroup">
+						<Panel class="PortraitContainerLayered">
+							<Panel class="PortraitContainerLayered" id="PortraitStack">
+								<Panel class="PortraitDropShadow" />
+								<Image class="PortraitBackgroundFrame" defaultsrc="s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_spring_psd.vtex" />
+								<Panel id="AnimationContainer" class="AnimationContainer_Visible">
+									<Image id="ActorPictureMain" class="ActorPicture" defaultsrc="s2r://panorama/images/events/seasonal/visual_novel/portraits/quartero/quartero_portrait_idle_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								</Panel>
+								<Panel class="ActorEffectOverlay" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
 		</Panel>
 		<Panel class="TopDash" />
 	</DOTADBPopupQuarteroItemClaimPopup>
