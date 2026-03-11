@@ -38,6 +38,40 @@ function CDotaNPXScenario_CreepStacking:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 0, -- Not Timed.
+		
+		Spawners = 
+		{
+			{
+				SpawnerName = "teammate_spawner", 
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_alchemist",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							PlayerID = 1,
+							BotName = "Alchemist",
+							EntityScript = "ai/creep_stacking/ai_creep_stacking_alchemist.lua",
+							StartingHeroLevel = 8,
+							StartingItems = 
+							{
+								"item_bfury",
+								"item_power_treads",
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority = { 
+								"alchemist_acid_spray",
+								},
+							},
+						},
+					},
+				}
+			}
+		}
 	}
 
 	self.nCheckpoint = 0
@@ -63,34 +97,7 @@ function CDotaNPXScenario_CreepStacking:SetupScenario()
 	self.flStartCount = 0.0
 	self.flAttackCount = 0.0
 	self.bFinalTaskStarted = false
-
-	self.AlchemistSpawner = CDotaSpawner( "teammate_spawner", 
-	{
-		{
-			EntityName = "npc_dota_hero_alchemist",
-			Team = DOTA_TEAM_GOODGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				PlayerID = 1,
-				BotName = "Alchemist",
-				EntityScript = "ai/creep_stacking/ai_creep_stacking_alchemist.lua",
-				StartingHeroLevel = 8,
-				StartingItems = 
-				{
-					"item_bfury",
-					"item_power_treads",
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { 
-					"alchemist_acid_spray",
-					},
-				},
-			},
-		},
-	}, self, false )
+	return true
 end
 
 --------------------------------------------------------------------
@@ -126,6 +133,8 @@ function CDotaNPXScenario_CreepStacking:SetupTasks()
 	if not CDotaNPXScenario.SetupTasks( self ) then
 		return false
 	end
+
+	self.AlchemistSpawner = self:GetSpawner( "teammate_spawner" )
 
 	if self.Tasks == nil then
 		self.Tasks = {}

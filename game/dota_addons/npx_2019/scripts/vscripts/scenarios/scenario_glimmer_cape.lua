@@ -221,6 +221,178 @@ function CDotaNPXScenario_GlimmerCape:InitScenarioKeys()
 		Queries =
 		{
 		},
+		Spawners = 
+		{
+			{
+				SpawnerName = "sniper_spawn_pos",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_sniper",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						StartingHealth = 600,
+						BotPlayer =
+						{
+							PlayerID = 1,
+							BotName = "Sniper",
+							EntityScript = "ai/glimmer_cape/ai_sniper.lua",
+							StartingHeroLevel = 8,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_satanic",
+							},
+							StartingAbilities =
+							{
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority =
+								{
+								},
+							},
+						},
+					},
+				},
+            },
+            {
+                SpawnerName = "necrophos_spawn_pos", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_necrolyte",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Necrophos",
+                            EntityScript = "ai/glimmer_cape/ai_necrophos.lua",
+                            StartingHeroLevel = 10,
+                            StartingItems = 
+                            {
+                                "item_boots",
+                                "item_gem",
+                                --"item_greater_crit",
+                            },
+                            StartingAbilities =
+                            {
+                                "necrolyte_reapers_scythe",
+                                "necrolyte_reapers_scythe",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "necrolyte_reapers_scythe",
+                                    "necrolyte_reapers_scythe",
+                                },
+                            },
+                        },
+                    },
+                }
+            },
+            {
+                SpawnerName = "ogre_spawn_pos", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_ogre_magi",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 2,
+                            BotName = "Ogre Magi",
+                            EntityScript = "ai/glimmer_cape/ai_ogre.lua",
+                            StartingHeroLevel = 3,
+                            StartingItems = 
+                            {
+                            },
+                            StartingAbilities =
+                            {
+                            },
+                        },
+                    },
+                }
+            },
+            {
+                SpawnerName = "chaos_knight_spawn_pos", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_chaos_knight",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Chaos Knight",
+                            EntityScript = "ai/glimmer_cape/ai_chaos_knight.lua",
+                            StartingHeroLevel = 10,
+                            StartingItems = 
+                            {
+                                "item_phase_boots",
+                                "item_echo_sabre",
+                                "item_greater_crit",
+                            },
+                            StartingAbilities =
+                            {
+                                "chaos_knight_chaos_bolt",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "chaos_knight_chaos_bolt",
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "chaos_knight_spawn_pos_2", 
+                NPCs = 
+                {
+                    {
+                        EntityName = "npc_dota_hero_chaos_knight",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Chaos Knight",
+                            EntityScript = "ai/glimmer_cape/ai_chaos_knight.lua",
+                            StartingHeroLevel = 10,
+                            StartingItems = 
+                            {
+                                "item_phase_boots",
+                                "item_echo_sabre",
+                                "item_greater_crit",
+                            },
+                            StartingAbilities =
+                            {
+                                "chaos_knight_chaos_bolt",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "chaos_knight_chaos_bolt",
+                                },
+                            },
+                        },
+                    },
+                }
+            }
+        }
 	}
 end
 
@@ -369,100 +541,17 @@ function CDotaNPXScenario_GlimmerCape:OnTaskCompleted( event )
 				hBlocker:SetEnabled( false )
 			end
 
-			self.hSniperSpawner = CDotaSpawner( "sniper_spawn_pos", 
-			{
-				{
-					EntityName = "npc_dota_hero_sniper",
-					Team = DOTA_TEAM_GOODGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					StartingHealth = 600,
-					BotPlayer =
-					{
-						PlayerID = 1,
-						BotName = "Sniper",
-						EntityScript = "ai/glimmer_cape/ai_sniper.lua",
-						StartingHeroLevel = 8,
-						StartingItems = 
-						{
-							"item_power_treads",
-							"item_satanic",
-						},
-						StartingAbilities =
-						{
-						},
-						AbilityBuild = 
-						{
-							AbilityPriority =
-							{
-							},
-						},
-					},
-				},
-			}, self, true )
+			self.hSniperSpawner = self:GetSpawner( "sniper_spawn_pos" ) 
+			self.hSniperSpawner:SpawnUnits()
 
-		self.hNecrophosSpawner = CDotaSpawner( "necrophos_spawn_pos", 
-		{
-			{
-				EntityName = "npc_dota_hero_necrolyte",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Necrophos",
-					EntityScript = "ai/glimmer_cape/ai_necrophos.lua",
-					StartingHeroLevel = 10,
-					StartingItems = 
-					{
-						"item_boots",
-						"item_gem",
-						--"item_greater_crit",
-					},
-					StartingAbilities =
-					{
-						"necrolyte_reapers_scythe",
-						"necrolyte_reapers_scythe",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"necrolyte_reapers_scythe",
-							"necrolyte_reapers_scythe",
-						},
-					},
-				},
-			},
-		}, self, true )
-
+            self.hNecrophosSpawner = self:GetSpawner( "necrophos_spawn_pos" ) 
+            self.hNecrophosSpawner:SpawnUnits()
 		end	
 
 	elseif Task:GetTaskName() == "move_to_escape" then
 
-		self.hOgreSpawner = CDotaSpawner( "ogre_spawn_pos", 
-		{
-			{
-				EntityName = "npc_dota_hero_ogre_magi",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 2,
-					BotName = "Ogre Magi",
-					EntityScript = "ai/glimmer_cape/ai_ogre.lua",
-					StartingHeroLevel = 3,
-					StartingItems = 
-					{
-					},
-					StartingAbilities =
-					{
-					},
-				},
-			},
-		}, self, true )
+		self.hOgreSpawner = self:GetSpawner( "ogre_spawn_pos" ) 
+		self.hOgreSpawner:SpawnUnits()
 
 	end
 
@@ -495,74 +584,12 @@ function CDotaNPXScenario_GlimmerCape:OnTaskCompleted( event )
 		end
 
 	elseif Task:GetTaskName() == "move_to_start" then
-		self.hCKSpawner = CDotaSpawner( "chaos_knight_spawn_pos", 
-		{
-			{
-				EntityName = "npc_dota_hero_chaos_knight",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Chaos Knight",
-					EntityScript = "ai/glimmer_cape/ai_chaos_knight.lua",
-					StartingHeroLevel = 10,
-					StartingItems = 
-					{
-						"item_phase_boots",
-						"item_echo_sabre",
-						"item_greater_crit",
-					},
-					StartingAbilities =
-					{
-						"chaos_knight_chaos_bolt",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"chaos_knight_chaos_bolt",
-						},
-					},
-				},
-			},
-		}, self, true )
+		self.hCKSpawner = self:GetSpawner( "chaos_knight_spawn_pos" )
+		self.hCKSpawner:SpawnUnits() 
 
 	elseif Task:GetTaskName() == "move_to_location_2" then
-		self.hCKSpawner = CDotaSpawner( "chaos_knight_spawn_pos_2", 
-		{
-			{
-				EntityName = "npc_dota_hero_chaos_knight",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Chaos Knight",
-					EntityScript = "ai/glimmer_cape/ai_chaos_knight.lua",
-					StartingHeroLevel = 10,
-					StartingItems = 
-					{
-						"item_phase_boots",
-						"item_echo_sabre",
-						"item_greater_crit",
-					},
-					StartingAbilities =
-					{
-						"chaos_knight_chaos_bolt",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"chaos_knight_chaos_bolt",
-						},
-					},
-				},
-			},
-		}, self, true )
+		self.hCKSpawner = self:GetSpawner( "chaos_knight_spawn_pos_2" ) 
+		self.hCKSpawner:SpawnUnits()
 
 		if self.hOgre and self.hOgre.Bot then
 			self.hOgre.Bot:GoToDestination()
@@ -572,8 +599,8 @@ function CDotaNPXScenario_GlimmerCape:OnTaskCompleted( event )
 
 		local hOgreUnitLocation = Entities:FindByName( nil, "ogre_move_pos" )		
 		if hOgreUnitLocation ~= nil then
- 			self:HintLocation( hOgreUnitLocation:GetAbsOrigin(), true )
- 		end
+			self:HintLocation( hOgreUnitLocation:GetAbsOrigin(), true )
+		end
 
 	elseif Task:GetTaskName() == "move_to_escape" then
 
@@ -588,8 +615,8 @@ function CDotaNPXScenario_GlimmerCape:OnTaskCompleted( event )
 	elseif Task:GetTaskName() == "protect_ogre" then
 		local hOgreUnitLocation = Entities:FindByName( nil, "ogre_move_pos" )		
 		if hOgreUnitLocation ~= nil then
- 			self:HintLocation( hOgreUnitLocation:GetAbsOrigin(), false )
- 		end
+			self:HintLocation( hOgreUnitLocation:GetAbsOrigin(), false )
+		end
 
 		if event.success == 1 then
 			self:Fade( 1 )

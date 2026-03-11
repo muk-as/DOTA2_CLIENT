@@ -43,6 +43,277 @@ function CDotaNPXScenario_InitiationTeamfight:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 0,
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "queenofpain_spawner",
+				SpawnOnPrecacheComplete = true,
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_queenofpain",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Queen of Pain",
+							EntityScript = "ai/initiation_teamfight/queenofpain.lua",
+							StartingHeroLevel = 7,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_null_talisman",
+								"item_null_talisman",
+							},
+							StartingAbilities	= 
+							{
+								"queenofpain_scream_of_pain",
+								"queenofpain_sonic_wave",
+								"queenofpain_sonic_shadow_strike",
+								"queenofpain_sonic_blink",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "p2_lion_spawner",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_lion",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Lion",
+							EntityScript = "ai/initiation_teamfight/lion_p2.lua",
+							StartingHeroLevel = 7,
+							StartingItems = 
+							{
+								"item_arcane_boots",
+								"item_null_talisman",
+								"item_blink",
+							},
+							StartingAbilities = 
+							{
+								"lion_finger_of_death",
+								"lion_impale",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "lion_finger_of_death", "lion_impale" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "p2_dragon_knight_spawner",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_dragon_knight",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Dragon Knight",
+							EntityScript = "ai/initiation_teamfight/dragon_knight_p2.lua",
+							StartingHeroLevel = 6,
+							StartingItems =
+							{
+								"item_power_treads",
+								"item_hyperstone",
+								"item_lesser_crit",
+								"item_blink",
+							},
+							StartingAbilities	=
+							{
+								"dragon_knight_elder_dragon_form",
+							},
+							AbilityBuild =
+							{
+								AbilityPriority = { "dragon_knight_elder_dragon_form" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "p2_wraith_king_spawner", 
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_skeleton_king",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Wraith King",
+							EntityScript = "ai/initiation_teamfight/wraith_king_p2.lua",
+							StartingHeroLevel = 3,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_hyperstone",
+								"item_desolator",
+							},
+							StartingAbilities	= 
+							{
+								"skeleton_king_hellfire_blast",
+								"skeleton_king_vampiric_aura",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "skeleton_king_hellfire_blast", "skeleton_king_vampiric_aura" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "p2_sniper_spawner", 
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_sniper",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Sniper",
+							EntityScript = "ai/initiation_teamfight/sniper_p2.lua",
+							StartingHeroLevel = 3,
+							StartingItems =
+							{
+								"item_power_treads",
+								"item_wraith_band",
+								"item_wraith_band",
+								"item_desolator",
+							},
+							StartingAbilities	= 
+							{
+								"sniper_assassinate",
+								"sniper_take_aim",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "sniper_take_aim", "sniper_assassinate" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "p2_enigma_spawner", 
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_enigma",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Enigma",
+							EntityScript = "ai/initiation_teamfight/enigma_p2.lua",
+							StartingHeroLevel = 3,
+							StartingItems = 
+							{
+								"item_arcane_boots",
+								"item_null_talisman",
+								"item_black_king_bar",
+								"item_blink",
+							},
+							StartingAbilities	= 
+							{
+								"enigma_black_hole",
+								"enigma_midnight_pulse",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "enigma_black_hole", "enigma_midnight_pulse" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "wraith_king_spawner",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_skeleton_king",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Wraith King",
+							EntityScript = "ai/initiation_teamfight/wraith_king.lua",
+							StartingHeroLevel = 5,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_platemail",
+								"item_desolator",
+							},
+							StartingAbilities	= 
+							{
+								"skeleton_king_hellfire_blast",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "skeleton_king_hellfire_blast" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "sniper_spawner",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_sniper",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Sniper",
+							EntityScript = "ai/initiation_teamfight/sniper.lua",
+							StartingHeroLevel = 6,
+							StartingItems =
+							{
+								"item_power_treads",
+								"item_wraith_band",
+							},
+							StartingAbilities	= 
+							{
+								"sniper_assassinate",
+								"sniper_take_aim",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "sniper_take_aim", "sniper_assassinate" },
+							},
+						},
+					},
+				},
+			}
+		}
 	}
 
 	self.nCheckpoint = 0
@@ -72,38 +343,7 @@ function CDotaNPXScenario_InitiationTeamfight:SetupScenario()
 
 		self.hDireMidTower:SetHealth( self.hDireMidTower:GetMaxHealth() * 0.5 )
 
-		self.hQueenOfPainSpawner = CDotaSpawner( "queenofpain_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_queenofpain",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Queen of Pain",
-					EntityScript = "ai/initiation_teamfight/queenofpain.lua",
-					StartingHeroLevel = 7,
-					StartingItems = 
-					{
-						"item_power_treads",
-						"item_null_talisman",
-						"item_null_talisman",
-					},
-					StartingAbilities	= 
-					{
-						"queenofpain_scream_of_pain",
-						"queenofpain_sonic_wave",
-						"queenofpain_sonic_shadow_strike",
-						"queenofpain_sonic_blink",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
-					},
-				},
-			},
-		}, self, true )
+		self.hQueenOfPainSpawner = self:GetSpawner( "queenofpain_spawner" );
 		ScriptAssert( self.hQueenOfPainSpawner ~= nil, "self.hQueenOfPainSpawner is nil!" )
 	end
 
@@ -297,164 +537,26 @@ function CDotaNPXScenario_InitiationTeamfight:OnTaskCompleted( event )
 		self.nCheckpoint = 1
 
 		-- Spawn allied heroes (part 2)
-		self.hLionP2Spawner = CDotaSpawner( "p2_lion_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_lion",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Lion",
-					EntityScript = "ai/initiation_teamfight/lion_p2.lua",
-					StartingHeroLevel = 7,
-					StartingItems = 
-					{
-						"item_arcane_boots",
-						"item_null_talisman",
-						"item_blink",
-					},
-					StartingAbilities = 
-					{
-						"lion_finger_of_death",
-						"lion_impale",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "lion_finger_of_death", "lion_impale" },
-					},
-				},
-			},
-		}, self, true )
+		self.hLionP2Spawner = self:GetSpawner( "p2_lion_spawner" )
 		ScriptAssert( self.hLionP2Spawner ~= nil, "self.hLionP2Spawner is nil!" )
+		self.hLionP2Spawner:SpawnUnits()
 
-		self.hDragonKnightP2Spawner = CDotaSpawner( "p2_dragon_knight_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_dragon_knight",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Dragon Knight",
-					EntityScript = "ai/initiation_teamfight/dragon_knight_p2.lua",
-					StartingHeroLevel = 6,
-					StartingItems =
-					{
-						"item_power_treads",
-						"item_hyperstone",
-						"item_lesser_crit",
-						"item_blink",
-					},
-					StartingAbilities	=
-					{
-						"dragon_knight_elder_dragon_form",
-					},
-					AbilityBuild =
-					{
-						AbilityPriority = { "dragon_knight_elder_dragon_form" },
-					},
-				},
-			},
-		}, self, true )
+		self.hDragonKnightP2Spawner = self:GetSpawner( "p2_dragon_knight_spawner" )
+		ScriptAssert( self.hDragonKnightP2Spawner ~= nil, "self.hDragonKnightP2Spawner is nil!" )
+		self.hDragonKnightP2Spawner:SpawnUnits()
 
 		-- Spawn enemy heroes (part 2)
-		self.hWraithKingP2Spawner = CDotaSpawner( "p2_wraith_king_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_skeleton_king",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Wraith King",
-					EntityScript = "ai/initiation_teamfight/wraith_king_p2.lua",
-					StartingHeroLevel = 3,
-					StartingItems = 
-					{
-						"item_power_treads",
-						"item_hyperstone",
-						"item_desolator",
-					},
-					StartingAbilities	= 
-					{
-						"skeleton_king_hellfire_blast",
-						"skeleton_king_vampiric_aura",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "skeleton_king_hellfire_blast", "skeleton_king_vampiric_aura" },
-					},
-				},
-			},
-		}, self, true )
+		self.hWraithKingP2Spawner = self:GetSpawner( "p2_wraith_king_spawner" )
+		ScriptAssert( self.hWraithKingP2Spawner ~= nil, "self.hWraithKingP2Spawner is nil!" )
+		self.hWraithKingP2Spawner:SpawnUnits()
 
-		self.hSniperP2Spawner = CDotaSpawner( "p2_sniper_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_sniper",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Sniper",
-					EntityScript = "ai/initiation_teamfight/sniper_p2.lua",
-					StartingHeroLevel = 3,
-					StartingItems =
-					{
-						"item_power_treads",
-						"item_wraith_band",
-						"item_wraith_band",
-						"item_desolator",
-					},
-					StartingAbilities	= 
-					{
-						"sniper_assassinate",
-						"sniper_take_aim",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "sniper_take_aim", "sniper_assassinate" },
-					},
-				},
-			},
-		}, self, true )
+		self.hSniperP2Spawner = self:GetSpawner( "p2_sniper_spawner" ) 
+		ScriptAssert( self.hSniperP2Spawner ~= nil, "self.hSniperP2Spawner is nil!" )
+		self.hSniperP2Spawner:SpawnUnits()
 
-		self.hEnigmaP2Spawner = CDotaSpawner( "p2_enigma_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_enigma",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Enigma",
-					EntityScript = "ai/initiation_teamfight/enigma_p2.lua",
-					StartingHeroLevel = 3,
-					StartingItems = 
-					{
-						"item_arcane_boots",
-						"item_null_talisman",
-						"item_black_king_bar",
-						"item_blink",
-					},
-					StartingAbilities	= 
-					{
-						"enigma_black_hole",
-						"enigma_midnight_pulse",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "enigma_black_hole", "enigma_midnight_pulse" },
-					},
-				},
-			},
-		}, self, true )
+		self.hEnigmaP2Spawner = self:GetSpawner( "p2_enigma_spawner" )
+		ScriptAssert( self.hEnigmaP2Spawner ~= nil, "self.hEnigmaP2Spawner is nil!" )
+		self.hEnigmaP2Spawner:SpawnUnits()
 	elseif Task:GetTaskName() == "blink_ravage_enemies" then
 		printf( "Completed task blink_ravage_enemies" )
 		local hWinSecondTeamfightTask = GameRules.DotaNPX:GetTask( "win_second_teamfight" )
@@ -491,65 +593,13 @@ function CDotaNPXScenario_InitiationTeamfight:OnTaskCompleted( event )
 		hQueenOfPain:RemoveModifierByName( "modifier_disable_healing" )
 
 		-- Spawn enemy heroes
-		self.hWraithKingSpawner = CDotaSpawner( "wraith_king_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_skeleton_king",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Wraith King",
-					EntityScript = "ai/initiation_teamfight/wraith_king.lua",
-					StartingHeroLevel = 5,
-					StartingItems = 
-					{
-						"item_power_treads",
-						"item_platemail",
-						"item_desolator",
-					},
-					StartingAbilities	= 
-					{
-						"skeleton_king_hellfire_blast",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "skeleton_king_hellfire_blast" },
-					},
-				},
-			},
-		}, self, true )
-
-		self.hSniperSpawner = CDotaSpawner( "sniper_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_sniper",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Sniper",
-					EntityScript = "ai/initiation_teamfight/sniper.lua",
-					StartingHeroLevel = 6,
-					StartingItems =
-					{
-						"item_power_treads",
-						"item_wraith_band",
-					},
-					StartingAbilities	= 
-					{
-						"sniper_assassinate",
-						"sniper_take_aim",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "sniper_take_aim", "sniper_assassinate" },
-					},
-				},
-			},
-		}, self, true )
+		self.hWraithKingSpawner = self:GetSpawner( "wraith_king_spawner" )
+		ScriptAssert( self.hWraithKingSpawner ~= nil, "self.hWraithKingSpawner is nil!" )
+		self.hWraithKingSpawner:SpawnUnits()
+		
+		self.hSniperSpawner = self:GetSpawner( "sniper_spawner" )
+		ScriptAssert( self.hSniperSpawner ~= nil, "self.hSniperSpawner is nil!" )
+		self.hSniperSpawner:SpawnUnits()
 	elseif Task:GetTaskName() == "win_teamfight" then
 		-- Give Tidehunter a blink dagger
 		local blink = CreateItem( "item_blink", self.hPlayerHero, self.hPlayerHero )

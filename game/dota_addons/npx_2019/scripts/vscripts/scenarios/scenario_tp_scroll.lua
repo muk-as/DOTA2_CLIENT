@@ -89,6 +89,58 @@ function CDotaNPXScenario_TP_Scroll:InitScenarioKeys()
 		Queries =
 		{
 		},
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "enemy_spawn_location",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_dragon_knight",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Dragon Knight",
+							EntityScript = "ai/tp_scroll/ai_tp_scroll_dragon_knight.lua",
+							StartingHeroLevel = 2,
+							StartingItems = 
+							{
+								"boots",
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority = {
+									"dragon_knight_dragon_tail",
+								},
+							},
+						},
+						PostSpawn = function( hUnit )
+							GameRules.DotaNPX:GetTask( "stun_tp" ):SetTargetCaster( hUnit )
+							GameRules.DotaNPX:GetTask( "kill_enemy" ):SetUnitsToKill( { hUnit } )
+						end
+					},
+				}
+			},
+			{
+				SpawnerName = "creep_spawn_location",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_neutral_kobold",
+						Team = DOTA_TEAM_NEUTRALS,
+						Count = 1,
+						PositionNoise = 0,
+						PostSpawn = function( hUnit )
+							hUnit:SetMaxHealth( 4000 )
+							hUnit:SetHealth( 4000 )
+						end
+					},
+				}
+			}
+		}
 	}
 
 end
@@ -199,50 +251,10 @@ function CDotaNPXScenario_TP_Scroll:OnTaskCompleted( event )
 	end
 	
 	if event.task_name == "buy_two_tp" then
-		self.DragonKnightSpawner = CDotaSpawner( "enemy_spawn_location",
-		{
-			{
-				EntityName = "npc_dota_hero_dragon_knight",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Dragon Knight",
-					EntityScript = "ai/tp_scroll/ai_tp_scroll_dragon_knight.lua",
-					StartingHeroLevel = 2,
-					StartingItems = 
-					{
-						"boots",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority = {
-							"dragon_knight_dragon_tail",
-						},
-					},
-				},
-				PostSpawn = function( hUnit )
-					GameRules.DotaNPX:GetTask( "stun_tp" ):SetTargetCaster( hUnit )
-					GameRules.DotaNPX:GetTask( "kill_enemy" ):SetUnitsToKill( { hUnit } )
-				end
-			},
-		}, self, true )
-
-		self.CreepSpawner = CDotaSpawner( "creep_spawn_location",
-		{
-			{
-				EntityName = "npc_dota_neutral_kobold",
-				Team = DOTA_TEAM_NEUTRALS,
-				Count = 1,
-				PositionNoise = 0,
-				PostSpawn = function( hUnit )
-					hUnit:SetMaxHealth( 4000 )
-					hUnit:SetHealth( 4000 )
-				end
-			},
-		}, self, true )
-
+		self.DragonKnightSpawner = self:GetSpawner( "enemy_spawn_location" )
+		self.DragonKnightSpawner:SpawnUnits()
+		self.CreepSpawner = self:GetSpawner( "creep_spawn_location" )
+		self.CreepSpawner:SpawnUnits()
 		AddFOWViewer( DOTA_TEAM_GOODGUYS, Entities:FindByName( nil, "enemy_spawn_location" ):GetAbsOrigin(), 250, 999, false )
 
 		return

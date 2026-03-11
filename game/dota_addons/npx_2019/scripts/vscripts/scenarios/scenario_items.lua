@@ -42,6 +42,42 @@ function CDotaNPXScenario_Items:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 0, -- Not Timed.
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "teammate_1_spawner",
+				SpawnOnPrecacheComplete = true,
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_windrunner",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							PlayerID = 1,
+							BotName = "Windranger",
+							EntityScript = "ai/items/ai_items_windranger.lua",
+							StartingHeroLevel = 1,
+							StartingItems = 
+							{
+								"item_circlet",
+								"item_branches",
+								"item_branches",
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority = { 
+								"windrunner_powershot",
+								},
+							},
+						},
+					},
+				}
+			}
+		}
 	}
 
 end
@@ -109,38 +145,6 @@ function CDotaNPXScenario_Items:SetupTasks()
 			return true
 		end,
 	}, self ), 0.0 )
-
-	self.WindrangerSpawner = CDotaSpawner( "teammate_1_spawner", 
-	{
-		{
-			EntityName = "npc_dota_hero_windrunner",
-			Team = DOTA_TEAM_GOODGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				PlayerID = 1,
-				BotName = "Windranger",
-				EntityScript = "ai/items/ai_items_windranger.lua",
-				StartingHeroLevel = 1,
-				StartingItems = 
-				{
-					"item_circlet",
-					"item_branches",
-					"item_branches",
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { 
-					"windrunner_powershot",
-					},
-				},
-			},
-		},
-	}, self, false )
-
-	self.WindrangerSpawner:SpawnUnits()
-	self.hTeammate = self.WindrangerSpawner:GetSpawnedUnits()[1]
 
 	local shareTango = rootTask:AddTask( CDotaNPXTask_ShareItem( {
 		TaskName = "share_tango",

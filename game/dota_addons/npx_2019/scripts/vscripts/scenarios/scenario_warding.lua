@@ -15,7 +15,7 @@ end
 
 function CDotaNPXScenario_Warding:PrecacheResources()
 	PrecacheUnitByNameSync( "npc_dota_hero_pudge", context )
-    PrecacheModel( "npc_dota_hero_pudge", context )
+	PrecacheModel( "npc_dota_hero_pudge", context )
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_pudge", context )
 end
 
@@ -185,6 +185,41 @@ function CDotaNPXScenario_Warding:InitScenarioKeys()
 		Queries =
 		{
 		},
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "enemy_spawner",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_pudge",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							PlayerID = 1,
+							BotName = "Pudge",
+							EntityScript = "ai/warding/ai_warding_pudge.lua",
+							StartingHeroLevel = 10,
+							StartingItems = 
+							{
+								"item_tranquil_boots",
+								"item_magic_wand",
+								"item_urn_of_shadows",
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority = { 
+								"pudge_meat_hook",
+								},
+							},
+						},
+					},
+				}
+			}
+		}
 	}
 
 end
@@ -216,35 +251,6 @@ function CDotaNPXScenario_Warding:SetupScenario()
 	self.bCanPlaceObserver = false
 	self.bCanPlaceSentry = false
 
-	self.PudgeSpawner = CDotaSpawner( "enemy_spawner", 
-	{
-		{
-			EntityName = "npc_dota_hero_pudge",
-			Team = DOTA_TEAM_BADGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				PlayerID = 1,
-				BotName = "Pudge",
-				EntityScript = "ai/warding/ai_warding_pudge.lua",
-				StartingHeroLevel = 10,
-				StartingItems = 
-				{
-					"item_tranquil_boots",
-					"item_magic_wand",
-					"item_urn_of_shadows",
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { 
-					"pudge_meat_hook",
-					},
-				},
-			},
-		},
-	}, self, false )
-
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_Warding, "OnTriggerStartTouch" ), self )
 	self.nTaskListener = ListenToGameEvent( "npc_spawned", Dynamic_Wrap( CDotaNPXScenario_Warding, "OnWardSpawned" ), self )
 end
@@ -253,6 +259,8 @@ end
 
 function CDotaNPXScenario_Warding:OnSetupComplete()
 	CDotaNPXScenario.OnSetupComplete( self )
+	
+	self.PudgeSpawner = self:GetSpawner( "enemy_spawner" )
 end
 
 --------------------------------------------------------------------

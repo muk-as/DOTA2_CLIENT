@@ -29,6 +29,7 @@ end
 --------------------------------------------------------------------
 
 function CDOTANPXScenario_Economy:InitScenarioKeys()
+	self.GoldToEarn = 200
 	self.hScenario =
 	{
 		PreGameTime 		= 0.0,
@@ -38,7 +39,7 @@ function CDOTANPXScenario_Economy:InitScenarioKeys()
 		StartingHeroLevel	= 8,
 		StartingXP 			= ( GetXPNeededToReachNextLevel( 8 ) - GetXPNeededToReachNextLevel( 7 ) ) * 0.7,
 		Team 				= DOTA_TEAM_GOODGUYS,
-		StartingGold		= ( GetCostOfItem( "item_tpscroll" ) * 2 ) + GetCostOfItem( "item_broadsword" ) + GetCostOfItem( "item_ogre_axe" ) + ( GetCostOfItem( "item_void_stone" ) / 2 ),
+		StartingGold		= ( GetCostOfItem( "item_tpscroll" ) * 2 ) + GetCostOfItem( "item_broadsword" ) + GetCostOfItem( "item_ogre_axe" ) + ( GetCostOfItem( "item_void_stone" ) - self.GoldToEarn ),
 		StartingItems 		=
 		{
 			"item_bracer",
@@ -60,6 +61,45 @@ function CDOTANPXScenario_Economy:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 0,
+		Spawners = 
+		{
+            {
+                SpawnerName = "sf_spawner",
+                NPCs =  
+                {
+                    {
+                        EntityName = "npc_dota_hero_nevermore",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Shadow Fiend",
+                            EntityScript = "ai/ai_sf_economy.lua",
+                            StartingHeroLevel = 18,
+                            StartingItems = 
+                            {
+                                "item_power_treads",
+                                "item_ancient_janggo",
+                                "item_hurricane_pike",
+                                "item_kaya",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { 
+                                "nevermore_requiem",
+                                "nevermore_shadowraze1",
+                                "nevermore_necromastery",
+                                "nevermore_dark_lord",
+                                "special_bonus_attack_speed_20",
+                                },
+                            },
+                        },
+                    },
+                }
+            }
+        }
 	}
 end
 
@@ -358,7 +398,7 @@ function CDOTANPXScenario_Economy:SetupTask_CompleteEchoSabre()
 		TaskName = "earn_gold_for_void_stone",
 		TaskParams =
 		{
-			Gold = GetCostOfItem( "item_void_stone" ) / 2,
+			Gold = self.GoldToEarn,
 		},
 	}, self ), 0 )
 
@@ -756,40 +796,7 @@ end
 function CDOTANPXScenario_Economy:OnGameRulesStateChange( nOldState, nNewState )
 	CDotaNPXScenario.OnGameRulesStateChange( self, nOldState, nNewState )
 	if nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self.SfSpawner = CDotaSpawner( "sf_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_nevermore",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Shadow Fiend",
-					EntityScript = "ai/ai_sf_economy.lua",
-					StartingHeroLevel = 18,
-					StartingItems = 
-					{
-						"item_power_treads",
-						"item_ancient_janggo",
-						"item_hurricane_pike",
-						"item_kaya",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority = { 
-						"nevermore_requiem",
-						"nevermore_shadowraze1",
-						"nevermore_necromastery",
-						"nevermore_dark_lord",
-						"special_bonus_attack_speed_20",
-						},
-					},
-				},
-			},
-		}, self, false )
-
+		self.SfSpawner = self:GetSpawner( "sf_spawner" )
 	end 
 end
 
@@ -820,7 +827,9 @@ function CDOTANPXScenario_Economy:IntroduceScenario()
 
 		local tLaneCreeps = Entities:FindAllByClassname( "npc_dota_creep_lane" )
 		for _,hCreep in pairs ( tLaneCreeps ) do
-			hCreep:AddNewModifier( hCreep, nil, "modifier_no_damage", { duration = -1 } )
+			if hCreep:GetTeam() == DOTA_TEAM_BADGUYS then
+				hCreep:AddNewModifier( hCreep, nil, "modifier_no_damage", { duration = -1 } )
+			end
 		end
 
 		local tTowers = Entities:FindAllByClassname( "npc_dota_tower" )

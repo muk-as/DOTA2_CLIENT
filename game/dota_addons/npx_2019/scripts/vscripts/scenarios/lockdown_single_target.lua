@@ -31,6 +31,135 @@ function CDotaNPXScenario_LockdownSingleTarget:InitScenarioKeys()
 			"item_point_booster",
 		},
 		ScenarioTimeLimit = 0,
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "lina_spawner",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_lina",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Lina",
+							EntityScript = "ai/lockdown_single_target/lina.lua",
+							StartingHeroLevel = 6,
+							StartingItems = 
+							{
+								"item_power_treads",
+							},
+							StartingAbilities	= 
+							{
+								"lina_laguna_blade",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "lina_laguna_blade" },
+							},
+						},
+					}
+				}
+			},
+			{
+				SpawnerName = "drow_spawner",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_drow_ranger",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Drow Ranger",
+							EntityScript = "ai/lockdown_single_target/drow_ranger.lua",
+							StartingHeroLevel = 5,
+							StartingItems = 
+							{
+								"item_boots",
+								"item_gloves",
+								"item_wraith_band",
+								"item_wraith_band",
+								"item_yasha",
+							},
+							StartingAbilities	= 
+							{
+								"drow_ranger_trueshot",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "drow_ranger_trueshot" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "queenofpain_spawner", 
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_queenofpain",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Queen of Pain",
+							EntityScript = "ai/lockdown_single_target/queenofpain.lua",
+							StartingHeroLevel = 5,
+							StartingItems = 
+							{
+								"item_power_treads",
+							},
+							StartingAbilities	= 
+							{
+								"queenofpain_blink",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "queenofpain_blink" },
+							},
+						},
+					}
+				}
+			},
+			{
+				SpawnerName = "bane_spawner",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_bane",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Bane",
+							EntityScript = "ai/lockdown_single_target/bane.lua",
+							StartingHeroLevel = 6,
+							StartingItems = 
+							{
+								"item_power_treads",
+							},
+							StartingAbilities	= 
+							{
+								"bane_brain_sap",
+								"bane_fiends_grip",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "bane_brain_sap", "bane_fiends_grip" },
+							},
+						},
+					}
+				}
+			}
+		}
 	}
 
 	self.nCheckpoint = 0
@@ -46,37 +175,6 @@ function CDotaNPXScenario_LockdownSingleTarget:SetupScenario()
 	GameRules:SetHeroRespawnEnabled( false )
 	GameRules:GetGameModeEntity():SetDaynightCycleDisabled( true )
 	GameRules:SetTimeOfDay( 0.251 )
-
-	if self.nCheckpoint == 0 then
-		-- Create Lina
-		self.hLinaSpawner = CDotaSpawner( "lina_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_lina",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Lina",
-					EntityScript = "ai/lockdown_single_target/lina.lua",
-					StartingHeroLevel = 6,
-					StartingItems = 
-					{
-						"item_power_treads",
-					},
-					StartingAbilities	= 
-					{
-						"lina_laguna_blade",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "lina_laguna_blade" },
-					},
-				},
-			}
-		}, self, true )
-	end
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_LockdownSingleTarget, "OnTriggerStartTouch" ), self )
 	return true
@@ -216,7 +314,7 @@ function CDotaNPXScenario_LockdownSingleTarget:OnSetupComplete()
 
 	if self.nCheckpoint == 1 then
 		printf( "CHECKPOINT 1" )
-		local bForceStart = true
+		local bForceStart = false
 		self:CheckpointSkipCompleteTask( "move_to_lina", true, bForceStart )
 		self:CheckpointSkipCompleteTask( "protect_lina_parallel", true )
 		self:CheckpointSkipCompleteTask( "protect_lina", true )
@@ -248,6 +346,9 @@ function CDotaNPXScenario_LockdownSingleTarget:OnTaskStarted( event )
 	end
 
 	if Task:GetTaskName() == "move_to_lina" then
+		-- Create Lina
+		self.hLinaSpawner = self:GetSpawner( "lina_spawner" )
+		self.hLinaSpawner:SpawnUnits()
 		self:ShowWizardTip( "lockdown_single_target_tip_channeled_spells", 8.0 )
 		self:ShowUIHint( "Ability2 AbilityButton" )
 	end
@@ -298,37 +399,8 @@ function CDotaNPXScenario_LockdownSingleTarget:OnTaskCompleted( event )
 		end
 
 		-- Create Drow
-		self.hDrowSpawner = CDotaSpawner( "drow_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_drow_ranger",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Drow Ranger",
-					EntityScript = "ai/lockdown_single_target/drow_ranger.lua",
-					StartingHeroLevel = 5,
-					StartingItems = 
-					{
-						"item_boots",
-						"item_gloves",
-						"item_wraith_band",
-						"item_wraith_band",
-						"item_yasha",
-					},
-					StartingAbilities	= 
-					{
-						"drow_ranger_trueshot",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "drow_ranger_trueshot" },
-					},
-				},
-			},
-		}, self, true )
+		self.hDrowSpawner = self:GetSpawner( "drow_spawner" )
+		self.hDrowSpawner:SpawnUnits() 
 	elseif Task:GetTaskName() == "move_to_drow_ranger" then
 		self:HideUIHint()
 
@@ -339,78 +411,23 @@ function CDotaNPXScenario_LockdownSingleTarget:OnTaskCompleted( event )
 		self.nCheckpoint = 1
 
 		-- Make QoP
-		self.hQueenOfPainSpawner = CDotaSpawner( "queenofpain_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_queenofpain",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Queen of Pain",
-					EntityScript = "ai/lockdown_single_target/queenofpain.lua",
-					StartingHeroLevel = 5,
-					StartingItems = 
-					{
-						"item_power_treads",
-					},
-					StartingAbilities	= 
-					{
-						"queenofpain_blink",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "queenofpain_blink" },
-					},
-				},
-			}
-		}, self, true )
+		self.hQueenOfPainSpawner = self:GetSpawner( "queenofpain_spawner" ) 
+		self.hQueenOfPainSpawner:SpawnUnits()
 	elseif Task:GetTaskName() == "kill_queenofpain" then
 		self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 2.0, function()
 			self:OnScenarioComplete( true )
 		end )
 	end	
 
-
-
 	if event.checkpoint_skip == 1 then
 		printf( "Checkpoint Skipping past the task completed logic for \"%s\"", Task:GetTaskName() )
 		return
 	end
 
-
-
 	if Task:GetTaskName() == "move_to_lina" then
 		-- Create Bane
-		self.hBaneSpawner = CDotaSpawner( "bane_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_bane",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Bane",
-					EntityScript = "ai/lockdown_single_target/bane.lua",
-					StartingHeroLevel = 6,
-					StartingItems = 
-					{
-						"item_power_treads",
-					},
-					StartingAbilities	= 
-					{
-						"bane_brain_sap",
-						"bane_fiends_grip",
-					}, 
-					AbilityBuild = 
-					{
-						AbilityPriority = { "bane_brain_sap", "bane_fiends_grip" },
-					},
-				},
-			}
-		}, self, true )
+		self.hBaneSpawner = self:GetSpawner( "bane_spawner" )
+		self.hBaneSpawner:SpawnUnits()
 	elseif Task:GetTaskName() == "moving_past_lina_trigger" then
 		self:HideUIHint()
 	end

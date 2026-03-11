@@ -191,6 +191,188 @@ function CDotaNPXScenario_Roshan:InitScenarioKeys()
 		Queries =
 		{
 		},
+		
+		Spawners =
+		{
+            {
+                SpawnerName = "snapfire_start_pos", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_snapfire",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Snapfire",
+                            EntityScript = "ai/roshan/ai_snapfire.lua",
+                            StartingHeroLevel = 9,
+                            StartingItems = 
+                            {
+                                "item_tranquil_boots",
+                                "item_aether_lens",
+                            },
+                            StartingAbilities	= 
+                            {
+                            }, 
+                            AbilityBuild = 
+                            {
+                                --AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "snapfire_tp_pos", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_snapfire",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Snapfire",
+                            EntityScript = "ai/roshan/ai_snapfire.lua",
+                            StartingHeroLevel = 9,
+                            StartingItems = 
+                            {
+                                "item_tranquil_boots",
+                                "item_aether_lens",
+                            },
+                            StartingAbilities	= 
+                            {
+                            }, 
+                            AbilityBuild = 
+                            {
+                                --AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "lich_tp_pos",
+                NPCs = 
+                {
+                    {
+                        EntityName = "npc_dota_hero_lich",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Lich",
+                            EntityScript = "ai/roshan/ai_lich.lua",
+                            StartingHeroLevel = 8,
+                            StartingItems = 
+                            {
+                                "item_tranquil_boots",
+                                "item_aether_lens",
+                            },
+                            StartingAbilities	= 
+                            {
+                            }, 
+                            AbilityBuild = 
+                            {
+                                --AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "lich_start_pos",
+                NPCs = 
+                {
+                    {
+                        EntityName = "npc_dota_hero_lich",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Lich",
+                            EntityScript = "ai/roshan/ai_lich.lua",
+                            StartingHeroLevel = 8,
+                            StartingItems = 
+                            {
+                                "item_tranquil_boots",
+                                "item_aether_lens",
+                            },
+                            StartingAbilities	= 
+                            {
+                            }, 
+                            AbilityBuild = 
+                            {
+                                --AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "juggernaut_start_pos",
+                NPCs =  
+                {
+                    {
+                        EntityName = "npc_dota_hero_juggernaut",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Juggernaut",
+                            EntityScript = "ai/roshan/ai_juggernaut.lua",
+                            StartingHeroLevel = 12,
+                            StartingItems = 
+                            {
+                                "item_phase_boots",
+                                "item_bfury",
+                                "item_wraith_band",
+                                "item_maelstrom"
+                            },
+                            StartingAbilities =
+                            {
+                                "juggernaut_omni_slash",
+                                "juggernaut_blade_fury",
+                                "juggernaut_healing_ward",
+                                "juggernaut_blade_dance",
+                                "special_bonus_all_stats_5",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "juggernaut_omni_slash",
+                                    "juggernaut_blade_fury",
+                                    "juggernaut_healing_ward",
+                                    "juggernaut_blade_dance",
+                                    "special_bonus_all_stats_5",
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "roshan_spawn_location",
+                NPCs = 
+                {
+                    
+                    {
+                        EntityName = "npc_dota_roshan",
+                        Team = DOTA_TEAM_NEUTRALS,
+                        Count = 1,
+                        PositionNoise = 0.0
+                    }
+                }
+            }
+        }
 	}
 end
 
@@ -202,75 +384,6 @@ function CDotaNPXScenario_Roshan:SetupScenario()
 	end
 
 	GameRules:SetHeroRespawnEnabled( false )
-
-	-- if we've hit the checkpoint then put the allies at the tp destinations
-	local szSnapfireStartPos = "snapfire_start_pos"
-	local szLichStartPos = "lich_start_pos"
-
-	local checkpointTask = self:GetTask( self.szCheckpointTaskName )
-	if checkpointTask ~= nil then
-		szSnapfireStartPos = "snapfire_tp_pos"
-		szLichStartPos = "lich_tp_pos"
-	end
-
-	self.hSnapfireSpawner = CDotaSpawner( szSnapfireStartPos, 
-	{
-		{
-			EntityName = "npc_dota_hero_snapfire",
-			Team = DOTA_TEAM_GOODGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				BotName = "Snapfire",
-				EntityScript = "ai/roshan/ai_snapfire.lua",
-				StartingHeroLevel = 9,
-				StartingItems = 
-				{
-					"item_tranquil_boots",
-					"item_aether_lens",
-				},
-				StartingAbilities	= 
-				{
-				}, 
-				AbilityBuild = 
-				{
-					--AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
-				},
-			},
-		},
-	}, self, true )
-	ScriptAssert( self.hSnapfireSpawner ~= nil, "self.hSnapfireSpawner is nil!" )
-
-
-	self.hLichSpawner = CDotaSpawner( szLichStartPos, 
-	{
-		{
-			EntityName = "npc_dota_hero_lich",
-			Team = DOTA_TEAM_GOODGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				BotName = "Lich",
-				EntityScript = "ai/roshan/ai_lich.lua",
-				StartingHeroLevel = 8,
-				StartingItems = 
-				{
-					"item_tranquil_boots",
-					"item_aether_lens",
-				},
-				StartingAbilities	= 
-				{
-				}, 
-				AbilityBuild = 
-				{
-					--AbilityPriority = { "queenofpain_scream_of_pain", "queenofpain_sonic_wave", "queenofpain_sonic_shadow_strike", "queenofpain_blink" },
-				},
-			},
-		},
-	}, self, true )
-	ScriptAssert( self.hLichSpawner ~= nil, "self.hLichSpawner is nil!" )
 
 	return true
 end
@@ -375,17 +488,8 @@ function CDotaNPXScenario_Roshan:OnTaskCompleted( event )
 	if Task:GetTaskName() == "intro_delay" then
 		self:ShowWizardTip( "scenario_roshan_wizard_tip_intro", 10.0 )
 
-		self.hRoshanSpawner = CDotaSpawner( "roshan_spawn_location", 
-		{
-			{
-				EntityName = "npc_dota_roshan",
-				Team = DOTA_TEAM_NEUTRALS,
-				Count = 1,
-				PositionNoise = 0.0
-			},
-		}, self, true )	
-
-		self:AddSpawner( self.hRoshanSpawner )
+		self.hRoshanSpawner = self:GetSpawner( "roshan_spawn_location" ) 
+		self.hRoshanSpawner:SpawnUnits()	
 
 	elseif Task:GetTaskName() == "move_to_location_1" then
 		local hRoshanHintPos = Entities:FindByName( nil, "roshan_spawn_location" )
@@ -443,49 +547,7 @@ function CDotaNPXScenario_Roshan:OnTaskCompleted( event )
 
 
 	elseif Task:GetTaskName() == "exit_pit" then
-		self.hJuggernautSpawner = CDotaSpawner( "juggernaut_start_pos", 
-		{
-			{
-				EntityName = "npc_dota_hero_juggernaut",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Juggernaut",
-					EntityScript = "ai/roshan/ai_juggernaut.lua",
-					StartingHeroLevel = 12,
-					StartingItems = 
-					{
-						"item_phase_boots",
-						"item_bfury",
-						"item_wraith_band",
-						"item_maelstrom"
-					},
-					StartingAbilities =
-					{
-						"juggernaut_omni_slash",
-						"juggernaut_blade_fury",
-						"juggernaut_healing_ward",
-						"juggernaut_blade_dance",
-						"special_bonus_all_stats_5",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"juggernaut_omni_slash",
-							"juggernaut_blade_fury",
-							"juggernaut_healing_ward",
-							"juggernaut_blade_dance",
-							"special_bonus_all_stats_5",
-						},
-					},
-				},
-			},
-		}, self, true )
-
+		self.hJuggernautSpawner:SpawnUnits()
 	end
 
 end
@@ -494,6 +556,26 @@ end
 
 function CDotaNPXScenario_Roshan:OnSetupComplete()
 	CDotaNPXScenario.OnSetupComplete( self )
+	
+	local szSnapfireStartPos = "snapfire_start_pos"
+    local szLichStartPos = "lich_start_pos"
+
+    local checkpointTask = self:GetTask( self.szCheckpointTaskName )
+    if checkpointTask ~= nil then
+        szSnapfireStartPos = "snapfire_tp_pos"
+        szLichStartPos = "lich_tp_pos"
+    end
+
+    self.hSnapfireSpawner = self:GetSpawner( szSnapfireStartPos ) 
+    ScriptAssert( self.hSnapfireSpawner ~= nil, "self.hSnapfireSpawner is nil!" )
+    self.hSnapfireSpawner:SpawnUnits()
+
+    self.hLichSpawner = self:GetSpawner( szLichStartPos )
+   
+    self.hLichSpawner:SpawnUnits() ScriptAssert( self.hLichSpawner ~= nil, "self.hLichSpawner is nil!" )
+    
+    self.hJuggernautSpawner = self:GetSpawner( "juggernaut_start_pos" )
+    ScriptAssert( self.hJuggernautSpawner ~= nil, "self.hJuggernautSpawner is nil!")
 
 	self:GetPlayerHero():SetAbilityPoints( 0 )
 

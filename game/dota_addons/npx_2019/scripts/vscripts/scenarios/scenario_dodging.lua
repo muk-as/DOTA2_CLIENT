@@ -126,7 +126,7 @@ function CDotaNPXScenario_Dodging:InitScenarioKeys()
 					GoalLocation = self.hInitialPlayerMoveLoc:GetAbsOrigin(),
 					GoalDistance = 64,
 				},
-				CheckTaskStart = 
+				CheckTaskStart =  
 				function() 
 					return GameRules:GetGameTime() >= self.DodgeArrowTimeStart + self.DodgeArrowTime and GameRules.DotaNPX:IsTaskComplete( "task_fail_player_hero_take_damage" ) == false
 				end,
@@ -193,6 +193,101 @@ function CDotaNPXScenario_Dodging:InitScenarioKeys()
 		Queries =
 		{
 		},
+		Spawners =
+		{
+            {
+                SpawnerName = "enemy_spawn_location_1",
+                SpawnPointName = "enemy_spawn_location",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_mirana",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Mirana",
+                            EntityScript = "ai/dodging/ai_dodging_mirana.lua",
+                            StartingHeroLevel = 3,
+                            StartingItems = 
+                            {
+                                "item_boots",
+                            },
+                            StartingAbilities	= 
+                            {
+                                "mirana_arrow",
+                                "mirana_leap",
+                            }, 
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { "mirana_arrow" },
+                            },
+                        },
+                    },
+                }
+            },
+            {
+                SpawnerName = "enemy_spawn_location_2",
+                SpawnPointName = "enemy_spawn_location",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_skywrath_mage",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Skywrath Mage",
+                            EntityScript = "ai/dodging/ai_dodging_skywrath.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = 
+                            {
+                            },
+                            StartingAbilities	= 
+                            {
+                                "skywrath_mage_concussive_shot",
+                            }, 
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { "skywrath_mage_concussive_shot" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "enemy_spawn_location_3",
+                SpawnPointName = "enemy_spawn_location",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_skywrath_mage",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Skywrath Mage",
+                            EntityScript = "ai/dodging/ai_dodging_skywrath.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = 
+                            {
+                            },
+                            StartingAbilities	= 
+                            {
+                                "skywrath_mage_concussive_shot",
+                            }, 
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { "skywrath_mage_concussive_shot" },
+                            },
+                        },
+                    },
+                }
+            }
+        }
 	}
 end
 
@@ -261,35 +356,8 @@ function CDotaNPXScenario_Dodging:OnTaskCompleted( event )
 	if Task:GetTaskName() == "move_to_location_1" then
 		self.DodgeArrowTimeStart = GameRules:GetGameTime()
 
-		self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_mirana",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Mirana",
-						EntityScript = "ai/dodging/ai_dodging_mirana.lua",
-						StartingHeroLevel = 3,
-						StartingItems = 
-						{
-							"item_boots",
-						},
-						StartingAbilities	= 
-						{
-							"mirana_arrow",
-							"mirana_leap",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "mirana_arrow" },
-						},
-					},
-				},
-			}, self, true )
-
+		self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_1" )
+		self.EnemySpawner:SpawnUnits()
 	end
 	if Task:GetTaskName() == "dodge_all_arrows" then
 		local hPlayerHero = self:GetPlayerHero()
@@ -312,70 +380,13 @@ function CDotaNPXScenario_Dodging:OnTaskCompleted( event )
 
 
 	if Task:GetTaskName() == "move_to_location_2" then
-			self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_tinker",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Tinker",
-						EntityScript = "ai/dodging/ai_dodging_tinker.lua",
-						StartingHeroLevel = 6,
-						StartingItems = 
-						{
-							"item_aether_lens",
-							"item_aghanims_shard",
-						},
-						StartingAbilities	= 
-						{
-							"tinker_rearm",
-							"tinker_heat_seeking_missiles",
-							"tinker_warp_grenade",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "tinker_warp_grenade" },
-						},
-					},
-				},
-			}, self, true )
-
+        self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_2" )
+        self.EnemySpawner:SpawnUnits()
 	end		
 
 	if Task:GetTaskName() == "move_to_location_3" then
-			self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_tinker",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Tinker",
-						EntityScript = "ai/dodging/ai_dodging_tinker_pt2.lua",
-						StartingHeroLevel = 6,
-						StartingItems = 
-						{
-							"item_aether_lens",
-							"item_aghanims_shard",
-						},
-						StartingAbilities	= 
-						{
-							"tinker_rearm",
-							"tinker_heat_seeking_missiles",
-							"tinker_warp_grenade",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "tinker_warp_grenade" },
-						},
-					},
-				},
-			}, self, true )
+			self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_3" )
+			self.EnemySpawner:SpawnUnits()
 		end
 end	
 

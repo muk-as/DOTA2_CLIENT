@@ -245,6 +245,277 @@ function CDotaNPXScenario_Status_Effects:InitScenarioKeys()
 		Queries =
 		{
 		},
+		
+		Spawners = 
+		{
+			{
+				SpawnerName = "enemy_spawn_location_1",
+				SpawnPointName = "enemy_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_shadow_shaman",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Shadow Shaman",
+							EntityScript = "ai/status_effects/ai_status_effects_shadow_shaman.lua",
+							StartingHeroLevel = 5,
+							StartingItems = 
+							{
+								"item_boots",
+							},
+							StartingAbilities	= 
+							{
+								"shadow_shaman_shackles",
+								"shadow_shaman_voodoo",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "shadow_shaman_shackles" },
+							},
+						},
+					},
+				},
+			},
+			{
+				SpawnerName = "ally_spawn_location_1",
+				SpawnPointName = "ally_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_lina",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Lina",
+							EntityScript = "ai/status_effects/ai_status_effects_lina",
+							StartingHeroLevel = 14,
+							StartingItems = 
+							{
+								"item_boots",
+								"item_ultimate_scepter",
+							},
+							StartingAbilities	= 
+							{
+								"lina_light_strike_array",
+								"lina_dragon_slave",
+								"lina_laguna_blade",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "lina_laguna_blade" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "enemy_spawn_location_2",
+				SpawnPointName = "enemy_spawn_location",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_tinker",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Tinker",
+							EntityScript = "ai/status_effects/ai_status_effects_tinker.lua",
+							StartingHeroLevel = 12,
+							StartingItems = 
+							{
+								"item_travel_boots",
+								"item_kaya",
+							},
+							StartingAbilities	= 
+							{
+								"tinker_laser",
+								"tinker_rearm",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "tinker_laser" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "ally_spawn_location_2",
+				SpawnPointName = "ally_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_drow_ranger",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Drow Ranger",
+							EntityScript = "ai/status_effects/ai_status_effects_drow",
+							StartingHeroLevel = 14,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_butterfly",
+								"item_greater_crit",
+								"item_heart",
+							},
+							StartingAbilities	= 
+							{
+							--	"drow_frost_arrows",
+							}, 
+							AbilityBuild = 
+							{
+							--	AbilityPriority = { "drow_frost_arrows" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "enemy_spawn_location_3",
+				SpawnPointName = "enemy_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_dark_seer",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Dark Seer",
+							EntityScript = "ai/status_effects/ai_status_effects_dark_seer.lua",
+							StartingHeroLevel = 6,
+							StartingItems = 
+							{
+								"item_boots",
+								"item_hood_of_defiance",
+							},
+							StartingAbilities	= 
+							{
+								"dark_seer_surge",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "dark_seer_surge" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "ally_spawn_location_3",
+				SpawnPointName = "ally_spawn_location",
+				NPCs = 
+				{
+					{
+						EntityName = "npc_dota_hero_sven",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Sven",
+							EntityScript = "ai/status_effects/ai_status_effects_sven",
+							StartingHeroLevel = 14,
+							StartingItems = 
+							{
+								"item_boots",
+								"item_sange",
+								"item_heart",
+							},
+							StartingAbilities	= 
+							{
+							}, 
+							AbilityBuild = 
+							{
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "enemy_spawn_location_4",
+				SpawnPointName = "enemy_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_troll_warlord",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Troll Warlord",
+							EntityScript = "ai/status_effects/ai_status_effects_troll.lua",
+							StartingHeroLevel = 5,
+							StartingItems = 
+							{
+								"item_boots",
+								"item_basher",
+								"item_moon_shard",
+							},
+							StartingAbilities	= 
+							{
+								"troll_warlord_fervor",
+								"troll_warlord_berserkers_rage",
+							}, 
+							AbilityBuild = 
+							{
+								AbilityPriority = { "troll_warlord_fervor" },
+							},
+						},
+					},
+				}
+			},
+			{
+				SpawnerName = "ally_spawn_location_4",
+				SpawnPointName = "ally_spawn_location",
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_storm_spirit",
+						Team = DOTA_TEAM_GOODGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "Storm SPirit",
+							EntityScript = "ai/status_effects/ai_status_effects_storm_spirit",
+							StartingHeroLevel = 14,
+							StartingItems = 
+							{
+								"item_power_treads",
+								"item_yasha_and_kaya",
+								"item_bloodstone",
+							},
+							StartingAbilities	= 
+							{
+								"storm_spirit_electric_vortex",
+								"storm_spirit_overload",
+								"storm_spirit_static_remnant",
+								"storm_spirit_ball_lightning",
+	
+							}, 
+							AbilityBuild = 
+							{
+							--	AbilityPriority = { "drow_frost_arrows" },
+							},
+						},
+					},
+				}
+			}
+		}
 	}
 end
 
@@ -308,65 +579,11 @@ function CDotaNPXScenario_Status_Effects:OnTaskCompleted( event )
 
 		self:GetPlayerHero():AddItemByName("item_abyssal_blade")
 
-		self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_shadow_shaman",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Shadow Shaman",
-						EntityScript = "ai/status_effects/ai_status_effects_shadow_shaman.lua",
-						StartingHeroLevel = 5,
-						StartingItems = 
-						{
-							"item_boots",
-						},
-						StartingAbilities	= 
-						{
-							"shadow_shaman_shackles",
-							"shadow_shaman_voodoo",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "shadow_shaman_shackles" },
-						},
-					},
-				},
-			}, self, true )
+		self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_1" )
+		self.EnemySpawner:SpawnUnits()
 
-		self.AllySpawner = CDotaSpawner( "ally_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_lina",
-					Team = DOTA_TEAM_GOODGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Lina",
-						EntityScript = "ai/status_effects/ai_status_effects_lina",
-						StartingHeroLevel = 14,
-						StartingItems = 
-						{
-							"item_boots",
-							"item_ultimate_scepter",
-						},
-						StartingAbilities	= 
-						{
-							"lina_light_strike_array",
-							"lina_dragon_slave",
-							"lina_laguna_blade",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "lina_laguna_blade" },
-						},
-					},
-				},
-			}, self, true )
+		self.AllySpawner = self:GetSpawner( "ally_spawn_location_1" )
+		self.AllySpawner:SpawnUnits()
 
 	elseif Task:GetTaskName() == "move_to_location_2" then
 		local hAbyssalBlade = self:GetPlayerHero():FindItemInInventory("item_abyssal_blade")
@@ -375,66 +592,12 @@ function CDotaNPXScenario_Status_Effects:OnTaskCompleted( event )
 		end
 		self:GetPlayerHero():AddItemByName("item_orchid")
 
-		self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_tinker",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Tinker",
-						EntityScript = "ai/status_effects/ai_status_effects_tinker.lua",
-						StartingHeroLevel = 12,
-						StartingItems = 
-						{
-							"item_travel_boots",
-							"item_kaya",
-						},
-						StartingAbilities	= 
-						{
-							"tinker_laser",
-							"tinker_rearm",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "tinker_laser" },
-						},
-					},
-				},
-			}, self, true )
+		self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_2" )
+		self.EnemySpawner:SpawnUnits()
 
-		self.AllySpawner = CDotaSpawner( "ally_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_drow_ranger",
-					Team = DOTA_TEAM_GOODGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Drow Ranger",
-						EntityScript = "ai/status_effects/ai_status_effects_drow",
-						StartingHeroLevel = 14,
-						StartingItems = 
-						{
-							"item_power_treads",
-							"item_butterfly",
-							"item_greater_crit",
-							"item_heart",
-						},
-						StartingAbilities	= 
-						{
-						--	"drow_frost_arrows",
-						}, 
-						AbilityBuild = 
-						{
-						--	AbilityPriority = { "drow_frost_arrows" },
-						},
-					},
-				},
-			}, self, true )
+		self.AllySpawner = self:GetSpawner( "ally_spawn_location_2" )
+		self.AllySpawner:SpawnUnits()
+		
 	elseif Task:GetTaskName() == "move_to_location_3" then
 		local hOrchid = self:GetPlayerHero():FindItemInInventory("item_orchid")
 		if hOrchid ~= nil then
@@ -442,62 +605,11 @@ function CDotaNPXScenario_Status_Effects:OnTaskCompleted( event )
 		end
 		self:GetPlayerHero():AddItemByName("item_rod_of_atos")
 
-		self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_dark_seer",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Dark Seer",
-						EntityScript = "ai/status_effects/ai_status_effects_dark_seer.lua",
-						StartingHeroLevel = 6,
-						StartingItems = 
-						{
-							"item_boots",
-							"item_hood_of_defiance",
-						},
-						StartingAbilities	= 
-						{
-							"dark_seer_surge",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "dark_seer_surge" },
-						},
-					},
-				},
-			}, self, true )
+		self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_3" )
+		self.EnemySpawner:SpawnUnits()
 
-		self.AllySpawner = CDotaSpawner( "ally_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_sven",
-					Team = DOTA_TEAM_GOODGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Sven",
-						EntityScript = "ai/status_effects/ai_status_effects_sven",
-						StartingHeroLevel = 14,
-						StartingItems = 
-						{
-							"item_boots",
-							"item_sange",
-							"item_heart",
-						},
-						StartingAbilities	= 
-						{
-						}, 
-						AbilityBuild = 
-						{
-						},
-					},
-				},
-			}, self, true )
+		self.AllySpawner = self:GetSpawner( "ally_spawn_location_3" )
+		self.AllySpawner:SpawnUnits()
 
 	elseif Task:GetTaskName() == "move_to_location_4" then
 		local hOrchid = self:GetPlayerHero():FindItemInInventory("item_rod_of_atos")
@@ -506,70 +618,12 @@ function CDotaNPXScenario_Status_Effects:OnTaskCompleted( event )
 		end
 		self:GetPlayerHero():AddItemByName("item_heavens_halberd")
 
-		self.EnemySpawner = CDotaSpawner( "enemy_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_troll_warlord",
-					Team = DOTA_TEAM_BADGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Troll Warlord",
-						EntityScript = "ai/status_effects/ai_status_effects_troll.lua",
-						StartingHeroLevel = 5,
-						StartingItems = 
-						{
-							"item_boots",
-							"item_basher",
-							"item_moon_shard",
-						},
-						StartingAbilities	= 
-						{
-							"troll_warlord_fervor",
-							"troll_warlord_berserkers_rage",
-						}, 
-						AbilityBuild = 
-						{
-							AbilityPriority = { "troll_warlord_fervor" },
-						},
-					},
-				},
-			}, self, true )
-
-		self.AllySpawner = CDotaSpawner( "ally_spawn_location",
-			{
-				{
-					EntityName = "npc_dota_hero_storm_spirit",
-					Team = DOTA_TEAM_GOODGUYS,
-					Count = 1,
-					PositionNoise = 0,
-					BotPlayer =
-					{
-						BotName = "Storm SPirit",
-						EntityScript = "ai/status_effects/ai_status_effects_storm_spirit",
-						StartingHeroLevel = 14,
-						StartingItems = 
-						{
-							"item_power_treads",
-							"item_yasha_and_kaya",
-							"item_bloodstone",
-						},
-						StartingAbilities	= 
-						{
-							"storm_spirit_electric_vortex",
-							"storm_spirit_overload",
-							"storm_spirit_static_remnant",
-							"storm_spirit_ball_lightning",
-
-						}, 
-						AbilityBuild = 
-						{
-						--	AbilityPriority = { "drow_frost_arrows" },
-						},
-					},
-				},
-			}, self, true )		
+		self.EnemySpawner = self:GetSpawner( "enemy_spawn_location_4" )
+		self.EnemySpawner:SpawnUnits()
+	
+		self.AllySpawner = self:GetSpawner( "ally_spawn_location_4" )
+		self.AllySpawner:SpawnUnits()
+		
 	elseif Task:GetTaskName() == "disarm_enemy_hero" then
 		self:OnScenarioComplete(true)
 	end

@@ -115,6 +115,55 @@ function CDotaNPXScenario_Regen:InitScenarioKeys()
 		Queries =
 		{
 		},
+		
+		Spawners = 
+		{
+            {
+                SpawnerName = "ally_spawn_location",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_lina",
+                        Team = DOTA_TEAM_GOODGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        StartingMana = 400,
+                        BotPlayer =
+                        {
+                            BotName = "Lina",
+                            EntityScript = "ai/regen/ai_regen_lina.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = {},
+                            AbilityBuild = { "lina_laguna_blade" },
+                        },
+                        PostSpawn = function( hHero )
+                            hHero:SetHealth( 200 )
+                            GameRules.DotaNPX:GetTask("regen_lina"):SetRegenUnit( hHero )
+                        end
+                    }
+                }
+            },
+            {
+                SpawnerName = "enemy_spawn_location",
+                NPCs = 
+                {
+                    {
+                        EntityName = "npc_dota_hero_lion",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Lion",
+                            EntityScript = "ai/regen/ai_regen_lion.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = { "item_blink" },
+                            AbilityBuild = { "lion_finger_of_death" },
+                        },
+                    },
+                }
+            }
+        }
 	}
 
 end
@@ -267,47 +316,12 @@ function CDotaNPXScenario_Regen:OnTaskCompleted( event )
 		GameRules:RemoveItemFromWhiteList( "item_flask" )
 	elseif event.task_name == "buy_regen" then
 		local nTangoHealthDrop = self.nTangoHealthDrop
-		CDotaSpawner( "ally_spawn_location",
-		{
-			{
-				EntityName = "npc_dota_hero_lina",
-				Team = DOTA_TEAM_GOODGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				StartingMana = 400,
-				BotPlayer =
-				{
-					BotName = "Lina",
-					EntityScript = "ai/regen/ai_regen_lina.lua",
-					StartingHeroLevel = 6,
-					StartingItems = {},
-					AbilityBuild = { "lina_laguna_blade" },
-				},
-				PostSpawn = function( hHero )
-					hHero:SetHealth( 200 )
-					GameRules.DotaNPX:GetTask("regen_lina"):SetRegenUnit( hHero )
-				end
-			},
-		}, self, true )
+		local allySpawner = self:GetSpawner( "ally_spawn_location" )
+		allySpawner:SpawnUnits()
     elseif event.task_name == "share_tango" then
 		self:HideUIHint()
-		CDotaSpawner( "enemy_spawn_location",
-		{
-			{
-				EntityName = "npc_dota_hero_lion",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					BotName = "Lion",
-					EntityScript = "ai/regen/ai_regen_lion.lua",
-					StartingHeroLevel = 6,
-					StartingItems = { "item_blink" },
-					AbilityBuild = { "lion_finger_of_death" },
-				},
-			},
-		}, self, true )
+		local enemySpawner = self:GetSpawner( "enemy_spawn_location" )
+		enemySpawner:SpawnUnits()
 	elseif event.task_name == "regen_full" then
 		self:ScheduleFunctionAtGameTime(GameRules:GetDOTATime( false, false ) + 2.0, function()
 			self:OnScenarioComplete( true )

@@ -8,7 +8,7 @@ g_UnitPrecache =
 	"npc_dota_hero_antimage",
 	"npc_dota_hero_drow_ranger",
 	"npc_dota_hero_mirana",
-	"npc_dota_hero_windrunner",
+	-- "npc_dota_hero_windrunner",
 }
 
 g_ItemPrecache =

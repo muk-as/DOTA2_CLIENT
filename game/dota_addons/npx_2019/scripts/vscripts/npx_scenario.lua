@@ -95,7 +95,9 @@ function CDotaNPXScenario:SetupNPCs()
 	end
 
 	for _,Spawner in pairs ( self.hScenario.Spawners ) do
-		self:AddSpawner( CDotaSpawner( Spawner.SpawnerName, Spawner.NPCs, self, Spawner.SpawnOnPrecacheComplete ) )
+        ScriptAssert( Spawner.SpawnerName ~= nil, "Spawner must have a SpawnerName field.")
+        ScriptAssert( Spawner.NPCs ~= nil, "Spawner must have an NPCs field.")
+		self:AddSpawner( CDotaSpawner( Spawner.SpawnerName, Spawner.NPCs, self, Spawner.SpawnOnPrecacheComplete, Spawner.SpawnPointName ) )
 	end
 
 	return true
@@ -707,7 +709,12 @@ end
 ----------------------------------------------------------------------------
 
 function CDotaNPXScenario:IsFullyPrecached()
-	return #self.hScenarioNPCSpawnGroups == #self.PrecachedNPCs
+	for _,sg in pairs( self.rgSpawners ) do
+		if not sg:IsFullyPrecached() then
+			return false
+		end
+	end
+	return true
 end
 
 ----------------------------------------------------------------------------

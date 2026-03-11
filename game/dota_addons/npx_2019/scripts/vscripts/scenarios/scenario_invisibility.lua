@@ -298,6 +298,87 @@ function CDotaNPXScenario_Invisibility:InitScenarioKeys()
 		Queries =
 		{
 		},
+		Spawners =
+		{
+            {
+                SpawnerName = "bounty_hunter_spawner",
+                NPCs =  
+                {
+                    {
+                        EntityName = "npc_dota_hero_bounty_hunter",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Bounty Hunter",
+                            EntityScript = "ai/invisibility/ai_bounty_hunter.lua",
+                            StartingHeroLevel = 5,
+                            StartingItems = 
+                            {
+                                "item_gem"
+                                --"item_power_treads",
+                                --"item_greater_crit",
+                                --"item_diffusal_blade",
+                            },
+                            StartingAbilities =
+                            {
+                                "bounty_hunter_wind_walk",
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "bounty_hunter_wind_walk",
+                                },
+                            },
+                        },
+                    },
+                }                
+            },
+            {
+                SpawnerName = "riki_spawner",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_riki",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            PlayerID = 1,
+                            BotName = "Riki",
+                            EntityScript = "ai/invisibility/ai_riki.lua",
+                            StartingHeroLevel = 12,
+                            StartingItems = 
+                            {
+                                "item_wraith_band",
+                                --"item_greater_crit",
+                                --"item_diffusal_blade",
+                                --"item_satanic",
+                            },
+                            StartingAbilities =
+                            {
+                                "riki_backstab",
+                                "riki_smoke_screen",
+                                "riki_blink_strike"
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority =
+                                {
+                                    "riki_backstab",
+                                    "riki_smoke_screen",
+                                    "riki_blink_strike"
+                                },
+                            },
+                        },
+                    },
+                }
+            }
+        }
 	}
 end
 
@@ -450,40 +531,9 @@ function CDotaNPXScenario_Invisibility:OnTaskCompleted( event )
 			self:HintLocation( hHintPosition:GetAbsOrigin(), true )
 		end
 
-		self.hBountyHunterSpawner = CDotaSpawner( "bounty_hunter_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_bounty_hunter",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Bounty Hunter",
-					EntityScript = "ai/invisibility/ai_bounty_hunter.lua",
-					StartingHeroLevel = 5,
-					StartingItems = 
-					{
-						"item_gem"
-						--"item_power_treads",
-						--"item_greater_crit",
-						--"item_diffusal_blade",
-					},
-					StartingAbilities =
-					{
-						"bounty_hunter_wind_walk",
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"bounty_hunter_wind_walk",
-						},
-					},
-				},
-			},
-		}, self, true )		
+		self.hBountyHunterSpawner = self:GetSpawner( "bounty_hunter_spawner" ) 
+		ScriptAssert( self.hBountyHunterSpawner ~= nil, "self.hBountyHunterSpawner is nil!" )
+		self.hBountyHunterSpawner:SpawnUnits()		
 
 	elseif Task:GetTaskName() == "dust_bounty_hunter" then
 		local hHintPosition = Entities:FindByName( nil, "bounty_hunter_hint_pos" )
@@ -507,45 +557,9 @@ function CDotaNPXScenario_Invisibility:OnTaskCompleted( event )
 	end
 
 	if Task:GetTaskName() == "destroy_enemy_ward" then
-		self.hRikiSpawner = CDotaSpawner( "riki_spawner", 
-		{
-			{
-				EntityName = "npc_dota_hero_riki",
-				Team = DOTA_TEAM_BADGUYS,
-				Count = 1,
-				PositionNoise = 0,
-				BotPlayer =
-				{
-					PlayerID = 1,
-					BotName = "Riki",
-					EntityScript = "ai/invisibility/ai_riki.lua",
-					StartingHeroLevel = 12,
-					StartingItems = 
-					{
-						"item_wraith_band",
-						--"item_greater_crit",
-						--"item_diffusal_blade",
-						--"item_satanic",
-					},
-					StartingAbilities =
-					{
-						"riki_backstab",
-						"riki_smoke_screen",
-						"riki_blink_strike"
-					},
-					AbilityBuild = 
-					{
-						AbilityPriority =
-						{
-							"riki_backstab",
-							"riki_smoke_screen",
-							"riki_blink_strike"
-						},
-					},
-				},
-			},
-		}, self, true )
-
+		self.hRikiSpawner = self:GetSpawner( "riki_spawner" )
+		ScriptAssert( self.hRikiSpawner ~= nil, "self.hRikiSpawner is nil!" )
+		self.hRikiSpawner:SpawnUnits()
 	elseif Task:GetTaskName() == "move_to_shop" then
 		local hPlayerHero = self:GetPlayerHero()
 

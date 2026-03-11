@@ -61,6 +61,8 @@ function CDotaNPXScenario_CreepPulling:SetupScenario()
 	GameRules:GetGameModeEntity():SetKillingSpreeAnnouncerDisabled( true )
 	GameRules:GetGameModeEntity():SetWeatherEffectsDisabled( true )
 
+	Tutorial:StartTutorialMode()
+
 	self.bTriggerIsActive = false
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_CreepPulling, "OnTriggerStartTouch" ), self )
@@ -119,7 +121,7 @@ function CDotaNPXScenario_CreepPulling:SetupDemoGood()
 	self:ShowWizardTip( "scenario_creep_pulling_wizard_tip_intro_radiant", 10.0 )
 	local hGoodLoc = Entities:FindByName( nil, "radiant_melee_spawner_good" )
 	local vDemo1Pos = hGoodLoc:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vDemo1Pos.x .. " " .. vDemo1Pos.y .. " " .. 1 )
+	Tutorial:MoveCameraToLocation(vDemo1Pos);
 	self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 10, function()
 		self:Fade( 1 )
 		self:RemoveDemoCreepWaves()
@@ -138,12 +140,12 @@ function CDotaNPXScenario_CreepPulling:SetupDemoBad()
 	self:ShowWizardTip( "scenario_creep_pulling_wizard_tip_intro_dire", 10.0 )
 	local hBadLoc = Entities:FindByName( nil, "radiant_melee_spawner_bad" )
 	local vDemo2Pos = hBadLoc:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vDemo2Pos.x .. " " .. vDemo2Pos.y .. " " .. 1 )
+	Tutorial:MoveCameraToLocation(vDemo2Pos);
 	self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 10, function()
 		local vPlayerStartLoc = self.hHeroSpawn:GetAbsOrigin()
 		self:GetPlayerHero():Stop()
 		FindClearSpaceForUnit( self:GetPlayerHero(), vPlayerStartLoc, true )
-		SendToConsole( "dota_camera_lerp_position " .. vPlayerStartLoc.x .. " " .. vPlayerStartLoc.y .. " " .. 1 )
+		Tutorial:MoveCameraToLocation(vPlayerStartLoc);
 		self:RemoveDemoCreepWaves()
 		--self:EndHintWorldText( self.hDemoHintLoc2:GetAbsOrigin() ) 
 		self:SetupStage1Tasks()
@@ -298,10 +300,8 @@ function CDotaNPXScenario_CreepPulling:SetupStage2()
 	local vPlayerStartLoc = self.hHeroSpawn:GetAbsOrigin()
 	self:GetPlayerHero():Stop()
 	FindClearSpaceForUnit( self:GetPlayerHero(), vPlayerStartLoc, true )
-	--SendToConsole( "dota_camera_lerp_position " .. vPlayerStartLoc.x .. " " .. vPlayerStartLoc.y .. " " .. 1 )
-	SendToConsole( "+dota_camera_center_on_hero" )
-	SendToConsole( "-dota_camera_center_on_hero" )
 	--self:HintWorldText( self.hHintLoc1:GetAbsOrigin(), "pulling_time", 89, -1 )
+	Tutorial:MoveCameraToLocation( vPlayerStartLoc )
 	self:SetupStage2Tasks()
 end
 
@@ -388,10 +388,10 @@ function CDotaNPXScenario_CreepPulling:SpawnSingleCreepMoving()
 
 	local hHintPath = Entities:FindByName( nil, "lane_creep_moving_path_2" )
 	local vHintPos = hHintPath:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vHintPos.x .. " " .. vHintPos.y .. " " .. 1 )
+	Tutorial:MoveCameraToLocation(vHintPos);
 	self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 3, function()
 		local vPlayerPos = self:GetPlayerHero():GetAbsOrigin()
-		SendToConsole( "dota_camera_lerp_position " .. vPlayerPos.x .. " " .. vPlayerPos.y .. " " .. 1 )
+		Tutorial:MoveCameraToLocation(vPlayerPos);
 	end )
 end
 
@@ -413,9 +413,7 @@ function CDotaNPXScenario_CreepPulling:SetupStage3()
 	local vPlayerStartLoc = self.hHeroSpawn:GetAbsOrigin()
 	self:GetPlayerHero():Stop()
 	FindClearSpaceForUnit( self:GetPlayerHero(), vPlayerStartLoc, true )
-	--SendToConsole( "dota_camera_lerp_position " .. vPlayerStartLoc.x .. " " .. vPlayerStartLoc.y .. " " .. 1 )
-	SendToConsole( "+dota_camera_center_on_hero" )
-	SendToConsole( "-dota_camera_center_on_hero" )
+	Tutorial:MoveCameraToLocation(vPlayerStartLoc);
 	self.bTriggerIsActive = false
 	self:SetupStage3Tasks()
 end
@@ -457,6 +455,7 @@ function CDotaNPXScenario_CreepPulling:SetupStage3Tasks()
 			EntityName = "npc_dota_neutral_kobold",
 			SpawnPos = self.hNeutralLoc1:GetAbsOrigin(),
 			SpawnAngles = { 0, 315, 0 },
+			CreepCount = 4
 			--Team = "DOTA_TEAM_NEUTRALS", -- Could not pass enum
 		},
 		CheckTaskStart =
@@ -502,23 +501,13 @@ function CDotaNPXScenario_CreepPulling:SpawnCreepWaveMoving()
 
 	local hHintPath = Entities:FindByName( nil, "lane_creep_moving_path_2" )
 	local vHintPos = hHintPath:GetAbsOrigin()
-	SendToConsole( "dota_camera_lerp_position " .. vHintPos.x .. " " .. vHintPos.y .. " " .. 1 )
+	Tutorial:MoveCameraToLocation(vHintPos);
 	self:ScheduleFunctionAtGameTime( GameRules:GetDOTATime( false, false ) + 3, function()
 		local vPlayerPos = self:GetPlayerHero():GetAbsOrigin()
-		SendToConsole( "dota_camera_lerp_position " .. vPlayerPos.x .. " " .. vPlayerPos.y .. " " .. 1 )
+		Tutorial:MoveCameraToLocation(vPlayerPos);
 	end )
 end
 
-----------------------------------------------------------------------------
-
-function CDotaNPXScenario_CreepPulling:SpawnNeutralCreeps()
-	print( "Spawning Neutral Creep Camp" )
-	-- Could not pull the wave if the team was set to DOTA_TEAM_NEUTRALS?
-	for i = 1, 3 do
-	    CreateUnitByName( "npc_dota_neutral_kobold", self.hNeutralLoc1:GetAbsOrigin() + RandomVector( RandomFloat( 0, 100 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
-	end
-	--CreateUnitByName( "npc_dota_neutral_kobold_tunneler", self.hNeutralLoc1:GetAbsOrigin() + RandomVector( RandomFloat( 0, 100 ) ), true, nil, nil, DOTA_TEAM_BADGUYS )
-end
 
 --------------------------------------------------------------------
 
@@ -591,7 +580,6 @@ function CDotaNPXScenario_CreepPulling:OnTaskCompleted( event )
 			end )
 		end
 	elseif event.task_name == "move_to_location_3" then
-		self:SpawnNeutralCreeps()
 		self:SpawnCreepWaveMoving()
 		self.nCheckpoint = 3
 	elseif event.task_name == "lead_neutral_creep_3" then

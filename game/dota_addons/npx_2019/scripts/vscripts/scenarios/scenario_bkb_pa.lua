@@ -30,6 +30,62 @@ function CDotaNPXScenario_BKB_PA:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 60.0,
+		Spawners = 
+		{
+            {
+                SpawnerName = "lina_spawn_location", 
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_lina",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Lina",
+                            EntityScript = "ai/ai_bkb_pa_lina.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = 
+                            {
+                                --[["item_ultimate_scepter",
+                                "item_ethereal_blade",
+                                "item_dagon_5",--]]
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { "lina_laguna_blade", "lina_dragon_slave", "lina_light_strike_array" },
+                            },
+                        },
+                    },
+                },
+            },
+            {
+                SpawnerName = "lion_spawn_location",
+                NPCs =
+                {
+                    {
+                        EntityName = "npc_dota_hero_lion",
+                        Team = DOTA_TEAM_BADGUYS,
+                        Count = 1,
+                        PositionNoise = 0,
+                        BotPlayer =
+                        {
+                            BotName = "Lion",
+                            EntityScript = "ai/ai_bkb_pa_lion.lua",
+                            StartingHeroLevel = 6,
+                            StartingItems = 
+                            {
+                            },
+                            AbilityBuild = 
+                            {
+                                AbilityPriority = { "lion_voodoo", "lion_impale", "lion_finger_of_death" },
+                            },
+                        },
+                    },
+                }
+            }
+        }
 	}
 end
 
@@ -57,54 +113,6 @@ function CDotaNPXScenario_BKB_PA:SetupScenario()
 	self.hRune = CreateRune( hBountyLoc:GetAbsOrigin(), DOTA_RUNE_BOUNTY )
 
 	self.hSpawnedUnits = {}
-	self.LinaSpawner = CDotaSpawner( "lina_spawn_location", 
-	{
-		{
-			EntityName = "npc_dota_hero_lina",
-			Team = DOTA_TEAM_BADGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				BotName = "Lina",
-				EntityScript = "ai/ai_bkb_pa_lina.lua",
-				StartingHeroLevel = 6,
-				StartingItems = 
-				{
-					--[["item_ultimate_scepter",
-					"item_ethereal_blade",
-					"item_dagon_5",--]]
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { "lina_laguna_blade", "lina_dragon_slave", "lina_light_strike_array" },
-				},
-			},
-		},
-	}, self, true )
-
-	self.LionSpawner = CDotaSpawner( "lion_spawn_location", 
-	{
-		{
-			EntityName = "npc_dota_hero_lion",
-			Team = DOTA_TEAM_BADGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				BotName = "Lion",
-				EntityScript = "ai/ai_bkb_pa_lion.lua",
-				StartingHeroLevel = 6,
-				StartingItems = 
-				{
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { "lion_voodoo", "lion_impale", "lion_finger_of_death" },
-				},
-			},
-		},
-	}, self, true )
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_BKB_PA, "OnTriggerStartTouch" ), self )
 end
@@ -192,6 +200,12 @@ end
 
 function CDotaNPXScenario_BKB_PA:OnSetupComplete()
 	CDotaNPXScenario.OnSetupComplete( self )
+	
+    self.LinaSpawner = self:GetSpawner( "lina_spawn_location" )
+    self.LinaSpawner:SpawnUnits()
+
+    self.LionSpawner = self:GetSpawner( "lion_spawn_location" )
+    self.LionSpawner:SpawnUnits() 
 
 	local hPlayerHero = PlayerResource:GetSelectedHeroEntity( 0 )
 	if hPlayerHero ~= nil and hPlayerHero:IsNull() == false then

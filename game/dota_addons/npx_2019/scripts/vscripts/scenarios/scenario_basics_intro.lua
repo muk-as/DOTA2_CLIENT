@@ -28,6 +28,39 @@ function CDotaNPXScenario_BasicsIntro:InitScenarioKeys()
 		},
 
 		ScenarioTimeLimit = 600.0,
+		
+		Spawners =
+		{
+			{
+				SpawnerName = "mirana_spawn_location",
+				SpawnOnPrecacheComplete = true,
+				NPCs =
+				{
+					{
+						EntityName = "npc_dota_hero_mirana",
+						Team = DOTA_TEAM_BADGUYS,
+						Count = 1,
+						PositionNoise = 0,
+						BotPlayer =
+						{
+							BotName = "POTM",
+							EntityScript = "ai/ai_basics_intro_mirana.lua",
+							StartingHeroLevel = 18,
+							StartingItems = 
+							{
+								"item_ultimate_scepter",
+								"item_ethereal_blade",
+								"item_dagon_5",
+							},
+							AbilityBuild = 
+							{
+								AbilityPriority = { "mirana_arrow", "mirana_starfall", "mirana_leap" },
+							},
+						},
+					},
+				},
+			}
+		}
 	}
 end
 
@@ -37,32 +70,6 @@ function CDotaNPXScenario_BasicsIntro:SetupScenario()
 	if not CDotaNPXScenario.SetupScenario( self ) then
 		return false
 	end
-
-	self.MiranaSpawner = CDotaSpawner( "mirana_spawn_location", 
-	{
-		{
-			EntityName = "npc_dota_hero_mirana",
-			Team = DOTA_TEAM_BADGUYS,
-			Count = 1,
-			PositionNoise = 0,
-			BotPlayer =
-			{
-				BotName = "POTM",
-				EntityScript = "ai/ai_basics_intro_mirana.lua",
-				StartingHeroLevel = 18,
-				StartingItems = 
-				{
-					"item_ultimate_scepter",
-					"item_ethereal_blade",
-					"item_dagon_5",
-				},
-				AbilityBuild = 
-				{
-					AbilityPriority = { "mirana_arrow", "mirana_starfall", "mirana_leap" },
-				},
-			},
-		},
-	}, self, true )
 
 	self.nTaskListener = ListenToGameEvent( "trigger_start_touch", Dynamic_Wrap( CDotaNPXScenario_BasicsIntro, "OnTriggerStartTouch" ), self )
 end
@@ -107,6 +114,8 @@ end
 
 function CDotaNPXScenario_BasicsIntro:OnSetupComplete()
 	CDotaNPXScenario.OnSetupComplete( self )
+	
+	self.MiranaSpawner = self:GetSpawner( "mirana_spawn_location" )
 end
 
 --------------------------------------------------------------------

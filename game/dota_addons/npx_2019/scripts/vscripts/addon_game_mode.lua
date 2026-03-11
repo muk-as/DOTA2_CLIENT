@@ -213,7 +213,7 @@ function CDotaNPX:SetupScenario( szScenario )
 	self.CurrentScenario = hScenarioClass( szScenario )
 
 	local bSuccess = self.CurrentScenario:SetupScenario()
-	if not bSuccess then
+	if bSuccess == false then
 		print( "...FAILED!" )
 		return
 	end

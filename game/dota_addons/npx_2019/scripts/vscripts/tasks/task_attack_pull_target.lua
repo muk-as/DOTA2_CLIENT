@@ -52,9 +52,16 @@ function CDotaNPXTask_AttackPullTarget:StartTask()
 		end
 	end
 	-- Creating Neutral Creep
-	self.hUnit = CreateUnitByName( self.hTaskInfo.TaskParams.EntityName, self.hTaskInfo.TaskParams.SpawnPos, true, nil, nil, nTeam )
-	if self.hTaskInfo.TaskParams.SpawnAngles ~= nil then
-		self.hUnit:SetAbsAngles( self.hTaskInfo.TaskParams.SpawnAngles[1], self.hTaskInfo.TaskParams.SpawnAngles[2], self.hTaskInfo.TaskParams.SpawnAngles[3] )
+	local nNumUnits = 1
+	if self.hTaskInfo.TaskParams.CreepCount ~= nil then
+		nNumUnits = self.hTaskInfo.TaskParams.CreepCount
+	end
+	print( "Creating " .. nNumUnits .. " creeps of type " .. self.hTaskInfo.TaskParams.EntityName )
+	for n = 1, nNumUnits do
+		self.hUnit = CreateUnitByName( self.hTaskInfo.TaskParams.EntityName, self.hTaskInfo.TaskParams.SpawnPos + RandomVector( RandomFloat( 0, 100 ) ), true, nil, nil, nTeam )
+		if self.hTaskInfo.TaskParams.SpawnAngles ~= nil then
+			self.hUnit:SetAbsAngles( self.hTaskInfo.TaskParams.SpawnAngles[1], self.hTaskInfo.TaskParams.SpawnAngles[2], self.hTaskInfo.TaskParams.SpawnAngles[3] )
+		end
 	end
 end
 
@@ -74,6 +81,7 @@ function CDotaNPXTask_AttackPullTarget:OnThink()
 			if target:GetUnitName() == self.hTaskInfo.TaskParams.EntityName then
 				if target:GetAggroTarget() == self:GetScenario():GetPlayerHero() then
 					self:CompleteTask( true )
+					break
 				end
 			end
 		end

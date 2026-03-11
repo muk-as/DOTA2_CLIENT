@@ -6,7 +6,7 @@ end
 
 ----------------------------------------------------------------------------
 
-function CDotaSpawner:constructor( szSpawnerNameInput, rgUnitsInfoInput, hScenario, bSpawnOnPrecacheComplete )
+function CDotaSpawner:constructor( szSpawnerNameInput, rgUnitsInfoInput, hScenario, bSpawnOnPrecacheComplete, szSpawnEntityNameInput )
 	self.szSpawnerName = szSpawnerNameInput
 	self.rgUnitsInfo = rgUnitsInfoInput
 	self.bPrecached = false
@@ -14,6 +14,10 @@ function CDotaSpawner:constructor( szSpawnerNameInput, rgUnitsInfoInput, hScenar
 	self.rgSpawnedUnits = {}
 	self.hScenario = hScenario
 	self.bSpawnOnPrecacheComplete = bSpawnOnPrecacheComplete
+	self.szSpawnEntityName = szSpawnEntityNameInput
+	if self.szSpawnEntityName == nil then
+		self.szSpawnEntityName = szSpawnerNameInput
+	end
 
 	ListenToGameEvent( "entity_killed", Dynamic_Wrap( CDotaSpawner, 'OnEntityKilled' ), self )
 
@@ -32,9 +36,9 @@ function CDotaSpawner:SpawnUnits()
 		print( self.szSpawnerName .. " spawning units that have not yet been fully precached." )
 	end
 
-	local rgSpawners = Entities:FindAllByName( self.szSpawnerName )
+	local rgSpawners = Entities:FindAllByName( self.szSpawnEntityName )
 	if #rgSpawners == 0 then
-		print( "Failed to find entity " .. self.szSpawnerName .. " as spawner position" )
+		print( "Failed to find entity " .. self.szSpawnEntityName .. " as spawner position" )
 		return
 	end
 
