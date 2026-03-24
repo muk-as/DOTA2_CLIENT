@@ -9,6 +9,7 @@
 		<snippet name="PatchNote">
 			<Panel class="PatchNoteContainer" AllowOversized="1">
 				<Panel class="Indent" />
+				<Panel class="TreeBranch" />
 				<Panel class="Dot" />
 				<Label class="NoteLine" text="{s:patch_note} &lt;child id=&quot;PatchNoteInfo&quot;&gt;" html="true">
 					<Panel id="PatchNoteInfo" class="InfoIcon" html="true" onmouseover="UIShowTextTooltip( #DOTA_PatchNotes_Info )" onmouseout="UIHideTextTooltip()" />
@@ -57,7 +58,10 @@
 		</snippet>
 		<snippet name="AbilityNotes">
 			<Panel class="AbilityNotes">
-				<DOTAAbilityImage id="AbilityImage" />
+				<Panel class="AbilityImageWrapper">
+					<DOTAAbilityImage id="AbilityImage" />
+					<Image class="InnateIconFrame" src="s2r://panorama/images/hud/facets/innate_icon_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				</Panel>
 				<DOTAInnateIcon id="InnateIcon" show-tooltips="true" hittest="true" />
 				<Panel class="AbilityNotesContents">
 					<Label class="AbilityName" text="{s:ability_name}" />
@@ -159,10 +163,10 @@
 							<Label class="HeroName" text="{g:dota_hero_name:hero_id}" />
 							<Label class="HeroTitleTag" text="- {s:hero_title_tag}" html="true" />
 						</Panel>
-						<Panel id="HeroNotesContainer" />
 					</Panel>
 				</Panel>
 				<Panel class="HeroNotesMain">
+					<Panel id="HeroNotesContainer" />
 					<Panel id="HeroSubsections" />
 					<Panel id="AbilityNotesContainer" />
 					<Panel class="TalentNotes" id="MainTalentNotes">

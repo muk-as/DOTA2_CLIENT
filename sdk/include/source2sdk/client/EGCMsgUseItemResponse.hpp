@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 14
+        // Enumerator count: 17
         // Alignment: 4
         // Size: 0x_
         enum class EGCMsgUseItemResponse : std::uint32_t
@@ -32,6 +32,9 @@ namespace source2sdk
             k_EGCMsgUseItemResponse_EmoticonUnlock_NoNew = 0xb,
             k_EGCMsgUseItemResponse_EmoticonUnlock_Complete = 0xc,
             k_EGCMsgUseItemResponse_ItemUsed_Compendium = 0xd,
+            k_EGCMsgUseItemResponse_CannotUseWhileUntradable = 0xe,
+            k_EGCMsgUseItemResponse_CannotBeUsedByAccount = 0xf,
+            k_EGCMsgUseItemResponse_RecipientCannotRecieve = 0x10,
         };
     };
 };

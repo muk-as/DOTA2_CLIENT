@@ -109,10 +109,13 @@ var RunPageAnimation = function () {
     }));
     */
 
+    let backgroundModelPanel = $('#ModelBackground');
 
     seq.actions.push(new AddClassAction($.GetContextPanel(), 'BackgroundLoaded'));
     seq.actions.push(new AddClassAction($('#MainContainer'), 'Initialize'));
-    seq.actions.push(new AddClassAction($('#ModelBackground'), 'Initialize'));
+    if (backgroundModelPanel) {
+        seq.actions.push(new AddClassAction(backgroundModelPanel, 'Initialize'));
+    }
     // seq.actions.push(new AddClassAction($('#ModelForeground'), 'Initialize'));
 
     seq.actions.push(new WaitAction(0.0));
@@ -120,9 +123,11 @@ var RunPageAnimation = function () {
     //
     // Switch cameras to enable mouse hover parallax
     //
-    seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 2.2); }))
-    seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetRootEntity', 'ModelBackground', 'root_post'); }))
-    seq.actions.push(new LerpRotateAction($('#ModelBackground'), 0, 0, 0, 0, -0.13, 0.13, -0.03, 0.03, 0.0));
+    if (backgroundModelPanel) {
+        seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 2.2); }))
+        seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetRootEntity', 'ModelBackground', 'root_post'); }))
+        seq.actions.push(new LerpRotateAction(backgroundModelPanel, 0, 0, 0, 0, -0.13, 0.13, -0.03, 0.03, 0.0));
+    }
 
     // play the sequences!
     RunSingleAction(seq);

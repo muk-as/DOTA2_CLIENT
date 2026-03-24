@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 90
+        // Enumerator count: 93
         // Alignment: 4
         // Size: 0x_
         enum class DotaPseudoRandomType : std::uint32_t
@@ -98,16 +98,19 @@ namespace source2sdk
             DOTA_PSEUDO_RANDOM_PANGOLIER_PARRY = 0x4d,
             DOTA_PSEUDO_RANDOM_HOODWINK_REDIRECT = 0x4e,
             DOTA_PSEUDO_RANDOM_KEZ_SAI = 0x4f,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GENERIC = 0x50,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1 = 0x51,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_2 = 0x52,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_3 = 0x53,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_4 = 0x54,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_5 = 0x55,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_6 = 0x56,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_7 = 0x57,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_8 = 0x58,
-            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_9 = 0x59,
+            DOTA_PSEUDO_RANDOM_CHAOS_KNIGHT_HAVOC = 0x50,
+            DOTA_PSEUDO_RANDOM_LARGO_FROGSTOMP = 0x51,
+            DOTA_PSEUDO_RANDOM_NAGA_RIPTIDE = 0x52,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GENERIC = 0x53,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1 = 0x54,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_2 = 0x55,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_3 = 0x56,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_4 = 0x57,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_5 = 0x58,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_6 = 0x59,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_7 = 0x5a,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_8 = 0x5b,
+            DOTA_PSEUDO_RANDOM_CUSTOM_GAME_9 = 0x5c,
         };
     };
 };

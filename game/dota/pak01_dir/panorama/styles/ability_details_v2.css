@@ -1,14 +1,20 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
-@define TextColor: #A7BCD8;
 @define TextColorLight: #CEDDF0;
-@define TextColorDark: #788eac;
-@define PhysicalDamageColor: #E0714C;
-@define MagicalDamageColor: #595EF3;
-@define PureDamageColor: #D8AF54;
-@define Gold1: #EFD4AC;
-@define Gold2: #CEA25A;
-@define Gold3: #976E28;
+@define TextColor: #B9CCE5;
+@define TextColorDark: #8698B0;
+@define TextColorStat: #757E91;
+@define PhysicalDamageColorLight: #E76969;
+@define PhysicalDamageColor: #DF5454;
+@define MagicalDamageColorLight: #9AA0FF;
+@define MagicalDamageColor: #7C81FF;
+@define PureDamageColorLight: #CFAF64;
+@define PureDamageColor: #BE934E;
+@define RedColor: #E83749;
+@define GreenColor: #68C08B;
+@define Gold1: #FFEDD2;
+@define Gold2: #FFEDD2;
+@define Gold3: #97835F;
 DOTAAbilityDetailsV2
 {
 	width: 100%;
@@ -129,7 +135,7 @@ DOTAAbilityDetailsV2
 #HeaderContainer #CurrentAbilityCostsContainer .CurrentAbilityCostContainer .CurrentAbilityCostLabel
 {
 	vertical-align: center;
-	max-width: 26px;
+	max-width: 28px;
 	height: 16px;
 	margin-bottom: 2px;
 	margin-right: 2px;
@@ -161,10 +167,58 @@ DOTAAbilityDetailsV2
 {
 	horizontal-align: center;
 	vertical-align: center;
-	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	color: gradient( linear, 0% 0%, 0% 100%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
 	font-size: 16px;
 	font-weight: semi-bold;
 	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+#AbilityVideoContainer
+{
+	width: 100%;
+	height: width-percentage( 50% );
+	background-color: rgba(0, 0, 0, 0.2);
+	overflow: clip;
+	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+	margin-bottom: 2px;
+	visibility: collapse;
+}
+
+#AbilityVideoContainer .Spinner
+{
+	opacity: 0.5;
+	wash-color: LighterGrey;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#AbilityVideoContainer.Visible
+{
+	visibility: visible;
+}
+
+#AbilityVideoContainer Movie
+{
+	visibility: visible;
+	width: 140%;
+	height: width-percentage( 56.25% );
+	vertical-align: center;
+	horizontal-align: center;
+	overflow: noclip;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-delay: 0.1s;
+}
+
+#AbilityVideoContainer Movie.IsPlaying
+{
+	opacity: 1;
+}
+
+.HasEmbeddedAbilityPreviewMovie #AbilityVideoContainer
+{
+	visibility: visible;
 }
 
 .CurrentAbilityCostContainer,.LevelContainer
@@ -242,52 +296,240 @@ DOTAAbilityDetailsV2
 	visibility: visible;
 }
 
-.FacetDescription
+.FacetDescription,.ShardDescription,.ScepterDescription
 {
 	visibility: collapse;
 }
 
-.HasFacetDesc .FacetDescription
+.HasFacetDesc .FacetDescription,.HasShardDesc .ShardDescription,.HasScepterDesc .ScepterDescription
 {
 	visibility: visible;
 }
 
+@keyframes 'MadnessAnimationEven'
+{
+	0%
+	{
+		transform: rotateZ( 10.0deg ) scaleX( 1.2 ) scaleY( 1.0 );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -10.0deg ) scaleX( 1.2 ) scaleY( 1.0 );
+	}
+	
+}
+
+@keyframes 'MadnessAnimationOdd'
+{
+	0%
+	{
+		transform: rotateZ( 10.0deg ) scaleX( 1.1 ) scaleY( 1.2 );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -10.0deg ) scaleX( 1.1 ) scaleY( 1.2 );
+	}
+	
+}
+
+@keyframes 'MadnessAnimation5'
+{
+	0%
+	{
+		transform: rotateZ( 10.0deg ) scaleX( 0.9 );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -10.0deg ) scaleX( 0.9 );
+	}
+	
+}
+
 #SimpleDescriptionContainer
 {
-	padding: 10px 16px;
+	padding: 10px 16px 12px;
 	flow-children: down;
 }
 
-#SimpleDescriptionContainer .SimpleDescriptionText
+#SimpleDescriptionContainer .SimpleDescriptionText,#SimpleDescriptionContainer .TooltipHighlight Label
 {
 	color: TextColor;
-	font-size: 16px;
-	line-height: 1.4;
-	font-family: titleFont;
+	font-size: 16.5px;
+	line-height: 20px;
 	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+	margin-bottom: 16px;
+	paragraph-spacing: 8px;
 }
 
-#SimpleDescriptionContainer .SimpleDescriptionText b
+#SimpleDescriptionContainer .SimpleDescriptionText b,#SimpleDescriptionContainer .TooltipHighlight Label b
 {
 	color: TextColorLight;
 	font-weight: semi-bold;
 }
 
-#SimpleDescriptionContainer .SimpleDescriptionText .TooltipActiveDynamicValue
+#SimpleDescriptionContainer .TooltipHighlight.Madness Label
 {
-	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	color: gradient( linear, 0% 20%, 0% 80%, from( yellow ), color-stop( 0.5, greenyellow ), to( green ) );
 }
 
-.TooltipActiveDynamicValue
+#SimpleDescriptionContainer .TooltipHighlight.Madness #ImageSlices Image
 {
-	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	animation-duration: 0.55s;
+	animation-iteration-count: infinite;
+}
+
+#SimpleDescriptionContainer .TooltipHighlight.Madness #ImageSlices Image:nth-child(even)
+{
+	animation-name: MadnessAnimationEven;
+	animation-direction: alternate-reverse;
+}
+
+#SimpleDescriptionContainer .TooltipHighlight.Madness #ImageSlices Image:nth-child(odd)
+{
+	animation-name: MadnessAnimationOdd;
+	animation-direction: alternate;
+	animation-duration: 0.49s;
+}
+
+#SimpleDescriptionContainer .TooltipHighlight.Madness #ImageSlices Image:nth-child(5)
+{
+	animation-name: MadnessAnimation5;
+	animation-direction: alternate;
+}
+
+.DynamicStatsGroup
+{
+	flow-children: down;
+	width: fill-parent-flow(1);
+	visibility: collapse;
+}
+
+.DynamicStatsGroup .DynamicStatsGroupTitleContainer
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.DynamicStatsGroup .DynamicStatsGroupTitleContainer .DynamicStatsTitle
+{
+	color: TextColorDark&99;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	margin-right: 4px;
+	text-shadow: 0px 1px 4px black;
+}
+
+.DynamicStatsGroup .DynamicStatsGroupTitleContainer .DynamicStatsTitleDash
+{
+	width: fill-parent-flow(1);
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF ), to( #FFFFFF00 ) );
+	wash-color: TextColorDark;
+	opacity: 0.1;
+	height: 1px;
+	vertical-align: center;
+	margin-top: -1px;
+}
+
+.HasDynamicProperties .DynamicStatsGroup
+{
+	visibility: visible;
+}
+
+#DynamicStatsContainer
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 2px;
+}
+
+#DynamicStatsContainer .DynamicStatRow
+{
+	flow-children: right;
+}
+
+#DynamicStatsContainer .DynamicStatRow Label
+{
+	font-size: 16px;
+	color: TextColorDark;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+	vertical-align: center;
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatLabel
+{
+	margin-right: 4px;
+}
+
+#DynamicStatsContainer .DynamicStatRow .LevelScaleArrow
+{
+	width: 14px;
+	vertical-align: center;
+	wash-color: TextColorStat;
+	opacity: 0.8;
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatValue
+{
+	color: TextColorStat;
+	margin: 0px 2px;
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatValue .TooltipStaticValue
+{
+	color: TextColorLight;
+	font-weight: semi-bold;
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatValue .IsStatMagicalDamageValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( MagicalDamageColorLight ), to( MagicalDamageColor ) );
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatValue .IsStatPhysicalDamageValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( PhysicalDamageColorLight ), to( PhysicalDamageColor ) );
+}
+
+#DynamicStatsContainer .DynamicStatRow .StatValue .IsStatPureDamageValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( PureDamageColorLight ), to( PureDamageColor ) );
+}
+
+.TooltipActiveLevelValue
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
 	font-weight: semi-bold;
 }
 
 #SimpleDescriptionLevelUp
 {
 	visibility: collapse;
-	margin-top: 10px;
+	border: 1px solid rgba(211, 237, 255, 0.1);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	margin-top: 8px;
+	padding: 4px 8px 6px;
+	border-radius: 4px;
+	width: 100%;
+	flow-children: right;
+	background-color: #00000066;
+}
+
+#SimpleDescriptionLevelUp .SimpleDescriptionLevelUpDescription
+{
+	font-size: 14px;
+	line-height: 1.2;
+	color: #ffdbae96;
+	color: gradient( linear, 0% 0%, 100% 0%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	color: TextColor;
+	text-shadow: 0px 1px 6px black;
+	width: fill-parent-flow(1);
+	color: gradient( linear, 0% 0%, 100% 0%, from( Gold1&99 ), color-stop( 0.5, Gold2&99 ), to( Gold3&99 ) );
+	brightness: 1.3;
 }
 
 .HasSimpleDescriptionLevelUp #SimpleDescriptionLevelUp
@@ -300,7 +542,6 @@ DOTAAbilityDetailsV2
 	visibility: visible;
 	width: 100%;
 	flow-children: down;
-	margin-top: 4px;
 }
 
 .TEMP_DetailsContainer,#DetailsContainer
@@ -361,6 +602,14 @@ DOTAAbilityDetailsV2
 	padding: 0px 8px;
 }
 
+.StatsContainer.Characteristics .StatRow
+{
+	padding: 2px 8px;
+	margin-bottom: 1px;
+	border: 0px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( TextColorDark&00 ), to( TextColorDark&0A ) );
+}
+
 .StatsContainer.Specific
 {
 	background-color: rgba(0, 0, 0, 0.5);
@@ -395,12 +644,12 @@ DOTAAbilityDetailsV2
 
 .StatsContainer.Callouts .CalloutRow Label.Green
 {
-	color: winnerGreenLow;
+	color: GreenColor;
 }
 
 .StatsContainer.Callouts .CalloutRow Label.Red
 {
-	color: loserRed;
+	color: RedColor;
 }
 
 .StatsContainer.Callouts .CalloutRow.Physical
@@ -411,6 +660,56 @@ DOTAAbilityDetailsV2
 .StatsContainer.Callouts .CalloutRow.Pure
 {
 	background-color: gradient( linear, 0% 0%, 100% 0%, from( PureDamageColor&11 ), to( PureDamageColor&00 ) );
+}
+
+.StatsContainer.HasShardDesc,.StatsContainer.HasScepterDesc
+{
+	padding: 4px 8px;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	border-radius: 4px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #6d9bdb0f ), to( #526dc70f ) );
+	flow-children: right;
+	margin-top: 0px;
+	margin-bottom: 16px;
+}
+
+.StatsContainer.HasShardDesc .AghsDescriptionContainer,.StatsContainer.HasScepterDesc .AghsDescriptionContainer
+{
+	flow-children: down;
+	width: fill-parent-flow(1);
+	vertical-align: center;
+}
+
+.StatsContainer.HasShardDesc .AghsDescriptionContainer .AghsTitle,.StatsContainer.HasScepterDesc .AghsDescriptionContainer .AghsTitle
+{
+	color: gradient( linear, 0% 0%, 40% 0%, from( #62cdff ), to( #658CF8 ) );
+	letter-spacing: 0px;
+	font-weight: semi-bold;
+}
+
+.StatsContainer.HasShardDesc .AghsDescriptionContainer .AghsDescription,.StatsContainer.HasScepterDesc .AghsDescriptionContainer .AghsDescription
+{
+	color: TextColor;
+	width: fill-parent-flow(1);
+}
+
+.StatsContainer.HasShardDesc .AghsIcon,.StatsContainer.HasScepterDesc .AghsIcon
+{
+	width: 28px;
+	height: 28px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.StatsContainer.HasShardDesc .AghsIcon
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghsstatus_shard_on_psd.vtex");
+}
+
+.StatsContainer.HasScepterDesc .AghsIcon
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghsstatus_scepter_on_psd.vtex");
 }
 
 .StatsContainer.Modifiers .ModifierRow
@@ -629,19 +928,61 @@ DOTAAbilityDetailsV2
 	border-top: 0px;
 }
 
-.StatsContainer .StatRow.IsStatValueMagicalDamage .StatValue
+.StatsContainer .StatRow.IsStatMagicalDamage .StatValue
 {
-	color: MagicalDamageColor;
+	color: gradient( linear, 0% 20%, 0% 80%, from( MagicalDamageColorLight ), to( MagicalDamageColor ) );
+}
+
+.StatsContainer .StatRow.IsStatPhysicalDamage .StatValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( PhysicalDamageColorLight ), to( PhysicalDamageColor ) );
+}
+
+.StatsContainer .StatRow.IsStatPureDamage .StatValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( PureDamageColorLight ), to( PureDamageColor ) );
+}
+
+.StatsContainer .StatRow .StatLabel
+{
+	width: fill-parent-flow(1);
 }
 
 .StatsContainer .StatRow .StatValue
 {
 	margin: 0px 2px;
+	color: TextColorStat;
+	text-align: right;
 }
 
 .StatsContainer .StatRow .StatValue .StatDivider
 {
-	color: TextColorDark&66;
+	color: TextColorDark&44;
+}
+
+.StatsContainer .StatRow .StatValue .TooltipActiveLevelValue
+{
+	color: gradient( linear, 0% 20%, 0% 70%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+}
+
+.StatsContainer .StatRow .StatValue .DispelValue_Yes
+{
+	color: GreenColor;
+}
+
+.StatsContainer .StatRow .StatValue .DispelValue_No
+{
+	color: RedColor;
+}
+
+.StatsContainer .StatRow .StatValue .PierceValue_No
+{
+	color: RedColor;
+}
+
+.StatsContainer .StatRow .StatValue .PierceValue_Yes
+{
+	color: GreenColor;
 }
 
 .StatsContainer .StatRow .AbilityCostIcon
@@ -649,20 +990,56 @@ DOTAAbilityDetailsV2
 	margin-left: 2px;
 }
 
+.AbilityListContainer
+{
+	flow-children: down;
+	margin-bottom: 12px;
+}
+
+.AbilityListContainer .AbilityContainer
+{
+	flow-children: right;
+	margin: 3px 0px;
+}
+
+.AbilityListContainer .AbilityContainer .AbilityImage
+{
+	width: 40px;
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.6);
+	margin-right: 12px;
+	margin-top: 1px;
+}
+
+.AbilityListContainer .AbilityContainer .AbilityDescriptionContainer
+{
+	flow-children: down;
+	width: fill-parent-flow(1);
+	padding-top: 6px;
+	border-top: 1px solid rgba(191, 218, 255, 0.04);
+	border-brush: gradient( linear, 50% 0%, 100% 0%, from( #FFFFFF ), to( #FFFFFF00 ) );
+}
+
+.AbilityListContainer .AbilityContainer .AbilityDescriptionContainer .AbilityName
+{
+	color: LightestGrey;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+	font-family: titleFont;
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+.AbilityListContainer .AbilityContainer .AbilityDescriptionContainer .AbilityDescription
+{
+	font-size: 16px;
+	color: TextColorDark;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
+}
+
 .TEMP_DetailsContainer
 {
 	border: 1px solid rgba(255, 0, 255, 0.8);
-	visibility: collapse;
-}
-
-.TEMP_DetailsContainer .TEMP_Title
-{
-	color: rgba(255, 0, 255, 0.8);
-	font-size: 14px;
-	margin: 12px 0px;
-	width: 100%;
-	text-align: right;
-	font-size: 12px;
 }
 
 .StatRow .AbilityCostIcon
@@ -670,12 +1047,12 @@ DOTAAbilityDetailsV2
 	visibility: collapse;
 }
 
-.IsStatValueCooldown .AbilityCostIcon.Cooldown,.IsStatValueManaCost .AbilityCostIcon.ManaCost,.IsStatValueCastRange .AbilityCostIcon.CastRange,.IsStatValueAreaOfEffectRadius .AbilityCostIcon.AOE
+.IsStatCooldown .AbilityCostIcon.Cooldown,.IsStatManaCost .AbilityCostIcon.ManaCost,.IsStatHealthCost .AbilityCostIcon.HealthCost,.IsStatCastRange .AbilityCostIcon.CastRange,.IsStatAreaOfEffectRadius .AbilityCostIcon.AOE,.IsStatMagicalDamage .AbilityCostIcon.MagicalDamage,.IsStatPhysicalDamage .AbilityCostIcon.PhysicalDamage,.IsStatPureDamage .AbilityCostIcon.PureDamage
 {
 	visibility: visible;
 }
 
-.IsStatValuePhysicalDamage .StatValue
+.IsStatPhysicalDamage .StatValue
 {
 	color: PhysicalDamageColor;
 }

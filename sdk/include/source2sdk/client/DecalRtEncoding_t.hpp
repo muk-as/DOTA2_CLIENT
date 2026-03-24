@@ -19,11 +19,12 @@ namespace source2sdk
         enum class DecalRtEncoding_t : std::uint8_t
         {
             kDecalInvalid = 0xff,
+            // MPropertySuppressEnumerator
+            kDecalMin = 0x0,
             kDecalBlood = 0x0,
             kDecalCloak = 0x1,
-            kDecalCloakDamage = 0x2,
             // MPropertySuppressEnumerator
-            kDecalMax = 0x3,
+            kDecalMax = 0x2,
             // MPropertySuppressEnumerator
             kDecalDefault = 0x0,
         };

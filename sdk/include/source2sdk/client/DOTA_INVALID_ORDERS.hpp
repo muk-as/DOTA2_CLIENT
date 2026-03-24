@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 124
+        // Enumerator count: 125
         // Alignment: 4
         // Size: 0x_
         enum class DOTA_INVALID_ORDERS : std::uint32_t
@@ -117,7 +117,7 @@ namespace source2sdk
             DOTA_INVALID_ORDER_CANT_CAST_ON_CONSIDERED_HERO = 0x5f,
             DOTA_INVALID_ORDER_CANT_SHOP_AUTO_BUY_ENABLED = 0x60,
             DOTA_INVALID_ORDER_ONLY_DELIBERATE_CHANNELING_CANCEL = 0x61,
-            DOTA_INVALID_ORDER_CANT_BUYBACK_REAPERS_SCYTHE = 0x62,
+            DOTA_INVALID_ORDER_CANT_BUYBACK_DEVILS_BARGAIN = 0x62,
             DOTA_INVALID_ORDER_CANT_BUYBACK_DISABLED_BY_GAME_MODE = 0x63,
             DOTA_INVALID_ORDER_CANT_ABILITY_PING_BAD_TEAM = 0x64,
             DOTA_INVALID_ORDER_ABILITY_NOT_POSITIONED = 0x65,
@@ -141,7 +141,8 @@ namespace source2sdk
             DOTA_INVALID_ORDER_ITEM_CANNOT_BE_CONSUMED = 0x77,
             DOTA_INVALID_ORDER_CANT_BUYBACK_CEASELESS_DIRGE = 0x78,
             DOTA_INVALID_ORDER_CANT_ATTACK_BUILDINGS = 0x79,
-            DOTA_INVALID_ORDER_COUNT = 0x7a,
+            DOTA_INVALID_ORDER_PURCHASE_LEVEL = 0x7a,
+            DOTA_INVALID_ORDER_COUNT = 0x7b,
         };
     };
 };

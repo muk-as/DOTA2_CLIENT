@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 4
+        // Enumerator count: 5
         // Alignment: 4
         // Size: 0x_
         enum class DecalFlags_t : std::uint32_t
@@ -21,6 +21,7 @@ namespace source2sdk
             // MEnumeratorIsNotAFlag
             eNone = 0x0,
             eCannotClear = 0x1,
+            eDecalProjectToBackfaces = 0x2,
             // MEnumeratorIsNotAFlag
             eAll = 0xffffffff,
             // MEnumeratorIsNotAFlag

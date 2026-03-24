@@ -312,6 +312,11 @@ DropDownMenu Label:hover
 	margin-bottom: 12px;
 }
 
+.AbilityNotes.SubInnateIcon
+{
+	min-height: 76px;
+}
+
 #AbilityImage
 {
 	width: 64px;
@@ -337,6 +342,24 @@ DropDownMenu Label:hover
 .TrueInnateAbility #InnateIcon
 {
 	visibility: visible;
+}
+
+.InnateIconFrame
+{
+	visibility: collapse;
+}
+
+.SubInnateIcon .InnateIconFrame
+{
+	visibility: visible;
+	width: 32px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	y: 17px;
+	background-color: rgba(9, 11, 14, 0.97);
+	padding: 1.5px;
+	border-radius: 50%;
+	box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.3);
 }
 
 .FacetContainer #AbilityImage
@@ -454,6 +477,7 @@ DropDownMenu Label:hover
 {
 	flow-children: down;
 	margin-left: 16px;
+	vertical-align: center;
 }
 
 .HeroNotesMain
@@ -466,6 +490,7 @@ DropDownMenu Label:hover
 #HeroNotesContainer
 {
 	flow-children: down;
+	margin-bottom: 15px;
 }
 
 #AbilityNotesContainer
@@ -525,7 +550,64 @@ DropDownMenu Label:hover
 .PatchNoteContainer
 {
 	flow-children: right;
-	margin-bottom: 2px;
+	padding-bottom: 2px;
+	width: fill-parent-flow(1);
+}
+
+.PatchNoteContainer.Scepter,.PatchNoteContainer.Shard
+{
+	border-radius: 3px;
+	background-color: gradient( linear, 0% 0%, 70% 0%, from( #53afff08 ), color-stop( 0.5, #608dff02 ), to( #608dff00 ) );
+	margin-bottom: 1px;
+}
+
+.PatchNoteContainer.Scepter .NoteLine,.PatchNoteContainer.Shard .NoteLine
+{
+	color: #8190a5;
+}
+
+.PatchNoteContainer.Scepter .Dot,.PatchNoteContainer.Shard .Dot
+{
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	margin: 0px;
+	border-radius: 0px;
+	background-color: none;
+	margin: 0px 3px;
+}
+
+.PatchNoteContainer.Scepter .Dot
+{
+	background-size: 90%;
+	margin-bottom: -1px;
+	background-image: url("s2r://panorama/images/hud/reborn/aghsstatus_scepter_on_psd.vtex");
+}
+
+.PatchNoteContainer.Shard .Dot
+{
+	background-size: contain;
+	margin-bottom: -4px;
+	background-image: url("s2r://panorama/images/hud/reborn/aghsstatus_shard_on_psd.vtex");
+}
+
+#HeroNotesContainer .PatchNoteContainer.Indent1 .Indent
+{
+	width: 24px;
+}
+
+#HeroNotesContainer .PatchNoteContainer.Indent1 .TreeBranch
+{
+	ignore-parent-flow: true;
+	width: 10px;
+	height: 10px;
+	margin-left: 12px;
+	margin-top: 2px;
+	border: 1px solid rgba(195, 214, 255, 0.2);
+	border-top: 0px;
+	border-right: 0px;
 }
 
 .NeutralCreepNotes
@@ -594,8 +676,8 @@ DropDownMenu Label:hover
 
 .Indent1:not(.NoDot) .Dot
 {
-	background-color: gradient( radial, 50% 50%, 0% 0%, 10% 10%, from( #000000 ), to( #000000 ) );
-	border: 1px solid #aaa;
+	background-color: none;
+	border: 1.5px solid #b7d1e131;
 }
 
 .Indent2:not(.NoDot) .Dot
@@ -625,22 +707,22 @@ DropDownMenu Label:hover
 
 .Indent1 .Indent
 {
-	width: 14px;
+	width: 18px;
 }
 
 .Indent2 .Indent
 {
-	width: 28px;
+	width: 36px;
 }
 
 .Indent3 .Indent
 {
-	width: 42px;
+	width: 54px;
 }
 
 .Indent4 .Indent
 {
-	width: 56px;
+	width: 72px;
 }
 
 .NoteLine
@@ -658,6 +740,8 @@ DropDownMenu Label:hover
 	transform: none;
 	margin: 0px 2px;
 	wash-color: #6C8798;
+	width: 16px;
+	height: 16px;
 }
 
 .Indent1 .NoteLine
@@ -1022,5 +1106,84 @@ DropDownMenu Label:hover
 {
 	horizontal-align: right;
 	margin-top: 8px;
+}
+
+.DotIcon .Dot
+{
+	width: 21px;
+	height: 21px;
+	background-size: 95%;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: center;
+	margin: 0px 4px 0px 3px;
+	border-radius: 0;
+	background-color: none;
+}
+
+.Indent1.DotIcon .Dot
+{
+	background-color: none;
+	border: 0;
+}
+
+.DotIcon_strength .Dot
+{
+	background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex");
+}
+
+.DotIcon_agility .Dot
+{
+	background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex");
+}
+
+.DotIcon_intelligence .Dot
+{
+	background-image: url("s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex");
+}
+
+.DotIcon_attack_range .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_attack_range_psd.vtex");
+}
+
+.DotIcon_attack_speed .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_attack_speed3_psd.vtex");
+}
+
+.DotIcon_armor .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_armor_psd.vtex");
+}
+
+.DotIcon_damage .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_damage_psd.vtex");
+}
+
+.DotIcon_movement .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_speed_psd.vtex");
+}
+
+.DotIcon_attack_time .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_attack_speed2_psd.vtex");
+}
+
+.DotIcon_health_regen .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/health_regen_png.vtex");
+}
+
+.DotIcon_mana_regen .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/mana_regen_png.vtex");
+}
+
+.DotIcon_projectile_speed .Dot
+{
+	background-image: url("s2r://panorama/images/hud/reborn/icon_projectile_speed_psd.vtex");
 }
 

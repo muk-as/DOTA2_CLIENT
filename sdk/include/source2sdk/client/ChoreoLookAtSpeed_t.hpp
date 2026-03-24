@@ -21,10 +21,13 @@ namespace source2sdk
             // MPropertySuppressEnumerator
             eInvalid = 0xffffffff,
             // MPropertyFriendlyName "Slow"
+            // MAlternateSemanticName
             eSlow = 0x0,
             // MPropertyFriendlyName "Medium"
+            // MAlternateSemanticName
             eMedium = 0x1,
             // MPropertyFriendlyName "Fast"
+            // MAlternateSemanticName
             eFast = 0x2,
         };
     };

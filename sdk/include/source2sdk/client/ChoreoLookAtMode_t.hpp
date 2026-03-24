@@ -21,10 +21,13 @@ namespace source2sdk
             // MPropertySuppressEnumerator
             eInvalid = 0xffffffff,
             // MPropertyFriendlyName "Chest"
+            // MAlternateSemanticName
             eChest = 0x0,
             // MPropertyFriendlyName "Head"
+            // MAlternateSemanticName
             eHead = 0x1,
             // MPropertyFriendlyName "Eyes"
+            // MAlternateSemanticName
             eEyesOnly = 0x2,
         };
     };

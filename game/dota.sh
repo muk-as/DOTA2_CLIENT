@@ -55,7 +55,7 @@ fi
 ulimit -n 2048
 
 # Set default thread size.
-ulimit -Ss 1024
+ulimit -Ss 2048
 
 # enable nVidia threaded optimizations
 export __GL_THREADED_OPTIMIZATIONS=1

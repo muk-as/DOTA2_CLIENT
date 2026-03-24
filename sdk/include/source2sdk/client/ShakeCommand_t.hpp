@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 6
+        // Enumerator count: 7
         // Alignment: 4
         // Size: 0x_
         enum class ShakeCommand_t : std::uint32_t
@@ -24,6 +24,7 @@ namespace source2sdk
             SHAKE_FREQUENCY = 0x3,
             SHAKE_START_RUMBLEONLY = 0x4,
             SHAKE_START_NORUMBLE = 0x5,
+            SHAKE_DURATION = 0x6,
         };
     };
 };

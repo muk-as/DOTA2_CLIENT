@@ -927,6 +927,14 @@ DOTASortHeader.SortAscending .GoldIcon,DOTASortHeader.SortDescending .GoldIcon
 	height: 24px;
 }
 
+.DewardsIcon
+{
+	background-image: url("s2r://panorama/images/hud/facets/icons/no_vision_png.vtex");
+	background-size: 100% 100%;
+	width: 24px;
+	height: 24px;
+}
+
 #OverviewStats .GoldIcon
 {
 	pre-transform-scale2d: .5;
@@ -954,12 +962,23 @@ DOTASortHeader.SortAscending .GoldIcon,DOTASortHeader.SortDescending .GoldIcon
 
 .SupportItemsLegend .GoldIcon
 {
-	margin-right: 65px;
+	margin-right: 130px;
 }
 
 .SupportItemsLegend .CampsStackedIcon
 {
 	wash-color: #C48123;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 4px;
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+	margin-right: 70px;
+}
+
+.SupportItemsLegend .DewardsIcon
+{
+	wash-color: #b91b1e;
 	horizontal-align: right;
 	vertical-align: bottom;
 	margin-bottom: 4px;
@@ -2298,8 +2317,6 @@ Panel.AbilityUpgradesRow .Player:hover Label.PlayerName
 DOTAAbilityImage.AbilityMaxLevel
 {
 	saturation: 1;
-	wash-color: #00000000;
-	border: 1px solid #6CABAD32;
 }
 
 #DetailsBasicGraphs
@@ -5318,7 +5335,7 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 
 .DetailsTable
 {
-	margin-top: 16px;
+	margin-top: 8px;
 	margin-left: 0px;
 	margin-right: 16px;
 	margin-bottom: 4px;
@@ -5333,23 +5350,48 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	color: white;
 	text-transform: uppercase;
 	margin-bottom: 8px;
+	text-shadow: 0px 2px 12px black;
+	letter-spacing: 1px;
 }
 
 .DetailsTableHeader
 {
 	flow-children: right;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
 }
 
-.DetailsTableHeader DOTAHeroImage
+.DetailsTableHeaderColumn
+{
+	flow-children: down;
+}
+
+.DetailsTableHeaderHeroes DOTAHeroImage
 {
 	width: 78px;
+	height: 44px;
+	background-color: black;
 	margin-right: 10px;
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
 }
 
 .DetailsTableHeader #DetailsDamageHeroSource,.DetailsTableHeader #DetailsHealingHeroSource
 {
 	margin-right: 12px;
+}
+
+.HeroSource
+{
+	width: 78px;
+	height: width-percentage( 133% );
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+	background-color: rgb(14, 15, 18);
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #484330 ), to( #253138 ) );
+}
+
+.HeroSource.Small
+{
+	width: 56px;
 }
 
 .DetailsTableHeaderHeroes
@@ -5359,17 +5401,28 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 
 .DetailsTableRows
 {
+	width: 100%;
 	flow-children: down;
 	overflow: clip scroll;
-	max-height: 500px;
+	max-height: 480px;
 	padding-right: 10px;
-	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	opacity-mask: url("s2r://panorama/images/masks/soft_top_bottom_vscroll_psd.vtex");
+	opacity-mask-position: 1px 0px;
+}
+
+.DetailsTableRows VerticalScrollBar
+{
+	width: 4px;
+	margin: 10px 0px 28px;
 }
 
 .DetailsTableRow
 {
 	flow-children: right;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
+	overflow: noclip;
 }
 
 .BorderBottom
@@ -5377,19 +5430,64 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	border-bottom: 2px solid #768e8d;
 }
 
-.DetailsTableRow Image,.DetailsTableRow DOTAAbilityImage,.DetailsTableRow Label
+.DetailsTableRow .ExpanderArrow
+{
+	width: 22px;
+	height: 22px;
+	horizontal-align: center;
+	vertical-align: middle;
+	background-image: url("s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg");
+	background-size: cover;
+	wash-color: #818e95;
+	opacity: 0;
+	transition-property: transform, brightness;
+	transition-duration: 0.15s;
+}
+
+.DetailsTableRow .ExpanderArrow:hover
+{
+	brightness: 3;
+}
+
+.DetailsTableRow.ShowExpander .ExpanderArrow
+{
+	opacity: 1;
+}
+
+.DetailsTableRow.ShowingDrilldown .ExpanderArrow
+{
+	transform: rotateZ(90deg);
+	brightness: 3;
+}
+
+.DetailsTableRow #DetailsAttackDamageImage,.DetailsTableRow DOTAAbilityImage,.DetailsTableRow #DamageUnitImage,.DetailsTableRow .DetailsTableCell
 {
 	width: 78px;
 	height: 78px;
 	margin-right: 10px;
+}
+
+.DetailsTableRow .ValueLabel
+{
+	width: 100%;
+	height: 100%;
 	letter-spacing: 1px;
+}
+
+.DetailsTableCell.DamageTotal
+{
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	padding-top: 26px;
+	color: #DDDDDD;
+	text-shadow: 0px 1px 6px #000000;
 }
 
 .DetailsTableRow DOTAHudTalentDisplay
 {
 	vertical-align: middle;
 	width: 72px;
-	height: 72px;
+	height: 68px;
 	margin-left: 6px;
 	margin-top: 3px;
 	tooltip-position: right;
@@ -5422,18 +5520,35 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	margin-left: 0px;
 }
 
-.DetailsTableRow Label
+.DetailsTableRow .ValueLabel
 {
-	background-color: #00000077;
+	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
-	padding-top: 28px;
+	padding-top: 26px;
 	color: #DDDDDD;
-	text-shadow: 1px 1px 1px #00000077;
+	text-shadow: 0px 1px 6px #000000;
+	border: 1px solid transparent;
+	transition-property: border;
+	transition-duration: 0.1s;
 }
 
 .DetailsTableRow.DetailsTableRowBottom Image
 {
 	opacity: 0.0;
+}
+
+@keyframes 'BobTooltip'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	100%
+	{
+		transform: translateY( 4px );
+	}
+	
 }
 
 #DetailsBreakdowns
@@ -5449,7 +5564,7 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	flow-children: down;
 	width: 500px;
 	padding: 18px 20px;
-	margin-top: 16px;
+	margin-top: 22px;
 }
 
 #GoldReceived.Hidden,#XPReceived.Hidden
@@ -5469,12 +5584,18 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 {
 	margin-right: 5px;
 	text-transform: uppercase;
-	color: #98a096;
+	color: LightGrey;
+	letter-spacing: 0.5px;
+}
+
+#RowPercentage,#XPPercentage
+{
+	color: LightestGrey;
 }
 
 .GoldReceivedRow #RowValue,.XPReceivedRow #RowValue
 {
-	color: #E7BA01;
+	color: #dcbb37;
 	horizontal-align: right;
 	vertical-align: bottom;
 }
@@ -5482,9 +5603,9 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 .GoldReceivedRow .RowBarContainer,.XPReceivedRow .RowBarContainer
 {
 	width: 340px;
-	height: 12px;
+	height: 8px;
 	vertical-align: bottom;
-	margin-bottom: 4px;
+	margin-bottom: 6px;
 	background-color: #0008;
 }
 
@@ -5653,6 +5774,7 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 {
 	flow-children: right;
 	margin-bottom: 10px;
+	margin-left: 22px;
 }
 
 .DetailsBuffRow Image,.DetailsBuffRow DOTAAbilityImage,.DetailsBuffRow Label
@@ -5759,7 +5881,7 @@ DOTAPostGameSupportItemsRow
 	margin-left: 64px;
 	padding-left: 12px;
 	padding-right: 16px;
-	width: 382px;
+	width: 447px;
 }
 
 .MaxItems4 DOTAPostGameSupportItemsRow
@@ -5827,10 +5949,18 @@ DOTAPostGameSupportItemsRow
 #SupportItemsValue
 {
 	horizontal-align: right;
-	margin-right: 57px;
+	margin-right: 122px;
 }
 
 .SupportItemsCampsStacked
+{
+	vertical-align: center;
+	color: baseText;
+	horizontal-align: right;
+	margin-right: 65px;
+}
+
+.SupportItemsDewards
 {
 	vertical-align: center;
 	color: baseText;
@@ -7101,7 +7231,7 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 
 .SupportItemsLegend
 {
-	width: 424px;
+	width: 489px;
 }
 
 .MaxItems4 .SupportItemsLegend

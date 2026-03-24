@@ -103,12 +103,12 @@
 [
 ]
 
-@PointClass base(Targetname) = npc_dota_roshan_spawner: 
+@PointClass base(Targetname) editormodel("models/creeps/roshan/roshan.vmdl") = npc_dota_roshan_spawner: 
 	"Spawns Roshan, the big boss in the standard Dota2 PvP map."
 [
 ]	
 
-@PointClass base(Targetname) = npc_dota_miniboss_spawner: 
+@PointClass base(Targetname, teamnumber) editormodel("models/props_gameplay/divine_sentinel/divine_sentinel_cube.vmdl") = npc_dota_miniboss_spawner: 
 	"Spawns Tormentor, the small side lane boss in the standard Dota2 PvP map."
 [
 	VisualTeam(choices) : "Rune Team" : 2 =
@@ -306,8 +306,22 @@
 	visionrange(integer) : "Vision Range" : 500 : "Radius of vision to reveal"
 ]
 
-@PointClass base(Targetname) = npc_dota_neutral_spawner: 
-	"Spawns neutral units."
+@PointClass base(Targetname) 
+editormodel
+{
+	model_from_key =
+	{
+		source_key = "NeutralType"
+		value_to_vmdl =
+		{
+			"0" = "models/creeps/neutral_creeps/n_creep_kobold/kobold_c/n_creep_kobold_c.vmdl"
+			"1" = "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+			"2" = "models/creeps/neutral_creeps/n_creep_vulture_b/n_creep_vulture_b.vmdl"
+			"3" = "models/creeps/neutral_creeps/n_creep_satyr_spawn_a/n_creep_satyr_spawn_a.vmdl"
+		}
+	}
+}
+= npc_dota_neutral_spawner: "Spawns neutral units."
 [
 	NeutralType(choices) :"Camp Type" : 0 =
 	[
@@ -826,6 +840,10 @@
 [
 ]
 
+@PointClass base(prop_dynamic_base, Targetname, dota_building) studioprop() = npc_dota_unit_item_stone_of_recall:
+	"A recall stone."
+[
+]
 
 @PointClass base(prop_dynamic_base, Targetname, dota_building) studioprop() = npc_dota_xp_fountain:
 	"An XP fountain that grants experience to a unit that stands near it for long enough."

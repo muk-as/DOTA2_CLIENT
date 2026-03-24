@@ -111,61 +111,79 @@
 				<Label class="Frostivus2017PlayerScore Frostivus2017ScoreColumn" text="{d:frostivus_2017_score}" />
 			</Panel>
 		</snippet>
-		<snippet name="DetailsTableTitle">
-			<Label class="DetailsTableTitle" text="#DOTA_PlusPostGame_DamageTableHeader" />
-		</snippet>
 		<snippet name="DetailsDamageTableHeader">
 			<Panel class="DetailsTableHeader">
-				<DOTAHeroImage id="DetailsDamageHeroSource" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
-				<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
-				<Label id="DamageTotalColumnHeader" class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+				<Panel class="TopBottomFlow">
+					<DOTAHeroImage id="DetailsDamageHeroSource" class="HeroSource" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				<Panel class="TopBottomFlow VerticalBottom">
+					<Label class="DetailsTableTitle" text="{s:table_title}" />
+					<Panel class="LeftRightFlow">
+						<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
+						<Label id="DamageTotalColumnHeader" class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+					</Panel>
+				</Panel>
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowBasic">
 			<Panel class="DetailsTableRow">
+				<Image class="ExpanderArrow" />
 				<Image id="DetailsAttackDamageImage" src="" texturewidth="128px" textureheight="128px" class="DamageBasicIcon" scaling="stretch-to-cover-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_HUD_Killcam_AttackDmg )" onmouseout="UIHideTextTooltip()" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowUnit">
 			<Panel class="DetailsTableRow">
+				<Image class="ExpanderArrow" />
 				<Image id="DamageUnitImage" scaling="stretch-to-cover-preserve-aspect" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowAbility">
 			<Panel class="DetailsTableRow">
+				<Image class="ExpanderArrow" />
 				<DOTAAbilityImage id="DamageAbilityImage" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowBottom">
 			<Panel class="DetailsTableRow DetailsTableRowBottom">
-				<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+				<Image class="ExpanderArrow" />
+				<Label class="DamageTotal DetailsTableCell" text="#DOTA_PlusPostGame_Total" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableHeader">
 			<Panel class="DetailsTableHeader">
-				<DOTAHeroImage id="DetailsHealingHeroSource" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
-				<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
-				<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+				<Panel class="TopBottomFlow">
+					<DOTAHeroImage id="DetailsHealingHeroSource" class="HeroSource" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				<Panel class="TopBottomFlow VerticalBottom">
+					<Label class="DetailsTableTitle" text="#DOTA_PlusPostGame_HealingTableHeader" />
+					<Panel class="LeftRightFlow">
+						<Panel id="DetailsTableHeaderHeroes" class="DetailsTableHeaderHeroes" />
+						<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+					</Panel>
+				</Panel>
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableRowBasic">
 			<Panel class="DetailsTableRow">
-				<Image src="s2r://panorama/images/spellicons/attr_damage_png.vtex" class="DamageBasicIcon" scaling="stretch-to-cover-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_HUD_Killcam_AttackDmg )" onmouseout="UIHideTextTooltip()" />
+				<Image class="ExpanderArrow" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableRowUnit">
 			<Panel class="DetailsTableRow">
+				<Image class="ExpanderArrow" />
 				<Image id="DamageUnitImage" scaling="stretch-to-cover-preserve-aspect" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableRowAbility">
 			<Panel class="DetailsTableRow">
+				<Image class="ExpanderArrow" />
 				<DOTAAbilityImage id="DamageAbilityImage" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableRowBottom">
 			<Panel class="DetailsTableRow DetailsTableRowBottom">
-				<Label class="DamageTotal" text="#DOTA_PlusPostGame_Total" />
+				<Image class="ExpanderArrow" />
+				<Label class="DamageTotal DetailsTableCell" text="#DOTA_PlusPostGame_Total" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsBuffTableHeader">
@@ -1053,12 +1071,14 @@
 								<Label id="KillMatrixTitle" text="#dota_page_post_game_support_items" />
 								<Panel class="GoldIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_support_gold_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="CampsStackedIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_camps_stacked_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="DewardsIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_dewards_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel class="SupportItemsTeamContainer" id="RadiantSupportItemsRows" />
 							<Panel class="SupportItemsLegend KillMatrixLegend StatRowHeight StatSectionTitle">
 								<Label id="KillMatrixTitle" text="#dota_page_post_game_support_items" />
 								<Panel class="GoldIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_support_gold_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="CampsStackedIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_camps_stacked_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="DewardsIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_dewards_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel class="SupportItemsTeamContainer" id="DireSupportItemsRow" />
 						</Panel>

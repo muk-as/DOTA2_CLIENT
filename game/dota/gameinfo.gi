@@ -78,6 +78,11 @@
 		}
 	}
 
+	Localize
+	{
+		DisallowTokenContexts	0
+	}
+
 	Engine2
 	{
 		"HasModAppSystems" "1"
@@ -214,6 +219,8 @@
 		{
 			EncodeVertexBuffer      "1"
 			EncodeIndexBuffer       "1"
+            EncodeVertexBufferVersion   "1"
+            EncodeVertexBufferLevel     "3"
 		}
 
 		WorldRendererBuilder

@@ -490,15 +490,6 @@
 				
 				{
 					m_type = "SPEAK"
-					m_value = "lich_lich_ability_ritual_02"
-					m_params = 
-					{
-						m_respeakdelay.start = 60.000000
-					}
-				},
-				
-				{
-					m_type = "SPEAK"
 					m_value = "lich_lich_ability_ritual_03"
 					m_params = 
 					{
@@ -523,15 +514,6 @@
 						m_respeakdelay.start = 60.000000
 					}
 				},
-				
-				{
-					m_type = "SPEAK"
-					m_value = "lich_lich_ability_ritual_13"
-					m_params = 
-					{
-						m_respeakdelay.start = 60.000000
-					}
-				},
 			]
 			m_pEmbeddedRule = 
 			{
@@ -547,27 +529,90 @@
 		},
 		
 		{
-			m_name = "lich_CastExecuteIsLichDarkRitualChance_5%"
+			m_name = "lich_CastExecuteIsLichSacrificeChance_75%"
 			m_responses = 
 			[
+				
+				{
+					m_type = "SPEAK"
+					m_value = "lich_lich_ability_ritual_01"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SPEAK"
+					m_value = "lich_lich_ability_ritual_02"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
 				
 				{
 					m_type = "SPEAK"
 					m_value = "lich_lich_ability_ritual_07"
 					m_params = 
 					{
-						m_bSpeakOnce = true
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SPEAK"
+					m_value = "lich_lich_ability_ritual_13"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
 					}
 				},
 			]
 			m_pEmbeddedRule = 
 			{
-				m_name = "lich_CastExecuteIsLichDarkRitualChance_5%"
+				m_name = "lich_CastExecuteIsLichSacrificeChance_75%"
 				m_Requirements = 
 				[
 					"CastExecute",
 					"Islich",
-					"IsLichDarkRitual",
+					"IsLichSacrifice",
+					"Chance_75%",
+				]
+			}
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichIsLichSacrificeChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SPEAK"
+					m_value = "lich_lich_ability_ritual_08"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SPEAK"
+					m_value = "lich_lich_ability_ritual_12"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+			m_pEmbeddedRule = 
+			{
+				m_name = "lich_CastExecuteIsIsLichSacrificeChance_5%"
+				m_Requirements = 
+				[
+					"CastExecute",
+					"Islich",
+					"IsLichSacrifice",
 					"Chance_5%",
 				]
 			}
@@ -2221,6 +2266,14 @@
 			m_name = "IsLichDarkRitual"
 			m_matchKey = "abilityname"
 			m_matchExpr = "lich_sinister_gaze"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichSacrifice"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lich_death_charge"
 			m_flWeight = 5.000000
 			m_bRequired = true
 		},

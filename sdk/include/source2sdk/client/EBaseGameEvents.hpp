@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 13
+        // Enumerator count: 15
         // Alignment: 4
         // Size: 0x_
         enum class EBaseGameEvents : std::uint32_t
@@ -31,6 +31,8 @@ namespace source2sdk
             GE_SosSetSoundEventParams = 0xd2,
             GE_SosSetLibraryStackFields = 0xd3,
             GE_SosStopSoundEventHash = 0xd4,
+            GE_ClothStiffenAnimEvent = 0xd5,
+            GE_ClothEffectAnimEvent = 0xd6,
         };
     };
 };

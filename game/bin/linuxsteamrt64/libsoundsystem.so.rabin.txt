@@ -49,19 +49,19 @@
 14CMonoDelayLine
 14CMultiInstance
 14COversampler16
+14CSndSeqManager
 14CSoundOpSystem
-14CSoundSamplers
 14CVoiceTraceKV3
 14IErrorListener
+14ISndSeqManager
 14ISoundOpSystem
-14ISoundSamplers
 14IVSoundManager
 14IVoiceTraceKV3
 15CAudioProcessor
 15CAudioSourceMP3
+15CSndSeqArranger
 15CSosEventInfo_t
 15CSosOperatorLFO
-15CSoundSequencer
 15CTier0AppSystemI12ISoundSystemLx0EE
 15CTier0AppSystemI14ISoundOpSystemLx0EE
 15CTier0AppSystemI18ISoundOpSystemEditLx0EE
@@ -72,7 +72,7 @@
 15CTier2AppSystemI14ISoundOpSystemLx0EE
 15CTier2AppSystemI18ISoundOpSystemEditLx0EE
 15IAudioSubsystem
-15ISoundSequencer
+15ISndSeqArranger
 15IToolAttr_Array
 15IToolAttr_Table
 15IToolAttr_Value
@@ -178,7 +178,8 @@
 17CConcreteToolAttrIi20VMixPitchShiftDesc_tvE
 17CConcreteToolAttrIi22CVMixBaseProcessorDescvE
 17CDSPEditorWrapper
-17CSequenceArranger
+17CSndSeqPlayerBase
+17CSndSeqRegionBase
 17CSosOperatorCurve
 17CSosOperatorDelta
 17CSosOperatorFloat
@@ -191,7 +192,6 @@
 17IAudioInputStream
 17IAudioWAVRecorder
 17IBaseErrorContext
-17ISequenceArranger
 17IVMixToolServices
 18>BFJMPSVX[]_acegiklnpqstvwyz
 18CAsyncWavDataCache
@@ -201,9 +201,11 @@
 18CErrorContextValueIPK10KeyValues3E
 18CGenericExpr_Unary
 18CInstanceGenerator
+18CLoopXFadeInstance
 18COscAudioProcessor
 18CRetriggerInstance
 18CSDLAudioSubsystem
+18CSndSeqInstruments
 18CSosOperatorConvar
 18CSosOperatorCurve4
 18CSosOperatorCurve6
@@ -218,6 +220,7 @@
 18CWaveTmpFileWriter
 18IAsyncWavDataCache
 18IAudioOutputStream
+18ISndSeqInstruments
 18ISoundEventManager
 18ISoundOpSystemEdit
 19CAudioCaptureDevice
@@ -226,6 +229,8 @@
 19CHRTFAudioProcessor
 19CNullAudioSubsystem
 19CSchemaRegistration
+19CSndSeqPlayerSndEvt
+19CSndSeqRegionSndEvt
 19CSosOperatorBuiltIn
 19CSosOperatorFalloff
 19CSosOperatorGlobals
@@ -236,41 +241,43 @@
 19CVoiceContainerNull
 19CVoiceContainerVOIP
 19IVSndParameterTable
-1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
+1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
 1>O\\kw
 1ANYckrx
 1CMR]c
 1Ia\t!9Qi
-1\v=&XO
-1\v=,HH
-1\v=. R
-1\v=4UJ
-1\v=6+O
-1\v=7?O
-1\v=:YK
-1\v=:ZK
-1\v=>KK
-1\v=B#H
-1\v=FFK
-1\v=JuM
-1\v=ONC
-1\v=R7K
-1\v=T3I
-1\v=VTO
-1\v=Z$F
-1\v=Z'D
-1\v=\n C
-1\v=\naR
-1\v=\nwO
-1\v=^uC
-1\v=f'H
-1\v=iUI
-1\v=j]C
-1\v=nVK
-1\v=orF
+1\v=#PU
+1\v=&LU
+1\v=0rL
+1\v==JF
+1\v=>EF
+1\v=>HR
+1\v=GNM
+1\v=N,N
+1\v=NGR
+1\v=PXE
+1\v=QrL
+1\v=R-Q
+1\v=R\bK
+1\v=U~T
+1\v=VJU
+1\v=\n3I
+1\v=\nLF
+1\v=\nOU
+1\v=cRU
+1\v=f!N
+1\v=fDR
+1\v=j5P
+1\v=jCU
+1\v=k#S
+1\v=n+N
+1\v=o\eM
+1\v=rrL
+1\v=wJM
+1\v\r\\9F
 1f / %.1f
 1ɉFpHc
-1Ҿ-YA1L
+1ҋ\r.VE
 20CAudioDecoderEncoded
 20CAudioDecoderStretch
 20CAudioDecoderWaveMP3
@@ -298,7 +305,6 @@
 20IToolAttr_TypedValueI22VMixChannelOperation_tE
 20IToolAttr_TypedValueI37VMixSubgraphSwitchInterpolationType_tE
 20IToolAttr_TypedValueIbE
-20IToolAttr_TypedValueIfE
 20IToolAttr_TypedValueIiE
 21CBaseConcreteToolAttrI10CUtlString19VMixPresetDSPDesc_tE
 21CBaseConcreteToolAttrI10CUtlString21VMixEffectChainDesc_tE
@@ -393,6 +399,7 @@
 21CGenericExpr_Property
 21CPannerAudioProcessor
 21CShaperAudioProcessor
+21CSndSeqInstBaseSchema
 21CSosGroupActionSchema
 21CSosOperatorBlockTest
 21CSosOperatorCrossfade
@@ -425,6 +432,7 @@
 22CFlangerAudioProcessor
 22CPathingAudioProcessor
 22CSchemaInstallCallback
+22CSndSeqInstMidiSampler
 22CSosOperatorAudibility
 22CSosOperatorClampFloat
 22CSosOperatorDistantDSP
@@ -460,6 +468,7 @@
 23CKV3TransferSaveContext
 23CModDelayAudioProcessor
 23CParameterBlendInstance
+23CSndSeqInstSndEvtSchema
 23CSosOperatorApplyEffect
 23CSosOperatorBlockEvents
 23CSosOperatorCalcDoppler
@@ -496,18 +505,23 @@
 24CSosOperatorQueueToTrack
 24CSosOperatorRandomFloat3
 24CSosOperatorSamplerEvent
+24CSosOperatorSequencerLFO
 24CSosOperatorSetEventInfo
 24CSosOperatorSetOpVarVsnd
 24CSosOperatorSpatializeVR
 24CSosOperatorStackControl
+24CSosStopSoundEventInfo_t
 24CVMixFilterProcessorDesc
 24CVMixPannerProcessorDesc
 24CVMixShaperProcessorDesc
 24CVoiceContainerGenerator
+24CVoiceContainerLoopXFade
 25BufferedImpulseResponse_t
 25CAutoFilterAudioProcessor
 25CGenericExpr_FloatLiteral
 25CGenericExpr_FunctionCall
+25CSndSeqPlayerMidiSequence
+25CSndSeqRegionMidiSequence
 25CSosOperatorAnimateFloat3
 25CSosOperatorApproachFloat
 25CSosOperatorFloat3ToFloat
@@ -522,6 +536,7 @@
 25CSosOperatorPointContents
 25CSosOperatorPointOnSphere
 25CSosOperatorPointOnVolume
+25CSosOperatorSequenceStart
 25CSosOperatorSetOpVarFloat
 25CSosOperatorVMixNameInput
 25CSosStartSoundEventInfo_t
@@ -590,6 +605,7 @@
 26CSosGroupActionLimitSchema
 26CSosOperatorCheckValidVsnd
 26CSosOperatorDspMixgroupMod
+26CSosOperatorFloat16ToFloat
 26CSosOperatorGetOpVarFloat3
 26CSosOperatorGetOpVarFloat8
 26CSosOperatorGetOpVarSndevt
@@ -762,6 +778,7 @@
 28CSosOperatorRightAngleFloat3
 28CSosOperatorSetVoicePosition
 28CSosOperatorSteamAudioReverb
+28CSosOperatorUsableFloatRange
 28CSoundsystemProcessorFactory
 28CToolEditContextQuery_String
 28CVMixAutoFilterProcessorDesc
@@ -947,6 +964,7 @@
 30CDefaultToolAttrTableForStructI40CVMixSteamAudioHybridReverbProcessorDescE
 30CGenericExpr_VariableReference
 30CMultiBlenderContainerInstance
+30CSosGroupActionOcclusionSchema
 30CSosGroupActionTimeLimitSchema
 30CSosOperatorCalcAngleFrom3Vec3
 30CSosOperatorGenerateGranulator
@@ -965,6 +983,7 @@
 31CSosOperatorCalcDirectionalVec3
 31CSosOperatorCalcWeightedAvgVec3
 31CSosOperatorFindSourceDspPreset
+31CSosOperatorFloat16Accumulate16
 31CSosOperatorIncrementOpVarFloat
 31CSosOperatorLogicSwitch12Float3
 31CSosOperatorLogicSwitchSpeakers
@@ -995,6 +1014,7 @@
 33CSosOperatorGameEntityPerspective
 33CSosOperatorMixGraphInputGetFloat
 33CSosOperatorOpvarGetElementFloat8
+33CSosOperatorSequencerSetMasterBPM
 33CVoiceContainerRealtimeFMSineWave
 346$Z
 34CKV3Transfer_ResourceLoadInterface
@@ -1007,6 +1027,7 @@
 34IKV3TransferInterface_ResourceLoad
 35CSosGroupActionTimeBlockLimitSchema
 35CSosOperatorIterateAndMergeSpeakers
+35CSosOperatorLogicStringMatchIndex12
 35CSosOperatorLogicSwitchStringHandle
 35CVMixSteamAudioPathingProcessorDesc
 35CVoiceContainerOutputStreamAttached
@@ -1018,10 +1039,13 @@
 36CVoiceContainerAmpedDecayingSineWave
 37CSosOperatorCalcWeightedAvgSerialVec3
 37CSosOperatorGetPointSurfaceProperties
+37CSosOperatorHarmonicToolsHarmonicLFOs
+37CSosOperatorHarmonicToolsOddsAndEvens
 37CSosOperatorSetContainerInstanceParam
 38CSosGroupActionSoundeventClusterSchema
 39CKV3Transfer_EmptyResourceLoadInterface
 39CSosGroupActionSoundeventPrioritySchema
+39CSosOperatorHarmonicToolsSpectralSpread
 39CSosOperatorLogicPerspectiveSwitchFloat
 3;NYk
 3<CIOSW[^adfikosvy
@@ -1040,6 +1064,7 @@
 43CSosGroupActionSetSoundeventParameterSchema
 43CSosGroupActionSoundeventMinMaxValuesSchema
 44CSosOperatorMaterialResonantSoundEventLookup
+46CSosOperatorHarmonicToolsDeltaHarmonicResponse
 47CSchemaRegistration_soundsystem_voicecontainers
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT
 4;AFJNQUWZ]_bdfikmoqstvxz
@@ -1050,7 +1075,6 @@
 4Ld\f$<Tl
 5%YA1i
 5&YA1A
-5,¸YD1
 52CRSA
 53CKV3Transfer_AssertAlreadyLoadedResourceLoadInterface
 5?KYks
@@ -1093,39 +1117,40 @@
 9BDt1L
 9CAudioSDL
 9CSfxTable
+9D9*tQ
 9GXdx
 9G\ft\v[1
 9Gxt]UH
 9ISequence
 9JYiy
 9K0tPLc
+9\arnI
 9\aroI
-9\at&A
 9\at,A
 9fmt u
-9r@t+H
+9r(t+H
+9r,t\eH
 9r\ft\rH
 9y\bs-H
-A#L$TL
 A,t\bA
 A,w"H
 A94$~BA
 A9D$lr
 A9D$ls
-A9E\b|yA
 A9ElroM
 A9Els)H
 A9L$$H
 A9]\b~yI
 A9^\b~GI
-A9u0t1
+A9t$0tuI
 A9̋r\bA
-A;D$H
 A;D$\bs
 A;R`H
 A;S`H
 A;U\b
 A;W\b
+A;t$0t5
+A>A2C
 ANTLR3_EXCEPTION number %d (%08X).\n
 ANTLR3_EXCEPTION: %s\n
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
@@ -1155,7 +1180,6 @@ AVAUATL
 AVAUATLc
 AVAUATM
 AVAUATS
-AVAUATS;O\bH
 AVAUATSD
 AVAUATSH
 AVAUATSHc
@@ -1191,6 +1215,7 @@ AWAVAUI
 AWAVAUL
 AWAVAULc
 AWAVAUM
+AWAVE1
 AWAVLc
 AWAVLi
 AWAVMc
@@ -1201,13 +1226,14 @@ A\bHc9H
 A\bw\bH
 A]A^A
 A^A_]Hc
-A^ZunH
+A^A_urH
 A_Sharp
 Abort processing sound event %s (scheduled recursively will not process this frame)\n
 Above Threshold(dB
 Active ?: %s\n
 Active Voices: %d\n
 Actually dude, we didn't seem to be expecting anything here, or at least\n
+AddMultipleToTail
 AddNewSoundEvent:  %s has a hash collision with existing %s\n
 AddPage
 AddSoundEvent:  %s has a hash collision with existing %s\n
@@ -1246,6 +1272,7 @@ Atomic Type: %i\n
 Attack
 Attack Time MS
 Attack time (ms
+Attempt to recreate default mixgraph!\n
 Attempted preload of soundevent %s with no vsnds\n
 Attempted re-use of a soundevent guid to start a new soundevent: %s
 Attempting to pause non-existent soundevent: %s\n
@@ -1266,8 +1293,6 @@ Authu\a
 Available Operators:\n
 B0Hc։L
 B<Hc։L
-B<\bt)f
-B>A2A
 B?:oA?4U
 B?wMD?öE
 BACKSLASH_CHAR
@@ -1345,9 +1370,12 @@ C0A9̍P
 C0HcC\fH
 C0Hcǋ3L
 C0z/u
+C20IToolAttr_TypedValueIfE
 C4A9F4
 C8ATE1
 C8D;c
+C8z%u
+C<8A<tUI
 C<A8F
 C=A8F=A
 C>YPH>z
@@ -1418,8 +1446,13 @@ CPiecewiseCurve
 CRC32_ProcessBuffer
 CSequence: %s\n
 CSequence:\t%f : %i : %i\n
+CSndSeqInstBaseSchema
+CSndSeqInstMidiSampler
+CSndSeqInstSndEvtSchema
+CSndSeqInstruments
 CSosGroupActionLimitSchema
 CSosGroupActionMemberCountEnvelopeSchema
+CSosGroupActionOcclusionSchema
 CSosGroupActionSchema
 CSosGroupActionSetSoundeventParameterSchema
 CSosGroupActionSoundeventClusterSchema
@@ -1432,6 +1465,7 @@ CSosOPeratorGetOpVarInfo
 CSosOperatorAudibility::Execute
 CSosOperatorConvar
 CSosOperatorFindSourceDspPreset: unable to get source soundscape on event: %s\n
+CSosOperatorFloat16Accumulate16
 CSosOperatorFloatAccumulate12
 CSosOperatorGetOpVarArrayIndex
 CSosOperatorGetOpVarBool
@@ -1476,7 +1510,6 @@ CSosOperatorStack::SetOpField: Unable to find opfield %s.%s in %s\n
 CSosOperatorStack::SetOpFieldData: Incoming data size %i greater than field %s, %i on %s\n
 CSosOperatorStartSoundEvent
 CSosOperatorSystem: Deleting orphaned CSosOperatorStack pointer for %s via shutdown\n
-CSosOperatorSystem::NewOpVarsParseKV3: Stack %s, cannot find public field %s to auto_connect_public_fields.\n
 CSosOperatorSystem::SetOpField: Unable to find operator stack %s\n
 CSosOperatorSystem::SetOpField: Unable to find operator stack from guid %d\n
 CSosOperatorSystem::StartSoundEvent Unable to find soundevent %s\n
@@ -1495,20 +1528,6 @@ CSoundOpSystem::LoadManifestStacksForParsing - Failed to load kv3 manifest: %s
 CSoundOpSystem::LoadManifestStacksForParsing - Failed to load stack %s: %s
 CSoundOpSystem::LoadManifestStacksForParsing - Missing operator stack manifest %s\n
 CSoundOpSystem::LoadManifestStacksForParsing - stack with empty name
-CSoundSampler
-CSoundSampler: Key Groups: %i\n
-CSoundSampler: Max: %i\n
-CSoundSampler: Min: %i\n
-CSoundSampler: Sampler: %s\n
-CSoundSampler: SoundEvent: %s\n
-CSoundSampler:\tCenter: %i\n
-CSoundSampler:\tKey: %i : %i\n
-CSoundSampler:\tMax: %i\n
-CSoundSampler:\tMin: %i\n
-CSoundSampler:\tZones: %i\n
-CSoundSampler:\t\tMax: %i\n
-CSoundSampler:\t\tSamples: %i\n
-CSoundSampler:\t\t\tSample: %s\n
 CStrongHandle
 CTSQueue corruption
 CURVE_TANGENT_FREE
@@ -1584,6 +1603,7 @@ CVoiceContainerEnvelopeAnalyzer
 CVoiceContainerGenerator
 CVoiceContainerGranulator
 CVoiceContainerLoopTrigger
+CVoiceContainerLoopXFade
 CVoiceContainerMultiBlender
 CVoiceContainerNull
 CVoiceContainerParameterBlender
@@ -1607,6 +1627,7 @@ C\bJct8\b
 C\b[A
 C\fHcs
 C_Sharp
+Calculation interval ( seconds
 Can't find mix layer %s\n
 Can't find mixgroup name %s for submix\n
 Can't find sound event to remove for %s!\n
@@ -1627,6 +1648,7 @@ Cleaning up leaked audio capture stream.\n
 Cleaning up leaked audio stream!\n
 Cleanup resources
 Clear the list of deferred soundevents for loading
+ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 Cluster Size Opvar Name
 Cluster size: %u
@@ -1707,36 +1729,39 @@ CustomCommand
 CustomCommand%d
 Cutoff Freq
 Cutoff Frequency
-Cxv.~\n
 D \bD9U
 D$(Lcm
 D$1Ict
 D$2\bu\tA
 D$4Hǅ8
 D$8AQAUP
-D$8~ID
-D$Dt\bH
 D$\b9X\b
 D$\bA9F\b
 D$\bA;E
 D$\bHcS
+D$\bI9މC
+D$\bJct8\b
 D$\bXZL
 D$\fIcS
+D$hHcC`I
+D$h~ID
 D$ptAA
 D$xH9Cxt
 D)Ήp\bD
+D8h#r\nD:h
+D9"~\fH
 D98t|I
-D9c ~]H
+D9cP~^H
 D9c\bt3A
 D9k ~6H
 D9k0u
 D9}(Hc
 D;2t3A
+D;5N>\e
 D;B\b
-D;`@tMI
-D;`Xu\a
+D;`(tRI
 D;c\br
-D;kp}Pf
+D;hXu\a
 D?28D
 D?AdB
 DATAAUATI
@@ -1816,26 +1841,22 @@ Duration for which path remains visible. Should be close to update rate of the s
 Duration: %f\n
 Dynamic
 E u1H
-E#l$dL
 E+]\bMc
 E,t8Hc
 E0PASH
 E1>vmix
 E1>vsndH
 E1D2z2D
-E1\vsXH
 E1\vsXL
 E1ɾUCDSL
 E1ҍ4[D
-E1ۋE̋U
-E81\v=މM
-E81\v=ތM
+E81\v
 E9<$~wH
 E9g`~#I
 E9o`~#I
+E;gp}M
 E;o t8A
 E;t$\fr
-E>.YA1H
 ELPAWH
 EMPTY
 EMidiNote
@@ -1954,6 +1975,7 @@ Envelope Mode
 Envelope Type
 Envelope VSND
 Error: %s : Math expression type not currently supported in sound operator math_accumulate12_float\n
+Error: %s : Math expression type not currently supported in sound operator math_accumulate16_float16\n
 Error: CSosOperatorOpvarCurve in %s. Unable to find curve field "%s"\n
 Error: Failed to get mix group %s!\n
 Error: Invalid SoundEvent Hash %i from entry %s in sound event %s\n
@@ -2002,7 +2024,6 @@ Expecting %s
 Expecting EOF
 Exponential
 Exponential Ramp
-Exports scene currently used by Steam Audio as a phononscene file
 Extra taps
 Extract Source
 ExtractModuleMetadata
@@ -2016,7 +2037,6 @@ F0[A\\A]A
 F0t!A
 F4z{uy
 F8zkui
-F;d(\bu
 F;d8\bu
 F;l0\bu
 F<z[uY
@@ -2130,7 +2150,7 @@ Freq Range Start
 Frequency (Hz
 Frequency Sweep
 Func( %s
-G$Mct
+G$Mcu
 G$~7A
 G0Wft\b
 G8;0t!H
@@ -2146,6 +2166,7 @@ GLIBC_2.29
 GLIBC_2.3
 GLIBC_2.3.2
 GLOBAL
+GPAUATI
 G\b9F\b
 G\b9F\bt\b1
 G\bwlL9
@@ -2210,9 +2231,11 @@ GtzEuC
 Gxz8u6
 G|z+u)E
 GЉQ\b[A
+H HcCH9
 H znulH
 H(HcӋ4
 H09K(u\b
+H4t2Hc
 H9C\bt9H
 H9\atNUH
 H9Љ49u
@@ -2220,12 +2243,11 @@ H;C(toH
 H;CHtoH
 H;CHtqH
 H;C`ttH
+H;\bt0ff
 H@s+1
 H@s/1
 HALL Detected \n
 HGRPE1
-HGRPH
-HGRPL
 HHcr\bL
 HLcC0F
 HRTF calculations will calculate the player as being this far behind the camera
@@ -2238,31 +2260,30 @@ HandleSetLibStackFieldsMessageQueue
 HandleSetSoundEventFieldsMessageQueue
 Harmonics
 Hc7E1
-Hc=s1\n
 HcA@A9
 HcA\bA9
+HcB0A9
 HcC@A9
 HcC@D9
 HcC\bHcs
-HcG A
-HcG D
-HcG L
-HcGHH
+HcC`D9
+HcD2\bH
 HcG\bH
 HcH<HcP8
 HcJxx\b9
-HcK(5ve
 HcL7\bH
-HcL8\bH
 HcL:\bH
 HcO\b9
-HcP<HcH8A
 HcS(E
 HcS0D9
-HcW L
+HcT8\bH
 HcX0Ic
 Hc\aHcW
+Hc\f7Hk
+Hc\rI6L
 Hc_`f
+Hc|0\bH
+HcË=IsQ
 Height
 Height Reflectivity
 HelpSystem_001
@@ -2273,7 +2294,6 @@ High EQ gain (dB
 HighPass
 Hold Time MS
 HostStateMgr001
-H؋E\rx3
 I could not work out what I was expecting, like so many of us these days!\n
 I#4$H\t
 I9D$Pu
@@ -2287,6 +2307,7 @@ IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 INVALID
 IPulseSystem_001
+ISndSeqInstruments
 ITM_RU1
 ITM_RU8
 ITM_addUserCommitAction
@@ -2297,21 +2318,22 @@ ITM_registerTMCloneTable
 IcB\bIcr\fMi
 IcD$ A
 IcD$(9E
+IcD$\bA
 IcD$\bE
 IcD$\bH
+IcD$hfI
 IcE\b1
 IcE\bIc
 IcF(9E
-IcG D
 IcK\bHk
 IcL$\bHc
 IcM\bHc
-IcO\bHc
+IcM\bIc
 IcR01
 IcS\bHk
 IcS\bfA
-IcT$ L
 IcT$(9
+IcT$0A
 IcT$PH
 IcT$\bI
 IcT$`I
@@ -2321,14 +2343,12 @@ IcV0to
 Ic\\$0M
 Ic\\$Xt
 Ic\\$p9
-Ic]8茢4
-Ic_0E1
+Ic_\bE1
 Icu\b1
-Icw,fA
+Icw`D9
+Ic},fA
 Ic~`1
 Ic~l1
-Icċ=75K
-Icҍ4pH
 If set > 0, overrides how long the decay time is on all mix graphs (in seconds).\n
 If set to 1, report more error found when playing sounds.\n
 If set to 1, show all incoming updates to vmix inputs.\n
@@ -2376,10 +2396,12 @@ K4z u
 KHPAVD
 KIcM\bHc
 KV3 Pointer
+K\bHcC`E1
+KeyGroup_t
 KeyValueCache001
 KeyValuesSystem
+Klt4Hc
 Knee Width (dB
-L$Dt1H
 L$Pu5A
 L$\fIcS
 L$\f~nff
@@ -2404,7 +2426,8 @@ LOG_GENERAL
 Late Reflections
 LayerTriggers
 Lc#D;c
-Lc-6xC
+Lc-\bfR
+Lc5+$E
 LcL1\bI
 Lcc\bfA
 Lch0f
@@ -2435,6 +2458,9 @@ LoggingSystem_AddTagToChannel
 LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
+Loop End
+Loop Start
+Loop XFade
 LoopTrigger
 Loudest Volume
 Low Cutoff Freq
@@ -2443,6 +2469,7 @@ Low EQ gain (dB
 LowPass
 Lowpass4Tap
 Lԗ>qxs
+M$zTuR
 M?y>O
 MASK_WATER
 MATCHFRAMEWORK_001
@@ -2491,14 +2518,16 @@ Max value property name
 McA\bMc)E
 McN\bMcf\fL
 Mcf\bfA
-Mcl$ 1
 Mcl$ A
-Mcl$8D
+Mcl$P1
+Mcl$hD
 Mcl$xD
 Mct$\bA
 Mct$\bI
 Mct$\bf
 Mct$xM
+Mcu\b
+McwPE;w
 Mc|$PH
 Mc|$\bD
 Mc|$\bH
@@ -2511,6 +2540,21 @@ MemAlloc_StrDupWrapperFunc
 MeshSystem001
 MeshUtils001
 Mid EQ gain (dB
+Midi Sampler
+MidiSampler
+MidiSampler: Key Groups: %i\n
+MidiSampler: Max: %i\n
+MidiSampler: Min: %i\n
+MidiSampler: Sampler: %s\n
+MidiSampler: SoundEvent: %s\n
+MidiSampler:\tCenter: %i\n
+MidiSampler:\tKey: %i : %i\n
+MidiSampler:\tMax: %i\n
+MidiSampler:\tMin: %i\n
+MidiSampler:\tZones: %i\n
+MidiSampler:\t\tMax: %i\n
+MidiSampler:\t\tSamples: %i\n
+MidiSampler:\t\t\tSample: %s\n
 Min Index
 Min Threshold Count
 Min reverb gain amount amount for listener DSP
@@ -2556,7 +2600,6 @@ Modifier Table
 Modulation Depth
 Modulation Frequency
 Modulator Frequency
-MovementGaitId_t
 Multi Blender
 Music volume
 N10__cxxabiv115__forced_unwindE
@@ -2570,6 +2613,8 @@ N17CConcreteToolAttrI10CUtlVectorI10CUtlStringi25CUtlVectorMemory_GrowableIS1_iL
 N17CConcreteToolAttrIA3_18VMixDynamicsBand_t23VMixDynamics3BandDesc_tvE19CArrayElementAccessE
 N17CConcreteToolAttrIA8_16VMixFilterDesc_t13VMixEQ8Desc_tvE19CArrayElementAccessE
 N18CVoiceContainerSet9CInstanceE
+N19CVoiceContainerBase10CParameterI18CLoopXFadeInstancebEE
+N19CVoiceContainerBase10CParameterI18CLoopXFadeInstancefEE
 N19CVoiceContainerBase10CParameterI23CParameterBlendInstancefEE
 N19CVoiceContainerBase10CParameterIN25CVoiceContainerGranulator19CGranulatorInstanceEfEE
 N19CVoiceContainerBase10CParameterIN25CVoiceContainerGranulator19CGranulatorInstanceEiEE
@@ -2597,8 +2642,6 @@ N33CVoiceContainerRealtimeFMSineWave15CFMSineInstanceE
 N34CVoiceContainerStaticAdditiveSynth26CAdditiveSynthInstanceViewE
 N35CVoiceContainerOutputStreamAttached29COutputStreamAttachedInstanceE
 N36CVoiceContainerAmpedDecayingSineWave23CAmpedDecaySineInstanceE
-N81\v=;KJ
-N8D9)trH
 N9__gnu_cxx20recursive_init_errorE
 N9__gnu_cxx24__concurrence_lock_errorE
 N9__gnu_cxx26__concurrence_unlock_errorE
@@ -2627,9 +2670,7 @@ No 'Mixers' member found in MixLayer in soundmixers.txt\n
 No DATA block for resource\n
 No MP3 support, can't compile!\n
 No data
-No filename specified to export Steam Audio scene.\n
 No input data for '%s'. (Empty buffer
-No scene loaded to export as Steam Audio scene.\n
 Not safe to 'new' this class due to alignment requirements
 Note: Array declaration using table syntax on field %s in stack %s. Please convert.\n
 Note: Double array found in field %s in stack %s, value: %s\n
@@ -2643,6 +2684,7 @@ Num Match groups: %i\n
 Number of materials not mapped = %d.\n
 Number of materials updated with new mapping = %d.\n
 O(HcG\fL
+O(t\v1
 O-p?A6
 O5A8M5uZ
 OPEN SIDED OUTDOOR AREA Detected \n
@@ -2663,10 +2705,16 @@ O\\f9H
 O\bHcq\b
 O\bUH
 O\fIcT$\bI
-O`}AH
+O`}IH
 Occlusion
+Occlusion Info
+Occlusion max
+Occlusion min
+Occlusion radius
+Occlusion scale
 Octave
 Octaves shifted
+OnCachedDataAvailable
 Only Tails On Fade Out
 Only text params, renders in real time
 OpVar Float
@@ -2695,11 +2743,15 @@ P D;kX
 P E;e
 P E;eH
 P E;e\b
+P E;n\b
+P E;n\bsnA
 P(Ic@\fI
-P(IcW8H
+P(IcV8H
+P(Icϋ4
 P0x\b9
-P4t7Hc
 P8H=vsndt
+P8HcE\t
+P8HcH4
 P@sS1
 PANNER_TYPE_EQUAL_POWER
 PANNER_TYPE_LINEAR
@@ -2737,6 +2789,7 @@ Peak Amplitude
 Peak Mode
 Peak mode
 Performing fixup on '%s'\n
+PhA9\\$P
 Phase ( 0 - 1
 Phase (degrees
 Phase Invert
@@ -2763,6 +2816,7 @@ Plat_TickDiffSecF
 Plat_UnloadModule
 Plat_WindowToOsSpecificHandle
 Play All Instances In Sync
+Play Tail
 Play a note from a specified sampler
 Play a sound
 Play a sound at a specified volume
@@ -2775,6 +2829,7 @@ Plays a single channel of silence
 Plays sound with envelope
 Pointers cannot be used as numeric values
 PostProcessingSystem_001
+Pre-Roll
 Pre-delay (ms
 Prefilter
 Prewview VMIX voice on the game graph, preview will be different!\n
@@ -2828,6 +2883,7 @@ Px9Spu
 Px[A\\A]A
 Q>0P7
 QUEUE event %s | %s : elapsed time: %f, next sync time: %f, length: %f\n
+QUEUE event %s\n
 Q\bA]A^A
 Quality
 Quick example for how we'd derive traits from voice containers
@@ -2908,6 +2964,7 @@ S(뚋C4
 S0|OE1
 S<HcSx
 S?seT?\r
+SCOPE_QUALIFIER
 SDL Audio Device: %s (status: %d, driver: %s)\n
 SDL Device Capture Audio Stream Failed To Open: %s
 SDL_AUDIO_DEVICE_STREAM_ROLE
@@ -2978,14 +3035,15 @@ STRING_CHAR
 SUBGRAPH_INTERPOLATION_KEEP_LAST_SUBGRAPH_RUNNING
 SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE
 SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT
-SXHcB
 SXsn1
+SXz\\uZ
 S\bHcɋ4
-S\eǪH
 S\eǪHǅp
 S_Init( finish
 S_MixSampleFrames
 S_UpdateVoicesPerFrame
+Sample accurate looping with xfade capabilities
+SamplerVoice_t
 Save Result to Group
 SceneSystem_002
 SceneUtils_001
@@ -3018,6 +3076,7 @@ Set Num Grains
 Set Playback Speed
 Set Position
 Set Sound Event Parameter
+Set Volume %d
 Set an input mix value
 Set named Mixgroup of current mixer to mix vol, mute, solo
 Set named Mixgroup of named mix layer to mix vol, mute, solo
@@ -3049,6 +3108,21 @@ Size in bytes
 Size of TRASHSYNTH instance on stack: %d\n
 Size of TRASHSYNTH on stack: %d\n
 SndOperators
+SndSeqInstrumentType_t
+SndSeqMidiStatusChannelPressure
+SndSeqMidiStatusCtrlChange
+SndSeqMidiStatusKeyPressure
+SndSeqMidiStatusNoteOff
+SndSeqMidiStatusNoteOn
+SndSeqMidiStatusPitchBend
+SndSeqMidiStatusProgramChange
+SndSeqMidiStatusType_t
+SndSeqPlayerType_t
+SndSeqQuantizeType_t
+SndSeqRegionType_t
+SndSeqSyncType_t
+SndSeqTrackPlaybackType_t
+Something Weird ( check the BindInstanceParams implementation
 SosActionLimitSortType_t
 SosActionSetParamSortType_t
 SosActionStopType_t
@@ -3082,6 +3156,7 @@ SoundEvent %s, has invalid input_owner_entity_index, defaulting to 'neutral' per
 SoundEvent %s, input_entity_index %i found but specified attachment %s was not\n
 SoundEvent %s, input_entity_index %i was valid but no longer is\n
 SoundEvent Data*\n\t
+SoundEvent on Start
 SoundEvent_error
 SoundMix
 SoundMixer %s:\n
@@ -3092,6 +3167,7 @@ SoundOperatorSystem
 SoundOperators
 SoundService_001
 SoundStack %s unable to find imported stack %s\n
+SoundStack %s: import override of field %s has incorrect type.\n
 SoundSystem
 SoundSystem/DisableSoundOnDedicatedServer
 SoundSystem/UsePlatTime
@@ -3197,6 +3273,7 @@ Stop Highest
 Stop Lowest
 Stop a note from a specified sampler
 Stop sound event: %s\n
+Stop the specified track and it's queue
 StopTime: %f\n
 Stopping All Sounds...\n
 Stops a specified soundevent
@@ -3210,11 +3287,15 @@ Subgraphs
 Sustain target amplitude
 Sustain time (ms
 Switches between a selection of vsnds based on a provided index
+Sync Track: %s\n
 SyncExtref!!%s
 SystemAttributes
 T$ A+F4
 T$ HcE
+T$\bHcE
+T$hHcE
 T( HcS
+T8\bff
 T>k6Q
 TESTBED: Amped Decaying Sine Wave Container
 TESTBED: Decaying Sine Wave Container
@@ -3231,6 +3312,7 @@ Tape Player
 Target
 Target Value
 TernaryConditional
+Test depth
 Test nesting voice containers
 TestScriptMgr001
 TextLayout_001
@@ -3308,8 +3390,6 @@ UHcF H
 UNRECOGNIZED
 UNRESOLVED
 UUUU\t
-U\bD9zX
-U\bHcR\b
 U\tMĉE
 UnInvalid
 UnNegate
@@ -3319,6 +3399,7 @@ Unable to connect convar input %s\n
 Unable to create audio thread.\n
 Unable to create voice for vmix "%s" check script for %s.\n
 Unable to find graph for vmix %s\n
+Unable to find queue event\n
 Unable to find soundevent: %s\n
 Unable to load sound system data.\nStarting verification of Steam Game Cache.\nRetry launching after completion.\n
 Unable to read resource file %s!\n
@@ -3359,7 +3440,7 @@ Usage: snd_set_physics_surface_properties <diffmaterials|diffmapping|set|overwri
 Usage: snd_sos_compare_operator_stacks <stackname> <stackname>\n
 Usage: snd_sos_pause_first_soundevent <soundevent index>\n
 Usage: snd_sos_unpause_soundevent <soundevent index>\n
-Usage: snd_steamaudio_display_probes <reverb|pathing|occlusion|dimensions|materials> <display_duration> <-1|search_radius> <display_radius>.\n
+Usage: snd_steamaudio_display_probes <reverb|pathing|occlusion|dimensions|materials> <display_radius>.\n
 Use Vsnd File
 Use perspective correction for 3D audio only in the frontal directions
 Used main graph %s on voice %s\n
@@ -3368,7 +3449,6 @@ UtlVectorMemory_Alloc
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
 UĉMȉE
-Ű=BwQ
 V?V/V
 V?wm\v
 VALUE BEFORE: %s\nVALUE AFTER: %s\n\n
@@ -3430,8 +3510,6 @@ VNotify
 VNotify Abandoned (Not enabled)\n
 VOIPVolume
 VP4003
-VPIcFh9
-VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
@@ -3445,6 +3523,7 @@ VScriptManager010
 VStringTokenSystem001
 VTT for
 VWebm001
+V\bD9bX
 V\bE1ҋJ
 V_DefaultExtension
 V_DoubleToString_Unsafe
@@ -3517,6 +3596,7 @@ V_sinf
 V_sinhf
 V_snprintf
 V_sscanf
+V_strEndsWith
 V_stricmp_fast
 V_strlower_fast
 V_strncat
@@ -3535,6 +3615,7 @@ Value Operator Offset: %i\n
 Value Stack Offset: %i\n
 Var( %s
 Vector2D
+VelocityZone_t
 VisBuilder_001
 Vmix Convolution node (re)loaded IR vsnd.\n
 Vmix Convolution node has not yet loaded IR vsnd, running pass thru.\n
@@ -3552,7 +3633,6 @@ Vsnd File
 Vsnd Reference
 Vu?N\\t?8Ws?vGr
 V|x{w
-W(t\v1
 WAIT event %s | %s: elapsed time: %f, next sync time: %f, local elapsed: %f, local sync: %f, length: %f, num loops: %i\n
 WARNING CSosOperatorSystem::OverwriteOpVarsParseKV3: Stack %s Operator %s: cannot find opfield : %s\n
 WARNING: Attempting to import existing public field %s in stack %s\n
@@ -3568,6 +3648,8 @@ WARNING: Stack %s Operator %s, opvar field %s overwriting existing parameter of 
 WARNING: Stack %s Operator %s, opvar field %s overwriting existing parameter of the same name. THERE IS NO TYPE OR SIZE CHECKING IN PLACE, IT IS UP TO YOU TO MAKE SURE THEY ARE THE SAME.\n
 WARNING: Stack %s had %i stack field overwrite warnings. Set "snd_sos_show_parameter_overwrite_warnings 1" and recompile for details.\n
 WARNING: snd_sos_soundevent_profile disabled - ignoring!\n
+WPIcGh9
+W\bIc{\f
 Warning
 Warning:  math_curve_2d in %s : Curve 2d field %s won't cache more than 8 points currently. Increase cache size in sos_op_math.h::CSosOperatorCurve_t \n
 Warning: %s (error %s)!\n
@@ -3596,30 +3678,33 @@ WorldRendererMgr001
 Wrong arg count for '%s' %d, expected 1
 Wrong arg count for '%s' %d, expected 2
 Wrong arg count for '%s' %d, expected 3
+X [A\\A]A
 X?OsX
 X?wm\v
 XE;{hD
+XHcGPA
+XHcGPD
+XHcGPL
+XHcWPL
 XIS(Hc
 XIS\bHc
-XLc%XpC
-X\b[A
+XIcGPD
+XIcT$PL
 XfHt\rf
 Y(HcQH
 Y?'WY
 YA1ATI
-YA1ATL
 YA1ATSH
 YA1ATfA
 YA1AUATA
-YA1AVL
 YA1E1
+YA1Hǅ0
 YA1Hǅ8
-YA1Hǅh
 YA1SH
 YA1fA
-YA1fH
 Y\bLc!Mi
 Yt?\f:u
+Z z\ru\v
 Z(HcJ\fH
 Z10DevWarningPKcz
 Z13DebugPrintKV3PK10KeyValues3
@@ -3643,7 +3728,8 @@ Z20g_nSequentialIndicesIDv4_fE
 Z20g_nSequentialIndicesIDv4_iE
 Z20g_nSequentialIndicesIfE
 Z20g_nSequentialIndicesIiE
-Z21ThreadAtomicNotifyOnePj
+Z21ThreadAtomicNotifyOnePKj
+Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z23FormatArgumentsToBufferP19IFormatOutputStreamPKcPK28CTypeErasedFormattingWrapperi
 Z23_txnal_cow_string_c_strPKv
@@ -3652,6 +3738,7 @@ Z24g_flTValues0To1InclusiveIDv4_fE
 Z24g_flTValues0To1InclusiveIfE
 Z26_txnal_logic_error_get_msgPv
 Z27_txnal_cow_string_D1_commitPv
+Z28Assert_ConditionFailed_FatalRK34_AssertCompileTimeConstantStruct_tPKcz
 Z28_txnal_runtime_error_get_msgPv
 Z35_txnal_cow_string_C1_for_exceptionsPvPKcS
 Z48wN39
@@ -3739,7 +3826,7 @@ ZN10CUtlBuffer17SetExternalBufferEPviiNS_13BufferFlags_tE
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer21CheckArbitraryPeekGetEiRi
 ZN10CUtlBuffer3PutEPKvi
-ZN10CUtlBuffer4SwapERS
+ZN10CUtlBuffer4SwapERS_b
 ZN10CUtlBuffer6PrintfEPKcz
 ZN10CUtlBuffer7GetLineEPci
 ZN10CUtlBuffer7SeekGetENS_10SeekType_tEi
@@ -4024,6 +4111,12 @@ ZN24CUniformRandomStreamImplI16CThreadNullMutexEC1Ev
 ZN24CVMixFilterProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN24CVMixPannerProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN24CVMixShaperProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKbE
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKbE0
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKfE
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKfE0
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKfE1
+ZN24CVoiceContainerLoopXFade18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP18CLoopXFadeInstanceRKfE2
 ZN24VMixDualCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_bandDesc
 ZN24VMixDualCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_flWetMix
 ZN24VMixDualCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE17CAttr_m_bPeakMode
@@ -4040,13 +4133,13 @@ ZN25CVMixFlangerProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseTool
 ZN25CVMixUtilityProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN25CVMixVocoderProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN25CVoiceContainerGranulator17Finalize_InternalEvEUlvE
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE0
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE1
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE2
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE3
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKiE
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_19CGranulatorInstanceERKiE0
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE0
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE1
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE2
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKfE3
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKiE
+ZN25CVoiceContainerGranulator18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_19CGranulatorInstanceERKiE0
 ZN25CVoiceContainerTapePlayer17Finalize_InternalEvEUlvE
 ZN26CVMixBoxverb2ProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN26CVMixDiffusorProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
@@ -4059,7 +4152,7 @@ ZN28CVMixAutoFilterProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseT
 ZN28CVMixPitchShiftProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN28CVoiceContainerRandomSampler17Finalize_InternalEvEUlvE
 ZN28CVoiceContainerRandomSampler17KickOffRenderWorkEvEUlvE
-ZN28CVoiceContainerRandomSampler18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_26CRandomSamplerInstanceViewERKiE
+ZN28CVoiceContainerRandomSampler18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_26CRandomSamplerInstanceViewERKiE
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_flWetMix
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE17CAttr_m_bPeakMode
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE19CAttr_m_flRMSTimeMS
@@ -4073,14 +4166,14 @@ ZN29CVMixConvolutionProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBase
 ZN29CVMixEffectChainProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN29CVMixPlateReverbProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN31CVMixDynamics3BandProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
-ZN31CVoiceContainerParameterBlender18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlP23CParameterBlendInstanceRKfE
-ZN31CVoiceContainerParameterBlender18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlP23CParameterBlendInstanceRKfE0
+ZN31CVoiceContainerParameterBlender18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP23CParameterBlendInstanceRKfE
+ZN31CVoiceContainerParameterBlender18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlP23CParameterBlendInstanceRKfE0
 ZN32CVMixDualCompressorProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN32CVMixSubgraphSwitchProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
-ZN33CVoiceContainerRealtimeFMSineWave18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_15CFMSineInstanceERKfE
+ZN33CVoiceContainerRealtimeFMSineWave18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_15CFMSineInstanceERKfE
 ZN34CVoiceContainerStaticAdditiveSynth17Finalize_InternalEvEUlvE
-ZN34CVoiceContainerStaticAdditiveSynth18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_26CAdditiveSynthInstanceViewERKiE
-ZN34CVoiceContainerStaticAdditiveSynth18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi25CUtlVectorMemory_GrowableIS6_iLm0EEEEUlPNS_26CAdditiveSynthInstanceViewERKiE0
+ZN34CVoiceContainerStaticAdditiveSynth18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_26CAdditiveSynthInstanceViewERKiE
+ZN34CVoiceContainerStaticAdditiveSynth18BindInstanceParamsERK21VoiceParamNamespace_tR10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS6_EEi25CUtlVectorMemory_GrowableIS9_iLm0EEEEUlPNS_26CAdditiveSynthInstanceViewERKiE0
 ZN36CVMixDynamicsCompressorProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_desc
 ZN9KeyValues10GetNextKeyEv
 ZN9KeyValues14GetFirstSubKeyEv
@@ -5029,7 +5122,6 @@ ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St
 ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tagEN6_GuardC2EPS4
 ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tagEN6_GuardD1Ev
 ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tagEN6_GuardD2Ev
-Z\v=H
 ZdaPv
 ZdaPvSt11align_val_t
 ZdaPvm
@@ -5049,7 +5141,7 @@ ZnwmSt11align_val_tRKSt9nothrow_t
 a?wSa
 aD:p0t
 aH9x\bt[H
-aMcnPE;n
+aLc0E9
 aP?҉O
 a\bLcs\bD
 accumulate_indexed_speakers
@@ -5110,7 +5202,6 @@ audible_on_spawn
 audio_input_test_signal
 audio_input_use_sdl_roles
 audio_stream.cpp
-audio_stream_attached.cpp
 auto.convar
 auto_calc_vnsd_duration
 auto_connect_field_scope
@@ -5121,13 +5212,12 @@ b5\b2\tt\t
 bAUATI
 bA\\A]A
 bA\\A]A^A
+bD9=])N
 bH\vH\v$\t
 bHc@0
 bHcC0
 bHcX\bH
 bHcҋH
-bJct7\b
-bLc%±J
 bMcX\bL
 bO\b5\b9\v
 b\bE9`\b
@@ -5193,6 +5283,7 @@ buǋB\bD
 bx9;\b}5Hc
 c@LcC0I
 c\bE9a\b
+c\bHc3H
 c\b[A
 c\bqH,\t
 calc_angles_facing
@@ -5262,6 +5353,7 @@ comb_filter
 comb_filter_const_sse
 command
 comment
+common
 compute_band_energies
 compute_dense
 compute_gru
@@ -5454,6 +5546,27 @@ e9x\bs\vE9
 e?W.e?w
 eMeans
 eSOUax
+eSndSeqInstMidiSampler
+eSndSeqInstNull
+eSndSeqInstSndEvt
+eSndSeqPlayerMidiSeq
+eSndSeqPlayerNull
+eSndSeqPlayerSndEvt
+eSndSeqQuantizeBar
+eSndSeqQuantizeBeat
+eSndSeqQuantizeInvalid
+eSndSeqQuantizeNone
+eSndSeqQuantizeReset
+eSndSeqQuantizeSeek
+eSndSeqQuantizeSequence
+eSndSeqRegionTypeMidiSeq
+eSndSeqRegionTypeNull
+eSndSeqRegionTypeSndEvt
+eSndSeqSyncTypeNone
+eSndSeqSyncTypeSeek
+eSndSeqSyncTypeWait
+eSndSeqTrackPlaybackTypeFwd
+eSndSeqTrackPlaybackTypeStep
 eX?/QY?s
 ease_sin_out
 ec_dec_bit_logp
@@ -5521,10 +5634,13 @@ f;\ntzfD
 f;\nt}fD
 f?3Jf?6
 fA)\afE
+fA9_\b
 fA;D$\b
 fA\\A]A^A
 fB?ȀA
+fD9k\b
 fD;(t\nD9h\f
+fD;L\a,u܋K\f
 fD;p\b
 fD;x\b
 fDD"AUDT$t
@@ -5566,6 +5682,7 @@ float8
 float_max_speakers
 for forH
 force_direction
+force_flu_basis
 forward
 frame_size_select
 frames
@@ -5575,6 +5692,8 @@ ftcHcH
 function
 fwrite
 g)>3j
+gA;EX
+gA;Ep
 g\n7\a
 g\t\e\r@8F
 g_BitBuf_BitWriteMasks
@@ -5623,8 +5742,13 @@ groups
 guard variable for
 gxx_personality_v0
 h4`!gL\e
-hMc4$M
+h9>u\vH
+hMc<$M
 hardware
+harmonic_tools_delta_harmonic_response
+harmonic_tools_harmonic_lfos
+harmonic_tools_odds_and_evens
+harmonic_tools_spectral_spread
 headphones
 hidden alias for
 hmpsv
@@ -5653,6 +5777,10 @@ input1
 input10
 input11
 input12
+input13
+input14
+input15
+input16
 input2
 input3
 input4
@@ -5690,6 +5818,7 @@ input_arrangement
 input_attack_time
 input_atten
 input_base_angle
+input_beat_mult
 input_block_max_events
 input_bpm
 input_center
@@ -5713,6 +5842,9 @@ input_default
 input_default_local_position
 input_default_world_position
 input_delay
+input_depth_max
+input_depth_min
+input_depth_multiplier
 input_directionality
 input_distance
 input_distance_max
@@ -5780,6 +5912,7 @@ input_is_player
 input_label
 input_latch_output_high
 input_level
+input_lfo_center
 input_lifespan_time
 input_limit_max_events
 input_limit_priority
@@ -5822,10 +5955,14 @@ input_min_val
 input_min_val_offset
 input_mixgroup
 input_mixgroups
+input_multiplier_negative
+input_multiplier_positive
 input_name
+input_namespace
 input_near_max
 input_near_min
 input_neutral_value
+input_num_harmonics
 input_obb_angles
 input_obb_bounds_max
 input_obb_bounds_min
@@ -5834,17 +5971,22 @@ input_observer_position
 input_occlusion_method
 input_occlusion_mode
 input_occlusion_samples
+input_odds_level
 input_offset_X
 input_on_note_off
 input_on_note_on
 input_operator_name
 input_opponent_value
+input_output_max
+input_output_min
 input_owner_entity_index
 input_owning_graph
 input_participant_perspective
 input_pathing_enabled
 input_pathing_eq_enabled
 input_pause
+input_percentile_lower
+input_percentile_upper
 input_pitch
 input_pitch1
 input_pitch2
@@ -5873,6 +6015,7 @@ input_position_7
 input_position_a
 input_position_b
 input_priority
+input_quantize_mult
 input_quantize_type
 input_query_position
 input_query_z_offset
@@ -5883,6 +6026,9 @@ input_rand_max
 input_rand_min
 input_random_seed
 input_rate_falling
+input_rate_max
+input_rate_min
+input_rate_multiplier
 input_rate_rising
 input_rear_stereo_scale
 input_reference_ir
@@ -5919,6 +6065,7 @@ input_source_offset
 input_source_position
 input_source_radius
 input_spawn_oneshots
+input_spawn_soundevents
 input_speaker_override
 input_speaker_volumes
 input_sphere_1_pos
@@ -5927,6 +6074,7 @@ input_sphere_2_pos
 input_sphere_2_radius
 input_sphere_pos
 input_sphere_radius
+input_spread
 input_spread_max
 input_spread_max_distance
 input_spread_max_value
@@ -5971,9 +6119,13 @@ input_target_value
 input_team_value
 input_test_depth
 input_threshold
+input_threshold_end_negative
+input_threshold_end_positive
 input_threshold_high
 input_threshold_low
 input_threshold_mid
+input_threshold_start_negative
+input_threshold_start_positive
 input_time
 input_time_scale
 input_tolerance
@@ -6043,6 +6195,7 @@ input_y
 input_z
 inrange
 instrument
+instruments
 int128
 internal error
 interpolation
@@ -6089,11 +6242,13 @@ key_groups
 keyvalues3.cpp
 kmmxv\fqsuwc;Wo?opP
 l bug reH
+l$ uWL
 l$\bw\bL
 l?O#m
 l?\eyl
 l`UROM=;98310
 lambda
+last_calc_time
 layer0
 layer1
 layer2
@@ -6115,6 +6270,7 @@ less_than
 less_than_or_equal
 lexer error %d :\n\t%s at offset %d
 lexer->mTokens(): Error: No lexer rules were added to the lexer yet!\n
+lfo_shape
 libc.so.6
 libm.so.6
 libmpg123.so.0
@@ -6131,10 +6287,10 @@ localPlayer
 locked
 logic_perspective_switch_float
 logic_perspective_switch_string
+logic_string_match_12
 long double
 long long
 looks like this:\n\t\t%.*s\n
-lt<Ic
 lvl: %3.2f
 m\vm\vm\vm\vm\vm\vm\vm\vm\vm\vm\v
 m_Angles
@@ -6161,6 +6317,7 @@ m_audioMeters
 m_automaticControlInputs
 m_bApplyAntialiasing
 m_bBassMono
+m_bBeatEnvelopes
 m_bBlocksEvents
 m_bCountStopped
 m_bCrossFade
@@ -6171,6 +6328,7 @@ m_bEnableFilter
 m_bEnableOcclusionBlend
 m_bEnableOcclusionBlend == false
 m_bEnabled
+m_bEqualPow
 m_bExcludSoundsAboveThreshold
 m_bExcludeDelayedSounds
 m_bExcludeSoundsBelowThreshold
@@ -6187,6 +6345,8 @@ m_bOnlyTailsOnFadeOut
 m_bParallel
 m_bPeakMode
 m_bPhaseInvert
+m_bPlayHead
+m_bPlayTail
 m_bPreviewInGame
 m_bPriorityReadButDontContribute
 m_bRegenerateCurveOnCompile
@@ -6195,7 +6355,9 @@ m_bShouldPause
 m_bShouldVoiceDuck
 m_bShouldWraparound
 m_bSolo
+m_bStopCurrentEvents
 m_bStopImmediate
+m_bStopPrevious
 m_bSyncInstances
 m_bUseCurveForAmplitude
 m_bUseCurveForAmplitude == 0
@@ -6240,10 +6402,14 @@ m_flAmplitude
 m_flAmplitudeJitter
 m_flAttack
 m_flAttackTimeMS
+m_flBPM
+m_flBPMFactor
+m_flBPMInvFactor
 m_flBandwidth
 m_flBaseValue
 m_flBassFreq
 m_flBlendFactor
+m_flCalculationInterval
 m_flCarrierFrequency
 m_flCents
 m_flClusterEpsilon
@@ -6269,6 +6435,8 @@ m_flEntIndex
 m_flEnvelopeAmount
 m_flExcludeSoundsMaxThresholdValue
 m_flExcludeSoundsMinThresholdValue
+m_flFadeIn
+m_flFadeOut
 m_flFadeTime
 m_flFeedback
 m_flFeedbackDepth
@@ -6299,15 +6467,19 @@ m_flLFORate
 m_flLateReflections
 m_flLimiterRatio
 m_flListenerReverbModifierWhenSourceReverbIsActive
+m_flLoopEnd
+m_flLoopStart
 m_flLowCutoffFreq
 m_flMasterVolume
 m_flMaxDuration
 m_flMaxLength
 m_flMaxValue
+m_flMaxVelocityAtten
 m_flMaxVolume
 m_flMaxVolumeChangePerBuffer
 m_flMemberLifespanTime
 m_flMinValue
+m_flMinVelocityAtten
 m_flMinVolume
 m_flMix
 m_flModDepth
@@ -6316,6 +6488,9 @@ m_flModifier
 m_flModifierMin
 m_flModulatorAmount
 m_flModulatorFrequency
+m_flOcclusionMax
+m_flOcclusionMin
+m_flOcclusionScale
 m_flOpvar
 m_flOutputBalance
 m_flOutputGain
@@ -6326,9 +6501,11 @@ m_flPlaybackJitter
 m_flPreDelayMS
 m_flPrefilter
 m_flRMSTimeMS
+m_flRadius
 m_flRatio
 m_flRatioAbove
 m_flRatioBelow
+m_flRelease
 m_flReleaseTimeMS
 m_flResonance
 m_flRetriggerTimeMax
@@ -6353,6 +6530,7 @@ m_flTapeSpeedAttackTime
 m_flTapeSpeedReleaseTime
 m_flTaps
 m_flTargetValue
+m_flTestDepth
 m_flThreshold
 m_flTime
 m_flTimeJitter
@@ -6387,6 +6565,7 @@ m_graphName
 m_graphPreview
 m_groupBoundingBoxMaxsOpvar
 m_groupBoundingBoxMinsOpvar
+m_hSoundEventHash
 m_harmonics
 m_iSelection
 m_impulseResponseInputs
@@ -6431,9 +6610,12 @@ m_nLayer
 m_nLoopEnd
 m_nLoopStart
 m_nMaxCount
+m_nMaxNote
 m_nMemSize: %i -> %i\n
 m_nMinNearby
+m_nMinNote
 m_nMixGroups
+m_nNextVoiceSlot
 m_nNumDelayVariations
 m_nOctave
 m_nOutgoingTangent
@@ -6441,6 +6623,7 @@ m_nOutputSubmix
 m_nOversampleFactor
 m_nParameterNameHash
 m_nPhonemeCode
+m_nPlayerType
 m_nProcType
 m_nProcessor
 m_nQuality
@@ -6453,6 +6636,7 @@ m_nStartSample
 m_nStopType
 m_nStreamingSize
 m_nTargetCount
+m_nType
 m_nValue
 m_nValueIndex
 m_nVoiceId
@@ -6462,6 +6646,7 @@ m_nameHashCodes
 m_nameInputMeters
 m_nameInputs
 m_nameStrings
+m_namespace
 m_opvarName
 m_opvarString
 m_pEnvelopeAnalyzer
@@ -6532,6 +6717,7 @@ match_this_event
 material_resonant_soundevent_lookup
 materials
 math_accumulate12_float
+math_accumulate16_float16
 math_animate_float3
 math_average8_float
 math_calc_angle_from_3_vec3
@@ -6592,6 +6778,8 @@ mesh_calculate_curvature_smooth_invert
 mesh_calculate_curvature_smooth_pass_count
 mesh_calculate_curvature_smooth_weight
 metadata
+midi_sampler
+midi_sequence
 min_max_query
 min_note
 min_output
@@ -6644,19 +6832,24 @@ n    near %s\n
 n%*sName: %s\n
 n%*sName: %s\n%*sNameSpace: %s\n
 n9\v2\tt\t
+n:&YA1H
 n<\et!H
 n>sak
 n?SZn
-nA;EX
 nActive Sound events: %d\n
 nCOpFieldHashCache: Stack %s searching for opfield: %s.%s\n
-nD$0fA
+nCenterNote
 nGVKUTS[BXIWH\\KbHi:k6s4r7p8
-nMc"E9
+nMaxNote
+nMaxVel
+nMinNote
 nNameSpaceIndex: %i -> %i\n
+nNextSelection
+nNoteNum
+nNumSamples
+nNumVelocityZones
 nOperator Field: %s\n
 nSOS PRINT STRING: %s: %s\n
-nT$PfA
 nTries < 10000000
 nType Name: %s\n
 nUpdate SoundEvent: %s\n
@@ -6670,8 +6863,6 @@ near %s
 near '%c' :\n
 near char(%#02X) :\n
 neutral
-nfD;%\n
-nfD;%o
 nhZNLFE9
 nm\v{\re
 no failure reason set
@@ -6694,13 +6885,12 @@ null_container.vsnd
 nullfield
 num_radial_divisions
 numerator
-nċSpLcc`A
 n݉κ&YA1L
 o8ATSH
 o? Bo
-oA;Ep
 oD$PL
 o\bATSH
+o\bIc\aL
 obXOF>82
 obb_info
 obj_count
@@ -6825,7 +7015,20 @@ outputPeak
 outputSubmix
 output_0
 output_1
+output_10
+output_11
+output_12
+output_13
+output_14
+output_15
 output_2
+output_3
+output_4
+output_5
+output_6
+output_7
+output_8
+output_9
 output_above
 output_angles
 output_below
@@ -6860,6 +7063,7 @@ output_entity_index
 output_entity_is_actual_player_entity
 output_entity_is_npc
 output_entity_is_player
+output_entity_is_shrunken
 output_entity_scale
 output_event_finished
 output_event_playing
@@ -6907,8 +7111,10 @@ output_material_1
 output_material_1_weight
 output_material_2
 output_material_2_weight
+output_max
 output_max_index
 output_mid
+output_min
 output_mix
 output_mixgroups
 output_modifier_surface_index
@@ -6970,6 +7176,8 @@ output_total_weights
 output_transmission
 output_unspread
 output_unstopped
+output_usable_max
+output_usable_min
 output_vector_forward
 output_vector_left
 output_vector_up
@@ -7005,6 +7213,9 @@ p< tgv]<0ulH
 p< thv^<0uOI
 p< tpvV<0uJI
 p?IGq?|\fr
+pSamples
+pSource != nullptr
+pVelocityZones
 p\b[A
 parallel filters
 paramName
@@ -7071,7 +7282,6 @@ pthread_rwlock_unlock
 pthread_rwlock_wrlock
 public
 public.%s
-public.%s.%s
 public.attack
 public.dsp_preset
 public.enable_retrigger
@@ -7095,25 +7305,26 @@ public_field_name
 public_opvar
 q$v\r
 q8s\n
-q<A8r<tRH
 q\bIcJxK
 q\ra\fQ\vU\r{\r
 qangle
 qfefkv
 qke_XRLF@93
+qpA9q0|zA
 quant_all_bands
 quant_coarse_energy
 quant_energy_finalise
 quant_fine_energy
-quantize_multiplier
 quantize_type
 qxs?L
 qxs?z7
-r z\ru\v
+r(t+H
+r,t0H
+r,tEHcPh
 r2f;Q\bs
 r9E0~mE
 r?dar?\n
-r@t+H
+rA;F\b
 rF`JXKXWJYB[Cd;l2x(z%a+N2SNTQXKVJWGZI]J]Jm(r$u"u
 rJRTS\\Rg>`H`CeIkHq7v4}4v4u7
 rYf;Q\bsDH
@@ -7137,6 +7348,7 @@ reduction
 reference temporary
 reference_operator
 reference_stack
+regions
 reinterpret_cast
 rela.dyn
 rela.plt
@@ -7200,11 +7412,13 @@ s : param size = %i, field size = %i\n
 s : vol: %4.2f, sndlvl: %4.2f \n
 s = %f\n
 s = %s: %i : %i : %i : %i : %i : %i\n
+s Mce\b
 s Operator Fields: %i\n
 s [A\\H
 s allocation count overflow
 s allocation count overflow( %llu + %llu > %llu )\n
 s allocation count overflow( %llu > %llu )\n
+s allocation count overflow( add %llu + current %llu > max %llu )\n
 s called on a pool arena (no root available)\n
 s changed to
 s impulse response swapped\n
@@ -7221,6 +7435,8 @@ s(%08x):Stopping: %s (%08x) : elapsed time: %.2fs\n
 s) %d
 s, UNKNOWN %i
 s0HcHx
+s8HcC0M
+s8HcS0
 s: %f\n
 s: %s
 s: %s %s
@@ -7242,6 +7458,7 @@ s::Execute: Can't find operator stack %s in %s\n
 s:fA+v
 s?&ps?v-s
 sD1ҋKT
+sHHcS
 sOperator Stack: %s\n%*sOperator: %s\n
 sOperator Stack: %s\n%*sSize: %i\n%*sDepend: %i\n
 sRHcC0H
@@ -7251,7 +7468,8 @@ s\bIc
 s] %s : src %d : vol %.2f : time %.3f\n
 s`IcF0I
 sampler_event
-samplers
+saw_down
+saw_up
 scripts/soundmixers.txt
 scripts/vmidi/vmidi_manifest.txt
 secure_getenv
@@ -7260,8 +7478,12 @@ send%d
 sendOperator
 send_type
 sequence
-sequence_index
-sequences
+sequence_name
+sequence_track_name
+sequencer_LFO
+sequencer_LFO unable to find sequence track %s\n
+sequencer_sequence_start
+sequencer_set_master_bpm
 shstrtab
 sideChain
 sideChainPeak
@@ -7488,6 +7710,7 @@ snd_gamevoicevolume
 snd_gamevolume
 snd_get_physics_surface_properties
 snd_group_cluster_debug
+snd_group_occlusion_debug
 snd_group_priority_debug
 snd_group_priority_max_tolerance
 snd_headphone_pan_exponent
@@ -7519,11 +7742,8 @@ snd_occlusion_report
 snd_occlusion_visualize
 snd_op_sys/sos_system.cpp
 snd_op_test_convar
-snd_print_activetracks
-snd_print_arrangements
 snd_print_current_mixer_mixgroup
 snd_print_samplers
-snd_print_sequences
 snd_print_soundevent
 snd_print_soundevent %s
 snd_print_soundevent_default_public_properties
@@ -7540,13 +7760,17 @@ snd_report_audio_nan
 snd_report_verbose_error
 snd_samplers_play_note
 snd_samplers_stop_note
-snd_sequence_set_track_bpm
-snd_sequence_set_track_transpose
-snd_sequence_stop_all_tracks
-snd_sequence_stop_track
+snd_sequencer_print_activetracks
+snd_sequencer_print_arrangements
+snd_sequencer_print_sequences
+snd_sequencer_set_track_bpm
+snd_sequencer_set_track_transpose
 snd_sequencer_show_bpm
 snd_sequencer_show_events
 snd_sequencer_show_quantize_queue
+snd_sequencer_stop_all_tracks
+snd_sequencer_stop_track
+snd_sequencer_vmidi_flush
 snd_set_physics_surface_properties
 snd_setmixer
 snd_setmixlayer
@@ -7624,6 +7848,7 @@ snd_sos_start_stack
 snd_sos_stop_all_soundevents
 snd_sos_stop_soundevent_guid
 snd_sos_stop_soundevent_index
+snd_sos_stop_track
 snd_sos_test_soundmessage
 snd_sos_unpause_soundevent
 snd_sos_update_server_message %s
@@ -7641,7 +7866,6 @@ snd_soundmixer_version
 snd_spatialize_lerp
 snd_steamaudio_display_probes
 snd_steamaudio_enable_reverb
-snd_steamaudio_export_scene
 snd_steamaudio_perspective_correction_front_only
 snd_steamaudio_reverb_level_db
 snd_steamaudio_source_pathing_debug
@@ -7653,11 +7877,11 @@ snd_surround_speaker_pan_exponent
 snd_surround_speaker_pan_radial_weight
 snd_toolvolume
 snd_use_baked_occlusion
-snd_vmidi_flush
 snd_vmix_override_mix_decay_time
 snd_vmix_show_input_updates
 snd_voipvolume
 snd_wave_data.cpp
+snd_wave_mixer.cpp
 snd_wave_mixer_mp3.cpp
 sndevt
 sndlvl_max
@@ -7744,13 +7968,12 @@ sphere
 spline
 spreading_decision
 sprintf
+square
 stack_properties
 stapsdt
 startSample
 startSubvoice
 startVoice
-start_beat
-start_offset
 start_on_name_change
 static_cast
 std::allocator
@@ -7781,9 +8004,11 @@ stopSubvoice
 stopVoice
 stop_events_by_next
 stop_oldest
+stop_previous
 stop_previous_on_name_change
 stop_queue
 stopped_includes_dependencies
+stopping_stops_current_events
 stopsound
 strchr
 strcmp
@@ -7791,6 +8016,18 @@ strcpy
 strerror_r
 string
 string literal
+string0
+string1
+string10
+string11
+string2
+string3
+string4
+string5
+string6
+string7
+string8
+string9
 string::string
 string_token
 strings
@@ -7812,7 +8049,7 @@ submix.spectrum
 submix_name
 success
 sync_track
-sync_type
+sync_track_name
 syntax error...\n
 syntax not recognized...\n
 syscall
@@ -7825,14 +8062,16 @@ t dspmix %1.2f : lvol %1.2f : cvol %1.2f : rvol %1.2f : rlvol %1.2f : rrvol %1.2
 t x: %4f y: %4f z: %4f\n
 t!Lck\bE9
 t$D;s0
-t$pA9t$0|,A
-t$pA\\A]A
+t$\b~AH
 t$tt]H
 t$xA\\A]A
 t%fD;g
 t&D9}\t
 t'McepE
-t-Lc-U
+t(Mce\bE
+t(Mcu\bE
+t)HcK\b
+t/Lc6I
 t/Mcl
 t0HcF(A
 t1Ic^pE
@@ -7840,6 +8079,7 @@ t79X\bu
 t7D9`\b
 t7D;`\b
 t7[A\\A]A
+t8IcL$P
 t:HcSpMcL$pA
 t;Hdt\fH
 t<;C0}7H
@@ -7847,14 +8087,13 @@ t?;tt?74t
 t?Dlt?e
 t?\tZ\tZ\tZ\tZ\t?\tg\t\n\t
 t?\tZ\tt\tt\tt\t
+tB[A\\A]A
 tCR;\\HdY
 tC|tڿH
 tD94\au
 tD[A\\A]A
-tF[A\\A]A
-tGA9v\b
 tG[A\\A]A
-tIA;GhtCA
+tI;ChtD
 tI[A\\A]A
 tJIc]\b
 tQIc^\b
@@ -7862,9 +8101,10 @@ tQ[A\\A]A
 tRefs %16s : Name (Locks)\n
 tS;X\b}fH
 tTrack: %s\n
-tUD;+u
+tUA9I\b
 tUHcX
 tVOL: %f\n\tLVL: %f\n\tDSP: %f\n\tMUTE: %f\n\tSOLO: %f\n\n
+tWMc'A
 tYHcX
 tYHcЉC
 t[%2d] %16.16s : %s (%d) priority: %d\n
@@ -7873,19 +8113,26 @@ t\aA9D$DuڋC
 t\aH9P\bu
 t\aL9*r
 t\eL; u
-t\nD:s
-t\nD:sH
-t\nD:sP
-t\nD:sX
-t\nD:sh
-t\nD:sp
-t\nD:sx
+t\fD8`#r
 t\nD;R\f
+t\nE8Sl
+t\nE:S
+t\nE:ST
+t\nE:Sd
+t\nE:St
 t\n[A
+t\r8W\\H
+t\r:WTH
+t\r:WdH
+t\r:WlH
+t\r:WtH
+t\r:W|H
+t\tBPM: %f\n
 t\tInstrument: %s\n
 t\t\tBeat:\t%f\n
 t\t\tSequence:\t%s\n
 t\vA;T$0
+t^Mc'A
 ta[A\\A]A
 ta\n\f\a\bA\v
 table: %u members
@@ -7907,11 +8154,18 @@ thMc&A
 threshold
 threshold_type
 throw
+tiD;5
+tiD;5*8\e
+tiD;5J;\e
+tiD;5Z
+tiD;5\n
+tiD;5j>\e
 time slice ms
 tj;C0}eH
 tj;V0}eH
 tls_get_addr
 tm_clone_table
+toIcEH9
 to[A\\A]A
 tonality_analysis_init
 tonality_analysis_reset
@@ -7921,6 +8175,7 @@ tools
 tools/audio:Source
 toolspreview
 total preset slots used: %d \n
+tpIcE`A9
 track_01
 track_name
 track_queue
@@ -7934,9 +8189,6 @@ transmissionMid
 trigger
 tsD9s0~mH
 tt;Hc
-tvIcEH9
-txIcD$0A9
-txIcE`A9
 typeinfo fn for
 typeinfo for
 typeinfo name for
@@ -7944,13 +8196,9 @@ typename
 tʉUċU
 tӋP\f)SLH
 tӋP\fA)T$LH
-t܋=FU
-u2[A\\A]A
 u<Hcw\b;q(u3
 u>AǇd\t
-uA;F\b
 uG[A\\A]A
-u\e[A
 u\f[A
 u\nH;Z\b
 u\rfD;C
@@ -7978,11 +8226,13 @@ unsigned long
 unsigned long long
 unsigned short
 uoib\\VPJC=71
+upA9u0|&A
 updateVoice
 update_stack
 update_voices_low_priority
 ur[A\\A]A
 use_entity_position_if_local_player
+use_independant_levels
 use_local_namespace
 use_namespace
 use_public_opvar_scope
@@ -7994,6 +8244,7 @@ util_draw_debug_sphere
 util_draw_perspective
 util_draw_radius
 util_draw_relevance
+util_elements_float16
 util_elements_float3
 util_float_to_speakers
 util_frame_switch_float
@@ -8008,6 +8259,7 @@ util_print_string
 util_print_vsnd
 util_timer
 util_timer_ramp
+util_usable_float_range
 v$ATSH
 v9?Gw8?Q
 vH\vH\vH\v
@@ -8019,7 +8271,6 @@ vH\vm\vm\vm\vm\vH\vH\vH\vH\vH\v
 vHcG\bL
 vI\n?\tg\t2\t
 vV<0uJI
-vXA9v |&A
 v\n}\by
 values
 vector
@@ -8086,10 +8337,10 @@ volatile
 volume
 vpA9v0
 vpA9v0|&A
-vpA9v0|uA
-vpA9v0|wA
+vpA9v0|6A
 vpjd^WQKE?8
 vrman
+vsndL
 vsnd_c
 vsnd_duration
 vsnd_files
@@ -8114,9 +8365,9 @@ w0s=Hc
 w?FFv
 w?\n\bw?n
 wVf9pV
-wXA9w |&A
 wZf9pZ
 w[<gvPH
+w\bAUATSH
 w\f9q\f|kI
 w^f9p
 wait_for_track
@@ -8130,16 +8381,14 @@ wpA9w0|&A
 wph_YSNHB<6
 wsqnmcb_OD420
 wwgEbDgxvvfGb
-x$;CH
 x$\nwU1
-x&A;Ep} H
+x*A;Ep}$H
 x-Hc@\b
 x.Hc@\b
 x/Hc@\b
 x6Hc@\b
 x:A;L$x}3I
 x;Hc@\b
-x=Hc@\b
 x?M\fo>\t
 x?sMx
 x@ h(3
@@ -8150,8 +8399,6 @@ xBHc@\b
 xIHc@\b
 xMHc@\b
 x\eHc@\b
-x\r;CH}\bH
-x\rh\rX\r
 xcorr_kernel_sse
 xe\\Y]fv
 xg;CX}b1

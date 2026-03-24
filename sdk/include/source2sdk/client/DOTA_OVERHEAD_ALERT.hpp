@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 25
+        // Enumerator count: 26
         // Alignment: 4
         // Size: 0x_
         enum class DOTA_OVERHEAD_ALERT : std::uint32_t
@@ -43,6 +43,7 @@ namespace source2sdk
             OVERHEAD_ALERT_FORCE_MISS = 0x19,
             OVERHEAD_ALERT_AEGIS = 0x1a,
             OVERHEAD_ALERT_DISPEL = 0x1b,
+            OVERHEAD_ALERT_BONUS_PURE_DAMAGE = 0x1c,
         };
     };
 };

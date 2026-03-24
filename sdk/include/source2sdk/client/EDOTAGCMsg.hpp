@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 999
+        // Enumerator count: 1012
         // Alignment: 4
         // Size: 0x_
         enum class EDOTAGCMsg : std::uint32_t
@@ -1007,6 +1007,13 @@ namespace source2sdk
             k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse = 0x2358,
             k_EMsgClientToGCMonsterHunterClaimSetReward = 0x2359,
             k_EMsgClientToGCMonsterHunterClaimSetRewardResponse = 0x235a,
+            k_EMsgClientToGCItemBattlerGetUserData = 0x238c,
+            k_EMsgClientToGCItemBattlerGetUserDataResponse = 0x238d,
+            k_EMsgClientToGCItemBattlerGameAction = 0x238e,
+            k_EMsgClientToGCItemBattlerGameActionResponse = 0x238f,
+            k_EMsgGCToClientItemBattlerUserDataUpdated = 0x2390,
+            k_EMsgClientToGCItemBattlerDevGrantItem = 0x2391,
+            k_EMsgClientToGCItemBattlerDevGrantItemResponse = 0x2392,
             k_EMsgClientToGCGetEventRanking = 0x2393,
             k_EMsgClientToGCGetEventRankingResponse = 0x2394,
             k_EMsgClientToGCGetEventCoupon = 0x2395,
@@ -1017,6 +1024,12 @@ namespace source2sdk
             k_EMsgServerToGCWarningInvalidBotAbilityUsage = 0x239a,
             k_EMsgClientToGCInviteToDemoMode = 0x239b,
             k_EMsgGCToClientInviteToDemoMode = 0x239c,
+            k_EMsgClientToGCOverworldDevSetFortune = 0x239d,
+            k_EMsgClientToGCOverworldDevSetFortuneResponse = 0x239e,
+            k_EMsgClientToGCOverworldRequestFortune = 0x239f,
+            k_EMsgClientToGCOverworldRequestFortuneResponse = 0x23a0,
+            k_EMsgClientToGCOverworldDevClearFortune = 0x23a1,
+            k_EMsgClientToGCOverworldDevClearFortuneResponse = 0x23a2,
         };
     };
 };

@@ -13,13 +13,14 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 2
+        // Enumerator count: 3
         // Alignment: 4
         // Size: 0x_
         enum class ETormentorLocation : std::uint32_t
         {
             TORMENTOR_LOCATION_TOP = 0x0,
             TORMENTOR_LOCATION_BOTTOM = 0x1,
+            TORMENTOR_LOCATION_COUNT = 0x2,
         };
     };
 };

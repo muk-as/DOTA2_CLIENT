@@ -38,6 +38,7 @@
 	input HolsterAndDestroyWeapon(void) : "Identical to HolsterWeapon, except the weapon is destroyed once it has been holstered and concealed."
 	input UnholsterWeapon(void) : "Force the NPC to draw their weapon. Ignored if the NPC is scripting, if the NPC's weapon is already drawn, or if the NPC doesn't use weapons."
 	input BecomeTemporaryRagdoll(float) : "Become a temporary ragdoll that then can be later unrgadolled."
+	input BecomeAnimatedTemporaryRagdoll(string) : "Become a temporary animated ragdoll that then can be later unrgadolled."
 	input StopTemporaryRagdoll(void) : "Rise from your grave."
 	input StopTemporaryRagdollAndSetEnemy(string) : "Rise from your grave to attack an enemy. Animgraph NPCs will turn to face the enemy during their unragdoll. Parameter is the enemy, usually the !activator on the trigger that's firing this input."
 	input StartScripting(void) : "Enter scripting state. In this state, NPCs ignore a variety of stimulus that would make them break out of their scripts: They ignore danger sounds, ignore +USE, don't idle speak or respond to other NPC's idle speech, and so on."
@@ -65,6 +66,7 @@
 	input RemoveAbility( string ) : "Removes an ability to the NPC"
 	input DisableAllAbilities( boolean ) : "Disable all abilities on the NPC. Parameter: 0 - Do not disable all abilities, 1 - Do disable all abilities"
 	input SetMovementGaitOverride(string) : "Force this NPC to use a specified movement gait. Empty string cancels the override; otherwise use 'Slow,Medium,Fast,VeryFast' ."
+	input SetMovementGaitSetOverride(string) : "Force this NPC to use a specified movement gait set. Empty string cancels the override"
 	input SetForceAim(integer) : "Force this NPC to aim or not aim. Parameter: 0 - Return to AI, 1 - Force Aiming, 2 - Force Not Aiming. Note that an NPC forced to Not Aim may be non-functional in combat."
 	input StartActBusy(string) : "Force an NPC to go into an Act Busy. The parameter is the act busy entry name found in actbusy.vdata"
 	input StopActBusy(void) : "Force an NPC to exit a performing Act Busy."
@@ -73,6 +75,7 @@
 	input RemoveAvailableHintGroup(string) : "Removes a hint group that the NPC to find hints for. This takes precedence over preferrred hint groups specified in vdata."
 	input AddDisallowedAttribute(string) : "Adds a nav attribute by name that the NPC is not allowed to navigate on."
 	input RemoveDisallowedAttribute(string) : "Removes a nav attribute by name that the NPC was not allowed to navigate on."
+	input SetDesiredStrategy(api)
 ]
 
 @BaseClass base(DefaultNPC) 
@@ -106,11 +109,17 @@
 	output OnRappelTouchdown(void) : "Fires when done rappeling"
 ]
 
-@BaseClass base(DefaultNPC) = PlayerCompanion
+@BaseClass base(DefaultNPC) 
+	metadata
+	{
+		api_classes = [ "npc_companion" ]
+	}
+= PlayerCompanion
 [
 	input OutsideTransition(void) : "Use this input to teleport the NPC to a hintnode with the Player Squad Transition Point hint type."
-	input EnableAlwaysTransition(void) : "Enable the 'always transition' behavior"
-	input DisableAlwaysTransition(void) : "Disable the 'always transition' behavior"
+
+	input EnableAlwaysTransition(api)
+	input DisableAlwaysTransition(api)
 	
 	input EnableSpeakWhileScripting(void) : "Allow this NPC to speak responses while in a scripted sequence or while StartScripting is active."
 	input DisableSpeakWhileScripting(void) : "Cancels this NPC's ability to speak responses while in a scripted sequence or while StartScripting is active if it was previously enabled by EnableSpeakWhileScripting."
@@ -124,22 +133,12 @@
 	input MakeGameEndAlly(void) : "Make this NPC a game end ally."
 	input MakeRegularAlly(void) : "Make this NPC a regular ally."
 
-	input EnableWeaponPickup(void) : "Enable Weapon Pickup"
-	input DisableWeaponPickup(void) : "Disable Weapon Pickup"
-	input EnableLimitedReloads(void) : "Enable Limited Reloads (if specified in VData)"
-	input DisableLimitedReloads(void) : "Disable Limited Reloads"
+	input EnableWeaponPickup(api)
+	input DisableWeaponPickup(api)
 	
-	input SetReadinessPanic(void) : "Set readiness to panic state (Special)"
-	input SetReadinessLow(void) : "Set readiness to calmest state (Bored)"
-	input SetReadinessMedium(void) : "Set readiness to moderate (Alert)"
-	input SetReadinessHigh(void) : "Set readiness to highest. (Combat imminent)"
-	input LockReadiness(float) : "Lock readiness at current setting for x seconds -1 = forever, 0 = unlock now"
-	
-	input ClearAllOutputs(void) : "Obliterate every output that this NPC has."
-
 	input ReviveCompleted(void) : "Force the NPC to revive itself from an incapacitated state. "
 
-	output OnWeaponPickup(void) : "Fires when this NPC picks a weapon off the ground or a gun rack."
+	output OnWeaponPickup(api) 
 ]
 
 @BaseClass base( DefaultNPC ) = BaseHelicopter

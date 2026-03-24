@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 40
+        // Enumerator count: 41
         // Alignment: 8
         // Size: 0x_
         enum class DebugOverlayBits_t : std::uint64_t
@@ -136,6 +136,9 @@ namespace source2sdk
             // MPropertyFriendlyName "Minimal Text"
             // MPropertyDescription "Only draw the base name and subclass, but no other text data"
             OVERLAY_MINIMAL_TEXT = 0x20000000000,
+            // MPropertyFriendlyName "NPC God Mode"
+            // MPropertyDescription "This NPC will take no damage or react to it"
+            OVERLAY_NPC_GOD_MODE = 0x40000000000,
         };
     };
 };

@@ -37,6 +37,7 @@
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11InitBucketsEv
 12CSceneObject
+13CScriptScopeTI22CDefScriptAccessorBaseLb1EE
 13CWorldManager
 13ConCommandRef
 13IBaseSequence
@@ -45,8 +46,10 @@
 14IErrorListener
 1555Row
 1555To
+15CEntityIOOutput
 15CEntityIdentity
-15CNetworkVarBaseIiN15CEntityIdentity32NetworkVar_m_nameStringableIndexEE
+15CEntityInstance
+15CNetworkVarBaseIiN15CEntityIdentity33NetworkVar_m_nameStringTableIndexEE
 15CPulseCell_Base
 15CSingleWorldRep
 15CTier0AppSystemI17IWorldRendererMgrLx0EE
@@ -56,7 +59,10 @@
 15ISaveRestoreOps
 15IWorldReference
 16Block4x4EncodingE
+16CEntityComponent
 16CGenericExprPart
+16CScriptAccessorTI22CDefScriptAccessorBaseLb1EE
+16CScriptComponent
 16ICommandCallback
 16ISceneObjectDesc
 16PerformIterationEf
@@ -65,12 +71,14 @@
 17IWorldRendererMgr
 18CDefSaveRestoreOps
 18CGenericExpr_Unary
+18CWorldVPKReference
+18IWorldVPKReference
 19BJRZcks
 19CGenericExpr_Binary
 19CPulseCell_BaseFlow
 19CSchemaRegistration
 19CVariantSaveDataOps
-1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
+1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
 1Block4x4Encoding
 1CalculateA8Ef
 1Decode_ETC1Ev
@@ -93,13 +101,13 @@
 20PermEntityLumpData_t
 210To
 210ToA
-21CEntity2_EHandle_Save
 21CGenericExpr_Property
 21CGrassTileSceneObject
 21IGrassTileSceneObject
 21IPulseInstanceLoadAPI
 21IPulseInstanceSaveAPI
 21PerformFirstIterationEv
+22CDefScriptAccessorBase
 22CEntityComponentHelper
 22CSchemaInstallCallback
 22IToolsResourceListener
@@ -109,11 +117,9 @@
 23CKV3TransferContextBase
 23CKV3TransferLoadContext
 23CKV3TransferSaveContext
-24CEntity2_EHandle_Restore
 24CGenericExpr_BoolLiteral
 24CPulseCell_Inflow_Method
 24Row
-25CAttributeDictSaveDataOps
 25CConCommandMemberAccessorI17CWorldRendererMgrE
 25CGenericExpr_FloatLiteral
 25CGenericExpr_FunctionCall
@@ -202,6 +208,7 @@
 4InitFromSourceEPNS_8Block4x4EPNS_14ColorFloatRGBAEPhNS_11ErrorMetricE
 4SSSE3
 4SortEv
+4fffff
 4ffffff
 4fffffffffffffff
 5&YA1A
@@ -245,7 +252,6 @@
 7ffff
 7fffff
 7ffffff
-7耀7耀7耀7
 8"3hrf
 82ToI444
 8AddBlockEPNS_8Block4x4E
@@ -274,6 +280,7 @@
 9VP8 t
 9VP8Lt
 9__async_assoc_stateI
+9ffffff
 9耀E耀w耀G
 A#4$L
 A+G ~&D
@@ -281,10 +288,7 @@ A+N$Hc
 A+V$Hc
 A9D$Tu
 A9EHvrI
-A9FHvnI
 A9P@v>I
-A9PHv>I
-A9UHv I
 A9UHv$I
 A9t$Tu
 A;6}HI
@@ -531,13 +535,8 @@ ASAVPAR
 ASEs implemented
 ASSSE3
 ATAZBRBZBRBZBRBZBRBZBRAZARAZARBZBRAZARAZAVA
-ATTRIBUTE_EHANDLE
-ATTRIBUTE_EMPTY
-ATTRIBUTE_FLOAT
-ATTRIBUTE_INT
-ATTRIBUTE_STRING
-ATTRIBUTE_VECTOR
 AVASAR
+AVSHcG
 AWAVATS
 AWAVATS1
 AWAVATSA
@@ -569,6 +568,7 @@ AWAVAUATSPD
 AWAVAUATSPE
 AWAVAUATSPE1
 AWAVAUATSPH
+AWAVAUATSPHc
 AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPLc/A9
@@ -596,8 +596,14 @@ AYUVToVURow_C
 AYUVToYRow_C
 A\A]A^A
 A\A^A
+Activate
 Actually dude, we didn't seem to be expecting anything here, or at least
+Add an output
 AddBlock
+AddOutput
+AddResource
+Adds an I/O connection that will call the named function on the passed entity when the specified output fires
+Adds an I/O connection that will call the named function on this entity when the specified output fires
 AggregateInstanceStream
 AggregateInstanceStreamOnDiskData_t
 AggregateInstanceStream_t
@@ -635,8 +641,8 @@ AssetPreviewSystem_001
 AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
+Attempted to ConvertToCopiedData for unsupported type (%d
 Attribute_t
-Attributes
 BACKSLASH_CHAR
 BGR565
 BGR888
@@ -707,6 +713,7 @@ BlockErrorEv
 BoneConstraintList
 Bool( %s
 Boolean
+Bp p p0RCp p p0SCpXp
 Breakpoint Log [%u
 Breakpoint Log [%u] - %s
 BufferInternal
@@ -714,6 +721,7 @@ ByteToFloat
 ByteToFloatRow_C
 C A;F
 C17CWorldRendererMgr
+C1@u"H
 C@;C8
 CBasePulseGraphInstance
 CEmptyEntityInstance
@@ -725,18 +733,20 @@ CEntityIOOutput
 CEntityIdentity
 CEntityIdentity::SetEntityName called, but there is no entity name string table pointer
 CEntityInstance
+CEntityInstance: Root class for all entities
+CEntityKeyValues
 CEntityKeyValues::LegacyUnserialize: Unable to read from a text-based utlbuffer
 CEntityKeyValues::LoadFromContext: Invalid version! Expected %d, encountered %d
 CEntityKeyValues::Unserialize: Invalid version! Expected %d, encountered %d
 CEntityKeyValues::Unserialize: Unsupported keyvalue variant type (%d
 CEntityOutputTemplate
-CEntitySystem
 CGrassTileObjectDesc
 CHandle
 CLOSE_BRACE
 CLOSE_BRACKET
 CLOSE_PAREN
 CMemAllocSystemInitialize
+CNativeOutputs
 CNetworkSerializerClassInfo::Get( %s ) failed
 CNetworkUtlVectorBase
 CNetworkVarChainer
@@ -787,6 +797,9 @@ CScriptComponent
 CScriptComponent::Storage_t
 CScriptComponentReferenced
 CScriptComponentReferencedPtr
+CScriptKeyValues
+CScriptNativeOutputs
+CScriptPrecacheContext
 CStrongHandle
 CStrongHandleCopyable
 CTSQueue corruption
@@ -794,6 +807,7 @@ CTSQueue::Node_t *CTSQueue<std::function<void ()> *, false>::Push(CTSQueue::Node
 CUYVYRow
 CUtlBinaryBlock
 CUtlDict::IndexType_t CUtlDict<CNetworkSerializerClassInfo *>::Insert(const char *, const T &) [T = CNetworkSerializerClassInfo *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<unsigned short>::Insert(const char *, const T &) [T = unsigned short, L = CDefFastCaselessStringLess
 CUtlLeanVector
 CUtlOrderedMap
 CUtlString
@@ -819,13 +833,16 @@ CalculateBaseColorsForTAndH
 CalculateG11
 CalculateR11
 CalculateSourceAverages
+CallScriptFunction
 Calloc
 Cancel any waiting cursors
 CancelOnSucceeded
 Cannot allocate abstract class
 Cannot convert KV3 type '%s' (%u) to a string token
+Cannot destruct abstract class
 Cannot reference domain '%s' from '%s
 Cannot reinterpret instance (actual: %s) from (original) %s to (desired) %s
+Cannot run script: NULL script name
 Cast of %s loses value information (returning %s
 ChangeAccessorFieldPathIndex_t
 CharacterSetBuild
@@ -833,6 +850,8 @@ CheckSignature
 ClampFloatToZero_SSE2
 Class data is a '%s', not a table
 Class does not allow allocation from its schema binding
+Class does not allow destruction from its schema binding
+ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 ClutterSceneObjectDesc
 ClutterSceneObject_t
@@ -843,6 +862,12 @@ ColorRegressionEPNS_14ColorFloatRGBAEjS2_S2
 CommandLine
 ComputeCumulativeSumRow_C
 ComputeCumulativeSumRow_SSE2
+ConnectOutput
+ConnectOutputToScript
+ConnectOutputToScriptSelf
+Container to hold context published to precache functions in script
+Container to hold keyvalues published to spawn functions in script
+Container to hold outputs published by script to game
 Convert16To8Plane
 Convert16To8Row_AVX2
 Convert16To8Row_Any_AVX2
@@ -870,18 +895,19 @@ Could not decode alpha data
 Could not execute '%s' because this graph domain does not support the required IPulseHost
 Couldn't ReadTexturePixels when creating grass
 CpuId
+CreateEntity
 CreateInterface
 Creating %i scene objects for node %i
 CumulativeSumToAverageRow_C
 CumulativeSumToAverageRow_SSE2
 Cursor[ ptr:%p | id:%d | graph:%p ]: Register observer:%d
+C耀7耀7耀7耀7
 D$(kL
 D$0kL
 D16_SHADOW
 D24FS8
 D24X8_SHADOW
 D32FS8
-D;5%U
 DATA_CONST
 DOUBLE_AND
 DOUBLE_OR
@@ -901,12 +927,23 @@ DecodePixels_PlanarEv
 DecoderVersion
 DefaultRuneLocale
 DefaultTime
+Delete this entity
 Deletion List
 DemoUpconverterVersion001
+Destroy
+DevMsg
 Dfffff
 Did not execute '%s' because the 'Target' object was missing
 DifferentialTrys
 Disallowed variable name: %s
+DisconnectOutput
+DisconnectOutputFromScript
+DisconnectOutputFromScriptSelf
+DisconnectRedirectedOutput
+DispatchActivate
+DispatchPrecache
+DispatchSpawn
+DispatchUpdateOnRemove
 Dither
 DitherRow
 Divide by zero
@@ -918,6 +955,7 @@ Do not stop the current yielding node, but do not continue to the next node afte
 Double-save to Member '%s
 Dump all of the worlds that we know about
 Dump the contents of an entity lump
+E;t$0u
 E<G&Iw
 ENTITY_DORMANT
 ENTITY_IO_TARGET_EHANDLE
@@ -942,7 +980,6 @@ EncodeMipmapsEPfjjNS_5Image6FormatENS_11ErrorMetricEfjjjjPNS_8RawImageEPib
 EngineServiceMgr001
 EntComponentInfo_t
 EntInput_t
-EntOutput_t
 Entity Handle
 Entity Load Unserialize
 Entity Name
@@ -954,6 +991,7 @@ EntityIOConnection_t
 EntityIOQueuePrioritizedEvent_t
 EntityIOTargetType_t
 EntityKeyValueData_t
+Error running script named %s
 Expecting %s
 Expecting EOF
 ExternalMethodParent
@@ -971,6 +1009,7 @@ F32_C
 F709Constants
 F9| 0u
 F@A;F8
+Failed to activate script entity %s of type %s: script entity instance is null
 Failed to allocate a lexer for '%s'. (Out of memory
 Failed to allocate a parser for '%s'. (Out of memory
 Failed to allocate a token stream for '%s'. (Out of memory
@@ -979,7 +1018,10 @@ Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load geometry for level %s
 Failed to load nested keys: %s
 Failed to mount world vpk file %s, file could not be found
+Failed to precache script entity %s of type %s: script entity instance is null
 Failed to save unsupported class
+Failed to spawn script entity %s of type %s: script entity instance is null
+Failed to update on remove script entity %s of type %s: script entity instance is null
 FeaturesH
 FeaturesInternal
 FeetSettings
@@ -990,6 +1032,8 @@ FilterCols
 FilterTwoPassEPNS_11tagRGBCOLOREiiS1_iijPFddE
 FindEncodingWarningTypesForCurFormat
 Finished %d Blocks out of %d
+Fire an entity output
+FireOutput
 FixedDiv
 FixedDiv1_C
 FixedDiv1_X86
@@ -1022,7 +1066,6 @@ GBRow
 GRotate
 GSSSE3
 GScale
-G`@Ap
 Game Time
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -1039,13 +1082,31 @@ Gc]ÐUH
 GenerateGrassTexture
 GenerateGrassTexture failed for albedo
 GenerateGrassTexture failed for specular
+Get Integer Attribute
+Get the entity as an EHANDLE
+Get the entity name
+Get the entity name w/help if not defined (i.e. classname/etc
 GetARGBBlend
-GetAttributeDictSaveDataOps
 GetCPUInformation
+GetClassNameAsCStr
+GetClassNameOverride
+GetClassname
+GetDebugName
+GetEntityHandle
+GetEntityIndex
+GetEntityNameAsCStr
 GetError
 GetInfo
+GetIntAttr
+GetName
+GetNativeOutputsForClass
+GetOrCreatePrivateScriptScope
+GetOrCreatePublicScriptScope
+GetPrivateScriptScope
+GetPublicScriptScope
 GetResourceManifestCount
 GetResourceManifests
+GetValue
 GetVariantSaveDataOps
 GetXCR0
 Gf95)1
@@ -1132,7 +1193,7 @@ HcE HcM
 HcE(HcM
 HcH0H
 HcI H9
-HcKTHk
+HcK\Hk
 HcN4H
 HcO H
 HcP H9
@@ -1349,7 +1410,6 @@ I444ToI420
 I444ToNV12
 I444ToNV21
 I601Constants
-I9E8u fA
 I;A s H
 I;D$ s
 I;I sSH
@@ -1378,6 +1438,7 @@ IPulseSystem_001
 ISSSE3
 IS_ALIGNED(src_height, 2
 IS_ALIGNED(src_width, 2
+I`AAp
 IcE HcM
 IcL$0H
 IcL$<Icw
@@ -1385,6 +1446,7 @@ IcO H9
 Icv0Mc
 Immediate Wake
 Immediately reactivate any waiting cursors regardless of how long they have been waiting
+IncludeScript stack overflow
 Inconsistent treatment of '%s' (existing key is %s
 Incorrect keyframe parameters
 Index
@@ -1404,12 +1466,14 @@ InitFromEncodingBits_PlanarEv
 InitFromEtcEncodingBits
 InitFromSource
 InitFromSourceEPNS_8Block4x4EPNS_14ColorFloatRGBAEPhNS_11ErrorMetricE
+Initialize with number of outputs
 InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 InstallSchemaBindings
 Int( %d
 Integer
+Internal cursor flow error: halting due to leaf cell bug
 Interpolate
 InterpolatePlane
 InterpolateRow_16_C
@@ -1456,6 +1520,7 @@ Kill elegantly
 Kill immediately
 L44ToA
 L9(tTI
+L<ffffff
 LINEAR_D24S8
 LINE_CONTINUATION
 LINKEDIT
@@ -1484,7 +1549,6 @@ LookAtList
 Loongson-2K
 Loongson-3
 LumaColorTable
-L耀L考M退M
 MATCHFRAMEWORK_001
 MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS
 MESH_DRAW_FLAGS_DRAW_LAST
@@ -1501,11 +1565,7 @@ MGetKV3ClassDefaults
 MIsBoxedFloatType
 MIsBoxedIntegerType
 ML_COMMENT
-MNetworkChangeCallback
-MNetworkEnable
-MNetworkPriority
-MNetworkSerializeAs
-MNetworkVarNames
+MNetworkChangeAccessorFieldPathIndex
 MNotSaved
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MPlane
@@ -1619,7 +1679,6 @@ Model conversion: %d conversions in %.3fsec (%.3fms each
 ModelDocUtils001
 MostLikelyFlipEv
 MountWorldVPK() ++%s is at refcount %d
-MovementGaitId_t
 MovementSettings
 MultiplyRow_16_AVX2
 MultiplyRow_16_Any_AVX2
@@ -1727,20 +1786,21 @@ NV_NULL
 N_U9203
 NavGameTest001
 NetworkClientService_001
+NetworkCodeGen
 NetworkMessagesVersion001
 NetworkP2PService_001
 NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
 Newline in string literal
-Nfffff
 No DATA block for resource
 No DATA block for resource '%s
 No closing */ before end of file
+No conversion from %s to bool now
 No conversion from %s to string at the moment
 No data
 No expression
-No free conversion of %s variant to Vector right now
+No free conversion of %s variant to HSCRIPT right now
 No input data for '%s'. (Empty buffer
 NodeData_t
 Nodes Loaded: %d / %d
@@ -1753,11 +1813,12 @@ OBJECT_TYPE_BAKED_GEOMETRY
 OBJECT_TYPE_BLOCK_LIGHT
 OBJECT_TYPE_DISABLED_IN_LOW_QUALITY
 OBJECT_TYPE_DISABLE_VIS_CULLING
+OBJECT_TYPE_HAS_AGGREGATE_RTPROXY
 OBJECT_TYPE_MODEL
 OBJECT_TYPE_MODEL_HAS_LODS
+OBJECT_TYPE_NEEDS_DYNAMIC_SHADOWS
 OBJECT_TYPE_NONE
 OBJECT_TYPE_NO_SHADOWS
-OBJECT_TYPE_NO_SUN_SHADOWS
 OBJECT_TYPE_OVERLAY
 OBJECT_TYPE_PRECOMPUTED_VISMEMBERS
 OBJECT_TYPE_RENDER_TO_CUBEMAPS
@@ -1768,7 +1829,7 @@ OPEN_BRACE
 OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
-OXHcGT
+O`HcG
 O`HcG4LcW
 ObjectTypeFlags_t
 Offff
@@ -1777,11 +1838,11 @@ Opaque
 Opaque Handle
 Output aborted
 Output unserialization of entities on map load. 0 - off, 1 - client/server, 2 - server, 3 - client
-P [A\A^A
 P fffff
 P010ToAR30Matrix
 P010ToARGBMatrix
 P010ToP410
+P0PPPPPPPP
 P15CEntityIdentity
 P210ToAR30Matrix
 P210ToAR30Row_AVX2
@@ -1806,14 +1867,38 @@ P410ToARGBRow_Any_AVX2
 P410ToARGBRow_Any_SSSE3
 P410ToARGBRow_C
 P410ToARGBRow_SSSE3
-P@P0000@P@P0000@P0
 PLANAR
 POS_FLOATLITERAL
 POS_INTLITERAL
 PPPPPP
+PPPPPPPP
+PPPPPPPP 0
+PPPPPPPP @P
+PPPPPPPP@@   P 0P
+PPPPPPPP@@  @P@P0000@P@P0000@P0
+PPPPPPPP@@ 0PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@0PPPPPPPP@@PPPPPPPP
+PPPPPPPP@@ PPPPPPPP
+PPPPPPPP@@0
+PPPPPPPP@@000
+PPPPPPPP@@000@PPPPPPPP@@PPPPPPPP
+PPPPPPPP@@@PPPPPPPP@@0PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@P
+PPPPPPPP@@P
+PPPPPPPP@@PPPPPPPP
+PPPPPPPP@@PPPPPPPP@@0PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@@PPPPPPPP
+PPPPPPPP@@PPPPPPPP@@PPPPPPPP
+PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@PPPPPPPP
+PPPPPPPP@@PPPPPPPP@@PPPPPPPP@@`@PPPPPPPP@@pPPPPPPPP@@PPPPPPPP
+PPPPPPPP@@PPPPPPPPPPPPPPPP
+PPPPPPPP@@``PPPPPPPP
+PPPPPPPP@@p
+PPPPPPPP@@pPPPPPPPP@@ PPPPPPPP@@P
+PPPPPPPPP0
+PPPPPPPPPP@@0PPPPPPPP
+PPPPPPPPPPPPPPPP
+PPPPPPPPPPPPPPPPP@@PPPPPPPP
+PPPPPPPPp
 PSARASAUj
 PSSSE3
-PULSE_OUTPUT_list
 PVAL_ANY
 PVAL_ARRAY
 PVAL_BOOL
@@ -1880,6 +1965,8 @@ Pny_AVX2
 Pointers cannot be used as numeric values
 Polynomial
 PostProcessingSystem_001
+Precache
+Precaches a specific resource
 Premature end-of-file encountered
 Premature end-of-partition0 encountered
 Preventing new cursor (%s
@@ -1913,16 +2000,15 @@ R9G9B9E5_FLOAT
 RARARA
 RARARARARARARA
 RARARASAp
-RARARAZBRB
-RARBRAp
-RARBRBRBRBp p
+RARARAp
 RASARARARARASARAp
 RASBp
 RATARARARARAZAVBp
 RATBZARAp
+RAUASBRAZBRB
 RAUA[ASA
-RAUBWAp
-RAWARAWARAWARAWARAWARAWARAWARAWARAYARARARARAUASBWASCWAp
+RAUBTAp
+RAWARAWARAWARAWARAWARAWARAWARAWARAYAUASB`1ARCVAp
 RAWToARGB
 RAWToARGBRow_Any_SSSE3
 RAWToARGBRow_C
@@ -1948,8 +2034,12 @@ RAWToYJRow_C
 RAWToYJRow_SSSE3
 RAWToYRowMatrix_C
 RAWToYRow_C
-RBRBRBRBRBRBRBRBRBp
+RBRBRBRBRCp
+RBRBRBp
+RBp8p(p(p
 RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp
+RCp p RAp
+RCp p p
 RENDER_SLOT_INVALID
 RENDER_SLOT_PER_INSTANCE
 RENDER_SLOT_PER_VERTEX
@@ -2035,11 +2125,16 @@ RWLockTranstionResult_t CSemiAutoRWLockT<CThreadRWLock_FastRead>::LockForRead(co
 RandomFloat
 RandomInt
 RandomSeed
+Reads a spawn key
 Recognition Exception
 Recognition exception
+RedirectOutput
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
 Release
+RemoveSelf
+Removes a connected script function from an I/O event on the passed entity
+Removes a connected script function from an I/O event on this entity
 Render the world
 Render world node bounds
 RenderDevice003
@@ -2062,6 +2157,10 @@ ResourceManifest
 ResourceManifestRegistry001
 ResourceSystem013
 Resume
+Retrieve the private per-instance script-side data associated with an entity
+Retrieve the public script-side data associated with an entity
+Retrieve, creating if necessary, the private per-instance script-side data associated with an entity
+Retrieve, creating if necessary, the public script-side data associated with an entity
 Rny_AVX2
 Rotate
 RotatePlane
@@ -2071,6 +2170,7 @@ RotatePlane90
 RunFirstPass
 SARAWAWAp
 SBSB]0
+SCOPE_QUALIFIER
 SEMICOLON
 SIGNED_R11
 SIGNED_RG11
@@ -2292,8 +2392,19 @@ Schema Enum
 SchemaSystem_001
 SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
+Script failed to find output "%s
+Script not found (%s
+ScriptFireOutput
+ScriptGetEHandle
+ScriptGetEntityIndex
+ScriptGetOrCreatePrivateScriptScope
+ScriptGetOrCreatePublicScriptScope
+ScriptGetPrivateScriptScope
+ScriptGetPublicScriptScope
+Scripting disabled or no server running
 SerializedEntitiesVersion001
 ServerToolsInfo_001
+Set Integer Attribute
 SetEncodingBits
 SetEncodingBitsEv
 SetEncodingBits_ETC1
@@ -2302,6 +2413,7 @@ SetEncodingBits_H
 SetEncodingBits_Planar
 SetEncodingBits_PlanarEv
 SetEncodingBits_T
+SetIntAttr
 SetPlane
 SetRow_Any_X86
 SetRow_C
@@ -2416,7 +2528,6 @@ Test Handle
 TestScriptMgr001
 TextLayout_001
 The lexer was matching from line %d, offset %d, which
-The preceding flow should have branched away from this
 This convar is being accessed prior to ConVar_Register being called
 This indicates a poorly specified lexer RULE
 ThreadGetCurrentId
@@ -2440,6 +2551,7 @@ TransposeWx8_Fast_Any_SSSE3
 TransposeWx8_Fast_SSSE3
 TransposeWx8_SSSE3
 TransposeWxH_C
+Tried to destroy (from script) a networked entity (%d/%s) on the client, the server controls lifespan, ignoring
 Tried to load resource reference '%s' from a value without a resource reference specific type
 Truncated header
 TryDifferential
@@ -2521,6 +2633,7 @@ Unsupported number of values found in grass tile. Expected %d. Found %d
 Unwanted token '%s' %s
 Unwind_Resume
 Uny_AVX2
+UpdateOnRemove
 Usage: %s <world_name> <layer_name> <visible
 Usage: %s <world_name> <lump_name
 UtlVectorMemory_Alloc
@@ -2535,6 +2648,8 @@ VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
+VDVDVDVDVAp
+VDVDVDVDVDVDVDVDp
 VERTEX_ALBEDO_565
 VERTEX_ALBEDO_8888
 VERTEX_ALBEDO_NONE
@@ -2553,7 +2668,6 @@ VP8GetInfo
 VP8LA
 VP8LCheckSignature
 VP8LGetInfo
-VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
@@ -2709,6 +2823,7 @@ XSSSE3
 X[A\A]A^A
 X[A^A
 Xffffff
+Xt6<Hu`H
 YRow_C
 YSSSE3
 YToAlpha
@@ -2743,9 +2858,10 @@ Yfffff
 Z14V_stristr_fastPKcS0
 Z17LoggingSystem_Logi17LoggingSeverity_tPK17LoggingMetaData_tPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK20LoggingRareOptions_tPKcz
-Z21ThreadAtomicNotifyOnePj
-Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
+Z21ThreadAtomicNotifyOnePKj
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
+Z28Assert_ConditionFailed_FatalRK34_AssertCompileTimeConstantStruct_t
+Z28Assert_ConditionFailed_FatalRK34_AssertCompileTimeConstantStruct_tPKcz
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
 Z7LoadKV3P9CKV3ArenaP10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
 Z9V_strnlenPKci
@@ -3184,7 +3300,9 @@ askCpuFlags
 assert_rtn
 at <EOF
 at offset %d
+atomic
 attributes
+bPPPPPPPP@@PPPPPPPP@@pPPPPPPPP
 bSSSE3
 background
 bad partition length
@@ -3207,6 +3325,7 @@ cannot parse partitions
 cannot parse picture header
 cannot parse segment header
 ceilf
+chandle
 channel
 character
 chkstk_darwin
@@ -3215,6 +3334,7 @@ classname
 cmaps%c
 codegen
 common
+connections
 const
 const CUtlOrderedMap::ElemType_t &CUtlOrderedMap<PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t *>::FindElement(const CUtlOrderedMap::KeyType_t &) const [K = PulseCursorID_t, T = PulseGraphExecutionHistoryCursorDesc_t *, L = CDefLess<PulseCursorID_t>, I = int
 cpu model
@@ -3273,6 +3393,7 @@ empty
 empty member name
 encodingTry.m_fError < FLT_MAX
 end of input
+entindex
 entity2
 entityIdentityNameChanged
 entity_log_load_unserialize
@@ -3283,6 +3404,7 @@ entity_name_fixup_persist
 entname_fixup_local
 entname_fixup_parent
 entname_fixup_prefix
+enum(signed
 error %d : %s
 etWorkerInterface
 expected %s
@@ -3310,6 +3432,7 @@ ffineRow
 fgets
 filesystem_stdio
 final %s
+fixed_array
 fixed_invtbl8
 fj".T\CMek2>x
 flDurationSec
@@ -3318,6 +3441,7 @@ float64
 floor
 floorf
 fopen
+forward-all-args
 ft: %-60s %-40s : %-80.80s raw:%s
 g %g %g
 g %g %g %g
@@ -3377,8 +3501,6 @@ int CUtlMemoryBlockAllocator<char>::AddPage(uint) [T = char, Alloc_t = CMemAlloc
 integer
 invalid
 is also the end of the line, so you must check your lexer rules
-iszString
-iszSymbol
 itCpuFlags
 jNS_12__async_funcIMN3Etc5ImageEFjjjjEJPS3_jijEEEEE
 jNS_12__async_funcIMN3Etc5ImageEFjjjjEJPSA_jijEEEEEFvvEPSF_EEEEEPvSK
@@ -3443,14 +3565,12 @@ m_EnclosedClusterListBlock
 m_EnclosedClustersBlock
 m_EntryChunk
 m_Format
-m_HandleValue
 m_IBData
 m_Inparams
 m_InparamsWhichCanBeMoved
 m_InstanceAlbedoData
 m_InstanceOrientations32
 m_Instances
-m_IntValue
 m_MasksBlock
 m_MethodName
 m_Name
@@ -3464,7 +3584,6 @@ m_ReturnType
 m_Type
 m_VBData
 m_Value
-m_VecValue
 m_VisClusterMemberBits
 m_aggregateInstanceStreams
 m_aggregateMeshes
@@ -3484,7 +3603,6 @@ m_bMarkedForRemoval
 m_bSHLightmaps
 m_bakedLightingInfo
 m_bakedShadows
-m_bool
 m_boolDiff
 m_boolDiff == true
 m_boolDone
@@ -3512,21 +3630,17 @@ m_flEndCullSize
 m_flFadeEndDistance
 m_flFadeStartDistance
 m_flFireTime
-m_flFloatValue
 m_flGridSize
 m_flMinDrawVolumeSize
 m_flMinimumDistance
 m_flags
-m_float
 m_fragmentTransforms
 m_grassFileName
 m_hActivator
 m_hBuffer
 m_hCaller
 m_hEntTarget
-m_hEntity
 m_hTarget
-m_iEventListCount
 m_inputLayoutFields
 m_inputName
 m_instancePositions
@@ -3594,7 +3708,6 @@ m_nSubSceneObject
 m_nSunVisibilityCluster
 m_nTargetType
 m_nTimesToFire
-m_nType
 m_nVBByteOffset
 m_nVertexAlbedoByteOffset
 m_nVertexAlbedoStreamOffset
@@ -3604,7 +3717,7 @@ m_nVisClusterMemberCount
 m_nVisClusterMemberOffset
 m_nVradQuality
 m_name
-m_nameStringableIndex
+m_nameStringTableIndex
 m_nodeLightingInfo
 m_objectFlags
 m_outputName
@@ -3635,7 +3748,6 @@ m_sceneObjectLayerIndices
 m_sceneObjects
 m_scriptClassName
 m_skin
-m_strValue
 m_szShaderSemantic
 m_targetDesc
 m_targetInput
@@ -3645,8 +3757,6 @@ m_tiles
 m_uiAddedBlocks < m_uiImageBlocks
 m_uiAddedBlocks == m_uiImageBlocks
 m_uiEncodingIterations == 0
-m_uint
-m_uint64
 m_vLODOrigin
 m_vLightingOrigin
 m_vLightmapUvScale
@@ -3693,6 +3803,7 @@ mod_init_func
 model_default_preview_sequence_name
 model_dump_convert_info
 modellib
+modifierhandle
 mputeCumulativeSum
 mputeCumulativeSumRow
 nTries < 10000000
@@ -3700,6 +3811,7 @@ ndroid420To
 near %s
 near '%c
 near char(%#02X
+net_array
 nffff
 no classname
 no failure reason set
@@ -3715,21 +3827,30 @@ oderConfigInternal
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/../src/mathlib/extended/generic_expr.g
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(320): Conversion not supported yet
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(989): Unsupported color format "%s", skipping
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(993): Unsupported color format "%s", skipping
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/entity2/entitykeyvalues.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/worldrenderer/grasstilesceneobject.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/worldrenderer/worldrenderermgr.cpp
 or unterminated input element such as: "STRING
 otate
 otateUV
+output
+p SDRDp p
 p WARAp
 p `&Ap
+p p RAp
+p p p0RBRCp
+p p p0p
+p p p0p(pXRC
+p p0p(pXRCp
+p(p0p p
 p0PPP
-p0``0
+p0``0 PPPPPPPP
 pFilter
 pL]ÐUH
 pMaxSamples_C
 pMessage
+pPPPPPPPP
 pReduce
 pSSSE3
 p[A\A^A
@@ -3738,6 +3859,7 @@ pbucket->plinkLast->GetNext() == nullptr
 phys_res
 pointer
 position
+ppppppp
 printf
 psCpuCaps
 pthread_create
@@ -3813,6 +3935,7 @@ s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
 s at offset %d
 s called on a pool arena (no root available
+s executing script: %s
 s is at refcount %d
 s!IcL
 s!IcT
@@ -3846,6 +3969,9 @@ sc_allow_precomputed_vismembers
 scale <= 32768
 scale >= 256
 scenesystem
+scripts/vscripts
+scripts/vscripts/%s
+single-literal
 source_file
 source_line
 src_height != 0
@@ -3864,6 +3990,7 @@ strcmp
 string
 string_t
 strlen
+stronghandle
 strstr
 stub_helper
 stubs
@@ -3881,9 +4008,9 @@ t$8HcD
 t$8HcD$4H
 t$8kD
 t%IcE<I
+t%fffff
 t&ffffff
 t'ffffff
-t)A#@DI
 t)fffff
 t,#BDI
 t-E9t
@@ -3892,20 +4019,30 @@ t8fff
 t;fffff
 tDfff
 tGffffff
+tPLc6H
 tSSSE3
 table: %u members
+target
+target_type
 targetname
 texcoord
 tgffffff
+thisEntity
 thread constructor failed
 thread initialization failed
+thread_bss
+thread_vars
+times_to_fire
 tkfffff
+tlv_bootstrap
 tnfffff
 toupper
 tqD9#uVD9s
 ttenuate
 tuHc@$;G
 twffff
+typesafe_float
+typesafe_int
 u %u %u
 u iterated blocks
 u unfinished blocks
@@ -3934,6 +4071,7 @@ unwind_info
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
+utl_vector
 utlstringtoken
 u{ffff
 űUȋM
@@ -3952,10 +4090,9 @@ vXA9v
 v\fff
 v]fffff
 v_Box
-v`A9v
+value_override
 values
 variant
-vecSave
 vector
 vector2
 vector2d
@@ -3981,6 +4118,7 @@ wAny_SSSE3
 wSSSE3
 wXA9w
 w\IcD
+weakhandle
 world renderer
 world_dump_loaded_worlds
 world_layer_base
