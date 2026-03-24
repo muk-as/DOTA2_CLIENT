@@ -773,7 +773,7 @@ namespace source2sdk
             double m_flLastPerfSampleTime; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
             std::int32_t m_nMultipleTickFrameCount; // 0x_            
-            uint8_t _pad_[0x_]; // 0x_
+            std::int32_t m_nTimesPlayersDisconnected; // 0x_            
             double m_flLastPerfSampleSendTime; // 0x_            
             bool m_bDidSeeStrategyTime; // 0x_            
             uint8_t _pad_[0x_]; // 0x_
