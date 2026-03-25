@@ -958,6 +958,95 @@ DOTAAbilityPanel.Hidden
 	border: 0px solid white;
 }
 
+.ConsumeItemPropmt
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(255, 224, 157);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #ffffff81 ) );
+	visibility: collapse;
+}
+
+.ConsumeItemPropmt .ConsumeItemPropmtGlow
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/ability_icon_inner_glow_png.vtex");
+	background-size: cover;
+	-s2-mix-blend-mode: screen;
+	wash-color: rgb(255, 237, 171);
+	animation-name: GlowConsumeItemPromt;
+	animation-duration: 0.75s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.activate_to_use .ConsumeItemPropmt
+{
+	visibility: visible;
+}
+
+@keyframes 'GlowConsumeItemPromt'
+{
+	0%
+	{
+		opacity: 0.3;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		opacity: 0.6;
+		brightness: 3;
+	}
+	
+}
+
+.activate_to_use
+{
+	animation-name: BounceConsumeItemPromt;
+	animation-duration: 3s;
+	animation-iteration-count: 4;
+}
+
+@keyframes 'BounceConsumeItemPromt'
+{
+	0%
+	{
+		brightness: 1;
+		transform: none;
+	}
+	
+	3%
+	{
+		brightness: 3;
+		transform: scale3d( 1.1, 1.1, 1 );
+	}
+	
+	6%
+	{
+		brightness: 1;
+		transform: none;
+	}
+	
+	9%
+	{
+		brightness: 3;
+		transform: scale3d( 1.1, 1.1, 1 );
+	}
+	
+	18%
+	{
+		transform: none;
+	}
+	
+	30%
+	{
+		brightness: 1;
+	}
+	
+}
+
 #Hotkey
 {
 	margin-left: -4px;
