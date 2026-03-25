@@ -562,7 +562,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x10e,
             // MScriptDescription "GetVisualZSpeedBaseOverride GetVisualZDelta"
             MODIFIER_PROPERTY_VISUAL_Z_DELTA = 0x10f,
-            // MScriptDescription "P GetVisualZSpeedBaseOverride"
+            // MScriptDescription "0 GetVisualZSpeedBaseOverride"
             MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 0x110,
             // MScriptDescription "GetModifierNoVisionOfAttacker "
             MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 0x111,
@@ -612,7 +612,7 @@ namespace source2sdk
             MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 0x127,
             // MScriptDescription "GetModifierPropetyFailAttack GetModifierAvoidDamageAfterReductions"
             MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS = 0x128,
-            // MScriptDescription " GetModifierPropetyFailAttack"
+            // MScriptDescription "A GetModifierPropetyFailAttack"
             MODIFIER_PROPERTY_FAIL_ATTACK = 0x129,
             // MScriptDescription "GetModifierSuppressFullscreenDeathFX GetModifierPrereduceIncomingDamage_Mult"
             MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 0x12a,
@@ -648,7 +648,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x139,
             // MScriptDescription "GetModifierShareXPRune OnDamageHPLoss"
             MODIFIER_EVENT_ON_DAMAGE_HPLOSS = 0x13a,
-            // MScriptDescription "C GetModifierShareXPRune"
+            // MScriptDescription "B GetModifierShareXPRune"
             MODIFIER_PROPERTY_SHARE_XPRUNE = 0x13b,
             // MScriptDescription "GetModifierNoFreeTPScrollOnDeath GetModifierXPFountainCountdownTimeOverride"
             MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE = 0x13c,
@@ -770,7 +770,7 @@ namespace source2sdk
             MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS = 0x176,
             // MScriptDescription "GetModifierMoveSpeedMax_BonusConstant GetModifierNeutralEnhancementOptions"
             MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS = 0x177,
-            // MScriptDescription "X GetModifierMoveSpeedMax_BonusConstant"
+            // MScriptDescription " GetModifierMoveSpeedMax_BonusConstant"
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x178,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant "
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x179,
