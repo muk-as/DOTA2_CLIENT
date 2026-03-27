@@ -10796,6 +10796,7 @@
 28CDOTA_Ability_Rubick_Hidden2
 28CDOTA_Ability_Rubick_Hidden3
 28CDOTA_Ability_Rubick_Hidden4
+28CDOTA_Ability_Rubick_Hidden5
 28CDOTA_Ability_Slardar_Sprint
 28CDOTA_Ability_Slark_DarkPact
 28CDOTA_Ability_Sniper_TakeAim
@@ -20813,6 +20814,7 @@ Ability can't be used while tethered
 Ability cannot be auto-cast
 Ability cannot be upgraded
 Ability cast failed
+Ability contributions delta exceeded by %f in match ID %llu. Check logs for error records.\n
 Ability contributions logging mode. 0 = off, 1 = bad records only, 2 = all records
 Ability expected to have no mana cost
 Ability gained a level
@@ -21489,7 +21491,6 @@ AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 AssignRangeMultipler with bitcount=32!\n
-Assigned role and lane: %s (%s) -> %s\n
 Assigning an auto-generated AbilityID to new ability: %s=%d\n
 Associated Player Pawn
 AssociatedConsumable
@@ -24455,6 +24456,7 @@ CDOTA_Ability_Rubick_Hidden1
 CDOTA_Ability_Rubick_Hidden2
 CDOTA_Ability_Rubick_Hidden3
 CDOTA_Ability_Rubick_Hidden4
+CDOTA_Ability_Rubick_Hidden5
 CDOTA_Ability_Rubick_Might_And_Magus
 CDOTA_Ability_Rubick_NullField
 CDOTA_Ability_Rubick_SpellSteal
@@ -29719,6 +29721,7 @@ CDOTA_TeamCommander::UpdateLastKnownEnemyLocations
 CDOTA_TeamCommander::UpdatePotentialLocationGrid
 CDOTA_TeamCommander::UpdatePushLaneDesires
 CDOTA_TeamCommander::UpdateRoamDesire
+CDOTA_TeamCommander::UpdateRoleAndLaneAssignments
 CDOTA_TeamCommander::UpdateRoshanDesire
 CDOTA_TeamCommander::UpdateRuneVision
 CDOTA_TeamCommander::UpdateTeamRoamDesire
@@ -45728,7 +45731,7 @@ MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
 MapValuesEntry
 Maps the shape to it's code behavior
-Mar 26 2026
+Mar 27 2026
 Margin desired = %0.2f, actual = %0.2f\n
 Mark the ability button for this ability as needing a refresh
 Mark this quest complete
@@ -45955,6 +45958,7 @@ Minimum send interval: Don't check for lobby vs game state discrepancies if we'v
 Minimum size of pushback objects
 Minimum stopping speed when on ground
 Minimum tablet level to unlock this type of gem, -1 or 0 for always unlocked
+Minimum threshold for ability contribution delta before triggering asserts
 Minimum time between ability contributions error log entries
 Minimum updates per second that the server will allow
 MinimumHP
@@ -48243,7 +48247,6 @@ Number of times Nian has used the roar
 Number of times a player is allowed to pause the game
 Numbers starting with leading zero must be in octal
 O
-OB
 OBSERVABLE
 OBSERVER_INTERP_NONE
 OBSERVER_INTERP_SETTLING
@@ -50762,6 +50765,7 @@ S:Gamerules: WAIT_FOR_PLAYERS_TO_LOAD entering substate EWFPS_Success\n
 SAFELANE
 SAVE\\animgraph
 SAVE_HEADER
+SB
 SBatches multiple data updates, snapshots, and inference requests into a single call
 SCALE
 SCALE_INV
@@ -54115,7 +54119,6 @@ TeamNeutralItem
 TeamNum
 TeamNumber
 TeamThink
-Teammate: %s (%s)\n
 Teams
 Teleport To Path Node [node=%i
 Teleport To Point
@@ -55016,7 +55019,7 @@ UpdateQueryCache
 UpdateRealtimeGameState
 UpdateRoamDesire
 UpdateRoamDesire returning a non-table value!\n
-UpdateRoleAndLaneAssignments:\n
+UpdateRoleAndLaneAssignments
 UpdateRoshanDesire
 UpdateRuneVision
 UpdateSearch
@@ -60636,6 +60639,7 @@ dota_731_teaser_enabled
 dota_732
 dota_737
 dota_ability_channel_finished
+dota_ability_contribution_assert_minimum
 dota_ability_contribution_common.h
 dota_ability_debug
 dota_ability_debug_disable
@@ -60728,6 +60732,7 @@ dota_bot_avg_fps
 dota_bot_challenge_game_mode
 dota_bot_challenge_submode
 dota_bot_chat_throttle_duration
+dota_bot_debug_assign_hero_roles
 dota_bot_debug_clear
 dota_bot_debug_clear_all
 dota_bot_debug_force_push_tower
@@ -60744,7 +60749,6 @@ dota_bot_debug_path_avg
 dota_bot_debug_path_draw
 dota_bot_debug_pathing
 dota_bot_debug_potential_location
-dota_bot_debug_roles
 dota_bot_debug_team
 dota_bot_debug_ward_spots
 dota_bot_disable
@@ -70329,6 +70333,7 @@ m_LaneFrontCreepsAmounts
 m_LaneFrontTowersAmounts
 m_LaneFrontUpdate
 m_LaneLengths
+m_LaneMigrationTimer
 m_LaneNodes
 m_LaneReassignTimer
 m_LaneStatusTimer
@@ -79378,7 +79383,6 @@ meteor_distance_spread
 meteor_hammer_purchases
 method
 method_description
-mid lane
 mid_lane
 midair_explosion_radius
 midas_purchases
@@ -88690,7 +88694,6 @@ octarine_tested
 octree.dat
 odds
 odds_damage
-off lane
 off_duration
 off_duration_initial
 offhand_kill
@@ -89091,6 +89094,7 @@ pangolier_rollup
 pangolier_rollup_stop
 pangolier_shield_crash
 pangolier_swashbuckle
+panorama/images/heroes/icons/%s_png.vtex
 panorama\\images\\teamfancontent\\season_%d\\%d\\banner_png.vtex
 panorama\\images\\teamfancontent\\season_%d\\%d\\baselogo_png.vtex
 panorama\\images\\teamfancontent\\season_%d\\%u\\banner_png.vtex
@@ -93896,6 +93900,7 @@ rubick_hidden1
 rubick_hidden2
 rubick_hidden3
 rubick_hidden4
+rubick_hidden5
 rubick_might_and_magus
 rubick_null_field
 rubick_spell_steal
@@ -94358,9 +94363,11 @@ s: member count overflow (%u)\n
 s: no space for allocation of %u\n
 s: removed %d offsets from array\n
 s: removed change %s, %s %s\n
+s: requires a comma-separated list of hero names\n
 s: resources loaded in %.3f sec\n
 s: unexpected parameter format for InputSetBodyGroup. Had %s, expected <bodygroupname,partnumber>\n
 s: unexpected parameter type %s, expected a CString\n
+s: unrecognized hero name: %s\n
 s:%llu
 s::%s (Entity Output Handler
 s:Gamerules: entering state #%d\n
@@ -94458,7 +94465,6 @@ s_upgraded_mega
 s_variant_%d
 saco
 safe
-safe lane
 sai_attack_range
 sai_base_attack_time
 sai_base_ms
@@ -98257,6 +98263,7 @@ tools/images/pulse_editor/observable_variable_listener.png
 tools/images/pulse_editor/requirements.png
 tools_event_desc
 tooltip
+tooltip_clones
 tooltip_image
 tooltip_string
 top_custom_games
@@ -99839,6 +99846,7 @@ void CDOTABaseAbility::AlertSpecialValueFloatIntoInteger(const char *) const
 void CDOTABaseAbility_BotScript::ToggleAutoCast
 void CDOTACustomGameCache::StartInstallingUGC(CUtlVector<InstallCustomGameCacheInfo_t> &, std::function<bool (const CMsgCustomGameInstallStatus
 void CDOTAGCServerSystem::ActivateServerFromLobby
+void CDOTAGCServerSystem::MatchSignOut
 void CDOTAGCServerSystem::SetHibernation(bool
 void CDOTAGCServerSystem::UpdateGCServerInfo(bool
 void CDOTAGameRules::State_Enter_WAIT_FOR_PLAYERS_TO_LOAD
