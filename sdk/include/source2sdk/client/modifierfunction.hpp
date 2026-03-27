@@ -738,9 +738,9 @@ namespace source2sdk
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x166,
             // MScriptDescription "GetVisionDegreeRestriction GetTierTokenReroll"
             MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x167,
-            // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
+            // MScriptDescription "P GetVisionDegreeRestriction"
             MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x168,
-            // MScriptDescription " GetModifierTotal_ConstantBlockStacking"
+            // MScriptDescription "GetModifierInventorySlotRestricted GetModifierTotal_ConstantBlockStacking"
             MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_STACKING = 0x169,
             // MScriptDescription "GetModifierInventorySlotRestricted"
             MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED = 0x16a,
