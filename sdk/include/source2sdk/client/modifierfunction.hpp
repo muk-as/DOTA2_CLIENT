@@ -736,7 +736,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x165,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x166,
-            // MScriptDescription "T GetTierTokenReroll"
+            // MScriptDescription "0T GetTierTokenReroll"
             MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x167,
             // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
             MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x168,
