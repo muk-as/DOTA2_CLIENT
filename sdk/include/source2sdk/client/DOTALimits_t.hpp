@@ -33,7 +33,7 @@ namespace source2sdk
             // MScriptDescription "Default number of non-spectator players supported. Default number of players per team."
             DOTA_DEFAULT_MAX_TEAM = 0x5,
             // MScriptDescription "�
-	�� Default number of non-spectator players supported."
+�� Default number of non-spectator players supported."
             DOTA_DEFAULT_MAX_TEAM_PLAYERS = 0xa,
         };
     };
