@@ -246,7 +246,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x70,
             // MScriptDescription "GetModifierAttackRangeOverride GetModifierCastRangeBonusStacking"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x71,
-            // MScriptDescription "p GetModifierAttackRangeOverride"
+            // MScriptDescription "P GetModifierAttackRangeOverride"
             MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE = 0x72,
             // MScriptDescription "GetModifierAttackRangeBonusUnique GetModifierAttackRangeBonus"
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS = 0x73,
@@ -562,7 +562,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x10e,
             // MScriptDescription "GetVisualZSpeedBaseOverride GetVisualZDelta"
             MODIFIER_PROPERTY_VISUAL_Z_DELTA = 0x10f,
-            // MScriptDescription " GetVisualZSpeedBaseOverride"
+            // MScriptDescription "  GetVisualZSpeedBaseOverride"
             MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 0x110,
             // MScriptDescription "GetModifierNoVisionOfAttacker "
             MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 0x111,
@@ -736,7 +736,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x165,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x166,
-            // MScriptDescription "0T GetTierTokenReroll"
+            // MScriptDescription " T GetTierTokenReroll"
             MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x167,
             // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
             MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x168,
@@ -774,7 +774,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x178,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant "
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x179,
-            // MScriptDescription " GetModifierPropertyForbidIllusions"
+            // MScriptDescription "p GetModifierPropertyForbidIllusions"
             MODIFIER_PROPERTY_FORBID_ILLUSIONS = 0x17a,
             // MScriptDescription "GetModifierPropertyRestorationAmplification GetModifierPropertyManacostOverride"
             MODIFIER_PROPERTY_MANACOST_OVERRIDE = 0x17b,
