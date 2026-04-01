@@ -164,6 +164,7 @@
 22CSchemaInstallCallback
 22IStreamBuilderCallbackI14CCommandStreamE
 22IToolsResourceListener
+23CDescriptorCountTracker
 23CRasterizerStateCreator
 23CRayTracePipelineVulkan
 23CTextureStreamingHelper
@@ -3275,6 +3276,7 @@ TransposeWx8_SSSE3
 TransposeWxH_C
 Triggers a RenderDoc capture
 Triggers a RenderDoc capture of a specific Window
+Trim descriptor pools when not in use for a number of frames
 Truncated header
 TryDifferential
 TryDifferentialHalf
@@ -5091,33 +5093,33 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/textureba
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/texturebase.cpp(3615):ResourceHandleToData( %s ) failed! Falling back to error texture
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/asynccompilehelpervulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp(1492): vmaCreatePool failed with error: %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp(1563): vmaCreatePool failed with error: %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp:726
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp(1489): vmaCreatePool failed with error: %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp(1560): vmaCreatePool failed with error: %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/memorymgrvulkan.cpp:723
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/pipelinecachemgrvulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/pipelinemgrvulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/raytracevulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/rendercontextvulkan.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/rendercontextvulkan.cpp(460
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/rendercontextvulkan.cpp(6313):  - invalid offset, aborting texture update to avoid hanging the GPU [texture: %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/rendercontextvulkan.cpp(445
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/rendercontextvulkan.cpp(6288):  - invalid offset, aborting texture update to avoid hanging the GPU [texture: %s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10048): vmaBindImageMemory failed for image %s with error %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10080): Unable to get Vulkan image for %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10086): no allocation for image %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10226): failed to allocate GPU memory in custom pool for %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10281): vmaBindImageMemory failed for buffer %s with error %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10320): Unable to get Vulkan buffer
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10326): no allocation for buffer %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10397): Unable to get Vulkan image for %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10403): no allocation for image %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10422): Unable to get Vulkan buffer
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10428): no allocation for buffer %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(9904): Allocation already set for %s, it is not valid to assign a new allocation
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(9981): failed to allocate GPU memory in custom pool for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10029): vmaBindImageMemory failed for image %s with error %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10061): Unable to get Vulkan image for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10067): no allocation for image %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10207): failed to allocate GPU memory in custom pool for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10262): vmaBindImageMemory failed for buffer %s with error %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10301): Unable to get Vulkan buffer
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10307): no allocation for buffer %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10378): Unable to get Vulkan image for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10384): no allocation for image %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10403): Unable to get Vulkan buffer
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(10409): no allocation for buffer %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(9885): Allocation already set for %s, it is not valid to assign a new allocation
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderdevicevulkan.cpp(9962): failed to allocate GPU memory in custom pool for %s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/renderthreadvulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/shadertablevulkan.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/texturevulkan.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/texturevulkan.cpp(1441
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/texturevulkan.cpp(1438
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/rendersystem/vulkan/vulkanfunctions.h
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1137): Error opening file "%s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1145): Error opening file "%s
@@ -5294,6 +5296,7 @@ r_vma_defrag_moves_per_frame
 r_vma_defrag_threshold_mb
 r_vulkan_force_sync1
 r_vulkan_sw_cmd_lists
+r_vulkan_trim_descriptor_pools
 r_vulkan_validation_filter_in
 r_vulkan_validation_filter_out
 r_wait_on_present
