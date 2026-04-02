@@ -18,7 +18,7 @@ namespace source2sdk
         // Size: 0x_
         enum class DOTALimits_t : std::uint32_t
         {
-            // MScriptDescription "m_hVarmint Max number of players connected to the server including spectators."
+            // MScriptDescription "Max number of players per team. Max number of players connected to the server including spectators."
             DOTA_MAX_PLAYERS = 0x40,
             // MScriptDescription "Max number of players per team."
             DOTA_MAX_TEAM = 0x18,
@@ -28,12 +28,13 @@ namespace source2sdk
             DOTA_MAX_TEAM_PLAYERS = 0x18,
             // MScriptDescription "Max number of viewers in a spectator lobby. How many spectators can watch."
             DOTA_MAX_SPECTATOR_TEAM_SIZE = 0x28,
-            // MScriptDescription "Max number of viewers in a spectator lobby."
+            // MScriptDescription "
+�� Max number of viewers in a spectator lobby."
             DOTA_MAX_SPECTATOR_LOBBY_SIZE = 0xf,
             // MScriptDescription "Default number of non-spectator players supported. Default number of players per team."
             DOTA_DEFAULT_MAX_TEAM = 0x5,
             // MScriptDescription "�
-	�� Default number of non-spectator players supported."
+�� Default number of non-spectator players supported."
             DOTA_DEFAULT_MAX_TEAM_PLAYERS = 0xa,
         };
     };
