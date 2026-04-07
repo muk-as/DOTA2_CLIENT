@@ -3601,6 +3601,7 @@
 16CModifierFactoryI29CDOTA_Modifier_StackedNeutralE
 16CModifierFactoryI29CDOTA_Modifier_Tinker_RearmorE
 16CModifierFactoryI29CDOTA_Modifier_Tiny_AvalancheE
+16CModifierFactoryI29CDOTA_Modifier_Tiny_No_CleaveE
 16CModifierFactoryI29CDOTA_Modifier_Tiny_Tree_GrabE
 16CModifierFactoryI29CDOTA_Modifier_Truesight_AuraE
 16CModifierFactoryI29CDOTA_Modifier_Tutorial_SleepE
@@ -11308,6 +11309,7 @@
 29CDOTA_Modifier_StackedNeutral
 29CDOTA_Modifier_Tinker_Rearmor
 29CDOTA_Modifier_Tiny_Avalanche
+29CDOTA_Modifier_Tiny_No_Cleave
 29CDOTA_Modifier_Tiny_Tree_Grab
 29CDOTA_Modifier_Truesight_Aura
 29CDOTA_Modifier_Tutorial_Sleep
@@ -21417,7 +21419,7 @@ ApplyModifier
 ApplyMotionController
 ApplyVerticalMotionController
 ApplyWearableModifiers
-Apr  6 2026
+Apr  7 2026
 Arc Cos
 Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to
 Arc Sin
@@ -29287,6 +29289,7 @@ CDOTA_Modifier_Tiny_CraggyExterior
 CDOTA_Modifier_Tiny_CraggyExterior_Debuff
 CDOTA_Modifier_Tiny_Grow
 CDOTA_Modifier_Tiny_Insurmountable
+CDOTA_Modifier_Tiny_No_Cleave
 CDOTA_Modifier_Tiny_Rocksteady
 CDOTA_Modifier_Tiny_Toss
 CDOTA_Modifier_Tiny_TossTree_Bonus
@@ -37404,6 +37407,7 @@ EnableAbilityUpgradeWhitelist
 EnableAccelDecel
 EnableAlternatePath
 EnableAngularConstraint
+EnableChargeDisplayOverride
 EnableCollision
 EnableCollisions
 EnableCreepAggroViz
@@ -40108,6 +40112,7 @@ GetModifierPropertyConsumableUseSpeed
 GetModifierPropertyForbidIllusions
 GetModifierPropertyHealingAmplificationUnique
 GetModifierPropertyManacostOverride
+GetModifierPropertyRedirectHealthGain
 GetModifierPropertyRestorationAmplification
 GetModifierPropertyRestorationAmplificationUnique
 GetModifierPropertySuppressInvalidMoveAttackOrders
@@ -45115,6 +45120,7 @@ MODIFIER_EVENT_ON_PROJECTILE_DODGE
 MODIFIER_EVENT_ON_PROJECTILE_OBSTRUCTION_HIT
 MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED
 MODIFIER_EVENT_ON_PURGE
+MODIFIER_EVENT_ON_REDIRECT_HEALTH_GAIN
 MODIFIER_EVENT_ON_REFRESH
 MODIFIER_EVENT_ON_RESPAWN
 MODIFIER_EVENT_ON_RUNE_SPAWN
@@ -45396,6 +45402,7 @@ MODIFIER_PROPERTY_PROJECTILE_SPEED_TARGET
 MODIFIER_PROPERTY_PROVIDES_FOW_POSITION
 MODIFIER_PROPERTY_PSEUDORANDOM_BONUS
 MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION
+MODIFIER_PROPERTY_REDIRECT_HEALTH_GAIN
 MODIFIER_PROPERTY_REDIRECT_SPELL
 MODIFIER_PROPERTY_REFLECT_SPELL
 MODIFIER_PROPERTY_REINCARNATION
@@ -48787,6 +48794,7 @@ OnReachedStart
 OnReachedValueCustom
 OnReachedValueOne
 OnReachedValueZero
+OnRedirectHealthGain
 OnRefresh
 OnRemove
 OnRemoved
@@ -57127,6 +57135,7 @@ attribute_controlled_attached_particles
 attribute_group
 attribute_levels
 attribute_name
+attribute_penalty_pct
 attribute_share_pct
 attribute_type
 attribute_value
@@ -57573,6 +57582,7 @@ bVisible
 bVisibleToEnemies
 bWasAnObservableComputation
 bWasSaved
+bWrapsTested
 bYashaAndKayaApplied
 b\a\t\n\v
 b\b\b\b
@@ -57592,7 +57602,6 @@ b\n\v\f\r
 b\t\a\v
 b\t\n\v
 b\t\v\f\r
-b_HasReachedMaxStacks
 b_has_path
 back
 back_angle
@@ -57685,7 +57694,6 @@ barrier_amt
 barrier_block
 barrier_block_creep
 barrier_bonus
-barrier_cd
 barrier_decay_pct
 barrier_duration
 barrier_flat
@@ -58564,6 +58572,7 @@ building_damage_pct
 building_dmg_pct
 building_duration_limit
 building_healing_pct
+building_pct_damage
 building_state
 building_type
 built-in
@@ -62216,11 +62225,11 @@ ehandle
 ehandle_values
 eidelon_base_damage
 eidelon_base_movespeed
-eidelon_damage_spread
 eidelon_max_health
 eidolon_attack_range
 eidolon_bonus_attack_speed
 eidolon_bonus_damage
+eidolon_damage_spread
 eidolon_gold_bounty_max
 eidolon_gold_bounty_min
 eidolon_magic_resist
@@ -63240,6 +63249,7 @@ firetrigger
 firework_mine
 firing in: %.2f sec
 first
+first_ability_level
 first_attack_record
 first_blood
 first_blood_after_10_minutes
@@ -66348,7 +66358,6 @@ item_clumsy_net
 item_collections
 item_conjurers_catalyst
 item_consecrated_wraps
-item_consecrated_wraps_stack_gain_check
 item_container_id
 item_cooldown_reduction
 item_cooldown_seconds
@@ -71132,6 +71141,7 @@ m_bBanSuggestedHeroes
 m_bBatchSameVolumeType
 m_bBattleBonusActive
 m_bBattleCup
+m_bBittenThisFrame
 m_bBlasted
 m_bBlockFoW
 m_bBlockMetamorph
@@ -71374,6 +71384,7 @@ m_bEffectMultiplied
 m_bEnableAngleBetweenNormalAndGravityRange
 m_bEnableAngleBetweenNormalAndGravityRange == 0
 m_bEnableAngularConstraint
+m_bEnableChargeDisplayOverride
 m_bEnableFreeCourierMode
 m_bEnableFriendlyBuildingMoveTo
 m_bEnableIndirect
@@ -72364,6 +72375,7 @@ m_bSpeechUseSpawnInsteadOfRespawnConcept
 m_bSpeedBonus
 m_bSpellDamageField
 m_bSpellImmunity
+m_bSpent
 m_bSpiritBear
 m_bSpiritsExplode
 m_bSplitNavSpace
@@ -73772,7 +73784,6 @@ m_flLastFierySoulFullStackTime
 m_flLastFireTime
 m_flLastFocusFireAttackTime
 m_flLastGameTime
-m_flLastHealTime
 m_flLastHealedTime
 m_flLastHeroAttackTime
 m_flLastHit
@@ -74073,9 +74084,12 @@ m_flPathfindingSearchDepthScale
 m_flPathingDistanceNormFactor
 m_flPauseDuration
 m_flPauseTime
+m_flPenaltyAgility
 m_flPenaltyHPRegen
 m_flPenaltyHPRegenPct
+m_flPenaltyIntelligence
 m_flPenaltyMPRegen
+m_flPenaltyStrength
 m_flPendingRespawnTime
 m_flPercentage
 m_flPetThreatLevel
@@ -76283,6 +76297,7 @@ m_nDireSeriesWins
 m_nDireSilverCheers
 m_nDirectLight
 m_nDirection
+m_nDisableOverheatUntil
 m_nDisableTakePhysicsDamageSpawnFlag
 m_nDisadvantage
 m_nDisguiseEffectIndex
@@ -76821,6 +76836,8 @@ m_nPauseStartTick
 m_nPausesRemaining
 m_nPenaltyAS
 m_nPenaltyDamage
+m_nPenaltyHealth
+m_nPenaltyMana
 m_nPenetrate
 m_nPerchedTree
 m_nPermanentDesire
@@ -78378,6 +78395,7 @@ m_vTargetHorizontalDirection
 m_vTargetLastKnownPosition
 m_vTargetLoc
 m_vTargetLocation
+m_vTargetOrigin
 m_vTargetPos
 m_vTargetPosition
 m_vTargetPositions
@@ -79484,6 +79502,7 @@ minigame_leaderboard_name
 minimap_radar.cycle
 minimap_radar.target
 minimum_damage
+minimum_damage_familiars
 minimum_distance
 minimum_mana
 minimum_priority
@@ -82819,6 +82838,7 @@ modifier_tiny_craggy_exterior
 modifier_tiny_craggy_exterior_debuff
 modifier_tiny_grow
 modifier_tiny_insurmountable
+modifier_tiny_no_cleave
 modifier_tiny_rocksteady
 modifier_tiny_toss
 modifier_tiny_toss_charge_counter
@@ -89600,6 +89620,7 @@ particles/items7_fx/archimedes_satchel_speed.vpcf
 particles/items7_fx/misrule_focus.vpcf
 particles/items7_fx/misrule_focus_hands.vpcf
 particles/items7_fx/misrule_focusbase_attack_ground_burnhit_minor.vpcf
+particles/items8_fx/consecrated_wraps_stack.vpcf
 particles/items8_fx/crellas_crozier_buff.vpcf
 particles/items8_fx/crellas_crozier_debuff.vpcf
 particles/items8_fx/crellas_crozier_pulses.vpcf
@@ -94894,6 +94915,7 @@ seasonal_ti9_monkey
 seasonal_ti9_shovel
 seasons
 second
+second_ability_level
 second_attack_damage_penalty
 second_attack_delay
 second_cast_cooldown
@@ -96531,6 +96553,7 @@ special_bonus_unique_invoker_3
 special_bonus_unique_invoker_5
 special_bonus_unique_invoker_9
 special_bonus_unique_invoker_chaos_meteor_size
+special_bonus_unique_invoker_forged_spirit_armor_reduction
 special_bonus_unique_invoker_orb_levels
 special_bonus_unique_jakiro_3
 special_bonus_unique_jakiro_6
@@ -98067,6 +98090,7 @@ thinkalways
 thinker
 thinkerEntities
 thinkfunc_t
+third_ability_level
 third_radius
 thirdparty/protobuf-3.21.8/src/google/protobuf/map.h
 thirdparty/protobuf-3.21.8/src/google/protobuf/map_field.h
