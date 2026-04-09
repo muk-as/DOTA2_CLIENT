@@ -734,7 +734,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x164,
             // MScriptDescription "OnCleaveAttackLanded OnTreeCutDown"
             MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x165,
-            // MScriptDescription " OnCleaveAttackLanded"
+            // MScriptDescription "  OnCleaveAttackLanded"
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x166,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x167,
