@@ -698,7 +698,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_HERO_BEGIN_DYING = 0x152,
             // MScriptDescription "GetModifierBaseHpRegenPerStrBonusPercentage GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BONUS_LOTUS_HEAL = 0x153,
-            // MScriptDescription " GetModifierBaseHpRegenPerStrBonusPercentage"
+            // MScriptDescription "  GetModifierBaseHpRegenPerStrBonusPercentage"
             MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE = 0x154,
             // MScriptDescription "GetModifierBaseAttackSpeedPerAgiBonusPercentage GetModifierBaseArmorPerAgiBonusPercentage"
             MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE = 0x155,
@@ -734,7 +734,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x164,
             // MScriptDescription "OnCleaveAttackLanded OnTreeCutDown"
             MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x165,
-            // MScriptDescription "0 OnCleaveAttackLanded"
+            // MScriptDescription "H OnCleaveAttackLanded"
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x166,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x167,
