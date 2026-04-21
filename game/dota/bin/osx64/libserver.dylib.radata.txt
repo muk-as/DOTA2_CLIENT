@@ -7910,6 +7910,7 @@
 20CDOTA_BaseNPC_Healer
 20CDOTA_BotAction_Idle
 20CDOTA_BotMode_Attack
+20CDOTA_BotMode_Deward
 20CDOTA_BotMode_Laning
 20CDOTA_BotMode_Roshan
 20CDOTA_Bot_Hero_Pudge
@@ -9259,6 +9260,7 @@
 24CDOTA_BotMode_SecretShop
 24CDOTA_BotMode_Trial_Farm
 24CDOTA_BotMode_Trial_Rune
+24CDOTA_BotMode_Trial_Ward
 24CDOTA_Bot_Hero_Alchemist
 24CDOTA_Bot_Hero_Necrolyte
 24CDOTA_Bot_Hero_Nevermore
@@ -12974,6 +12976,7 @@
 33CDOTA_Bot_AbilityUsage_MagicStick
 33CDOTA_Bot_AbilityUsage_PhaseBoots
 33CDOTA_Bot_AbilityUsage_RoyalJelly
+33CDOTA_Bot_AbilityUsage_SentryWard
 33CDOTA_Bot_AbilityUsage_Sheepstick
 33CDOTA_Bot_AbilityUsage_SpiderLegs
 33CDOTA_Creature_BehaviorController
@@ -18706,7 +18709,6 @@
 69CDOTA_Modifier_CDOTA_Modifier_CrystalMaiden_IceRink_Movement_Ricochet
 6?10IGameEvent
 6AABB_t
-6ActionI13CDOTA_BaseNPCE
 6CCoJob
 6CWorld
 6D33
@@ -21417,7 +21419,7 @@ ApplyModifier
 ApplyMotionController
 ApplyVerticalMotionController
 ApplyWearableModifiers
-Apr 20 2026
+Apr 21 2026
 Arc Cos
 Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to
 Arc Sin
@@ -22058,7 +22060,8 @@ Bot querying nearby trees with a distance greater than cached!\n
 Bot script ID to use for local games
 Bot scripts do not check CRC, cache miss.\n
 Bot scripts reloaded.\n
-Bot ward spot %s in an invalid location, this may cause bots to get stuck
+Bot ward spot %s in an invalid location, this may cause bots to get stuck.\n
+Bot ward spot %s not found in map; falling back to hardcoded location.\n
 BotAttackScoreBonus
 BotBaseScriptScope
 BotBuilds
@@ -25494,6 +25497,8 @@ CDOTA_BotMode_DefendAlly::GetDesire
 CDOTA_BotMode_DefendAlly::Think
 CDOTA_BotMode_DefendTower::GetDesire
 CDOTA_BotMode_DefendTower::Think
+CDOTA_BotMode_Deward::GetDesire
+CDOTA_BotMode_Deward::Think
 CDOTA_BotMode_EvasiveManeuvers::GetDesire
 CDOTA_BotMode_EvasiveManeuvers::Think
 CDOTA_BotMode_Farm::GetDesire
@@ -25540,6 +25545,8 @@ CDOTA_BotMode_Trial_Rune::GetDesire
 CDOTA_BotMode_Trial_Rune::Think
 CDOTA_BotMode_Trial_SecretShop::GetDesire
 CDOTA_BotMode_Trial_SecretShop::Think
+CDOTA_BotMode_Trial_Ward::GetDesire
+CDOTA_BotMode_Trial_Ward::Think
 CDOTA_BotMode_Ward::GetDesire
 CDOTA_BotMode_Ward::Think
 CDOTA_BotMode_Watcher::Think
@@ -29727,6 +29734,7 @@ CDOTA_TeamCommander::UpdateRoshanDesire
 CDOTA_TeamCommander::UpdateRuneVision
 CDOTA_TeamCommander::UpdateTeamRoamDesire
 CDOTA_TeamCommander::UpdateUnitLists
+CDOTA_TeamCommander::UpdateWardLocations
 CDOTA_TeleportTimerManager
 CDOTA_TempTree
 CDOTA_Tiny_ScepterTree
@@ -34202,6 +34210,7 @@ DEM_SyncTick
 DEM_UserCmd
 DEPRICATED_EF_NOINTERP
 DETACH_REGISTER
+DEWARD
 DFLAG_ALLOW_NON_AUTHORITATIVE
 DFLAG_ALWAYS_FIRE_DAMAGE_EVENTS
 DFLAG_ALWAYS_GIB
@@ -34363,6 +34372,7 @@ DOTAMatchVote_INVALID
 DOTAMatchVote_NEGATIVE
 DOTAMatchVote_POSITIVE
 DOTAMinimapEvent_t
+DOTAMinimapGrid
 DOTAModifierAttribute_t
 DOTAMusic.Death
 DOTAMusicStatus_t
@@ -34501,6 +34511,7 @@ DOTA_BOT_MODE_DEFEND_ALLY
 DOTA_BOT_MODE_DEFEND_TOWER_BOT
 DOTA_BOT_MODE_DEFEND_TOWER_MID
 DOTA_BOT_MODE_DEFEND_TOWER_TOP
+DOTA_BOT_MODE_DEWARD
 DOTA_BOT_MODE_EVASIVE_MANEUVERS
 DOTA_BOT_MODE_FARM
 DOTA_BOT_MODE_ITEM
@@ -34871,7 +34882,7 @@ DOTA_ContextualTips_DeathSavingItems_Healing_Annotation
 DOTA_ContextualTips_DeathSavingItems_Healing_Text
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Annotation
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Text
-DOTA_ContextualTips_DeathSavingItems_Stick_Annotation
+DOTA_ContextualTips_DeathSavingItems_Stick_Annotation:f
 DOTA_ContextualTips_DeathSavingItems_Stick_Text
 DOTA_ContextualTips_MegaCreeps_Allies_Annotation
 DOTA_ContextualTips_MegaCreeps_Allies_Text
@@ -36474,6 +36485,7 @@ Determine whether an issued command with no target is valid
 Determines whether response criteria is matched on server or client
 Devour adds '%s'\n
 Devour removes '%s'\n
+Dewarding
 Did not execute '%s' because the 'Target' object was missing
 Did not find any close death events!\n
 Did not find both an input and ouput field within root components block
@@ -37810,6 +37822,7 @@ EyeAngles
 EyePosition
 Eyes
 F16CNmTwoBoneIKTask
+F6ActionI13CDOTA_BaseNPCE
 FACET_COLOR_BLUE
 FACET_COLOR_COUNT
 FACET_COLOR_GRAY
@@ -55031,6 +55044,7 @@ UpdateTeamSlot
 UpdateUnitLists
 UpdateVerticalMotion
 UpdateViewerSize
+UpdateWardLocations
 Updates a cached data entry
 Updates custom hero, unit and ability KeyValues in memory with the latest values from disk
 Updates: %d\n
@@ -60753,6 +60767,7 @@ dota_bot_debug_path_draw
 dota_bot_debug_pathing
 dota_bot_debug_potential_location
 dota_bot_debug_team
+dota_bot_debug_team_ward_spots
 dota_bot_debug_ward_spots
 dota_bot_disable
 dota_bot_disable_test
@@ -63949,6 +63964,7 @@ game/server/dota/bot/dota_bot_mode_bot_challenge_endgame.cpp
 game/server/dota/bot/dota_bot_mode_companion.cpp
 game/server/dota/bot/dota_bot_mode_defend_ally.cpp
 game/server/dota/bot/dota_bot_mode_defend_tower.cpp
+game/server/dota/bot/dota_bot_mode_deward.cpp
 game/server/dota/bot/dota_bot_mode_evasive_maneuvers.cpp
 game/server/dota/bot/dota_bot_mode_farm.cpp
 game/server/dota/bot/dota_bot_mode_item.cpp
@@ -63979,6 +63995,7 @@ game/server/dota/bot/trial/dota_bot_mode_trial_retreat.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_roshan.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_rune.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_secret_shop.cpp
+game/server/dota/bot/trial/dota_bot_mode_trial_ward.cpp
 game/server/dota/dota_base_ability.h
 game/server/dota/dota_client.cpp
 game/server/dota/dota_combatlog.cpp
@@ -70901,6 +70918,8 @@ m_Victims
 m_ViewerTimer
 m_WaitComplete
 m_WakeResume
+m_WardCalculationTimer
+m_WardPlacementTimer
 m_Weight
 m_WhenFalse
 m_WhenTrue
@@ -78346,6 +78365,7 @@ m_vRelativeOffset
 m_vRemnantData
 m_vRenderOrigin
 m_vRequestedBlinkLoc
+m_vRequestedWardLocation
 m_vRespawnPosition
 m_vResumePreviousMovementRequestLocation
 m_vRicochetDir

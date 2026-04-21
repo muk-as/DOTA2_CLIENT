@@ -7997,6 +7997,7 @@
 20CDOTA_BaseNPC_Healer
 20CDOTA_BotAction_Idle
 20CDOTA_BotMode_Attack
+20CDOTA_BotMode_Deward
 20CDOTA_BotMode_Laning
 20CDOTA_BotMode_Roshan
 20CDOTA_Bot_Hero_Pudge
@@ -9400,6 +9401,7 @@
 24CDOTA_BotMode_SecretShop
 24CDOTA_BotMode_Trial_Farm
 24CDOTA_BotMode_Trial_Rune
+24CDOTA_BotMode_Trial_Ward
 24CDOTA_Bot_Hero_Alchemist
 24CDOTA_Bot_Hero_Necrolyte
 24CDOTA_Bot_Hero_Nevermore
@@ -13131,6 +13133,7 @@
 33CDOTA_Bot_AbilityUsage_MagicStick
 33CDOTA_Bot_AbilityUsage_PhaseBoots
 33CDOTA_Bot_AbilityUsage_RoyalJelly
+33CDOTA_Bot_AbilityUsage_SentryWard
 33CDOTA_Bot_AbilityUsage_Sheepstick
 33CDOTA_Bot_AbilityUsage_SpiderLegs
 33CDOTA_Creature_BehaviorController
@@ -22368,6 +22371,7 @@ Bot script ID to use for local games
 Bot scripts do not check CRC, cache miss
 Bot scripts reloaded
 Bot ward spot %s in an invalid location, this may cause bots to get stuck
+Bot ward spot %s not found in map; falling back to hardcoded location
 BotAttackScoreBonus
 BotBaseScriptScope
 BotBuilds
@@ -25985,6 +25989,8 @@ CDOTA_BotMode_DefendAlly::GetDesire
 CDOTA_BotMode_DefendAlly::Think
 CDOTA_BotMode_DefendTower::GetDesire
 CDOTA_BotMode_DefendTower::Think
+CDOTA_BotMode_Deward::GetDesire
+CDOTA_BotMode_Deward::Think
 CDOTA_BotMode_EvasiveManeuvers::GetDesire
 CDOTA_BotMode_EvasiveManeuvers::Think
 CDOTA_BotMode_Farm::GetDesire
@@ -26031,6 +26037,8 @@ CDOTA_BotMode_Trial_Rune::GetDesire
 CDOTA_BotMode_Trial_Rune::Think
 CDOTA_BotMode_Trial_SecretShop::GetDesire
 CDOTA_BotMode_Trial_SecretShop::Think
+CDOTA_BotMode_Trial_Ward::GetDesire
+CDOTA_BotMode_Trial_Ward::Think
 CDOTA_BotMode_Ward::GetDesire
 CDOTA_BotMode_Ward::Think
 CDOTA_BotMode_Watcher::Think
@@ -30217,6 +30225,7 @@ CDOTA_TeamCommander::UpdateRoshanDesire
 CDOTA_TeamCommander::UpdateRuneVision
 CDOTA_TeamCommander::UpdateTeamRoamDesire
 CDOTA_TeamCommander::UpdateUnitLists
+CDOTA_TeamCommander::UpdateWardLocations
 CDOTA_TeleportTimerManager
 CDOTA_TempTree
 CDOTA_Tiny_ScepterTree
@@ -34996,103 +35005,119 @@ D9u uQH
 D; uTH
 D; |mH
 D;!ufM
-D;%7Ep
+D;%A7
+D;%MF
 D;&}sMc
-D;-1Ec
-D;-1Up
-D;-3Rb
-D;-3V
-D;-55
-D;-58e
-D;-5Ka
-D;-5Nd
-D;-5Tf
-D;-649
-D;-C8e
-D;-CKa
-D;-EAc
-D;-Eoi
-D;-K l
-D;-K4
-D;-K9
-D;-KCn
-D;-KSw
-D;-KU8
-D;-KYx
-D;-Khm
-D;-Kox
-D;-Kx
-D;-M3
-D;-M6x
-D;-M8
-D;-M9x
-D;-MCm
-D;-MHm
-D;-MQm
-D;-Ma
-D;-MgM
-D;-MgO
-D;-MyN
-D;-Mz
-D;-SAc
-D;-U3e
-D;-UJ
-D;-UOf
-D;-UZe
-D;-Y8c
-D;-c3e
-D;-cFa
-D;-cOf
-D;-cZe
-D;-dL9
-D;-e4c
-D;-e5c
-D;-eBh
-D;-eC
-D;-eO
-D;-eRi
-D;-eRk
-D;-eYc
-D;-eYd
-D;-eqh
-D;-ewf
-D;-kD
-D;-kEN
-D;-kEm
-D;-kHN
-D;-kL
-D;-kgN
+D;-36
+D;-3bk
+D;-3lg
+D;-5Be
+D;-5E
+D;-5Ki
+D;-5Qa
+D;-5Sc
+D;-5t
+D;-7Wp
+D;-CE
+D;-CKi
+D;-Ct
+D;-ETf
+D;-K2m
+D;-K5a
+D;-KDy
+D;-KNw
+D;-KO
+D;-KUM
+D;-KUm
+D;-KiO
+D;-Km
+D;-Ko
+D;-M2m
+D;-M7N
+D;-MHy
+D;-MIw
+D;-MO
+D;-MPM
+D;-MW
+D;-McM
+D;-Mq
+D;-Mr
+D;-U2h
+D;-U8d
+D;-U8e
+D;-U9n
+D;-UCj
+D;-UFi
+D;-UNc
+D;-Uhc
+D;-Ulh
+D;-Uze
+D;-a8q
+D;-c2h
+D;-c8d
+D;-c8e
+D;-c9n
+D;-cCj
+D;-cFi
+D;-cNc
+D;-chc
+D;-cze
+D;-e j
+D;-e3e
+D;-eCe
+D;-eKk
+D;-eXc
+D;-erk
+D;-k8O
+D;-k9
+D;-kCy
+D;-kFy
+D;-kI
+D;-kKx
+D;-kT
+D;-kYl
+D;-kll
+D;-kly
 D;-ktl
-D;-ku
-D;-mH9
-D;-mel
-D;-mf
-D;-mmM
+D;-kv
+D;-m y
+D;-m0O
+D;-m1
+D;-m7o
+D;-mJm
+D;-mKM
+D;-mSM
+D;-mV
+D;-mZ
+D;-md0
+D;-mfm
+D;-mgN
+D;-mky
+D;-ml
 D;-mq
-D;-mrM
-D;-ms
-D;-mu
-D;-n5c
-D;-s5c
-D;-sC
-D;-sRi
-D;-swf
-D;-sze
-D;-u h
-D;-u0c
+D;-myl
+D;-s j
+D;-s3e
+D;-srk
 D;-u3d
-D;-uA
-D;-uE
-D;-uHj
-D;-uJf
-D;-uUe
+D;-u6a
+D;-uAf
+D;-uAi
+D;-uC
+D;-uIc
+D;-uZd
+D;-ugh
+D;-ui
+D;-uwc
+D;-uzd
 D;0r/D9x
 D;0tYH
 D;4$}VD
-D;5H0c
+D;5	ne
+D;5Hwc
 D;;HcE
 D;;XZ
-D;=w3e
+D;=wze
 D;@0tRD;HLtLH
 D;@0tb;HLt]H
 D;@0tjD;HLtdH
@@ -35194,6 +35219,7 @@ DES-EDE3-OFB
 DES-OFB
 DESX-CBC
 DETACH_REGISTER
+DEWARD
 DF128
 DFLAG_ALLOW_NON_AUTHORITATIVE
 DFLAG_ALWAYS_FIRE_DAMAGE_EVENTS
@@ -35352,6 +35378,7 @@ DOTAMatchVote_INVALID
 DOTAMatchVote_NEGATIVE
 DOTAMatchVote_POSITIVE
 DOTAMinimapEvent_t
+DOTAMinimapGrid
 DOTAModifierAttribute_t
 DOTAMusic.Death
 DOTAMusicStatus_t
@@ -35490,6 +35517,7 @@ DOTA_BOT_MODE_DEFEND_ALLY
 DOTA_BOT_MODE_DEFEND_TOWER_BOT
 DOTA_BOT_MODE_DEFEND_TOWER_MID
 DOTA_BOT_MODE_DEFEND_TOWER_TOP
+DOTA_BOT_MODE_DEWARD
 DOTA_BOT_MODE_EVASIVE_MANEUVERS
 DOTA_BOT_MODE_FARM
 DOTA_BOT_MODE_ITEM
@@ -35860,7 +35888,7 @@ DOTA_ContextualTips_DeathSavingItems_Healing_Annotation
 DOTA_ContextualTips_DeathSavingItems_Healing_Text
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Annotation
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Text
-DOTA_ContextualTips_DeathSavingItems_Stick_Annotation
+DOTA_ContextualTips_DeathSavingItems_Stick_Annotation:f
 DOTA_ContextualTips_DeathSavingItems_Stick_Text
 DOTA_ContextualTips_MegaCreeps_Allies_Annotation
 DOTA_ContextualTips_MegaCreeps_Allies_Text
@@ -37464,6 +37492,7 @@ DevMsg
 DevWarning
 Devour adds '%s
 Devour removes '%s
+Dewarding
 Diagnostic
 DictString
 Dictionary
@@ -41926,30 +41955,30 @@ H;2ssI
 H;2t-H
 H;3sZE
 H;3s|I
-H;=60y
-H;=6Dx
-H;=6ey
-H;=6sw
-H;=6yx
-H;=F w
-H;=FUw
-H;=Fox
-H;=VKw
-H;=VQy
-H;=Vex
-H;=az
-H;=fAw
-H;=fGy
-H;=fIe
-H;=fTe
-H;=fje
-H;=fue
-H;=sh
-H;=v3x
-H;=v7w
-H;=vQx
-H;=vlw
-H;=vry
+H;=2s
+H;=3j
+H;=61x
+H;=65w
+H;=67z
+H;=6Ex
+H;=6Hy
+H;=6Iw
+H;=6k
+H;=6zx
+H;=F4y
+H;=Fpx
+H;=Ftw
+H;=Fzy
+H;=Sx
+H;=Vfx
+H;=Vjw
+H;=Vpy
+H;=f y
+H;=fRy
+H;=ffy
+H;=sZ
+H;=vRx
+H;=vVw
 H;C(tNH
 H;C(tV
 H;D$pH
@@ -42138,7 +42167,6 @@ H[]A\A]ÐAWAVAUATUSH
 H[]A\A]ÐAWAVI
 H[]ÐATUA
 H[]ÐATUSH
-H`sY1
 Hammer ID: %s
 Hammer/DefaultTextureScale
 Hammer/GameFeatureSet
@@ -42198,7 +42226,7 @@ Have Entity say string, and teamOnly or not
 Have we received the post match signout message that includes reward information
 HaveAllPlayersJoined
 Hc+HcC
-Hc5#U
+Hc5#X
 Hc@ HcR 9
 Hc@LHk
 HcA0;A
@@ -42226,6 +42254,7 @@ HcK(Ic
 HcK0Ic
 HcK@Ic
 HcKHIc
+HcKPIc
 HcK`Ic
 HcKhIc
 HcO@9N
@@ -42247,6 +42276,7 @@ Hck$HcC(9
 Hck(HcC,9
 Hck,HcC09
 HcphH
+Hcs ;0
 HcsXHc
 HcspHc
 Hcw$D
@@ -44143,6 +44173,7 @@ IcH(Ic
 IcL$ Ic
 IcL$(Ic
 IcL$HIc
+IcL$PIc
 IcL$`Ic
 IcM(Ic
 IcM0Ic
@@ -44197,6 +44228,7 @@ Ict$DH
 Ict$HH
 Ict$HHk
 Ic|$0H
+Ic|$XH
 Id	Moving	Dormant	External
 IdempotencyLevel
 IdleAnim
@@ -45851,6 +45883,7 @@ L$HdH3
 L$PHcH
 L$XdH3
 L$\tVH
+L$hHc
 L$hNcl
 L$hdH3
 L$xdH3
@@ -45874,10 +45907,8 @@ L;"tnH
 L;#tGH
 L;$$tJA
 L;(t I
-L;-P6I
 L;4$t0A
 L;4$trM
-L;5GAI
 L;;scA
 L;k s3H
 L;o u
@@ -46093,238 +46124,261 @@ Lc D;c
 Lc!D;a
 Lc#D9c
 Lc#D;c
+Lc%J$9
 Lc&D;f
 Lc'D;g
 Lc(D9n
 Lc+D9k
 Lc+D;k
-Lc-"2
-Lc-"Dy
-Lc-"H
-Lc-"Xw
-Lc-"b
-Lc-"im
-Lc-"j
-Lc-"qm
-Lc-"uM
-Lc-$ N
-Lc-$2l
-Lc-$6M
-Lc-$B
-Lc-$Dw
-Lc-$F
-Lc-$Q
-Lc-$Sm
-Lc-$UO
-Lc-$Y
-Lc-$e
-Lc-$gx
-Lc-$k
-Lc-*Hg
-Lc-*K
-Lc-*Rb
-Lc-*cc
-Lc-*ge
-Lc-,5
-Lc-,8e
-Lc-,Ka
-Lc-,Nd
-Lc-,Tf
-Lc-2 N
-Lc-2)y
-Lc-22l
-Lc-26M
-Lc-2:M
-Lc-2Dw
-Lc-2Q
-Lc-2Sm
-Lc-2UO
-Lc-2Y
-Lc-2e
-Lc-2gx
-Lc-2k
-Lc-2o
-Lc-2pO
-Lc-2w
-Lc-2x
-Lc-4	z
-Lc-4 l
-Lc-44
-Lc-49
-Lc-4Cn
-Lc-4Hy
-Lc-4Sw
-Lc-4U8
-Lc-4Yl
-Lc-4Yx
-Lc-4hm
-Lc-4ox
-Lc-4x
-Lc-:Ka
-Lc-:j
-Lc-:m
-Lc-<Ac
-Lc-<oi
-Lc-B l
-Lc-B4
-Lc-B9
-Lc-BCn
-Lc-BHy
-Lc-BSw
-Lc-BU8
-Lc-BYl
-Lc-BYx
-Lc-Bhm
-Lc-Box
-Lc-D.O
-Lc-D6x
-Lc-D8
-Lc-D=m
-Lc-D=y
-Lc-D>m
-Lc-DCm
-Lc-DHm
-Lc-DQm
-Lc-Da
-Lc-Dax
-Lc-DgM
-Lc-DgO
-Lc-DyN
-Lc-J	k
-Lc-J?c
-Lc-Js
-Lc-L!c
-Lc-L%h
-Lc-L&j
-Lc-L3e
-Lc-LFa
-Lc-LJ
-Lc-LOf
-Lc-LZe
-Lc-R.O
-Lc-R6x
-Lc-R8
-Lc-R=m
-Lc-R=y
-Lc-R>m
-Lc-RCm
-Lc-RHm
-Lc-RQm
-Lc-Ra
-Lc-Rax
-Lc-RgM
-Lc-RgO
-Lc-RyN
-Lc-T	N
-Lc-T$x
-Lc-T-x
-Lc-T?l
-Lc-T@y
-Lc-TD
-Lc-TEN
-Lc-TEm
-Lc-THN
-Lc-TL
-Lc-T_a
-Lc-TgN
+Lc-"Dx
+Lc-"E
+Lc-"Ga
+Lc-"Kx
+Lc-"Qn
+Lc-"a
+Lc-"hz
+Lc-"mM
+Lc-"nm
+Lc-"ny
+Lc-"t
+Lc-"tM
+Lc-"u
+Lc-"xw
+Lc-"za
+Lc-$2
+Lc-$Ba
+Lc-$K
+Lc-$RM
+Lc-$wN
+Lc-*6
+Lc-*bk
+Lc-*k
+Lc-*lg
+Lc-,E
+Lc-,Ki
+Lc-,Qa
+Lc-,Sc
+Lc-,t
+Lc-2!m
+Lc-2)M
+Lc-22
+Lc-2<w
+Lc-2Ba
+Lc-2K
+Lc-2P
+Lc-2RM
+Lc-2kz
+Lc-2v
+Lc-2wN
+Lc-42m
+Lc-45a
+Lc-4<z
+Lc-4=a
+Lc-4Dw
+Lc-4Dy
+Lc-4Nw
+Lc-4O
+Lc-4UM
+Lc-4Um
+Lc-4g
+Lc-4iO
+Lc-4m
+Lc-4o
+Lc-:v
+Lc-<Tf
+Lc-B2m
+Lc-B5a
+Lc-B=a
+Lc-BDw
+Lc-BDy
+Lc-BNw
+Lc-BO
+Lc-BUM
+Lc-BUm
+Lc-BiO
+Lc-Bm
+Lc-Bo
+Lc-D'm
+Lc-D/N
+Lc-D2m
+Lc-D7N
+Lc-DIw
+Lc-DO
+Lc-DPM
+Lc-DW
+Lc-D\n
+Lc-DcM
+Lc-Dq
+Lc-Dr
+Lc-DvN
+Lc-D{N
+Lc-J2
+Lc-J=e
+Lc-JTf
+Lc-L2h
+Lc-L8d
+Lc-L8e
+Lc-L9n
+Lc-LCj
+Lc-LFi
+Lc-LNc
+Lc-Lhc
+Lc-Llh
+Lc-Lof
+Lc-Lze
+Lc-R'm
+Lc-R/N
+Lc-R2m
+Lc-R7N
+Lc-RHy
+Lc-RIw
+Lc-RO
+Lc-RPM
+Lc-RW
+Lc-R\n
+Lc-RcM
+Lc-Rm
+Lc-Rr
+Lc-RvN
+Lc-R{N
+Lc-T$m
+Lc-T*m
+Lc-T*n
+Lc-T8O
+Lc-T9
+Lc-T<a
+Lc-TCy
+Lc-TFy
+Lc-TI
+Lc-TKx
+Lc-TSw
+Lc-TYl
+Lc-T\l
+Lc-Tll
+Lc-Tly
 Lc-Ttl
-Lc-Tu
-Lc-Tvy
-Lc-T}x
-Lc-Z%h
-Lc-Z3e
-Lc-ZFa
-Lc-ZOf
-Lc-ZZe
-Lc-Zy
-Lc-\4c
-Lc-\Bh
-Lc-\C
-Lc-\O
-Lc-\Ri
-Lc-\Rk
-Lc-\Yc
-Lc-\Yd
-Lc-\qh
-Lc-\wf
-Lc-\ze
-Lc-b	N
-Lc-b$x
-Lc-b-x
-Lc-b4x
-Lc-b?l
-Lc-b@y
-Lc-bD
-Lc-bEN
-Lc-bEm
-Lc-bHN
-Lc-bL
-Lc-bgN
+Lc-Tv
+Lc-Z2h
+Lc-Z8d
+Lc-Z8e
+Lc-Z9n
+Lc-ZCj
+Lc-ZFi
+Lc-ZNc
+Lc-Zze
+Lc-\ j
+Lc-\3e
+Lc-\Ce
+Lc-\Kk
+Lc-\Xc
+Lc-\rk
+Lc-b$m
+Lc-b*m
+Lc-b*n
+Lc-b8O
+Lc-b9
+Lc-b?y
+Lc-bCy
+Lc-bFy
+Lc-bI
+Lc-bKx
+Lc-bYl
+Lc-b\l
+Lc-bi
+Lc-bll
+Lc-bly
 Lc-btl
-Lc-bu
-Lc-bvy
-Lc-b}x
-Lc-d)l
-Lc-dRn
-Lc-d[O
-Lc-d_n
-Lc-del
-Lc-dmM
-Lc-drM
-Lc-ds
-Lc-du
-Lc-d}x
-Lc-d~m
-Lc-j[m
-Lc-j\c
-Lc-jze
-Lc-l h
-Lc-l0c
+Lc-bv
+Lc-by
+Lc-d y
+Lc-d!z
+Lc-d$P
+Lc-d/9
+Lc-d0O
+Lc-d1
+Lc-d2m
+Lc-d7o
+Lc-d>w
+Lc-dJm
+Lc-dKM
+Lc-dSM
+Lc-dV
+Lc-dZ
+Lc-dd0
+Lc-dfm
+Lc-dgN
+Lc-dh
+Lc-dky
+Lc-dl
+Lc-dpy
+Lc-dv
+Lc-dyl
+Lc-d}M
+Lc-j3e
+Lc-jCe
+Lc-jrk
+Lc-j{c
+Lc-l.e
 Lc-l3d
-Lc-lA
-Lc-lE
-Lc-lHj
-Lc-lJf
-Lc-lUe
-Lc-r)l
-Lc-rK
-Lc-rRn
-Lc-r[O
-Lc-r^x
-Lc-r_n
-Lc-rel
-Lc-rmM
-Lc-rq
-Lc-rrM
-Lc-rs
-Lc-r}x
-Lc-t	0
-Lc-t	m
-Lc-t/x
-Lc-t4
-Lc-t9
-Lc-t:m
-Lc-t>l
-Lc-tAM
-Lc-tEz
-Lc-tW
-Lc-tjy
-Lc-z h
+Lc-l6a
+Lc-lAf
+Lc-lAi
+Lc-lC
+Lc-lIc
+Lc-lZd
+Lc-lgh
+Lc-li
+Lc-lwc
+Lc-lzd
+Lc-r y
+Lc-r/9
+Lc-r0O
+Lc-r1
+Lc-r2m
+Lc-r7o
+Lc-r>w
+Lc-rF
+Lc-rJm
+Lc-rKM
+Lc-rSM
+Lc-rV
+Lc-r`x
+Lc-rd0
+Lc-rfm
+Lc-rgN
+Lc-rh
+Lc-rky
+Lc-rpy
+Lc-ryl
+Lc-r}M
+Lc-t%M
+Lc-t+O
+Lc-t,z
+Lc-t=O
+Lc-t@z
+Lc-tPz
+Lc-tbN
+Lc-tf
+Lc-tgl
+Lc-tp
+Lc-z.e
 Lc-z3d
-Lc-zA
-Lc-zE
-Lc-zHj
-Lc-zJf
-Lc-zUe
-Lc-zji
-Lc-|J
-Lc-|Mk
-Lc-|Tc
-Lc-|Td
-Lc-|Ve
-Lc-|ga
-Lc-|lh
-Lc-|wh
+Lc-z6a
+Lc-zAf
+Lc-zAi
+Lc-zC
+Lc-zIc
+Lc-zZd
+Lc-zi
+Lc-zwc
+Lc-zzd
+Lc-|Cd
+Lc-|Fk
+Lc-|Sc
+Lc-|fe
+Lc-|mk
+Lc-|rc
+Lc-|vc
 Lc.D;n
 Lc/D;o
 Lc0D9v
@@ -47609,6 +47663,7 @@ Mct$pH
 Mcu E;u0
 Mcw E;w0D
 Mc|$0E
+Mc|$8E1
 Mc|$DH
 Mc|$PH
 Mc|$pD
@@ -55750,7 +55805,6 @@ Synchronously spawn an entity group from a list of spawn tables
 Synchronously spawns a single entity from a table
 Synthetic oneofs must be after all other oneofs
 System %s failed to init
-S棠S棠S棠S
 T     %s
 T$ HcE
 T$ IcD
@@ -57000,6 +57054,7 @@ UpdateUnitLists
 UpdateVerticalMotion
 UpdateViewerSize
 UpdateVolumes
+UpdateWardLocations
 Updates a cached data entry
 Updates custom hero, unit and ability KeyValues in memory with the latest values from disk
 Updates: %d
@@ -57103,7 +57158,6 @@ UtlVectorMemory_Alloc
 UtlVectorMemory_AllocAligned
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
-U냐U낸U낸U
 V(A;V,H
 V(A\A]A^A
 V0;P0r
@@ -57832,7 +57886,6 @@ YA1Hc
 YA1Lc
 YA1SH
 YA1fA
-YA1萩N
 YYYY-MM-DD
 YYYY-MM-DD hh:mm
 YYYY-MM-DD hh:mm AM
@@ -68654,8 +68707,6 @@ cxa_throw_bad_array_new_length
 cyclone_duration
 cyclone_enemy
 cyclone_friendly
-c靳c需c靠c
-c고c걸c겠c
 d %d %d
 d %d %d %d
 d %s [%d] offset(s) %s are culled
@@ -69700,6 +69751,7 @@ dota_bot_debug_path_draw
 dota_bot_debug_pathing
 dota_bot_debug_potential_location
 dota_bot_debug_team
+dota_bot_debug_team_ward_spots
 dota_bot_debug_ward_spots
 dota_bot_disable
 dota_bot_disable_test
@@ -71929,13 +71981,6 @@ eye_of_the_storm_chance_multiplier
 eye_ramp
 eyes_follow
 eyes_radius
-e거e거e거e거e
-e거e거e거e급e
-e군e그e그e
-e그e그e그e
-e그e그e길e
-e깝e거e거e
-e멧e멧e말e
 f %f %f
 f %f %f %f
 f %f %f %f %f %f %f
@@ -71958,7 +72003,6 @@ fAttackTimeRemaining
 fD9,Fr)H
 fD;"t_H
 fD;,Bt
-fD;=YU
 fDamage
 fDelay
 fDistance
@@ -72934,7 +72978,6 @@ fx_index
 fxindex
 fxstat
 fxstat64
-f問f問f哈f唸f
 g %g %g
 g %g %g %g
 g E;4$toI
@@ -72974,6 +73017,7 @@ game/server/dota/bot/dota_bot_mode_bot_challenge_endgame.cpp
 game/server/dota/bot/dota_bot_mode_companion.cpp
 game/server/dota/bot/dota_bot_mode_defend_ally.cpp
 game/server/dota/bot/dota_bot_mode_defend_tower.cpp
+game/server/dota/bot/dota_bot_mode_deward.cpp
 game/server/dota/bot/dota_bot_mode_evasive_maneuvers.cpp
 game/server/dota/bot/dota_bot_mode_farm.cpp
 game/server/dota/bot/dota_bot_mode_item.cpp
@@ -73004,6 +73048,7 @@ game/server/dota/bot/trial/dota_bot_mode_trial_retreat.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_roshan.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_rune.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_secret_shop.cpp
+game/server/dota/bot/trial/dota_bot_mode_trial_ward.cpp
 game/server/dota/dota_base_ability.h
 game/server/dota/dota_client.cpp
 game/server/dota/dota_combatlog.cpp
@@ -73764,7 +73809,6 @@ gyrocopter_rocket_barrage
 gyrocopter_side_gunner
 gyrocopter_side_gunner_spawn_ability
 gyroshell
-gぐgグgトg
 h IcN E
 h(Hc@ Hk
 hAbility
@@ -76578,7 +76622,6 @@ jurisdictionStateOrProvinceName
 just happens to cross-check the results of huge numbers of
 justify_horizontal
 justify_vertical
-j졸j점j져j
 k D;k0D
 k(HcC M
 k0X[]A\A]A^A
@@ -79129,6 +79172,7 @@ kv 0x%p Release refcount == %d
 kv_data
 kv_juxtapose_illusion
 kv_juxtapose_illusion_uncontrollable
+kＰk３k（kｈk
 l bug reH
 l$0tTH
 l$8IcD$0M
@@ -80689,6 +80733,8 @@ m_Victims
 m_ViewerTimer
 m_WaitComplete
 m_WakeResume
+m_WardCalculationTimer
+m_WardPlacementTimer
 m_Weight
 m_WhenFalse
 m_WhenTrue
@@ -88131,6 +88177,7 @@ m_vRelativeOffset
 m_vRemnantData
 m_vRenderOrigin
 m_vRequestedBlinkLoc
+m_vRequestedWardLocation
 m_vRespawnPosition
 m_vResumePreviousMovementRequestLocation
 m_vRicochetDir
@@ -100468,6 +100515,7 @@ runs pick test on multiple players
 rush_range
 rush_speed
 ry;C s
+r径r张r
 s	%32.32s = "%s
 s  %%c %%10s : %c%%%ds%c %%s
 s %.3f] Sound event skipped because %i sound events were fired at once
@@ -104651,7 +104699,8 @@ szRewardType
 szUnitName
 s}SAVE/%s.%s
 s}SAVE/%s.sav
-s狗s狠s狩s
+s且s两s勅s勅s
+s卜s卜s卜s
 t	H;h H
 t	IcD
 t	IcT$0
@@ -104716,7 +104765,6 @@ t.HcC81
 t/H;3r
 t0;qlt7H
 t0f94Au
-t1L95
 t2<\th
 t2D9p\~,f
 t2Hc>A
@@ -104824,7 +104872,6 @@ tTIcD
 tTIcD$0
 tTIcD$H
 tTIcFX
-tUH;=.9
 tUHcC
 tUHcC0
 tUHcC8
@@ -104997,8 +105044,7 @@ tcAVAVD
 tcI;4
 tcgetattr
 tcsetattr
-tdH;=E
-tdH;=u
+tdH;=5
 tdMc/E;o
 td[A\A]A
 tdata
@@ -105399,6 +105445,7 @@ tjIcEhA9
 tjMc,$A
 tkI;4
 tkL;0ufH
+tlH;=u
 tls_get_addr
 tm_clone_table
 tnL; tBM
@@ -105901,6 +105948,7 @@ txn_country_code
 txn_id
 ty '%s',H
 tyIcD$ A;D$0
+tyL;52
 type %d
 type does not match
 type name is DEBUG only
@@ -105929,9 +105977,10 @@ tzI;4
 tzI;E
 tz[A\A
 t}L;3I
-t陈t陈t陈t
-t鹰t鹰t鹰t
-t찰t찰t찰t
+t馈t馈t馈t
+t찮t찮t찮t
+t콰t콰t콰t큘t
+u	H;=BM
 u %u %u
 u [A\A]A
 u!Mc.A
@@ -105941,6 +105990,7 @@ u&HcW0
 u(IcE Ic
 u(IcT$0
 u)HcW0
+u+HcC
 u,H;0u'H
 u,Lcs
 u-AWAVAUATUH
@@ -105958,8 +106008,6 @@ u5IcD$(A
 u5[A\A]A
 u6L; u1I
 u6[A\A]A
-u7H;=2
-u7H;=b
 u8AVAUATUSH
 u8IcE0I
 u:%02u:%02u
@@ -106684,6 +106732,7 @@ visual_novel_dialogue
 visuals
 visualzdelta
 vmdl_c
+vmdl誅1
 vnmclip
 vnmgraph
 vnmgraph30IEntityResourceManifestBuilder
@@ -106744,7 +106793,8 @@ vote_create_failed_t
 vote_keys
 voxel_size
 vpcf_c
-vpcf芝e
+vpcf芦H
+vpcf読n
 vphysics2
 vprof_report
 vprof_scope_entity_thinks
@@ -106771,6 +106821,7 @@ w(Lco I
 w+LcCpK
 w0HcG(I
 w0IcW(H
+w0Lco(I
 w4IcG
 w8AUATL
 w8IcG09
@@ -107208,6 +107259,7 @@ wrong submessage type
 wt1<mu%H
 www.memtest86.com).  At the time of writing it is free (GPLd
 wxAUATSH
+w常w忱w忱w
 x Jc<7I
 x%02x
 x(Lcc D;c0
@@ -107299,8 +107351,7 @@ yield_token
 yielding
 ynormal
 you_hear_them
-y昴y於y旬y昔y
-y데y눠y된y
+y적y요y운y
 z AUATI
 z HcCx
 z)u'A

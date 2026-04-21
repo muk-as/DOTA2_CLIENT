@@ -78,11 +78,6 @@
 		}
 	}
 
-	Localize
-	{
-		DisallowTokenContexts	0
-	}
-
 	Engine2
 	{
 		"HasModAppSystems" "1"

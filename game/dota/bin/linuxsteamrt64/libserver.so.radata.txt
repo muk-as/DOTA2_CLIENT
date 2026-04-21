@@ -45,18 +45,20 @@
 03d] Found: %s, firing (%s)\n
 03d] Found: %s, firing\n
 03o
-04[\a
 04d_%02d_%02d_%02d_%02d_%02d
 04i_%02i_%02i_%02i%02i%02i
-06l\a
 0700
 0800
 08X
 0: (V0) Legacy save format, 1: (V1) KeyValues3 save format, 2: (V2) KV3Transfer saves
-0Y[\a
+0M_\a
 0[m\a
+0]Z\a
+0_m\a
+0`m\a
+0bm\a
+0cm\a
 0enum $1 {\n
-0k_\a
 0message $1
 0oneof $1
 0option $1;\n
@@ -65,6 +67,7 @@
 0x%08X
 0x%s
 0x%x
+0yk\a
 1 1
 1 255
 1 == client, 2 == server
@@ -7570,6 +7573,7 @@
 20CDOTA_BaseNPC_Healer
 20CDOTA_BotAction_Idle
 20CDOTA_BotMode_Attack
+20CDOTA_BotMode_Deward
 20CDOTA_BotMode_Laning
 20CDOTA_BotMode_Roshan
 20CDOTA_Bot_Hero_Pudge
@@ -7796,6 +7800,7 @@
 20TEImpact_GameEvent_t
 20TESparks_GameEvent_t
 20TransitioningLayer_t
+20\b
 20s = '%s' (weight %f)\n
 20s = '%s'\n
 20s' vs. '%20s
@@ -8910,6 +8915,7 @@
 24CDOTA_BotMode_SecretShop
 24CDOTA_BotMode_Trial_Farm
 24CDOTA_BotMode_Trial_Rune
+24CDOTA_BotMode_Trial_Ward
 24CDOTA_Bot_Hero_Alchemist
 24CDOTA_Bot_Hero_Necrolyte
 24CDOTA_Bot_Hero_Nevermore
@@ -12455,6 +12461,7 @@
 33CDOTA_Bot_AbilityUsage_MagicStick
 33CDOTA_Bot_AbilityUsage_PhaseBoots
 33CDOTA_Bot_AbilityUsage_RoyalJelly
+33CDOTA_Bot_AbilityUsage_SentryWard
 33CDOTA_Bot_AbilityUsage_Sheepstick
 33CDOTA_Bot_AbilityUsage_SpiderLegs
 33CDOTA_Creature_BehaviorController
@@ -17147,7 +17154,7 @@
 49CUserMsg_ParticleManager_SetParticleClusterGrowth
 49CUserMsg_ParticleManager_SetParticleFoWProperties
 49CUserMsg_ParticleManager_UpdateParticleShouldDraw
-4M\a
+4\b
 4_bot
 4_top
 4d     %s\n
@@ -17809,12 +17816,10 @@
 5CTeam
 5Color
 5ISave
-5M\a
 5Vec2DIfE
 5Vec3DIfE
 5Vec4DIfE
 5\n
-5a\a
 5d\t%s\n
 5f (%.5f
 5ff澤p
@@ -17986,10 +17991,8 @@
 6CCoJob
 6CWorld
 6QAngle
-6a\a
 6d unresolved strings\n
 6f
-6l\a
 70CDOTA_Ability_CDOTA_Ability_Special_Bonus_Unique_Keeper_of_the_Light_2
 70CDOTA_Ability_CDOTA_Ability_Special_Bonus_Unique_Keeper_of_the_Light_7
 70CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Portal_Warp_Channel_Soundstop
@@ -18082,11 +18085,8 @@
 8INavDraw
 8INextBot
 8IRestore
-8M\a
-8N[\a
 8VectorWS
 8itemid_t
-8q[\a
 9BloodType
 9CAnimPose
 9CBaseProp
@@ -18128,7 +18128,6 @@
 9IEconTool
 9ILoopMode
 9ISequence
-9M\a
 9MatchID_t
 9rcContext
 A Dota Bot Team Commander
@@ -20905,7 +20904,6 @@ BOUNTY_TIME
 BPE_Diagnostic
 BPE_StringCommand
 BPE_Teleport
-BP\a
 BRACKET_DOUBLE_ALL_WINNER
 BRACKET_DOUBLE_SEED_LOSER
 BRACKET_SINGLE
@@ -21135,7 +21133,8 @@ Bot querying nearby trees with a distance greater than cached!\n
 Bot script ID to use for local games
 Bot scripts do not check CRC, cache miss.\n
 Bot scripts reloaded.\n
-Bot ward spot %s in an invalid location, this may cause bots to get stuck
+Bot ward spot %s in an invalid location, this may cause bots to get stuck.\n
+Bot ward spot %s not found in map; falling back to hardcoded location.\n
 BotAttackScoreBonus
 BotBaseScriptScope
 BotBuilds
@@ -24354,6 +24353,8 @@ CDOTA_BotMode_DefendAlly::GetDesire
 CDOTA_BotMode_DefendAlly::Think
 CDOTA_BotMode_DefendTower::GetDesire
 CDOTA_BotMode_DefendTower::Think
+CDOTA_BotMode_Deward::GetDesire
+CDOTA_BotMode_Deward::Think
 CDOTA_BotMode_EvasiveManeuvers::GetDesire
 CDOTA_BotMode_EvasiveManeuvers::Think
 CDOTA_BotMode_Farm::GetDesire
@@ -24400,6 +24401,8 @@ CDOTA_BotMode_Trial_Rune::GetDesire
 CDOTA_BotMode_Trial_Rune::Think
 CDOTA_BotMode_Trial_SecretShop::GetDesire
 CDOTA_BotMode_Trial_SecretShop::Think
+CDOTA_BotMode_Trial_Ward::GetDesire
+CDOTA_BotMode_Trial_Ward::Think
 CDOTA_BotMode_Ward::GetDesire
 CDOTA_BotMode_Ward::Think
 CDOTA_BotMode_Watcher::Think
@@ -28586,6 +28589,7 @@ CDOTA_TeamCommander::UpdateRoshanDesire
 CDOTA_TeamCommander::UpdateRuneVision
 CDOTA_TeamCommander::UpdateTeamRoamDesire
 CDOTA_TeamCommander::UpdateUnitLists
+CDOTA_TeamCommander::UpdateWardLocations
 CDOTA_TeleportTimerManager
 CDOTA_TempTree
 CDOTA_Tiny_ScepterTree
@@ -30233,7 +30237,6 @@ CPPTYPE_MESSAGE
 CPPTYPE_STRING
 CPPTYPE_UINT32
 CPPTYPE_UINT64
-CP\a
 CPanoramaImageName
 CParticleBindingRealPulse
 CParticleCollectionBindingInstance
@@ -32184,6 +32187,7 @@ DES-EDE3-OFB
 DES-OFB
 DESX-CBC
 DETACH_REGISTER
+DEWARD
 DF128
 DF16
 DF16b
@@ -32349,6 +32353,7 @@ DOTAMatchVote_INVALID
 DOTAMatchVote_NEGATIVE
 DOTAMatchVote_POSITIVE
 DOTAMinimapEvent_t
+DOTAMinimapGrid
 DOTAModifierAttribute_t
 DOTAMusic.Death
 DOTAMusicStatus_t
@@ -32485,6 +32490,7 @@ DOTA_BOT_MODE_DEFEND_ALLY
 DOTA_BOT_MODE_DEFEND_TOWER_BOT
 DOTA_BOT_MODE_DEFEND_TOWER_MID
 DOTA_BOT_MODE_DEFEND_TOWER_TOP
+DOTA_BOT_MODE_DEWARD
 DOTA_BOT_MODE_EVASIVE_MANEUVERS
 DOTA_BOT_MODE_FARM
 DOTA_BOT_MODE_ITEM
@@ -32855,7 +32861,7 @@ DOTA_ContextualTips_DeathSavingItems_Healing_Annotation
 DOTA_ContextualTips_DeathSavingItems_Healing_Text
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Annotation
 DOTA_ContextualTips_DeathSavingItems_MagicResist_Text
-DOTA_ContextualTips_DeathSavingItems_Stick_Annotation
+DOTA_ContextualTips_DeathSavingItems_Stick_Annotation:f
 DOTA_ContextualTips_DeathSavingItems_Stick_Text
 DOTA_ContextualTips_MegaCreeps_Allies_Annotation
 DOTA_ContextualTips_MegaCreeps_Allies_Text
@@ -34453,6 +34459,7 @@ Determine whether an issued command with no target is valid
 Determines whether response criteria is matched on server or client
 Devour adds '%s'\n
 Devour removes '%s'\n
+Dewarding
 Did not execute '%s' because the 'Target' object was missing
 Did not find any close death events!\n
 Did not find both an input and ouput field within root components block
@@ -35059,7 +35066,6 @@ EOverworldAuditAction
 EOverworldMinigameAction
 EOverworldNodeState
 EOverworldPathState
-EP\a
 EPartyMatchmakingFlags
 EPerformAttackFlags
 EPingMinimapAnimType
@@ -35756,7 +35762,6 @@ Extrapolates their location in the future, based on past movement
 EyeAngles
 EyePosition
 Eyes
-F0\b
 F10CTransformRKS_S1_E
 FACET_COLOR_BLUE
 FACET_COLOR_COUNT
@@ -36836,7 +36841,6 @@ GOST R 34.11-94 with GOST R 34.10-2001 Cryptocom
 GOST R 34.11-94 with GOST R 34.10-94
 GOST R 34.11-94 with GOST R 34.10-94 Cryptocom
 GOST R 3410-2001 Parameter Set Cryptocom
-GP\a
 Ga=`R
 Gambler
 Game
@@ -38552,6 +38556,7 @@ GuildBannerUpgrade
 GuildChallengeProgress: QueryID(%d) challenge %s - %s\n
 GuildID_t
 GuildTagDecoration
+H0\b
 HAC K  Unused Binding
 HARDSUPPORT
 HAS_LADDERS
@@ -38669,7 +38674,6 @@ HP Regen: %f - MP Regen: %f
 HP to set when damaged below zero in Buddha Mode
 HPGain
 HPRegenGain
-HP\a
 HParticleSystemDefinition
 HParticleSystemDefinitionStrong
 HPostProcessing
@@ -38765,7 +38769,6 @@ HaticsType_None
 Have Entity say string, and teamOnly or not
 Have we received the post match signout message that includes reward information
 HaveAllPlayersJoined
-Hda
 Head
 Header
 Heal
@@ -40428,6 +40431,7 @@ IKV3TransferInterface_Worldspace_Save
 ILLUSION
 IMMEDIATE_HALT
 IMPORTANT
+IM\a
 IMsgNetPacketFromCNetPacket: malformed packet, size %d bytes\n
 INACTIVE
 INCOMPATIBLE FORWARDING PARAM. content fix needed
@@ -42039,7 +42043,6 @@ Iterations: %d\n
 Iterator_Step_NextNode
 JArray
 JOINT-ISO-ITU-T
-JP\a
 JUMP
 JUMP_COND
 January
@@ -43222,7 +43225,6 @@ MVDataRoot
 MVDataSingleton
 MVDataUniqueMonotonicInt
 MVDataUseLinkedEntityClasses
-M\a
 Made contact here
 MagicImmune
 MagicResistGain
@@ -46297,12 +46299,10 @@ P28CDOTA_ArcanaDataEntity_Razor
 P33CDOTA_ArcanaDataEntity_DrowRanger
 P35CDOTA_ArcanaDataEntity_FacelessVoid
 P5=%d
-P6l\a
 P95=%.1f
 P95=%u
 P99=%.1f
 P99=%u
-P:P\a
 PANEL_ID
 PARALYZE
 PARTIAL
@@ -46406,6 +46406,7 @@ PLACEMENT
 PLASMA
 PM_NORMAL
 PM_NO_GIBS
+PM_\a
 POINT
 POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_CENTER
 POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_LEFT
@@ -46430,6 +46431,7 @@ POSIX
 POST
 POS_FLOATLITERAL
 POS_INTLITERAL
+PO\a
 PR
 PR::InitPlayersWithLobby - could not find player id for account_id=%u, will not be able to initialize additional account data
 PR:ClearAllDraftHeroChoice called with bogus player id %d, ignoring\n
@@ -46488,7 +46490,6 @@ PROP_CLEARFLAGS
 PROVIDER_GENERIC
 PROVIDER_WEAPON
 PSPECIFIED
-PT[\a
 PULSE_CALL_ASYNC_FIRE
 PULSE_CALL_SYNC
 PURCHASE_ITEM_DISALLOWED_ITEM
@@ -46540,14 +46541,15 @@ PVAL_VOID
 PVS is shared between teams
 PVSManagerGameSystem
 PVSModifier
-PZm\a
-P[m\a
-P\a
+PZ[\a
+P]Z\a
+P_m\a
 Package name is too long
 PackedAABB_t
 PackedBlobNormal
 Packet loss threshold (0...1) for declaring a QoS stat interval to be 'bad
 Paints the river for a duration
+Pam\a
 PanelID
 Panorama Panel Handle
 PanoramaTextServices001
@@ -46632,6 +46634,7 @@ PayGoldCost
 PayGoldCostForUpgrade
 PayHealthCost
 PayManaCost
+Pcm\a
 Pct Games With Enemy Lane T1 Taken First
 Pct Games With Roshan Advantage (Player team killed Roshan more times
 Peak Iterations: %d\n
@@ -46717,7 +46720,6 @@ PitchShift
 PitchYawRoll
 Pivot
 PivotPaint
-Pk_\a
 Place a message in the telemetry timeline
 Place a rune in the bottle
 Place a unit somewhere not already occupied
@@ -47077,7 +47079,7 @@ Pushes an identifier used to group overlays. Deletes all existing overlays using
 Pushes an identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch
 Pushing %s Lane
 Put all physics in all the worlds to sleep
-Pw[\a
+Pyk\a
 Q8>\t
 QAngle
 QAngle-world
@@ -47243,6 +47245,7 @@ ROTATE_STOP_AT_END
 ROTATOR_TARGET_LOCALSPACE
 ROTATOR_TARGET_WORLDSPACE
 ROUND_ROBIN
+RO\a
 RP_PAUSE
 RP_TOGGLEPAUSE
 RP_UNPAUSE
@@ -47992,7 +47995,6 @@ Runs when the modifier is refreshed
 Runs when the think interval occurs
 S/MIME
 S/MIME Capabilities
-S0\b
 S:Gamerules: WAIT_FOR_PLAYERS_TO_LOAD entering substate EWFPS_Failed\n
 S:Gamerules: WAIT_FOR_PLAYERS_TO_LOAD entering substate EWFPS_Success\n
 SAFELANE
@@ -52410,6 +52412,7 @@ UpdateUnitLists
 UpdateVerticalMotion
 UpdateViewerSize
 UpdateVolumes
+UpdateWardLocations
 Updates custom hero, unit and ability KeyValues in memory with the latest values from disk
 Updates: %d\n
 Updating Weekly/Daily challenge for player %d, challenge %d of %d\n
@@ -53022,14 +53025,12 @@ X9.42 DH
 X9.57
 X9.57 CM
 X9cm
-XI[\a
 XP Delta %d\n
 XP Fountain: Unit %s gains %d XP\n
 XP per min: %u  Gold per min: %u  Claimed Farm: %u  Support Gold %u\n
 XPAmount
 XPGain
 Xbox VDP is not supported on this platform
-Xl[\a
 Y
 Y?ddd
 YYYY
@@ -53371,11 +53372,11 @@ ZZN20CNavObstacleSplitMgr11AddOverlapsERK10CUtlVectorIyi25CUtlVectorMemory_Growa
 ZZN20CNavObstacleSplitMgr11AddOverlapsERK10CUtlVectorIyi25CUtlVectorMemory_GrowableIyiLm0EEEENKUliE_clEiEUlR8CNavAreaE0
 ZZN24CNavMovableMeshesManager27UpdateMovableMeshTransformsERK10CUtlVectorI22NavMovableMeshUpdate_ti25CUtlVectorMemory_GrowableIS1_iLm0EEER19CNavGeometryManagerR8CNavGridbENKUliE_clEiEUlR8CNavAreaE
 ZZN24CNavMovableMeshesManager27UpdateMovableMeshTransformsERK10CUtlVectorI22NavMovableMeshUpdate_ti25CUtlVectorMemory_GrowableIS1_iLm0EEER19CNavGeometryManagerR8CNavGridbENKUliE_clEiEUlSt4spanIP8CNavAreaLm18446744073709551615EEE
+Z\a
 Z\n\n\n
 Zero Pose Task
 Zero frame animations are not supported for warping
 Zero input vector for info node
-Zm\a
 Zone1Distance
 Zone2Distance
 a
@@ -53902,6 +53903,7 @@ always_perform_full_spatial_partition_update
 always_send_to_servers
 always_unlocked
 always_visible
+am\a
 am_blink
 ambient_effects
 ambient_effects_persona_1
@@ -54567,7 +54569,6 @@ axes
 axis
 b
 b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time
-b0\f
 b=33
 bAccumulatedDamageDealt
 bActivated
@@ -54726,7 +54727,6 @@ bOnlyPlayerHero
 bOriginalModel
 bOverheadEffect
 bOverride
-bP\a
 bPaladinAmpApplied
 bPathResult[%d
 bPedestal
@@ -54803,6 +54803,7 @@ bUseOnStrongestAlly
 bUseOnTrees
 bUseProjectile
 bUseSelfishly
+bV_\a
 bValue
 bVisible
 bVisibleToEnemies
@@ -55023,7 +55024,6 @@ battle_pass_background_panel_path
 battlefury_cleave
 battlepass
 bbox
-be[\a
 beam
 beam_damage
 beam_interval
@@ -55196,6 +55196,7 @@ blue
 blue_dragonspawn_overseer_devotion_aura
 blue_dragonspawn_overseer_evasion
 blue_dragonspawn_sorcerer_evasion
+bm\a
 bn_lib.c
 bn_print.c
 bn_shift.c
@@ -55820,7 +55821,6 @@ c2tnb431r1
 cACertificate
 cColor
 cNAMERecord
-cP\a
 caIssuers
 caRepository
 cable_dynamic
@@ -56315,6 +56315,7 @@ cloud_duration
 cloud_radius
 cloudrun
 cloudrun_start
+cm\a
 cmac
 cntrl
 co_await
@@ -56943,7 +56944,6 @@ d: REMOVED\n
 d:%llu
 dITRedirect
 dNSDomain
-dP\a
 dSAQuality
 d\n\t
 d] %s\n
@@ -57800,6 +57800,7 @@ dota_bot_debug_path_draw
 dota_bot_debug_pathing
 dota_bot_debug_potential_location
 dota_bot_debug_team
+dota_bot_debug_team_ward_spots
 dota_bot_debug_ward_spots
 dota_bot_disable
 dota_bot_disable_test
@@ -59903,6 +59904,7 @@ fTimestamp
 fValue
 fWeight
 fYaw
+f\f
 f_current_lean
 f_current_speed
 f_move_heading_actual
@@ -60748,6 +60750,7 @@ fxIndex
 fx_halo_height
 fx_index
 fxindex
+f \b0
 g
 g %g
 g %g %g
@@ -60778,6 +60781,7 @@ game/server/dota/bot/dota_bot_mode_bot_challenge_endgame.cpp
 game/server/dota/bot/dota_bot_mode_companion.cpp
 game/server/dota/bot/dota_bot_mode_defend_ally.cpp
 game/server/dota/bot/dota_bot_mode_defend_tower.cpp
+game/server/dota/bot/dota_bot_mode_deward.cpp
 game/server/dota/bot/dota_bot_mode_evasive_maneuvers.cpp
 game/server/dota/bot/dota_bot_mode_farm.cpp
 game/server/dota/bot/dota_bot_mode_item.cpp
@@ -60808,6 +60812,7 @@ game/server/dota/bot/trial/dota_bot_mode_trial_retreat.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_roshan.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_rune.cpp
 game/server/dota/bot/trial/dota_bot_mode_trial_secret_shop.cpp
+game/server/dota/bot/trial/dota_bot_mode_trial_ward.cpp
 game/server/dota/dota_base_ability.h
 game/server/dota/dota_client.cpp
 game/server/dota/dota_combatlog.cpp
@@ -63890,6 +63895,7 @@ jurisdictionST
 jurisdictionStateOrProvinceName
 justify_horizontal
 justify_vertical
+k@lXl
 kBEAMCLIPSTYLE_NUMBITS
 kDecalBlood
 kDecalCloak
@@ -66583,7 +66589,7 @@ lycan_summon_wolves_hamstring
 lycan_summon_wolves_hightail
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-mP\a
+mN\a
 mXRecord
 m\a
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT\n
@@ -67490,6 +67496,8 @@ m_Victims
 m_ViewerTimer
 m_WaitComplete
 m_WakeResume
+m_WardCalculationTimer
+m_WardPlacementTimer
 m_Weight
 m_WhenFalse
 m_WhenTrue
@@ -74945,6 +74953,7 @@ m_vRelativeOffset
 m_vRemnantData
 m_vRenderOrigin
 m_vRequestedBlinkLoc
+m_vRequestedWardLocation
 m_vRespawnPosition
 m_vResumePreviousMovementRequestLocation
 m_vRicochetDir
@@ -81465,7 +81474,6 @@ nyx_assassin_unburrow
 nyx_assassin_vendetta
 o [%5d] '%s' (%s) [group entity]\n
 o [no group entity]\n
-oP\a
 obj_count
 obj_dat.c
 obj_lib.c
@@ -81722,7 +81730,7 @@ owner_context
 owner_max_barrier_pct_max_health
 ownername
 owning_item
-p6l\a
+p2Z\a
 pAbility
 pAbilityName
 pAbilityName1
@@ -81763,11 +81771,9 @@ pModelName
 pName
 pNameOrWildcard
 pNearestArea index[%d
-pO[\a
 pOnEntity
 pOtherEntity
 pOwner
-pP\a
 pProjectileName
 pRevenant
 pSequenceName
@@ -81785,7 +81791,9 @@ pVCD
 pValue
 pWhitelistKeyValues
 pWorldObject
-pZm\a
+pZ[\a
+p]Z\a
+p_m\a
 pack_config
 pack_grant
 package $0;\n\n
@@ -84634,6 +84642,7 @@ pbeWithSHA1And40BitRC2-CBC
 pbeWithSHA1And40BitRC4
 pbeWithSHA1AndDES-CBC
 pbeWithSHA1AndRC2-CBC
+pbm\a
 pct_bonus_shield_damage
 pct_health_damage
 pct_health_damage_initial
@@ -84863,7 +84872,6 @@ pitchVel
 pitchfrac
 pitchrun
 pitchstart
-pk_\a
 pkcs
 pkcs1
 pkcs3
@@ -85041,7 +85049,6 @@ plus_auto_grant_yearly_pattern_start
 plus_guild_banner
 plus_high_five
 plus_player_guild_banner
-po_\a
 pocket_riki_enabled
 point
 point0
@@ -85176,7 +85183,6 @@ powershot_slow
 poweruptype
 ppBasis
 pqrstuvwxyz
-pr[\a
 practice
 pre idle done
 pre_chase_time
@@ -85636,7 +85642,7 @@ r
 r(y
 rFC822localPart
 rK~\n
-rZ\a
+r\b
 r\n
 r_AirboatViewDampenDamp
 r_AirboatViewDampenFreq
@@ -86898,7 +86904,6 @@ sLockedSound
 sMuertaPartingShotSoulDef
 sOARecord
 sObstructing nav
-sP\a
 sParticle
 sParticleTarget
 sPendingTreeModelChange
@@ -90192,7 +90197,6 @@ t"%s" "%s" // local\n
 t"sourcefile" "%s"\n
 t%s - %zu KB (%%%.0f)\n
 t%s%s\n
-t0\b
 t58R
 t=%8.2f id=%d n='%-16s' c=%d starve=%d maxstarve=%d maxbloat=%d avgq=%.2f %s
 t=%8.2f name=%-16s %s
@@ -91043,7 +91047,6 @@ u
 u %u %u
 u00
 u:%02u:%02u
-uP\a
 uchar32
 ui.abilitydraft_theirpick
 ui_menu_activate_open
@@ -91296,7 +91299,6 @@ uses_range
 using_stolen_ability
 utl_vector
 utlstringtoken
-v \b
 v8array
 v8callback
 v8object
@@ -91976,7 +91978,6 @@ x509_info
 x509_pkey
 x509_req
 x509_store
-x:P\a
 xPos
 xTransform
 xX0123456789abcdef0123456789ABCDEF
@@ -91984,7 +91985,6 @@ xX0123456789abcdefABCDEF
 x_return
 xdigit
 xfriction
-xg[\a
 xmas
 xmax
 xmin
@@ -92003,7 +92003,6 @@ xuid
 xzy{u
 xzy{ͦǌuw
 yPos
-yQ\a
 y_offset
 yawVel
 yaw_offset
@@ -92013,10 +92012,10 @@ yes - via input
 yfriction
 yield_token
 yielding
+yk\a
 ymax
 ymin
 z?ff
-zD0p
 zFar
 zNear
 zPos
@@ -92026,6 +92025,7 @@ zealots
 zero
 zero_value
 zfriction
+zk\a
 zlib compression
 zmax
 zmin

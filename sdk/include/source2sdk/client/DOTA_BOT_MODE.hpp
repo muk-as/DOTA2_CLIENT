@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 31
+        // Enumerator count: 32
         // Alignment: 4
         // Size: 0x_
         enum class DOTA_BOT_MODE : std::uint32_t
@@ -49,6 +49,7 @@ namespace source2sdk
             DOTA_BOT_MODE_WATCHER = 0x1c,
             DOTA_BOT_MODE_WISDOM_SHRINE = 0x1d,
             DOTA_BOT_MODE_LOTUS_POOL = 0x1e,
+            DOTA_BOT_MODE_DEWARD = 0x1f,
         };
     };
 };
