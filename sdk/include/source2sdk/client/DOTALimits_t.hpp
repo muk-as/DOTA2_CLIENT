@@ -18,7 +18,7 @@ namespace source2sdk
         // Size: 0x_
         enum class DOTALimits_t : std::uint32_t
         {
-            // MScriptDescription "Max number of players connected to the server including spectators."
+            // MScriptDescription "Max number of players per team. Max number of players connected to the server including spectators."
             DOTA_MAX_PLAYERS = 0x40,
             // MScriptDescription "Max number of player teams supported. Max number of players per team."
             DOTA_MAX_TEAM = 0x18,

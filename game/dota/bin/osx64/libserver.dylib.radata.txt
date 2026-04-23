@@ -21419,7 +21419,7 @@ ApplyModifier
 ApplyMotionController
 ApplyVerticalMotionController
 ApplyWearableModifiers
-Apr 21 2026
+Apr 23 2026
 Arc Cos
 Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to
 Arc Sin
@@ -21704,6 +21704,7 @@ AwardEventPoints failed as no lobby found!\n
 Away from closest point
 Axis
 AxisAngleToQuaternion
+B
 B!=27CSchemaRegistration_animlib
 B-Spline
 B43SA
@@ -33116,6 +33117,7 @@ CWorkThreadPool::~CWorkThreadPool: work complete queue not empty, %d items disca
 CWorkThreadPool::~CWorkThreadPool: work processing queue not empty: %d items discarded.\n
 CWorld
 CWorldCompositionChunkReferenceElement_t
+C\bE\bE
 C\n>kKillEaterEventType_Disruptor_ThreeHeroKineticFieldStaticStorm
 C\n>kKillEaterEventType_NightStalker_EnemyMissesUnderCripplingFear
 C\n>k_EMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse
@@ -39452,6 +39454,7 @@ GetAllHeroes
 GetAllTrees
 GetAllTreesAroundPoint
 GetAllowEtherealAttack
+GetAltCastState
 GetAlwaysAllowAttack
 GetAlwaysAutoAttackWhileHoldPosition
 GetAlwaysShowPlayerInventory
@@ -40528,6 +40531,7 @@ Gets the cast range of the ability
 Gets the cast range of the ability, taking modifiers into account
 Gets the cast range of this Ability
 Gets the curren time of day (0.0 is midnight, 0.5 is noon
+Gets the current Alt Cast State
 Gets the current phase of hero picking
 Gets the current state of the game
 Gets the current unspent ability points
@@ -49483,6 +49487,7 @@ Pickup Item
 PickupDroppedItem
 PickupRadius
 PickupRune
+PiercesDebuffImmunity
 Pin or Unpin the overlay to the Entity's location
 PineCone.ShieldBash.Warmup
 PingConfirmationIconType
@@ -50531,6 +50536,7 @@ Return float value for the amount of time left on cooldown for this hero's buyba
 Return gold cost at the given level (-1 is current
 Return health cost at the given level (-1 is current
 Return health cost per second of channeling at the given level (-1 is current
+Return if an ability and its modifiers should pierce debuff immunity
 Return integer value for the gold cost of a buyback
 Return mana cost at the given level (-1 is current
 Return mana cost at the given level per second while channeling (-1 is current
@@ -50664,6 +50670,7 @@ Returns true if this is lua running from the server.dll
 Returns true if this is lua running within tools mode
 Returns true if this item can be picked up by the target unit
 Returns true if this server is a dedicated server
+Returns true or false on if the effects of this modifier should pierce debuff immunity. By default uses the setting from the ability
 Returns up to the maximum requested elements. Never grows the array (unlike SetCount
 Returns whether Dota Plus ability suggestions are enabled or disabled
 Returns whether Dota Plus item suggestions are enabled or disabled
@@ -50769,7 +50776,6 @@ RunePosition
 RuneSpawnData
 RuneTeam
 Running command %d.\n{ %s }\n
-Runs when item's charge count changes
 Runs when stack count changes (param is old count
 Runs when the modifier is created
 Runs when the modifier is destroyed (after unit loses modifier
@@ -51829,6 +51835,7 @@ Script_PayManaCost
 Script_PerformAttack
 Script_PickupDroppedItem
 Script_PickupRune
+Script_PiercesDebuffImmunity
 Script_PlayVCD
 Script_PlayerHasCustomGameHostPrivileges
 Script_PointToLineDistance
@@ -52191,6 +52198,7 @@ Set 0 to disable emotes
 Set Abs Angles
 Set Abs Origin
 Set Abs Scale
+Set Alt Cast State to a specific value (true for on, false for off
 Set Angular Velocity for VPHYS or normal object, from a vector of the axis of rotation, multiplied by the degrees of rotation per second
 Set Body Group Value
 Set Effect Control Ent
@@ -52434,6 +52442,7 @@ SetAllowHeroTargets
 SetAllowNeutralItemDrops
 SetAllowOutpostBonuses
 SetAllowRelaxation
+SetAltCastState
 SetAlwaysShowPlayerInventory
 SetAlwaysShowPlayerNames
 SetAmmoType
@@ -53191,6 +53200,7 @@ Should the entity die when this damage level is destroyed
 Should we straighten face island if the displacement is this much? (inches
 Should we try to straighten an island of faces deviating from their average normal (tangent
 Should we try to straighten two faces connected to this edge? (tangent
+ShouldAltCast
 ShouldClientReceiveStringTableUserData called with nullptr GameRules() on table %s, string %d\n
 ShouldDoFlyHeightVisual
 ShouldGiveFreeTPOnDeath
@@ -54302,6 +54312,7 @@ This can be used to limit the value of cl_interp_ratio for connected clients (on
 This convar is being accessed prior to ConVar_Register being called
 This edge only allows unlocks in the direction of the arrow
 This is not
+This is what the Alt Cast State of the ability was when it was initially cast. Updated during Execute Orders
 This item has already been purchased and cannot be purchased again
 This many seconds must have passed since start of game before announcers poll for idle speech
 This many seconds must pass after a hero dies for an announcer to consider saying idle lines
@@ -54375,6 +54386,7 @@ Toggle an ability
 Toggle by default, or 0 to disable and 1 to enable. Player becomes invulnerable
 Toggle enabling/disabling the destructible parts system for debug
 Toggle prop debug mode. If on, props will show colorcoded bounding boxes. Red means ignore all damage. White means respond physically to damage but never break. Green maps health in the range of 100 down to 1
+Toggle the Alt Cast State of an Ability
 Toggle the autocast state of this Ability
 Toggle the day-night cycle
 Toggle the in-game script debug features
@@ -54383,6 +54395,7 @@ Toggle the visibility of an existing custom hud element ( PlayerID_t PlayerID /*
 Toggle. Player becomes hidden to NPCs
 Toggle. Player becomes non-solid and flies.  Optional argument of 0 or 1 to force enable/disable
 ToggleAbility
+ToggleAltCast
 ToggleAlternatePath
 ToggleAmbientSound
 ToggleAutoCast
@@ -57356,6 +57369,7 @@ bAllowCopy
 bAllowSelling
 bAllowZeroDamageFromPostReductionBlock
 bAlsoIgnoreBuffsIfDebuffImmune
+bAltCastEnabled
 bAlwaysPush
 bAlwaysShow
 bAmplify
@@ -57555,6 +57569,7 @@ bSkipImpactLogic
 bSkipNoConsume
 bSpecialistTested
 bSpellLifesteal
+bSpent
 bStacksWithOtherOwners
 bStartNode
 bStarted
@@ -58332,6 +58347,7 @@ bool bEnabled
 bool bFilter
 bool bGive
 bool bInterrupted) Channel finished
+bool bSpent) Runs when item's charge count changes. bSpent is true when the charge count change is coming from SpendCharge
 bool[4
 bool[5
 bool[DOTA_MAX_TEAM_PLAYERS
@@ -71310,6 +71326,7 @@ m_bDeathEventsDispatched
 m_bDeathFxTriggered
 m_bDeathTipsDisabled
 m_bDebuff
+m_bDebuffImmune
 m_bDebugAbsOriginChanges
 m_bDebugging
 m_bDefault
