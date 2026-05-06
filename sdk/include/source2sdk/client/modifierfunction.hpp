@@ -246,7 +246,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x70,
             // MScriptDescription "GetModifierAttackRangeOverride GetModifierCastRangeBonusStacking"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x71,
-            // MScriptDescription "M GetModifierAttackRangeOverride"
+            // MScriptDescription "PM GetModifierAttackRangeOverride"
             MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE = 0x72,
             // MScriptDescription "GetModifierAttackRangeBonusUnique GetModifierAttackRangeBonus"
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS = 0x73,
@@ -416,7 +416,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ATTACK = 0xc5,
             // MScriptDescription "OnAttackFail OnAttackLanded"
             MODIFIER_EVENT_ON_ATTACK_LANDED = 0xc6,
-            // MScriptDescription "M OnAttackFail"
+            // MScriptDescription "PM OnAttackFail"
             MODIFIER_EVENT_ON_ATTACK_FAIL = 0xc7,
             // MScriptDescription "OnProjectileDodge OnAttackAllied"
             MODIFIER_EVENT_ON_ATTACK_ALLIED = 0xc8,
@@ -648,13 +648,13 @@ namespace source2sdk
             MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x139,
             // MScriptDescription "GetModifierShareXPRune OnDamageHPLoss"
             MODIFIER_EVENT_ON_DAMAGE_HPLOSS = 0x13a,
-            // MScriptDescription " GetModifierShareXPRune"
+            // MScriptDescription "M GetModifierShareXPRune"
             MODIFIER_PROPERTY_SHARE_XPRUNE = 0x13b,
             // MScriptDescription "GetModifierNoFreeTPScrollOnDeath GetModifierXPFountainCountdownTimeOverride"
             MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE = 0x13c,
             // MScriptDescription "GetModifierHasBonusNeutralItemChoice GetModifierNoFreeTPScrollOnDeath"
             MODIFIER_PROPERTY_NO_FREE_TP_SCROLL_ON_DEATH = 0x13d,
-            // MScriptDescription "u GetModifierHasBonusNeutralItemChoice"
+            // MScriptDescription "y GetModifierHasBonusNeutralItemChoice"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_CHOICE = 0x13e,
             // MScriptDescription "GetModifierPreserveNeutralItemPassives HasBonusNeutralItemPassive"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE = 0x13f,
