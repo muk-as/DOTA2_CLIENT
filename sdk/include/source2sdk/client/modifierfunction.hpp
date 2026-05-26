@@ -518,7 +518,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_IS_SHARD = 0xf8,
             // MScriptDescription "GetActivityTranslationModifiers GetModifierRadarCooldownReduction"
             MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION = 0xf9,
-            // MScriptDescription "K GetActivityTranslationModifiers"
+            // MScriptDescription " GetActivityTranslationModifiers"
             MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS = 0xfa,
             // MScriptDescription "GetUnitLifetimeFraction GetAttackSound"
             MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND = 0xfb,
@@ -562,7 +562,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x10e,
             // MScriptDescription "GetVisualZSpeedBaseOverride GetVisualZDelta"
             MODIFIER_PROPERTY_VISUAL_Z_DELTA = 0x10f,
-            // MScriptDescription "K GetVisualZSpeedBaseOverride"
+            // MScriptDescription "L GetVisualZSpeedBaseOverride"
             MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 0x110,
             // MScriptDescription "GetModifierNoVisionOfAttacker "
             MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 0x111,
@@ -612,7 +612,7 @@ namespace source2sdk
             MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 0x127,
             // MScriptDescription "GetModifierPropetyFailAttack GetModifierAvoidDamageAfterReductions"
             MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS = 0x128,
-            // MScriptDescription "K GetModifierPropetyFailAttack"
+            // MScriptDescription "L GetModifierPropetyFailAttack"
             MODIFIER_PROPERTY_FAIL_ATTACK = 0x129,
             // MScriptDescription "GetModifierSuppressFullscreenDeathFX GetModifierPrereduceIncomingDamage_Mult"
             MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 0x12a,
@@ -648,13 +648,13 @@ namespace source2sdk
             MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x139,
             // MScriptDescription "GetModifierShareXPRune OnDamageHPLoss"
             MODIFIER_EVENT_ON_DAMAGE_HPLOSS = 0x13a,
-            // MScriptDescription "K GetModifierShareXPRune"
+            // MScriptDescription "L GetModifierShareXPRune"
             MODIFIER_PROPERTY_SHARE_XPRUNE = 0x13b,
             // MScriptDescription "GetModifierNoFreeTPScrollOnDeath GetModifierXPFountainCountdownTimeOverride"
             MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE = 0x13c,
             // MScriptDescription "GetModifierHasBonusNeutralItemChoice GetModifierNoFreeTPScrollOnDeath"
             MODIFIER_PROPERTY_NO_FREE_TP_SCROLL_ON_DEATH = 0x13d,
-            // MScriptDescription "y GetModifierHasBonusNeutralItemChoice"
+            // MScriptDescription "P GetModifierHasBonusNeutralItemChoice"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_CHOICE = 0x13e,
             // MScriptDescription "GetModifierPreserveNeutralItemPassives HasBonusNeutralItemPassive"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE = 0x13f,
@@ -674,7 +674,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES = 0x146,
             // MScriptDescription "GetModifierAbilityPoints GetSuppressCrit"
             MODIFIER_PROPERTY_SUPPRESS_CRIT = 0x147,
-            // MScriptDescription "K GetModifierAbilityPoints"
+            // MScriptDescription "L GetModifierAbilityPoints"
             MODIFIER_PROPERTY_ABILITY_POINTS = 0x148,
             // MScriptDescription "GetModifierItemSellbackCost GetModifierBuybackPenaltyPercent"
             MODIFIER_PROPERTY_BUYBACK_PENALTY_PERCENT = 0x149,
@@ -698,7 +698,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BONUS_LOTUS_HEAL = 0x152,
             // MScriptDescription "GetModifierBaseArmorPerAgiBonusPercentage GetModifierBaseHpRegenPerStrBonusPercentage"
             MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE = 0x153,
-            // MScriptDescription "K GetModifierBaseArmorPerAgiBonusPercentage"
+            // MScriptDescription "L GetModifierBaseArmorPerAgiBonusPercentage"
             MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE = 0x154,
             // MScriptDescription "GetModifierBaseManaRegenPerIntBonusPercentage GetModifierBaseAttackSpeedPerAgiBonusPercentage"
             MODIFIER_PROPERTY_BASE_ATTACKSPEED_PER_AGI_BONUS_PERCENTAGE = 0x155,
@@ -774,7 +774,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x178,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant"
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x179,
-            // MScriptDescription "K GetModifierPropertyForbidIllusions"
+            // MScriptDescription "L GetModifierPropertyForbidIllusions"
             MODIFIER_PROPERTY_FORBID_ILLUSIONS = 0x17a,
             // MScriptDescription "GetModifierPropertyRestorationAmplification GetModifierPropertyManacostOverride"
             MODIFIER_PROPERTY_MANACOST_OVERRIDE = 0x17b,
