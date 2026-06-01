@@ -654,7 +654,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE = 0x13c,
             // MScriptDescription "GetModifierHasBonusNeutralItemChoice GetModifierNoFreeTPScrollOnDeath"
             MODIFIER_PROPERTY_NO_FREE_TP_SCROLL_ON_DEATH = 0x13d,
-            // MScriptDescription "P GetModifierHasBonusNeutralItemChoice"
+            // MScriptDescription " GetModifierHasBonusNeutralItemChoice"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_CHOICE = 0x13e,
             // MScriptDescription "GetModifierPreserveNeutralItemPassives HasBonusNeutralItemPassive"
             MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE = 0x13f,
