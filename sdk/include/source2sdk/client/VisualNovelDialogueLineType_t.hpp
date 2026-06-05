@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 8
+        // Enumerator count: 12
         // Alignment: 4
         // Size: 0x_
         enum class VisualNovelDialogueLineType_t : std::uint32_t
@@ -24,8 +24,12 @@ namespace source2sdk
             k_eVisualNovelDialogueLineType_Comic = 0x3,
             k_eVisualNovelDialogueLineType_ExternalComic = 0x4,
             k_eVisualNovelDialogueLineType_Video = 0x5,
-            k_eVisualNovelDialogueLineType_ConditionalIf = 0x6,
-            k_eVisualNovelDialogueLineType_ConditionalElse = 0x7,
+            k_eVisualNovelDialogueLineType_PopupImage = 0x6,
+            k_eVisualNovelDialogueLineType_ConditionalIf = 0x7,
+            k_eVisualNovelDialogueLineType_ConditionalElse = 0x8,
+            k_eVisualNovelDialogueLineType_ActionSwipe = 0x9,
+            k_eVisualNovelDialogueLineType_MotionComic = 0xa,
+            k_eVisualNovelDialogueLineType_PortraitSwap = 0xb,
         };
     };
 };
