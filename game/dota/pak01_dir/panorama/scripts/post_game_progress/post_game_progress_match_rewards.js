@@ -389,7 +389,7 @@ class AnimateMatchRewardsScreenAction extends RunSequentialActions
 									rewardsPanel.RemoveAndDeleteChildren();
 									panel.RemoveClass( 'RewardsFinished' );
 
-									PlayUISoundScript( "HeroBadge.Levelup" );
+									PlayUISoundEvent( "HeroBadge.Levelup" );
 									$.DispatchEvent( 'DOTASceneFireEntityInput', levelUpScene, 'light_rank_' + levelUpData.tier_number, 'TurnOn', '1' );
 									$.DispatchEvent( 'DOTASceneFireEntityInput', levelUpScene, 'particle_rank_' + levelUpData.tier_number, 'start', '1' );
 								} ) );

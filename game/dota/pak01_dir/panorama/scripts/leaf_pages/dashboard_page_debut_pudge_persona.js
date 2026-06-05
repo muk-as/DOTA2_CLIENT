@@ -47,8 +47,8 @@ var RunPageAnimation = function ()
 	g_seq.actions.push( new WaitAction( 0.01 ) );
     g_seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true ); } ) )
     g_seq.actions.push( new WaitForClassAction( $( '#ModelBackground' ), 'SceneLoaded' ) );
-    g_seq.actions.push(new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundScript( 'pudge_persona_debut_stinger'); }))
-    g_seq.actions.push(new RunFunctionAction( function () { g_SFX_SoundId = PlayUISoundScript( 'pudge_persona_debut_sfx'); } ) )
+    g_seq.actions.push(new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundEvent( 'pudge_persona_debut_stinger'); }))
+    g_seq.actions.push(new RunFunctionAction( function () { g_SFX_SoundId = PlayUISoundEvent( 'pudge_persona_debut_sfx'); } ) )
 	g_seq.actions.push( new AddClassAction( $( '#MainContainer' ), 'Initialize' ) );
 	g_seq.actions.push( new AddClassAction( $( '#ModelBackground' ), 'Initialize' ) );
 
@@ -82,11 +82,11 @@ function closePudgePersonaDebutPage() {
 
     if ( g_Stinger_SoundId !== undefined )
     {
-        StopUISoundScript( g_Stinger_SoundId );
+        StopUISoundEvent( g_Stinger_SoundId );
     }
     if ( g_SFX_SoundId !== undefined )
     {
-        StopUISoundScript( g_SFX_SoundId );
+        StopUISoundEvent( g_SFX_SoundId );
     }
 
     $('#MainContainer').RemoveClass('Initialize');

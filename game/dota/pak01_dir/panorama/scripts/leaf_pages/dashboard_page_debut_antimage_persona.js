@@ -29,8 +29,8 @@ var RunPageAnimation = function ()
 	g_seq.actions.push( new WaitAction( 0.01 ) );
     g_seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true ); } ) )
 	g_seq.actions.push( new WaitForClassAction( $( '#AMModelBackground' ), 'SceneLoaded' ) );
-    g_seq.actions.push(new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundScript( 'antimage_persona_debut_stinger'); }))
-    g_seq.actions.push(new RunFunctionAction( function () { g_SFX_SoundId = PlayUISoundScript( 'antimage_persona_debut_sfx'); } ) )
+    g_seq.actions.push(new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundEvent( 'antimage_persona_debut_stinger'); }))
+    g_seq.actions.push(new RunFunctionAction( function () { g_SFX_SoundId = PlayUISoundEvent( 'antimage_persona_debut_sfx'); } ) )
     g_seq.actions.push(new RunFunctionAction( function () { $('#AMModelBackground').FireEntityInput('antimage_persona', 'SetAnimation', 'antimage_persona_debut_spawn'); } ) )
 	g_seq.actions.push( new AddClassAction( $( '#MainContainer' ), 'Initialize' ) );
 	g_seq.actions.push( new AddClassAction( $( '#AMModelBackground' ), 'Initialize' ) );
@@ -108,8 +108,8 @@ var RunPageAnimation = function ()
 
 function closeFemaleAntimageDebutPage() {
     g_seq.finish();
-    StopUISoundScript( g_Stinger_SoundId );
-    StopUISoundScript( g_SFX_SoundId );
+    StopUISoundEvent( g_Stinger_SoundId );
+    StopUISoundEvent( g_SFX_SoundId );
 
     $('#MainContainer').RemoveClass('Initialize');
     $('#AMModelBackground').RemoveClass('Initialize');

@@ -154,7 +154,7 @@ class AnimateHeroBadgeLevelRewardAction extends RunSequentialActions
 			var sound_event = this.data.sound_event;
 			$.RegisterEventHandler( "Activated", reward, function()
 			{
-				PlayUISoundScript( sound_event );
+				PlayUISoundEvent( sound_event );
 			} );
 			this.actions.push( new AddClassAction( reward, 'ShowReward' ) );
 		}
@@ -337,7 +337,7 @@ class AnimateHeroBadgeLevelScreenAction extends RunSequentialActions
 									rewardsPanel.RemoveAndDeleteChildren();
 									panel.RemoveClass( 'RewardsFinished' );
 
-									PlayUISoundScript( "HeroBadge.Levelup" );
+									PlayUISoundEvent( "HeroBadge.Levelup" );
 									$.DispatchEvent( 'DOTASceneFireEntityInput', levelUpScene, 'light_rank_' + levelUpData.tier_number, 'TurnOn', '1' );
 									$.DispatchEvent( 'DOTASceneFireEntityInput', levelUpScene, 'particle_rank_' + levelUpData.tier_number, 'start', '1' );
 								} ) );

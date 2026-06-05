@@ -38,7 +38,7 @@ class PlaySoundIfVisibleAction extends RunFunctionAction
 				findDetailsOverviewPanel = findDetailsOverviewPanel.GetParent();
 			}
 			if ( findDetailsOverviewPanel.BHasClass( "TabSelected" ) )
-				PlayUISoundScript( soundName );
+				PlayUISoundEvent( soundName );
 		} );
 	}
 }

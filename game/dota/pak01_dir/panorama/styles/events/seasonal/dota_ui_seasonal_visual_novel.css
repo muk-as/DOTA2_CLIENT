@@ -94,14 +94,49 @@
 	background-image: url("s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_spring_psd.vtex");
 }
 
-#GroupContainer2
+.Season_Summer2026 .MainContents
 {
-	visibility: collapse;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #143226 ), to( #060910 ) );
 }
 
-.ShowActor1.ShowActor2 #GroupContainer2
+.Season_Summer2026 .VisualNovelBackground
 {
-	visibility: visible;
+	background-image: url("s2r://panorama/images/events/seasonal/backgrounds/summer_background_psd.vtex");
+	background-size: cover;
+	background-repeat: no-repeat;
+	blur: gaussian( 2px );
+	brightness: 0.5;
+	opacity-mask: url("s2r://panorama/images/events/seasonal/backgrounds/background_mask_psd.vtex");
+}
+
+.Season_Summer2026 .InstructionText
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( #AAF2D5 ), to( #6BB296 ) );
+}
+
+.Season_Summer2026 .InstructionIcon
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #AAF2D5 ), to( #6BB296 ) );
+}
+
+.Season_Summer2026 #RewardLabel,.Season_Summer2026 #RewardTextHero
+{
+	color: #80AB9A;
+}
+
+.Season_Summer2026 .PortraitBackgroundFrame
+{
+	background-image: url("s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_summer_psd.vtex");
+}
+
+#GroupContainer2
+{
+	opacity: 0;
+}
+
+.ShowActor2 #GroupContainer2
+{
+	opacity: 1;
 }
 
 DOTASeasonalVisualNovel
@@ -263,14 +298,14 @@ DOTASeasonalVisualNovel.Hidden
 	opacity: 1;
 }
 
-.TopUpdated .GroupContainer.Top .PortraitContainerLayered.PortraitOrder0,.BottomUpdated .GroupContainer.Bottom .PortraitContainerLayered.PortraitOrder0
+.TopUpdated .GroupContainer.Top .PortraitContainerLayered.PortraitOrder0,.BottomUpdated .GroupContainer.Bottom .PortraitContainerLayered.PortraitOrder0,.NoPortraitDimBlur .GroupContainer.Top .PortraitContainerLayered.PortraitOrder0,.NoPortraitDimBlur .GroupContainer.Bottom .PortraitContainerLayered.PortraitOrder0
 {
 	brightness: 1.0;
 	saturation: 1.0;
 	blur: none;
 }
 
-.TopUpdated .GroupContainer.Top .ActorTextContainer,.BottomUpdated .GroupContainer.Bottom .ActorTextContainer
+.TopUpdated .GroupContainer.Top .ActorTextContainer,.BottomUpdated .GroupContainer.Bottom .ActorTextContainer,.NoPortraitDimBlur .GroupContainer.Top .ActorTextContainer,.NoPortraitDimBlur .GroupContainer.Bottom .ActorTextContainer
 {
 	brightness: 1.0;
 	saturation: 1.0;
@@ -575,12 +610,26 @@ DOTASeasonalVisualNovel.Hidden
 {
 	animation-name: EntranceSlideTop;
 	animation-duration: 0.5s;
+	animation-iteration-count:1;
 }
 
 .Top .PortraitGroup .PortraitContainerLayered.EntranceSlideFast .PortraitDropShadow
 {
 	animation-name: EntranceSlideTop;
 	animation-duration: 0.5s;
+	animation-iteration-count:1;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.EntranceSlideFast.ShakePortrait
+{
+	animation-name: EntranceSlideTopThenShake;
+	animation-duration: 1.0;
+}
+
+.Top .PortraitGroup .PortraitContainerLayered.EntranceSlideFast.ShakePortrait .PortraitDropShadow
+{
+	animation-name: EntranceSlideTopThenShake;
+	animation-duration: 1.0s;
 }
 
 .Top .PortraitGroup .PortraitContainerLayered.ExitSlideFast
@@ -620,6 +669,12 @@ DOTASeasonalVisualNovel.Hidden
 {
 	animation-name: EntranceSlideBottom;
 	animation-duration: 0.5s;
+}
+
+.Bottom .PortraitGroup .PortraitContainerLayered.EntranceSlideFast.ShakePortrait
+{
+	animation-name: EntranceSlideBottomThenShake;
+	animation-duration: 1.0s;
 }
 
 .Bottom .PortraitGroup .PortraitContainerLayered.ExitSlideFast
@@ -920,6 +975,260 @@ DOTASeasonalVisualNovel.Hidden
 	
 }
 
+@keyframes 'EntranceSlideShakeTop'
+{
+	0%
+	{
+		transform:translateX( -420px );
+		opacity: 0;
+	}
+	
+	10%
+	{
+		transform:translateX( -340px );
+	}
+	
+	20%
+	{
+		transform:translateX( -338px );
+	}
+	
+	30%
+	{
+		transform:translateX( -262px );
+	}
+	
+	40%
+	{
+		transform:translateX( -256px );
+	}
+	
+	50%
+	{
+		transform:translateX( -184px );
+	}
+	
+	60%
+	{
+		transform:translateX( -173px );
+	}
+	
+	70%
+	{
+		transform:translateX( -107px );
+	}
+	
+	80%
+	{
+		transform:translateX( -90px );
+	}
+	
+	90%
+	{
+		transform:translateX( -30px );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX( -10px );
+	}
+	
+}
+
+@keyframes 'EntranceSlideShakeBottom'
+{
+	0%
+	{
+		transform:translateX( 420px );
+		opacity: 0;
+	}
+	
+	10%
+	{
+		transform:translateX( 340px );
+	}
+	
+	20%
+	{
+		transform:translateX( 338px );
+	}
+	
+	30%
+	{
+		transform:translateX( 262px );
+	}
+	
+	40%
+	{
+		transform:translateX( 256px );
+	}
+	
+	50%
+	{
+		transform:translateX( 184px );
+	}
+	
+	60%
+	{
+		transform:translateX( 173px );
+	}
+	
+	70%
+	{
+		transform:translateX( 107px );
+	}
+	
+	80%
+	{
+		transform:translateX( 90px );
+	}
+	
+	90%
+	{
+		transform:translateX( 30px );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX( 10px );
+	}
+	
+}
+
+@keyframes 'EntranceSlideTopThenShake'
+{
+	0%
+	{
+		opacity: 0;
+		transform:translateX(-400px);
+	}
+	
+	50%
+	{
+		opacity: 1;
+		transform:translateX(0px);
+	}
+	
+	55%
+	{
+		transform:translateX( 20px );
+	}
+	
+	60%
+	{
+		transform:translateX( -18px );
+	}
+	
+	65%
+	{
+		transform:translateX( 18px );
+	}
+	
+	70%
+	{
+		transform:translateX( -16px );
+	}
+	
+	75%
+	{
+		transform:translateX( 16px );
+	}
+	
+	80%
+	{
+		transform:translateX( -13px );
+	}
+	
+	85%
+	{
+		transform:translateX( 13px );
+	}
+	
+	90%
+	{
+		transform:translateX( -10px );
+	}
+	
+	95%
+	{
+		transform:translateX( 10px );
+	}
+	
+	100%
+	{
+		transform:translateX( -10px );
+	}
+	
+}
+
+@keyframes 'EntranceSlideBottomThenShake'
+{
+	0%
+	{
+		opacity: 0;
+		transform:translateX(400px);
+	}
+	
+	50%
+	{
+		opacity: 1;
+		transform:translateX(0px);
+	}
+	
+	55%
+	{
+		transform:translateX( 20px );
+	}
+	
+	60%
+	{
+		transform:translateX( -18px );
+	}
+	
+	65%
+	{
+		transform:translateX( 18px );
+	}
+	
+	70%
+	{
+		transform:translateX( -16px );
+	}
+	
+	75%
+	{
+		transform:translateX( 16px );
+	}
+	
+	80%
+	{
+		transform:translateX( -13px );
+	}
+	
+	85%
+	{
+		transform:translateX( 13px );
+	}
+	
+	90%
+	{
+		transform:translateX( -10px );
+	}
+	
+	95%
+	{
+		transform:translateX( 10px );
+	}
+	
+	100%
+	{
+		transform:translateX( -10px );
+	}
+	
+}
+
 @keyframes 'EntranceRising'
 {
 	0%
@@ -1190,5 +1499,193 @@ DOTASeasonalVisualNovel.Hidden
 	width: 100%;
 	height: 100%;
 	border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.dialogue_q04_set03_itm04 .GroupContainer.Bottom .ActorTextContainer
+{
+	padding-left: 0px;
+	padding-right: 40px;
+}
+
+@keyframes 'EntranceSlideBottom_CustomQ04S03I04_Galdron'
+{
+	0%
+	{
+		opacity: 0;
+		transform:translateX(400px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX(1000px);
+	}
+	
+}
+
+@keyframes 'Shake_CustomQ04S03I04_Galdron'
+{
+	0%
+	{
+		transform:translateX( -70px );
+	}
+	
+	10%
+	{
+		transform:translateX( -30px );
+	}
+	
+	20%
+	{
+		transform:translateX( -68px );
+	}
+	
+	30%
+	{
+		transform:translateX( -28px );
+	}
+	
+	40%
+	{
+		transform:translateX( -66px );
+	}
+	
+	50%
+	{
+		transform:translateX( -26px );
+	}
+	
+	60%
+	{
+		transform:translateX( -63px );
+	}
+	
+	70%
+	{
+		transform:translateX( -23px );
+	}
+	
+	80%
+	{
+		transform:translateX( -60px );
+	}
+	
+	90%
+	{
+		transform:translateX( -30px );
+	}
+	
+	100%
+	{
+		transform:translateX( -60px );
+	}
+	
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait0.Galdron
+{
+	z-index: 3;
+	transform: translateX( -50px );
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait0.Galdron.EntranceSlideFast
+{
+	animation-name: EntranceSlideBottom_CustomQ04S03I04_Galdron;
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait0.Galdron.ShakePortrait
+{
+	animation-name: Shake_CustomQ04S03I04_Galdron;
+}
+
+@keyframes 'EntranceSlideBottom_CustomQ04S03I04_Sextus'
+{
+	0%
+	{
+		opacity: 0;
+		transform:translateX(500px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform:translateX(100px);
+	}
+	
+}
+
+@keyframes 'Shake_CustomQ04S03I04_Sextus'
+{
+	0%
+	{
+		transform:translateX( 80px );
+	}
+	
+	10%
+	{
+		transform:translateX( 120px );
+	}
+	
+	20%
+	{
+		transform:translateX( 82px );
+	}
+	
+	30%
+	{
+		transform:translateX( 118px );
+	}
+	
+	40%
+	{
+		transform:translateX( 84px );
+	}
+	
+	50%
+	{
+		transform:translateX( 116px );
+	}
+	
+	60%
+	{
+		transform:translateX( 87px );
+	}
+	
+	70%
+	{
+		transform:translateX( 113px );
+	}
+	
+	80%
+	{
+		transform:translateX( 90px );
+	}
+	
+	90%
+	{
+		transform:translateX( 110px );
+	}
+	
+	100%
+	{
+		transform:translateX( 90px );
+	}
+	
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait1.Sextus
+{
+	z-index: 2;
+	transform: translateX( 100px );
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait1.Sextus.EntranceSlideFast
+{
+	animation-name: EntranceSlideBottom_CustomQ04S03I04_Sextus;
+}
+
+.dialogue_q04_set03_itm04 .PortraitContainerLayered.Portrait1.Sextus.ShakePortrait
+{
+	animation-name: Shake_CustomQ04S03I04_Sextus;
 }
 

@@ -14,26 +14,26 @@ function SetStep(newStep) {
     switch (step) {
         case 1:
             panel.AddClass("ShowColumn2");
-            PlayUISoundScript("ui.shortwhoosh");
+            PlayUISoundEvent("ui.shortwhoosh");
             break;
         case 2:
             panel.AddClass("ShowColumn3");
-            PlayUISoundScript("ui.shortwhoosh");
+            PlayUISoundEvent("ui.shortwhoosh");
             break;
         case 3:
-            PlayUISoundScript("ui.shortwhoosh");
+            PlayUISoundEvent("ui.shortwhoosh");
             panel.AddClass("ShowStoryPage");
             $.Schedule(0.7, function () {
                 $.GetContextPanel().AddClass("StoryPageLoaded");
-                PlayUISoundScript("ui_find_match_slide_out");
+                PlayUISoundEvent("ui_find_match_slide_out");
             });
             break;
         case 4:
-            PlayUISoundScript("ui.shortwhoosh");
+            PlayUISoundEvent("ui.shortwhoosh");
             panel.AddClass("ShowComicPage");
             break;
         default:
-            PlayUISoundScript("ui.shortwhoosh");
+            PlayUISoundEvent("ui.shortwhoosh");
             $.DispatchEvent("UIPopupButtonClicked", panel);
             $.DispatchEvent("DOTANextOverworldIntro", panel);
             break;
@@ -56,6 +56,6 @@ function SkipToStory() {
         $.GetContextPanel().AddClass("Loaded");
     });
     $.Schedule(1.1, function () {
-        PlayUISoundScript("ui_find_match_slide_out");
+        PlayUISoundEvent("ui_find_match_slide_out");
     });
 })();

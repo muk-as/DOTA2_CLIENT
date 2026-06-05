@@ -17,7 +17,7 @@ var RunPageAnimation = function ()
     g_seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true ); } ) )
     g_seq.actions.push( new WaitForClassAction( $( '#ModelBackground' ), 'SceneLoaded' ) );
 
-    g_seq.actions.push( new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundScript( 'crownfall_1_debut_stinger' ); } ) )
+    g_seq.actions.push( new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundEvent( 'crownfall_1_debut_stinger' ); } ) )
     g_seq.actions.push( new AddClassAction( $( '#MainContainer' ), 'Initialize' ) );
     g_seq.actions.push( new AddClassAction( $( '#ModelBackground' ), 'Initialize' ) );
 
@@ -42,7 +42,7 @@ function OnLeavePage()
     }
     if ( g_Stinger_SoundId !== undefined )
     {
-        StopUISoundScript( g_Stinger_SoundId );
+        StopUISoundEvent( g_Stinger_SoundId );
     }
 
     $('#MainContainer').RemoveClass('Initialize');
