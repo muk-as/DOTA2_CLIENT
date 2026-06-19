@@ -36,7 +36,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL = 0x7,
             // MScriptDescription "GetModifierProcAttack_BonusDamage_Magical_Target GetModifierProcAttack_BonusDamage_Pure"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE = 0x8,
-            // MScriptDescription "p GetModifierProcAttack_BonusDamage_Magical_Target"
+            // MScriptDescription " GetModifierProcAttack_BonusDamage_Magical_Target"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET = 0x9,
             // MScriptDescription "GetModifierOverrideAttackDamage GetModifierProcAttack_Feedback"
             MODIFIER_PROPERTY_PROCATTACK_FEEDBACK = 0xa,
@@ -60,7 +60,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_MAX_OVERRIDE = 0x13,
             // MScriptDescription "GetModifierMoveSpeedBonus_Percentage_Unique GetModifierMoveSpeedBonus_Percentage"
             MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE = 0x14,
-            // MScriptDescription "P GetModifierMoveSpeedBonus_Percentage_Unique"
+            // MScriptDescription " GetModifierMoveSpeedBonus_Percentage_Unique"
             MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE = 0x15,
             // MScriptDescription "GetModifierMoveSpeedBonus_Special_Boots_2 GetModifierMoveSpeedBonus_Special_Boots"
             MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE = 0x16,
@@ -170,7 +170,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BASE_PERCENTAGE = 0x4a,
             // MScriptDescription "GetModifierPhysicalArmorBonus GetModifierPhysicalArmorTotal_Percentage"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_TOTAL_PERCENTAGE = 0x4b,
-            // MScriptDescription " GetModifierPhysicalArmorBonus"
+            // MScriptDescription "P GetModifierPhysicalArmorBonus"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS = 0x4c,
             // MScriptDescription "GetModifierPhysicalArmorBonusUniqueActive GetModifierPhysicalArmorBonusUnique"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE = 0x4d,
@@ -316,7 +316,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_INNATE_DAMAGE_BLOCK_PCT_OVERRIDE = 0x93,
             // MScriptDescription "GetModifierTotal_ConstantBlock GetModifierPhysical_ConstantBlockUnavoidablePreArmor"
             MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR = 0x94,
-            // MScriptDescription " GetModifierTotal_ConstantBlock"
+            // MScriptDescription "p GetModifierTotal_ConstantBlock"
             MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK = 0x95,
             // MScriptDescription "GetOverrideAnimationRate GetOverrideAnimation"
             MODIFIER_PROPERTY_OVERRIDE_ANIMATION = 0x96,
@@ -340,7 +340,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE = 0x9f,
             // MScriptDescription "GetFixedNightVision GetFixedDayVision"
             MODIFIER_PROPERTY_FIXED_DAY_VISION = 0xa0,
-            // MScriptDescription " GetFixedNightVision"
+            // MScriptDescription "P GetFixedNightVision"
             MODIFIER_PROPERTY_FIXED_NIGHT_VISION = 0xa1,
             // MScriptDescription "GetMinMana GetMinHealth"
             MODIFIER_PROPERTY_MIN_HEALTH = 0xa2,
@@ -494,7 +494,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_MODEL_CHANGED = 0xec,
             // MScriptDescription "OnModifierRemoved OnModifierAdded"
             MODIFIER_EVENT_ON_MODIFIER_ADDED = 0xed,
-            // MScriptDescription "P OnModifierRemoved"
+            // MScriptDescription " OnModifierRemoved"
             MODIFIER_EVENT_ON_MODIFIER_REMOVED = 0xee,
             // MScriptDescription "OnShardUpgradeSelected OnScepterUpgradeSelected"
             MODIFIER_EVENT_ON_SCEPTER_UPGRADE_SELECTED = 0xef,
@@ -514,7 +514,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MODEL_SCALE_CONSTANT = 0xf6,
             // MScriptDescription "GetModifierShard GetModifierScepter"
             MODIFIER_PROPERTY_IS_SCEPTER = 0xf7,
-            // MScriptDescription "Yo GetModifierShard"
+            // MScriptDescription " GetModifierShard"
             MODIFIER_PROPERTY_IS_SHARD = 0xf8,
             // MScriptDescription "GetActivityTranslationModifiers GetModifierRadarCooldownReduction"
             MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION = 0xf9,
@@ -698,7 +698,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BONUS_LOTUS_HEAL = 0x152,
             // MScriptDescription "GetModifierBaseArmorPerAgiBonusPercentage GetModifierBaseHpRegenPerStrBonusPercentage"
             MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE = 0x153,
-            // MScriptDescription " GetModifierBaseArmorPerAgiBonusPercentage"
+            // MScriptDescription "p GetModifierBaseArmorPerAgiBonusPercentage"
             MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE = 0x154,
             // MScriptDescription "GetModifierBaseManaRegenPerIntBonusPercentage GetModifierBaseAttackSpeedPerAgiBonusPercentage"
             MODIFIER_PROPERTY_BASE_ATTACKSPEED_PER_AGI_BONUS_PERCENTAGE = 0x155,
@@ -752,7 +752,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BASEATTACK_POSTBONUS = 0x16d,
             // MScriptDescription "OnFoWTeamChanged"
             MODIFIER_EVENT_ON_FOW_TEAM_CHANGED = 0x16e,
-            // MScriptDescription "GetSuppressAttackProcs"
+            // MScriptDescription "OnAbilityToggled GetSuppressAttackProcs"
             MODIFIER_PROPERTY_SUPPRESS_ATTACK_PROCS = 0x16f,
             // MScriptDescription "GetModifierAvoidAttackProcs OnAbilityToggled"
             MODIFIER_EVENT_ON_ABILITY_TOGGLED = 0x170,
@@ -774,7 +774,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x178,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant"
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x179,
-            // MScriptDescription " GetModifierPropertyForbidIllusions"
+            // MScriptDescription "GetModifierPropertyForbidIllusions"
             MODIFIER_PROPERTY_FORBID_ILLUSIONS = 0x17a,
             // MScriptDescription "GetModifierPropertyRestorationAmplification GetModifierPropertyManacostOverride"
             MODIFIER_PROPERTY_MANACOST_OVERRIDE = 0x17b,
