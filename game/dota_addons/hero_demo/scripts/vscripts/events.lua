@@ -342,6 +342,10 @@ end
 function CHeroDemo:OnRequestInitialSpawnHeroID( eventSourceIndex, data )
 	local sHeroToSpawn = Convars:GetStr( "dota_hero_demo_default_enemy" )
 	local nHeroID = DOTAGameManager:GetHeroIDByName( sHeroToSpawn )
+	-- // Axehack
+	if nHeroID == 2 then
+		nHeroID = 3
+	end
 	local event_data =
 	{
 		hero_id = nHeroID,
