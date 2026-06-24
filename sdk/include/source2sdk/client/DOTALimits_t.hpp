@@ -22,7 +22,7 @@ namespace source2sdk
             DOTA_MAX_PLAYERS = 0x40,
             // MScriptDescription "Max number of player teams supported. Max number of players per team."
             DOTA_MAX_TEAM = 0x18,
-            // MScriptDescription " Max number of player teams supported."
+            // MScriptDescription "Max number of non-spectator players supported. Max number of player teams supported."
             DOTA_MAX_PLAYER_TEAMS = 0xa,
             // MScriptDescription "How many spectators can watch. Max number of non-spectator players supported."
             DOTA_MAX_TEAM_PLAYERS = 0x18,

@@ -246,7 +246,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x70,
             // MScriptDescription "GetModifierAttackRangeOverride GetModifierCastRangeBonusStacking"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x71,
-            // MScriptDescription " GetModifierAttackRangeOverride"
+            // MScriptDescription "P GetModifierAttackRangeOverride"
             MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE = 0x72,
             // MScriptDescription "GetModifierAttackRangeBonusUnique GetModifierAttackRangeBonus"
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS = 0x73,
@@ -416,7 +416,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ATTACK = 0xc5,
             // MScriptDescription "OnAttackFail OnAttackLanded"
             MODIFIER_EVENT_ON_ATTACK_LANDED = 0xc6,
-            // MScriptDescription " OnAttackFail"
+            // MScriptDescription "P OnAttackFail"
             MODIFIER_EVENT_ON_ATTACK_FAIL = 0xc7,
             // MScriptDescription "OnProjectileDodge OnAttackAllied"
             MODIFIER_EVENT_ON_ATTACK_ALLIED = 0xc8,
@@ -512,7 +512,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MODEL_SCALE_USE_IN_OUT_EASE = 0xf5,
             // MScriptDescription "GetModifierModelScaleConstant"
             MODIFIER_PROPERTY_MODEL_SCALE_CONSTANT = 0xf6,
-            // MScriptDescription "lx GetModifierScepter"
+            // MScriptDescription "h GetModifierScepter"
             MODIFIER_PROPERTY_IS_SCEPTER = 0xf7,
             // MScriptDescription "GetModifierRadarCooldownReduction GetModifierShard"
             MODIFIER_PROPERTY_IS_SHARD = 0xf8,
@@ -562,7 +562,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x10e,
             // MScriptDescription "GetVisualZSpeedBaseOverride GetVisualZDelta"
             MODIFIER_PROPERTY_VISUAL_Z_DELTA = 0x10f,
-            // MScriptDescription " GetVisualZSpeedBaseOverride"
+            // MScriptDescription "  GetVisualZSpeedBaseOverride"
             MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 0x110,
             // MScriptDescription "GetModifierNoVisionOfAttacker "
             MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 0x111,
@@ -648,7 +648,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x139,
             // MScriptDescription "GetModifierShareXPRune OnDamageHPLoss"
             MODIFIER_EVENT_ON_DAMAGE_HPLOSS = 0x13a,
-            // MScriptDescription "  GetModifierShareXPRune"
+            // MScriptDescription " GetModifierShareXPRune"
             MODIFIER_PROPERTY_SHARE_XPRUNE = 0x13b,
             // MScriptDescription "GetModifierNoFreeTPScrollOnDeath GetModifierXPFountainCountdownTimeOverride"
             MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE = 0x13c,
@@ -746,7 +746,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED = 0x16a,
             // MScriptDescription "GetRedirectSpell OnTierTokenRerolled"
             MODIFIER_EVENT_ON_TIER_TOKEN_REROLLED = 0x16b,
-            // MScriptDescription "GetRedirectSpell"
+            // MScriptDescription "GetBaseAttackPostBonus GetRedirectSpell"
             MODIFIER_PROPERTY_REDIRECT_SPELL = 0x16c,
             // MScriptDescription "OnFoWTeamChanged GetBaseAttackPostBonus"
             MODIFIER_PROPERTY_BASEATTACK_POSTBONUS = 0x16d,
@@ -774,7 +774,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT = 0x178,
             // MScriptDescription "GetModifierPropertyForbidIllusions GetModifierMoveSpeedPostMultiplierBonus_Constant"
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x179,
-            // MScriptDescription "R GetModifierPropertyForbidIllusions"
+            // MScriptDescription "Pc GetModifierPropertyForbidIllusions"
             MODIFIER_PROPERTY_FORBID_ILLUSIONS = 0x17a,
             // MScriptDescription "GetModifierPropertyRestorationAmplification GetModifierPropertyManacostOverride"
             MODIFIER_PROPERTY_MANACOST_OVERRIDE = 0x17b,

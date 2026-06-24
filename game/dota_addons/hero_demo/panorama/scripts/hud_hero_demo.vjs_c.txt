@@ -19,12 +19,7 @@ function Init()
 		$( '#TowersEnabledButton' ).SetSelected( UiDefaults["TowersEnabled"] );
     }
 
-	//Axehack
-	var nHeroID = Players.GetSelectedHeroID( 0 )
-	if ( nHeroID == 2 )
-		nHeroID = 1;
-
-	SwitchToNewHero( nHeroID, 0);
+	SwitchToNewHero( Players.GetSelectedHeroID( 0 ), 0);
 
 	if ( !Game.GetConvarBool("dota_hero_demo_is_hosting") )
 	{
