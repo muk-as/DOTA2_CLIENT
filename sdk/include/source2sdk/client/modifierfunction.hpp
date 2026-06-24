@@ -512,7 +512,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MODEL_SCALE_USE_IN_OUT_EASE = 0xf5,
             // MScriptDescription "GetModifierModelScaleConstant"
             MODIFIER_PROPERTY_MODEL_SCALE_CONSTANT = 0xf6,
-            // MScriptDescription "h GetModifierScepter"
+            // MScriptDescription "H GetModifierScepter"
             MODIFIER_PROPERTY_IS_SCEPTER = 0xf7,
             // MScriptDescription "GetModifierRadarCooldownReduction GetModifierShard"
             MODIFIER_PROPERTY_IS_SHARD = 0xf8,
