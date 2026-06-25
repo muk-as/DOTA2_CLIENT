@@ -37,6 +37,7 @@
 10CMsgQAngle
 10CMsgVector
 10CMsg_CVars
+10IAppSystem
 10IHostUtils
 11CNETMsg_NOP
 11IGameSystem
@@ -64,7 +65,6 @@
 14CGameAppSystemI18IPredictionDiffMgrLi0EE
 14CGameAppSystemI20IGameSystem2HostHookLi0EE
 14CGameAppSystemI25ISinglePlayerSharedMemoryLi0EE
-14CGameModelInfo
 14CMsgPlayerInfo
 14CMsgQuaternion
 14IGameModelInfo
@@ -147,6 +147,7 @@
 23CNETMsg_SplitScreenUser
 23CSVCMsg_GameEvent_key_t
 24CSchemaRegistration_host
+256:?\n
 25CNETMsg_SpawnGroup_Unload
 25CSurfacePropDataTableBase
 25ISinglePlayerSharedMemory
@@ -160,6 +161,7 @@
 33CNETMsg_SpawnGroup_ManifestUpdate
 34CNETMsg_SpawnGroup_SetCreationTick
 3\n\bNamePart
+3\n\nCMsgQAngle
 41CModuleMetadataProvider_ResourceManifests
 5\n\vnested_type
 6\n\fmessage_type
@@ -208,14 +210,12 @@ AssetSystemTest001
 BackUp() can only be called after a successful Next
 BakedLODBuilderMgr001
 BenchmarkService001
-BoneConstraintList
 Boolean default must be true or false
-C10IAppSystem
+C14CGameModelInfo
 CAnimScriptBase
 CAnimScriptParam
 CDotaMapUtils: Failed to load tree map %s\n
 CEHandleNetworkableInt
-CGameModelInfo::GetModelIndex() Lazy loading mode
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
 CHECK failed: !TableEntryIsTree(b) && !TableEntryIsTree(b ^ 1
@@ -445,7 +445,6 @@ CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK failed: z.first != NULL
 CMsgPlayerInfo
 CMsgQuaternion
-CMsgQuaternion"6\n\bCMsgRGBA
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
 CNETMsg_SetConVar
@@ -484,6 +483,7 @@ Can't reach
 Cannot get here
 Cannot skip field value, unexpected token
 ClearField
+ClientLocalServerAccess001
 ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 Comment started here
@@ -497,10 +497,10 @@ DescriptorProto
 DescriptorProtosH
 Difference of
 DotaMapUtils001
+DualHull
 EProtoDebugVisiblity
 ERROR
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
-ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 EXPORTSYSTEM_INTERFACE_VERSION_001
 E\n NETWORK_DISCONNECT_REJECT_BANNED
 E\n\rtarget_entity
@@ -563,7 +563,6 @@ F\n%NETWORK_DISCONNECT_DISCONNECT_BY_USER
 F\n\foptimize_for
 Failed to open file: %s\n
 False
-FeetSettings
 Field
 Field "$0" uses reserved number $1
 Field does not match message type
@@ -603,7 +602,6 @@ FixupResourceName: Illegal full path passed in ("%s")!\n
 FixupResourceName: Illegal path, missing extension passed in ("%s")!\n
 FlattenedSerializersVersion001
 FontManager_001
-Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Found invalid proto option data for
 GN6google8protobuf2io20ZeroCopyOutputStreamE
 Game System %s is defined twice!\n
@@ -736,8 +734,6 @@ Hex and octal numbers must be integers
 Host
 HostStateMgr001
 HostUtils001
-I CUtlRBTree<CDiffInfo, CLessFunc<&CDiffInfo::Less>>::Insert(const T &) [T = CDiffInfo, L = CLessFunc<&CDiffInfo::Less>, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CDiffInfo, int
-I CUtlRBTree<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, L = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, int
 IDEMPOTENCY_UNKNOWN
 IGameSystem::Init( %-80s ) %8.3f msec
 IGameSystem::PostInit( %-80s ) %8.3f msec
@@ -798,8 +794,8 @@ L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
 Label
+LocalServerClientAccess001
 Localize_001
-LookAtList
 LookupMapValue
 MATCHFRAMEWORK_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
@@ -859,7 +855,6 @@ MethodOptions
 Missing field: FileDescriptorProto.name
 Missing name
 ModelDocUtils001
-MovementSettings
 Multiple extension registrations for type
 MutableMessage
 MutableRawRepeatedField
@@ -1136,6 +1131,9 @@ SetUInt32
 SetUInt64
 Shared memory space %s (%i) still has %i references.\n
 Should not reach here
+Should we straighten face island if the displacement is this much? (inches
+Should we try to straighten an island of faces deviating from their average normal (tangent
+Should we try to straighten two faces connected to this edge? (tangent
 Show diff only
 Show diff with matching filter substring only
 SignonState_t
@@ -1264,6 +1262,7 @@ Valve_Reject_Reserved_For_Lobby
 VisBuilder_001
 Vrad3_001
 WARNING
+WARNING: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 W\n,NETWORK_DISCONNECT_REJECT_CONNECT_FROM_LOBBY
 W\n,NETWORK_DISCONNECT_REJECT_RESERVED_FOR_LOBBY
 Warning parsing text-format
@@ -1308,13 +1307,13 @@ but only
 but was
 bytes
 bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/io/coded_stream.h
-c\n\rCMsgTransform
 can't force demo version '%s', no such version name\n
 can't reach here
 cannot be required
 cc_enable_arenas
 cc_generic_services
 client_streaming
+codegen_delta_encoder
 color
 colors
 com.google.protobufB
@@ -1332,6 +1331,7 @@ ctype
 cvars
 d %d %d
 d %d %d %d
+d:G\n
 d\n-NETWORK_DISCONNECT_KICKED_COMPETITIVECOOLDOWN
 d\n-NETWORK_DISCONNECT_LOCALPROBLEM_NETWORKCONFIG
 data
@@ -1369,9 +1369,6 @@ expected_long_tick
 expected_long_tick_reason
 extend .$0 {\n
 extension_range
-f %f
-f %f %f
-f %f %f %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
 f\n\bnet_Tick
 failed to parse contents
@@ -1380,6 +1377,7 @@ false:<\n
 false:=\n
 false:=\n\rvalve_map_key
 false:?\n
+false:A\n
 fast
 field
 field number
@@ -1533,7 +1531,12 @@ host
 host_computationtime
 host_frame_dropped_pct_x10
 host_unfiltered_frametime
+hullivr_edge_merge_tan
+hullivr_faceisland_merge_disp
+hullivr_faceisland_merge_tan
+hullivr_version
 i < length
+i\n\rCMsgTransform
 idempotency_level
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
@@ -1602,7 +1605,6 @@ length_delimited
 leveltransition
 libhost.dylib
 libprotobuf %s %s:%d] %s\n
-link
 lld
 llu
 localnamefixup
@@ -1671,6 +1673,7 @@ n\asteamid
 n\astrings
 n\auint64s
 n\avectors
+n\bCMsgRGBA
 n\bLocation
 n\bextendee
 n\bgamemode
@@ -1707,7 +1710,6 @@ n\fstring_value
 n\fswift_prefix
 n\fworldgroupid
 n\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
-n\nCMsgQAngle
 n\nIDEMPOTENT
 n\nTYPE_BYTES
 n\nTYPE_FLOAT
@@ -1777,7 +1779,7 @@ net_SpawnGroup_SetCreationTick
 net_SpawnGroup_Unload
 net_SplitScreenUser
 network_connection.proto
-network_connection.proto"8\n\nCMsgVector
+network_connection.proto">\n\nCMsgVector
 network_connection_detail_token
 network_connection_token
 networkbasetypes.proto
@@ -1816,7 +1818,6 @@ proto text format> }". To set fields within it, use syntax like
 proto2
 proto3
 proto3_optional
-public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 public_dependency
 py_generic_services
@@ -1839,6 +1840,9 @@ resource_manifests
 resources
 runleft
 runright
+s %s
+s %s %s
+s %s %s %s
 s allocation count overflow
 s allocation count overflow( %llu + %llu > %llu )\n
 s allocation count overflow( %llu > %llu )\n
@@ -1929,6 +1933,7 @@ unimplemented type
 uninterpreted_option
 unknown
 unknown. Ensure that your proto
+untrusted_delta_max
 unverified_lazy
 userid
 uses the same enum value as
@@ -1966,6 +1971,7 @@ varint
 vector2
 vector3
 vector4
+vectorws
 very_fast
 void CKeyValues3Array::EnsureElementCapacity(CKV3Arena *, int, bool, bool
 void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int

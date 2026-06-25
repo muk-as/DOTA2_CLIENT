@@ -16,6 +16,7 @@
 02x%c
 02x%s
 04d%02d%02d%02d%02d%02dZ
+0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs
 0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2
 0A^A]A
 0A_A]A
@@ -53,7 +54,7 @@
 241012000000Z
 250507000000Z
 250604000000Z
-260512213304Z0
+260625062841Z0
 271008235959Z0a1
 2DigiCert SHA256 RSA4096 Timestamp Responder 2025 10
 2cb:RO
@@ -70,6 +71,7 @@
 380114235959Z0i1
 380115120000Z0b1
 3DES(168
+3Gc[Йl
 3M5cWAK
 3T$(A
 3T$(A3
@@ -333,7 +335,6 @@ AV?$CTier1AppSystem@VISteamAudio@@$0A
 AV?$CTier2AppSystem@VISteamAudio@@$0A
 AV?$_Func_base@XHH@std
 AV?$_Func_impl_no_alloc@V<lambda_3>@?1??BakeDimensions@CSteamAudioScene@@QEAA_NAEAUSteamAudioBakeDimensionsTask_t@@AEAVCSteamAudioBakedDimensionsData@@P6AXMPEAX@Z2@Z@XHH@std
-AVAWD
 AVAWE3
 AVCBaseVModuleMetadataProvider
 AVCDirectProcessor
@@ -385,7 +386,10 @@ Acceptable OCSP Responses
 Acquire@CUtlString@@QEAAXPEAVCBufferString@@_N@Z
 AcquireLock@CAtomicMutex@@AEAAXI@Z
 AcquireSRWLockExclusive
+Adjust how much occlusion goes does with deviation angle
 Adjust overall volume of the default HRTF by the specified gain (dB
+Adjust scaling for reflection energy when combining it to calculate occlusion value
+Adjust scaling of pathing energy by exponentiall scaling with pathing delta
 Affiliation Changed
 AlignedByteArray not properly aligned
 AllocAligned@CUtlScratchMemoryPool@@QEAAPEAXHH@Z
@@ -545,8 +549,8 @@ BakeMaterials: Max probes (%u) limit exceeded (%d). Bake cancelled
 BakeMaterials: No probes generated. Bake cancelled
 BakeOcclusion: Max probes (%u) limit exceeded (%d). Bake cancelled
 BakeOcclusion: No probes generated. Bake cancelled
-BakeOcclusion: Unable to create impulse response. (%d
 BakeOcclusion: Unable to create probe batch. [%d
+BakeOcclusion: Unable to create reflection simulator. (%d
 BakeOcclusion: Unable to create simulator. (%d
 BakeOcclusion: Unable to create source. (%d
 BakePathData: Cancelled
@@ -584,7 +588,6 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\check_cast.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\threadtoolstypes.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlblockvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utllinkedlist.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlrbtree.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsortvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\vpklib\packedstore.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\soundsystem\steamaudio\steamaudio.cpp
@@ -871,8 +874,6 @@ CUtlLinkedList overflow! (exhausted index range
 CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::Alloc
 CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::AddPage
-CUtlRBTree<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,class CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
-CUtlRBTreeBase
 CUtlSortVector<struct ChunkHashFraction_t,class CUtlSortVectorDefaultLess<struct ChunkHashFraction_t::SortKey_t>,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlVectorMemory_Growable<struct ChunkHashFraction_t,int,0> > >::Find
 CUtlSymbolTableLarge element limit of %u exceeded
 CUtlVector
@@ -895,6 +896,7 @@ ChunkHashFraction_t::GetPackFileNumber
 Class Hierarchy Descriptor
 Class data is a '%s', not a table
 Class does not allow allocation from its schema binding
+ClientLocalServerAccess001
 ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 CloseHandle
@@ -922,7 +924,8 @@ Content-Type: %ssignature
 Content-Type: application/ocsp-request
 Content-Type: multipart/signed
 Content-Type: text/plain
-Continue using previous prrobes if probe lookup for reverb fails
+Continue using previous occlusion if probe lookup for occlusion fails
+Continue using previous reverb if probe lookup for reverb fails
 CorExitProcess
 Could not load custom hrtf properties file. %s
 CreateFileW
@@ -945,11 +948,14 @@ D$08\$0t
 D$0@8
 D$0HcH
 D$18F(u
+D$4D;%QB
 D$8D9~Pu=L
 D$8D9~PuCH
 D$8HcH
 D$HH1C
 D$HL9gXt
+D$h8GDtU
+D$t33s?H
 D+s$D+s D
 D+{HD
 D2I_ASN1_BIT_STRING
@@ -1215,6 +1221,7 @@ Double-save to Member '%s
 E$33s
 E+E1EAEIESEUEaEwE}E
 E-mail Protection
+E9'~2A
 E9fPt
 EC PARAMETERS
 EC PRIVATE KEY
@@ -1476,6 +1483,7 @@ EdiPartyName:<unsupported
 Email address mismatch
 Enable caching listener probe neighborhood for pathing
 Enable custom HRTF loading
+Enable order-truncated Ambisonics HRTF loading
 Enable perspective correction for 3D audio
 Enables tracy profiling when baking steam audio data in Hammer
 Encipher Only
@@ -1490,7 +1498,6 @@ Eric Young's PKCS#1 RSA
 Error in encoding
 Error reading from loaded packed store "%s
 Estimate Size
-EwHc\$ Hc0
 Excluded
 ExitProcess
 Expecting
@@ -1518,7 +1525,7 @@ FIPS_MD_CTX_COPY
 FIPS_mode_set
 FORMAT
 FV|FgUV
-Failed to allocate an instance of a class
+Failed to allocate an instance of a class of type '%s
 Failed to open file
 Failed to read
 Failed to read %d bytes
@@ -1545,7 +1552,6 @@ FlushFileBuffers
 FontManager_001
 Format@CBufferString@@QEAAHPEBDZZ
 Format@CUtlString@@QEAAHPEBDZZ
-Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 FreeEnvironmentStringsW
 FreeInts@CVariableBitStringBase@@AEAAXXZ
 FreeLibrary
@@ -1666,7 +1672,6 @@ GetUserObjectInformationW
 GlobalMemoryStatus
 H'H	O
 H(hqA1p
-H+D$0u
 H+D$8H
 H1GHM
 H5gRR
@@ -1674,6 +1679,8 @@ H97u+A
 H99tjH
 H9D$XH
 H9D$Xsi
+H9\$8t
+H9\$Ht
 H9k@u
 H9l$0t
 H9l$8t
@@ -1770,6 +1777,7 @@ ISO US Member Body
 ISO-US
 ISSUING_DIST_POINT
 IV block
+If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries
 If set, all the probes near a source withing probe range are used to find paths instead of nearest probe
 If set, baked dimensions data is loaded
 If set, baked materials data is loaded
@@ -1830,7 +1838,6 @@ L$ SUWATAUAVAW
 L$ SVW
 L$ UVWATAUAVAW
 L$ UVWATAUAVAWH
-L$ UVWATAVH
 L$ UVWAVAWH
 L$ UWATAVAWH
 L$ VWAVH
@@ -1869,6 +1876,7 @@ LoadLibraryExW
 LoadLibraryW
 Loaded custom HRTF [%s] with volume [%.2f dB] and normaliztion [%d
 LocalKeySet
+LocalServerClientAccess001
 LocaleNameToLCID
 Localize_001
 LoggingSystem_IsChannelEnabled
@@ -1913,6 +1921,7 @@ Maximum number of probes to create when baking custom data (dimensions
 Maximum number of probes to create when baking custom data (occlusion
 Maximum number of probes to create when baking paths
 Maximum number of probes to create when baking reverb
+Maximum order for Ambisonics binaural rendering and Ambisonics panning
 MemAlloc_StrDupFunc
 MeshSystem001
 MeshUtils001
@@ -1942,7 +1951,6 @@ Monday
 Montgomery Multiplication for x86_64, CRYPTOGAMS by <appro@openssl.org
 Montgomery Multiplication with scatter/gather for x86_64, CRYPTOGAMS by <appro@openssl.org
 MultiByteToWideChar
-MÉD$HH
 M̪MT̪MT
 NAME_CONSTRAINTS
 NAN(IND
@@ -1978,7 +1986,6 @@ NIST/X9.62/SECG curve over a 192 bit prime field
 NISTP224_PRE_COMP_NEW
 NISTP256_PRE_COMP_NEW
 NISTP521_PRE_COMP_NEW
-NLA;NP
 NO X509_NAME
 NOTICEREF
 NOTICE_SECTION
@@ -2320,6 +2327,7 @@ Parameters
 Parse error on %s: %s
 ParticleSystemMgr003
 Path length of invalid path in inches. Set this to .0 to use direct distance as path length
+Pathing
 Pathing: Cannot find baked paths file: %s
 Pathing: Cannot find baked paths file: %s. Pathing disabled
 Pathing: Filesystem not initialized
@@ -2508,6 +2516,7 @@ ReadConsoleW
 ReadFile
 Reason
 Reasons
+Reflections
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
 RegisterEventSourceW
@@ -2586,6 +2595,9 @@ Reverb: Unable to create serialized object. (%d
 Reverb: Unable to load baked data file (%s
 Reverb: Unable to load baked data file (%s). Reverb disabled
 Reverb: Unable to load probe batch. (%d
+ReverbEffectCreate
+ReverbEffectRelease
+ReverbEstimatorCreate
 Right@CUtlString@@QEBA?AV1@H@Z
 RtlCaptureContext
 RtlLookupFunctionEntry
@@ -2605,7 +2617,6 @@ SATAUL
 SATAVAW
 SATAVH
 SATAWH
-SAVAWH
 SA|X=G
 SECG curve over a 112 bit prime field
 SECG curve over a 113 bit binary field
@@ -2780,7 +2791,6 @@ SUVATAUAVAWH
 SUVATAV
 SUVATAVAW
 SUVATAW
-SUVATAWH
 SUVWATAU
 SUVWATAUAV
 SUVWATAUAVAW
@@ -2799,7 +2809,6 @@ SUWATAV
 SUWAUAVH
 SUWAVAWH
 SVATAU
-SVATAUH
 SVWATAUAVAW
 SVWATAUAVAWH
 SVWATAUAWH
@@ -2808,7 +2817,6 @@ SVWAUAW
 SWATAU
 SWATAUH
 SWATAW
-SWAVH
 SXNETID
 SXNET_add_id_INTEGER
 SXNET_add_id_asc
@@ -2907,10 +2915,10 @@ SystemTimeToFileTime
 SystemTimeToTzSpecificLocalTime
 T$ D)s
 T$(3D$@3\$D3L$H3T$LM
+T$0Hc
 T$8SUATAUAVAWH
 T$8SUATAUAVAWL
 T$`fA
-T$hH9\$X
 T$xD;D$x
 T61STRING
 TELETEXSTRING
@@ -3017,6 +3025,7 @@ U%04lX
 U)l:T^8rv
 U<E3M E3E$E3](E3U,A3
 UATAUAVAWH
+UATAVI
 UATAW
 UAVAWH
 UI_ctrl
@@ -3047,6 +3056,7 @@ USVWATAUAWH
 USVWATAVAWH
 USVWATH
 USVWAVH
+USVWAWH
 USVWH
 USWATAUAVAWH
 USWATAUAWH
@@ -3065,8 +3075,7 @@ UVATAUAVAWH
 UVATAUAW
 UVATAUH
 UVATAVAWH
-UVAVAWH
-UVAVAWI
+UVATAWH
 UVWATAU
 UVWATAUAV
 UVWATAUAVAW
@@ -3081,6 +3090,8 @@ UWATAVAWH
 UWATAW
 UWATH
 Unable to create Ambisonics decode effect [%d
+Unable to create GPU scene: %d
+Unable to create GPU static mesh: %d
 Unable to create custom HRTF [%s
 Unable to create direct effect [%d
 Unable to create impulse response [%d
@@ -3103,11 +3114,11 @@ Unsupported extension feature
 Unused
 Usage: snd_steamaudio_halton_sequence <order> <numsamples
 Use compressed reverb data if available
+UtlRBTree_FailedInsertDuplicate
 UtlVectorMemory_Alloc
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
 U|r*C
-V	V_logf
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -3125,7 +3136,6 @@ V2t<f2
 V3_ADDR_VALIDATE_PATH_INTERNAL
 V3_GENERIC_EXTENSION
 VATAUAVAW
-VATAUAVAWH
 VATAW
 VAUAV
 VApplication001
@@ -3186,6 +3196,7 @@ V_StringToUint64
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
+V_StringToVectorWS
 V_UInt32ToString_Unsafe
 V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
@@ -3193,6 +3204,8 @@ V_acosf
 V_atanf
 V_atoi
 V_cosf
+V_expf
+V_logf
 V_stricmp_fast
 V_stristr_fast@@YAPEBDPEBD0@Z
 V_strncmp
@@ -3212,7 +3225,6 @@ VggjeK uO5n
 VisBuilder_001
 Vrad3_001
 W%08lX
-W.A@fE
 W1-x]1
 W@H1G@A
 WATAU
@@ -3252,6 +3264,7 @@ WideCharToMultiByte
 WorldRendererMgr001
 WriteConsoleW
 WriteFile
+X UVWH
 X,,tX,,t4
 X.509 part of OpenSSL 1.0.2j  26 Sep 2016
 X400Name
@@ -3396,7 +3409,6 @@ You need to read the OpenSSL FAQ, http://www.openssl.org/support/faq.html
 Ze2Zh
 Zf:Di
 ZwKiZwKi
-a	V_powd
 a null shared library handle was used
 a2d_ASN1_OBJECT
 a2i_ASN1_ENUMERATED
@@ -3530,7 +3542,6 @@ az-AZ-Cyrl
 az-AZ-Latn
 az-az-cyrl
 az-az-latn
-b	V_powf
 b <= sizeof ctx->buf
 b <= sizeof ctx->final
 b2i_PVK_bio
@@ -3615,6 +3626,7 @@ base64 encoding
 based
 basicConstraints
 basicOCSPResponse
+bc1(53
 bf-cbc
 bf-cfb
 bf-ecb
@@ -3666,7 +3678,6 @@ buffer
 buffer too small
 buildingName
 businessCategory
-c	V_qsort
 c2i_ASN1_BIT_STRING
 c2i_ASN1_INTEGER
 c2i_ASN1_OBJECT
@@ -4130,12 +4141,10 @@ custom.dimensions
 custom.materials
 custom.occlusion
 custom_hrtfs
-d	V_qsort_s
 d %d %d
 d %d %d %d
 d e not congruent to 1
 d$ fD
-d$8uKH
 d$dD;d$l
 d.allOrFirstTier
 d.authenticatedData
@@ -4460,6 +4469,7 @@ enable_compressed_reverb_lookup
 enable_dc_correction_for_phase_interpolation
 enable_iir_order_8
 enable_iir_order_switching
+enable_optix_verbose_logging
 enable_paths_from_all_source_probes
 enable_reverb_probe_caching_for_missing_probes
 enc->iv_len <= (int)sizeof(iv
@@ -4571,8 +4581,6 @@ extension value error
 extensions
 extra data in message
 f %d %d %d
-f %f %f
-f %f %f %f
 f33Uf33U
 f9|$ tyf
 fA9	t	I
@@ -4624,6 +4632,7 @@ friendlyName
 fullname
 func(%lu
 functionality not supported
+g	V_powd
 g E9oPt
 g_pMemAlloc
 generate cryptogram
@@ -4651,6 +4660,7 @@ got next proto without seeing extension
 ground_reflection_min_angle
 group
 group2pkparameters failure
+h	V_powf
 hA_A^A]A
 h`H(|sO
 h`H1pqA
@@ -4684,6 +4694,7 @@ http://ocsp.digicert.com0A
 http://ocsp.digicert.com0C
 http://www.digicert.com/CPS0
 https proxy request
+i	V_qsort
 i <= EVP_MAX_MD_SIZE
 i <= n
 i2b_PVK_bio
@@ -5099,6 +5110,8 @@ iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
+iplCUDADeviceCreate
+iplCUDADeviceRelease
 iplCompressedEnergyFieldsBlendAndDecompress
 iplCompressedEnergyFieldsCreateEmpty
 iplCompressedEnergyFieldsCreateFromProbeBatch
@@ -5124,7 +5137,9 @@ iplDirectivityCalculate
 iplDistanceAttenuationCalculate
 iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
+iplEnergyFieldCopyDeviceToHost
 iplEnergyFieldCreate
+iplEnergyFieldGetBand
 iplEnergyFieldGetChannel
 iplEnergyFieldGetNumBins
 iplEnergyFieldGetNumChannels
@@ -5132,19 +5147,10 @@ iplEnergyFieldRelease
 iplHRTFCreate
 iplHRTFRelease
 iplHybridReverbEffectApply
-iplHybridReverbEffectCreate
-iplHybridReverbEffectRelease
-iplHybridReverbEstimatorCreate
 iplHybridReverbEstimatorEstimate
 iplHybridReverbEstimatorRelease
 iplImageSourceSimulatorCreate
 iplImageSourceSimulatorRelease
-iplImpulseResponse2Create
-iplImpulseResponse2GetChannel
-iplImpulseResponse2GetNumSamples
-iplImpulseResponse2Release
-iplImpulseResponse2Reset
-iplImpulseResponse2SwapSource
 iplImpulseResponseCopy
 iplImpulseResponseCreate
 iplImpulseResponseGetChannel
@@ -5153,6 +5159,9 @@ iplImpulseResponseGetNumSamples
 iplImpulseResponseRelease
 iplImpulseResponseReset
 iplImpulseResponseSwap
+iplOpenCLDeviceRelease
+iplOptiXDeviceCreate
+iplOptiXDeviceRelease
 iplOverlapSaveFIRCreate
 iplOverlapSaveFIRRelease
 iplPartitionerCreate
@@ -5202,11 +5211,13 @@ iplProbeNeighborhoodResize
 iplProbeNeighborhoodSetProbeBatch
 iplProbeNeighborhoodSetProbeIndex
 iplProbeNeighborhoodSetProbeWeight
+iplRadeonRaysDeviceRelease
 iplReconstructorCreate
 iplReconstructorReconstruct
 iplReconstructorRelease
 iplReflectionSimulatorCreate
 iplReflectionSimulatorRelease
+iplReflectionSimulatorSimulate
 iplReflectionsBakerBake
 iplReverbEstimatorApplyScale
 iplReverbEstimatorCreate
@@ -5230,7 +5241,6 @@ iplSimulatorRunPathing
 iplSimulatorRunPathingForNeighborhoods
 iplSimulatorRunPathingPerSource
 iplSimulatorRunPathingPerSourceForNeighborhood
-iplSimulatorRunReflections
 iplSimulatorSetScene
 iplSimulatorSetSharedInputs
 iplSourceAdd
@@ -5271,6 +5281,7 @@ it|<nto<otb<ptU<st
 iv gen error
 iv too large
 i~wKVA
+j	V_qsort_s
 j <= (int)sizeof(ctx->key
 j <= sizeof(c->iv
 j55_j55
@@ -5458,7 +5469,7 @@ m_vecPathingDeviation
 m_vecPathingRatio
 m_vecProbeIndices
 m_vecProbes
-m_vecReflectionRatio
+m_vecReflectionEnergy
 m_vecSize
 mac absent
 mac generation error
@@ -5567,7 +5578,6 @@ mstring wrong tag
 mtllib %s
 multipart/signed
 multiple sgc restarts
-n	V_sincosf
 n < (int)sizeof(ctx->enc_data
 n >= 0
 n does not equal p q
@@ -5703,6 +5713,7 @@ non fips method
 non fips rsa method
 non hex characters
 non sslv2 initial packet
+non-RTTI type
 nonRepudiation
 nonce mismatch
 nonce not returned
@@ -5831,7 +5842,6 @@ othername:<unsupported
 out of memory
 override_reconstruction_type
 p	CUp
-p	V_sinf
 p WATAUAVAWH
 p is not prime
 p not prime
@@ -5961,6 +5971,7 @@ pp == NULL || *pp != NULL
 ppBasis
 pqualid
 pre mac length too long
+precached_ambisonics_order
 preferredDeliveryMethod
 presentationAddress
 prf-gostr3411-94
@@ -6031,7 +6042,6 @@ quz-PE
 quz-bo
 quz-ec
 quz-pe
-r	V_sinhf
 r&fR{a
 r99Kr99K
 rFC822localPart
@@ -6160,6 +6170,8 @@ rvf;\$d
 rދD$0f
 s %2d %02d:%02d:%02d %d%s
 s %2d %02d:%02d:%02d%.*s %d%s
+s %s %s
+s %s %s %s
 s %s HTTP/1.0
 s %s%lu (%s0x%lx
 s (%s
@@ -6556,16 +6568,22 @@ snd_boxverb_simd
 snd_boxverb_simd_svf
 snd_hrtf_distance_behind
 snd_steamaudio_active_hrtf
+snd_steamaudio_ambisonics_correction_type
 snd_steamaudio_baked_data_stats
 snd_steamaudio_baked_occlusion_mode
+snd_steamaudio_baked_occlusion_pathing_deviation_slope
+snd_steamaudio_baked_occlusion_pathing_exponent
+snd_steamaudio_baked_occlusion_reflection_factor
 snd_steamaudio_default_hrtf_volume_gain
 snd_steamaudio_enable_compressed_reverb_lookup
 snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_editor_profiling
+snd_steamaudio_enable_occlusion_caching
+snd_steamaudio_enable_ordertruncated_ambisonics_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
-snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
+snd_steamaudio_enable_reverb_caching
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -6578,6 +6596,7 @@ snd_steamaudio_load_materials_data
 snd_steamaudio_load_occlusion_data
 snd_steamaudio_load_pathing_data
 snd_steamaudio_load_reverb_data
+snd_steamaudio_max_ambisonics_order
 snd_steamaudio_max_convolution_sources
 snd_steamaudio_max_hrtf_normalization_gain_db
 snd_steamaudio_max_occlusion_samples
@@ -6598,6 +6617,7 @@ snd_steamaudio_perspective_correction_factor
 snd_steamaudio_reverb_order
 snd_steamaudio_reverb_order_rendering
 snd_steamaudio_reverb_update_rate
+snd_steamaudio_use_soundblocking_shapes_only
 snmpv2
 socket
 source_file
@@ -6861,6 +6881,7 @@ syr-SY
 syr-sy
 system lib
 system library
+t	V_sincosf
 t >= 0
 t$ ATAVAW
 t$ AVH
@@ -6881,7 +6902,6 @@ t$HA_A^A]A
 t$HfA
 t$Pu4H
 t$X9^8H
-t$Xfff
 t$x9k`H
 t$xH9n
 t$xt*3
@@ -6891,6 +6911,7 @@ tA8_:t
 tIHcX H
 tQD8c:u0M
 tTL9q t-H
+tUH959
 table: %u members
 tag mismatch
 tag value too high
@@ -6989,6 +7010,7 @@ u3HcH<H
 u8A9C8t
 u:@8w
 u<g~l<it[<ntP<ot,<pt
+uAD#D
 uB!!cB!!c
 uED8r(t
 uF9C(tAL
@@ -7172,6 +7194,7 @@ uz-uz-latn
 u{L9mHu
 u~9t$Xt
 u͋C$9C rgH
+v	V_sinf
 v %f %f %f
 v2!L.2
 v2i_ASN1_BIT_STRING
@@ -7217,6 +7240,7 @@ vector2
 vector3
 vector4
 vectorcall
+vectorws
 verification failure
 version
 version incompatibility
@@ -7265,6 +7289,7 @@ wrong type
 wrong version number
 www.digicert.com1!0
 www.digicert.com1$0
+x	V_sinhf
 x ATAVAWH
 x AUAVAWH
 x UATAUAVAWH

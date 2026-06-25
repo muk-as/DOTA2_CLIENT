@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 22
+        // Enumerator count: 23
         // Alignment: 4
         // Size: 0x_
         enum class EDOTA_ModifyGold_Reason : std::uint32_t
@@ -40,6 +40,7 @@ namespace source2sdk
             DOTA_ModifyGold_AbilityGold = 0x13,
             DOTA_ModifyGold_WardKill = 0x14,
             DOTA_ModifyGold_CourierKilledByThisPlayer = 0x15,
+            DOTA_ModifyGold_SummonKill = 0x16,
         };
     };
 };

@@ -1,0 +1,2719 @@
+"EVENT_ID_DARK_CARNIVAL" //54
+{
+	"season_name"	"#DOTA_EventName_DarkCarnival"
+	"season_class"	"Season_Dark_Carnival"
+
+	"must_be_owned"		"0"
+	"default_event_points"	"0"
+
+	"event_end_time"	"none"
+ 	"expiration_date"	"none"
+
+	"uses_premium_points"	"1"		// Used for Fortune Teller resource
+
+	"candy_shop_id"					"3"
+
+	"allows_season_changes"		"1"
+
+	"minigame_leaderboard_name"		"DarkCarnivalMinigameScore"
+
+	"supports_overworld"		"1"
+	"grants_rewards_for_coop_bot_matches"		"1"
+	   
+	"effects_item_def"		"34482"
+	
+	"dashboard_background_panel_path" "file://{resources}/layout/events/dark_carnival/background_dark_carnival.xml"
+
+	"game_secondary_abilities"
+	{
+		"seasonal_dark_carnival_balloon" "1"
+		"seasonal_dark_carnival_firework" "1"
+		"seasonal_dark_carnival_pie" "1"
+	}
+
+	"event_level"
+	{
+		"show_battle_level"		"1"
+		"event_level_action"	"nodes_unlocked_act_1"
+		"badge_tiers"
+		{
+			"1"
+			{
+				"event_level"	"1"
+				"tier_class"	"EventTierBronze"
+				"tier_badge"	"file://{images}/badges/dark_carnival_badge_red.png"
+			}
+			"2"
+			{
+				"event_level"	"38"
+				"tier_class"	"EventTierSilver"
+				"tier_badge"	"file://{images}/badges/dark_carnival_badge_silver.png"
+			}
+			"3"
+			{
+				"event_level"	"65"
+				"tier_class"	"EventTierGold"
+				"tier_badge"	"file://{images}/badges/dark_carnival_badge_gold.png"
+			}
+			"4"
+			{
+				"event_level"	"100"
+				"tier_class"	"EventTierPlatinum"
+				"tier_badge"	"file://{images}/badges/dark_carnival_badge_gold.png"
+			}
+		}
+	}
+
+	"notification_class"	"DarkCarnival"
+	"notifications"
+	{
+	}
+
+	"seasons"
+	{
+		"chapter1"
+		{
+			"season_id"						"1"
+			"season_loc_name"				"#DOTA_DarkCarnival_Act1_Name"
+			"season_start_time"				"1767312000" // Thursday, January 1, 2026 4:00:00 PM GMT-08:00
+			"season_end_time"				"1795996800" // Sunday, November 29, 2026 4:00:00 PM GMT-08:00
+			"season_overworld_id"			"11"
+			"season_quests"
+			{
+				"season_quests_action_prefix"	"act1_"
+			}
+		}
+	}
+	
+	"action_lists"
+	{
+		"emoticon_rewards_act1a"
+		{
+			"reward_list"
+			{
+				"emoticon_actions"
+				{
+					"action_min"	"1000"
+					"action_max"	"1004"
+					"weight"		"1"
+				}
+			}
+		}
+		"emoticon_rewards_act1b"
+		{
+			"reward_list"
+			{
+				"emoticon_actions"
+				{
+					"action_min"	"1005"
+					"action_max"	"1010"
+					"weight"		"1"
+				}
+			}
+		}
+		"chat_wheel_rewards_act1"
+		{
+			"reward_list"
+			{
+				"chat_wheel_actions"
+				{
+					"action_min"	"1100"
+					"action_max"	"1106"
+					"weight"		"1"
+				}
+			}
+		}
+	}
+	
+
+	"event_actions"
+	{
+		"win_matches"
+		{
+			"action_id"		"1"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"		"candy_shop_half_reroll"
+							"count"			"2"
+						}
+
+						"grant_periodic_action"
+						{
+							"action"			"fortune_teller_ticket"
+							"count"				"1"
+							"periodic_resource"	"dark_carnival_2026_daily_fortune_teller_ticket"
+						}
+					}
+				}
+			}
+		}
+
+		"win_turbo_matches"
+		{
+			"action_id"		"4"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"		"candy_shop_half_reroll"
+							"count"			"1"
+						}
+						"grant_periodic_action"
+						{
+							"action"			"fortune_teller_ticket"
+							"count"				"1"
+							"periodic_resource"	"dark_carnival_2026_daily_fortune_teller_ticket"
+						}
+					}
+				}
+			}
+		}
+
+		"lose_matches"
+		{
+			"action_id"					"2"
+			"max_grants"				"999999"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_periodic_action"
+						{
+							"action"			"fortune_teller_ticket"
+							"count"				"1"
+							"periodic_resource"	"dark_carnival_2026_daily_fortune_teller_ticket"
+						}
+					}
+				}
+			}
+		}
+
+		"lose_turbo_matches"
+		{
+			"action_id"					"3"
+			"max_grants"				"999999"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_periodic_action"
+						{
+							"action"			"fortune_teller_ticket"
+							"count"				"1"
+							"periodic_resource"	"dark_carnival_2026_daily_fortune_teller_ticket"
+						}
+					}
+				}
+			}
+		}
+
+		"secret_rooms_pack"
+		{
+			"action_id"		"20"
+			"required_item_def"			"34452" // Dark Carnival Secret Room Pack
+			"max_grants"	"1"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34473" // Dark Carnival Music Pack
+
+						"grant_item"		"34430" // Dark Carnival Radiant Creeps
+						"grant_item"		"34429" // Dark Carnival Dire Creeps
+						"grant_item"		"34431" // Dark Carnival - Radiant Siege Creeps
+						"grant_item"		"34448" // Dark Carnival - Dire Siege Creeps
+
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"12"	"2" // 2 Premium Tokens
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		"store_purchase_midnight_bundle"
+		{
+			"action_id"		"31"
+			"required_item_def"		"34472" // Dark Carnival Midnight Bundle
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges" 	
+						{
+							"item_def"		"36254" // Dark Carnival Candy Sack
+							"quantity"		"30"
+						}
+						"grant_candy_shop_reroll_charges"
+						{
+							"charges"			"10"
+							"ignore_maximum"	"1"
+						}
+						
+						"grant_premium_points"       "3" // 3 Oracle Seeing Stones
+
+						// "grant_item" "31200" // Dark Carnival Treasure 1
+					}
+				}
+			}
+		}
+		
+		
+		"nodes_unlocked_act_1"
+		{
+			"action_id"		"40"
+			"max_grants"	"10000"
+			"friends_leaderboard"	"DarkCarnivalAct1NodesUnlocked"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points"	"1000"
+					}
+				}
+			}
+		}
+		
+		"map_reward_store_coins_small"
+		{
+			"action_id"		"103"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"StoreCoin"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36255" // Dark Carnival Store Coin
+							"quantity"           "2"
+						}
+					}
+				}
+			}
+		}
+
+		"map_reward_store_coins_big"
+		{
+			"action_id"		"104"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"StoreCoin"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36255" // Dark Carnival Store Coin
+							"quantity"           "5"
+						}
+					}
+				}
+			}
+		}
+
+		"map_reward_candy_bag_small"
+		{
+			"action_id"		"105"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36254" // Dark Carnival Candy Sack
+							"quantity"           "3"
+						}
+					}
+				}
+			}
+		}
+
+		"map_reward_candy_bag_big"
+		{
+			"action_id"		"106"
+			"max_grants"	"1000"
+			"important"		"1"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"			"36254" // Dark Carnival Candy Sack
+							"quantity"           "5"
+						}
+					}
+				}
+			}
+		}
+
+		"map_reward_store_coins_medium"
+		{
+			"action_id"		"107"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"StoreCoin"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36255" // Dark Carnival Store Coin
+							"quantity"           "3"
+						}
+					}
+				}
+			}
+		}
+
+		"map_reward_oracle_coins"
+		{
+			"action_id"		"108"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"OracleCoin"
+					"grants"
+					{
+						"grant_premium_points"       "1"
+					}
+				}
+			}
+		}
+		"map_reward_oracle_coins_medium"
+		{
+			"action_id"		"109"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"OracleCoin"
+					"grants"
+					{
+						"grant_premium_points"       "2"
+					}
+				}
+			}
+		}
+		"map_reward_oracle_coins_big"
+		{
+			"action_id"		"110"
+			"max_grants"	"1000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"OracleCoin"
+					"grants"
+					{
+						"grant_premium_points"       "3"
+					}
+				}
+			}
+		}
+
+		"map_reward_dark_carnival_act1a_emoticon"
+		{
+			"action_id"					"111"
+			"max_grants"				"5"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_action_list"	"emoticon_rewards_act1a"
+					}
+				}
+			}
+		}
+
+		"map_reward_dark_carnival_act1b_emoticon"
+		{
+			"action_id"					"112"
+			"max_grants"				"6"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_action_list"	"emoticon_rewards_act1b"
+					}
+				}
+			}
+		}
+		
+		
+		"map_reward_treasure_1" // Treasure
+		{
+			"action_id"		"122"
+			"max_grants"	"10000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"Treasure"
+					"grants"
+					{
+						"grant_item" "31200" // Dark Carnival Treasure 1
+					}
+				}
+			}
+		}
+		
+		"map_reward_candy_bag_huge"
+		{
+			"action_id"		"123"
+			"max_grants"	"1000"
+			"important"		"1"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"			"36254" // Dark Carnival Candy Sack
+							"quantity"           "8"
+						}
+					}
+				}
+			}
+		}
+		
+		//"map_reward_automaton_treasure" // Treasure
+		//{
+		//	"action_id"		"124"
+		//	"max_grants"	"10"
+		//	"rewards"
+		//	{
+		//		"1 + 1n"
+		//		{
+		//			"reward_class"	"Treasure"
+		//			"grants"
+		//			{
+		//				"grant_item" "31202" // Dark Carnival Treasure: Automatons
+		//			}
+		//		}
+		//	}
+		//}
+		
+		"map_reward_loading_screen_axe"
+		{
+			"action_id"					"200"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34436" // Dark Carnival Loading Screen Axe
+					}
+				}
+			}
+		}
+		"map_reward_loading_screen_oracle"
+		{
+			"action_id"					"201"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34438" // Dark Carnival Loading Screen Oracle
+					}
+				}
+			}
+		}
+		"map_reward_loading_screen_legioncommander"
+		{
+			"action_id"					"202"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34433" // Dark Carnival Loading Screen Legion Commander
+					}
+				}
+			}
+		}
+		"map_reward_loading_screen_bristleback"
+		{
+			"action_id"					"203"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34432" // Dark Carnival Loading Screen Bristleback
+					}
+				}
+			}
+		}
+		"map_reward_loading_screen_morphling"
+		{
+			"action_id"					"204"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34437" // Dark Carnival Loading Screen Morphling
+					}
+				}
+			}
+		}
+
+		// Chapter 1 Story Showcase Decorations
+
+		"showcase_decoration_hoodwink_1"
+		{
+			"action_id"					"301"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34524" // Hoodwink - Story Showcase Decoration
+						"grant_item"	"34542" // Hoodwink Angry - Story Showcase Decoration
+						"grant_item"	"34537" // Hoodwink Confused - Story Showcase Decoration
+						"grant_item"	"34536" // Hoodwink Thinking - Story Showcase Decoration
+						"grant_item"	"34541" // Hoodwink Drowsy - Story Showcase Decoration
+					}
+				}
+			}
+		}
+		"showcase_decoration_tresdin_1"
+		{
+			"action_id"					"302"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34525" //Tresdin - Story Showcase Decoration
+						"grant_item"	"34547" //Tresdin Fist - Story Showcase Decoration
+						"grant_item"	"34548" //Tresdin Stern - Story Showcase Decoration
+						"grant_item"	"34549" //Tresdin Smug - Story Showcase Decoration
+
+					}
+				}
+			}
+		}
+		"showcase_decoration_slark_1"
+		{
+			"action_id"					"303"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_item"	"34526" //Slark - Story Showcase Decoration
+						"grant_item"	"34543" //Slark Blushing - Story Showcase Decoration
+						"grant_item"	"34544" //Slark Slimy - Story Showcase Decoration
+						"grant_item"	"34545" //Slark Wall - Story Showcase Decoration
+						"grant_item"	"34546" //Slark Smile - Story Showcase Decoration
+						"grant_item"	"34527" // Fish Witch - Story Showcase Decoration
+					}
+				}
+			}
+		}
+		"candy_and_showcase_decoration_secret_room_1"
+		{
+			"action_id"					"304"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"			"36254" // Dark Carnival Candy Sack
+							"quantity"          "8"
+						}
+
+						"grant_item"	"34533" // Cogsnout - Story Showcase Decoration
+						"grant_item"	"34534" // Clown - Story Showcase Decoration
+					}
+				}
+			}
+		}
+		"bristleback_decoration_and_treasure_secret_1"
+		{
+			"action_id"					"305"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Treasure"
+					"grants"
+					{
+						"grant_item"	"31200" // Dark Carnival Treasure 1
+						"grant_item"	"34531" // Automaton Bristleback - Story Showcase Decoration
+						"grant_item"	"34550" // Automaton Bristleback Cheers - Story Showcase Decoration
+						"grant_item"	"34551" // Automaton Bristleback Upwards - Story Showcase Decoration
+						"grant_item"	"34532" // Automaton Morphling - Story Showcase Decoration
+						"grant_permanent_chat_wheel_messages"	"820"	// dc_wow
+					}
+				}
+			}
+		}
+		
+		// Chapter 2 Story Showcase Decorations
+		
+		// Chapter 3 Story Showcase Decorations
+		
+		"emoticon_rewards_act1a_1"
+		{
+			"action_id"					"1000"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"421" 
+					}
+				}
+			}
+		}
+
+		"emoticon_rewards_act1a_2"
+		{
+			"action_id"					"1001"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"423" 
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1a_3"
+		{
+			"action_id"					"1002"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"424" 
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1a_4"
+		{
+			"action_id"					"1003"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"425" 
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1a_5"
+		{
+			"action_id"					"1004"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"426" 
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_1"
+		{
+			"action_id"					"1005"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"427" // troll_rage
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_2"
+		{
+			"action_id"					"1006"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"428" // watchout
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_3"
+		{
+			"action_id"					"1007"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"429" // shout
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_4"
+		{
+			"action_id"					"1008"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"430" // jam_out
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_5"
+		{
+			"action_id"					"1009"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"431" // cud
+					}
+				}
+			}
+		}
+		"emoticon_rewards_act1b_6"
+		{
+			"action_id"					"1010"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"432" // ill_have_that
+					}
+				}
+			}
+		}
+		
+		"map_reward_act1_final"
+		{
+			"action_id"					"1012"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CompletionSet"
+					"grants"
+					{
+						"grant_item"		"36194" // Magnus Elephant
+					}
+				}
+			}
+		}
+		
+		"map_reward_act1_car1"
+		{
+			"action_id"					"1013"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CompletionSet"
+					"grants"
+					{
+						"grant_item"		"36068" // Phantom Assassin
+					}
+				}
+			}
+		}
+		"map_reward_act1_car2"
+		{
+			"action_id"					"1014"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CompletionSet"
+					"grants"
+					{
+						"grant_item"		"36017" // Crystal Maiden
+					}
+				}
+			}
+		}
+		"map_reward_act1_car3"
+		{
+			"action_id"					"1015"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CompletionSet"
+					"grants"
+					{
+						"grant_item"		"21088" // Invoker
+					}
+				}
+			}
+		}
+
+		"spray_act1_1"
+		{
+			"action_id"					"1100"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"805" // dc_beastmaster
+					}
+				}
+			}
+		}
+		"spray_act1_2"
+		{
+			"action_id"					"1101"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"806" // dc_monkey
+					}
+				}
+			}
+		}
+		"spray_act1_3"
+		{
+			"action_id"					"1102"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"808" // dc_ringmaster
+					}
+				}
+			}
+		}
+		"spray_act1_4"
+		{
+			"action_id"					"1103"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"809" // dc_monkey
+					}
+				}
+			}
+		}
+		"spray_act1_5"
+		{
+			"action_id"					"1104"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"810" // dc_meepo
+					}
+				}
+			}
+		}
+		"spray_act1_6"
+		{
+			"action_id"					"1105"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"811" // dc_hoodwink
+					}
+				}
+			}
+		}
+		"spray_act1_7"
+		{
+			"action_id"					"1106"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"812" // dc_earthspirit
+					}
+				}
+			}
+		}
+
+		"voiceline_act1_1"
+		{
+			"action_id"					"1107"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"818" // dc_money_and_bones
+					}
+				}
+			}
+		}
+
+		"voiceline_act1_2"
+		{
+			"action_id"					"1108"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"819" // dc_money_and_bones
+					}
+				}
+			}
+		}
+
+		
+		// Token Gifting
+		"encounter_gifting_thefool"
+		{
+			"action_id"         "1200"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_themagician"
+		{
+			"action_id"         "1201"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_thehighpriestess"
+		{
+			"action_id"         "1202"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_thedevil"
+		{
+			"action_id"         "1203"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_theemperor"
+		{
+			"action_id"         "1204"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_thelovers"
+		{
+			"action_id"         "1205"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_strength"
+		{
+			"action_id"         "1206"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_thehermit"
+		{
+			"action_id"         "1207"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_thestar"
+		{
+			"action_id"         "1208"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_wheeloffortune"
+		{
+			"action_id"         "1209"
+			"max_grants"        "99999"
+		}
+		"encounter_gifting_death"
+		{
+			"action_id"         "1210"
+			"max_grants"        "99999"
+		}
+		
+		"encounter_gifting_thefool_claim"
+		{
+			"action_id"         "1300"
+			"max_grants"        "99999" 
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thefool" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"1"		"1" // 1 Fool Token
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		"encounter_gifting_themagician_claim"
+		{
+			"action_id"         "1301"
+			"max_grants"        "99999"
+			
+			"prerequisite_actions"
+			{
+				"encounter_gifting_themagician" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"2"		"1" // 1 The Magician Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_thehighpriestess_claim"
+		{
+			"action_id"         "1302"
+			"max_grants"        "99999"
+			
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thehighpriestess" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"3"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_thedevil_claim"
+		{
+			"action_id"         "1303"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thedevil" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"4"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_theemperor_claim"
+		{
+			"action_id"         "1304"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_theemperor" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"5"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_thelovers_claim"
+		{
+			"action_id"         "1305"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thelovers" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"6"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_strength_claim"
+		{
+			"action_id"         "1306"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_strength" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"7"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_thehermit_claim"
+		{
+			"action_id"         "1307"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thehermit" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"8"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_thestar_claim"
+		{
+			"action_id"         "1308"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_thestar" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"9"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_wheeloffortune_claim"
+		{
+			"action_id"         "1309"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_wheeloffortune" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"10"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_gifting_death_claim"
+		{
+			"action_id"         "1310"
+			"max_grants"        "99999"
+
+			"prerequisite_actions"
+			{
+				"encounter_gifting_death" "1 + 1n"
+			}
+
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"      "11"
+							"tokens"
+							{
+								"11"		"1" // 1 _ Token
+							}
+						}
+					}
+				}
+			}
+		}
+		
+
+		// --------------------------------------------------------------------------
+		// Fortune Teller
+		// --------------------------------------------------------------------------
+		"fortune_teller_ticket"
+		{
+			"action_id"		"1500"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_premium_points"       "1"
+					}
+				}
+			}
+		}
+		
+		"fortune_teller_receive_fortune"
+		{
+			"action_id"					"1501"
+			"premium_point_cost"				"1"
+			"max_grants"					"999999"
+			"claimable_without_grant"			"1"
+		}
+
+		"fortune_teller_unlock"
+		{
+			"action_id"					"1502"
+			"max_grants"					"4"
+			"rewards"
+			{
+				"1" {}
+			}
+		}
+
+		"fortune_teller_first_time"
+		{
+			"action_id"					"1503"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+			"rewards"
+			{
+				"1" {}
+			}
+		}
+		
+		// --------------------------------------------------------------------------
+		// Candy shop
+		// --------------------------------------------------------------------------
+		"candy_shop_half_reroll"
+		{
+			"action_id"		"2000"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"2 + 2n"
+				{
+					"grants"
+					{
+						"grant_candy_shop_reroll_charges"
+						{
+							"charges"				"1"
+							"periodic_resource"		"dark_carnival_2026_weekly_candyshop_rerollcharges"
+						}
+					}
+				}
+			}
+		}
+
+		"candy_shop_upgrade_1"
+		{
+			"action_id"		"2011"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{	
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36254" // Dark Carnival Candy Sack
+							"quantity"           "3"
+						}
+						"grant_action_custom"
+						{
+							"action"			"candy_shop_upgrade_tracker"
+						}
+						"grant_candy_shop_reward_shelf"		"1"
+					}
+				}
+			}
+		}
+		
+		"candy_shop_upgrade_2"
+		{
+			"action_id"		"2012"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges" 	// Candy Sacks
+						{
+							"item_def"		"36254"
+							"quantity"		"3"
+						}
+						"grant_action_custom"
+						{
+							"action"			"candy_shop_upgrade_tracker"
+						}
+						"grant_candy_shop_extra_exchange_recipe"	"1"
+					}
+				}
+			}
+		}
+		
+		"candy_shop_upgrade_3"
+		{
+			"action_id"		"2013"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges" 	// Candy Sacks
+						{
+							"item_def"		"36254"
+							"quantity"		"3"
+						}
+						"grant_action_custom"
+						{
+							"action"			"candy_shop_upgrade_tracker"
+						}
+						"grant_candy_shop_inventory_size"	"10"
+					}
+				}
+			}
+		}
+
+		"candy_shop_upgrade_tracker"
+		{
+			"action_id"					"2001"
+			"max_grants"				"4"
+			"rewards"
+			{
+				"1" {}
+				"2" {}
+				"3" {}
+				"4" {}
+			}
+		}
+
+		"candy_shop_upgrade_claim"
+		{
+			"action_id"					"2002"
+			"max_grants"				"4"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"candy_shop_upgrade_tracker"	"auto"
+			}
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges" 	// Candy Sacks
+						{
+							"item_def"		"36254"
+							"quantity"		"3"
+						}
+					}
+				}
+				"2" {}
+				"3" {}
+				"4" {}
+			}
+		}
+
+		"candy_shop_reward_store_coins"
+		{
+			"action_id"					"2003"
+			"max_grants"				"9999"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"		"36255"
+							"quantity"           "10"
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_candy_bag_small"
+		{
+			"action_id"		"2500"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"			"36254" // Dark Carnival Candy Sack
+							"quantity"          "3"
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_candy_bag_large"
+		{
+			"action_id"		"2501"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"			"36254" // Dark Carnival Candy Sack
+							"quantity"          "5"
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_candy_shop_reroll"
+		{
+			"action_id"		"2502"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_candy_shop_reroll_charges"
+						{
+							"charges"				"3"
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_treasure"
+		{
+			"action_id"		"2503"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_class"	"Treasure"
+					"grants"
+					{
+						"grant_item" "31200" // Dark Carnival Treasure 1
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_balloon_charges"
+		{
+			"action_id"		"2504"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"34475"	// Balloon
+							"quantity"	"1"
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_fireworks_charges"
+		{
+			"action_id"		"2505"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"34476"	//Fireworks
+							"quantity"  "1"		
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_fortune_teller_coin"
+		{
+			"action_id"		"2506"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_premium_points"       "1"
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_node_unlock"
+		{
+			"action_id"		"2507"
+			"max_grants"	"999999"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"16"	"1" // 1 Node Unlock
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_two_node_unlocks"
+		{
+			"action_id"		"2508"
+			"max_grants"	"999999"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"16"	"2" // 2 Node Unlock
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_fool"
+		{
+			"action_id"		"2509"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34455" // The Fool - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_magician"
+		{
+			"action_id"		"2510"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34457" // The Magician - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_high_priestess"
+		{
+			"action_id"		"2511"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34458" // The High Priestess - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_emperor"
+		{
+			"action_id"		"2512"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34460" // The Emperor - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_lovers"
+		{
+			"action_id"		"2513"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34461" // The Lovers - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_strength"
+		{
+			"action_id"		"2514"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34464" // Strength - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_hermit"
+		{
+			"action_id"		"2515"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34465" // The Hermit - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_wheel_of_fortune"
+		{
+			"action_id"		"2516"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34466" // Wheel Of Fortune - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_death"
+		{
+			"action_id"		"2517"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34467" // Death - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_devil"
+		{
+			"action_id"		"2518"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34468" // The Devil - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_tarot_card_star"
+		{
+			"action_id"		"2519"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"34469" // The Star - Tarot Showcase Decoration
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_1"
+		{
+			"action_id"		"2520"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_chat_wheel_messages"	"807" // dc_oracle
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_2"
+		{
+			"action_id"		"2521"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Bauble"
+					"grants"
+					{
+						"grant_emoticon"		"422" 
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_3"
+		{
+			"action_id"		"2522"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Cosmetic"
+					"grants"
+					{
+						"grant_item"		"33315" // The Royal Jester - Weapon
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_4"
+		{
+			"action_id"		"2523"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Cosmetic"
+					"grants"
+					{
+						"grant_item"		"33317" // The Royal Jester - Arms
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_5"
+		{
+			"action_id"		"2524"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Cosmetic"
+					"grants"
+					{
+						"grant_item"		"33316" // The Royal Jester - Belt
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_6"
+		{
+			"action_id"		"2525"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Cosmetic"
+					"grants"
+					{
+						"grant_item"		"33318" // The Royal Jester - Head
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_story_7"
+		{
+			"action_id"		"2526"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Treasure"
+					"grants"
+					{
+						"grant_item" "31200" // Dark Carnival Treasure 1
+					}
+				}
+			}
+		}
+
+		"fortune_teller_reward_pie_charges"
+		{
+			"action_id"		"2527"
+			"max_grants"	"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"34479"	// Pie
+							"quantity"  "1"		
+						}
+					}
+				}
+			}
+		}
+	
+		// --------------------------------------------
+		// Tutorial/Onboarding
+		// --------------------------------------------
+		
+		"tutorial_opened_overworld"
+		{
+			"action_id"					"2004"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+		}
+
+		"tutorial_starting_token"
+		{
+			"action_id"					"2006"
+			"max_grants"				"1"
+			"always_claimable"			"1"
+
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Token"
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"suppress_reward_popup"		"1"
+							"overworld_id"		"11" // act 1 dark carnival
+							"tokens"
+							{
+								"1"		"1"		//1 Fool Token
+							}
+						}
+						"grant_overworld_tokens"
+						{
+							"suppress_reward_popup"		"1"
+							"overworld_id"		"11" // act 1 dark carnival
+							"tokens"
+							{
+								"13"		"1"		//13 Candy Store Unlock Token
+							}
+						}
+						"grant_overworld_tokens"
+						{
+							"suppress_reward_popup"		"1"
+							"overworld_id"		"11" // act 1 dark carnival
+							"tokens"
+							{
+								"15"		"1"		//15 Fortune Teller Unlock Token
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"tutorial_first_node_reward"
+		{
+			"action_id"					"2007"
+			"max_grants"				"1"
+			
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"Treasure"
+					"grants"
+					{
+						"grant_item" "31200" // Dark Carnival Treasure 1
+					}
+				}
+			}
+		}
+	
+		// --------------------------------------------
+		// Minigame - Lockpicking
+		// --------------------------------------------
+		
+		"encounter_act1_reward_lockpicking_1"
+		{
+			"action_id"		"4001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"17"	"1" // 1 Minigame Unlock Token
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_lockpicking_2"
+		{
+			"action_id"		"4002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 3 random tokens
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_lockpicking_3"
+		{
+			"action_id"		"4003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 5 random token
+								"255"	"1"
+								"255"	"1"
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_lockpicking_4"
+		{
+			"action_id"		"4004"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"433" 
+					}
+				}
+			}
+
+		}
+
+		
+		// --------------------------------------------
+		// Minigame - Whack a Mole
+		// --------------------------------------------
+		
+		"encounter_act1_reward_whack_a_mole_1"
+		{
+			"action_id"		"5001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"17"	"1" // 1 Minigame Unlock Token
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_whack_a_mole_2"
+		{
+			"action_id"		"5002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 2 random tokens
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_whack_a_mole_3"
+		{
+			"action_id"		"5003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 3 random token
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		// --------------------------------------------
+		// Minigame - Crate Drop
+		// --------------------------------------------
+		
+		"encounter_act1_reward_crate_drop_1"
+		{
+			"action_id"		"6001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"17"	"1" // 1 Minigame Unlock Token
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_crate_drop_2"
+		{
+			"action_id"		"6002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 2 random tokens
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_crate_drop_3"
+		{
+			"action_id"		"6003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 3 random token
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		
+		// --------------------------------------------
+		// Minigame - Blimp Jump
+		// --------------------------------------------
+		
+		"encounter_act1_reward_blimpjump_1"
+		{
+			"action_id"		"7001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"17"	"1" // 1 Minigame Unlock Token
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_blimpjump_2"
+		{
+			"action_id"		"7002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 2 random tokens
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+
+		}
+		"encounter_act1_reward_blimpjump_3"
+		{
+			"action_id"		"7003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 3 random token
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+		}
+	
+		// --------------------------------------------
+		// Minigame - Slark Jailbreak
+		// --------------------------------------------
+		
+		"encounter_act1_reward_slark_jailbreak_1"
+		{
+			"action_id"		"8001"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"17"	"1" // 1 Minigame Unlock Token
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_act1_reward_slark_jailbreak_2"
+		{
+			"action_id"		"8002"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 3 random tokens
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+		}
+		"encounter_act1_reward_slark_jailbreak_3"
+		{
+			"action_id"		"8003"
+			"max_grants"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_overworld_tokens"
+						{
+							"overworld_id"		"11"
+							"tokens"
+							{
+								"255"	"1" // 5 random tokens
+								"255"	"1"
+								"255"	"1"
+								"255"	"1"
+								"255"	"1"
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		// Rewards for the ticket smelting encounter
+		"encounter_reward_ticket_smelter"
+		{
+			"action_id"		"8004"
+			"max_grants"	"5"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36254" // Dark Carnival Candy Sack
+							"quantity"           "4"
+						}
+					}
+				}
+				"2"
+				{
+					"reward_class"	"OracleCoin"
+					"grants"
+					{
+						"grant_premium_points"       "1"
+					}
+				}
+				"3"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36254" // Dark Carnival Candy Sack
+							"quantity"				 "8"
+						}
+					}	
+				}
+				"4"
+				{
+					"reward_class"	"OracleCoin"
+					"grants"
+					{
+						"grant_premium_points"       "2"
+					}
+				}
+				"5"
+				{
+					"reward_class"	"CandySack"
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"36254" // Dark Carnival Candy Sack
+							"quantity"           "12"
+						}
+					}	
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,120 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+#Contents.StorePurchaseAllContents
+{
+	border: 2px solid black;
+	padding: 12px;
+	flow-children: down;
+	width: 400px;
+}
+
+@keyframes 'PulseDiscountPrice'
+{
+	0%
+	{
+		transform: none;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		transform: scale3d(1.15, 1.15, 1);
+		brightness: 5;
+	}
+	
+}
+
+.Price
+{
+	color: gradient( linear, 0% 24%, 0% 100%, from( goldLight ), to( goldDark ) );
+	font-weight: semi-bold;
+	margin: 0px 2px;
+}
+
+#PurchaseAllLineItems
+{
+	flow-children: down;
+}
+
+.PurchaseAllLineItem
+{
+	flow-children: right;
+	padding: 3px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.PurchaseAllLineItem Label
+{
+	font-size: 17px;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.PurchaseAllLineItem #ItemName
+{
+	width: fill-parent-flow(1);
+	color: LightestGrey;
+}
+
+.PurchaseAllLineItem #DiscountPriceLabel
+{
+	visibility: collapse;
+}
+
+.PurchaseAllLineItem.Discounted #DiscountPriceLabel
+{
+	visibility: visible;
+}
+
+.PurchaseAllLineItem.Discounted .Price.Default
+{
+	font-weight: normal;
+	text-decoration: line-through;
+	color: LightGrey;
+}
+
+.PurchaseAllLineItem.ItemAlreadyOwned Label
+{
+	opacity: 0.2;
+}
+
+.PriceContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	padding-top: 6px;
+}
+
+.PriceContainer Label
+{
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.DiscountActive .Price.IsDiscountable
+{
+	font-weight: normal;
+	text-decoration: line-through;
+	color: LighterGrey&66;
+}
+
+.EverythingPurchased .PriceContainer
+{
+	visibility: collapse;
+}
+
+.DiscountPrice
+{
+	color: rgb(209, 186, 110);
+	font-weight: semi-bold;
+	margin: 0px 2px;
+	visibility: collapse;
+}
+
+.DiscountActive .DiscountPrice
+{
+	visibility: visible;
+	animation-name: PulseDiscountPrice;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 5
+        // Enumerator count: 6
         // Alignment: 4
         // Size: 0x_
         enum class EOverworldTokenType : std::uint32_t
@@ -23,6 +23,7 @@ namespace source2sdk
             k_eOverworldTokenType_Hidden = 0x2,
             k_eOverworldTokenType_Premium = 0x3,
             k_eOverworldTokenType_Scrap = 0x4,
+            k_eOverworldTokenType_Internal = 0x5,
         };
     };
 };

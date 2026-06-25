@@ -95,8 +95,6 @@
 		"AllocWarnMB" "2000"
 		"ReserveWarnMB" "64"
 
-		"DefaultRenderSystem"					"-vulkan" [ $LINUX || $OSX ] // macOS/Linux default to Vulkan
-
 		"RenderingPipeline"
 		{
 			"SkipPostProcessing" "1"
@@ -131,7 +129,7 @@
 		"CMTAtlasChunkSize" "128"
 		"DrawParticleChildrenSeparateFromParents" "1"
 		"MaxAutoPartitions" "8"
-		"LayerBatchThreshold" "512" [ $OSX && $CPU_EMULATED ] // Apple M1 - increase sc_layer_batch_threshold from 128 -> 512. Reduces TBDR memory bandwidth.
+		"TBDRLayerBatchThreshold" "512" // Apple M1 - increase sc_layer_batch_threshold from 128 -> 512. Reduces TBDR memory bandwidth.
 	}
 
 	SoundSystem
@@ -252,9 +250,6 @@
 
 	RenderSystem
 	{
-		SwapChainSampleableDepth 1
-		"VulkanSteamShaderCache"			"1"
-		"OpenGLForceSM30"					"1"
 		"LowLatency"						"1"
 	}
 

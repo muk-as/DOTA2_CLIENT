@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 7
+        // Enumerator count: 8
         // Alignment: 4
         // Size: 0x_
         enum class EFantasyShapeBehavior : std::uint32_t
@@ -25,8 +25,9 @@ namespace source2sdk
             k_eFantasyShapeBehavior_StealBonus = 0x3,
             k_eFantasyShapeBehavior_OnlyOne = 0x4,
             k_eFantasyShapeBehavior_NeedMultiples = 0x5,
+            k_eFantasyShapeBehavior_UniqueQualities = 0x6,
             // MPropertySuppressEnumerator
-            k_eFantasyShapeBehavior_COUNT = 0x6,
+            k_eFantasyShapeBehavior_COUNT = 0x7,
         };
     };
 };

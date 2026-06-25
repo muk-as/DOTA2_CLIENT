@@ -1,10 +1,8 @@
 0   0
-0 0 0 255
 0H;Vh|=H
 0[A\A^A
 0__function6__baseIFbiiEEE
 0_t=H
-0ffff
 10ConCommand
 10IAppSystem
 11IRefCounted
@@ -40,13 +38,16 @@
 23CKV3TransferLoadContext
 23CKV3TransferSaveContext
 23CResourceSystemProfiler
+23IRD_ResourceExtrefUtils
 23IResourceSystemProfiler
 24CTestResourceTypeManager
 25CAsyncResourceDataRequest
 25CConCommandMemberAccessorI23CResourceSystemProfilerE
+25CRD_AsyncProcessDataUtils
 25CResourceDeallocatorUtils
 25IAsyncProcessedDataResult
 25IAsyncResourceDataRequest
+25IRD_AsyncProcessDataUtils
 25IResourceDeallocatorUtils
 25IResourceManifestRegistry
 26CResourceSystemLeakTracker
@@ -56,6 +57,7 @@
 28CCodeResourceManifestManager
 28CResourceManifestTypeManager
 28ICodeResourceManifestManager
+29CRD_RegisterResourceDataUtils
 29IRD_RegisterResourceDataUtils
 30IAsyncResourceDataRequestOwner
 32CSchemaRegistration_resourcefile
@@ -90,8 +92,8 @@ AABB_t
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARARAp
 ARA\BVBUAZBWAp
-AUASAp
 AUASCRAp
+AUBYAUAp
 AVSH9w
 AWAVATS
 AWAVATS@8w0}8I
@@ -102,6 +104,7 @@ AWAVATSM
 AWAVAUATS
 AWAVAUATSA
 AWAVAUATSH
+AWAVAUATSI
 AWAVAUATSP
 AWAVAUATSP1
 AWAVAUATSPA
@@ -132,6 +135,7 @@ AssetPreviewSystem_001
 AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
+AsyncPreFinalize
 AsyncProcess
 Attempted to register duplicate manifest name %s
 Bad FLC data for resource '%s': %s
@@ -188,6 +192,7 @@ CWeakHandle
 CWeakHandleVoid
 Cast of %s loses value information (returning %s
 Class data is a '%s', not a table
+ClientLocalServerAccess001
 ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 CmdLinkAH
@@ -196,6 +201,7 @@ ConstantInfo_t
 Couldn't load KV3 for resource: %s
 CreateInterface
 DATA_CONST
+DEPRECATED_FIELD_AI_SCHEDULE_BITS
 DISABLED
 Deleting empty loading resource
 DemoUpconverterVersion001
@@ -207,7 +213,6 @@ ERROR: %s resource '%s' (%016llX) requested is not loaded and may have been dele
 ERROR: %s resource '%s' (%016llX) requested is still pending and is not loaded
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 ERROR: No type manager for resource "%s
-ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
 ERROR_BADREQUEST: Code error - bad request
 ERROR_COMPILEFAIL: Tools mode - tried to (re)compile an asset but failed
 ERROR_FILEOPEN: File not found
@@ -216,6 +221,7 @@ ERROR_READING: File exists but read failed
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
+Effff
 Encountered nonexistent %s: %016llX (file "%s
 EngineServiceMgr001
 Error initializing resource manager for resource type "%lld
@@ -223,10 +229,8 @@ Error loading resource "%s" (Invalid header version: %d != %d
 Error loading resource "%s" file size %d > allocated buffer size %d
 Error loading resource manifest "%s" (No DATA block
 ExtractModuleMetadata
-F<A;F(uw
 FAIL ] - Manifest contains an illegal resource name "%s
 FATAL ERROR: %s resource '%s' (%016llX) is the wrong resource type! (This is likely caused by a hash collision between the strings '%s' and '%s
-FIELD_AI_SCHEDULE_BITS
 FIELD_AMMO_INDEX
 FIELD_ATTACHMENT_HANDLE
 FIELD_BOOLEAN
@@ -269,8 +273,10 @@ FIELD_MATRIX3X4_WORLDSPACE
 FIELD_MODIFIER_HANDLE
 FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_POSITION_VECTOR
 FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTOR
+FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTORWS
 FIELD_NETWORK_QUANTIZED_FLOAT
 FIELD_NETWORK_QUANTIZED_VECTOR
+FIELD_NETWORK_QUANTIZED_VECTORWS
 FIELD_POSITION_VECTOR
 FIELD_POSITIVEINTEGER_OR_NULL
 FIELD_QANGLE
@@ -315,9 +321,6 @@ Failed to find or register resource "%s" for external reference: referring resou
 Failed to load resource "%s" and ExitOnResourceLoadFailure was set and it's not in badresources_whitelist.txt
 Failed to save unsupported class
 FileSystem
-Finalize queue Finalizing StartLoading(%s) @%.2f
-Finalize queue completed processed %d, %s, elapsed time %.2fMSEC %s @%.2f
-Finalize queue continue processed %d of %d, elapsed time %.2fMSEC %s @%.2f
 FixupResourceName: Illegal full path passed in ("%s
 FixupResourceName: Illegal path, missing extension passed in ("%s
 FlattenedSerializersVersion001
@@ -325,7 +328,6 @@ FontManager_001
 ForceSynchronizationAndBlockUntilManifestLoaded
 Forcing all resource loads to fail: "%s
 Forgot to remove resource type manager for type %s
-Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 FourQuaternions
 FourVectors
 FunctionInfo_t
@@ -333,8 +335,6 @@ FuseFunctionIndex_t
 FuseVariableAccess_t
 FuseVariableIndex_t
 FuseVariableType_t
-G08C0
-G@;GD
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameUIService_001
@@ -349,6 +349,8 @@ GetResourceStatus( resourceName ) == RESOURCE_STATUS_RESIDENT
 Gradient
 H91tZH
 H;Qh}IL
+HLc{HA
+HPHcPHH
 H[A\A]A^A
 H__ZdaPv
 H__ZdaPvSt11align_val_t
@@ -370,13 +372,13 @@ HammerMapLoader001
 HelpSystem_001
 HhH;Nh
 HostStateMgr001
-I CUtlRBTree<CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, L = CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::CKeyLess, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, int
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 IKV3TransferInterface_UtlSymbolLarge
 INSt3__11
 INVALID
 IPulseSystem_001
+Ic\$8H
 Idle (ResourceSystemSleep
 Inert VModuleMetadata
 InfoForResourceTypeCAnimData
@@ -443,10 +445,11 @@ L9(tTI
 L93t^H
 LINKEDIT
 LOG_GENERAL
-Lc0t2E
+Lc0t)E
 Leaked reference to ERROR resource for type %s
 Leaked resource: Refcount %s for %s%s resource "%s" (%016llX).  This may result in a crash
 List loaded resources matching a substring
+LocalServerClientAccess001
 Localize_001
 Log time spent in Allocate for all resource types
 LoggingSystem_IsChannelEnabled
@@ -461,12 +464,10 @@ MODEL_PROCESSING_SERVICES_INTERFACE_001
 MPropertyCustomEditor
 MPropertyCustomFGDType
 MResourceTypeForInfoType
-MULTI FRAME
 ManifestTestResource_t
 MapListService_001
 Matched %d of %d loaded resources
 MaterialUtils_001
-Max time to spend finalizing resources per frame in miliseconds
 Mc,$D9
 Mc<$D9
 Mcg A
@@ -490,20 +491,9 @@ NetworkService_001
 NetworkSystemVersion001
 No DATA block for resource
 Only wrote %d (of %d) values when saving map
+P@Mc~8M
+P@P0000@P@P0000@P
 PP@0@P
-PPPPPPPP
-PPPPPPPP @P
-PPPPPPPP@@                                            @P@P0000@P@P0000@P
-PPPPPPPP@@0
-PPPPPPPP@@0  PPPPPPPP@@PPPPPPPP
-PPPPPPPP@@P
-PPPPPPPP@@P0
-PPPPPPPP@@PPPPPPPP
-PPPPPPPP@@PPPPPPPP PPPPPPPP@@PPPPPPPP
-PPPPPPPP@@PPPPPPPPPPPPPPPP@@PPPPPPPP
-PPPPPPPP@@`p@0
-PPPPPPPPP
-PPPPPPPPp
 PackedAABB_t
 PanoramaTextServices001
 PanoramaUIClient001
@@ -520,9 +510,7 @@ Plat_MicroSecTickDiff
 Plat_NonFatalErrorFunc
 Plat_NotifyOSAppIsNotHung
 Plat_RelativeTicks
-Plat_TickDiffMilliSec
 Plat_TickDiffMilliSecF
-Plat_TickDiffSecF
 Plat_USTime
 Pointers cannot be used as numeric values
 PostProcessingSystem_001
@@ -530,10 +518,9 @@ PropertyEditorSystem_001
 QhH;Ph
 RARARARARA
 RARAWAp
+RARA[ARARAp
 RASARAp
 RAWASA[ASC
-RAWBRA`gAVA\AXASASASASB[Ap
-RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBpXp
 READ_ONLY
 RESOURCE LOADING STATS
 RESOURCE STREAMING STATS
@@ -574,9 +561,7 @@ ResourceSystem013
 ResourceSystemWaitingForFutureWork
 ReturnJobManualEventToPool
 SARARBRBRARAp8p
-SARAWAWAp
 SASASASASASASASB
-SINGLE FRAME
 SNSt3__11
 STATUS_ABORTED: Request canceled
 STATUS_PENDING: Request still pending
@@ -616,7 +601,6 @@ System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
 System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
 TestScriptMgr001
 TextLayout_001
-This convar is being accessed prior to ConVar_Register being called
 ThreadGetCurrentId
 ThreadGetCurrentProcessId
 ThreadNanoSleep
@@ -631,6 +615,7 @@ Tried to install a placeholder resource manager for an existing resource type "%
 Tried to install two resource managers for the same resource type "%lld
 Tried to load resource reference '%s' from a value without a resource reference specific type
 Tried to release UGC that hasn't been referenced: %lld
+UBWBRA`gAVA\AXASASASASBSAp
 UINT16
 UINT32
 UNKNOWN VALUE
@@ -642,6 +627,7 @@ Update_Internal
 Usage: resource_leaks <resource_name
 Usage: resource_repeated_reload <count> <resource_name
 Use '-allow_missing_resources' to ignore
+UtlRBTree_FailedInsertDuplicate
 UtlVectorMemory_Alloc
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
@@ -674,19 +660,9 @@ V_RemoveDotSlashes
 V_StringAfterPrefix
 V_StringParseError
 V_StringToBool
-V_StringToColor
-V_StringToFloat32
 V_StringToFloat64
-V_StringToInt16
 V_StringToInt32
 V_StringToInt64
-V_StringToQAngle
-V_StringToUint16
-V_StringToUint32
-V_StringToUint64
-V_StringToVector
-V_StringToVector2D
-V_StringToVector4D
 V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
 V_atoi
@@ -705,6 +681,7 @@ WARNING: %s resource '%s' (%016llX) requested but is not in the system. (Missing
 WARNING: Long frame update (%.2fms) for resource type manager '%s' in frame %d (%d long updates total for this manager
 WARNING: Long resource system update - should have taken no more than %dns, but took %.4fs! (Frame #%d
 WARNING: Resource "%s" references itself
+WARNING: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
 WARNING: Resource system exiting at %.2f seconds due to '-resource_exit_after_time' command line flag
 WARNING: Trying to deallocate a resource after the type manager was uninstalled! ("%s
 WARNING: Trying to deallocate a resource with no associated resource type! ("%s
@@ -712,7 +689,7 @@ WARNING: resource '%s' is an unrecognized resource type
 WRITABLE
 Warning
 WorldRendererMgr001
-XB`0B\AWARA`bASCp
+XB`0B\AWARA`bASCSAWAWAp
 X[A\A]A^A
 YARAXAp
 Z14V_stristr_fastPKcS0
@@ -741,6 +718,7 @@ ZN11CTSListBase11InternalPopEv
 ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
+ZN11IThreadPool17QueueJobWithFlagsIZN15CResourceSystem17FinalizeManifestsEvE3$_6EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
 ZN11IThreadPool17QueueJobWithFlagsIZN25CAsyncResourceDataRequest33IO_HandleAsyncResourceDataRequestEP18IAsyncReadRequest220AsyncRequestStatus_tE3$_2EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
 ZN11IThreadPool17QueueJobWithFlagsIZN25CAsyncResourceDataRequest6SubmitEvE3$_1EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
 ZN12CAtomicMutex11AcquireLockEy
@@ -757,7 +735,6 @@ ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString13FixupPathNameEc
 ZN13CBufferString14StripExtensionEb
 ZN13CBufferString5PurgeEi
-ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
@@ -775,7 +752,6 @@ ZN18CStableSymbolTable5GetIdEPKcPb
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
 ZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_t30ResourceManifestLoadPriority_tbPKcE3$_0
-ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
 ZNK9KeyValues6GetIntEPKci
@@ -841,17 +817,13 @@ cxa_guard_acquire
 cxa_guard_release
 cxa_pure_virtual
 cxa_throw
-d %d %d
-d %d %d %d
 double
 dyld_stub_binder
 econitemvrr
-editor
 empty member name
 enable_profiling
 error_resource
-f %f %f
-f %f %f %f
+fA`'Lp
 fffff
 ffffff
 fieldtype_t
@@ -861,8 +833,6 @@ flc_count
 flc_file_ids
 flc_file_list
 flc_lines
-float32
-float64
 g_pMemAlloc
 g_pThreadPool
 gcc_except_tab__TEXT
@@ -876,11 +846,11 @@ int CUtlMemoryBlockAllocator<UtlLinkedListElem_t<CLoadingResource *, unsigned sh
 int CUtlMemoryBlockAllocator<UtlLinkedListElem_t<CStreamingResourceData *, unsigned short>>::AddPage(uint) [T = UtlLinkedListElem_t<CStreamingResourceData *, unsigned short>, Alloc_t = CMemAllocAllocator
 int CUtlMemoryBlockAllocator<UtlLinkedListElem_t<ExtRefList_t *, unsigned int>>::AddPage(uint) [T = UtlLinkedListElem_t<ExtRefList_t *, unsigned int>, Alloc_t = CMemAllocAllocator
 int CUtlMemoryBlockAllocator<char>::AddPage(uint) [T = char, Alloc_t = CMemAllocAllocator
-int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::Find(const TKey &) const [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t>, TKey = CResourceManifest::LoadingResourceReference_t
-int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::Insert(const T &) [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t
+int CUtlSortVector<const ResourceBindingBase_t *>::Find(const TKey &) const [T = const ResourceBindingBase_t *, LessFunc = CUtlSortVectorDefaultLess<const ResourceBindingBase_t *>, BaseVector = CUtlVector<const ResourceBindingBase_t *>, TKey = const ResourceBindingBase_t
+int CUtlSortVector<const ResourceBindingBase_t *>::Insert(const T &) [T = const ResourceBindingBase_t *, LessFunc = CUtlSortVectorDefaultLess<const ResourceBindingBase_t *>, BaseVector = CUtlVector<const ResourceBindingBase_t
 invalid
 item->m_cookie == BindingAllocator_t::ITEM_COOKIE_ALLOC
-itemdefsr
+itemdefs
 la_symbol_ptr
 libresourcesystem.dylib
 loader_path
@@ -927,16 +897,14 @@ memcpy
 memmove
 memset
 mod_init_func
-multibase
 nTries < 10000000
 newSerial == i + 1
 no failure reason set
-not_pickable
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/asyncresourcedatarequest.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/loadingresource.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/resourcesystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/streamingresourcedata.cpp
-p UBRBRBRBRBRCp8p
+p UBRBRBRBRBRDp8p
 p p p0RCp p p0RCp p p0SARBp
 p p p0SCp
 pExisting == nTypeManifestPriority
@@ -946,11 +914,8 @@ pointer
 pthis->HandleUtils_Deref( ch )->m_ResourceId == key
 pthis->StaticDeref( ch, true ) == nullptr
 public/tier0/tslist.h
-public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
-qangle
 qhH;rh}	I
-rA`(0
 radr://5614542
 raise
 refcount % 4d
@@ -971,7 +936,6 @@ resource_reset_allocate_timing
 resourcefile
 resources
 resourcesystem
-resourcesystem_multiframe_finalize_time_msec
 rh != RESOURCE_HANDLE_INVALID
 rpath/libresourcesystem.dylib
 rpath/libtier0.dylib
@@ -1019,19 +983,14 @@ t#fff
 t#ffffff
 t$fff
 t%fffff
-t&fffff
-t'ffffff
-t.Lc(M
+t'ffff
+t-Lc(M
 t/fff
 t7H97u
-t:I;0t
+t\I;0t
 table: %u members
 test_payload
-uint16
-uint32
-uint64
 unable to register all schema data: %s
-undefined
 unknown
 unknown KV3 basic type '%s' (%d
 unwind_info
@@ -1041,9 +1000,6 @@ usr/lib/libiconv.2.dylib
 vXA9v
 vanmgrphvcd
 vcompmatvgcxdatavsmart
-vector2
-vector3
-vector4
 virtual ResourceHandle_t CResourceSystem::BlockingLoadResourceByNameIntoJustInTimeManifest(const CResourceName &, const char
 virtual ResourceHandle_t CResourceSystem::FindOrRegisterResourceByName_Internal(const CResourceName &, bool
 virtual void CResourceSystem::InstallTestFilesystem(IResourceCompileFileSystemInterface
@@ -1073,5 +1029,4 @@ vsndevtsvsndstckvsnd
 wXA9w
 x != %x
 x[A\A]A^A
-zD29CRD_RegisterResourceDataUtils
 zhH;ph

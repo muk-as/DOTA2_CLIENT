@@ -18,7 +18,7 @@ namespace source2sdk
         // Size: 0x_
         enum class StanceType_t : std::uint32_t
         {
-            // MPropertySuppressEnumerator
+            // MPropertyFriendlyName "Current"
             STANCE_CURRENT = 0xffffffff,
             // MPropertyFriendlyName "Default"
             STANCE_DEFAULT = 0x0,

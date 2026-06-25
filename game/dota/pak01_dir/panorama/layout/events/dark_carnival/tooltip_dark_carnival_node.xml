@@ -1,0 +1,165 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/tooltip_dark_carnival_node.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="RewardContainer">
+			<Panel class="RewardContainer" />
+		</snippet>
+		<snippet name="EconItemReward">
+			<Panel class="EconItemReward">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" />
+					<Label class="Quantity" text="x{d:quantity}" />
+				</Panel>
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelSprayReward">
+			<Panel class="ChatWheelSprayReward">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelMessageReward">
+			<Panel class="ChatWheelMessageReward">
+				<Panel class="ChatWheelMessage">
+					<Panel class="InnerContainer">
+						<Panel class="ChatWheelMessageIcon" />
+						<Button id="ChatWheelMessageSoundButton" />
+						<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+					</Panel>
+				</Panel>
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ActionListReward">
+			<Panel class="ActionListReward">
+				<DOTAActionListReward id="ActionList" show_info_icon="false" show_tooltips="false" />
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:action_list_type}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="TrophyReward">
+			<Panel class="TrophyReward">
+				<DOTATrophyImage id="TrophyImage" />
+				<Label text="{g:dota_trophy_name:trophy_id}" />
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopRerollChargesReward">
+			<Panel class="BundleItem CandyShopRerollChargesItem">
+				<Panel class="CandyShopRerollChargeImage" />
+				<Label text="#DOTA_Crownfall_Reward_CandyShopRerollRefresh:f" />
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopUpgradeShelfReward">
+			<Panel class="BundleItem CandyShopUpgradeShelfReward">
+				<Panel class="CandyShopUpgradeShelfImage" />
+				<Label text="#DOTA_DarkCarnival_Reward_CandyShopShelfUpgrade" />
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopUpgradeRecipeReward">
+			<Panel class="BundleItem CandyShopUpgradeRecipeReward">
+				<Panel class="CandyShopUpgradeRecipeImage" />
+				<Label text="#DOTA_DarkCarnival_Reward_CandyShopRecipeUpgrade" />
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopUpgradeInventoryReward">
+			<Panel class="BundleItem CandyShopUpgradeInventoryReward">
+				<Panel class="CandyShopUpgradeInventoryImage" />
+				<Label text="#DOTA_DarkCarnival_Reward_CandyShopInventoryUpgrade" />
+			</Panel>
+		</snippet>
+		<snippet name="TokenReward">
+			<Panel class="TokenReward">
+				<DOTADarkCarnivalToken id="OverworldToken" class="Token" />
+				<Label hittest="false" class="TokenName" text="{s:token_name}" />
+			</Panel>
+		</snippet>
+		<snippet name="OracleReward">
+			<Panel class="OracleReward">
+				<Panel class="OracleCoinImage">
+					<Image class="Image" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_coin_large_png.vtex" scaling="contain" />
+					<Label class="Quantity" text="x{d:seeing_stone_count}" html="true" />
+				</Panel>
+				<Label text="#DOTA_DarkCarnival_Reward_OracleCoin" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="NodeTooltipContents">
+		<AsyncDataPanel id="AsyncPanel" class="AsyncPanel" state="{d:tooltip_state}" onactivate="">
+			<Panel class="AsyncSuccessContainer">
+				<Panel class="TooltipSection RewardsSection">
+					<Label class="ChapterTitle LabelMedium" text="{d:dialogue_index}" />
+					<Panel class="TooltipSectionTop">
+						<Panel class="TooltipBackground" />
+						<Panel class="TooltipSectionTopContents">
+							<Panel class="Header">
+								<Label class="DialogueTitle LabelMedium" text="{s:dialogue_title}" />
+								<Panel class="RewardLabelContainer">
+									<Panel class="BannerFlag" />
+									<Label class="SectionTitle LabelMedium" text="#DOTA_Overworld_Node_Reward" />
+								</Panel>
+							</Panel>
+							<Panel id="RewardList" />
+							<Panel id="ShowcaseRewardsContainer">
+								<Panel id="ShowcaseRewardsList" />
+								<Image class="QuestionMark" src="s2r://panorama/images/control_icons/question_mark_png.vtex" />
+								<Label class="BodyMedium" text="#DOTA_Crownfall_DecorationReward:f" />
+							</Panel>
+							<Label class="BodySmall ActionListRewardInfo" text="#DOTA_Crownfall_RandomReward_Info" />
+							<DOTADarkCarnivalButton text="#DOTA_Overworld_ReplayDialog" class="Secondary ReplayDialogue" onactivate="DOTAOverworldMapNodeTooltipReplayDialogue()" />
+						</Panel>
+					</Panel>
+					<Panel class="RewardStatus">
+						<Panel class="RewardStatusInfo">
+							<Panel class="RewardStatusIcon" />
+							<Label text="{s:rewards_status}" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="TooltipSection EncounterSection">
+					<Panel class="TooltipSectionTop">
+						<Panel class="TooltipBackground" />
+						<Panel class="TooltipSectionTopContents">
+							<Panel class="Header">
+								<Label class="ChapterTitle LabelMedium" text="{d:dialogue_index}" />
+								<Label class="DialogueTitle LabelMedium" text="{s:dialogue_title}" />
+								<Panel class="RewardLabelContainer">
+									<Panel class="BannerFlag" />
+									<Label class="SectionTitle LabelMedium" text="#DOTA_Overworld_Node_Encounter" />
+								</Panel>
+							</Panel>
+							<Panel class="EncounterDetails">
+								<Image id="EncounterImage" scaling="contain" />
+								<Panel class="EncounterInfo">
+									<Label class="EncounterName BodyLarge" text="{s:encounter_name}" />
+									<Label class="EncounterDescription BodySmall" text="{s:encounter_description}" />
+								</Panel>
+							</Panel>
+							<DOTADarkCarnivalButton text="#DOTA_Overworld_ReplayDialog" class="Secondary Blue ReplayDialogue" onactivate="DOTAOverworldMapNodeTooltipReplayDialogue()" />
+						</Panel>
+					</Panel>
+					<Panel class="EncounterStatus">
+						<Panel class="EncounterStatusInfo">
+							<Panel class="EncounterStatusIcon" />
+							<Label text="{s:encounter_status}" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+	</Panel>
+</root>

@@ -22,6 +22,10 @@
 		1 : "Yes"
 	]
 
+	enemyfilter(target_destination) [ group="NPC Properties" ] : "Enemy Filter" : "" : "Filter by which to filter potential enemies"
+	ignoreunseenenemies(boolean) [ group="NPC Properties" ] : "Ignore unseen enemies" : 0 : "Prefer visible enemies, regardless of distance or relationship priority"
+	wait_until_seen_by_player(boolean) [ group="NPC Properties" ] : "Wait until seen by player" : 0 : "Disable sensing until this NPC has been seen by the player"
+
 	// Outputs
 	output OnFoundPlayer(string) : "Fired when this NPC establishes line of sight to its enemy, and that enemy is a player (outputs player entity)."
 	output OnHearPlayer(void) : "Fired when this NPC hears the player."
@@ -31,8 +35,11 @@
 	output OnConditionRemoved(string) : "A condition was removed from the NPC. Only a subset of conditions are sent through this to reduce the amount of entity IO happening."
 	output OnAbilityUse(string) : "An ability has started, but may not complete."
 	output OnAbilityUseEnded(string) : "An ability has been finished."
+	output OnStartTouchMaterial(void) : "Fired when NPC touches a surface material defined in the touch material modifier."
+	output OnEndTouchMaterial(void) : "Fired when NPC leaves a surface material defined in the touch material modifier."
 
 	// Inputs
+	input SetEnemyFilter(string) : "Changes this NPC's enemy filter to the named filter."
 	input IgnoreDangerSounds(float) : "Ignore danger sounds for the specified number of seconds."
 	input HolsterWeapon(void) : "Force the NPC to holster their weapon. Ignored if the NPC is scripting, if the NPC's weapon is already holstered, or if the NPC doesn't use weapons."
 	input HolsterAndDestroyWeapon(void) : "Identical to HolsterWeapon, except the weapon is destroyed once it has been holstered and concealed."
@@ -76,6 +83,10 @@
 	input AddDisallowedAttribute(string) : "Adds a nav attribute by name that the NPC is not allowed to navigate on."
 	input RemoveDisallowedAttribute(string) : "Removes a nav attribute by name that the NPC was not allowed to navigate on."
 	input SetDesiredStrategy(api)
+	input UpdateEnemyMemory(string) : "Update (or Create) this NPC's memory of an enemy and its location"
+	input ForgetEntity(string) : "Clears out the NPC's knowledge of a named entity."
+	input GagEnable(void) : "Turn on the NPC Gag flag. NPC won't speak outside of choreographed scenes."
+	input GagDisable(void) : "Turn off the NPC Gag flag."
 ]
 
 @BaseClass base(DefaultNPC) 
@@ -107,38 +118,6 @@
 
 	// Outputs
 	output OnRappelTouchdown(void) : "Fires when done rappeling"
-]
-
-@BaseClass base(DefaultNPC) 
-	metadata
-	{
-		api_classes = [ "npc_companion" ]
-	}
-= PlayerCompanion
-[
-	input OutsideTransition(void) : "Use this input to teleport the NPC to a hintnode with the Player Squad Transition Point hint type."
-
-	input EnableAlwaysTransition(api)
-	input DisableAlwaysTransition(api)
-	
-	input EnableSpeakWhileScripting(void) : "Allow this NPC to speak responses while in a scripted sequence or while StartScripting is active."
-	input DisableSpeakWhileScripting(void) : "Cancels this NPC's ability to speak responses while in a scripted sequence or while StartScripting is active if it was previously enabled by EnableSpeakWhileScripting."
-	
-	AlwaysTransition(boolean) : "Always transition" : "No" : "If yes, this NPC will always teleport to a Player Squad Transition Point if they're not within the trigger_transition volume."
-
-	DontPickupWeapons(boolean) : "Prevent picking up weapons?" : "No" : "If yes, this NPC will NOT be allowed to pick up weapons they find on the ground."
-
-	GameEndAlly(boolean) : "Is this a game-ending ally?" : "No" : "If yes, this NPC will cause the game to end if killed."
-
-	input MakeGameEndAlly(void) : "Make this NPC a game end ally."
-	input MakeRegularAlly(void) : "Make this NPC a regular ally."
-
-	input EnableWeaponPickup(api)
-	input DisableWeaponPickup(api)
-	
-	input ReviveCompleted(void) : "Force the NPC to revive itself from an incapacitated state. "
-
-	output OnWeaponPickup(api) 
 ]
 
 @BaseClass base( DefaultNPC ) = BaseHelicopter
@@ -518,8 +497,10 @@
 		"eVeryFast"	: "Forced Very Fast (Sprint)"
 	]
 	npc_lock_delay(float) : "NPC Lock Delay" : "0" : "Optionnal per NPC override of the same parameter defined in the lock trigger."
-	stop_radius(float) : "Stop Radius" : "0" : "Optional distance to goal at which to terminate the path.  This distance is measured along the full valid path from the goal, not directly.  This path will end at the first point, measured back from the goal, where the path exists within this given range. The resulting path will be the initial section of a fully valid path that reaches the goal."
-    goal_arrival_tolerance(float) : "Goal Arrival Tolerance" : "0" : "Optional distance from the goal position within which the NPC is allowed to end the navigation."
+	goal_success_radius_when_blocked(float) : "Goal Success Radius (Blocked)" : "-1" : "In general, NPCs always try to exactly reach the goal target. If the target is blocked for some reason, being this close to the goal means we'll still consider the movement a success anyways. -1 means use the default settings."
+    goal_success_radius(float) : "[Optional] Goal Success Radius" : "-1" : "Optional distance from the goal position within which the NPC is allowed to end the navigation. -1 means use the blocked success radius. WARNING: You probably want to be setting blocked success radius rather than this, since in general, you want NPCs to actually reach their goals."
+	path_end_distance_from_goal(float) : "Minimum End Distance From Goal" : "-1" : "Optional distance to goal at which to terminate the path.  Clips the goal to this distance away from the goal, along the path, so the NPC will never get closer than this to the goal."
+    should_stop_at_goal(bool) : "Stop At Goal" : "1" : "Should we stop at goal with zero velocity or keep our speed."
 ]
 
 @PointClass base(Targetname, AIScriptedBase) tags( Choreo ) color(255 0 255) selected_line( 255 255 255, targetname, m_iszTarget ) selected_line( 255 255 255, targetname, m_iszNPC ) iconsprite("editor/aiscripted_schedule") = ai_scripted_abilityusage :

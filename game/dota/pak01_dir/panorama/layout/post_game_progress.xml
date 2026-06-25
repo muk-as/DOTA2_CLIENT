@@ -28,6 +28,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_crownfall.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2024.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_monster_hunter.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_dark_carnival.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -1260,6 +1261,108 @@
 				<Label class="NewBadge MHLabelFont Small" hittest="false" text="#DOTA_MonsterHunter_Codex_Entry_New" />
 			</Panel>
 		</snippet>
+		<snippet name="DarkCarnivalRewardTokenContainer">
+			<Panel class="DarkCarnivalTokenContainer">
+				<DOTADarkCarnivalToken id="OverworldToken" class="LargeToken" tooltipstyle="none" />
+				<Label text="{s:token_name}" class="TokenName" />
+			</Panel>
+		</snippet>
+		<snippet name="DarkCarnivalRerollIcon">
+			<Panel class="DarkCarnivalRerollIcon">
+				<Panel class="DarkCarnivalRerollOnIcon" />
+				<Panel class="DarkCarnivalRerollOffIcon" />
+				<Panel class="DarkCarnivalRerollIconGlow" />
+			</Panel>
+		</snippet>
+		<snippet name="DarkCarnivalFortuneTellerCoin">
+			<Panel class="DarkCarnivalFortuneTellerCoin">
+				<Image class="OracleCoinSlot" src="s2r://panorama/images/events/dark_carnival/postgame/oracle_coin_slot_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="OracleCoinGlow" />
+				<Image class="OracleCoinImage" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_coin_large_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="DarkCarnivalProgress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="BackgroundImageContainer" />
+				<DOTAParticleScenePanel class="GodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
+				<Image class="Curtain Left" src="s2r://panorama/images/events/dark_carnival/overworld/curtain_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Image class="Curtain Right" src="s2r://panorama/images/events/dark_carnival/overworld/curtain_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Panel class="BottomGradient" hittest="false" />
+				<Panel id="DarkCarnivalProgressMain">
+					<Panel id="DarkCarnivalProgressTitle">
+						<Image class="DarkCarnivalLogo en" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="DarkCarnivalLogo cn" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="DarkCarnivalLogoShimmer" />
+						<Panel class="DarkCarnivalLogoFX">
+							<DOTAParticleScenePanel class="LogoGodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
+						</Panel>
+						<Image class="SubtitleRope Left" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_rope_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="SubtitleContainer">
+							<Image class="SubtitleBackground" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="TitleSmall EventSubtitle" text="#DOTA_DarkCarnival_MidnightRun" />
+						</Panel>
+					</Panel>
+					<Panel id="DarkCarnivalProgressRewards">
+						<Image class="DarkCarnivalProgressBackground" src="s2r://panorama/images/events/dark_carnival/postgame/postgame_contents_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="DarkCarnivalInfo">
+							<Label class="WinText HorizontalCenter" html="true" text="#DOTA_Dark_Carnival_PostGame_WinEarned" />
+							<Label class="LossText HorizontalCenter" html="true" text="#DOTA_Dark_Carnival_PostGame_LossEarned" />
+							<Label class="LossTextTurbo HorizontalCenter" html="true" text="#DOTA_Dark_Carnival_PostGame_TurboLossEarned" />
+							<Label class="TurboDisclaimer HorizontalCenter" text="#DOTA_Dark_Carnival_PostGame_TurboDisclaimer" />
+						</Panel>
+						<Panel class="DarkCarnivalRewardsContainer">
+							<Panel class="DarkCarnivalOverworldProgress">
+								<Label class="DarkCarnivalOverworldProgressTitle TitleSmall" text="#DOTA_DarkCarnival_FortuneTeller_OverworldTokens" />
+								<Panel id="TokenList" class="DarkCarnivalTokenList" />
+							</Panel>
+							<Panel class="RewardsDivider" />
+							<Panel id="DarkCarnivalFortuneTellerProgress" class="DarkCarnivalFortuneTellerProgress">
+								<Label class="DarkCarnivalFortunteTellerProgressTitle TitleSmall" text="#DOTA_DarkCarnival_FortuneTeller_DailySeeingStoneTitle" />
+								<Panel id="DarkCarnivalFortunteTellerEarnedMessageContainer">
+									<Image class="OracleCoinImageEarnedImage" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_coin_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="BodyMedium" text="#DOTA_Dark_Carnival_PostGame_FortuneTellerProgressEarned" />
+								</Panel>
+								<Panel id="DarkCarnivalFortuneTellerCoinContainer" />
+								<DOTACountdown id="DarkCarnivalFortunteTellerDailyProgress" server-time="true">
+									<Label class="RerollProgressLabel" html="true" text="#DOTA_Dark_Carnival_PostGame_FortuneTellerProgress" />
+								</DOTACountdown>
+							</Panel>
+						</Panel>
+						<Panel id="OverworldClaimable" class="DarkCarnivalProgressAvailableBadge">
+							<Panel class="DarkCarnivalProgressAvailableGlow" />
+							<Panel class="DarkCarnivalProgressAvailableBackground" />
+							<Panel class="DarkCarnivalProgressAvailableBorder" />
+							<Label class="ProgressAvailableText LabelSmall" text="#DOTA_DarkCarnival_ProgressAvailable" />
+						</Panel>
+					</Panel>
+					<Panel class="DarkCarnivalProgressCandy">
+						<Panel class="BannerContainer">
+							<Panel class="BannerFlag" />
+							<Label class="CandyShopTitle TitleMedium" text="#DOTA_CandyShop_Dark_Carnival_Title" />
+						</Panel>
+						<Panel id="DarkCarnivalRerollProgress" />
+						<Panel class="DarkCarnivalWeeklyProgress Active">
+							<Label class="RerollProgressLabel" text="#DOTA_CandyShop_Dark_Carnival_PostGame_RerollsEarned" />
+						</Panel>
+						<Panel class="DarkCarnivalWeeklyProgress Complete">
+							<DOTACountdown id="CrownfallRerollCountdown" server-time="true">
+								<Label class="RerollProgressLabel" html="true" text="#DOTA_CandyShop_Dark_Carnival_PostGame_WeeklyProgressComplete" />
+							</DOTACountdown>
+						</Panel>
+						<Panel class="DarkCarnivalWeeklyProgress Capped">
+							<Panel class="WeeklyProgressCap">
+								<Label class="RerollCapText" text="#DOTA_CandyShop_Dark_Carnival_PostGame_RerollCap" />
+								<Label class="RerollCapText RerollCapUnlockedShop" text="#DOTA_CandyShop_Dark_Carnival_PostGame_RerollCapUnlocked" />
+								<Label class="RerollCapText RerollCapLockedShop" text="#DOTA_CandyShop_Dark_Carnival_PostGame_ShopLocked" />
+							</Panel>
+						</Panel>
+						<Panel class="DarkCarnivalWeeklyProgress LockedShop">
+							<Label class="RerollProgressLabel" text="#DOTA_CandyShop_Dark_Carnival_PostGame_ShopLocked" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1533,6 +1636,7 @@
 			<TextButton class="PopupButton" text="Crownfall" unlocalized="true" onactivate="TestAnimateCrownfall()" />
 			<TextButton class="PopupButton" text="Frostivus 2024" unlocalized="true" onactivate="TestAnimateFrostivus2024()" />
 			<TextButton class="PopupButton" text="Monster Hunter" unlocalized="true" onactivate="TestAnimateMonsterHunter()" />
+			<TextButton class="PopupButton" text="Dark Carnival" unlocalized="true" onactivate="TestAnimateDarkCarnival()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

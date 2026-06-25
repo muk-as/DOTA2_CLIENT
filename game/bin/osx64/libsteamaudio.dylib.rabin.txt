@@ -5,15 +5,14 @@
 0123456789
 018COscAudioProcessor
 024CGeneratorAudioProcessor
+0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs
 0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2
 0IcF(H
 0V[$0
 0]T30
 0__function6__baseIF
-0b\n\tpc\n
 0ffff
 0p p RAp
-0r\v\a u\v\t
 10IAppSystem
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11CSteamAudio
@@ -129,6 +128,7 @@
 17CConcreteToolAttrIi17VMixVocoderDesc_tvE
 17CConcreteToolAttrIi20VMixPitchShiftDesc_tvE
 17CConcreteToolAttrIi22CVMixBaseProcessorDescvE
+17CConcreteToolAttrIj22CVMixBaseProcessorDescvE
 17CPathingProcessor
 17CSteamAudioSource
 17IPathingProcessor
@@ -137,7 +137,6 @@
 18CSource3DProcessor
 19CSchemaRegistration
 1ffff
-1fffff
 1ffffff
 1؉G03G
 20CDelayAudioProcessor
@@ -153,6 +152,7 @@
 20IToolAttr_TypedValueIbE
 20IToolAttr_TypedValueIfE
 20IToolAttr_TypedValueIiE
+20IToolAttr_TypedValueIjE
 21CBaseConcreteToolAttrI10CUtlString19VMixPresetDSPDesc_tE
 21CBaseConcreteToolAttrI10CUtlString21VMixEffectChainDesc_tE
 21CBaseConcreteToolAttrI10CUtlString22CVMixBaseProcessorDescE
@@ -241,6 +241,7 @@
 21CBaseConcreteToolAttrIi17VMixVocoderDesc_tE
 21CBaseConcreteToolAttrIi20VMixPitchShiftDesc_tE
 21CBaseConcreteToolAttrIi22CVMixBaseProcessorDescE
+21CBaseConcreteToolAttrIj22CVMixBaseProcessorDescE
 21CFilterAudioProcessor
 21CPannerAudioProcessor
 21CSurfacePropDataTableI19CSteamAudioMaterialE
@@ -332,6 +333,7 @@
 26CBaseConcreteToolAttrValueIi17VMixVocoderDesc_tE
 26CBaseConcreteToolAttrValueIi20VMixPitchShiftDesc_tE
 26CBaseConcreteToolAttrValueIi22CVMixBaseProcessorDescE
+26CBaseConcreteToolAttrValueIj22CVMixBaseProcessorDescE
 26CSteamAudioReverbSimulator
 26CStereoDelayAudioProcessor
 26CToolEditContextQuery_Base
@@ -428,6 +430,7 @@
 27CToolAttrDirectMemberAccessIi17VMixVocoderDesc_tE
 27CToolAttrDirectMemberAccessIi20VMixPitchShiftDesc_tE
 27CToolAttrDirectMemberAccessIi22CVMixBaseProcessorDescE
+27CToolAttrDirectMemberAccessIj22CVMixBaseProcessorDescE
 27CVMixPresetDSPProcessorDesc
 27IToolAttrConcreteDataAccessI10CUtlStringE
 27IToolAttrConcreteDataAccessI10CUtlVectorI10CUtlStringi25CUtlVectorMemory_GrowableIS1_iLm0EEEE
@@ -468,6 +471,7 @@
 27IToolAttrConcreteDataAccessIbE
 27IToolAttrConcreteDataAccessIfE
 27IToolAttrConcreteDataAccessIiE
+27IToolAttrConcreteDataAccessIjE
 28CBaseVModuleMetadataProvider
 28CDynamics3BandAudioProcessor
 28CToolEditContextQuery_String
@@ -559,6 +563,7 @@
 29CConcreteToolAttrDirectMemberIi17VMixVocoderDesc_tE
 29CConcreteToolAttrDirectMemberIi20VMixPitchShiftDesc_tE
 29CConcreteToolAttrDirectMemberIi22CVMixBaseProcessorDescE
+29CConcreteToolAttrDirectMemberIj22CVMixBaseProcessorDescE
 29CDualCompressorAudioProcessor
 29CVMixConvolutionProcessorDesc
 29CVMixEffectChainProcessorDesc
@@ -661,11 +666,9 @@
 41CModuleMetadataProvider_ResourceManifests
 5&YA1A
 512_block_data_order
-5:ػ3i
 60-G/0í\n09N
-6\a\a07\a
+6A`?A\\ARAp\bp\bp
 6p p RAp
-7A`@A\\ARAp\bp\bp
 7bad_function_callE
 8$4,8$4
 80D?\bfA
@@ -680,9 +683,7 @@ A+G ~(D
 A+w ~*I
 A+w ~\tI
 A+w0~!I
-A+w0~\tI
 A+wH~\rI
-A+wH~\tI
 A+w\b~ L
 A+wp~\tI
 A3H\bA3P\fL
@@ -694,8 +695,7 @@ A96~\vA
 A9P@v>I
 A9\a| I
 A;A\f
-A;L$8u
-A;_Htu
+A;_Htg
 AABB_t
 AES for x86_64, CRYPTOGAMS by <appro@openssl.org
 AES-NI GCM module for x86_64, CRYPTOGAMS by <appro@openssl.org
@@ -709,8 +709,8 @@ ARARAUAp\bRAUARAUARAUARA`\eARA
 ARASASAp\bRA
 ARAZAp\bRAp\bZARAp\bZARAp\bZARAp\b
 ARA`\eARA
-ARCp\bUATAp
-ASPASAR
+ARCp\bp\bUATAp
+ARPARAS
 ATAUL
 ATAUM1
 ATAWASAR
@@ -728,6 +728,7 @@ AWAVATSM
 AWAVAUATS
 AWAVAUATSD
 AWAVAUATSH
+AWAVAUATSI
 AWAVAUATSP
 AWAVAUATSP1
 AWAVAUATSPA
@@ -747,21 +748,29 @@ AWAVSPA
 AWAVSPH
 AWAVSPI
 AWAVSPL
+AXvEH
+AXvFL
+AXvIA
+AXvqH
 A\fA;B\f
-A\t\apB\t
 A_A^A]A
 A`-ASAp\bRARARARARARAp\bp\bp
 Above Threshold(dB
+Adjust how much occlusion goes does with deviation angle
 Adjust overall volume of the default HRTF by the specified gain (dB
+Adjust scaling for reflection energy when combining it to calculate occlusion value
+Adjust scaling of pathing energy by exponentiall scaling with pathing delta
 AlignedByteArray not properly aligned\n
 Ambisonics order to use for convolution reverb. 0th order = 1 channel, 1st order = 4 channels
 Ambisonics order to use for simulating reverb
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
-Ap\bRAXAp\bRA[Ap\bRAXAp\bRASARATAp\bRARA^ATBp
+Ap\bRAXAp\bRA[Ap\bRAXAp\bRASARAWARATAp\bRARA^ATBp
 Ap\bp\bRA
 Apply Antialiasing
+AssetBrowse
+AssetBrowse( %s
 AssetBrowserSystem_001
 AssetPreviewSystem_001
 AssetRenameSystem_001
@@ -778,7 +787,8 @@ A~ou\bI
 A~ouhI
 B14CMonoDelayLine
 B=\nW?23CFreeverbAudioProcessor
-BBYBp\bZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARA`=AYAp\bRARAp\bRAp\bp\bp
+BBYBp\bZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARA`<AYARARAp\bRAp\bp\bp
+BXvDH
 B\bA9A\b~\r
 BakeDimensions: Estimating inside field.\n
 BakeDimensions: Estimating outside field (1/2: Pathing).\n
@@ -792,8 +802,8 @@ BakeMaterials: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
 BakeMaterials: No probes generated. Bake cancelled.\n
 BakeOcclusion: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
 BakeOcclusion: No probes generated. Bake cancelled.\n
-BakeOcclusion: Unable to create impulse response. (%d)\n
 BakeOcclusion: Unable to create probe batch. [%d]\n
+BakeOcclusion: Unable to create reflection simulator. (%d)\n
 BakeOcclusion: Unable to create simulator. (%d)\n
 BakeOcclusion: Unable to create source. (%d)\n
 BakePathData: Cancelled\n
@@ -899,6 +909,7 @@ Channels
 Chunk hash not found
 Class data is a '%s', not a table\n
 Class does not allow allocation from its schema binding
+ClientLocalServerAccess001
 ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 Cn77Yn77Y
@@ -910,7 +921,8 @@ Content file %s is corrupt. Hashing could not be verified. Verify integrity of g
 Content file %s is corrupt. Verify integrity of game files.\n
 Content file %s is corrupt; Chunk hash not found (expected: %d, found: %d)\n
 Content file %s is corrupt; signature couldn't be verified. Verify integrity of game files\n
-Continue using previous prrobes if probe lookup for reverb fails
+Continue using previous occlusion if probe lookup for occlusion fails
+Continue using previous reverb if probe lookup for reverb fails
 Could not load custom hrtf properties file. %s
 CreateInterface
 CreateSimpleThread
@@ -922,6 +934,7 @@ D$ fE
 D$0fE
 D$@fE
 D$PfE
+D$\bH
 D$`fE
 D$pfE
 D0xBǄ0
@@ -958,6 +971,7 @@ D7q/;M
 D8pBǄ8
 DATA_CONST
 Debug Band
+Debug Id
 DecryptBlock
 Default
 Delay Gain
@@ -975,12 +989,10 @@ Double-save to Member '%s
 Downward Ratio
 Drive (dB
 Dry/Wet
-E1ҋ58
 E3T$\bA
 E3]\bE3U\fD1
 E3]\bE3U\fL
 E3^\bE3V\f
-E8~ttP
 E9oP~PI
 E9oh~dI
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
@@ -1052,6 +1064,7 @@ Enable SIMD code path for diffusor processor
 Enable SIMD code path for shoebox reverb processor
 Enable caching listener probe neighborhood for pathing
 Enable custom HRTF loading
+Enable order-truncated Ambisonics HRTF loading
 Enable perspective correction for 3D audio
 Enabled
 Enables tracy profiling when baking steam audio data in Hammer
@@ -1065,6 +1078,7 @@ EȉE̋EĉE
 E؉E܋C
 F0]ÐUH
 F4u#z
+F<A;F(uzL
 FILTER_ALLPASS
 FILTER_BANDPASS
 FILTER_HIGHPASS
@@ -1084,11 +1098,12 @@ FILTER_SLOPE_36dB
 FILTER_SLOPE_48dB
 FILTER_SLOPE_MAX
 FILTER_UNKNOWN
+FXvEH
 F\b9C\b
 F\bJcL
 F\bNc\f(I
 F\b[A
-Failed to allocate an instance of a class
+Failed to allocate an instance of a class of type '%s
 Failed to open file
 Failed to read
 Failed to read %d bytes\n
@@ -1118,7 +1133,6 @@ Fldb Limiter Threshold
 Fldb Noise Gate Threshold
 Flxfade
 FontManager_001
-Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Freq Range End
 Freq Range Start
 Frequency (Hz
@@ -1142,8 +1156,10 @@ GetResourceManifest
 GetResourceManifestCount
 GetResourceManifests
 Glide Time
+Gradient
 Grain Sample Count
 H9_@t
+H;T1\bt
 H;l$\bsCH
 H;l$\bsEH+t
 H[A^A
@@ -1164,9 +1180,7 @@ H__ZnwmRKSt9nothrow_t
 H__ZnwmSt11align_val_t
 H__ZnwmSt11align_val_tRKSt9nothrow_t
 HammerMapLoader001
-Hc@\bIc
 HcG\bH9
-Hc\rQ\e
 Height
 HelpSystem_001
 High Cutoff Freq
@@ -1178,7 +1192,6 @@ Hiсl@6H
 Hiѣ4>2H
 Hold Time MS
 HostStateMgr001
-I CUtlRBTree<CUtlOrderedMapBase<CUtlStringToken, int, CDefLess<CUtlStringToken>, int>::Node_t, CUtlOrderedMapBase<CUtlStringToken, int, CDefLess<CUtlStringToken>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlStringToken, int, CDefLess<CUtlStringToken>, int>::Node_t, L = CUtlOrderedMapBase<CUtlStringToken, int, CDefLess<CUtlStringToken>, int>::CKeyLess, I = int, M = CUtlLeanVector<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlStringToken, int, CDefLess<CUtlStringToken>, int>::Node_t, int
 I9D$pH
 I9D$pu\bfA
 I9D$xu\bfA
@@ -1190,10 +1203,12 @@ IPLStaticMesh
 IPulseSystem_001
 Ic4$Ic
 IcD$$H
+IcD$$I
 IcD$PH
 IcD$\bH
 IcD$\bH9
 IcE(Hi
+IcF$I9
 IcF\bH
 IcF\bHi
 IcG$H9
@@ -1202,6 +1217,7 @@ IcG\bI9
 IcL$(H
 IcL$\fI
 IcN\bH9
+If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries
 If set, all the probes near a source withing probe range are used to find paths instead of nearest probe
 If set, baked dimensions data is loaded
 If set, baked materials data is loaded
@@ -1239,7 +1255,6 @@ Ks %f %f %f\n
 K£Qlǡ迢Kf
 K£QlǣQlǣQlǣQlǣQlǣQlǣQlǣQl
 L$lu\eI
-L$tuRI
 L&&jL&&jl66Zl66Z~??A~??A
 L+#L\ek\bL
 L9(tTI
@@ -1254,8 +1269,6 @@ LFO_SHAPE_SINE
 LFO_SHAPE_SQUARE
 LFO_SHAPE_TRI
 LINKEDIT
-LNu\rUH
-L\a\tPM\a
 L\e#L\ek\bL
 L\eN\bL\eV
 L\ea\bL\ei
@@ -1264,6 +1277,7 @@ Late Reflections
 Limiter Ratio
 LoadKV3Object error: %s\n
 Loaded custom HRTF [%s] with volume [%.2f dB] and normaliztion [%d]\n
+LocalServerClientAccess001
 Localize_001
 LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
@@ -1296,6 +1310,7 @@ Maximum number of probes to create when baking custom data (dimensions
 Maximum number of probes to create when baking custom data (occlusion
 Maximum number of probes to create when baking paths
 Maximum number of probes to create when baking reverb
+Maximum order for Ambisonics binaural rendering and Ambisonics panning
 Mcw0D9
 McwPD9
 McwpD9
@@ -1327,7 +1342,7 @@ NSt3__110__function6__funcIZ14GenerateArcTanR20CCubicSplineFunctionjffE3$_6NS_9a
 NSt3__110__function6__funcIZ15GenerateSigmoidR20CCubicSplineFunctionjffE3$_4NS_9allocatorIS4_EEFfffEEE
 NSt3__110__function6__funcIZ16GenerateFuzzExp1R20CCubicSplineFunctionjffE3$_7NS_9allocatorIS4_EEFfffEEE
 NSt3__110__function6__funcIZ16GenerateSigmoid2R20CCubicSplineFunctionjffE3$_5NS_9allocatorIS4_EEFfffEEE
-NSt3__110__function6__funcIZN16CSteamAudioScene14BakeDimensionsER30SteamAudioBakeDimensionsTask_tR30CSteamAudioBakedDimensionsDataPFvfPvES7_E3$_0NS_9allocatorISA_EEFviiEEE
+NSt3__110__function6__funcIZN16CSteamAudioScene14BakeDimensionsER30SteamAudioBakeDimensionsTask_tR30CSteamAudioBakedDimensionsDataPFvfPvES7_E3$_5NS_9allocatorISA_EEFviiEEE
 N\ft#D
 NavGameTest001
 NetworkClientService_001
@@ -1340,7 +1355,7 @@ Normalize volume of default HRTF dataset across all directions
 Not safe to 'new' this class due to alignment requirements
 Np p RAp
 Number of rays to trace for estimating inside outside status of a probe
-O ]ÐUH
+O A9O8}\e
 O$Lcw(E9
 OOўOO
 OPENSSL
@@ -1366,27 +1381,13 @@ Output Gain (dB
 Oversampling
 OхɉK\bL
 OхɉK\fL
-P IǄ$H
-P IǄ$x
+P IǄ$P
+P IǄ$h
 P@1҆PQ
+P@P0000@P@P0000@P0
 PANNER_TYPE_EQUAL_POWER
 PANNER_TYPE_LINEAR
 PPPPP
-PPPPPPPP
-PPPPPPPP @P
-PPPPPPPP0
-PPPPPPPP@@         PPPPPPPP
-PPPPPPPP@@ 0PPPPPPPP@@PPPPPPPP
-PPPPPPPP@@0
-PPPPPPPP@@0  0
-PPPPPPPP@@0P@PPPPPPPP
-PPPPPPPP@@@@PPPPPPPP
-PPPPPPPP@@@P@P0000@P@P0000@P0
-PPPPPPPP@@P
-PPPPPPPP@@PPPPPPPP@@pPPPPPPPP
-PPPPPPPPP
-PPPPPPPPPP
-PPPPPPPPp
 Packed store %s with refcount > 0.\n
 PanoramaTextServices001
 PanoramaUIClient001
@@ -1396,6 +1397,7 @@ ParallelForSharedCode
 Parse error on %s: %s\n
 ParticleSystemMgr003
 Path length of invalid path in inches. Set this to .0 to use direct distance as path length
+Pathing...\n
 Pathing: Cannot find baked paths file: %s. Pathing disabled.\n
 Pathing: Cannot find baked paths file: %s.\n
 Pathing: Filesystem not initialized.\n
@@ -1428,55 +1430,53 @@ Proc Type
 PropertyEditorSystem_001
 P~AeS~AeS
 QZ^&A
-Q\n\tPR\n
 Quality
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVARA`=AYARAp\bp\bp
-RARARA`=AYA`7AVARA`?A]ARAp\bp\bp
-RARARA`=AYA`7AVARA`@A\\ARAp\bp\bp
-RARARA`=AYA`7AVAp\bRAWARA`=AYARARAp\bp\bp
-RARARA`=AYA`7AVAp\bRA`=AYARARAp\bp\bp
-RARARA`=AYA`7AVAp\bRA`=AYARAp\bp\bp
-RARARA`=AYA`7AWA`/AVAp\bRAp\bRA`=AYARARAp\bp\bp
-RARARA`=AYA`=AYA`7AVARA`=AYARA`CA]ARAp\bp\bp
-RARARA`=AYA`=AYA`7AVARA`=AYARAp\bp\bp
-RARARA`=AYA`=AYA`7AVAp\bRA`=AYARARAp\bp\bp
-RARARA`=AYA`=AYA`7AVAp\bRA`=AYARAp\bp\bp
-RARARA`=AYA`=AYA`7AVAp\bRA`@A\\ARAp\bp\bp
-RARA`?A]A`?A]A`7AVAp\bRAVARA`@A\\ARAp\bp\bp
-RARA`?A]A`?A]A`7AVAp\bRAVAp\bRA`@A\\ARAp\bp\bp
-RARA`@A\\A`7AVARA`=AYARA`=AYARA`=AYARA`=AYARARAp\bp\bp
-RARA`@A\\A`7AVARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`=AYARA`@A\\ARAp\bp\bp
-RARA`@A\\A`7AVARA`=AYARAp\bp\bp
-RARA`@A\\A`7AVARA`@A\\ARAp\bp\bp
-RARA`@A\\A`7AVAp\bRA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARATAp\bRATARARARARAUASASASASASASAS
-RARA`@A\\A`7AVAp\bRA`=AYARARAp\bp\bp
-RARA`@A\\A`7AVAp\bRA`=AYARAp\bp\bp
-RARA`@A\\A`7AVAp\bRA`?A]ARA
-RARA`@A\\A`7AVAp\bRA`@A\\ARAp\bp\bp
-RARA`@A\\A`7AVAp\bRB`=AYARARAp\bp\bp
-RARA`@A\\A`7AVAp\bRB`=AYARAp\bp\bp
-RARA`CA]A`CA]A`7AVAp\bRAVARA`=AYARARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVARA`<AYARAp\bp\bp
+RARARA`<AYA`6AVARA`>A]ARAp\bp\bp
+RARARA`<AYA`6AVARA`?A\\ARAp\bp\bp
+RARARA`<AYA`6AVAp\bRA`<AYARARAp\bp\bp
+RARARA`<AYA`6AVAp\bRA`<AYARAp\bp\bp
+RARARA`<AYA`6AVAp\bRB`<AYARARAp\bp\bp
+RARARA`<AYA`6AWA`.AVAp\bRAp\bRA`<AYARARAp\bp\bp
+RARARA`<AYA`<AYA`6AVARA`<AYARA`BA]ARAp\bp\bp
+RARARA`<AYA`<AYA`6AVARA`<AYARAp\bp\bp
+RARARA`<AYA`<AYA`6AVAp\bRA`<AYARARAp\bp\bp
+RARARA`<AYA`<AYA`6AVAp\bRA`<AYARAp\bp\bp
+RARARA`<AYA`<AYA`6AVAp\bRA`?A\\ARAp\bp\bp
+RARA`>A]A`>A]A`6AVAp\bRAVARA`?A\\ARAp\bp\bp
+RARA`>A]A`>A]A`6AVAp\bRAVAp\bRA`?A\\ARAp\bp\bp
+RARA`?A\\A`6AVARA`<AYARA`<AYARA`<AYARA`<AYARARAp\bp\bp
+RARA`?A\\A`6AVARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`<AYARA`?A\\ARAp\bp\bp
+RARA`?A\\A`6AVARA`<AYARAp\bp\bp
+RARA`?A\\A`6AVARA`?A\\ARAp\bp\bp
+RARA`?A\\A`6AVAp\bRA`<AYARARAp\bp\bp
+RARA`?A\\A`6AVAp\bRA`<AYARAp\bp\bp
+RARA`?A\\A`6AVAp\bRA`>A]ARA
+RARA`?A\\A`6AVAp\bRA`?A\\ARAp\bp\bp
+RARA`?A\\A`6AVAp\bRB\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARA\\ARATAp\bRATARARARARAUASASASASASASAS
+RARA`?A\\A`6AVAp\bRB`<AYARARAp\bp\bp
+RARA`?A\\A`6AVAp\bRB`<AYARAp\bp\bp
+RARA`BA]A`BA]A`6AVAp\bRAVARA`<AYARARAp\bp\bp
 RAp\bRA
-RAp\bWA
 RCp p p
 RF##eF##e
 RKSt9nothrow_t
 RMS Time MS
 RWLockTranstionResult_t CSemiAutoRWLockT<CThreadRWLock_FastRead>::LockForWrite(const char *, int, Ts &&...) [RWLOCK_TYPE = CThreadRWLock_FastRead, Ts
-R\t\apR\t\t`S\t\t
 RandomFloat
 RandomInt
+Reflections...\n
 RegisterConCommand: Unknown error registering con command "%s"!\n
 RegisterConVar: Unknown error registering convar "%s"!\n
 Release
@@ -1548,7 +1548,7 @@ Reverb: Unable to load baked data file (%s).\n
 Reverb: Unable to load probe batch. (%d)\n
 Room Size
 Rounds
-SASBZAp\bRAp
+SBZAp\bRAp\bRAp\bWA
 SCSAWAWAp\bRARAp
 SHA1 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
 SHA1 multi-block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
@@ -1587,6 +1587,7 @@ Size Max
 Size Min
 SoundOpSystem001
 SoundOpSystemEdit001
+SoundPicker
 SoundService_001
 SoundSystem001
 SoundSystemLowLevel
@@ -1630,10 +1631,11 @@ T$\nL\t
 T$\rL\t
 T$\tL\t
 T$\vL\t
-TTo Impl::AssertCastImpl(TFrom, const CUtlSourceLocation) [TTo = short, TFrom = int, TFlags = ASSERTION_FATAL, TRequireDBGFLAG_ASSERT = false
-T\a\t0U\a\n`U\a\a
+TTo Impl::AssertCastImpl(TFrom, const CUtlSourceLocation) [TTo = short, TFrom = int, TFlags = ASSERTION_FATAL, TRequireDBGFLAG_ASSERT = false, TRequireDBGFLAG_ASSERTDEBUG = false
 T`00P`00P
+TargetCastForModify
 TestScriptMgr001
+TextBlock
 TextLayout_001
 Tf %f %f %f\n\n
 The amount of directional detail in the rendered audio by Steam Audio
@@ -1657,15 +1659,15 @@ Toggles the speculative fix for low-frequency issues when using spatial blend
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
-U0fffff
 U<E3M E3E$E3](E3U,D1
 USATAUAVAW
 USATAUAVAWH
 USATAVAWH
-UUUUUU
 UUUUUUUUUUUUUUUU3333333333333333
 U\f2>Y
 Unable to create Ambisonics decode effect [%d]\n
+Unable to create GPU scene: %d.\n
+Unable to create GPU static mesh: %d.\n
 Unable to create custom HRTF [%s]\n
 Unable to create direct effect [%d]\n
 Unable to create impulse response [%d]\n
@@ -1680,6 +1682,7 @@ Unwind_Resume
 Upward Ratio
 Usage: snd_steamaudio_halton_sequence <order> <numsamples>.\n
 Use compressed reverb data if available
+UtlRBTree_FailedInsertDuplicate
 UtlVectorMemory_Alloc
 UtlVectorMemory_CalcNewAllocationCount
 UtlVectorMemory_FailedAllocation
@@ -1690,6 +1693,8 @@ VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
+VDataChoice
+VDataChoice( %s
 VEngineCvar007
 VFileSystem017
 VMIX_CHAN_LEFT
@@ -1766,6 +1771,7 @@ V_StringToUint64
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
+V_StringToVectorWS
 V_UInt32ToString_Unsafe
 V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
@@ -1796,19 +1802,18 @@ Vector Permutation AES for x86_64/SSSE3, Mike Hamburg (Stanford University
 VisBuilder_001
 Vrad3_001
 W0fff
-W0ffffff
 W1-x]1
 Warning
 Wet Mix
 WorldRendererMgr001
 X,,tX,,t4
-XIcF\bHk
+X9C8v
 X[A^A
-X\n\v@Y\n\npY\n
+X\v=6W4
+X\v=IS4
 Xt6<Hu`H
 YAUATAp
 YDiF\f
-Y\n\bpZ\n
 Z13FioCreateFilePKc15EFioAccessFlags14EFioShareFlags14EFioCreateModejPi
 Z14GenerateArcTanR20CCubicSplineFunctionjffE3$_6
 Z14V_stristr_fastPKcS0
@@ -1886,7 +1891,7 @@ ZN15VMixDelayDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUt
 ZN15VMixDelayDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE21CAttr_m_bEnableFilter
 ZN15VMixDelayDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE22CAttr_m_feedbackFilter
 ZN15VMixDelayDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE22CAttr_m_flFeedbackGain
-ZN16CSteamAudioScene14BakeDimensionsER30SteamAudioBakeDimensionsTask_tR30CSteamAudioBakedDimensionsDataPFvfPvES4_E3$_0
+ZN16CSteamAudioScene14BakeDimensionsER30SteamAudioBakeDimensionsTask_tR30CSteamAudioBakedDimensionsDataPFvfPvES4_E3$_5
 ZN16CThreadSemaphoreD1Ev
 ZN16VMixFilterDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE11CAttr_m_flQ
 ZN16VMixFilterDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_bEnabled
@@ -2028,6 +2033,7 @@ ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
 ZN22CVMixBaseProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_name
 ZN22CVMixBaseProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE15CAttr_m_flxfade
+ZN22CVMixBaseProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_nDebugId
 ZN22CVMixBaseProcessorDesc22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE17CAttr_m_nChannels
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
@@ -2121,7 +2127,6 @@ ZTVN10__cxxabiv117__class_type_infoE
 ZTVN10__cxxabiv120__si_class_type_infoE
 ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZTVSt12length_error
-Z\a\t [\a
 ZdaPv
 ZdaPvSt11align_val_t
 ZdaPvm
@@ -2137,10 +2142,6 @@ ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
 ZwKiZwKi
-aPPPPPPPP
-a\a0!\a
-a\vP*\a
-a\vЫ\a\a0
 absorptionCoefficients
 aesni
 aesni_cbc_encrypt
@@ -2170,13 +2171,10 @@ bL3D̀I
 bL3D݀I
 bMc/D9
 bMc>M
-bPPPPPPPP
-bRARAVARA
+bRARAVA
 bSt11align_val_t
 b[A^A
-b\a\b@d\a
 b\t\n\vSHA256 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
-b\tp'\b
 band_0:gainReduction
 band_0:input
 band_0:inputPeak
@@ -2192,6 +2190,7 @@ band_2:input
 band_2:inputPeak
 band_2:output
 band_2:outputPeak
+bandwidth
 bc_encrypt
 biased
 biiEEE
@@ -2221,7 +2220,6 @@ bsaes_xts_decrypt
 bsaes_xts_encrypt
 by_one
 bzero
-c\n\a`d\n
 catter4
 catter5_avx2
 cb_encrypt
@@ -2255,12 +2253,18 @@ d %d %d %d
 d$ fD
 d0\f$f0
 d22Vd22Vt::Nt::N
+dBLevel
+dBOutputGain
 dVPdVP{˄a{˄a
 d\n ~mA
+dbGain
+debug.bypass
 decrypt
 decrypt_blocks
 decrypt_key
 default
+delayLeft
+delayRight
 directory
 disable_specular_shadow_rays
 div_by_2
@@ -2291,22 +2295,23 @@ efffff
 effffff
 elect_w
 empty member name
+enable
 enable_compressed_reverb_lookup
 enable_dc_correction_for_phase_interpolation
 enable_iir_order_8
 enable_iir_order_switching
+enable_optix_verbose_logging
 enable_paths_from_all_source_probes
 enable_reverb_probe_caching_for_missing_probes
 encrypt
 encrypt_key
 f %d %d %d\n
-f %f %f
-f %f %f %f
+f$A9O L
 f(Lc{(E
 f33Uf33U
 f;z\f
+f@UUUUUU
 fE9l$8v~A
-fPPPPPPPP
 fet_bits5
 fffEEE
 fffff
@@ -2324,6 +2329,7 @@ fnumber=%d ofs=0x%x sz=%d
 for Intel AES-NI, CRYPTOGAMS by <appro@openssl.org
 fp p RAp
 fpLc{pE
+frequency
 from_mont
 fsaes
 g<E;g(uyL
@@ -2349,6 +2355,7 @@ ground_reflection_min_angle
 gxx_personality_v0
 gٞwgٞw
 h[A^A
+hffffff
 inputPeak
 int CUtlMemoryBlockAllocator<FileHandleTracker_t>::AddPage(uint) [T = FileHandleTracker_t, Alloc_t = CMemAllocAllocator
 int CUtlMemoryBlockAllocator<char>::AddPage(uint) [T = char, Alloc_t = CMemAllocAllocator
@@ -2365,6 +2372,8 @@ iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
+iplCUDADeviceCreate
+iplCUDADeviceRelease
 iplCompressedEnergyFieldsBlendAndDecompress
 iplCompressedEnergyFieldsCreateEmpty
 iplCompressedEnergyFieldsCreateFromProbeBatch
@@ -2390,7 +2399,9 @@ iplDirectivityCalculate
 iplDistanceAttenuationCalculate
 iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
+iplEnergyFieldCopyDeviceToHost
 iplEnergyFieldCreate
+iplEnergyFieldGetBand
 iplEnergyFieldGetChannel
 iplEnergyFieldGetNumBins
 iplEnergyFieldGetNumChannels
@@ -2406,12 +2417,6 @@ iplHybridReverbEstimatorRelease
 iplImageSourceBakerBake
 iplImageSourceSimulatorCreate
 iplImageSourceSimulatorRelease
-iplImpulseResponse2Create
-iplImpulseResponse2GetChannel
-iplImpulseResponse2GetNumSamples
-iplImpulseResponse2Release
-iplImpulseResponse2Reset
-iplImpulseResponse2SwapSource
 iplImpulseResponseCopy
 iplImpulseResponseCreate
 iplImpulseResponseGetChannel
@@ -2420,6 +2425,9 @@ iplImpulseResponseGetNumSamples
 iplImpulseResponseRelease
 iplImpulseResponseReset
 iplImpulseResponseSwap
+iplOpenCLDeviceRelease
+iplOptiXDeviceCreate
+iplOptiXDeviceRelease
 iplOverlapSaveFIRCreate
 iplOverlapSaveFIRRelease
 iplPartitionerCreate
@@ -2469,11 +2477,13 @@ iplProbeNeighborhoodResize
 iplProbeNeighborhoodSetProbeBatch
 iplProbeNeighborhoodSetProbeIndex
 iplProbeNeighborhoodSetProbeWeight
+iplRadeonRaysDeviceRelease
 iplReconstructorCreate
 iplReconstructorReconstruct
 iplReconstructorRelease
 iplReflectionSimulatorCreate
 iplReflectionSimulatorRelease
+iplReflectionSimulatorSimulate
 iplReflectionsBakerBake
 iplReverbEstimatorApplyScale
 iplReverbEstimatorCreate
@@ -2497,7 +2507,6 @@ iplSimulatorRunPathing
 iplSimulatorRunPathingForNeighborhoods
 iplSimulatorRunPathingPerSource
 iplSimulatorRunPathingPerSourceForNeighborhood
-iplSimulatorRunReflections
 iplSimulatorSetScene
 iplSimulatorSetSharedInputs
 iplSourceAdd
@@ -2515,7 +2524,6 @@ iplStaticMeshRelease
 iplStaticMeshRetain
 iplStaticMeshSave
 j55_j55
-j\a\b`n\a\vpo\a
 j˾9JLX
 keygen
 kffffff
@@ -2657,6 +2665,7 @@ m_nChannels
 m_nChunkHashesSize % sizeof( ChunkHashFraction_t ) ) == 0
 m_nCubeMapResolution
 m_nDebugBand
+m_nDebugId
 m_nFilterSlope
 m_nFilterType
 m_nGrainSampleCount
@@ -2710,7 +2719,7 @@ m_vecPathingDeviation
 m_vecPathingRatio
 m_vecProbeIndices
 m_vecProbes
-m_vecReflectionRatio
+m_vecReflectionEnergy
 m_vecSize
 max_hrtf_normalization_volume_gain_db
 md5_block_asm_data_order
@@ -2720,7 +2729,9 @@ memmove
 memset
 memset_pattern16
 mffff
+mod_depth
 mod_init_func
+mod_rate
 mtllib %s\n\n
 mul_avx2
 multi_block
@@ -2730,10 +2741,8 @@ n------- Steam Audio Baked Pathing Statistics ------\n
 n------- Steam Audio Baked Reverb Statistics ------\n
 nH$$lH$$l
 nLc6Lc
-nPPPPPPPP
 n\b fD
 n\bRAp\bp\bSA
-n\t b\n
 n\v\fNSt3__117bad_function_callE
 ncryptBlock
 nencrypt
@@ -2741,6 +2750,7 @@ newmtl material_%d\n
 nfffff
 nl$\bSUATAUAVAWI
 nncrypt
+non-RTTI type
 norm2red_avx2
 normalization
 o.htoc
@@ -2778,27 +2788,27 @@ ot$pfA
 ot$pfD
 ot$pfE
 output
+outputGain
 outputPeak
 override_reconstruction_type
 owȉL$ L
 p p RAp
 p88Hp88H
-p8\b\bP:\b
 pHhXpHhX
 pHl\\tHl\\tиWBиWBR\tj
 pIcF\bHk
 p\bVARBRBRBRBRBp
-p\b[JRBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp
-p\b`GCSATCWASASA
+p\b[JRBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp
+p\b`HCSATCWASASA
 p\bp(p\bp
 point
 pointer
+precached_ambisonics_order
 private_AES_set
 private_AES_set_decrypt_key
 private_AES_set_encrypt_key
 public/tier0/check_cast.h
 public/tier0/threadtoolstypes.h
-public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 public/vpklib/packedstore.h
 q\b9p\b~\r
@@ -2819,6 +2829,7 @@ reconstruction_normalize_noise
 reconstruction_type
 recp_nistz256
 red2norm_avx2
+reduction
 rencrypt
 reverb_min_absorptive_gain
 rffff
@@ -2844,6 +2855,8 @@ rsaz_512_sqr
 rsaz_avx2_eligible
 rscatter5
 rtr32_encrypt_blocks
+s %s %s
+s %s %s %s
 s allocation count overflow
 s allocation count overflow( %llu + %llu > %llu )\n
 s allocation count overflow( %llu > %llu )\n
@@ -2916,16 +2929,22 @@ snd_boxverb_simd_svf
 snd_diffusor_simd
 snd_hrtf_distance_behind
 snd_steamaudio_active_hrtf
+snd_steamaudio_ambisonics_correction_type
 snd_steamaudio_baked_data_stats
 snd_steamaudio_baked_occlusion_mode
+snd_steamaudio_baked_occlusion_pathing_deviation_slope
+snd_steamaudio_baked_occlusion_pathing_exponent
+snd_steamaudio_baked_occlusion_reflection_factor
 snd_steamaudio_default_hrtf_volume_gain
 snd_steamaudio_enable_compressed_reverb_lookup
 snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_editor_profiling
+snd_steamaudio_enable_occlusion_caching
+snd_steamaudio_enable_ordertruncated_ambisonics_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
-snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
+snd_steamaudio_enable_reverb_caching
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -2938,6 +2957,7 @@ snd_steamaudio_load_materials_data
 snd_steamaudio_load_occlusion_data
 snd_steamaudio_load_pathing_data
 snd_steamaudio_load_reverb_data
+snd_steamaudio_max_ambisonics_order
 snd_steamaudio_max_convolution_sources
 snd_steamaudio_max_hrtf_normalization_gain_db
 snd_steamaudio_max_occlusion_samples
@@ -2958,6 +2978,7 @@ snd_steamaudio_perspective_correction_factor
 snd_steamaudio_reverb_order
 snd_steamaudio_reverb_order_rendering
 snd_steamaudio_reverb_update_rate
+snd_steamaudio_use_soundblocking_shapes_only
 sscanf
 stack_chk_fail
 stack_chk_guard
@@ -3026,8 +3047,8 @@ t%fff
 t&IcD\f
 t&fffff
 t'HcD3
+t'fff
 t(fff
-t,HcCP;C8s#H
 t-fffff
 t256_enc
 t7Hc9H
@@ -3035,14 +3056,11 @@ tD;w\fvoI
 tEA9\\$\b
 tG@;GD
 tLc\nLc
-tPPPPPPPP@@P
-t\a\tP\n\a
 t\tAƄ$1
 t\tL9+u
 t\tL93u
 t\t[A
 t\v[A^A
-t\vp]\t\v
 t_Mc>L
 table: %u members
 tcm64
@@ -3053,7 +3071,6 @@ to_mont
 transmissionCoefficients
 ttr32_encrypt_blocks
 tu\t:Ic
-u@A;uD
 uB!!cB!!c
 u\r4.ŭs
 uint16
@@ -3075,15 +3092,13 @@ vBinaryProperties_GetValue
 vIcN\bH
 vMiٿ\nf(Ii
 vXA9v
-v\a\a0\f\a
 v\bHcv\fA
 v\r[A
-v\t0^\v
-v\tPA\v
 vector
 vector2
 vector3
 vector4
+vectorws
 vencrypt
 vencrypt_key
 vfffff

@@ -1,0 +1,58 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_splash_ad.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/popups/popup_dark_carnival.vts_c" />
+	</scripts>
+	<Popup class="PopupPanel DarkCarnivalSplash Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()" onpopupdisplayed="SplashAdDisplayed()">
+		<DOTAScenePanel class="BackgroundImage" map="maps/scenes/events/dark_carnival/pop_up_act1" hittest="false" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="true" camera="overview_camera" antialias="true" />
+		<Button id="CloseButton" class="ButtonPrimary" onactivate="UIPopupButtonClicked();">
+			<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+		</Button>
+		<Panel id="Contents">
+			<Panel class="DarkCarnivalLogoContainer">
+				<Image class="DarkCarnivalLogo en" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="DarkCarnivalLogo cn" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="SubtitleContainer">
+					<Image class="SubtitleBackground" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="TitleSmall EventSubtitle" text="#DOTA_DarkCarnival_MidnightRun" />
+				</Panel>
+			</Panel>
+			<Panel class="PanelContainer">
+				<Panel class="PanelContentsBackground" />
+				<Panel class="PanelContentsBorder" />
+				<Panel class="PanelContents">
+					<Panel class="EventHeaderContainer">
+						<Panel class="Dash Left" />
+						<Label class="EventHeader TitleSmall" text="#DOTA_DarkCarnival_Splash_NewEvent" />
+						<Panel class="Dash Right" />
+					</Panel>
+					<Label class="EventIntroduction" text="#DOTA_DarkCarnival_Splash_EventDescription" />
+					<Panel class="Comic" id="ComicContainer">
+						<Panel class="InnerPanelBackground">
+							<Panel class="InnerPanelBackgroundInner" />
+						</Panel>
+						<Panel class="ComicContents">
+							<Label class="ComicDescription" text="#DOTA_DarkCarnival_Splash_BackStory" />
+							<Panel class="CoverImageContainer" onactivate="ShowComicPopup( midnight_run )">
+								<Image class="CoverImage" src="s2r://panorama/images/events/dark_carnival/splash/comic_cover_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="ViewComicLabel LabelMedium" text="#DOTA_DarkCarnival_Splash_ViewComic" hittest="false" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<DOTADarkCarnivalButton id="ViewComicButton" class="Wide" text="#DOTA_DarkCarnival_Splash_ViewEvent" onactivate="DOTAShowDarkCarnivalOverworldPage( 11 ) UIPopupButtonClicked()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<DOTADarkCarnivalTalkingHead id="RingmasterTalkingHead" novel="darkcarnival_ringmaster_part1" dialogue="intro-1" />
+		<Panel class="PopupBorder" hittest="false" />
+	</Popup>
+</root>

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 48
+        // Enumerator count: 61
         // Alignment: 4
         // Size: 0x_
         enum class GameAnimEventIndex_t : std::uint32_t
@@ -48,24 +48,37 @@ namespace source2sdk
             AE_ENABLE_PLATFORM_PLAYER_FOLLOWS_YAW = 0x1b,
             AE_ENABLE_PLATFORM_PLAYER_IGNORES_YAW = 0x1c,
             AE_DESTRUCTIBLE_PART_DESTROY = 0x1d,
-            AE_CL_SUPPRESS_EVENTS_WITH_TAG = 0x1e,
-            AE_CL_HIDE_PARTICLE_EFFECT = 0x1f,
-            AE_CL_SHOW_PARTICLE_EFFECT = 0x20,
-            AE_CL_ADD_PARTICLE_EFFECT_CP = 0x21,
-            AE_CL_SPEECH = 0x22,
-            AE_CL_PANORAMA_EVENT = 0x23,
-            AE_CL_DOTA_PLAY_STATUS_EFFECT = 0x24,
-            AE_CL_DOTA_STOP_STATUS_EFFECT = 0x25,
-            AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT = 0x26,
-            AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT = 0x27,
-            AE_DOTA_PET_ITEM_PICKUP = 0x28,
-            AE_DOTA_PET_ITEM_DROP = 0x29,
-            AE_DOTA_SUPPRESS_CONSTANT_LAYER = 0x2a,
-            AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL = 0x2b,
-            AE_DOTA_CREATE_CLINKZ_ATTACK = 0x2c,
-            AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB = 0x2d,
-            AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES = 0x2e,
-            AE_DOTA_SWITCH_ATTACK_COMBO = 0x2f,
+            AE_VEHICLE_ENTER_FINISHED = 0x1e,
+            AE_VEHICLE_EXIT_FINISHED = 0x1f,
+            AE_SCRIPT_FIRE_EVENT_01 = 0x20,
+            AE_SCRIPT_FIRE_EVENT_02 = 0x21,
+            AE_SCRIPT_FIRE_EVENT_03 = 0x22,
+            AE_SCRIPT_FIRE_EVENT_04 = 0x23,
+            AE_SCRIPT_FIRE_EVENT_05 = 0x24,
+            AE_SCRIPT_FIRE_EVENT_06 = 0x25,
+            AE_SCRIPT_FIRE_EVENT_07 = 0x26,
+            AE_SCRIPT_FIRE_EVENT_08 = 0x27,
+            AE_SCRIPT_FIRE_EVENT_09 = 0x28,
+            AE_SCRIPT_FIRE_EVENT_10 = 0x29,
+            AE_CL_SUPPRESS_EVENTS_WITH_TAG = 0x2a,
+            AE_CL_HIDE_PARTICLE_EFFECT = 0x2b,
+            AE_CL_SHOW_PARTICLE_EFFECT = 0x2c,
+            AE_CL_ADD_PARTICLE_EFFECT_CP = 0x2d,
+            AE_CL_SPEECH = 0x2e,
+            AE_CL_PANORAMA_EVENT = 0x2f,
+            AE_CL_DOTA_PLAY_STATUS_EFFECT = 0x30,
+            AE_CL_DOTA_STOP_STATUS_EFFECT = 0x31,
+            AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT = 0x32,
+            AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT = 0x33,
+            AE_DOTA_PET_ITEM_PICKUP = 0x34,
+            AE_DOTA_PET_ITEM_DROP = 0x35,
+            AE_DOTA_SUPPRESS_CONSTANT_LAYER = 0x36,
+            AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL = 0x37,
+            AE_DOTA_CREATE_CLINKZ_ATTACK = 0x38,
+            AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB = 0x39,
+            AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES = 0x3a,
+            AE_DOTA_SWITCH_ATTACK_COMBO = 0x3b,
+            AE_COUNT = 0x3c,
         };
     };
 };

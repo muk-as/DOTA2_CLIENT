@@ -33,16 +33,16 @@
 	attachment_type(choices) : "Attachment Type" : "point_follow" =
 	[
 		"absorigin"				: "PATTACH_ABSORIGIN"			// Create at absorigin, but don't follow
-		"absorigin_follow"		: "PATTACH_ABSORIGIN_FOLLOW"		// Create at absorigin, and update to follow the entity
-		"customorigin"			: "PATTACH_CUSTOMORIGIN"			// Create at a custom origin, but don't follow
+		"absorigin_follow"		: "PATTACH_ABSORIGIN_FOLLOW"	// Create at absorigin, and update to follow the entity
+		"customorigin"			: "PATTACH_CUSTOMORIGIN"		// Create at a custom origin, but don't follow
 		"customorigin_follow"	: "PATTACH_CUSTOMORIGIN_FOLLOW"	// Create at a custom origin, follow relative position to specified entity
-		"point"					: "PATTACH_POINT"					// Create on attachment point, but don't follow
-		"point_follow"			: "PATTACH_POINT_FOLLOW"			// Create on attachment point, and update to follow the entity
+		"point"					: "PATTACH_POINT"				// Create on attachment point, but don't follow
+		"point_follow"			: "PATTACH_POINT_FOLLOW"		// Create on attachment point, and update to follow the entity
 		"eyes_follow"			: "PATTACH_EYES_FOLLOW"			// Create on eyes of the attached entity, and update to follow the entity
 		"overhead_follow"		: "PATTACH_OVERHEAD_FOLLOW"		// Create at the top of the entity's bbox
 		"worldorigin"			: "PATTACH_WORLDORIGIN"			// Used for control points that don't attach to an entity
 		"rootbone_follow"		: "PATTACH_ROOTBONE_FOLLOW"		// Create at the root bone of the entity, and update to follow
-		"renderorigin_follow"	: "PATTACH_RENDERORIGIN_FOLLOW"			// Create at the renderorigin of the entity, and update to follow
+		"renderorigin_follow"	: "PATTACH_RENDERORIGIN_FOLLOW"	// Create at the renderorigin of the entity, and update to follow
 		"main_view"				: "PATTACH_MAIN_VIEW"
 		"water_wake"			: "PATTACH_WATERWAKE"
 		"center_follow"			: "PATTACH_CENTER_FOLLOW"
@@ -190,7 +190,12 @@
 	suppress(bool)			: "Suppress" : "1"
 ]
 
-@ModelAnimEvent = AE_FOOTSTEP
+@ModelAnimEvent 
+	metadata
+    {
+        verify_override_sound_foot_choice = 2 // Verify if we have 'use override sound' set.
+    }
+	= AE_FOOTSTEP
 [
 	attachment(model_attachment) [report] : "Attachment"
 	foot(choices) [report] : "Foot" : 0 =

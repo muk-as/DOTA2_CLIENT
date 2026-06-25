@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 59
+        // Enumerator count: 60
         // Alignment: 4
         // Size: 0x_
         enum class EEvent : std::uint32_t
@@ -71,6 +71,7 @@ namespace source2sdk
             EVENT_ID_MONSTER_HUNTER = 0x33,
             EVENT_ID_INTERNATIONAL_2025 = 0x34,
             EVENT_ID_FALL_2025 = 0x35,
+            EVENT_ID_DARK_CARNIVAL = 0x36,
             EVENT_ID_WINTER_2025 = 0x37,
             EVENT_ID_SPRING_2026 = 0x38,
             EVENT_ID_SUMMER_2026 = 0x39,

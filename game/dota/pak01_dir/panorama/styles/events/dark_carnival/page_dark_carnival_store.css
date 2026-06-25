@@ -1,0 +1,3789 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTADarkCarnivalStorePage
+{
+	width: 100%;
+	height: 100%;
+}
+
+.SkyBackgroundImage
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/sky_psd.vtex");
+	background-size: cover;
+	brightness: 0.3;
+	blur: gaussian(4px);
+}
+
+.Header
+{
+	margin-bottom: 14px;
+	height: 320px;
+	width: 1820px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	overflow: noclip;
+	z-index: 1;
+}
+
+.Header .TitleBanner
+{
+	horizontal-align: center;
+	width: 1480px;
+	border-width: 220px 280px 0px 280px;
+	border-image-slice: 100% 560px 0px 560px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/dark_carnival/store/ui/title_banner_png.vtex");
+	ignore-parent-flow: true;
+}
+
+.PageButton
+{
+	vertical-align: center;
+	y: 6px;
+	padding: 8px 24px;
+	transition-property: transform, brightness;
+	transition-duration: 0.05s;
+}
+
+.PageButton .PageButtonBackground
+{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: gradient( linear, 0% 10%, 0% 90%, from( rgba(130, 93, 45, 0.5) ), to( rgba(93, 73, 37, 0.5) ) );
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0);
+	transition-property: transform, background-color, border, box-shadow;
+	transition-duration: 0.1s;
+	transform: scale3d( 0.95, 0.95, 1 );
+}
+
+.PageButton Image
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 48px;
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( #FFF2DF ), color-stop( 0.5, #CCBF9D ), to( #8c9cb4 ) );
+	img-shadow: 0px 2px 12px black;
+	padding: 4px;
+	transition-property: opacity-brush, img-shadow;
+	transition-duration: 0.1s;
+}
+
+.PageButton.NextPageButton
+{
+	horizontal-align: right;
+}
+
+.PageButton:hover .PageButtonBackground
+{
+	transform: none;
+	background-color: gradient( linear, 0% 10%, 0% 90%, from( rgb(148, 108, 61) ), to( rgb(116, 84, 47) ) );
+	border: 2px solid goldLight&99;
+	box-shadow: 0px 8px 24px -2px rgba(0, 0, 0, 0.4);
+}
+
+.PageButton:hover Image
+{
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( #FFFFFF ), color-stop( 0.5, #FFFFFF ), to( #FFFFFF ) );
+	img-shadow: 0px 0px 12px rgba(255, 197, 155, 0.689);
+}
+
+.PageButton:active
+{
+	brightness: 0.5;
+	transform: translateY( 1px );
+}
+
+.FirstCarouselElement .PrevPageButton
+{
+	visibility: collapse;
+}
+
+.LastCarouselElement .NextPageButton
+{
+	visibility: collapse;
+}
+
+.TitlesContainer
+{
+	horizontal-align: center;
+	margin-top: 26px;
+	height: 90px;
+	width: 900px;
+}
+
+.TitleContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	width: 700px;
+	opacity: 0.0001;
+}
+
+.TitleContainer .Title,.TitleContainer .HeroTitle
+{
+	width: 100%;
+	font-size: 32px;
+	height: 46px;
+	text-overflow: shrink;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: titleFont;
+	font-weight: bold;
+	margin-bottom: -6px;
+	horizontal-align: center;
+	text-align: center;
+	color: gradient( linear, 0% 10%, 0% 100%, from( #FFF2DF ), color-stop( 0.5, #CCBF9D ), to( #8c9cb4 ) );
+	text-shadow: 0px 0px 0px 3 rgba(73, 46, 37, 0.9);
+	font-weight: semi-bold;
+}
+
+.TitleContainer .Title.ShadowText,.TitleContainer .HeroTitle.ShadowText
+{
+	text-shadow: 0px 2px 12px #000000ce;
+	ignore-parent-flow: true;
+}
+
+.TitleContainer .Title.Robot,.TitleContainer .HeroTitle.Robot
+{
+	height: 24px;
+}
+
+.TitleContainer .Title.Robot.ShadowText,.TitleContainer .HeroTitle.Robot.ShadowText
+{
+	visibility: collapse;
+}
+
+.TitleContainer .Description
+{
+	width: 100%;
+	height: 26px;
+	text-overflow: shrink;
+	text-align: center;
+	horizontal-align: center;
+	color: #ffe5c7b9;
+	text-shadow: 0px 2px 12px #000000ce;
+	font-family: titleFont;
+}
+
+.TitleContainer.ActiveTitle
+{
+	opacity: 1;
+}
+
+.TitleContainer.TitleInLeft
+{
+	animation-name: TitleInLeftAnimation;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
+}
+
+.TitleContainer.TitleInRight
+{
+	animation-name: TitleInRightAnimation;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
+}
+
+.TitleContainer.TitleOutLeft
+{
+	animation-name: TitleOutLeftAnimation;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
+}
+
+.TitleContainer.TitleOutRight
+{
+	animation-name: TitleOutRightAnimation;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
+}
+
+@keyframes 'TitleInRightAnimation'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateX( 40px );
+	}
+	
+	30%
+	{
+		opacity: 0;
+		transform: translateX( 40px );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: none;
+	}
+	
+}
+
+@keyframes 'TitleOutRightAnimation'
+{
+	0%
+	{
+		opacity: 1;
+		transform: none;
+	}
+	
+	30%
+	{
+		opacity: 0;
+		transform: translateX( -16px );
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: translateX( -16px );
+	}
+	
+}
+
+@keyframes 'TitleInLeftAnimation'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateX( -40px );
+	}
+	
+	30%
+	{
+		opacity: 0;
+		transform: translateX( -40px );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: none;
+	}
+	
+}
+
+@keyframes 'TitleOutLeftAnimation'
+{
+	0%
+	{
+		opacity: 1;
+		transform: none;
+	}
+	
+	30%
+	{
+		opacity: 0;
+		transform: translateX( 16px );
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: translateX( 16px );
+	}
+	
+}
+
+.ViolatorSection
+{
+	ignore-parent-flow: true;
+	vertical-align: top;
+	horizontal-align: left;
+	margin-top: 39px;
+	margin-left: 235px;
+	padding-top: 5px;
+	overflow: noclip;
+	width: 300px;
+	height: 200px;
+	ui-scale: 92%;
+}
+
+.ViolatorSection .ViolatorHed
+{
+	font-size: 52px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: titleFont;
+	color: #BEEE11;
+	font-weight: bold;
+	text-shadow: 0px 1px 6px 2 rgba(0, 0, 0, 1);
+	horizontal-align: center;
+}
+
+.ViolatorSection .ViolatorSubHed
+{
+	font-size: 26px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: titleFont;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0px 1px 6px 2 rgba(0, 0, 0, 1);
+	horizontal-align: center;
+	margin-top: 57px;
+}
+
+.ViolatorSection .ViolatorBackground
+{
+	horizontal-align: center;
+	width: 80%;
+	height: 80%;
+}
+
+.CoinsSectionWrapper
+{
+	pre-transform-rotate2d: 6deg;
+	x: 728px;
+	y: 26px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	z-index: 1;
+}
+
+.CoinsSection
+{
+	width: 400px;
+	margin: 100px;
+	margin-right: 140px;
+	tooltip-position: left;
+	tooltip-body-position: 100% 0%;
+	tooltip-arrow-position: 0% 80%;
+}
+
+.CoinsSection .DiscountBackground
+{
+	height: 160px;
+	width: 300px;
+	vertical-align: center;
+}
+
+.CoinsSection .DiscountMeter
+{
+	vertical-align: center;
+	horizontal-align: right;
+	width: 180px;
+	height: 180px;
+	overflow: noclip;
+}
+
+.CoinsSection .DiscountMeter .DiscountMeterBackground
+{
+	width: 100%;
+	height: 100%;
+}
+
+.CoinsSection .DiscountMeter .DiscountPip
+{
+	width: 240px;
+	height: 140px;
+	padding: 0px 49px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.CoinsSection .DiscountMeter .DiscountPip .DiscountPipBackground
+{
+	width: 32px;
+	height: 32px;
+	horizontal-align: right;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_empty_png.vtex");
+	background-size: cover;
+	background-position: center;
+}
+
+.CoinsSection .DiscountMeter .DiscountPip .DiscountPipGlow
+{
+	horizontal-align: right;
+	vertical-align: center;
+	width: 32px;
+	height: 32px;
+	transform: scale3d( 2, 2, 1 );
+	border-radius: 50%;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #fff0c1f1 ), color-stop( 0.5, #ffdea41c ), color-stop( 0.8, #ffd18b03 ), to( #ffd08b00 ) );
+	-s2-mix-blend-mode: overlay;
+	brightness: 3;
+	visibility: collapse;
+}
+
+.CoinsSection .DiscountMeter #DiscountPip1
+{
+	transform: rotateZ( 0deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip2
+{
+	transform: rotateZ( 36deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip2 .DiscountPipBackground
+{
+	transform: rotateZ( -36deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip3
+{
+	transform: rotateZ( 72deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip3 .DiscountPipBackground
+{
+	transform: rotateZ( -72deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip4
+{
+	transform: rotateZ( 108deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip4 .DiscountPipBackground
+{
+	transform: rotateZ( -108deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip5
+{
+	transform: rotateZ( 144deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip5 .DiscountPipBackground
+{
+	transform: rotateZ( -144deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip6
+{
+	transform: rotateZ( 180deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip6 .DiscountPipBackground
+{
+	transform: rotateZ( -180deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip7
+{
+	transform: rotateZ( 216deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip7 .DiscountPipBackground
+{
+	transform: rotateZ( -216deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip8
+{
+	transform: rotateZ( 252deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip8 .DiscountPipBackground
+{
+	transform: rotateZ( -252deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip9
+{
+	transform: rotateZ( 288deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip9 .DiscountPipBackground
+{
+	transform: rotateZ( -288deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip10
+{
+	transform: rotateZ( 324deg );
+}
+
+.CoinsSection .DiscountMeter #DiscountPip10 .DiscountPipBackground
+{
+	transform: rotateZ( -324deg );
+}
+
+.CoinsSection .DiscountContent
+{
+	flow-children: down;
+	vertical-align: center;
+	width: 180px;
+	margin-left: 40px;
+}
+
+.CoinsSection .DiscountContent .DiscountTitle
+{
+	horizontal-align: center;
+	color: gradient( linear, 0% 55%, 0% 70%, from( #EBC28E ), to( #977656 ) );
+	text-shadow: 0px 2px 8px black;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.CoinsSection .DiscountContent .TotalCoinCountContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-left: -4px;
+	margin-top: -4px;
+	margin-bottom: -8px;
+}
+
+.CoinsSection .DiscountContent .TotalCoinCountContainer .RewardTypeIcon.Coin
+{
+	width: 40px;
+	height: 40px;
+	vertical-align: center;
+}
+
+.CoinsSection .DiscountContent .TotalCoinCountContainer .TotalCoinCount
+{
+	text-shadow: 0px 2px 8px black;
+	color: peachLight;
+	vertical-align: center;
+	text-align: center;
+	font-size: 16px;
+}
+
+.CoinsSection .ActivateContainer
+{
+	horizontal-align: center;
+	width: 100%;
+}
+
+.CoinsSection .ActivateContainer .activateButton
+{
+	brightness: 0.4;
+	saturation: 0.2;
+}
+
+.CoinsSection .ActivateContainer .deactivateButton
+{
+	visibility: collapse;
+}
+
+.CoinsSection .ActivateContainer DOTADarkCarnivalButton
+{
+	ui-scale: 80%;
+	width: 100%;
+}
+
+.CoinsSection .CoinIcon
+{
+	width: 92px;
+	height: 92px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.CoinsSection .CoinArrow
+{
+	width: 92px;
+	height: 92px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.CoinQuantity1 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 0deg );
+}
+
+.CoinQuantity2 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 36deg );
+}
+
+.CoinQuantity3 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 72deg );
+}
+
+.CoinQuantity4 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 108deg );
+}
+
+.CoinQuantity5 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 144deg );
+}
+
+.CoinQuantity6 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 180deg );
+}
+
+.CoinQuantity7 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 216deg );
+}
+
+.CoinQuantity8 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 252deg );
+}
+
+.CoinQuantity9 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 288deg );
+}
+
+.CoinQuantity10 .CoinsSection .CoinArrow
+{
+	transform: rotateZ( 324deg );
+}
+
+.CoinQuantity1 #DiscountPip1 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity1 #DiscountPip1 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity2 #DiscountPip1 .DiscountPipGlow,.CoinQuantity2 #DiscountPip2 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity2 #DiscountPip1 .DiscountPipBackground,.CoinQuantity2 #DiscountPip2 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity3 #DiscountPip1 .DiscountPipGlow,.CoinQuantity3 #DiscountPip2 .DiscountPipGlow,.CoinQuantity3 #DiscountPip3 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity3 #DiscountPip1 .DiscountPipBackground,.CoinQuantity3 #DiscountPip2 .DiscountPipBackground,.CoinQuantity3 #DiscountPip3 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity4 #DiscountPip1 .DiscountPipGlow,.CoinQuantity4 #DiscountPip2 .DiscountPipGlow,.CoinQuantity4 #DiscountPip3 .DiscountPipGlow,.CoinQuantity4 #DiscountPip4 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity4 #DiscountPip1 .DiscountPipBackground,.CoinQuantity4 #DiscountPip2 .DiscountPipBackground,.CoinQuantity4 #DiscountPip3 .DiscountPipBackground,.CoinQuantity4 #DiscountPip4 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity5 #DiscountPip1 .DiscountPipGlow,.CoinQuantity5 #DiscountPip2 .DiscountPipGlow,.CoinQuantity5 #DiscountPip3 .DiscountPipGlow,.CoinQuantity5 #DiscountPip4 .DiscountPipGlow,.CoinQuantity5 #DiscountPip5 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity5 #DiscountPip1 .DiscountPipBackground,.CoinQuantity5 #DiscountPip2 .DiscountPipBackground,.CoinQuantity5 #DiscountPip3 .DiscountPipBackground,.CoinQuantity5 #DiscountPip4 .DiscountPipBackground,.CoinQuantity5 #DiscountPip5 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity6 #DiscountPip1 .DiscountPipGlow,.CoinQuantity6 #DiscountPip2 .DiscountPipGlow,.CoinQuantity6 #DiscountPip3 .DiscountPipGlow,.CoinQuantity6 #DiscountPip4 .DiscountPipGlow,.CoinQuantity6 #DiscountPip5 .DiscountPipGlow,.CoinQuantity6 #DiscountPip6 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity6 #DiscountPip1 .DiscountPipBackground,.CoinQuantity6 #DiscountPip2 .DiscountPipBackground,.CoinQuantity6 #DiscountPip3 .DiscountPipBackground,.CoinQuantity6 #DiscountPip4 .DiscountPipBackground,.CoinQuantity6 #DiscountPip5 .DiscountPipBackground,.CoinQuantity6 #DiscountPip6 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity7 #DiscountPip1 .DiscountPipGlow,.CoinQuantity7 #DiscountPip2 .DiscountPipGlow,.CoinQuantity7 #DiscountPip3 .DiscountPipGlow,.CoinQuantity7 #DiscountPip4 .DiscountPipGlow,.CoinQuantity7 #DiscountPip5 .DiscountPipGlow,.CoinQuantity7 #DiscountPip6 .DiscountPipGlow,.CoinQuantity7 #DiscountPip7 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity7 #DiscountPip1 .DiscountPipBackground,.CoinQuantity7 #DiscountPip2 .DiscountPipBackground,.CoinQuantity7 #DiscountPip3 .DiscountPipBackground,.CoinQuantity7 #DiscountPip4 .DiscountPipBackground,.CoinQuantity7 #DiscountPip5 .DiscountPipBackground,.CoinQuantity7 #DiscountPip6 .DiscountPipBackground,.CoinQuantity7 #DiscountPip7 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity8 #DiscountPip1 .DiscountPipGlow,.CoinQuantity8 #DiscountPip2 .DiscountPipGlow,.CoinQuantity8 #DiscountPip3 .DiscountPipGlow,.CoinQuantity8 #DiscountPip4 .DiscountPipGlow,.CoinQuantity8 #DiscountPip5 .DiscountPipGlow,.CoinQuantity8 #DiscountPip6 .DiscountPipGlow,.CoinQuantity8 #DiscountPip7 .DiscountPipGlow,.CoinQuantity8 #DiscountPip8 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity8 #DiscountPip1 .DiscountPipBackground,.CoinQuantity8 #DiscountPip2 .DiscountPipBackground,.CoinQuantity8 #DiscountPip3 .DiscountPipBackground,.CoinQuantity8 #DiscountPip4 .DiscountPipBackground,.CoinQuantity8 #DiscountPip5 .DiscountPipBackground,.CoinQuantity8 #DiscountPip6 .DiscountPipBackground,.CoinQuantity8 #DiscountPip7 .DiscountPipBackground,.CoinQuantity8 #DiscountPip8 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity9 #DiscountPip1 .DiscountPipGlow,.CoinQuantity9 #DiscountPip2 .DiscountPipGlow,.CoinQuantity9 #DiscountPip3 .DiscountPipGlow,.CoinQuantity9 #DiscountPip4 .DiscountPipGlow,.CoinQuantity9 #DiscountPip5 .DiscountPipGlow,.CoinQuantity9 #DiscountPip6 .DiscountPipGlow,.CoinQuantity9 #DiscountPip7 .DiscountPipGlow,.CoinQuantity9 #DiscountPip8 .DiscountPipGlow,.CoinQuantity9 #DiscountPip9 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity9 #DiscountPip1 .DiscountPipBackground,.CoinQuantity9 #DiscountPip2 .DiscountPipBackground,.CoinQuantity9 #DiscountPip3 .DiscountPipBackground,.CoinQuantity9 #DiscountPip4 .DiscountPipBackground,.CoinQuantity9 #DiscountPip5 .DiscountPipBackground,.CoinQuantity9 #DiscountPip6 .DiscountPipBackground,.CoinQuantity9 #DiscountPip7 .DiscountPipBackground,.CoinQuantity9 #DiscountPip8 .DiscountPipBackground,.CoinQuantity9 #DiscountPip9 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinQuantity10 #DiscountPip1 .DiscountPipGlow,.CoinQuantity10 #DiscountPip2 .DiscountPipGlow,.CoinQuantity10 #DiscountPip3 .DiscountPipGlow,.CoinQuantity10 #DiscountPip4 .DiscountPipGlow,.CoinQuantity10 #DiscountPip5 .DiscountPipGlow,.CoinQuantity10 #DiscountPip6 .DiscountPipGlow,.CoinQuantity10 #DiscountPip7 .DiscountPipGlow,.CoinQuantity10 #DiscountPip8 .DiscountPipGlow,.CoinQuantity10 #DiscountPip9 .DiscountPipGlow,.CoinQuantity10 #DiscountPip10 .DiscountPipGlow
+{
+	visibility: visible;
+}
+
+.CoinQuantity10 #DiscountPip1 .DiscountPipBackground,.CoinQuantity10 #DiscountPip2 .DiscountPipBackground,.CoinQuantity10 #DiscountPip3 .DiscountPipBackground,.CoinQuantity10 #DiscountPip4 .DiscountPipBackground,.CoinQuantity10 #DiscountPip5 .DiscountPipBackground,.CoinQuantity10 #DiscountPip6 .DiscountPipBackground,.CoinQuantity10 #DiscountPip7 .DiscountPipBackground,.CoinQuantity10 #DiscountPip8 .DiscountPipBackground,.CoinQuantity10 #DiscountPip9 .DiscountPipBackground,.CoinQuantity10 #DiscountPip10 .DiscountPipBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/discounts/dicount_pip_filled_png.vtex");
+}
+
+.CoinsInFlight:not(.InPurchaseFlow) .CoinsSection,.UnknownPurchaseIssue:not(.InPurchaseFlow) .CoinsSection
+{
+	opacity: 0.1;
+	saturation: 0.2;
+}
+
+#CancelTransactionErrorMessage
+{
+	flow-children: right;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 8px 12px;
+	width: 400px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 2px solid loserRed;
+	horizontal-align: right;
+	vertical-align: center;
+	box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.2);
+	visibility: collapse;
+}
+
+#CancelTransactionErrorMessage .ErrorIcon
+{
+	width: 20px;
+	margin-right: 12px;
+	wash-color: loserRed;
+	vertical-align: center;
+}
+
+#CancelTransactionErrorMessage .ErrorTextLabel
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
+	margin-right: 12px;
+	line-height: 1.2;
+}
+
+#CancelTransactionErrorMessage #CancelButton
+{
+	vertical-align: center;
+}
+
+.CoinsInFlight:not(.InPurchaseFlow) #CancelTransactionErrorMessage
+{
+	visibility: visible;
+}
+
+#TransactionErrorMessage
+{
+	flow-children: right;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 8px 12px;
+	width: 400px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 2px solid loserRed;
+	horizontal-align: right;
+	vertical-align: center;
+	box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.2);
+	visibility: collapse;
+}
+
+#TransactionErrorMessage .ErrorIcon
+{
+	width: 20px;
+	margin-right: 12px;
+	wash-color: loserRed;
+	vertical-align: center;
+}
+
+#TransactionErrorMessage .ErrorTextLabel
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
+	margin-right: 12px;
+	line-height: 1.2;
+}
+
+.UnknownPurchaseIssue:not(.InPurchaseFlow) #TransactionErrorMessage
+{
+	visibility: visible;
+}
+
+@keyframes 'Gleam'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	50%
+	{
+		brightness: 3;
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
+}
+
+@keyframes 'borderGleam'
+{
+	0%
+	{
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( #f000 ), color-stop( 0.5, #ffc74f ), to( #f000) );
+	}
+	
+	50%
+	{
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffc74f ), color-stop( 0.5, #f000 ), to( #ffc74f) );
+	}
+	
+	100%
+	{
+		border-brush: gradient( linear, 0% 0%, 0% 100%, from( #f000 ), color-stop( 0.5, #ffc74f ), to( #f000) );
+	}
+	
+}
+
+.CanActivateDiscount .CoinsSection .CoinText
+{
+	visibility: collapse;
+}
+
+.CanActivateDiscount .CoinsSection #DiscountPip1,.CanActivateDiscount .CoinsSection #DiscountPip2,.CanActivateDiscount .CoinsSection #DiscountPip3,.CanActivateDiscount .CoinsSection #DiscountPip4,.CanActivateDiscount .CoinsSection #DiscountPip5,.CanActivateDiscount .CoinsSection #DiscountPip6,.CanActivateDiscount .CoinsSection #DiscountPip7,.CanActivateDiscount .CoinsSection #DiscountPip8,.CanActivateDiscount .CoinsSection #DiscountPip9,.CanActivateDiscount .CoinsSection #DiscountPip10
+{
+	animation-name: DiscountPipPulse;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.CanActivateDiscount .CoinsSection .ActivateContainer
+{
+	animation-name: ActiveButtonBounce;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.CanActivateDiscount .CoinsSection .ActivateContainer .activateButton
+{
+	brightness: 1;
+	saturation: 1;
+}
+
+.CanActivateDiscount .CoinsSection .ActivateContainer .deactivateButton
+{
+	visibility: collapse;
+}
+
+@keyframes 'ActiveButtonBounce'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+		brightness: 2;
+	}
+	
+	100%
+	{
+		transform: scale3d( 0.95, 0.95, 1 );
+		brightness: 1;
+	}
+	
+}
+
+@keyframes 'DiscountPipPulse'
+{
+	0%
+	{
+		brightness: 2;
+	}
+	
+	100%
+	{
+		brightness: 0.75;
+	}
+	
+}
+
+.DiscountActive .CoinsSection #DiscountModeActivateFX
+{
+	opacity: 0;
+}
+
+.DiscountActive .CoinsSection .ActivateContainer
+{
+	animation: none;
+}
+
+.DiscountActive .CoinsSection #DiscountPip1,.DiscountActive .CoinsSection #DiscountPip2,.DiscountActive .CoinsSection #DiscountPip3,.DiscountActive .CoinsSection #DiscountPip4,.DiscountActive .CoinsSection #DiscountPip5,.DiscountActive .CoinsSection #DiscountPip6,.DiscountActive .CoinsSection #DiscountPip7,.DiscountActive .CoinsSection #DiscountPip8,.DiscountActive .CoinsSection #DiscountPip9,.DiscountActive .CoinsSection #DiscountPip10
+{
+	animation-name: DiscountPipFlash;
+	animation-duration: 0.4s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.DiscountActive .CoinsSection #DiscountPip2
+{
+	animation-delay: 0.1s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip3
+{
+	animation-delay: 0.2s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip4
+{
+	animation-delay: 0.3s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip5
+{
+	animation-delay: 0.4s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip6
+{
+	animation-delay: 0.5s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip7
+{
+	animation-delay: 0.6s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip8
+{
+	animation-delay: 0.7s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip9
+{
+	animation-delay: 0.8s;
+}
+
+.DiscountActive .CoinsSection #DiscountPip10
+{
+	animation-delay: 0.9s;
+}
+
+.DiscountActive .CoinsSection .CoinText
+{
+	visibility: collapse;
+}
+
+.DiscountActive .CoinsSection .ActivateContainer .activateButton
+{
+	visibility: collapse;
+}
+
+.DiscountActive .CoinsSection .ActivateContainer .deactivateButton
+{
+	visibility: visible;
+}
+
+@keyframes 'DiscountPipFlash'
+{
+	0%
+	{
+		brightness: 4;
+	}
+	
+	100%
+	{
+		brightness: 0.5;
+	}
+	
+}
+
+.DiscountActiveContainer
+{
+	perspective-origin: 40% 74%;
+	perspective: 50px;
+	vertical-align: top;
+	horizontal-align: center;
+	margin-top: 60px;
+	margin-left: 1550px;
+	width: 320px;
+	height: 320px;
+	z-index: 0;
+	transition-property: transform, opacity, pre-transform-scale2d;
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+	opacity: 0;
+	pre-transform-scale2d: .3;
+	transform: translateX(-100px) translateY(40px);
+}
+
+.DiscountActiveContainer Label
+{
+	width: 220px;
+	padding: 0 12px;
+	font-size: 22px;
+	transform: translateY(10px) translateZ(8px) rotateZ(-10deg) rotateX(-10deg);
+	color: white;
+	color: white;
+	padding: 0 12px;
+	text-transform: uppercase;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-align: center;
+	text-shadow: 2px 2px 8px 6 rgb(0, 13, 201);
+	letter-spacing: 2px;
+	font-size: 24px;
+	font-weight: bold;
+	transform-origin: 10% 50%;
+	text-overflow: shrink;
+	animation-duration: 0.82s;
+	animation-delay: 0.0s;
+	animation-iteration-count: 6;
+	animation-timing-function: ease-in-out;
+}
+
+.DiscountActive .DiscountActiveContainer
+{
+	opacity: 1;
+	pre-transform-scale2d: 1;
+	transform: translateX(0px) translateY(0px);
+	transition-duration: 1s;
+}
+
+.DiscountActive .DiscountActiveContainer Label
+{
+	animation-name: DiscountLabelSwing;
+}
+
+@keyframes 'DiscountLabelSwing'
+{
+	0%
+	{
+		transform: translateY(10px) translateZ(8px) rotateZ(-10deg) rotateX(-10deg);
+		color: white;
+	}
+	
+	25%
+	{
+		transform: translateY(10px) translateZ(0px) rotateZ(-20deg) rotateX(-10deg);
+		color: #934FE7;
+	}
+	
+	50%
+	{
+		transform: translateY(10px) translateZ(8px) rotateZ(-10deg) rotateX(-10deg);
+		color: white;
+	}
+	
+	75%
+	{
+		transform: translateY(10px) translateZ(0px) rotateZ(0deg) rotateX(-10deg);
+		color: #EBC085;
+	}
+	
+	100%
+	{
+		transform: translateY(10px) translateZ(8px) rotateZ(-10deg) rotateX(-10deg);
+		color: white;
+	}
+	
+}
+
+.RobotPartsSection
+{
+	flow-children: down;
+	width: 320px;
+	vertical-align: center;
+	margin-top: 4px;
+}
+
+.RobotPartsSection .RobotPartsTitle
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-bottom: -4px;
+	margin-left: 8px;
+}
+
+.RobotPartsSection .RobotPartsTitle .InfoIcon
+{
+	tooltip-position: top;
+}
+
+.RobotPartsSection .RobotPartsProgress
+{
+	width: 100%;
+	flow-children: right;
+}
+
+.RobotPartsSection .RobotPartsProgress .RobotPartsIconContainer
+{
+	border-radius: 50%;
+	padding: 6px;
+	background-color: rgb(209, 186, 110);
+	margin-right: 8px;
+}
+
+.RobotPartsSection .RobotPartsProgress .RobotPartsIconContainer .RobotPartsIcon
+{
+	wash-color: black;
+	width: 20px;
+}
+
+.RobotPartsSection .RobotPartsProgress .RobotPartsPip
+{
+	width: fill-parent-flow(1);
+	height: 8px;
+	background-color: rgb(58, 63, 83);
+	vertical-align: center;
+	margin: 1px;
+}
+
+.RobotPartsSection .RobotPartsProgress .RobotPartsPip.Filled
+{
+	background-color: rgb(209, 186, 110);
+}
+
+.RobotPartsSection .RobotPartsProgress .RobotPartsProgressLabel
+{
+	vertical-align: center;
+	margin-left: 8px;
+}
+
+.RobotPartsSection #ClaimRobotButton
+{
+	horizontal-align: center;
+}
+
+.BottomGears
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: -116px;
+	width: 1580px;
+	z-index: -1;
+}
+
+.StoreNav
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: -100px;
+}
+
+.StoreNav .StoreNavBackground
+{
+	width: 1570px;
+	ignore-parent-flow: true;
+}
+
+.StoreNav .StoreNavContents
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 88px;
+}
+
+.StoreNav .StoreNavDivider
+{
+	height: 48px;
+	vertical-align: center;
+	margin: 0px -4px;
+}
+
+.StoreNav .StoreNavCategory
+{
+	flow-children: down;
+}
+
+.StoreNav .StoreNavCategory .CategoryTitle
+{
+	horizontal-align: center;
+	padding: 0px 4px;
+	margin-top: -4px;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	color: LightGrey;
+	opacity: 0.7;
+	vertical-align: middle;
+	transition-property: color, opacity, text-shadow, brightness;
+	transition-duration: 0.2s;
+	visibility: collapse;
+}
+
+.StoreNav .StoreNavCategory .CategoryDivider
+{
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+	margin: 4px 0px;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents
+{
+	flow-children: right;
+	horizontal-align: center;
+	padding: 4px;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem
+{
+	width: 84px;
+	height: 84px;
+	margin: 0px -6px;
+	tooltip-position: top;
+	transition-property: brightness, transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem Image
+{
+	width: 84px;
+	height: 84px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem .RewardTypeIcon
+{
+	width: 64px;
+	height: 64px;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+	y: -8px;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem .NavItemBgTrack
+{
+	width: 16px;
+	height: 56px;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/store_nav_item_track_png.vtex");
+	background-size: cover;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem .NavItemBg
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	horizontal-align: center;
+	vertical-align: center;
+	box-shadow: 0px 4px 24px -3px rgba(0, 0, 0, 0.4);
+	padding: 1px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373234 ), to( #6a5c50) );
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8b6c4f ), to( #4C4447) );
+	transition-property: border-brush, transform, brightness, box-shadow;
+	transition-duration: 0.1s;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem .NavItemBg .NavItemBgInner
+{
+	background-color: gradient( linear, 0% 0%, 0% 60%, from( #303A58 ), from( #303A58 ), to( #000000) );
+	width: 100%;
+	height: 100%;
+	border: 2px solid black;
+	border-radius: 50%;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem:hover .NavItemBg
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373234 ), to( #41372F) );
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF3D9 ), color-stop( 0.5, #7A7D89 ), to( #8AA4F2) );
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem:active
+{
+	transform: translateY( 1px );
+	brightness: 0.5;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem:selected .NavItemBg
+{
+	box-shadow: 0px 8px 40px -3px rgba(0, 0, 0, 0.6);
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #373234 ), to( #41372F) );
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF3D9 ), color-stop( 0.5, #7A7D89 ), to( #8AA4F2) );
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem:selected .NavItemBg
+{
+	transform: scale3d( 1.1, 1.1, 1 );
+	brightness: 2;
+}
+
+.StoreNav .StoreNavCategory .CategoryContents .StoreNavItem:selected .HeroIconContainer
+{
+	transform: scale3d( 1.1, 1.1, 1 );
+}
+
+.StoreNav .StoreNavCategory:selected .CategoryTitle
+{
+	color: white;
+	opacity: 1;
+	text-shadow: 0px 0px 12px rgba(210, 240, 255, 0.08);
+}
+
+.StoreNav .StoreNavCategory.Overview .StoreNavItem Image
+{
+	width: 32px;
+	height: 32px;
+	y: -2px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF3D9 ), to( #8AA4F2) );
+}
+
+.StoreNav .StoreNavCategory.Robots .StoreNavItem .HeroIconContainer
+{
+	border-radius: 50%;
+	vertical-align: center;
+	horizontal-align: center;
+	width: 50px;
+	height: width-percentage(100%);
+	transition-property: transform;
+	transition-duration: 0.1s;
+}
+
+.StoreNav .StoreNavCategory.Robots .StoreNavItem .HeroIconContainer DOTAHeroImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	height: 100%;
+	width: height-percentage(177.8%);
+}
+
+.StoreNav .StoreNavCategory.PacksBundles .StoreNavItem.SecretRoomPack Image
+{
+	width: 75%;
+	y: -6px;
+}
+
+.StoreNav .StoreNavCategory.PacksBundles .StoreNavItem.MidnightRunBundle Image
+{
+	width: 75%;
+	y: -8px;
+}
+
+.StoreNav .StoreNavCategory.PacksBundles .StoreNavItem.AutomotonBundle Image
+{
+	width: 85%;
+	y: -4px;
+	x: 1px;
+}
+
+#DiscountModeActivateFX
+{
+	pre-transform-scale2d: 0.7;
+	width: 420px;
+	height: 200px;
+	x: -78px;
+	y: 50px;
+	ignore-parent-flow: true;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	transition-property: opacity, pre-transform-scale2d;
+	transition-timing-function: ease-in-out;
+	transition-duration: 4s;
+	opacity: 0;
+}
+
+.CanActivateDiscount #DiscountModeActivateFX
+{
+	opacity: 1;
+	transition-duration: 0.6s;
+}
+
+#DiscountModePageFX,#DiscountModePageFXForeground
+{
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	transition-property: opacity, pre-transform-scale2d;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.1s;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+}
+
+.DiscountActive #DiscountModePageFX,.DiscountActive #DiscountModePageFXForeground
+{
+	opacity: 1;
+	transition-duration: 1s;
+}
+
+#DiscountModePageFX
+{
+	blur: gaussian(1px);
+}
+
+#DiscountModePageFXForeground
+{
+	z-index: 2;
+}
+
+.DiscountActive .StoreItemMain
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffc74f ), to( #f00) );
+}
+
+@keyframes 'GoldGlow'
+{
+	0%
+	{
+		text-shadow: 0px 0px 4px gold2;
+	}
+	
+	100%
+	{
+		text-shadow: 0px 0px 12px gold1;
+	}
+	
+}
+
+.SalePanel1
+{
+	ui-scale: 140%;
+	flow-children: right;
+	margin: 1px 1px 5px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SalePanel1 Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	text-align:center;
+	padding: 1px 4px;
+	padding-left: 6px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+}
+
+.SalePanel1b
+{
+	ui-scale: 140%;
+	flow-children: right;
+	margin: 1px 1px 5px;
+	Margin-top: 9px;
+	margin-right: 6px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SalePanel1b Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	padding: 1px 4px;
+	padding-left: 6px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+}
+
+.SalePanel1c
+{
+	ui-scale: 140%;
+	flow-children: right;
+	margin: 1px 1px 5px;
+	Margin-top: 25px;
+	margin-right: 6px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SalePanel1c Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	padding: 1px 4px;
+	padding-left: 6px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+}
+
+.SalePanel1d
+{
+	ui-scale: 140%;
+	flow-children: right;
+	margin: 1px 1px 5px;
+	Margin-top: 27px;
+	margin-right: 6px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SalePanel1d Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	padding: 1px 4px;
+	padding-left: 6px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+}
+
+.SalePanel2
+{
+	ui-scale: 95%;
+	flow-children: right;
+	margin: 1px 1px 4px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SalePanel2 Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	padding: 1px 3px;
+	padding-left: 6px;
+	font-weight:normal;
+	letter-spacing: 0.4px;
+}
+
+.SalePanel3
+{
+	ui-scale: 93%;
+	flow-children: right;
+	margin: 5px 1px 5px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+	margin-right: 4px;
+}
+
+.SalePanel3 Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	text-align:center;
+	padding: 1px 4px;
+	padding-left: 4px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+	line-height: 13px;
+	margin-top: 1px;
+}
+
+.SalePanel3a
+{
+	ui-scale: 93%;
+	horizontal-align: right;
+	flow-children: right;
+	margin: 5px 1px 5px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+	margin-right: 4px;
+	margin-top: 22px;
+}
+
+.SalePanel3a Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px 0 #ffffff25;
+	text-align:center;
+	padding: 1px 4px;
+	padding-left: 4px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+	line-height: 13px;
+	margin-top: 1px;
+}
+
+.SaleBadge1
+{
+	ui-scale: 80%;
+	horizontal-align: center;
+	flow-children: right;
+	margin: 0.5px 0.5px 2px;
+	margin-top: 48px box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SaleBadge1 Label
+{
+	background-color: #4D6B22;
+	color: #BEEE11;
+	text-shadow: 0px 0.5px 0px #ffffff25;
+	padding: 00px 00px;
+	padding-left: 4.75px;
+	font-weight:normal;
+	letter-spacing: 0.8px;
+}
+
+.StoreContents
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	margin-top: 60px;
+	overflow: noclip;
+	width: 1920px;
+	height: 1080px;
+}
+
+.AspectRatio21x9 .StoreContents
+{
+	width: 100%;
+}
+
+#StoreCarousel
+{
+	flow-children: right;
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	horizontal-align: center;
+	y: -50px;
+	overflow: noclip;
+	width: 1920px;
+}
+
+.AspectRatio21x9 #StoreCarousel
+{
+	width: 2520px;
+	opacity-brush: gradient( linear, 11% 0%, 89% 0%, from( #FFFFFF00 ), color-stop( 0.1, #ffffff ), color-stop( 0.9, #ffffff ), to( #FFFFFF00 ) );
+}
+
+.AspectRatio16x10 #StoreCarousel
+{
+	transform: scale3d( 0.96, 0.96, 1 ) translateY( -10px );
+}
+
+.AspectRatio16x10 .StoreNav
+{
+	transform: translateY( -10px );
+}
+
+.AspectRatio16x10 .Header
+{
+	transform: translateY( -10px );
+}
+
+.AspectRatio16x10 .CoinsSectionWrapper
+{
+	transform: translateX( -80px ) translateY( -10px );
+}
+
+.StoreItem
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+	horizontal-align: center;
+	width: 1920px;
+}
+
+.StoreItem,.FlagTransition
+{
+	transition-property: position;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.6s;
+}
+
+.FlagBackground
+{
+	width: 1920px;
+	height: 1080px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/flag_background_png.vtex");
+	background-size: cover;
+}
+
+.FlagBackground.Overview
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/flag_background_overview_png.vtex");
+}
+
+.FlagTransition
+{
+	horizontal-align: right;
+	vertical-align: center;
+	width: 480px;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/flag_transition_png.vtex");
+	background-size: cover;
+}
+
+.StoreItemContents
+{
+	width: 1668px;
+	height: 682px;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-bottom: 26px;
+	opacity-mask: url("s2r://panorama/images/events/dark_carnival/store/ui/store_content_flag_mask_png.vtex");
+}
+
+.StoreItemContents.Background
+{
+	background-color: rgb(44, 48, 66);
+}
+
+.StoreItemContents .ItemName
+{
+	width: 100%;
+	font-size: 34px;
+	text-overflow: shrink;
+	font-family: titleFont;
+	color: whitesmoke;
+}
+
+#AnimationControls
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 290px;
+	y: 8px;
+}
+
+.StoreCellPriceContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.StoreCellPriceContainer .TreasureCount
+{
+	margin-right: 4px;
+}
+
+.CellTitle
+{
+	color: whitesmoke;
+	color: gradient( linear, 0% 10%, 0% 100%, from( #FFF2DF ), color-stop( 0.5, #e0d2ad ), to( #9eafca ) );
+	text-shadow: 0px 2px 12px black;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.ActionButtonsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.ActionButtonsContainer .ActionButton
+{
+	margin-top: 12px;
+}
+
+.ActionButtonsContainer.Treasure
+{
+	margin-top: -40px;
+}
+
+.Price
+{
+	color: gradient( linear, 0% 24%, 0% 100%, from( goldLight ), to( goldDark ) );
+	font-weight: semi-bold;
+	margin: 0px 2px;
+}
+
+.DiscountActive .Price.IsDiscountable
+{
+	font-weight: normal;
+	text-decoration: line-through;
+	color: LighterGrey&66;
+}
+
+.DiscountPrice
+{
+	color: rgb(209, 186, 110);
+	font-weight: semi-bold;
+	margin: 0px 2px;
+	visibility: collapse;
+}
+
+.DiscountActive .DiscountPrice
+{
+	visibility: visible;
+	animation-name: PulseDiscountPrice;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+@keyframes 'PulseDiscountPrice'
+{
+	0%
+	{
+		transform: none;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		transform: scale3d(1.15, 1.15, 1);
+		brightness: 5;
+	}
+	
+}
+
+.BulletPoint
+{
+	padding-left: 20px;
+	background-image: url("s2r://panorama/images/control_icons/24px/bullet.vsvg");
+	background-position: 4px 10px;
+	background-size: 6px;
+	background-repeat: no-repeat;
+	background-img-opacity: 0.5;
+	margin-bottom: 6px;
+	margin-left: 24px;
+}
+
+.ContentDash
+{
+	width: 100%;
+	height: 1px;
+	background-color: rgba(255, 228, 193, 0.2);
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( goldDark&00 ), color-stop( 0.25, goldDark ), color-stop( 0.75, goldDark ), to( goldDark&00 ) );
+	margin: 12px 0px;
+	opacity: 0.3;
+}
+
+@define overviewCellMargin: 4px;
+.StoreItem.StoreItemOverview .StoreItemContents
+{
+	flow-children: down;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer
+{
+	flow-children: right;
+	width: 100%;
+	height: fill-parent-flow( 1.8 );
+	margin-bottom: overviewCellMargin;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell
+{
+	background-color: rgb(14, 15, 15);
+	width: fill-parent-flow(1);
+	height: 100%;
+	margin-right: overviewCellMargin;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackground
+{
+	border-radius: 1px;
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 20%, 0% 0%, 80% 80%, from( #43468e ), color-stop( 0.5, #292c4e ), to( #060608 ) );
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackground .RobotCellBackgroundTexture
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/dark_carnival/textures/texture_fabric_png.vtex");
+	background-size: 300px;
+	-s2-mix-blend-mode: overlay;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage
+{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	brightness: 2;
+	saturation: 1.1;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/robot_frame_stars_png.vtex");
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFFFFF ), color-stop( 0.5, #ffffff33 ), to( #FFFFFF00 ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage.Axe
+{
+	background-size: 100%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage.LegionCommander
+{
+	background-size: 150%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage.Oracle
+{
+	background-size: 120%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage.Morphling
+{
+	background-size: 200%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellBackgroundImage.MorphlBristlebacking
+{
+	background-size: 130%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity-brush: gradient( linear, 0% 70%, 0% 100%, from( #FFFFFF ), color-stop( 0.5, #ffffff33 ), to( #FFFFFF00 ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel
+{
+	width: 230%;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
+	transition-property: transform, brightness;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel.Axe
+{
+	x: 14%;
+	y: 4%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel.LegionCommander
+{
+	x: -14%;
+	y: -3%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel.Oracle
+{
+	width: 250%;
+	x: -12%;
+	y: 12%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel.Morphling
+{
+	width: 280%;
+	x: 0%;
+	y: -8%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellModelContainer .RobotCellModel.Bristleback
+{
+	width: 280%;
+	x: 0%;
+	y: -20%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellInfoContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 24px;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellInfoContainer Label
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellInfoContainer .TitleSmall
+{
+	font-size: 22px;
+	text-transform: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: white;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell .RobotCellInfoContainer .AutomotonLabel
+{
+	color: goldLight&99;
+	text-shadow: 0px 1px 6px black;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell.LastRobotCell
+{
+	margin-right: 0px;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell:hover .RobotCellBackground
+{
+	background-color: gradient( radial, 50% 20%, 0% 0%, 80% 80%, from( #5358b1 ), color-stop( 0.5, #35386a ), to( #0f0f17 ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell:hover .RobotCellBackgroundImage
+{
+	saturation: 1;
+	wash-color: none;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell:hover .RobotCellModel
+{
+	transform: scale3d( 1.05, 1.05, 1 );
+	brightness: 1.5;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell.AlreadyPurchased .AlreadyOwnedContainer
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell.AlreadyPurchased .Price,.StoreItem.StoreItemOverview .StoreItemContents .RobotCellsContainer .RobotCell.AlreadyPurchased .DiscountPrice
+{
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer
+{
+	flow-children: right;
+	width: 100%;
+	height: fill-parent-flow(1);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell
+{
+	width: fill-parent-flow(1);
+	height: 100%;
+	background-color: rgb(14, 15, 15);
+	margin-right: overviewCellMargin;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	tooltip-position: top;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell Label,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell Label,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell Label,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .CellDescription,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .CellDescription,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .CellDescription,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .CellDescription
+{
+	color: #ffe5c7b9;
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .CellTitle,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .CellTitle,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .CellTitle,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .CellTitle
+{
+	line-height: 1.1;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .BottomCellContents
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #100c0a ), to( #261a17 ) );
+	transition-property: transform, background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .BottomCellInfoContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellInfoContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .BottomCellInfoContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .BottomCellInfoContainer
+{
+	flow-children: down;
+	horizontal-align: right;
+	margin-right: 5%;
+	width: 46%;
+	margin-top: 17%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .BottomCellImage
+{
+	transition-property: transform, brightness;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell:hover .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell:hover .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell:hover .BottomCellImage,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell:hover .BottomCellImage
+{
+	transform: scale3d( 1.05, 1.05, 1 );
+	brightness: 1.5;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell:hover .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell:hover .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell:hover .BottomCellContents,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell:hover .BottomCellContents
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #17100d ), to( #3b1f1d ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell.AlreadyPurchased .AlreadyOwnedContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell.AlreadyPurchased .AlreadyOwnedContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell.AlreadyPurchased .AlreadyOwnedContainer,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell.AlreadyPurchased .AlreadyOwnedContainer
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell.AlreadyPurchased .Price,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell.AlreadyPurchased .DiscountPrice,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell.AlreadyPurchased .Price,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell.AlreadyPurchased .DiscountPrice,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell.AlreadyPurchased .Price,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell.AlreadyPurchased .DiscountPrice,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell.AlreadyPurchased .Price,.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell.AlreadyPurchased .DiscountPrice
+{
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .TreasureCell .BottomCellImage
+{
+	vertical-align: center;
+	height: 65%;
+	width: height-percentage(100%);
+	x: 6%;
+	y: -18%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell
+{
+	width: fill-parent-flow(1.6);
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .TopRightGodRays
+{
+	width: 200%;
+	height: 150%;
+	horizontal-align: center;
+	overflow: noclip;
+	y: -60%;
+	x: -15%;
+	hue-rotation: -190deg;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	saturation: 0.8;
+	opacity: 0.3;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell:hover .BottomCellContents
+{
+	background-color: gradient( radial, 30% 30%, 0% 0%, 80% 80%, from( #494d98 ), color-stop( 0.5, #363968 ), to( #0d0d13 ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellContents
+{
+	background-color: gradient( radial, 30% 30%, 0% 0%, 80% 80%, from( #24274a ), color-stop( 0.4, #21233f ), to( #060608 ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellImage
+{
+	vertical-align: center;
+	height: 105%;
+	width: height-percentage(100%);
+	overflow: noclip;
+	x: 8%;
+	y: -2%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .MidnightRunBundleSky
+{
+	width: 100%;
+	transform: scale3d( 1.4, 1.4, 1 );
+	x: -20%;
+	opacity: 0.5;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .MidnightRunBundleFloor
+{
+	width: 100%;
+	x: -20%;
+	y: 20%;
+	opacity: 0.5;
+	brightness: 0.5;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .SecretRoomPackCell .BottomCellInfoContainer
+{
+	margin-right: 7%;
+	width: 35%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .MidnightRunBundleCell .BottomCellImage
+{
+	vertical-align: center;
+	height: 60%;
+	width: height-percentage(100%);
+	x: 8%;
+	y: -18%;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell
+{
+	width: fill-parent-flow(1.6);
+	margin-right: 0px;
+	padding: 0px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0c1010 ), to( #161d1d ) );
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .BackgroundPatternContainer
+{
+	vertical-align: top;
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	opacity-brush: gradient( radial, 50% 0%, 0% 0%, 50% 90%, from( #ffffff ), color-stop( 0.5, #ffffff68 ), to( #ffffff00 ) );
+	opacity: 0.05;
+	border: 1px solid red;
+}
+
+.StoreItem.StoreItemOverview .StoreItemContents .BottomCellsContainer .PurchaseAllCell .BackgroundPatternContainer .BackgroundPattern
+{
+	horizontal-align: center;
+	overflow: noclip;
+	width: 220%;
+	height: 220%;
+	y: -120%;
+	wash-color: goldDark;
+	animation-name: SpinBackgroundPattern;
+	animation-duration: 120s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'SpinBackgroundPattern'
+{
+	0%
+	{
+		transform: rotateZ( 0deg );
+	}
+	
+	50%
+	{
+		transform: rotateZ( -180deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( -360deg );
+	}
+	
+}
+
+.AlreadyOwnedContainer
+{
+	flow-children: right;
+	margin-top: 2px;
+	visibility: collapse;
+}
+
+.AlreadyOwnedContainer .CheckIcon
+{
+	width: 20px;
+	height: 20px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #4bdc8f ), to( #1b7d56 ) );
+	vertical-align: center;
+	margin-right: 2px;
+}
+
+.AlreadyOwnedContainer .AlreadyOwnedLabel
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( #4bdc8f ), to( #1b7d56 ) );
+	font-weight: semi-bold;
+	vertical-align: center;
+}
+
+.PurchaseAllCell
+{
+	width: 100%;
+	flow-children: down;
+	padding-top: 8%;
+	tooltip-position: top;
+}
+
+.PurchaseAllCell.EverythingPurchased #PurchaseAllButton
+{
+	visibility: collapse;
+}
+
+.PurchaseAllCell.EverythingPurchased .PurchaseSummary
+{
+	padding-top: 50px;
+}
+
+.PurchaseAllCell .PurchaseSummary
+{
+	padding-top: 24px;
+	horizontal-align: center;
+	flow-children: down;
+	margin: 2px;
+}
+
+.PurchaseAllCell .PurchaseSummaryLabel
+{
+	color: textLighter;
+}
+
+.PurchaseAllCell #PurchsaeAllButton
+{
+	margin-top: 12px;
+	horizontal-align: center;
+	width: 65%;
+}
+
+.PurchaseAllCell .Price.PurchaseAllTotal
+{
+	color: magenta;
+}
+
+.PurchaseAllCell .Price.Discounted
+{
+	color: green;
+}
+
+.PurchaseAllCell #PurchaseAllButton
+{
+	horizontal-align: center;
+	margin-top: 10px;
+	ui-scale: 80%;
+}
+
+.DiscountActive .PurchaseAllCell .PurchaseAllLineItem.Discounted .Price.Default
+{
+	brightness: 0.1;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer .IconContainer
+{
+	height: 32px;
+	width: 32px;
+	margin: 4px;
+	margin-bottom: 8px;
+	overflow:noclip;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer DOTAHeroImage
+{
+	width: 32px;
+	height: 32px;
+	texture-sampling: point;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer #PackIcon
+{
+	vertical-align: center;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer .Owned
+{
+	saturation: 0;
+	brightness: 0.1;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer .Checkmark
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/check_fancy.vsvg");
+	background-size: cover;
+	width: 60%;
+	height: 60%;
+	horizontal-align: center;
+	vertical-align: center;
+	x: 8px;
+	y: 8px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #4bdc8f ), to( #1b7d56 ) );
+}
+
+.PurchaseAllCell #AutomatonIconsContainer .SecretRoomPack
+{
+	width: 100%;
+	height: 100%;
+	transform: translateY( 3px );
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/secret_room_pack_placeholder_small_icon_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.PurchaseAllCell #AutomatonIconsContainer #Plus
+{
+	vertical-align: center;
+	text-align: center;
+	font-weight: bold;
+	color: gold1;
+	margin: 0 4px;
+}
+
+.RobotBackgroundTexture
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("s2r://panorama/images/events/dark_carnival/store/ui/banner_texture_png.vtex");
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/banner_texture_gold_leaf_png.vtex");
+	background-size: cover;
+	background-position: center;
+}
+
+.StoreItem.StoreItemRobot .RobotBackground
+{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	opacity: 0.3;
+}
+
+.StoreItem.StoreItemRobot .AlreadyOwned
+{
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemRobot.AlreadyPurchased DOTADarkCarnivalPurchaseButton
+{
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemRobot.AlreadyPurchased .AlreadyOwned
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot.Axe .RobotBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/robot_background_png.vtex");
+	wash-color: rgb(255, 101, 101);
+}
+
+.StoreItem.StoreItemRobot.LegionCommander .RobotBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/robot_background_png.vtex");
+	wash-color: rgb(255, 207, 102);
+}
+
+.StoreItem.StoreItemRobot.Oracle .RobotBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/robot_background_png.vtex");
+	wash-color: rgb(239, 161, 255);
+}
+
+.StoreItem.StoreItemRobot.Morphling .RobotBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/robot_background_png.vtex");
+	wash-color: rgb(120, 154, 255);
+}
+
+.StoreItem.StoreItemRobot.Bristleback .RobotBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/placeholder/robot_background_png.vtex");
+	wash-color: rgb(255, 163, 106);
+}
+
+.StoreItem.StoreItemRobot .RobotFrame
+{
+	width: 1080px;
+	height: 760px;
+	horizontal-align: center;
+	vertical-align: center;
+	y: -24px;
+}
+
+.StoreItem.StoreItemRobot .RobotFrame .HeroIconImageContainer,.StoreItem.StoreItemRobot .RobotFrame .HeroPortraitImageContainer
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	y: -118px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( midnightDark ), to( purpleLight ) );
+	overflow: clip;
+	border: 3px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #69502f ), color-stop( 0.5, #F0CA83 ), to( #876b3e) );
+	box-shadow: 0px 8px 24px -2px rgba(0, 0, 0, 0.4);
+	width: 120px;
+	height: width-percentage( 56.25% );
+	border-radius: 8px;
+}
+
+.StoreItem.StoreItemRobot .RobotFrame .HeroIconImageContainer
+{
+	x: -314px;
+}
+
+.StoreItem.StoreItemRobot .RobotFrame .HeroIconImageContainer DOTAHeroImage
+{
+	width: 40px;
+	height: 40px;
+	horizontal-align: center;
+	vertical-align: center;
+	texture-sampling: point;
+}
+
+.StoreItem.StoreItemRobot .RobotFrame .HeroPortraitImageContainer
+{
+	x: 314px;
+}
+
+.StoreItem.StoreItemRobot .RobotFrame .HeroPortraitImageContainer DOTAHeroImage
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.StoreItem.StoreItemRobot .RobotFrameBackground
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 580px;
+	height: 668px;
+	border-radius: 50%;
+	y: -24px;
+	background-image: url("s2r://panorama/images/events/dark_carnival/store/ui/robot_frame_stars_png.vtex");
+	background-size: cover;
+}
+
+.StoreItem.StoreItemRobot .RobotModelPreviewContainer
+{
+	width: 1080px;
+	height: 760px;
+	y: -24px;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff00 ), color-stop( 0.1, #ffffff ), color-stop( 0.9, #ffffff ), to( #ffffff00 ) );
+	opacity-mask: url("s2r://panorama/images/events/dark_carnival/store/ui/robot_frame_mask_png.vtex");
+}
+
+.StoreItem.StoreItemRobot .RobotModelPreviewContainer .RobotModelPreview
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+	transform: translateY( -50px );
+}
+
+.StoreItem.StoreItemRobot.Axe .RobotModelPreview
+{
+	x: 40px;
+}
+
+.StoreItem.StoreItemRobot.Oracle .RobotModelPreview
+{
+	x: -45px;
+	y: -15px;
+}
+
+.StoreItem.StoreItemRobot.Bristleback .RobotModelPreviewContainer
+{
+	opacity-mask: url("s2r://panorama/images/events/dark_carnival/store/ui/robot_frame_mask_bristleback_png.vtex");
+}
+
+.StoreItem.StoreItemRobot.Bristleback .RobotModelPreview
+{
+	width: 120%;
+	height: 120%;
+	x: 40px;
+	y: -80px;
+}
+
+.StoreItem.StoreItemRobot.Morphling .RobotModelPreview
+{
+	width: 110%;
+	height: 110%;
+	y: -50px;
+}
+
+.StoreItem.StoreItemRobot.LegionCommander .RobotModelPreview
+{
+	width: 107%;
+	height: 107%;
+	y: -10px;
+	x: -40px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotHighlightsContainer
+{
+	flow-children: down;
+	padding: 32px;
+	width: 440px;
+	height: 100%;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotHighlightsContainer .RobotHeroNameContainer
+{
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotHighlightsContainer .RobotHeroNameContainer DOTAHeroImage
+{
+	vertical-align: center;
+	texture-sampling: point;
+	width: 28px;
+	height: width-percentage(100%);
+	margin-right: 6px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotHighlightsContainer .RobotHeroNameContainer Label
+{
+	vertical-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotHighlightsContainer .RobotSummary
+{
+	font-family: titleFont;
+	margin-bottom: 12px;
+	visibility: collapse;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer
+{
+	flow-children: down;
+	horizontal-align: right;
+	padding: 40px;
+	width: 440px;
+	margin-top: 16px;
+	margin-right: 16px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody
+{
+	margin-right: -40px;
+	font-size: 16px;
+	visibility: collapse;
+}
+
+.Axe.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody.Axe
+{
+	visibility: visible;
+}
+
+.LegionCommander.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody.LegionCommander
+{
+	visibility: visible;
+}
+
+.Oracle.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody.Oracle
+{
+	visibility: visible;
+}
+
+.Morphling.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody.Morphling
+{
+	visibility: visible;
+}
+
+.Bristleback.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .DetailsBody.Bristleback
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader
+{
+	visibility: collapse;
+}
+
+.Axe.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader.Axe
+{
+	visibility: visible;
+}
+
+.LegionCommander.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader.LegionCommander
+{
+	visibility: visible;
+}
+
+.Oracle.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader.Oracle
+{
+	visibility: visible;
+}
+
+.Morphling.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader.Morphling
+{
+	visibility: visible;
+}
+
+.Bristleback.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .SubHeader.Bristleback
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint
+{
+	font-size: 17px;
+	line-height: 24px;
+	color: white;
+	wash-color: goldDark;
+	brightness: 1.25;
+	text-shadow: 0px 2px 8px black;
+	visibility: collapse;
+}
+
+.Axe.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.Axe
+{
+	visibility: visible;
+}
+
+.LegionCommander.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.LegionCommander
+{
+	visibility: visible;
+}
+
+.Oracle.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.Oracle
+{
+	visibility: visible;
+}
+
+.Morphling.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.Morphling
+{
+	visibility: visible;
+}
+
+.Bristleback.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.Bristleback
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDetailsContainer .BulletPoint.Visible
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody
+{
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	line-height: 22px;
+	visibility: collapse;
+}
+
+.Axe.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody.Axe
+{
+	visibility: visible;
+}
+
+.LegionCommander.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody.LegionCommander
+{
+	visibility: visible;
+}
+
+.Oracle.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody.Oracle
+{
+	visibility: visible;
+}
+
+.Morphling.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody.Morphling
+{
+	visibility: visible;
+}
+
+.Bristleback.StoreItem.StoreItemRobot .StoreItemContents .RobotDescriptionContainer .DetailsBody.Bristleback
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer
+{
+	flow-children: down;
+	padding: 40px;
+	width: 440px;
+	margin-top: 16px;
+	margin-left: 16px;
+	margin-bottom: 24px;
+	overflow: squish scroll;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo
+{
+	width: 100%;
+	height: width-percentage( 56.25% );
+	border: 2px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #744E1C ), color-stop( 0.5, #F0CA83 ), to( #B28C50) );
+	visibility: collapse;
+}
+
+.Axe.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo.Axe
+{
+	visibility: visible;
+}
+
+.LegionCommander.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo.LegionCommander
+{
+	visibility: visible;
+}
+
+.Oracle.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo.Oracle
+{
+	visibility: visible;
+}
+
+.Morphling.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo.Morphling
+{
+	visibility: visible;
+}
+
+.Bristleback.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .HeroDemoVideo.Bristleback
+{
+	visibility: visible;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .DetailsHeader
+{
+	font-weight: semi-bold;
+	color: peachLight;
+	text-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .DetailsBody
+{
+	text-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .Spacer
+{
+	height: 16px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .RobotCustomAssetsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .RobotCustomAssetsContainer #HeroAbilityList
+{
+	min-height: 51px;
+	min-width: 51px;
+	flow-children: right;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .RobotCustomAssetsContainer #HeroAbilityList DOTAAbilityImage
+{
+	height: 48px;
+	margin: 4px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+	saturation: 0;
+	brightness: 0.2;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .RobotAssetsContainer .RobotCustomAssetsContainer #HeroAbilityList DOTAAbilityImage.HasModifiedAbilityIcon
+{
+	saturation: 1;
+	brightness: 1;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer
+{
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8b6c4f ), to( #4C4447) );
+	background-color: gradient( radial, 50% 40%, 0% 0%, 80% 70%, from( #383b78 ), color-stop( 0.5, #21233f ), to( #060608 ) );
+	box-shadow: 0px 4px 16px -1px rgba(0, 0, 0, 0.6);
+	width: 100%;
+	transition-property: background-color, border-brush;
+	transition-duration: 0.15s;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer .AutomotonBundleImage
+{
+	vertical-align: center;
+	width: 50%;
+	x: -5%;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer .BottomCellInfoContainer
+{
+	flow-children: down;
+	width: 60%;
+	vertical-align: center;
+	horizontal-align: right;
+	margin: 16px 4px;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer .BottomCellInfoContainer Label
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer .BottomCellInfoContainer .StoreCellPriceContainer
+{
+	margin-top: 4px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .AutomotonBundleImageContainer:hover
+{
+	background-color: gradient( radial, 50% 40%, 0% 0%, 80% 70%, from( #4c50a3 ), color-stop( 0.5, #2a2c54 ), to( #0f0f17 ) );
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF3D9 ), color-stop( 0.5, #7A7D89 ), to( #8AA4F2) );
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents #DemoHeroButton
+{
+	horizontal-align: center;
+	ui-scale: 75%;
+}
+
+.StoreItem.StoreItemRobot .StoreItemContents .ViewTreasureButton
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin: 32px;
+}
+
+.SubHeader
+{
+	horizontal-align: center;
+	color: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( goldDark ) );
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	font-size: 16px;
+	text-align: center;
+}
+
+.BulletPoint
+{
+	color: white;
+	wash-color: goldDark;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.DetailsBody
+{
+	horizontal-align: center;
+	text-align: center;
+	color: goldDark;
+	brightness: 1.25;
+	text-shadow: 0px 2px 8px black;
+}
+
+.PurchaseNote
+{
+	color: #FFB39966;
+	text-align: center;
+}
+
+.RewardLabelContainer
+{
+	horizontal-align: center;
+	y: 112px;
+	visibility: collapse;
+}
+
+.RewardLabelContainer .BannerFlag
+{
+	width: 100%;
+	horizontal-align: center;
+	height: 72px;
+	border-image-source: url("s2r://panorama/images/events/dark_carnival/artwork/banner_small_png.vtex");
+	border-width: 72px 50px 0px 50px;
+	border-image-slice: 100% 100px 0px 100px;
+	ui-scale: 60%;
+	margin: 0px 16px;
+	brightness: 0.4;
+	saturation: 1.3;
+	contrast: 1.1;
+}
+
+.RewardLabelContainer .SectionTitle
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: redDark;
+	letter-spacing: 0px;
+	font-weight: semi-bold;
+	text-shadow: 0px 1px 0px rgba(255, 244, 227, 0.05);
+	margin-top: -6px;
+	padding: 0px 50px;
+}
+
+.StoreItem.Treasure .StoreItemContents .CircusFloor
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	x: 220px;
+	y: 80px;
+	transform: rotateX( 45deg );
+	opacity-brush: gradient( linear, 0% 0%, 0% 50%, from( #FFFFFF00 ), to( #FFFFFF ) );
+}
+
+.StoreItem.Treasure .TreasureModelsContainer
+{
+	vertical-align: center;
+	width: 1920px;
+	height: 100%;
+	x: -160px;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.8, #FFFFFF ), to( #FFFFFF00 ) );
+}
+
+.StoreItem.Treasure .TreasureModelsContainer .TopRightGodRays
+{
+	width: 150%;
+	height: 150%;
+	horizontal-align: center;
+	overflow: noclip;
+	y: -70%;
+	hue-rotation: -190deg;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	saturation: 0.8;
+	opacity: 0.3;
+}
+
+.StoreItem.Treasure .TreasureDetailsContainer
+{
+	flow-children: down;
+	horizontal-align: right;
+	padding: 40px;
+	width: 540px;
+	height: 100%;
+}
+
+.StoreItem.Treasure .TreasureDetailsContainer .TreasureModelContainer
+{
+	width: 340px;
+	height: width-percentage(100%);
+	horizontal-align: center;
+}
+
+.StoreItem.Treasure .TreasureDetailsContainer .TreasureModelContainer #BackgroundFXWindow
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	wash-color: rgba(255, 211, 129, 0.7);
+	brightness: 1;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_circle_png.vtex") 1.0;
+	opacity: 0.5;
+	overflow: noclip;
+	x: 2%;
+}
+
+.StoreItem.Treasure .TreasureDetailsContainer .TreasureModelContainer .RewardTypeIcon.Treasure
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 100%;
+	height: width-percentage(100%);
+	y: -5%;
+}
+
+.StoreItem.Treasure .TreasureDetailsContainer .NotAvailable
+{
+	padding: 16px 24px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.StoreItem.Treasure .ViewTreasureButton
+{
+	margin-top: 12px;
+	horizontal-align: center;
+	ui-scale: 75%;
+}
+
+.LoadingFailedLabel,.LoadInProgress,.AlreadyOwned
+{
+	horizontal-align: center;
+	padding: 8px 16px;
+	background-color: rgba(5, 8, 8, 0.911);
+	border: 1px solid rgba(255, 255, 255, 0.02);
+	margin: 4px 0px;
+	flow-children: right;
+	border-radius: 4px;
+	color: textLighter;
+}
+
+.LoadingFailedLabel Label,.LoadInProgress Label,.AlreadyOwned Label
+{
+	vertical-align: center;
+	text-shadow: 0px 2px 8px black;
+	color: textLighter;
+}
+
+.LoadingFailedLabel .Spinner,.LoadInProgress .Spinner,.AlreadyOwned .Spinner
+{
+	margin: -2px;
+	margin-right: 12px;
+	width: 24px;
+	wash-color: textLighter;
+}
+
+.LoadingFailedLabel .Checkmark,.LoadInProgress .Checkmark,.AlreadyOwned .Checkmark
+{
+	margin-right: 8px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #4bdc8f ), to( #1b7d56 ) );
+}
+
+.ActivateButton
+{
+	margin: 4px 0px;
+}
+
+.AlreadyOwned Label
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( #4bdc8f ), to( #1b7d56 ) );
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+}
+
+.StoreItem.SecretRoom .AlreadyOwned,.StoreItem.SecretRoom .ActivateButton,.StoreItem.SecretRoom .PurchaseButton,.StoreItem.SecretRoom .LoadInProgress,.StoreItem.SecretRoom .LoadingFailedLabel
+{
+	visibility: collapse;
+}
+
+.StoreItem.SecretRoom.PassState_Loading .LoadInProgress,.StoreItem.SecretRoom.PassState_FailedToLoad .LoadingFailedLabel,.StoreItem.SecretRoom.PassState_NeedsActivate .ActivateButton,.StoreItem.SecretRoom.PassState_NotOwned .PurchaseButton,.StoreItem.SecretRoom.PassState_AlreadyOwned .AlreadyOwned
+{
+	visibility: visible;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .SecretRoomPackFloor
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 70%;
+	height: 60%;
+	y: -6%;
+	brightness: 0.5;
+	saturation: 0.9;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .TopRightGodRays
+{
+	width: 130%;
+	height: 150%;
+	horizontal-align: center;
+	overflow: noclip;
+	y: -70%;
+	hue-rotation: -190deg;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	saturation: 0.8;
+	opacity: 0.3;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .SmokeFX
+{
+	width: 100%;
+	height: 100%;
+	y: -28%;
+	opacity-brush: gradient( linear, 20% 0%, 80% 0%, from( #FFFFFF00 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.8, #FFFFFF ), to( #FFFFFF00 ) );
+	wash-color: rgb(255, 202, 142);
+	opacity: 0.2;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .SecretRoomsPackScene
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("s2r://panorama/images/masks/hero_model_preview_mask_loadout_psd.vtex");
+	opacity-mask-scale: 75%;
+	opacity-mask-position: 0% 8%;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MidnightRunTokens
+{
+	flow-children: right;
+	horizontal-align: center;
+	x: 8%;
+	y: 8%;
+	animation-name: BobReward;
+	animation-duration: 3s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MidnightRunTokens DOTADarkCarnivalToken
+{
+	ui-scale: 250%;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MidnightRunTokens .OverworldToken1
+{
+	transform: rotateZ( -5deg ) translateX( 28px );
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MidnightRunTokens .OverworldToken2
+{
+	transform: rotateZ( 5deg ) translateX( -28px );
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MusicPackImage
+{
+	horizontal-align: center;
+	width: 330px;
+	perspective: 500;
+	padding: 24px;
+	x: -8%;
+	y: 3%;
+	animation-name: BobReward;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MusicPackImage Image
+{
+	border: 2px solid #9b8171;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #5c5c5c ) );
+	transform: rotateY( 25deg );
+	box-shadow: 0px 8px 48px -2px rgba(0, 0, 0, 0.3);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MusicPackImage DOTAPreviewAudioButton
+{
+	ui-scale: 150%;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomsPackSceneContainer .MusicPackImage:hover
+{
+	brightness: 2;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .TempCreeps
+{
+	width: 400px;
+	height: 400px;
+	vertical-align: center;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomDetailsContainer
+{
+	flow-children: down;
+	horizontal-align: right;
+	padding: 40px;
+	width: 440px;
+	margin-bottom: 60px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer
+{
+	flow-children: down;
+	width: 440px;
+	padding: 40px;
+	height: 100%;
+	ui-scale: 85%;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .RoomsTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	color: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( goldDark ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom
+{
+	width: 100%;
+	margin: 2px;
+	flow-children: down;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .ViewInOverworldText
+{
+	visibility: collapse;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom.Released .LockedText
+{
+	visibility: collapse;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom.Released .ViewInOverworldText
+{
+	visibility: visible;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .PreviewIconContainer
+{
+	ignore-parent-flow: true;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #090a0d ), color-stop( 0.5, #090a0df5 ), to( #00000000 ) );
+	padding: 4px 64px;
+	margin-bottom: 6px;
+	flow-children: right;
+	vertical-align: bottom;
+	horizontal-align: center;
+	x: 4px;
+	border-top: 1px solid #ffd18b27;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.3, #FFFFFF ), color-stop( 0.7, #FFFFFF ), to( #FFFFFF00) );
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .PreviewIconContainer .PreviewIcon
+{
+	width: 20px;
+	opacity-brush: gradient( linear, 0% 10%, 0% 150%, from( goldLight ), to( goldDark ) );
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .PreviewIconContainer Label
+{
+	vertical-align: center;
+	color: gradient( linear, 0% 10%, 0% 150%, from( goldLight ), to( goldDark ) );
+	font-weight: semi-bold;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomBackground
+{
+	ignore-parent-flow: true;
+	height: 100%;
+	margin-top: 16px;
+	box-shadow: 0px 6px 24px -4px rgba(0, 0, 0, 0.6);
+	border-radius: 4px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomBackground .SecretRoomImageContainer
+{
+	margin: 4px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomBackground .SecretRoomImage
+{
+	brightness: 0.5;
+	blur: gaussian( 1px );
+	transition-property: brightness, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomBackground .SecretRoomFrame
+{
+	width: 100%;
+	height: 100%;
+	border-image-source: url("s2r://panorama/images/events/dark_carnival/overworld/room_frame_png.vtex");
+	border-width: 32px;
+	border-image-slice: 96px;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .SecretRoomFrame
+{
+	brightness: 2;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .SecretRoomImage
+{
+	transform: scale3d( 1.05, 1.05, 1 );
+	brightness: 1;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .PreviewIconContainer
+{
+	opacity: 1;
+	transition-duration: 0.1s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .RewardType1
+{
+	animation-name: BounceRewardTypeIcon;
+	animation-duration: 0.4s;
+	animation-delay: 0s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .RewardType2
+{
+	animation-name: BounceRewardTypeIcon;
+	animation-duration: 0.4s;
+	animation-delay: 0.1s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .RewardType3
+{
+	animation-name: BounceRewardTypeIcon;
+	animation-duration: 0.4s;
+	animation-delay: 0.2s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .RewardType4
+{
+	animation-name: BounceRewardTypeIcon;
+	animation-duration: 0.4s;
+	animation-delay: 0.3s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom:hover .RewardType5
+{
+	animation-name: BounceRewardTypeIcon;
+	animation-duration: 0.4s;
+	animation-delay: 0.4s;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom DOTADarkCarnivalToken
+{
+	horizontal-align: center;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomName
+{
+	color: goldLight;
+	color: gradient( linear, 0% 20%, 0% 100%, from( #FFF2DF ), color-stop( 0.5, #CCBF9D ), to( #8c9cb4 ) );
+	horizontal-align: center;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .SecretRoomLabel
+{
+	color: textLighter;
+	horizontal-align: center;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .RewardTypeList
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin: 4px 0px 36px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .RewardTypeList .RewardType
+{
+	flow-children: down;
+	margin: 0px 2px;
+	padding: 8px 0px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .RewardTypeList .RewardType .RewardTypeIcon
+{
+	width: 56px;
+	height: width-percentage(100%);
+	margin-bottom: -8px;
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .RewardTypeList .RewardType .RewardTypeIcon.Chest
+{
+	transform: translateY( -2px );
+}
+
+.StoreItem.SecretRoom .StoreItemContents .SecretRoomListContainer .SecretRoom .RewardTypeList .RewardType Label
+{
+	horizontal-align: center;
+	text-align: center;
+	color: goldLight;
+	font-weight: semi-bold;
+}
+
+@keyframes 'BounceRewardTypeIcon'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	30%
+	{
+		transform: translateY( -8px );
+	}
+	
+	100%
+	{
+		transform: translateY( 0px );
+	}
+	
+}
+
+@keyframes 'BobReward'
+{
+	0%
+	{
+		transform: translateY( -4px );
+	}
+	
+	100%
+	{
+		transform: translateY( 4px );
+	}
+	
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleDetailsContainer
+{
+	flow-children: down;
+	horizontal-align: right;
+	padding: 40px;
+	width: 440px;
+	margin-bottom: 60px;
+	margin-right: 180px;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer
+{
+	width: 100%;
+	height: 100%;
+	x: -120px;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .TopRightGodRays
+{
+	width: 130%;
+	height: 150%;
+	horizontal-align: center;
+	overflow: noclip;
+	y: -70%;
+	hue-rotation: -190deg;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	saturation: 0.8;
+	opacity: 0.3;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .SmokeFX
+{
+	width: 100%;
+	height: 100%;
+	y: -28%;
+	opacity-brush: gradient( linear, 20% 0%, 80% 0%, from( #FFFFFF00 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.8, #FFFFFF ), to( #FFFFFF00 ) );
+	wash-color: rgb(255, 202, 142);
+	opacity: 0.2;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .MidnightRunBundleFloor
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 70%;
+	y: -4%;
+	brightness: 0.5;
+	saturation: 0.9;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .MidnightRunBundleImageShadow
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 700px;
+	opacity: 0.8;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .FloorShadow
+{
+	width: 900px;
+	height: 120px;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgb(0, 0, 0), to( rgba(0, 0, 0, 0) ) );
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 80px;
+	opacity: 0.95;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .MidnightRunBundleImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .SeeingStoneImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .FireworksImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .BalloonImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .PieImage,.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages
+{
+	horizontal-align: center;
+	vertical-align: center;
+	animation-name: BobReward;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .MidnightRunBundleImage
+{
+	width: 320px;
+	y: 6%;
+	animation-duration: 2s;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .SeeingStoneImage
+{
+	width: 200px;
+	pre-transform-rotate2d: 15deg;
+	x: -15%;
+	y: -8%;
+	animation-duration: 2.5s;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyImage
+{
+	width: 290px;
+	x: 12%;
+	y: -18%;
+	animation-duration: 3s;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages
+{
+	x: -2%;
+	y: -33%;
+	animation-duration: 2.5s;
+	width: 400px;
+	height: 200px;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage
+{
+	width: 80px;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage1
+{
+	pre-transform-scale2d: 0.8;
+	brightness: 1;
+	x: -25%;
+	y: -2%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage2
+{
+	pre-transform-scale2d: 1;
+	brightness: 1;
+	x: -3%;
+	y: -20%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage3
+{
+	pre-transform-scale2d: 0.8;
+	brightness: 1;
+	x: 20%;
+	y: -8%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage4
+{
+	pre-transform-scale2d: 0.6;
+	brightness: 0.2;
+	x: -18%;
+	y: -40%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage5
+{
+	pre-transform-scale2d: 0.6;
+	brightness: 0.2;
+	x: 10%;
+	y: -40%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage6
+{
+	pre-transform-scale2d: 0.4;
+	brightness: 0.2;
+	x: -5%;
+	y: -60%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .CandyRerollImages .CandyRerollImage7
+{
+	pre-transform-scale2d: 0.4;
+	brightness: 0.2;
+	x: 15%;
+	y: -60%;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .FireworksImage
+{
+	width: 120px;
+	x: 15%;
+	y: -30%;
+	animation-duration: 2.5s;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .BalloonImage
+{
+	width: 250px;
+	x: 10%;
+	y: -15%;
+	animation-duration: 4s;
+}
+
+.StoreItem.MidnightRunBundle .StoreItemContents .MidnightRunBundleSceneContainer .PieImage
+{
+	width: 130px;
+	x: 15%;
+	y: 10%;
+	animation-duration: 3.5s;
+}
+
+.Act1TreasureScene
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	vertical-align: center;
+	horizontal-align: right;
+	overflow: noclip;
+	background-color: none;
+	opacity: 1;
+	transition-property: opacity, pre-transform-scale2d, brightness;
+	transition-duration: 0.5s, 0.2s;
+}
+
+.Act1TreasureScene.Initialize
+{
+	opacity: 1;
+}
+
+.StoreItem.AutomotonBundle .StoreItemContents .AutomtonBundleDetailsContainer
+{
+	flow-children: down;
+	padding: 40px;
+	width: 440px;
+	height: 100%;
+	margin-bottom: 60px;
+}
+
+.StoreItem.AutomotonBundle .AutomotonBundleFloor
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 70%;
+	x: 15%;
+	y: -4%;
+	brightness: 0.5;
+	saturation: 0.9;
+}
+
+.StoreItem.AutomotonBundle .AutomotonBundleImage
+{
+	horizontal-align: right;
+	vertical-align: center;
+	y: -5%;
+	x: 5%;
+	overflow: noclip;
+	width: 85%;
+	height: width-percentage(100%);
+}
+
+.StoreItem.AutomotonBundle .TopRightGodRays
+{
+	width: 130%;
+	height: 150%;
+	horizontal-align: center;
+	overflow: noclip;
+	y: -70%;
+	x: 10%;
+	hue-rotation: -190deg;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	saturation: 0.8;
+	opacity: 0.3;
+}
+
+.StoreItem.AutomotonBundle .SmokeFX
+{
+	width: 100%;
+	height: 100%;
+	x: 10%;
+	y: -28%;
+	opacity-brush: gradient( linear, 20% 0%, 80% 0%, from( #FFFFFF00 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.8, #FFFFFF ), to( #FFFFFF00 ) );
+	wash-color: rgb(255, 202, 142);
+	opacity: 0.2;
+}
+

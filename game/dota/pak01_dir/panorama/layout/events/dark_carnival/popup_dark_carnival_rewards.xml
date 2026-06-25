@@ -1,0 +1,257 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_rewards.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="LoadingScreen">
+			<Panel class="LoadingScreen">
+				<Image class="LoadingScreenPreview RewardPreview" id="LoadingScreenPreview" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="Emoticon">
+			<Panel class="Emoticon">
+				<DOTAEmoticon class="EmoticonPreview RewardPreview" id="EmoticonPreview" />
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="Spray">
+			<Panel class="Spray">
+				<Image class="SprayPreview RewardPreview" id="SprayPreview" />
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelMessage">
+			<Panel class="ChatWheelMessage">
+				<Panel class="ChatWheelMessageIcon" />
+				<Button id="ChatWheelMessageSoundButton" />
+				<Label html="true" class="ChatWheelMessageLabel" text="{s:chat_wheel_message}" />
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="ShowcaseDecoration">
+			<Panel class="ShowcaseDecoration">
+				<Panel id="ShowcaseRewardsList" />
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="CompletionSet">
+			<Panel class="CompletionSet">
+				<DOTAUIEconSetPreview class="CompletionSetPreview RewardPreview" id="EconSetPreview" />
+				<Panel class="SetInfoContainer">
+					<Label id="ItemName" text="Item Name " />
+					<Label id="CarriageName" class="LabelSmall" text="{s:train_car_name}" />
+				</Panel>
+				<Panel class="CompleteIcon" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTADarkCarnivalRewardsPopup class="PopupPanel DarkCarnivalRewards Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="ContentsBackground" />
+		<Panel class="Contents">
+			<Panel class="BackgroundTexture" />
+			<Panel class="NavigationContainer">
+				<Panel class="NavigationBackgroundTexture" />
+				<Panel class="NavigationDash" />
+				<Label class="TitleSmall RewardsPopupTitle" text="#DOTA_DarkCarnivalReward_Act1_Title" />
+				<Panel class="NavigationTabs">
+					<RadioButton id="Tab0" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_Coins )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(0)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Coin" reward-type="k_eDarkCarnivalRewardVisual_Coin" />
+					</RadioButton>
+					<RadioButton id="Tab1" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_Candy )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(1)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Candy" reward-type="k_eDarkCarnivalRewardVisual_CandyBag" />
+					</RadioButton>
+					<RadioButton id="Tab2" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_Treasures )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(2)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Chest" reward-type="k_eDarkCarnivalRewardVisual_Chest" />
+					</RadioButton>
+					<RadioButton id="Tab3" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_Goodies )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(3)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Tome" reward-type="k_eDarkCarnivalRewardVisual_Tome" />
+					</RadioButton>
+					<RadioButton id="Tab4" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_Oracle )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(4)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Tome" reward-type="k_eDarkCarnivalRewardVisual_Oracle" />
+					</RadioButton>
+					<RadioButton id="Tab5" class="TabItem" group="1" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnivalRewardType_CompletionSet )" onmouseout="UIHideTextTooltip()" onactivate="DarkCarnivalRewardsPopupSelectTab(5)">
+						<Panel class="PointerContainer">
+							<Panel class="Pointer" />
+						</Panel>
+						<Panel class="NavItemBg">
+							<Panel class="NavItemBgInner" />
+						</Panel>
+						<Panel class="HeroSetReward">
+							<Panel class="HeroSetIcon" />
+						</Panel>
+					</RadioButton>
+				</Panel>
+			</Panel>
+			<Panel id="PopupPagesContainer">
+				<DOTAParticleScenePanel class="TopRightGodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
+				<Panel id="CoinsPage" class="PopupPage ShowPage">
+					<Panel class="PagePreviewContainer">
+						<Panel class="ShadowContainer">
+							<Panel class="ShadowLarge" />
+							<Panel class="ShadowSmall" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Coin Large" reward-type="k_eDarkCarnivalRewardVisual_Coin" />
+					</Panel>
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_Coins" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalStore_CoinsInfo" />
+						<DOTADarkCarnivalButton class="Wide" text="#DOTA_Dark_Carnival_Store" onactivate="DOTAShowDarkCarnivalStoreItem(0); UIPopupButtonClicked();" />
+					</Panel>
+				</Panel>
+				<Panel id="CandyPage" class="PopupPage">
+					<Panel class="PagePreviewContainer">
+						<Panel class="ShadowContainer">
+							<Panel class="ShadowLarge" />
+							<Panel class="ShadowSmall" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Candy Large" reward-type="k_eDarkCarnivalRewardVisual_CandyBag" />
+					</Panel>
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_Candy" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalRewardType_Candy_Description" />
+						<DOTADarkCarnivalButton class="CandyworksClosedButton" text="#DOTA_CandyShop_Dark_Carnival_Title_Short" disabled="true" />
+						<DOTADarkCarnivalButton class="CandyworksOpenButton" text="#DOTA_CandyShop_Dark_Carnival_Title_Short" onactivate="DOTAShowDarkCarnivalCandyShopPage( false ); UIPopupButtonClicked();" />
+						<Label class="BodySmall PageInfoSmall CandyworksClosedNote" html="true" text="#DOTA_Dark_Carnival_CandyworksDisabled" />
+					</Panel>
+				</Panel>
+				<Panel id="TreasuresPage" class="PopupPage">
+					<DOTAScenePanel id="RobotTreasureCarouselScene" class="Act1TreasureScene" map="maps/events/dark_carnival/act1_treasure" hittest="false" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="true" camera="robot_treasure_carousel_2" light="versus_light" antialias="true" pin-fov="vertical" rotateonmousemove="true" yawmin="0" yawmax="0" pitchmin="0" pitchmax="0" />
+					<Panel class="PagePreviewContainer" />
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_Treasures" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalRewardType_Treasures_Description" />
+						<DOTADarkCarnivalButton class="Wide" text="#DOTA_DarkCarnivalReward_View_Treasure" onactivate="DOTAShowItemDefPage( 31200 ); UIPopupButtonClicked();" />
+					</Panel>
+				</Panel>
+				<Panel id="GoodiesPage" class="PopupPage">
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_Goodies" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalRewardType_Goodies_Description" />
+						<Panel class="GoodiesContainer">
+							<Panel class="GoodieContainer">
+								<Panel class="GoodiePreview LoadingScreens">
+									<Panel class="ShadowContainer">
+										<Panel class="ShadowLarge" />
+										<Panel class="ShadowSmall" />
+									</Panel>
+									<Panel class="LoadingScreensGrid" id="LoadingScreensContainer" />
+								</Panel>
+								<Label class="TitleSmall GoodieTitle" text="#DOTA_Armory_Category_LoadingScreens" />
+							</Panel>
+							<Panel style="width: 16px;" />
+							<Panel class="GoodieContainer">
+								<Panel class="GoodiePreview Sprays">
+									<Panel class="ShadowContainer">
+										<Panel class="ShadowLarge" />
+										<Panel class="ShadowSmall" />
+									</Panel>
+									<Panel class="SpraysGrid" id="SpraysContainer" />
+								</Panel>
+								<Label class="TitleSmall GoodieTitle" text="#DOTA_ChatWheelType_Sprays" />
+							</Panel>
+							<Panel style="width: 16px;" />
+							<Panel class="GoodieContainer">
+								<Panel class="GoodiePreview Emoticons">
+									<Panel class="ShadowContainer">
+										<Panel class="ShadowLarge" />
+										<Panel class="ShadowSmall" />
+									</Panel>
+									<Panel class="EmoticonsGrid" id="EmoticonsContainer" />
+								</Panel>
+								<Label class="TitleSmall GoodieTitle" text="#DOTA_GlobalItems_Emoticons" />
+							</Panel>
+							<Panel style="width: 16px;" />
+							<Panel class="GoodieContainer">
+								<Panel class="GoodiePreview ChatWheelMessages">
+									<Panel class="ShadowContainer">
+										<Panel class="ShadowLarge" />
+										<Panel class="ShadowSmall" />
+									</Panel>
+									<Panel class="ChatWheelMessagesGrid" id="ChatMessageContainer" />
+								</Panel>
+								<Label class="TitleSmall GoodieTitle" text="Chat Wheel" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="OraclePage" class="PopupPage">
+					<Panel class="PagePreviewContainer">
+						<Panel class="ShadowContainer">
+							<Panel class="ShadowLarge" />
+							<Panel class="ShadowSmall" />
+						</Panel>
+						<DOTADarkCarnivalReward class="RewardTypeIcon Oracle Large" reward-type="k_eDarkCarnivalRewardVisual_Oracle" />
+					</Panel>
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_Oracle" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalRewardType_Oracle_Description" />
+						<Label class="OracleLockedText" text="#DOTA_Dark_Carnival_FortuneTellerDisabled" />
+						<DOTADarkCarnivalButton id="FortuneTellerButton" class="Wide" text="#DOTA_DarkCarnival_SeeTheOracle" onactivate="DOTAShowDarkCarnivalFortuneTellerPage( 11 ); UIPopupButtonClicked();" />
+					</Panel>
+				</Panel>
+				<Panel id="HeroSetPage" class="PopupPage">
+					<Panel class="PageInfoContainer">
+						<Label class="TitleMedium PageTitle" text="#DOTA_DarkCarnivalRewardType_CompletionSet" />
+						<Label class="BodyMedium PageInfo" html="true" text="#DOTA_DarkCarnivalRewardType_CompletionSet_Description" />
+						<Panel class="SetsContainer">
+							<Panel id="CompletionSetsContainer" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="GoodiesFooter">
+					<Panel id="ShowcaseDecorationsContainer" />
+					<Label class="TitleSmall GoodieTitle" text="#DOTA_DarkCarnivalReward_ShowcaseDecorations" />
+				</Panel>
+				<Panel class="RewardCountContainer">
+					<Label class="LabelLarge ClaimedLabel" text="#DOTA_Claimed" />
+					<Label class="DisplayLarge ClaimedCount" text="{d:main_nodes_complete}" />
+					<Label class="LabelSmall" html="true" text="#DOTA_DarkCarnival_RewardsPopupClaimedFree" />
+					<Panel class="RewardCountDivider" />
+					<Label class="DisplayLarge ClaimedCount" text="{d:premium_nodes_complete}" />
+					<Label class="LabelSmall" html="true" text="#DOTA_DarkCarnival_RewardsPopupClaimedPaid" />
+					<Panel class="InfoIcon" onactivate="UIPopupButtonClicked(); DOTAShowDarkCarnivalStoreItem( 34452 )" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_SecretRoomsPack_RequiredForRewardsClaims )" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="ClosePopupButton" onactivate="UIPopupButtonClicked()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</DOTADarkCarnivalRewardsPopup>
+</root>

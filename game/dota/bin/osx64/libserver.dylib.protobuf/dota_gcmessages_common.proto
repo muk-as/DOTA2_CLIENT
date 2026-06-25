@@ -296,6 +296,7 @@ message CMatchPlayerTimedStats {
 	optional uint32 triple_kills = 40;
 	optional uint32 rampages = 41;
 	repeated .CMatchPlayerTimedCustomStat custom_stats = 42;
+	optional uint32 summon_kill_gold = 43;
 }
 
 message CMatchTeamTimedStats {
@@ -1865,7 +1866,7 @@ message CDotaMsgStructuredTooltipProperties {
 	message Attribute {
 		optional string internal_name = 1;
 		optional string localized_name_text = 2;
-		optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
+		optional .CDotaMsgStructuredTooltipProperties.EAttributeType resolved_type = 3 [default = kUnknown];
 		optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 4;
 	}
 
@@ -1937,6 +1938,8 @@ message CDotaMsgStructuredTooltipProperties {
 		kAbilityDefinedDamage = 20;
 		kDispellability = 21;
 		kSpellImmunityPiercing = 22;
+		kHealthPercentageAsPureDamage = 23;
+		kPhysicalDamagePercentage = 24;
 	}
 
 	optional string ability_name_loc_token = 1;

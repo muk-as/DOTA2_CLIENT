@@ -1,0 +1,32 @@
+import "events.proto";
+import "event_gcmessages_common.proto";
+
+enum EGCEventClientMessages {
+	k_EMsgClientToGCGetEventPoints = 15000;
+	k_EMsgClientToGCGetEventPointsResponse = 15001;
+	k_EMsgGCToClientEventPointsUpdated = 15002;
+}
+
+message CMsgClientToGCGetEventPoints {
+	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
+	optional uint32 account_id = 2;
+}
+
+message CMsgClientToGCGetEventPointsResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_eTimeout = 4;
+		k_eNotAllowed = 5;
+	}
+
+	optional .CMsgClientToGCGetEventPointsResponse.EResponse result = 1 [default = k_eInternalError];
+	optional .CMsgUserEventPoints event_points = 2;
+}
+
+message CMsgGCToClientEventPointsUpdated {
+	optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
+	optional .CMsgUserEventPoints event_points = 2;
+}

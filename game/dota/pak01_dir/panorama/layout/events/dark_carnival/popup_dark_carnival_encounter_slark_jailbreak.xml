@@ -1,0 +1,263 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_slark_jailbreak.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Panel class="Check" />
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+		<snippet name="LifeIcon">
+			<Panel class="LifeIcon">
+				<Image class="Life" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/slark_breakout_boot_idle_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="FloatingTextBoot">
+			<Panel class="FloatingText">
+				<Label text="+{s:bonus_item_name}" />
+			</Panel>
+		</snippet>
+		<snippet name="FloatingTextBonusPoints">
+			<Panel class="FloatingText">
+				<Label text="+{d:number_of_bonus_points}" />
+			</Panel>
+		</snippet>
+		<snippet name="FloatingText2X">
+			<Panel class="FloatingText">
+				<Label text="2X" />
+			</Panel>
+		</snippet>
+		<snippet name="FloatingText3X">
+			<Panel class="FloatingText">
+				<Label text="3X" />
+			</Panel>
+		</snippet>
+		<snippet name="FloatingText4X">
+			<Panel class="FloatingText">
+				<Label text="4X" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel SlarkJailbreak Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTASlarkJailbreakCancelPressed()">
+		<Panel id="MainContents">
+			<Panel class="GameScreen">
+				<Panel id="PixelArtScaler">
+					<DOTADarkCarnivalSlarkJailbreakGamePanel id="gamePanel">
+						<Image class="Curtains" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/background_framing_curtains_png.vtex" />
+						<Image class="RingMasterHead" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/background_framing_head_png.vtex" />
+						<Panel class="PlayAreaBlack" />
+						<DOTADarkCarnivalSlarkJailbreakRenderer class="DimmedWhenPaused MonoNumbersFont" id="rendererPanel" backgroundImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/background_png.vtex" backgroundFrameWidth="312" backgroundFrameHeight="432" blocksImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/blocks_png.vtex" blocksFrameWidth="24" blocksFrameHeight="12" blockHalvesImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/block_halves_png.vtex" blockHalvesFrameWidth="12" blockHalvesFrameHeight="12" blockShadowImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_block_shadow_png.vtex" blockShadowFrameWidth="24" blockShadowFrameHeight="12" blockShadowHalfImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_block_half_shadow_png.vtex" blockShadowHalfFrameWidth="12" blockShadowHalfFrameHeight="12" breakBasicImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_standard_block_break_png.vtex" breakBasicFrameWidth="48" breakBasicFrameHeight="36" breakBasicHalfImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_standard_half_block_break_png.vtex" breakBasicHalfFrameWidth="36" breakBasicHalfFrameHeight="36" breakDurableImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_tough_block_break_png.vtex" breakDurableFrameWidth="48" breakDurableFrameHeight="36" breakDurableHalfImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_tough_half_block_break_png.vtex" breakDurableHalfFrameWidth="36" breakDurableHalfFrameHeight="36" bounceDurableImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/bounce_durable_png.vtex" bounceDurableFrameWidth="26" bounceDurableFrameHeight="14" bounceDurableHalfImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/bounce_durable_half_png.vtex" bounceDurableHalfFrameWidth="14" bounceDurableHalfFrameHeight="14" bounceMetalImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/unbreakable_block_shimmer_on_hit_png.vtex" bounceMetalFrameWidth="24" bounceMetalFrameHeight="12" bounceMetalHalfImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/unbreakable_block_half_shimmer_on_hit_png.vtex" bounceMetalHalfFrameWidth="12" bounceMetalHalfFrameHeight="12" shimmerExtraLifeImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/slark_breakout_1up_shimmer_png.vtex" shimmerExtraLifeFrameWidth="24" shimmerExtraLifeFrameHeight="12" hitEffectSparkImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/slark_breakout_standard_hit_png.vtex" hitEffectSparkFrameWidth="16" hitEffectSparkFrameHeight="16" hitEffectMetalImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/unbreakable_tink_png.vtex" hitEffectMetalFrameWidth="16" hitEffectMetalFrameHeight="16" hitEffectEnergyImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_particle_energy_hit_3f_png.vtex" hitEffectEnergyFrameWidth="16" hitEffectEnergyFrameHeight="16" coinsImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/coins_png.vtex" coinsFrameWidth="8" coinsFrameHeight="8" cartImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cart_png.vtex" cartFrameWidth="81" cartFrameHeight="63" cartBackImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cart_backpanel_png.vtex" cartBackFrameWidth="81" cartBackFrameHeight="63" cartWheelsImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cartwheels_4f_png.vtex" cartWheelsFrameWidth="81" cartWheelsFrameHeight="63" cartTopIdleImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cart_top_energy_idle_3f_png.vtex" cartTopIdleFrameWidth="81" cartTopIdleFrameHeight="63" cartTopHitImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cart_top_energy_hit_overlay_4f_png.vtex" cartTopHitFrameWidth="81" cartTopHitFrameHeight="63" cartTopSurgeImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_cart_top_energy_hit_3f_png.vtex" cartTopSurgeFrameWidth="48" cartTopSurgeFrameHeight="15" slarkImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_slark_png.vtex" slarkFrameWidth="81" slarkFrameHeight="63" bootIdleImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/slark_breakout_boot_idle_png.vtex" bootIdleFrameWidth="28" bootIdleFrameHeight="28" bootSpinImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/slark_breakout_boot_spin_png.vtex" bootSpinFrameWidth="28" bootSpinFrameHeight="28" aimPipImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/aim_pip_png.vtex" aimPipFrameWidth="8" aimPipFrameHeight="8" goImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_go_symbol_png.vtex" goFrameWidth="26" goFrameHeight="38" arrowRightImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/arrow_right_png.vtex" arrowRightFrameWidth="18" arrowRightFrameHeight="18" bottomFieldImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_forcefield_bottom_png.vtex" bottomFieldFrameWidth="24" bottomFieldFrameHeight="12" topFieldImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_forcefield_top_png.vtex" topFieldFrameWidth="24" topFieldFrameHeight="12" topFieldLeftImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_forcefield_top_left_mouth_png.vtex" topFieldLeftFrameWidth="24" topFieldLeftFrameHeight="12" topFieldRightImage="s2r://panorama/images/events/dark_carnival/slark_jailbreak/breakout_forcefield_top_right_mouth_png.vtex" topFieldRightFrameWidth="24" topFieldRightFrameHeight="12" />
+						<Image class="StatusFrame" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/status_frame_png.vtex" />
+						<Image class="RingMasterHandLeft" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/background_framing_hand_left_png.vtex" />
+						<Image class="RingMasterHandRight" src="s2r://panorama/images/events/dark_carnival/slark_jailbreak/background_framing_hand_right_png.vtex" />
+					</DOTADarkCarnivalSlarkJailbreakGamePanel>
+				</Panel>
+				<Panel id="FloatingLabelContainer" />
+				<Panel class="HeaderStats">
+					<Panel class="Stat Lives">
+						<Label class="Title" text="#DOTA_DarkCarnival_SlarkJailbreak_Lives" />
+						<Label class="Value MonoNumbersFont" id="LivesRemainingLabel" text="3" />
+						<Panel class="Count" id="LifeIconContainer" />
+					</Panel>
+					<Panel class="Stat Level">
+						<Label class="Title" text="#DOTA_DarkCarnival_SlarkJailbreak_Level" />
+						<Label class="Value MonoNumbersFont" id="LevelNumberLabel" text="{d:slark_current_level}" />
+					</Panel>
+					<Panel class="Stat Score">
+						<Label class="Title" text="#DOTA_DarkCarnival_SlarkJailbreak_Score" />
+						<DOTAIncrementingLabel class="Value MonoNumbersFont" id="ScoreLabel" increment="100" />
+					</Panel>
+				</Panel>
+				<Panel class="Interstitial">
+					<Label class="Message LabelMedium" text="#DOTA_DarkCarnival_SlarkJailbreak_Level" />
+					<Label class="Level" id="InterstitialLevelNumberLabel" text="{d:slark_current_level}" />
+				</Panel>
+				<Panel class="InterstitialStoryUnlockedPanel">
+					<Label class="Message LabelMedium" text="STORY UNLOCKED" />
+					<Panel class="Check Reward" />
+					<Panel class="TokensContainer">
+						<DOTADarkCarnivalToken class="TokenName_MinigameUnlock TokenAct11 LargeToken" oltipstyle="none" />
+					</Panel>
+				</Panel>
+				<Panel class="ControlsHint">
+					<Panel class="MoveHint">
+						<Panel class="ControlKey">
+							<Panel class="KeyText Space" />
+						</Panel>
+						<Label class="LabelLarge" text="#DOTA_DarkCarnival_SlarkJailbreak_MoveHint" />
+					</Panel>
+					<Panel class="LaunchHint">
+						<Panel class="ControlKey">
+							<Panel class="KeyText Space" />
+						</Panel>
+						<Label class="LabelLarge" text="#DOTA_DarkCarnival_SlarkJailbreak_LaunchHint" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="DebugButtons" class="DebugButtons MainBranchOnly Hide">
+				<TextButton text="+ Life" onactivate="DOTASlarkJailbreakDebugAddLife()" />
+				<TextButton text="Reload Level" onactivate="DOTASlarkJailbreakDebugReloadLevel()" />
+				<TextButton text="End Level" onactivate="DOTASlarkJailbreakDebugEndLevel( false )" />
+				<TextButton text="End Level + Unlock Story" onactivate="DOTASlarkJailbreakDebugEndLevel( true )" />
+				<TextButton text="Skip Level" onactivate="DOTASlarkJailbreakDebugSkipLevel()" />
+				<TextButton text="Reset Score" onactivate="DOTASlarkJailbreakResetScoreOverride()" />
+			</Panel>
+			<Panel class="MainMenuContainer">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_SlarkJailbreak_Title" />
+						<Label class="Subtitle" text="#DOTA_DarkCarnival_SlarkJailbreak_GameDesc" />
+					</Panel>
+					<Panel class="ColumnContainer">
+						<Panel class="Column First">
+							<Panel id="Controls" class="Section">
+								<Label class="SectionHeader" text="#DOTA_Crownfall_Overworld_HowToPlay" />
+								<Panel class="Quadrant">
+									<Panel class="ControlsContents">
+										<Panel class="KeysRow">
+											<Panel class="ControlKey">
+												<Label class="KeyText" text="A" />
+											</Panel>
+											<Panel class="ControlKey">
+												<Label class="KeyText" text="D" />
+											</Panel>
+										</Panel>
+										<Panel class="KeysRow">
+											<Panel class="ControlKey">
+												<Panel class="KeyText Back" />
+											</Panel>
+											<Panel class="ControlKey">
+												<Panel class="KeyText Forward" />
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_SlarkJailbreak_ControlPaddle" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="Quadrant">
+									<Panel class="ControlsContents">
+										<Panel class="KeysRow">
+											<Panel class="ControlKey">
+												<Panel class="KeyText Space" />
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_SlarkJailbreak_ControlLaunch" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="SectionSpacer" />
+							<Panel class="Section">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Scoring" />
+								<Panel id="ScoreList" class="DescriptionContainer">
+									<Panel class="Row">
+										<Label class="Details" text="#DOTA_DarkCarnival_SlarkJailbreak_Scoring_PerBlock" />
+										<Label class="DetailsValue" text="{d:score_per_block}" />
+									</Panel>
+									<Panel class="Row">
+										<Label class="Details" text="#DOTA_DarkCarnival_SlarkJailbreak_Scoring_PerBonusBlock" />
+										<Label class="DetailsValue" text="{d:score_per_bonus_block}" />
+									</Panel>
+									<Panel class="Row">
+										<Label class="Details" text="#DOTA_DarkCarnival_SlarkJailbreak_Scoring_PerLevel" />
+										<Label class="DetailsValue" text="{d:score_per_level}" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="Scoring" class="Column Last">
+							<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+								<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="Rewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="RewardsList" class="RewardsSection" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton id="PlayButton" class="StartGameButton Wide" text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTASlarkJailbreakStartGame()" />
+				</Panel>
+			</Panel>
+			<Panel class="PausedMenuContainer">
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Paused" />
+					</Panel>
+				</Panel>
+				<Panel class="PausedMenuButtons">
+					<DOTADarkCarnivalButton id="ResumeButton" class="ResumeButton UltraWide" text="#DOTA_DarkCarnival_Lockpicking_Resume" onactivate="DOTASlarkJailbreakUnpause()" />
+					<Panel class="Dash" />
+					<Label class="ExitGameButton LabelButton LabelMedium" text="#DOTA_DarkCarnival_Lockpicking_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+				</Panel>
+			</Panel>
+			<Panel class="PostGameMenuContainer" hittest="false">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body" hittest="false">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_GameOver" />
+					</Panel>
+					<Panel id="PostGameScore" class="Section">
+						<Panel class="DescriptionContainer">
+							<Panel class="Row TotalScore">
+								<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_ScoringTotal" />
+								<Label class="DetailsValue" text="{d:total_score}" />
+							</Panel>
+						</Panel>
+						<Panel class="NewHighScoreContainer">
+							<Label class="NewHighScoreLabel LabelMedium" text="#DOTA_DarkCarnival_Minigames_NewHighScore" />
+						</Panel>
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="PostGameRewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="PostGameRewardsList" class="RewardsSection" />
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+						<DelayLoadList id="PostGameLeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton class="MainMenuButton Wide" text="#DOTA_DarkCarnival_Lockpicking_PlayAgain" onactivate="DOTASlarkJailbreakShowMainMenu()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="CloseEncounterButton" onactivate="UIPopupButtonClicked()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</Panel>
+</root>

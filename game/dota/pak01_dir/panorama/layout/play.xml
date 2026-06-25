@@ -61,6 +61,62 @@
 				</Button>
 			</Panel>
 		</snippet>
+		<snippet name="Season_Dark_Carnival_CustomGamePlaySection">
+			<Panel class="Fall2021CustomGamePlaySection">
+				<Panel class="Divider" />
+				<Panel id="AghanimText">
+					<Label id="AghanimTitle" class="AghanimDescription" text="#DOTA_Aghanim_PlayLabel_Title" />
+					<Label id="AghanimLearnMore" text="#DOTA_LearnMore" onactivate="DOTAAghanimMoreInfo()" />
+				</Panel>
+				<Panel id="DifficultySelector" class="TopBottomFlow">
+					<Label class="DifficultySelectorTitle" text="#DOTA_TI10_EventGame_PlayMenu_SelectDifficuly" />
+					<ToggleButton class="CustomGameDifficultyButton" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameDifficulty1">
+						<Panel class="CustomGameLevelIcon" />
+						<Label class="CustomGameDifficultyTitle" text="#TI10_EventGame_AscensionName_0" />
+					</ToggleButton>
+					<ToggleButton class="CustomGameDifficultyButton" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameDifficulty2">
+						<Panel class="CustomGameLevelIcon" />
+						<Label class="CustomGameDifficultyTitle" text="#TI10_EventGame_AscensionName_1" />
+						<Panel class="AscensionModifierIcon" id="Ascension1" onmouseover="UIShowTitleTextTooltip( #TI10_EventGame_AscensionName_1, #DOTA_AghsLab_AscensionModifier_1 );" onmouseout="UIHideTitleTextTooltip();" />
+					</ToggleButton>
+					<ToggleButton class="CustomGameDifficultyButton" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameDifficulty3">
+						<Panel class="CustomGameLevelIcon" />
+						<Label class="CustomGameDifficultyTitle" text="#TI10_EventGame_AscensionName_2" />
+						<Panel class="AscensionModifierIcon" id="Ascension2" onmouseover="UIShowTitleTextTooltip( #TI10_EventGame_AscensionName_2, #DOTA_AghsLab_AscensionModifier_2 );" onmouseout="UIHideTitleTextTooltip();" />
+					</ToggleButton>
+					<ToggleButton class="CustomGameDifficultyButton" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameDifficulty4">
+						<Panel class="CustomGameLevelIcon" />
+						<Label class="CustomGameDifficultyTitle" text="#TI10_EventGame_AscensionName_3" />
+						<Panel class="AscensionModifierIcon" id="Ascension3" onmouseover="UIShowTitleTextTooltip( #TI10_EventGame_AscensionName_3, #DOTA_AghsLab_AscensionModifier_3 );" onmouseout="UIHideTitleTextTooltip();" />
+					</ToggleButton>
+					<ToggleButton class="CustomGameDifficultyButton" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameDifficulty5">
+						<Panel class="CustomGameLevelIcon" />
+						<Label class="CustomGameDifficultyTitle" text="#TI10_EventGame_AscensionName_4" />
+						<Panel class="AscensionModifierIcon" id="Ascension4" onmouseover="UIShowTitleTextTooltip( #TI10_EventGame_AscensionName_4, #DOTA_AghsLab_AscensionModifier_4 );" onmouseout="UIHideTitleTextTooltip();" />
+					</ToggleButton>
+					<ToggleButton class="CustomGameDifficultyButton Challenge" onactivate="DOTAPlayMenuChangeCustomGameDifficulty()" id="CustomGameChallengeToggle">
+						<Panel class="CustomGameLevelIcon" />
+						<Panel id="ChallengeText">
+							<Label class="CustomGameDifficultyTitle Challenge Title" text="#TI10_EventGame_ChallengeName_Title" />
+							<Label class="CustomGameDifficultyTitle Challenge Countdown" text="#TI10_EventGame_ChallengeName_Countdown" />
+						</Panel>
+					</ToggleButton>
+				</Panel>
+				<Button id="BlessingSkillTreeButton" onactivate="DOTAShowBPFall2021LabyrinthPage();DOTAPlayPanelCloseButtonClicked(false)">
+					<Panel class="BlessingsIcon Left" />
+					<Label class="BlessingsButtonTextView" text="#DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreeView" />
+					<Panel class="BlessingsPurchase">
+						<Label class="BlessingsButtonTextPurchase" text="#DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreePurchase" />
+						<Panel class="BlessingsButtonTextFragmentsContainer">
+							<Label class="BlessingsButtonTextFragments" text="{d:arcane_fragments}" />
+							<Panel id="AvailableFragmentsIcon" class="BlessingsIcon Purchase" />
+							<Label class="BlessingsButtonTextFragments" text="#DOTA_FALL2021_EventGame_PlayMenu_BlessingsTreeFragments" />
+						</Panel>
+					</Panel>
+					<Panel class="BlessingsIcon Right" />
+				</Button>
+			</Panel>
+		</snippet>
 		<snippet name="Season_Diretide_CustomGamePlaySection">
 			<Panel class="Diretide2020CustomGamePlaySection">
 				<Panel class="DiretideLogo" />
@@ -418,7 +474,10 @@
 						</Panel>
 						<DropDown id="BotScriptDD" />
 						<Panel id="BotScriptDedicatedChoices" class="BotSectionColumn TopBottomFlow">
-							<ToggleButton selected="true" id="BotScriptIndexMask_0" class="Checkbox BotScriptToggle ValveBots" text="#DOTA_Lobby_BotScriptIndex_Valve" onactivate="DOTABotScriptIndexChecked(0)" />
+							<Panel class="LeftRightFlow FullWidth">
+								<ToggleButton selected="true" id="BotScriptIndexMask_0" class="Checkbox BotScriptToggle ValveBots" text="#DOTA_Lobby_BotScriptIndex_Valve" onactivate="DOTABotScriptIndexChecked(0)" />
+								<Panel class="EligibleForEventProgress" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_TooltipEligibleForEventProgress )" onmouseout="UIHideTextTooltip()" />
+							</Panel>
 							<ToggleButton selected="true" id="BotScriptIndexMask_1" class="Checkbox BotScriptToggle" text="#DOTA_Lobby_BotScriptIndex_Workshop1" onactivate="DOTABotScriptIndexChecked(1)" />
 							<ToggleButton selected="true" id="BotScriptIndexMask_2" class="Checkbox BotScriptToggle" text="#DOTA_Lobby_BotScriptIndex_Workshop2" onactivate="DOTABotScriptIndexChecked(2)" />
 							<ToggleButton selected="true" id="BotScriptIndexMask_3" class="Checkbox BotScriptToggle" text="#DOTA_Lobby_BotScriptIndex_Workshop3" onactivate="DOTABotScriptIndexChecked(3)" />
@@ -429,8 +488,14 @@
 								<Label class="CoopOrSolo" text="#DOTA_Lobby_BotDifficulty" />
 								<ToggleButton selected="true" id="BotDifficultyMask_1" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_easy" onactivate="DOTABotDifficultyChecked(1)" />
 								<ToggleButton selected="true" id="BotDifficultyMask_2" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_medium" onactivate="DOTABotDifficultyChecked(2)" />
-								<ToggleButton selected="true" id="BotDifficultyMask_3" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_hard" onactivate="DOTABotDifficultyChecked(3)" />
-								<ToggleButton selected="true" id="BotDifficultyMask_4" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_unfair" onactivate="DOTABotDifficultyChecked(4)" />
+								<Panel class="LeftRightFlow FullWidth">
+									<ToggleButton selected="true" id="BotDifficultyMask_3" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_hard" onactivate="DOTABotDifficultyChecked(3)" />
+									<Panel class="EligibleForEventProgress" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_TooltipEligibleForEventProgress )" onmouseout="UIHideTextTooltip()" />
+								</Panel>
+								<Panel class="LeftRightFlow FullWidth">
+									<ToggleButton selected="true" id="BotDifficultyMask_4" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_unfair" onactivate="DOTABotDifficultyChecked(4)" />
+									<Panel class="EligibleForEventProgress" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_TooltipEligibleForEventProgress )" onmouseout="UIHideTextTooltip()" />
+								</Panel>
 								<RadioButton selected="true" id="BotDifficulty_1" class="PlayTabRadio BotSoloDifficulty" group="BotDifficultyGroup" text="#DOTA_Lobby_BotDifficulty_easy" onactivate="DOTABotSoloDifficultyChecked(1)" />
 								<RadioButton id="BotDifficulty_2" class="PlayTabRadio BotSoloDifficulty" group="BotDifficultyGroup" text="#DOTA_Lobby_BotDifficulty_medium" onactivate="DOTABotSoloDifficultyChecked(2)" />
 								<RadioButton id="BotDifficulty_3" class="PlayTabRadio BotSoloDifficulty" group="BotDifficultyGroup" text="#DOTA_Lobby_BotDifficulty_hard" onactivate="DOTABotSoloDifficultyChecked(3)" />

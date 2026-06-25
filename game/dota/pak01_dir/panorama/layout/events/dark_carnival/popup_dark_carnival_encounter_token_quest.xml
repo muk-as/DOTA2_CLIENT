@@ -1,0 +1,97 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_token_quest.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ModelReward">
+			<Panel class="ModelReward" hittest="false">
+				<DOTAUIEconSetPreview id="ModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" />
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="EconItemReward">
+			<Panel class="EconItemReward">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" />
+					<Label class="Quantity" text="x{d:quantity}" />
+				</Panel>
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ImageReward">
+			<Panel class="ImageReward" hittest="false">
+				<Image id="ItemImage" hittest="false" scaling="cover" />
+			</Panel>
+		</snippet>
+		<snippet name="EmoticonReward">
+			<Panel class="EmoticonReward" hittest="false" hittestchildren="false">
+				<DOTAEmoticon id="Emoticon" />
+			</Panel>
+		</snippet>
+		<snippet name="SeeingStoneReward">
+			<Panel class="SeeingStoneReward" hittest="false" hittestchildren="false">
+				<Image id="SeeingStoneImage" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_coin_png.vtex" hittest="false" scaling="cover" />
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="#DOTA_DarkCarnival_Encounter_TicketSmelter_SeeingStone:f" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopRerollChargesReward">
+			<Panel class="BundleItem CandyShopRerollChargesItem">
+				<Panel class="CandyShopRerollChargeImage" />
+				<Label text="#DOTA_Crownfall_Reward_CandyShopRerollRefresh:f" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel Encounter TokenQuest Hidden" allows_popups="1" popupbackground="blur" oncancel="UIPopupButtonClicked()" onactivate="UIPopupButtonClicked()">
+		<Panel class="InnerPopupPanel" onactivate="">
+			<Panel id="MainContents" class="ContentsWrapper">
+				<Panel class="PopupBackground" />
+				<AsyncDataPanel class="AsyncSection" state="{d:encounter_state}">
+					<Panel class="AsyncSuccessContainer">
+						<Label class="TitleText" text="#DOTA_DarkCarnival_Encounter_TicketSmelter" />
+						<Label class="InstructionsText" text="#DOTA_DarkCarnival_Encounter_TicketSmelter_Tooltip" />
+						<Label class="NoMoreText" text="#DOTA_DarkCarnival_Encounter_TicketSmelter_NothingLeft" />
+						<Panel class="CenterContainer">
+							<Panel class="Tokens" id="CostTokensContainer" />
+							<Image class="TradeArrow" src="s2r://panorama/images/control_icons/24px/arrow_right.vsvg" />
+							<Panel id="RewardContainer" />
+						</Panel>
+						<Panel class="Actions">
+							<DOTADarkCarnivalButton text="{s:claim_reward}" id="ClaimRewardButton" class="ClaimRewardButton" onactivate="DOTACrownfallEncounterTokenQuestClaimReward()" />
+							<DOTADarkCarnivalButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+						</Panel>
+					</Panel>
+					<Panel class="AsyncLoadingContainer">
+						<Panel class="Spinner" />
+					</Panel>
+					<Panel class="AsyncFailureContainer">
+						<Panel class="Spinner" />
+					</Panel>
+				</AsyncDataPanel>
+			</Panel>
+			<Panel id="VisualNovelContainer" />
+			<Panel class="PopupBorder" hittest="false" />
+			<Panel class="CloseEncounterButton" onactivate="UIPopupButtonClicked()">
+				<Panel class="BorderInner" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</Panel>
+		<Panel class="NoteContainer">
+			<Panel class="TopNote">
+				<Label class="BristlebackNote" text="#DOTA_DarkCarnival_Encounter_TicketSmelter_Bristleback_Note" />
+			</Panel>
+			<Label class="BristlebackSignature" text="#DOTA_DarkCarnival_Encounter_TicketSmelter_Bristleback_Name" />
+		</Panel>
+		<Image class="SmelterImage" src="s2r://panorama/images/events/dark_carnival/overworld/encounter_smelter_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+	</Panel>
+</root>

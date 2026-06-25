@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 8
+        // Enumerator count: 9
         // Alignment: 4
         // Size: 0x_
         enum class EDestructibleParts_DestroyParameterFlags : std::uint32_t
@@ -26,6 +26,7 @@ namespace source2sdk
             ForceDamageApply = 0x8,
             IgnoreKillEntityFlag = 0x10,
             IgnoreHealthCheck = 0x20,
+            ApplyPhysicsForce = 0x40,
             // MEnumeratorIsNotAFlag
             Default = 0x7,
         };

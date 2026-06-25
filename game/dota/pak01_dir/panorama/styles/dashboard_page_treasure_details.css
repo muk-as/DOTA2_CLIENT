@@ -58,6 +58,16 @@ DOTATreasureDetailsPage
 	background-color: #00000077;
 }
 
+DOTATreasureDetailsPage.IsPopup .TreasureControlsContainer
+{
+	padding-top: 0px;
+}
+
+DOTATreasureDetailsPage.IsPopup #TreasureNavigation
+{
+	visibility: collapse;
+}
+
 .TreasureDetailsContentContainer
 {
 	width: 100%;
@@ -1433,6 +1443,11 @@ DropDown
 	transition-duration: fullPreviewTransitionDuration;
 }
 
+.FullPreviewMode.DisableFullPreviewTransitions #TreasureContents
+{
+	transition-duration: 0s;
+}
+
 #ItemPreviewTempContainer
 {
 	visibility: collapse;
@@ -1470,7 +1485,18 @@ DOTATreasureDetailsPage.FullPreviewMode:not(.CanHaveDuplicates) #TreasureContent
 
 .FullPreviewTransition #TreasureContents .TreasureItem
 {
-	transition-duration: fullPreviewTransitionDuration;
+	transition-property: transform, position;
+	transition-duration: 0s;
+}
+
+.FullPreviewMode.DisableFullPreviewTransitions #TreasureContents .TreasureItem
+{
+	transition-duration: 0s;
+}
+
+.DisableFullPreviewTransitions.FullPreviewTransition #TreasureContents .TreasureItem
+{
+	transition-duration: 0s;
 }
 
 .OpeningInProgress #TreasureContents .TreasureItem
@@ -2573,6 +2599,11 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 	transition-property: opacity;
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in-out;
+}
+
+.DisableFullPreviewTransitions #TreasureItemPreviewMovieContainer
+{
+	transition-duration: 0s;
 }
 
 #TreasureItemPreviewMovieContainer > .Spinner
@@ -3936,6 +3967,41 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 	transform: none;
 }
 
+.treasure_itemdef_31200 .TreasureDetailsBackground
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #323E6F ), to( #0E121F ) );
+	background-image: url("s2r://panorama/images/treasures/dark_carnival_treasure_background_png.vtex");
+	background-size: cover;
+	background-position: 0px -100px;
+	background-repeat: no-repeat;
+	visibility: visible;
+	transition-property: blur, transform, background-image;
+	transition-duration: 0.8s;
+	transition-timing-function: ease;
+	blur: gaussian( 6px );
+	transform: scale3d( 1.05, 1.05, 1 ) translateY( -8px );
+	transition-timing-function: cubic-bezier(1,0,0,1);
+}
+
+.treasure_itemdef_31200 #TreasureExtraInfo
+{
+	margin-top: 0px;
+	y: -80px;
+	horizontal-align: center;
+}
+
+.treasure_itemdef_31200 .CompendiumLogoContainer,.treasure_itemdef_31200 .CompendiumBGParticles,.treasure_itemdef_31200 .TreasureSeasonBar
+{
+	visibility: collapse;
+}
+
+.treasure_itemdef_31200.FullPreviewMode .TreasureDetailsBackground
+{
+	blur: gaussian( 0px );
+	transform: none;
+	background-position: 0px 0px;
+}
+
 .FullPreviewMode.treasure_itemdef_27046 .TreasureDetailsBackground
 {
 	blur: gaussian( 0px );
@@ -4375,6 +4441,213 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 }
 
 .CoinsInFlight:not(.InPurchaseFlow) .CrownfallCoinsSection,.UnknownPurchaseIssue:not(.InPurchaseFlow) .CrownfallCoinsSection
+{
+	opacity: 0.1;
+	saturation: 0.2;
+}
+
+.DarkCarnivalDiscountsContainer
+{
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #ebc3860c ), to( #8d6c3a08 ) );
+	margin-top: -12px;
+	margin-bottom: 12px;
+	width: 100%;
+	visibility: collapse;
+}
+
+.DarkCarnivalDiscountsContainer .Row
+{
+	flow-children: right;
+	padding-right: 4px;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountsContainerBorder
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 10% 100%, from( #ffdfab5c ), to( #8d612030 ) );
+}
+
+.DarkCarnivalDiscountsContainer .activateButton,.DarkCarnivalDiscountsContainer .deactivateButton
+{
+	ui-scale: 73%;
+	vertical-align: center;
+	margin-bottom: -12px;
+	margin-left: -12px;
+	brightness: 0.4;
+	saturation: 0.2;
+}
+
+.DarkCarnivalDiscountsContainer .deactivateButton
+{
+	visibility: collapse;
+}
+
+.DiscountActive .DarkCarnivalDiscountsContainer .activateButton
+{
+	visibility: collapse;
+}
+
+.DiscountActive .DarkCarnivalDiscountsContainer .deactivateButton
+{
+	visibility: visible;
+}
+
+.DarkCarnivalDiscountsContainer #DiscountModeActivateFX
+{
+	width: 260px;
+	height: 200%;
+	transform: translateX( 60px );
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: center;
+	overflow: noclip;
+	visibility: collapse;
+}
+
+.CanActivateDiscount .DarkCarnivalDiscountsContainer #DiscountModeActivateFX
+{
+	visibility: visible;
+}
+
+.CanActivateDiscount .DarkCarnivalDiscountsContainer .activateButton,.CanActivateDiscount .DarkCarnivalDiscountsContainer .deactivateButton
+{
+	brightness: 1.0;
+	saturation: 1.0;
+}
+
+.CanActivateDiscount.DiscountActive .DarkCarnivalDiscountsContainer #DiscountModeActivateFX
+{
+	visibility: collapse;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountMessage
+{
+	width: fill-parent-flow(1);
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
+	max-height: 32px;
+	text-overflow: shrink;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountMessage b
+{
+	font-weight: semi-bold;
+	color: gradient( linear, 0% 55%, 0% 100%, from( #f5d7ab ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountMessage:hover
+{
+	color: whitesmoke;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountMessage:hover b
+{
+	color: gradient( linear, 0% 55%, 0% 100%, from( whitesmoke ), color-stop( 0.48, whitesmoke ), color-stop( 0.52, whitesmoke ), to( whitesmoke ) );
+}
+
+.DarkCarnivalDiscountsContainer .CoinsIconContainer
+{
+	width: 64px;
+	height: 64px;
+}
+
+.DarkCarnivalDiscountsContainer .CoinsIconContainer #CoinsIcon
+{
+	width: 60px;
+	height: 60px;
+	horizontal-align: left;
+	vertical-align: bottom;
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/rewards/reward_coin_png.vtex");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.DarkCarnivalDiscountsContainer .CoinsIconContainer .TotalCoinCount
+{
+	horizontal-align: right;
+	vertical-align: top;
+	width: 40px;
+	height: 22px;
+	border-radius: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( DarkGrey ), to( DarkestGrey ) );
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+	border: 1px solid rgb(0, 0, 0);
+	text-align: center;
+	text-overflow: shrink;
+	letter-spacing: 0px;
+	font-size: 16px;
+	line-height: 1;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LightGrey ) );
+	text-shadow: 0px 1px 6px 2 rgba(0, 0, 0, 1);
+}
+
+.DarkCarnivalDiscountsContainer .DiscountActiveContainer
+{
+	visibility: collapse;
+	width: 100%;
+	margin-top:5px;
+}
+
+.DarkCarnivalDiscountsContainer .DiscountActiveContainer Label
+{
+	horizontal-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding-top: 6px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: semi-bold;
+	text-align: center;
+	border-top: 1px solid rgba(229, 188, 141, 0.5);
+	margin: 10px 12px -6px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.4, white ), color-stop( 0.6, white ), to( rgba(255, 255, 255, 0) ) );
+	color: whitesmoke;
+	text-shadow: 0px 0px 16px rgba(255, 219, 142, 0.6);
+}
+
+.DiscountActive .DarkCarnivalDiscountsContainer .DiscountActiveContainer
+{
+	visibility: visible;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalActivationRow
+{
+	margin: 4px 0px -10px 12px;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalPurchaseButtonRow
+{
+	width: 100%;
+	margin: 12px 12px 12px;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalPurchaseButtonRow .BundlePurchaseButton
+{
+	visibility: collapse;
+	width: 100%;
+}
+
+.treasure_itemdef_31200 .DarkCarnivalDiscountsContainer
+{
+	visibility: visible;
+}
+
+.DarkCarnivalDiscountsContainer .DarkCarnivalDiscountMessage
+{
+	visibility: collapse;
+}
+
+.treasure_itemdef_31200 .DarkCarnivalDiscountsContainer .31200
+{
+	visibility: visible;
+}
+
+.CoinsInFlight:not(.InPurchaseFlow) .DarkCarnivalCoinsSection,.UnknownPurchaseIssue:not(.InPurchaseFlow) .DarkCarnivalCoinsSection
 {
 	opacity: 0.1;
 	saturation: 0.2;

@@ -1,0 +1,230 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/page_dark_carnival_overworld.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="NodeSnippet">
+			<Panel class="Node">
+				<Panel class="NodeImage" />
+			</Panel>
+		</snippet>
+		<snippet name="EncounterShortcut">
+			<Panel class="ShortcutContainer" onmouseover="UIShowTextTooltip( #DOTA_Overworld_EncounterShortcut_water_wheel )" onmouseout="UIHideTextTooltip()">
+				<Image class="ShortcutBackground" src="s2r://panorama/images/events/dark_carnival/overworld/encounter_node_container_png.vtex" />
+				<Image class="ShortcutIcon" id="EncounterImage" scaling="contain" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTADarkCarnivalOverworldPage class="DashboardPage" overworld="crownfall_chapter2">
+		<DOTADarkCarnivalOverworldMap id="Map" />
+		<Panel class="BottomGradient" hittest="false" />
+		<Panel class="LeftGradient" hittest="false" />
+		<Panel class="RightGradient" hittest="false" />
+		<Panel class="RightUICol">
+			<Panel class="ProgressionContainer">
+				<Panel class="WoodBackgroundContainer">
+					<Image class="WoodBackgroundImage" />
+					<Panel class="WoodBackgroundBorder" />
+				</Panel>
+				<Panel class="ProgressionContents">
+					<Panel class="PanelTitleContainer">
+						<Panel class="PanelTitleBackground" />
+						<Label class="LabelMedium PanelTitleLabel" text="#DOTA_DarkCarnival_Overworld_Progress" />
+					</Panel>
+					<Panel class="EventProgressWidget">
+						<DOTADarkCarnivalCompletionProgress class="NoCountdown Overworld" />
+					</Panel>
+					<DOTALeaderboard id="FriendsLeaderboard" class="DarkCarnivalOverworld" minimumrows="0" />
+				</Panel>
+			</Panel>
+			<Panel class="ShortcutsContainer">
+				<Panel class="WoodBackgroundContainer">
+					<Image class="WoodBackgroundImage" />
+					<Panel class="WoodBackgroundBorder" />
+				</Panel>
+				<Panel class="InnerPanelBackground">
+					<Panel class="InnerPanelBackgroundInner" />
+				</Panel>
+				<Panel class="PanelTitleContainer">
+					<Panel class="PanelTitleBackground" />
+					<Label class="LabelMedium PanelTitleLabel" text="#DOTA_DarkCarnival_Overworld_Minigames" />
+				</Panel>
+				<Panel id="EncounterShortcutContainer" />
+			</Panel>
+		</Panel>
+		<DOTACrownfallActSelector id="ActSelector" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );" />
+		<Panel id="RewardsPanel" class="LeftUICol" hittest="false">
+			<Panel class="RewardsPanelContents">
+				<Panel class="DarkCarnivalLogoContainer">
+					<Image class="DarkCarnivalLogo en" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Image class="DarkCarnivalLogo cn" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="SubtitleContainer">
+					<Image class="SubtitleBackground" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="TitleSmall EventSubtitle" text="#DOTA_DarkCarnival_MidnightRun" />
+				</Panel>
+				<Panel class="TicketsContainer">
+					<Panel class="WoodBackgroundContainer">
+						<Image class="WoodBackgroundImage" />
+						<Panel class="WoodBackgroundBorder" />
+					</Panel>
+					<Panel class="TicketsContents" id="TicketsContents">
+						<Panel class="PanelTitleContainer">
+							<Panel class="PanelTitleBackground" />
+							<Panel class="LabelContainer LeftRightFlow">
+								<Label class="LabelMedium PanelTitleLabel" text="#DOTA_DarkCarnival_Overworld_Tokens" />
+								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_DarkCarnival_OverworldInventory_MultiselectInfo&apos; )" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+							<Panel class="GiftContainer" hittest="false">
+								<Panel class="GiftIcon" onactivate="DarkCarnivalOverworldOpenReceivedGiftTokens()" onmouseover="UIShowTextTooltip(&apos;#DOTA_DarkCarnival_SecretAdmirer_GiftAvailableTooltip&apos;)" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+						</Panel>
+						<Panel class="InventoryContainer">
+							<Panel class="InnerPanelBackground">
+								<Panel class="InnerPanelBackgroundInner" />
+							</Panel>
+							<DOTADarkCarnivalInventory id="Inventory" />
+							<DOTADarkCarnivalButton id="TokenTraderButton" text="#DOTA_DarkCarnival_Overworld_Trade" class="" onactivate="DOTADarkCarnivalOverworldOpenTokenTrader()" />
+						</Panel>
+					</Panel>
+					<Panel class="PremiumContents">
+						<Panel class="InnerPanelBackground">
+							<Panel class="InnerPanelBackgroundInner" />
+						</Panel>
+						<Panel class="PremiumTokenContainer">
+							<Image class="Emblem Left" src="s2r://panorama/images/events/dark_carnival/overworld/leaf_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<DOTADarkCarnivalToken id="PremiumToken" class="TokenName_Premium" onactivate="DOTADarkCarnivalInventoryTokenSelected( 12 )" />
+							<Image class="Emblem Right" src="s2r://panorama/images/events/dark_carnival/overworld/leaf_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Label class="BodySmall" text="#DOTA_DarkCarnival_Overworld_SecretRoomTokens" />
+					</Panel>
+					<Panel style="height: 16px;" />
+				</Panel>
+				<Panel id="FortuneTellerContainer" class="OracleContainer" onactivate="DOTAShowDarkCarnivalFortuneTellerPage( 11 );">
+					<Panel class="OracleContainerBackground">
+						<Panel class="PaperTexture" />
+						<Panel class="OracleContainerBorderSquare" />
+						<Panel class="OracleContainerBorderRound" />
+						<Image class="OracleStar Top Left" src="s2r://panorama/images/events/dark_carnival/oracle/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="OracleStar Top Right" src="s2r://panorama/images/events/dark_carnival/oracle/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="OracleStar Bottom Left" src="s2r://panorama/images/events/dark_carnival/oracle/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="OracleStar Bottom Right" src="s2r://panorama/images/events/dark_carnival/oracle/star.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="OracleMapContainer">
+						<Image class="OracleImage" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_banner_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="PanelTitleContainer">
+						<Panel class="PanelTitleBackground" />
+						<Panel class="LabelContainer LeftRightFlow">
+							<Label class="LabelMedium PanelTitleLabel" text="#DOTA_Dark_Carnival_The_Oracle" />
+						</Panel>
+					</Panel>
+					<Label class="LabelSmall DailySeeingStoneTitle" text="#DOTA_DarkCarnival_FortuneTeller_DailySeeingStoneTitle" />
+					<Panel class="OracleContents">
+						<Panel class="OracleCoinContainer">
+							<Image class="OracleCoinSlot" src="s2r://panorama/images/events/dark_carnival/postgame/oracle_coin_slot_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Image class="OracleCoinImage" src="s2r://panorama/images/events/dark_carnival/oracle/oracle_coin_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel class="OracleInfo">
+							<Panel class="EarnedContainer">
+								<Image class="EarnedCheck" src="s2r://panorama/images/control_icons/24px/check_fancy.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="BodySmall EarnedSeeingStone" text="#DOTA_DarkCarnival_FortuneTeller_Earned" />
+							</Panel>
+							<Panel class="AvailableContainer">
+								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_DarkCarnival_FortuneTeller_DescriptionSubtitle&apos; )" onmouseout="UIHideTextTooltip()" />
+								<Label class="BodySmall AvilableToEarnSeeingStone" text="#DOTA_DarkCarnival_FortuneTeller_AvailableToEarn" />
+							</Panel>
+							<DOTACountdown id="FortunteTellerDailyProgressCountdown" server-time="true">
+								<Label class="BodySmall FortuneCountdown" text="#DOTA_DarkCarnival_FortuneTeller_SeeingStoneCountdown" />
+							</DOTACountdown>
+						</Panel>
+						<Panel class="ReadyToUnlockButton">
+							<Label class="LabelMedium" text="#DOTA_DarkCarnival_FortuneTeller_ReadyToUnlock" />
+							<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" />
+						</Panel>
+					</Panel>
+					<Panel class="DarkCarnivalProgressAvailableBadge">
+						<Panel class="DarkCarnivalProgressAvailableGlow" />
+						<Panel class="DarkCarnivalProgressAvailableBackground" />
+						<Panel class="DarkCarnivalProgressAvailableBorder" />
+						<Label class="ProgressAvailableText LabelSmall" text="#DOTA_DarkCarnival_FortunesAvailable" />
+					</Panel>
+				</Panel>
+				<Panel class="Unused">
+					<Panel class="StoreContainer">
+						<Button id="ViewStoreButton" class="ButtonPrimary Blue Small" onactivate="DOTAShowBPCrownfallStorePage()">
+							<Label text="View store" />
+						</Button>
+					</Panel>
+					<DOTACrownfallButton id="ActivateButton" text="#DOTA_Crownfall_Overworld_SetActive" class="Secondary" onactivate="DOTAActivateOverworld()" />
+					<ProgressBar id="PremiumProgressBar" class="ProgressBar" value="0.0" />
+					<ProgressBar id="BasicProgressBar" class="ProgressBar" value="0.0" />
+					<Panel class="SectionTitleContainer">
+						<Panel class="Dash Left" />
+						<Label class="LabelSmall SectionTitle" text="Free Rewards" />
+						<Panel class="Dash Right" />
+					</Panel>
+					<Panel class="RewardTypeList">
+						<Panel class="RewardType Coin">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Coin" />
+							<Label class="LabelSmall" text="{d:basic_storecoin_earned}/{d:basic_storecoin_max}" />
+						</Panel>
+						<Panel class="RewardType Candy">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_CandyBag" />
+							<Label class="LabelSmall" text="{d:basic_candysack_earned}/{d:basic_candysack_max}" />
+						</Panel>
+						<Panel class="RewardType Chest">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Chest" />
+							<Label class="LabelSmall" text="{d:basic_treasure_earned}/{d:basic_treasure_max}" />
+						</Panel>
+						<Panel class="RewardType Gift">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Tome" />
+							<Label class="LabelSmall" text="{d:basic_bauble_earned}/{d:basic_bauble_max}" />
+						</Panel>
+					</Panel>
+					<Panel class="SectionTitleContainer">
+						<Panel class="Dash Left" />
+						<Label class="LabelSmall SectionTitle" text="Paid Rewards" />
+						<Panel class="Dash Right" />
+					</Panel>
+					<Panel class="RewardTypeList">
+						<Panel class="RewardType">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Coin" />
+							<Label class="LabelSmall" text="{d:premium_storecoin_earned}/{d:premium_storecoin_max}" />
+						</Panel>
+						<Panel class="RewardType">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_CandyBag" />
+							<Label class="LabelSmall" text="{d:premium_candysack_earned}/{d:premium_candysack_max}" />
+						</Panel>
+						<Panel class="RewardType">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Chest" />
+							<Label class="LabelSmall" text="{d:premium_treasure_earned}/{d:premium_treasure_max}" />
+						</Panel>
+						<Panel class="RewardType">
+							<DOTADarkCarnivalReward class="RewardTypeIcon" reward-model="k_eDarkCarnivalModel_Tome" />
+							<Label class="LabelSmall" text="{d:premium_bauble_earned}/{d:premium_bauble_max}" />
+						</Panel>
+					</Panel>
+					<DOTADarkCarnivalButton id="ViewPassButton" class="" text="Purchase pass" onactivate="DOTAShowDarkCarnivalStoreItem( 34452 );" />
+					<Panel style="height: 4px;" />
+				</Panel>
+			</Panel>
+			<DOTADarkCarnivalInventoryTray id="InventoryTray" />
+		</Panel>
+		<Panel class="NarratorContainer" hittest="false">
+			<DOTADarkCarnivalTalkingHead id="RingmasterTalkingHead" />
+		</Panel>
+		<Panel class="TopRightButtonsContainer">
+			<Panel class="HowToPlayContainer" onactivate="UIShowCustomLayoutPopup( DarkCarnivalIntro, file://{resources}/layout/events/dark_carnival/popup_dark_carnival_intro.xml );">
+				<Label text="#DOTA_Crownfall_Overworld_HowToPlay" />
+				<Image class="Icon" src="s2r://panorama/images/control_icons/question_mark_circle_psd.vtex" />
+			</Panel>
+			<Label class="Separator" text="|" />
+			<TextButton class="FeedbackButton" text="#DOTA_Crownfall_Overworld_Feedback" onactivate="UIShowCustomLayoutPopup( CrownfallFeedback, file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_feedback.xml );" />
+		</Panel>
+	</DOTADarkCarnivalOverworldPage>
+</root>

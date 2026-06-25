@@ -17,6 +17,7 @@
 0123456789
 0123456789abcdef
 03o
+0A\t\n\v
 0enum $1 {\n
 0message $1
 0oneof $1
@@ -103,6 +104,7 @@
 15ISPSharedMemory
 16CLoopModeFactoryI21CLoopModeGameHostDotaE
 16CSource2HostBase
+16ILoggingListener
 16ILoopModeFactory
 17CNETMsg_SetConVar
 17CNETMsg_StringCmd
@@ -128,6 +130,7 @@
 22CSPSharedMemoryManager
 22CSVCMsgList_GameEvents
 22CSchemaInstallCallback
+22CSimpleLoggingListener
 22IVTableIndexCalculator
 23CNETMsg_SpawnGroup_Load
 23CNETMsg_SplitScreenUser
@@ -172,10 +175,12 @@ AddFloat
 AddInt32
 AddInt64
 AddMessage
+AddPage
 AddString
 AddUInt32
 AddUInt64
 AlignedByteArray not properly aligned\n
+Alloc
 Already saw decimal point or exponent; can't have another one
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
@@ -198,7 +203,6 @@ CANCELLED
 CAnimScriptBase
 CAnimScriptParam
 CDotaMapUtils: Failed to load tree map %s\n
-CGameModelInfo::GetModelIndex() Lazy loading mode
 CHECK failed: !AllocPolicy
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
@@ -361,6 +365,7 @@ CHECK failed: (value) >= (0x80
 CHECK failed: (value.size()) <= (kInt32MaxSize
 CHECK failed: (was_message_owned) == (IsMessageOwned
 CHECK failed: *from != nullptr
+CHECK failed: *ptr
 CHECK failed: *to == nullptr
 CHECK failed: Arena::InternalGetOwningArena(lhs) != Arena::InternalGetOwningArena(rhs
 CHECK failed: Arena::InternalGetOwningArena(lhs) != nullptr || Arena::InternalGetOwningArena(rhs) != nullptr
@@ -488,6 +493,7 @@ CPPTYPE_STRING
 CPPTYPE_UINT32
 CPPTYPE_UINT64
 CUtlLinkedList overflow! (exhausted index range)\n
+CUtlSymbolTableLarge element limit of %u exceeded\n
 Call set methods to initialize MapKey
 Caller should provide us with *buffer_ when buffer is non-empty
 Can't
@@ -504,6 +510,7 @@ Cannot get here
 Cannot skip field value, unexpected token
 Cbasic_ios::clear
 ClearField
+ClientLocalServerAccess001
 ClientServerSharedHandleSystem001
 ClientToolsInfo_001
 Comment started here
@@ -524,6 +531,9 @@ DF32x
 DF64
 DF64x
 DO NOT PARSE: fields may be stripped and missing.\n
+Data_Branch1xy
+Data_Branch1zBranch2x
+Data_Branch2yz
 DebugDrawQueueManager001
 December
 Default value for an enum field must be an identifier
@@ -534,7 +544,9 @@ Division or mod by zero: dividend.hi
 Don't lookup extension types if they aren't present (1
 Don't lookup extension types if they aren't present (2
 DotaMapUtils001
+DualHull
 ERROR
+ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EconItemToolModel_001
 EconVData001
@@ -543,6 +555,8 @@ End-of-file inside block comment
 EngineServiceMgr001
 EnsureCapacity
 EnsureElementCapacity
+EnsureMemberCapacity
+EnsureUnusedCapacity
 EntitySubclassUtilsV001
 Entry
 Entry %s was not found in surfaceproperties_footsteps.txt\n
@@ -634,12 +648,13 @@ FixupResourceName: Illegal full path passed in ("%s")!\n
 FixupResourceName: Illegal path, missing extension passed in ("%s")!\n
 FlattenedSerializersVersion001
 Float
+FoliageAnimation
 FontManager_001
-Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Found invalid proto option data for
 Friday
 GLIBCXX_TUNABLES
 GLOBAL
+Game System %s is defined twice!\n
 GameModelInfo001
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -701,6 +716,7 @@ InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 Insert
+InsertMultipleBefore
 InsertOrLookupMapValue
 Insufficient memory to compile regular expression
 Insufficient memory to determine regex match
@@ -739,6 +755,8 @@ June
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
 LC_ADDRESS
 LC_COLLATE
 LC_CTYPE
@@ -752,6 +770,9 @@ LC_PAPER
 LC_TELEPHONE
 LC_TIME
 Lf
+LightmapUV
+LightmapUVW
+LocalServerClientAccess001
 Localize_001
 Logic problem? szsrc
 LookupMapValue
@@ -1001,6 +1022,22 @@ NSt7__cxx119money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEEE
 NSt7__cxx119money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEE
 NSt7__cxx119money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE
 NSt7__cxx119money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb0ELb0EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb0ELb1EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb1ELb0EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb1ELb1EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb1ELb0ELb0EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb1ELb0ELb1EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb1ELb1ELb0EEE
+NSt8__detail11_AnyMatcherISt12regex_traitsIcELb1ELb1ELb1EEE
+NSt8__detail12_CharMatcherISt12regex_traitsIcELb0ELb0EEE
+NSt8__detail12_CharMatcherISt12regex_traitsIcELb0ELb1EEE
+NSt8__detail12_CharMatcherISt12regex_traitsIcELb1ELb0EEE
+NSt8__detail12_CharMatcherISt12regex_traitsIcELb1ELb1EEE
+NSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb0EEE
+NSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb1EEE
+NSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb0EEE
+NSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EEE
 NSt8ios_base7failureB5cxx11E
 NSt8ios_base7failureE
 NavGameTest001
@@ -1032,6 +1069,7 @@ Option field
 Option must have a name
 Option must not use reserved name "uninterpreted_option
 Outdent() without matching Indent
+OverlayProjectionDirection
 PDF128
 PDF16
 PDF16b
@@ -1062,11 +1100,14 @@ PanoramaUIClient001
 PanoramaUIEngine001
 Parameter to BackUp() can't be negative
 ParticleSystemMgr003
+PerVertexLighting
 Physics
 PhysicsBuilderMgr001
+PivotPaint
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 PostProcessingSystem_001
 PredictionDiffManager001
+PropWorldOrigin
 PropertyEditorSystem_001
 Proto file starts with 0xEF but not UTF-8 BOM. Only UTF-8 is accepted for proto file
 Protobuf: %s(%d): %s\n
@@ -1089,7 +1130,6 @@ RenderDevice003
 RenderDeviceMgr001
 RenderHardwareConfig002
 RenderService_001
-RenderUtils_001
 Repeated fields can't have default values
 Requested size is too large to fit into size_t
 Required fields are not allowed in proto3
@@ -1138,6 +1178,9 @@ SetUInt32
 SetUInt64
 Shared memory space %s (%i) still has %i references.\n
 Should not reach here
+Should we straighten face island if the displacement is this much? (inches
+Should we try to straighten an island of faces deviating from their average normal (tangent
+Should we try to straighten two faces connected to this edge? (tangent
 Show diff only
 Show diff with matching filter substring only
 SinglePlayerSharedMemory001
@@ -1245,6 +1288,7 @@ St20__codecvt_utf16_baseIwE
 St20bad_array_new_length
 St21__ctype_abstract_baseIcE
 St21__ctype_abstract_baseIwE
+St23_Sp_counted_ptr_inplaceINSt8__detail4_NFAISt12regex_traitsIcEEESaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23__codecvt_abstract_baseIDiDu11__mbstate_tE
 St23__codecvt_abstract_baseIDic11__mbstate_tE
 St23__codecvt_abstract_baseIDsDu11__mbstate_tE
@@ -1304,6 +1348,7 @@ Synthetic oneofs must be after all other oneofs
 System %s failed to init\n
 TLS init function for
 TLS wrapper function for
+TanFrameQuat
 TestScriptMgr001
 TextLayout_001
 The JSON camel-case name of field
@@ -1393,6 +1438,11 @@ Value of type
 Value out of range for int32 option
 Value out of range for int64 option
 Value out of range for uint32 option
+VertexElementAnnotation
+VertexGenericIntegerData
+VertexPaintBlendParams
+VertexPaintBlendParams1
+VertexPaintTintColor
 VisBuilder_001
 Vrad3_001
 WARNING
@@ -1404,16 +1454,23 @@ a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 a\t\n\n\t
 abi
 accessor_ == other.accessor
+alert
 alignof
 allocator
 allowed in proto3
 alnum
 alpha
+ampersand
 anonymous namespace
 another member of oneof
+apostrophe
 args were given.  Full format string was
 arguments
+asterisk
 auto
+b\t\n\v
+backslash
+backspace
 bad
 bad_function_call
 basic_filebuf::_M_convert_to_external conversion error
@@ -1445,7 +1502,11 @@ basic_string::resize
 basic_string::substr
 basic_string_view::substr
 because it is missing required fields
+bentnormal
 blank
+blendindices
+blendweight
+blendweights
 bool
 bool google::protobuf::internal::RepeatedFieldRefIterator<T>::operator!=(const google::protobuf::internal::RepeatedFieldRefIterator<T>&) const [with T = google::protobuf::Message
 boolean
@@ -1458,18 +1519,26 @@ can't force demo version '%s', no such version name\n
 can't reach here
 cannot be required
 cannot create shim for unknown locale::facet
+cannot create std::deque larger than max_size
+cannot create std::vector larger than max_size
 cannot determine missing fields for lite message
+carriage-return
 char
 char google::protobuf::stringpiece_internal::StringPiece::operator[](google::protobuf::stringpiece_internal::StringPiece::size_type) const
 char16_t
 char32_t
 char8_t
+circumflex
 class
 clone
 close() failed
 cntrl
 co_await
+colon
 color
+comma
+commercial-at
+compressedtangentframe
 conflicts with an existing enum type
 conflicts with an existing field
 conflicts with an existing nested message type
@@ -1487,6 +1556,7 @@ construction vtable for
 contains invalid UTF-8 data when
 contains null character
 covariant return thunk to
+curvature
 d %d %d
 d %d %d %d
 data_ == other.data
@@ -1511,22 +1581,26 @@ diffcheck_spew
 diffcheck_spew_diff_filter
 diffcheck_spew_diff_only
 digit
+dollar-sign
 dota_use_heightmap
 double
 dummy
 dynamic_cast
 e" must be followed by exponent
+eight
+enderUtils_001
 enum
+equals-sign
 exceeded maximum protobuf size of 2GB
+exclamation-mark
 extend .$0 {\n
-f %f
-f %f %f
-f %f %f %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
+f'\fE\fV\f
 failed to parse contents
 false
 fast
 field number
+five
 fixed32
 fixed64
 float
@@ -1539,7 +1613,9 @@ for
 for field
 for option
 forcing demo version '%s' : %s\n
+form-feed
 found
+four
 friend
 from
 g
@@ -1679,6 +1755,8 @@ google::protobuf::FieldDescriptorProto_Type_IsValid(value
 google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::internal::ExtensionSet::flat_begin
 google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::internal::ExtensionSet::flat_end
 graph
+grave-accent
+greater-than-sign
 group
 guard variable for
 half
@@ -1689,6 +1767,11 @@ has not been loaded
 has the same name as
 hidden alias for
 host
+hullivr_edge_merge_tan
+hullivr_faceisland_merge_disp
+hullivr_faceisland_merge_tan
+hullivr_version
+hyphen
 i < length
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
 implements neither SetCachedSize() nor ByteSize().  Must implement one or the other
@@ -1738,11 +1821,14 @@ json_name
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
 lambda
 lazy = true] can only be specified for submessage fields
+left-curly-bracket
+left-parenthesis
+left-square-bracket
 len >= input_len
 length_ >= n
+less-than-sign
 libhost.so
 libprotobuf %s %s:%d] %s\n
-link
 lld
 llu
 lo
@@ -1755,6 +1841,8 @@ long
 long double
 long long
 lower
+lowprecisionuv
+lowprecisionuv1
 m_bIsValid
 m_bNeedsSort
 map keys are not unique
@@ -1783,18 +1871,23 @@ n  Problem     : Enum value did not match field type:\n    Expected
 n  Problem     : Field is not the right type for this message:\n    Expected
 nParsing attempt
 n\v\f\r
+name
 network_connection.proto
 networkbasetypes.proto
 new
+newline
+nine
 no failure reason set
 noexcept
 non-transaction clone for
 non-virtual thunk to
+normal
 not found
 not just within
 not previously defined in symbols_by_name_, but was defined in symbols_by_parent_; this shouldn't be possible
 null
 nullptr output boolean given
+number-sign
 obj_count
 obj_size
 of the Protocol Buffer runtime library, but the installed version is
@@ -1802,26 +1895,33 @@ of the Protocol Buffer runtime library, which is not compatible with the install
 operator
 option json_name is not allowed on extension fields
 optional
+optionallycompressedtangentframe
 output specified is nullptr
 package $0;\n\n
 packed = true] can only be specified for repeated primitive fields
 parm
 parse
 parsing
+percent-sign
+period
+phys_res
 placeholder.proto
 please implement MergeFrom for your type
+plus-sign
 position
+posxyz
 prev
 print
 proto
 proto text format> }". To set fields within it, use syntax like
 proto2
 proto3
-public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 punct
 pure virtual method called\n
 qangle
+question-mark
+quotation-mark
 rK~\n
 random_device could not be read
 random_device: getentropy failed
@@ -1840,10 +1940,19 @@ reinterpret_cast
 repeated
 required
 requires
+resource_manifests
+resources
 restrict
+right-curly-bracket
+right-parenthesis
+right-square-bracket
 runleft
 runright
+s %s
+s %s %s
+s %s %s %s
 s allocation count overflow
+s allocation count overflow( %llu + %llu > %llu )\n
 s allocation count overflow( %llu > %llu )\n
 s:  IGameSystem::LoopActivateAllSystems {\n
 s:  IGameSystem::LoopDeactivateAllSystems {\n
@@ -1853,12 +1962,19 @@ s:  } IGameSystem::LoopActivateAllSystems done\n
 s:  } IGameSystem::LoopDeactivateAllSystems done\n
 s: __pos (which is %zu) > __size (which is %zu
 s: __pos (which is %zu) > this->size() (which is %zu
+s: allocation of %u too large, max %u\n
 s: element count overflow (%u)\n
+s: invalid insert point %u (current count %u)\n
+s: max element overflow, cur count %u + %u\n
+s: member count overflow (%u)\n
+s: no space for allocation of %u\n
 scripts/surfaceproperties_footsteps.txt
 seems to be defined in
+semicolon
 serialize
 serializing
 service $0 {\n
+seven
 sfixed32
 sfixed64
 short
@@ -1867,9 +1983,13 @@ sint32
 sint64
 size too big
 sizeof
+slash
 slow
 soundsystem
+source_file
+source_line
 space
+src
 stack frames not accounted for stack unwind
 static_cast
 std::allocator
@@ -1901,16 +2021,21 @@ subtype mismatch
 surfacePropertyName
 syntax = "$0";\n\n
 system
+tangent
+tangentu_signv
 template
 template parameter object for
 terminate called after throwing an instance of
 terminate called recursively\n
 terminate called without an active exception\n
+texcoord
 text format contains deprecated field
 the actual field type (for enums T should be the generated enum
 the global scope
 this
+three
 throw
+tilde
 to
 to start from the outermost scope
 transaction clone for
@@ -1938,6 +2063,7 @@ uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
 unable to register all schema data: %s\n
 undefined
+underscore
 unimplemented type
 uninitialized __any_string
 uninterpreted_option
@@ -1967,6 +2093,9 @@ vector::_M_insert_aux
 vector::_M_range_insert
 vector::_M_realloc_append
 vector::reserve
+vectorws
+vertical-line
+vertical-tab
 very_fast
 virtual thunk to
 void
@@ -1996,3 +2125,4 @@ x%02x
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
 xdigit
+zero

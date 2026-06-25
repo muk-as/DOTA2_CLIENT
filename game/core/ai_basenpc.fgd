@@ -146,6 +146,7 @@
 	]
 
 	cooldown(float) : "Cooldown" : 0 : "After use, how long does another NPC has to wait in order to use this hint (in seconds)."
+	npc_snap_to_hint_distance( float ) : "Snap NPC To Hint Distance" : "-1" : "If > 0, don't snap the NPC to this hint position until the NPC is within the specified range (allows animgraph or other systems to move the entity even after the animations have started). If < 0, don't snap unless you have a Follow Entity specified."
 
 	// Inputs
 	input EnableHint(void) : "Enable hint."
@@ -269,7 +270,7 @@
 
 	spawnflags(Flags) = 
 	[
-		1 : "Wait Till Seen" : 0
+		//1 : "Unused" : 0
 		2 : "Gag (No IDLE sounds until angry)" : 0
 		4 : "Fall to ground (unchecked means *teleport* to ground)" : 1
 		16 : "Efficient - Don't acquire enemies or avoid obstacles" : 0
@@ -283,10 +284,6 @@
 		8192: "Don't drop weapons" : 0
 		16384 : "Ignore player push (dont give way to player)" : 0
 	]
-
-	enemyfilter(target_destination) [ group="NPC Properties" ] : "Enemy Filter" : "" : "Filter by which to filter potential enemies"
-
-	ignoreunseenenemies(boolean) [ group="NPC Properties" ] : "Ignore unseen enemies" : 0 : "Prefer visible enemies, regardless of distance or relationship priority"
 
 	forcedynamichull(boolean) [ group="Physics Properties" ] : "Force Dynamic Hull" : 0 : "Force this NPC to use a dynamic hull even if its vdata doesn't request it"
 	physdamagescale(float) [ group="Physics Properties" ] : "Physics Impact Damage Scale" : "1.0" : "Scales damage energy when this character is hit by a physics object. With a value of 0 the NPC will take no damage from physics."
@@ -693,13 +690,10 @@
 	output OnDenyCommanderUse(void) : "Fired when this NPC has refused to join the player's squad."
 	output OnPlayerUse(void) : "Fired when a player +Uses this npc."
 	output OnUse(void) : "Fired when ANYTHING calls Use on this npc (such as other NPCs)."
-	output OnStartTouchMaterial(void) : "Fired when NPC touches a surface material defined in the touch material modifier."
-	output OnEndTouchMaterial(void) : "Fired when NPC leaves a surface material defined in the touch material modifier."
 
 	// Inputs
 	input OverrideHealth(integer) : "Overrides this entity's health, ignoring max health constraints. This is for prototyping only and all uses of this input should be audited before shipping! Values <=0 are ignored."
 	input SetRelationship(string) : "Changes this entity's relationship with another entity or class. Format: <entityname/classname> <D_HT/D_FR/D_LI/D_NU> <priority>"
-	input SetEnemyFilter(string) : "Changes this NPC's enemy filter to the named filter."
 	input SetHealth(integer) : "Set this NPC's health."
 	input SetBodyGroup(string) : "Sets NPC bodygroup. Format is <BodygroupName,index> "
 	input physdamagescale(float) : "Sets the value that scales damage energy when this character is hit by a physics object. NOTE: 0 means this feature is disabled for backwards compatibility."
@@ -710,10 +704,6 @@
 	input Extinguish(void) : "Extinguish ourself if we're on fire"
 	input Break(void) : "Break, smash into pieces"
 	input SetSquad(string) : "Set the name of this NPC's squad. It will be removed from any existing squad automatically. Leaving the parameter blank will remove the NPC from any existing squad."
-	input ForgetEntity(string) : "Clears out the NPC's knowledge of a named entity."
-	input GagEnable(void) : "Turn on the NPC Gag flag. NPC won't speak outside of choreographed scenes."
-	input GagDisable(void) : "Turn off the NPC Gag flag."
-	input UpdateEnemyMemory(string) : "Update (or Create) this NPC's memory of an enemy and its location"
 	input SetEasingParameter(string) : "Set an easing parameter Format: <name=value>"
 	input SetNavRestrictionVolume(string) : "Set the nav restriction volume. Parameter is the name of the target markup volume. Empty parameter will clear the nav restriction."
 

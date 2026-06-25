@@ -710,8 +710,6 @@ editormodel
 
 @BaseClass base( Targetname, Parentname, CanBeClientOnly, Global, Studiomodel, RenderFields, teamnumber) = dota_building
 [ 
-	link(string) : "Linked" : " " : "The Linked Unit."	
-	 
 	vulnerableoncreepspawn(choices) :"Vulnerable On Creep Spawn" : 0 =
 	[
 		0: "No"
@@ -1422,6 +1420,7 @@ editormodel
 	target(target_destination) : "Follow Path" : : "The path this enemy will follow through the level"
 ]
 
+
 @PathNodeClass
 	metadata
 	{
@@ -1449,4 +1448,25 @@ editormodel
 	}
 	accompany() = dota_movespeed_modifier_path
 [
+]
+
+@PointClass base(Targetname) = dota_whack_a_mole_effects :
+	"Effects entity for the Whack a Mole game"
+[
+]
+
+@PointClass base(Targetname) = dota_crate_drop_effects :
+	"Effects entity for the Crate Drop game"
+[
+]
+
+@PointClass base(Targetname) = dota_dc_murder_of_crows :
+	"Crows for the Dark Carnival act 1 overworld map"
+[
+	model(studio) : "Crow model"
+	crow_explosion_vfx(resource:vpcf) : "Crow Explosion Particle System"
+	crow_explosion_sound(sound) : "Crow Explosion Sound"
+	number_of_crows(integer) : "Number of Crows" : 10 : "How many crows in the murder"
+	crow_speed(float) : "Crow Speed" : 80 : "How fast are the crows"
+	crow_scale(float) : "Crow Scale" : 1 : "What should the crow model be scaled by"
 ]

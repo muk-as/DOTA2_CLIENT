@@ -1,0 +1,230 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_lockpicking.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Panel class="Check" />
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+		<snippet name="UnlockMarker">
+			<Panel class="UnlockMarker" />
+		</snippet>
+		<snippet name="UnlockMarkerRange">
+			<Panel class="UnlockMarkerRange" />
+		</snippet>
+	</snippets>
+	<DOTADarkCarnivalEncounterLockpickingPopup class="PopupPanel Lockpicking Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTALockpickingTogglePaused()">
+		<Panel id="MainContents">
+			<Panel class="GameScreen" id="GameScreen">
+				<Panel class="SceneBackground" />
+				<Panel id="SlarkArm" />
+				<Panel id="SlarkHead">
+					<AnimatedImageStrip id="SlarkHeadStrip" frametime="30ms" loop="true" frameheight="500px" framewidth="420px" src="s2r://panorama/images/events/dark_carnival/lockpicking/slark_head_psd.vtex" />
+				</Panel>
+				<Panel id="WholeLock">
+					<Panel id="LockTop" />
+					<Panel class="BoardContainer">
+						<Panel id="LockpickingBoardBorder">
+							<Panel id="LockpickingBoard">
+								<Panel class="LockpickingBackground" />
+								<Panel id="UnlockMarkerContainer" />
+								<DOTAParticleScenePanel id="LockpickParticle" hittest="false" particleName="particles/events/dark_carnival/lockpicking/lockpick_2.vpcf" particleonly="true" startActive="true" cameraOrigin="0 120 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+								<Panel id="LockpickPanel">
+									<Panel class="LockpickStick" />
+								</Panel>
+								<Panel id="GameInfoPanel">
+									<Label id="TimerIncreaseText" text="+{f:1:time_increase}" />
+									<Panel class="Stat TimeRemaining">
+										<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_TimeRemaining" />
+										<Label class="Value MonoNumbersFont" id="LevelNumberLabel" text="{f:1:time_remaining}" />
+									</Panel>
+									<Panel class="Stat Score">
+										<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Score" />
+										<DOTAIncrementingLabel id="ScoreLabel" class="Value ScorePanel MonoNumbersFont" display="0" increment="120" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<DOTAParticleScenePanel class="LeftCandleAmbientParticle" hittest="false" particleName="particles/events/dark_carnival/minigames/pick_the_lock_candle_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="-63 150 -54" lookAt="-63 0 -54" fov="60" squarePixels="true" />
+				<DOTAParticleScenePanel class="RightCandleAmbientParticle" hittest="false" particleName="particles/events/dark_carnival/minigames/pick_the_lock_candle_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="65 150 -71" lookAt="65 0 -71" fov="60" squarePixels="true" />
+				<Panel id="TitleBackground">
+					<Label text="#DOTA_DarkCarnival_Lockpicking_Title" class="PanelTitleLabel" />
+				</Panel>
+				<DOTAParticleScenePanel class="LeftCandleParticle" hittest="false" particleName="particles/events/dark_carnival/minigames/pick_the_lock_candle_flame.vpcf" particleonly="true" startActive="true" cameraOrigin="-63 150 -54" lookAt="-63 0 -54" fov="60" squarePixels="true" />
+				<DOTAParticleScenePanel class="RightCandleParticle" hittest="false" particleName="particles/events/dark_carnival/minigames/pick_the_lock_candle_flame.vpcf" particleonly="true" startActive="true" cameraOrigin="65 150 -71" lookAt="65 0 -71" fov="60" squarePixels="true" />
+			</Panel>
+			<Panel class="MainMenuContainer">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Title" />
+						<Label class="Subtitle" text="#DOTA_DarkCarnival_Lockpicking_GameDesc" />
+					</Panel>
+					<Panel class="ColumnContainer">
+						<Panel class="Column First">
+							<Panel id="Controls" class="Section">
+								<Label class="SectionHeader" text="#DOTA_Crownfall_Overworld_HowToPlay" />
+								<Label class="Details HowToPlay" text="#DOTA_DarkCarnival_Lockpicking_Help_HowToPlay" />
+								<Panel class="Quadrant">
+									<Panel class="Contents">
+										<Panel class="ControlMouse">
+											<Panel class="MouseButton MOUSE1" />
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_Lockpicking_Help_Pick" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_Help_Pick_Details" />
+									</Panel>
+								</Panel>
+								<Panel class="Quadrant">
+									<Panel class="Contents">
+										<Panel class="ControlMouse">
+											<Panel class="MouseButton MOUSE2" />
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_Lockpicking_Help_Boost" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_Help_Boost_Details" />
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="SectionSpacer" />
+							<Panel class="Section">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Scoring" />
+								<Panel id="ScoreList" class="DescriptionContainer">
+									<Panel class="Row">
+										<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_Scoring_SuccessfulPick" />
+										<Label class="DetailsValue" text="{d:score_per_unlock}" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="Scoring" class="Column Last">
+							<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+								<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="Rewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="RewardsList" class="RewardsSection" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton id="PlayButton" class="StartGameButton Wide" text="#DOTA_DarkCarnival_Lockpicking_Play" onactivate="DOTALockpickingSetMode(time_attack);DOTAEncounterMinigameStart()" />
+				</Panel>
+			</Panel>
+			<Panel class="PausedMenuContainer">
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Paused" />
+					</Panel>
+				</Panel>
+				<Panel class="PausedMenuButtons">
+					<DOTADarkCarnivalButton id="ResumeButton" class="ResumeButton UltraWide" text="#DOTA_DarkCarnival_Lockpicking_Resume" onactivate="DOTALockpickingTogglePaused()" />
+					<Panel class="Dash" />
+					<Label class="ExitGameButton LabelButton LabelMedium" text="#DOTA_DarkCarnival_Lockpicking_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+				</Panel>
+			</Panel>
+			<Panel class="PostGameMenuContainer" hittest="false">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body" hittest="false">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_GameOver" />
+					</Panel>
+					<Panel id="PostGameScore" class="Section">
+						<Panel class="DescriptionContainer">
+							<Panel class="Row">
+								<Label class="Details MonoNumbersFont" text="#DOTA_DarkCarnival_Lockpicking_ScoringUnlocks" />
+								<Label class="DetailsValue MonoNumbersFont" text="{d:unlocks_score}" />
+							</Panel>
+							<Panel class="Row TotalScore">
+								<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_ScoringTotal" />
+								<Label class="DetailsValue" text="{d:total_score}" />
+							</Panel>
+						</Panel>
+						<Panel class="NewHighScoreContainer">
+							<Label class="NewHighScoreLabel LabelMedium" text="#DOTA_DarkCarnival_Minigames_NewHighScore" />
+						</Panel>
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="PostGameRewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="PostGameRewardsList" class="RewardsSection" />
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+						<DelayLoadList id="PostGameLeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton class="MainMenuButton Wide" text="#DOTA_DarkCarnival_Lockpicking_PlayAgain" onactivate="DOTALockpickingSetMode(time_attack);DOTAEncounterMinigameStart()" />
+				</Panel>
+			</Panel>
+			<Panel class="MissingDataSpinnerContainer" hittest="false">
+				<Panel class="Spinner MissingDataSpinner" hittest="false" />
+			</Panel>
+			<DOTALockpickingScenePanel id="FXScenePanel" hittest="false" particleonly="false" map="maps/scenes/dark_carnival/lockpicking_fx.vpk" camera="fx_camera" />
+			<Panel class="LeftMouseHint" hittest="false">
+				<Panel class="PickLabelContainer">
+					<Label text="#DOTA_DarkCarnival_Lockpicking_Help_Pick" class="LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlMouse">
+					<Panel class="MouseButton MOUSE1" />
+				</Panel>
+			</Panel>
+			<Panel class="RightMouseHint" hittest="false">
+				<Panel class="BoostLabelContainer">
+					<Label text="#DOTA_DarkCarnival_Lockpicking_Help_Boost" class="LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlMouse">
+					<Panel class="MouseButton MOUSE2" />
+				</Panel>
+			</Panel>
+			<Panel class="PauseHint" onactivate="DOTALockpickingTogglePaused()">
+				<Panel class="PauseLabelContainer" hittest="false">
+					<Label text="#DOTA_DarkCarnival_Lockpicking_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+					<Label text="#DOTA_DarkCarnival_Lockpicking_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+				</Panel>
+				<Panel class="ControlKey">
+					<Label class="KeyText" text="F9" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="CloseEncounterButton" onactivate="UIPopupButtonClicked()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</DOTADarkCarnivalEncounterLockpickingPopup>
+</root>

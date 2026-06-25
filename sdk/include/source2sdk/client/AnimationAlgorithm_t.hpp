@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 7
+        // Enumerator count: 6
         // Alignment: 1
         // Size: 0x_
         enum class AnimationAlgorithm_t : std::uint8_t
@@ -23,8 +23,7 @@ namespace source2sdk
             eSequence = 0x1,
             eAnimGraph2 = 0x2,
             eAnimGraph2Secondary = 0x3,
-            eAnimGraph1 = 0x4,
-            eCount = 0x5,
+            eCount = 0x4,
         };
     };
 };

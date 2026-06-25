@@ -1,0 +1,130 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/ui_dark_carnival_visual_novel.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="PortraitContainerLayered">
+			<Panel class="PortraitContainerLayered">
+				<Panel id="AnimationContainer" class="AnimationContainer">
+					<Panel class="SilhouetteContainer">
+						<Image id="ActorPictureSilhouette" class="ActorPicture Silhouette" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Image id="ActorPicture" class="ActorPicture" scaling="stretch-to-fit-preserve-aspect" />
+					<Image id="ActorPictureFadeOut" class="ActorPicture" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="ActorEffectOverlay" />
+				<Panel class="ActorNameContainer">
+					<Panel class="ActorNameBackground">
+						<Panel class="Edge Left" />
+						<Panel class="Fill" />
+						<Panel class="Middle" />
+						<Panel class="Fill" />
+						<Panel class="Edge Right" />
+					</Panel>
+					<Label class="ActorName LabelLarge" text="{s:name_actor}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="NavButton">
+			<Panel class="NavButton">
+				<Panel class="NavButtonBackground" />
+				<Image class="NavButtonIcon Comic" src="s2r://panorama/images/control_icons/24px/comic_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="NavButtonIcon Lock" src="s2r://panorama/images/control_icons/24px/lock.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="ComicViewer">
+			<Panel class="ComicViewer" acceptsfocus="true">
+				<ComicViewerBook id="Book" remember_last_page="false" minimum_page_time="0.3" />
+			</Panel>
+		</snippet>
+		<snippet name="ActionSwipe">
+			<Panel class="ActionSwipe">
+				<Panel id="ActionSwipeBackground" />
+				<Panel id="ActionSwipeForeground" />
+			</Panel>
+		</snippet>
+		<snippet name="ActionSwipeBackground_MotionLines">
+			<Panel class="ActionSwipeBackground_MotionLines">
+				<Image id="MotionLinesBG" src="s2r://panorama/images/events/dark_carnival/visual_novel/popups/actionswipe_bg_png.vtex" />
+				<Image id="MotionLines" src="s2r://panorama/images/events/dark_carnival/visual_novel/popups/actionswipe_lines_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="ActionSwipeForeground_ThrowBoot">
+			<Panel class="ActionSwipeForeground_ThrowBoot">
+				<Image id="VaporizedBoot" src="s2r://panorama/images/events/dark_carnival/visual_novel/popups/boot_vaporize_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image id="Boot" src="s2r://panorama/images/events/dark_carnival/visual_novel/popups/boot_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="VisualNovel">
+		<Panel id="ChapterNavigation" />
+		<Panel class="MainContentsWrapper">
+			<Panel class="MainContents" onactivate="DOTAVisualNovelNextStep( false )">
+				<Panel class="VisualNovelBackground" />
+				<DOTAMotionComic id="BackgroundMotionComicPanel" />
+				<Panel id="StoryPanel" class="NovelContainer" hittest="false">
+					<Panel class="GroupContainer Top" id="GroupContainer1">
+						<Panel class="PortraitGroup" id="PortraitGroup1" />
+						<Panel class="PortraitGroupEffect" />
+						<Panel class="ActorTextContainer">
+							<DOTATypewriterText id="ActorText1" class="DarkCarnival ActorText" cursorimage="s2r://panorama/images/emoticons/crownfall/props/prop_donkey_prompt_psd.vtex" />
+							<Panel class="MoreIndicator" />
+							<Panel class="ActorNameContainer">
+								<Image class="ActorNameContainerShadow" src="s2r://panorama/images/events/crownfall/encounters/box_shadow_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="ActorNameContainerBackdrop">
+									<Panel class="ActorNameBackdrop" />
+								</Panel>
+								<Panel class="ActorNameInnerContainer">
+									<Image class="ActorNameForeground" src="s2r://panorama/images/events/dark_carnival/visual_novel/nameplates/nameplate_witch_centerpiece_png.vtex" />
+									<Label class="ActorName" text="{s:current_actor_name}" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="GroupContainer Bottom" id="GroupContainer2">
+						<Panel class="PortraitGroup" id="PortraitGroup2" />
+						<Panel class="PortraitGroupEffect" />
+						<Panel class="ActorTextContainer">
+							<DOTATypewriterText id="ActorText2" class="DarkCarnival ActorText" cursorimage="s2r://panorama/images/emoticons/crownfall/props/prop_donkey_prompt_psd.vtex" />
+							<Panel class="MoreIndicator" />
+							<Panel class="ActorNameContainer">
+								<Image class="ActorNameContainerShadow" src="s2r://panorama/images/events/dark_carnival/visual_novel/nameplates/box_shadow_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Panel class="ActorNameContainerBackdrop">
+									<Panel class="ActorNameBackdrop" />
+								</Panel>
+								<Panel class="ActorNameInnerContainer">
+									<Image class="ActorNameForeground" src="s2r://panorama/images/events/dark_carnival/visual_novel/nameplates/nameplate_witch_centerpiece_png.vtex" />
+									<Label class="ActorName" text="{s:current_actor_name}" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="InstructionTextContainer">
+					<Label class="InstructionText" text="#DOTA_Crownfall_VisualNovel_ClickToContinue" />
+				</Panel>
+				<Panel id="PopupContainer">
+					<Image class="SoundEffectBackground Vaporize" src="s2r://panorama/images/events/dark_carnival/visual_novel/expressions/poof_png.vtex" />
+					<Label id="PopupText" text="{s:text_popup}" />
+				</Panel>
+				<Panel id="ComicContainer" />
+				<Panel class="ComicBlocker" onactivate="" />
+				<Panel id="ComicExternalContainer">
+					<Image id="ExternalComicBackgroundPage" />
+					<DOTACrownfallButton id="ShowExternalComicButton" text="#DOTA_Crownfall_StoryRecap_Act1_ViewComicButton" onactivate="DOTAVisualNovelShowExternalComic()" />
+				</Panel>
+				<Panel id="ActionSwipeContainer" />
+				<DOTAMotionComic id="MotionComicPanel" />
+			</Panel>
+			<Panel id="CloseButtonContainer">
+				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackgroundHover" hittest="false" />
+				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			</Panel>
+		</Panel>
+		<Image id="PreloadActorPicture" />
+	</Panel>
+</root>

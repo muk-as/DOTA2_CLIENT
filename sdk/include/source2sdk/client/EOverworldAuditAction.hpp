@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 20
+        // Enumerator count: 25
         // Alignment: 4
         // Size: 0x_
         enum class EOverworldAuditAction : std::uint32_t
@@ -38,6 +38,11 @@ namespace source2sdk
             k_eOverworldAuditAction_DevSetFortune = 0x12,
             k_eOverworldAuditAction_DevClearFortune = 0x13,
             k_eOverworldAuditAction_RequestFortune = 0x14,
+            k_eOverworldAuditAction_ClaimFortuneReward = 0x15,
+            k_eOverworldAuditAction_DevGrantFortuneTellerCoin = 0x16,
+            k_eOverworldAuditAction_ClaimFortuneTellerStoryNodeReward = 0x17,
+            k_eOverworldAuditAction_MatchRewardsAbilityDraft = 0x18,
+            k_eOverworldAuditAction_MatchRewardsCoopBotMatch = 0x19,
         };
     };
 };

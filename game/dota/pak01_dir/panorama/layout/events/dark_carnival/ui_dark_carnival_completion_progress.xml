@@ -1,0 +1,40 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/ui_dark_carnival_completion_progress.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ChapterContainer">
+			<Panel class="ChapterContainer">
+				<ProgressBar id="ChapterProgressBar" class="CompletionProgressBar" value="0.0" max="1" />
+				<Label class="ChapterTitle" text="{s:chapter_name}" />
+				<Panel class="ChapterProgress">
+					<Image class="CompletedFlagImage" />
+					<Label class="ProgressText" html="true" text="&lt;b&gt;{d:chapter_total_earned}&lt;/b&gt; / {d:chapter_total_max}" />
+				</Panel>
+				<Label class="CompleteText" text="#DOTA_DarkCarnival_ChapterComplete" />
+				<Panel class="LockedContainer">
+					<Label class="LockedText" text="#DOTA_DarkCarnival_ChapterLocked" />
+					<Panel class="InfoIcon" onmouseover="UIShowTextTooltip(&apos;#DOTA_DarkCarnival_ChapterReleaseDate&apos;)" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTADarkCarnivalCompletionProgress>
+		<Panel class="ChapterHeader">
+			<Label class="TitleSmall ChapterTitle" text="{s:current_chapter_name}" />
+			<Panel class="CompletionContainer">
+				<Image class="CompletedFlagImage" />
+				<Label class="LabelMedium ActCompletion Emphasis" html="true" text="{d:current_chapter_total_earned}" />
+				<Label class="LabelMedium ActCompletion" html="true" text=" / {d:current_chapter_total_max}" />
+			</Panel>
+		</Panel>
+		<Panel id="ChapterContainer" />
+		<Panel class="CountdownContainer" onmouseover="UIShowTextTooltip( &apos;#DOTA_DarkCarnival_ChapterReleaseDate&apos; )" onmouseout="UIHideTextTooltip()">
+			<Panel class="InfoIcon" />
+			<Label class="LabelMedium Countdown" html="true" text="#DOTA_DarkCarnival_TimeUntilNextChapter" />
+		</Panel>
+	</DOTADarkCarnivalCompletionProgress>
+</root>
