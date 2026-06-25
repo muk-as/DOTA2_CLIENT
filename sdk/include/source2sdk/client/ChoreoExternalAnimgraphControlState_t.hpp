@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 6
+        // Enumerator count: 8
         // Alignment: 4
         // Size: 0x_
         enum class ChoreoExternalAnimgraphControlState_t : std::uint32_t
@@ -21,20 +21,26 @@ namespace source2sdk
             // MPropertyFriendlyName "None"
             // MAlternateSemanticName
             eNone = 0x0,
-            // MPropertyFriendlyName "Begin"
-            // MAlternateSemanticName
-            eBegin = 0x1,
-            // MPropertyFriendlyName "Looping"
-            // MAlternateSemanticName
-            eLooping = 0x2,
             // MPropertyFriendlyName "Exit"
             // MAlternateSemanticName
-            eExit = 0x3,
-            // MPropertyFriendlyName "Abort"
+            eExit = 0x1,
+            // MPropertyFriendlyName "State_01"
             // MAlternateSemanticName
-            eAbort = 0x4,
+            eState01 = 0x2,
+            // MPropertyFriendlyName "State_02"
+            // MAlternateSemanticName
+            eState02 = 0x3,
+            // MPropertyFriendlyName "State_03"
+            // MAlternateSemanticName
+            eState03 = 0x4,
+            // MPropertyFriendlyName "State_04"
+            // MAlternateSemanticName
+            eState04 = 0x5,
+            // MPropertyFriendlyName "State_05"
+            // MAlternateSemanticName
+            eState05 = 0x6,
             // MPropertySuppressEnumerator
-            eCount = 0x5,
+            eCount = 0x7,
         };
     };
 };

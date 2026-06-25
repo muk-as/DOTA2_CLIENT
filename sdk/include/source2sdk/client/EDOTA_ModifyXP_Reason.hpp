@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 9
+        // Enumerator count: 10
         // Alignment: 4
         // Size: 0x_
         enum class EDOTA_ModifyXP_Reason : std::uint32_t
@@ -26,7 +26,8 @@ namespace source2sdk
             DOTA_ModifyXP_Outpost = 0x5,
             DOTA_ModifyXP_CatchUp = 0x6,
             DOTA_ModifyXP_HeroAbility = 0x7,
-            DOTA_ModifyXP_MAX = 0x8,
+            DOTA_ModifyXP_SummonKill = 0x8,
+            DOTA_ModifyXP_MAX = 0x9,
         };
     };
 };

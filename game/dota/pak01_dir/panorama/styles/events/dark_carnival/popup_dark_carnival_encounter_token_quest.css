@@ -20,6 +20,7 @@
 	background-color: transparent;
 	margin-top: 0;
 	padding-top: 0;
+	height: fit-children;
 }
 
 .PopupPanel.TokenQuest .InnerPopupPanel .PanelTitleContainer
@@ -57,9 +58,16 @@
 {
 	width: 100%;
 	height: 100%;
-	background-image: url("s2r://panorama/images/textures/miniprofile_rock_darker_psd.vtex");
-	background-repeat: repeat;
-	background-size: 100% 100%;
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/act1/smelting_room2_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: cover;
+	blur: gaussian( 4px );
+}
+
+.AlreadyClaimed .PopupBackground
+{
+	saturation: 0.5;
+	brightness: 0.35;
 }
 
 #RewardContainer
@@ -105,17 +113,17 @@
 #RewardContainer .EconItemReward .Details Label
 {
 	font-size: 20px;
-	color: #ddd;
+	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
 }
 
 #RewardContainer .EconItemReward .Quantity
 {
 	vertical-align: bottom;
 	horizontal-align: right;
-	color: white;
-	text-shadow: 0px 2px 12px black;
+	color: gradient( linear, 0% 24%, 0% 100%, from( #FFF3D9 ), color-stop( 0.25, #FBE0A0 ), color-stop( 0.5, #787C89 ), color-stop( 0.75, #9D968E ), to( #88A7FF) ) text-shadow: 0px 2px 12px black;
 	font-family: titleFont;
 	font-size: 28px;
+	font-weight: semi-bold;
 	margin: 2px 6px;
 	letter-spacing: 0.5px;
 }
@@ -155,6 +163,7 @@
 #RewardContainer .Details .ItemName
 {
 	font-size: 24px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
 	text-shadow: 0 0 3px black;
 }
 
@@ -163,25 +172,37 @@
 	visibility: Collapse;
 }
 
-.NoMoreText
+.NoMoreTextContainer
 {
-	visibility: collapse;
+	flow-children: right;
+	vertical-align: center;
 	horizontal-align: center;
-	margin-top: 80px;
-	margin-bottom: -20px;
-	text-align: center;
+	max-width: 480px;
+	min-height: 250px;
+	padding: 32px;
+	visibility: collapse;
 }
 
-.AlreadyClaimed .NoMoreText
+.AlreadyClaimed .NoMoreTextContainer
 {
 	visibility: visible;
 }
 
+.NoMoreTextContainer .NoMoreText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 24px;
+	text-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
+	text-shadow: 0px 2px 8px black;
+}
+
 #ClaimRewardButton
 {
-	margin-top: 50px;
+	margin-top: 24px;
 	horizontal-align: center;
-	width: 200px;
+	width: 240px;
 }
 
 .AlreadyClaimed #ClaimRewardButton
@@ -194,14 +215,14 @@
 	vertical-align: center;
 	horizontal-align: center;
 	flow-children: right-wrap;
-	margin: 10px;
+	margin: 0px;
 	min-height: 70px;
-	max-width: 400px;
+	max-width: 480px;
 	max-height: 280px;
 	background-color: #261e2cfe;
 	padding: 10px;
 	border-radius: 8px;
-	border: 1px solid #3a1e51fe;
+	border: 1px solid goldDark&33;
 	box-shadow: 0 6px 32px -4px rgba(0, 0, 0, 0.6 );
 }
 
@@ -221,6 +242,7 @@
 	height: 1000px;
 	width: 550px;
 	transform: translateX( 250px ) translateY( 30px );
+	visibility: collapse;
 }
 
 .NoteContainer
@@ -234,7 +256,9 @@
 	horizontal-align: right;
 	vertical-align: center;
 	padding: 4px;
-	transform: rotateZ( 2deg ) translateX( -180px );
+	transform: rotateZ( 5deg );
+	x: -220px;
+	y: 220px;
 	brightness: 0.9;
 }
 
@@ -248,7 +272,7 @@
 {
 	font-size: 16px;
 	color: black;
-	padding: 30px 30px 0 30px;
+	padding: 50px 30px 0 30px;
 	font-family: Reaver;
 	line-height: 1.7;
 	color: #444;
@@ -310,10 +334,11 @@
 	horizontal-align: center;
 	text-transform: uppercase;
 	font-size: 40px;
+	font-weight: semi-bold;
 	letter-spacing: 1px;
-	font-family: Reaver;
-	text-shadow: 0px 1px 1px gold3;
-	color: gold1;
+	font-family: titleFont;
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+	color: gradient( linear, 0% 24%, 0% 100%, from( #FFF3D9 ), color-stop( 0.25, #FBE0A0 ), color-stop( 0.5, #787C89 ), color-stop( 0.75, #9D968E ), to( #88A7FF) );
 }
 
 .ContentsWrapper .InstructionsText
@@ -325,13 +350,14 @@
 	color: gold1;
 	text-shadow: 0px 1px 1px gold3;
 	brightness: 0.5;
-	margin-bottom: 10px;
+	margin-bottom: 32px;
 }
 
 .ContentsWrapper .CenterContainer
 {
-	margin-left: 210px;
 	flow-children: right;
+	border: 1px solid rgba(255, 255, 255, 0.55);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( goldDark&00 ), color-stop( 0.15, goldDark&33 ), color-stop( 0.5, goldLight ), color-stop( 0.85, goldDark&33 ), to( goldDark&00 ) );
 }
 
 .NoRewardVisualization .TradeArrow
@@ -358,6 +384,19 @@
 .AlreadyClaimed .TradeArrow
 {
 	visibility: collapse;
+}
+
+.TradeArrow
+{
+	width: 48px;
+	height: width-percentage(100%);
+	margin: 0px 12px 0px 32px;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 50%, 50% 100%, from( goldLight ), to( goldDark ) );
+	img-shadow: 0px 2px 12px black;
+	transition-property: opacity-brush, img-shadow;
+	transition-duration: 0.1s;
 }
 
 .AlreadyClaimed .BodyContainer .AsyncContainer .Actions

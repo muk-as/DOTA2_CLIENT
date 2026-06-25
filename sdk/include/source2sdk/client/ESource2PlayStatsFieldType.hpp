@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 17
+        // Enumerator count: 18
         // Alignment: 4
         // Size: 0x_
         enum class ESource2PlayStatsFieldType : std::uint32_t
@@ -35,6 +35,7 @@ namespace source2sdk
             Source2PlayStats_UTCDateTime = 0xe,
             Source2PlayStats_SteamIDTrustBucket = 0xf,
             Source2PlayStats_SteamIDTrustBucketMin = 0x10,
+            Source2PlayStats_SteamID = 0x11,
         };
     };
 };
