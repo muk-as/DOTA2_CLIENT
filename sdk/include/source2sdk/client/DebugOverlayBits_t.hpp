@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 41
+        // Enumerator count: 43
         // Alignment: 8
         // Size: 0x_
         enum class DebugOverlayBits_t : std::uint64_t
@@ -139,6 +139,12 @@ namespace source2sdk
             // MPropertyFriendlyName "NPC God Mode"
             // MPropertyDescription "This NPC will take no damage or react to it"
             OVERLAY_NPC_GOD_MODE = 0x40000000000,
+            // MPropertyFriendlyName "NPC Anim AI Handshakes"
+            // MPropertyDescription "show handshaking between AI and Animgraphs"
+            OVERLAY_NPC_ANIM_AI_HANDSHAKES_BIT = 0x80000000000,
+            // MPropertyFriendlyName "NPC Path Queries"
+            // MPropertyDescription "show path query processing"
+            OVERLAY_NPC_PATH_QUERIES_BIT = 0x100000000000,
         };
     };
 };

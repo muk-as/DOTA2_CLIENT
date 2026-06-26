@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 1012
+        // Enumerator count: 1027
         // Alignment: 4
         // Size: 0x_
         enum class EDOTAGCMsg : std::uint32_t
@@ -461,6 +461,7 @@ namespace source2sdk
             k_EMsgClientToGCSetPlayerCardRosterRequest = 0x1ff4,
             k_EMsgClientToGCSetPlayerCardRosterResponse = 0x1ff5,
             k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse = 0x1ff7,
+            k_EMsgLobbyOverworldFortuneList = 0x1ff9,
             k_EMsgLobbyBattleCupVictory = 0x1ffa,
             k_EMsgGCGetPlayerCardItemInfo = 0x1ffb,
             k_EMsgGCGetPlayerCardItemInfoResponse = 0x1ffc,
@@ -1007,6 +1008,12 @@ namespace source2sdk
             k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse = 0x2358,
             k_EMsgClientToGCMonsterHunterClaimSetReward = 0x2359,
             k_EMsgClientToGCMonsterHunterClaimSetRewardResponse = 0x235a,
+            k_EMsgClientToGCFantasyCraftingSelectTeam = 0x235b,
+            k_EMsgClientToGCFantasyCraftingSelectTeamResponse = 0x235c,
+            k_EMsgClientToGCFantasyCraftingSelectGlobalPrefix = 0x235d,
+            k_EMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse = 0x235e,
+            k_EMsgClientToGCFantasyCraftingSelectGlobalSuffix = 0x235f,
+            k_EMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse = 0x2360,
             k_EMsgClientToGCItemBattlerGetUserData = 0x238c,
             k_EMsgClientToGCItemBattlerGetUserDataResponse = 0x238d,
             k_EMsgClientToGCItemBattlerGameAction = 0x238e,
@@ -1030,6 +1037,14 @@ namespace source2sdk
             k_EMsgClientToGCOverworldRequestFortuneResponse = 0x23a0,
             k_EMsgClientToGCOverworldDevClearFortune = 0x23a1,
             k_EMsgClientToGCOverworldDevClearFortuneResponse = 0x23a2,
+            k_EMsgClientToGCOverworldClaimFortuneReward = 0x23a3,
+            k_EMsgClientToGCOverworldClaimFortuneRewardResponse = 0x23a4,
+            k_EMsgClientToGCOverworldDevGrantFortuneTellerCoin = 0x23a5,
+            k_EMsgClientToGCOverworldDevGrantFortuneTellerCoinResponse = 0x23a6,
+            k_EMsgClientToGCOverworldClaimFortunePermanentReward = 0x23a7,
+            k_EMsgClientToGCOverworldClaimFortunePermanentRewardResponse = 0x23a8,
+            k_EMsgClientToGCOverworldClaimFortuneTellerStoryNode = 0x23a9,
+            k_EMsgClientToGCOverworldClaimFortuneTellerStoryNodeResponse = 0x23aa,
         };
     };
 };
