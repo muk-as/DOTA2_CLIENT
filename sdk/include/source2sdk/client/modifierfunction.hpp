@@ -830,7 +830,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_CUSTOM1 = 0x194,
             // MScriptDescription "OnCustom3 OnCustom2"
             MODIFIER_EVENT_ON_CUSTOM2 = 0x195,
-            // MScriptDescription "x OnCustom3"
+            // MScriptDescription "h OnCustom3"
             MODIFIER_EVENT_ON_CUSTOM3 = 0x196,
             MODIFIER_FUNCTION_LAST = 0x197,
             MODIFIER_FUNCTION_INVALID = 0xffff,
