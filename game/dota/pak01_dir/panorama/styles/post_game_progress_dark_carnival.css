@@ -219,8 +219,8 @@
 
 #DarkCarnivalProgressMain #DarkCarnivalProgressRewards .DarkCarnivalInfo
 {
-	margin-top: 168px;
-	margin-bottom: 12px;
+	margin-top: 160px;
+	margin-bottom: 16px;
 	horizontal-align: center;
 	flow-children: down;
 }
@@ -233,17 +233,20 @@
 	padding-bottom: 6px;
 	border-radius: 1px;
 	border-image-source: url("s2r://panorama/images/events/dark_carnival/postgame/rewards_container_border_png.vtex");
-	border-width: 24px;
+	border-width: 20px;
 	border-image-slice: 48px;
 }
 
 #DarkCarnivalProgressMain #DarkCarnivalProgressRewards .DarkCarnivalRewardsContainer .RewardsDivider
 {
 	width: 3px;
-	height: 100%;
+	height: 96%;
+	vertical-align: center;
 	background-image: url("s2r://panorama/images/events/dark_carnival/postgame/rewards_divider_png.vtex");
 	background-size: 100%;
-	margin: 0px 24px;
+	margin: 0px 20px;
+	overflow: noclip;
+	margin-top: 2%;
 }
 
 .HasScrap #DarkCarnivalProgressMain #DarkCarnivalProgressRewards
@@ -354,11 +357,26 @@
 	font-size: 44px;
 }
 
+#DarkCarnivalProgressMain #DarkCarnivalProgressRewards .TicketsAndScrapList
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#DarkCarnivalProgressMain #DarkCarnivalProgressRewards .TicketsAndScrapList .RewardsDivider
+{
+	width: 1px;
+	overflow: clip;
+	height: 80%;
+	margin: 0px;
+	margin-top: 4%;
+}
+
 #DarkCarnivalProgressMain #DarkCarnivalProgressRewards .DarkCarnivalTokenList
 {
-	horizontal-align: center;
 	flow-children: right;
 	overflow: noclip;
+	padding: 0px 12px;
 }
 
 #DarkCarnivalProgressMain #DarkCarnivalProgressRewards .DarkCarnivalTokenList.HighlightTokenReceived .DarkCarnivalTokenContainer:not(.Empty) DOTADarkCarnivalToken
@@ -393,6 +411,8 @@
 {
 	ui-scale: 200%;
 	horizontal-align: center;
+	margin-left: -6px;
+	margin-right: -6px;
 }
 
 #DarkCarnivalProgressMain #DarkCarnivalProgressRewards .DarkCarnivalTokenList .DarkCarnivalTokenContainer .TokenName
@@ -402,6 +422,10 @@
 	horizontal-align: center;
 	margin-top: -6px;
 	color: textLighter;
+	width: 90px;
+	height: 20px;
+	text-align: center;
+	text-overflow: shrink;
 	transition-property: color;
 	transition-duration: 0.3s;
 }
@@ -445,7 +469,6 @@
 {
 	flow-children: down;
 	horizontal-align: center;
-	padding: 0px 40px;
 }
 
 #DarkCarnivalProgressMain .DarkCarnivalOverworldProgress .DarkCarnivalOverworldProgressTitle
@@ -553,7 +576,7 @@
 
 #DarkCarnivalProgressMain .DarkCarnivalFortuneTellerProgress #DarkCarnivalFortuneTellerCoinContainer .DarkCarnivalFortuneTellerCoin .OracleCoinSlot
 {
-	width: 96px;
+	width: 112px;
 	height: width-percentage(100%);
 	horizontal-align: center;
 	vertical-align: center;
@@ -575,7 +598,7 @@
 
 #DarkCarnivalProgressMain .DarkCarnivalFortuneTellerProgress #DarkCarnivalFortuneTellerCoinContainer .DarkCarnivalFortuneTellerCoin .OracleCoinImage
 {
-	width: 96px;
+	width: 112px;
 	height: width-percentage(100%);
 	horizontal-align: center;
 	vertical-align: center;
@@ -1003,6 +1026,69 @@
 .CandyworksLocked .RerollCapLockedShop
 {
 	visibility: visible;
+}
+
+#ScrapRow
+{
+	flow-children: down;
+	vertical-align: center;
+	margin-top: -8px;
+	width: 120px;
+	margin-left: 4px;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+}
+
+.ShowScrap #ScrapRow
+{
+	opacity: 1;
+	transform: none;
+}
+
+#ScrapRow .ScrapText
+{
+	horizontal-align: center;
+	font-size: 16px;
+	color: textLighter;
+	vertical-align: center;
+	text-shadow: 0px 2px 8px black;
+	text-overflow: shrink;
+	height: 19px;
+	margin-bottom: 4px;
+}
+
+#ScrapRow #ScrapList
+{
+	horizontal-align: center;
+}
+
+#ScrapRow #ScrapList.DarkCarnivalTokenList .DarkCarnivalTokenContainer
+{
+	opacity: 1;
+	margin: 0px -12px;
+}
+
+#ScrapRow #ScrapList.DarkCarnivalTokenList .DarkCarnivalTokenContainer .TokenName
+{
+	visibility: collapse;
+}
+
+#ScrapRow #ScrapList.DarkCarnivalTokenList .DarkCarnivalTokenContainer DOTADarkCarnivalToken
+{
+	ui-scale: 120%;
+}
+
+#ScrapRow #ScrapList.TiltTickets #Scrap0
+{
+	transform: rotateZ( -8deg );
+}
+
+#ScrapRow #ScrapList.TiltTickets #Scrap1
+{
+	transform: rotateZ( 8deg );
 }
 
 @keyframes 'GlowText'
