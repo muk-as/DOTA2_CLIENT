@@ -1,19 +1,34 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
+@define bronzeDark: #4D3F3A;
+@define goldDark: #977656;
+@define goldLight: #FFDFB7;
+@define midnightDark: #0C1223;
+@define midnightLight: #352E3D;
+@define blueDark: #202D52;
+@define blueLight: #485E6B;
+@define purpleDark: #2C2233;
+@define purpleLight: #3F3144;
+@define tanDark: #4A2F2B;
+@define tanLight: #665033;
+@define greyDark: #101315;
 DOTAUIOverworldInventoryPicker
 {
 	flow-children: down;
 	width: 100%;
-	padding: 32px 44px;
+	height: 100%;
 	padding-top: 0px;
 }
 
-.CloseButton
+.TextureOverlay
 {
 	ignore-parent-flow: true;
-	vertical-align: top;
-	horizontal-align: right;
-	margin-right: -40px;
+	width: 100%;
+	height: 100%;
+	background-color: purpleDark;
+	background-image: url("s2r://panorama/images/events/dark_carnival/textures/dark_carnival_woodgrain_04_horizontal_png.vtex");
+	background-size: contain;
+	opacity: 0.6;
 }
 
 #ItemList
@@ -38,7 +53,7 @@ DOTAUIOverworldInventoryPicker
 {
 	padding: 24px 0px 16px;
 	horizontal-align: center;
-	color: LightestGrey;
+	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
 	width: 100%;
 	text-align: center;
 	text-shadow: 0px 2px 8px black;
@@ -51,7 +66,6 @@ DOTAUIOverworldInventoryPicker
 {
 	vertical-align: top;
 	horizontal-align: center;
-	margin-bottom: 16px;
 	min-width: 600px;
 }
 
@@ -60,6 +74,7 @@ DOTAUIOverworldInventoryPicker
 	vertical-align: center;
 	horizontal-align: center;
 	font-size: 40px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
 	visibility: collapse;
 	transition-property: brightness, pre-transform-scale2d;
 	transition-duration: .1s;
@@ -70,8 +85,66 @@ DOTAUIOverworldInventoryPicker
 	pre-transform-scale2d: 1.01;
 }
 
+.EmptyInventory .ChooseTokensTitle
+{
+	visibility: collapse;
+}
+
 .EmptyInventory .NoTokensLabel
 {
 	visibility: visible;
+}
+
+.CloseEncounterButton
+{
+	width: 44px;
+	height: 44px;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: top;
+	transition-property: pre-transform-scale2d, brightness;
+	transition-duration: 0.1s;
+}
+
+.CloseEncounterButton .BorderInner
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( midnightLight ), to( midnightDark ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #3E322C ), to( #8A7467 ) );
+	box-shadow: inset 0px 1px 8px -1px rgba(0, 0, 0, 0.39);
+}
+
+.CloseEncounterButton .CloseIcon
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 24px;
+	height: 24px;
+	opacity-brush: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( goldDark ) );
+	img-shadow: 0px 2px 12px black;
+	padding: 4px;
+	transition-property: opacity-brush, img-shadow;
+	transition-duration: 0.1s;
+}
+
+.CloseEncounterButton:hover .BorderInner
+{
+	brightness: 1.5;
+}
+
+.CloseEncounterButton:hover .CloseIcon
+{
+	opacity-brush: gradient( linear, 0% 20%, 0% 100%, from( white ), to( white ) );
+	img-shadow: 0px 0px 12px rgba(255, 216, 158, 0.2);
+}
+
+.CloseEncounterButton:active
+{
+	pre-transform-scale2d: 0.95;
+	brightness: 0.5;
 }
 

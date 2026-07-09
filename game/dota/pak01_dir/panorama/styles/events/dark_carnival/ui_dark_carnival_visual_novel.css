@@ -287,8 +287,6 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 
 .EncounterDialogue .MainContents
 {
-	width: 1200px;
-	height: fit-children;
 	background-color: none;
 	box-shadow: none;
 	border: 0;
@@ -582,7 +580,7 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 
 .ActorTextContainer .ActorName,.ActorTextContainer .ActorText
 {
-	font-family: Reaver;
+	font-family: titleFont;
 }
 
 .ActorTextContainer .ActorText
@@ -621,8 +619,8 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 
 .EncounterDialogue .ActorTextContainer
 {
-	background-color: #00000000;
-	padding-bottom: 30px;
+	margin-bottom: 180px;
+	max-height: 220px;
 }
 
 .ActorTextContainer .MoreIndicator
@@ -660,6 +658,18 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 	visibility: collapse;
 }
 
+.EncounterDialogue .GroupContainer .ActorTextContainer
+{
+	transition-property: transform, brightness;
+	transition-duration: 0.5s;
+}
+
+.EncounterDialogue.NoMoreDialogue.DialogFinished .GroupContainer .ActorTextContainer
+{
+	transform: translateY( 2px );
+	brightness: 0.8;
+}
+
 @keyframes 'MoreIndicatorAnim'
 {
 	100%
@@ -686,6 +696,19 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 .Bottom .PortraitGroup
 {
 	margin-right: 270px;
+}
+
+.EncounterDialogue .PortraitGroup
+{
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+
+.EncounterDialogue .PortraitGroup .PortraitContainerLayered
+{
+	width: 1000px;
+	height: 800px;
+	margin-right: 130px;
 }
 
 @keyframes 'TestSilhouetteAnimLeft'
@@ -967,6 +990,11 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 	background-image: url("s2r://panorama/images/events/dark_carnival/visual_novel/expressions/silence_png.vtex");
 }
 
+.PortraitContainerLayered.ActorGasp .ActorEffectOverlay
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/visual_novel/expressions/gasp_png.vtex");
+}
+
 .PortraitContainerLayered.Flipped .AnimationContainer .ActorPicture
 {
 	transform: scaleX(-1);
@@ -995,6 +1023,16 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 .Top .PortraitContainerLayered.AutoBristleback:not(.Flipped) .AnimationContainer .ActorPicture
 {
 	transform: translateX( 50px );
+}
+
+.Top .PortraitContainerLayered.Bex:not(.Flipped) .AnimationContainer .ActorPicture
+{
+	transform: translateX( 70px );
+}
+
+.Bottom .PortraitContainerLayered.Flipped.Agnes .AnimationContainer .ActorPicture
+{
+	transform: scaleX(-1) translateX( -100px );
 }
 
 .PortraitContainerLayered .ActorEffectOverlay
@@ -1215,6 +1253,20 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 	animation-fill-mode: forwards;
 }
 
+.PortraitContainerLayered.ShowActorEffectOverlay.ActorGasp .ActorEffectOverlay
+{
+	animation-name: AnimGaspLeft;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+}
+
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.ActorGasp .ActorEffectOverlay
+{
+	animation-name: AnimGaspRight;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+}
+
 .Bottom .PortraitContainerLayered.ShowActorEffectOverlay.AutoMorphling.ActorAnger .ActorEffectOverlay
 {
 	margin-top: 50px;
@@ -1244,6 +1296,11 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 	margin-left: 300px;
 }
 
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Tresdin.ActorGasp .ActorEffectOverlay
+{
+	margin-top: 100px;
+}
+
 .Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Empty.ActorSmoke .ActorEffectOverlay
 {
 	width: 500px;
@@ -1253,6 +1310,32 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 .Top .PortraitContainerLayered.ShowActorEffectOverlay.Slark.ActorAnnoyed .ActorEffectOverlay
 {
 	margin-top: 300px;
+}
+
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Slark.ActorSweatDrop .ActorEffectOverlay
+{
+	margin-top: 300px;
+}
+
+.Top .PortraitContainerLayered.ShowActorEffectOverlay.Bex.ActorHuff .ActorEffectOverlay
+{
+	margin-top: 300px;
+	margin-left: 400px;
+}
+
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Cogliacci.ActorHuff .ActorEffectOverlay,.Top .PortraitContainerLayered.ShowActorEffectOverlay.Cogliacci.ActorHuff .ActorEffectOverlay
+{
+	margin-top: 350px;
+}
+
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Cogliacci.ActorNoisy .ActorEffectOverlay
+{
+	margin-top: 300px;
+}
+
+.Bottom .PortraitContainerLayered.ShowActorEffectOverlay.Ringmaster.ActorAnnoyed .ActorEffectOverlay
+{
+	margin-top: 150px;
 }
 
 .PortraitContainerLayered .ActorNameContainer
@@ -1546,7 +1629,7 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 
 .InstructionTextContainer .InstructionText
 {
-	font-family: Reaver;
+	font-family: titleFont;
 	font-size: 20px;
 	color: rgba(255, 255, 255, 0.8);
 	text-shadow: 0px 2px 12px black;
@@ -3465,6 +3548,50 @@ DOTADarkCarnivalVisualNovel.TalkingHead .ActorNameContainer
 	88%
 	{
 		opacity: 0;
+	}
+	
+}
+
+@keyframes 'AnimGaspLeft'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( -0.5, 0.5, 1.0 ) translateX( 0px ) translateY( 0px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( -1, 1, 1.0) translateX( 25px) translateY( -20px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( -1, 1, 1.0) translateX( 30px) translateY( -25px);
+	}
+	
+}
+
+@keyframes 'AnimGaspRight'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( 0.5, 0.5, 1.0 ) translateX( 0px ) translateY( 0px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( 1, 1, 1.0) translateX( -25px) translateY( -20px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( 1, 1, 1.0) translateX( -30px) translateY( -25px);
 	}
 	
 }

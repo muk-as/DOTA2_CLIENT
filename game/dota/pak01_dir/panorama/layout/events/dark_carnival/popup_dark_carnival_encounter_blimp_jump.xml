@@ -1,0 +1,299 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_blimp_jump.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/events/dark_carnival_encounter_blimp_jump.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="Platform">
+			<Panel class="Platform">
+				<Image class="PlatformColor" />
+				<Image class="PlatformBorder" />
+				<Image class="PlatformBorder2" />
+			</Panel>
+		</snippet>
+		<snippet name="PlatformAttachment">
+			<Panel class="PlatformAttachment" />
+		</snippet>
+		<snippet name="Projectile">
+			<Panel class="Projectile" />
+		</snippet>
+		<snippet name="Enemy">
+			<Panel class="Enemy">
+				<Panel class="EnemyFrame1" />
+				<Panel class="EnemyFrame2" />
+				<Panel class="EnemyFrame3" />
+			</Panel>
+		</snippet>
+		<snippet name="Player">
+			<Panel class="Player">
+				<Panel class="PlayerRocket PlayerImage" />
+				<Panel class="PlayerJumping PlayerImage" />
+				<Panel class="PlayerFalling PlayerImage" />
+				<Panel class="PlayerOof PlayerImage" />
+				<Panel class="PlayerOof2 PlayerImage" />
+			</Panel>
+		</snippet>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Panel class="Check" />
+				<Label class="RewardScore" text="{s:reward_score_title}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+		<snippet name="Hitbox">
+			<Panel class="Hitbox" />
+		</snippet>
+		<snippet name="Blimp">
+			<Panel class="Blimp" />
+		</snippet>
+		<snippet name="SmeltingCar">
+			<Panel class="SmeltingCar">
+				<Panel class="SmeltingCarFrame1 SmeltingCarImage" />
+				<Panel class="SmeltingCarFrame2 SmeltingCarImage" />
+				<Panel class="SmeltingCarFrame3 SmeltingCarImage" />
+				<Panel class="SmeltingCarFrame4 SmeltingCarImage" />
+				<Panel class="SmeltingCarFrame5 SmeltingCarImage" />
+			</Panel>
+		</snippet>
+		<snippet name="WhooshLine">
+			<Panel class="WhooshLine" />
+		</snippet>
+		<snippet name="SmokeCloud">
+			<Panel class="SmokeCloud">
+				<Panel class="SmokeCloud1 SmokeCloudImage" />
+				<Panel class="SmokeCloud2 SmokeCloudImage" />
+				<Panel class="SmokeCloud3 SmokeCloudImage" />
+				<Panel class="SmokeCloud4 SmokeCloudImage" />
+			</Panel>
+		</snippet>
+		<snippet name="FallExplosion">
+			<Panel class="FallExplosion">
+				<Panel class="FallExplosion1 FallExplosionImage" />
+				<Panel class="FallExplosion2 FallExplosionImage" />
+				<Panel class="FallExplosion3 FallExplosionImage" />
+				<Panel class="FallExplosion4 FallExplosionImage" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel BlimpJump Hidden" allows_popups="1" popupbackground="dim">
+		<Panel class="ContentsWrapper">
+			<Panel class="EncounterContainer">
+				<Panel class="BackgroundGradientContainer" />
+				<Panel class="BackgroundWoodContainer" />
+				<Panel class="BackgroundHardlightContainer" />
+				<Panel class="LoadingBlocker" />
+				<Panel class="BodyContainer" />
+				<Panel class="GameScreen">
+					<Panel class="BackdropLeft" id="BackdropLeft" />
+					<Panel class="BackdropRight" id="BackdropRight" />
+					<Panel class="BackdropRepeating" id="BackdropRepeating" require-composition-layer="true" />
+					<Panel class="BackdropNormal" id="BackdropNormal" require-composition-layer="true" />
+					<Panel class="GameContainer" id="GameContainer">
+						<DOTAParticleScenePanel id="RocketEffect" squarePixels="true" hittest="false" particleName="particles/econ/courier/courier_snapjaw/courier_snapjaw_ambient_rocket.vpcf" particleonly="true" renderdeferred="true" cameraOrigin="85 95 0" cameraRoll="90" lookAt="85 0 0" fov="90" />
+					</Panel>
+					<Label class="InGameScore DisplayMedium" text="{d:score}" />
+					<Panel class="ProgressContainer" id="ProgressContainer">
+						<Panel class="ProgressBarContainer">
+							<Panel class="ProgressBarEmpty" />
+							<Panel class="ProgressBarFull" id="Progress" />
+							<Panel class="ProgressBarSmeltingCar" />
+							<Panel class="ProgressBarBlimp" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="MainMenuBackground" />
+				<Panel class="MainMenuContainer">
+					<Panel class="MenuBackground" />
+					<Panel class="BackgroundPatternContainer">
+						<Panel class="BackgroundPattern" />
+					</Panel>
+					<Panel class="Body">
+						<Panel class="Header">
+							<Label class="Title" text="#DOTA_DarkCarnival_BlimpJump_Title" />
+							<Label class="Subtitle" text="#DOTA_DarkCarnival_BlimpJump_Subtitle" />
+						</Panel>
+						<Panel class="ColumnContainer">
+							<Panel class="Column First">
+								<Panel id="Controls" class="Section">
+									<Label class="SectionHeader" text="#DOTA_Crownfall_Overworld_HowToPlay" />
+									<Panel class="Quadrant">
+										<Panel class="ControlsContents">
+											<Panel class="KeysRow">
+												<Panel class="ControlKey">
+													<Label text="A" class="KeyText" />
+												</Panel>
+												<Panel class="ControlKey">
+													<Label text="D" class="KeyText" />
+												</Panel>
+											</Panel>
+											<Panel class="KeysRow">
+												<Panel class="ControlKey Left">
+													<Panel class="KeyText Back" />
+												</Panel>
+												<Panel class="ControlKey Right">
+													<Panel class="KeyText Forward" />
+												</Panel>
+											</Panel>
+										</Panel>
+										<Panel class="DescriptionContainer">
+											<Panel class="SubHeaderContainer">
+												<Label class="SubHeader" text="#DOTA_DarkCarnival_BlimpJump_Controls_Move" />
+											</Panel>
+											<Label class="Details" text="#DOTA_DarkCarnival_BlimpJump_Controls_Move_Details" />
+										</Panel>
+									</Panel>
+									<Panel class="Quadrant">
+										<Panel class="ControlsContents">
+											<Panel class="KeysRow">
+												<Panel class="ControlKey">
+													<Label text="W" class="KeyText" />
+												</Panel>
+											</Panel>
+											<Panel class="KeysRow">
+												<Panel class="ControlKey">
+													<Panel class="KeyText Up" />
+												</Panel>
+											</Panel>
+										</Panel>
+										<Panel class="DescriptionContainer">
+											<Panel class="SubHeaderContainer">
+												<Label class="SubHeader" text="#DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv" />
+											</Panel>
+											<Label class="Details" text="#DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="SectionSpacer" />
+								<Panel id="Modes" class="Section">
+									<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Modes" />
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_BlimpJump_Modes_StoryMode" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details" />
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details" />
+									</Panel>
+								</Panel>
+								<Panel class="SectionSpacer" />
+								<Panel class="Section">
+									<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Scoring" />
+									<Panel id="ScoreList" class="DescriptionContainer">
+										<Panel class="Row">
+											<Label class="Details" text="#DOTA_DarkCarnival_BlimpJump_Scoring" html="true" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel id="Scoring" class="Column Last">
+								<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+									<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+									<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="Rewards" class="Section">
+							<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+							<Panel id="RewardsList" class="RewardsSection" />
+						</Panel>
+					</Panel>
+					<Panel class="BottomButtons">
+						<DOTADarkCarnivalButton class="StartGameButton StoryMode Wide" id="StoryModeButton" text="#DOTA_DarkCarnival_BlimpJump_Modes_StoryMode" onactivate="StartBlimpJump(false)" />
+						<DOTADarkCarnivalButton class="StartGameButton InfiniteMode Wide" id="InfiniteModeButton" text="#DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode" onactivate="StartBlimpJump(true)" />
+					</Panel>
+				</Panel>
+				<Panel class="MainMenuSlarkContainer">
+					<Panel class="MainMenuPlatform" />
+					<Panel class="MainMenuSlark Player" id="MainMenuSlark">
+						<Panel class="PlayerJumping PlayerImage" />
+						<Panel class="PlayerFalling PlayerImage" />
+					</Panel>
+				</Panel>
+				<Panel class="PausedMenuContainer">
+					<Panel class="Body">
+						<Panel class="Header">
+							<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Paused" />
+						</Panel>
+					</Panel>
+					<Panel class="PausedMenuButtons">
+						<DOTADarkCarnivalButton id="ResumeButton" class="ResumeButton UltraWide" text="#DOTA_DarkCarnival_BlimpJump_Resume" onactivate="Unpause()" />
+						<Panel class="Dash" />
+						<Label class="ExitGameButton LabelButton LabelMedium" text="#DOTA_DarkCarnival_Lockpicking_LeaveGame" onactivate="EventExit()" />
+					</Panel>
+				</Panel>
+				<Panel class="PostGameMenuContainer" hittest="false">
+					<Panel class="MenuBackground" />
+					<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+						<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="Body" hittest="false">
+						<Panel class="Header">
+							<Label class="Title" text="{s:post_game_title}" />
+							<Label class="Subtitle" text="{s:post_game_subtitle}" />
+						</Panel>
+						<Panel id="PostGameScore" class="Section">
+							<Panel class="DescriptionContainer">
+								<Panel class="Row TotalScore">
+									<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_ScoringTotal" />
+									<Label class="DetailsValue" text="{d:score}" />
+								</Panel>
+							</Panel>
+							<Panel class="NewHighScoreContainer">
+								<Label class="NewHighScoreLabel LabelMedium" text="#DOTA_DarkCarnival_Minigames_NewHighScore" />
+							</Panel>
+						</Panel>
+						<Panel class="SectionSpacer" />
+						<Panel id="PostGameRewards" class="Section">
+							<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+							<Panel id="PostGameRewardsList" class="RewardsSection" />
+						</Panel>
+						<Panel class="SectionSpacer" />
+						<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+							<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+							<DelayLoadList id="PostGameLeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+						</Panel>
+					</Panel>
+					<Panel class="BottomButtons">
+						<DOTADarkCarnivalButton class="MainMenuButton Wide" id="PlayAgainStory" text="#DOTA_DarkCarnival_BlimpJump_PlayAgain" onactivate="StartBlimpJump(false)" />
+						<DOTADarkCarnivalButton class="MainMenuButton Wide" id="PlayAgainInfinite" text="#DOTA_DarkCarnival_BlimpJump_PlayAgain" onactivate="StartBlimpJump(true)" />
+						<DOTADarkCarnivalButton class="MainMenuButton Wide" id="GoInfiniteButton" text="#DOTA_DarkCarnival_BlimpJump_GoInfinite" onactivate="StartBlimpJump(true)" />
+						<DOTADarkCarnivalButton class="MainMenuButton Wide" id="LeaveEncounterButton" text="#DOTA_DarkCarnival_BlimpJump_LeaveEncounter" onactivate="EventExit()" />
+					</Panel>
+				</Panel>
+				<DOTAParticleScenePanel id="WinConfetti" squarePixels="true" hittest="false" particleName="particles/events/dark_carnival/blimp_jump_confetti.vpcf" particleonly="true" renderdeferred="true" cameraOrigin="100 100 200" lookAt="0 0 200" fov="90" />
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="EventExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+		</Panel>
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="CloseEncounterButton" onactivate="EventExit()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</Panel>
+</root>

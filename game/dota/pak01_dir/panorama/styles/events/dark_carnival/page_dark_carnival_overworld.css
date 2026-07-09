@@ -1113,28 +1113,158 @@ DOTADarkCarnivalOverworldPage.HideUI .RightUICol
 .GiftContainer
 {
 	visibility: collapse;
-	horizontal-align: right;
-	ignore-parent-flow: true;
-	vertical-align: bottom;
+	horizontal-align: center;
+	width: 100%;
 }
 
-.GiftContainer .GiftIcon
+.GiftContainer:hover
+{
+	brightness: 2;
+}
+
+.GiftContainer:hover .GiftIconHeart,.GiftContainer:hover .GiftIconEnvelope
+{
+	transform: scale3d( 1.1, 1.1, 1 );
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+
+.GiftContainer .BackgroundPatternContainer
+{
+	vertical-align: top;
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	opacity-brush: gradient( radial, 50% 50%, 0% 0%, 50% 70%, from( #ffffff ), color-stop( 0.25, #ffffff68 ), color-stop( 0.75, #ffffff00 ), to( #ffffff00 ) );
+	opacity: 0.25;
+}
+
+.GiftContainer .BackgroundPatternContainer .BackgroundPattern
 {
 	horizontal-align: center;
-	height: 32px;
+	vertical-align: center;
+	overflow: noclip;
+	width: 220%;
+	height: 220%;
+	wash-color: goldDark;
+	animation-name: SpinBackgroundPattern;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.GiftContainer .GiftIconStarOrbit
+{
+	horizontal-align: center;
+	height: 180px;
 	width: height-percentage( 100% );
-	background-image: url("s2r://panorama/images/events/crownfall/overworld/token_gift_icon_png.vtex");
-	wash-color: magenta;
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/gift_icon_star_orbit_png.vtex");
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 20px;
-	background-color: #1f1f1f;
-	border-radius: 3px;
-	border: 2px solid white;
+	background-size: 180px;
+	opacity: 0.75;
+	animation-name: GiftStarOrbit;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.GiftContainer .GiftIconHeart
+{
+	horizontal-align: center;
+	vertical-align: center;
+	height: 96px;
+	width: height-percentage( 100% );
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/gift_icon_large_heart_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 96px;
+	transition-property: transform;
+	transition-duration: 0.1s;
+	animation-name: GiftHeartBounce;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.GiftContainer .GiftIconEnvelope
+{
+	horizontal-align: center;
+	vertical-align: center;
+	height: 96px;
+	width: height-percentage( 100% );
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/gift_icon_large_envelope_png.vtex");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 96px;
+	transition-property: transform;
+	transition-duration: 0.1s;
+	animation-name: GiftEnvelopePulse;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 .HasTokenGifts .GiftContainer
 {
 	visibility: visible;
+}
+
+@keyframes 'SpinBackgroundPattern'
+{
+	0%
+	{
+		transform: rotateZ( 0deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( 180deg );
+	}
+	
+}
+
+@keyframes 'GiftStarOrbit'
+{
+	0%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(-180deg);
+	}
+	
+}
+
+@keyframes 'GiftHeartBounce'
+{
+	0%
+	{
+		y: -10px;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		y: 0px;
+		brightness: 3;
+	}
+	
+}
+
+@keyframes 'GiftEnvelopePulse'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	100%
+	{
+		brightness: 3;
+	}
+	
 }
 

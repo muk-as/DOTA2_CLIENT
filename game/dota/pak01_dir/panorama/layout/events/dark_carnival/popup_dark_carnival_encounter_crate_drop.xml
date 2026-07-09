@@ -1,0 +1,336 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/hud/dota_hud_ability_panel.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_crate_drop.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+		<snippet name="UnlockMarker">
+			<Panel class="UnlockMarker" />
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel CrateDrop Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTACrateDropOnCancel()">
+		<Panel id="MainContents">
+			<Panel class="GameScreen">
+				<Panel class="GameContainer" id="GameContainer">
+					<DOTAScenePanel id="GameScenePanel" map="maps/events/dark_carnival/crate_drop" hittest="true" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="false" camera="game_camera" antialias="true" pin-fov="horizontal" light="versus_light" />
+				</Panel>
+				<Panel class="HUD">
+					<Panel id="MultiplierPanel" class="MultiplierPanel">
+						<Panel id="MultiplierPanelContainer">
+							<Label class="MultiplierPanelValue" text="{f:assembly_multiplier}x" />
+							<Label class="MultiplierPanelText" text="#DOTA_DarkCarnival_CrateDrop_HeightBonus" />
+						</Panel>
+					</Panel>
+					<Panel id="HealthBar" value="0.0" max="1">
+						<Panel id="HealthBarBG">
+							<Panel id="HealthBarFG">
+								<Panel id="HPBarContainer">
+									<ProgressBar id="HPDamageBar" />
+									<ProgressBar id="HPBar" />
+									<DarkCarnivalCrateDropHPBarTicks id="HPTicks" />
+								</Panel>
+								<ProgressBar id="ShieldBar" />
+							</Panel>
+						</Panel>
+						<DOTAHeroImage id="TinkerHeroIcon" heroimagestyle="icon" heroid="34" />
+					</Panel>
+					<Panel class="TopHUD">
+						<Panel class="HUDColumn Left">
+							<Panel class="ValueRow Level">
+								<Panel class="LabelRow Level">
+									<Label class="SmallLabel LabelUppercase Level" text="#DOTA_DarkCarnival_CrateDrop_Level" />
+									<Label class="Value Level" text="{u:level}" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="HUDColumn RemainingColumn">
+							<Panel class="ValueRow">
+								<Panel class="LabelRow CratesRemaining">
+									<Image class="StatusIcon" src="s2r://panorama/images/events/dark_carnival/minigames/icon_crate_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+									<Label class="SmallLabel LabelUppercase Level" text="#DOTA_DarkCarnival_CrateDrop_CratesRemaining" />
+								</Panel>
+							</Panel>
+							<Panel class="ValueRow CratesRemaining">
+								<Label class="BigValue CratesRemaining" text="{d:spawned_crates}" />
+							</Panel>
+						</Panel>
+						<Panel class="HUDColumn Right" />
+					</Panel>
+					<Panel class="Bottom">
+						<Panel class="AbilityContainer">
+							<Panel id="CrateClearAbilityPanel" class="CrateClearAbilityPanel">
+								<Panel id="AbilityImageAndCooldown">
+									<DOTAAbilityImage class="BuffIcon" abilityname="tinker_rearm" />
+									<Panel id="CooldownOverlay" />
+									<Label class="CooldownTime" text="{d:ability_cooldown}" />
+								</Panel>
+								<Panel class="Key">
+									<Panel class="ControlKey">
+										<Panel class="KeyText Space" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="ScoreColumn">
+							<Panel class="ValueRow Score">
+								<DOTAIncrementingLabel id="ScoreLabel" class="BigValue" display="0" increment="75" />
+								<Panel class="ValueDetails">
+									<Panel id="PotentialScorePanel">
+										<Label class="PotentialScore" text="+" />
+										<DOTAIncrementingLabel id="PotentialScoreLabel" class="PotentialScore" display="+0" increment="75" />
+									</Panel>
+									<Label class="SmallLabel LabelUppercase Score" text="#DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Label id="Loading" class="Takeover DisplayMedium" text="#dota_waiting_for_players_loading" />
+				<Label id="LevelWon" class="Takeover BigValue" text="#DOTA_DarkCarnival_CrateDrop_LevelComplete" />
+			</Panel>
+			<Panel class="LevelIntroCaptionUI" hittest="false">
+				<Panel class="LevelIntroCaptionContents">
+					<Panel class="MenuBackground" />
+					<Panel class="LevelIntroCaptionText">
+						<Label id="Level" class="BigValue" text="#DOTA_DarkCarnival_CrateDrop_StartingLevel" />
+						<Label html="true" class="Instructions LevelIntroCaption1" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText1" />
+						<Label html="true" class="Instructions LevelIntroCaption2" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText2" />
+						<Label html="true" class="Instructions LevelIntroCaption3" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText3" />
+						<Label html="true" class="Instructions LevelIntroCaption4" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText4" />
+						<Label html="true" class="Instructions LevelIntroCaption5" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText5" />
+						<Label html="true" class="Instructions LevelIntroCaption6" text="#DOTA_DarkCarnival_CrateDrop_LevelIntroText6" />
+					</Panel>
+					<Panel class="LevelIntroCaptionImages">
+						<Panel class="IntroImage LevelIntroCaption1">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_1_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+						<Panel class="IntroImage LevelIntroCaption2">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_2_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+						<Panel class="IntroImage LevelIntroCaption3">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_3_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+						<Panel class="IntroImage LevelIntroCaption4">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_4_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+						<Panel class="IntroImage LevelIntroCaption5">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_5_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+						<Panel class="IntroImage LevelIntroCaption6">
+							<Image class="LevelIntroImage" src="s2r://panorama/images/events/dark_carnival/minigames/crate_drop_level_intro_6_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="MainMenuContainer">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_CrateDrop_Title" />
+						<Label class="Subtitle" text="#DOTA_DarkCarnival_CrateDrop_GameDesc" />
+					</Panel>
+					<Panel class="ColumnContainer">
+						<Panel class="Column First">
+							<Panel id="Controls" class="Section">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_CrateDrop_HowToPlay" />
+								<Panel class="Quadrant">
+									<Panel class="Contents">
+										<Panel class="KeysColumn">
+											<Panel class="ControlKey">
+												<Panel class="KeyText Up" />
+											</Panel>
+											<Panel class="KeysRow">
+												<Panel class="ControlKey">
+													<Panel class="KeyText Back" />
+												</Panel>
+												<Panel class="ControlKey">
+													<Panel class="KeyText Down" />
+												</Panel>
+												<Panel class="ControlKey">
+													<Panel class="KeyText Forward " />
+												</Panel>
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_CrateDrop_Help_Move" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_CrateDrop_Help_Move_Details" />
+									</Panel>
+								</Panel>
+								<Panel class="Quadrant">
+									<Panel class="Contents">
+										<Panel class="KeysColumn Alt">
+											<Panel class="ControlKey ExtraLarge">
+												<Panel class="KeyText Space Large" />
+											</Panel>
+										</Panel>
+									</Panel>
+									<Panel class="DescriptionContainer">
+										<Panel class="SubHeaderContainer">
+											<Label class="SubHeader" text="#DOTA_DarkCarnival_CrateDrop_Help_Ability" />
+										</Panel>
+										<Label class="Details" text="#DOTA_DarkCarnival_CrateDrop_Help_Ability_Description" />
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="Section">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_CrateDrop_Scoring" />
+								<Panel id="ScoreList" class="DescriptionContainer">
+									<Panel class="Row">
+										<Label class="Details" text="#DOTA_DarkCarnival_CrateDrop_Scoring_Desc" />
+										<Label class="DetailsValue" text="{d:score_per_unlock}" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel id="Leaders" class="Column Last">
+							<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+								<Label class="SectionHeader" text="#DOTA_DarkCarnival_CrateDrop_HighScores" />
+								<Panel class="LeaderListHeader LeftRightFlow">
+									<Label class="ScoreBoardType" text="#DOTA_DarkCarnival_Lockpicking_Leaderboard_HeaderFriends" />
+									<Label class="Score" text="#DOTA_DarkCarnival_Lockpicking_Leaderboard_Score" />
+								</Panel>
+								<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="Rewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="RewardsList" class="RewardsSection" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton id="PlayButton" class="StartGameButton UltraWide" text="#DOTA_DarkCarnival_CrateDrop_Play" onactivate="DOTACrateDropOnPlay()" />
+				</Panel>
+			</Panel>
+			<Panel class="TutorialUI" hittest="false">
+				<Panel class="TutorialContents">
+					<Panel class="MenuBackground" />
+					<Panel class="TutorialText">
+						<Label html="true" class="Instructions Tutorial1" text="#DOTA_DarkCarnival_CrateDrop_Tutorial_1" />
+						<Label html="true" class="Instructions Tutorial2" text="#DOTA_DarkCarnival_CrateDrop_Tutorial_2" />
+						<Label html="true" class="Instructions Tutorial3" text="#DOTA_DarkCarnival_CrateDrop_Tutorial_3" />
+						<Label html="true" class="Instructions Tutorial4" text="#DOTA_DarkCarnival_CrateDrop_Tutorial_4" />
+					</Panel>
+					<Panel class="TutorialButtons">
+						<Panel class="Instructions Tutorial1 KeysRow">
+							<Panel class="ControlKey">
+								<Panel class="KeyText Back" />
+							</Panel>
+							<Panel class="ControlKey">
+								<Panel class="KeyText Forward" />
+							</Panel>
+						</Panel>
+						<Panel class="Instructions Tutorial2 KeysRow">
+							<Panel class="ControlKey">
+								<Panel class="KeyText Up" />
+							</Panel>
+							<Panel class="ControlKey">
+								<Panel class="KeyText Down" />
+							</Panel>
+						</Panel>
+						<Panel class="Instructions Tutorial3 KeysRow">
+							<Panel class="ControlKey ExtraLarge">
+								<Panel class="KeyText Space Large" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="PausedMenuContainer">
+				<Panel class="Body">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Paused" />
+					</Panel>
+				</Panel>
+				<Panel class="PausedMenuButtons">
+					<DOTADarkCarnivalButton id="ResumeButton" class="ResumeButton UltraWide" text="#DOTA_DarkCarnival_Lockpicking_Resume" onactivate="DOTACrateDropTogglePaused()" />
+					<Panel class="Dash" />
+					<Label class="ExitGameButton LabelButton LabelMedium" text="#DOTA_DarkCarnival_Lockpicking_LeaveGame" onactivate="UIPopupButtonClicked()" />
+				</Panel>
+			</Panel>
+			<Panel class="PostGameMenuContainer" hittest="false">
+				<Panel class="MenuBackground" />
+				<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+					<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<Panel class="Body" hittest="false">
+					<Panel class="Header">
+						<Label class="Title" text="#DOTA_DarkCarnival_CrateDrop_GameOver" />
+						<Label class="Subtitle" text="{s:stage_message_text}" />
+					</Panel>
+					<Panel id="PostGameScore" class="Section">
+						<Panel class="DescriptionContainer">
+							<Panel class="Row">
+								<Label class="Details MonoNumbersFont" text="#DOTA_DarkCarnival_CrateDrop_Score_Label" />
+								<Label class="DetailsValue MonoNumbersFont" text="{d:current_score}" />
+							</Panel>
+							<Panel class="Row">
+								<Label class="Details MonoNumbersFont" text="#DOTA_DarkCarnival_CrateDrop_TotalCratesCaught" />
+								<Label class="DetailsValue MonoNumbersFont" text="{d:total_crates_caught}" />
+							</Panel>
+							<Panel class="Row">
+								<Label class="Details MonoNumbersFont" text="#DOTA_DarkCarnival_CrateDrop_TotalCratesLost" />
+								<Label class="DetailsValue MonoNumbersFont" text="{d:total_crates_lost}" />
+							</Panel>
+							<Panel class="Row">
+								<Label class="Details MonoNumbersFont" text="#DOTA_DarkCarnival_CrateDrop_MaxHeight" />
+								<Label class="DetailsValue MonoNumbersFont" text="{f:max_crate_height}" />
+							</Panel>
+						</Panel>
+						<Panel class="NewHighScoreContainer">
+							<Label class="NewHighScoreLabel LabelMedium" text="#DOTA_DarkCarnival_Minigames_NewHighScore" />
+						</Panel>
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="PostGameRewards" class="Section">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+						<Panel id="PostGameRewardsList" class="RewardsSection" />
+					</Panel>
+					<Panel class="SectionSpacer" />
+					<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+						<Label class="SectionHeader" text="#DOTA_DarkCarnival_CrateDrop_HighScores" />
+						<DelayLoadList id="PostGameLeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTADarkCarnivalButton class="MainMenuButton Wide" text="#DOTA_DarkCarnival_CrateDrop_PlayAgain" onactivate="DOTACrateDropShowMainMenuScreen()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="CloseEncounterButton" onactivate="UIPopupButtonClicked()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</Panel>
+</root>
