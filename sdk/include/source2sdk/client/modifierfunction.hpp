@@ -56,7 +56,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE = 0x11,
             // MScriptDescription "GetModifierMoveSpeed_MaxOverride GetModifierMoveSpeed_MinOverride"
             MODIFIER_PROPERTY_MOVESPEED_MIN_OVERRIDE = 0x12,
-            // MScriptDescription "Pt GetModifierMoveSpeed_MaxOverride"
+            // MScriptDescription "P GetModifierMoveSpeed_MaxOverride"
             MODIFIER_PROPERTY_MOVESPEED_MAX_OVERRIDE = 0x13,
             // MScriptDescription "GetModifierMoveSpeedBonus_Percentage_Unique GetModifierMoveSpeedBonus_Percentage"
             MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE = 0x14,
@@ -152,7 +152,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT = 0x41,
             // MScriptDescription "GetModifierNegativeEvasion_Constant GetModifierEvasion_Constant"
             MODIFIER_PROPERTY_EVASION_CONSTANT = 0x42,
-            // MScriptDescription "w GetModifierNegativeEvasion_Constant"
+            // MScriptDescription " GetModifierNegativeEvasion_Constant"
             MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT = 0x43,
             // MScriptDescription "GetModifierStatusResistanceStacking GetModifierStatusResistance"
             MODIFIER_PROPERTY_STATUS_RESISTANCE = 0x44,
@@ -356,7 +356,8 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE = 0xa7,
             // MScriptDescription "GetModifierIllusionLabel GetIsIllusion"
             MODIFIER_PROPERTY_IS_ILLUSION = 0xa8,
-            // MScriptDescription " GetModifierIllusionLabel"
+            // MScriptDescription "�
+�� GetModifierIllusionLabel"
             MODIFIER_PROPERTY_ILLUSION_LABEL = 0xa9,
             // MScriptDescription "GetModifierSuperIllusion GetModifierStrongIllusion"
             MODIFIER_PROPERTY_STRONG_ILLUSION = 0xaa,
@@ -806,8 +807,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY = 0x188,
             // MScriptDescription "GetModifierOverrideUntargetableFrom GetModifierOverrideBaseDamage"
             MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE = 0x189,
-            // MScriptDescription "@
-ʦ� GetModifierOverrideUntargetableFrom"
+            // MScriptDescription " GetModifierOverrideUntargetableFrom"
             MODIFIER_PROPERTY_UNTARGETABLE_FROM = 0x18a,
             // MScriptDescription "GetModifierSuperIllusionWithItems GetModifierOverrideUntargetableTo"
             MODIFIER_PROPERTY_UNTARGETABLE_TO = 0x18b,
