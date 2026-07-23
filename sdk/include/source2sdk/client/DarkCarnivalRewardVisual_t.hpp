@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 16
+        // Enumerator count: 17
         // Alignment: 4
         // Size: 0x_
         enum class DarkCarnivalRewardVisual_t : std::uint32_t
@@ -31,9 +31,10 @@ namespace source2sdk
             k_eDarkCarnivalRewardVisual_Oracle = 0x9,
             k_eDarkCarnivalRewardVisual_HeroItemSet = 0xa,
             k_eDarkCarnivalRewardVisual_ShowcaseDecoration = 0xb,
-            k_eDarkCarnivalRewardVisual_Start = 0xc,
-            k_eDarkCarnivalRewardVisual_End = 0xd,
-            k_eDarkCarnivalRewardVisual_Completed = 0xe,
+            k_eDarkCarnivalRewardVisual_EconItem = 0xc,
+            k_eDarkCarnivalRewardVisual_Start = 0xd,
+            k_eDarkCarnivalRewardVisual_End = 0xe,
+            k_eDarkCarnivalRewardVisual_Completed = 0xf,
         };
     };
 };

@@ -2,7 +2,76 @@
 
 DOTAGameTimeNotchedRangeSlider
 {
-	overflow: noclip;
+	height: 128px;
+	width: 100%;
+}
+
+.RangedSliderBackgroundContainer
+{
+	width: 100%;
+	height: 68px;
+	vertical-align: bottom;
+	transition-property: height;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.RangedSliderBackgroundContainer .RangedSliderBackgroundShadow
+{
+	width: 100%;
+	height: 8px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), to( #000000 ) );
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffffff00 ), color-stop( 0.02, #ffffff ), color-stop( 0.98, #ffffff ), to( #ffffff00 ) );
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+}
+
+.RangedSliderBackgroundContainer .RangedSliderBackground
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #151A1E99 ), to( #151a1e99 ) );
+	margin-top: 8px;
+	transition-property: background-color;
+	transition-duration: 0.25s;
+}
+
+.RangedSliderBackgroundContainer .RangedSliderBackgroundBorder
+{
+	width: 100%;
+	height: 1px;
+	background-color: rgba(207, 235, 255, 1);
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffffff00 ), color-stop( 0.02, #ffffff ), color-stop( 0.98, #ffffff ), to( #ffffff00 ) );
+	margin-top: 8px;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+}
+
+.ShowOverlay .RangedSliderBackgroundContainer
+{
+	height: 100%;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0.2s;
+}
+
+.ShowOverlay .RangedSliderBackgroundContainer .RangedSliderBackgroundShadow
+{
+	opacity: 0.3;
+	transition-delay: 0.2s;
+}
+
+.ShowOverlay .RangedSliderBackgroundContainer .RangedSliderBackground
+{
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #232a3199 ), to( #151a1e99 ) );
+	transition-delay: 0.2s;
+}
+
+.ShowOverlay .RangedSliderBackgroundContainer .RangedSliderBackgroundBorder
+{
+	opacity: 0.01;
+	transition-delay: 0.2s;
 }
 
 .SliderContainer
@@ -15,83 +84,140 @@ DOTAGameTimeNotchedRangeSlider
 {
 	width: 100%;
 	vertical-align: bottom;
-	margin-bottom: 6px;
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-bottom: 12px;
 }
 
 .TimeRangeLabel
 {
-	margin: 4px 0px 4px 4px;
 	vertical-align: bottom;
-	width: 200px;
-	horizontal-align: center;
+	width: 80px;
+	margin-bottom: 14px;
+	margin-left: 22px;
+	font-family: monospaceNumbersFont;
+}
+
+.TimeRangeLabel.EndTime
+{
+	text-align: right;
+	horizontal-align: right;
+	margin-right: 22px;
 }
 
 #OverlayPanel
 {
-	opacity: 0;
-	transition-property: opacity;
-	transition-duration: 0.5s;
-	background-color: #000000aa;
 	width: 100%;
-	height: 120px;
-	overflow: noclip;
+	vertical-align: bottom;
+	height: 74px;
+	margin-bottom: 38px;
+	padding-left: 80px;
+	margin-right: 80px;
+	opacity: 0;
+	transform: translateY( 4px );
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }
 
 .ShowOverlay #OverlayPanel
 {
 	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-delay: 0.2s;
+	transition-timing-function: ease-in-out;
 }
 
 .ItemPurchaseGroup
 {
-	flow-children: none;
-	margin-left: -15px;
-	margin-top: 8px;
+	flow-children: down;
+	margin-left: -12px;
 	width: 38px;
-	height: 100%;
-	background-size: cover;
-	overflow: noclip;
+	height: 44px;
+	vertical-align: bottom;
 }
 
-.VerticalLine
+.ItemPurchaseGroup .CaretDownIcon
 {
-	width: 1px;
-	height: 100%;
-	background-color: #ffffff11;
 	horizontal-align: center;
+	width: 14px;
+	margin-top: -6px;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #545a60 ), to( #242a31 ) );
+	img-shadow: 0px 2px 8px -1px black;
 }
 
-.ItemPurchaseGroupImage
+.ItemPurchaseGroup .ItemPurchaseGroupImage
 {
 	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	border: 1.5px solid #555687;
-	background-color: black;
-	pre-transform-scale2d: 0.9;
+	height: 28px;
+	border-radius: 2px;
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #a8afb7 ), to( #60666c ) );
 	horizontal-align: center;
-	animation-duration: .81s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	transition-property: brightness, pre-transform-scale2d;
-	transition-timing-function: ease-in-out;
-	transition-duration: 0.1s;
+	box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.6);
+	z-index: 1;
 }
 
-.ItemRecipe #ItemImage.ItemPurchaseGroupImage
+.ItemPurchaseGroup .MultipleItemsContainer
 {
-	width: 32px;
-	height: 32px;
-	margin-top: 3px;
-	border-radius: 0px;
-	border-width: 0px;
-	background-color: none;
+	width: 100%;
+	flow-children: down;
 }
 
-.ItemPurchaseGroupImage:hover
+.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem1,.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem2,.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem3
 {
-	pre-transform-scale2d: 1;
-	brightness: 2;
+	width: 100%;
+	height: 0.5px;
+	background-color: #7e8996;
+	border-radius: 2px 2px 0px 0px;
+	opacity: 0;
+}
+
+.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem1
+{
+	margin: 0px 2px 1px;
+}
+
+.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem2
+{
+	margin: 0px 3.5px 1px;
+}
+
+.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem3
+{
+	margin: 0px 5px 1px;
+}
+
+.ItemCount2.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem1
+{
+	opacity: 1;
+}
+
+.ItemCount3.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem1
+{
+	opacity: 1;
+}
+
+.ItemCount3.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem2
+{
+	opacity: 0.6;
+}
+
+.ItemCount4.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem1
+{
+	opacity: 1;
+}
+
+.ItemCount4.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem2
+{
+	opacity: 0.6;
+}
+
+.ItemCount4.ItemPurchaseGroup .MultipleItemsContainer .MultipleItem3
+{
+	opacity: 0.4;
 }
 
 .ItemPurchaseGroupImage.ItemQuality0
@@ -118,34 +244,6 @@ DOTAGameTimeNotchedRangeSlider
 	animation-timing-function: ease-in-out;
 	animation-duration: 1.0s;
 	box-shadow: 0px 0px 6px #ffffff;
-}
-
-#MultipleItemBG
-{
-	width: 38px;
-	height: 58px;
-	background-size: 36px 55px;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	overflow: noclip;
-	margin-left: 0px;
-	margin-top: -1px;
-	z-index: -2;
-}
-
-.ItemPurchaseGroup.ItemCount2 #MultipleItemBG
-{
-	background-image: url("s2r://panorama/images/status_icons/stackeditems_1_psd.vtex");
-}
-
-.ItemPurchaseGroup.ItemCount3 #MultipleItemBG
-{
-	background-image: url("s2r://panorama/images/status_icons/stackeditems_2_psd.vtex");
-}
-
-.ItemPurchaseGroup.ItemCount4 #MultipleItemBG
-{
-	background-image: url("s2r://panorama/images/status_icons/stackeditems_3_psd.vtex");
 }
 
 @keyframes 'AegisPulse'
@@ -201,34 +299,28 @@ DOTAGameTimeNotchedRangeSlider
 
 .KillsGroup
 {
-	flow-children: right;
-	padding: 1px 4px;
-	background-color: rgb(12, 14, 15);
-	border-radius: 24px;
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #848484 ) );
-	border: 1px solid rgba(235, 247, 255, 0.2);
-	width: 34px;
-	transform: translateX( -17px );
-	margin-top: 60px;
+	flow-children: down;
+	width: 20px;
+	transform: translateX( -10px );
+	margin-bottom: 12px;
 }
 
 .KillsGroup .SkullIcon
 {
-	height: 12px;
-	width: 12px;
-	wash-color: Grey;
-	wash-color: #b91b1e;
-	vertical-align: center;
+	height: 14px;
+	width: 14px;
+	wash-color: LightGrey;
+	horizontal-align: center;
+	margin-left: 1px;
 }
 
 .KillsGroup .KillCountLabel
 {
-	font-size: 10px;
-	color: Grey;
-	color: #b91b1e;
-	vertical-align: center;
-	margin-left: 1px;
+	font-size: 14px;
+	color: LightGrey;
+	horizontal-align: center;
+	text-align: center;
 	font-family: monospaceNumbersFont;
-	text-overflow: text-shrink;
+	text-overflow: shrink;
 }
 

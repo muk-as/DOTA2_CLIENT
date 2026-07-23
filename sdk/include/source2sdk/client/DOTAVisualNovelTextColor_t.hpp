@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 14
+        // Enumerator count: 15
         // Alignment: 4
         // Size: 0x_
         enum class DOTAVisualNovelTextColor_t : std::uint32_t
@@ -32,6 +32,7 @@ namespace source2sdk
             VN_TEXT_COLOR_PURPLE = 0xb,
             VN_TEXT_COLOR_YELLOW = 0xc,
             VN_TEXT_COLOR_LIGHT_BROWN = 0xd,
+            VN_TEXT_COLOR_TITLE = 0xe,
         };
     };
 };

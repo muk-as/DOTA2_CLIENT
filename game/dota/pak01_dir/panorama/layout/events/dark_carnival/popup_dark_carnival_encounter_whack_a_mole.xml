@@ -1,0 +1,171 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_minigame_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_encounter_whack_a_mole.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="WordBubble">
+			<Panel class="WordBubble">
+				<Panel class="WordTextBox">
+					<Panel class="WordTextBoxShadow" />
+					<Label id="DisplayLabel" />
+					<SplitLabel id="TypingLabel" />
+				</Panel>
+				<Label id="MultiplierLabel" text="{d:point_value}" />
+			</Panel>
+		</snippet>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTADarkCarnivalEncounterWhackAMole class="PopupPanel WhackAMole IntroMenu Hidden" allows_popups="1" popupbackground="dim" oncancel="DOTAWhackAMoleTogglePaused()">
+		<Panel id="MainContents">
+			<Panel class="VisualNovelBackground" />
+			<Panel class="BodyContainer" />
+			<Panel class="GameScreen" id="GameContainer">
+				<DOTAScenePanel id="GameScenePanel" map="maps/events/dark_carnival/whack_a_mole_02" post-process-material="materials/dev/deferred_post_process_dark_carnival_typing_game.vmat" require-composition-layer="true" hittest="true" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="false" camera="game_camera" antialias="true" pin-fov="vertical" light="game_light" />
+				<Panel id="WordBubbleContainer" />
+			</Panel>
+			<Panel id="ScoreRow">
+				<Panel id="ScoreBlock">
+					<Label id="ScoreValue" text="{d:score}" />
+					<Label id="ScoreLabel" text="#DOTA_DarkCarnival_WhackAMole_HUD_Score" />
+					<Label id="Multiplier" text="#DOTA_DarkCarnival_WhackAMole_HUD_Multiplier" />
+				</Panel>
+				<Panel id="TimerBlock">
+					<Label class="Time DisplayMedium" text="{s:time_remaining}" />
+					<Label id="TimeLabel" text="#DOTA_DarkCarnival_WhackAMole_HUD_Time" />
+				</Panel>
+				<Panel id="HighScoreBlock">
+					<Label id="HighScoreValue" text="{d:high_score}" />
+					<Label id="HighScoreLabel" text="#DOTA_DarkCarnival_WhackAMole_HUD_HighScore" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="MainMenuContainer">
+			<Panel class="MenuBackground" />
+			<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+				<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel class="Body">
+				<Panel class="Header">
+					<Label class="Title" text="#DOTA_DarkCarnival_Encounter_BotAttack" />
+					<Label class="Subtitle" html="true" text="#DOTA_DarkCarnival_WhackAMole_Desc" />
+				</Panel>
+				<Panel class="ColumnContainer">
+					<Panel class="Column First">
+						<Panel id="Controls" class="Section">
+							<Label class="SectionHeader" text="#DOTA_Crownfall_Overworld_HowToPlay" />
+							<Panel class="Quadrant">
+								<Panel class="Contents">
+									<Panel class="ControlKeyboard">
+										<Image class="KeyboardIcon" texturewidth="48px" textureheight="48px" src="s2r://panorama/images/control_icons/24px/keyboard.vsvg" />
+									</Panel>
+								</Panel>
+								<Panel class="DescriptionContainer">
+									<Panel class="SubHeaderContainer">
+										<Label class="SubHeader" text="#DOTA_DarkCarnival_WhackAMole_Type" />
+									</Panel>
+									<Label class="Details" text="#DOTA_DarkCarnival_WhackAMole_HowToPlay" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="SectionSpacer" />
+						<Panel class="Section">
+							<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Scoring" />
+							<Panel id="ScoreList" class="DescriptionContainer">
+								<Label class="Details" html="true" text="#DOTA_DarkCarnival_WhackAMole_Scoring" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="Scoring" class="Column Last">
+						<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+							<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+							<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="Rewards" class="Section">
+					<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+					<Panel id="RewardsList" class="RewardsSection" />
+				</Panel>
+			</Panel>
+			<Panel class="BottomButtons">
+				<DOTADarkCarnivalButton id="PlayButton" class="StartGameButton Wide" text="#DOTA_DarkCarnival_WhackAMole_Play" onactivate="DOTAEncounterMinigameStart()" />
+			</Panel>
+		</Panel>
+		<Panel class="PausedMenuContainer">
+			<Panel class="Body">
+				<Panel class="Header">
+					<Label class="Title" text="#DOTA_DarkCarnival_Lockpicking_Paused" />
+				</Panel>
+			</Panel>
+			<Panel class="PausedMenuButtons">
+				<DOTADarkCarnivalButton id="ResumeButton" class="ResumeButton UltraWide" text="#DOTA_DarkCarnival_Lockpicking_Resume" onactivate="DOTAWhackAMoleTogglePaused()" />
+				<Panel class="Dash" />
+				<Label class="ExitGameButton LabelButton LabelMedium" text="#DOTA_DarkCarnival_Lockpicking_LeaveGame" onactivate="DOTAEncounterMinigameExit()" />
+			</Panel>
+		</Panel>
+		<Panel class="PostGameMenuContainer" hittest="false">
+			<Panel class="MenuBackground" />
+			<Panel class="BackgroundPatternContainer" hittest="false" hittestchildren="false">
+				<Image class="BackgroundPattern" src="s2r://panorama/images/events/dark_carnival/minigames/menu_background_rays_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel class="Body" hittest="false">
+				<Panel class="Header">
+					<Label class="Title" text="#DOTA_DarkCarnival_WhackAMole_HUD_GameOver" />
+				</Panel>
+				<Panel id="PostGameScore" class="Section">
+					<Panel class="DescriptionContainer">
+						<Panel class="Row TotalScore">
+							<Label class="Details" text="#DOTA_DarkCarnival_Lockpicking_ScoringTotal" />
+							<Label class="DetailsValue" text="{d:score}" />
+						</Panel>
+					</Panel>
+					<Panel class="NewHighScoreContainer">
+						<Label class="NewHighScoreLabel LabelMedium" text="#DOTA_DarkCarnival_Minigames_NewHighScore" />
+					</Panel>
+				</Panel>
+				<Panel class="SectionSpacer" />
+				<Panel id="PostGameRewards" class="Section">
+					<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_Rewards" />
+					<Panel id="PostGameRewardsList" class="RewardsSection" />
+				</Panel>
+				<Panel class="SectionSpacer" />
+				<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+					<Label class="SectionHeader" text="#DOTA_DarkCarnival_Lockpicking_HighScores" />
+					<DelayLoadList id="PostGameLeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+				</Panel>
+			</Panel>
+			<Panel class="BottomButtons">
+				<DOTADarkCarnivalButton class="MainMenuButton Wide" text="#DOTA_DarkCarnival_WhackAMole_PlayAgain" onactivate="DOTAEncounterMinigameStart()" />
+			</Panel>
+		</Panel>
+		<Panel id="VisualNovelContainer" />
+		<Panel class="PopupBorder" hittest="false" />
+		<Panel class="CloseEncounterButton" onactivate="UIPopupButtonClicked()">
+			<Panel class="BorderInner" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+		</Panel>
+	</DOTADarkCarnivalEncounterWhackAMole>
+</root>
