@@ -1,0 +1,58 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_itemclaim_popup.vcss_c" />
+		<include src="s2r://panorama/styles/hero_loadout_background_images.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ChoiceItem">
+			<Panel class="ChoiceItem">
+				<Panel class="ChoiceItemBackground" />
+				<Panel class="AegisTexture" />
+				<Panel class="ModelPreviewContainer">
+					<DOTAUIEconSetPreview id="ModelPreview" hittest="false" zoom="95" hittestchildren="false" />
+				</Panel>
+				<Button id="InfoButton" onmouseover="UIShowTextTooltip( #Notification_ViewDetails )" onmouseout="UIHideTextTooltip()">
+					<Image class="InfoIconImage" src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				</Button>
+				<Panel class="ItemInfo">
+					<Label class="HeroName LabelSmall" text="{s:hero_name}" />
+					<Label class="ItemName" text="#DOTA_econ_item_details_item_name" />
+					<DOTAInternational2026Button id="ClaimButton" text="#DOTA_Compendium2026_ItemChoice_ButtonLabel" class="FillWidth" />
+					<Panel class="HorizontalRule OwnedOnly" />
+					<Label class="AlreadyOwned OwnedOnly LabelLarge" text="#DOTA_Compendium2026_ItemChoice_AlreadyOwned" onmouseover="UIShowTextTooltip( &apos;#DOTA_StoreItem_AlreadyOwned&apos; )" onmouseout="UIHideTextTooltip()" />
+					<Label class="ReleaseDate BodySmall" text="#DOTA_econ_item_details_item_creation_date" />
+				</Panel>
+				<Panel class="ChoiceItemBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAInternational2026ItemClaimPopup popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="RopeTexture" />
+		<Panel class="PopupContents">
+			<Panel class="PopupBackgroundImage" />
+			<Panel class="PopupBorder" hittest="false" />
+			<Panel class="PageHeaderContainer">
+				<ToggleButton id="OwnedToggle" class="AllowDuplicatesCheckbox" text="#DOTA_Compendium2026_ItemChoice_AllowDuplicates" onactivate="DOTACompendium26ToggleOwnedItems()" />
+				<Label class="PopupTitle" text="#DOTA_Compendium2026_ItemChoice_Title" />
+				<Label class="PageSubtitle BodyMedium" text="#DOTA_Compendium2026_ItemChoice_SubTitle" />
+				<Panel class="ClaimsRemainingContainer">
+					<Panel class="ClaimsRemainingTypeImage" />
+					<Label class="ClaimsRemainingDescription" text="{s:claims_remaining_text}" />
+					<Label class="ClaimsRemainingCountLabel" text="{d:claims_remaining}" />
+				</Panel>
+				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel class="ItemContainerOuter">
+				<Panel id="ItemContainer" />
+			</Panel>
+		</Panel>
+		<Panel class="RopeTexture" />
+	</DOTAInternational2026ItemClaimPopup>
+</root>

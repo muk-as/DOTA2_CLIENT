@@ -3,9 +3,33 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/frontpage_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss_c" />
 		<include src="s2r://panorama/styles/banners/front_page_dark_carnival.vcss_c" />
 	</styles>
-	<CustomLayoutPanel class="FrontPageDarkCarnivalCell" onactivate="DOTAShowDarkCarnivalBackgroundPage()">
-		<Panel class="Contents" />
-	</CustomLayoutPanel>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/events/dark_carnival_robot_treasure_carousel.vts_c" />
+		<include src="s2r://panorama/scripts/dashboard_dark_carnival.vts_c" />
+	</scripts>
+	<DOTAFrontpageCellDarkCarnival class="FrontPageDarkCarnivalCell" onactivate="DOTAShowDarkCarnivalOverworldPage( 11 )">
+		<DOTAScenePanel id="DarkCarnivalDashboard" class="DarkCarnivalDashboard" onload="RunPageAnimation();" map="maps/events/dark_carnival/dark_carnival_dashboard" hittest="true" squarePixels="true" particleonly="false" renderdeferred="true" deferredalpha="false" camera="versus_camera" light="dashboard_light" antialias="true" rotateonmousemove="true" yawmin="0" yawmax="0" pitchmin="0" pitchmax="0" />
+		<Panel class="TopShadow" />
+		<Panel class="BottomShadow" />
+		<Panel class="DarkCarnivalLogoContainer">
+			<Image class="DarkCarnivalLogo en" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="DarkCarnivalLogo cn" src="s2r://panorama/images/events/dark_carnival/logos/dark_carnival_emblem_cn_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="SubtitleRope Left" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_rope_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			<Image class="SubtitleRope Right" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_rope_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+			<Panel class="SubtitleContainer">
+				<Image class="SubtitleBackground" src="s2r://panorama/images/events/dark_carnival/logos/subtitle_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Label class="TitleSmall EventSubtitle" text="#DOTA_DarkCarnival_MidnightRun" />
+			</Panel>
+		</Panel>
+		<Panel class="CellContents">
+			<Label class="EventSummary" text="#DOTA_DarkCarnival_FrontPage_SmallEventDescription" />
+			<Label class="ProgressAvailableBadge" text="#DOTA_Crownfall_FrontPage_ProgressAvailable" />
+		</Panel>
+		<Panel class="CellBorder" hittest="false" />
+	</DOTAFrontpageCellDarkCarnival>
 </root>

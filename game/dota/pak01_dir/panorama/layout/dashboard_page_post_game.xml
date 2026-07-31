@@ -149,6 +149,74 @@
 				<Label class="DamageTotal DetailsTableCell" text="#DOTA_PlusPostGame_Total" />
 			</Panel>
 		</snippet>
+		<snippet name="DetailsDamageTableKillCount">
+			<Panel class="KillCount">
+				<Image class="SkullIcon" src="s2r://panorama/images/control_icons/24px/skull.vsvg" />
+				<Label class="KillCountLabel" text="x{d:kill_count}" />
+			</Panel>
+		</snippet>
+		<snippet name="DetailsDamageTableDrilldownGraphs">
+			<Panel class="DetailsTableDrilldownContainer" hittest="false">
+				<Panel class="DetailsTableArrows" hittest="false">
+					<Image class="DetailsTableArrow ArrowSpacer" />
+					<Panel class="DetailsTableArrow Arrow0">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow1">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow2">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow3">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow4">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow5">
+						<Panel class="ArrowShape" />
+					</Panel>
+				</Panel>
+				<Panel class="DetailsTableDrilldownContents">
+					<Panel class="ContributionContainer">
+						<Panel class="DrilldownGraphHeaderContainer">
+							<Label class="DrilldownGraphHeader LabelMedium" text="#DOTA_PlusPostGame_DamageContributionDrilldownHeading" />
+							<Image class="DrillDownHeaderArrow TargetHeroOnly" src="s2r://panorama/images/control_icons/24px/arrow_right.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<DOTAHeroImage id="DrillDownHeroIcon" class="DrillDownHeroIcon TargetHeroOnly" heroimagestyle="icon" />
+							<Label class="DrilldownGraphHeader LabelMedium TargetHeroOnly" text="{g:dota_hero_name:target_hero_id}" />
+						</Panel>
+						<Panel id="DamageContributionGraphContainer" class="DetailsTableDrilldownGraph" />
+						<Button id="ShowMoreContributionsButton" class="ShowMoreDrilldownButton ButtonPrimary Small DarkGrey" onactivate="DOTAPostGameDrilldownShowMoreRows(5)">
+							<Label text="Show More" />
+						</Button>
+					</Panel>
+					<Panel class="MitigationContainer">
+						<Panel class="DrilldownGraphHeaderContainer">
+							<Image class="DamageMitigationIcon" src="s2r://panorama/images/control_icons/24px/damage_mitigation.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="DrilldownGraphHeader LabelMedium" text="#DOTA_PlusPostGame_DamageMitigationDrilldownHeading" />
+						</Panel>
+						<Panel id="DamageMitigationGraphContainer" class="DetailsTableDrilldownGraph" />
+						<Button id="ShowMoreMitigationsButton" class="ShowMoreDrilldownButton ButtonPrimary Small DarkGrey" onactivate="DOTAPostGameDrilldownShowMoreRows(5)">
+							<Label text="Show More" />
+						</Button>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DetailsDamageTableDrilldownGraphRow">
+			<Panel class="DetailsTableDrilldownGraphRow">
+				<Panel class="DrilldownContributor">
+					<Image class="NonHeroContributorIcon" src="s2r://panorama/images/control_icons/24px/towers.vsvg" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_PlusPostGame_NonHeroContributionTooltip )" onmouseout="UIHideTextTooltip()" />
+					<DOTAHeroImage id="ContributingHero" heroimagestyle="icon" />
+					<DOTAAbilityImage id="ContributingAbility" />
+					<DOTAHudTalentDisplay id="ContributingTalent" />
+				</Panel>
+				<Panel id="DrilldownGraphBar" />
+				<Label class="DrilldownGraphPercent" text="{f:0:total_percent}%" />
+				<Label id="DrilldownGraphTotal" class="DrilldownGraphTotal" text="{d:total_number}" />
+			</Panel>
+		</snippet>
 		<snippet name="DetailsHealingTableHeader">
 			<Panel class="DetailsTableHeader">
 				<Panel class="TopBottomFlow">
@@ -166,6 +234,7 @@
 		<snippet name="DetailsHealingTableRowBasic">
 			<Panel class="DetailsTableRow">
 				<Image class="ExpanderArrow" />
+				<Image id="DetailsHealthRegenImage" src="" texturewidth="128px" textureheight="128px" class="DamageBasicIcon" scaling="stretch-to-cover-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_PlusPostGame_HealingContributionDefaultHeading )" onmouseout="UIHideTextTooltip()" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsHealingTableRowUnit">
@@ -184,6 +253,180 @@
 			<Panel class="DetailsTableRow DetailsTableRowBottom">
 				<Image class="ExpanderArrow" />
 				<Label class="DamageTotal DetailsTableCell" text="#DOTA_PlusPostGame_Total" />
+			</Panel>
+		</snippet>
+		<snippet name="DetailsHealingTableDrilldownGraphs">
+			<Panel class="DetailsTableDrilldownContainer">
+				<Panel class="DetailsTableArrows">
+					<Image class="DetailsTableArrow ArrowSpacer" />
+					<Panel class="DetailsTableArrow Arrow0">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow1">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow2">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow3">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow4">
+						<Panel class="ArrowShape" />
+					</Panel>
+					<Panel class="DetailsTableArrow Arrow5">
+						<Panel class="ArrowShape" />
+					</Panel>
+				</Panel>
+				<Panel class="DetailsTableDrilldownContents">
+					<Panel class="ContributionContainer">
+						<Panel class="DrilldownGraphHeaderContainer">
+							<Label class="DrilldownGraphHeader HealingContributionHeader LabelMedium" text="#DOTA_PlusPostGame_HealingContributionDrilldownHeading" />
+							<Image class="DrillDownHeaderArrow TargetHeroOnly" src="s2r://panorama/images/control_icons/24px/arrow_right.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<DOTAHeroImage id="DrillDownHeroIcon" class="DrillDownHeroIcon TargetHeroOnly" heroimagestyle="icon" />
+							<Label class="DrilldownGraphHeader HealingContributionHeader LabelMedium TargetHeroOnly" text="{g:dota_hero_name:target_hero_id}" />
+						</Panel>
+						<Panel id="HealingContributionGraphContainer" class="DetailsTableDrilldownGraph" />
+						<Button id="ShowMoreContributionsButton" class="ShowMoreDrilldownButton ButtonPrimary Small DarkGrey" onactivate="DOTAPostGameDrilldownShowMoreRows(5)">
+							<Label text="Show More" />
+						</Button>
+					</Panel>
+					<Panel class="ReductionContainer">
+						<Panel class="DrilldownGraphHeaderContainer">
+							<Image class="HealingReductionIcon" src="s2r://panorama/images/control_icons/24px/damage_mitigation.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="DrilldownGraphHeader HealingReductionHeader LabelMedium" text="#DOTA_PlusPostGame_HealingReductionDrilldownHeading" />
+						</Panel>
+						<Panel id="HealingReductionGraphContainer" class="DetailsTableDrilldownGraph" />
+						<Button id="ShowMoreReductionsButton" class="ShowMoreDrilldownButton ButtonPrimary Small DarkGrey" onactivate="DOTAPostGameDrilldownShowMoreRows(5)">
+							<Label text="Show More" />
+						</Button>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DetailsHealingTableDrilldownGraphRow">
+			<Panel class="DetailsTableDrilldownGraphRow">
+				<Panel class="DrilldownContributor">
+					<Image class="NonHeroContributorIcon" src="s2r://panorama/images/control_icons/24px/towers.vsvg" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_PlusPostGame_NonHeroContributionTooltip )" onmouseout="UIHideTextTooltip()" />
+					<DOTAHeroImage id="ContributingHero" heroimagestyle="icon" />
+					<DOTAAbilityImage id="ContributingAbility" />
+					<DOTAHudTalentDisplay id="ContributingTalent" />
+				</Panel>
+				<Panel id="DrilldownGraphBar" />
+				<Label class="DrilldownGraphPercent" text="{f:0:total_percent}%" />
+				<Label id="DrilldownGraphTotal" class="DrilldownGraphTotal" text="{d:total_number}" />
+			</Panel>
+		</snippet>
+		<snippet name="DamageMitigationSection">
+			<Panel class="DamageMitigationSection">
+				<Panel class="DamageMitigationHeader">
+					<DOTAHeroImage id="HeroSource" class="HeroSource Small" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+					<Label class="DamageMitigationTitle" text="#DOTA_PlusPostGame_DamageMitigationHeaderTitle" />
+				</Panel>
+				<Panel class="DamageMitigationSubSection Self">
+					<Panel class="DamageMitigationSubHeader">
+						<Label class="LabelMedium SubHeaderLabel LeftAlign" text="#DOTA_PlusPostGame_SelfMitigation" />
+						<Label class="LabelMedium SubHeaderLabel RightAlign" text="#DOTA_AttribDamage" />
+					</Panel>
+					<Panel id="SelfDamageMitigationGraphContents" class="DamageMitigationGraphContents" />
+				</Panel>
+				<Panel class="DamageMitigationSubSection Ally">
+					<Panel class="DamageMitigationSubHeader">
+						<Label class="LabelMedium SubHeaderLabel LeftAlign" text="#DOTA_PlusPostGame_AllyMitigation" />
+						<Label class="LabelMedium SubHeaderLabel RightAlign" text="#DOTA_AttribDamage" />
+					</Panel>
+					<Panel id="AllyDamageMitigationGraphContents" class="DamageMitigationGraphContents" />
+					<Panel class="DamageMitigationFooter Allies">
+						<Label class="LabelMedium SubHeaderLabel LeftAlign" text="Overall Total" />
+						<Label class="DamageMitigationTotal" text="{d:mitigation_total}" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DamageMitigationGraphRow">
+			<Panel class="DamageMitigationGraphRow">
+				<DOTAHeroImage id="AllyHero" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="DamageBar">
+					<Panel id="DamageMitigatedByMe" />
+				</Panel>
+				<Panel class="ValuesContainer">
+					<Label class="MitigatedDamage" text="{d:damage_mitigated_by_me}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DamageContributionSection">
+			<Panel class="DamageContributionSection">
+				<Panel class="DamageContributionHeader">
+					<DOTAHeroImage id="HeroSource" class="HeroSource Small" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+					<Label class="DamageContributionTitle" text="#DOTA_PlusPostGame_DamageContributionHeaderTitle" />
+				</Panel>
+				<Label class="DataUnitLabel LabelMedium" text="#DOTA_AttribDamage" />
+				<Panel id="DamageContributionGraphContents" />
+				<Panel class="DamageContributionFooter">
+					<Label class="DamageContributionTotal" text="+{d:contribution_total}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DamageContributionGraphRow">
+			<Panel class="DamageContributionGraphRow">
+				<DOTAHeroImage id="AllyHero" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="DamageBar">
+					<Panel id="DamageContributedByMe" />
+				</Panel>
+				<Panel class="ValuesContainer">
+					<Label class="ContributedDamage" text="+{d:damage_contributed_by_me}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="HealingReductionSection">
+			<Panel class="HealingReductionSection">
+				<Panel class="HealingReductionHeader">
+					<DOTAHeroImage id="HeroSource" class="HeroSource Small" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+					<Label class="HealingReductionTitle" text="#DOTA_PlusPostGame_HealingReductionHeaderTitle" />
+				</Panel>
+				<Label class="DataUnitLabel LabelMedium" text="#DOTA_Health" />
+				<Panel id="HealingReductionGraphContents" />
+				<Panel class="HealingReductionFooter">
+					<Label class="HealingReductionTotal" text="{d:contribution_total}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="HealingReductionGraphRow">
+			<Panel class="HealingReductionGraphRow">
+				<DOTAHeroImage id="EnemyHero" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="DamageBar">
+					<Panel id="HealingReductionContributedByMe" />
+				</Panel>
+				<Panel class="ValuesContainer">
+					<Label class="ContributedHealingReduction" text="{d:healing_reduction_contributed_by_me}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="DispelContributionSection">
+			<Panel class="DispelContributionSection">
+				<Panel class="DispelContributionHeader">
+					<DOTAHeroImage id="HeroSource" class="HeroSource Small" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+					<Label class="DispelContributionTitle" text="#DOTA_PlusPostGame_DispelContributionHeaderTitle" />
+				</Panel>
+				<Panel id="DispelContributionContents" />
+			</Panel>
+		</snippet>
+		<snippet name="DispelContributionRow">
+			<Panel class="DispelContributionRow">
+				<DOTAHeroImage id="HeroTarget" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel id="DispelledModifiersContainer" />
+			</Panel>
+		</snippet>
+		<snippet name="DispelledModifier">
+			<Panel class="DispelledModifier">
+				<Panel class="ModifierAbilityContainer">
+					<Panel class="ModifierAbilityBorder" />
+					<DOTAAbilityImage id="ModifierAbility" class="IsDebuff" showtooltip="true" />
+				</Panel>
+				<Panel class="DispelTimesContainer">
+					<Label class="DispelTimes" text="x{d:dispel_count}" />
+				</Panel>
+				<Label class="DispelDuration" text="-{f:1:dispel_duration}s" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsBuffTableHeader">
@@ -1072,6 +1315,7 @@
 								<Panel class="GoldIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_support_gold_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="CampsStackedIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_camps_stacked_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="DewardsIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_dewards_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="WisdomShrineIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_wisdom_shrine_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel class="SupportItemsTeamContainer" id="RadiantSupportItemsRows" />
 							<Panel class="SupportItemsLegend KillMatrixLegend StatRowHeight StatSectionTitle">
@@ -1079,6 +1323,7 @@
 								<Panel class="GoldIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_support_gold_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="CampsStackedIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_camps_stacked_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 								<Panel class="DewardsIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_dewards_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="WisdomShrineIcon" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_wisdom_shrine_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel class="SupportItemsTeamContainer" id="DireSupportItemsRow" />
 						</Panel>
@@ -1208,6 +1453,12 @@
 					<Panel id="DetailsBreakdowns" class="DetailsPanel">
 						<Panel id="DetailsDamageTable" class="DetailsTable" />
 						<Panel id="DetailsHealingTable" class="DetailsTable" />
+						<Panel id="DetailsMoreContributionContainers">
+							<Panel id="DamageMitigationTable" class="DetailsTable" />
+							<Panel id="DamageContributionTable" class="DetailsTable" />
+							<Panel id="HealingReductionTable" class="DetailsTable" />
+							<Panel id="DispelContributionTable" class="DetailsTable" />
+						</Panel>
 						<Panel id="GoldReceived">
 							<Label text="#DOTA_PlusPostGame_GoldReceivedTitle" class="DetailsTableTitle" />
 							<Panel id="GoldReceivedRows" />
@@ -1216,6 +1467,22 @@
 						<Panel id="XPReceived">
 							<Label text="#DOTA_PlusPostGame_XPReceivedTitle" class="DetailsTableTitle" />
 							<Panel id="XPReceivedRows" />
+						</Panel>
+						<DOTAViolator id="DamageBreakdownWelcomeTooltip" name="damage_contribution_drilldown_violator">
+							<Panel class="DamageBreakdownWelcomeTooltipContents">
+								<Panel class="DamageBreakdownWelcomeTooltipBadge" />
+								<Label text="#DOTA_PlusPostGame_DamageMitigationWelcomeMessage" />
+								<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+							</Panel>
+							<Panel class="DamageBreakdownWelcomeTooltipArrowContainer">
+								<Panel class="DamageBreakdownWelcomeTooltipArrow" />
+							</Panel>
+						</DOTAViolator>
+						<Panel id="MatchScrubberSection" hittest="false">
+							<DOTAGameTimeNotchedRangeSlider id="GameTimeScrubber" notch-increment-seconds="60" hittest="false" />
+						</Panel>
+						<Panel class="BreakdownsLoadingSpinner">
+							<Panel class="Spinner" />
 						</Panel>
 					</Panel>
 					<Panel id="DetailsMVP" class="DetailsPanel" />
@@ -1322,8 +1589,26 @@
 								<Label class="ShowKillsDropDownItem" id="ShowKillsOption_None" text="#dota_page_match_details_hide_kills" />
 							</DropDown>
 						</Panel>
+						<Panel class="FilterBreakdownsButtonContainer">
+							<Label class="FilterBreakdownsLabel" text="#DOTA_PlusPostGame_Breakdowns_MoreOptions" />
+							<Button class="ButtonPrimary DarkGrey" onactivate="$(&apos;#DOTAPostGame&apos;).ToggleClass(&apos;ShowBreakdownsMoreOptions&apos;)">
+								<Image src="s2r://panorama/images/control_icons/24px/settings_slider.vsvg" />
+							</Button>
+						</Panel>
 					</Panel>
 					<Panel id="PinnedHeroesRightMargin" />
+					<Panel id="BreakdownsMoreOptionsPanel" onactivate="">
+						<Label class="MoreOptionsPanelTitle LabelMedium" text="#DOTA_PlusPostGame_Breakdowns_MoreOptionsTitle" />
+						<Panel class="MoreOptionsPanelDash" />
+						<ToggleButton id="BreakdownsBaseStatsContributionOption" selected="true" onactivate="DOTAPostGameUpdateBreakdownTables( false )">
+							<Label class="OptionText" text="#DOTA_PlusPostGame_Breakdowns_IncludeHeroBaseStats" />
+						</ToggleButton>
+						<Panel class="MoreOptionsPanelDash" />
+						<ToggleButton id="BreakdownsNonHeroContributionOption" selected="true" onactivate="DOTAPostGameUpdateBreakdownTables( false )">
+							<Label class="OptionText" text="#DOTA_PlusPostGame_Breakdowns_IncludeNonHero" />
+						</ToggleButton>
+						<Label class="MoreOptionsPanelNote" text="#DOTA_PlusPostGame_Breakdowns_IncludeNonHero_Description" />
+					</Panel>
 				</Panel>
 				<Panel id="PinnedStats" class="LeftRightFlow">
 					<Panel id="PinnedStatsLeftMargin" />

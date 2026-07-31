@@ -3,7 +3,7 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
-		<include src="s2r://panorama/styles/events/international_2025/international_2025_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_shared.vcss_c" />
 		<include src="s2r://panorama/styles/popups/popup_purchase_team_fan_content.vcss_c" />
 	</styles>
 	<snippets>
@@ -14,7 +14,7 @@
 			</Panel>
 		</snippet>
 		<snippet name="ChatWheelReward">
-			<Panel class="ChatWheelReward">
+			<Panel class="VoiceLineContainer">
 				<DOTAPreviewAudioButton class="Round Small" id="ChatWheelSoundButton" />
 				<Label text="{s:chat_wheel_label}" />
 			</Panel>
@@ -36,16 +36,15 @@
 		</snippet>
 	</snippets>
 	<DOTAPopupPurchaseTeamFanContent class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
-		<Image class="DashOrnament" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-		<Panel class="TopDash" />
+		<Panel class="RopeTexture" />
 		<Panel class="PopupContents">
-			<Panel class="BackgroundImage" />
+			<Panel class="PopupBackgroundImage" />
 			<Panel class="PopupBorder" hittest="false" />
 			<DOTATeamImage id="BackgroundTeamLogo" scaling="stretch-to-fit-preserve-aspect" teamimagestyle="squarelarge" />
 			<Panel class="TeamInfo">
 				<Label class="FeatureName LabelMedium" text="#DOTA_TeamFanContent_SupportersClub" />
 				<Label class="TeamName" text="{g:dota_team_name:team_id}" />
-				<Label class="TeamPerksOverviewText" html="true" text="#DOTA_International2025_TeamPerksText" />
+				<Label class="TeamPerksOverviewText" html="true" text="#DOTA_International2026_TeamPerksText" />
 				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
 					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
 				</Button>
@@ -79,7 +78,7 @@
 						<Panel class="FillHeight" />
 						<Label class="TierAlreadyPurchased" text="#DOTA_TeamFanContent_AlreadyOwned" />
 						<Label class="TierNotAvailable" text="#DOTA_TeamFanContent_TierNotAvailable" />
-						<DOTAInternational2025Button id="TierPurchaseButton1" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 1 )" />
+						<DOTAInternational2026Button id="TierPurchaseButton1" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 1 )" />
 						<Label class="IncludesText" text=" " />
 						<Panel class="SupporterTierBorder" hittest="false" />
 					</Panel>
@@ -96,7 +95,7 @@
 						<Panel class="FillHeight" />
 						<Label class="TierAlreadyPurchased" text="#DOTA_TeamFanContent_AlreadyOwned" />
 						<Label class="TierNotAvailable" text="#DOTA_TeamFanContent_TierNotAvailable" />
-						<DOTAInternational2025Button id="TierPurchaseButton2" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 2 )" />
+						<DOTAInternational2026Button id="TierPurchaseButton2" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 2 )" />
 						<Label class="IncludesText" text="#DOTA_TeamFanContent_Tier2Includes" />
 						<Panel class="SupporterTierBorder" hittest="false" />
 					</Panel>
@@ -109,25 +108,51 @@
 							<DOTAEventCrestImage id="TierBadge3" class="TierBadge" teamcrestsize="large" ignorequality="true" />
 						</Panel>
 						<Label class="TeamBadgeLabel" text="#DOTA_TeamFanContent_Tier3Badge" />
-						<Panel class="RewardCategory">
-							<Label class="RewardCategoryName" text="#DOTA_TeamFanContent_HPBarBadge" />
-							<Panel id="RewardCategoryItems">
-								<Panel class="HPBarImage" />
-								<DOTAEventCrestImage id="HPBarBadge" ignorequality="true" />
+						<Label class="NewBadge LabelSmall" text="#DOTA_New" />
+						<Panel class="Tier3Rewards">
+							<Panel class="LeftCol">
+								<Panel class="RewardCategory">
+									<Label class="RewardCategoryName" text="#DOTA_TeamFanContent_HPBarBadge" />
+									<Panel id="RewardCategoryItems">
+										<Panel class="HPBarImage" />
+										<DOTAEventCrestImage id="HPBarBadge" ignorequality="true" />
+									</Panel>
+								</Panel>
+								<Panel id="TierContent3" class="TierContent" />
+							</Panel>
+							<Panel class="RightCol EffigyOnly">
+								<Panel class="RewardCategory TeamLogoEffigyContainer">
+									<Label class="RewardCategoryName" text="#DOTA_TeamFanContent_TeamLogoEffigy" />
+									<Panel class="TeamLogoEffigyModelContainer" id="TeamLogoEffigyAnimationTarget">
+										<DOTAParticleScenePanel class="LevelUpEffigyFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+										<Image class="TeamLogoEffigyFloor" src="s2r://panorama/images/events/international_2026/artwork/effigy_floor_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+										<DOTAInternational2026EffigyPreviewPanel id="EffigyPreviewPanel" class="TeamLogoEffigyModelScene" />
+										<DOTAParticleScenePanel class="LevelUpEffigyFX" hittest="false" particleName="particles/econ/courier/courier_dragon_2024_gold/courier_dragon_2024_gold_ambient_sparkles.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="40" squarePixels="true" />
+									</Panel>
+									<Label class="EffigyDescription BodySmall" text="#DOTA_FanContent_EffigyDesc" />
+									<Panel class="OwnedEffigy">
+										<Label class="BodyMedium CurrentEffigyLevel" html="true" text="#DOTA_TeamFanContent_EffigyLevel" />
+										<Panel class="EffigyUIDash" />
+										<Label class="RewardCategoryName" text="#DOTA_TeamFanContent_PurchaseEffigy" />
+										<Panel class="EffigyLevelUI">
+											<Panel class="TeamLogoEffigyUIContainer">
+												<Slider id="EffigySlider" class="HorizontalSlider LevelSlider" direction="horizontal" />
+												<NumberEntry id="EffigyLevels" min="0" max="250" value="1" onvaluechanged="DOTAEffigyPurchaseAmountChanged()" />
+											</Panel>
+										</Panel>
+									</Panel>
+								</Panel>
 							</Panel>
 						</Panel>
-						<Panel id="TierContent3" class="TierContent" />
-						<Panel class="FillHeight" />
-						<Label class="TierAlreadyPurchased" text="#DOTA_TeamFanContent_AlreadyOwned" />
 						<Label class="TierNotAvailable" text="#DOTA_TeamFanContent_TierNotAvailable" />
-						<DOTAInternational2025Button id="TierPurchaseButton3" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 3 )" />
+						<DOTAInternational2026Button id="TierPurchaseButton3" class="TierPurchaseButton FillWidth" onactivate="DOTAPurchaseTeamFanContentLevel( 3 )" />
+						<DOTAInternational2026Button id="EffigyPurchaseButton" class="EffigyPurchaseButton FillWidth" text="#DOTA_TeamFanContent_PurchaseEffigyLevels" onactivate="DOTAPurchaseEffigyLevels()" />
 						<Label class="IncludesText" text="#DOTA_TeamFanContent_Tier3Includes" />
 						<Panel class="SupporterTierBorder" hittest="false" />
 					</Panel>
 				</Panel>
 			</Panel>
 		</Panel>
-		<Panel class="TopDash" />
-		<Image class="DashOrnament Flipped" src="s2r://panorama/images/events/international_2025/artwork/ornament_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="RopeTexture" />
 	</DOTAPopupPurchaseTeamFanContent>
 </root>

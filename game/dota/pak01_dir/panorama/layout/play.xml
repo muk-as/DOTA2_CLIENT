@@ -409,6 +409,8 @@
 			<Button id="BackgroundClickCatcher" hittest="true" onactivate="DOTAClosePlayTab()" />
 			<Panel id="PlaySlideOutBackground">
 				<Panel class="PlayTabBackgroundImage" />
+				<Panel class="PlayTabBackgroundBorder" />
+				<Panel class="PlayTabBackgroundBorderHighlight" />
 				<Panel id="LowPriGlow" />
 			</Panel>
 			<Panel id="LobbySelectorContent">
@@ -424,7 +426,7 @@
 			<DOTALobby id="Lobby" />
 			<DOTAWeekendTourneySetup id="WeekendTourneySetup" />
 			<Panel id="PlaySlideOutContent" class="TopBottomFlow" acceptsinput="true">
-				<Button id="WeekendTourneyButton" class="LobbyButton" onactivate="DOTAWeekendTourneyStartSetup();">
+				<Button id="WeekendTourneyButton" class="LobbyButton PlayTabSection" onactivate="DOTAWeekendTourneyStartSetup();">
 					<Panel class="FullWidth">
 						<Panel class="PrivateLobbyButtonIcon" />
 						<Panel id="BattleCupRegularSeasonContainer" class="FullWidth LeftRightFlow">
@@ -461,7 +463,7 @@
 				</Panel>
 				<Panel id="PracticeBotsSection" class="PlayTabSection TopBottomFlow">
 					<RadioButton id="GameStyle_PracticeBots" class="GameStyle" group="GameStyleTabGroup" text="#dota_play_practice_with_bots" onactivate="DOTAPlaySectionRadioChecked( PLAY_TAB_SECTION_PRACTICE_BOTS )" />
-					<Panel id="PracticeBotsSectionContent" class="TopBottomFlow">
+					<Panel id="PracticeBotsSectionContent" class="TopBottomFlow GameStyleContents">
 						<Panel class="Divider" />
 						<Panel class="LeftRightFlow HorizontalCenter">
 							<RadioButton class="CoopOrSolo GameModeCheckBox" id="PlayBotsCoop" group="CoopOrSolo" text="#DOTA_create_bot_practice_coop" onactivate="DOTAPlayBotsCoopOrSoloRadioChecked(false) AddStyle( Play, CoopBotSelected) " onmouseover="UIShowTextTooltipStyled( #DOTA_create_bot_practice_coop_desc, GameModeTooltip )" onmouseout="UIHideTextTooltip()" />
@@ -469,7 +471,7 @@
 						</Panel>
 						<Panel class="PlayDividerLine" />
 						<Panel class="FullWidth">
-							<Label class="CoopOrSolo" text="#DOTA_Lobby_BotScript" />
+							<Label class="CoopOrSolo SubSectionTitle LabelMedium" text="#DOTA_Lobby_BotScript" />
 							<TextButton id="BotScriptWorkshopURL" text="#DOTA_Lobby_BotScriptURL" />
 						</Panel>
 						<DropDown id="BotScriptDD" />
@@ -485,7 +487,7 @@
 						<Panel class="PlayDividerLine" />
 						<Panel id="BotSectionContainer" class="LeftRightFlow">
 							<Panel id="PracticeBotsDifficulty" class="BotSectionColumn TopBottomFlow">
-								<Label class="CoopOrSolo" text="#DOTA_Lobby_BotDifficulty" />
+								<Label class="CoopOrSolo SubSectionTitle LabelMedium" text="#DOTA_Lobby_BotDifficulty" />
 								<ToggleButton selected="true" id="BotDifficultyMask_1" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_easy" onactivate="DOTABotDifficultyChecked(1)" />
 								<ToggleButton selected="true" id="BotDifficultyMask_2" class="Checkbox BotDifficultyToggle" text="#DOTA_Lobby_BotDifficulty_medium" onactivate="DOTABotDifficultyChecked(2)" />
 								<Panel class="LeftRightFlow FullWidth">
@@ -502,7 +504,7 @@
 								<RadioButton id="BotDifficulty_4" class="PlayTabRadio BotSoloDifficulty" group="BotDifficultyGroup" text="#DOTA_Lobby_BotDifficulty_unfair" onactivate="DOTABotSoloDifficultyChecked(4)" />
 							</Panel>
 							<Panel id="PracticeBotsTeam" class="BotSectionColumn TopBottomFlow">
-								<Label class="CoopOrSolo" text="#DOTA_Lobby_BotTeam" />
+								<Label class="CoopOrSolo SubSectionTitle LabelMedium" text="#DOTA_Lobby_BotTeam" />
 								<RadioButton selected="true" id="BotTeamRadiant" class="PlayTabRadio" group="BotTeamGroup" text="#DOTA_practice_vs_bots_team_radiant" onactivate="DOTAPracticeBotsTeamRadioChecked(0)" />
 								<RadioButton id="BotTeamDire" class="PlayTabRadio" group="BotTeamGroup" text="#DOTA_practice_vs_bots_team_dire" onactivate="DOTAPracticeBotsTeamRadioChecked(1)" />
 								<RadioButton id="BotTeamRandom" class="PlayTabRadio" group="BotTeamGroup" text="#DOTA_practice_vs_bots_team_random" onactivate="DOTAPracticeBotsTeamRadioChecked(2)" />
@@ -582,10 +584,6 @@
 							</Panel>
 						</Panel>
 						<Panel class="RankedContent RankedContent__Roles">
-							<Panel class="RankedContent RankedContent__ModeSelection">
-								<RadioButton selected="true" id="RankedRoleQueueRadioButton" class="PlayTabRadio" group="RankedQueueGroup" text="#dota_play_role_queue" onactivate="DOTARankedModeRadioChecked( 0 )" />
-								<RadioButton id="ClassicQueueRadioButton" class="PlayTabRadio" group="RankedQueueGroup" text="#dota_play_classic" onactivate="DOTARankedModeRadioChecked( 1 )" />
-							</Panel>
 							<Panel id="RankDisplayContainer" class="RankedContent RankedContent__RankDisplay">
 								<Panel id="RankTierContainer" class="RankTierContainer">
 									<DOTAScenePanel id="BackgroundFX" map="scenes/rank_tier_ambient" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
@@ -605,13 +603,11 @@
 								</Panel>
 							</Panel>
 							<Panel class="RankedMMRSection" id="RankedRolesContainer">
-								<Panel id="RankedHighPriorityInfo" onmouseover="DOTAShowHighPriorityQueueTooltip()" onmouseout="DOTAHideHighPriorityQueueTooltip()">
-									<Panel id="RankedHighPriorityTitleSection">
-										<Label id="RankedHighPriorityTitleEnabled" class="RankedHighPriorityTitle" text="#DOTA_RR_RoleQueue" />
-										<Label id="RankedHighPriorityTitleDisabled" class="RankedHighPriorityTitle" text="#DOTA_RR_NoRoleQueue" />
-										<Panel id="RankedHighPriorityInfoIcon" class="InfoIcon" />
+								<Label class="RoleSelectorTitle" text="#DOTA_LaneSelectionSelectRole" />
+								<Panel class="RankedAutoSelectAllRolesContainer" onactivate="DOTAPlayMenuToggleAllRolesButton()">
+									<Panel id="RankedAutoSelectAllRoles">
+										<DOTASettingsCheckbox id="AutoSelectAllRoles" convar="dota_ranked_role_queue_automatically_select_all" text="#DOTA_settings_ranked_role_queue_automatically_select_all" />
 									</Panel>
-									<Label id="RankedHighPriorityPointChange" />
 								</Panel>
 								<Panel class="RoleSelectionGroup RoleSelectionGroup__Support">
 									<Panel class="RankedMatchmakingRoleContainer">
@@ -648,6 +644,28 @@
 										</Panel>
 									</Panel>
 								</Panel>
+								<Panel class="PlayDividerLine" />
+								<Panel id="RankedHighPriorityInfo">
+									<Panel id="RankedHighPriorityTitleSection">
+										<Label id="RankedHighPriorityTitleLabel" class="SubSectionTitle LabelMedium" text="#DOTA_RR_RoleQueueTokens" />
+										<Panel id="RoleTokensPanel" class="RoleTokensCount">
+											<Label id="RoleTokensLabel" class="LabelMedium" text="{d:role_tokens}" />
+										</Panel>
+									</Panel>
+									<ProgressBarWithMiddle id="ProgressBarRoleTokens" class="HPQ_Bar" min="0.0" max="1.0">
+										<Panel id="ProgressBar_Left" />
+										<Panel id="ProgressBarRoleTokens_Middle">
+											<Panel id="ProgressBarRoleTokens_Middle_Content">
+												<Panel id="ProgressBarRoleTokens_Middle_Scrolly" />
+											</Panel>
+										</Panel>
+									</ProgressBarWithMiddle>
+									<Label id="RankedHighPriorityPointChange" html="true" />
+									<Panel class="SelectAllRolesContainer">
+										<Panel id="RankedHighPriorityInfoIcon" class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_RR_Reason )" onmouseout="UIHideTextTooltip()" />
+										<Label class="SelectAllRolesNote" text="#DOTA_Play_RR_SelectAllRolesNote" />
+									</Panel>
+								</Panel>
 							</Panel>
 							<Panel class="Divider" />
 							<Panel class="TeamIdentity">
@@ -656,16 +674,6 @@
 									<Button class="TeamPrevious PaginationArrow Left" onactivate="DOTAPlayChangeTeamIdentity(-1);" />
 									<DOTAUGCImage class="TeamLogo" id="RankedTeamLogo" />
 									<Button class="TeamNext PaginationArrow Right" onactivate="DOTAPlayChangeTeamIdentity(1);" />
-								</Panel>
-							</Panel>
-							<Panel class="RankedGameModesContainer">
-								<Panel id="RankedGameModes">
-									<Panel class="RankGameModeHeader">
-										<Label class="RankGameModeTitle" text="#game_mode_ranked_title" />
-										<Label class="RankGameModeNotSelected" text="#game_mode_ranked_notSelected" />
-									</Panel>
-									<ToggleButton class="CheckBox GameModeCheckBox" id="GameMode_Ranked_AllDraft" text="#game_mode_lobby_name_22" selected="true" onmouseover="UIShowTextTooltipStyled( #game_mode_22_desc, GameModeTooltip )" onactivate="DOTAGameModeToggled( true )" onmouseout="UIHideTextTooltip()" />
-									<ToggleButton class="CheckBox GameModeCheckBox" id="GameMode_Ranked_RandomDraft" text="#game_mode_3" onmouseover="UIShowTextTooltipStyled( #game_mode_3_desc, GameModeTooltip )" onactivate="DOTAGameModeToggled( true )" onmouseout="UIHideTextTooltip()" />
 								</Panel>
 							</Panel>
 						</Panel>

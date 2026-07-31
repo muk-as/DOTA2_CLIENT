@@ -274,6 +274,23 @@
 							</Panel>
 						</Panel>
 					</Panel>
+					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_modifier_keys">
+						<Label class="SettingsSectionSubtitle" text="#dota_settings_modifier_keys" />
+						<Panel class="SettingsSectionColumnContainer FilledBackground">
+							<Panel class="SettingsSectionColumn">
+								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterEnemy" bind="FilterEnemy" />
+								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterAlly" bind="FilterAlly" />
+								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterHero" bind="FilterHero" />
+								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterNonHero" bind="FilterNonHero" />
+								<Panel style="height: 8px;" />
+								<DOTASettingsCheckbox convar="dota_experimental_target_filter_is_toggle" text="#dota_settings_target_filter_is_toggle" onmouseover="UIShowTextTooltipStyled( #dota_tooltip_settings_target_filter_is_toggle_details, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+							<Panel class="SettingsSectionColumnDivider" />
+							<Panel class="SettingsSectionColumn">
+								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_ModifierKeysDescription" />
+							</Panel>
+						</Panel>
+					</Panel>
 					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_options">
 						<Label class="SettingsSectionSubtitle" text="#dota_settings_options" />
 						<Panel class="SettingsSectionColumnContainer FilledBackground">
@@ -474,6 +491,37 @@
 							</Panel>
 						</Panel>
 					</Panel>
+					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_overlay_map">
+						<Label class="SettingsSectionSubtitle" text="#dota_settings_overlay_map" />
+						<Panel class="SettingsSectionColumnContainer FilledBackground">
+							<Panel class="SettingsSectionColumn">
+								<DOTASettingsKeyBinder text="#dota_settings_show_overlay_map" bind="OverlayMapToggle" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_OverlayMapSettings, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+								<Panel style="height: 12px;" />
+								<DOTASettingsEnum convar="dota_overlaymap_togglemode" text="#dota_settings_overlay_map_key_behavior">
+									<RadioButton text="#dota_settings_overlay_map_key_behavior_whenheld" value="0" class="EnumButton" />
+									<RadioButton text="#dota_settings_overlay_map_key_behavior_toggle" value="1" class="EnumButton" />
+								</DOTASettingsEnum>
+								<Panel class="SettingsSectionDivider" />
+								<DOTASettingsEnum convar="dota_overlaymap_inputmode" text="#dota_settings_overlay_map_inputmode" onactivate="DOTALabsUpdateOverlayMapInputKeyState()">
+									<RadioButton text="#dota_settings_overlay_map_inputmode_never" value="0" class="EnumButton" />
+									<RadioButton text="#dota_settings_overlay_map_inputmode_always" value="1" class="EnumButton" />
+									<RadioButton text="#dota_settings_overlay_map_inputmode_whileheld" value="2" class="EnumButton" />
+								</DOTASettingsEnum>
+								<Panel class="SettingsSectionDivider" />
+								<DOTASettingsSlider text="#dota_settings_overlay_map_opacity" convar="dota_overlaymap_opacity" class="compressed" min="0.25" max="1.0" percentage="true" value100percent="1.00" />
+								<Panel class="SettingsSectionDivider" />
+								<DOTASettingsEnum convar="dota_overlaymap_position" text="#dota_settings_overlay_map_position">
+									<RadioButton text="#dota_settings_overlay_map_position_center" value="0" class="EnumButton" />
+									<RadioButton text="#dota_settings_overlay_map_position_left" value="1" class="EnumButton" />
+									<RadioButton text="#dota_settings_overlay_map_position_right" value="2" class="EnumButton" />
+								</DOTASettingsEnum>
+							</Panel>
+							<Panel class="SettingsSectionColumnDivider" />
+							<Panel class="SettingsSectionColumn">
+								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_OverlayMapDescription" />
+							</Panel>
+						</Panel>
+					</Panel>
 					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_camera">
 						<Label class="SettingsSectionSubtitle" text="#dota_settings_camera" />
 						<Panel class="SettingsSectionColumnContainer FilledBackground">
@@ -549,6 +597,7 @@
 								<DOTASettingsCheckbox convar="dota_show_hero_finder" text="#dota_settings_herofinder" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ALTHero, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsCheckbox convar="dota_alt_shows_neutral_spawn_boxes" text="#dota_alt_shows_neutral_spawn_boxes" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ALTNeutral, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsCheckbox convar="dota_alt_shows_tower_attack_range" text="#dota_alt_shows_tower_attack_range" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ALTTower, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+								<DOTASettingsCheckbox convar="dota_alt_right_range_hint" text="#dota_settings_alt_right_range_hint" onmouseover="UIShowTextTooltipStyled( #dota_tooltip_settings_alt_right_range_hint, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<Panel class="SettingsSectionDivider" />
 								<Label class="SettingsSectionSubSubtitleSmall" text="#dota_settings_tips" searchable="true" />
 								<ToggleButton id="HelpTipsEnabled" class="CheckBox" text="#dota_settings_help_tips" onactivate="DOTAUpdateHelpTipsEnabled()" onmouseover="UIShowTextTooltipStyled( #dota_settings_help_tips_tooltip, OptionsTooltip )" onmouseout="UIHideTextTooltip()" />
@@ -1063,7 +1112,7 @@
 						</Panel>
 					</Panel>
 				</Panel>
-				<Panel id="LabsSection" class="SettingsSectionContainer" section="#dota_settings_labs" icon="s2r://panorama/images/control_icons/24px/labs.vsvg">
+				<Panel id="LabsSection" class="SettingsSectionContainer LegacyKeyUsersOnly" section="#dota_settings_labs" icon="s2r://panorama/images/control_icons/24px/labs.vsvg">
 					<Panel class="SettingsSectionTitleContainer LeftRightFlow">
 						<Image class="SettingsSectionTitleIcon" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/labs.vsvg" />
 						<Label class="SettingsSectionTitle" text="#dota_settings_labs" />
@@ -1077,79 +1126,7 @@
 						</Panel>
 						<Image class="DotaLabsIcon" src="s2r://panorama/images/logos/dota_labs_logo_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_modifier_keys">
-						<Label class="SettingsSectionSubtitle" text="#dota_settings_modifier_keys" />
-						<Panel class="SettingsSectionColumnContainer FilledBackground">
-							<Panel class="SettingsSectionColumn">
-								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterEnemy" bind="FilterEnemy" />
-								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterAlly" bind="FilterAlly" />
-								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterHero" bind="FilterHero" />
-								<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterNonHero" bind="FilterNonHero" />
-								<Panel style="height: 8px;" />
-								<DOTASettingsCheckbox convar="dota_experimental_target_filter_is_toggle" text="#dota_settings_target_filter_is_toggle" onmouseover="UIShowTextTooltipStyled( #dota_tooltip_settings_target_filter_is_toggle_details, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-							</Panel>
-							<Panel class="SettingsSectionColumnDivider" />
-							<Panel class="SettingsSectionColumn">
-								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_ModifierKeysDescription" />
-							</Panel>
-						</Panel>
-					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_overlay_map">
-						<Label class="SettingsSectionSubtitle" text="#dota_settings_overlay_map" />
-						<Panel class="SettingsSectionColumnContainer FilledBackground">
-							<Panel class="SettingsSectionColumn">
-								<DOTASettingsKeyBinder text="#dota_settings_show_overlay_map" bind="OverlayMapToggle" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_OverlayMapSettings, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-								<Panel style="height: 12px;" />
-								<DOTASettingsEnum convar="dota_overlaymap_togglemode" text="#dota_settings_overlay_map_key_behavior">
-									<RadioButton text="#dota_settings_overlay_map_key_behavior_whenheld" value="0" class="EnumButton" />
-									<RadioButton text="#dota_settings_overlay_map_key_behavior_toggle" value="1" class="EnumButton" />
-								</DOTASettingsEnum>
-								<Panel class="SettingsSectionDivider" />
-								<DOTASettingsEnum convar="dota_overlaymap_inputmode" text="#dota_settings_overlay_map_inputmode" onactivate="DOTALabsUpdateOverlayMapInputKeyState()">
-									<RadioButton text="#dota_settings_overlay_map_inputmode_never" value="0" class="EnumButton" />
-									<RadioButton text="#dota_settings_overlay_map_inputmode_always" value="1" class="EnumButton" />
-									<RadioButton text="#dota_settings_overlay_map_inputmode_whileheld" value="2" class="EnumButton" />
-								</DOTASettingsEnum>
-								<Panel class="SettingsSectionDivider" />
-								<DOTASettingsSlider text="#dota_settings_overlay_map_opacity" convar="dota_overlaymap_opacity" class="compressed" min="0.25" max="1.0" percentage="true" value100percent="1.00" />
-								<Panel class="SettingsSectionDivider" />
-								<DOTASettingsEnum convar="dota_overlaymap_position" text="#dota_settings_overlay_map_position">
-									<RadioButton text="#dota_settings_overlay_map_position_center" value="0" class="EnumButton" />
-									<RadioButton text="#dota_settings_overlay_map_position_left" value="1" class="EnumButton" />
-									<RadioButton text="#dota_settings_overlay_map_position_right" value="2" class="EnumButton" />
-								</DOTASettingsEnum>
-							</Panel>
-							<Panel class="SettingsSectionColumnDivider" />
-							<Panel class="SettingsSectionColumn">
-								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_OverlayMapDescription" />
-							</Panel>
-						</Panel>
-					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_labs_matchmaking_section">
-						<Label class="SettingsSectionSubtitle" text="#dota_settings_labs_matchmaking_section" />
-						<Panel class="SettingsSectionColumnContainer FilledBackground">
-							<Panel class="SettingsSectionColumn">
-								<DOTASettingsCheckbox convar="dota_show_accept_match_details" text="#dota_settings_accept_match_details" />
-							</Panel>
-							<Panel class="SettingsSectionColumnDivider" />
-							<Panel class="SettingsSectionColumn">
-								<Label class="SettingsDescription" text="#dota_tooltip_settings_accept_match_details" />
-							</Panel>
-						</Panel>
-					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_healthbars">
-						<Label class="SettingsSectionSubtitle" text="#dota_settings_healthbars" />
-						<Panel class="SettingsSectionColumnContainer FilledBackground">
-							<Panel class="SettingsSectionColumn">
-								<DOTASettingsCheckbox convar="dota_health_bar_hovered_always_top" text="#dota_settings_hovered_always_top" onvaluechanged="DOTASettingsHealthBarSettingsUpdated()" />
-							</Panel>
-							<Panel class="SettingsSectionColumnDivider" />
-							<Panel class="SettingsSectionColumn">
-								<Label class="SettingsDescription" text="#DOTA_Tooltip_Settings_HoverAlwaysOnTop" />
-							</Panel>
-						</Panel>
-					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_labs_hotkeys_section">
+					<Panel class="SettingsSubsectionContainer LegacyKeyUsersOnly" subsection="#dota_settings_labs_hotkeys_section" exclude_navigation="true">
 						<Label class="SettingsSectionSubtitle" text="#dota_settings_labs_hotkeys_section" />
 						<Panel class="SettingsSectionColumnContainer FilledBackground">
 							<Panel class="SettingsSectionColumn">
@@ -1160,18 +1137,6 @@
 							<Panel class="SettingsSectionColumnDivider" />
 							<Panel class="SettingsSectionColumn">
 								<Label class="SettingsDescription" text="#dota_tooltip_settings_goodbye_legacy_keys" />
-							</Panel>
-						</Panel>
-					</Panel>
-					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_interface">
-						<Label class="SettingsSectionSubtitle" text="#dota_settings_interface" />
-						<Panel class="SettingsSectionColumnContainer FilledBackground">
-							<Panel class="SettingsSectionColumn">
-								<DOTASettingsCheckbox convar="dota_alt_right_range_hint" text="#dota_settings_alt_right_range_hint" />
-							</Panel>
-							<Panel class="SettingsSectionColumnDivider" />
-							<Panel class="SettingsSectionColumn">
-								<Label class="SettingsDescription" text="#dota_tooltip_settings_alt_right_range_hint" />
 							</Panel>
 						</Panel>
 					</Panel>

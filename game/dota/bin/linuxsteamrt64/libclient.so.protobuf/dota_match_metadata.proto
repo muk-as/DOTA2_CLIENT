@@ -177,6 +177,12 @@ message CDOTAMatchMetadata {
 				optional .CMsgOverworldTokenQuantity tokens = 2;
 			}
 
+			message NeutralItem {
+				optional int32 trinket_id = 1 [default = -1];
+				optional int32 enchantment_id = 2 [default = -1];
+				optional int32 tier = 3;
+			}
+
 			repeated int32 ability_upgrades = 2;
 			optional uint32 player_slot = 3;
 			repeated .CDOTAMatchMetadata.Team.PlayerKill kills = 5;
@@ -234,6 +240,8 @@ message CDOTAMatchMetadata {
 			repeated .CMsgCraftworksQuestReward craftworks_quest_rewards = 60;
 			optional int32 ad_facet_hero_id = 61;
 			optional .CMsgMonsterHunterMatchRewards.Player monster_hunter_rewards = 62;
+			optional uint32 wisdom_shrines_taken = 63;
+			repeated .CDOTAMatchMetadata.Team.Player.NeutralItem neutral_items = 64;
 		}
 
 		optional uint32 dota_team = 1;

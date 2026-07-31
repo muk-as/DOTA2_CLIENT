@@ -9,7 +9,6 @@ function Init()
 
 	$.RegisterEventHandler( 'DOTAUIHeroPickerHeroSelected', $( '#SelectHeroContainer' ), SwitchToNewHero );
 	// $.RegisterEventHandler('DOTAHeroFacetDropdownFacetSelected', $('#HeroFacetDropdown'), SwitchToNewFacet);
-	$.RegisterEventHandler('DOTAHeroFacetPickerFacetSelected', $('#SpawnHeroFacetPicker'), SwitchSpawnHeroFacet);
 
     var UiDefaults = CustomNetTables.GetTableValue( "game_global", "ui_defaults" );
 
@@ -295,11 +294,6 @@ function SwitchToNewHero( nHeroID, nHeroVariant )
 {
 	$.Msg( 'SwitchToNewHero - Hero = ' + nHeroID + ', Variant = ' + nHeroVariant );
 
-	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
-	if (SpawnHeroFacetPicker != null) {
-		SpawnHeroFacetPicker.heroid = nHeroID;
-	}
-
 	var HeroPickerImage = $( '#HeroPickerImage' );
 	if ( HeroPickerImage != null )
 	{
@@ -316,28 +310,6 @@ function SwitchToNewHero( nHeroID, nHeroVariant )
 
 	SetHeroPickerVisible( false );
 }
-
-function SwitchToNewFacet( nHeroID, nHeroFacet )
-{
-	$( '#SelectHeroContainer' ).SetHasClass( 'PickMainHero', true );
-
-	var PlayerHeroImage = $( '#PlayerHeroImage' );
-	if ( PlayerHeroImage != null )
-	{
-		// $.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroFacet ) );	
-	}
-}
-
-function SwitchSpawnHeroFacet(nHeroID, nHeroFacet) {
-
-	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
-	var nHeroFacetID = nHeroFacet & 0xFFFFFFFF;
-	if (SpawnHeroFacetPicker != null) {
-		$.Msg( 'SwitchSpawnHeroFacet ' + nHeroID + ' ' + nHeroFacetID );
-		// $.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroFacetID ) );
-	}
-}
-
 
 function OnSetPlayerHeroID( event_data )
 {
@@ -388,21 +360,14 @@ function OnSetSpawnHeroID( event_data )
 		SpawnHeroButton.SetDialogVariable( "hero_name", GameUI.GetUnitNameLocalized( event_data.hero_name ) );
 		SpawnHeroButton.SetDialogVariable( "hero_variant", event_data.hero_variant );
 	}
-	if (event_data.initial_spawn) {
-		var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
-		if (SpawnHeroFacetPicker != null) {
-			SpawnHeroFacetPicker.heroid = event_data.hero_id;
-		}
-	}
 }
 GameEvents.Subscribe( "set_spawn_hero_id", OnSetSpawnHeroID );
 
 function SpawnAlly()
 {
 	var HeroPickerImage = $( '#HeroPickerImage' );
-	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
 	var nHeroID = HeroPickerImage.heroid;
-	var nHeroFacet = SpawnHeroFacetPicker.facet;
+	var nHeroFacet = 0;
 
 	$.Msg( 'spawning this thing ' + nHeroFacet );
 
@@ -412,9 +377,8 @@ function SpawnAlly()
 function SpawnEnemy()
 {
 	var HeroPickerImage = $( '#HeroPickerImage' );
-	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
 	var nHeroID = HeroPickerImage.heroid;
-	var nHeroFacet = SpawnHeroFacetPicker.facet;
+	var nHeroFacet = 0;
 
 	$.DispatchEvent( 'FireCustomGameEvent_Str', 'SpawnEnemyButtonPressed', String( nHeroID ) + ':' + String( nHeroFacet ) );	
 }
@@ -422,9 +386,8 @@ function SpawnEnemy()
 function SpawnSelf()
 {
 	var HeroPickerImage = $( '#HeroPickerImage' );
-	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
 	var nHeroID = HeroPickerImage.heroid;
-	var nHeroFacet = SpawnHeroFacetPicker.facet;
+	var nHeroFacet = 0;
 
 	$.DispatchEvent( "DOTADemoHeroEquippedItems", GameUI.GetHeroNameForHeroID( nHeroID ), nHeroFacet );
 }

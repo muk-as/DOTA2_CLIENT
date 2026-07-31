@@ -975,7 +975,7 @@ DOTASortHeader.SortAscending .GoldIcon,DOTASortHeader.SortDescending .GoldIcon
 
 .SupportItemsLegend .GoldIcon
 {
-	margin-right: 130px;
+	margin-right: 190px;
 }
 
 .SupportItemsLegend .CampsStackedIcon
@@ -986,12 +986,23 @@ DOTASortHeader.SortAscending .GoldIcon,DOTASortHeader.SortDescending .GoldIcon
 	margin-bottom: 4px;
 	tooltip-position: top;
 	tooltip-body-position: 50% 50%;
-	margin-right: 70px;
+	margin-right: 130px;
 }
 
 .SupportItemsLegend .DewardsIcon
 {
 	wash-color: #b91b1e;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 4px;
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+	margin-right: 65px;
+}
+
+.SupportItemsLegend .WisdomShrineIcon
+{
+	wash-color: #a96eff;
 	horizontal-align: right;
 	vertical-align: bottom;
 	margin-bottom: 2px;
@@ -1312,15 +1323,15 @@ DOTAAbilityImage.ADAbilityIcon
 	border: 1px solid black;
 }
 
-#ItemIcon9
+.NeutralItemIcon
 {
-	width: 45px;
+	width: 40px;
 	border: 1px solid #000000;
-	height: 45px;
+	height: 40px;
 	vertical-align: center;
 	border-radius: 50px;
-	vertical-align: center;
-	horizontal-align: center;
+	horizontal-align: left;
+	margin-left: 2px;
 }
 
 #EventGameOverview
@@ -5337,6 +5348,39 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	wash-color: white;
 }
 
+#DetailsMoreContributionContainers
+{
+	flow-children: down-wrap;
+	height: 100%;
+	padding-top: 26px;
+	margin-right: 32px;
+	margin-left: 20px;
+	padding-right: 20px;
+	padding-left: 44px;
+	margin-bottom: 64px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-color: rgba(255, 255, 255, 0.3);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8a6936 ), color-stop( 0.7, #26354a ), to( #26354a00 ) );
+	visibility: collapse;
+}
+
+#DetailsMoreContributionContainers .DetailsTable
+{
+	min-width: 540px;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 16px;
+	padding-bottom: 8px;
+	margin-right: 32px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#DetailsMoreContributionContainers.HasContributionData
+{
+	visibility: visible;
+}
+
 #DetailsBreakdowns
 {
 	flow-children: right;
@@ -5496,6 +5540,42 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	text-shadow: 0px 1px 6px #000000;
 }
 
+.DetailsTableRow #DetailsHealthRegenImage
+{
+	width: 78px;
+	height: 78px;
+	margin-right: 10px;
+}
+
+.DetailsTableCell .KillCount
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	flow-children: right;
+	margin: 2px 4px;
+	transition-property: position;
+	transition-duration: 0.15s;
+}
+
+.DetailsTableCell .KillCount .SkullIcon
+{
+	height: 14px;
+	width: 14px;
+	wash-color: LightGrey;
+	horizontal-align: center;
+	margin-left: 1px;
+	margin-bottom: -1px;
+}
+
+.DetailsTableCell .KillCount .KillCountLabel
+{
+	font-size: 14px;
+	color: LightGrey;
+	horizontal-align: center;
+	font-family: monospaceNumbersFont;
+	text-align: right;
+}
+
 .DetailsTableRow DOTAHudTalentDisplay
 {
 	vertical-align: middle;
@@ -5551,9 +5631,122 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	transition-duration: 0.1s;
 }
 
+#DetailsDamageTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent .ValueLabel,#DetailsHealingTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent .ValueLabel
+{
+	background-color: rgba(0, 0, 0, 0.65);
+	border-color: rgba(214, 245, 255, 0.02);
+}
+
+#DetailsDamageTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent:hover .ValueLabel,#DetailsHealingTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent:hover .ValueLabel
+{
+	background-color: rgba(0, 0, 0, 0.8);
+	border-color: rgba(214, 245, 255, 0.2);
+}
+
+#DetailsDamageTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent.ShowingDrilldown .ValueLabel,#DetailsHealingTable .DetailsTableRows .DetailsTableRow .DetailsTableCell.HasDrilldownContent.ShowingDrilldown .ValueLabel
+{
+	background-color: rgb(10, 14, 18);
+	border-color: rgba(196, 229, 255, 0.8);
+	box-shadow: 0px 0px 32px -2px rgba(154, 203, 255, 0.1);
+}
+
 .DetailsTableRow.DetailsTableRowBottom Image
 {
 	opacity: 0.0;
+}
+
+#DamageBreakdownWelcomeTooltip
+{
+	ignore-parent-flow: true;
+	flow-children: down;
+	x: 580px;
+	y: 104px;
+	animation-name: BobTooltip;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+#DamageBreakdownWelcomeTooltip.Hidden
+{
+	opacity: 0;
+}
+
+#DamageBreakdownWelcomeTooltip:hover .DamageBreakdownWelcomeTooltipContents
+{
+	border: 1px solid rgba(228, 237, 255, 0.1);
+}
+
+#DamageBreakdownWelcomeTooltip:hover .DamageBreakdownWelcomeTooltipArrow
+{
+	border: 1px solid rgba(228, 237, 255, 0.1);
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipContents
+{
+	background-color: #262C31;
+	border: 1px solid rgba(228, 237, 255, 0.05);
+	padding: 8px;
+	box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.4);
+	flow-children: right;
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipContents Label
+{
+	color: whitesmoke;
+	font-size: 16px;
+	vertical-align: center;
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipContents .DamageBreakdownWelcomeTooltipBadge
+{
+	vertical-align: center;
+	width: 8px;
+	height: 8px;
+	background-color: rgb(129, 255, 145);
+	margin-right: 8px;
+	margin-left: 8px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 16px rgba(105, 255, 125, 0.1);
+	border: 1px solid rgb(159, 255, 172);
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipContents .CloseIcon
+{
+	width: 28px;
+	height: 28px;
+	vertical-align: center;
+	wash-color: rgb(122, 135, 145);
+	margin-left: 8px;
+	padding: 4px;
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipContents .CloseIcon:hover
+{
+	wash-color: rgb(147, 161, 172);
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipArrowContainer
+{
+	width: 60px;
+	height: 20px;
+	overflow: clip;
+	margin-top: -1px;
+	z-index: 1;
+}
+
+#DamageBreakdownWelcomeTooltip .DamageBreakdownWelcomeTooltipArrow
+{
+	horizontal-align: center;
+	width: height-percentage(100%);
+	height: 100%;
+	background-color: #262C31;
+	border: 1px solid rgba(228, 237, 255, 0.05);
+	transform: rotateZ(45deg);
+	y: -50%;
+	box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes 'BobTooltip'
@@ -5568,6 +5761,933 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 		transform: translateY( 4px );
 	}
 	
+}
+
+#MatchScrubberSection
+{
+	ignore-parent-flow: true;
+	overflow: noclip;
+	width: 1328px;
+	vertical-align: bottom;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.BreakdownsLoadingSpinner
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	flow-children: right;
+	background-color: #00000099;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	opacity: 0;
+}
+
+.BreakdownsLoading .BreakdownsLoadingSpinner
+{
+	opacity: 1;
+}
+
+.BreakdownsLoadingSpinner .Spinner
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+}
+
+.DetailsTableDrilldownContainer
+{
+	width: fill-parent-flow(1);
+	margin-left: 20px;
+	margin-top: -18px;
+	flow-children: down;
+	visibility: collapse;
+}
+
+.DetailsTableDrilldownContainer.HasRelevantContent.ShowDrilldown
+{
+	visibility: visible;
+}
+
+.DetailsTableDrilldownContainer.Column0 .DetailsTableArrow.Arrow0
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer.Column1 .DetailsTableArrow.Arrow1
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer.Column2 .DetailsTableArrow.Arrow2
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer.Column3 .DetailsTableArrow.Arrow3
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer.Column4 .DetailsTableArrow.Arrow4
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer.Column5 .DetailsTableArrow.Arrow5
+{
+	opacity: 1;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableArrows
+{
+	flow-children: right;
+	margin-bottom: -1px;
+	z-index: 1;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableArrows .DetailsTableArrow
+{
+	width: fill-parent-flow(1);
+	height: 24px;
+	margin: 0px 5px;
+	opacity: 0;
+	overflow: clip;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableArrows .DetailsTableArrow.ArrowSpacer
+{
+	margin-left: 0px;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableArrows .DetailsTableArrow.Arrow5
+{
+	margin-right: 0px;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableArrows .DetailsTableArrow .ArrowShape
+{
+	width: 32px;
+	height: 32px;
+	border: 1px solid rgba(195, 230, 255, 0.03);
+	background-color: rgb(9, 14, 18);
+	transform: rotateZ( 45deg );
+	horizontal-align: center;
+	y: 8px;
+}
+
+.DetailsTableDrilldownContainer .DetailsTableDrilldownContents
+{
+	margin-bottom: 24px;
+	padding: 16px 0px 16px 24px;
+	flow-children: down;
+	background-color: rgb(9, 14, 18);
+	border: 1px solid rgba(195, 230, 255, 0.03);
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.2);
+}
+
+.ContributionContainer,.MitigationContainer,.ReductionContainer
+{
+	flow-children: down;
+	visibility: collapse;
+	width: fill-parent-flow(1);
+}
+
+.HasFriendlyDamageContributions .ContributionContainer
+{
+	visibility: visible;
+}
+
+.HasFriendlyHealingContributions .ContributionContainer
+{
+	visibility: visible;
+}
+
+.HasEnemyMigitationContributions .MitigationContainer
+{
+	visibility: visible;
+	border-top: 1px solid rgba(201, 224, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF ), color-stop( 0.6, #FFFFFF ), to( #FFFFFF00 ) );
+	margin-top: 12px;
+	padding-top: 12px;
+}
+
+.HasEnemyHealingReductionContributions .ReductionContainer
+{
+	visibility: visible;
+	border-top: 1px solid rgba(201, 224, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF ), color-stop( 0.6, #FFFFFF ), to( #FFFFFF00 ) );
+	margin-top: 12px;
+	padding-top: 12px;
+}
+
+.DrilldownGraphHeaderContainer
+{
+	flow-children: right;
+	height: 24px;
+}
+
+.DrilldownGraphHeaderContainer .DrillDownHeaderArrow
+{
+	height: 16px;
+	vertical-align: center;
+	wash-color: #c3e9ff;
+	margin: 0px 12px;
+	opacity: 0.2;
+}
+
+.DrilldownGraphHeaderContainer .DrilldownGraphHeader
+{
+	vertical-align: center;
+	color: LighterGrey;
+	text-shadow: 0px 1px 6px black;
+}
+
+.DrilldownGraphHeaderContainer .DrillDownHeroIcon
+{
+	width: 24px;
+	height: width-percentage(100%);
+	margin-right: 8px;
+	vertical-align: center;
+}
+
+.DrilldownGraphHeaderContainer .DamageMitigationIcon,.DrilldownGraphHeaderContainer .HealingReductionIcon
+{
+	width: 20px;
+	margin: 0px 2px;
+	margin-right: 8px;
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 0%, 0% 90%, from( #a9bcc7 ), to( #475863 ) );
+}
+
+.NoTargetHero .TargetHeroOnly
+{
+	visibility: collapse;
+}
+
+.DrilldownGraphSubHeader
+{
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 4px 0px 0px 0px;
+	color: #999999;
+}
+
+.DetailsTableDrilldownGraph
+{
+	flow-children: down;
+}
+
+.ShowMoreDrilldownButton
+{
+	horizontal-align: center;
+	width: 150px;
+	visibility: collapse;
+}
+
+.ShowMoreDrilldownButton.HasMoreRows
+{
+	visibility: visible;
+}
+
+.DetailsTableDrilldownGraphRow
+{
+	flow-children: right;
+	height: 30px;
+	margin-top: 2px;
+	visibility: collapse;
+}
+
+.DetailsTableDrilldownGraphRow.ShowRow.HasContent
+{
+	visibility: visible;
+}
+
+.DrilldownContributor
+{
+	flow-children: right;
+	width: 72px;
+	vertical-align: middle;
+}
+
+#ContributingAbility
+{
+	height: 28px;
+	width: 28px;
+	margin-left: 6px;
+	vertical-align: middle;
+}
+
+.IsBaseHeroContribution #ContributingAbility,.PerHero #ContributingAbility,.IsTalentContribution #ContributingAbility
+{
+	visibility: collapse;
+}
+
+.NonHeroContributorIcon
+{
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.IsNonHeroContribution .NonHeroContributorIcon
+{
+	visibility: visible;
+}
+
+#ContributingHero
+{
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+#ContributingTalent
+{
+	height: 28px;
+	width: 28px;
+	margin-left: 6px;
+	vertical-align: middle;
+	visibility: collapse;
+}
+
+.IsTalentContribution #ContributingTalent
+{
+	visibility: visible;
+}
+
+#DrilldownGraphBar
+{
+	height: 8px;
+	width: fill-parent-flow( 1.0 );
+	background-color: #232831;
+	vertical-align: middle;
+	flow-children: right;
+	background-color: gradient( linear, 100% 0%, 0% 0%, from( #2a2f3a ), to( #2a2f3a22 ) );
+}
+
+.GraphBarSection
+{
+	background-color: #b91b1e;
+	border-left: 1px solid #262626;
+	border-right: 1px solid #262626;
+	height: 100%;
+}
+
+.GraphBarSection.GraphBarSectionType1
+{
+	background-color: #92979a;
+}
+
+.GraphBarSection.GraphBarSectionType2
+{
+	background-color: #4a8b74;
+}
+
+.GraphBarSection.GraphBarSectionType3
+{
+	background-color: #3478d2;
+}
+
+.GraphBarSection.GraphBarSectionType4
+{
+	background-color: #9845e7;
+}
+
+.GraphBarSection.GraphBarSectionType5
+{
+	background-color: #fdc14b;
+}
+
+.GraphBarSection.GraphBarSectionType6
+{
+	background-color: #ae2f28;
+}
+
+.GraphBarSection.GraphBarSectionType7
+{
+	background-color: #5b93d1;
+}
+
+.GraphBarSection.GraphBarSectionType8
+{
+	background-color: #d8ae53;
+}
+
+.GraphBarSection.GraphBarSectionType9
+{
+	background-color: #c20ce6;
+}
+
+.GraphBarSection.IsMitigation
+{
+	background-image: url("s2r://panorama/images/hud/hazard_pattern_png.vtex");
+	background-size: 8px 8px;
+	background-img-opacity: 0.1;
+}
+
+#DetailsHealingTable .ContributionContainer .GraphBarSection
+{
+	background-color: #42c942;
+}
+
+#DetailsHealingTable .ReductionContainer .GraphBarSection
+{
+	background-color: #42c942;
+	background-image: url("s2r://panorama/images/hud/hazard_pattern_png.vtex");
+	background-size: 8px 8px;
+	background-img-opacity: 0.1;
+}
+
+.DrilldownGraphPercent
+{
+	font-size: 14px;
+	width: 40px;
+	text-align: center;
+	margin: 2px 4px 0px;
+	vertical-align: middle;
+	font-family: monospaceNumbersFont;
+	color: LightGrey;
+}
+
+.DrilldownGraphTotal
+{
+	font-size: 16px;
+	width: 78px;
+	text-align: center;
+	vertical-align: middle;
+	font-family: monospaceNumbersFont;
+	letter-spacing: 0.5px;
+	color: LighterGrey;
+}
+
+#DamageMitigationTable
+{
+	margin-top: 0px;
+	padding-top: 0px;
+	visibility: collapse;
+}
+
+#DamageMitigationTable.HasDamageMitigationForTeam
+{
+	visibility: visible;
+}
+
+.DamageMitigationSection
+{
+	flow-children: down;
+	min-width: 570px;
+}
+
+.DamageMitigationTitle
+{
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 2px 0px 8px 8px;
+	color: white;
+	vertical-align: middle;
+	text-shadow: 0px 2px 12px black;
+	letter-spacing: 1px;
+	max-width: 470px;
+}
+
+.DamageMitigationHeader
+{
+	flow-children: right;
+	width: 100%;
+	margin-top: 4px;
+}
+
+.DamageMitigationSubSection
+{
+	flow-children: down;
+	width: 100%;
+	margin-top: 8px;
+	margin-bottom: 4px;
+}
+
+.DamageMitigationSubSection.Ally
+{
+	border-top: 1px solid rgba(255, 255, 255, 0.02);
+	visibility: collapse;
+}
+
+.HasDamageMitigationForAllies .DamageMitigationSubSection.Ally
+{
+	visibility: visible;
+}
+
+.DamageMitigationSubHeader
+{
+	flow-children: right;
+	width: 100%;
+	margin-top: 4px;
+}
+
+.SubHeaderLabel
+{
+	color: Grey;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+}
+
+.DamageMitigationGraphContents
+{
+	flow-children: down;
+	width: 100%;
+	margin: 4px 0px 0px 0px;
+}
+
+.DamageMitigationFooter
+{
+	width: 100%;
+	flow-children: right;
+	margin-top: 10px;
+}
+
+.DamageMitigationTotal
+{
+	color: #30c5b3;
+	color: LighterGrey;
+	font-weight: bold;
+	horizontal-align: right;
+	font-family: monospaceNumbersFont;
+}
+
+.DamageMitigationGraphRow
+{
+	flow-children: right;
+	width: 100%;
+	margin: 3px 0px;
+}
+
+.DamageMitigationSection #AllyHero
+{
+	width: 56px;
+	vertical-align: center;
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+.DamageMitigationSection .DamageBar
+{
+	flow-children: right;
+	height: 10px;
+	width: fill-parent-flow( 1.0 );
+	margin: 0px 8px;
+	vertical-align: middle;
+	background-color: #0008;
+}
+
+#DamageMitigatedByMe
+{
+	flow-children: right;
+	border-top: 1px solid #252119;
+	border-bottom: 1px solid #252119;
+	height: 14px;
+}
+
+.DamageMitigationSection .ValuesContainer
+{
+	width: 72px;
+	horizontal-align: right;
+	flow-children: right;
+	vertical-align: middle;
+	margin-left: -8px;
+}
+
+.DamageMitigationSection .ValuesContainer Label
+{
+	font-size: 18px;
+	horizontal-align: right;
+	text-align: right;
+	font-family: monospaceNumbersFont;
+	margin-top: 3px;
+}
+
+.DamageMitigationSection .ValuesContainer .MitigatedDamage
+{
+	color: #30c5b3;
+	color: LighterGrey;
+}
+
+#DamageContributionTable
+{
+	margin-top: 0px;
+	padding-top: 0px;
+	visibility: collapse;
+}
+
+#DamageContributionTable.HasDamageContributionForAllies
+{
+	visibility: visible;
+}
+
+.DamageContributionSection
+{
+	flow-children: down;
+	min-width: 570px;
+}
+
+.DamageContributionTitle
+{
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 2px 0px 8px 8px;
+	color: white;
+	vertical-align: middle;
+	max-width: 470px;
+	text-overflow: shrink;
+	text-shadow: 0px 2px 12px black;
+}
+
+.DamageContributionHeader
+{
+	flow-children: right;
+}
+
+#DamageContributionGraphContents
+{
+	flow-children: down;
+	width: 100%;
+	margin: 4px 0px 0px 0px;
+}
+
+.DamageContributionFooter
+{
+	width: 100%;
+	flow-children: right;
+}
+
+.DamageContributionTotal
+{
+	color: #b91b1e;
+	font-weight: bold;
+	horizontal-align: right;
+	font-family: monospaceNumbersFont;
+}
+
+.DamageContributionGraphRow
+{
+	flow-children: right;
+	width: 100%;
+	margin: 3px 0px;
+}
+
+.DamageContributionSection #AllyHero
+{
+	width: 56px;
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+.DamageContributionSection .DamageBar
+{
+	flow-children: right;
+	height: 10px;
+	width: fill-parent-flow( 1.0 );
+	margin: 0px 8px;
+	vertical-align: middle;
+	background-color: #0008;
+}
+
+#DamageContributedByMe
+{
+	flow-children: right;
+	border: 1px solid #252119;
+	height: 14px;
+	background-color: #b91b1e;
+}
+
+.DamageContributionSection .ValuesContainer
+{
+	width: 72px;
+	margin-left: -8px;
+	horizontal-align: right;
+	flow-children: right;
+	vertical-align: middle;
+}
+
+.DamageContributionSection .ValuesContainer Label
+{
+	font-size: 18px;
+	horizontal-align: right;
+	text-align: right;
+	margin-top: 3px;
+}
+
+.DamageContributionSection .ValuesContainer .ContributedDamage
+{
+	color: #b91b1e;
+	font-family: monospaceNumbersFont;
+}
+
+#HealingReductionTable
+{
+	margin-top: 0px;
+	padding-top: 0px;
+	visibility: collapse;
+}
+
+#HealingReductionTable.HasHealingReductionForEnemies
+{
+	visibility: visible;
+}
+
+.HealingReductionSection
+{
+	flow-children: down;
+	min-width: 570px;
+}
+
+.HealingReductionTitle
+{
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 2px 0px 8px 8px;
+	color: white;
+	vertical-align: middle;
+	max-width: 470px;
+	text-overflow: shrink;
+	text-shadow: 0px 2px 12px black;
+}
+
+.HealingReductionHeader
+{
+	flow-children: right;
+}
+
+#HealingReductionGraphContents
+{
+	flow-children: down;
+	width: 100%;
+	margin: 4px 0px 0px 0px;
+}
+
+.HealingReductionFooter
+{
+	width: 100%;
+	flow-children: right;
+}
+
+.HealingReductionTotal
+{
+	color: #63da63;
+	font-weight: bold;
+	horizontal-align: right;
+}
+
+.HealingReductionGraphRow
+{
+	flow-children: right;
+	width: 100%;
+	margin: 3px 0px;
+}
+
+.HealingReductionSection #EnemyHero
+{
+	width: 56px;
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+.HealingReductionSection .DamageBar
+{
+	flow-children: right;
+	height: 10px;
+	width: fill-parent-flow( 1.0 );
+	margin: 0px 8px;
+	vertical-align: middle;
+	background-color: #0008;
+}
+
+#HealingReductionContributedByMe
+{
+	flow-children: right;
+	border: 1px solid #252119;
+	height: 14px;
+	background-color: #42c942;
+	background-image: url("s2r://panorama/images/hud/hazard_pattern_png.vtex");
+	background-size: 8px 8px;
+	background-img-opacity: 0.15;
+}
+
+.HealingReductionSection .ValuesContainer
+{
+	width: 72px;
+	margin-left: -8px;
+	horizontal-align: right;
+	flow-children: right;
+	vertical-align: middle;
+}
+
+.HealingReductionSection .ValuesContainer Label
+{
+	font-size: 18px;
+	horizontal-align: right;
+	text-align: right;
+	margin-top: 2px;
+	font-family: monospaceNumbersFont;
+}
+
+.HealingReductionSection .ValuesContainer .ContributedHealingReduction
+{
+	color: #63da63;
+}
+
+#DispelContributionTable
+{
+	margin-top: 0px;
+	padding-top: 0px;
+	overflow: squish scroll;
+	visibility: collapse;
+}
+
+#DispelContributionTable.HasDispelContributions
+{
+	visibility: visible;
+}
+
+.DispelContributionSection
+{
+	flow-children: down;
+	min-width: 570px;
+}
+
+.DispelContributionTitle
+{
+	font-size: 30px;
+	text-transform: uppercase;
+	margin: 2px 0px 8px 8px;
+	color: white;
+	vertical-align: middle;
+	max-width: 470px;
+	text-overflow: shrink;
+	text-shadow: 0px 2px 12px black;
+}
+
+.DispelContributionHeader
+{
+	flow-children: right;
+}
+
+#DispelContributionContents
+{
+	flow-children: down;
+	width: 100%;
+	margin: 10px 0px 0px 0px;
+}
+
+.DispelContributionRow
+{
+	flow-children: right;
+	width: 100%;
+	margin: 2px 0px;
+}
+
+.DispelContributionSection #HeroTarget
+{
+	width: 56px;
+	box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
+	margin-right: 4px;
+	margin-top: 8px;
+}
+
+.DataUnitLabel
+{
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	text-align: right;
+	y: 62px;
+	color: Grey;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+}
+
+#DispelledModifiersContainer
+{
+	flow-children: right-wrap;
+}
+
+.DispelledModifier
+{
+	margin: 0px 6px;
+	flow-children: down;
+}
+
+.DispelledModifier .ModifierAbilityContainer
+{
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	box-shadow: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #b5b5b5 ) );
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.5);
+}
+
+.DispelledModifier .ModifierAbilityContainer .ModifierAbilityBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 3.5px solid rgb(24, 29, 32);
+	border-radius: 50%;
+	overflow: noclip;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.DispelledModifier .ModifierAbilityContainer DOTAAbilityImage
+{
+	padding: 3px;
+	width: 150%;
+	height: 100%;
+	overflow: noclip;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.DispelledModifier .DispelTimesContainer
+{
+	width: 28px;
+	height: 20px;
+	background-color: rgb(12, 14, 15);
+	border-radius: 24px;
+	horizontal-align: center;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #848484 ) );
+	border: 1px solid rgba(235, 247, 255, 0.2);
+	margin-top: -12px;
+}
+
+.DispelledModifier .DispelTimesContainer .DispelTimes
+{
+	color: LightGrey;
+	font-size: 14px;
+	vertical-align: center;
+	horizontal-align: center;
+	font-family: monospaceNumbersFont;
+}
+
+.DispelledModifier .DispelDuration
+{
+	font-size: 16px;
+	horizontal-align: center;
+	margin: 1px 0px 2px;
+	color: LighterGrey;
+	font-family: monospaceNumbersFont;
+}
+
+.DispelledModifier.IsDebuff .ModifierAbilityContainer
+{
+	border: 2px solid #e43c10;
+}
+
+.DispelledModifier.IsBuff .ModifierAbilityContainer
+{
+	border: 2px solid #8bdd4f;
 }
 
 #DetailsBreakdowns
@@ -5910,27 +7030,27 @@ DOTAPostGameSupportItemsRow
 	margin-left: 64px;
 	padding-left: 12px;
 	padding-right: 16px;
-	width: 447px;
+	width: 503px;
 }
 
 .MaxItems4 DOTAPostGameSupportItemsRow
 {
-	width: 412px;
+	width: 462px;
 }
 
 .MaxItems5 DOTAPostGameSupportItemsRow
 {
-	width: 468px;
+	width: 518px;
 }
 
 .MaxItems6 DOTAPostGameSupportItemsRow
 {
-	width: 523px;
+	width: 573px;
 }
 
 .MaxItems7 DOTAPostGameSupportItemsRow
 {
-	width: 578px;
+	width: 628px;
 }
 
 .SupportItemCount
@@ -5978,7 +7098,7 @@ DOTAPostGameSupportItemsRow
 #SupportItemsValue
 {
 	horizontal-align: right;
-	margin-right: 122px;
+	margin-right: 180px;
 }
 
 .SupportItemsCampsStacked
@@ -5986,10 +7106,18 @@ DOTAPostGameSupportItemsRow
 	vertical-align: center;
 	color: baseText;
 	horizontal-align: right;
-	margin-right: 65px;
+	margin-right: 120px;
 }
 
 .SupportItemsDewards
+{
+	vertical-align: center;
+	color: baseText;
+	horizontal-align: right;
+	margin-right: 60px;
+}
+
+.SupportItemsWisdomShrines
 {
 	vertical-align: center;
 	color: baseText;
@@ -6004,7 +7132,7 @@ DOTAPostGameSupportItemsRow
 
 DOTAPostGameSupportItemsItemEntry
 {
-	margin-right: 16px;
+	margin-right: 6px;
 }
 
 DOTAPostGameSupportItemsItemEntry DOTAItemImage
@@ -7086,6 +8214,98 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 	margin-right: 6px;
 }
 
+#BreakdownsMoreOptionsPanel
+{
+	width: 100%;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin: 0px 30px 52px 46px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #262e34 ), to( #1d2428 ) );
+	padding: 12px 16px;
+	border: 2px solid black;
+	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0);
+	transition-duration: 0.1s;
+	transition-property: opacity, transform, box-shadow;
+	transform-origin: 90% 100%;
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.BreakdownsVisible.ShowBreakdownsMoreOptions #BreakdownsMoreOptionsPanel
+{
+	opacity: 1;
+	transform: none;
+	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.4);
+}
+
+#BreakdownsMoreOptionsPanel .MoreOptionsPanelTitle
+{
+	margin-bottom: 4px;
+}
+
+#BreakdownsMoreOptionsPanel .MoreOptionsPanelDash
+{
+	width: 100%;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.02);
+	margin: 4px 0px 2px;
+}
+
+#BreakdownsMoreOptionsPanel .MoreOptionsPanelNote
+{
+	font-size: 15px;
+	margin-left: 26px;
+	opacity: 0.8;
+	margin-top: 2px;
+}
+
+#BreakdownsMoreOptionsPanel ToggleButton
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#BreakdownsMoreOptionsPanel ToggleButton .TickBox
+{
+	vertical-align: top;
+	margin-top: 4px;
+}
+
+.FilterBreakdownsButtonContainer
+{
+	flow-children: right;
+	vertical-align: bottom;
+	ignore-parent-flow: true;
+	margin: 10px 14px;
+	width: 100%;
+	transition-property: opacity, transform;
+	transition-duration: 0.15s;
+	transition-delay: 0.1s;
+	opacity: 0;
+	transform: translateX( -8px );
+}
+
+.FilterBreakdownsButtonContainer .FilterBreakdownsLabel
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
+}
+
+.FilterBreakdownsButtonContainer .ButtonPrimary
+{
+	vertical-align: center;
+}
+
+.BreakdownsVisible .FilterBreakdownsButtonContainer
+{
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
 #DireTeamScore,#RadiantTeamScore
 {
 	font-size: 18px;
@@ -7261,27 +8481,27 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 
 .SupportItemsLegend
 {
-	width: 489px;
+	width: 549px;
 }
 
 .MaxItems4 .SupportItemsLegend
 {
-	width: 452px;
+	width: 502px;
 }
 
 .MaxItems5 .SupportItemsLegend
 {
-	width: 514px;
+	width: 564px;
 }
 
 .MaxItems6 .SupportItemsLegend
 {
-	width: 569px;
+	width: 619px;
 }
 
 .MaxItems7 .SupportItemsLegend
 {
-	width: 624px;
+	width: 674px;
 }
 
 #KillMatrixHeader
@@ -7696,6 +8916,12 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 	vertical-align: middle;
 }
 
+.NeutralItemsContainer
+{
+	flow-children: right;
+	vertical-align: middle;
+}
+
 .AdditionalItems.ADBear #ItemsContainer,.AdditionalItems.npc_dota_hero_lone_druid .ItemsContainer
 {
 	flow-children: right-wrap;
@@ -7795,7 +9021,7 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 DOTAHudTalentDisplay
 {
 	vertical-align: middle;
-	min-width: 32px;
+	min-width: 28px;
 	max-width: 150px;
 	height: 100%;
 	tooltip-position: right;
@@ -7837,7 +9063,13 @@ DOTAHudTalentDisplay
 
 .BackpackItemsColumn
 {
-	width: 226px;
+	width: 170px;
+	margin-left: 32px;
+}
+
+.NeutralItemsColumn
+{
+	width: 223px;
 	margin-left: 32px;
 }
 

@@ -1,0 +1,90 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_fantasycraft_tablet.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="GemSnippet">
+			<Panel class="FantasyGem">
+				<Panel class="GemStatIcon" />
+				<Panel class="GemContents">
+					<Panel class="Background" />
+					<Panel class="Details">
+						<Panel class="Header">
+							<Label id="GemStatLabel" class="GemStat" text="{s:gem_stat}" onmouseout="DOTAHideTextTooltip()" />
+							<Label class="GemTotal" text="{d:total_stat_value}%" onmouseover="DOTAShowTextTooltip( #DOTA_FantasyCraft_TotalStatBonusDesc )" onmouseout="DOTAHideTextTooltip()" />
+						</Panel>
+						<Panel class="Body">
+							<Panel id="GemQuality" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" text="{s:gem_quality}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" text="+{d:quality_quality_amount}%" />
+							</Panel>
+							<Panel id="GemShape" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" id="GemShapeName" text="{s:gem_shape}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" id="GemShapeAmount" text="{s:shape_quality_amount}" />
+							</Panel>
+							<Panel id="Score" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemScore" text="{s:gem_score}" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="PlayerSnippet">
+			<Panel class="PlayerSnippet" hittest="false">
+				<DOTAPlayerImage id="Headshot" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="FantasyOperationSnippet">
+			<Panel class="FantasyOperation">
+				<TextButton class="PopupButton FantasyOperationButton" id="FantasyOperationButton" text="{s:operation_text}" onmouseout="Fantasy2026RemoveOperationHighlights()" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAInternational2026FantasyCraftTablet>
+		<Panel class="SelectedTabletBorder" hittest="false" />
+		<Panel class="TabletShadow" hittest="false" />
+		<AsyncDataPanel class="TabletDetails" state="{d:tablet_state}" loading-text="" error-text="">
+			<Panel class="AsyncSuccessContainer">
+				<Panel class="RopeTexture" hittest="false" />
+				<Panel class="FantasyTablet">
+					<Panel class="TopShadow" />
+					<Panel class="AegisTexture" />
+					<Image id="TeamLogo" scaling="contain" />
+					<Panel id="PlayerHeadshots" hittest="false" />
+					<Panel class="PlayerInfo">
+						<Panel class="RoleAndName">
+							<Label class="RoleName" text="{s:tablet_role}" />
+							<Label id="PlayerNameAndTitleLabel" text="{s:tablet_player}" html="true" />
+						</Panel>
+						<DOTAInternational2026Button id="SelectTeamButton" text="#DOTA_FantasyCraft_Operation_ChooseTeam" class="CraftingOnly Small" />
+						<Panel hittest="true" id="InvalidPlayerAlert" onmouseover="$( &apos;#InvalidPlayerAlert&apos; ).AddClass( &apos;ViewedAlert&apos; );">
+							<Panel class="InfoIcon Shadow" />
+							<Panel class="InfoIcon" onmouseover="DOTAShowTextTooltip(#DOTA_FantasyCraft_InvalidPlayer)" onmouseout="DOTAHideTextTooltip()" />
+							<Panel id="IconPulse" class="HeroGameplayUpdatePulse" />
+						</Panel>
+					</Panel>
+					<Panel class="FantasyTabletBorder" hittest="false" />
+				</Panel>
+				<Panel class="RopeTexture" hittest="false" />
+				<Panel class="FantasyGemHolderContainer">
+					<Panel class="WarbannerBackgroundContainer">
+						<Panel class="WarbannerBackground" />
+						<Panel class="WarbannerBackgroundEdge" />
+					</Panel>
+					<Panel class="WarbannerBorderContainer">
+						<Panel class="WarbannerBorder" />
+						<Panel class="WarbannerBorderEdge" />
+					</Panel>
+					<Panel id="FantasyGemHolder" />
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+	</DOTAInternational2026FantasyCraftTablet>
+</root>

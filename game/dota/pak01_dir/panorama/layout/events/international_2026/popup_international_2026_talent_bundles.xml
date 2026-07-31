@@ -1,0 +1,64 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/international_2026_shared.vcss_c" />
+		<include src="s2r://panorama/styles/events/international_2026/popup_international_2026_talent_bundles.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="StickerReward">
+			<Panel class="StickerReward">
+				<DOTAUIEconSetPreview id="StickerPreview" class="HideStickerbacks" stickeranim="sticker_card_idle_fold" stickermap="scenes/stickers/sticker_basic" />
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelReward">
+			<Panel class="VoiceLineContainer">
+				<DOTAPreviewAudioButton class="Round Small" id="ChatWheelSoundButton" />
+				<Label class="ChatWheelText" text="{s:chat_wheel_label}" />
+			</Panel>
+		</snippet>
+		<snippet name="AutographReward">
+			<Panel class="AutographReward">
+				<DOTAEconItem id="AutographImage" itemdef="3048" />
+			</Panel>
+		</snippet>
+		<snippet name="Reward">
+			<Panel class="Reward">
+				<Label class="RewardName" text="{s:reward_name}" />
+				<Panel id="RewardContents" />
+			</Panel>
+		</snippet>
+		<snippet name="BundleTier">
+			<Panel class="BundleTier">
+				<Panel class="BundleTierTexture" />
+				<Panel class="RopeTexture" />
+				<Label class="TierName" text="{s:tier_name}" />
+				<Panel id="TierRewards" />
+				<Image class="PurchasedTick" src="s2r://panorama/images/control_icons/24px/check_corner_topright.vsvg" texturewidth="48px" textureheight="48px" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_International2026_Talent_Supported );" />
+				<DOTAInternational2026Button id="PurchaseButton" class="LightGreen" text="#DOTA_International2024_TalentBundle_Purchase" />
+				<Panel class="BundleTierBorder" hittest="false" />
+				<Panel class="SupportedBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPInternational2026TalentBundlesPopup class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="RopeTexture" />
+		<Panel class="PopupContents">
+			<Panel class="PopupBackgroundImage" />
+			<Panel class="PopupBorder" hittest="false" />
+			<Panel class="Header">
+				<Label class="Title" text="#DOTA_International2026_TalentBundle_Title" html="true" />
+				<Label class="Subtitle" html="true" text="#DOTA_International2026_TalentBundle_Desc" />
+				<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel class="NoBundleTiers">
+				<Label text="#DOTA_International2026_TalentBundle_NoBundles" />
+			</Panel>
+			<Panel id="BundleTiers" />
+		</Panel>
+		<Panel class="RopeTexture" />
+	</DOTABPInternational2026TalentBundlesPopup>
+</root>

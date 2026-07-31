@@ -2,32 +2,223 @@
 
 .FrontpageCell.FrontPageDarkCarnivalCell
 {
-	background-color: black;
-	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/sky_psd.vtex");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #283560 ), to( #3a5e81 ) );
 }
 
-.FrontpageCell.FrontPageDarkCarnivalCell:hover
+.FrontpageCell.FrontPageDarkCarnivalCell:hover .CellBorder
+{
+	border: 1px solid rgba(235, 247, 255, 0.07);
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell:hover .DarkCarnivalDashboard
 {
 	brightness: 1.5;
+	pre-transform-scale2d: 1.03;
 }
 
-.FrontpageCell.FrontPageDarkCarnivalCell .Contents
+.FrontpageCell.FrontPageDarkCarnivalCell .TopShadow,.FrontpageCell.FrontPageDarkCarnivalCell .BottomShadow
 {
 	width: 100%;
-	height: 100%;
-	background-image: url("s2r://panorama/images/events/dark_carnival/logos/dark_carnival_logo_png.vtex");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	height: 140px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0d0f18eb ), color-stop( 0.4, #0d0f18be ), to( #00000000 ) );
+	opacity: 0;
 }
 
-.FrontpageCell.FrontPageDarkCarnivalCell Label
+.FrontpageCell.FrontPageDarkCarnivalCell .BottomShadow
 {
-	color: #aaa;
+	transform: scaleY( -1 );
+	vertical-align: bottom;
+	opacity: 1;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalDashboard
+{
+	width: 120%;
+	height: 110%;
+	overflow: noclip;
+	x: -15%;
+	y: 14%;
+	opacity-brush: gradient( linear, 0% 0%, 0% 90%, from( #ffffff00 ), color-stop( 0.2, white ), color-stop( 0.7, white ), to( #ffffff00 ) );
+	transition-property: brightness, pre-transform-scale2d;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer
+{
+	transform-origin: 50% 0%;
 	horizontal-align: center;
+	flow-children: down;
+	y: -17%;
+	animation-name: SwayLogo;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .DarkCarnivalLogo
+{
+	width: 280px;
+	z-index: 1;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .DarkCarnivalLogo.en
+{
+	visibility: visible;
+}
+
+.Language_schinese .FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .DarkCarnivalLogo.en
+{
+	visibility: collapse;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .DarkCarnivalLogo.cn
+{
+	visibility: collapse;
+}
+
+.Language_schinese .FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .DarkCarnivalLogo.cn
+{
+	visibility: visible;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleRope
+{
+	width: 12px;
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: bottom;
+	visibility: collapse;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleRope.Left
+{
+	x: -80px;
+	y: -30px;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleRope.Right
+{
+	x: 90px;
+	y: -40px;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleContainer
+{
+	width: 80%;
+	horizontal-align: center;
+	transform: rotateZ( -3deg );
+	margin-top: -32px;
+	margin-left: -16px;
+	visibility: collapse;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleContainer .SubtitleBackground
+{
+	width: 80%;
 	vertical-align: center;
+	horizontal-align: center;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .DarkCarnivalLogoContainer .SubtitleContainer .EventSubtitle
+{
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	width: 72%;
+	height: 22px;
+	text-overflow: shrink;
+	color: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( rgb(190, 182, 199) ) );
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	font-weight: semi-bold;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .CellContents
+{
+	width: 100%;
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .EventSummary
+{
+	width: 100%;
+	margin: 16px;
+	font-size: 15px;
+	text-align: center;
+	color: rgb(207, 200, 195);
+	text-shadow: 0px 2px 8px black;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .ProgressAvailableBadge
+{
+	color: white;
+	horizontal-align: center;
+	vertical-align: bottom;
+	padding: 5px 4px 6px;
+	width: 100%;
+	margin-top: -4px;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-weight: semi-bold;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 0px 12px rgba(255, 208, 142, 0.76);
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(0, 0, 0, 0) ), color-stop( 0.3, rgba(177, 137, 72, 0.5) ), color-stop( 0.5, rgba(177, 137, 72, 0.7) ), color-stop( 0.7, rgba(177, 137, 72, 0.5) ), to( rgba(0, 0, 0, 0) ) );
+	border-left: 0px;
+	border-right: 0px;
+	border: 1px solid rgba(255, 229, 194, 0.3);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, rgb(255, 255, 255) ), color-stop( 0.8, rgb(255, 255, 255) ), to( rgba(255, 255, 255, 0) ) );
+	visibility: collapse;
+	animation-name: ProgressAvailableAnimation;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell.ProgressIsAvailable .ProgressAvailableBadge
+{
+	visibility: visible;
+}
+
+.FrontpageCell.FrontPageDarkCarnivalCell .CellBorder
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(235, 247, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 50% 100%, from( white ), to( rgba(255, 255, 255, 0.47) ) );
+	transition-property: border;
+	transition-duration: 0.1s;
+}
+
+@keyframes 'ProgressAvailableAnimation'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	100%
+	{
+		brightness: 2;
+	}
+	
+}
+
+@keyframes 'SwayLogo'
+{
+	0%
+	{
+		transform: rotateZ( -1deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( 1deg );
+	}
+	
 }
 
