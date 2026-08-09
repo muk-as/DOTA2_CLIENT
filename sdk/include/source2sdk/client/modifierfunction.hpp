@@ -30,7 +30,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE = 0x4,
             // MScriptDescription "GetModifierProcAttack_ConvertPhysicalToMagical GetModifierProcAttack_BonusDamage_Physical"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL = 0x5,
-            // MScriptDescription "0t GetModifierProcAttack_ConvertPhysicalToMagical"
+            // MScriptDescription "0P GetModifierProcAttack_ConvertPhysicalToMagical"
             MODIFIER_PROPERTY_PROCATTACK_CONVERT_PHYSICAL_TO_MAGICAL = 0x6,
             // MScriptDescription "GetModifierProcAttack_BonusDamage_Pure GetModifierProcAttack_BonusDamage_Magical"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL = 0x7,
@@ -374,7 +374,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_TURN_RATE_OVERRIDE = 0xb0,
             // MScriptDescription "GetDisableManaGain GetDisableHealing"
             MODIFIER_PROPERTY_DISABLE_HEALING = 0xb1,
-            // MScriptDescription "t GetDisableManaGain"
+            // MScriptDescription "P GetDisableManaGain"
             MODIFIER_PROPERTY_DISABLE_MANA_GAIN = 0xb2,
             // MScriptDescription "GetAllowEtherealAttack GetAlwaysAllowAttack"
             MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK = 0xb3,
@@ -692,7 +692,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BONUS_UPHILL_MISS_CHANCE = 0x14f,
             // MScriptDescription "GetModifierAttackSpeedAbsoluteMax GetModifierCreepDenyPercent"
             MODIFIER_PROPERTY_CREEP_DENY_PERCENT = 0x150,
-            // MScriptDescription "t GetModifierAttackSpeedAbsoluteMax"
+            // MScriptDescription "P GetModifierAttackSpeedAbsoluteMax"
             MODIFIER_PROPERTY_ATTACKSPEED_ABSOLUTE_MAX = 0x151,
             // MScriptDescription "OnHeroBeginDying GetModifierFoWTeam"
             MODIFIER_PROPERTY_FOW_TEAM = 0x152,
@@ -780,7 +780,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT = 0x17b,
             // MScriptDescription "GetModifierPropertyManacostOverride GetModifierPropertyForbidIllusions"
             MODIFIER_PROPERTY_FORBID_ILLUSIONS = 0x17c,
-            // MScriptDescription "0t GetModifierPropertyManacostOverride"
+            // MScriptDescription "0P GetModifierPropertyManacostOverride"
             MODIFIER_PROPERTY_MANACOST_OVERRIDE = 0x17d,
             // MScriptDescription "GetModifierPropertyRestorationAmplificationUnique GetModifierPropertyRestorationAmplification"
             MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION = 0x17e,
