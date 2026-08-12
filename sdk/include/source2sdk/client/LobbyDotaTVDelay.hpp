@@ -13,15 +13,16 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 4
+        // Enumerator count: 5
         // Alignment: 4
         // Size: 0x_
         enum class LobbyDotaTVDelay : std::uint32_t
         {
             LobbyDotaTV_10 = 0x0,
-            LobbyDotaTV_120 = 0x1,
-            LobbyDotaTV_300 = 0x2,
-            LobbyDotaTV_900 = 0x3,
+            LobbyDotaTV_60 = 0x1,
+            LobbyDotaTV_120 = 0x2,
+            LobbyDotaTV_300 = 0x3,
+            LobbyDotaTV_900 = 0x4,
         };
     };
 };
