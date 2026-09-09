@@ -23,13 +23,26 @@ DOTAFrontpageSeasonalRewards
 	transition-delay: 0.15s;
 }
 
+.OnHomePage #ContentsContainer
+{
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+}
+
 .BackgroundScene
 {
 	width: 100%;
 	height: 100%;
 	horizontal-align: center;
 	transition-property: blur, opacity, brightness, opacity-brush;
-	transition-duration: 0.5s;
+	transition-duration: 0.25s;
+	transition-delay: 0.15s;
+}
+
+.OnHomePage .BackgroundScene
+{
+	transition-duration: 0.1s;
+	transition-delay: 0s;
 }
 
 .AspectRatio21x9 .BackgroundScene
@@ -43,9 +56,18 @@ DOTAFrontpageSeasonalRewards
 	width: 100%;
 	height: 100%;
 	horizontal-align: center;
+	transition-property: opacity, brightness;
+	transition-duration: 0.25s;
+	transition-delay: 0.15s;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.OnHomePage .BackgroundImage
+{
+	transition-duration: 0.1s;
+	transition-delay: 0s;
 }
 
 .EventFramingContainer
@@ -53,7 +75,12 @@ DOTAFrontpageSeasonalRewards
 	vertical-align: bottom;
 	horizontal-align: center;
 	width: 1080px;
-	margin-bottom: 102px;
+	margin-bottom: 106px;
+}
+
+.ProgressionDisabled .EventFramingContainer
+{
+	margin-bottom: 122px;
 }
 
 .AspectRatio16x10 .EventFramingContainer
@@ -86,15 +113,6 @@ DOTAFrontpageSeasonalRewards
 {
 	transform: scaleX( -1 );
 	horizontal-align: right;
-}
-
-#ContentsContainer
-{
-	width: 100%;
-	height: 100%;
-	transition-property: opacity;
-	transition-duration: 0.25s;
-	transition-delay: 0.15s;
 }
 
 #ForegroundContainer
@@ -568,7 +586,7 @@ DOTAEventRewardList
 {
 	horizontal-align: center;
 	vertical-align: top;
-	margin-top: 36px;
+	margin-top: 48px;
 	flow-children: right;
 	margin-left: -40px;
 	transform: translateY(24px);
@@ -671,6 +689,31 @@ DOTAEventRewardList
 	font-weight: normal;
 }
 
+.IntroText.Ended
+{
+	visibility: collapse;
+}
+
+.IntroText.Ended .ShardsIcon
+{
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+	background-image: dotaPlusCurrencySmallIcon;
+	background-size: contain;
+	background-position: center;
+}
+
+.ShardClaimEnabled .IntroText.Ended
+{
+	visibility: visible;
+}
+
+.ShardClaimEnabled .IntroText.Active
+{
+	visibility: collapse;
+}
+
 .ButtonContainer
 {
 	width: 100%;
@@ -717,7 +760,7 @@ DOTAEventRewardList
 	flow-children: right;
 	horizontal-align: center;
 	vertical-align: bottom;
-	margin-bottom: 100px;
+	margin-bottom: 106px;
 }
 
 #TimeLeft .TimeLeftLabels
@@ -737,11 +780,6 @@ DOTAEventRewardList
 .ProgressionDisabled #TimeLeft .TimeLeftLabels
 {
 	visibility: collapse;
-}
-
-.ProgressionDisabled #TimeLeft #Completed
-{
-	visibility: visible;
 }
 
 #LevelDetails
@@ -815,29 +853,45 @@ DOTAEventRewardClaimButton.item_reward
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }
 
+.ProgressionDisabled .OtherRewardsContainer
+{
+	margin-bottom: 131px;
+}
+
 #RandomRewardsContainer
 {
 	flow-children: down;
-	padding: 16px 24px;
+	padding: 12px 24px 20px;
+}
+
+.ProgressionDisabled #RandomRewardsContainer
+{
+	flow-children: right;
+}
+
+.ProgressionDisabled #RandomRewardsContainer Label
+{
+	vertical-align: center;
+	margin-right: 12px;
 }
 
 #RandomRewardsContainer Label
 {
+	horizontal-align: center;
 	text-transform: uppercase;
 	font-family: titleFont;
 	font-weight: bold;
 	letter-spacing: 1px;
 	font-size: 15px;
-	width: 100%;
 	text-align: center;
 }
 
 #ParticleRewardsContainer
 {
 	flow-children: down;
-	padding: 16px 24px;
+	padding: 12px 24px 20px;
 	border-right: 1px solid rgba(255, 255, 255, 0.04);
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0) ) );
+	border-brush: gradient( linear, 0% 0%, 0% 80%, from( white ), to( rgba(255, 255, 255, 0) ) );
 }
 
 #ParticleRewardsContainer Label
@@ -885,5 +939,121 @@ DOTAEventRewardClaimButton.item_reward
 .ParticleWindowBG .AspectRatio21x9
 {
 	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( black ), color-stop( 0.15, white ), color-stop( 0.85, white ), to( black ) );
+}
+
+.EventHistoryNavigation
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 60px;
+	padding: 6px 80px 4px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.25, #FFFFFF ), color-stop( 0.75, #FFFFFF ), to( #FFFFFF00 ) );
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #00000000 ), color-stop( 0.2, #333333 ), color-stop( 0.8, #333333 ), to( #00000000 ) );
+	z-index: 1;
+}
+
+.EventHistoryNavigation .EventTab
+{
+	margin: 0px 1px;
+	padding: 3px 8px 4px;
+	color: #cfd2d6da;
+	border-radius: 4px;
+	text-shadow: 0px 2px 12px black;
+	font-size: 17px;
+	background-color: #00000000;
+	border: 1px solid #00000000;
+	transition-property: transform, background-color, color, text-shadow;
+	transition-duration: 0.05s, 0.1s;
+}
+
+.EventHistoryNavigation .EventTab:hover
+{
+	color: white;
+	background-color: #00000066;
+	border-color: #00000066;
+}
+
+.EventHistoryNavigation .EventTab:active
+{
+	transform: translateY( 1px );
+}
+
+.Season_Fall2026 #EventTabFall2026,.Season_Summer2026 #EventTabSummer2026,.Season_Spring2026 #EventTabSpring2026,.Season_Winter2025 #EventTabWinter2025,.Season_Fall2025 #EventTabFall2025
+{
+	color: white;
+	brightness: 1.5;
+}
+
+.Season_Summer2026 #EventTabSummer2026
+{
+	text-shadow: 0px 0px 12px rgba(255, 126, 201, 0.6);
+}
+
+.Season_Spring2026 #EventTabSpring2026
+{
+	text-shadow: 0px 0px 12px rgba(180, 153, 255, 0.6);
+}
+
+.Season_Winter2025 #EventTabWinter2025
+{
+	text-shadow: 0px 0px 12px rgba(153, 209, 255, 0.6);
+}
+
+.Season_Fall2026 #EventTabFall2026,.Season_Fall2025 #EventTabFall2025
+{
+	text-shadow: 0px 0px 12px rgba(255, 188, 126, 0.6);
+}
+
+.BackstoryButton
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: right;
+	margin-bottom: 114px;
+	border-radius: 4px;
+	padding: 5px 12px 6px;
+	box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.4);
+	opacity: 0.7;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #454648aa ), to( #232324aa ) );
+	border: 1px solid rgba(255, 242, 231, 1);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff09 ), to( #ffffff04 ) );
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	visibility: collapse;
+}
+
+.PostSeason .BackstoryButton
+{
+	visibility: visible;
+}
+
+.BackstoryButton Image
+{
+	width: 18px;
+	vertical-align: center;
+	margin-bottom: -4px;
+	margin-left: 2px;
+}
+
+.BackstoryButton Label
+{
+	vertical-align: center;
+	color: white;
+	text-shadow: 0px 1px 6px black;
+	font-size: 15px;
+}
+
+.BackstoryButton:hover
+{
+	opacity: 1;
+	brightness: 1.5;
+}
+
+.BackstoryButton:active
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #232324aa ), to( #454648aa ) );
+	brightness: 0.6;
+	transform: translateY( 1px );
 }
 

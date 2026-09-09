@@ -18,14 +18,12 @@
 		</snippet>
 		<snippet name="NavButton">
 			<Panel class="NavButton">
-				<Panel class="NavButtonBackground" />
-				<Image class="NavButtonIcon Comic" src="s2r://panorama/images/control_icons/24px/comic_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-				<Image class="NavButtonIcon Lock" src="s2r://panorama/images/control_icons/24px/lock.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="NavButtonBackground" scaling="stretch-to-fit-preserve-aspect" />
+				<Label id="Label" class="ChapterNumber" text="{s:button_title}" />
 			</Panel>
 		</snippet>
 	</snippets>
 	<Panel class="VisualNovel">
-		<Panel id="ChapterNavigation" />
 		<Panel class="MainContentsWrapper">
 			<Panel class="MainContents" onactivate="DOTAVisualNovelNextStep( false )">
 				<Image class="VisualNovelBackground" />
@@ -56,6 +54,22 @@
 					<Image class="SoundEffectBackground Wet" src="s2r://panorama/images/events/crownfall/visual_novel/wet_effect_background_png.vtex" />
 					<Label id="PopupText" text="{s:text_popup}" />
 				</Panel>
+				<Panel id="ItemContents">
+					<Panel id="ItemContentsContainer">
+						<Panel id="ImageContainer">
+							<Image id="RewardImage" scaling="stretch-to-fit-preserve-aspect" />
+							<MoviePanel id="RewardVideo" repeat="true" autoplay="onload" />
+						</Panel>
+						<Panel id="RewardTextContainer">
+							<Label id="RewardLabel" text="#DOTA_Seasonal_VisualNovel_Reward" />
+							<Label id="RewardText" html="true" text="{s:reward_name}" />
+							<Label id="RewardTextHero" html="true" text="{s:reward_hero}" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ChapterNavigationContainer">
+					<Panel id="ChapterNavigation" />
+				</Panel>
 			</Panel>
 			<Panel id="CloseButtonContainer">
 				<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
@@ -67,18 +81,5 @@
 			<Panel class="PopupBorder" hittest="false" />
 		</Panel>
 		<Image id="PreloadActorPicture" />
-		<Panel id="ItemContents">
-			<Panel id="ItemContentsContainer">
-				<Panel id="ImageContainer">
-					<Image id="RewardImage" scaling="stretch-to-fit-preserve-aspect" />
-					<MoviePanel id="RewardVideo" repeat="true" autoplay="onload" />
-				</Panel>
-				<Panel id="RewardTextContainer">
-					<Label id="RewardLabel" text="#DOTA_Seasonal_VisualNovel_Reward" />
-					<Label id="RewardText" html="true" text="{s:reward_name}" />
-					<Label id="RewardTextHero" html="true" text="{s:reward_hero}" />
-				</Panel>
-			</Panel>
-		</Panel>
 	</Panel>
 </root>

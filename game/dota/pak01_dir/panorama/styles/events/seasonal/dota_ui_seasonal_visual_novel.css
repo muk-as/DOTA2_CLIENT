@@ -1,33 +1,38 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
-.Season_Fall2025 .MainContents
+.Season_Fall2025 .MainContents,.Season_Fall2026 .MainContents
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #211910 ), to( #120a06 ) );
 }
 
-.Season_Fall2025 .VisualNovelBackground
-{
-	background-image: url("s2r://panorama/images/events/seasonal/backgrounds/fall_background_png.vtex");
-}
-
-.Season_Fall2025 .InstructionText
+.Season_Fall2025 .InstructionText,.Season_Fall2026 .InstructionText
 {
 	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
 }
 
-.Season_Fall2025 .InstructionIcon
+.Season_Fall2025 .InstructionIcon,.Season_Fall2026 .InstructionIcon
 {
 	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
 }
 
-.Season_Fall2025 #RewardLabel,.Season_Fall2025 #RewardTextHero
+.Season_Fall2025 #RewardLabel,.Season_Fall2025 #RewardTextHero,.Season_Fall2026 #RewardLabel,.Season_Fall2026 #RewardTextHero
 {
 	color: #cbb89b;
 }
 
-.Season_Fall2025 .PortraitBackgroundFrame
+.Season_Fall2025 .PortraitBackgroundFrame,.Season_Fall2026 .PortraitBackgroundFrame
 {
 	background-image: url("s2r://panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_fall_png.vtex");
+}
+
+.Season_Fall2026 .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/seasonal/backgrounds/fall_2026_background_alt_psd.vtex");
+}
+
+.Season_Fall2025 .VisualNovelBackground,.Season_Fall2026_Outside .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/seasonal/backgrounds/fall_background_png.vtex");
 }
 
 .Season_Winter2025 .MainContents
@@ -168,9 +173,90 @@ DOTASeasonalVisualNovel.Hidden
 	visibility: visible;
 }
 
+.ChapterNavigationContainer
+{
+	width: 100%;
+	vertical-align: bottom;
+	padding: 28px;
+	background-color: rgba(0, 0, 0, 0.3);
+	visibility: collapse;
+}
+
+.PostSeason .ChapterNavigationContainer
+{
+	visibility: visible;
+}
+
 #ChapterNavigation
 {
-	visibility: collapse;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#ChapterNavigation .NavButton
+{
+	width: 40px;
+	height: 40px;
+	margin: 4px;
+	vertical-align: center;
+	tooltip-position: top;
+}
+
+#ChapterNavigation .NavButton .NavButtonBackground
+{
+	background-image: url("s2r://panorama/images/events/seasonal/icons/dialogue_node_png.vtex");
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	brightness: 0.3;
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+#ChapterNavigation .NavButton .ChapterNumber
+{
+	color: gradient(linear, 0% 30%, 0% 80%, from(#d6d3af), to(#9c9980));
+	font-size: 16px;
+	text-shadow: 0px 1px 6px black;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-bottom: 4px;
+}
+
+#ChapterNavigation .NavButton.Unlocked:hover:not(.Selected) .NavButtonBackground
+{
+	brightness: 2;
+}
+
+#ChapterNavigation .NavButton.Selected .NavButtonBackground
+{
+	background-image: url("s2r://panorama/images/events/seasonal/icons/dialogue_node_active_png.vtex");
+	opacity-brush: white;
+	brightness: 1;
+}
+
+#ChapterNavigation .NavButton.Selected .ChapterNumber
+{
+	color: black;
+	font-weight: semi-bold;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes 'GlowSelectedItem'
+{
+	0%
+	{
+		brightness: 1;
+		box-shadow: 0px 0px 24px rgba(255, 206, 143, 0.02);
+	}
+	
+	100%
+	{
+		brightness: 1.3;
+		box-shadow: 0px 0px 32px rgba(255, 206, 143, 0.08);
+	}
+	
 }
 
 .MainContents
@@ -1350,10 +1436,9 @@ DOTASeasonalVisualNovel.Hidden
 
 #ItemContents
 {
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #08080870 ), to( #00000001 ) );
+	background-color: rgba(0, 0, 0, 0.3);
 	horizontal-align: center;
 	vertical-align: bottom;
-	border-radius: 5px;
 	border: 0px solid #ffffff;
 	width: 100%;
 	ignore-parent-flow: true;
@@ -1478,6 +1563,11 @@ DOTASeasonalVisualNovel.Hidden
 .HasItem #ItemContents
 {
 	visibility: visible;
+}
+
+.PostSeason #ItemContents
+{
+	visibility: collapse;
 }
 
 .PopupBorderDash
