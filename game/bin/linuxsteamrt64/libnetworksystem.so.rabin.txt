@@ -20,7 +20,7 @@
 048<@DHLPQTX
 048<@DHLPT
 048<@DHLPTX
-08,@DHLPTX\\`dhlptx
+08,@dhlptx
 08,Dx\b\f
 08@lmnHP\b\t\n\v\f\r
 08H@\a\b\t\n\v\f\r
@@ -132,8 +132,6 @@
 1:T8^a
 1\n-NETWORK_DISCONNECT_DIRECT_CONNECT_RESERVATION
 1\n\fvprof_report
-1\v=cL
-1\v=h4
 1~*HcЍD
 1ɋ@0A9
 1҃y,\aH
@@ -335,6 +333,7 @@
 8A]A^]H
 8CMsgRGBA
 8CNetChan
+8CUtlSlot
 8[]A\\A]A^A_ÐAUATI
 8[]A\\A]A^A_ÐAWAVAUATL
 8[]A\\A]A^A_ÐAWAVAUATUSH
@@ -1140,7 +1139,6 @@ C\bHcҋ\f
 C\bI9G\bu
 C\bKcD
 C\b[ÐAUATI
-C\b|zA
 C_NetworkUtlVectorBase
 C_UtlVectorEmbeddedNetworkVar
 CacheableConnectionExpired
@@ -1224,8 +1222,6 @@ CreateReplayCompatSerializerFromMeta creating fake serializer for %s\n
 Created poll group for socket '%s'\n
 CxHcKpL
 CxHcSpL
-D#%0b
-D#5ua
 D$ A;G
 D$ H9D$(L
 D$ \bI9
@@ -1281,7 +1277,6 @@ D8"tMH
 D86}tH
 D89~6I
 D9(u\rA
-D95C7
 D98s\bH
 D9e(~JH
 D9e,}^H
@@ -1301,6 +1296,7 @@ DA8D$Lu
 DATA_LOSS
 DEADLINE_EXCEEDED
 DF128
+DHLPTX
 DIALOG_ASKCONNECT
 DO NOT PARSE: fields may be stripped and missing.\n
 DP\ff#E
@@ -1334,9 +1330,10 @@ Don't bother compressing packets below this size
 Don't lookup extension types if they aren't present (1
 Don't lookup extension types if they aren't present (2
 Double-save to Member '%s
+Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity
+Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Dump UDP packets summary to console
 Dump non-loopback udp only
-Dǋ=t7
 E H;E
 E H;E(t
 E H;E(t"H
@@ -1780,6 +1777,10 @@ H9z s
 H9ʉC8tF
 H9ʉG8t
 H;2s]A
+H;=Le
+H;=Na
+H;=WZ
+H;=yW
 H;C(t9D
 H;C(tD
 H;C(tM
@@ -1789,7 +1790,8 @@ H;G(t
 H;P ~BH
 H;P\btYH
 H;V }$H
-H;\r71
+H;\rWN
+H;\r\b9
 H;\vsnA
 H;l$\bt=I9
 H;z H
@@ -2016,7 +2018,7 @@ Invalid wire type for CPPTYPE_UINT64
 InvokeMiniDumpHandler
 IsEqualSerializer
 J@H;JH
-J@L;\rM
+J@L;\rm
 JArray
 JSType
 J\n NETWORK_DISCONNECT_SNAPSHOTERROR
@@ -2398,6 +2400,10 @@ N6google8protobuf8internal31RepeatedPtrFieldMessageAccessorE
 N6google8protobuf8internal33RandomAccessRepeatedFieldAccessorE
 N6snappy15ByteArraySourceE
 N6snappy22UncheckedByteArraySinkE
+N8CNetChan11NetFlowIn_tE
+N8CNetChan12NetFlowOut_tE
+N8CNetChan9NetFlow_tINS_12NetFrameIn_tEEE
+N8CNetChan9NetFlow_tINS_13NetFrameOut_tEEE
 N9__gnu_cxx13stdio_filebufIcSt11char_traitsIcEEE
 N9__gnu_cxx13stdio_filebufIwSt11char_traitsIwEEE
 N9__gnu_cxx18stdio_sync_filebufIcSt11char_traitsIcEEE
@@ -2520,8 +2526,7 @@ Need space between number and identifier
 Net Message Info: %s ]\n
 Net graph %s\n
 Net status for host %s:\n
-NetChan %s ProcessMessages has taken more than %dms to process %d messages.  (Current message type: '%s')\n
-NetChan %s ProcessMessages tok %dms to process %d messages.\n
+NetChan %s ProcessMessages has exhausted its CPU time warning budget.  %dms to process %d messages this call.  (Current message type: '%s')\n
 NetChanTransmitReliable
 NetChanTransmitUnreliable
 NetChannel '%s':\n
@@ -3428,6 +3433,8 @@ W\bH;P\bu
 W\fLc
 W\n,NETWORK_DISCONNECT_REJECT_CONNECT_FROM_LOBBY
 W\n,NETWORK_DISCONNECT_REJECT_RESERVED_FOR_LOBBY
+Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity
+Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Warning
 Warning parsing text-format
 Wednesday
@@ -9442,7 +9449,7 @@ aH9G\bt
 aH9G\bt\b
 aH;G\bH
 aH;G\bSs
-aH;\r*K
+aH;\rJh
 a\ab\bf\fn\nr\r
 a\f\a\b
 accessor_ == other.accessor
@@ -9515,11 +9522,10 @@ bH9CPsJH
 bH9H\bt
 bH9H\bt\bH
 bH9H\bu
-bH;5To
 bHcD$4
 bHcG\bH
 bHcT\b\bH
-bHc\r0
+bHc\rP
 bHcw\b9
 bLc7E
 bLc?E
@@ -9578,7 +9584,7 @@ bool google::protobuf::internal::RepeatedFieldRefIterator<T>::operator!=(const g
 boolean
 both states
 bt!USH
-bt'I;u
+bt(H;3
 bt7<ft;<a
 btZI;4
 bt[H;\v
@@ -9591,11 +9597,12 @@ btkH;\v
 btqI;E
 btrH;2
 btsI;4
+btwH;3
 btxM;4
+btzH;3
 btzI;u
 bt{I;4
 bt{I;E
-bt{I;u
 buBD\tk
 buCD\tk
 building fake field for %s %s\n
@@ -10282,6 +10289,8 @@ long double
 long long
 loopback:%d
 lowest
+m H;-L
+m H;-T
 m\bu\eH9
 m_NetworkChangeTagCallback.IsEmpty
 m_Value
@@ -10329,6 +10338,14 @@ message_type_id
 method
 min_client_limit
 mold 2.36.0 (compatible with GNU ld
+msgproc_usec_avg_max
+msgproc_usec_avg_p50
+msgproc_usec_avg_p95
+msgproc_usec_avg_p99
+msgproc_usec_max
+msgproc_usec_p50
+msgproc_usec_p95
+msgproc_usec_p99
 mt19937
 must be unique within
 m۶m۶\rM
@@ -10775,10 +10792,18 @@ netchan.cpp
 netframe_jitter_p50
 netframe_jitter_p99
 netframes_dropped
+netframes_msgs_max
+netframes_msgs_p50
+netframes_msgs_p95
+netframes_msgs_p99
 netframes_outoforder
 netframes_size_exceeds_mtu
 netframes_size_p95
 netframes_size_p99
+netframes_size_uncompressed_max
+netframes_size_uncompressed_p50
+netframes_size_uncompressed_p95
+netframes_size_uncompressed_p99
 netframes_total
 netmessage
 netmessages.proto
@@ -10838,7 +10863,6 @@ o8ATUI
 o\bATUH
 o\bATUI
 o\bATUSH
-o\bH;-F
 obj_count
 obj_size
 objc_class_prefix
@@ -10953,13 +10977,17 @@ punctMA
 pure virtual method called\n
 pxHcPpI
 py_generic_services
-p}?8CUtlSlot
+p}?N8CNetChan13NetFlowBase_tE
 q@H;qH
 q\f9w\f
 qangle
 qangle_pitch_yaw
 qangle_precise
 question-mark
+queuedmsgs_max
+queuedmsgs_p50
+queuedmsgs_p95
+queuedmsgs_p99
 quotation-mark
 r"+\n\tESyncType
 r%Pe#\nlʧq
@@ -11140,6 +11168,7 @@ sHE94$tBA
 sProcess includes/excludes %s %s [%d fields]\n
 s\bLc;D9
 s\b[A
+s] DISCONNECTING. ProcessMessages has exhausted its CPU time budget.  %dms to process %d messages this call.  (Current message type: '%s')\n
 s] Queued message count %d exceeds limit of %s=%d.  Allowing due to engine_frametime_warnings_enable=false\n
 s] high frame misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping, %.0fms peak jitter\n
 s] misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping\n
@@ -11280,6 +11309,10 @@ struct %s, fields: %s\n
 strxfrm_l
 subtype mismatch
 sv_listen_directudp
+sv_net_client_message_process_time_ms_drop_burst
+sv_net_client_message_process_time_ms_drop_rate
+sv_net_client_message_process_time_ms_warn_burst
+sv_net_client_message_process_time_ms_warn_rate
 svc_Broadcast_Command
 svc_ClearAllStringTables
 svc_CmdKeyValues
@@ -11346,6 +11379,7 @@ t$\f9t$\b
 t$\ftDH
 t$`A9t
 t$pIcT$h
+t&H;3
 t);y }\fH
 t*HcL
 t*USPH
@@ -11356,7 +11390,6 @@ t-I;6r
 t.<ptl<0
 t/H9\bu
 t0Hc\b;O\f}(LcG\bH
-t1I;u
 t2Hc>A
 t3Hc\nHcG\b9
 t3I;\f$r
@@ -11399,6 +11432,7 @@ tVAVAUI
 tWH9\bu
 tXI;4
 tYAVAUATUSL
+tZH;3
 tZH;\v
 tZI;4
 tZM;4
@@ -11436,11 +11470,11 @@ t\tH;h H
 t\v9q H
 t\vL;#tGH
 t_I;E
+t`H;2I
 taH;2
 taHct$\b
 ta\n\f\a\bA\v
 target struct
-tbH;2I
 tdata
 template
 template parameter object for
@@ -11495,6 +11529,7 @@ ttI;E
 tuI;E
 tu[A\\A]A
 tvI;\f
+twH;3
 txI;4
 type does not match\n
 type or int32_t
@@ -11510,11 +11545,11 @@ typeinfo for
 typeinfo name for
 typename
 tzAWAVAUATA
+tzH;3
 tzI;4
 tzI;\f
 tzI;u
 t{I;E
-t{I;u
 t|RAUH
 u %u %u %u
 u PAVH
@@ -11548,7 +11583,6 @@ u\r[A
 u\v[A
 ua[A\\A]A
 ub[A\\A]A
-ucǃ\br
 ud[A\\A]A
 ug[A\\A]A
 uh[A\\A]A
@@ -11558,7 +11592,6 @@ uint32_t google::protobuf::UnknownField::fixed32() const
 uint64
 uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
-ujHǃ\bt
 unable to match %s::%s (type %s) in %s, no likely matches found\n
 unable to register all schema data: %s\n
 uncompressed_sample_offset
@@ -11752,7 +11785,8 @@ wxIcGpI
 wy[vL
 x (int:%d, float:%f
 x%02x
-x:f;\rB
+x9f;\rs
+x:f;\rb
 xD;c|}wD
 xHcCpM
 xHcG\b
@@ -11772,7 +11806,8 @@ x[]ÐATUI
 x[]ÐUSH
 x\au5M9
 x\bt`H
-xbf;\rh
+xbf;\rTo
+xdf;\r
 xdigit
 xxHc@pM
 yZ[A\\A]A

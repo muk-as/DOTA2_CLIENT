@@ -116,7 +116,9 @@
 19CSerializedEntities
 19ISerializedEntities
 19NetMessagePacketEnd
-1꾀1군1군1넘1
+1梵1懇1按1斋1
+1梵1梵1梵1
+1梵1梵1梵1梵1
 2	.CMsgRGBA
 2 .ProtoFlattenedSerializerField_t
 2 .google.protobuf.DescriptorProto
@@ -246,6 +248,7 @@
 29CMsgSource2PerfIntervalSample
 29NetMessageConnectionCrashed_t
 2t,E9
+2余2余2余2余2
 30CBidirMsg_RebroadcastGameEvent
 30CMsgSource2VProfLiteReportItem
 30CNetworkFieldChangedEventQueue
@@ -318,6 +321,7 @@
 8A]A^]H
 8CMsgRGBA
 8CNetChan
+8CUtlSlot
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
 8[A\A
 8[A\A]A
@@ -1184,8 +1188,6 @@ CreateReplayCompatSerializerFromMeta creating fake serializer for %s
 Created poll group for socket '%s
 CxHcKpL
 CxHcSpL
-D#%0b
-D#5ua
 D$ A;G
 D$ H9D$(L
 D$(D9
@@ -1208,15 +1210,14 @@ D$xIcL$pL
 D8"tMH
 D86}tH
 D89~6I
-D95C7
 D9e(~JH
 D9e4~ H
 D9kXH
-D9{pIc
 D;4$}VD
 D;c4|	E1
 D;k }3H
 D;k }:H
+DA8D$Lu
 DATA_LOSS
 DEADLINE_EXCEEDED
 DF128
@@ -1256,6 +1257,8 @@ Don't bother compressing packets below this size
 Don't lookup extension types if they aren't present (1
 Don't lookup extension types if they aren't present (2
 Double-save to Member '%s
+Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity
+Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Dump UDP packets summary to console
 Dump non-loopback udp only
 E H;E
@@ -1640,6 +1643,8 @@ H9p sMI9
 H9y8t
 H9z r
 H9z s
+H;=WZ
+H;=yW
 H;G(t
 H;V }$H
 H;z H
@@ -1941,7 +1946,6 @@ Maximum number of messages to allow waiting in queue after processing; exceeding
 Maximum number of messages to process from a client in a single frame (0 == no limit
 MaybeAllocateAligned cannot fail here
 Mc'E;g
-Mc.E;n
 McL$ fA
 McL$(I
 McOHD1
@@ -2120,6 +2124,10 @@ N6snappy15ByteArraySourceE
 N6snappy22UncheckedByteArraySinkE
 N6snappy4SinkE
 N6snappy6SourceE
+N8CNetChan11NetFlowIn_tE
+N8CNetChan12NetFlowOut_tE
+N8CNetChan9NetFlow_tINS_12NetFrameIn_tEEE
+N8CNetChan9NetFlow_tINS_13NetFrameOut_tEEE
 N9__gnu_cxx13stdio_filebufIcSt11char_traitsIcEEE
 N9__gnu_cxx13stdio_filebufIwSt11char_traitsIwEEE
 N9__gnu_cxx18stdio_sync_filebufIcSt11char_traitsIcEEE
@@ -2335,8 +2343,7 @@ Need space between number and identifier
 Net Message Info: %s
 Net graph %s
 Net status for host %s
-NetChan %s ProcessMessages has taken more than %dms to process %d messages.  (Current message type: '%s
-NetChan %s ProcessMessages tok %dms to process %d messages
+NetChan %s ProcessMessages has exhausted its CPU time warning budget.  %dms to process %d messages this call.  (Current message type: '%s
 NetChanTransmitReliable
 NetChanTransmitUnreliable
 NetChannel '%s
@@ -2985,6 +2992,7 @@ TYPE_SINT64
 TYPE_STRING
 TYPE_UINT32
 TYPE_UINT64
+T[A\A]A
 TestScriptMgr001
 TextLayout_001
 The 'sdr' console command has been renamed to 'net_option'.  Please update your scripts
@@ -3199,6 +3207,8 @@ W(Hc_ H
 W(Hco H
 WARNING
 WHIcOXI
+Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity
+Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Warning
 Warning parsing text-format
 Wednesday
@@ -10016,6 +10026,8 @@ low_cardinality_string_vals
 low_priority
 low_value
 lowest
+m H;-L
+m H;-T
 m_NetworkChangeTagCallback.IsEmpty
 m_Value
 m_bCanStillRegisterCallbackPriorities
@@ -10074,6 +10086,14 @@ model_index
 mold 2.36.0 (compatible with GNU ld
 msg_data
 msg_type
+msgproc_usec_avg_max
+msgproc_usec_avg_p50
+msgproc_usec_avg_p95
+msgproc_usec_avg_p99
+msgproc_usec_max
+msgproc_usec_p50
+msgproc_usec_p95
+msgproc_usec_p99
 mt19937
 must be unique within
 n L9l
@@ -10164,10 +10184,18 @@ netchan.cpp
 netframe_jitter_p50
 netframe_jitter_p99
 netframes_dropped
+netframes_msgs_max
+netframes_msgs_p50
+netframes_msgs_p95
+netframes_msgs_p99
 netframes_outoforder
 netframes_size_exceeds_mtu
 netframes_size_p95
 netframes_size_p99
+netframes_size_uncompressed_max
+netframes_size_uncompressed_p50
+netframes_size_uncompressed_p95
+netframes_size_uncompressed_p99
 netframes_total
 netmessage
 netmessages.proto
@@ -10373,12 +10401,16 @@ public_dependency
 punctMA
 pure virtual method called
 py_generic_services
-p}?8CUtlSlot
+p}?N8CNetChan13NetFlowBase_tE
 qangle
 qangle_pitch_yaw
 qangle_precise
 quality
 question-mark
+queuedmsgs_max
+queuedmsgs_p50
+queuedmsgs_p95
+queuedmsgs_p99
 quotation-mark
 r0AUATE1
 r[@Kun78
@@ -10553,6 +10585,7 @@ sCull fields for %s
 sCulled %s::%s
 sHE94$tBA
 sProcess includes/excludes %s %s [%d fields
+s] DISCONNECTING. ProcessMessages has exhausted its CPU time budget.  %dms to process %d messages this call.  (Current message type: '%s
 s] Queued message count %d exceeds limit of %s=%d.  Allowing due to engine_frametime_warnings_enable=false
 s] high frame misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping, %.0fms peak jitter
 s] misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping
@@ -10720,6 +10753,10 @@ struct %s, fields: %s
 strxfrm_l
 subtype mismatch
 sv_listen_directudp
+sv_net_client_message_process_time_ms_drop_burst
+sv_net_client_message_process_time_ms_drop_rate
+sv_net_client_message_process_time_ms_warn_burst
+sv_net_client_message_process_time_ms_warn_rate
 svc_BSPDecal
 svc_Broadcast_Command
 svc_ClassInfo
@@ -10785,7 +10822,6 @@ tF[A\A]A
 tHA;E`tJ1
 tIHcC
 tIIcEH
-tJE;e0
 tLL;8u
 tMHcC
 tMHcC8

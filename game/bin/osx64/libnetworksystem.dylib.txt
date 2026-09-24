@@ -278,7 +278,7 @@
 33CMsgSource2PerfIntervalSample_Tag
 33CNETMsg_SpawnGroup_ManifestUpdate
 33CSchemaRegistration_networksystem
-33s?H
+33s?L
 34CNETMsg_SpawnGroup_SetCreationTick
 34CSVCMsg_GameEventList_descriptor_t
 34NetMessageSplitscreenUserChanged_t
@@ -370,7 +370,7 @@ APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARA
 ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 ASBUAp
-ASEZARAWA
+ASEZAp
 ATARARATA\Ap
 AVG        Mean delay, for packets that are jittered, in ms.  The random
 AWARATAp
@@ -418,9 +418,10 @@ AWAVSPL
 AWAVSPLc
 AWAVSPM
 AWAVSPf
+AZARASAWA
 AZARAWA
 AZARBRAWA
-AZAUAWA
+AZAUB
 A[ATAp
 A\A]A^A
 A\A^A
@@ -474,7 +475,6 @@ Average Backing Raw Paths         :  %8.3f
 Average Data Bytes                :  %8.3f bytes
 Average Memory Usage Per Entity   :  %8.3f bytes
 Average Number of Field Paths     :  %8.3f
-A老D瀉E耀E
 BVB<F
 BackUp() can only be called after a successful Next
 BakedLODBuilderMgr001
@@ -1050,7 +1050,6 @@ D2LI;D
 D2XuNJ
 D2\A;D
 D93vKH
-D95,q
 D;c8~!H
 D;~8tW
 D<hH;C8u
@@ -1085,6 +1084,8 @@ Disconnecting netchan because of excessive CPU usage /+/ %dms, %d, current messa
 Display info about a message (by classname or id
 Don't bother compressing packets below this size
 Double-save to Member '%s
+Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity
+Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Dump UDP packets summary to console
 Dump non-loopback udp only
 E I;G u
@@ -1180,7 +1181,6 @@ Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Extra connection [%s
 ExtractModuleMetadata
-Eȋ=Vm
 Eـ8.uCH
 F H+p(H
 F(D:`0r
@@ -1216,6 +1216,7 @@ FakeLoss
 FakeReorderDelay
 FakeReorderPct
 Fatal error, demo file includes a field in array that is not parseable %s = (%s::%s
+Fffff
 Ffffff
 Field
 Field "$0" uses reserved number $1
@@ -1522,6 +1523,7 @@ IcD$(E
 IcD$(H
 IcD$(I
 IcD$(I9
+IcD$0H9
 IcD$4H9
 IcD$4I
 IcD$8H9
@@ -1626,6 +1628,7 @@ L93v"I
 L9;tAH
 L;8t"I
 L;sxtKL
+L=N8CNetChan11NetFlowIn_tE
 L>Lu!H
 LABEL_OPTIONAL
 LABEL_REPEATED
@@ -1856,6 +1859,10 @@ N6snappy15ByteArraySourceE
 N6snappy22UncheckedByteArraySinkE
 N6snappy4SinkE
 N6snappy6SourceE
+N8CNetChan12NetFlowOut_tE
+N8CNetChan13NetFlowBase_tE
+N8CNetChan9NetFlow_tINS_12NetFrameIn_tEEE
+N8CNetChan9NetFlow_tINS_13NetFrameOut_tEEE
 NETWORK_DISCONNECT_BADDELTATICK
 NETWORK_DISCONNECT_BADRELAYPASSWORD
 NETWORK_DISCONNECT_BADSPECTATORPASSWORD
@@ -2037,8 +2044,7 @@ Need space between number and identifier
 Net Message Info: %s
 Net graph %s
 Net status for host %s
-NetChan %s ProcessMessages has taken more than %dms to process %d messages.  (Current message type: '%s
-NetChan %s ProcessMessages tok %dms to process %d messages
+NetChan %s ProcessMessages has exhausted its CPU time warning budget.  %dms to process %d messages this call.  (Current message type: '%s
 NetChanTransmitReliable
 NetChanTransmitUnreliable
 NetChannel '%s
@@ -2247,6 +2253,7 @@ QueueChange
 QueueReplayCompatFieldChange( %s ): can't place MNetworkReplayCompatField callback on a fully fake struct (e.g., a pointed to component or object), game code should move callback on entity %d to a C_BaseEntity derived class
 RARARA
 RARARARARA
+RARARAp
 RASARA
 RATARA
 RATARARARARAR
@@ -2551,7 +2558,7 @@ UASBTAp
 UASBXAp
 UASB`:ASB
 UAUB`.Ap
-UBTASB`\Bp
+UBTASB`\BRAp
 UBUAUAp
 UDP -> %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
 UDP <- %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
@@ -2701,6 +2708,8 @@ W }dL
 WARNING
 WAUBUASASBTAp
 WAXARARASDp
+Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity
+Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate
 Warning
 Warning parsing text-format
 WorldGroupId_t
@@ -3693,6 +3702,14 @@ mod_init_func
 model_index
 msg_data
 msg_type
+msgproc_usec_avg_max
+msgproc_usec_avg_p50
+msgproc_usec_avg_p95
+msgproc_usec_avg_p99
+msgproc_usec_max
+msgproc_usec_p50
+msgproc_usec_p95
+msgproc_usec_p99
 must be unique within
 nBits != 32
 nIndex != m_priorityToOrderMap.InvalidIndex
@@ -3779,10 +3796,18 @@ net_why_field_excluded
 netframe_jitter_p50
 netframe_jitter_p99
 netframes_dropped
+netframes_msgs_max
+netframes_msgs_p50
+netframes_msgs_p95
+netframes_msgs_p99
 netframes_outoforder
 netframes_size_exceeds_mtu
 netframes_size_p95
 netframes_size_p99
+netframes_size_uncompressed_max
+netframes_size_uncompressed_p50
+netframes_size_uncompressed_p95
+netframes_size_uncompressed_p99
 netframes_total
 netmessage
 netmessages.proto
@@ -3962,6 +3987,10 @@ qangle
 qangle_pitch_yaw
 qangle_precise
 quality
+queuedmsgs_max
+queuedmsgs_p50
+queuedmsgs_p95
+queuedmsgs_p99
 r%ffffff
 r1<_t
 rFffffff
@@ -4109,6 +4138,7 @@ sCull fields for %s
 sCulled %s::%s
 sPK9L& uvO
 sProcess includes/excludes %s %s [%d fields
+s] DISCONNECTING. ProcessMessages has exhausted its CPU time budget.  %dms to process %d messages this call.  (Current message type: '%s
 s] Queued message count %d exceeds limit of %s=%d.  Allowing due to engine_frametime_warnings_enable=false
 s] high frame misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping, %.0fms peak jitter
 s] misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping
@@ -4234,6 +4264,10 @@ stub_helper
 stubs
 subtype mismatch
 sv_listen_directudp
+sv_net_client_message_process_time_ms_drop_burst
+sv_net_client_message_process_time_ms_drop_rate
+sv_net_client_message_process_time_ms_warn_burst
+sv_net_client_message_process_time_ms_warn_rate
 svc_BSPDecal
 svc_Broadcast_Command
 svc_ClassInfo
@@ -4318,6 +4352,7 @@ tRI96vs
 tUI96vvH
 tUI96vvHcC
 tWfG9L3
+tXI96
 t[I96
 t]M+f`I
 t^I96
@@ -4328,7 +4363,6 @@ target struct
 target_entity
 text format contains deprecated field
 tgM97
-thI96
 the actual field type (for enums T should be the generated enum
 the global scope
 they_hear_you
@@ -4353,6 +4387,7 @@ ticks_good_almost_late
 ticks_total
 time_span
 tjMcl$`M
+tkI96
 tkI96vYI
 tkM97
 tlv_atexit
@@ -4455,8 +4490,6 @@ usr/lib/libiconv.2.dylib
 utcdatetime_vals
 utlvector
 v%d,path%d
-v8H;5
-v8H;58
 v8IcV0H
 vPIcVHH
 vXA9v
@@ -4543,7 +4576,7 @@ worldgroupname
 worldname
 writing (in %s
 wrong submessage type
-wzD9-Ch
+wxH;5r
 x (int:%d, float:%f
 x%A;Gh
 x8HcN H
