@@ -1,3 +1,8 @@
+enum EEventActionScoreMode {
+	k_eEventActionScoreMode_Add = 0;
+	k_eEventActionScoreMode_Min = 1;
+}
+
 message CMsgEventAction {
 	optional uint32 action_id = 1;
 	optional uint32 times_completed = 2 [default = 1];
@@ -13,4 +18,15 @@ message CMsgUserEventPoints {
 	repeated .CMsgEventAction completed_actions = 7;
 	optional bool owned = 8;
 	optional uint32 active_season_id = 9;
+}
+
+message CMsgPeriodicResourceKey {
+	optional uint32 account_id = 1;
+	optional uint32 periodic_resource_id = 2;
+	optional uint32 timestamp = 3;
+}
+
+message CMsgPeriodicResourceValue {
+	optional uint32 periodic_resource_max = 1;
+	optional uint32 periodic_resource_used = 2;
 }

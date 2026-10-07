@@ -1,27 +1,36 @@
 <!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/gamestyles.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
-		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard_page_treasure_details.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_ui_treasure_odds_details.vcss_c" />
+		<include src="s2r://panorama/styles/gamestyles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss" />
+		<include src="s2r://panorama/styles/dashboard_page_treasure_details.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_ui_treasure_odds_details.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="TreasureOddsDetailsEntry">
 			<Panel class="TreasureOddsDetailsEntry LeftRightFlow">
 				<Panel id="CurrentEntryInfoIcon" class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_Treasure_Odds_Details_CurrentEntryTooltip )" onmouseout="UIHideTextTooltip()" />
+				<Panel id="BadLuckProtectionInfoIcon" onmouseover="UIShowTextTooltip( #DOTA_Treasure_Odds_Details_BadLuckProtectionTooltip )" onmouseout="UIHideTextTooltip()" />
 				<Label id="TreasuresOpenedColumn" class="TreasuresOpenedColumn" text="#DOTA_Treasure_Odds_Details_ValueOpened" html="true" />
 				<Label id="IndividualOddsColumn" class="IndividualOddsColumn" text="#DOTA_Treasure_Odds_Details_ValueIndividual" html="true" />
 				<Label id="TreasureOddsMetadataColumn" class="TreasureOddsMetadataColumn" text="#DOTA_Treasure_Odds_Details_MetadataValue" html="true" />
 			</Panel>
 		</snippet>
 	</snippets>
-	<DOTAPopupUITreasureOddsDetails class="PopupPanel Hidden" popupbackground="dim">
+	<DOTAPopupUITreasureOddsDetails class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
 		<Panel id="Title">
 			<Panel id="TitleBackground">
-				<Button id="CancelButton" class="CloseButton" onactivate="UIPopupButtonClicked()" />
-				<Label class="TitleLabel" text="#DOTA_Treasure_Odds_Details_Title" html="true" />
+				<Button id="CancelButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+				<Panel class="TitleContents">
+					<Label class="TitleLabel" text="#DOTA_Treasure_Odds_Details_Specific_Title" html="true" />
+					<Panel class="ItemNameContainer">
+						<DOTAHeroImage id="HeroIcon" heroimagestyle="icon" />
+						<Label class="ItemNameLabel" text="{s:item_name}" />
+					</Panel>
+				</Panel>
 			</Panel>
 		</Panel>
 		<Panel class="TitleBar">

@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c" />
-		<include src="s2r://panorama/styles/settings/ui_ability_bar_settings.vcss_c" />
+		<include src="s2r://panorama/styles/dotastyles.vcss" />
+		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss" />
+		<include src="s2r://panorama/styles/settings/ui_ability_bar_settings.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="AbilityHotkeyBind">
@@ -92,6 +92,9 @@
 						<Panel class="LeftRightFlow AbilitiesContainer" id="AbilitiesContainer" hittest="false" />
 						<Panel class="AbilitiesContainerDash" />
 						<Panel class="HeroAbilityActionsContainer">
+							<Button id="AdditionalAbilitiesButton" class="ButtonPrimary DarkGrey Small" onactivate="$(&apos;#AdditionalAbilitiesContainer&apos;).ToggleClass(&apos;ShowAdditionalAbilitiesPanel&apos;);" onmouseover="UIShowTextTooltip( #dota_settings_additional_abilities_tooltip)" onmouseout="UIHideTextTooltip()">
+								<Label text="#dota_settings_additional_abilities" />
+							</Button>
 							<Panel class="UnitAbilityQuickcastButton LeftRightFlow">
 								<ToggleButton class="CheckBox" id="DefaultAbilityQuickcastCheckBox" text="#dota_settings_enable_quickcast_abilities" onactivate="DOTASetDefaultAbilityQuickCast();" onmouseover="UIShowTextTooltip( #DOTA_Hotkeys_Tooltip_Quickcast )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
@@ -164,6 +167,9 @@
 						</Panel>
 					</Panel>
 				</Panel>
+			</Panel>
+			<Panel id="AdditionalAbilitiesContainer">
+				<Panel id="AdditionalAbilitiesPanel" />
 			</Panel>
 			<Panel class="ItemSpecificBindsContainer">
 				<Panel class="LeftRightFlow HorizontalCenter">

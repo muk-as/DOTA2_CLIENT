@@ -22,6 +22,7 @@
 13IRenderDevice
 14CBaseAppSystemI12IRenderUtilsE
 14CBaseAppSystemI16IRenderDeviceMgrE
+14CPsdBufferFile
 14CReadGPUBuffer
 14CSwapChainBase
 14IRenderContext
@@ -94,7 +95,6 @@
 8@-24(%rbp) 8@-32(%rbp
 8@-48(%rbp) 8@%rax
 8BPSu\bf
-8BPSu\vf
 8\vJrF
 8b  16-May-2010
 9CdAXAYr
@@ -342,6 +342,7 @@ AUATSL
 AUATUH
 AUATUS
 AUATUSH
+AVASARV
 AVAUATA
 AVAUATE
 AVAUATHc
@@ -379,6 +380,7 @@ AWAVAUATUS
 AWAVAUATUSH
 AWAVAUI
 AWAVAUL
+AWAVAUM
 AWAVAUMc
 AWAVE1
 AWAVLc
@@ -448,6 +450,9 @@ BGRX8888_LINEAR
 BHHcAH
 BKbhTb~XBK
 B\bA;E\fr
+B\b}wHc
+B\f}WHc
+B\f~WHc
 B`HcA
 Backing store not supported
 Bad VTEX data for '%s'\n
@@ -562,6 +567,7 @@ Corrupt JPEG data: found marker 0x%02x instead of RST%d
 Corrupt JPEG data: premature end of data segment
 Could not decode alpha data
 CreateConstantBufferInternal
+CreateDocument failed
 CreateInterface
 CreateNewThreadPool
 CumulativeSumToAverageRow_C
@@ -664,7 +670,6 @@ EXRReadFile() - cannot read image data!\n
 EXTERNAL: %.2fmb\n
 E\bA9G\b
 E\bE)O\b
-E\tŰE
 EarlyInit_Tier0
 EconItemToolModel_001
 Empty Driver
@@ -689,6 +694,7 @@ E؋E0;E
 F2\a1wsHp
 FRAGMENTATION: %.2fmb\n
 FXYNk G
+F\btgHc
 F\fD9
 Failed to compute channel layout.\n
 Failed to create temporary file %s
@@ -739,7 +745,6 @@ GCC: (SteamRT 14.2.0-19~steamrt3.1+bsrt3.1) 14.2.0
 GCC: (SteamRT 4.8.4-1ubuntu15~12.04+steamrt1.2+srt2) 4.8.4
 GCC: (SteamRT 9.3.0-13+steamrt1.2+srt1) 9.3.0
 GHcG\bH
-GIcU H
 GLIBCXX_TUNABLES
 GLIBC_2.14
 GLIBC_2.17
@@ -800,7 +805,7 @@ H9P`~\bH
 H9S8u\n
 H9\atVUH
 H;8űp\b
-H;=oc\f
+H;=we\f
 H;C(t9D
 H;C(tNH
 H;E s\a
@@ -812,7 +817,9 @@ H;P }\bH
 H;P ~BH
 H;P\b}\bH
 H;V }$H
-H;\r3\f\r
+H;\r7
+H;\rB\b\r
+H;\rw
 H=vtext
 H\bD)C
 H\bu\nH
@@ -828,7 +835,6 @@ HalfMergeUVRow_AVX2
 HalfMergeUVRow_C
 HalfMergeUVRow_SSSE3
 HammerMapLoader001
-Hc=mJ
 HcD$tf
 HcE8Hc
 HcG\fHcO
@@ -1182,6 +1188,7 @@ J422ToARGB
 J444ToABGR
 J444ToARGB
 J4t\aH
+J@L;\rE
 JArray
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
@@ -1201,8 +1208,6 @@ K@H;K8u\t
 KG89G
 Keeping resolution of (%dx%d)\n
 KeyValueCache001
-KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
-KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
 KeyValuesSystem
 K˕dN®H
 L$\b9L
@@ -1236,13 +1241,11 @@ LC_TIME
 LINEAR_D24S8
 LOG_CONSOLE
 LOG_GENERAL
-L\tI5L
 LcH\fHc
 LcK<Hc
 LcU A
 LcV L
 LceHL9
-LckhD;kxD
 LegacyUserSettingsPathID
 LoadEXRImageFromMemory() failed! Error message: %s\n
 LoadStreamingData
@@ -1287,7 +1290,7 @@ Mca\fLi
 Mcl$xA
 Mcl$xE
 Mct$XE
-MeSaA
+Mct$hE;t$xD
 MemAlloc_AllocFunc
 MemAlloc_CallocFunc
 MemAlloc_FreeFunc
@@ -1393,6 +1396,9 @@ N3Etc29Block4x4Encoding_RGBA8_OpaqueE
 N3Etc30Block4x4Encoding_RGB8A1_OpaqueE
 N3Etc34Block4x4Encoding_RGBA8_TransparentE
 N3Etc35Block4x4Encoding_RGB8A1_TransparentE
+N3psd15MallocAllocatorE
+N3psd4FileE
+N3psd9AllocatorE
 N9__gnu_cxx20recursive_init_errorE
 N9__gnu_cxx24__concurrence_lock_errorE
 N9__gnu_cxx26__concurrence_unlock_errorE
@@ -1586,11 +1592,11 @@ P410ToARGBRow_C
 P410ToARGBRow_SSSE3
 P8H=vtex
 P8H=vtext
-P8H=vtext+1
 P@H+P8H
 PERF WARNING: Texture pool size set to more than 80%% of total GPU memory.\n
 PLANAR
 PQRSTUVWXYZ
+PSD is %d bits per channel, only 8 bit PSDs can be read into a Bitmap_t\n
 P\bE9n8H
 P\bE9|$dXZr\tI
 P\nSL
@@ -1599,6 +1605,7 @@ PanoramaUIClient001
 PanoramaUIEngine001
 ParallelForSharedCode
 ParseEXRHeaderFromMemory() failed! Error message: %s\n
+ParseImageDataSection failed
 ParticleSystemMgr003
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
@@ -1634,6 +1641,7 @@ Premature end of input file
 Premature end-of-file encountered
 Premature end-of-partition0 encountered
 Print Vertex/Index/GPU buffers
+ProcessResourceThreadEvents
 Promise already satisfied
 PropertyEditorSystem_001
 Pu;ff
@@ -1654,6 +1662,7 @@ R8G8B8A8_ETC2_EAC
 R8G8B8_ETC2
 R8G8_UINT
 R8_UINT
+R8_UNORM
 R9G9B9E5_FLOAT
 R;cv0
 RAWToARGB
@@ -1811,6 +1820,17 @@ RandomFloat
 Read failed on temporary file
 Read from EMS failed
 Read from XMS failed
+ReadCompiledTextureMips: callback for %s is still using mip %d, but that data is about to be recycled\n
+ReadCompiledTextureMips: cannot convert %s from %s to %s\n
+ReadCompiledTextureMips: could not create a read request for %s\n
+ReadCompiledTextureMips: could not decode passthrough %s\n
+ReadCompiledTextureMips: mip %d of %s did not decompress (%d of %d bytes)\n
+ReadCompiledTextureMips: mip %d of %s is %d bytes on disk but %d uncompressed\n
+ReadCompiledTextureMips: mip %d of %s is below page size but the texture has no mip tail\n
+ReadCompiledTextureMips: mip %d of %s runs past the data we read\n
+ReadCompiledTextureMips: mip %d of %s wants pages out to byte %lld but only %llu were read\n
+ReadCompiledTextureMips: no texture data for %s\n
+ReadCompiledTextureMips: short read for %s, wanted %lld bytes of mips but got %llu\n
 RegisterConCommand: Unknown error registering con command "%s"!\n
 RegisterConVar: Unknown error registering convar "%s"!\n
 Release
@@ -1836,6 +1856,8 @@ RenderSystem/MinStreamingPoolSizeMBTools
 Rendersystem/SheetCacheTextureCols
 Rendersystem/SheetCacheTextureRows
 Requested feature was omitted at compile time
+Resizing IBPool from %s -> %s\n
+Resizing VBPool from %s -> %s\n
 ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
@@ -1852,7 +1874,6 @@ RsFillMode_t
 RsRasterizerStateDesc_t
 RsStencilStateDesc_t
 S>TUBk
-SASARV
 SIGNED_R11
 SIGNED_RG11
 SLcw@E
@@ -1861,6 +1882,7 @@ SRGBA8
 SSE and SSE2 are required
 S\bIc6L
 S\bM9T$\b
+S\b}\bI
 Sampling factors too large for interleaved scan
 Saturday
 Saved video settings config to '%s'\n
@@ -2079,6 +2101,8 @@ SetRow_ERMS
 SetRow_X86
 Setting max texture resolution to: %dx%d\n
 SheetSequenceIntegerId_t
+Show RenderDoc overlay
+SmartPropsSystem_001
 Smoothing not supported with nonstandard sampling ratios
 SobelRow_Any_SSE2
 SobelRow_C
@@ -2305,6 +2329,8 @@ TEXMAN: Abandoning job in %s (%s)\n
 TEXMAN: Adding %llx+%p (binding=%p), %s to abandoned hookup jobs\n
 TEXMAN: Deleting %d textures\n
 TEXMAN: Outstanding stream count %d -> %d (%s)\n
+TEXMAN: streaming data requested for a virtual texture before the VT manager callbacks were installed, not preloading (%s)\n
+TEXMAN: virtual texture created before the VT manager callbacks were installed, falling back to normal streaming (%s)\n
 TLS init function for
 TLS wrapper function for
 TOTAL: %.2fmb\n
@@ -2397,6 +2423,8 @@ UYVYToYRow_Any_SSE2
 UYVYToYRow_C
 UYVYToYRow_SSE2
 Unable to find swapchain named %s
+Unable to load psd: %s\n
+Unable to read compiled texture "%s" (Error: %s)\n
 Unavailable
 Unexpected marker 0x%02x
 Unexpected null character in regular expression
@@ -2832,7 +2860,7 @@ ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer21CheckArbitraryPeekGetEiRi
 ZN10CUtlBuffer3GetEPvi
 ZN10CUtlBuffer3PutEPKvi
-ZN10CUtlBuffer4SwapERS_b
+ZN10CUtlBuffer4SwapERS
 ZN10CUtlBuffer6PrintfEPKcz
 ZN10CUtlBuffer7GetUpToEPvi
 ZN10CUtlBuffer7PeekGetEii
@@ -2855,6 +2883,7 @@ ZN10CUtlString6AppendEPKc
 ZN10CUtlString6AppendEPKci
 ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
+ZN10CUtlString7FormatVEPKcP13__va_list_tag
 ZN10CUtlString9SetDirectEPKci
 ZN10CUtlString9SetLengthEi
 ZN10CUtlStringC1ERK13CBufferString
@@ -2940,7 +2969,6 @@ ZN13CSOAContainer10FilterFromERKS_iiiiiPKfbEUlvE
 ZN13CSOAContainer10FilterFromERKS_iiiiiPKfbEUlvE0
 ZN13CSOAContainer17SrgbGammaToLinearEiEUlvE
 ZN13CSOAContainer17SrgbLinearToGammaEiEUlvE
-ZN13CSOAContainer21GenerateDistanceFieldEiiiP8Rect3D_tEUlvE
 ZN13CSOAContainer24IIRGaussianApproximationEjfEUliiE
 ZN13CSOAContainer24IIRGaussianApproximationEjfEUliiE0
 ZN13CSOAContainer24IIRGaussianApproximationEjfEUliiE1
@@ -2982,6 +3010,7 @@ ZN18CUtlMemoryPoolBase4FreeEPv
 ZN18CUtlMemoryPoolBase5AllocEv
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
+ZN19CTextureManagerBase23ReadCompiledTextureMipsE11CWeakHandleI31InfoForResourceTypeCTextureBaseEiii11ImageFormatSt10shared_ptrI26IReadTexturePixelsCallbackEEUlP25IAsyncResourceDataRequestSt10unique_ptrI25IAsyncProcessedDataResultSt14default_deleteISA_EEE
 ZN19CTextureManagerBase31MN_AddAsyncTextureBitsHookupJobEP12CTextureBaseRKNS_24AsyncTextureHookupData_tEEUlvE
 ZN19IFormatOutputStream11FormatArrayE28CTypeErasedFormattingWrapper20CFormatStringElementPPKvib
 ZN19IFormatOutputStream13Format2DTableE28CTypeErasedFormattingWrapper20CFormatStringElementPPKvii
@@ -5313,6 +5342,7 @@ ZNSt14overflow_errorC2ERKSs
 ZNSt14overflow_errorD0Ev
 ZNSt14overflow_errorD1Ev
 ZNSt14overflow_errorD2Ev
+ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv
 ZNSt15__exception_ptr13exception_ptr10_M_releaseEv
 ZNSt15__exception_ptr13exception_ptr18_M_safe_bool_dummyEv
 ZNSt15__exception_ptr13exception_ptr4swapERS0
@@ -5568,6 +5598,7 @@ ZNSt15underflow_errorC2ERKSs
 ZNSt15underflow_errorD0Ev
 ZNSt15underflow_errorD1Ev
 ZNSt15underflow_errorD2Ev
+ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE15_M_weak_releaseEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE19_M_release_last_useEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE23_M_add_ref_lock_nothrowEv
@@ -8228,6 +8259,7 @@ bA;~Tr
 bA\vt$,A
 bAƇ 3
 bD\tȉB
+bH;5o
 bH\tЍQ\bH
 bHcS\fI
 bIcz4L
@@ -8265,6 +8297,7 @@ basic_string::substr
 basic_string_view::substr
 bind_textdomain_codeset
 bindtextdomain
+bitmap output needs an 8 bit document
 blocking issue in occlusion queries!!\n
 bmit fulH
 bn0s}Q_@r~aoPq
@@ -8299,9 +8332,12 @@ circumflex
 class
 clock_gettime
 clone
+cmyk document with non 8 bit channels
 co_await
 comment
 commercial-at
+composite channel data missing
+composite has too few channels for its color mode
 compressH
 compression
 compression" attribute not found in the header
@@ -8425,6 +8461,7 @@ fD\t0A9
 fMinAlpha <= fMaxAlpha
 fMinGrn <= fMaxGrn
 fMinRed <= fMaxRed
+fPHcC I
 fWeightSumBottom > 0.0f
 fWeightSumLeft + fWeightSumRight) > 0.0f
 fWeightSumLeft > 0.0f
@@ -8448,8 +8485,8 @@ float128
 float32
 float64
 floatbitmap.cpp
-floatbitmap.cpp(1191): Unsupported color format "%s", skipping!\n
-floatbitmap.cpp(518): Conversion not supported yet!\n
+floatbitmap.cpp(1213): Unsupported color format "%s", skipping!\n
+floatbitmap.cpp(520): Conversion not supported yet!\n
 fn\aJn
 fopen64
 for forH
@@ -8553,6 +8590,9 @@ immediate
 incorrect data check
 incorrect header check
 incorrect length check
+indexed document with more than 2 channels
+indexed document with no usable palette
+indexed document with non 8 bit indices
 init_array
 initializer for module
 int128
@@ -8713,6 +8753,15 @@ mold 2.36.0 (compatible with GNU ld
 mt19937
 m}I*2jZ2elP
 n offsetH
+n***ASSERT FAILED*** Image data section has too many channels (%d
+n***ASSERT FAILED*** Pointer is null
+n***ERROR*** [DecompressRle] Malformed RLE data encountered
+n***ERROR*** [ImageData] Unhandled bits per channel: %u
+n***ERROR*** [ImageData] Unhandled compression type %u
+n***ERROR*** [PSD] Document does not contain an image data section
+n***ERROR*** [PsdExtract] File seems to be corrupt, reserved bytes are not zero
+n***ERROR*** [PsdExtract] File seems to be corrupt, signature does not match "8BPS
+n***ERROR*** [PsdExtract] File seems to be corrupt, version does not match 1 or 2
 nD$<fA
 nHcW\b
 nMEu4`G
@@ -8724,6 +8773,7 @@ nanosleep
 newline
 newlocale
 nl_langinfo_l
+no composite (not saved with Maximize Compatibility
 no failure reason set
 no memory during frame initialization
 noexcept
@@ -8819,6 +8869,7 @@ r_renderdoc_auto_shader_pdbs
 r_renderdoc_capture_frame
 r_renderdoc_capture_window_vulkan
 r_renderdoc_open_captures
+r_renderdoc_show_overlay
 r_renderdoc_validation_error_capture_limit
 r_texture_hookup_uses_threadpool
 r_texture_nonstreaming_load
@@ -8837,6 +8888,7 @@ random_device::random_device(const std::string&): device not available
 random_device::random_device(const std::string&): unsupported token
 rdrand
 rdseed
+read past end of file (truncated/corrupt
 realloc
 reference temporary
 regex error
@@ -8992,6 +9044,7 @@ t$`fA
 t/E;u
 t2Lc#D;c
 tDHcA
+tD[A\\A]A
 tF[A\\A]A
 tPaE(y
 tRHcAH
@@ -9009,23 +9062,23 @@ terminate called after throwing an instance of
 terminate called recursively\n
 terminate called without an active exception\n
 texturebase.cpp
-texturebase.cpp(2342):Error loading texture: %s\n
-texturebase.cpp(3100):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3103):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3136):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3139):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3161):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3164):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3184):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3187):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3207):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3210):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3232):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3235):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3247):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3250):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3262):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3265):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(2873):Error loading texture: %s\n
+texturebase.cpp(3729):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3732):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3765):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3768):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3790):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3793):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3813):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3816):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3836):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3839):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3861):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3864):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3876):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3879):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3891):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3894):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
 thread initialization failed
 throw
 tls_get_addr
@@ -9067,6 +9120,7 @@ unknown
 unknown compression method
 unknown header flags set
 unknown multisample type
+unknown reason
 unnamed type
 unsigned
 unsigned __int128
@@ -9076,6 +9130,12 @@ unsigned int Etc::Image::IterateThroughWorstBlocks(unsigned int, unsigned int, u
 unsigned long
 unsigned long long
 unsigned short
+unsupported bits per channel
+unsupported color mode: bitmap
+unsupported color mode: duotone
+unsupported color mode: lab
+unsupported color mode: multichannel
+unsupported color mode: unknown
 uo[A\\A]A
 upportedH
 uselocale
@@ -9206,12 +9266,12 @@ vsnprintf
 vtable for
 vtexE1
 vtexH
-vtexf
 vulkan
 vπ>Ju
 w+OQvr
 w8A9w@D
 wIcV8H
+wT<Wv@H
 wchar_t
 wcrtomb
 wcscmp
@@ -9231,6 +9291,7 @@ wn>Jj
 wpp >= 1 && wpp <= 2
 wwwwwwwwwwwwwwww
 x != __null
+x$acsp
 x0Ysqx
 x<\rE
 xDE9{Du
@@ -9245,6 +9306,8 @@ y8VEj
 yNp_M
 z A;w\bu
 z&Pd1
+z\f u\a
 z\ru\vƅh
 z\tu\aƃh
+zero sized document
 zyxwvutsrqponmlkjihgfedcba`_^]\\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?>=<;:9876543210

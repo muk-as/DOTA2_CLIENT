@@ -3828,10 +3828,10 @@ EconItemImage #Overlay
 {
 	width: 24px;
 	height: 24px;
-	background-image: url("s2r://panorama/images/status_icons/modifier_animation_psd.vtex");
 	background-repeat: no-repeat;
-	background-position: center 50% 50%;
-	background-size: 24px 24px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LightGrey ));
+	background-size: 90%;
+	background-position: center;
 }
 
 .ModifierIcon.Empty
@@ -3841,17 +3841,17 @@ EconItemImage #Overlay
 
 .ModifierIcon.icon_replacement
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_icons_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_icon.vsvg");
 }
 
 .ModifierIcon.particle
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_spelleffects_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_custom_effects.vsvg");
 }
 
 .ModifierIcon.particle_create
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_ambienteffects_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_ambient_effects.vsvg");
 }
 
 .ModifierIcon.facet
@@ -3861,62 +3861,82 @@ EconItemImage #Overlay
 
 .ModifierIcon.speech
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_voice_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_voice.vsvg");
 }
 
 .ModifierIcon.activity
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_animation_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_animation.vsvg");
 }
 
 .ModifierIcon.loading_screen
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_loading_screen_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/loading_screens.vsvg");
 }
 
 .ModifierIcon.cursor_pack
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_cursor_pack_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/cursor_packs.vsvg");
 }
 
 .ModifierIcon.portrait_game
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_portrait_game_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/profile.vsvg");
 }
 
 .ModifierIcon.model
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_model_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_model.vsvg");
 }
 
 .ModifierIcon.custom_kill_effect
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_kill_effect_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/kill_streak_effects.vsvg");
+}
+
+.ModifierIcon.ability_name
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_abilityname.vsvg");
 }
 
 .ModifierIcon.soundscape
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_voice_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_soundscape.vsvg");
 }
 
 .ModifierIcon.sound
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_voice_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_sound.vsvg");
 }
 
 .ModifierIcon.announcer
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_voice_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/announcer_packs.vsvg");
 }
 
 .ModifierIcon.pet
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_model_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/effigy_pet.vsvg");
 }
 
 .ModifierIcon.has_arcana_augment
 {
-	background-image: url("s2r://panorama/images/status_icons/modifier_arcanaaugment_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_augments_arcana.vsvg");
+}
+
+.ModifierIcon.hero_base_model
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/modifier_herobase.vsvg");
+}
+
+.ModifierIcon.hud_skin
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/huds.vsvg");
+}
+
+.ModifierIcon.weather
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/weather_effects.vsvg");
 }
 
 #DOTAHud .TooltipContainer
@@ -4513,7 +4533,7 @@ DOTAGameItemsPage DOTAItemImage
 	background-color: black;
 }
 
-DOTAItemImage #RecipeOutputImage
+DOTAItemImage .RecipeOutputImage
 {
 	opacity: 1;
 	saturation: 0.25;
@@ -4526,7 +4546,7 @@ DOTAItemImage #RecipeOutputImage
 	height: 100%;
 }
 
-#RecipeContainer
+.RecipeContainer
 {
 	wash-color: #d8984bff;
 	width: 100%;
@@ -4537,9 +4557,36 @@ DOTAItemImage #RecipeOutputImage
 	overflow: clip;
 }
 
-DOTAShopItem .CanPurchase #RecipeContainer,DOTAShopItem .AvailableAtOtherShop #RecipeContainer
+DOTAShopItem .CanPurchase .RecipeContainer,DOTAShopItem .AvailableAtOtherShop .RecipeContainer
 {
 	opacity-mask: url("s2r://panorama/images/items/recipe_opacity_mask_nopurchase_psd.vtex");
+}
+
+DOTAItemImage .DarkCarnivalAffixOutputImage
+{
+	saturation: 1;
+	brightness: 1.0;
+	transform: skew(6deg, -5deg) translateY(-3px) rotateZ(-4deg) rotateY(10deg) translateX(-.5px);
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	width: 40px;
+	height: 40px;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.DarkCarnivalAffixContainer
+{
+	width: 100%;
+	height: 100%;
+	contrast: 1.2;
+	background-color: rgba(0, 0, 0, 0.132);
+	opacity-mask: url("s2r://panorama/images/items/cog_mask_png.vtex");
+	overflow: clip;
+}
+
+DOTAShopItem .CanPurchase .DarkCarnivalAffixContainer,DOTAShopItem .AvailableAtOtherShop .DarkCarnivalAffixContainer
+{
+	opacity-mask: url("s2r://panorama/images/items/cog_mask_png.vtex");
 }
 
 #dragImage
@@ -8237,4 +8284,4 @@ DOTAAbilityImage.UseInnateIcon
 	img-shadow: 0px 3px 12px black;
 }
 
-@import url("s2r://panorama/styles/split_label.vcss_c");
+@import url("s2r://panorama/styles/split_label.vcss");

@@ -285,13 +285,6 @@ Scheme
 		
 		Default
 		{
-			"1"	[$X360]
-			{
-				"name"		"Verdana"
-				"tall"		"12"
-				"weight"	"700"
-				"antialias" "1"
-			}
 			"1"	[$WIN32]
 			{
 				"name"		"Verdana"
@@ -587,13 +580,6 @@ Scheme
 				"weight"	"400"
 				"outline"	"1"
 			}
-			"1"	[$X360]
-			{
-				"name"		"Tahoma"
-				"tall"		"18"
-				"weight"	"200"
-				"outline"	"1"
-			}
 		}
 		"CloseCaption_Normal"
 		{
@@ -658,7 +644,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"13"	[$WIN32]
-				"tall"		"20"	[$X360]
 				"weight"	"900"
 				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
 				"yres"	"600 767"
@@ -767,7 +752,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"12"	[$OSX||$WIN32]
-				"tall"		"15"	[$X360]
 				"weight"	"700"
 				"yres"		"480 599"
 				"dropshadow"	"1"
@@ -776,7 +760,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"14"	[$OSX||$WIN32]
-				"tall"		"17"	[$X360]
 				"weight"	"700"
 				"yres"		"600 767"
 				"dropshadow"	"1"
@@ -785,7 +768,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"15"	[$OSX||$WIN32]
-				"tall"		"18"	[$X360]
 				"weight"	"700"
 				"yres"		"768 1023"
 				"dropshadow"	"1"
@@ -794,7 +776,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"17"	[$OSX||$WIN32]
-				"tall"		"20"	[$X360]
 				"weight"	"700"
 				"yres"		"1024 1199"
 				"dropshadow"	"1"
@@ -803,7 +784,6 @@ Scheme
 			{
 				"name"		"Verdana"
 				"tall"		"22"	[$OSX||$WIN32]
-				"tall"		"25"	[$X360]
 				"weight"	"700"
 				"yres"		"1200 10000"
 				"dropshadow"	"1"

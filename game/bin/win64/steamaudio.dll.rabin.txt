@@ -1,7 +1,9 @@
 0 0 0 0
 0 0 0 255
 0 = use biquad instead of svf, 1 = use vectorized svf, 2 = use scalar svf
+0 is disabled, but otherwise sets a limit the maximum ray size in the dimension size calculation. Used to model the enclosure algorithm. Game units
 0-G/0]T30
+0.1 16000
 000\a743
 00cfg
 012345678
@@ -17,10 +19,12 @@
 02x%c
 02x%s
 04d%02d%02d%02d%02d%02dZ
+0: No spatial filtering. 1: bidirectional spatial filter
 0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs
-0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2
+0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios. 7: no baked value - occlusion is traced per probe pair the way the calc_occlusion_info operator does, then interpolated like any other mode
 0<\tw\b
 0<\tw\rA
+0A9]H
 0A;V\f
 0A^A]A
 0A_A]A
@@ -31,9 +35,11 @@
 0CThreadEvent@@QEAA@_N@Z
 0CThreadRWLock_FastRead@@QEAA@XZ
 0CUtlBuffer@@QEAA@HHW4BufferFlags_t@0@@Z
+0CUtlSymbolTable@@QEAA@HH_N@Z
 0E3ɉt$(A
 0HcЍX
 0L2@2H
+0Qe>@b
 0V[$0
 0\f<pqA1
 0\r0#0)070;0U0Y0[0g0q0y0}0
@@ -44,7 +50,9 @@
 0pp@5tqE?|sO541
 0tU+xc
 0t\bH
+0t\rH
 0}0i1\v0\t
+0}\vH
 1!1'1-191C1E1K1]1a1g1m1s1
 1#QNAN
 1#SNAN
@@ -60,7 +68,7 @@
 1CThreadEvent@@QEAA@XZ
 1CThreadSemaphore@@QEAA@XZ
 1CThreadSyncObject@@QEAA@XZ
-1\aPlat_IsInDebugSession
+1CUtlSymbolTable@@QEAA@XZ
 1f\t3Qg^y
 1h=bfz
 1kYL\r
@@ -68,6 +76,7 @@
 1캵i\aq
 2)252Y2]2c2k2o2u2w2{2
 23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s\n
+24 24
 28)fk
 2:3maJ
 2DigiCert SHA256 RSA4096 Timestamp Responder 2026 10
@@ -93,6 +102,8 @@
 3DES(168
 3Ej%Tb
 3H9D$0
+3H9t$ t\vH
+3Hc\f\bH
 3L$ A3
 3L$ E3
 3L$$3L$\b
@@ -142,7 +153,6 @@
 4<>\v0A
 4CUtlString@@QEAAAEAV0@AEBVCBufferString@@@Z
 4Ch;⍤\r6
-4\bUtlRBTree_FailedInsertDuplicate
 4\e474E4U4W4c4i4m4
 4\rt-A
 4http://crl3.digicert.com/DigiCertAssuredIDRootCA.crl0
@@ -157,7 +167,6 @@
 5BppA
 5BppfA
 5N{jזY
-5\bUtlVectorMemory_Alloc
 5\r\v
 5\vSF
 5`q@roz
@@ -181,7 +190,6 @@
 6ynV\f8
 7?XEAVn
 7\a7\e7?7E7I7O7]7a7u7
-7\bUtlVectorMemory_CalcNewAllocationCount
 7\rayf
 7\tFq
 7http://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt0E
@@ -207,6 +215,7 @@
 8DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1
 8DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA10
 8E9T\b4t
+8H9ugt\nH
 8HcY\bH
 8H܋\\fP
 8SIffK5W
@@ -214,32 +223,37 @@
 8X\rt\tM
 8\\$PtD
 8\\$PtF
-8\bUtlVectorMemory_FailedAllocation
 8\e7/Q\aa
 8\nt\nH
+8\tV_acosf
 8\v8!83858A8G8K8S8W8_8e8o8q8}8
 8dS2ܺIquO
-8p\rt\tM
 8q-S*]X
 8sIssuer Unique ID
 8sSubject Unique ID
 8sVersion: %lu (0x%lx)\n
 8s\rt
+8xXtm9
+8yXt\b
 8|$Pu
+8}_tS
 8ʿ4<Td
 8ϸֹai`UJ4\f
 9#9%9)9/9=9A9M9[9k9y9}9
 9(}ZA
 90T1@I
 92"\anv1
+94\v(E6
 9:dzGN
 9;|\nHcC\bH
 9APu\nH
 9B\\u#LcAXA
 9C,r\bH
 9C\bu\nf
+9D$0t=L
 9D$Pu\tA
 9F\b~&E3
+9K\b~ H
 9S\bt?HcS\bH
 9Y@nJM
 9YDu\tH9
@@ -289,6 +303,7 @@ A3ӋL$\f3
 A8}(u\bI
 A9(u\f3
 A96u\bI
+A96~gL
 A9>u\bI
 A9\tu3A
 A9\tuaA
@@ -500,20 +515,544 @@ ATA\v\tATH
 AUAVAW
 AUAVAWH
 AUBufferedImpulseResponse_t
+AUCAttr_m_bApplyAntialiasing@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bApplyAntialiasing@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bAutoMakeupGain@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bBassMono@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bEnable@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bEnableFilter@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bEnabled@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bOnlyTailsOnFadeOut@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bParallel@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPeakMode@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPeakMode@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPeakMode@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPeakMode@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPeakMode@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPhaseInvert@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bPhaseInvert@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bSolo@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bandDesc@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_bandDesc@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixEffectChainDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixPresetDSPDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_effectName@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_feedbackFilter@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_feedbackFilter@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_filter@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_filterType@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixEnvelopeDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flAttackTimeMS@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flBandwidth@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flBassFreq@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flComplexity@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flComplexity@?1??GetAttributeTable_Impl@VMixDiffusorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flCompressionRatio@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flCutoffFreq@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDamp@?1??GetAttributeTable_Impl@VMixFreeverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDamp@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDecay@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDelay@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDelay@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDelay@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDelayGain@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDepth@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDepth@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDiffusion@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flDirectGain@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flEnvelopeAmount@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedback@?1??GetAttributeTable_Impl@VMixDiffusorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackDepth@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackDiffusion1@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackDiffusion2@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackGain@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackGain@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackGain@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackHeight@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackScale@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedbackWidth@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFeedforwardGain@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFreqRangeEnd@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flFreqRangeStart@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flGlideTime@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flGlideTime@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flHeight@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flHighCutoffFreq@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flHighCutoffFreq@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flHoldTimeMS@?1??GetAttributeTable_Impl@VMixEnvelopeDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flInputDiffusion1@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flInputDiffusion2@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flInputPan@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flInterpolationTime@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLFOAmount@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLFORate@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLateReflections@?1??GetAttributeTable_Impl@VMixFreeverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLimiterRatio@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLowCutoffFreq@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flLowCutoffFreq@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModDepth@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModDepth@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModDepth@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModRate@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModRate@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flModRate@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flOutputBalance@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flOutputGain@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flOutputGain@?1??GetAttributeTable_Impl@VMixDiffusorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flOutputGain@?1??GetAttributeTable_Impl@VMixFlangerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flOutputGain@?1??GetAttributeTable_Impl@VMixModDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flPhase@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flPhase@?1??GetAttributeTable_Impl@VMixOscDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flPitchShift@?1??GetAttributeTable_Impl@VMixPitchShiftDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flPreDelayMS@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flPrefilter@?1??GetAttributeTable_Impl@VMixPlateverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flQ@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRMSTimeMS@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRMSTimeMS@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRMSTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRMSTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRatio@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRatioAbove@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRatioBelow@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixEnvelopeDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flReleaseTimeMS@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flRoomSize@?1??GetAttributeTable_Impl@VMixFreeverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flSCHighPassFreq@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flSize@?1??GetAttributeTable_Impl@VMixDiffusorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flSizeMax@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flSizeMin@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flStrength@?1??GetAttributeTable_Impl@VMixPannerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flTaps@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flTimeScale@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWetMix@?1??GetAttributeTable_Impl@VMixShaperDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWidth@?1??GetAttributeTable_Impl@VMixBoxverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWidth@?1??GetAttributeTable_Impl@VMixDelayDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_flWidth@?1??GetAttributeTable_Impl@VMixFreeverbDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldBModGain@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldBUnvoicedGain@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbCompressionThreshold@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbCompressionThreshold@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbDrive@?1??GetAttributeTable_Impl@VMixShaperDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGain@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGain@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGain@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGainInput@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGainOutput@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbGainOutput@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbHigh@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbKneeWidth@?1??GetAttributeTable_Impl@VMixDualCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbKneeWidth@?1??GetAttributeTable_Impl@VMixDynamics3BandDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbKneeWidth@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbKneeWidth@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbLimiterThreshold@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbLow@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbMid@?1??GetAttributeTable_Impl@VMixConvolutionDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbNoiseGateThreshold@?1??GetAttributeTable_Impl@VMixDynamicsDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbOutputGain@?1??GetAttributeTable_Impl@VMixDynamicsCompressorDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbOutputGain@?1??GetAttributeTable_Impl@VMixShaperDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbOutputGain@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbThresholdAbove@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_fldbThresholdBelow@?1??GetAttributeTable_Impl@VMixDynamicsBand_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_freq@?1??GetAttributeTable_Impl@VMixOscDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_interpolationMode@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nBandCount@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nChannelSet@?1??GetAttributeTable_Impl@VMixEQFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nDebugBand@?1??GetAttributeTable_Impl@VMixVocoderDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nFilterSlope@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nFilterType@?1??GetAttributeTable_Impl@VMixFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nGrainSampleCount@?1??GetAttributeTable_Impl@VMixPitchShiftDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nLFOShape@?1??GetAttributeTable_Impl@VMixAutoFilterDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nOffset@?1??GetAttributeTable_Impl@CVMixDataOffset@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nOp@?1??GetAttributeTable_Impl@VMixUtilityDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nOversampleFactor@?1??GetAttributeTable_Impl@VMixShaperDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nProcType@?1??GetAttributeTable_Impl@VMixPitchShiftDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nQuality@?1??GetAttributeTable_Impl@VMixPitchShiftDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_nShape@?1??GetAttributeTable_Impl@VMixShaperDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_name@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_stages@?1??GetAttributeTable_Impl@VMixEQ8Desc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_subgraphs@?1??GetAttributeTable_Impl@VMixSubgraphSwitchDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_m_type@?1??GetAttributeTable_Impl@VMixPannerDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
+AUCAttr_oscType@?1??GetAttributeTable_Impl@VMixOscDesc_t@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z
 AUTHORITY_INFO_ACCESS
 AUTHORITY_KEYID
-AV<lambda_3>@?1??BakeDimensions@CSteamAudioScene@@QEAA_NAEAUSteamAudioBakeDimensionsTask_t@@AEAVCSteamAudioBakedDimensionsData@@P6AXMPEAX@Z2@Z
+AV<lambda_7>@?1??BakeDimensionsSizeAndInOut@CSteamAudioScene@@SAXAEAVCSteamAudioBakedDimensionsData@@AEBUSteamAudioCustomDataDimensionsSettings_t@@PEAVIVPhysics2World@@AEAV?$CUtlVector@V?$Vec3D@M@@HV?$CUtlVectorMemory_Growable@V?$Vec3D@M@@H$0A@@@@@HP6AXMPEAX@Z4@Z
 AV?$CBaseAppSystem@VISteamAudio
+AV?$CBaseConcreteToolAttr@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttr@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t
+AV?$CBaseConcreteToolAttr@HUVMixPitchShiftDesc_t
+AV?$CBaseConcreteToolAttr@HUVMixShaperDesc_t
+AV?$CBaseConcreteToolAttr@HUVMixVocoderDesc_t
+AV?$CBaseConcreteToolAttr@IVCVMixDataOffset
+AV?$CBaseConcreteToolAttr@MUVMixAutoFilterDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixBoxverbDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixConvolutionDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDelayDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDiffusorDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDualCompressorDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDynamicsBand_t
+AV?$CBaseConcreteToolAttr@MUVMixDynamicsCompressorDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixDynamicsDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixEnvelopeDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixFilterDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixFlangerDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixFreeverbDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixModDelayDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixOscDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixPannerDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixPitchShiftDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixPlateverbDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixShaperDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttr@MUVMixVocoderDesc_t
+AV?$CBaseConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t
+AV?$CBaseConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttr@UVMixEQFilterDesc_t@@UVMixEQ8Desc_t
+AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixAutoFilterDesc_t
+AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixBoxverbDesc_t
+AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixDelayDesc_t
+AV?$CBaseConcreteToolAttr@UVMixFilterDesc_t@@UVMixModDelayDesc_t
+AV?$CBaseConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixEffectChainDesc_t
+AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t
+AV?$CBaseConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixLFOShape_t@@UVMixAutoFilterDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixLFOShape_t@@UVMixOscDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixPannerType_t@@UVMixPannerDesc_t
+AV?$CBaseConcreteToolAttr@W4VMixSubgraphSwitchInterpolationType_t@@UVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixBoxverbDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixDelayDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixDualCompressorDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixDynamicsBand_t
+AV?$CBaseConcreteToolAttr@_NUVMixDynamicsCompressorDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixDynamicsDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixFilterDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixFlangerDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixModDelayDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttr@_NUVMixVocoderDesc_t
+AV?$CBaseConcreteToolAttrValue@HUVMixPitchShiftDesc_t
+AV?$CBaseConcreteToolAttrValue@HUVMixShaperDesc_t
+AV?$CBaseConcreteToolAttrValue@HUVMixVocoderDesc_t
+AV?$CBaseConcreteToolAttrValue@IVCVMixDataOffset
+AV?$CBaseConcreteToolAttrValue@MUVMixAutoFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixBoxverbDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixConvolutionDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDelayDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDiffusorDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDualCompressorDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDynamicsBand_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDynamicsCompressorDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixDynamicsDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixEnvelopeDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixFlangerDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixFreeverbDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixModDelayDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixOscDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixPannerDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixPitchShiftDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixPlateverbDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixShaperDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttrValue@MUVMixVocoderDesc_t
+AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixEffectChainDesc_t
+AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixPresetDSPDesc_t
+AV?$CBaseConcreteToolAttrValue@VCUtlString@@UVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixChannelOperation_t@@UVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixFilterSlope_t@@UVMixFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixFilterType_t@@UVMixFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixLFOShape_t@@UVMixAutoFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixLFOShape_t@@UVMixOscDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixPannerType_t@@UVMixPannerDesc_t
+AV?$CBaseConcreteToolAttrValue@W4VMixSubgraphSwitchInterpolationType_t@@UVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixBoxverbDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDelayDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDualCompressorDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDynamics3BandDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDynamicsBand_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDynamicsCompressorDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixDynamicsDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixFilterDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixFlangerDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixModDelayDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixSubgraphSwitchDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixUtilityDesc_t
+AV?$CBaseConcreteToolAttrValue@_NUVMixVocoderDesc_t
+AV?$CConcreteToolAttr@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@X
+AV?$CConcreteToolAttr@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@X
+AV?$CConcreteToolAttr@HUVMixPitchShiftDesc_t@@X
+AV?$CConcreteToolAttr@HUVMixShaperDesc_t@@X
+AV?$CConcreteToolAttr@HUVMixVocoderDesc_t@@X
+AV?$CConcreteToolAttr@IVCVMixDataOffset@@X
+AV?$CConcreteToolAttr@MUVMixAutoFilterDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixBoxverbDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixConvolutionDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDelayDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDiffusorDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDualCompressorDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDynamics3BandDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDynamicsBand_t@@X
+AV?$CConcreteToolAttr@MUVMixDynamicsCompressorDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixDynamicsDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixEnvelopeDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixFilterDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixFlangerDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixFreeverbDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixModDelayDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixOscDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixPannerDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixPitchShiftDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixPlateverbDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixShaperDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixSubgraphSwitchDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixUtilityDesc_t@@X
+AV?$CConcreteToolAttr@MUVMixVocoderDesc_t@@X
+AV?$CConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t@@X
+AV?$CConcreteToolAttr@UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@X
+AV?$CConcreteToolAttr@UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@X
+AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixAutoFilterDesc_t@@X
+AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixBoxverbDesc_t@@X
+AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixDelayDesc_t@@X
+AV?$CConcreteToolAttr@UVMixFilterDesc_t@@UVMixModDelayDesc_t@@X
+AV?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t@@X
+AV?$CConcreteToolAttr@VCUtlString@@UVMixEffectChainDesc_t@@X
+AV?$CConcreteToolAttr@VCUtlString@@UVMixPresetDSPDesc_t@@X
+AV?$CConcreteToolAttr@VCUtlString@@UVMixSubgraphSwitchDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixChannelOperation_t@@UVMixUtilityDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixFilterSlope_t@@UVMixFilterDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixFilterType_t@@UVMixFilterDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixLFOShape_t@@UVMixAutoFilterDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixLFOShape_t@@UVMixOscDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixPannerType_t@@UVMixPannerDesc_t@@X
+AV?$CConcreteToolAttr@W4VMixSubgraphSwitchInterpolationType_t@@UVMixSubgraphSwitchDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixBoxverbDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixDelayDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixDualCompressorDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixDynamics3BandDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixDynamicsBand_t@@X
+AV?$CConcreteToolAttr@_NUVMixDynamicsCompressorDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixDynamicsDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixFilterDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixFlangerDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixModDelayDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixSubgraphSwitchDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixUtilityDesc_t@@X
+AV?$CConcreteToolAttr@_NUVMixVocoderDesc_t@@X
+AV?$CConcreteToolAttrDirectMember@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t
+AV?$CConcreteToolAttrDirectMember@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t
+AV?$CConcreteToolAttrDirectMember@HUVMixPitchShiftDesc_t
+AV?$CConcreteToolAttrDirectMember@HUVMixShaperDesc_t
+AV?$CConcreteToolAttrDirectMember@HUVMixVocoderDesc_t
+AV?$CConcreteToolAttrDirectMember@IVCVMixDataOffset
+AV?$CConcreteToolAttrDirectMember@MUVMixAutoFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixBoxverbDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixConvolutionDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDiffusorDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDualCompressorDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDynamics3BandDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDynamicsBand_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDynamicsCompressorDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixDynamicsDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixEnvelopeDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixFlangerDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixFreeverbDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixModDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixOscDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixPannerDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixPitchShiftDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixPlateverbDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixShaperDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixSubgraphSwitchDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixUtilityDesc_t
+AV?$CConcreteToolAttrDirectMember@MUVMixVocoderDesc_t
+AV?$CConcreteToolAttrDirectMember@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t
+AV?$CConcreteToolAttrDirectMember@UVMixFilterDesc_t@@UVMixAutoFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@UVMixFilterDesc_t@@UVMixBoxverbDesc_t
+AV?$CConcreteToolAttrDirectMember@UVMixFilterDesc_t@@UVMixDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@UVMixFilterDesc_t@@UVMixModDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t
+AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixEffectChainDesc_t
+AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixPresetDSPDesc_t
+AV?$CConcreteToolAttrDirectMember@VCUtlString@@UVMixSubgraphSwitchDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixChannelOperation_t@@UVMixUtilityDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixFilterSlope_t@@UVMixFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixFilterType_t@@UVMixFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixLFOShape_t@@UVMixAutoFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixLFOShape_t@@UVMixOscDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixPannerType_t@@UVMixPannerDesc_t
+AV?$CConcreteToolAttrDirectMember@W4VMixSubgraphSwitchInterpolationType_t@@UVMixSubgraphSwitchDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixBoxverbDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDualCompressorDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDynamics3BandDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDynamicsBand_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDynamicsCompressorDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixDynamicsDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixFilterDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixFlangerDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixModDelayDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixSubgraphSwitchDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixUtilityDesc_t
+AV?$CConcreteToolAttrDirectMember@_NUVMixVocoderDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixAutoFilterDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixBoxverbDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixConvolutionDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDelayDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDiffusorDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDualCompressorDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDynamics3BandDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDynamicsBand_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDynamicsCompressorDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixDynamicsDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixEQ8Desc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixEQFilterDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixEffectChainDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixEnvelopeDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixFilterDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixFlangerDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixFreeverbDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixModDelayDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixOscDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixPannerDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixPitchShiftDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixPlateverbDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixPresetDSPDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixShaperDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixSubgraphSwitchDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixUtilityDesc_t
+AV?$CDefaultToolAttrTableForStruct@UVMixVocoderDesc_t
+AV?$CDefaultToolAttrTableForStruct@VCVMixDataOffset
 AV?$CRefCountServiceBase@VCRefMT
 AV?$CRefCounted@V?$CRefCountServiceBase@VCRefMT
 AV?$CSurfacePropDataTable@VCSteamAudioMaterial
 AV?$CTier0AppSystem@VISteamAudio@@$0A
 AV?$CTier1AppSystem@VISteamAudio@@$0A
 AV?$CTier2AppSystem@VISteamAudio@@$0A
+AV?$CToolAttrDirectMemberAccess@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t
+AV?$CToolAttrDirectMemberAccess@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t
+AV?$CToolAttrDirectMemberAccess@HUVMixPitchShiftDesc_t
+AV?$CToolAttrDirectMemberAccess@HUVMixShaperDesc_t
+AV?$CToolAttrDirectMemberAccess@HUVMixVocoderDesc_t
+AV?$CToolAttrDirectMemberAccess@IVCVMixDataOffset
+AV?$CToolAttrDirectMemberAccess@MUVMixAutoFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixBoxverbDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixConvolutionDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDiffusorDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDualCompressorDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDynamics3BandDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDynamicsBand_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDynamicsCompressorDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixDynamicsDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixEnvelopeDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixFlangerDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixFreeverbDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixModDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixOscDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixPannerDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixPitchShiftDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixPlateverbDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixShaperDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixSubgraphSwitchDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixUtilityDesc_t
+AV?$CToolAttrDirectMemberAccess@MUVMixVocoderDesc_t
+AV?$CToolAttrDirectMemberAccess@UVMixDynamicsBand_t@@UVMixDualCompressorDesc_t
+AV?$CToolAttrDirectMemberAccess@UVMixFilterDesc_t@@UVMixAutoFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@UVMixFilterDesc_t@@UVMixBoxverbDesc_t
+AV?$CToolAttrDirectMemberAccess@UVMixFilterDesc_t@@UVMixDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@UVMixFilterDesc_t@@UVMixModDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t
+AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixEffectChainDesc_t
+AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixPresetDSPDesc_t
+AV?$CToolAttrDirectMemberAccess@VCUtlString@@UVMixSubgraphSwitchDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixChannelOperation_t@@UVMixUtilityDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixFilterChannelSet_t@@UVMixEQFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixFilterSlope_t@@UVMixFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixFilterType_t@@UVMixFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixLFOShape_t@@UVMixAutoFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixLFOShape_t@@UVMixOscDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixPannerType_t@@UVMixPannerDesc_t
+AV?$CToolAttrDirectMemberAccess@W4VMixSubgraphSwitchInterpolationType_t@@UVMixSubgraphSwitchDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixBoxverbDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDualCompressorDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDynamics3BandDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDynamicsBand_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDynamicsCompressorDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixDynamicsDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixFilterDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixFlangerDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixModDelayDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixSubgraphSwitchDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixUtilityDesc_t
+AV?$CToolAttrDirectMemberAccess@_NUVMixVocoderDesc_t
+AV?$IToolAttrConcreteDataAccess@$$BY02UVMixDynamicsBand_t
+AV?$IToolAttrConcreteDataAccess@$$BY07UVMixEQFilterDesc_t
+AV?$IToolAttrConcreteDataAccess@H
+AV?$IToolAttrConcreteDataAccess@I
+AV?$IToolAttrConcreteDataAccess@M
+AV?$IToolAttrConcreteDataAccess@UVMixDynamicsBand_t
+AV?$IToolAttrConcreteDataAccess@UVMixEQFilterDesc_t
+AV?$IToolAttrConcreteDataAccess@UVMixFilterDesc_t
+AV?$IToolAttrConcreteDataAccess@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A
+AV?$IToolAttrConcreteDataAccess@VCUtlString
+AV?$IToolAttrConcreteDataAccess@W4VMixChannelOperation_t
+AV?$IToolAttrConcreteDataAccess@W4VMixFilterChannelSet_t
+AV?$IToolAttrConcreteDataAccess@W4VMixFilterSlope_t
+AV?$IToolAttrConcreteDataAccess@W4VMixFilterType_t
+AV?$IToolAttrConcreteDataAccess@W4VMixLFOShape_t
+AV?$IToolAttrConcreteDataAccess@W4VMixPannerType_t
+AV?$IToolAttrConcreteDataAccess@W4VMixSubgraphSwitchInterpolationType_t
+AV?$IToolAttrConcreteDataAccess@_N
+AV?$IToolAttr_TypedValue@H
+AV?$IToolAttr_TypedValue@I
+AV?$IToolAttr_TypedValue@M
+AV?$IToolAttr_TypedValue@VCUtlString
+AV?$IToolAttr_TypedValue@W4VMixChannelOperation_t
+AV?$IToolAttr_TypedValue@W4VMixFilterChannelSet_t
+AV?$IToolAttr_TypedValue@W4VMixFilterSlope_t
+AV?$IToolAttr_TypedValue@W4VMixFilterType_t
+AV?$IToolAttr_TypedValue@W4VMixLFOShape_t
+AV?$IToolAttr_TypedValue@W4VMixPannerType_t
+AV?$IToolAttr_TypedValue@W4VMixSubgraphSwitchInterpolationType_t
+AV?$IToolAttr_TypedValue@_N
 AV?$_Func_base@XHH@std
-AV?$_Func_impl_no_alloc@V<lambda_3>@?1??BakeDimensions@CSteamAudioScene@@QEAA_NAEAUSteamAudioBakeDimensionsTask_t@@AEAVCSteamAudioBakedDimensionsData@@P6AXMPEAX@Z2@Z@XHH@std
+AV?$_Func_impl_no_alloc@V<lambda_7>@?1??BakeDimensionsSizeAndInOut@CSteamAudioScene@@SAXAEAVCSteamAudioBakedDimensionsData@@AEBUSteamAudioCustomDataDimensionsSettings_t@@PEAVIVPhysics2World@@AEAV?$CUtlVector@V?$Vec3D@M@@HV?$CUtlVectorMemory_Growable@V?$Vec3D@M@@H$0A@@@@@HP6AXMPEAX@Z4@Z@XHH@std
 AVAWE3
 AVAWH
+AVCArrayElementAccess@?$CConcreteToolAttr@$$BY02UVMixDynamicsBand_t@@UVMixDynamics3BandDesc_t@@X
+AVCArrayElementAccess@?$CConcreteToolAttr@$$BY07UVMixEQFilterDesc_t@@UVMixEQ8Desc_t@@X
+AVCArrayElementAccess@?$CConcreteToolAttr@V?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@UVMixSubgraphSwitchDesc_t@@X
+AVCBaseToolAttr
 AVCBaseVModuleMetadataProvider
 AVCDirectProcessor
 AVCHybridReverbProcessor
@@ -537,7 +1076,10 @@ AVCSteamAudioScene
 AVCSteamAudioSimulationData
 AVCSteamAudioSource
 AVCSurfacePropDataTableBase
+AVCToolEditContextQuery_Base
+AVCToolEditContextQuery_String
 AVIAppSystem
+AVIBaseToolAttr
 AVIDirectProcessor
 AVIErrorListener
 AVIHybridReverbProcessor
@@ -548,9 +1090,15 @@ AVISteamAudio
 AVISteamAudioScene
 AVISteamAudioSimulationData
 AVISteamAudioSource
+AVIToolAttr_Array
+AVIToolAttr_Table
+AVIToolAttr_Value
+AV__non_rtti_object@std
 AVbad_alloc@std
 AVbad_array_new_length@std
+AVbad_cast@std
 AVbad_exception@std
+AVbad_typeid@std
 AVexception@std
 AVlength_error@std
 AVlogic_error@std
@@ -562,7 +1110,9 @@ A_A]A
 A_A^A
 A_A^A]A
 A_A^_ËB4A
+Above Threshold(dB
 Acceptable OCSP Responses
+Access violation - no RTTI data
 Acquire@CUtlString@@QEAAXPEAVCBufferString@@_N@Z
 AcquireLock@CAtomicMutex@@AEAAXI@Z
 AcquireSRWLockExclusive
@@ -571,8 +1121,11 @@ Adjust overall volume of the default HRTF by the specified gain (dB
 Adjust scaling for reflection energy when combining it to calculate occlusion value
 Adjust scaling of pathing energy by exponentiall scaling with pathing delta
 Affiliation Changed
+Air absorption coefficient sued for baked occlusion calculation
 AlignedByteArray not properly aligned\n
+All Channels
 AllocAligned@CUtlScratchMemoryPool@@QEAAPEAXHH@Z
+Ambient noise energy to serve as a floor for reflection energy
 Ambisonics order to use for convolution reverb. 0th order = 1 channel, 1st order = 4 channels
 Ambisonics order to use for simulating reverb
 AnimGraphEditorUtils001
@@ -594,18 +1147,25 @@ AppPolicyGetProcessTerminationMethod
 AppendConcat@CBufferString@@QEAAPEBDHPEBQEBDPEBH_N@Z
 AppendFormat@CBufferString@@QEAAHPEBDZZ
 AppendFormatV@CBufferString@@QEAAHPEBDPEAD@Z
+Apply Antialiasing
 AreFileApisANSI
 Assert_ConditionFailed@@YA_NAEBU_AssertCompileTimeConstantStruct_t@@PEBDZZ
 Assert_ConditionFailed_Fatal@@YAXAEBU_AssertCompileTimeConstantStruct_t@@@Z
 Assert_ConditionFailed_Fatal@@YAXAEBU_AssertCompileTimeConstantStruct_t@@PEBDZZ
+AssetBrowse
+AssetBrowse( %s
 AssetBrowserSystem_001
 AssetPreviewSystem_001
 AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 Ata<Cte<PtQ<UtE
+Attack Time MS
+Attack time (ms
+Attribute
 August
 Authority Information Access
+Auto Make-up Gain
 AvRJɥ\\^s
 AvÄ\t-T
 Azo\f$L
@@ -740,14 +1300,20 @@ BY_FILE_CTRL
 BY_Lq
 BZZn\rN]#8f
 B\bHcEgH
+B\bI9D1
 B\bu0L
+B\tV_atoi
 Bad boolean\n
+Bad dynamic_cast
 Bad time value
+Bake occlusion for a single source probe with the given probe id
 BakeDimensions: Estimating inside field.\n
-BakeDimensions: Estimating outside field (1/2: Pathing).\n
-BakeDimensions: Estimating outside field (2/2: Outside probe lookups).\n
+BakeDimensions: Estimating outside field.\n
+BakeDimensions: Estimating size and inside / outside (mode 0, direct sky fraction, %d rays).\n
+BakeDimensions: Estimating size and inside / outside (mode 1, multi-bounce escape, %d rays, %d bounces, %.0f max path, %.2f loss per bounce).\n
 BakeDimensions: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
 BakeDimensions: No probes generated. Bake cancelled.\n
+BakeDimensions: Pathing.\n
 BakeDimensions: Unable to create probe batch. [%d]\n
 BakeDimensions: Unable to create simulator. (%d)\n
 BakeDimensions: Unable to create source. (%d)\n
@@ -773,10 +1339,16 @@ BakeReverb: Unable to create clustered probe batch. (%d)\n
 BakeReverb: Unable to create probe array. (%d)\n
 BakeReverb: Unable to create probe batch. (%d)\n
 BakedLODBuilderMgr001
+Band Count
+Band Desc
+Bandwidth
 Base Class Array
 Base Class Descriptor at
 Basic OCSP Response
 Basis Type: %s\n
+Bass Freq
+Bass Mono
+Below Threshold(dB
 BenchmarkService001
 Bfffff
 Big Number part of OpenSSL 1.0.2j  26 Sep 2016
@@ -785,8 +1357,10 @@ Biometric Info
 Blowfish part of OpenSSL 1.0.2j  26 Sep 2016
 Bp\bu\bH
 Buffer too small
+BuildMidpoint@CVertexKDTree@@QEAAXPEBMHH@Z
 BvVlZ
 BŉF\fHcn\bH
+BƉG,Hc7
 BЉT$4L
 C H1C@H
 C!FReQ
@@ -1061,6 +1635,8 @@ CSteamAudioProbeLineSegment
 CSteamAudioReverbSimulator
 CSteamAudioReverbSimulator::CSteamAudioReverbSimulator
 CSteamAudioScene::BakeDimensions
+CSteamAudioScene::BakeDimensionsInsideSizeField
+CSteamAudioScene::BakeDimensionsOutsideField
 CSteamAudioScene::BakeMaterials
 CSteamAudioScene::BakeOcclusion
 CSteamAudioScene::BakePathData
@@ -1083,6 +1659,7 @@ CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CSmartPtr<class CSteamAudioP
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CSmartPtr<class CSteamAudioSimulationData,class CRefCountAccessor>,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CSmartPtr<class CSteamAudioSource,class CRefCountAccessor>,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CUtlStringToken,struct Mat3x4<float>,class CDefEquals<class CUtlStringToken>,struct DefaultHashFunctor<class CUtlStringToken>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CUtlStringToken,struct Mat3x4<float>,class CDefEquals<class CUtlStringToken>,struct DefaultHashFunctor<class CUtlStringToken>,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class SoundEventGuid_t,struct SteamAudioOcclusionVizData_t,class CDefEquals<class SoundEventGuid_t>,struct DefaultHashFunctor<class SoundEventGuid_t>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class SoundEventGuid_t,struct SteamAudioOcclusionVizData_t,class CDefEquals<class SoundEventGuid_t>,struct DefaultHashFunctor<class SoundEventGuid_t>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<int,struct _IPLSource_t *,class CDefEquals<int>,struct DefaultHashFunctor<int>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<int,struct _IPLSource_t *,class CDefEquals<int>,struct DefaultHashFunctor<int>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<char,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
@@ -1094,6 +1671,7 @@ CUtlMemoryBlockAllocator<struct FileHandleTracker_t,class CMemAllocAllocator>::A
 CUtlSortVector<struct ChunkHashFraction_t,class CUtlSortVectorDefaultLess<struct ChunkHashFraction_t::SortKey_t>,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlVectorMemory_Growable<struct ChunkHashFraction_t,int,0> > >::Find
 CUtlSymbolTableLarge element limit of %u exceeded\n
 CUtlVector
+CVMixDataOffset
 C\\lVQ˅nF
 C\b9{\bu
 C\bE3ɋ\bH
@@ -1110,6 +1688,8 @@ Certificate Hold
 Certificate Sign
 Certificate:\n
 Cessation Of Operation
+Channel Set
+Channels
 Check@CThreadEvent@@QEAA_NXZ
 CheckPut@CUtlBuffer@@IEAA_NH@Z
 Chunk hash not found
@@ -1131,8 +1711,10 @@ CommandLine
 CompareStringEx
 CompareStringW
 Complete Object Locator
+Complexity
 ComposeFileName@CBufferString@@QEAAPEBDPEBD0D@Z
 CompressBakedReverbInProbeBatch
+Compression Ratio
 Content file %s is corrupt (Chunk: %s). Verify integrity of game files.\n
 Content file %s is corrupt. Hashing could not be verified. Verify integrity of game files.\n
 Content file %s is corrupt. Verify integrity of game files.\n
@@ -1160,9 +1742,13 @@ CryptGenRandom
 CryptReleaseContext
 Ct-<D
 CtK<Dv
+CustomCommand
+CustomCommand%d
+Cutoff Freq
 CЉL$ H
 D!l$xA
 D#D)D;D?DEDKDQDSDYDeDoD
+D#d$PA
 D$ :1N
 D$ E3\t\\$7H
 D$ E;n\f
@@ -1183,17 +1769,16 @@ D$(tr
 D$,t\eH
 D$03\tD
 D$03\tD$ D
+D$03҈D$ H
 D$08\\$0t
 D$0:1N
 D$0@8
-D$0E;G
 D$0H1C
 D$0H9D$8
 D$0HcH
 D$0g=t/L
 D$0u\rH
 D$18F(u\bH
-D$4D;%QB
 D$4E3ɈD$6H
 D$8+L$4+D
 D$83҉L$ H
@@ -1204,8 +1789,10 @@ D$8E3\tt$0E3
 D$8H1C
 D$8HcD$8H
 D$8HcH
+D$8HcJ
 D$8u&H
 D$@H1C
+D$@t\nI
 D$D3\tD
 D$H+D$LH
 D$HD9`\bu!H
@@ -1301,8 +1888,11 @@ D8;t\bH
 D8<(t4
 D8L$0u`A
 D8Z\bt
+D8hXtvD9
+D8p\rt\tM
 D8t$ht\nH
 D8}?t\tH
+D9"t\fH
 D9.v6H
 D91~/H
 D93~/H
@@ -1311,6 +1901,7 @@ D9`Pu7H
 D9cDt\f
 D9c\b~\rH
 D9d$@u
+D9d$@u\a2
 D9ePt0H
 D9e\bu/H
 D9fPt6D9gPt0H
@@ -1322,19 +1913,22 @@ D9k\b~\bH
 D9l$@u
 D9l$@~2I
 D9l$p~+I
-D9l$p~1I
+D9l$p~-I
 D9m\bu
 D9o\b~,I
 D9q\buAA
+D9s(~#H
 D9s,tQH
 D9t$8t)H
 D9t$hu
-D9w v-H
-D9w8v-H
-D9wPv-H
-D9whv&H
+D9w0v-H
+D9wHv-H
+D9wH~\tH
+D9w`v-H
+D9wxv&H
 D9|$8}O
 D;3~3A
+D;L$`|ȸVUUUA
 D;T$0H
 D;T$hr A
 D;W\b
@@ -1550,9 +2144,11 @@ Data Encipherment
 Data:\n
 DcO/lcK+hSK\eX
 Dd g4X3
+Debug Band
 December
 Decipher Only
 Default
+Delay Gain
 DeleteCriticalSection
 DemoUpconverterVersion001
 DeregisterEventSource
@@ -1561,28 +2157,34 @@ Different CRL scope
 Diffie-Hellman based MAC
 Diffie-Hellman part of OpenSSL 1.0.2j  26 Sep 2016
 Diffie-Hellman routines
+Diffusion
 DigiCert Trusted Root G40
 DigiCert, Inc.1;09
 DigiCert, Inc.1A0
 Digital Signature
 Dimensions: Cannot find baked data file: %s.\n
+Dimensions: Computing dimensions data for the main probes only. Movable probes keep their baked values.\n
 Dimensions: Data not stored in KV3 format. Rebake.\n
 Dimensions: Filesystem not initialized.\n
 Dimensions: Imported %d probes from baked file (%s).\n
 Dimensions: Loaded baked data file (%s).\n
+Dimensions: Restored cached data for mode %d, %d rays.\n
 Dimensions: Unable to load baked data file (%s).\n
 DirName
 DirName@CUtlString@@QEBA?AV1@XZ
+Direct Gain
 Directory
 Display baked data stats for the current mod
 Dj\f|*L\t
 DlnfA
 Domain
 Double-save to Member '%s
+Downward Ratio
+Drive (dB
+Dry/Wet
 E$33s
 E&O]ix
 E+E1EAEIESEUEaEwE}E
-E,33s
 E-mail Protection
 E0HcH\fD
 E0Lc`\fI
@@ -1608,6 +2210,7 @@ E3ɉt$0H
 E3ɋD$XD
 E3ɍPGE3
 E3ɍU*E3
+E3҉\\$DE3
 E8<$t#H
 E8HcE,H
 E8q(u\bH
@@ -1766,7 +2369,7 @@ EDIPARTYNAME
 EEo3҉D$@H
 EIl$@3
 EIt$@3
-EL;\r
+EL;\rny\b
 EMPTY>\n
 EN2 s
 ENCRYPTED
@@ -1874,6 +2477,7 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 EXTENDED_KEY_USAGE
 EXTERNAL
 EXTERNAL TYPE %s\n
+E\aPlat_IsInDebugSession
 E\bHcu`M
 E\bIcN\b
 E\tD$(A
@@ -1881,13 +2485,48 @@ EarlyInit_Tier0
 EconItemToolModel_001
 EdiPartyName
 EdiPartyName:<unsupported
+Effect Name
 EhQ,[3
 El@t'H
+Element.CVMixDataOffset
+Element.VMixAutoFilterDesc_t
+Element.VMixBoxverbDesc_t
+Element.VMixConvolutionDesc_t
+Element.VMixDelayDesc_t
+Element.VMixDiffusorDesc_t
+Element.VMixDualCompressorDesc_t
+Element.VMixDynamics3BandDesc_t
+Element.VMixDynamicsBand_t
+Element.VMixDynamicsCompressorDesc_t
+Element.VMixDynamicsDesc_t
+Element.VMixEQ8Desc_t
+Element.VMixEQFilterDesc_t
+Element.VMixEffectChainDesc_t
+Element.VMixEnvelopeDesc_t
+Element.VMixFilterDesc_t
+Element.VMixFlangerDesc_t
+Element.VMixFreeverbDesc_t
+Element.VMixModDelayDesc_t
+Element.VMixOscDesc_t
+Element.VMixPannerDesc_t
+Element.VMixPitchShiftDesc_t
+Element.VMixPlateverbDesc_t
+Element.VMixPresetDSPDesc_t
+Element.VMixShaperDesc_t
+Element.VMixSubgraphSwitchDesc_t
+Element.VMixUtilityDesc_t
+Element.VMixVocoderDesc_t
 Email address mismatch
+Enable Filter
+Enable SIMD code path for diffusor processor
+Enable baking insize size field for probes when baking custom dimensions data
+Enable baking outside field for probes baking custom dimensions data
+Enable baking size and inout data for probes when baking custom dimensions data
 Enable caching listener probe neighborhood for pathing
 Enable custom HRTF loading
 Enable order-truncated Ambisonics HRTF loading
 Enable perspective correction for 3D audio
+Enabled
 Enables tracy profiling when baking steam audio data in Hammer
 Encipher Only
 EncodePointer
@@ -1897,6 +2536,7 @@ Enter
 Enter PEM pass phrase
 EnterCriticalSection
 Enterprises
+Envelope Amount
 Ep0uλ\ebq
 Eric Young's PKCS#1 RSA
 Error in encoding\n
@@ -1919,9 +2559,9 @@ ExtractFilePath@CBufferString@@QEAAPEBDPEBD_N@Z
 ExtractModuleMetadata
 EȉL$`E3
 EȋA\bA
-E̋D$8D
 EωL$8H
 EӀ:0u
+F Hc~0H
 F#bgn?MwN
 F$9~ s
 F$A9~ s
@@ -1929,6 +2569,31 @@ F,mZq\e\vn
 FILE pointer
 FILE_CTRL
 FILE_READ
+FILTER_ALLPASS
+FILTER_ALL_CHANNELS
+FILTER_BANDPASS
+FILTER_CHANNEL_SET_MAX
+FILTER_HIGHPASS
+FILTER_HIGH_SHELF
+FILTER_LEFT_ONLY
+FILTER_LOWPASS
+FILTER_LOW_SHELF
+FILTER_MID_ONLY
+FILTER_NOTCH
+FILTER_PASSTHROUGH
+FILTER_PEAKING_EQ
+FILTER_RIGHT_ONLY
+FILTER_SIDE_ONLY
+FILTER_SLOPE_12dB
+FILTER_SLOPE_1POLE_12dB
+FILTER_SLOPE_1POLE_18dB
+FILTER_SLOPE_1POLE_24dB
+FILTER_SLOPE_1POLE_6dB
+FILTER_SLOPE_24dB
+FILTER_SLOPE_36dB
+FILTER_SLOPE_48dB
+FILTER_SLOPE_MAX
+FILTER_UNKNOWN
 FIPS routines
 FIPS_CIPHERINIT
 FIPS_CIPHER_CTX_COPY
@@ -1954,18 +2619,40 @@ Failed to read
 Failed to read %d bytes\n
 Failed to save unsupported class
 February
+Feedback
+Feedback Depth
+Feedback Diffusion1
+Feedback Diffusion2
+Feedback Filter
+Feedback Gain
+Feedback Height
+Feedback Scale
+Feedback Width
+Feedforward Gain
 Field
 Field Type: %s\n
 FileTimeToSystemTime
+Filter
+Filter Slope
+Filter Type
 FindClose
 FindFirstFileExW
 FindNextFileW
+FindVertsInSphere@CVertexKDTree@@QEBAXAEAV?$CUtlVectorFixedGrowable@PEBM$0EA@H@@AEBV?$Vec3D@M@@MH@Z
 FioClose@@YAHPEAX@Z
 FioCreateFile@@YAHPEBDW4EFioAccessFlags@@W4EFioShareFlags@@W4EFioCreateMode@@IPEAPEAX@Z
 FioReadAt@@YAHPEAX_K0HPEAH@Z
 FixSlashes@CBufferString@@QEAAPEBDD@Z
 FixupPathName@CBufferString@@QEAAPEBDD@Z
 FlattenedSerializersVersion001
+Fld B Mod Gain
+Fld B Unvoiced Gain
+Fldb Compression Threshold
+Fldb Gain
+Fldb Gain Output
+Fldb Knee Width
+Fldb Limiter Threshold
+Fldb Noise Gate Threshold
 FlsAlloc
 FlsFree
 FlsGetValue
@@ -1979,12 +2666,16 @@ FreeEnvironmentStringsW
 FreeInts@CVariableBitStringBase@@AEAAXXZ
 FreeLibrary
 FreeMemoryBlock@CUtlString@@AEAAXXZ
+Freq Range End
+Freq Range Start
+Frequency (Hz
 Friday
 FtqvoH
 Fu\\ɷe01
 F|w)a]c
 F߷̀Y1
 G%uRH
+G,D8;I
 G1rGP1
 G2xVo
 GBd<}v
@@ -2043,7 +2734,9 @@ GOST89MAC
 GOST94
 GOST94-GOST89-GOST89
 GOST94-NULL-GOST94
+GPH;A\bt
 GRAPHICSTRING
+GT$8HcD$0L
 GT$HE3
 GXL9f
 G\bD80t
@@ -2113,11 +2806,15 @@ GetTickCount
 GetTimeZoneInformation
 GetUserObjectInformationW
 Gk\f\el
+Glide Time
 GlobalMemoryStatus
 Go^ldg
+Gradient
+Grain Sample Count
 G|A_A^A
 GŠD,㴉9CZ
 H 9Y\b
+H USVWATAUAVAWH
 H!D$ I
 H!T$0D
 H'H\tO
@@ -2134,7 +2831,6 @@ H5gRR
 H9+uEA
 H9/t\fH
 H9/u&L
-H95YJ\e
 H97u+A
 H99tjH
 H9:t\fH
@@ -2142,6 +2838,7 @@ H9>&X
 H9>t\bH
 H9A u
 H9A u\bH
+H9APt\tH9AH
 H9C v\n
 H9D$XH
 H9D$Xsi
@@ -2152,9 +2849,7 @@ H9K\bu\vH
 H9L$8v"H
 H9Q\bv"H
 H9X teH
-H9\\$8t\vH
-H9\\$Ht\vH
-H9\\$ht\vH
+H9\\$xt\vH
 H9]gt\nH
 H9^\bt/H9_\bu
 H9_ u
@@ -2168,6 +2863,7 @@ H9s(t\fA
 H9sHu\t
 H9t$0t\vH
 H9u t
+H9ugt\nH
 H9x\buSH
 H9{8t7I;_@t1
 H9{\bt
@@ -2175,6 +2871,7 @@ H9|$pt\vH
 H;C\bw
 H;C\bw H
 H;C\bw"H
+H;D$Pu\bM
 H;H\bv\a
 H;K\bt\bH
 H;XXs\v
@@ -2204,7 +2901,6 @@ HEX DUMP
 HH9|$8t\vH
 HH:mm:ss
 HL$3E
-HL;HPǅ0
 HLJ:OGN;KI
 HLJG:ON9;KIM
 HMAC GOST 34.11-94
@@ -2212,6 +2908,7 @@ HMAC routines
 HMAC-MD5
 HMAC-SHA1
 HMAC_Init_ex
+HPHcPHH
 HU>mA$_E
 H\bATAVAWH
 H\bAUAVAWH
@@ -2220,6 +2917,7 @@ H\bUSAWH
 H\bUSVWATAUAVAWH
 H\bUVATAWH
 H\bUVWATAUAVAWH
+H\bVWATAUAVAWL
 H\bVWAVH
 H\vMhL3
 H\vMpH\vMxH
@@ -2229,40 +2927,54 @@ Hash Algorithm
 HaveWriteLock_BlockReadsNow@CThreadRWLock_FastRead@@QEAAX_N@Z
 HaɈ|M\v
 HcC ;G
-HcD$ A
+HcD$ E
+HcD$ H
 HcD$8H
 HcD$8L
 HcD$DH
 HcD$P3
+HcD$PH
+HcD$PL
 HcD$`H
+HcD0\fH
 HcH\bH
 HcL$0H
 HcL$83
 HcL$LE
+HcL0\fA
 HcN(E3
 HcO(E3
+HcO\b3\v
 HcPX;W8s\nH
 HcRTH
 HcT$0HcL
 HcT$0L
 HcT$4L
 HcT$@L
+HcW\fHcO
 HcX H
+Hc\\$ H
+Hc\\$ I
 Hcl$$A
+Hco\b;o
 Hct$`3
 Hcz\bE3
 Hc|$ L
-Hc|$hA
 Heap32First
 Heap32ListFirst
 Heap32ListNext
 Heap32Next
+Height
 HelpSystem_001
 HfD9#A
+High Cutoff Freq
+High Cutoff Freq (Hz
+High EQ gain (dB
 Hold Instruction Call Issuer
 Hold Instruction Code
 Hold Instruction None
 Hold Instruction Reject
+Hold Time MS
 HostStateMgr001
 Hostname mismatch
 Hq,r/f
@@ -2275,6 +2987,7 @@ I2D_ASN1_TIME
 I2S_ASN1_IA5STRING
 I2V_AUTHORITY_INFO_ACCESS
 I9>t\bH
+I9D1\bu\vI
 I9T$(t
 I9}(tiH
 I;\bt\aH
@@ -2321,9 +3034,11 @@ ISSUING_DIST_POINT
 IV block
 I\bE3\tD
 I\tHA\t981G'dc
+I\tV_cosf
 I`Mb"(\ao
+IcY\fIcI
+Ic~0Mc
 If D\b?i
-If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries
 If set, all the probes near a source withing probe range are used to find paths instead of nearest probe
 If set, baked dimensions data is loaded
 If set, baked materials data is loaded
@@ -2338,14 +3053,21 @@ Inhibit Policy Mapping
 InitializeCriticalSectionAndSpinCount
 InitializeCriticalSectionEx
 InitializeSListHead
+Input Diffusion1
+Input Diffusion2
+Input Gain (dB
+Input Pan
 InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 Insert@CBufferString@@QEAAPEBDHPEBDH_N@Z
+Inside / outside estimator used when baking dimensions. 0 - direct sky fraction, 1 - multi-bounce escape. Any other value bakes mode 0
 InstallSchemaBindings
 Intel Hardware Cryptographic Service Provider
 InterlockedFlushSList
 International Organizations
+Interpolation Mode
+Interpolation Time
 Invalid certificate verification context
 Invalidity Date
 InvokeMiniDumpHandler
@@ -2365,6 +3087,7 @@ J:xrG\aDC
 J<0"0i3
 JJޔJJޘLLԘLL
 JOINT-ISO-ITU-T
+J\bUtlRBTree_FailedInsertDuplicate
 J\ty\bRF
 J_R=I
 J_spY
@@ -2372,25 +3095,32 @@ January
 Jy;B`]A
 JzuӖ?PD
 Jܾ\rY=QX
+K H;\rZ
 K(3\tD$4H
+K(H;\rP
 K+hcF&db
-K0H;\rֱ\v
+K0H;\rF
 K0HcQ\fD
 K32GetModuleBaseNameA
 K5!n^n
-K8H;\ṟ\v
+K8H;\r
 K=\nr9
 K@D;KD
+K@H;\r2
 KDF failed
 KERNEL32.DLL
 KERNEL32.dll
+KHH;\r
 KMBo8
 KV3 save transfer failed: %s
+KXH;\rg
 K[C7W
+K\aPlat_IsRunningOnCustomerMachine
 K\bE3\rW
+K\bH;\r
+K\bI9L9
 K\bLc@\b
-K\bSUAVH
-K\bUATAVI
+K\bUtlVectorMemory_Alloc
 K\vHC\n
 K]taM
 K`tBL
@@ -2404,8 +3134,11 @@ Key field (volume) missing in custom hrtf properties file. Setting it to 0 dB
 KeyValueCache001
 KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
 KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
-KhH;\rƱ\v
+KhH;\r6
+Knee Width (dB
+KpH;\r
 Ks %f %f %f\n
+KxH;\r
 K{"Kb,p
 K{(KĖK/VTR
 K£Qlǡ迢Kf
@@ -2413,6 +3146,7 @@ K£QlǣQlǣQlǣQlǣQlǣQlǣQlǣQl
 KڟBTB
 Kޜ?AT
 L$ 3҉D$ H
+L$ E3
 L$ SATAUAW
 L$ SUVWATAW
 L$ SUVWAUAVAW
@@ -2438,6 +3172,7 @@ L$0H;K\bt
 L$0LcB
 L$0SUATAUAVAWE
 L$0SUATAUAVAWH
+L$0t\f
 L$0t\rA
 L$4+L$8
 L$4+L$H
@@ -2459,6 +3194,7 @@ L$\bSUVATAW
 L$\bSUVAVAW
 L$\bSUVWATAU
 L$\bSUVWATAUAVAW
+L$\bSUVWATAUAVAWH
 L$\bSUVWATAUAW
 L$\bSUVWATAV
 L$\bSUVWAUAVAW
@@ -2477,9 +3213,9 @@ L$\bUATAUAVAWH
 L$\bUH
 L$\bUSAUAVAWH
 L$\bUSVWATAUAVAWH
+L$\bUSVWAUH
 L$\bUSWAUH
 L$\bUVAT
-L$\bUVATAUAVAWH
 L$\bUVATAUH
 L$\bUVW
 L$\bUVWATAUAVAW
@@ -2495,37 +3231,47 @@ L$\fHcL$d
 L$`LcB
 L$hH9\vH
 L$hM9<$tXH
-L$pD;@XvT
 L&&jL&&jl66Zl66Z~??A~??A
 L+#L\ek\bI
 L4uGv~;6
 L5^x|S
 L7\t?1\b
-L93t\tH
+L9#t\tH
 L9;t\tH
 L9B\bt\vH;B\bv
 L9[\bt-H;C\bv'E
 L9[\bt\nH;C\b
 L9[\bt\vH;C\bv
 L9a u
-L9d$0t\vH
 L9d$@t\vH
 L9d$Ht\vH
 L9d$Pt\vH
-L9d$Xt\vH
+L9mpt\nH
 L9nPu
 L9sPu
 L9s\btgL
+L9ugtnH
 L9{Pu
 L9{\bt\vH;C\bv
 L9|$0t\vH
 L;D$pu
+L;\rdt\b
+L;\rgy\b
+L;\rtx\b
 L;d$PA
 L;l$PA
 L?n(Zy
 LAM\rhaI)|pL<\b
 LCMapStringEx
 LCMapStringW
+LFO Amount
+LFO Rate
+LFO Shape
+LFO_SHAPE_NOISE
+LFO_SHAPE_SAW
+LFO_SHAPE_SINE
+LFO_SHAPE_SQUARE
+LFO_SHAPE_TRI
 LINEBUFFER_CTRL
 LIST_ADD
 LK~lO
@@ -2540,10 +3286,13 @@ L\em\bL\eu
 L\n/8x
 LanmanServer
 LanmanWorkstation
+Late Reflections
 Lc&D;f
 Lc'D;g
+Lc6D;v
 Lc7D;w
 LcA<E3
+LcB\fHcJ
 LcD$0H
 LcD$0J
 LcD$8H
@@ -2556,11 +3305,15 @@ Lc\\$pI
 Lcd$0J
 Lcd;0D;d
 Lcl$0E
+Lcm@D
+LcmXD
 Lct$8I
 Lc|$4H
 Lc|$PA
 Lc|$hL
 LeaveCriticalSection
+Left Only
+Limiter Ratio
 Load certs from files in a directory
 Load file into cache
 LoadKV3@@YA_NPEAVCKV3Arena@@PEAVCUtlString@@PEAVCUtlBuffer@@AEBUKV3ID_t@@PEBDI@Z
@@ -2577,6 +3330,9 @@ LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
 LoggingSystem_Log@@YA?AW4LoggingResponse_t@@HW4LoggingSeverity_t@@AEBULoggingRareOptions_t@@PEBDZZ
 LoggingSystem_RegisterLoggingChannel
+Low Cutoff Freq
+Low Cutoff Freq (Hz
+Low EQ gain (dB
 LwH'LwH'LwH'LwH'LwH'LwH'LwH'LwH
 Lۻ9)PF
 Lܠ=\boWnS
@@ -2604,6 +3360,10 @@ MODEL_PROCESSING_SERVICES_INTERFACE_001
 MODULE_INIT
 MODULE_LOAD_DSO
 MODULE_RUN
+MPropertyDescription
+MPropertyFriendlyName
+MPropertySuppressEnumerator
+M\bUtlVectorMemory_CalcNewAllocationCount
 M\rLAI)haL<|p\t\t\b
 M`~\efff
 MakeAbsolutePath@CBufferString@@QEAAPEBDPEBD0@Z
@@ -2639,6 +3399,8 @@ Microsoft Server Gated Crypto
 Microsoft Smartcardlogin
 Microsoft Trust List Signing
 Microsoft Universal Principal Name
+Mid EQ gain (dB
+Mid Only
 MinghuaQu
 MinghuaQuS
 MinghuaQuw
@@ -2646,6 +3408,8 @@ Minimum distance (in meters) of a source from a surface for the purposes of ener
 Missing custom_hrtfs key field in custom hrtf properties file. Cannot load
 Mj-\fd
 Mm/JhA
+Mod Depth
+Mod Rate
 ModelDocUtils001
 Module32First
 Module32Next
@@ -2658,6 +3422,7 @@ MultiByteToWideChar
 M|\rK
 M}8vhJ
 M̪MT̪MT
+MωL$ H
 N2Lɭ3
 N5dIn9
 NAME_CONSTRAINTS
@@ -2706,13 +3471,14 @@ NUMERIC
 NUMERICSTRING
 NWzl\n
 NXfT>o
-N\aPlat_NonFatalErrorFunc
 N\bA+̉k\b
 N\bD9y\b
+N\bUtlVectorMemory_FailedAllocation
 N\ft#A
 N`UaK
 NavGameTest001
 NavSystem001
+Nc\\\b\fF
 Negative
 NetApiBufferFree
 NetStatisticsGet
@@ -2746,7 +3512,7 @@ Not After
 Not Before
 Not safe to 'new' this class due to alignment requirements
 November
-Number of rays to trace for estimating inside outside status of a probe
+Number of reflection simulations to run when baking occlusion. Potential way to reduce noise
 Nz3I#B
 O'-U\tND
 O1NzNfj'fGv
@@ -2835,11 +3601,13 @@ Occlusion: Data not stored in KV3 format. Rebake.\n
 Occlusion: Filesystem not initialized.\n
 Occlusion: Imported %d probes from baked file (%s).\n
 Occlusion: Loaded baked data file (%s).\n
+Occlusion: Spatially filtering occlusion data (mode = %d)\n
 Occlusion: Unable to load baked data file (%s).\n
 October
-OfZn-}|be
+Offset
 Oh44\\h44\\Q
 Only Some Reasons
+Only Tails On Fade Out
 OpenSSL 1.0.2j  26 Sep 2016
 OpenSSL CMAC method
 OpenSSL DH Method
@@ -2855,6 +3623,10 @@ OpenSSL default
 OpenSSL default user interface
 OpenSSL: FATAL
 Order
+Output Balance
+Output Gain
+Output Gain (dB
+Oversampling
 Ow~㶨F
 OхɉK\bL
 OхɉK\fL
@@ -2864,6 +3636,8 @@ P1\t98
 P3҈D$HH
 P?Nbp
 PAGN_4
+PANNER_TYPE_EQUAL_POWER
+PANNER_TYPE_LINEAR
 PARAMETERS
 PARSE_BAG
 PARSE_BAGS
@@ -3059,6 +3833,7 @@ PSPECIFIED
 PUBLIC KEY
 P\bHcEHH
 P\f~\bH
+P\tV_expf
 P\tt\f8C:u\aH
 P_ÉL$0H
 P`3\bD$8H
@@ -3066,6 +3841,7 @@ Packed store %s with refcount > 0.\n
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
+Parallel
 ParallelForSharedCode
 Parameters
 Parse error on %s: %s\n
@@ -3080,14 +3856,20 @@ Pathing: Loaded baked data file (%s).\n
 Pathing: No probes found in baked data file. Pathing disabled.\n
 Pathing: Unable to load baked data file (%s).\n
 Pathing: Unable to read from baked data file (%s). Pathing disabled.\n
+Peak Mode
+Peak mode
 PeekNamedPipe
 Peer haven't sent GOST certificate, required for selected ciphersuite
 Permanent Identifier
 Permitted
 Perspective correction factor, ratio of screen size and view depth from screen, for 3D audio
+Phase (degrees
+Phase Invert
 Phonon_Log
 Phttp://cacerts.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crt0\t
 PhysicsBuilderMgr001
+Pitch Shift
+Plat_CPUTickFrequency
 Plat_ExitProcess
 Plat_FatalError
 Plat_FloatTime
@@ -3098,6 +3880,8 @@ Policy Qualifier User Notice
 Polynomial
 Pop@CTSListBase@@QEAAPEAUTSLNodeBase_t@@XZ
 PostProcessingSystem_001
+Pre-delay (ms
+Prefilter
 Prime
 Printf@CUtlBuffer@@QEAAXPEBDZZ
 Private
@@ -3105,6 +3889,7 @@ Private Key
 Private-Key
 Private-Key: (%d bit)\n
 Privilege Withdrawn
+Proc Type
 Proc-Type
 Proc-Type: 4
 Process32First
@@ -3132,6 +3917,7 @@ QZ^&E3
 Qhttp://cacerts.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crt0
 Qh٢%v
 Qjh/T
+Quality
 QueryPerformanceCounter
 R/Qs߬}MF
 R2I_CERTPOL
@@ -3181,6 +3967,7 @@ RFC 5639 curve over a 320 bit prime field
 RFC 5639 curve over a 384 bit prime field
 RFC 5639 curve over a 512 bit prime field
 RIPEMD160
+RMS Time MS
 RM~]qY
 RSA Data Security, Inc
 RSA Data Security, Inc. PKCS
@@ -3264,18 +4051,22 @@ RSA_verify_PKCS1_PSS_mgf1
 RSTUVWX
 R\b;Q\f
 R\r1>Vp
+Radius factor to multiply the distance between probes with to get the radius withing which probes are averaged
 RaiseException
 ReadConsoleInputW
 ReadConsoleW
 ReadFile
 Reason
 Reasons
-Reflections...\n
+Reflections ] Total Time = %.2f seconds. (Simulation = %.1f%% Accumulate = %.1f%%)\n
+Reflections... (rays: %d x %d) (bounces: %d) (bidirectional: %s) (#runs: %d)\n
 RegisterConCommand: Unknown error registering con command "%s"!\n
 RegisterConVar: Unknown error registering convar "%s"!\n
 RegisterEventSourceW
 Registered ID
 Release
+Release Time MS
+Release time (ms
 ReleaseSRWLockExclusive
 Relinquish@CBufferString@@QEAAPEADW4EAllocationOption_t@1@@Z
 Remove From CRL
@@ -3303,7 +4094,6 @@ ResourceCompiler/SteamAudio/CustomDataDefaults/FilterUsingVolumes
 ResourceCompiler/SteamAudio/CustomDataDefaults/GridGenerationType
 ResourceCompiler/SteamAudio/CustomDataDefaults/GridSpacing
 ResourceCompiler/SteamAudio/CustomDataDefaults/HeightAboveFloor
-ResourceCompiler/SteamAudio/CustomDataDefaults/OcclusionPathing
 ResourceCompiler/SteamAudio/CustomDataDefaults/OcclusionReflection
 ResourceCompiler/SteamAudio/CustomDataDefaults/OcclusionReflectionBounces
 ResourceCompiler/SteamAudio/CustomDataDefaults/OcclusionReflectionRays
@@ -3348,12 +4138,15 @@ Reverb: Unable to create serialized object. (%d)\n
 Reverb: Unable to load baked data file (%s). Reverb disabled.\n
 Reverb: Unable to load baked data file (%s).\n
 Reverb: Unable to load probe batch. (%d)\n
+Right Only
 Right@CUtlString@@QEBA?AV1@H@Z
+Room Size
 RtlCaptureContext
 RtlLookupFunctionEntry
 RtlPcToFileHeader
 RtlUnwindEx
 RtlVirtualUnwind
+Run simulation from both source and listner and average the results. Potential way to reduce noise
 RxT\f0<1
 RϠLqH!)8
 S"8\b\e
@@ -3544,6 +4337,9 @@ SUAUAVAW
 SUAUAVAWD
 SUAUAVAWL
 SUAVH
+SUBGRAPH_INTERPOLATION_KEEP_LAST_SUBGRAPH_RUNNING
+SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE
+SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT
 SUITEB128
 SUITEB128C2
 SUITEB128ONLY
@@ -3556,9 +4352,11 @@ SUVATAVAW
 SUVATAW
 SUVAUAVAW
 SUVAVAW
+SUVAVH
 SUVWATAU
 SUVWATAUAV
 SUVWATAUAVAW
+SUVWATAUAVAWH
 SUVWATAUAVH
 SUVWATAUAW
 SUVWATAV
@@ -3581,6 +4379,7 @@ SUWAVAWH
 SUWAW
 SVATAU
 SVATAUAW
+SVAUAVH
 SVAVAW
 SVAVH
 SVWATAU
@@ -3606,6 +4405,7 @@ SWAUAV
 SWAUAVAW
 SWAVAW
 SWAVH
+SWAWH
 SXNETID
 SXNET_add_id_INTEGER
 SXNET_add_id_asc
@@ -3648,12 +4448,18 @@ SetStdHandle
 SetUnhandledExceptionFilter
 Sets the number of threads used for realtime reflection by Steam Audio
 ShfPQ
+Side Only
+SideChain Highpass
 Signature Algorithm
 Signature verification failed
+Size Max
+Size Min
 SleepConditionVariableSRW
 Slice@CUtlString@@QEBA?AV1@HH@Z
+SmartPropsSystem_001
 SoundOpSystem001
 SoundOpSystemEdit001
+SoundPicker
 SoundService_001
 SoundSystem001
 SoundSystemLowLevel
@@ -3678,6 +4484,7 @@ Split@CSplitString@@AEAAXPEBDHPEAPEBDH_N@Z
 StO9>T
 Stack depth limit hit (%d
 Stack part of OpenSSL 1.0.2j  26 Sep 2016
+Stages
 StatsService_001
 SteamAudio
 SteamAudio001
@@ -3687,11 +4494,14 @@ SteamAudioPathSettings_t
 SteamAudioReverbClusteringSettings_t
 SteamAudioReverbCompressionSettings_t
 SteamAudioReverbSettings_t
+Strength
+String@CUtlSymbolTable@@QEBAPEBDVCUtlSymbol@@@Z
 StripExtension@CBufferString@@QEAAPEBD_N@Z
 StripExtension@CUtlString@@QEBA?AV1@XZ
 StripTrailingSlash@CBufferString@@QEAAPEBDXZ
 StripTrailingSlash@CUtlString@@QEAAXXZ
 Strong Extranet ID
+Subgraphs
 Subject Information Access
 Subject OCSP hash
 Subject Public Key Info:\n
@@ -3713,6 +4523,7 @@ T$(Lcl
 T$08L$0t
 T$0H9F
 T$0Hc\r
+T$0fff
 T$43҉D$`C
 T$8SUATAUAVAWH
 T$8SUATAUAVAWL
@@ -3722,7 +4533,6 @@ T$\tI\v
 T$\vI\v
 T$`fA
 T$hE3\b
-T$pH9
 T$xD;D$x
 T61STRING
 T;6P/Arc
@@ -3792,12 +4602,15 @@ T\ew®pcN
 T\viMOb
 T^h<U_i=V`j>Wak?Xbl@YcmAZdnB[eoC\\fpD]gq
 T`00P`00P
+TargetCastForModify
 TerminateProcess
 TestScriptMgr001
+TextBlock
 TextLayout_001
 Tf %f %f %f\n\n
 The amount of directional detail in the rendered audio by Steam Audio
 The amount of directional detail in the simulated by Steam Audio
+The maximum height (from the ground) we allow probes to be added above the initial layer. (meters
 The maximum number of rays that can be traced for volumetric occlusion by Steam Audio
 The maximum number of simultaneous sources that can be modeled by Steam Audio
 The maximum number of times any ray can bounce when using Steam Audio
@@ -3810,7 +4623,10 @@ This variable is checked by soundstack to globally enabling pathing for audio pr
 Thread32First
 Thread32Next
 ThreadAtomicNotifyOne@@YAXPEBI@Z
+Threshold (dB
+Threshold detection time (ms
 Thursday
+Time Scale
 Time Stamp signing
 Time Stamping
 TlsAlloc
@@ -3877,6 +4693,7 @@ USVATAUAVH
 USVATAUAWH
 USVATAUH
 USVAUAVH
+USVAUH
 USVWATAUAVAW
 USVWATAUAVAWH
 USVWATAUAVH
@@ -3910,21 +4727,24 @@ UVATAUAW
 UVATAV
 UVATAVAW
 UVATAVAWH
+UVATH
 UVAUAVAW
 UVAUAVAWH
+UVAUAVH
+UVAUAWH
 UVAUH
 UVAVAW
-UVAVAWH
 UVAVH
 UVAWH
 UVWATAU
 UVWATAUAV
 UVWATAUAVAW
+UVWATAUAVAWD
 UVWATAUAVAWH
-UVWATAUAVAWI
 UVWATAUAW
 UVWATAUH
 UVWATAW
+UVWAUAVH
 UVWAV
 UVWAVAW
 UVWAVAWH
@@ -3970,12 +4790,14 @@ Unspecified
 Unsupported KV3 basic type '%s' (%d
 Unsupported extension feature
 Unused
+Upward Ratio
 Usage: snd_steamaudio_halton_sequence <order> <numsamples>.\n
+Use alternate probe lookup algorithm to query dimensions for listener position based on kd-tree of probe points
+Use alternate probe lookup algorithm to query occlusion for source and listener position based on kd-tree of probe points
 Use compressed reverb data if available
 Ut]<E\e0
 Uz_G3
 U|r*C
-UЉu؉u
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -3997,6 +4819,7 @@ VATAUAVAW
 VATAUAW
 VATAV
 VATAW
+VATAWH
 VAUAV
 VAUAVAW
 VAUAW
@@ -4007,6 +4830,8 @@ VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
+VDataChoice
+VDataChoice( %s
 VEngineCvar007
 VFileSystem017
 VFųJ9L
@@ -4015,12 +4840,52 @@ VISIBLE
 VISIBLESTRING
 VIgq qC
 VM%G]f
+VMIX_CHAN_LEFT
+VMIX_CHAN_MID_SIDE
+VMIX_CHAN_MONO
+VMIX_CHAN_RIGHT
+VMIX_CHAN_STEREO
+VMIX_CHAN_SWAP
 VMS_BIND_SYM
 VMS_LOAD
 VMS_MERGER
 VMS_UNLOAD
 VMaterialSystem2_001
 VMediaFoundation001
+VMixAutoFilterDesc_t
+VMixBoxverbDesc_t
+VMixChannelOperation_t
+VMixConvolutionDesc_t
+VMixDelayDesc_t
+VMixDiffusorDesc_t
+VMixDualCompressorDesc_t
+VMixDynamics3BandDesc_t
+VMixDynamicsBand_t
+VMixDynamicsCompressorDesc_t
+VMixDynamicsDesc_t
+VMixEQ8Desc_t
+VMixEQFilterDesc_t
+VMixEffectChainDesc_t
+VMixEnvelopeDesc_t
+VMixFilterChannelSet_t
+VMixFilterDesc_t
+VMixFilterSlope_t
+VMixFilterType_t
+VMixFlangerDesc_t
+VMixFreeverbDesc_t
+VMixLFOShape_t
+VMixModDelayDesc_t
+VMixOscDesc_t
+VMixPannerDesc_t
+VMixPannerType_t
+VMixPitchShiftDesc_t
+VMixPlateverbDesc_t
+VMixPresetDSPDesc_t
+VMixShaperDesc_t
+VMixSubgraphSwitchDesc_t
+VMixSubgraphSwitchInterpolationType_t
+VMixUtilityDesc_t
+VMixVocoderDesc_t
 VP4003
 VPK directory for '%s' corrupt
 VPhysics2_Interface_001
@@ -4031,22 +4896,24 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+VUUUE3
 VWATAU
 VWATAUAV
 VWATAUAVH
 VWATAUAW
 VWATAUAWH
+VWATAUH
 VWATAVAW
 VWATAVAWH
 VWATAW
 VWAUAVAW
+VWAUAVAWH
 VWAVAW
 VWAVH
 VWAWH
 VWSUATAUAVAW
 VWebm001
 VY5[;o
-V\aPlat_RegisterModule
 V\b9^\bu
 V\rO:e
 V\v6I]Dc
@@ -4101,10 +4968,13 @@ W\bA9_\bu
 W\bD9*u
 W\bE9o\bu
 W\bI;P\bwwH9Q\bwqI
+W\b\n
+W\v\rsa
 W`c[\e\fF
 Wait@CThreadSyncObject@@QEAA_NI@Z
 WakeAllConditionVariable
 Wednesday
+Wet Mix
 WideCharToMultiByte
 Wmn|CH
 WorldRendererMgr001
@@ -4117,7 +4987,6 @@ Wɉl$hL
 Wɉt$xL
 X @8u/t
 X @l(&q
-X UVWH
 X)ؓ\rae
 X,,tX,,t4
 X.509 part of OpenSSL 1.0.2j  26 Sep 2016
@@ -4260,29 +5129,33 @@ X< w\eI
 XA_A]A
 XA_A^A
 XA_A^A]A
+XD9w0~\vH
+XHcD$PH
 XLuC'4
 XNU`{3
+XTo\f
+X\vD$DI
 Xu\eD
 X醑U[D
 Y&\f -aY
 Y93a=7c
 Y:D\n5
 Y;C;8V蓶m
+YD$TfD
 YD+ȸi
 YWQa:B
 Y\bE3Ɉ\\$ E3
 Y\vl\rm p
 YedcCH
-Yl$T\fIH
 You must type in
 You need to read the OpenSSL FAQ, http://www.openssl.org/support/faq.html
 Z"T-47\f8
+Z4w\tA
 ZFDGn
 ZIޱZI
 ZRrˬ#D
 ZXF,`i
 Z\aGdD
-Z\bV_DoubleToString_Unsafe
 ZdOt\n
 Ze2Zh
 Zf:Di
@@ -4319,7 +5192,6 @@ aPw0öMB
 aRandomFloat
 aRecord
 aReleaseThreadHandle
-aThreadInMainThread
 aUU[⤙Q7\v
 a\eZDi
 a`3\tAd3
@@ -4464,7 +5336,6 @@ b9o\bu
 b;L$ u
 b;\bt\fH
 b;\nt
-b;{P}WH
 b@t=H
 bA;V\f~\bI
 bA\vȉKD
@@ -4480,16 +5351,24 @@ bFEMh\f
 bH9(u
 bH;l$X
 bH@H9xqI
+bHc\aH
 bJcL0\b
 bL3D̀I
 bL3D݀I
 bPb:L7X
-bThreadJoin
+bThreadInMainThread
 bThreadSleep
 bUVWATAUAVAW
 bUVWATAUAVAWH
 bUVWAVAWH
+bV_DoubleToString_Unsafe
 bV_FixDoubleSlashes
+bV_FloatToString_Unsafe
+bV_IndexAfterPrefix
+bV_Int16ToString_Unsafe
+bV_Int32ToString_Unsafe
+bV_Int64ToString_Unsafe
+bV_IsAbsolutePath
 bV_StringParseError
 bV_StringToBool
 bV_StringToColor
@@ -4506,14 +5385,12 @@ bV_StringToVector
 bV_StringToVector2D
 bV_StringToVector4D
 bV_StringToVectorWS
-bV_UInt32ToString_Unsafe
 bV_UInt64ToString_Unsafe
-bV_UnqualifiedFileName
 bW\a|T1
+b\aPlat_NonFatalErrorFunc
 b\b 0\b\b  \b\t
 b\eQEy
 b\fzUkm
-b\ng_pMemAlloc
 b\t 0\b\t
 b\t\n\vSHA256 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
 b\vȉJ\fA
@@ -4609,6 +5486,7 @@ bfB9<A}1L
 bfE\v
 bgD$ȸA
 bh.b|C
+biased
 bignum out of range
 bignum routines
 bignum too long
@@ -4657,6 +5535,7 @@ br~s-v7
 bs-BA-Latn
 bs-ba-latn
 bu&L;c
+bu\aO9d
 buffer
 buffer too small
 buildingName
@@ -5126,6 +6005,7 @@ ctx->cipher->block_size == 1 || ctx->cipher->block_size == 8 || ctx->cipher->blo
 ctx->digest->md_size <= EVP_MAX_MD_SIZE
 ctx->length <= (int)sizeof(ctx->enc_data
 ctx->tmp_len <= 3
+current_metadata_table_stack
 custom.dimensions
 custom.materials
 custom.occlusion
@@ -5135,11 +6015,13 @@ d %d %d
 d %d %d %d
 d e not congruent to 1
 d$ AUAVAW
+d$ UAVAWH
 d$ fD
 d$(Lc
-d$0D87
+d$0fff
 d$8u"H
 d$8uKH
+d$HLc"A
 d$PxSL
 d$dD;d$l
 d$pu>H
@@ -5213,7 +6095,6 @@ dNSDomain
 dSAQuality
 dVPdVP{˄a{˄a
 d[kHy
-d\bV_FloatToString_Unsafe
 d_r_0\e
 d`D-laM
 daE<<0\f6
@@ -5399,6 +6280,7 @@ eYe80D
 eYs/MA\b`}ڷN
 e\aPm
 e\bA_A^A]A
+e\bThreadJoin
 e\e\e\e\e\e\e\eQ
 e\tcCPtH
 e\vUE
@@ -5467,6 +6349,7 @@ ecp_nistz256_pre_comp_new
 ecp_nistz256_set_words
 ecp_nistz256_windowed_mul
 edata
+editor
 ee/?P
 efffffff
 egUkr݅f
@@ -5613,6 +6496,7 @@ f9\bu3HcH<H
 f9\nt\tH
 f9|$ tyf
 f;Zv9l\r
+f;s\b
 f<<0A1pq
 f<>28
 f@HcC(H
@@ -5639,14 +6523,15 @@ fKS1߃έ9T
 fLct$0
 fN46R
 fPw.\vM
+fR\bp\a
 fS{ggRcjh
 fTSъ8,x
 fX!t5
-f\b9\r{\f
+f\b9\r\v
 f\eփZ
 f\trixZ
 f\vǉD$HH
-f`\v0
+f`\v0!3\f
 f`\vP\n0
 facsimileTelephoneNumber
 failed loading private key
@@ -5683,7 +6568,6 @@ format error in certificate's notAfter field
 format error in certificate's notBefore field
 forward
 fp\vP!\n
-fp\v`0C
 fp\v`\nP
 fpnS\bia
 freshestCRL
@@ -5708,6 +6592,7 @@ g>\tk
 g@Lcl;0A
 gN(dq
 gXC.nT\v\e
+gain of wet signal (dB
 gax܁HY
 generate cryptogram
 generationQualifier
@@ -5741,6 +6626,7 @@ g|FeW\v
 g}1\n^X
 gٞwgٞw
 gۂpSPo
+h;PXvI
 hA_A]A
 hA_A^A]A
 hJxRX
@@ -6322,6 +7208,7 @@ iplReflectionsBakerBake
 iplReverbEstimatorApplyScale
 iplReverbEstimatorCreate
 iplReverbEstimatorRelease
+iplSceneAnyHit
 iplSceneClosestHit
 iplSceneCommit
 iplSceneCreate
@@ -6388,7 +7275,6 @@ j55_j55
 jLTKTz
 jNXcA뢐X
 jV*d9O
-j\tV_powd
 j\vIP{s
 j]*\r2q
 janetMailbox
@@ -6403,6 +7289,7 @@ jurisdictionLocalityName
 jurisdictionST
 jurisdictionStateOrProvinceName
 j˾9JLX
+k VATAVH
 k+ka\\T
 k/.fG
 k/\b\tA
@@ -6414,8 +7301,8 @@ kECDHr
 kEECDH
 kL@8o(u
 kXKlQT
+k\aPlat_RegisterModule
 k\bA8m(u\vI
-k\tV_powf
 kdf parameter error
 keepalive
 kernel32
@@ -6492,10 +7379,12 @@ l$8H3D$0H3l
 l$@Ic.L
 l$@u\bI
 l$@x3
+l$DD9d$h
+l$HA_A^A]A
 l$Ht4H
+l$Pw\vE
 l$XE3
 l$XHci
-l$X\fIL
 l$XfA
 l$hfff
 l$pLcopI
@@ -6505,7 +7394,6 @@ l0+!n0Z
 l7ql`R2lWf
 l:ArR
 lZrNlZrN
-l\tV_qsort
 laM-\\SO
 language
 last octet invalid
@@ -6546,46 +7434,157 @@ lৢXU\e
 m>FC*a7H
 mPG@j^h
 mXRecord
-m\tV_qsort_s
 m\ta=\ruWb
 m_aabb
+m_bApplyAntialiasing
+m_bAutoMakeupGain
+m_bBassMono
+m_bEnable
 m_bEnableClustering
 m_bEnableCompression
+m_bEnableFilter
 m_bEnablePathing
 m_bEnableReflections
+m_bEnabled
 m_bExportScene
 m_bNeedsSort
+m_bOnlyTailsOnFadeOut
+m_bParallel
+m_bPeakMode
+m_bPhaseInvert
+m_bSolo
+m_bandDesc
 m_clusteredProbes
 m_compressedClusteredData
 m_compressedData
+m_effectName
+m_feedbackFilter
 m_field
+m_filter
+m_filterType
+m_flAttackTimeMS
+m_flBandwidth
+m_flBassFreq
+m_flComplexity
+m_flCompressionRatio
+m_flCutoffFreq
+m_flDamp
+m_flDecay
+m_flDelay
+m_flDelayGain
+m_flDepth
 m_flDepthThreshold
+m_flDiffusion
+m_flDirectGain
+m_flEnvelopeAmount
+m_flFeedback
+m_flFeedbackDepth
+m_flFeedbackDiffusion1
+m_flFeedbackDiffusion2
+m_flFeedbackGain
+m_flFeedbackHeight
+m_flFeedbackScale
+m_flFeedbackWidth
+m_flFeedforwardGain
+m_flFreqRangeEnd
+m_flFreqRangeStart
+m_flGlideTime
+m_flHeight
+m_flHighCutoffFreq
+m_flHoldTimeMS
 m_flIRDuration
+m_flInOutBounceLoss
+m_flInOutMaxPathLength
+m_flInputDiffusion1
+m_flInputDiffusion2
+m_flInputPan
 m_flInsideThreshold
+m_flInterpolationTime
+m_flLFOAmount
+m_flLFORate
+m_flLateReflections
+m_flLimiterRatio
+m_flLowCutoffFreq
+m_flModDepth
+m_flModRate
+m_flOutputBalance
+m_flOutputGain
 m_flOutsideThreshold
+m_flPhase
+m_flPitchShift
+m_flPreDelayMS
+m_flPrefilter
 m_flProbePathRange
 m_flProbeVisRadius
 m_flProbeVisThreshold
 m_flQuality
+m_flRMSTimeMS
+m_flRatio
+m_flRatioAbove
+m_flRatioBelow
+m_flReleaseTimeMS
+m_flRoomSize
+m_flSCHighPassFreq
+m_flSize
+m_flSizeMax
+m_flSizeMin
 m_flSizeThreshold
 m_flSpacing
+m_flStrength
+m_flTaps
+m_flTimeScale
+m_flWetMix
+m_flWidth
+m_fldBModGain
+m_fldBUnvoicedGain
+m_fldbCompressionThreshold
+m_fldbDrive
+m_fldbGain
+m_fldbGainInput
+m_fldbGainOutput
+m_fldbHigh
+m_fldbKneeWidth
+m_fldbLimiterThreshold
+m_fldbLow
+m_fldbMid
+m_fldbNoiseGateThreshold
+m_fldbOutputGain
+m_fldbThresholdAbove
+m_fldbThresholdBelow
+m_freq
 m_grid
+m_interpolationMode
 m_movables
 m_nAmbisonicsOrder
 m_nAmbisonicsOrderInsideSizeField
 m_nAmbisonicsOrderOutsideField
+m_nBandCount
 m_nBands
 m_nBins
+m_nChannelSet
 m_nChannels
 m_nChunkHashesSize % sizeof( ChunkHashFraction_t ) ) == 0
 m_nCubeMapResolution
+m_nDebugBand
+m_nFilterSlope
+m_nFilterType
+m_nGrainSampleCount
+m_nInOutMaxBounces
+m_nInOutMode
+m_nLFOShape
 m_nNumBounces
 m_nNumRays
 m_nNumVisSamples
+m_nOffset
+m_nOversampleFactor
 m_nPackFileNumber
 m_nProbes
+m_nProcType
+m_nQuality
 m_nReflectionBounces
 m_nReflectionRays
+m_nShape
+m_name
 m_pClusteredProbeBatch
 m_pCompressedData
 m_pProbeBatch
@@ -6597,6 +7596,9 @@ m_reverbCompressionSettings
 m_reverbSettings
 m_scene
 m_settings
+m_stages
+m_subgraphs
+m_type
 m_vEnd
 m_vMaxBounds
 m_vMinBounds
@@ -6753,7 +7755,6 @@ n03>Pu
 n>8;I
 nH$$lH$$l
 nH9C\b
-nHcMȉD$8
 nSRecord
 nStf,a
 nSw}Z\tu
@@ -6763,7 +7764,10 @@ n\a<4x
 n\bE;o\f
 n\tIPSec/IKE/Oakley curve #3 over a 155 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
 n\tIPSec/IKE/Oakley curve #4 over a 185 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
-n`\t0\bP
+n_MakeGlobalSymbol
+n_V_strncmp
+n_V_strncpy
+n_V_strnicmp_fast
 name constraints minimum and maximum not supported
 name too long
 name translation failed
@@ -6787,6 +7791,7 @@ nextUpdate
 nextupdate before thisupdate
 nfA9\tt\tI
 nffffff
+ng_pMemAlloc
 niv <= EVP_MAX_IV_LENGTH
 nkey <= EVP_MAX_KEY_LENGTH
 nl$8SUATAUAVAWI
@@ -6926,7 +7931,6 @@ notBefore
 noticeNumbers
 noticenos
 noticeref
-np\t`\bP
 nsBaseUrl
 nsCaPolicyUrl
 nsCaRevocationUrl
@@ -7019,6 +8023,7 @@ originatorInfo
 originatorSignatureValue
 os.length <= (int)sizeof(ret->session_id
 osM@\vQ
+oscType
 ot$ fA
 ot$0fA
 ot$0fD
@@ -7252,12 +8257,14 @@ q not prime
 q2'<Kv
 qE7\t8\e
 qF{qc\t
+qMg#8
 qOy*o
 qTm_fC
 qangle
 qcStatements
 qualifiers
 qualityLabelledData
+quj*se
 quz-BO
 quz-EC
 quz-PE
@@ -7265,13 +8272,14 @@ quz-bo
 quz-ec
 quz-pe
 r&I|C
+r0\fP
 r130801120000Z
 r210429000000Z
 r220801000000Z
 r241012000000Z
 r250507000000Z
 r260805000000Z
-r260929181939Z0
+r261006011440Z0
 r271008235959Z0a1\v0\t
 r311109235959Z0b1\v0\t
 r360428235959Z0i1\v0\t
@@ -7290,12 +8298,12 @@ rFC822localPart
 rFur`7\t
 rMinghuaQu\f
 rOH+ЋA
+rR\tp!\f
 rService-0x
 rUHz4Z}\r
 rX&O0
 rZ1VwGf5
 r\bSA|X=G
-r\bV_Int16ToString_Unsafe
 r\f\v\n\t\bSHA512 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
 r\tVr.>T
 r`\fP\v0
@@ -7395,7 +8403,7 @@ rn\b!AECO
 roleOccupant
 roomNumber
 root ca not trusted
-rp\f0\vP!+\n
+rp\f0\vP!"\b
 rp\fP\v0
 rp\fP\v0!\b
 rp\f`\v0
@@ -7543,7 +8551,6 @@ sTrusted Uses:\n%*s
 sUnknown Qualifier
 sUser Notice:\n
 sVersion: %ld (0x%lX
-s\bV_Int32ToString_Unsafe
 s_%03d.vpk
 sa.mtl
 safeContentsBag
@@ -7827,15 +8834,31 @@ sms-FI
 sms-fi
 snd_boxverb_simd
 snd_boxverb_simd_svf
+snd_diffusor_simd
 snd_hrtf_distance_behind
 snd_steamaudio_active_hrtf
 snd_steamaudio_ambisonics_correction_type
 snd_steamaudio_baked_data_stats
+snd_steamaudio_baked_dimensions_probelookup_usealternate
+snd_steamaudio_baked_occlusion_air_absorption_coefficient
 snd_steamaudio_baked_occlusion_mode
 snd_steamaudio_baked_occlusion_pathing_deviation_slope
 snd_steamaudio_baked_occlusion_pathing_exponent
+snd_steamaudio_baked_occlusion_probelookup_usealternate
 snd_steamaudio_baked_occlusion_reflection_factor
+snd_steamaudio_baked_occlusion_reflection_regularization
+snd_steamaudio_baked_occlusion_spatialfilter_mode
+snd_steamaudio_baked_occlusion_spatialfilter_radius_factor
+snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled
+snd_steamaudio_custombake_dimensions_size_and_inout_bake_enabled
+snd_steamaudio_custombake_dimensions_smallsizefield_bake_enabled
+snd_steamaudio_custombake_occlusion_bidirectional
+snd_steamaudio_custombake_occlusion_numsimulations
+snd_steamaudio_customdata_dimensions_inout_mode
 snd_steamaudio_default_hrtf_volume_gain
+snd_steamaudio_diagnostic_baked_occlusion_single_probe
+snd_steamaudio_dimensions_grid_height_max
+snd_steamaudio_dimensions_max_ray_length
 snd_steamaudio_enable_compressed_reverb_lookup
 snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_editor_profiling
@@ -7878,7 +8901,6 @@ snd_steamaudio_perspective_correction_factor
 snd_steamaudio_reverb_order
 snd_steamaudio_reverb_order_rendering
 snd_steamaudio_reverb_update_rate
-snd_steamaudio_use_soundblocking_shapes_only
 snmpv2
 so=H*m
 socket
@@ -8069,6 +9091,9 @@ steamaudio.dll
 steamaudio_customdata_bake_dimensions
 steamaudio_customdata_bake_materials
 steamaudio_customdata_bake_occlusion
+steamaudio_customdata_dimensions_inout_bounce_loss
+steamaudio_customdata_dimensions_inout_max_bounces
+steamaudio_customdata_dimensions_inout_max_path_length
 steamaudio_customdata_dimensions_inside_threshold
 steamaudio_customdata_dimensions_insidesize_order
 steamaudio_customdata_dimensions_numrays
@@ -8080,7 +9105,6 @@ steamaudio_customdata_filter_volumes
 steamaudio_customdata_generation_type
 steamaudio_customdata_grid_spacing
 steamaudio_customdata_height_above_floor
-steamaudio_customdata_occlusion_pathing
 steamaudio_customdata_occlusion_reflection
 steamaudio_customdata_occlusion_reflection_bounces
 steamaudio_customdata_occlusion_reflection_rays
@@ -8153,6 +9177,7 @@ t!L;\tt
 t!McE\bI
 t#\t%\t+\t/\t5\tC\tI\tM\tO\tU\tY\t_\tk\tq\tw\t
 t$ ATAVAW
+t$ ATAVAWH
 t$ AVH
 t$ AWH
 t$ UWAUAVAWH
@@ -8196,14 +9221,17 @@ t$x9k`H
 t$xD;c
 t$xH9n\b
 t$xt*3
+t%@8.t H
 t%fE9\bt
 t'@83t
-t'Hc\rqV
+t'Hc\ry
 t(E8 t#3
 t).0n
 t)D93A
 t)IcV\bH
+t+D8't
 t,9uPu
+t,D8:t'H
 t-f3F2
 t.LcL$pM
 t0;?ZlP*m
@@ -8224,7 +9252,9 @@ t?D9k,u9H
 tA8_:t
 tA9u\b
 tA`KO/3G!\n7h
+tBD8 t=L
 tGHcT$0A
+tH;\rE
 tHAI8xpH\f
 tH^\tzڣJA
 tIHcX H
@@ -8240,17 +9270,21 @@ tQD8c:u0M
 tS9{\b~\bH
 tTL9q t-H
 tUH959
+tV_UnqualifiedFileName
 tV_atanf
-tV_atoi
-tV_cosf
-tV_expf
 tV_logf
+tV_powd
+tV_powf
+tV_qsort
+tV_qsort_s
+tV_sincosf
+tV_sinf
 tV_sinhf
 tV_stricmp_fast
 tV_tanf
 tWarning
 tZHcX H
-t\bV_Int64ToString_Unsafe
+t\aH9D$huJH
 t\eHcW\fH
 t\nH9
 t\nH;B\bv
@@ -8264,9 +9298,6 @@ t\t\brF6t
 t\t|87
 t\vA9v\bt
 t\vH;B\bv
-t_V_strncmp
-t_V_strncpy
-t_V_strnicmp_fast
 t`H9o@t0H
 t`Hc\v
 t``@ PP
@@ -8309,6 +9340,7 @@ timeStamping
 timestampsign
 tj<jtV
 tk0uIH
+tk8uIH
 tkE>fvw
 tk\buIH
 tk`uIH
@@ -8361,8 +9393,8 @@ transmissionCoefficients
 tried to use unsupported cipher
 trustRoot
 ts datasign
-ts uIH
-ts8uIH
+ts0uIH
+tsHuIH
 ts\buIH
 ts`uIH
 tsa name mismatch
@@ -8380,6 +9412,8 @@ type_id
 typeof
 t{(uIH
 t{0uIH
+t|+(uPH
+t|+@uPH
 t}BzJ88
 t~,Vg
 t~H9}Pt_H9
@@ -8424,6 +9458,7 @@ u\v@8~0tM
 u`H9|$Pt5H
 ucD9{0u]H
 udt returning
+ufHc_HH
 ugfD9A
 uint16
 uint32
@@ -8596,7 +9631,7 @@ usr/local/ssl/private
 usݶuC<[rR
 utf8only
 utfD9A
-uxHc\rD
+uxHc\rt
 uxLc|$8H
 uz-UZ-Cyrl
 uz-UZ-Latn
@@ -8606,7 +9641,7 @@ u{L9mHu
 u~9t$Xt
 uƂnA&Q
 u͋C$9C rgH
-uԸVUUUD
+u؉t$XA9]0
 v %f %f %f\n
 v&dbF:xrJ'$#\a
 v'A>M6
@@ -8622,6 +9657,7 @@ v9C#U
 v=Y]Bv
 v@D8s(t\rH
 vAD8s(t\rH
+vI9L9\bu\vH
 vID$\b
 vJza\r
 vKfffff
@@ -8635,11 +9671,9 @@ vValve Corp.1
 v\b;k\b
 v\b;o\b
 v\bTC\tf
-v\bV_IsAbsolutePath
 v\f@8k(t
 v\f\tvC
 v\rEߴK7
-v\tV_acosf
 validity
 value
 value missing
@@ -8695,7 +9729,6 @@ wMwwǷfm
 wOUigi
 wR\fe3c
 wTHcWTH
-w\tV_sincosf
 w_5&#R4
 w``u N
 wap-wsg
@@ -8737,13 +9770,16 @@ wrong ssl version
 wrong tag
 wrong type
 wrong version number
+wsP\v\nL
 www.digicert.com1!0
 www.digicert.com1$0
 x ATAVAWH
 x AUAVAWH
+x AVHcA
 x UATAUAVAWH
 x UATAVH
 x UAVAWH
+x"E;C\b
 x&HcI
 x&IcI
 x&IcI0
@@ -8793,7 +9829,6 @@ yAu[7
 yU#\f\fy
 y\\PD
 y\bL+9I
-y\tV_sinf
 yh9A(w
 ym\bdy
 ynl$<M
@@ -8801,6 +9836,7 @@ ypto\\bio\\bss_file.c
 ypto\\rsa\\rsa_crpt.c
 ypto\\x509v3\\v3_utl.c
 y͗(\ed5
+yދD$DH
 z/B,9d
 z7\nO
 z99ýq

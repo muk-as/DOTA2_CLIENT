@@ -31,7 +31,6 @@
 0<\tw'H
 0<\tw\nH
 0FS@[e0
-0H9X\b~\vH
 0HPX8
 0HcC\bH
 0I#w8I
@@ -94,7 +93,6 @@
 1kYL\r
 1ǉt$DH
 1ɋr ;3H
-1ۃ=N42
 1ۉt$ L
 1ۋD$LH
 1ۋT$\bH
@@ -232,7 +230,9 @@
 3l$\fD
 3mmXs
 3psC'dcG
+3t$l3D$p
 3w2URu
+3w\b3O\f3W
 4!D3t
 4$H;k
 4$~iMc
@@ -790,6 +790,9 @@ A\\ÐAWAVAUI
 A\\ÐAWAVI
 A\\ÐAWH
 A\\ÐUSH
+A\bH9B\b
+A\bH9C\b
+A\bH9G\b
 A\bH;w\b
 A\n\nannotation
 A\n\nrelay_mode
@@ -910,6 +913,7 @@ Assertion Failed: !m_pNextTaskInQueue
 Assertion Failed: !m_pParentListenSocket
 Assertion Failed: !m_pPartner
 Assertion Failed: !m_pPartner->m_fakeIPRefRemote.IsValid
+Assertion Failed: !m_pPendingSTUNRequest
 Assertion Failed: !m_pPollGroup
 Assertion Failed: !m_pPollGroup->m_vecConnections.HasElement( this
 Assertion Failed: !m_pPrevTaskForTarget
@@ -1032,8 +1036,11 @@ Assertion Failed: a.m_adr == m_adr
 Assertion Failed: a.m_eProtocol == m_eProtocol
 Assertion Failed: a.m_pServer == nullptr
 Assertion Failed: a.port
+Assertion Failed: addr.GetType() == k_EIPTypeV4
+Assertion Failed: addr.GetType() == k_EIPTypeV6
 Assertion Failed: addr.IsFakeIP
 Assertion Failed: addrFakeIP.GetFakeIPType() == k_ESteamNetworkingFakeIPType_GlobalIPv4
+Assertion Failed: addrPeer.GetType() == k_EIPTypeV6
 Assertion Failed: adr.GetType() == k_EIPTypeV4
 Assertion Failed: adr.HasIP
 Assertion Failed: alt.m_nPenalty == k_nSDRAltAddressPenalty_PingOnly
@@ -1146,6 +1153,7 @@ Assertion Failed: g_vecSharedClusterDataInConfigOrder.size() == m_vecClusters.si
 Assertion Failed: gapFilled->first < gapFilled->second
 Assertion Failed: gapFilled->first <= nSegBegin
 Assertion Failed: gapFilled->second > nSegBegin
+Assertion Failed: h->first < h->second.m_nEnd
 Assertion Failed: hAPICall != k_uAPICallInvalid
 Assertion Failed: has_element( m_vecLinkedConnections, pConn
 Assertion Failed: identity.m_cbSize <= sizeof( identity.m_genericBytes
@@ -1201,6 +1209,7 @@ Assertion Failed: len( m_vecAvailableTransports ) == i
 Assertion Failed: len( m_vecLinkedConnections ) == ( ( m_pConnection != nullptr ) ? 1 : 0
 Assertion Failed: links.m_pNext == nullptr
 Assertion Failed: links.m_pPrev == nullptr
+Assertion Failed: localAddr.GetType() == k_EIPTypeV6
 Assertion Failed: lookup.m_nFirstShell > 0
 Assertion Failed: m->m_conn == m_hConnectionSelf
 Assertion Failed: m.m_nIndirectPing >= 0
@@ -1208,6 +1217,7 @@ Assertion Failed: m_CertStatus.m_eAvail != k_ESteamNetworkingAvailability_NeverT
 Assertion Failed: m_CertStatus.m_eAvail == k_ESteamNetworkingAvailability_Current
 Assertion Failed: m_Put >= 0
 Assertion Failed: m_TotalElements != InvalidIndex
+Assertion Failed: m_addrTURNServer.IsValid
 Assertion Failed: m_arMarker[n-1].m_nID != m_arMarker[n].m_nID
 Assertion Failed: m_bConnectionInitiatedRemotely
 Assertion Failed: m_bCryptKeysValid
@@ -1267,6 +1277,7 @@ Assertion Failed: m_idxServerMigrationTarget == -1
 Assertion Failed: m_info.m_cbPkt < sizeof(m_pkt
 Assertion Failed: m_itNextInFlightPacketToTimeout != it
 Assertion Failed: m_itNextInFlightPacketToTimeout == m_mapInFlightPacketsByPktNum.end
+Assertion Failed: m_itPendingAck->second.m_nEnd == INT64_MAX
 Assertion Failed: m_keyPrivate.IsValid
 Assertion Failed: m_keyPublic.IsValid
 Assertion Failed: m_listReadyRetryReliableRange[ relSeg.m_hStatusOrRetry ] == hSeg
@@ -1373,7 +1384,6 @@ Assertion Failed: m_pktNumInFlight == 0 && m_eActivityLevel == ELinkActivityLeve
 Assertion Failed: m_queueIndex == -1
 Assertion Failed: m_queueIndex >= 0
 Assertion Failed: m_queueRecvMessages.empty
-Assertion Failed: m_receiverState.m_itPendingAck->second.m_nEnd == INT64_MAX
 Assertion Failed: m_receiverState.m_itPendingNack->first < nExpectedNextPktNum
 Assertion Failed: m_response.m_nStatusCode >= 0
 Assertion Failed: m_routeSelector.m_vecClusters.size() == g_vecSharedClusterDataInConfigOrder.size
@@ -1437,6 +1447,7 @@ Assertion Failed: m_vecAvailableTransports.empty
 Assertion Failed: m_vecConnections.Count() == i
 Assertion Failed: m_vecFakeIPRef.empty
 Assertion Failed: m_vecLinkedConnections.empty
+Assertion Failed: m_vecPendingPeerRequests.empty
 Assertion Failed: m_vecRoutes.empty
 Assertion Failed: m_vecServers.empty
 Assertion Failed: marker.m_nIndirectPing >= 0 && marker.m_nIndirectPing <= SteamNetworkPingLocationInternal_t::k_nMaxReasonablePing
@@ -1521,6 +1532,7 @@ Assertion Failed: nPktNum > 0
 Assertion Failed: nPktNum > 0 && nPktNum < TLinkStatsTracker::m_nMaxRecvPktNum
 Assertion Failed: nPktNum >= 0
 Assertion Failed: nPktNumAckBegin >= 0
+Assertion Failed: nPktNumBeforeSentinelGap <= m_statsEndToEnd.m_nMaxRecvPktNum
 Assertion Failed: nPktNumNackBegin >= 0
 Assertion Failed: nPut + nPutDelta <= outBuf.TellMaxPut
 Assertion Failed: nRawScore >= 0
@@ -1684,6 +1696,8 @@ Assertion Failed: pTask->m_eTaskState == CQueuedTask::k_ETaskState_ReadyToDelete
 Assertion Failed: pTask->m_pTarget == nullptr
 Assertion Failed: pTask->m_pTarget == this
 Assertion Failed: pThis->m_nReplyTimeoutsSinceLastRecv == 0
+Assertion Failed: pThisPair->m_nState != kICECandidatePairState_InProgress
+Assertion Failed: pThisPair->m_nState == kICECandidatePairState_InProgress
 Assertion Failed: pToken
 Assertion Failed: pTransport
 Assertion Failed: pTransport && pTransport->m_listRelaySessions.IsEmpty
@@ -1720,6 +1734,7 @@ Assertion Failed: r.m_nSortScoreLocal < 9999
 Assertion Failed: r.pop_id() == c.m_pConfig->m_id
 Assertion Failed: relInfo.m_nSentReliableSegRefCount > 0
 Assertion Failed: relSeg.m_nRefCount > 0
+Assertion Failed: remoteCandidate.m_addr.GetType() == k_EIPTypeV4
 Assertion Failed: result != 0
 Assertion Failed: result == -1
 Assertion Failed: route.m_idxClusterLocal == pClusterData->m_idxInConfig
@@ -1965,6 +1980,7 @@ BUG_no_ping_data
 BY_Lq
 BZZn\rN]#8f
 B\bH9F\b
+B\bM9C\bA
 B\btYM
 B\n\fextra_fields
 BackUp() can only be called after Next
@@ -2564,7 +2580,6 @@ CSteamNetworkingICESession::GatherInterfaces
 CSteamNetworkingICESession::OnPacketReceived
 CSteamNetworkingICESession::Think
 CSteamNetworkingICESession::Think_TestPeerConnectivity
-CSteamNetworkingICESession::UpdateHostCandidates
 CSteamNetworkingMessages::BHandleNewIncomingConnection
 CSteamNetworkingMessages::DestroySession
 CSteamNetworkingMessages::FindOrCreateChannel
@@ -2572,8 +2587,6 @@ CSteamNetworkingMessages::FreeResources
 CSteamNetworkingSockets::Destroy
 CSteamNetworkingSockets::KillConnections
 CSteamNetworkingSocketsSDR::Destroy
-CSteamNetworkingSocketsSTUNRequest::CreatePeerConnectivityCheckRequest
-CSteamNetworkingSocketsSTUNRequest::SendBindRequest
 CSteamNetworkingSocketsSTUNRequest::Think
 CSteamNetworkingSocketsSteamBase::BInitSteamBase
 CSteamNetworkingUtils::CSteamNetworkingUtils
@@ -2597,6 +2610,7 @@ CXXABI_1.3
 CXXABI_1.3.5
 C\\lVQ˅nF
 C\bA9D$\bH
+C\bD95
 C\bD<PHc
 C\bE1
 C\bHcD$ H
@@ -2798,7 +2812,6 @@ Content-Type: text/plain\r\n\r\n
 Control character 0x%02x is illegal in string
 Control message of type %d failed serialization consistency check!  (%d, expected %d
 Control message of type %d is too big.  (%d bytes; max is %d
-Could not bind to %s.  %s\n
 Could not create an instance of
 Could not find type
 Couldn't parse default value
@@ -2851,7 +2864,6 @@ D$ IcI\b
 D$ IcU0H
 D$ M3T
 D$ fE
-D$ s\aA
 D$ t(H
 D$ t=L
 D$ t>E
@@ -2864,17 +2876,16 @@ D$(1\tt
 D$(1\vG\b
 D$(A\tl
 D$(D3|$`D3T$dL
+D$(D9p
 D$(D;ctD
 D$(E9
 D$(H9C u
 D$(H9D
 D$(H9D$ L
-D$(H9D$8
 D$(H9D$Hw&H
 D$(H;D$0H
 D$(IcF@I
 D$(dH3
-D$(t2H
 D$(tIH
 D$)A\tl
 D$)vrA
@@ -2908,10 +2919,13 @@ D$81\tt
 D$8;C
 D$8D;t
 D$8H1C
+D$8H9D$`H
 D$8H;D$@u
+D$8Hcq
 D$8I9E
 D$8L;l$8
 D$8L;t$8t%A
+D$8\f9D
 D$8dH3
 D$8tZA
 D$8t\aH
@@ -2924,9 +2938,9 @@ D$<D\vD
 D$@9D$H
 D$@H+s\bH
 D$@H9D
+D$@H9D$pH
 D$@I1F
 D$@I1G
-D$@\f9D
 D$@fE
 D$@t=HcT
 D$@tuHcT
@@ -2940,19 +2954,19 @@ D$H9D
 D$HD9kh~>Mi
 D$HD9kt~NMi
 D$HH9D
-D$HH9D$xH
 D$HH;l$8t
 D$HI1F
 D$HI1G
 D$HL)\f$H
 D$HdH3
 D$Ht\bH
+D$Hv)H
+D$P9D$T
 D$PH9D$HuyH
 D$PHcD$lH
 D$PHǄ$h
 D$PLcƍ4
 D$PfE
-D$Pt\bH
 D$Pt\rE1
 D$S1\bT$QH
 D$T+L$H
@@ -2963,15 +2977,15 @@ D$X;k
 D$XD;s
 D$XF:4
 D$XH9D
+D$XH9D$0H
 D$XH9D$8u\eH
-D$XH9D$PH
+D$XH9D$h
 D$XH;D
 D$XHcD$PH
 D$XHcտR
 D$XdH3
 D$Xt6H
 D$XtLH
-D$Xv)H
 D$\b+CxA
 D$\b+D$ D
 D$\b19
@@ -3014,6 +3028,7 @@ D$\btNA
 D$\btU1
 D$\bt\aL
 D$\bt\vH
+D$\bt_H
 D$\btiH
 D$\btxH
 D$\btzA
@@ -3043,7 +3058,6 @@ D$\nt&H
 D$`9k
 D$`D;e8
 D$`H+D$XH
-D$`H+T$hH
 D$`IcE
 D$`M9~ M
 D$`fE
@@ -3056,15 +3070,12 @@ D$hD;sh
 D$hE1
 D$hH9D$`H
 D$hH;D$p
-D$hH;D$ptAH
 D$hdH3
-D$hu\tH
 D$hu\vM
 D$hubH
 D$l1҉D
 D$p;Cds
 D$pH9D
-D$pH9D$hH
 D$pHcտj
 D$pHǄ$8
 D$pfA
@@ -3085,6 +3096,7 @@ D0l$7I
 D1ۉ_HD
 D34$D1
 D3D$0f
+D3F\b3N\f3F
 D3T$ M
 D3d$\bI
 D3d$dD
@@ -3124,11 +3136,9 @@ D8`\vtHH
 D9 r9f
 D9 rUwCf;x
 D9+t H
-D9=)FD
 D9@\f
 D9D\a\br
 D9H\f
-D9Xlu\fD
 D9c,~ZMi
 D9c4~)Ik
 D9c8~BMi
@@ -3153,13 +3163,12 @@ D9l$$t
 D9t$0t\rH
 D:c\trT
 D; s)f
-D;-t6D
+D;%r5H
 D;8}#Ic
 D;GL|\nD
 D;G\f
 D;G\fu
-D;\r4hJ
-D;\rKx
+D;\rep
 D;cXs
 D;ch}#D
 D;ct}#D
@@ -3338,9 +3347,10 @@ E(9C(|3
 E(9C(|\eH
 E(H9E0sHL
 E(Hcտ\n
-E(I9G
 E+D\tD
 E+E1EAEIESEUEaEwE}E
+E,fA;D
+E,fA;F
 E-mail Protection
 E09C0H
 E09C\ft
@@ -3563,7 +3573,8 @@ EXTRACT_ONLY
 E\a2D$7H
 E\b2D$8H
 E\bA;MH}G
-E\bH9h
+E\bH9D$(t
+E\bH9h(t
 E\bH;h(tuH
 E\bHc
 E\bHcD
@@ -3677,6 +3688,7 @@ Extra text starting with character 0x%02x='%c
 ExtractSubrange() when arena is non-NULL is only supported when
 F#bgn?MwN
 F(H9G(uaH
+F(I9E
 F,mZq\e\vn
 F0AVAUATUSH
 F0IcV@H
@@ -3686,7 +3698,6 @@ F8;D$tu
 F8I9G8
 F@I9G
 FAILED_PRECONDITION
-FH;w\b
 FHA9FD
 FILE pointer
 FIPS routines
@@ -3737,7 +3748,6 @@ Failed to negotiate mutually-agreeable cipher
 Failed to parse %s value %s
 Failed to parse '%s'.  %s\n
 Failed to parse JSON %s
-Failed to parse address '%s' as an IP address
 Failed to parse authorized client identity.  %s
 Failed to parse gameserver identity.  %s
 Failed to parse result JSON.  Line %d, offset %d: %s
@@ -3786,12 +3796,15 @@ FastHexToBuffer() wants non-negative integers, not
 Fatal Assertion Failed: (uint8 *)pEncryptedDataAndTag + cbEncryptedWithoutTag == pOut
 Fatal Assertion Failed: EVP_DecryptInit_ex( ctx, nullptr, nullptr, nullptr, (const uint8*)pIV ) == 1
 Fatal Assertion Failed: EVP_DigestFinal(ctx.ctx, *pOutDigest, &digest_len) == 1
+Fatal Assertion Failed: EVP_DigestFinal(ctx.ctx, *pOutputDigest, &digest_len) == 1
+Fatal Assertion Failed: EVP_DigestInit_ex(ctx.ctx, EVP_md5(), __null) == 1
 Fatal Assertion Failed: EVP_DigestInit_ex(ctx.ctx, EVP_sha256(), __null) == 1
 Fatal Assertion Failed: EVP_DigestInit_ex(mdctx.ctx, digest, __null) == 1
 Fatal Assertion Failed: EVP_DigestSign( ctx, (unsigned char *)pSignatureOut, &siglen, (const unsigned char *)pData, cbData ) == 1
 Fatal Assertion Failed: EVP_DigestSignFinal(mdctx.ctx, *pOutputDigest, &needed) == 1
 Fatal Assertion Failed: EVP_DigestSignInit( ctx, nullptr, nullptr, nullptr, pkey ) == 1
 Fatal Assertion Failed: EVP_DigestSignInit(mdctx.ctx, __null, digest, __null, pkey.ctx) == 1
+Fatal Assertion Failed: EVP_DigestUpdate(ctx.ctx, pData, cbData) == 1
 Fatal Assertion Failed: EVP_DigestUpdate(ctx.ctx, pInput, cbInput) == 1
 Fatal Assertion Failed: EVP_DigestUpdate(mdctx.ctx,pubData,cubData) == 1
 Fatal Assertion Failed: EVP_DigestVerifyInit( ctx, nullptr, nullptr, nullptr, pkey ) == 1
@@ -3954,7 +3967,6 @@ GOST R 3410-2001 Parameter Set Cryptocom
 GP9E\fL
 GP<\nu\f
 GPH+x
-GPL+GHMc
 GRAPHICSTRING
 G\a2D$GH
 G\b2D$HH
@@ -4036,12 +4048,10 @@ Gk\f\el
 Go^ldg
 Google.Protobuf.Reflection
 Got SDR network config.  %s
-Got a rendezvous candidate at "%s"\n
 Got callback for wrong request
 Got cert for %s from Steam\n
 Got incoming FakeIP connection request when we already had a connection.  This could legit happen due to race condition we aren't handling right now
 Got incoming messages session connection request when we already had a connection.  This could happen legit, but we aren't handling it right now
-Got remote candidate '%s'\n
 Groups are not supported in proto3 syntax
 GŠD,㴉9CZ
 H!D$ A
@@ -4062,6 +4072,7 @@ H(hqA1p
 H)IL$TH
 H)l$\bI
 H)Ɖt$TH
+H+5@kG
 H+D$ H
 H+D$(9D
 H+D$09D$<}pD
@@ -4070,6 +4081,7 @@ H+D$@H\eT$HL
 H+D$PH\eT$XH
 H+D$PH\eT$XL
 H+D$XH
+H+D$\b9D
 H+D$\bH
 H+D$\bI
 H+D$`H\eT$hH
@@ -4084,8 +4096,9 @@ H+L$pH
 H+L$x1
 H+N0H
 H+T$\bH
-H+T$hH
-H+T$xL
+H+T$hL
+H+T$pH
+H+\r6OH
 H+l$ H
 H+l$8L
 H+l$H
@@ -4145,25 +4158,25 @@ H9D$\br0L
 H9D$\bs
 H9D$\bs#H
 H9E8tOH
-H9G(tNH
+H9G(tLH
 H9L$ r
 H9L$ t
+H9P ~zH
 H9PHv>H
+H9Q tJH9P\btTH9P
 H9Q tbH9P\b
 H9T$\bH
 H9X\btoH
+H9Z tZH9X\b
 H9\\$ tJH
 H9\atHH
-H9\au
 H9\au2f
 H9](t\bH
 H9l$(H
+H9l$0
 H9l$\bs
 H9p s[L9
 H9p scL9
-H9s\b~\bH
-H9u\b~,H
-H9u\b~\bH
 H9w\bH
 H9yPt
 H9z r
@@ -4175,20 +4188,17 @@ H9։G,t
 H9팒dkT
 H;,$vKH
 H;,$vPH
-H;-Ll6
 H;2s!H
 H;2s"H
 H;2sPH
-H;=1\bN
-H;=4PD
-H;=EpO
-H;=G\vN
-H;=Kv
-H;=R5A
-H;=U\vC
-H;=UwO
-H;=WrO
-H;=gtO
+H;=5\fD
+H;=KQC
+H;=Op
+H;=W G
+H;=W\nN
+H;=Zd
+H;=qyK
+H;=tmD
 H;D$0
 H;D$0u
 H;D$8H
@@ -4197,12 +4207,10 @@ H;D$\bw-L
 H;D$`t\rH
 H;D$p
 H;D$pH
-H;E\b|\eH
-H;J tfH;H\b
 H;L$Pf
 H;L$\btQC
 H;P\btYH
-H;Q tbH;P\b
+H;Q t_H;P\b
 H;T$ht;H
 H;W8r\fH
 H;Y tzH;Z\b
@@ -4210,8 +4218,8 @@ H;Z tRH;X\b
 H;Z tWH;X\b
 H;Z tZH;X\b
 H;k@r\nH;kH
+H;k\b}\vH
 H;kxt\vH
-H;kx|#H
 H;l$\bsCH
 H;l$\bt
 H;l$\bt/D
@@ -4289,7 +4297,6 @@ H`ЈݳIk\f`dub`D
 HasField
 Hash Algorithm
 HaɈ|M\v
-Hc+;-p7D
 HcD$ H
 HcD$ I
 HcD$ L
@@ -4318,6 +4325,7 @@ HcS A;T$ u
 HcS,Hc
 HcS<H
 HcS\fu
+HcT$ H
 HcT$$H
 HcT$$L
 HcT$(H
@@ -4334,8 +4342,6 @@ Hct$ H
 Hct$0L
 Hct$41
 Hct$4H
-Hct$8H
-Hct$8J
 Hct$@H
 Hct$PH
 Hct$`H
@@ -4390,7 +4396,7 @@ I3}\bL
 I3~\bL
 I9,$t\bH
 I94$vuH
-I9F8~YH
+I9F8~UH
 I9l$ L
 I9Ή~\bD
 I;4$s
@@ -4405,7 +4411,32 @@ IA5STRING
 IB;4e^WP
 ICC or token signature
 ICE connection dropped after successful negotiation
+ICE counters reset\n
 ICE not enabled by local user options
+ICE selected candidate %s -> %s
+ICE selected candidate %s -> %s -> %s
+ICE: Could not bind to %s, skipping interface.  %s\n
+ICE: Dropping Data Indication from %s: not our TURN server (%s).\n
+ICE: Dropping Data Indication from TURN: missing peer-address or data attribute.\n
+ICE: Dropping STUN message 0x%x from %s.\n
+ICE: Dropping STUN response 0x%x from %s: attribute parse or integrity failure.\n
+ICE: Dropping binding request: USERNAME length %u exceeds max %u
+ICE: Dropping binding request: attribute parse or integrity failure.\n
+ICE: Dropping peer candidate with invalid address %s\n
+ICE: Host candidate has invalid address %s - gathering bug
+ICE: Incoming binding request from %s to %s.\n\n
+ICE: Incorrect username length; at least %d expected, got %d
+ICE: Incorrect username: got '%s' expected '%s
+ICE: Invalid username; no : found in %s
+ICE: Local interface %s removed\n
+ICE: Role conflict -- we are Controlled but peer also sent ICE-CONTROLLED.\n
+ICE: Role conflict -- we are Controlling but peer also sent ICE-CONTROLLING.\n
+ICE: STUN request 0x%x to %s timed out.\n
+ICE: STUN server %s gave us invalid reflexive address %s -- ignoring\n
+ICE: Sending a STUN binding response to %s from %s
+ICE: TURN Refresh timed out for %s -- tearing down relay allocation\n
+ICE: TURN server %s gave us invalid relay address %s -- ignoring allocation\n
+ICE: TURN server %s sent 401, retrying with long-term credentials for user '%s'.\n
 ID$\fH
 ID%llu
 IDEA-CBC
@@ -4452,6 +4483,7 @@ ISteamHTTPDestroyed while request in flight
 ISteamNetworkingSocketsSerialized::GetCertAsync failed
 ITM_deregisterTMCloneTable
 ITM_registerTMCloneTable
+I\bH9O\b
 I\tHA\t981G'dc
 I`Mb"(\ao
 Ic,$Hi
@@ -4514,15 +4546,12 @@ Ignoring weird timestamp %llu in ChallengeReply, current time is %llu.\n
 Ignoring weird timestamp %llu in ConnectOK, current time is %llu, remote delay was %lld.\n
 Illegal jstype for int64, uint64, sint64, fixed64 or sfixed64 field
 Import
-Incoming binding request from %s to %s.\n\n
 Incorrect challenge.  Could be spoofed
 Incorrect client challenge / connection ID %x in RouterPingReply from %s.  Reply could be spoofed, ignoring
 Incorrect connection ID
 Incorrect connection ID, when we do have a connection for this address.  Could be spoofed, ignoring
 Incorrect connection ID.  Message is stale or could be spoofed, ignoring
 Incorrect routing secret.  (Packet spam, or relay using routing secret from previous server instance
-Incorrect username length; at least %d expected, got %d
-Incorrect username: got '%s' expected '%s
 Independent
 Index must be -1 for non-repeated fields
 Index must be -1 for singular fields
@@ -4557,6 +4586,7 @@ Interpreting non ascii codepoint %d
 Invalid 25519 key type
 Invalid AES-GCM key size
 Invalid DH key
+Invalid IP type %d
 Invalid LocalVirtualPort %d
 Invalid P2P_Transport_ICE_Implementation value
 Invalid SDR_PRIVATE_KEY or SDR_CERT.  %s
@@ -4606,7 +4636,6 @@ Invalid signature length
 Invalid state %d
 Invalid strings::Substitute() format string
 Invalid symbol name
-Invalid username; no : found in %s
 Invalid value for boolean field
 Invalid weak dependency index
 Invalid wire type for CPPTYPE_INT32
@@ -4628,8 +4657,6 @@ JSON file is empty
 JSON number contains too many characters
 JSON value required here. (Strict parsing mode; trailing comma not permitted
 JSType
-J\bH9M\bw
-J\bH9O\bw
 J\n'CMsgSteamDatagramSessionCryptInfoSigned
 J\ty\bRF
 J_R=I
@@ -4657,8 +4684,6 @@ K\bH+\vI
 K\bHc
 K\bf;M\b
 K\bo~U
-K\f;\ra D
-K\f;\rp:D
 K\f~SH
 K\rdSC\td
 K\v8H\vtNH
@@ -4705,12 +4730,14 @@ L$ ?L1
 L$ ?M1
 L$ H)D$ H
 L$ H+D
+L$ Hcs
 L$ Hc|$`H
 L$ t^H
 L$ uBH
 L$(2D
 L$(D9L$`L
 L$(E;w4u
+L$(H9L
 L$(H9\f$tIH
 L$(IcE\bH
 L$(dH3\f
@@ -4752,9 +4779,9 @@ L$\bHc
 L$\bHǄY
 L$\bI1
 L$\bL;4$tqA
-L$\bL;M\bL
 L$\bL;h I
 L$\bdH3\f
+L$\bt&H
 L$\bt81
 L$\bt8H
 L$\bt=H
@@ -4771,7 +4798,6 @@ L$\bu$H
 L$\buZE1
 L$\bvAH
 L$\bx)L
-L$\b~CL9
 L$\b~jI
 L$\f0KLH
 L$\fE
@@ -4798,10 +4824,7 @@ L)ډS\fH
 L+#L\ek\bL
 L+] L\ee(H+E0H\eU8H
 L+d$ H
-L+d$0A
 L+d$PHcD$dI9
-L+l$hD
-L+l$hH
 L3S\bM
 L3^\bM\t
 L3d$XM1
@@ -4820,28 +4843,28 @@ L9`\bta
 L9c t\bL
 L9d$ H
 L9d$0H
-L9d$\bH
 L9d$hv
-L9e\b~\vL
 L9l$ s
 L9l$PH
 L9t$(tCD
 L9t$HH
 L9x r\aH
-L9|$ tnM
+L9|$ toM
 L9|$0
 L9|$8rBH
 L9|$\bE
 L9|$\bvIL
 L;4$tlM
 L;4$trM
+L;5h\v2
 L;L$XD
-L;X ~*L
+L;X ~&L
 L;d$8v
 L;d$PA
 L;d$\bt\t1
 L;d$\bu
 L;e t\bL
+L;k }QL
 L;k0tHL
 L;l$ w
 L;l$(t5H
@@ -4887,7 +4910,6 @@ L\vl$(L\t
 L\vl$(M\t
 LagPacket
 Lagged packet remains in queue after socket destroyed or queued for destruction
-Lc#D;%DCD
 LcD$<A9
 LcL$8D
 LcT$(D
@@ -4944,10 +4966,8 @@ Lܠ=\boWnS
 M-qƼBV\t
 M3^\bL
 M3gpI3_xL
-M9B\bvaf
 M9l$\bt
 M;}xt3L
-M@H;L
 MD5-SHA1
 MF?8ib[T
 MHH9K
@@ -5351,6 +5371,7 @@ Name lookup for "%s" failed - %s\n
 Need space between identifier and decimal point
 Need space between number and identifier
 Negative
+Nesting depth limit (%d) exceeded
 Netscape
 Netscape Base Url
 Netscape CA Policy Url
@@ -5440,6 +5461,7 @@ Np\f9ʉp\ft
 Number of lanes must be zero if array pointer is nonzero\n
 Numbers starting with leading zero must be in octal
 Nz3I#B
+O H;\r
 O'-U\tND
 O(+q A
 O(9O0H
@@ -5815,7 +5837,6 @@ P\b;jhu
 P\b;jhuLA
 P\bE;ux
 P\bH1U\bH
-P\bL9
 P\bf9U\b
 P\bf9U\b|6
 P\f1҃}P
@@ -5829,12 +5850,14 @@ P\tH9T$X
 Packet is %d bytes, must be padded to at least %d bytes
 Packet is too small
 Packet of size %d is too small
+PacketGaps map not increasing
 PacketTraceMaxBytes
 Parameter to BackUp() can't be negative
 Parameters
 Parse failure.  Length=%d, data begins %s
 Payload exceeded max size of %d\n
 Pd9Wds
+Peer connectivity-check pair already has a request in flight
 Peer is running old software and needs to be udpated
 Peer is running old software and needs to be updated.  (V%u, >=V%u is required
 Peer is using old protocol and cannot receive multiple lanes
@@ -5918,6 +5941,7 @@ QZ^&A
 QZ^&E1
 Q\a[$i\a7
 Q\bA1V
+Q\bI9Q\b
 Q\n\f\a\bA\v
 Q\tt\bd\nO
 Qjh/T
@@ -6309,6 +6333,7 @@ STEAMNETWORKINGSOCKETS_LOG_LEVEL
 STORE lib
 STORE routines
 STRING
+STUN USERNAME exceeds RFC limit
 SUATAUAV
 SUATAUAVAW
 SUATAUAVAWA
@@ -6363,7 +6388,6 @@ Sender sent reliable stream pos using %llx mod %llx, expected next %llx\n
 Sender tried to send on invalid lane %d; max is %d
 Sending ConnectRequest for ConnectionID %u to %s via primary relay %s.\n
 Sending NoConnection to %s: { %s }\n
-Sending a STUN response to %s from %s
 Sending ping probe to %s in %s\n
 Sent ack %u not pending.  %d: %u %u %u %u %u
 Serial Number
@@ -6527,7 +6551,7 @@ SteamServersDisconnected_t
 SteamUser023
 SteamUtils010
 SteamnetworkingSockets service thread waited %dms for lock!  This directly adds to network latency!  It could be a bug, but it's usually caused by general performance problem such as thread starvation or a debug output handler taking too long
-Stray data packet from host with no connection.  Ignoring
+Stray data packet from host with no connection
 String field
 String literals cannot cross line boundaries
 StringPrintfVector currently only supports up to
@@ -6549,6 +6573,7 @@ Synthetic oneofs must be after all other oneofs
 SystemSpew
 T$ 19\f
 T$ H\tT$HH#D$HH
+T$ ~fH
 T$(E1\vL$0H
 T$(Icp
 T$(dH3
@@ -6559,6 +6584,8 @@ T$09l$\fA
 T$0E1
 T$0IcQ
 T$89l
+T$8;U\b
+T$8;U\bt
 T$8A;W\b
 T$8A;W\bt
 T$8H9hX
@@ -6568,7 +6595,6 @@ T$@E9
 T$@I9ǋS
 T$@I;T$HtiH
 T$@w\vH
-T$H< H
 T$HJ1T \bI
 T$HdH3
 T$XH+D$@H\eT$H
@@ -6589,7 +6615,6 @@ T$\btLH
 T$\bt\aE
 T$\bt\f1
 T$\btgH
-T$\btpH
 T$\btpM
 T$\btqH
 T$\btzH
@@ -6598,9 +6623,6 @@ T$\f+U0L
 T$\f9P\f
 T$\fH
 T$\fL\t
-T$\ftZH
-T$\fthH
-T$\ftqH
 T$\nL\t
 T$\rL\t
 T$\tL\t
@@ -6618,6 +6640,19 @@ T00`P
 T61STRING
 T;6P/Arc
 TELETEXSTRING
+TEST_ICE_ctr_allocate_retx=%d\n
+TEST_ICE_ctr_allocate_send=%d\n
+TEST_ICE_ctr_binding_req_recv=%d\n
+TEST_ICE_ctr_binding_req_retx=%d\n
+TEST_ICE_ctr_binding_req_send=%d\n
+TEST_ICE_ctr_binding_resp_recv=%d\n
+TEST_ICE_ctr_binding_resp_send=%d\n
+TEST_ICE_ctr_create_permission_retx=%d\n
+TEST_ICE_ctr_data_ind_recv=%d\n
+TEST_ICE_ctr_refresh_retx=%d\n
+TEST_ICE_ctr_refresh_send=%d\n
+TEST_ICE_ctr_send_ind_send=%d\n
+TEST_ICE_ctr_srflx_send=%d\n
 TEST_ResetAll
 THܾ"j
 TLS Feature
@@ -6665,6 +6700,7 @@ TS_TST_INFO_set_serial
 TS_TST_INFO_set_time
 TS_TST_INFO_set_tsa
 TS_VERIFY_CTX_new
+TURN server address not in m_vecTURNServers
 TXJw^{Ԓ>r
 T\ew®pcN
 T\n\f\a\bE\v
@@ -6720,8 +6756,10 @@ Tokenizer::ParseFloat() passed text that could not have been tokenized as a floa
 Tokenizer::ParseStringAppend() passed text that could not have been tokenized as a string
 Told peer to stop acking up to %lld, but latest packet we have sent is %lld
 Too late
+Too many chunks to send via TURN relay (max 3
 Too many connections
 Too many ephemeral FakeUDP ports.\n
+Too many extra attrs for TURN request
 Trace Recv] %s <- %s | %d bytes\n
 Trace Send] %s -> %s | %d bytes\n
 TracerPid
@@ -6749,7 +6787,9 @@ Tunnel
 Type appears to be in generated pool but wasn't
 Type is already registered
 Tz$oҖJ
+U A1W\bA
 U t<Hc
+U$A1W\fA
 U$I9ĉS
 U$nǐg"f
 U%04lX
@@ -6760,8 +6800,6 @@ U)l:T^8rv\n
 U,\r\tB
 U13\v9
 U7{8+S
-U8A;T$\b
-U8A;T$\bt
 U<E3M E3E$E3](E3U,D1
 U?Y5qX}\tf
 UDP %s
@@ -6866,8 +6904,8 @@ Unsupported protocol %d
 Unsupported: type mismatch
 Unterminated string
 Until we obtain the config, we will not be able to accept clients!\n
+Untracked STUN retransmit type 0x%x
 Unused
-UseCandidate was set
 Using cert from SDR_PRIVATE_KEY and SDR_CERT environment vars\n
 Ut]<E\e0
 Uz_G3
@@ -6887,6 +6925,7 @@ VPL9T
 VXH\eVxH
 VY5[;o
 V\b9W\f|J
+V\b;T
 V\bA;W\b|PL
 V\bHǄ$x
 V\bÐATI
@@ -7172,7 +7211,6 @@ YWQa:B
 Y[]A\\A]ÐAWAVAUATI
 Y[]A\\A]ÐAWAVAUL
 Y[]A\\A]ÐAWAVI
-Y\bI9X\bw
 Y\nf9Z\n|6
 YedcCH
 You must type in
@@ -7639,7 +7677,6 @@ b2i_dss
 b2i_rsa
 b64_new
 b64_read_asn1
-b9xpu
 b@0t\v@H
 bA9ǉD
 bAVAUATI
@@ -7649,8 +7686,6 @@ bB303
 bD$\vtK
 bD$\vt{I
 bD1I\nD
-bD9Xpt%f
-bD9Xpu
 bD;h\b
 bD;hhu
 bD;x\b
@@ -7660,6 +7695,7 @@ bH+;H
 bH+>H
 bH+E\bH
 bH9E8
+bH9F\b
 bH9_\b|F
 bH9l$\b
 bH9o tV
@@ -7675,9 +7711,11 @@ bHcJ\fH
 bHcl$\fH
 bHǄ$X
 bI;E8
-bI;l$\b}FH
+bI;l$\b}AH
 bL3D̀I
 bL3D݀I
+bL9AXt
+bL9Z\bA
 bL9_\b
 bL9d$\b
 bL9g tV
@@ -7688,9 +7726,6 @@ bL;l$\bu
 bL;t$(u
 bL;t$\bu
 bL\tt$ D
-bM9B\bw
-bM;A\bv
-bM;B\br
 bPb:L7X
 bW\a|T1
 bZ\fL+i\a
@@ -7844,6 +7879,7 @@ bߋ0SY
 c []A
 c!!B0
 c0D;s8D
+c0[]A
 c2\\f?C\t
 c2i_ASN1_BIT_STRING
 c2i_ASN1_INTEGER
@@ -8446,6 +8482,7 @@ d$ HcU\bI
 d$ fD
 d$8!D$8D3D$8D
 d$H\bL\tt$HD
+d$P1ɺ0
 d$X\bL\t
 d$\b\bL\t
 d$\bt L
@@ -8574,13 +8611,16 @@ data/src/steamnetworkingsockets/clientlib/steam/csteamnetworkingsockets_steampar
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_connections.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_connections.h
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_ice_client.cpp
-data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel.h
+data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel_misc.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_p2p.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_p2p.h
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_p2p_ice.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_snp.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_snp.h
+data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_socketthread.cpp
+data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_spew.cpp
+data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_taskqueue.cpp
 data/src/steamnetworkingsockets/clientlib/steamnetworkingsockets_udp.cpp
 data/src/steamnetworkingsockets/sdr/steamdatagram_network_config.cpp
 data/src/steamnetworkingsockets/sdr/steamdatagram_network_config.h
@@ -8828,7 +8868,6 @@ e8Ict
 eContent
 eContentType
 eN.d\tA
-eXL;%Qm6
 eYe80D
 eYs/MA\b`}ڷN
 e\aPm
@@ -9065,6 +9104,7 @@ f"=\n\eCMsgSteamDatagramDiagnostic
 f"N\n*CMsgSteamDatagramSetSecondaryAddressResult
 f"R\n#CMsgSteamDatagramCertificateRequest
 f$0K@H
+f$< u!H
 f$H3T$\bI1
 f%wyLmX
 f(Ict
@@ -9444,7 +9484,6 @@ h L+m(M
 h0[]A
 h@L9hH
 hH+FpH\eVxH
-hH;\\$ptxH
 hHHHH
 hJxRX
 hPT8X`dlp
@@ -10173,7 +10212,6 @@ kx-srp
 k|9fD;P\b
 kֽkoޱoőT
 l$ A9]l~4Hk
-l$$txA
 l$01ɺ0
 l$0H;V
 l$0USV
@@ -10247,7 +10285,7 @@ length too long
 length_ >= n
 level_add_node
 lf%n %n
-lib Apr 30 2026 04:22:17
+lib Aug  6 2026 01:42:36
 lib(%lu
 libc.so.6
 libm.so.6
@@ -10289,7 +10327,7 @@ lookup returned nothing
 lookup_certs_sk
 loopback
 lৢXU\e
-m H;-^G6
+m H;-k~6
 m$L9d$\b
 m0IcE@L
 m>FC*a7H
@@ -10433,6 +10471,7 @@ multipath_packets_recv_later
 multipath_send_enabled
 munmap
 must be unique within
+mxH;-_Q6
 my_ips
 m۶m۶\rL
 m۶m۶mAUATU
@@ -10621,7 +10660,6 @@ n\f\a\bE\v
 n\f\a\bF\v
 n\f\a\bG\v
 n\f\a\bH\v
-n\f\a\bJ\v
 n\fca_signature
 n\fclose_reason
 n\fdouble_value
@@ -10647,7 +10685,6 @@ n\nAltAddress
 n\nCURVE25519
 n\nExtraField
 n\nIDEMPOTENT
-n\nSelected candidate %s -> %s.\n\n
 n\nTYPE_BYTES
 n\nTYPE_FLOAT
 n\nTYPE_GROUP
@@ -10910,6 +10947,7 @@ nsRevocationUrl
 nsSslServerName
 nssslserver
 nt&<\rt"A
+ntC<\r
 ntM(ie-V\a
 nteger out of range
 nu(L;e\bt"H
@@ -10927,12 +10965,14 @@ o.htoc
 o.httttttttoc
 o0;W,t
 o0ATUH
+o0H;-n"N
 o2i_ECPublicKey
 o2i_SCT
 o2i_SCT_LIST
 o2i_SCT_signature
 o8ATUH
 o8H;-2
+o8H;-B
 o?L\vL
 oB4Do4
 oCP)Kp)St
@@ -11078,10 +11118,7 @@ p2p_share_ip
 p2p_via_peer_relay_pop_id
 p3\bpU>\\AL
 p3\bq}M
-p8H;s\b
-p8I;t$\b}\bL
-p8I;u\b}\fL
-p8I;v\b
+p8A\\A]A
 p<R\a\e6ۀG
 p@0pqE5tsO?|1
 p@HPX`hx
@@ -11377,6 +11414,7 @@ qE7\t8\e
 qF{qc\t
 qOy*o
 qTm_fC
+q\bH9s\b
 q\bf9w\b
 q\bu\eH9
 q\nf9w\n
@@ -11836,12 +11874,14 @@ s] End-to-end sequence number is duplicate or old, or fails to decrypt, but rela
 s] End-to-end sequence number is duplicate or old, or fails to decrypt, but relay sequence number is OK
 s] Expecting %d acks!  %04x=%lld %04x=%lld %04x=%lld ... %04x=%lld %04x=%lld %04x=%lld
 s] Failed crypto init in ConnectOK packet.  %s
+s] Failed to parse remote candidate '%s'\n
 s] Failed to send end-to-end stats msg to primary relay %s to confirm end-to-end connectivity
 s] Failed to set option %d while implicitly accepting.  Ignoring failure
 s] Forgetting relay session %s.  Last communication was %.1f seconds ago
 s] Front ping %d is greater than measured end-to-end ping %d.\n
 s] Got P2P signal from %s.  Wrong connection type!\n
 s] Got P2P signal from wrong remote identity '%s'\n
+s] Got remote candidate '%s'\n
 s] Got valid end-to-end packet (%s) via %s.  Leaving finding route, entering connected state
 s] Guessed ICE failure to be %d: %s\n
 s] ICE already failed (%d %s) while changing role to server.  We won't try again
@@ -12409,7 +12449,6 @@ steamnetworkingsockets_messages.proto"n\n%CMsgSteamSockets_UDP_ChallengeRequest
 steamnetworkingsockets_messages_certs.proto
 steamnetworkingsockets_messages_udp.proto
 stop_waiting offset
-stop_waiting past sentinel gap
 stop_waiting pktNum %llu offset %llu
 store init error
 stored in google.protobuf.Any
@@ -12481,6 +12520,8 @@ t I94$vT
 t Ic1I
 t!9p w
 t!H9u
+t!H;X8
+t!H;h8
 t"$\n\bEKeyType
 t"A\n(CMsgSteamDatagramClientPingSampleRequest
 t"HU\v
@@ -12533,7 +12574,7 @@ t$\btR~aA
 t$\buHH
 t$\bvuH
 t$\b}MH
-t$\fD;5}BD
+t$\fD;5
 t$\ft@H
 t$\fvjH
 t$h!D$h!D$XD
@@ -12610,9 +12651,9 @@ tJL9t
 tJm_9
 tKH;2swH
 tLD9A\btND9A\ftPI
+tLH;D$0
 tLY^m`6
 tLl ՁgTH.M
-tM;A\bw
 tMHcC
 tPH;P
 tR<]tN<\t
@@ -12622,7 +12663,6 @@ tS<0t^H
 tTH;E
 tTIcD
 tUHcY H
-tU[]A
 tVI;4
 tWAWAVAUATI
 tWH;E
@@ -12655,7 +12695,7 @@ t\nH;X
 t\rHcs\fH
 t\tCJAAQ
 t\t\brF6t
-t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t00000000000000007777777777777777
+t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t00000000000000007777777777777777;p
 t\t|87
 t\vH9L
 t\vL9#tEH
@@ -12713,6 +12753,7 @@ tls1_prf_alg
 tls_get_addr
 tlsfeature
 tm_clone_table
+tnH;Q\b
 to start from the outermost scope
 to[]A
 to_connection_id
@@ -12763,6 +12804,7 @@ tst info setup error
 tt+<\nuF
 tt<\nt\t
 ttHcD
+tt\n< f
 tu!L9
 tu)L9
 tvL;c
@@ -12823,7 +12865,6 @@ u5L9e`u/H
 uDIcD
 uH3\bH3P\bH\t
 uHB9t08
-uHL97uC
 uHL;b
 uI$гPGr
 uID\tc
@@ -12833,8 +12874,6 @@ uR5&m
 uTH;Wh
 uWD\tc
 uYD\tc
-u\bH;p\b
-u\bH;p\bwLI
 u\n"CMsgSteamDatagramCertificateSigned
 u\r4.ŭs
 u\rD\tc
@@ -13018,7 +13057,7 @@ uыD$$E1
 u҈T$ND
 uڋCx9Ct| H
 uۋKD;KH
-uۋ\r\feJ
+uۋ\rU\fH
 u܋T$x
 u߉L$\fH
 v HǄ$H
@@ -13189,6 +13228,7 @@ wMwwǷfm
 wOUigi
 wPA\tl
 wPH+wHH
+wPL+wHMc
 wR\fe3c
 wZfD;p
 w[fD;p
@@ -13196,7 +13236,6 @@ w\bAUATI
 w\bAUATUH
 w\bAUE1
 w\bH+7H
-w\bH9r\br\f
 w\b}\rHc
 w\b~!Lc
 w\n\tConnectOK
@@ -13287,7 +13326,7 @@ x[]A\\A]A^A_ÐAWAVAUI
 x[]A\\A]ÐAVAUATUH
 x\aU8]\b
 x\b;_hu
-x\bH9w\b
+x\bH9~\b
 x\fA9
 x\ffD9z\f
 x\nf9{\n
@@ -13308,7 +13347,7 @@ y#y&Jb
 y@ ]H
 yAu[7
 yU#\f\fy
-y\b]A
+y\bH9z\bA
 y\bsett
 yhA\\A]A^A
 ym\bdy
@@ -13329,6 +13368,7 @@ zG==Ȭdd
 zG=dȬd
 zLD3BH1
 zWrgoI
+z\bI9y\b
 z\bfD;}\b
 z\nf9y\n
 z\r?, i

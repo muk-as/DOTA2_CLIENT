@@ -329,7 +329,7 @@ $.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#AghanimModel' ), funct
 	} );
 } );
 
-$.RegisterForUnhandledEvent( 'DOTAEventDataUpdated', function( eEvent )
+$.RegisterForUnhandledEvent( 'EventDataUpdated', function( eEvent )
 {
 	if ( eEvent != EVENT_ID_FALL_2021 )
 		return false;

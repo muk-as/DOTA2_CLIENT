@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 4
+        // Enumerator count: 5
         // Alignment: 4
         // Size: 0x_
         enum class EntityAttachmentType_t : std::uint32_t
@@ -22,6 +22,7 @@ namespace source2sdk
             eCenter = 0x1,
             eEyes = 0x2,
             eAttachment = 0x3,
+            eLocalOffset = 0x4,
         };
     };
 };

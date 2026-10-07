@@ -3,7 +3,23 @@
 DOTAPunchCard
 {
 	flow-children: right;
-	height: 34px;
+	height: 38px;
+}
+
+@keyframes 'PreviewGlow'
+{
+	0%
+	{
+		brightness: 1;
+		transform: translateX( -4px );
+	}
+	
+	100%
+	{
+		brightness: 3;
+		transform: translateX( 0px );
+	}
+	
 }
 
 .StampPanel
@@ -38,17 +54,44 @@ DOTAPunchCard
 	ignore-parent-flow: true;
 	vertical-align: center;
 	horizontal-align: center;
-	width: 18px;
-	height: 18px;
-	opacity: 0.5;
+	width: 16px;
+	height: 16px;
+	opacity: 0.4;
+	margin-right: 4px;
 	img-shadow: 0px 2px 8px black;
 	background-size: cover;
 	background-image: url("s2r://panorama/images/control_icons/24px/hero.vsvg");
 }
 
+DOTAPopupUITreasureRecycling .StampPanel .StampPanelIcon
+{
+	width: 20px;
+	height: 20px;
+}
+
 .IsRecyclingSticker .StampPanel .StampPanelIcon
 {
 	background-image: url("s2r://panorama/images/control_icons/24px/sticker.vsvg");
+}
+
+.StampPanel.StampPreview .StampPanelBackground,.StampPanel.StampPreview .StampPanelBackgroundArrow
+{
+	wash-color: rgb(131, 218, 255);
+	opacity: 0.5;
+	animation-name: PreviewGlow;
+	animation-duration: 0.3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.StampPanel.StampPreview .StampPanelIcon
+{
+	opacity: 1;
+	img-shadow: 0px 0px 12px rgb(80, 203, 255);
+	animation-name: PreviewGlow;
+	animation-duration: 0.3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
 }
 
 .StampPanel:selected .StampPanelBackground,.StampPanel:selected .StampPanelBackgroundArrow

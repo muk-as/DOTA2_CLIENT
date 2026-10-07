@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 51
+        // Enumerator count: 53
         // Alignment: 4
         // Size: 0x_
         enum class EBaseUserMessages : std::uint32_t
@@ -68,6 +68,8 @@ namespace source2sdk
             UM_PlayResponseConditional = 0xa6,
             UM_UserSentBugBug = 0xa7,
             UM_UsageReport = 0xa8,
+            UM_RemoteServerCommand = 0xa9,
+            UM_RemoteServerResponse = 0xaa,
             UM_MAX_BASE = 0xc8,
         };
     };

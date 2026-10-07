@@ -13,34 +13,40 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 8
+        // Enumerator count: 10
         // Alignment: 4
         // Size: 0x_
         enum class ChoreoExternalAnimgraphControlState_t : std::uint32_t
         {
-            // MPropertyFriendlyName "None"
+            // MPropertyFriendlyName "eNone"
             // MAlternateSemanticName
             eNone = 0x0,
-            // MPropertyFriendlyName "Exit"
+            // MPropertyFriendlyName "eExit"
             // MAlternateSemanticName
             eExit = 0x1,
-            // MPropertyFriendlyName "State_01"
+            // MPropertyFriendlyName "eFallbackExit"
             // MAlternateSemanticName
-            eState01 = 0x2,
-            // MPropertyFriendlyName "State_02"
+            eFallbackExit = 0x2,
+            // MPropertyFriendlyName "eState01"
             // MAlternateSemanticName
-            eState02 = 0x3,
-            // MPropertyFriendlyName "State_03"
+            eState01 = 0x3,
+            // MPropertyFriendlyName "eState02"
             // MAlternateSemanticName
-            eState03 = 0x4,
-            // MPropertyFriendlyName "State_04"
+            eState02 = 0x4,
+            // MPropertyFriendlyName "eState03"
             // MAlternateSemanticName
-            eState04 = 0x5,
-            // MPropertyFriendlyName "State_05"
+            eState03 = 0x5,
+            // MPropertyFriendlyName "eState04"
             // MAlternateSemanticName
-            eState05 = 0x6,
+            eState04 = 0x6,
+            // MPropertyFriendlyName "eState05"
+            // MAlternateSemanticName
+            eState05 = 0x7,
+            // MPropertyFriendlyName "eLooping"
+            // MAlternateSemanticName
+            eLooping = 0x8,
             // MPropertySuppressEnumerator
-            eCount = 0x7,
+            eCount = 0x9,
         };
     };
 };

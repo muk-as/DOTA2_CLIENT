@@ -9,10 +9,8 @@ DOTAPopupUITreasureOddsDetails.PopupPanel
 	animation-name: none;
 	background-color: black;
 	background-color: gradient( linear, 0% 0%, 140% 0%, from( #22282Af4 ), to( #000000 ) );
-	border: 0px;
-	box-shadow: fill black 0px 0px 20px 0px ;
 	padding: 0px;
-	transition-duration: .35s;
+	transition-duration: 0.2s;
 	opacity: 0;
 }
 
@@ -32,40 +30,76 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 	width: 100%;
 }
 
-#Title Label
-{
-	margin: 10px;
-	width: 80%;
-}
-
-.ShowMetadata #Title Label
-{
-	margin: 0px;
-	width: 90%;
-}
-
 #TitleBackground
 {
 	width: 100%;
-	height: 100px;
+	min-height: 100px;
 	border-top: 0;
 	background-image: none;
 	background-color: #00000077;
 	background-size: cover;
-	flow-children: none;
+	background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+	background-size: cover;
+	background-img-opacity: 0.4;
+}
+
+.TitleContents
+{
+	width: 100%;
+	flow-children: down;
+	vertical-align: center;
+	margin: 24px;
 }
 
 .TitleLabel
 {
-	margin-top: 15px;
+	width: 80%;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 	vertical-align: top;
 	text-align: center;
 	horizontal-align:center;
 	vertical-align:center;
 	color: white;
-	font-size: 30px;
+	font-size: 28px;
+	text-shadow: 0px 2px 8px black;
+}
+
+.ItemNameContainer
+{
+	visibility: collapse;
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 2px;
+}
+
+.ItemNameContainer .ItemNameLabel
+{
+	vertical-align: center;
+	font-family: titleFont;
+	color: LightestGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	letter-spacing: 0.2px;
+}
+
+.ItemNameContainer #HeroIcon
+{
+	width: 28px;
+	height: 28px;
+	texture-sampling: point;
+	vertical-align: center;
+	margin-right: 8px;
+	visibility: collapse;
+}
+
+.HasHeroIcon .ItemNameContainer #HeroIcon
+{
+	visibility: visible;
+}
+
+.ForSpecificItem .ItemNameContainer
+{
+	visibility: visible;
 }
 
 .ReceivedLog #Body,DOTAPopupUITreasureOddsDetails.ReceivedLog .TotalShards
@@ -75,26 +109,12 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 
 #CancelButton
 {
-	width: 35px;
-	height: 35px;
-	background-size: 20px;
-	background-color: #00000077;
-	margin-top: 8px;
-	margin-right: 9px;
+	margin: 12px;
 	horizontal-align: right;
-	transition-property: background-color, brightness;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
-}
-
-#CancelButton:hover
-{
-	background-color: #000000dd;
 }
 
 .TitleBar
 {
-	padding-top: 6px;
 	width: 100%;
 	flow-children: right;
 	height: 32px;
@@ -103,9 +123,16 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 
 .TitleBar Label
 {
+	vertical-align: center;
 	text-transform: uppercase;
-	font-weight: thin;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: LightGrey;
+}
+
+.TitleBar .TreasureOddsMetadataColumn
+{
+	vertical-align: center;
 }
 
 .TitleBar .TreasuresOpenedColumn
@@ -138,7 +165,26 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 
 .TreasureOddsDetailsEntry.CurrentLevel
 {
-	wash-color: #e2aa0088;
+	border: 1px solid rgba(205, 232, 255, 0.2);
+	box-shadow: inset 0px 0px 12px -1px rgba(194, 226, 255, 0.03);
+	z-index: 1;
+	brightness: 1.5;
+}
+
+.TreasureOddsDetailsEntry.PityUnlockLevel
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( ultraRareChanceTextColor&22 ), to( ultraRareChanceTextColor&05 ) );
+}
+
+.TreasureOddsDetailsEntry.PityUnlockLevel Label
+{
+	color: white;
+	text-shadow: 0px 0px 12px ultraRareChanceTextColor&33;
+}
+
+.TreasureOddsDetailsEntry.PityUnlockLevel #BadLuckProtectionInfoIcon
+{
+	visibility: visible;
 }
 
 .CurrentLevel #CurrentEntryInfoIcon
@@ -146,7 +192,7 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 	visibility: visible;
 }
 
-#CurrentEntryInfoIcon
+#CurrentEntryInfoIcon,#BadLuckProtectionInfoIcon
 {
 	margin-left: 8px;
 	margin-right: -24px;
@@ -157,12 +203,23 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 	z-index: 10;
 }
 
+#BadLuckProtectionInfoIcon
+{
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/control_icons/24px/back_luck_protection.vsvg");
+	background-size: contain;
+	ignore-parent-flow: true;
+	tooltip-position: top;
+	img-shadow: 0px 0px 12px ultraRareChanceTextColor&99;
+	opacity: 0.85;
+}
+
 .TreasureOddsDetailsEntry Label
 {
 	font-size: 18px;
 	vertical-align: middle;
 	margin-top: 3px;
-	font-weight: thin;
 }
 
 .TreasuresOpenedColumn
@@ -233,7 +290,7 @@ DOTAPopupUITreasureOddsDetails.DetailsLoaded
 	margin: 2px;
 	width: 16px;
 	height: 16px;
-	background-image: url("s2r://panorama/images/status_icons/information_psd.vtex");
+	background-image: url("s2r://panorama/images/control_icons/24px/info.vsvg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: contain;

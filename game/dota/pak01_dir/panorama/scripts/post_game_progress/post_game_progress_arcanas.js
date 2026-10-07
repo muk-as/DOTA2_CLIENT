@@ -205,6 +205,148 @@ class AnimateDrowRangerArcanaScreenAction extends RunSequentialActions
 
 
 
+class AnimateTidehunterArcanaScreenAction extends RunSequentialActions
+{
+	constructor( data )
+	{
+		super();
+		this.data = data;
+	}
+
+	start()
+	{
+		var heroName = this.data.arcana_progress.arcana_hero_name;
+		var tracks = this.data.arcana_progress.tracks;
+
+		var LocalizeFirstFound = function( tokens, context )
+		{
+			for ( var i = 0; i < tokens.length - 1; ++i )
+			{
+				var sText = $.Localize( tokens[i], context );
+				if ( sText != tokens[i] )
+					return sText;
+			}
+			return $.Localize( tokens[tokens.length - 1], context );
+		};
+
+		var LocalizeTrackString = function( sPrefix, nTrack, context )
+		{
+			return LocalizeFirstFound( [ sPrefix + heroName + "_" + nTrack, sPrefix + heroName, sPrefix + "generic" ], context );
+		};
+
+		var panel = StartNewScreen( 'GenericArcanaProgressScreen' );
+		panel.BLoadLayoutSnippet( "ArcanaProgress_" + heroName );
+		panel.AddClass( heroName );
+
+		var heroModel = panel.FindChildTraverse( 'GenericArcanaModel' );
+		var unstyledHeroModel = panel.FindChildTraverse( 'GenericArcanaModelUnstyled' );
+
+		if ( typeof this.data.player_slot !== 'undefined' )
+		{
+			if ( heroModel ) { heroModel.SetScenePanelToPlayerHero( this.data.match_id, this.data.player_slot ); }
+			if ( unstyledHeroModel ) { unstyledHeroModel.SetScenePanelToPlayerHero( this.data.match_id, this.data.player_slot ); }
+		}
+		else
+		{
+			if ( heroModel ) { heroModel.SetScenePanelToLocalHero( this.data.hero_id ); }
+			if ( unstyledHeroModel ) { unstyledHeroModel.SetScenePanelToLocalHero( this.data.hero_id ); }
+		}
+
+		var bundleItems = this.data.arcana_progress.arcana_bundle_items;
+		var bundleSlots = this.data.arcana_progress.arcana_bundle_slots;
+		var styleIndex = this.data.arcana_progress.style_index;
+		for ( var i = 0; i < bundleItems.length; ++i )
+		{
+			if ( heroModel ) { heroModel.ReplaceEconItemSlot( bundleSlots[i], bundleItems[i], styleIndex ); }
+		}
+
+		panel.SetDialogVariable( "arcana_progress_header", LocalizeFirstFound( [ "#DOTA_ArcanaProgress_Header_" + heroName, "#DOTA_ArcanaProgress_Header_generic" ], panel ) );
+		panel.SetDialogVariable( "arcana_progress_title", LocalizeFirstFound( [ "#DOTA_ArcanaProgress_Title_" + heroName, "#DOTA_ArcanaProgress_Title_generic" ], panel ) );
+
+		var trackIconSuffixes = [ "_alt2", "_alt3" ];
+		var trackActions = [];
+		for ( var i = 0; i < tracks.length; ++i )
+		{
+			( function( track, trackPanel, nTrack )
+			{
+				if ( !trackPanel )
+					return;
+
+				var nStartScore = Math.floor( track.arcana_start_score );
+				var nEndScore = Math.floor( track.arcana_end_score );
+
+				trackPanel.SetDialogVariableLocString( 'killeater_type_name', track.killeater_type_name );
+				trackPanel.SetDialogVariableInt( 'arcana_progress_max_score', Math.floor( track.arcana_max_score ) );
+				trackPanel.SetDialogVariableInt( 'arcana_progress_current_score', nStartScore );
+				trackPanel.SetDialogVariable( 'arcana_progress_increment', nEndScore - nStartScore );
+
+				trackPanel.SetDialogVariable( "arcana_progress_description", LocalizeTrackString( "#DOTA_ArcanaProgress_Description_", nTrack, trackPanel ) );
+				trackPanel.SetDialogVariable( "arcana_progress_increment", LocalizeTrackString( "#DOTA_ArcanaProgress_Increment_", nTrack, trackPanel ) );
+
+				trackPanel.SetHasClass( "NoProgress", nEndScore <= nStartScore );
+
+				var heroIcon = trackPanel.FindChildTraverse( 'GenericArcanaHeroIcon' );
+				if ( heroIcon )
+				{
+					var sIconFile = ( "file://{images}/heroes/icons/" + heroName + ( trackIconSuffixes[nTrack] || "_alt1" ) + ".png" );
+					heroIcon.style.backgroundImage = 'url("' + sIconFile + '")';
+				}
+
+				var progressBar = trackPanel.FindChildTraverse( 'GenericArcanaProgressBar' );
+				progressBar.min = 0;
+				progressBar.max = track.arcana_max_score;
+				progressBar.value = track.arcana_start_score;
+
+				trackActions.push( new AddClassAction( trackPanel, 'ShowTrack' ) );
+				trackActions.push( new SkippableAction( new WaitAction( 0.75 ) ) );
+				trackActions.push( new RunFunctionAction( function()
+				{
+					trackPanel.TriggerClass( "PulseScore" );
+					trackPanel.AddClass( "ProgressComplete" );
+				} ) );
+				trackActions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
+				trackActions.push( new RunParallelActions( [
+					new AnimateProgressBarAction( progressBar, track.arcana_start_score, track.arcana_end_score, 1.0 ),
+					new AnimateDialogVariableIntAction( trackPanel, 'arcana_progress_current_score', nStartScore, nEndScore, 1.0 )
+				] ) );
+				trackActions.push( new SkippableAction( new WaitAction( 1.0 ) ) );
+			} )( tracks[i], panel.FindChildTraverse( 'TidehunterArcanaTrack' + i ), i );
+		}
+
+		var sndStinger = $.Localize( "#DOTA_ArcanaProgress_Stinger_" + heroName, panel );
+		if ( sndStinger )
+		{
+			this.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'PlaySoundEffect', sndStinger ); } ) );
+		}
+
+		this.actions.push( new AddClassAction( panel, 'ShowScreen' ) );
+		this.actions.push( new StopSkippingAheadAction() );
+		this.actions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
+
+		this.actions.push( new RunFunctionAction( function()
+		{
+			var link = AddScreenLink( panel, 'GenericArcanaProgress', '#DOTA_PostGame_GenericArcanaProgress' );
+			if ( !link.style.backgroundImage )
+			{
+				var sIconFile = ( "file://{images}/heroes/icons/" + heroName + "_alt1.png" );
+				link.style.backgroundImage = 'url("' + sIconFile + '")';
+			}
+			link.AddClass( heroName );
+		} ) );
+
+		this.actions.push( new ActionWithTimeout( new WaitForClassAction( heroModel, 'SceneLoaded' ), 3.0 ) );
+		this.actions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
+		this.actions.push( new AddClassAction( panel, 'ShowProgress' ) );
+		this.actions.push( new SkippableAction( new WaitAction( 1.0 ) ) );
+		this.actions.push( ...trackActions );
+		this.actions.push( new SkippableAction( new WaitAction( 2 ) ) );
+		this.actions.push( new StopSkippingAheadAction() );
+		this.actions.push( new SwitchClassAction( panel, 'current_screen', '' ) );
+		this.actions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
+
+		super.start();
+	}
+}
 
 // Rubick Arcana
 
@@ -571,6 +713,52 @@ var TestAnimateEarthshakerArcanaProgress = function()
 			arcana_bundle_items: [],
 			arcana_bundle_slots: []
 
+		}
+	};
+
+	TestProgressAnimation( data );
+};
+
+
+
+var TestAnimateTidehunterArcanaProgress = function()
+{
+	var data =
+	{
+		hero_id: 29,
+
+		arcana_progress:
+		{
+			hero_id: 29,
+			kills: 6,
+			deaths: 7,
+			assists: 8,
+
+			arcana_hero_name: "npc_dota_hero_tidehunter",
+
+			arcana_owner_item_def_index: 37143,
+			arcana_gem_item_def_index: 3049,
+			arcana_bundle_def_index: 0,
+
+			style_index: 1,
+			arcana_bundle_items: [],
+			arcana_bundle_slots: [],
+
+			tracks:
+			[
+				{
+					killeater_type_name: "KillEaterEvent_Tidehunter_ArcanaProgress",
+					arcana_start_score: 420,
+					arcana_end_score: 470,
+					arcana_max_score: 1000
+				},
+				{
+					killeater_type_name: "KillEaterEvent_Tidehunter_ArcanaFishEaten",
+					arcana_start_score: 213,
+					arcana_end_score: 229,
+					arcana_max_score: 1000
+				}
+			]
 		}
 	};
 

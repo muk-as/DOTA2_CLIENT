@@ -5,18 +5,25 @@ DOTATreasureRecycleStatus
 	width: 100%;
 }
 
+DOTATreasureStickerPackDetailsPage DOTATreasureRecycleStatus
+{
+	width: 100%;
+	max-width: 560px;
+}
+
+DOTATreasureStickerPackDetailsPage #TreasureRecycling
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 120% 120%, from( #ddf0ff09 ), to( #ddf0ff03 ) );
+	border: 1px solid rgba(223, 240, 255, 0.087);
+	border-brush: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( #ffffff ), to( #ffffff40 ) );
+	padding: 12px;
+}
+
 #TreasureRecycling
 {
 	visibility: collapse;
 	width: 100%;
-	flow-children: right;
-	background-color: gradient( radial, 0% 0%, 0% 0%, 120% 120%, from( #ddf0ff09 ), to( #ddf0ff03 ) );
-	padding: 10px 12zpx;
-	border: 1px solid rgba(223, 240, 255, 0.087);
-	border-brush: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( #ffffff ), to( #ffffff40 ) );
-	transition-duration: 0.4s;
-	transition-property: opacity;
-	opacity: 1;
+	flow-children: down;
 }
 
 .TreasureRecyclingGrantEnabled #TreasureRecycling
@@ -34,14 +41,26 @@ DOTATreasureRecycleStatus
 	width: 22px;
 	vertical-align: center;
 	margin-right: 8px;
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #dee2e7 ), to( #b5bcc4 ) );
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LightGrey ) );
 	img-shadow: 0px 1px 8px black;
 }
 
 .TreasureRecyclingTitle
 {
 	text-shadow: 0px 1px 8px black;
-	color: gradient( linear, 0% 0%, 0% 100%, from( #dee2e7 ), to( #b5bcc4 ) );
+	color: gradient( linear, 0% 0%, 0% 100%, from( whitesmoke ), to( LighterGrey ) );
+	font-weight: semi-bold;
+}
+
+DOTAPopupUITreasureRecycling .TreasureRecyclingTitle
+{
+	font-size: 22px;
+}
+
+#TreasureRecyclingHeader
+{
+	flow-children: right;
+	margin-bottom: 2px;
 }
 
 #TreasureRecyclingTop
@@ -49,24 +68,41 @@ DOTATreasureRecycleStatus
 	vertical-align: top;
 	horizontal-align: left;
 	width: fill-parent-flow(1);
-	margin-right: 12px;
+	vertical-align: center;
 	transition-property: opacity;
 	transition-duration: 0.2s;
 }
 
+DOTAPopupUITreasureRecycling #TreasureRecyclingTop
+{
+	padding: 24px;
+	padding-bottom: 16px;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+	background-size: cover;
+	background-img-opacity: 0.4;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
 #RecyclingInfoIcon
 {
+	width: 16px;
+	height: 16px;
 	z-index: 100;
-	vertical-align: top;
+	vertical-align: center;
 	horizontal-align: right;
-	ignore-parent-flow: true;
 	margin-right: 8px;
+	margin-left: 0px;
+	wash-color: white;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LightGrey ) );
 	tooltip-position: top;
 }
 
 .TreasureRecyclingSubtitle
 {
-	font-size: 15px;
+	color: LightGrey;
+	margin-bottom: 2px;
+	text-shadow: 0px 1px 8px black;
 }
 
 .ShowForEconRecycling
@@ -77,6 +113,7 @@ DOTATreasureRecycleStatus
 #RecyclingRewardProgress
 {
 	margin-top: 8px;
+	margin-bottom: 8px;
 	vertical-align: center;
 	flow-children: right;
 	blur: none;
@@ -124,7 +161,6 @@ DOTATreasureRecycleStatus
 	vertical-align: center;
 	horizontal-align: left;
 	width: fill-parent-flow(1.0);
-	margin-left: 12px;
 }
 
 #RecyclingPunchCard .StampPanel:selected
@@ -137,18 +173,22 @@ DOTATreasureRecycleStatus
 	visibility: collapse;
 }
 
+#RecyclingReward
+{
+	margin: 2px;
+}
+
 #RecyclingRewardContainer
 {
-	margin: 0px;
-	vertical-align: center;
+	vertical-align: bottom;
+	border-radius: 3px;
+	margin: 3px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #RecyclingRewardButton
 {
-	width: 100%;
-	margin: 8px;
-	horizontal-align: center;
-	vertical-align: bottom;
 	visibility: collapse;
 }
 
@@ -157,9 +197,35 @@ DOTATreasureRecycleStatus
 	visibility: visible;
 }
 
-.HideClaimButton #RecyclingRewardButton
+DOTAPopupUITreasureRecycling #RecyclingRewardButton
 {
+	horizontal-align: right;
+	height: fit-children;
+	padding: 8px 64px;
+}
+
+DOTAPopupUITreasureRecycling #RecyclingRewardButton Label
+{
+	font-weight: semi-bold;
+	font-size: 18px;
+}
+
+.TreasureClaimBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(255, 232, 193);
+	border-radius: 3px;
 	visibility: collapse;
+}
+
+.BonusTreasureClaimable .TreasureClaimBorder
+{
+	visibility: visible;
+	animation-name: GlowClaimBorder;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
 }
 
 .RecyclingRewardContents
@@ -178,11 +244,6 @@ DOTATreasureRecycleStatus
 	visibility: collapse;
 }
 
-#RecyclingRewardClaimLabel
-{
-	vertical-align: center;
-}
-
 .TreasureOpeningResultItemPanel
 {
 	vertical-align: bottom;
@@ -190,10 +251,9 @@ DOTATreasureRecycleStatus
 
 #RecyclingTreasureImageContainer
 {
-	width: height-percentage( 150% );
-	height: 92px;
+	width: 56px;
+	height: 38px;
 	vertical-align: center;
-	box-shadow: 0px 4px 24px -4px rgba(0, 0, 0, 0.5);
 	overflow: clip;
 }
 
@@ -204,23 +264,6 @@ DOTATreasureRecycleStatus
 	overflow: noclip;
 	vertical-align: center;
 	horizontal-align: center;
-}
-
-#RecyclingTreasureImageContainer .TreasureClaimBorder
-{
-	width: 100%;
-	height: 100%;
-	border: 1px solid rgb(255, 232, 193);
-	visibility: collapse;
-}
-
-.BonusTreasureClaimable #RecyclingTreasureImageContainer .TreasureClaimBorder
-{
-	visibility: visible;
-	animation-name: GlowClaimBorder;
-	animation-duration: 0.8s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate-reverse;
 }
 
 #RecyclingTreasureImageContainer #RecyclingTreasureQty
@@ -240,18 +283,12 @@ DOTATreasureRecycleStatus
 	vertical-align: center;
 	horizontal-align: center;
 	width: 280%;
-	height: 280%;
+	height: 200%;
 	ignore-parent-flow: true;
 	overflow: noclip;
-	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
 	brightness: 2;
 	hue-rotation: 10deg;
 	visibility: collapse;
-}
-
-.BonusTreasureClaimable .CanClaimFX
-{
-	visibility: visible;
 }
 
 @keyframes 'GlowClaimBorder'
@@ -291,8 +328,8 @@ DOTATreasureRecycleStatus
 
 #RecyclingRewardSeparator
 {
-	font-size: 16px;
-	margin: 4px;
+	margin: 1px;
+	color: Grey;
 	visibility: collapse;
 }
 
@@ -303,7 +340,7 @@ DOTATreasureRecycleStatus
 
 #RecyclingShardReward
 {
-	margin-top: 5px;
+	margin-right: 4px;
 	vertical-align: center;
 	horizontal-align: center;
 	visibility: collapse;
@@ -329,9 +366,42 @@ DOTATreasureRecycleStatus
 	visibility: visible;
 }
 
-#RecyclingShardReward Panel,Label
+#RarityText
 {
 	vertical-align: center;
+	margin-right: 8px;
+	font-weight: semi-bold;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.TreasureItemRarity_Default #RarityText
+{
+	visibility: collapse;
+}
+
+.TreasureItemRarity_Rare #RarityText
+{
+	color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #RarityText
+{
+	color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #RarityText
+{
+	color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #RarityText
+{
+	color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #RarityText
+{
+	color: cosmicallyRareChanceTextColor;
 }
 
 #RecyclingShardReward Label
@@ -339,7 +409,7 @@ DOTATreasureRecycleStatus
 	margin-left: 4px;
 	font-size: 18px;
 	color: dotaPlusLightGold;
-	text-shadow: 2px 2px 4px black;
+	text-shadow: 0px 1px 4px black;
 }
 
 #RecyclingShardReward .DotaPlusCurrencyIcon
@@ -422,7 +492,6 @@ DOTATreasureRecycleStatus
 #TreasureRecyclingBottom
 {
 	width: 100%;
-	border-top: 1px solid #4F3612;
 	flow-children: down;
 	min-width: 400px;
 }
@@ -437,11 +506,8 @@ DOTATreasureRecycleStatus
 	horizontal-align: left;
 	flow-children: down;
 	margin-left: 0px;
-	max-height: 360px;
 	width: 100%;
 	overflow: scroll;
-	padding-right: 20px;
-	margin-top: 10px;
 }
 
 .RecyclingRequiresPlusSubscription #TreasureBundlesReceivedList
@@ -451,29 +517,71 @@ DOTATreasureRecycleStatus
 
 #TreasureBundlesReceivedList .TreasureOpeningResult
 {
-	padding-right: 2px;
 	width: 100%;
 	flow-children: right;
+	padding-right: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.01);
 }
 
-#TreasureBundlesReceivedList #TreasureOpeningResultArmoryItem
+#TreasureBundlesReceivedList .TreasureOpeningResult.TreasureItemRarity_Rare
 {
-	width: 280px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rareTextColor&00 ), to( rareTextColor&05 ) );
+}
+
+#TreasureBundlesReceivedList .TreasureOpeningResult.TreasureItemRarity_VeryRare
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( veryRareTextColor&00 ), to( veryRareTextColor&05 ) );
+}
+
+#TreasureBundlesReceivedList .TreasureOpeningResult.TreasureItemRarity_ExtremelyRare
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( extremelyRareTextColor&00 ), to( extremelyRareTextColor&05 ) );
+}
+
+#TreasureBundlesReceivedList .TreasureOpeningResult.TreasureItemRarity_UltraRare
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( ultraRareChanceTextColor&00 ), to( ultraRareChanceTextColor&05 ) );
+}
+
+#TreasureBundlesReceivedList .TreasureOpeningResult.TreasureItemRarity_CosmicallyRare
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( cosmicallyRareChanceTextColor&00 ), to( cosmicallyRareChanceTextColor&05 ) );
+}
+
+.RecycleItemPreviewContainer
+{
+	width: 100px;
+	height: 100px;
+	margin-left: 24px;
+}
+
+.RecycleItemPreviewContainer .ItemShadow
+{
+	width: 110%;
+	height: 16px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 40% 40%, from( rgba(0, 0, 0, 0.8) ), to( rgba(0, 0, 0, 0) ) );
+	margin-bottom: 6px;
+	overflow: noclip;
+}
+
+.RecycleItemPreviewContainer #RecycleItemPreview
+{
+	width: 100%;
+	height: 100%;
 }
 
 .TreasureOpeningRecycleCountLabel
 {
 	vertical-align: center;
-	margin-left: 8px;
-	margin-right: 10px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #d8dce2 ;
-	overflow: clip;
-	color: #c4ceda;
-	font-size: 24px;
-	font-weight: bold;
-	font-size: 18px;
+	font-size: 22px;
+	color: LightestGrey;
+	padding: 4px 12px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .TreasureOpeningRecycleSpacer
@@ -486,52 +594,19 @@ DOTATreasureRecycleStatus
 {
 	horizontal-align: right;
 	vertical-align: center;
-	margin-right: 0px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #3484a7 ), to( #245575 ));
-	background-color: #253646;
-	border-top: 1px solid #485677;
-	transition-property: background-color, box-shadow;
-	transition-duration: .2s;
-	animation-duration: 3.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	box-shadow: fill #00000044 1px -1px 8px 1px ;
-	padding: 3px;
 }
 
-.TreasureOpeningRecycleButtonIcon
+.TreasureOpeningRecycleButton Image
 {
-	opacity: 0.75;
-	width: 22px;
-	height: 22px;
-	background-image: url("s2r://panorama/images/econ/smelting_psd.vtex");
-	background-size: 22px 22px;
-	vertical-align: center;
-	horizontal-align: left;
-	margin-right: 4px;
-	margin-left: 4px;
-}
-
-.TreasureOpeningRecycleButtonContents
-{
-	flow-children: right;
-	horizontal-align: center;
-	vertical-align: middle;
-}
-
-.TreasureOpeningRecycleButtonContents > Label
-{
-	text-transform: uppercase;
-	color: white;
-	font-weight: bold;
-	font-size: 15px;
-	margin-right: 4px;
-	margin-top: 2px;
+	margin-top: -4px;
 }
 
 .ButtonsContainer
 {
-	vertical-align: center;
+	flow-children: right;
+	margin-top: 4px;
+	margin-bottom: 8px;
+	width: 100%;
 }
 
 .ButtonsContainer .RecycleButton
@@ -541,10 +616,60 @@ DOTATreasureRecycleStatus
 
 .IsRecyclingTreasure .ButtonsContainer #TreasureRecycleButton
 {
+	margin-right: 6px;
 	visibility: visible;
 }
 
 .IsRecyclingSticker .ButtonsContainer #StickerRecycleButton
+{
+	margin-right: 6px;
+	visibility: visible;
+}
+
+.TreasureOpeningResult #RecycleItemPreview:hover
+{
+	brightness: 1.5;
+}
+
+.TreasureOpeningResult #ItemDetails
+{
+	margin-left: 16px;
+	vertical-align: middle;
+	flow-children: down;
+	width: fill-parent-flow(1);
+}
+
+.TreasureOpeningResult #ItemDetails Label
+{
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.TreasureOpeningResult #UnitName
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: LightGrey;
+}
+
+.TreasureOpeningResult #ItemType
+{
+	color: LightGrey;
+	visibility: collapse;
+}
+
+.TreasureOpeningResult #ItemType .SetName
+{
+	font-family: titleFont;
+}
+
+.TreasureOpeningResult #ItemName
+{
+	color: LightestGrey;
+	font-family: titleFont;
+}
+
+.TreasureOpeningResult.ShowItemType #ItemType
 {
 	visibility: visible;
 }

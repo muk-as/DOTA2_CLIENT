@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 109
+        // Enumerator count: 118
         // Alignment: 4
         // Size: 0x_
         enum class DOTASlotType_t : std::uint32_t
@@ -156,80 +156,98 @@ namespace source2sdk
             // MAlternateSemanticName
             DOTA_LOADOUT_TYPE_ABILITY_ULTIMATE_PERSONA_1 = 0x43,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_VOICE_PERSONA_1 = 0x44,
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_1_PERSONA_1 = 0x44,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_2_PERSONA_1 = 0x45,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_3_PERSONA_1 = 0x46,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_4_PERSONA_1 = 0x47,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_5_PERSONA_1 = 0x48,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_6_PERSONA_1 = 0x49,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_7_PERSONA_1 = 0x4a,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_8_PERSONA_1 = 0x4b,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_9_PERSONA_1 = 0x4c,
+            // MAlternateSemanticName
+            DOTA_LOADOUT_TYPE_VOICE_PERSONA_1 = 0x4d,
             DOTA_LOADOUT_PERSONA_1_START = 0x28,
-            DOTA_LOADOUT_PERSONA_1_END = 0x44,
+            DOTA_LOADOUT_PERSONA_1_END = 0x4d,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_PERSONA_SELECTOR = 0x45,
+            DOTA_LOADOUT_TYPE_PERSONA_SELECTOR = 0x4e,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_COURIER = 0x46,
+            DOTA_LOADOUT_TYPE_COURIER = 0x4f,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_ANNOUNCER = 0x47,
+            DOTA_LOADOUT_TYPE_ANNOUNCER = 0x50,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_MEGA_KILLS = 0x48,
+            DOTA_LOADOUT_TYPE_MEGA_KILLS = 0x51,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_MUSIC = 0x49,
+            DOTA_LOADOUT_TYPE_MUSIC = 0x52,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_WARD = 0x4a,
+            DOTA_LOADOUT_TYPE_WARD = 0x53,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_HUD_SKIN = 0x4b,
+            DOTA_LOADOUT_TYPE_HUD_SKIN = 0x54,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_LOADING_SCREEN = 0x4c,
+            DOTA_LOADOUT_TYPE_LOADING_SCREEN = 0x55,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_WEATHER = 0x4d,
+            DOTA_LOADOUT_TYPE_WEATHER = 0x56,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_HEROIC_STATUE = 0x4e,
+            DOTA_LOADOUT_TYPE_HEROIC_STATUE = 0x57,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_MULTIKILL_BANNER = 0x4f,
+            DOTA_LOADOUT_TYPE_MULTIKILL_BANNER = 0x58,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_CURSOR_PACK = 0x50,
+            DOTA_LOADOUT_TYPE_CURSOR_PACK = 0x59,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_TELEPORT_EFFECT = 0x51,
+            DOTA_LOADOUT_TYPE_TELEPORT_EFFECT = 0x5a,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_BLINK_EFFECT = 0x52,
+            DOTA_LOADOUT_TYPE_BLINK_EFFECT = 0x5b,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_EMBLEM = 0x53,
+            DOTA_LOADOUT_TYPE_EMBLEM = 0x5c,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_TERRAIN = 0x54,
+            DOTA_LOADOUT_TYPE_TERRAIN = 0x5d,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_RADIANT_CREEPS = 0x55,
+            DOTA_LOADOUT_TYPE_RADIANT_CREEPS = 0x5e,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_DIRE_CREEPS = 0x56,
+            DOTA_LOADOUT_TYPE_DIRE_CREEPS = 0x5f,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_RADIANT_TOWER = 0x57,
+            DOTA_LOADOUT_TYPE_RADIANT_TOWER = 0x60,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_DIRE_TOWER = 0x58,
+            DOTA_LOADOUT_TYPE_DIRE_TOWER = 0x61,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_VERSUS_SCREEN = 0x59,
+            DOTA_LOADOUT_TYPE_VERSUS_SCREEN = 0x62,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_STREAK_EFFECT = 0x5a,
+            DOTA_LOADOUT_TYPE_STREAK_EFFECT = 0x63,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_KILL_EFFECT = 0x5b,
+            DOTA_LOADOUT_TYPE_KILL_EFFECT = 0x64,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_DEATH_EFFECT = 0x5c,
+            DOTA_LOADOUT_TYPE_DEATH_EFFECT = 0x65,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_HEAD_EFFECT = 0x5d,
+            DOTA_LOADOUT_TYPE_HEAD_EFFECT = 0x66,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_MAP_EFFECT = 0x5e,
+            DOTA_LOADOUT_TYPE_MAP_EFFECT = 0x67,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_COURIER_EFFECT = 0x5f,
+            DOTA_LOADOUT_TYPE_COURIER_EFFECT = 0x68,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_RADIANT_SIEGE_CREEPS = 0x60,
+            DOTA_LOADOUT_TYPE_RADIANT_SIEGE_CREEPS = 0x69,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_DIRE_SIEGE_CREEPS = 0x61,
+            DOTA_LOADOUT_TYPE_DIRE_SIEGE_CREEPS = 0x6a,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_ROSHAN = 0x62,
+            DOTA_LOADOUT_TYPE_ROSHAN = 0x6b,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_TORMENTOR = 0x63,
+            DOTA_LOADOUT_TYPE_TORMENTOR = 0x6c,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_ANCIENT = 0x64,
+            DOTA_LOADOUT_TYPE_ANCIENT = 0x6d,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_PET_EFFIGY = 0x65,
-            DOTA_PLAYER_LOADOUT_START = 0x46,
-            DOTA_PLAYER_LOADOUT_END = 0x65,
+            DOTA_LOADOUT_TYPE_PET_EFFIGY = 0x6e,
+            DOTA_PLAYER_LOADOUT_START = 0x4f,
+            DOTA_PLAYER_LOADOUT_END = 0x6e,
             // MAlternateSemanticName
-            DOTA_LOADOUT_TYPE_NONE = 0x66,
-            DOTA_LOADOUT_TYPE_COUNT = 0x67,
+            DOTA_LOADOUT_TYPE_NONE = 0x6f,
+            DOTA_LOADOUT_TYPE_COUNT = 0x70,
         };
     };
 };

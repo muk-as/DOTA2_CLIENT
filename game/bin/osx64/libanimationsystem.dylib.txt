@@ -1,14 +1,11 @@
-0    0
 0    0P
 0    @  `@@  00
-0   0000
-0  @@@@P 00PP`p``PP
+0  @@@@P 00PP`p``PP@@PP
 0  extend .$1
 0  extensions $1 to $2
 0  reserved
 0 0 0
 0 0 0 255
-0 pp0 0P0
 0 to $1
 0 to max
 0" does not declare $1 as an extension number
@@ -27,12 +24,16 @@
 0123456789
 0123456789abcdef
 0@000
+0@@PP
 0A;^4
 0ASATARASARAZAp
 0Bp>*C
 0BxD*C
+0IcG(H
+0IcN(H
 0Lcc0E
 0P0PPP00
+0Pp @@PP
 0[A\A^A
 0__function6__baseIF
 0_t=H
@@ -54,7 +55,6 @@
 11CMotionNode
 11CNmClipNode
 11CNmPoseNode
-11CNmPoseTask
 11CPoseRecipe
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11CRenderMesh
@@ -80,9 +80,11 @@
 13CDemoSaveGame
 13CDemoSyncTick
 13CMorphSetData
+13CNmClothEvent
 13CNmFootIKNode
 13CNmSampleTask
 13CNmSoundEvent
+13CNullTypeInfo
 13CStrideStatus
 13IAudioAnimTag
 13IBaseSequence
@@ -110,6 +112,7 @@
 14IAnimationClip
 14IErrorListener
 14IPulseGraphDef
+14IPulseTypeInfo
 14IStatusAnimTag
 15CAnimationGroup
 15CBaseConstraint
@@ -139,6 +142,7 @@
 15CLeafUpdateNode
 15CNmBoneMaskNode
 15CNmCachedIDNode
+15CNmContactEvent
 15CNmIDSwitchNode
 15CNmSelectorNode
 15CNmZeroPoseNode
@@ -173,7 +177,6 @@
 16CNmIDToFloatNode
 16CNmParticleEvent
 16CNmTwoBoneIKNode
-16CNmTwoBoneIKTask
 16CPPScriptContext
 16CParticleAnimTag
 16CPointConstraint
@@ -226,6 +229,7 @@
 17CConcreteToolAttrI13CGlobalSymbol15CRagdollAnimTagvE
 17CConcreteToolAttrI13CGlobalSymbol18CAnimParameterBasevE
 17CConcreteToolAttrI13CGlobalSymbol20CSymbolAnimParametervE
+17CConcreteToolAttrI13CGlobalSymbol20NmContactAudioInfo_tvE
 17CConcreteToolAttrI13IKChannelMode23IKDemoCaptureSettings_tvE
 17CConcreteToolAttrI14IKTargetSource18IKTargetSettings_tvE
 17CConcreteToolAttrI17AnimParamButton_t22CConcreteAnimParametervE
@@ -275,6 +279,8 @@
 17CLookAtUpdateNode
 17CNmBodyGroupEvent
 17CNmCachedBoolNode
+17CNmCameraDOFEvent
+17CNmCameraFOVEvent
 17CNmConstFloatNode
 17CNmFloatClampNode
 17CNmFloatCurveNode
@@ -350,6 +356,7 @@
 18ICompressorService
 18IEnumAnimParameter
 18IParamLookupHelper
+18IPulseTypeEnumInfo
 19CAimCameraOperation
 19CAnimNetVarRegistry
 19CAnimUpdateNodeBase
@@ -389,6 +396,7 @@
 19CZeroPoseUpdateNode
 19IPulseCellDebugInfo
 1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
+1?n{3?"X5
 1Ic<$9
 1Lc#I
 1Lc+A
@@ -518,6 +526,7 @@
 21CBaseConcreteToolAttrI13CGlobalSymbol15CRagdollAnimTagE
 21CBaseConcreteToolAttrI13CGlobalSymbol18CAnimParameterBaseE
 21CBaseConcreteToolAttrI13CGlobalSymbol20CSymbolAnimParameterE
+21CBaseConcreteToolAttrI13CGlobalSymbol20NmContactAudioInfo_tE
 21CBaseConcreteToolAttrI13IKChannelMode23IKDemoCaptureSettings_tE
 21CBaseConcreteToolAttrI14IKTargetSource18IKTargetSettings_tE
 21CBaseConcreteToolAttrI17AnimParamButton_t22CConcreteAnimParameterE
@@ -593,8 +602,6 @@
 21IAnimationSystemUtils
 21IClothSettingsAnimTag
 21IMotionMetricInstance
-21IPulseInstanceLoadAPI
-21IPulseInstanceSaveAPI
 21IVConCommDataReceived
 21__basic_string_commonILb1EEE
 22CAnimComponentInstance
@@ -630,6 +637,7 @@
 22CPulseCell_CursorQueue
 22CPulseCell_FireCursors
 22CPulseCell_Inflow_Wait
+22CPulseCell_RaceCursors
 22CPulseCell_Value_Curve
 22CSchemaInstallCallback
 22CSeqResourceS1Sequence
@@ -676,6 +684,7 @@
 23CNmOrientationWarpEvent
 23CParticleTransformInput
 23CPulseCell_Inflow_Yield
+23CPulseCell_ReturnValues
 23CSeqResourceCmdSequence
 23CSequenceUpdateNodeBase
 23CSlopeComponentInstance
@@ -709,6 +718,8 @@
 24CPulseCell_Inflow_Method
 24CPulseCell_IntervalTimer
 24CPulseCell_Step_DebugLog
+24CPulseRegisteredTypeInfo
+24CPulseSchemaEnumTypeInfo
 24CQuaternionAnimParameter
 24CRagdollComponentUpdater
 24CRefCountedMemPoolObjectI9CAnimPoseE
@@ -740,8 +751,8 @@
 25CNmFootEventConditionNode
 25CNmGraphVariationUserData
 25CNmMaterialAttributeEvent
-25CNmParameterizedBlendNode
 25CNmRootMotionOverrideNode
+25CNmTimeControlledClipNode
 25CNmVirtualParameterIDNode
 25CPairedSequenceUpdateNode
 25CPathAnimMotorUpdaterBase
@@ -785,6 +796,7 @@
 26CBaseConcreteToolAttrValueI13CGlobalSymbol15CRagdollAnimTagE
 26CBaseConcreteToolAttrValueI13CGlobalSymbol18CAnimParameterBaseE
 26CBaseConcreteToolAttrValueI13CGlobalSymbol20CSymbolAnimParameterE
+26CBaseConcreteToolAttrValueI13CGlobalSymbol20NmContactAudioInfo_tE
 26CBaseConcreteToolAttrValueI13IKChannelMode23IKDemoCaptureSettings_tE
 26CBaseConcreteToolAttrValueI14IKTargetSource18IKTargetSettings_tE
 26CBaseConcreteToolAttrValueI17AnimParamButton_t22CConcreteAnimParameterE
@@ -835,11 +847,10 @@
 26CNmFixedWeightBoneMaskNode
 26CNmGraphEventConditionNode
 26CNmIDBasedClipSelectorNode
+26CNmRootMotionWarpDebugData
 26COrientationWarpUpdateNode
 26CPulseCell_BaseRequirement
 26CPulseCell_Value_RandomInt
-26CPulseInstanceLoadAPI_NoOp
-26CPulseInstanceSaveAPI_NoOp
 26CSetParameterActionUpdater
 26CSolveIKChainPoseOperation
 26CSpaceAgnosticBoneAccessor
@@ -848,6 +859,7 @@
 26IClothAttrSequenceListener
 26IEnumAnimParameterInstance
 26IMovementComponentInstance
+26INmRootMotionWarpDebugData
 27CAnimScriptComponentUpdater
 27CCPPScriptComponentInstance
 27CCompressedStaticQuaternion
@@ -889,6 +901,7 @@
 27CToolAttrDirectMemberAccessI13CGlobalSymbol15CRagdollAnimTagE
 27CToolAttrDirectMemberAccessI13CGlobalSymbol18CAnimParameterBaseE
 27CToolAttrDirectMemberAccessI13CGlobalSymbol20CSymbolAnimParameterE
+27CToolAttrDirectMemberAccessI13CGlobalSymbol20NmContactAudioInfo_tE
 27CToolAttrDirectMemberAccessI13IKChannelMode23IKDemoCaptureSettings_tE
 27CToolAttrDirectMemberAccessI14IKTargetSource18IKTargetSettings_tE
 27CToolAttrDirectMemberAccessI17AnimParamButton_t22CConcreteAnimParameterE
@@ -1022,6 +1035,7 @@
 29CConcreteToolAttrDirectMemberI13CGlobalSymbol15CRagdollAnimTagE
 29CConcreteToolAttrDirectMemberI13CGlobalSymbol18CAnimParameterBaseE
 29CConcreteToolAttrDirectMemberI13CGlobalSymbol20CSymbolAnimParameterE
+29CConcreteToolAttrDirectMemberI13CGlobalSymbol20NmContactAudioInfo_tE
 29CConcreteToolAttrDirectMemberI13IKChannelMode23IKDemoCaptureSettings_tE
 29CConcreteToolAttrDirectMemberI14IKTargetSource18IKTargetSettings_tE
 29CConcreteToolAttrDirectMemberI17AnimParamButton_t22CConcreteAnimParameterE
@@ -1085,12 +1099,12 @@
 29IAnimationGraphVisualizerInfo
 29IPlayerInputAnimMotorInstance
 29ISolveIKChainAnimNodeInstance
+2>e(6
 2Lc{(E
 2_BONE_IK
 2basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 2ffff
 2fffff
-2ffffff
 30CBlockSelectionMetricEvaluator
 30CDefaultToolAttrTableForStructI11CBlendCurveE
 30CDefaultToolAttrTableForStructI12CAnimTagBaseE
@@ -1114,6 +1128,7 @@
 30CDefaultToolAttrTableForStructI20CSymbolAnimParameterE
 30CDefaultToolAttrTableForStructI20CVectorAnimParameterE
 30CDefaultToolAttrTableForStructI20IKBoneNameAndIndex_tE
+30CDefaultToolAttrTableForStructI20NmContactAudioInfo_tE
 30CDefaultToolAttrTableForStructI21CClothSettingsAnimTagE
 30CDefaultToolAttrTableForStructI21CHandshakeAnimTagBaseE
 30CDefaultToolAttrTableForStructI21CTaskHandshakeAnimTagE
@@ -1164,10 +1179,9 @@
 32CNmParameterizedClipSelectorNode
 32CPairedSequenceComponentInstance
 32CPulseCell_Inflow_BaseEntrypoint
+32CPulseCell_ObservableSwitchState
 32CPulseCell_Outflow_CycleShuffled
 32CPulseCell_WaitForCursorsWithTag
-32CPulseInterfaceHelpers_Load_NoOp
-32CPulseInterfaceHelpers_Save_NoOp
 32CSchemaRegistration_animgraphlib
 32CSchemaRegistration_particleslib
 32IPairedSequenceComponentInstance
@@ -1183,19 +1197,14 @@
 34CModelConfigElement_SetRenderColor
 34CModelDocAnimResourceSeqWorldSpace
 34CPulseCell_Inflow_EntOutputHandler
-34CPulseCell_Inflow_Wait_DebugInfo_t
 34CPulseCell_PickBestOutflowSelector
 34CPulseCell_Step_CallExternalMethod
-34IKV3TransferInterface_EHandle_Load
-34IKV3TransferInterface_EHandle_Save
 34IKV3TransferInterface_ResourceLoad
 35CAnimationGraphVisualizationManager
 35CGameInfo_CDotaGameInfo_CPlayerInfo
 35CParticleCollectionRendererVecInput
 35CSchemaRegistration_animationsystem
 35IAnimationGraphVisualizationManager
-35IKV3TransferInterface_GameTime_Load
-35IKV3TransferInterface_GameTime_Save
 36CAnimationGraphVisualizationRegistry
 36CKV3Transfer_UtlSymbolLargeInterfaceI24CUtlSymbolTableLargeBaseILb0ELm2048E16CThreadNullMutex18CMemAllocAllocatorEE
 36CModelConfigElement_SetMaterialGroup
@@ -1209,33 +1218,26 @@
 37CTypesafeIntrospectedToKV3TypeManagerILy1902474102E18CSequenceGroupDataE
 37CTypesafeIntrospectedToKV3TypeManagerILy469920276854E9CAnimDataE
 37CTypesafeIntrospectedToKV3TypeManagerILy482955714934E15CAnimationGroupE
-37IKV3TransferInterface_Worldspace_Load
-37IKV3TransferInterface_Worldspace_Save
 38CAnimationGraphVisualizerPrimitiveBase
 38CDefaultKV3TransferResourceTypeManagerILy30510809657208438EE
 38CDefaultKV3TransferResourceTypeManagerILy31641111637094006EE
 38CDefaultKV3TransferResourceTypeManagerILy7525622121325489782EE
 39CCurrentRotationVelocityMetricEvaluator
-39CKV3TransferInterface_EHandle_Load_NoOp
-39CKV3TransferInterface_EHandle_Save_NoOp
-39CKV3Transfer_EmptyResourceLoadInterface
+3<IA><CMI
 3Ic|? H
 3[A\A^A
 3ffffff
 4$fff
 40CDemoRecovery_DemoInitialSpawnGroupEntry
 40CGameInfo_CDotaGameInfo_CHeroSelectEvent
-40CKV3TransferInterface_GameTime_Load_NoOp
-40CKV3TransferInterface_GameTime_Save_NoOp
 41CModuleMetadataProvider_ResourceManifests
 41CPulseCell_BooleanSwitchState_DebugInfo_t
 41CSolveIKChainAnimationGraphVisualizerInfo
 41Hc41I
-42CKV3TransferInterface_Worldspace_Load_NoOp
-42CKV3TransferInterface_Worldspace_Save_NoOp
 43IAnimVarBindingAdditionalContextLabelHelper
 4444<*Z
 44CPulseCell_Inflow_ObservableVariableListener
+44CPulseCell_ObservableSwitchState_DebugInfo_t
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT
 48CModelConfigElement_SetBodygroupOnAttachedModels
 4@ffff
@@ -1251,6 +1253,7 @@
 52CModelConfigElement_SetMaterialGroupOnAttachedModels
 5ASARASARATARAZAp
 5basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+5ffff
 5fffff
 61ҐH97t
 6A\ARA\ARA\ARAp
@@ -1264,7 +1267,6 @@
 7bad_function_callE
 7ffff
 7fffff
-82uQA
 8CNmEvent
 8CReceipt
 8E9T60u
@@ -1272,13 +1274,16 @@
 8Hc<8I
 8IAnimTag
 8IcG(H
+8IcG0H
 8IcGhA
 8IcM(H
 8IcM@9
-8Lc?A9
+8Icw$H
+8Lc/A9
 8[A\A]A^A
 8[A^A
 8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+8ffffff
 8耀w耀w耀w
 9CAnimData
 9CAnimPose
@@ -1293,6 +1298,7 @@
 9Lc3A
 9basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 9fffff
+9ffffff
 9whtNHcG H
 A 3-bone solver that uses two 2-bone solves under the hood to emulate a dog leg
 A file with this name is already in the pool
@@ -1304,9 +1310,8 @@ A#D$4tRM
 A#D$DI
 A#F$toI
 A#F,tUM
-A#F|tQM
 A#G$tpI
-A#G4tmI
+A#G<tmI
 A#L$lt
 A#T$,Ic
 A#T$lt
@@ -1321,7 +1326,8 @@ A+t$H
 A+t<0
 A+u ~	I
 A+uP~	I
-A+uP~UI
+A+uP~GI
+A+uP~xI
 A+uh~	I
 A+vx~;I
 A+w0~	I
@@ -1330,7 +1336,6 @@ A+wX~/I
 A18CBlend2DUpdateNode
 A9D$P
 A9D$h
-A9NHM
 A9P@v>I
 A9](~ I
 A;D$Pu
@@ -1507,7 +1512,7 @@ ARARASARASARASARAVARATAp
 ARARASARASARATARAZAp
 ARARASAp
 ARARASCRAp
-ARARAUASB^A^A^A^ATAYARARARARARA^A^ARARA
+ARARAUBTAp
 ARARAp
 ARARB
 ARASARA
@@ -1516,28 +1521,27 @@ ARASARAZAp
 ARASARA\ARASARA\ARASARASARA\ARAVAp
 ARASARA`-ASARAp
 ARASARA`0A
-ARASAUASAUAUASASASASA[ATAZARAp
+ARASAUASAUAUASASASASA[AUBZARAZARAZARAZARAZARAp
+ARASB
 ARATB
+ARATB]A
 ARAUB]ARA]ARARA]ARARA]ARARA]ARARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA^ARA]ARARARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA^ARA^ARA]ARA]ARA]ARA]ARA^ARA^ARARA^ARA^ARA^ARA^ARA]ARA^ARA^ARA^ARA
 ARAWARAWARA
 ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARASASASAp
 ARA\ARA\ARA\ARA\ARA\ARASARASARASARASARASARASARASARASARASARASARASARASARASARA\A\ARA\ARA\ARA\ARA\ARA\ARA\ARA\ARA\ARA\ARA\ARARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARA
-ARA]ARA]ARAYBZARAp
+ARA]ARA]ARAYATB
 ARA]ARA]ARA]ARA]ARA]ARA]ARA
-ARA]ARA]ARA]ARA]ARA]ARA]ARA]AWBRARA]ARA]ARA
+ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]AWBRARA]ARA]ARA
 ARA^ARA
-ARA^ARA]ARA]ARA]ARA^ARA]ARA]ARA]ARA]ARA
-ARA^ARA^ARA^ARA]ARA]ARA]ARATAUAp
+ARA^ARA]ARA]ARA]AUB^AUB]ARA]ARA]ARA]ARA
+ARA^ARA^ARA^ARA^ARA]ARA]ARA]ARATAUAp
 ARA`<AYBRBp
-ARBRAp
-ARBZARAp
-ARBZARC
+ARBRAp@p p8
 ARBZATB
-ARBZAp
 ASARASARASARASARARAp
 ASARASARA`/ASATARASARAZARAp
 ASARAp
-ASASCSASAp
+ASASCp`p
 ASATARASARASARAZAp
 ASATARASARASARA`/ASATARASARAZA`/ASATARARASARASARA`/ASATARASARA[ARA`,ASARAp
 ASATARASARAZARAp
@@ -1557,6 +1561,7 @@ ATARARATA\Ap
 ATBRATBWBRA
 ATTACHMENT_INFLUENCE_FLAGS_NONE
 AUASA
+AUA`"B
 AVSHcO
 AWARA
 AWASASASAp
@@ -1617,14 +1622,15 @@ AWAVSPI
 AWAVSPL
 AWAVSPLc
 AWAVSPM
-AWD`cLp
+AWAWAYATA`<AYBRBp
+AWD`c0
 AYARARAp
 AYBRARAp
 AYBRBp
 AZARAZARAZARAZASC
-AZARAp
 A[ASASAp
 A[ATAp
+A[A]AWB
 A\ARA\ARAp
 A\ARAp
 A\A]A^A
@@ -1633,11 +1639,7 @@ A`<AYARAp
 A`<AYBRARAp
 A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
 A`hARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
-Abs Float
-Abs Int
 Absolute
-Absolute value (float
-Absolute value (int
 Acceleration
 Acceleration Forward-Back
 Acceleration Heading
@@ -1743,6 +1745,7 @@ AnimValueSource
 AnimVectorSource
 Animation
 Animation 2
+Animation End Facing
 Animation Movement Heading
 Animation Movement Heading At End
 Animation Only
@@ -1750,6 +1753,7 @@ Animation Or Procedural
 Animation/AccumulatePose
 AnimationDecodeDebugDumpElement_t
 AnimationDecodeDebugDump_t
+AnimationEndFacing
 AnimationGraph
 AnimationProcessingType_t
 AnimationResourceData_t
@@ -1774,14 +1778,6 @@ Ap@RBSEp
 AppendDataChannels( %s, %d, %s
 Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag
 Ap~JH
-Arc Cos
-Arc Cosine of input value. Input must be -1.0, 1.0 range. Output in radians, from 0 to
-Arc Sin
-Arc Sine of input value. Input must be -1.0, 1.0 range. Output in radians, from -π/2 to π/2
-Arc Tan
-Arc Tangent of input value. Input can be any real number. Output in radians, from -π/2 to π/2
-ArcCos input out of range (-1, 1
-ArcSin input out of range (-1, 1
 Arg '%s
 AssetBrowse
 AssetBrowse( %s
@@ -1809,38 +1805,42 @@ Attribute
 Attribute Name
 Attribute Type
 At~JH
+Audio Action
+Audio Soundevent Override
 Audio Tag
+Audio Type
 Auto Reset
 Average
 A A A
 B16CNmBlendTaskBase
+B25CNmParameterizedBlendNode
 BACKSLASH_CHAR
 BLEND_PREALIGNED
-BRASASASASASASASASAp
-BRA^ARA^ARA^ARA^ARA^ARA^ARA^ARATAYARBp
+BRA^ARA^ARA^ARA^ARA^ARA^ARA^AUBTAYATASASAp
 BRBRB
 BRBRBRBRBRBRB
-BRBRBRBRBRBRBRBRBRBRBRBRBRBRBRB
+BRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRB
 BRBRBRBp
+BRBZARC
+BREAK
 BVB<F
 BWARBUAp
 BWASAp
 BWBRA
 BWBRAWAUASAUASASASASASASASASASASAp
-BYARAYARAYARAYARAYARAYBRAYARAYARAYARAYARAYARARBYATBYASCp
-BYARAYBRAYARAYBRAYARAYARAYARAYARAYARAYARAYARAYARATBYBRAYASC
-BYARAYBRAYBRAYBRAYBRAYARAYARAYARAYARAYARAYBRA
-BZARAp
+B[ARA[ARA[ARA[ARA[ARA[BRA[ARA[ARA[ARA[ARA[ARARB[ATB[ASCp
+B[ARA[BRA[ARA[BRA[ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARATB[BRA[ASC
+B[ARA[BRA[BRA[BRA[BRA[ARA[ARA[ARA[ARA[ARA[BRA
 B`<AYBRARAp
 B`<AYBRBp
 BackUp() can only be called after a successful Next
 Bad FLC data for resource '%s': %s
 Bad KV3 data for resource '%s': %s
 Bad KV3 data in control block for '%s': %s
-Bad array index %d (array has %d elements
 Bad block type for embedded animation data
 Bad data block index for vagrp embedded animation data (%d
 BakedLODBuilderMgr001
+Bank%d: %d temp vars (%d bytes
 Base Flow  Cancel After
 Base Flow  Cancel Elegantly
 Base Flow  Cancel Immediately
@@ -1863,11 +1863,10 @@ Base recognizer function displayRecognitionError called by unknown parser type -
 Base recognizer function recover called by unknown parser type - provide override for this function
 Base recognizer function recoverFromMismatchedSet called by unknown parser type - provide override for this function
 Base recognizer function recoverFromMismatchedToken called by unknown parser type - provide override for this function
-Base-10 logarithm
-Base-2 logarithm
 BaseDomain
 Begin testing a condition composed of Observable values. Continues checking until canceled
 Begin testing a condition composed of Observable variable references. Continues checking until true
+Begin testing a value composed of Observable values. Continues checking until canceled
 Beginning
 BenchmarkService001
 Bezier
@@ -1945,8 +1944,7 @@ Boolean default must be true or false
 Boundary Radius
 BoundaryRadius
 Box - Ground
-Breakpoint Log [%u
-Breakpoint Log [%u] - %s
+Bp p RAp
 Buffer Used: %i
 B B B
 B耀w耀G
@@ -1963,6 +1961,7 @@ C0fff
 C27CDirectionalBlendUpdateNode
 C8D9hXtPH
 C@Lc{8M
+CALL_TO_PULSE
 CActionComponentUpdater
 CAddUpdateNode
 CAimCameraUpdateNode
@@ -2506,10 +2505,13 @@ CNmBoolValueNode::CDefinition
 CNmCachedBoolNode::CDefinition
 CNmCachedFloatNode::CDefinition
 CNmCachedIDNode::CDefinition
+CNmCachedPoseBuffer *CNmPoseBufferPool::CreateCachedPoseBufferInternal(NmCachedPoseID_t
 CNmCachedPoseReadTask
 CNmCachedPoseWriteTask
 CNmCachedTargetNode::CDefinition
 CNmCachedVectorNode::CDefinition
+CNmCameraDOFEvent
+CNmCameraFOVEvent
 CNmChainLookatNode::CDefinition
 CNmChainLookatTask
 CNmChainLookatTask::CNmChainLookatTask(int8, const NmChainLookatParams
@@ -2518,11 +2520,16 @@ CNmClip::ModelSpaceSamplingChainLink_t
 CNmClipNode::CDefinition
 CNmClipReferenceNode::CDefinition
 CNmClipSelectorNode::CDefinition
+CNmClothEvent
+CNmClothEvent::Type_t
 CNmConstBoolNode::CDefinition
 CNmConstFloatNode::CDefinition
 CNmConstIDNode::CDefinition
 CNmConstTargetNode::CDefinition
 CNmConstVectorNode::CDefinition
+CNmContactAudioActionVData
+CNmContactAudioTypeVData
+CNmContactEvent
 CNmControlParameterBoolNode::CDefinition
 CNmControlParameterFloatNode::CDefinition
 CNmControlParameterIDNode::CDefinition
@@ -2579,8 +2586,6 @@ CNmGraphEventConditionNode::CDefinition
 CNmGraphEventConditionNode::Condition_t
 CNmGraphInstance
 CNmGraphInstance::CNmGraphInstance(const HNmGraphDefinition &, int32, CNmGraphContext
-CNmGraphInstance::EvaluateGraph
-CNmGraphInstance::GetCurrentGraphTimingInfo
 CNmGraphNode::CDefinition
 CNmGraphVariationUserData
 CNmIDBasedClipSelectorNode::CDefinition
@@ -2607,6 +2612,7 @@ CNmModelSpaceBlendTask
 CNmNotNode::CDefinition
 CNmOrNode::CDefinition
 CNmOrientationWarpEvent
+CNmOrientationWarpNode::AlignmentMode_t
 CNmOrientationWarpNode::CDefinition
 CNmOverlayBlendTask
 CNmParameterizedBlendNode::BlendRange_t
@@ -2644,6 +2650,7 @@ CNmStateMachineNode::TransitionDefinition_t
 CNmStateNode::CDefinition
 CNmStateNode::TimedEvent_t
 CNmStateNode::TimedEvent_t::Comparison_t
+CNmStateNode::TransitionFlag_t::TransitionFlag_t(uint64 *, uint8
 CNmSyncEventIndexConditionNode::CDefinition
 CNmSyncEventIndexConditionNode::TriggerMode_t
 CNmSyncTrack
@@ -2662,6 +2669,7 @@ CNmTargetWarpNode::TargetUpdateRule_t
 CNmTimeConditionNode::CDefinition
 CNmTimeConditionNode::ComparisonType_t
 CNmTimeConditionNode::Operator_t
+CNmTimeControlledClipNode::CDefinition
 CNmTransitionEvent
 CNmTransitionEventConditionNode::CDefinition
 CNmTransitionNode::CDefinition
@@ -2758,7 +2766,6 @@ CPulseCell_BooleanSwitchState::Activate
 CPulseCell_CursorQueue
 CPulseCell_CursorQueue::Wait
 CPulseCell_FireCursors
-CPulseCell_FireCursors::Cancel
 CPulseCell_FireCursors::Start
 CPulseCell_FireCursors::StopWaiting
 CPulseCell_Inflow_BaseEntrypoint
@@ -2773,20 +2780,15 @@ CPulseCell_Inflow_Method '%s' --> Chunk%d: %s
 CPulseCell_Inflow_ObservableVariableListener
 CPulseCell_Inflow_ObservableVariableListener '%s'.'%s (%u)' --> Chunk%d: %s
 CPulseCell_Inflow_Wait
-CPulseCell_Inflow_Wait::Abort
-CPulseCell_Inflow_Wait::ImmediateWake
 CPulseCell_Inflow_Wait::Wait
 CPulseCell_Inflow_Yield
-CPulseCell_Inflow_Yield::Abort
 CPulseCell_Inflow_Yield::Pause
-CPulseCell_Inflow_Yield::Resume
 CPulseCell_InlineNodeSkipSelector
 CPulseCell_InlineNodeSkipSelector::ProcessSelector
 CPulseCell_IntervalTimer
 CPulseCell_IntervalTimer::CursorState_t
 CPulseCell_IntervalTimer::OnInterval
 CPulseCell_IntervalTimer::Start
-CPulseCell_IntervalTimer::StopTimer
 CPulseCell_IsRequirementValid
 CPulseCell_IsRequirementValid::CheckRequirement
 CPulseCell_IsRequirementValid::Criteria_t
@@ -2795,6 +2797,8 @@ CPulseCell_LimitCount::CheckRequirement
 CPulseCell_LimitCount::CommitStep
 CPulseCell_LimitCount::Criteria_t
 CPulseCell_LimitCount::InstanceState_t
+CPulseCell_ObservableSwitchState
+CPulseCell_ObservableSwitchState::Activate
 CPulseCell_Outflow_CycleOrdered
 CPulseCell_Outflow_CycleOrdered::InstanceState_t
 CPulseCell_Outflow_CycleOrdered::Run
@@ -2803,35 +2807,22 @@ CPulseCell_Outflow_CycleRandom::Run
 CPulseCell_Outflow_CycleShuffled
 CPulseCell_Outflow_CycleShuffled::InstanceState_t
 CPulseCell_Outflow_CycleShuffled::Run
-CPulseCell_Outflow_ListenForAnimgraphTag::Cancel
-CPulseCell_Outflow_ListenForEntityOutput::Cancel
-CPulseCell_Outflow_NPCAccompanyEntity::Cancel
-CPulseCell_Outflow_NPCFollowTarget::Cancel
-CPulseCell_Outflow_NPCLeadPlayer::Cancel
-CPulseCell_Outflow_NPCScriptedIdle::Cancel
-CPulseCell_Outflow_NPCScriptedIdle::CancelElegantly
-CPulseCell_Outflow_NPCScriptedMoveTo::Cancel
-CPulseCell_Outflow_NPCUseScriptedAbility::Cancel
-CPulseCell_Outflow_PlaySequence::Cancel
-CPulseCell_Outflow_PlaySequence::CancelAtInterrupt
-CPulseCell_Outflow_PlayVCD::Cancel
-CPulseCell_Outflow_PlayVCD::CancelAtInterrupt
-CPulseCell_Outflow_PlayVOLine::Cancel
-CPulseCell_Outflow_ScriptedSequence::Cancel
 CPulseCell_PickBestOutflowSelector
 CPulseCell_PickBestOutflowSelector::ProcessSelector
-CPulseCell_PlaySequence::Cancel
+CPulseCell_RaceCursors
+CPulseCell_RaceCursors::Start
+CPulseCell_RaceCursors::StopWaiting
+CPulseCell_ReturnValues
+CPulseCell_ReturnValues::HandleReturnValues
 CPulseCell_Step_CallExternalMethod
 CPulseCell_Step_CallExternalMethod '%s
 CPulseCell_Step_CallExternalMethod::Run
-CPulseCell_Step_CallExternalMethod::StopWaiting
 CPulseCell_Step_DebugLog
 CPulseCell_Step_DebugLog::Run
 CPulseCell_Step_PublicOutput
 CPulseCell_Step_PublicOutput::Run
 CPulseCell_Timeline
 CPulseCell_Timeline::Start
-CPulseCell_Timeline::Stop
 CPulseCell_Timeline::TimelineEvent_t
 CPulseCell_Unknown
 CPulseCell_Value_Curve
@@ -2846,7 +2837,6 @@ CPulseCell_WaitForCursorsWithTag
 CPulseCell_WaitForCursorsWithTag::Wait
 CPulseCell_WaitForCursorsWithTagBase
 CPulseCell_WaitForObservable
-CPulseCell_WaitForObservable::Cancel
 CPulseCell_WaitForObservable::Start
 CPulseCursorFuncs
 CPulseCursorFuncs::AnyOtherCursorsHaveTag
@@ -2859,84 +2849,20 @@ CPulseCursorFuncs::WakeCursorsWithTag
 CPulseExecCursor
 CPulseGraphDef
 CPulseGraphExecutionHistory
-CPulseMathlib
-CPulseMathlib::AbsFloat
-CPulseMathlib::AbsInt
-CPulseMathlib::ArcCos
-CPulseMathlib::ArcSin
-CPulseMathlib::ArcTan
-CPulseMathlib::CeilingFloat
-CPulseMathlib::ClampFloat
-CPulseMathlib::ClampInt
-CPulseMathlib::Cos
-CPulseMathlib::CrossProductVector
-CPulseMathlib::Deg2Rad
-CPulseMathlib::DotProductVector
-CPulseMathlib::Exp
-CPulseMathlib::Exp2
-CPulseMathlib::FloatToGameTime
-CPulseMathlib::FloorFloat
-CPulseMathlib::Frac
-CPulseMathlib::GameTimeToFloat
-CPulseMathlib::IntegerDivide
-CPulseMathlib::IsValidVector
-CPulseMathlib::IsValidWorldVector
-CPulseMathlib::LengthVector
-CPulseMathlib::LengthVector2D
-CPulseMathlib::LerpFloat
-CPulseMathlib::LerpVector
-CPulseMathlib::LerpWorldVector
-CPulseMathlib::Log
-CPulseMathlib::Log10
-CPulseMathlib::Log2
-CPulseMathlib::MakeAngle
-CPulseMathlib::MakeAngleFromForwardVector
-CPulseMathlib::MakeColor
-CPulseMathlib::MakeTransform
-CPulseMathlib::MakeVector
-CPulseMathlib::MakeVector2D
-CPulseMathlib::MakeVector4D
-CPulseMathlib::MakeVectorFromAngle
-CPulseMathlib::MakeWorldTransform
-CPulseMathlib::MakeWorldVector
-CPulseMathlib::MaxFloat
-CPulseMathlib::MaxInt
-CPulseMathlib::MinFloat
-CPulseMathlib::MinInt
-CPulseMathlib::NormalizeVector
-CPulseMathlib::Pi
-CPulseMathlib::Pow
-CPulseMathlib::RSqrt
-CPulseMathlib::Rad2Deg
-CPulseMathlib::RandomWorldPosition
-CPulseMathlib::RemapClampedFloat
-CPulseMathlib::RoundFloat
-CPulseMathlib::Saturate
-CPulseMathlib::SignFloat
-CPulseMathlib::SignInt
-CPulseMathlib::Sin
-CPulseMathlib::SplitAngle
-CPulseMathlib::SplitColor
-CPulseMathlib::SplitTransform
-CPulseMathlib::SplitVector
-CPulseMathlib::SplitVector2D
-CPulseMathlib::SplitVector4D
-CPulseMathlib::SplitWorldTransform
-CPulseMathlib::SplitWorldVector
-CPulseMathlib::SqrFloat
-CPulseMathlib::SqrInt
-CPulseMathlib::Sqrt
-CPulseMathlib::StringsAreEqualCaseSensitive
-CPulseMathlib::Tan
-CPulseMathlib::VectorToWorldVector
-CPulseMathlib::WorldVectorToVector
 CPulseObservableExpression
+CPulseObservableSwitchCases
 CPulseRuntimeMethodArg
 CPulseStringlib
+CPulseStringlib::Format1
+CPulseStringlib::Format2
+CPulseStringlib::Format3
+CPulseStringlib::Format4
+CPulseStringlib::Format5
 CPulseStringlib::FormatDurationStringFromSeconds
 CPulseStringlib::StringLength
 CPulseStringlib::StringsAreEqualCaseSensitive
-CPulseValueFullType
+CPulseType
+CPulseVariant
 CPulse_BlackboardReference
 CPulse_CallInfo
 CPulse_Chunk
@@ -2949,6 +2875,8 @@ CPulse_OutputConnection
 CPulse_PublicOutput
 CPulse_RegisterInfo
 CPulse_ResumePoint
+CPulse_TempVarBankDefinition
+CPulse_TempVarInfo
 CPulse_Variable
 CQuaternionAnimParameter
 CRC32_ProcessBuffer
@@ -3035,8 +2963,10 @@ CTurnHelperUpdateNode
 CTwistConstraint
 CTwoBoneIKUpdateNode
 CURSOR_ADD_TAG
+CURSOR_CREATE_CHILD
 CURSOR_REMOVE_TAG
 CURSOR_RETIRED
+CURVE_TANGENT_FLAT
 CURVE_TANGENT_FREE
 CURVE_TANGENT_LINEAR
 CURVE_TANGENT_MIRROR
@@ -3052,7 +2982,7 @@ CUtlHashtable
 CUtlLeanVector
 CUtlLeanVectorFixedGrowable
 CUtlLeanVectorImpl::IndexType_t CUtlLeanVectorImpl<CUtlLeanVectorBase<CUtlHashMap<CGlobalSymbol, CPPScriptParamHandle>::HashBucket_t>, CUtlHashMap<CGlobalSymbol, CPPScriptParamHandle>::HashBucket_t>::AddMultipleToTail(CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<CUtlHashMap<CGlobalSymbol, CPPScriptParamHandle>::HashBucket_t>, T = CUtlHashMap<CGlobalSymbol, CPPScriptParamHandle>::HashBucket_t, I = int
-CUtlLeanVectorImpl::IndexType_t CUtlLeanVectorImpl<CUtlLeanVectorBase<CUtlHashMap<CUtlString, VertexColor_t>::HashBucket_t>, CUtlHashMap<CUtlString, VertexColor_t>::HashBucket_t>::AddMultipleToTail(CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<CUtlHashMap<CUtlString, VertexColor_t>::HashBucket_t>, T = CUtlHashMap<CUtlString, VertexColor_t>::HashBucket_t, I = int
+CUtlLeanVectorImpl::IndexType_t CUtlLeanVectorImpl<CUtlLeanVectorBase<CUtlHashMap<CUtlString, Color>::HashBucket_t>, CUtlHashMap<CUtlString, Color>::HashBucket_t>::AddMultipleToTail(CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<CUtlHashMap<CUtlString, Color>::HashBucket_t>, T = CUtlHashMap<CUtlString, Color>::HashBucket_t, I = int
 CUtlOrderedMap
 CUtlString
 CUtlStringToken
@@ -3102,11 +3032,12 @@ Cannot register variable %s because it is an unsupported type
 Cannot register variable %s more than once
 Cannot register variable %s: it has no components
 Cannot register variable %s: only float variables can have multiple components
-Cannot reinterpret instance (actual: %s) from (original) %s to (desired) %s
 Cannot skip field value, unexpected token
+Cant find specified alignment bone ID ('%s') for target selector node
 Cant find specified alignment bone ID ('%s') for target warp node
 Cant find specified bone IDs or there are not enough bones in the specified chains ('%s, %s') for two bone effector node
 Cant find specified effector bone ID ('%s') for lookat
+Cant find specified effector bone ID ('%s') for two bone IK
 Capsule - Centered
 Capsule - Generic
 Capsule - Ground
@@ -3119,8 +3050,6 @@ Causes each execution cursor to pause at this node for a fixed period of time. E
 Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete
 Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting
 Ceiling
-Ceiling - round float up to nearest integer
-Ceiling Float
 Cell%d - NULL
 Cell%d EditorID:%d [%s]: %s
 Center 1
@@ -3149,10 +3078,6 @@ ChoreoNode
 Chunk%d
 Ch~AH
 Ch~DH
-Clamp Float
-Clamp Int
-Clamp value to range (float
-Clamp value to range (int
 ClampDuration
 ClampTo180
 ClampTo360
@@ -3180,8 +3105,6 @@ Comment
 Comment started here
 Commit Step
 Compare strings with case sensitivity, in contrast to normal string equality which is case-insensitive
-Computes 2 raised to a power
-Computes e ( 2.71...) raised to a power
 Condition to evaluate when any of its dependent values change
 Conditionally Allowed
 ConditionallyAllowTransition
@@ -3195,29 +3118,18 @@ Control Point2
 Control Points: %f, %f
 Convar for toggling foot lock ground tracking
 Convert %s R%d <- %s R%d
-Convert degrees (0-180) to radians (0-pi
-Convert from a Game Time a raw floating-point time that will NOT fixed up - use with caution
-Convert from a local-space to a world-space vector
-Convert from a raw floating-point time to a Game Time that will be saved/loaded appropriately
-Convert from a world-space to local-space vector
-Convert radians (0-pi) to degrees (0-180
 Copy R%d <- R%d
-Cosine of angle. Input in radians, output in radians
 Could not create an instance of
-Could not execute '%s' because this graph domain does not support the required IPulseHost
 Could not find type
 Couldn't load KV3 for resource: %s
 Couldn't parse default value
 Count the number of codepoints in the string (unicode-aware). If you want rendered glyphs, you probably want to consider using Panorama
 Cp<*u`L
-Cp~*D
 Create
 CreateInterface
 Create_CFG
 Creating Bone Masks for Skeleton: Could find secondary skeleton for bone mask: %s
 Creating Bone Masks for Skeleton: Couldn't find bone (%s) in skeleton(%s) while serializing bone mask (%s
-Cross Product Vector
-Cross Product of Vector a x Vector b
 Current LOD
 Current Position ( Rotation Pivot
 Current Rotation Velocity
@@ -3251,8 +3163,8 @@ D$\HcH
 D$pHcH
 D$pHcL
 D$tIcL$pH
-D0 Hc
-D1ىO\H
+D1 Hc
+D1ىOdH
 D2 Hc
 D22CFootLockPoseOperation
 D9 tKH
@@ -3294,6 +3206,7 @@ DOUBLE_AND
 DOUBLE_OR
 DOUBLE_QUOTED_STRING
 DOUBLE_QUOTE_CHAR
+DRASASASASASASASASAp
 D[A\A^A
 Damped Value Component
 DampedPathAnimMotorInstance
@@ -3301,9 +3214,6 @@ DampedPathMotorInstanceData_t
 Damping
 DampingSpeedFunction
 Darken
-Data breakpoint [%s
-Data breakpoint [%s] - %s
-Data breakpoint hit
 Debug Hold Forward
 Debug Hold Left
 Debug Hold Up
@@ -3317,7 +3227,6 @@ Default Value
 Default value for an enum field must be an identifier
 DefaultRuneLocale
 DefaultTime
-Deg2 Rad
 DeltaOrientationX
 DeltaOrientationY
 DeltaOrientationZ
@@ -3330,7 +3239,6 @@ DescriptorProtosH
 Detach From Owner
 Detach R%d
 DevMsg
-Did not execute '%s' because the 'Target' object was missing
 Difference of
 Different skeleton for referenced graph detected, this is not allowed. Trying to use '%s' within '%s
 DirBlend:m_flCycleZeroTime
@@ -3354,16 +3262,12 @@ DistanceHorizontalOnly
 DistanceVerticalOnly
 Div R%d <- R%d / R%d
 Divide
-Divide by zero
 Dividing by zero in CNmFloatMathNode
 Do not stop the current yielding node, but do not continue to the next node afterwards
 DoesntMatch
 Dog Leg (3-Bone
 Domain: %s
-Dot Product Vector
-Dot Product of Vector a • Vector b
 Double-save to Member '%s
-Dp RAp
 Dpad Down
 Dpad Left
 Dpad Right
@@ -3378,6 +3282,7 @@ E+g(L
 E0IcN0H
 E9<$}xH
 E9t$(~QI
+E;t$Pu
 E;wl~AH
 E<A;E(uk
 EDemoBoneSelectionMode
@@ -3398,14 +3303,13 @@ EQ_BOOL
 EQ_COLOR_RGB
 EQ_EHANDLE
 EQ_ENTITY_NAME
+EQ_ENUM
 EQ_FLOAT
 EQ_GAMETIME
 EQ_INT
-EQ_OPAQUE_HANDLE
+EQ_LEAF
 EQ_PANEL_HANDLE
-EQ_SCHEMA_ENUM
 EQ_STRING
-EQ_TEST_HANDLE
 EQ_VEC2
 EQ_VEC3
 EQ_VEC3WS
@@ -3413,7 +3317,6 @@ EQ_VEC4
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 ERROR:NoEnum:%s:%d
 ERROR:NoEnumerator:%s:%d
-ERROR:NoFlags:%s:%d
 ESCAPE_CHAR
 ESCAPE_CODE
 EXPONENT
@@ -3423,6 +3326,8 @@ EarlyInit_Tier0
 EaseIn
 EaseOut
 EconItemToolModel_001
+Effect
+Effect: %s
 Effector
 Effector: %s
 Effffff
@@ -3465,6 +3370,7 @@ Element.IKBoneNameAndIndex_t
 Element.IKDemoCaptureSettings_t
 Element.IKSolverSettings_t
 Element.IKTargetSettings_t
+Element.NmContactAudioInfo_t
 Enable IK
 Enable Networking
 Enable Replication
@@ -3507,7 +3413,6 @@ Error while parsing option value for
 Evaluate the curve at the specified input position
 Evaluate the gradient at a position between 0 and 1
 Evaluate the requirements of each connected node
-EvaluateGraph
 ExactlyAtEventIndex
 Exceeds Maximum Package Depth
 Expanded map entry type
@@ -3556,9 +3461,9 @@ F0I;F(sAH
 F0Ic]0A
 F0[A^]ÐUH
 F0uII
+F11CNmPoseTask
 F13CNmFootIKTask
 F25CMovementComponentUpdater
-F2fA;F0
 F4;F<u
 F4A;F8
 F8Lc`\M
@@ -3674,6 +3579,7 @@ Failed to save unsupported class
 Failed to select a valid option
 Fallback hinge
 Falling Speed Scale
+Feature preserving XY warp required scaling is lower than the minimum allowed threshold. Falling back to LERP
 FeetSettings
 Fh[A\A^A
 Field
@@ -3752,10 +3658,7 @@ FlipHemisphere
 FlipHemisphereNegate
 Float Curve (%s
 Float Parameter
-Float To Game Time
 Float( %f
-Floor - round float down to nearest integer
-Floor Float
 Follow Bone
 FollowAttachmentData
 FollowAttachmentSettings_t
@@ -3800,14 +3703,22 @@ Force Latest Value
 ForceDisable
 ForceEnable
 Format Duration String From Seconds
+Format encountered } without matching { at column %d
+Format expected number or } at column %d
+Format expected } after number at column %d
+Format invalid index %d at column %d
+Format1
+Format2
+Format3
+Format4
+Format5
 Forward And Backward Reaching Inverse Kinematics" solver - A solver that can handle any number of bones and works by iteratively solving for the position of each bone in the chain
 Forward Speed
+Forward Start Only
 ForwardSpeed
 Found existing value when inserting into dict - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound
 Found invalid proto option data for
-Fp p p0SCp
 Fp[A^]ÐUH
-Fractional component (ie. returns 0.34 for 12.34
 FractionalPart
 FrameUpdate
 Fully Allowed
@@ -3815,9 +3726,9 @@ FullyAllowed
 FullyInState
 Func( %s
 Function "%s" takes %i parameters, but %i were given
-Functions not supported in this evaluator (%s
 Future Facing
 Future Velocity
+F鲜w楠F鲸w
 G A;F
 G H+x(H
 G Mcw$D9
@@ -3833,6 +3744,7 @@ G0HcG(I
 G0[A\A^A
 G0s	1
 G22CNmSkeletonTypeManager
+G2fA;G0
 G8HcG(H
 G:,'u3ff
 G<HcG4M
@@ -3844,6 +3756,7 @@ GET_BLACKBOARD_REFERENCE
 GET_CONST
 GET_CONST_INLINE_STORAGE
 GET_DOMAIN_VALUE
+GET_TEMPVAR
 GET_VAR
 GET_VAR_DETACH
 GN6google8protobuf2io20ZeroCopyOutputStreamE
@@ -3851,7 +3764,6 @@ GPUParticleCollisionMode_t
 G[A\A^A
 Game Blackboards
 Game Time
-Game Time To Float
 Game Writable
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -3867,7 +3779,6 @@ GetBlackboardReference R%d <- BR%d (%s
 GetBool
 GetCPUInformation
 GetConst R%d <- C%d (%s
-GetCurrentGraphTimingInfo
 GetCycle
 GetDomainValue R%d <- DV%d (%s
 GetDouble
@@ -3901,6 +3812,7 @@ GetResourceManifests
 GetStateWeight
 GetString
 GetStringReference
+GetTempVar R%d
 GetTimeInState
 GetTimeTillFinished
 GetTotalTranslation_SourceState
@@ -3926,7 +3838,6 @@ GreaterThanEqualToEventIndex
 GridBlendNode
 Groups are not supported in proto3 syntax
 G耀G耀G耀G
-G메y낀G멤y
 H [A\A]A^A
 H*NLFPFFLF
 H+3t1I
@@ -3947,6 +3858,7 @@ HAC K  Unused Binding
 HELPER_BONE
 HHcO$H
 HITGROUP_INVALID
+HIcG@H
 HLccHE
 HSequence
 HVIUCSARAp
@@ -3969,6 +3881,7 @@ H__ZnwmRKSt9nothrow_t
 H__ZnwmSt11align_val_t
 H__ZnwmSt11align_val_tRKSt9nothrow_t
 HammerMapLoader001
+Handle Return Values
 HandshakeTagState_t
 HandshakeTagType_t
 HardCancel
@@ -3994,7 +3907,6 @@ HcHXI9
 HcJ,H9
 HcK@H9
 HcKXH9
-HcK\Hk
 HcN,H9
 HcO H
 HcO,H9
@@ -4018,6 +3930,7 @@ HelpSystem_001
 Hermite
 HermiteFeaturePreserving
 Hex and octal numbers must be integers
+Hffffff
 Hinge Axis
 HitReact:m_hitCount
 HitReact:m_resetCount
@@ -4132,6 +4045,7 @@ IcExI9
 IcF(H
 IcF(I9
 IcF0H
+IcG H
 IcG(H9
 IcG,H9
 IcG0H9
@@ -4146,7 +4060,9 @@ IcL$@H9
 IcL$hI
 IcL$xH
 IcM(9
+IcM(D9
 IcN(H9
+IcN0H9
 IcN8H
 IcNXD9
 IcO H9
@@ -4240,14 +4156,11 @@ Instant Stop
 Int Parameter
 Int( %d
 Integer
-Integer Divide
-Integer division - unlike the divide (/) node, this will truncate any remainder (floor) and return an integer
 Integer out of range
 IntegerPart
 Intensity of the animation
 Intercept point
 Internal Tag
-Internal cursor flow error: halting due to leaf cell bug
 Interpolate
 Interpolation
 Interpreting non ascii codepoint %d
@@ -4279,6 +4192,7 @@ Invalid symbol name
 Invalid target detected for warp node
 Invalid target provided to target selector
 Invalid value for boolean field
+Invalid warp sections to perform a root motion warp for the given start time
 Invalid weak dependency index
 Invalid wire type for CPPTYPE_INT32
 Invalid wire type for CPPTYPE_INT64
@@ -4287,17 +4201,14 @@ Invalid wire type for CPPTYPE_UINT32
 Invalid wire type for CPPTYPE_UINT64
 InverseFractionalPart
 InverseSourceCycle
-Invoke '%s' failed with code %d
 Invoke Cell%d [eid=%d] %s%s
 Invoke Lib %s
 Invoke%d: Cell%d %s
 Invoke%d: LibraryFunc %s
-Is Valid Vector
-Is Valid World Vector
 IsSet
 IsTagActive
 IsTagActiveThisFrame
-IsValidIndex( i
+IsValidCachedPose( bufferID
 Iterate
 IterateRandom
 Iw+UH
@@ -4329,9 +4240,9 @@ Jump to Instr I%d
 JumpCorrectionMethod
 JumpOrLeap( C%d:I%d
 Jumping
+K16CNmTwoBoneIKTask
 KV3 save transfer failed: %s
 KV3DefaultTestFnName = 'CParticleModelInputDefaultTestFunc
-KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc
 K[A\A^A
 K]ÐUH
 KcD%LH
@@ -4347,7 +4258,7 @@ KeyValues3
 KeyValues3 *CKV3Arena::Root
 KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
 KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
-Kfff>fff>fff>fff
+Kfffff
 Kffffff
 Kill After
 Kill All Other Cursors
@@ -4356,8 +4267,6 @@ Kill Elegantly
 Kill Immediately
 L$$u6z4A
 L$9A	F(H
-L$HIcD
-L$HIcL
 L$`HcT
 L+0Hc
 L7<HcT7@H
@@ -4380,6 +4289,7 @@ LOD %i
 LOD Component
 LOD Off
 LOG_GENERAL
+LOOP_BREAK
 LTE_FLOAT
 LTE_GAMETIME
 LTE_INT
@@ -4390,13 +4300,12 @@ LabelledDebugHelperDebug
 Landing
 Last Bone in Chain
 Layers for this mood
-Lc"F;d3
-Lc#D;d
 Lc'A9
 Lc'E9
 Lc/A9
 Lc^,L9
 LcpHM
+Leaf Type
 LeanMatrixNode
 Leap to Chunk C%d
 Left Shoulder
@@ -4414,19 +4323,11 @@ LegacyAnimFieldType_t::VECTOR2D
 LegacyAnimFieldType_t::VECTOR3D
 LegacyAnimFieldType_t::VECTOR4D
 Length
-Length (magnitude) of Vector
-Length (magnitude) of Vector2D
-Length Vector
-Length Vector2 D
-Lerp Float
-Lerp Vector
-Lerp World Vector
 Less R%d <- R%d < R%d
 LessEq R%d <- R%d <= R%d
 LessThan
 LessThanEqual
 Lexer encountered %d error(s
-Lffff
 Lighten
 Limit Count
 LimitSearchToSourceState
@@ -4469,6 +4370,7 @@ LookTarget
 LookTarget_WorldSpace
 LookupMapValue
 Low LOD
+Lp p p0SCp
 Luminance
 M$u5z3A
 M9'v_Hc
@@ -4485,7 +4387,9 @@ MAlternateSemanticName
 MAtomicTransfersAsPlainString
 MCustomFGDMetadata
 MESH_BUFFER_USAGE_ADJACENCY
+MESH_BUFFER_USAGE_ALIAS_TABLE
 MESH_BUFFER_USAGE_IB
+MESH_BUFFER_USAGE_MESHLETS
 MESH_BUFFER_USAGE_MESHLET_TRIS
 MESH_BUFFER_USAGE_NONE
 MESH_BUFFER_USAGE_RT_PROXY
@@ -4538,6 +4442,7 @@ MPropertyAttrStateCallback
 MPropertyAttributeChoiceName
 MPropertyAttributeEditor
 MPropertyAttributeRange
+MPropertyAutoExpandSelf
 MPropertyAutoRebuildOnChange
 MPropertyCustomEditor
 MPropertyCustomFGDType
@@ -4559,38 +4464,21 @@ MPulseEditorCanvasItemSpecKV3
 MPulseEditorHeaderIcon
 MPulseExpressionAlias
 MPulseFGDSkipField
+MPulseFunctionAddsCursorTag
 MPulseFunctionHiddenInTool
-MPulseLegacyName
 MPulseRequirementCheck
 MPulseRequirementCommit
 MPulseSignatureForOutflow
 MPulseValuePure
 MUL_FLOAT
 MUL_INT
+MVDataAssociatedFile
 MVDataOverlayType
 MVDataRoot
 Magnitude Only
 MagnitudeOnly
 Maintain Parent Orientation
 MaintainParentOrientation
-Make Angle
-Make Angle From Forward Vector
-Make Color
-Make Transform
-Make Vector
-Make Vector From Angle
-Make Vector2 D
-Make Vector4 D
-Make World Transform
-Make World Vector
-Make a Color from component parts
-Make a Transform from component parts
-Make a Vector from an Angle
-Make a Vector from component parts
-Make a Vector2D from component parts
-Make a World Vector from component parts
-Make an Angle from a Forward Vector
-Make an Angle from component parts
 MakeGlobalSymbol
 MakeGlobalSymbolCaseSensitive
 Managers
@@ -4647,17 +4535,14 @@ Material Group
 MaterialGroup_t
 MaterialUtils_001
 MatterialAttributeTagType_t
-Max Float
 Max IK Rotation Error
 Max IK Translation Error
-Max Int
 Max Move Speed
 Max Stretch
 Max Value
 MaxMoveSpeed
-Maximum of two values (float
-Maximum of two values (int
-Mc$$F;d
+Mc$$D;d
+Mc,$D;l
 Mc,$E;l
 McL$<H
 McL$<I
@@ -4670,7 +4555,6 @@ McvXM
 Mcw D9
 Mc~0L9
 Mc~0M9
-Mc~8M
 Medium
 MemAlloc_AllocFunc
 MemAlloc_CallocFunc
@@ -4692,14 +4576,9 @@ Messages can't have default values
 Method      : google::protobuf::Reflection
 MethodDescriptorProto
 MethodOptions
-Mffff
-Min Float
-Min Int
 Min Value
-Minimum of two values (float
-Minimum of two values (int
 Mirror
-Mismatch parameter type for referenced graph '%s', parent type: '%s', referenced type: '%s
+Mismatch parameter type for referenced graph '%s', param: '%s', parent type: '%s', referenced type: '%s
 Mismatched Token Exception
 Mismatched set
 Mismatched skeleton detected for specified pose (%s), this will be ignored
@@ -4749,6 +4628,7 @@ ModelSkeletonData_t::BoneFlags_t
 ModelSpace
 ModelSpaceBlendTask - Trying to perform a model-space blend using an additive pose
 Monitor Observable
+Monitor Observable Switch
 MoodAnimationLayer_t
 MoodAnimation_t
 MoodType_t
@@ -4785,9 +4665,11 @@ MoveHeading
 MoveHeadingRelativeToLookHeading
 MoveSpeed
 Movement Component
+Movement Direction
 Movement Handshake Tag
 MovementCapability_t
 MovementData
+MovementDirection
 MoverNode
 Mul R%d <- R%d * R%d
 Multiple extension registrations for type
@@ -5274,6 +5156,7 @@ N25CNmCurrentSyncEventIDNode11CDefinitionE
 N25CNmFootEventConditionNode11CDefinitionE
 N25CNmParameterizedBlendNode11CDefinitionE
 N25CNmRootMotionOverrideNode11CDefinitionE
+N25CNmTimeControlledClipNode11CDefinitionE
 N25CNmVirtualParameterIDNode11CDefinitionE
 N26CNmFixedWeightBoneMaskNode11CDefinitionE
 N26CNmGraphEventConditionNode11CDefinitionE
@@ -5292,12 +5175,6 @@ N2IK16CAnimPoseWrapperE
 N30CNmStateCompletedConditionNode11CDefinitionE
 N30CNmSyncEventIndexConditionNode11CDefinitionE
 N30CNmVelocityBasedSpeedScaleNode11CDefinitionE
-N30PulseBindingSchemaEnumTraits_tI25PulseCursorWakePriority_tE3$_2E
-N30PulseBindingSchemaEnumTraits_tI25PulseCursorWakePriority_tE3$_3E
-N30PulseBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tE3$_0E
-N30PulseBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tE3$_1E
-N30PulseBindingSchemaEnumTraits_tI27PulseDurationStringFormat_tE3$_0E
-N30PulseBindingSchemaEnumTraits_tI27PulseDurationStringFormat_tE3$_1E
 N31CNmIDEventPercentageThroughNode11CDefinitionE
 N31CNmTransitionEventConditionNode11CDefinitionE
 N31CNmVirtualParameterBoneMaskNode11CDefinitionE
@@ -5305,10 +5182,6 @@ N32CNmIsExternalGraphSlotFilledNode11CDefinitionE
 N32CNmIsInactiveBranchConditionNode11CDefinitionE
 N32CNmParameterizedClipSelectorNode11CDefinitionE
 N33CBaseIntrospectedToKV3TypeManager18AsyncProcessResultE
-N34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_0E
-N34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_1E
-N34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_2E
-N34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_3E
 N37CNmFootstepEventPercentageThroughNode11CDefinitionE
 N37CTypesafeIntrospectedToKV3TypeManagerILy1902474102E18CSequenceGroupDataE26IKV3ResourceAllocatorUtilsE
 N37CTypesafeIntrospectedToKV3TypeManagerILy1902474102E18CSequenceGroupDataE28IKV3ResourceDeallocatorUtilsE
@@ -5485,7 +5358,7 @@ N9Attribute9AnimGraph19UseReflectionEditorE
 N9Attribute9AnimGraph9ParamTypeE
 N9Attribute9IsEnabledE
 N9CNmOrNode11CDefinitionE
-N@NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI27PulseDurationStringFormat_tE3$_0ENS_9allocatorIS5_EEF19CPulseValueFullTypevEEE
+N@34CPulseCell_Inflow_Wait_DebugInfo_t
 NEGATE
 NEGATE_FLOAT
 NEGATE_INT
@@ -5499,14 +5372,13 @@ NE_BOOL
 NE_COLOR_RGB
 NE_EHANDLE
 NE_ENTITY_NAME
+NE_ENUM
 NE_FLOAT
 NE_GAMETIME
 NE_INT
-NE_OPAQUE_HANDLE
+NE_LEAF
 NE_PANEL_HANDLE
-NE_SCHEMA_ENUM
 NE_STRING
-NE_TEST_HANDLE
 NE_VEC2
 NE_VEC3
 NE_VEC3WS
@@ -5519,7 +5391,6 @@ NSt3__110__function6__baseIF10CUtlVectorIN9Attribute2UI8Choice_tEi25CUtlVectorMe
 NSt3__110__function6__baseIF13CGlobalSymbolPK14IAnimParameterEEE
 NSt3__110__function6__baseIF13CGlobalSymbolPK22CAnimParameterInstanceEEE
 NSt3__110__function6__baseIF13CGlobalSymbolPK8IAnimTagEEE
-NSt3__110__function6__baseIF19CPulseValueFullTypevEEE
 NSt3__110__function6__baseIF5ColorPK18CAnimParameterBaseEEE
 NSt3__110__function6__baseIF5ColorPK21CVirtualAnimParameterEEE
 NSt3__110__function6__baseIF5ColorPK22CAnimParameterInstanceEEE
@@ -5539,7 +5410,6 @@ NSt3__110__function6__baseIFRK13CGlobalSymbolPK8IAnimTagEEE
 NSt3__110__function6__baseIFbPK18CAnimParameterBaseEEE
 NSt3__110__function6__baseIFbPK22CAnimComponentInstanceEEE
 NSt3__110__function6__baseIFbiiEEE
-NSt3__110__function6__baseIFjvEEE
 NSt3__110__function6__baseIFvP14IAnimParameter13CGlobalSymbolEEE
 NSt3__110__function6__baseIFvP14IAnimParameterRK10CUtlStringEEE
 NSt3__110__function6__baseIFvP22CAnimComponentInstancebEEE
@@ -5555,16 +5425,6 @@ NSt3__110__function6__baseIFviiEEE
 NSt3__110__function6__baseIFvvEEE
 NSt3__110__function6__funcIN22CAnimParameterInstance3$_0ENS_9allocatorIS3_EEF5ColorPKS2_EEE
 NSt3__110__function6__funcIN22CConcreteAnimParameter3$_0ENS_9allocatorIS3_EEF5ColorPK18CAnimParameterBaseEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI25PulseCursorWakePriority_tE3$_2ENS_9allocatorIS5_EEF19CPulseValueFullTypevEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI25PulseCursorWakePriority_tE3$_3ENS_9allocatorIS5_EEFjvEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tE3$_0ENS_9allocatorIS5_EEF19CPulseValueFullTypevEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tE3$_1ENS_9allocatorIS5_EEFjvEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI27PulseDurationStringFormat_tE3$_0ENS_9allocatorIS5_EEF19CPulseValueFullTypevEEE
-NSt3__110__function6__funcIN30PulseBindingSchemaEnumTraits_tI27PulseDurationStringFormat_tE3$_1ENS_9allocatorIS5_EEFjvEEE
-NSt3__110__function6__funcIN34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_0ENS_9allocatorIS7_EEF19CPulseValueFullTypevEEE
-NSt3__110__function6__funcIN34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_1ENS_9allocatorIS7_EEFjvEEE
-NSt3__110__function6__funcIN34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_2ENS_9allocatorIS7_EEF19CPulseValueFullTypevEEE
-NSt3__110__function6__funcIN34PulseBindingResourceHandleTraits_tI11CWeakHandleI25InfoForResourceTypeCModelEE3$_3ENS_9allocatorIS7_EEFjvEEE
 NSt3__110__function6__funcINS_8__mem_fnIM14CWeightPreviewKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14IAnimParameterFv13CGlobalSymbolEEENS_9allocatorIS7_EEFvPS3_S4_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14IAnimParameterFvRK10CUtlStringEEENS_9allocatorIS9_EEFvPS3_S6_EEE
@@ -5716,7 +5576,6 @@ NULL CELL
 Name of the animation
 Name of the layer
 NamePart
-Natural logarithm (base e
 NavGameTest001
 NearEqual
 Need space between identifier and decimal point
@@ -5747,9 +5606,11 @@ Newline in string literal
 Newly tilted bone
 Next step normal
 NmBoneMaskSetDefinition_t
+NmCachedPoseID_t CNmPoseBufferPool::GenerateNewCachedPoseID
 NmCachedValueMode_t
 NmCompressionSettings_t
 NmCompressionSettings_t::QuantizationRange_t
+NmContactAudioInfo_t
 NmEasingFunction_t
 NmEasingOperation_t
 NmEventConditionRules_t
@@ -5783,15 +5644,12 @@ No expression
 No field named "uninterpreted_option" in the Options proto
 No input data for '%s'. (Empty buffer
 No input target bone ID specified
-No valid warp events detected! Either no events present or start time is after warp events
 NoDamping
 NodeID %d port '%s' called from C%d:I%d
 Non-primitive types can't be packed
 Non-repeated Any specified multiple times
 Non-repeated field
 None Specified
-Normalize Vector
-Normalize Vector a
 Not R%d <- !R%d
 Not Set
 Not enough bones, there are not enough bones in the chain to achieve the requested chain length, chain is limited to %d bones
@@ -5810,10 +5668,10 @@ OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
 ORIENT
-O`HcG
 Observable
 Ocd7HM
 Oct=8D9
+Oc|4@A
 Off Before Finished
 Off When Finished
 Offffff
@@ -5835,7 +5693,6 @@ Oneof must have at least one field
 OneofDescriptorProto
 OneofOptions
 Only wrote %d (of %d) values when saving map
-Opaque Handle
 OperatorAnd
 OperatorOr
 OptimizeMode
@@ -5848,10 +5705,8 @@ Or R%d <- R%d || R%d
 Orientation Warp failed since there is not enough time left to warp or we're past the warp event
 Orientation warp failed since there wasnt a valid target direction set
 OrientationWarpMode_t
-OrientationWarpNodeInstanceData_t
 OrientationWarpRootMotionSource_t
 OrientationWarpTargetOffsetMode_t
-Origin
 Original
 Original Foot
 Original Joint
@@ -5875,17 +5730,16 @@ Overlay Blend (Masked): %.2f
 Overlay Blend: %.2f
 OverlayBlendTask - Trying to perform an overlay blend with mismatched pose types ( additive/parent-space
 Override Sound
-P  000 00
 P 0 0
-P 00P
 P 0@ P @0000
 P 0P`@@@P
+P @@PP
 P Mc~(M
-P P P P     @                                            @ @ @  @P  Pp  pP  PP  PP  PP  PP  P            @   p
+P0 0000
 P00PP`P
 P0A;D
-P@ @ PP
-P@P0000@P@P0000@@@@@P0
+P@ @ PP @@PP
+P@@PP
 PANEL_ID
 PARENT
 PARTICLEBLEND_DARKEN
@@ -5952,6 +5806,9 @@ PF_MAP_TYPE_COUNT
 PF_MAP_TYPE_CURVE
 PF_MAP_TYPE_DIRECT
 PF_MAP_TYPE_INVALID
+PF_MAP_TYPE_MAX
+PF_MAP_TYPE_MIN
+PF_MAP_TYPE_MOD
 PF_MAP_TYPE_MULT
 PF_MAP_TYPE_NOTCHED
 PF_MAP_TYPE_REMAP
@@ -5985,6 +5842,7 @@ PF_TYPE_COLLECTION_AGE
 PF_TYPE_CONCURRENT_DEF_COUNT
 PF_TYPE_CONTROL_POINT_CHANGE_AGE
 PF_TYPE_CONTROL_POINT_COMPONENT
+PF_TYPE_CONTROL_POINT_DISTANCE
 PF_TYPE_CONTROL_POINT_IS_SET
 PF_TYPE_CONTROL_POINT_SPEED
 PF_TYPE_COUNT
@@ -6029,7 +5887,26 @@ POSE_SPACE_BONE
 POSE_SPACE_MORPH
 POS_FLOATLITERAL
 POS_INTLITERAL
+PP   @@ 0
+PP @@PP
+PP Pp
+PP0    0
+PP00@@@PP
+PP0@@@00
+PP0@p0
+PP@ @@PP
+PP@@@PP0@@PP@@PP
+PP@@PP
+PP@@PP0
+PP@@PP@@PP
+PP@@PP@@PP@@PP@@PP
+PP@@PP``0
 PP@PPPPPPP
+PPP  000 00
+PPP @@PP
+PPP00
+PPP`0
+PP`@P@P0000@P@P0000@@PP@@PP@P0
 PRIVATE
 PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Label_IsValid(value
 PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Type_IsValid(value
@@ -6049,12 +5926,13 @@ PVAL_COUNT
 PVAL_CURSOR_FLOW
 PVAL_EHANDLE
 PVAL_ENTITY_NAME
+PVAL_ENUM
 PVAL_FLOAT
 PVAL_GAMETIME
 PVAL_INT
 PVAL_INVALID
+PVAL_LEAF
 PVAL_MODEL_MATERIAL_GROUP
-PVAL_OPAQUE_HANDLE
 PVAL_PANORAMA_PANEL_HANDLE
 PVAL_PARTICLE_EHANDLE
 PVAL_QANGLE
@@ -6064,7 +5942,6 @@ PVAL_SCHEMA_ENUM
 PVAL_SNDEVT_GUID
 PVAL_SNDEVT_NAME
 PVAL_STRING
-PVAL_TEST_HANDLE
 PVAL_TRANSFORM
 PVAL_TRANSFORM_WORLDSPACE
 PVAL_TYPESAFE_INT
@@ -6101,6 +5978,7 @@ PVEC_TYPE_RANDOM_UNIFORM_OFFSET
 PXD90~cH
 P[A\A^A
 P` P` P` P` P
+P`@@PPp
 Package name is too long
 Packed data buffer overflow: %d > %d
 PackedAABB_t
@@ -6212,7 +6090,6 @@ PreferClosestSyncEventID
 PreferHighestProgress
 PreferHighestWeight
 PrevActive
-Preventing new cursor (%s
 Preview Button
 Previous normal
 Primary View Depth Buffer
@@ -6266,11 +6143,14 @@ PulseRuntimeInvokeIndex_t
 PulseRuntimeOutputIndex_t
 PulseRuntimeRegisterIndex_t
 PulseRuntimeStateOffset_t
+PulseRuntimeTempVarBankIndex_t
+PulseRuntimeTempVarIndex_t
 PulseRuntimeVarIndex_t
 PulseSelectorOutflowList_t
 PulseSymbol_t
 PulseValueType_t
 PulseVariableKeysSource_t
+QASASAWAWA
 QAngle
 Q[A\A^A
 Qfffff
@@ -6279,7 +6159,6 @@ Quaternion
 Quaternion Parameter
 QuaternionParameter
 QuaternionStorage
-R Sqrt
 R%d%s%s
 R%d: %15s %25s %s
 RARARA
@@ -6288,7 +6167,6 @@ RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
 RARARARARARARAp
 RARARARARARAp
 RARARARARAp
-RARARASAp
 RARARA`<AYA`6AVARA\ASBRBRBRBRBRBRBRBVA
 RARARA`<AYA`6AVARA\AUA
 RARARA`<AYA`6AVARA\AUAUA
@@ -6312,6 +6190,7 @@ RARARA`<AYA`6BVARB\ASBRBRBRBRB
 RARARA`<AYA`6BVARB`<AYARARAp
 RARARA`<AYA`6BVARB`<AYARA\ARA\AUASASASAWASASAUAUAWAUAUAUASA
 RARARA`<AYA`6BVARB`<AYARA\ASBRBRBVA
+RARARA`<AYA`6BVARB`<AYARA`<AYARA\ASC
 RARARA`<AYA`6BVARB`<AYARA`<AYARA`<AYARBp
 RARARA`<AYA`6BVARB`<AYARA`<AYARB\ARAUAXA`<AYBRBp
 RARARA`<AYA`6BVARB`<AYARA`<AYARBp
@@ -6333,10 +6212,12 @@ RARAVARASARAVARASARAVARASARAVARAYARA
 RARAVARATARAZAp
 RARAVARAVARA
 RARAVARAVARA`5ASARASARAVARA`7ASA[A
+RARAVATATARAYA[A`cA
 RARAWAp
 RARAYA
 RARAZARAp
 RARAZAp
+RARA]ARARAp
 RARA^A
 RARA`?A\A`6AVAp
 RARA`BA]A`BA]A`6AVAp
@@ -6347,21 +6228,18 @@ RASARASC
 RASARAVARA
 RASARAVARATARAZAp
 RASARAp
-RASASASASASASASASASASASASASASASASASASAUASASASASASASASASASASASASASASASASASASASASAp
 RATARARARARARA`gASAp
 RATA`+A
 RAUAVB`<AYBRARAp
 RAVARA`<AYARBp
-RAWARAWARAWARAWARAWARAWARAWARAWARAYARA
+RAWARAWARAWARAWARAWARAWARAWARAWARAYARAp
 RAWA`9A
-RAZARAp
 RAZATA`4ATASBRBRBRB[AWARASA`>B
 RA[ARBRA\B
-RA\ARARARARASARAp
 RA\ARASAUAUARB`<AYBRBp
 RA\ARAUAp
 RA\ARA\ARA\ARA\ARA\ARASARASARASARASARASARATARASARATARASARARASARA
-RA]ARAZARAp
+RA\ARAp
 RA`6B\ARAUAVA`<AYBRBp
 RA`<AYARARAp
 RA`<AYARA\ARAWATBWBRARA`<AYBRBp
@@ -6377,19 +6255,18 @@ RA`?ARARARARA`AARAp
 RA`?A\ARAp
 RA`BA]ARAp
 RA`BBZBp
-RAp p RAp
 RAp p p
 RAp p p0RCp
 RAphRA`@A`AA`@A`AA`AA`BARA`AA`AA
 RBRBRAp(p
 RBRBRBRBRB
+RBRBRBRBRBRBRA
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
-RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp
+RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBTA
 RBRBRBRBRBRBRBp
-RBRBRBRBRBRBRC
 RBRBRBRBRBRBTA
 RBRBRBRBRBRBp
 RBRBRBRBRBRC
@@ -6402,21 +6279,23 @@ RBRBRBVAYBRBXAWA
 RBRBRB^BRBRBRB
 RBRBRBp
 RBRBRCp
-RBRBSBYBRAYC
+RBRBSB[BRAZB[BRA
 RBRBTAYASASARBXARBSAp
 RBRBVAYASASASAUASAp
 RBRDp RAp
+RBSB[BRAVB[BRAVB[ARARA[ARA[ARASARB[BRA[ASC
 RBTAVARAUASASASAUASASAp
 RBVAUBRBRBRBRBRBTA
 RBVAWASASAp
 RBVAYAXB`<AYBRBp
 RBVA[ASAUAUAYAUASASAUASBRBXAUCp
-RBYATBYA^BYBRAYARAYARAYARAYARAYAZBYARAYARAYARAYARAp
-RBYBRARBYASC
 RB[ASBRBRBRBRBRBRBSB[A
 RB[ATB[ASC
 RB[ATB[ATB[ASCp
 RB[ATB[ATB[ATB[AXB[ARA[ARA[ASCp
+RB[ATB[AVB[ARA[ARAp
+RB[ATB[A^B[BRA[ARA[ARA[ARA[ARA[AZB[ARA[ARA[ARA[ARAp
+RB[BRARB[ASC
 RB\AWA^B`<AYBRARAp
 RB\AWAp
 RB`<AYARARAp
@@ -6424,14 +6303,13 @@ RB`<AYARBp
 RB`?A\ARAp
 RB`BA]ARAp
 RBp p@RDp p p(p
-RBp(p(p
 RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp@RBp
 RCp p RAp
 RCp p p
 RCp p p0RCp
 RCp p p0RDp
 RDp RAp
-RDp p0RDp p
+RDp p0p
 RE;4$}LH
 REINTERPRET_INSTANCE
 RENDERMESH_SLOT_INVALID
@@ -6478,6 +6356,7 @@ RENDER_SLOT_PER_INSTANCE
 RENDER_SLOT_PER_VERTEX
 REQUIREMENT_FAIL
 REQUIREMENT_PASS
+RERBRBRBp
 RESOURCE_TYPE_ANIMATION_GROUP_INTERNAL
 RESOURCE_TYPE_ANIMATION_INTERNAL
 RESOURCE_TYPE_ANIMGRAPH
@@ -6489,10 +6368,9 @@ RETURN
 RETURN R%d
 RETURN_VALUE
 RETURN_VOID
-RIcu4H
 RKSt9nothrow_t
 ROTATION
-Rad2 Deg
+RaceCursorsParent
 Radius
 Ragdoll Component
 Ragdoll Tag
@@ -6500,7 +6378,6 @@ RagdollPoseControl
 Ramp Current Value at Input Rate Per Second
 Random Float
 Random Integer
-Random World Position
 RandomFloat
 RandomInt
 Range_t
@@ -6518,12 +6395,10 @@ Recalculate
 Recalculate Or Offset Warped Root Motion
 Recalculate Warped Root Motion
 RecalculateOrOffset
-Reciprocoal square root (1/sqrt
 Recognition Exception
 Recognition exception
 Recursion limit at end of parse should be
 Reference Pose Task
-Referenced clip resource failed to load or is invalid: %s
 Referenced graph resource failed to load or is invalid: %s
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
@@ -6531,9 +6406,7 @@ Reinterpret Instance %s R%d <- %s R%d
 Release
 ReleaseMessage
 Remaining Distance
-Remap Clamped Float
 Remap Value Component
-Remap and clamp input value from input range to output range (float
 RemapFloatInput
 Remove Tag From Cursor
 Remove the given tag from this cursor. If other cursors are waiting on us, they will resume
@@ -6571,16 +6444,8 @@ ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
 ResourceSystem013
+Return
 ReturnJobManualEventToPool
-Returns -1 or 0 or 1 based on the sign of the argument
-Returns -1.0 or 0.0 or 1.0 based on the sign of the argument
-Returns a random position centered on vCenter with random min and max radius
-Returns interpolated value between A and B based on frac 0.0 - 1.0 (float
-Returns interpolated value between A and B based on frac 0.0 - 1.0 (vector
-Returns interpolated value between A and B based on frac 0.0 - 1.0 (world vector
-Returns the constant pi (3.14
-Returns true if the Vector is valid
-Returns true if the World Vector is valid
 Retval '%s
 Right Shoulder
 Right Trigger
@@ -6588,6 +6453,7 @@ RightFootDown
 RightFootPassing
 RightPhase
 RnCapsuleDesc_t
+RnCompoundDesc_t
 RnHullDesc_t
 RnMeshDesc_t
 RnSoftbodyCapsule_t
@@ -6606,9 +6472,6 @@ Rotation Error Range
 Rotation Only
 RotationAndTranslation
 RotationOnly
-Round - round float up or down to integer
-Round Float
-R送S老T退T
 SARARC
 SARASARA
 SARASARASARA
@@ -6656,11 +6519,12 @@ SARA`8ASA
 SARA`:ASA
 SARA`<ASA
 SARA`>ASA
-SASASASASCSASASASCSASASCSASASASBp p p
-SASASA[AWA
+SASASASASCSASASASCSASASESASASASCSASBp p p
+SASASASAWAp
+SASA[ARA[ARAp
+SBRB\Ap
 SBSB]0
 SBUBTCp
-SBZARAp
 SBp p p
 SCALE_INV
 SCALE_INV_VEC2
@@ -6671,12 +6535,15 @@ SCALE_VEC3
 SCALE_VEC4
 SCOPE_QUALIFIER
 SCSAWAWAp
+SDp p p
 SEMICOLON
 SEQ_POSE_SETTING_CONSTANT
 SEQ_POSE_SETTING_POSITION
 SEQ_POSE_SETTING_ROTATION
 SEQ_POSE_SETTING_VELOCITY
 SET_BLACKBOARD_REFERENCE
+SET_TEMPVAR
+SET_TEMPVAR_OBSERVABLE
 SET_VAR
 SET_VAR_ARRAY_ELEMENT_1D
 SET_VAR_OBSERVABLE
@@ -6716,8 +6583,6 @@ SameCycleAsSource
 SameTimeAsSource
 Sample
 SampleCode
-Saturate
-Saturate (clamps float between 0 and 1
 Save a named value of any type on the cursor
 Scale
 Scale Animation Motion
@@ -6730,7 +6595,6 @@ ScaleMotion
 ScaleSet[%d] :: %s
 SceneSystem_002
 SceneUtils_001
-Schema Enum
 SchemaSystem_001
 SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
@@ -6797,6 +6661,7 @@ SetFloat
 SetInt32
 SetInt64
 SetString
+SetTempVar
 SetUInt32
 SetUInt64
 SetVar V%d (%s) <- R%d
@@ -6814,15 +6679,12 @@ Should we straighten face island if the displacement is this much? (inches
 Should we try to straighten an island of faces deviating from their average normal (tangent
 Should we try to straighten two faces connected to this edge? (tangent
 Shuffle
-Sign Float
-Sign Int
 Signature hook to fill out arguments for OnInterval
 SignatureOutflow_Continue
 SignatureOutflow_Resume
 SimSpace_Local
 SimSpace_Model
 SimSpace_World
-Sine of angle. Input in radians, output in radians
 Single Blend Time
 SingleBlendTime
 SkeletonAnimCapture_t
@@ -6834,6 +6696,7 @@ SkeletonBoneBounds_t
 SkeletonDemoDb_t
 Skip this node after the limit. Check Type does not apply, the limit will always be checked
 SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleFloatInputDefaultTestFunc
+SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc
 SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleVecInputDefaultTestFunc
 Slope Angle
 Slope Angle (World
@@ -6851,6 +6714,7 @@ SlopeNormal
 SlopeNormal_WorldSpace
 SlopePitch
 SlopeYaw
+SmartPropsSystem_001
 Snap Frame (%s
 SoftCancel
 Solid Collision at Zero Weight
@@ -6894,27 +6758,9 @@ Speed Function
 Speed Scale
 Spline
 Spline Settings
-Split Angle
-Split Color
-Split Transform
-Split Vector
-Split Vector2 D
-Split Vector4 D
-Split World Transform
-Split World Vector
-Split a Color into component parts
-Split a Transform into component parts
-Split a Vector into component parts
-Split a Vector2D into component parts
-Split a World Vector into component parts
-Split an Angle into component parts
 Spring
 Spring Frequency Max
 Spring Frequency Min
-Sqr Float
-Sqr Int
-Square
-Square root
 St11align_val_t
 Stack depth limit hit (%d
 StanceInfo_t
@@ -6935,6 +6781,7 @@ StepPhase
 StepPhase_InAir
 StepPhase_OnGround
 Steps Remaining
+Stiffen
 Stiffness
 Stop Waiting
 Stop When Graph Destroyed
@@ -6982,6 +6829,11 @@ T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CPulse_RegisterInfo>, CPulse_RegisterIn
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CSceneObjectData::RTProxyDrawDescriptor_t>, CSceneObjectData::RTProxyDrawDescriptor_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<CSceneObjectData::RTProxyDrawDescriptor_t>, T = CSceneObjectData::RTProxyDrawDescriptor_t, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<NmBoneMaskSetDefinition_t>, NmBoneMaskSetDefinition_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<NmBoneMaskSetDefinition_t>, T = NmBoneMaskSetDefinition_t, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<PGDInstruction_t>, PGDInstruction_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<PGDInstruction_t>, T = PGDInstruction_t, I = int
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<RnCapsuleDesc_t>, RnCapsuleDesc_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<RnCapsuleDesc_t>, T = RnCapsuleDesc_t, I = int
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<RnCompoundDesc_t>, RnCompoundDesc_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<RnCompoundDesc_t>, T = RnCompoundDesc_t, I = int
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<RnHullDesc_t>, RnHullDesc_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<RnHullDesc_t>, T = RnHullDesc_t, I = int
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<RnMeshDesc_t>, RnMeshDesc_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<RnMeshDesc_t>, T = RnMeshDesc_t, I = int
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<RnSphereDesc_t>, RnSphereDesc_t>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<RnSphereDesc_t>, T = RnSphereDesc_t, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<unsigned short>, unsigned short>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorBase<unsigned short>, T = unsigned short, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<CGlobalSymbol, 3>, CGlobalSymbol>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorFixedGrowableBase<CGlobalSymbol, 3>, T = CGlobalSymbol, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<CGlobalSymbol, 4>, CGlobalSymbol>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorFixedGrowableBase<CGlobalSymbol, 4>, T = CGlobalSymbol, I = int
@@ -7004,6 +6856,8 @@ T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<unsigned char, 30>, unsign
 T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<unsigned char, 8>, unsigned char>::InsertBeforeGetPtr(CUtlLeanVectorImpl::IndexType_t, CUtlLeanVectorImpl::IndexIntType_t) [B = CUtlLeanVectorFixedGrowableBase<unsigned char, 8>, T = unsigned char, I = int
 T$,A9
 T$LHcJ
+T%d (%s
+T%d: '%s' (%s) EditorID:%d%s
 T7.fA
 TAUA^ARARAWA
 TAUA^ARARA^ARARARAp
@@ -7013,12 +6867,10 @@ TAUA^ARA^ARA^ARARARAp
 TAUA^ARA^ARA^ARA^ARA^ARARAp
 TBWA`/B
 TBWBRAZBUAp
-TBYBRA
-TBYBRARBYBRARBYBRAVBYARARAYARAYARATBYBRAYASC
-TB[ARA[ARAp
+TB[BRA
 TB[BSARATB
+TB]AUB
 TCSBWKp
-TCp p RAp
 TCp p p
 TILT_TWIST
 TOK_COLON
@@ -7045,7 +6897,7 @@ Tag End Stop is Instant
 TagActionStatus
 TagSpan_t
 TagStatus
-Tangent of angle. Input in radians, output in radians
+Takes a format string that and 1-5 arguments to insert into that string.<br>Format string can look like, for example, <tt>"Hello {} my name is {}"</tt> to reference arguments 0 and 1 implcictly.<br>Or <tt>"Hello {0} my name is {1}"</tt> to reference arguments 0 and 1 explicitly.<br>Use <tt>{{</tt> and <tt>}}</tt> for literal brace characters.<br
 Target
 Target Coords
 Target Move Heading
@@ -7056,11 +6908,7 @@ Target Selector Move Direction
 Target Selector Target
 Target Source
 Target Warp Node
-Target Warp: Feature preserving XY warp required scaling is lower than the minimum allowed threshold. Falling back to LERP
-Target Warp: Trying to XY warp backwards, falling back to LERP
-Target Warp: XY warp curve blowout detected! Falling back to LERP
-Target Warp: trying to XY warp a section with no displacement, falling back to LERP
-Target Warp: trying to XY warp to under the distance threshold, falling back to LERP
+Target Warp: %s
 Target warp exceed accurate sampling error threshold! Switching to inaccurate sampling
 TargetCastForModify
 TargetMoveHeading
@@ -7072,9 +6920,9 @@ TargetWarpAngleMode_t
 TargetWarpCorrectionMethod
 TargetWarpTimingMethod
 Task Handshake Tag
+TempVarBank: Bank%d
 Terminate
 TernaryConditional
-Test Handle
 TestScriptMgr001
 TextBlock
 TextLayout_001
@@ -7097,6 +6945,7 @@ Tilt bone after tilt
 Tilt delta from up offset
 Time Remaining
 Time before the next animation can start
+Time controlled nodes ignore synchronization
 Time from the end of the mood when an animation cannot play
 Time from the start of the mood before an animation can start
 Time since the start of the timer
@@ -7119,6 +6968,9 @@ Tried to load a polymorphic pointer with no '%s' key
 Tried to load resource reference '%s' from a value without a resource reference specific type
 Tried to merge messages of different types
 Tried to register a non-generated type with the generated type registry
+Trying to XY warp a section with no displacement, falling back to LERP
+Trying to XY warp backwards, falling back to LERP
+Trying to XY warp to under the distance threshold, falling back to LERP
 Trying to set an offset on an unset node
 Turn a time in seconds into a display string. NOT localized
 TurnHelperNode
@@ -7132,8 +6984,6 @@ Type appears to be in generated pool but wasn't
 Type is already registered
 Type of mood
 TypeManager
-Typesafe Int
-Typesafe Int64
 U%08x
 U(u,z*L
 UARARA
@@ -7141,11 +6991,13 @@ UARAUARAUARAUARAUASBRBRBRBRB\BRBRBRBRBRB
 UASASA
 UASASASASA
 UASASASAp
+UASASASBRA`)A
+UA[BRAp
 UA\AZARAZARAZASAp
 UA^ARA^AUB^ARA^ARA^ARA]ARARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]ARA]AUB^ARA
-UBRA`'A
 UBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
 UBTARATARATARATARATARATARATARATARATARA
+UB^A^A^A^ATAYARARARARARA^A^ARARA
 UNKNOWN
 UNKNOWN_ENUM_VALUE_%s_%d
 UNRECOGNIZED
@@ -7180,10 +7032,8 @@ Unknown binary operator
 Unknown enumeration value of
 Unknown format type
 Unknown function "%s
-Unknown property %s
 Unknown unary operator
 Unknown variable "%s
-Unknown variable %s
 UnknownType
 Unnamed
 Unnamed Parameter
@@ -7217,12 +7067,10 @@ VApplication001
 VAsyncFileSystem2_001
 VAvi001
 VBRBRBp
-VBYARAYARAYAXBYBRA
-VBYARAYBRAYARARBp
+VB[ARA[ARA[AXB[BRA
+VB[ARA[BRA[ARARBp
 VBik001
 VConComm001
-VCp p RAp
-VCp p p
 VDRCp p RAp
 VDRCp p p
 VDRDp RAp
@@ -7231,7 +7079,8 @@ VDRDp p
 VData Choice
 VDataChoice
 VDataChoice( %s
-VDp RAp
+VDataChoice( scripts/nm_contact_audio_actions.vdata
+VDataChoice( scripts/nm_contact_audio_types.vdata
 VERTEX_ALBEDO_565
 VERTEX_ALBEDO_8888
 VERTEX_ALBEDO_NONE
@@ -7299,10 +7148,8 @@ V_UInt8ToString_Unsafe
 V_UnqualifiedFileName
 V_acosd
 V_acosf
-V_asind
 V_asinf
 V_atan2f
-V_atand
 V_atanf
 V_atof
 V_atofloat32
@@ -7312,11 +7159,8 @@ V_cosf
 V_coshf
 V_exp2f
 V_expf
-V_fmodd
 V_fmodf
-V_fpclassifyd
 V_fprintf
-V_isnand
 V_log10f
 V_log2_uint
 V_log2f
@@ -7337,7 +7181,6 @@ V_strncat
 V_strncmp
 V_strncpy
 V_strtok
-V_tand
 V_tanf
 V_tanhf
 V_vsnprintf
@@ -7359,6 +7202,7 @@ Value of type
 Value out of range for int32 option
 Value out of range for int64 option
 Value out of range for uint32 option
+Value to evaluate when any of its dependent values change. The result is compared against each case
 Values
 Var( %s
 Variable "%s" has %i components, a specific component must be specified, for example use: "%s.x
@@ -7366,7 +7210,6 @@ Variable '%s' is referenced but not declared in this system (%s). Adding a fallb
 Variant
 Vector
 Vector Parameter
-Vector To World Vector
 Vector Type
 Vector2D
 Vector4D
@@ -7392,7 +7235,6 @@ WARNING
 WARNING: Failed to convert introspected block for file: %s
 WARNING: Invalid resource version (%d): %s
 WARNING: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
-WAUA]A
 WAXARARASDp
 WBRAWAWASASASASA]Ap
 Wait For Completion
@@ -7404,6 +7246,7 @@ Wake Cursors With Tag
 WakeElegantly
 WakeImmediate
 Warning
+Warning loading: %s, Referenced clip resource failed to load or is invalid: %s
 Warning parsing text-format
 Warp Orientation
 Warp Position
@@ -7411,7 +7254,6 @@ Warp Section Tag
 Warp XY
 Warp XYZ
 Warp Z
-Warp attempted for animation with invalid warp events
 WarpXY
 WarpXYZ
 Warping orientation progress %f
@@ -7433,12 +7275,12 @@ WeightedRandom
 WeightedRandomNoRepeat
 Weights
 Wffff
-Wfffff
 When scaling an animation, grab the scale value as in int. Used for gestures/postures to control number of looping sections
 When we start waiting, how should we handle existing cursors
 While False
 While True
 While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled
+While active, manage child cursors based on which case an observable value matches. When the observable result moves to a different case, the prior cursor will be canceled and the matching outflow will fire a new child cursor. Will monitor continuously until externally canceled
 Will offset the warped root motion if we are pass warp events
 World Position
 World Space
@@ -7446,28 +7288,24 @@ World Space Direction
 World Space Position
 World Transform
 World Vector
-World Vector To Vector
 World space tilt normal
 WorldRendererMgr001
 WorldSpace
 Worley
 Write Cached Pose
 X (Red   / Forward
-X to the Y power
 XA9\<P}(M
-XARARDp p0p
-XAp p RAp
 XBRBRBp
-XBYARAYBRAYBRAYARA
-XBYARAYBRAYBRAYBTBYASCp
-XDp RAp
+XB[ARA[BRA[BRA[ARA
+XB[ARA[BRA[BRA[BTB[ASCp
+XCRARDp p0RDp p
 XHcPxH
+XMc~PM
+XY warp curve blowout detected! Falling back to LERP
 X[A\A]A^A
 X[A^A
-Xffff
 Xffffff
 Xt6<Hu`H
-X抄z笠X抬z
 Y (Green / Left
 Y@HcI8H
 YASASAp
@@ -7475,7 +7313,6 @@ YAUARAWARA
 YBRB\ASC
 Yfffff
 Yield, Resume=%s
-Y滤z畠Y滴z
 Z (Blue  / Up
 Z-google.golang.org/protobuf/types/descriptorpb
 Z10DevWarningPKcz
@@ -7519,21 +7356,10 @@ Z7LoadKV3P10KeyValues3P10CUtlStringPKcRK7KV3ID_tS4_j
 Z7LoadKV3P9CKV3ArenaP10CUtlStringP10CUtlBufferRK7KV3ID_tPKcj
 Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBufferj
 Z9V_strnlenPKci
-ZARARA
-ZARARBRB\Ap
-ZARARBRC
-ZARARBZARAZARAZARAZARAp
 ZARASARAZARASARAZARASARAZARASARAZARASARAZARASARAZARASARA[ARAp
-ZARATBZARAp
-ZARAUATATBRAWA[A`\B
-ZARAUB
-ZARAUB]ARBZARAp
-ZARAZARAp
-ZARA`'B
 ZA`,ASARARASARASARASARA`,ASARASARAZARAp
-ZBRBRBRBRBRBRBp
-ZBYARAYARARAYARARAYARARAYARATBYAVARAYA\BYARAYBRAYBRAYBRAYB
-ZBYBRAYARAYARARBYBRARBYA\BYBRARAYARAYARAYARAYAXBYARARARAYARAYASCp
+ZB[ARA[ARARA[ARARA[ARARA[ARATB[AVARA[A\B[ARA[BRA[BRA[BRA[B
+ZB[BRA[ARA[ARARB[BRARB[A\B[BRARA[ARA[ARA[ARA[AXB[ARARARA[ARA[ASCp
 ZN10CUtlBuffer17SetExternalBufferEPviiNS_13BufferFlags_tE
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer21CheckArbitraryPeekGetEiRi
@@ -7662,6 +7488,9 @@ ZN20CVectorAnimParameter22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri
 ZN20CVectorAnimParameter22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE20CAttr_m_bInterpolate
 ZN20CVectorAnimParameter22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE20CAttr_m_defaultValue
 ZN20IKBoneNameAndIndex_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE12CAttr_m_Name
+ZN20NmContactAudioInfo_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE19CAttr_m_audioTypeID
+ZN20NmContactAudioInfo_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE21CAttr_m_audioActionID
+ZN20NmContactAudioInfo_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE28CAttr_m_soundeventOverrideID
 ZN21CClothSettingsAnimTag22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE16CAttr_m_flEaseIn
 ZN21CClothSettingsAnimTag22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE17CAttr_m_flEaseOut
 ZN21CClothSettingsAnimTag22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE18CAttr_m_nVertexSet
@@ -7796,7 +7625,6 @@ ZNSt9exceptionD2Ev
 ZSt7nothrow
 ZSt9terminatev
 ZTINSt3__110__function6__baseIFbiiEEE
-ZTINSt3__110__function6__baseIFjvEEE
 ZTINSt3__110__function6__baseIFviiEEE
 ZTINSt3__110__function6__baseIFvvEEE
 ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -7813,7 +7641,6 @@ ZTINSt3__121__basic_string_commonILb1EEE
 ZTISt12length_error
 ZTISt9exception
 ZTSNSt3__110__function6__baseIFbiiEEE
-ZTSNSt3__110__function6__baseIFjvEEE
 ZTSNSt3__110__function6__baseIFviiEEE
 ZTSNSt3__110__function6__baseIFvvEEE
 ZTSNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -7851,9 +7678,6 @@ ZnamSt11align_val_tRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
-Z第z什Z答z
-Z節z惰Z篤z撰Z
-Z綴z赠Z締z
 a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 accessor_ == other.accessor
 acosf
@@ -7955,6 +7779,7 @@ cc_generic_services
 ceilf
 cffff
 channel
+childID
 chkstk_darwin
 cl_aggregate_particles
 cl_particle_batch_mode
@@ -7993,7 +7818,6 @@ conflicts with an existing oneof type
 conflicts with field
 conflicts with the existing symbol
 const
-const CUtlOrderedMap::ElemType_t &CUtlOrderedMap<PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t *>::FindElement(const CUtlOrderedMap::KeyType_t &) const [K = PulseCursorID_t, T = PulseGraphExecutionHistoryCursorDesc_t *, L = CDefLess<PulseCursorID_t>, I = int
 const char *Reflection::Internal::GetFuncName() [T = AnimParamType_t
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::ParamType
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::ReplayInputProvider
@@ -8319,10 +8143,13 @@ d Chunks
 d InvokeBindings
 d OutputConnections
 d PublicOutputs
+d TempVarBanks
 d Vars
 d WeightLists
 d instruction(s
 d register(s) %d byte(s
+d$ u0
+d$`KcD
 d. %s
 d.Add( %s, %d, %.2f
 d.Blend( %d, %.2f
@@ -8364,7 +8191,6 @@ details
 determinH
 dffff
 dfffff
-dffffff
 diff_encode_field
 dire_team_id
 dire_team_tag
@@ -8389,6 +8215,7 @@ eCenteredCylinder
 eCount
 eDeploy
 eFacingHeading
+eForwardStartOnly
 eGenericCapsule
 eGroundBox
 eGroundCapsule
@@ -8475,6 +8302,7 @@ failed to parse contents
 false
 false:A
 fetched: %s : %.3f
+ff&?H
 fffff
 ffffff
 fffffff
@@ -8493,36 +8321,22 @@ flAnimationVertexAttraction
 flBias
 flBounciness
 flCurvatureRadius
-flDegrees
 flDist
 flDuration
 flDurationSec
 flElapsed
 flExecTime
-flExponent
-flFloat
-flFrac
 flGravity
 flGroundFriction
 flHeight0
-flInputA
-flInputB
 flLastReferenced
 flMaxDist
-flMaxRadius
 flMinDist
-flMinRadius
 flNodeWeight0
-flOutputA
-flOutputB
 flPercentage
-flPitch
 flPointDamping
-flRadians
 flRadius
 flRelaxationFactor
-flRoll
-flScale
 flSeconds
 flSlack
 flSpringConstant
@@ -8530,11 +8344,7 @@ flSpringDamping
 flSpringRestLength
 flStrength
 flSwingRelax
-flTime
 flTwistRelax
-flValue
-flValueA
-flValueB
 flVolumetricSolveStrength
 flWaitInterval
 flWaitIntervalHigh
@@ -8593,7 +8403,6 @@ game_team
 game_winner
 gcc_except_tab__TEXT
 generic
-gfffff
 gffffff
 gfffffffH
 go_package
@@ -8735,7 +8544,6 @@ hero_name
 hffffff
 hidden
 hsequence
-ht(<XuF
 hullivr_edge_merge_tan
 hullivr_faceisland_merge_disp
 hullivr_faceisland_merge_tan
@@ -8749,6 +8557,7 @@ iW=:`TC
 idempotency_level
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
+ih> Gl
 ik_constraints_enabled
 ik_debug_all_chains_unique_color_per_chain
 ik_debug_ccd
@@ -8787,6 +8596,7 @@ inside block comment.  Block comments cannot be nested
 instantly
 int CUtlMemoryBlockAllocator<char>::AddPage(uint) [T = char, Alloc_t = CMemAllocAllocator
 int CUtlMemoryBlockAllocator<std::function<void ()>>::AddPage(uint) [T = std::function<void ()>, Alloc_t = CMemAllocAllocator
+int8 CNmBoneMaskTaskList::GenerateBoneMask(const CNmSkeleton *, CNmBoneMaskPool &) const
 internal error in map key sorting
 internal_set_label
 internal_set_type
@@ -8838,7 +8648,6 @@ k_EProtoDebugVisibility_Server
 k_EProtoDebugVisibility_ValveServer
 keyvalues
 kffff
-kv3:ParticleParamID_t
 la_symbol_ptr
 labelled_debug_helper_arc_segments
 labelled_debug_helper_enabled
@@ -8861,6 +8670,7 @@ libprotobuf %s %s:%d] %s
 loader_path
 location
 looks like this
+loop body, break -> C%d:I%d
 m$`< uMH
 m_AdditionalExtRefs
 m_AnimCaptures
@@ -8898,6 +8708,9 @@ m_CameraTrack
 m_Capsule
 m_Capsules
 m_CaptureName
+m_CaseOutflows
+m_CaseValues
+m_Cases
 m_Cells
 m_ChainsToSolveData
 m_ChoiceWeights
@@ -8911,6 +8724,8 @@ m_Color
 m_Command
 m_Completed
 m_CompositeBones
+m_Compound
+m_CompoundMaterialIndices
 m_Condition
 m_ConeAxis
 m_ConeCutoff
@@ -8930,11 +8745,13 @@ m_Data
 m_DebugAnimSourceString
 m_DebugSetting
 m_DecodeDump
+m_DefaultCaseOutflow
 m_DefaultConfig
 m_DefaultSolverSettings
 m_DefaultTargetSettings
 m_DefaultValue
 m_DependentObservableBlackboardReferences
+m_DependentObservableTempVars
 m_DependentObservableVars
 m_Description
 m_DestinationFlowNodeID
@@ -9001,6 +8818,7 @@ m_HitBoxSets
 m_HitBoxes
 m_HookName
 m_Hull
+m_Hulls
 m_IKChains
 m_IKLockArray
 m_ImportedCollision
@@ -9039,6 +8857,7 @@ m_MaterialGroupName
 m_MaterialGroupOnOtherModels
 m_Materials
 m_Mesh
+m_Meshes
 m_Metadata
 m_MethodName
 m_ModelBindPose
@@ -9085,6 +8904,8 @@ m_Plane
 m_Planes
 m_PoleVectorForAxis
 m_PortName
+m_PrismVolumes
+m_Prisms
 m_PublicOutputs
 m_Quads
 m_RefCount
@@ -9093,6 +8914,7 @@ m_Registers
 m_RequiredRuntimeType
 m_RequirementNodeIDs
 m_ReturnType
+m_ReturnValues
 m_ReverseOffsets
 m_RigidColliderPriorities
 m_Rods
@@ -9108,6 +8930,8 @@ m_Shuffle
 m_SimStateBones
 m_SimdAnimStrayRadii
 m_SimdNodeBases
+m_SimdPrismVolumes
+m_SimdPrisms
 m_SimdQuads
 m_SimdRods
 m_SimdRodsAnim
@@ -9124,12 +8948,14 @@ m_SourceOutflowName
 m_SourceOutput
 m_Sphere
 m_SphereRigids
+m_Spheres
 m_SpringIntegrator
 m_Springs
 m_Stamp
 m_StartTime
 m_Stops
 m_SwingLimit
+m_SwitchValue
 m_TagName
 m_TagStatus
 m_TagValue
@@ -9141,9 +8967,12 @@ m_TargetInput
 m_TargetOrientation
 m_TargetSettings
 m_TargetSource
+m_TempVarBanks
+m_TempVars
 m_Text
 m_TimelineEvents
 m_Transform
+m_Tree
 m_TreeChildren
 m_TreeCollisionMasks
 m_TreeParents
@@ -9174,6 +9003,7 @@ m_actions
 m_activityArray
 m_algorithm
 m_alignmentBoneID
+m_alignmentMode
 m_allTags
 m_anchor
 m_angle
@@ -9191,6 +9021,7 @@ m_attachmentCP1Name
 m_attachmentCP1Type
 m_attachmentHandle
 m_attachmentName
+m_attachmentOrBoneID
 m_attachmentPoint0
 m_attachmentPoint1
 m_attachmentType
@@ -9199,8 +9030,11 @@ m_attachmentType1
 m_attachments
 m_attributeName
 m_attributeNameToken
+m_audioActionID
+m_audioInfo
 m_audioParams
 m_audioSounds
+m_audioTypeID
 m_autoLayerArray
 m_autoResetMap
 m_autoResetParams
@@ -9246,7 +9080,10 @@ m_bCanBatchWithDynamicShaderConstants
 m_bCanBeForced
 m_bCanFreeze
 m_bClamp
+m_bCollideOutsideHierarchy
+m_bCollideWithHierarchy
 m_bCompleteOnNextWake
+m_bCompoundsPacked
 m_bCompressedZSTD
 m_bComputeDynamicMeshTensionAfterAnimation
 m_bConditionValue
@@ -9260,6 +9097,7 @@ m_bCrossFade
 m_bCylepose
 m_bDefault
 m_bDefaultValue
+m_bDeferBreak
 m_bDelta
 m_bDetachFromOwner
 m_bDisabled
@@ -9586,6 +9424,7 @@ m_comparison
 m_componentID
 m_componentName
 m_components
+m_compounds
 m_compressedData
 m_compressedOffsets
 m_compressedPoseData
@@ -9618,7 +9457,6 @@ m_data
 m_dataChannelArray
 m_dataSet
 m_dataSlotIdx
-m_debugEffectorBoneID
 m_debugPartNames
 m_decodeKey
 m_decodeOps
@@ -9679,8 +9517,8 @@ m_eType != eGroundCapsule && m_eType != eCenteredCapsule && m_eType != eCentered
 m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder
 m_easingOp
 m_effectForConfig
+m_effectName
 m_effectorBoneID
-m_effectorTarget
 m_elasticity
 m_elems
 m_embeddedKeyvalues
@@ -9713,6 +9551,7 @@ m_fFallingSpeedScale
 m_fMaxValue
 m_fMinValue
 m_fSpeedScale
+m_fTriangleAreaSize
 m_facingDamping
 m_facingTarget
 m_falseValue
@@ -9768,6 +9607,7 @@ m_flCapsuleRadius
 m_flChainRotationWeight
 m_flClipStartTime
 m_flComparand
+m_flCompareValue
 m_flComparisonValue
 m_flControlPoint1
 m_flControlPoint2
@@ -9877,6 +9717,7 @@ m_flLOD3
 m_flLastPathTime
 m_flLastTimeStep
 m_flLength
+m_flLengthSeconds
 m_flLerpFallbackDistanceThreshold
 m_flLinearDamping
 m_flLinearDampingRatio
@@ -9927,6 +9768,7 @@ m_flMaxYaw
 m_flMaxYawAngle
 m_flMin
 m_flMinAngle
+m_flMinCentroidRadius
 m_flMinDelayBetweenHits
 m_flMinDistance
 m_flMinExtrapolationSpeed
@@ -10010,7 +9852,9 @@ m_flShapeRadius
 m_flSlopeIncoming
 m_flSlopeOutgoing
 m_flSlowDownStrength
+m_flSpeedIn
 m_flSpeedMultiplier
+m_flSpeedOut
 m_flSpeedScaleBlending
 m_flSphereRadius
 m_flSpringConstant
@@ -10121,6 +9965,7 @@ m_frameList
 m_frameSnapMode
 m_frameblockArray
 m_friction
+m_gameplayRelevantBoneIndices
 m_goalAngularVelocity
 m_goalOrientation
 m_goalPosition
@@ -10320,8 +10165,10 @@ m_motionGraphConfigs
 m_motionGraphs
 m_motors
 m_movementArray
+m_nActiveCase
 m_nActiveMotorIndex
 m_nActivity
+m_nAliasTableIB
 m_nAnkleBoneIndex
 m_nAppliedIndexOffset
 m_nAsyncCallMode
@@ -10352,6 +10199,8 @@ m_nBoneMaskValueNodeIdx
 m_nBoneNameHash
 m_nBoneWeightCount
 m_nBoxRigidIndex
+m_nBreakDestChunk
+m_nBreakDestInstruction
 m_nBufferUsage
 m_nCallInfoIndex
 m_nCameraJointIndex
@@ -10424,6 +10273,7 @@ m_nElementCount
 m_nElementIndexArray
 m_nElementMaskArray
 m_nElementSizeInBytes
+m_nEmissivePrimitiveCount
 m_nEnableNodeIdx
 m_nEnabledNodeIdx
 m_nEndBoneIndex
@@ -10468,6 +10318,7 @@ m_nHandshakeMaskToDisableFirst
 m_nHeight
 m_nHipBoneIndex
 m_nHitBoxIndex
+m_nHullBaseIndex
 m_nIKAnchorBoneIndex
 m_nIncludeDetailLayerCount
 m_nIncomingTangent
@@ -10516,6 +10367,7 @@ m_nMaskNodeIdx
 m_nMax
 m_nMaxSegmentsPerHairStrand
 m_nMaxUniqueFrameIndex
+m_nMeshBaseIndex
 m_nMeshIndex
 m_nMeshletPackedIVBIndex
 m_nMeshoptMeshletEncodeVersion
@@ -10598,6 +10450,7 @@ m_nScalarAttribute
 m_nSemanticIndex
 m_nSequenceMaxFrame
 m_nServerLOD
+m_nShapeCount
 m_nShapeInBody
 m_nShapeType
 m_nSimdQuadCount1
@@ -10610,6 +10463,7 @@ m_nSlot
 m_nSlotType
 m_nSourceMaskNodeIdx
 m_nSourceStateNodeIdx
+m_nSpecialDependencyHash
 m_nSphereRigidIndex
 m_nSplitScreenUser
 m_nSrcChunk
@@ -10620,11 +10474,13 @@ m_nStartEventOffset
 m_nStartFrame
 m_nStartIndex
 m_nStartIndexOffset
+m_nStartIterationIndex
 m_nStartSyncEventOffset
 m_nStateNodeIdx
 m_nStaticNodeFlags
 m_nStaticNodes
 m_nSubCycles
+m_nSubtreeEndOrCompoundId
 m_nSurfacePropertyIndex
 m_nSwitchValueNodeIdx
 m_nTagIndex
@@ -10636,7 +10492,10 @@ m_nTargetMaskNodeIdx
 m_nTargetStateIdx
 m_nTargetStateNodeIdx
 m_nTargetValueNodeIdx
+m_nTempVarBank
+m_nTempVarIdx
 m_nTickCount
+m_nTimeValueNodeIdx
 m_nToolMaterialHash
 m_nToolsVBBlock
 m_nTotalSegmentCount
@@ -10728,6 +10587,8 @@ m_pOwningParticleProperty
 m_pParamListUpdater
 m_pParticles
 m_pPrev
+m_pRecording->m_recordedUpdateData.IsEmpty
+m_pRecording->m_recordedUpdateData.Tail()->m_updateType != NmRecordedUpdateType_t::Unknown
 m_pRegionSVM
 m_pRootNode
 m_pSemantic
@@ -10913,6 +10774,7 @@ m_softContactDampingRatio
 m_softContactFrequency
 m_solverIterationCount
 m_sortedOrder
+m_soundeventOverrideID
 m_sourceNodeIndices
 m_sourceStateNodeIdx
 m_spans
@@ -11141,6 +11003,7 @@ m_vecSize
 m_vectorType
 m_vehicleParams
 m_vertexBuffers
+m_vertexSetName
 m_verticalAxis
 m_virtualParameterIDs
 m_virtualParameterNodeIndices
@@ -11207,11 +11070,11 @@ nCount
 nCtrlChild
 nCtrlParent
 nCursorID
-nDenominator
 nDummy
 nEditorID
 nFlags
 nFormat
+nIdx < 128
 nKillPriority
 nLastValidEntryIdx
 nListBegin
@@ -11226,7 +11089,7 @@ nNodeX0
 nNodeX1
 nNodeY0
 nNodeY1
-nNumerator
+nNumBuffersChecked < NmCachedPoseID_t::s_nMaxNumberOfCachedPoses
 nParentNode
 nProbeNode
 nRemainderDigits
@@ -11234,9 +11097,9 @@ nRemainderNoiseDigits
 nReserved
 nRetiredAtNodeID
 nScaleSourceNode
+nSourceMaskBufferIdx != nTargetMaskBufferIdx
 nSpawnNodeID
 nTargetNode
-nValue
 nVertexBase
 nVertexCount
 nVertexMapIndex
@@ -11254,12 +11117,14 @@ no failure reason set
 no samples
 no text for the token
 no_standard_descriptor_accessor
+node_name_key = 'm_sName
 non-RTTI type
 not found
 not just within
 not previously defined in symbols_by_name_, but was defined in symbols_by_parent_; this shouldn't be possible
 npMc|$pD
 npcphysicshull
+numStates <= s_nMaxStates
 number
 numframes
 nxLc'E
@@ -11281,6 +11146,9 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/animpose.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/animskeleton.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/graph/animgraph_instance.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/graph/nodes/animgraphnode_chainlookat.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/graph/nodes/animgraphnode_statemachine.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/tasksystem/animbonemasktask.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/tasksystem/animtaskposepool.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/animlib/tasksystem/tasks/animtask_chainlookat.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bonesetup/bone_setup.cpp(645):  Model %s : sequence %d out of range
 optimize_for
@@ -11290,32 +11158,32 @@ options
 options.m_pBoneWeights->Count() >= m_boneIDs.Count
 options.m_pBoneWeights->Count() >= m_pSkeleton->GetNumBones
 or unterminated input element such as: "STRING
-origin
 output specified is nullptr
 output_type
-oxE9wx
+override
 p        P
 p    P
+p @ P p
 p RESAp
-p UASB
 p p RAp
-p p REp
 p p p0RC
 p p p0RCp
-p p p0RCp p p0pXSASASASAS0
+p p p0RCp p p0pxSASASASASAS0
 p p p0p
-p(p p RAp
-p(p(RC
+p(p p p
+p(p(RCp
 p(p(RDp p
 p(p(VAp
 p/ugH
 p0UApXp
 p@@ 0
+p@@PP
 p@p  00
-pA17CNmTargetWarpNode
+pCachedPoseBuffer->m_ID.IsValid
 pL]ÐUH
 pMessage
 pTagName
+pUpdateData->m_updateType == updateType
 p[A\A^A
 p``p`p`ppp
 package
@@ -11345,9 +11213,7 @@ player_name
 pointer
 position
 positive_int_value
-ppp`p
-pppp`````pppp
-ppppppp
+ppp`p`@@PP
 preview
 previous_status
 propattr_force_readonly
@@ -11355,10 +11221,11 @@ proto text format> }". To set fields within it, use syntax like
 proto2
 proto3
 proto3_optional
+public/animlib/graph/nodes/animgraphnode_state.h
 public/mathlib/range.h
 public/tier0/utldict.h
-public/tier0/utlmap.h
 public_dependency
+pulse_cursor_infinite_loop_detection_threshold
 pulse_runtime_lib
 pulse_save_execution_history
 pulse_save_execution_history_limit
@@ -11381,7 +11248,6 @@ radiant_team_id
 radiant_team_tag
 radr://5614542
 raise
-random_position
 registered
 remainingRootMotion			[%f] [%s
 remainingRootMotionToWarp	[%f] [%s
@@ -11402,6 +11268,7 @@ round_start_ticks
 rpath/libanimationsystem.dylib
 rpath/libtier0.dylib
 ruby_package
+r酔y預r醤y
 s %.2f
 s %.3f
 s %f %f
@@ -11413,9 +11280,6 @@ s (%s
 s (Color
 s (Material
 s - %.1f%%, %.2fs, frame %.1f %s
-s - Blackboard reference %s: %u (%s) type mismatches
-s - Could not find blackboard instance for %s
-s - Could not find blackboard reference %s: %u (%s
 s : Animations loaded but no animation data found
 s : animtable hash too small: %d elements / %d buckets
 s : param %s %s : %f
@@ -11459,10 +11323,13 @@ schema_suppress_enumerator
 scrapeRoughThreshold
 scraperough
 scrapesmooth
+scripts/nm_contact_audio_actions.vdata
+scripts/nm_contact_audio_types.vdata
 scriptsToRun
 secondary
 seems to be defined in
 select
+seqPoint
 sequence_tag_spans
 serialize
 serializing
@@ -11496,8 +11363,6 @@ stack_chk_fail
 stack_chk_guard
 standard_yielding_flow = true
 start_tick
-static void PInstruction_t<PulseInstructionCode_t::GET_BLACKBOARD_REFERENCE>::Run(CPulseExecCursor *, const CPulseGraphDef *, const PGDInstruction_t
-static void PInstruction_t<PulseInstructionCode_t::SET_BLACKBOARD_REFERENCE>::Run(CPulseExecCursor *, const CPulseGraphDef *, const PGDInstruction_t
 staticImpactVolume
 std::pair
 stderrp
@@ -11517,6 +11382,7 @@ stored in google.protobuf.Any
 stored in google.protobuf.Any has missing required fields
 strBindingName
 strCellDesc
+strFormat
 strValue
 strain
 strchr
@@ -11548,7 +11414,6 @@ syntax
 syntax error
 syntax not recognized
 synthetic_default
-s|t H
 t	L9+u
 t	L93u
 t ffff
@@ -11558,11 +11423,12 @@ t"fffff
 t"ffffff
 t#fff
 t#ffffff
-t$ H;5w
+t$ H;5
 t$IcN
 t$IcN8
 t$fff
 t$ffff
+t$pH	0I
 t%ffff
 t%fffff
 t&HcK<H
@@ -11578,7 +11444,6 @@ t/ffffff
 t0ffff
 t2IcM
 t5fffff
-t6ffff
 t7Ic0I
 t<IcF8H
 t@9qh~=H
@@ -11586,6 +11451,7 @@ tCMcnhM
 tEffff
 tFffffff
 tIffff
+tS[A\A^A
 tWL93
 t[M9u
 t[fff
@@ -11625,9 +11491,7 @@ tools/images/pulse_editor/observable_variable_listener.png
 tools/images/pulse_editor/requirements.png
 toupper
 trailing_comments
-transform
 truncated
-tuHc@$;G
 turn_rate
 type does not match
 type or int32_t
@@ -11649,6 +11513,7 @@ u<IcE`I
 u>IcD$ H
 u@IcD$@H
 uTzRL9
+uYHcs$H
 uint16
 uint32
 uint64
@@ -11676,7 +11541,6 @@ usr/lib/libiconv.2.dylib
 uЋF0Hc
 vCenter
 vCenterOfMass
-vForward
 vJOnPlane2
 vJOnPlane3
 vJOnPlane4
@@ -11690,15 +11554,17 @@ vSphere
 vVOnPlane1
 vXA9v
 vagrp_c/.vanim_c mismatch :: %s :: %s
+value0
+value1
+value2
+value3
+value4
 valve_map_field
 valve_map_key
 valveextensions.proto
 vanmgrphE1
 varint
 vecAncestorCursorIDs
-vecValue
-vecValueA
-vecValueB
 vector
 vector2
 vector3
@@ -11707,7 +11573,9 @@ vectorws
 vehicleparams
 version
 very_fast
+vhH	0I
 virtual void CNmChainLookatNode::CDefinition::InstantiateNode(const NmInstantiationContext_t &, NmInstantiationOptions_t) const
+virtual void CNmStateMachineNode::CDefinition::PostInstantiateNode(const NmInstantiationContext_t &) const
 vnmclip
 vnmgraphH
 vnmgraphH9
@@ -11716,6 +11584,7 @@ vnmskel
 void CKeyValues3Array::EnsureElementCapacity(CKV3Arena *, int, bool, bool
 void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int
 void CKeyValues3Table::EnsureMemberCapacity(CKV3Arena *, int, bool, bool
+void CNmGraphInstance::RecordPreGraphEvaluateState(NmRecordedUpdateType_t, const float, const CTransform
 void CNmPose::DrawDebug(ISceneViewDebugOverlays *, const CTransform &, CNmSkeleton::LOD, const CNmDrawOptions &) const
 void CNmSkeleton::DrawDebug(ISceneViewDebugOverlays *, const CTransform &, CNmSkeleton::LOD, const CNmDrawOptions &) const
 void CUtlBlockVector<std::function<void ()>>::GrowCount(CUtlBlockVector::IndexIntType_t, CapacityBehavior_t) [T = std::function<void ()>, TIndex = int, A = CMemAllocAllocator
@@ -11724,6 +11593,7 @@ void CUtlLeanVectorImpl<CUtlLeanVectorBase<CUtlMemoryBlockAllocator<std::functio
 vpulse
 vseqE1
 vsnprintf
+vｰ ダv
 w0;w4t;A
 wXA9w
 w\IcD
@@ -11746,7 +11616,10 @@ worldrelative
 written at chunk start last-read I%d
 written by I%d last-read I%d
 wrong submessage type
-wxH;5b
+w̫217CNmTargetWarpNode
+w峰E鉄w徐E
+w憐C聘w攀C
+w웰J뿐w은J
 x A9W
 x#9Gh
 x$9Fh
@@ -11768,6 +11641,7 @@ x=A;Fh}7A
 x?9wh
 x@HcV$H
 xA9Ch
+xB9wP~=H
 xG9C`~BH
 xG9Ch~BH
 xHHcN(H
@@ -11794,11 +11668,10 @@ x[A\A]A^A
 x[A^A
 x\9Gx~bH
 x\A9L$x~UI
-x\A9Nx~VI
 x]A9L$`~VI
 x^9Cx~eH
+x^9Kx~YH
 x^A9Gx~dI
-x_A9Nx~YI
 x_E9t$(~XI
 xa9Cx~kH
 xaA9L$x~ZI
@@ -11806,13 +11679,12 @@ xffff
 xhE9&~cI
 xjD9{`~dH
 x彭y彭z彭w
+x汀Z牌x潰Z
+x狀Z狀x異Z
+x준b훨x지b
 y(HcY,H
 yaw_end
 yaw_start
 yfffff
 yxHcIpH
-y惰C酌y懐C
 zero dir
-z珠W哼z盐W
-z詠Y炼z记Y
-z손a턴z씀a

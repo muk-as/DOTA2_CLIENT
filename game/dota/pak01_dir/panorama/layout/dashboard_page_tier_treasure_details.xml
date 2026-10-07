@@ -1,18 +1,18 @@
 <!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
-		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard_page_tier_treasure_shared.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard_page_tier_treasure_details.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard_page_treasure_details_shared.vcss_c" />
+		<include src="s2r://panorama/styles/dotastyles.vcss" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss" />
+		<include src="s2r://panorama/styles/collection_shared.vcss" />
+		<include src="s2r://panorama/styles/dashboard_page_tier_treasure_shared.vcss" />
+		<include src="s2r://panorama/styles/dashboard_page_tier_treasure_details.vcss" />
+		<include src="s2r://panorama/styles/dashboard_page_treasure_details_shared.vcss" />
 	</styles>
 	<scripts>
-		<include src="s2r://panorama/scripts/util.vts_c" />
-		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
-		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
-		<include src="s2r://panorama/scripts/dashboard_page_tier_treasure.vts_c" />
+		<include src="s2r://panorama/scripts/util.vts" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts" />
+		<include src="s2r://panorama/scripts/dashboard_page_tier_treasure.vts" />
 	</scripts>
 	<snippets>
 		<snippet name="FilterButton">
@@ -20,22 +20,12 @@
 				<Label class="TreasureRarityFilterName" text="{s:tier_label}" />
 			</RadioButton>
 		</snippet>
-		<snippet name="TreasureCrateItem">
-			<Panel class="TreasureItem TreasureCrateItem" hittest="false">
-				<Panel id="ItemSelect" hittest="true" />
-				<Panel id="ChestHexContainer" hittest="false" hittestchildren="false">
-					<Image class="ItemShadow" />
-					<Panel id="BackgroundFXContainer">
-						<DOTAScenePanel id="BackgroundFX" map="scenes/rank_tier_ambient" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
-					</Panel>
-					<Panel class="ChestHex" />
-				</Panel>
-				<EconItemImage id="TreasureItemEconImage" hittest="false" hittestchildren="false" />
-			</Panel>
-		</snippet>
 		<snippet name="TreasureItemPreview">
 			<Panel class="TreasureItem TreasureItemPreviewContainer" hittest="false">
 				<Panel id="ItemSelect" hittest="true" />
+				<Panel class="SelectedIndicator" hittest="false">
+					<Panel class="SelectedIndicatorBackground" hittest="false" />
+				</Panel>
 				<Panel class="ItemBackdrop" hittest="false">
 					<DOTAParticleScenePanel id="ItemBackdropParticles" particleName="particles/ui/hud/ui_treasure_rarity_tintable.vpcf" hittest="false" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="160 0 0" lookAt="0 0 100" fov="60" />
 				</Panel>
@@ -43,17 +33,16 @@
 				<Image class="ItemShadow" hittest="false" />
 				<Image id="ItemReflection" hittest="false" />
 				<DOTAUIEconSetPreview id="TreasureItemPreview" displaymode="treasure_small" pin-fov="vertical" hittest="false" hittestchildren="false" />
-				<Panel id="TreasureItemRarityHex" hittest="false">
-					<Panel class="RarityDash" hittest="false" />
+				<Panel id="TreasureItemRarityHex">
 					<Label class="RarityLabel" text="{s:rarity_label}" hittest="false" />
-					<Panel id="TreasureItemInfoIcon" hittest="true" class="EscalatingChancesIcon" onmouseover="UIShowTitleTextTooltip( #Crate_EscalatingOdds_Title, #Crate_EscalatingOdds_Text )" onmouseout="UIHideTitleTextTooltip()" />
-					<Panel id="TreasureItemInfoPopupIcon" hittest="true" class="EscalatingChancesPopupIcon" />
-					<Panel class="RarityDash" hittest="false" />
 				</Panel>
-				<Panel id="TreasureItemSubtext" hittest="false" hittestchildren="false">
+				<Panel id="TreasureItemSubtext">
 					<Label id="TreasureItemImmortal" text="#Rarity_Immortal" />
 					<Label id="TreasureItemSet" text="#DOTA_Treasure_Set" />
 					<Label id="TreasureItemArcanaPersona" text="{s:arcana_persona_label}" />
+				</Panel>
+				<Panel id="PeekIndicator">
+					<Image src="s2r://panorama/images/control_icons/24px/eye.vsvg" />
 				</Panel>
 			</Panel>
 		</snippet>
@@ -67,22 +56,6 @@
 				</Button>
 			</Panel>
 		</snippet>
-		<snippet name="TreasureTierList">
-			<Panel class="TreasureListTierContainer">
-				<Label class="TreasureListViewHeader" text="#DOTA_Treasure_TierListHeader" />
-				<Panel id="TreasureListItems" />
-			</Panel>
-		</snippet>
-		<snippet name="TreasureReward">
-			<Panel class="TreasureReward TreasureRewardPreviewContainer" hittest="false">
-				<Panel class="ItemBackdrop" hittest="false">
-					<DOTAParticleScenePanel id="ItemBackdropParticles" particleName="particles/ui/hud/ui_treasure_rarity_tintable.vpcf" hittest="false" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="160 0 0" lookAt="0 0 100" fov="60" />
-				</Panel>
-				<Panel class="ItemGlow" hittest="false" />
-				<Image class="ItemShadow" hittest="false" />
-				<DOTALargeModelPreview id="TreasureRewardPreview" />
-			</Panel>
-		</snippet>
 		<snippet name="MuertaEventTitleEnglish">
 			<Panel>
 				<MoviePanel id="LogoMovie" src="file://{resources}/videos/events/muerta/dead_reckoning_logo_2_english.webm" repeat="true" autoplay="onload" hittest="false" onload="$( &apos;#LogoMovie&apos; ).AddClass(&apos;Initialize&apos;);" />
@@ -93,9 +66,136 @@
 				<MoviePanel id="LogoMovie" src="file://{resources}/videos/events/muerta/dead_reckoning_logo_2_cn.webm" repeat="true" autoplay="onload" hittest="false" onload="$( &apos;#LogoMovie&apos; ).AddClass(&apos;Initialize&apos;);" />
 			</Panel>
 		</snippet>
+		<snippet name="SlotPreviewItem">
+			<Panel class="SlotPreviewItem">
+				<Panel class="HeroBackgroundImage" />
+				<DOTAUIEconSetPreview id="EconSetPreview" zoom="90" hittest="false" hittestchildren="false" />
+				<Panel class="SlotPreviewItemBorder" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="MilestoneRewardItem">
+			<Panel class="MilestoneRewardItem">
+				<Panel class="MilestoneRewardItemGlow" />
+				<Panel class="MilestoneRewardItemPreviewContainer">
+					<DOTAUIEconSetPreview id="MilestoneRewardItemPreview" rotation="0" drawbackground="false" suppress-intro-effects="true" zoom="90" />
+				</Panel>
+				<Label class="MilestoneRewardItemCount BodySmall" html="true" text="#DOTA_Treasure_MilestoneRewardsItemCount" />
+				<Label class="MilestoneRewardItemOwned BodySmall" html="true" text="#DOTA_Loadout_Owned" />
+				<ProgressBar id="MilestoneRewardProgressBar" />
+			</Panel>
+		</snippet>
+		<snippet name="MilestoneRewardItem_RoshanCourierBundle">
+			<Panel class="MilestoneRewardItem">
+				<Panel class="MilestoneRewardItemGlow" />
+				<Panel class="MilestoneRewardItemPreviewContainer">
+					<DOTAUIEconSetPreview class="MilestoneReward_MonsterRoshan" rotation="0" itemdef="34488" drawbackground="false" suppress-intro-effects="true" zoom="90" />
+					<DOTAUIEconSetPreview class="MilestoneReward_MonsterRoshanCourier" unitindex="0" rotation="-60" itemdef="37159" drawbackground="false" suppress-intro-effects="true" zoom="90" />
+				</Panel>
+				<Label class="MilestoneRewardItemCount BodySmall" html="true" text="#DOTA_Treasure_MilestoneRewardsItemCount" />
+				<Label class="MilestoneRewardItemOwned BodySmall" html="true" text="#DOTA_Loadout_Owned" />
+				<ProgressBar id="MilestoneRewardProgressBar" />
+			</Panel>
+		</snippet>
+		<snippet name="OpeningReceivedItem">
+			<Panel class="OpeningReceivedItem" hittest="false">
+				<DOTAScenePanel class="RarityPreviewRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+				<Label class="BonusRewardsReceivedMessage TitleMedium" text="#DOTA_Treasure_BonusRewardsTitle" hittest="false" />
+				<DOTAUIEconSetPreview id="TreasureRewardPreview" class="OpeningPreview" hittest="false" hittestchildren="false" />
+				<Panel id="TreasureRewardPreviewHitbox" class="TreasureRewardPreviewHitbox" />
+				<Panel class="RewardDetails">
+					<Panel class="Row" hittest="false" hittestchildren="false">
+						<DOTAHeroImage id="HeroIcon" heroimagestyle="icon" />
+						<Label id="UnitName" class="UnitName LabelMedium" text="{s:unit_name}" />
+						<Label id="RarityText" class="LabelLarge" />
+					</Panel>
+					<Label id="ItemName" class="ItemName" text="{g:dota_item_name:reward_item_def}" hittest="false" />
+					<Panel class="RewardButtonsRow">
+						<Label id="ItemSlot" class="ItemSlot LighterGreyText" text="{s:item_slot}" />
+						<Button id="EquipButton" class="ButtonPrimary DarkGrey">
+							<Label class="TreasureOpeningEquipLabel" text="#DOTA_Treasure_Equip" />
+						</Button>
+						<Button class="AlreadyEquippedBadge">
+							<Label class="TreasureOpeningEquippedLabel" text="#DOTA_Treasure_Equipped" />
+							<Image class="TreasureOpeningEquippedCheck" src="s2r://panorama/images/control_icons/24px/check_fancy.vsvg" />
+						</Button>
+						<TextButton id="ReceivedItemDetailsButton" class="ItemDetailsButton SetDetailsButton TextButton">
+							<Label class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
+							<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
+						</TextButton>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RarityCategory">
+			<Panel class="RarityCategoryDivider">
+				<Panel class="RarityCategoryBackground" />
+				<Panel class="RarityCategoryInfo">
+					<Label text="#Crate_Tier" class="LabelMedium TierLabel" />
+					<Label text="#DOTA_Diretide_Rarity_Crate_Tier1" class="TitleMedium TierNumber" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RarityCategory_Crate_Tier2">
+			<Panel class="RarityCategoryDivider">
+				<Panel class="RarityCategoryBackground" />
+				<Panel class="RarityCategoryInfo">
+					<Label text="#Crate_Tier" class="LabelMedium TierLabel" />
+					<Label text="#DOTA_Diretide_Rarity_Crate_Tier2" class="TitleMedium TierNumber" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RarityCategory_Crate_Tier3">
+			<Panel class="RarityCategoryDivider">
+				<Panel class="RarityCategoryBackground" />
+				<Panel class="RarityCategoryInfo">
+					<Label text="#Crate_Tier" class="LabelMedium TierLabel" />
+					<Label text="#DOTA_Diretide_Rarity_Crate_Tier3" class="TitleMedium TierNumber" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RarityCategory_Crate_Tier4">
+			<Panel class="RarityCategoryDivider">
+				<Panel class="RarityCategoryBackground" />
+				<Panel class="RarityCategoryInfo">
+					<Label text="#Crate_Tier" class="LabelMedium TierLabel" />
+					<Label text="#DOTA_Diretide_Rarity_Crate_Tier4" class="TitleMedium TierNumber" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RarityCategory_cosmically_rare">
+			<Panel class="RarityCategoryDivider">
+				<Panel class="RarityCategoryBackground" />
+				<Panel class="RarityCategoryInfo" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<DOTATierTreasureDetails class="DashboardPage OpeningNone" defaultfocus="TreasureContents">
 		<Panel id="TreasureExtraInfo" />
+		<DOTAScenePanel class="RarityPreviewRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+		<Panel class="NewArcanaBadge">
+			<DOTAParticleScenePanel class="NewArcanaBadgeFX" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="80" squarePixels="true" />
+			<Label class="NewArcanaBadgeLabel" text="#Debut_Arcana_Rubick_Title_Front_Page" />
+		</Panel>
+		<Panel class="SelectedItemShadow" />
+		<Panel id="MainTreasureItemPreviewContainer" hittest="true" />
+		<Panel id="TreasureModelContainer" hittest="false">
+			<DOTAScenePanel id="TreasureModel" hittest="false" />
+		</Panel>
+		<Panel id="TreasureRarityFilter">
+			<Panel id="TreasureRarityFilterButtons" />
+		</Panel>
+		<Panel id="TreasureContentsContainer" hittest="false">
+			<Carousel id="TreasureContents" focus="scroll-proportional" focus-range-size="20" shuffle-into-view="false" include-scale-2d="true" />
+		</Panel>
+		<Panel id="TreasureOpeningAnimation" hittest="false" hittestchildren="true">
+			<DOTAParticleScenePanel id="OpeningParticlesBG" class="OpeningParticles" particleName="particles/ui/ui_treasure_2026_open.vpcf" particleonly="true" startActive="false" cameraOrigin="250 0 40" lookAt="0 0 40" fov="60" pin-fov="horizontal" antialias="true" squarePixels="true" />
+			<DOTAUIEconSetPreview id="TreasureOpeningPreview1" class="OpeningPreview" />
+			<DOTAUIEconSetPreview id="TreasureOpeningPreview2" class="OpeningPreview" />
+			<DOTAUIEconSetPreview id="TreasureOpeningPreview3" class="OpeningPreview" />
+			<Panel id="TreasureRewards" hittest="false" />
+			<DOTAParticleScenePanel id="TreasureOpeningBurst" hittest="false" particleName="particles/econ/items/razor/razor_arcana/razor_arcana_null.vpcf" particleonly="true" startActive="false" cameraOrigin="400 0 40" lookAt="0 0 40" fov="60" pin-fov="horizontal" antialias="true" squarePixels="true" />
+			<DOTAParticleScenePanel id="OpeningParticlesFG" hittest="false" class="OpeningParticles" particleName="particles/ui/ui_treasure_2026_open.vpcf" particleonly="true" startActive="false" cameraOrigin="250 0 40" lookAt="0 0 40" fov="60" pin-fov="horizontal" antialias="true" squarePixels="true" />
+		</Panel>
 		<Panel id="TreasureHelp">
 			<Panel id="TreasureHelpHeaderRow">
 				<Panel id="TreasureHelpIcon" class="InfoIcon" />
@@ -107,51 +207,17 @@
 					<Label id="TreasureHelpHeaderPWZoomedOutPlural" text="#DOTA_Treasure_HelpHeaderPWZoomedOutPlural" />
 					<Label id="TreasureHelpHeaderUnusuals" text="#DOTA_Treasure_HelpHeaderUnusuals" />
 				</Panel>
-			</Panel>
-			<Panel id="TreasureHelpDetails">
-				<Label id="TreasureHelpNormalItems" html="true" />
-				<Label id="TreasureHelpRareItems" text="#DOTA_Treasure_HelpRares" />
-				<Label id="TreasureHelpUnusualItems" html="true" text="#DOTA_Treasure_HelpUnusuals">
-					<Image id="UnusualOddsTooltip" src="s2r://panorama/images/control_icons/24px/info.vsvg" onmouseover="UIShowTextTooltipStyled( #DOTA_Frostivus_2023_UnusualOddsDescription, LongTextTooltip )" onmouseout="UIHideTextTooltip()" />
-				</Label>
-			</Panel>
-		</Panel>
-		<Panel class="TreasureContentsGradient" />
-		<DOTAParticleScenePanel id="TreasureOpeningSparkles" hittest="false" particleonly="true" startActive="false" cameraOrigin="-100 0 150" lookAt="0 0 30" fov="40" />
-		<Panel class="SelectedItemShadow" />
-		<Panel id="TreasureItemPreviewContainer" hittest="true" />
-		<Panel id="TreasureModelContainer" hittest="false">
-			<DOTAScenePanel id="TreasureModel" hittest="false" />
-		</Panel>
-		<DOTAParticleScenePanel id="TreasureOpeningBurst" hittest="false" particleName="particles/ui/ui_diretide_chest_open.vpcf" particleonly="true" startActive="false" cameraOrigin="-100 0 150" lookAt="0 0 30" fov="40" />
-		<Panel id="TreasureContentsContainer" hittest="false">
-			<Carousel id="TreasureContents" wrap="true" focus="center" shuffle-into-view="false" include-scale-2d="true" />
-			<Panel id="TreasureRarityFilter">
-				<Panel id="TreasureRarityFilterButtons" />
-			</Panel>
-		</Panel>
-		<Panel id="TreasureRewardsContainer" hittest="false">
-			<Carousel id="TreasureRewards" wrap="false" focus="left" include-scale-2d="true" />
-			<Panel id="TreasureRewardsPagination" hittest="false">
-				<Button id="PreviousRewardButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelLeft( TreasureRewards, 1 )">
-					<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" />
+				<Button id="PreviewContentsButton" class="TextButton" onactivate="DOTATierTreasureSelectPeekTreasure()">
+					<Label text="#DOTA_Treasure_PreviewContents" />
 				</Button>
-				<Label id="TreasureRewardsCount" text="{d:current_reward_index} / {d:rewards_count}" />
-				<Button id="NextRewardButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelRight( TreasureRewards, 1 )">
-					<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" />
+				<Button class="ToggleHelpDetailsButton ButtonPrimary DarkGrey" onactivate="DOTATierTreasureToggleTreasureContentsSlideOut()">
+					<Image src="s2r://panorama/images/control_icons/24px/help.vsvg" />
 				</Button>
 			</Panel>
 		</Panel>
 		<DOTAScenePanel id="ItemReceivedParticles" map="scenes/treasure_opening" camera="shot_camera" hittest="false" particleonly="true" />
 		<Panel id="ItemPreviewTempContainer" />
-		<Panel id="TreasureContentsPagination" hittest="false">
-			<Button id="PreviousItemButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelLeft( TreasureContents, 1 )">
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" />
-			</Button>
-			<Button id="NextItemButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelRight( TreasureContents, 1 )">
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" />
-			</Button>
-		</Panel>
+		<Label id="TreasureOpeningMessage" html="true" />
 		<Panel class="UnusualExplainer">
 			<Panel class="UnusualExplainerInfo">
 				<Image src="s2r://panorama/images/control_icons/24px/info.vsvg" />
@@ -160,39 +226,44 @@
 			<Panel class="UnusualExplainerDash" />
 		</Panel>
 		<Panel class="ReceivedTreasureActionsContainer">
-			<Button id="DoneButton" class="ButtonPrimary Large DarkGrey Wide" onactivate="DOTATierTreasureCancelOpeningSelectedTreasure()">
-				<Label text="#DOTA_Done" />
-			</Button>
-			<Button id="OpenAnotherButton" class="ButtonPrimary Large Wide" onactivate="DOTATierTreasureStartOpeningSelectedTreasure()">
-				<Label text="#DOTA_Treasure_OpenAnother" />
-			</Button>
-			<Button id="EquipButton" class="ButtonPrimary Large DarkGrey Wide" onactivate="DOTATierTreasureEquipSelectedTreasureItem(false, true)">
-				<Label text="#DOTA_Treasure_Equip" />
-				<Image class="TreasureOpeningEquipCheck" src="s2r://panorama/images/control_icons/24px/check.vsvg" />
+			<Panel class="ReceivedTreasureActions">
+				<Button id="DoneButton" class="ButtonPrimary Large DarkGrey" onactivate="DOTATierTreasureCancelOpeningSelectedTreasure()">
+					<Label text="#DOTA_Done" />
+				</Button>
+				<Button id="OpenAnotherButton" class="ButtonPrimary Large" onactivate="DOTATierTreasureStartOpeningSelectedTreasure()">
+					<Label text="#DOTA_Treasure_OpenAnother" />
+				</Button>
+			</Panel>
+			<Label class="TreasuresRemainingLabel BodyMedium" text="#DOTA_Treasure_CountChestsOwned:f" />
+		</Panel>
+		<Panel class="SkipOpeningButtonContainer">
+			<Button id="SkipOpeningButton" class="ButtonPrimary Large DarkGrey" onactivate="DOTATierTreasureSkipOpeningSelectedTreasure()">
+				<Label text="#DOTA_Treasure_Skip" />
 			</Button>
 		</Panel>
-		<Button id="SkipOpeningButton" class="ButtonPrimary DarkGrey Wide" onactivate="DOTATierTreasureSkipOpeningSelectedTreasure()">
-			<Label text="#DOTA_Treasure_Skip" />
-		</Button>
+		<Panel class="TreasureGrantButtonsContainer LeftRightFlow">
+			<TextButton id="TreasureGrantButton" class="TreasureGrantButton" text="Grant Chest" unlocalized="true" onactivate="DOTATierTreasureGrantSelectedTreasure()" />
+			<TextButton id="KeyGrantButton" class="TreasureGrantButton" text="Grant Key" unlocalized="true" onactivate="DOTATierTreasureGrantSelectedTreasureKey()" />
+		</Panel>
 		<Panel id="TreasureDetails">
 			<Panel id="TreasureDetailsContents">
 				<Panel id="TreasureInfo" class="LeftRightFlow">
 					<Panel id="TreasureImageContainer">
-						<EconItemImage id="TreasureImage" />
+						<EconItemImage id="TreasureImage" onactivate="DOTATierTreasureSetFocusToHome()" />
+						<Panel class="TreasureHomeButton">
+							<Image class="HomeIcon" src="s2r://panorama/images/control_icons/24px/caret_left.vsvg" />
+						</Panel>
 					</Panel>
-					<Panel class="ChestIcon" />
-					<Panel class="TopBottomFlow VerticalCenter">
+					<Panel class="ChestIcon" onactivate="DOTATierTreasureSetFocusToHome()" />
+					<Panel class="TreasureInfoDetails VerticalCenter">
 						<Label class="TreasureDetailsTitle BodyTitleLarge WhiteText" text="#DOTA_Treasure_CountChestsOwned:f" />
-						<Button id="UnlockChestButton" class="ButtonPrimary Large" onactivate="DOTATierTreasureStartOpeningSelectedTreasure(); DOTATierTreasureHideOpenTreasureTooltip();" onmouseover="DOTATierTreasureShowSelectedOpenTreasureTooltip()" onmouseout="DOTATierTreasureHideOpenTreasureTooltip()">
+						<Button id="UnlockChestButton" class="ButtonPrimary Large" onactivate="DOTATierTreasureStartOpeningSelectedTreasure();">
 							<Label text="{s:open_chest_button_label}" />
-						</Button>
-						<Button id="PreviewContentsButton" class="TextButton" onactivate="DOTATierTreasureSelectPeekTreasure()">
-							<Label text="#DOTA_Treasure_PreviewContents" />
 						</Button>
 						<Label class="UnlockChestExplain None" text="#DOTA_Treasure_UnlockChestExplain_None" html="true" />
 						<Label class="UnlockChestExplain HasChest" text="#DOTA_Treasure_UnlockChestExplain_HasChest" html="true" />
 						<Panel class="TreasurePurchaseRow LeftRightFlow">
-							<DOTAPurchaseButtonMultiOption id="TreasurePurchaseButton" onmouseover="DOTATierTreasureShowSelectedOpenTreasureTooltip()" onmouseout="DOTATierTreasureHideOpenTreasureTooltip()" />
+							<DOTAPurchaseButtonMultiOption id="TreasurePurchaseButton" />
 						</Panel>
 					</Panel>
 				</Panel>
@@ -205,7 +276,7 @@
 						<EconItemImage id="KeyImage" />
 					</Panel>
 					<Panel class="KeyIcon" />
-					<Panel class="TopBottomFlow VerticalCenter">
+					<Panel class="KeyInfoDetails VerticalCenter">
 						<Label class="PurchaseKeyTitle BodyTitleLarge TreasureDetailsTitle WhiteText" text="#DOTA_Treasure_BuyKey" />
 						<Label class="KeyTitle BodyTitleLarge TreasureDetailsTitle WhiteText" text="#DOTA_Treasure_KeyRequired" />
 						<Panel class="TopBottomFlow">
@@ -216,36 +287,40 @@
 								<DOTAPurchaseButtonMultiOption id="KeyPurchaseButton" />
 							</Panel>
 						</Panel>
-						<Label class="OwnedKeyCountLabel LighterGreyText" text="#DOTA_Treasure_KeysOwned:f" />
+						<Label class="OwnedKeyCountLabel" text="#DOTA_Treasure_KeysOwned:f" />
 					</Panel>
 				</Panel>
 				<Panel class="PurchaseRowDivider RequiresKeyOnly">
 					<Panel class="Emblem" />
 					<Panel class="Dash" />
 				</Panel>
+				<Panel class="MilestoneRewardsContainer">
+					<Panel class="MilestoneRewardsHeader">
+						<Label class="MilestoneRewardsTitle LabelMedium" text="#DOTA_Treasure_MilestoneRewardsTitle" />
+					</Panel>
+					<Label class="MilestoneRewardsSubtitle" text="#DOTA_Treasure_MilestoneRewardsDescription" />
+					<Panel id="MilestoneRewardsList" />
+				</Panel>
 				<Panel class="TradeUpInformationContainer">
-					<Label class="TradeUpInformationLabel LighterGreyText" html="true" text="#DOTA_Treasure_TradeUpDescription:f" />
+					<Label class="TradeUpInformationLabel" html="true" text="#DOTA_Treasure_TradeUpDescription:f" />
 					<Panel id="TradeUpTiers" class="TradeUpTierContainer" />
 				</Panel>
 				<DOTATreasureRecycleStatus id="TreasureRecycleStatus" class="IsRecyclingTreasure" />
-				<Panel class="TreasureGrantButtonsContainer LeftRightFlow">
-					<TextButton id="TreasureGrantButton" class="TreasureGrantButton" text="Grant Chest" unlocalized="true" onactivate="DOTATierTreasureGrantSelectedTreasure()" />
-					<TextButton id="KeyGrantButton" class="TreasureGrantButton" text="Grant Key" unlocalized="true" onactivate="DOTATierTreasureGrantSelectedTreasureKey()" />
-				</Panel>
 			</Panel>
 			<Panel id="TreasureDetailsBlocker" class="Blocker" onactivate="" />
 		</Panel>
 		<Panel class="ItemInfoColumn">
-			<Label id="TreasureOpeningMessage" html="true" />
 			<Panel id="ItemDetails" class="ItemDetails">
+				<Panel class="ItemDetailsRarityGlow" />
 				<Panel class="ItemDetailsHeader">
 					<Label class="CurrentItemTierLabel LabelLarge LightestGreyText" text="{s:treasure_item_text}" />
 					<Panel class="EscalatingChance">
 						<Panel id="TreasureItemInfoIcon" hittest="true" class="EscalatingChancesIcon" onmouseover="UIShowTitleTextTooltip( #Crate_EscalatingOdds_Title, #Crate_EscalatingOdds_Text )" onmouseout="UIHideTitleTextTooltip()" />
 						<Panel id="TreasureItemInfoPopupIcon" hittest="true" class="EscalatingChancesPopupIcon" />
+						<Panel id="BadLuckProtectionIcon" class="BadLuckProtectionIcon" onmouseover="UIShowTextTooltip(&apos;#DOTA_Treasure_BadLuckProtectionTooltip&apos;)" onmouseout="UIHideTextTooltip()" />
 					</Panel>
 					<Panel id="ItemTradeUpContainer">
-						<Label class="DuplicateLabel LighterGreyText" text="#DOTA_Treasure_ItemsOwned:f" />
+						<Label class="DuplicateLabel BodyMedium" text="#DOTA_Treasure_ItemsOwned:f" />
 						<Button id="TradeUpButton" class="ButtonPrimary DarkGrey" text="#DOTA_TabName_Recycle" onactivate="DOTATierTreasureTradeUpSelectedTreasureItem()">
 							<Label class="LabelSmall" text="#DOTA_TabName_Recycle" />
 							<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
@@ -254,15 +329,19 @@
 				</Panel>
 				<Panel id="ItemDetailsContainer" class="ItemDetailsContainer">
 					<Panel id="ItemNameContainer" class="ItemNameContainer">
-						<Label id="UnitName" class="UnitName LabelMedium" text="{s:unit_name}" />
+						<Panel class="UnitNameContainer">
+							<DOTAHeroImage id="HeroIcon" heroimagestyle="icon" />
+							<Label id="UnitName" class="UnitName LabelSmall" text="{s:unit_name}" />
+						</Panel>
 						<Label id="ItemName" class="ItemName" text="{g:dota_item_name:selected_item_def}" />
-					</Panel>
-					<Panel id="ItemDetailsRow" class="ItemDetailsRow">
-						<Label id="ItemSlot" class="ItemSlot LighterGreyText" text="{s:item_slot}" />
-						<TextButton id="ItemDetailsButton" class="ItemDetailsButton TextButton">
-							<Label id="ItemDetailsLink" class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
+						<TextButton id="ItemDetailsButton" class="ItemDetailsButton SetDetailsButton TextButton" text="#DOTA_Treasure_ItemDetailsButtonActionLabel">
 							<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
 						</TextButton>
+					</Panel>
+					<Panel id="ItemDetailsRow" class="ItemDetailsRow">
+						<Label class="ItemImmortal" text="#Rarity_Immortal" />
+						<Label id="ItemSlot" class="ItemSlot LighterGreyText" text="{s:item_slot}" />
+						<Label class="ItemArcanaPersona" text="{s:arcana_persona_label}" />
 					</Panel>
 					<Panel id="ItemExtrasRow" class="ItemExtrasRow">
 						<Panel id="ModifiersList" class="ModifiersList ModifierContainer" hittest="false">
@@ -285,6 +364,7 @@
 							<Panel id="speech" class="ModifierIcon speech" onmouseover="UIShowTextTooltip( #DOTA_tooltip_econ_item_modifier_voice )" onmouseout="UIHideTextTooltip()" />
 							<Panel id="icon_replacement" class="ModifierIcon icon_replacement" onmouseover="UIShowTextTooltip( #DOTA_tooltip_econ_item_modifier_icon )" onmouseout="UIHideTextTooltip()" />
 							<Panel id="has_arcana_augment" class="ModifierIcon has_arcana_augment" onmouseover="UIShowTextTooltip( #DOTA_tooltip_econ_item_static_attribute_has_arcana_augment )" onmouseout="UIHideTextTooltip()" />
+							<Panel id="hero_base_model" class="ModifierIcon hero_base_model" onmouseover="UIShowTextTooltip( #DOTA_tooltip_econ_item_static_hero_base_model )" onmouseout="UIHideTextTooltip()" />
 						</Panel>
 						<Panel id="SlotPreviewPips" class="SlotPreviewPips" />
 					</Panel>
@@ -292,28 +372,47 @@
 						<DOTAEconItem id="AdditionalItemView" />
 						<Label id="AdditionalItemName" text="{s:additional_item_name}" />
 					</Panel>
+					<Panel id="AbilityIconsContainer" />
+					<Panel id="ArcanaPersonaItemDetails">
+						<Panel class="UnitNameContainer">
+							<Label class="LabelSmall LighterGreyText IncluesLabel" text="#DOTA_Compendium2023_Includes" />
+							<Label class="PersonaLabel" text="#DOTA_Treasure_ArcanaPersonaLabel" />
+							<Label class="ArcanaLabel" text="{s:included_arcana_item_name}" />
+							<TextButton id="ArcanaPersonaItemDetailsButton" class="ItemDetailsButton TextButton">
+								<Label id="ArcanaPersonaItemDetailsLink" class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
+								<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
+							</TextButton>
+						</Panel>
+						<Panel class="UnitHeroImageContainer">
+							<DOTAHeroImage id="HeroArcanaPersonaImage" />
+						</Panel>
+						<Panel class="ArcanaPersonaItemDetailsBorder" hittest="false" />
+					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="ArcanaPersonaItemDetails">
-				<Panel class="UnitHeroImageContainer">
-					<DOTAHeroImage id="HeroArcanaPersonaImage" />
-				</Panel>
-				<Panel class="UnitNameContainer">
-					<Label class="LabelSmall LighterGreyText" text="#DOTA_Compendium2023_Includes" />
-					<Label class="ArcanaPersonaLabel" text="#DOTA_Treasure_ArcanaPersonaLabel" />
-					<TextButton id="ArcanaPersonaItemDetailsButton" class="ItemDetailsButton TextButton">
-						<Label id="ArcanaPersonaItemDetailsLink" class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
-						<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
-					</TextButton>
-				</Panel>
-			</Panel>
+			<Panel id="SlotPreviewContainer" />
 			<Panel id="TreasureItemPreviewMovieContainer" hittest="false">
 				<Panel class="Spinner" />
 				<Panel class="">
 					<Movie id="ItemPreviewMovie" controls="none" autoplay="onload" repeat="true" />
-					<Label id="ItemPreviewMovieLabel" class="MovieLabel LabelSmall LightestGreyText" text="#DOTA_Ability_Movie_Label" />
+					<Label class="MovieLabel LabelSmall DefaultEffectsMovieLabel" text="#DOTA_Ability_Movie_Label" />
 				</Panel>
 			</Panel>
+		</Panel>
+		<Panel id="TreasureContentsPagination" hittest="false">
+			<Button id="PreviousItemButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelLeft( TreasureContents, 1 )">
+				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" />
+			</Button>
+			<Button id="NextItemButton" class="ButtonPrimary DarkGrey Large Circle" onactivate="MovePanelRight( TreasureContents, 1 )">
+				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" />
+			</Button>
+		</Panel>
+		<Panel id="SlideOutTreasureFullScreenHitBlocker" hittest="false" onactivate="DOTATierTreasureToggleTreasureContentsSlideOut()" />
+		<Panel class="SlideOutTreasureContents">
+			<DOTATreasureContentsList id="TreasureContentsList" />
+			<Button class="CloseTreasureContentsButton ButtonPrimary" onactivate="DOTATierTreasureToggleTreasureContentsSlideOut()">
+				<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+			</Button>
 		</Panel>
 		<Panel class="PopupDarkness" />
 		<Panel id="UnusualItemReceivedPopup">

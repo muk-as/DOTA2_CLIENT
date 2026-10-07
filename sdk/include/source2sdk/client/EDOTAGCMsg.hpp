@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 1027
+        // Enumerator count: 1020
         // Alignment: 4
         // Size: 0x_
         enum class EDOTAGCMsg : std::uint32_t
@@ -574,12 +574,8 @@ namespace source2sdk
             k_EMsgGCToGCGrantAutographResponse = 0x207c,
             k_EMsgSignOutConsumableUsage = 0x207d,
             k_EMsgLobbyEventGameDetails = 0x207e,
-            k_EMsgDevGrantEventPoints = 0x207f,
-            k_EMsgDevGrantEventPointsResponse = 0x2080,
             k_EMsgDevGrantEventAction = 0x2081,
             k_EMsgDevGrantEventActionResponse = 0x2082,
-            k_EMsgDevResetEventState = 0x2083,
-            k_EMsgDevResetEventStateResponse = 0x2084,
             k_EMsgGCToGCReconcileEventOwnership = 0x2085,
             k_EMsgConsumeEventSupportGrantItem = 0x2086,
             k_EMsgConsumeEventSupportGrantItemResponse = 0x2087,
@@ -610,8 +606,6 @@ namespace source2sdk
             k_EMsgSQLGCToGCGrantAllHeroProgressVictory = 0x20ac,
             k_EMsgDevDeleteEventActions = 0x20ad,
             k_EMsgDevDeleteEventActionsResponse = 0x20ae,
-            k_EMsgDevReloadAllEvents = 0x20af,
-            k_EMsgDevReloadAllEventsResponse = 0x20b0,
             k_EMsgGCToGCGetAllHeroCurrent = 0x21bb,
             k_EMsgGCToGCGetAllHeroCurrentResponse = 0x21bc,
             k_EMsgGCSubmitPlayerAvoidRequest = 0x21bd,
@@ -716,7 +710,6 @@ namespace source2sdk
             k_EMsgGCToClientGuildMembersDataUpdated = 0x222b,
             k_EMsgSignOutReportActivityMarkers = 0x222c,
             k_EMsgSignOutDiretideCandy = 0x222d,
-            k_EMsgGCToClientPostGameItemAwardNotification = 0x222e,
             k_EMsgClientToGCGetOWMatchDetails = 0x222f,
             k_EMsgClientToGCGetOWMatchDetailsResponse = 0x2230,
             k_EMsgClientToGCSubmitOWConviction = 0x2231,
