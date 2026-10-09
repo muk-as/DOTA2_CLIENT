@@ -94,7 +94,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MANACOST_REDUCTION_CONSTANT = 0x24,
             // MScriptDescription "GetModifierBaseAttackTimeConstant GetModifierHealthcostReduction_Constant"
             MODIFIER_PROPERTY_HEALTHCOST_REDUCTION_CONSTANT = 0x25,
-            // MScriptDescription "k GetModifierBaseAttackTimeConstant"
+            // MScriptDescription "Ei GetModifierBaseAttackTimeConstant"
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT = 0x26,
             // MScriptDescription "GetModifierBaseAttackTimePercentage GetModifierBaseAttackTimeConstant_Adjust"
             MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST = 0x27,
@@ -196,7 +196,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_UNIQUE = 0x57,
             // MScriptDescription "GetModifierBaseRegen GetModifierMagicalResistanceDecrepifyUnique"
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE = 0x58,
-            // MScriptDescription "k GetModifierBaseRegen"
+            // MScriptDescription "Ei GetModifierBaseRegen"
             MODIFIER_PROPERTY_BASE_MANA_REGEN = 0x59,
             // MScriptDescription "GetModifierConstantManaRegenUnique GetModifierConstantManaRegen"
             MODIFIER_PROPERTY_MANA_REGEN_CONSTANT = 0x5a,
@@ -274,7 +274,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_RESPAWNTIME = 0x7e,
             // MScriptDescription "GetModifierStackingRespawnTime GetModifierPercentageRespawnTime"
             MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE = 0x7f,
-            // MScriptDescription "k GetModifierStackingRespawnTime"
+            // MScriptDescription "Ei GetModifierStackingRespawnTime"
             MODIFIER_PROPERTY_RESPAWNTIME_STACKING = 0x80,
             // MScriptDescription "GetModifierPercentageCooldownOngoing GetModifierPercentageCooldown"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE = 0x81,
@@ -298,7 +298,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_DEATHGOLDCOST = 0x8a,
             // MScriptDescription "GetModifierPercentageExpRateBoost GetModifierPercentageDeathGoldCost"
             MODIFIER_PROPERTY_PERCENTAGE_DEATHGOLDCOST = 0x8b,
-            // MScriptDescription "-k GetModifierPercentageExpRateBoost"
+            // MScriptDescription "-Ei GetModifierPercentageExpRateBoost"
             MODIFIER_PROPERTY_EXP_RATE_BOOST = 0x8c,
             // MScriptDescription "GetModifierPercentageKillAssistGoldBoost GetModifierPercentageGoldRateBoost"
             MODIFIER_PROPERTY_GOLD_RATE_BOOST = 0x8d,
@@ -392,7 +392,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER = 0xb9,
             // MScriptDescription "GetModifierDodgeProjectile GetModifierUnitDisllowUpgrading"
             MODIFIER_PROPERTY_UNIT_DISALLOW_UPGRADING = 0xba,
-            // MScriptDescription "1k GetModifierDodgeProjectile"
+            // MScriptDescription "1Ei GetModifierDodgeProjectile"
             MODIFIER_PROPERTY_DODGE_PROJECTILE = 0xbb,
             // MScriptDescription "GetPrimaryStatDamageMultiplier GetTriggerCosmeticAndEndAttack"
             MODIFIER_PROPERTY_TRIGGER_COSMETIC_AND_END_ATTACK = 0xbc,
@@ -428,7 +428,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ATTACK_ALLIED = 0xcb,
             // MScriptDescription "OnOrder OnProjectileDodge"
             MODIFIER_EVENT_ON_PROJECTILE_DODGE = 0xcc,
-            // MScriptDescription " 2k OnOrder"
+            // MScriptDescription " 2Ei OnOrder"
             MODIFIER_EVENT_ON_ORDER = 0xcd,
             // MScriptDescription "OnUnitMoved OnOrderReceived"
             MODIFIER_EVENT_ON_ORDER_RECEIVED = 0xce,
@@ -456,7 +456,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_STATE_CHANGED = 0xd9,
             // MScriptDescription "OnProcessCleave Unused"
             MODIFIER_EVENT_ON_ORB_EFFECT = 0xda,
-            // MScriptDescription "3k OnProcessCleave"
+            // MScriptDescription "3Ei OnProcessCleave"
             MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xdb,
             // MScriptDescription "OnMagicDamageCalculated OnDamageCalculated"
             MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xdc,
@@ -532,7 +532,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_LIFETIME_FRACTION = 0xff,
             // MScriptDescription "GetModifierSpellsRequireHP GetModifierProvidesFOWVision"
             MODIFIER_PROPERTY_PROVIDES_FOW_POSITION = 0x100,
-            // MScriptDescription "5k GetModifierSpellsRequireHP"
+            // MScriptDescription "5Ei GetModifierSpellsRequireHP"
             MODIFIER_PROPERTY_SPELLS_REQUIRE_HP = 0x101,
             // MScriptDescription "GetForceDrawOnMinimap GetModifierConvertManaCostToHealthCost"
             MODIFIER_PROPERTY_CONVERT_MANA_COST_TO_HEALTH_COST = 0x102,
