@@ -4,13 +4,11 @@
 	{
 		operators = 
 		[
-			
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
 				_voicegraph = "dota_ui_pan"
 			},
-			
 			{
 				name = "public"
 				operator = "util_null"
@@ -127,7 +125,6 @@
 					}
 				}
 			},
-			
 			{
 				name = "switch_track_name"
 				execute_once = "true"
@@ -137,7 +134,6 @@
 				input2 = "hrtf"
 				input3 = "bypass"
 			},
-			
 			{
 				name = "is_stereo_mode"
 				execute_once = true
@@ -146,7 +142,6 @@
 				input1 = "@public.panner_mode"
 				input2 = "0"
 			},
-			
 			{
 				name = "is_not_disabled"
 				execute_once = true
@@ -155,7 +150,6 @@
 				input1 = "@public.panner_mode"
 				input2 = "2"
 			},
-			
 			{
 				name = "is_not_hrtf"
 				execute_once = true
@@ -164,7 +158,6 @@
 				input1 = "@public.panner_mode"
 				input2 = "1"
 			},
-			
 			{
 				name = "is_hrtf"
 				execute_once = true
@@ -173,14 +166,12 @@
 				input1 = "@public.panner_mode"
 				input2 = "1"
 			},
-			
 			{
 				name = "uiposition_elements"
 				input_execute = "@is_not_disabled.output"
 				operator = "util_elements_float3"
 				input = "@public.uiposition"
 			},
-			
 			{
 				name = "mult_enabled"
 				execute_once = true
@@ -189,7 +180,6 @@
 				input1 = "@uiposition_elements.output_0"
 				input2 = "@is_not_disabled.output"
 			},
-			
 			{
 				name = "invert_x"
 				input_execute = "@is_not_disabled.output"
@@ -198,42 +188,36 @@
 				input1 = "@mult_enabled.output"
 				input2 = "-1.0"
 			},
-			
 			{
 				name = "remap_stereo_pan_curve"
 				operator = "math_curve_2d"
 				input = "@invert_x.output"
 				public_field_name = "public.stereo_pan_curve"
 			},
-			
 			{
 				name = "globals"
 				operator = "get_system_globals"
 				input_execute = "1.0"
 				input_listener_index = "0"
 			},
-			
 			{
 				name = "listener_up"
 				input_execute = "@public.panner_mode"
 				operator = "util_elements_float3"
 				input = "@globals.output_listener_up"
 			},
-			
 			{
 				name = "listener_left"
 				input_execute = "@public.panner_mode"
 				operator = "util_elements_float3"
 				input = "@globals.output_listener_left"
 			},
-			
 			{
 				name = "listener_forward"
 				input_execute = "@public.panner_mode"
 				operator = "util_elements_float3"
 				input = "@globals.output_listener_forward"
 			},
-			
 			{
 				name = "remap_hrtf_vertical_pan"
 				operator = "math_curve_2d"
@@ -241,7 +225,6 @@
 				input_execute = "@public.panner_mode"
 				public_field_name = "public.hrtf_pan_vertical"
 			},
-			
 			{
 				name = "remap_hrtf_horizontal_pan"
 				operator = "math_curve_2d"
@@ -249,7 +232,6 @@
 				input_execute = "@public.panner_mode"
 				public_field_name = "public.hrtf_pan_horizontal"
 			},
-			
 			{
 				name = "scale_left_direction"
 				input_execute = "@public.panner_mode"
@@ -257,7 +239,6 @@
 				input1 = "@globals.output_listener_left"
 				input2 = "@remap_hrtf_horizontal_pan.output"
 			},
-			
 			{
 				name = "scale_up_direction"
 				input_execute = "@public.panner_mode"
@@ -265,7 +246,6 @@
 				input1 = "@globals.output_listener_up"
 				input2 = "@remap_hrtf_vertical_pan.output"
 			},
-			
 			{
 				name = "add_directions"
 				input_execute = "@public.panner_mode"
@@ -274,7 +254,6 @@
 				input1 = "@scale_left_direction.output"
 				input2 = "@scale_up_direction.output"
 			},
-			
 			{
 				name = "add_forward"
 				input_execute = "@public.panner_mode"
@@ -283,14 +262,12 @@
 				input1 = "@add_directions.output"
 				input2 = "@globals.output_listener_forward"
 			},
-			
 			{
 				name = "normalize_direction"
 				input_execute = "@public.panner_mode"
 				operator = "math_normalize_vec3"
 				input = "@add_forward.output"
 			},
-			
 			{
 				name = "project_direction"
 				input_execute = "@public.panner_mode"
@@ -298,7 +275,6 @@
 				input1 = "@normalize_direction.output"
 				input2 = "@public.listener_projection_distance"
 			},
-			
 			{
 				name = "hrtf_position_final"
 				operator = "math_float3"
@@ -307,7 +283,6 @@
 				input1 = "@globals.output_listener_position"
 				input2 = "@project_direction.output"
 			},
-			
 			{
 				name = "position_switch"
 				operator = "ctrl_switch_float3"
@@ -315,7 +290,6 @@
 				input1 = "@hrtf_position_final.output"
 				input2 = "@globals.output_listener_position"
 			},
-			
 			{
 				name = "send_panner_value"
 				input_execute = "@is_stereo_mode.output"
@@ -323,7 +297,6 @@
 				input_name = "pan_amount"
 				input = "@remap_stereo_pan_curve.output"
 			},
-			
 			{
 				name = "send_hrtf"
 				input_execute = "1.0"
@@ -331,12 +304,10 @@
 				input_name = "hrtf_on"
 				input = "@is_hrtf.output"
 			},
-			
 			{
 				name = "source_info"
 				operator = "game_get_source_info"
 			},
-			
 			{
 				name = "convar_switch"
 				operator = "ctrl_switch3_float"
@@ -345,7 +316,6 @@
 				input1 = "@globals.output_snd_musicvolume_convar"
 				input2 = "@globals.output_snd_gamevoice_convar"
 			},
-			
 			{
 				name = "get_vsnd"
 				operator = "opvar_get_vsnd"
@@ -356,7 +326,6 @@
 				input_use_namespace = "false"
 				array_selection_type = "random_exclusive"
 			},
-			
 			{
 				name = "soundevent_limit"
 				operator = "soundevent_limiter"
@@ -372,12 +341,10 @@
 				match_event_duration = "@public.limiter_match_event_duration"
 				match_this_event = "true"
 			},
-			
 			{
 				name = "get_event_info"
 				operator = "soundevent_get_info"
 			},
-			
 			{
 				name = "volume_random"
 				operator = "math_randomize_float"
@@ -386,7 +353,6 @@
 				input_rand_min = "@public.volume_rand_min"
 				input_rand_max = "@public.volume_rand_max"
 			},
-			
 			{
 				name = "pitch_random"
 				operator = "math_randomize_float"
@@ -395,7 +361,6 @@
 				input_rand_min = "@public.pitch_rand_min"
 				input_rand_max = "@public.pitch_rand_max"
 			},
-			
 			{
 				name = "mixer"
 				operator = "soundmixer_get_mixgroup"
@@ -406,13 +371,11 @@
 				input_soundlevel = "65.000000"
 				input_event_type = "@public.event_type"
 			},
-			
 			{
 				name = "mixer_mixgraph"
 				operator = "soundmixer_set_vmix"
 				input_mixgroups = "@mixer.output_mixgroups"
 			},
-			
 			{
 				name = "volume_fade_in"
 				operator = "math_remap_float"
@@ -423,7 +386,6 @@
 				input_map_max = "1.000000"
 				default_to_max = "true"
 			},
-			
 			{
 				name = "volume_accumulate"
 				operator = "math_accumulate12_float"
@@ -441,26 +403,23 @@
 				input11 = "1.000000"
 				input12 = "1.000000"
 			},
-			
 			{
 				name = "mixer_trigger"
 				operator = "soundmixer_set_trigger"
 				input_trigger = "@volume_accumulate.output"
 				input_mixgroups = "@mixer.output_mixgroups"
 			},
-			
 			{
 				name = "distance_to_source"
 				operator = "calc_distance"
 				input_position1 = "@position_switch.output"
 				input_position2 = "@globals.output_listener_position"
 			},
-			
 			{
 				name = "speakers_spatialize"
 				operator = "calc_spatialize_speakers_hrtf"
 				execute_once = "1.0"
-				input_360_listener = 0.000000
+				input_360_listener = 0.0
 				input_listener_angles = "@globals.output_listener_angles"
 				input_hrtf_on = "@public.panner_mode"
 				input_distance = "@distance_to_source.output"
@@ -472,13 +431,11 @@
 				input_spread_max_value = "0.0"
 				input_spread_min_value = "0.0"
 			},
-			
 			{
 				name = "volume_accumulate_fan"
 				operator = "util_float_to_speakers"
 				input = "@volume_accumulate.output"
 			},
-			
 			{
 				name = "speakers_scaled"
 				operator = "math_speakers"
@@ -486,13 +443,11 @@
 				input1 = "@volume_accumulate_fan.output"
 				input2 = "@speakers_spatialize.output"
 			},
-			
 			{
 				name = "set_builtins"
 				operator = "sos_set_builtins"
 				input_voicegraph = "@public.voicegraph"
 			},
-			
 			{
 				name = "start_vsnd"
 				operator = "vmix_voice_start"
@@ -507,7 +462,6 @@
 				input_memory_type = "@public.memory_type"
 				input_max_gain_change_per_second = "@public.max_gain_change_per_second"
 			},
-			
 			{
 				name = "set_vsnd_status"
 				operator = "opvar_set_float"

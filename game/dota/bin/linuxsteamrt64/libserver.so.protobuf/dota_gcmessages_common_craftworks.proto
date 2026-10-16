@@ -1,6 +1,9 @@
 import "steammessages.proto";
 import "dota_shared_enums.proto";
 import "gcsdk_gcmessages.proto";
+import "google/protobuf/descriptor.proto";
+
+option additional_includes = "dota_craftworks.h";
 
 enum ECraftworksAuditAction {
 	k_eInvalid = 0;
@@ -10,16 +13,11 @@ enum ECraftworksAuditAction {
 }
 
 message CMsgCraftworksComponents {
-	message ComponentQuantitiesEntry {
-		optional uint32 key = 1;
-		optional uint32 value = 2;
-	}
-
-	repeated .CMsgCraftworksComponents.ComponentQuantitiesEntry component_quantities = 1;
+	map<uint32, uint32> component_quantities = 1;
 }
 
 message CMsgCraftworksQuestReward {
-	optional uint32 quest_id = 1;
+	optional uint32 quest_id = 1 [boxed_type = "CraftworksQuestID_t"];
 	optional .CMsgCraftworksComponents reward_components = 2;
 	optional uint32 stat_value = 3;
 }
