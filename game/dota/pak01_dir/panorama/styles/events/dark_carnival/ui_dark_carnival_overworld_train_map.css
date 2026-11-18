@@ -8,10 +8,14 @@
 @define AvailableSaturation: 1.0;
 @define AvailableBrightness: 1.0;
 @define OverworldCarTintColor: #000;
+@define OverworldUnfocusedCarTintAmount: 0.7;
 @define PathVerticalOffset: 42px;
-@define CharacterAnimTime: 0.1;
-@define CharacterAnimTimeFast: 0.1;
 @define RoomContentsPadding: 0px;
+@define Act2IntroCameraHoldDuration: 1.0;
+@define Act2IntroCameraBlendDuration: 4.0;
+@define Act2IntroFarViewHoldDuration: 0.3;
+@define Act2IntroRoomZoomDuration: 2.0;
+@define Act2IntroDialogueDelay: 2;
 @define EditModeRoomNodeAlignmentEdgeMargins: 90;
 @define EditModeRoomNodeAlignmentMaxInnerDistance: 110;
 @define EditModeRoomNodeAlignmentVertical: -18;
@@ -230,201 +234,6 @@
 	saturation: 1;
 }
 
-.Character
-{
-	flow-children: right;
-	animation-name: fadeIn;
-	animation-duration: 0.2s;
-	animation-fill-mode: both;
-	z-index: 1;
-	overflow: noclip;
-	border-radius: 50%;
-	border: 2px solid rgb(212, 221, 240);
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFFFFF ), to( #2a2a2a ) );
-	box-shadow: 0px 12px 48px -2px rgba(0, 0, 0, 0.6);
-}
-
-.Character.Use3DModel .ModelPreview
-{
-	visibility: visible;
-}
-
-.Character.Use3DModel .CharacterIcon
-{
-	visibility: collapse;
-}
-
-.Character .ModelPreview
-{
-	horizontal-align: center;
-	vertical-align: center;
-	opacity: 1;
-	visibility: collapse;
-	transition-property: opacity;
-	transition-duration: 1s;
-}
-
-.CharacterDisappear .Character .ModelPreview
-{
-	opacity: 0;
-}
-
-.Character .CharacterContainer
-{
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	border: 1.5px solid rgb(136, 145, 173);
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #3d3d3d ), to( #ffffff ) );
-}
-
-.Character .CharacterContainer .CharacterIcon
-{
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #290F0F ), to( #7b2a2b ) );
-	border: 2px solid #000000;
-}
-
-.QuestCharacter
-{
-	margin-left: 56px;
-	margin-top: -16px;
-	transform: scaleX(-1) scaleZ(-1);
-	transition-duration: 0.5s;
-	transition-timing-function: ease-in-out;
-	transition-property: position, opacity;
-}
-
-.HeroCharacter
-{
-	transition-duration: 0.75s;
-	transition-timing-function: ease-in-out;
-	transition-property: position, transform;
-	visibility: collapse;
-}
-
-.Onboarding6 .HeroCharacter
-{
-	visibility: visible;
-}
-
-.FastCharacterMovement .HeroCharacter
-{
-	transition-duration: 0.4s;
-	transition-delay: 0s;
-	transition-timing-function: linear;
-}
-
-.HeroCharacter.SecondHero
-{
-	transform: scaleX(-1) scaleZ(-1) translate3d(108px, -8px, 0px);
-}
-
-.HeroCharacter.SecondHero.WithCharacter
-{
-	transform: scaleX(1) scaleZ(1) translate3d(-72px, 16px, 1px);
-}
-
-.HeroCharacter.ThirdHero
-{
-	transform: scaleX(1) scaleZ(1) translate3d(-48px, -32px, 0px);
-}
-
-#HeroCharacter2
-{
-	margin-left: 32px;
-	transform: scaleX(-1) scaleZ(-1);
-	transition-delay: 0.1s;
-}
-
-.FastCharacterMovement #HeroCharacter2
-{
-	transition-delay: 0s;
-}
-
-.PartyCharacter
-{
-	transition-property: position;
-	animation-duration: 0.2s;
-	animation-fill-mode: both;
-	transform: none;
-}
-
-.SlowCharacterMovement .PartyCharacter.PartyMember1
-{
-	transition-delay: 0.2s;
-	animation-delay: 0.0s;
-}
-
-.SlowCharacterMovement .PartyCharacter.PartyMember2
-{
-	transition-delay: 0.4s;
-	animation-delay: 0.2s;
-}
-
-.SlowCharacterMovement .PartyCharacter.PartyMember3
-{
-	transition-delay: 0.6s;
-	animation-delay: 0.4s;
-}
-
-.SlowCharacterMovement .PartyCharacter.PartyMember4
-{
-	transition-delay: 0.8s;
-	animation-delay: 0.6s;
-}
-
-.FastCharacterMovement .PartyCharacter
-{
-	animation-delay: 0s;
-}
-
-.FastCharacterMovement .PartyCharacter.PartyMember1
-{
-	transition-delay: 0.0s;
-	transform: translate3d(-40px, 0px, 0px);
-}
-
-.FastCharacterMovement .PartyCharacter.PartyMember2
-{
-	transition-delay: 0.0s;
-	transform: translate3d( 40px, 0px, 0px);
-}
-
-.FastCharacterMovement .PartyCharacter.PartyMember3
-{
-	transition-delay: 0.0s;
-	transform: translate3d( 80px, 0px, 0px);
-}
-
-.FastCharacterMovement .PartyCharacter.PartyMember4
-{
-	transition-delay: 0.0s;
-	transform: translate3d( 100px, -20px, 0px);
-}
-
-.PartyCharacter.Travelling
-{
-	animation-name: fadeIn;
-}
-
-.PartyMember1
-{
-	animation-delay: 0.4s;
-}
-
-.PartyMember2
-{
-	animation-delay: 0.6s;
-}
-
-.PartyMember3
-{
-	animation-delay: 0.8s;
-}
-
 @keyframes 'Bob'
 {
 	0%
@@ -494,6 +303,13 @@
 	transition-property: transform;
 	transition-duration: 0.3s;
 	transform: translateX( -120px ) translateY( -120px );
+}
+
+.Node #GodRaysParticleContainer,.Node #NodeUnlockButtonContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
 }
 
 .Node #NodeCenter
@@ -779,13 +595,15 @@
 
 .Node.EmptyNode.HasCost #NodeContents
 {
-	background-color: #fff8;
-	border: 1px solid red;
-	horizontal-align: center;
-	vertical-align: center;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
+	background-image: url("s2r://panorama/images/events/aghanim/question_mark_icon_png.vtex");
+	background-size: 72px 72px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.Node.EmptyNode.HasCost:not(.HasDialog) #NodeContents
+{
+	wash-color: red;
 }
 
 .Node #NodeBackground
@@ -1143,7 +961,7 @@
 	text-shadow: 0px 0px 12px rgba(255, 137, 113, 0.6);
 }
 
-.Node.CanBeUnlockedWithPathUnlocker .NodeUnlockButtonContainer
+.Node.CanBeUnlockedWithPathUnlocker .NodeUnlockButtonOption
 {
 	opacity: 1;
 	transform: none;
@@ -1342,6 +1160,16 @@
 	brightness: 1.5;
 }
 
+.ShowPathDebugInfo .Path.ConnectsTrainCars.ConnectsRooms
+{
+	wash-color: #FF0;
+}
+
+.ShowPathDebugInfo .Path.ConnectsRooms
+{
+	wash-color: #0FF;
+}
+
 .ShowPathDebugInfo #PathDebugArrow
 {
 	opacity: 0.5;
@@ -1384,6 +1212,13 @@
 	transition-duration: 0.2s;
 }
 
+.Room #RoomPremiumContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+
 .Room .RoomBackgroundColor
 {
 	width: 100%;
@@ -1423,7 +1258,7 @@
 	height: 100%;
 }
 
-.Room .RoomPremiumContainer
+.Room .RoomPremiumInfo
 {
 	margin: 32px;
 	horizontal-align: center;
@@ -1432,7 +1267,7 @@
 	transition-property: opacity, brighness;
 }
 
-.Room .RoomPremiumContainer .LockIcon
+.Room .RoomPremiumInfo .LockIcon
 {
 	width: 24px;
 	padding: 2px;
@@ -1442,7 +1277,7 @@
 	img-shadow: 0px 2px 8px black;
 }
 
-.Room .RoomPremiumContainer .SecretRoomLabel
+.Room .RoomPremiumInfo .SecretRoomLabel
 {
 	vertical-align: center;
 	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
@@ -1455,23 +1290,23 @@
 	border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-.Room .RoomPremiumContainer .PremiumToken
+.Room .RoomPremiumInfo .PremiumToken
 {
 	z-index: 1;
 }
 
-.Room .RoomPremiumContainer:hover
+.Room .RoomPremiumInfo:hover
 {
 	opacity: 1;
 	brightness: 1.5;
 }
 
-.Room.RoomPremium:not(.RoomUnlocked) .RoomPremiumContainer
+.Room.RoomPremium:not(.RoomUnlocked) .RoomPremiumInfo
 {
 	visibility: visible;
 }
 
-.Room.RoomPremium.PremiumAccessOwned .RoomPremiumContainer
+.Room.RoomPremium.PremiumAccessOwned .RoomPremiumInfo
 {
 	opacity: 0;
 }
@@ -1545,59 +1380,6 @@
 {
 	width: 100%;
 	height: 100%;
-}
-
-.Room #RoomCharacters
-{
-	horizontal-align: center;
-	flow-children: right;
-	margin: 20px;
-	opacity: 0.9;
-	transition-property: transform;
-	transition-duration: 0.2s;
-}
-
-.VisualNovelOpen .Room #RoomCharacters
-{
-	opacity: 0;
-}
-
-.Room #RoomCharacters .RoomCharacter
-{
-	width: 64px;
-	height: 36px;
-	margin: 2px;
-	opacity-mask: url("s2r://panorama/images/events/dark_carnival/overworld/hero_icons/hero_portrait_mask_png.vtex");
-	background-color: black;
-}
-
-.Room #RoomCharacters .RoomCharacter .RoomCharacterContents
-{
-	width: 100%;
-	height: 100%;
-	margin: 2px;
-	opacity-mask: url("s2r://panorama/images/events/dark_carnival/overworld/hero_icons/hero_portrait_mask_png.vtex");
-}
-
-.Room #RoomCharacters .RoomCharacter .RoomCharacterContents .RoomCharacterBackground
-{
-	width: 100%;
-	height: 100%;
-}
-
-.Room #RoomCharacters .RoomCharacter.Hoodwink .RoomCharacterBackground
-{
-	background-color: gradient( linear, 0% 0%, 100% 100%, from( #9C6B28 ), to( #E1BF98 ) );
-}
-
-.Room #RoomCharacters .RoomCharacter.LegionCommander .RoomCharacterBackground
-{
-	background-color: gradient( linear, 0% 0%, 100% 100%, from( #874132 ), to( #B69E95 ) );
-}
-
-.Room #RoomCharacters .RoomCharacter.CharacterSlark .RoomCharacterBackground
-{
-	background-color: gradient( linear, 0% 0%, 100% 100%, from( #3F8FB9 ), to( #CABCAB ) );
 }
 
 .Room .BackgroundImage
@@ -1808,6 +1590,20 @@
 	width: 100%;
 	height: 100%;
 	overflow: noclip;
+	transition-property: opacity;
+	transition-duration: 0.6s;
+}
+
+.Act2IntroBlending #TrainLayer
+{
+	opacity: 0;
+}
+
+.Act2IntroRoomZoom #RoomConnectionsLayer,.Act2IntroRoomZoom #YouAreHereBg,.Act2IntroRoomZoom #YouAreHere,.Act2IntroRoomZoom .Room:not(.Act2IntroRoom)
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.6s;
 }
 
 .TrainCar
@@ -2006,8 +1802,23 @@
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 46px;
-	height: 46px;
+	width: 70px;
+	height: 56px;
+	transform: translateY( -4px );
+}
+
+.RoomConnection.Incoming #RoomConnectionHitbox
+{
+	width: 66px;
+	height: 90px;
+	transform: translateY( 12px );
+}
+
+.RoomConnection.Act2LeftBranch #RoomConnectionHitbox,.RoomConnection.Act2RightBranch #RoomConnectionHitbox
+{
+	width: 90px;
+	height: 130px;
+	transform: translateY( -32px );
 }
 
 .RoomConnection .PremiumToken
@@ -2021,15 +1832,89 @@
 	wash-color: rgb(149, 165, 255);
 }
 
+.RoomConnection.Incoming .RoomCoupler
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_reverse_png.vtex");
+}
+
 .RoomConnection.Active .RoomCoupler
 {
 	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_active_png.vtex");
 	wash-color: none;
 }
 
+.RoomConnection.Active.Incoming .RoomCoupler
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_reverse_active_png.vtex");
+}
+
 .RoomConnection:hover
 {
 	brightness: 1.8;
+}
+
+.RoomConnection #TokensContainer,.RoomConnection #TokensContainerLabel
+{
+	visibility: collapse;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.RoomConnection.ShowsPathTokens #TokensContainer,.RoomConnection.ShowsPathTokens #TokensContainerLabel
+{
+	visibility: visible;
+	vertical-align: bottom;
+}
+
+.RoomConnection.ShowsPathTokens #TokensContainerLabel,.RoomConnection.ShowsPathTokens #TokensContainerLabelLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	margin-top: 64px;
+	font-size: 12px;
+	color: goldDark;
+	text-transform: uppercase;
+}
+
+.RoomConnection.ShowsPathTokens #TokensContainer
+{
+	ui-scale: 70%;
+	margin-bottom: 66px;
+}
+
+.RoomConnection.ShowsPathTokens #TokensContainerLabel
+{
+	margin-bottom: 52px;
+}
+
+.RoomConnection.ShowsPathTokens .RoomCoupler
+{
+	width: 100%;
+	height: 100%;
+	margin-top: -20px;
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_tickets_required_png.vtex");
+	background-size: cover;
+	wash-color: goldLight;
+}
+
+.RoomConnection.ShowsPathTokens #RoomConnectionHitbox
+{
+	width: 170px;
+	height: 130px;
+}
+
+.RoomConnection.Act2LeftBranch .RoomCoupler
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_act2_branch_left_png.vtex");
+	wash-color: none;
+	img-shadow: -2px 0px 12px black;
+}
+
+.RoomConnection.Act2RightBranch .RoomCoupler
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/overworld/coupler_act2_branch_right_png.vtex");
+	wash-color: none;
+	img-shadow: 2px 0px 12px black;
 }
 
 @keyframes 'fadeIn'
@@ -2232,7 +2117,7 @@
 	visibility: collapse;
 }
 
-.NodeUnlockButtonContainer
+.NodeUnlockButtonOption
 {
 	horizontal-align: center;
 	vertical-align: bottom;
@@ -2244,7 +2129,7 @@
 	transition-duration: 0.15s;
 }
 
-.NodeUnlockButtonContainer Label
+.NodeUnlockButtonOption Label
 {
 	horizontal-align: center;
 	font-weight: semi-bold;
@@ -2252,7 +2137,7 @@
 	margin-bottom: -3px;
 }
 
-.NodeUnlockButtonContainer #NodeUnlockButton
+.NodeUnlockButtonOption #NodeUnlockButton
 {
 	ui-scale: 60%;
 	horizontal-align: center;
@@ -2551,19 +2436,21 @@
 .TrainNavDarkness
 {
 	width: 100%;
-	height: 400px;
-	background-color: gradient( radial, 50% 30%, 0% 0%, 50% 60%, from( #FFFFFF ), color-stop( 0.25, #fffffff6 ), color-stop( 0.5, #ffffffc2 ), color-stop( 0.75, #ffffff42 ), to( #FFFFFF00 ) );
+	height: 100%;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 100% 65%, from( #FFFFFF ), color-stop( 0.5, #FFFFFF33), to( #FFFFFF00 ) );
 	horizontal-align: center;
 	margin-top: 40px;
 	wash-color: rgb(12, 12, 23);
-	opacity: 0;
+	wash-color: rgb(48, 65, 107);
+	-s2-mix-blend-mode: additive;
+	opacity: 0.5;
 	transition-property: opacity;
 	transition-duration: 0.5s;
 }
 
 .ZoomedIn:not(.VisualNovelOpen) .TrainNavDarkness
 {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .HideUI .TrainNavDarkness
@@ -2599,19 +2486,74 @@
 	text-shadow: 0px 2px 4px 1 rgba(0, 0, 0, 0.6);
 }
 
+@keyframes 'YouAreHereGlow'
+{
+	100%
+	{
+		brightness: 2;
+	}
+	
+}
+
+#YouAreHereBg,#YouAreHere
+{
+	height: 500px;
+	width: 500px;
+	transform: translateX( -40px ) translateY( 20px );
+}
+
+#YouAreHereBg.PointingLeft,#YouAreHere.PointingLeft
+{
+	transform: scaleX( -1 ) translateX( 40px ) translateY( 20px );
+}
+
+#YouAreHereBg Image,#YouAreHere Image
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+#YouAreHere
+{
+	transition-property: brightness, transform;
+	transition-duration: 0.4s;
+}
+
+.ZoomedOut #YouAreHere
+{
+	brightness: 1;
+	animation-name: YouAreHereGlow;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	transform: scale3d( 1.7, 1.7, 1 ) translateX( -40px ) translateY( 20px );
+}
+
+.ZoomedOut #YouAreHere.PointingLeft
+{
+	transform: scale3d( -1.7, 1.7, 1 ) translateX( 40px ) translateY( 20px );
+}
+
 .TrainNav
 {
-	flow-children: right;
+	flow-children: down;
 	horizontal-align: center;
+	vertical-align: top;
 	margin-top: 108px;
 	width: 800px;
 	transition-property: opacity;
 	transition-duration: 0.2s;
 }
 
+.Act12 .TrainNav
+{
+	vertical-align: bottom;
+	margin-bottom: 96px;
+	width: 800px;
+}
+
 .TrainNav .Center
 {
-	ignore-parent-flow: true;
 	horizontal-align: center;
 }
 
@@ -2644,12 +2586,37 @@
 	animation-duration: 0.3s;
 }
 
-.TrainNav.FirstTrainCar .LeftButton,.TrainNav.LastTrainCar .RightButton,.TrainNav.HideLeftRightButtons .SideButton
+.TrainNav.NoTrainCarLeft .LeftButton,.TrainNav.NoTrainCarRight .RightButton,.TrainNav.HideLeftRightButtons .SideButton
 {
 	brightness: 0.3;
 	saturation: 0;
-	opacity: 0.001;
+	opacity: 0.5;
 	box-shadow: none;
+}
+
+.Act11 .TrainNav .TopButton,.Act11 .TrainNav .BottomButton
+{
+	visibility: collapse;
+}
+
+.Act12 .TrainNav.NoTrainCarUp .BottomButton
+{
+	visibility: visible;
+}
+
+.Act12 .TrainNav.NoTrainCarUp .TopButton
+{
+	visibility: collapse;
+}
+
+.Act12 .TrainNav.NoTrainCarDown .BottomButton
+{
+	visibility: collapse;
+}
+
+.Act12 .TrainNav.NoTrainCarDown .TopButton
+{
+	visibility: visible;
 }
 
 .TrainNav.PanningToNext .RightButton,.TrainNav.PanningToPrev .LeftButton
@@ -2675,26 +2642,11 @@
 	transform: scale3d( 0.8,0.8,1 );
 }
 
-.TrainNav .ZoomedInPaginationButton,.TrainNav .ZoomedOutPaginationButton
-{
-	visibility: collapse;
-}
-
-.ZoomedOut .TrainNav .ZoomedOutPaginationButton
-{
-	visibility: visible;
-}
-
-.ZoomedIn .TrainNav .ZoomedInPaginationButton
-{
-	visibility: visible;
-}
-
 .TrainNav .WoodBackgroundContainer
 {
 	height: 88px;
 	padding: 12px;
-	margin: 52px 44px 0px;
+	margin: 20px 44px 0px;
 	horizontal-align: center;
 	brightness: 1.3;
 }
@@ -2779,6 +2731,8 @@
 {
 	flow-children: down;
 	horizontal-align: center;
+	margin-top: -10px;
+	z-index: -1;
 }
 
 .TrainNav .Center .TrainCarTitleContainer
@@ -2789,7 +2743,7 @@
 
 .TrainNav .Center .TrainCarTitleContainer .TrainCarTitleBanner
 {
-	height: 64px;
+	height: 56px;
 }
 
 .TrainNav .Center .TrainCarTitleContainer .TrainCarTitle
@@ -2797,8 +2751,8 @@
 	color: gradient( linear, 0% 0%, 0% 100%, from( goldLight ), to( goldDark ) );
 	horizontal-align: center;
 	vertical-align: center;
-	font-size: 18px;
-	margin-top: -12px;
+	font-size: 16px;
+	margin-top: -8px;
 	font-weight: semi-bold;
 	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
 }
@@ -2809,7 +2763,7 @@
 	horizontal-align: center;
 	margin-left: -8px;
 	margin-bottom: -2px;
-	opacity: 0;
+	visibility: collapse;
 }
 
 .TrainNav .Center .CompletionContainer .CompletedFlagImage
@@ -2851,11 +2805,25 @@
 	visibility: collapse;
 }
 
-.SideButton
+.NavButtons
 {
-	margin: 40px;
-	width: 48px;
-	height: 48px;
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 8px;
+}
+
+.NavButtons .CenterCol
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.NavButtons .SideButton
+{
+	margin: 2px;
+	width: 24px;
+	height: 24px;
 	border-radius: 50%;
 	border: 1px solid #ffffff;
 	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #F2CFB6 ), to( #3E322C ) );
@@ -2863,20 +2831,33 @@
 	background-color: rgb(58, 63, 83);
 	transition-property: pre-transform-scale2d, brightness;
 	transition-duration: 0.05s;
-	ignore-parent-flow: true;
 }
 
-.SideButton.LeftButton
+.NavButtons .SideButton.LeftButton
 {
 	horizontal-align: left;
+	vertical-align: center;
 }
 
-.SideButton.RightButton
+.NavButtons .SideButton.RightButton
 {
 	horizontal-align: right;
+	vertical-align: center;
 }
 
-.SideButton .SideButtonBackground
+.NavButtons .SideButton.TopButton,.NavButtons .SideButton.BottomButton
+{
+	horizontal-align: center;
+	width: 40px;
+	height: 40px;
+}
+
+.NavButtons .SideButton.TopButton Image,.NavButtons .SideButton.BottomButton Image
+{
+	width: 24px;
+}
+
+.NavButtons .SideButton .SideButtonBackground
 {
 	width: 100%;
 	height: 100%;
@@ -2889,7 +2870,7 @@
 	transition-duration: 0.1s;
 }
 
-.SideButton .SideButtonBackgroundTexture
+.NavButtons .SideButton .SideButtonBackgroundTexture
 {
 	width: 100%;
 	height: 100%;
@@ -2901,9 +2882,9 @@
 	contrast: 1.2;
 }
 
-.SideButton Image
+.NavButtons .SideButton Image
 {
-	width: 28px;
+	width: 16px;
 	height: width-percentage(100%);
 	horizontal-align: center;
 	vertical-align: center;
@@ -2913,18 +2894,122 @@
 	transition-duration: 0.1s;
 }
 
-.SideButton:hover .SideButtonBackground
+.NavButtons .SideButton:hover .SideButtonBackground
 {
 	brightness: 1.5;
 }
 
-.SideButton:hover Image
+.NavButtons .SideButton:hover Image
 {
 	opacity-brush: gradient( linear, 0% 20%, 0% 100%, from( white ), to( white ) );
 	img-shadow: 0px 0px 12px rgba(255, 216, 158, 0.2);
 }
 
-.SideButton:active
+.NavButtons .SideButton:active
+{
+	pre-transform-scale2d: 0.95;
+	brightness: 0.5;
+}
+
+.Act12 .NavButtons .SideButton
+{
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 1px solid #ffffff;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #F2CFB6 ), to( #3E322C ) );
+	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.4);
+	background-color: rgb(58, 63, 83);
+	transition-property: pre-transform-scale2d, brightness;
+	transition-duration: 0.05s;
+}
+
+.Act12 .NavButtons .SideButton.LeftButton
+{
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+.Act12 .NavButtons .SideButton.RightButton
+{
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+.Act12 .NavButtons .SideButton.TopButton
+{
+	horizontal-align: center;
+	width: 40px;
+	height: 40px;
+}
+
+.Act12 .NavButtons .SideButton.TopButton Image
+{
+	width: 24px;
+}
+
+.Act12 .NavButtons .SideButton.BottomButton
+{
+	horizontal-align: center;
+	width: 40px;
+	height: 40px;
+}
+
+.Act12 .NavButtons .SideButton.BottomButton Image
+{
+	width: 24px;
+}
+
+.Act12 .NavButtons .SideButton .SideButtonBackground
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 1px solid #ffffff;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #3E322C ), to( #8A7467 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( redLight ), to( redDark ) );
+	box-shadow: inset 0px 1px 8px -1px rgba(0, 0, 0, 0.39);
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+.Act12 .NavButtons .SideButton .SideButtonBackgroundTexture
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/dark_carnival/textures/wood_png.vtex");
+	background-size: 100px;
+	border-radius: 50%;
+	-s2-mix-blend-mode: multiply;
+	brightness: 2.5;
+	contrast: 1.2;
+}
+
+.Act12 .NavButtons .SideButton Image
+{
+	width: 16px;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( goldDark ) );
+	img-shadow: 0px 2px 12px black;
+	transition-property: opacity-brush, img-shadow;
+	transition-duration: 0.1s;
+}
+
+.Act12 .NavButtons .SideButton:hover .SideButtonBackground
+{
+	brightness: 1.5;
+}
+
+.Act12 .NavButtons .SideButton:hover Image
+{
+	opacity-brush: gradient( linear, 0% 20%, 0% 100%, from( white ), to( white ) );
+	img-shadow: 0px 0px 12px rgba(255, 216, 158, 0.2);
+}
+
+.Act12 .NavButtons .SideButton:active
 {
 	pre-transform-scale2d: 0.95;
 	brightness: 0.5;
@@ -2938,6 +3023,7 @@
 .EditMode .Node,.Node.IsDragging
 {
 	opacity: 1;
+	transition-duration: 0s;
 }
 
 .EditMode .Node #NodeBackground,.Node.IsDragging #NodeBackground

@@ -3,14 +3,14 @@
 0 = use biquad instead of svf, 1 = use vectorized svf, 2 = use scalar svf
 0 is disabled, but otherwise sets a limit the maximum ray size in the dimension size calculation. Used to model the enclosure algorithm. Game units
 0.1 16000
+00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789
 0123456789ABCDEF
 0123456789abcdef
 019lu
 02d:%02d:%02d
-0: No spatial filtering. 1: bidirectional spatial filter
 0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs
-0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios. 7: no baked value - occlusion is traced per probe pair the way the calc_occlusion_info operator does, then interpolated like any other mode
+0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios
 0[A\A]A
 0t<f24
 1+!n0
@@ -52,6 +52,7 @@
 17CConcreteToolAttrI18VMixDynamicsBand_t23VMixDynamics3BandDesc_tvE
 17CConcreteToolAttrI18VMixDynamicsBand_t24VMixDualCompressorDesc_tvE
 17CConcreteToolAttrI18VMixEQFilterDesc_t13VMixEQ8Desc_tvE
+17CConcreteToolAttrI20VMixCompressorType_t28VMixDynamicsCompressorDesc_tvE
 17CConcreteToolAttrI22VMixChannelOperation_t17VMixUtilityDesc_tvE
 17CConcreteToolAttrI22VMixFilterChannelSet_t18VMixEQFilterDesc_tvE
 17CConcreteToolAttrI37VMixSubgraphSwitchInterpolationType_t24VMixSubgraphSwitchDesc_tvE
@@ -110,6 +111,7 @@
 20IToolAttr_TypedValueI16VMixFilterType_tE
 20IToolAttr_TypedValueI16VMixPannerType_tE
 20IToolAttr_TypedValueI17VMixFilterSlope_tE
+20IToolAttr_TypedValueI20VMixCompressorType_tE
 20IToolAttr_TypedValueI22VMixChannelOperation_tE
 20IToolAttr_TypedValueI22VMixFilterChannelSet_tE
 20IToolAttr_TypedValueI37VMixSubgraphSwitchInterpolationType_tE
@@ -133,6 +135,7 @@
 21CBaseConcreteToolAttrI18VMixDynamicsBand_t23VMixDynamics3BandDesc_tE
 21CBaseConcreteToolAttrI18VMixDynamicsBand_t24VMixDualCompressorDesc_tE
 21CBaseConcreteToolAttrI18VMixEQFilterDesc_t13VMixEQ8Desc_tE
+21CBaseConcreteToolAttrI20VMixCompressorType_t28VMixDynamicsCompressorDesc_tE
 21CBaseConcreteToolAttrI22VMixChannelOperation_t17VMixUtilityDesc_tE
 21CBaseConcreteToolAttrI22VMixFilterChannelSet_t18VMixEQFilterDesc_tE
 21CBaseConcreteToolAttrI37VMixSubgraphSwitchInterpolationType_t24VMixSubgraphSwitchDesc_tE
@@ -200,6 +203,7 @@
 26CBaseConcreteToolAttrValueI16VMixFilterType_t16VMixFilterDesc_tE
 26CBaseConcreteToolAttrValueI16VMixPannerType_t16VMixPannerDesc_tE
 26CBaseConcreteToolAttrValueI17VMixFilterSlope_t16VMixFilterDesc_tE
+26CBaseConcreteToolAttrValueI20VMixCompressorType_t28VMixDynamicsCompressorDesc_tE
 26CBaseConcreteToolAttrValueI22VMixChannelOperation_t17VMixUtilityDesc_tE
 26CBaseConcreteToolAttrValueI22VMixFilterChannelSet_t18VMixEQFilterDesc_tE
 26CBaseConcreteToolAttrValueI37VMixSubgraphSwitchInterpolationType_t24VMixSubgraphSwitchDesc_tE
@@ -260,6 +264,7 @@
 27CToolAttrDirectMemberAccessI16VMixPannerType_t16VMixPannerDesc_tE
 27CToolAttrDirectMemberAccessI17VMixFilterSlope_t16VMixFilterDesc_tE
 27CToolAttrDirectMemberAccessI18VMixDynamicsBand_t24VMixDualCompressorDesc_tE
+27CToolAttrDirectMemberAccessI20VMixCompressorType_t28VMixDynamicsCompressorDesc_tE
 27CToolAttrDirectMemberAccessI22VMixChannelOperation_t17VMixUtilityDesc_tE
 27CToolAttrDirectMemberAccessI22VMixFilterChannelSet_t18VMixEQFilterDesc_tE
 27CToolAttrDirectMemberAccessI37VMixSubgraphSwitchInterpolationType_t24VMixSubgraphSwitchDesc_tE
@@ -314,6 +319,7 @@
 27IToolAttrConcreteDataAccessI17VMixFilterSlope_tE
 27IToolAttrConcreteDataAccessI18VMixDynamicsBand_tE
 27IToolAttrConcreteDataAccessI18VMixEQFilterDesc_tE
+27IToolAttrConcreteDataAccessI20VMixCompressorType_tE
 27IToolAttrConcreteDataAccessI22VMixChannelOperation_tE
 27IToolAttrConcreteDataAccessI22VMixFilterChannelSet_tE
 27IToolAttrConcreteDataAccessI37VMixSubgraphSwitchInterpolationType_tE
@@ -339,6 +345,7 @@
 29CConcreteToolAttrDirectMemberI16VMixPannerType_t16VMixPannerDesc_tE
 29CConcreteToolAttrDirectMemberI17VMixFilterSlope_t16VMixFilterDesc_tE
 29CConcreteToolAttrDirectMemberI18VMixDynamicsBand_t24VMixDualCompressorDesc_tE
+29CConcreteToolAttrDirectMemberI20VMixCompressorType_t28VMixDynamicsCompressorDesc_tE
 29CConcreteToolAttrDirectMemberI22VMixChannelOperation_t17VMixUtilityDesc_tE
 29CConcreteToolAttrDirectMemberI22VMixFilterChannelSet_t18VMixEQFilterDesc_tE
 29CConcreteToolAttrDirectMemberI37VMixSubgraphSwitchInterpolationType_t24VMixSubgraphSwitchDesc_tE
@@ -413,6 +420,8 @@
 30CDefaultToolAttrTableForStructI24VMixSubgraphSwitchDesc_tE
 30CDefaultToolAttrTableForStructI28VMixDynamicsCompressorDesc_tE
 30CSchemaRegistration_steamaudio
+33ISteamAudioEnergyFieldDebugTarget
+34ISteamAudioHybridReverbDebugTarget
 3F[_AF
 3d] [ Pathing %6.2f MB %6d %4.1f %4.1f %7.1f ] %s
 3d] [ Pathing: Invalid baked data version found. Please rebake. ] %s
@@ -427,10 +436,10 @@
 8@%rax 8@%rdx
 8@-24(%rbp) 8@-32(%rbp
 8@-48(%rbp) 8@%rax
-8B+L(4
 8[A\A
 8[A\A]A^A
 96hJiQN
+A probe pair keeps the deltas of a dynamic object only if opening it changes the reflection energy by more than this fraction of the energy with all dynamic objects closed, or of snd_steamaudio_baked_occlusion_reflection_regularization if that is higher
 A8\$pI
 AABB_t
 AD Time Stamping
@@ -477,7 +486,6 @@ AUATUS
 AUATUSH
 AUATUStKD
 AVAUATA
-AVAUATE1
 AVAUATI
 AVAUATL
 AVAUATS
@@ -489,10 +497,12 @@ AVAUATUSH
 AWAUATSH
 AWAVAUA
 AWAVAUATA
+AWAVAUATE1
 AWAVAUATI
 AWAVAUATL
 AWAVAUATS
 AWAVAUATSH
+AWAVAUATSL
 AWAVAUATU
 AWAVAUATUH
 AWAVAUATUSH
@@ -508,17 +518,20 @@ A\A]A^A
 A\A]A^A_H
 A\A]A^A_ÐAWH
 A\A]A^H
+A\A]A^Hc
 A\A]A^Hi
+A\A]H
 A\A]L
 A\A^A
 Above Threshold(dB
 Acceptable OCSP Responses
+Add the baked deltas of open dynamic objects (doors, windows) to the baked occlusion
 AddPage
 Adjust how much occlusion goes does with deviation angle
 Adjust overall volume of the default HRTF by the specified gain (dB
 Adjust scaling for reflection energy when combining it to calculate occlusion value
 Adjust scaling of pathing energy by exponentiall scaling with pathing delta
-Air absorption coefficient sued for baked occlusion calculation
+Air absorption coefficient used when baking occlusion
 AlignedByteArray not properly aligned
 All Channels
 Ambient noise energy to serve as a floor for reflection energy
@@ -545,6 +558,7 @@ August
 Authority Information Access
 Authu
 Auto Make-up Gain
+B@sx1
 BF-CBC
 BF-CFB
 BF-ECB
@@ -573,10 +587,12 @@ BakeMaterials: No probes generated. Bake cancelled
 BakeOcclusion
 BakeOcclusion: Max probes (%u) limit exceeded (%d). Bake cancelled
 BakeOcclusion: No probes generated. Bake cancelled
+BakeOcclusion: Unable to create energy field accumulator. (%d
 BakeOcclusion: Unable to create probe batch. [%d
 BakeOcclusion: Unable to create reflection simulator. (%d
 BakeOcclusion: Unable to create simulator. (%d
 BakeOcclusion: Unable to create source. (%d
+BakeOcclusionPass
 BakePathData
 BakePathData: Cancelled
 BakePathData: Max probes (%u) limit exceeded (%d). Bake cancelled
@@ -605,6 +621,7 @@ BenchmarkService001
 Big Number part of OpenSSL 1.0.2j  26 Sep 2016
 BinaryProperties_GetValue
 Biometric Info
+B저C저B
 CA Issuers
 CA Repository
 CAMELLIA-128-CBC
@@ -647,6 +664,8 @@ CSteamAudioAmbisonicsField
 CSteamAudioBakedDimensionsData
 CSteamAudioBakedMaterialsData
 CSteamAudioBakedOcclusionData
+CSteamAudioBakedOcclusionDynamicObject
+CSteamAudioBakedOcclusionDynamicObjectPair
 CSteamAudioBakedPathingData
 CSteamAudioBakedReverbData
 CSteamAudioCompressedReverb
@@ -664,6 +683,7 @@ CT Precertificate Poison
 CT Precertificate SCTs
 CT Precertificate Signer
 CUtlLinkedList overflow! (exhausted index range
+CUtlString
 CUtlSymbolTableLarge element limit of %u exceeded
 CUtlVector
 CVMixDataOffset
@@ -687,6 +707,7 @@ Complexity
 Complexity of regex match exceeded implementation limits
 CompressBakedReverbInProbeBatch
 Compression Ratio
+Compressor Type
 Conflicting regex grammar options
 Content file %s is corrupt (Chunk: %s). Verify integrity of game files
 Content file %s is corrupt. Hashing could not be verified. Verify integrity of game files
@@ -701,9 +722,9 @@ CreateSimpleThread
 CustomCommand
 CustomCommand%d
 Cutoff Freq
-D$ [A
 D$(tJI
 D8"tMH
+D9{HtOH
 DES-CBC
 DES-CDMF
 DES-CFB
@@ -754,6 +775,14 @@ Double-save to Member '%s
 Downward Ratio
 Drive (dB
 Dry/Wet
+Dynamic objects:   removed %s
+Dynamic objects: %d of %d, %s opened
+Dynamic objects: %s changes %d of %d probe pairs
+Dynamic objects: %s has no geometry, skipped
+Dynamic objects: Unable to create mesh for %s: %d
+Dynamic objects: pair %s changes %d of %d probe pairs beyond its objects
+Dynamic objects: pair %s changes nothing beyond what its objects do on their own. Removing it saves a bake
+Dynamic objects: pair %s does not have two dynamic objects with geometry, skipped
 E H;E
 E H;E(t
 E H;E(t&H
@@ -766,7 +795,6 @@ E ufH
 E umH
 E uwH
 E-mail Protection
-E9.|wE
 EC lib
 ENGINE lib
 ERROR
@@ -900,7 +928,6 @@ GCC: (Ubuntu 4.8.1-2ubuntu1~12.04+steamrt2+srt1) 4.8.1
 GLIBCXX_TUNABLES
 GLIBC_2.14
 GLIBC_2.17
-GLIBC_2.18
 GLIBC_2.2.5
 GLIBC_2.25
 GLIBC_2.27
@@ -932,6 +959,7 @@ GameUIService_001
 Generate Halton Sequence for a given order and number of samples
 Generated %d probes with %.2f spacing and %.2f height
 Generated by Steam Audio
+Generated height layer at height %.2f exceeds max height setting, ending generate probes
 Generating Halton Sequence of %d order for %d samples
 Genut
 GetBLAKE3HashContents
@@ -963,7 +991,6 @@ HMAC-SHA1
 H[A\A
 H[A\A]A^A
 HammerMapLoader001
-Hc=`F
 Height
 HelpSystem_001
 High Cutoff Freq
@@ -1122,12 +1149,15 @@ Materials: Filesystem not initialized
 Materials: Imported %d probes from baked file (%s
 Materials: Loaded baked data file (%s
 Materials: Unable to load baked data file (%s
+Max ray length in meters to find resonant material
 Maximum gain any HRTF could have during volume normalization
 Maximum number of probes to create when baking custom data (dimensions
 Maximum number of probes to create when baking custom data (occlusion
 Maximum number of probes to create when baking paths
 Maximum number of probes to create when baking reverb
 Maximum order for Ambisonics binaural rendering and Ambisonics panning
+McN(E;N8
+McoHE;oXD
 Mct$ H
 Mct$$H
 MemAlloc_StrDupFunc
@@ -1150,6 +1180,7 @@ Mismatched '(' and ')' in regular expression
 Mismatched '[' and ']' in regular expression
 Mismatched '{' and '}' in regular expression
 Missing custom_hrtfs key field in custom hrtf properties file. Cannot load
+MixBus
 Mod Depth
 Mod Rate
 ModelDocUtils001
@@ -1168,9 +1199,6 @@ N12_GLOBAL__N_122generic_error_categoryE
 N17CConcreteToolAttrI10CUtlVectorI10CUtlStringi25CUtlVectorMemory_GrowableIS1_iLm0EEE24VMixSubgraphSwitchDesc_tvE19CArrayElementAccessE
 N17CConcreteToolAttrIA3_18VMixDynamicsBand_t23VMixDynamics3BandDesc_tvE19CArrayElementAccessE
 N17CConcreteToolAttrIA8_18VMixEQFilterDesc_t13VMixEQ8Desc_tvE19CArrayElementAccessE
-N24CFieldPathHuffmanEncoder12InternalNodeE
-N24CFieldPathHuffmanEncoder5INodeE
-N24CFieldPathHuffmanEncoder8LeafNodeE
 N8H1P8H
 N9__gnu_cxx13stdio_filebufIcSt11char_traitsIcEEE
 N9__gnu_cxx13stdio_filebufIwSt11char_traitsIwEEE
@@ -1270,6 +1298,7 @@ NetworkSystemVersion001
 Normalize volume of default HRTF dataset across all directions
 Not safe to 'new' this class due to alignment requirements
 November
+Number of rays to trace to find resonant materials
 Number of reflection simulations to run when baking occlusion. Potential way to reduce noise
 OBJ lib
 OCSP Archive Cutoff
@@ -1285,12 +1314,15 @@ OPENSSL_ia32cap
 ORIGIN
 Oakley-EC2N-3
 Oakley-EC2N-4
+Occlusion bake memory: Total: %s
+Occlusion bake memory: Total: %s, Base: %s (%.1f%%), Dynamic: %s (%.1f%%), %d dynamic objects, %d pairs
+Occlusion bake time: Total: %.1f s
+Occlusion bake time: Total: %.1f s, Base: %.1f s (%.1f%%), Dynamic: %.1f s (%.1f
 Occlusion: Cannot find baked data file: %s
 Occlusion: Data not stored in KV3 format. Rebake
 Occlusion: Filesystem not initialized
 Occlusion: Imported %d probes from baked file (%s
 Occlusion: Loaded baked data file (%s
-Occlusion: Spatially filtering occlusion data (mode = %d
 Occlusion: Unable to load baked data file (%s
 October
 Offset
@@ -1301,6 +1333,7 @@ Output Gain (dB
 Oversampling
 P HcC
 P HcCH
+P HcCh
 P HcCx
 P@H+P8H
 PANNER_TYPE_EQUAL_POWER
@@ -1321,7 +1354,6 @@ PBKDF2
 PBMAC1
 PEM lib
 PEM routines
-PIcEHM
 PKCS12 lib
 PKCS12 routines
 PKCS7 lib
@@ -1417,10 +1449,11 @@ RSA-SHA512
 RSAES-OAEP
 RSASSA-PSS
 RSA_blinding
-Radius factor to multiply the distance between probes with to get the radius withing which probes are averaged
+Radius factor to multiply the distance between probes with to get the radius within which probes are averaged by the occlusion spatial filter, applied when baking
 RandomFloat
 RandomInt
-Reflections ] Total Time = %.2f seconds. (Simulation = %.1f%% Accumulate = %.1f
+Rays are only sampled in half angle measured from +Z. 120 deg covers everything except a 60 deg cap around straight down
+Reflections ] Total Time = %.2f seconds. (Simulation = %.1f%% Copy From Device = %.1f%% Accumulate = %.1f
 Reflections... (rays: %d x %d) (bounces: %d) (bidirectional: %s) (#runs: %d
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
@@ -1513,6 +1546,7 @@ SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE
 SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT
 SXNetID
 Saturday
+Scales the deltas of the open dynamic objects before they are added to the baked occlusion
 SceneSystem_002
 SceneUtils_001
 SchemaSystem_001
@@ -1538,6 +1572,7 @@ Signature verification failed
 Size Max
 Size Min
 SmartPropsSystem_001
+Smooth
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundPicker
@@ -1557,6 +1592,9 @@ Source2Host001
 Source2ModTools001
 Source2Server001
 Source2V8System001
+Spatial Filter ] Mode = %d, Radius Factor = %.2f, Total Time = %.2f seconds
+Spatial filter of the occlusion reflection energy, applied when baking. 0: No spatial filtering. 1: bidirectional spatial filter
+Spew Steam Audio scene list changes and realtime direct occlusion results (at most 10 lines a second
 St10bad_typeid
 St10ctype_base
 St10money_base
@@ -1693,6 +1731,10 @@ StatsService_001
 Steam Audio Baked Pathing Statistics
 Steam Audio Baked Reverb Statistics
 SteamAudio
+SteamAudio direct: NO SCENE, sound at (%.0f %.0f %.0f) %.0f from the listener is left unoccluded
+SteamAudio direct: scene %p, sound at (%.0f %.0f %.0f) %.0f from listener at (%.0f %.0f %.0f): occlusion %.2f, transmission %.2f/%.2f/%.2f (mode %u, method %u
+SteamAudio scene list: added scene %p for physics world %p (%d scenes, GetScene() = %p
+SteamAudio scene list: removed scene %p for physics world %p (%d scenes left, GetScene() = %p
 SteamAudio001
 SteamAudioCustomDataDimensionsSettings_t
 SteamAudioCustomDataOcclusionSettings_t
@@ -1767,7 +1809,7 @@ Unsupported KV3 basic type '%s' (%d
 Upward Ratio
 Usage: snd_steamaudio_halton_sequence <order> <numsamples
 Use alternate probe lookup algorithm to query dimensions for listener position based on kd-tree of probe points
-Use alternate probe lookup algorithm to query occlusion for source and listener position based on kd-tree of probe points
+Use alternate probe lookup algorithm to query materials for listener position based on kd-tree of probe points
 Use compressed reverb data if available
 UtlRBTree_FailedInsertDuplicate
 UtlVectorMemory_Alloc
@@ -1793,6 +1835,7 @@ VMediaFoundation001
 VMixAutoFilterDesc_t
 VMixBoxverbDesc_t
 VMixChannelOperation_t
+VMixCompressorType_t
 VMixConvolutionDesc_t
 VMixDelayDesc_t
 VMixDiffusorDesc_t
@@ -1835,6 +1878,7 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
+VUUUATI
 VWebm001
 V[$0x
 V_DoubleToString_Unsafe
@@ -1848,6 +1892,7 @@ V_Int64ToString_Unsafe
 V_Int8ToString_Unsafe
 V_IsAbsolutePath
 V_PathContainsPath
+V_PrettifyMem
 V_StringParseError
 V_StringToBool
 V_StringToColor
@@ -1885,6 +1930,7 @@ V_fmodf
 V_fpclassifyd
 V_fread
 V_isEntirelyWhitespace
+V_isfinited
 V_isnand
 V_log10f
 V_logf
@@ -1896,21 +1942,22 @@ V_sincosf
 V_sind
 V_sinf
 V_sinhf
-V_snprintf
+V_sscanf
 V_strEndsWith
 V_stricmp_fast
 V_strncat
 V_strncmp
 V_strncpy
 V_strnicmp_fast
-V_strtok
 V_tand
 V_tanf
 V_tanhf
+V_vsnprintf
 Vector
 VerifySingleChunk
 VisBuilder_001
 Vrad3_001
+WHcKHIc
 Warning
 Wednesday
 Wet Mix
@@ -2113,7 +2160,6 @@ ZN10CUtlBuffer8CheckPutEi
 ZN10CUtlBuffer9PutStringEPKc
 ZN10CUtlBufferC1EPKviNS_13BufferFlags_tE
 ZN10CUtlBufferC1EiiNS_13BufferFlags_tE
-ZN10CUtlString12GetForModifyEv
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString18StripTrailingSlashEv
 ZN10CUtlString3SetEPKc
@@ -2389,6 +2435,7 @@ ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseT
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE22CAttr_m_fldbOutputGain
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE23CAttr_m_bAutoMakeupGain
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE23CAttr_m_flReleaseTimeMS
+ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE23CAttr_m_nCompressorType
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE24CAttr_m_flSCHighPassFreq
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE26CAttr_m_flCompressionRatio
 ZN28VMixDynamicsCompressorDesc_t22GetAttributeTable_ImplEP10CUtlVectorIP13IBaseToolAttri25CUtlVectorMemory_GrowableIS2_iLm0EEEE32CAttr_m_fldbCompressionThreshold
@@ -5730,6 +5777,8 @@ ZNSt6vectorISt9sub_matchIPKcESaIS3_EEC1ERKS5
 ZNSt6vectorISt9sub_matchIPKcESaIS3_EEC2ERKS5
 ZNSt6vectorIcSaIcEEC1ERKS1
 ZNSt6vectorIcSaIcEEC2ERKS1
+ZNSt6vectorIfSaIfEEC1EmRKS0
+ZNSt6vectorIfSaIfEEC2EmRKS0
 ZNSt7__cxx1110moneypunctIcLb0EE24_M_initialize_moneypunctEP15__locale_structPKc
 ZNSt7__cxx1110moneypunctIcLb0EE2idE
 ZNSt7__cxx1110moneypunctIcLb0EE4intlE
@@ -7055,6 +7104,7 @@ ZSt9has_facetISt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6
 ZSt9has_facetISt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEEbRKSt6locale
 ZSt9has_facetISt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6locale
 ZSt9terminatev
+ZSt9to_stringi
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb0EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb1EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIwLb0EEEERKT_RKSt6locale
@@ -7149,6 +7199,7 @@ ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8
 ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_OS8
 ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_SA
 ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EES5_RKS8
+ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_OS6
 ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6
 ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8
 ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ES3_RKS6
@@ -8076,6 +8127,7 @@ c2tnb239v3
 c2tnb359v1
 c2tnb431r1
 cACertificate
+cHMceH
 cNAMERecord
 caIssuers
 caRepository
@@ -8188,8 +8240,6 @@ cxa_guard_release
 cxa_init_primary_exception
 cxa_pure_virtual
 cxa_rethrow
-cxa_thread_atexit
-cxa_thread_atexit_impl
 cxa_throw
 cxa_throw_bad_array_new_length
 d %d %d
@@ -8308,7 +8358,6 @@ empty member name
 enable_compressed_reverb_lookup
 enable_dc_correction_for_phase_interpolation
 enable_iir_order_8
-enable_iir_order_switching
 enable_optix_verbose_logging
 enable_paths_from_all_source_probes
 enable_reverb_probe_caching_for_missing_probes
@@ -8363,8 +8412,6 @@ func(%lu
 fwrite
 fxstat
 g@L;gH
-g_BitBuf_BitWriteMasks
-g_BitBuf_ExtraMasks
 g_pMemAlloc
 gain of wet signal (dB
 gcc.gnu.H
@@ -8723,7 +8770,10 @@ iplDirectivityCalculate
 iplDistanceAttenuationCalculate
 iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
-iplEnergyFieldCopyDeviceToHost
+iplEnergyFieldAccumulatorAccumulate
+iplEnergyFieldAccumulatorCreate
+iplEnergyFieldAccumulatorGetValues
+iplEnergyFieldAccumulatorRelease
 iplEnergyFieldCreate
 iplEnergyFieldGetBand
 iplEnergyFieldGetChannel
@@ -8852,6 +8902,7 @@ iplStaticMeshAdd
 iplStaticMeshCreate
 iplStaticMeshLoad
 iplStaticMeshRelease
+iplStaticMeshRemove
 iplStaticMeshRetain
 iplStaticMeshSave
 ipsec3
@@ -9005,6 +9056,7 @@ m_flSizeMax
 m_flSizeMin
 m_flSizeThreshold
 m_flSpacing
+m_flSpatialFilterRadiusFactor
 m_flStrength
 m_flTaps
 m_flTimeScale
@@ -9039,11 +9091,15 @@ m_nBins
 m_nChannelSet
 m_nChannels
 m_nChunkHashesSize % sizeof( ChunkHashFraction_t ) ) == 0
+m_nCompressorType
 m_nCubeMapResolution
 m_nDebugBand
 m_nFilterSlope
 m_nFilterType
 m_nGrainSampleCount
+m_nHammerIdHash
+m_nHammerIdHashA
+m_nHammerIdHashB
 m_nInOutMaxBounces
 m_nInOutMode
 m_nLFOShape
@@ -9059,6 +9115,7 @@ m_nQuality
 m_nReflectionBounces
 m_nReflectionRays
 m_nShape
+m_nSpatialFilterMode
 m_name
 m_pClusteredProbeBatch
 m_pCompressedData
@@ -9069,6 +9126,8 @@ m_probes
 m_reverbClusteringSettings
 m_reverbCompressionSettings
 m_reverbSettings
+m_sHammerId
+m_sName
 m_scene
 m_settings
 m_stages
@@ -9083,6 +9142,8 @@ m_vecClusterForProbe
 m_vecCompressedData
 m_vecData
 m_vecDictionary
+m_vecDynamicObjectPairs
+m_vecDynamicObjects
 m_vecInOut
 m_vecInitialTransforms
 m_vecInsideSmallSizeField
@@ -9093,11 +9154,18 @@ m_vecMaterialTokens
 m_vecMaterialWeights
 m_vecNumSingularValues
 m_vecOutsideField
+m_vecPairs
 m_vecPathingDeviation
+m_vecPathingDeviationDeltas
+m_vecPathingDeviationResiduals
 m_vecPathingRatio
+m_vecPathingRatioDeltas
+m_vecPathingRatioResiduals
 m_vecProbeIndices
 m_vecProbes
 m_vecReflectionEnergy
+m_vecReflectionEnergyDeltas
+m_vecReflectionEnergyResiduals
 m_vecSize
 mailPreferenceOption
 malloc
@@ -9152,7 +9220,6 @@ newline
 newlocale
 newmtl material_%d
 nl_langinfo_l
-nnot create shim for unknown locale::facet
 no failure reason set
 noCheck
 noRevAvail
@@ -9179,6 +9246,7 @@ nsion (PH
 number-sign
 number=%d, address=%08lX
 n潍n畔e敗d
+o`E;opD
 obj_count
 obj_dat.c
 obj_lib.c
@@ -9629,21 +9697,28 @@ snd_steamaudio_active_hrtf
 snd_steamaudio_ambisonics_correction_type
 snd_steamaudio_baked_data_stats
 snd_steamaudio_baked_dimensions_probelookup_usealternate
-snd_steamaudio_baked_occlusion_air_absorption_coefficient
+snd_steamaudio_baked_materials_probelookup_usealternate
+snd_steamaudio_baked_occlusion_dynamic_object_delta_scale
+snd_steamaudio_baked_occlusion_dynamic_objects
 snd_steamaudio_baked_occlusion_mode
 snd_steamaudio_baked_occlusion_pathing_deviation_slope
 snd_steamaudio_baked_occlusion_pathing_exponent
-snd_steamaudio_baked_occlusion_probelookup_usealternate
 snd_steamaudio_baked_occlusion_reflection_factor
 snd_steamaudio_baked_occlusion_reflection_regularization
-snd_steamaudio_baked_occlusion_spatialfilter_mode
-snd_steamaudio_baked_occlusion_spatialfilter_radius_factor
 snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled
 snd_steamaudio_custombake_dimensions_size_and_inout_bake_enabled
 snd_steamaudio_custombake_dimensions_smallsizefield_bake_enabled
+snd_steamaudio_custombake_dynamic_object_energy_threshold
+snd_steamaudio_custombake_materials_coneangle
+snd_steamaudio_custombake_materials_max_raylength
+snd_steamaudio_custombake_materials_numrays
+snd_steamaudio_custombake_occlusion_air_absorption_coefficient
 snd_steamaudio_custombake_occlusion_bidirectional
 snd_steamaudio_custombake_occlusion_numsimulations
+snd_steamaudio_custombake_occlusion_spatialfilter_mode
+snd_steamaudio_custombake_occlusion_spatialfilter_radius_factor
 snd_steamaudio_customdata_dimensions_inout_mode
+snd_steamaudio_debug_scene_spew
 snd_steamaudio_default_hrtf_volume_gain
 snd_steamaudio_diagnostic_baked_occlusion_single_probe
 snd_steamaudio_dimensions_grid_height_max
@@ -9773,6 +9848,7 @@ steamaudio_reverb_height_above_floor
 steamaudio_reverb_ir_duration
 steamaudio_reverb_rays
 steamaudio_reverb_rebake_option
+steamaudiodirectprocessor.cpp
 steamaudioscene.cpp
 strcasecmp
 strcat_chk
@@ -9818,8 +9894,10 @@ system lib
 system library
 t,M;e@t
 t5HcS0
+t691u2I
 t6Mce0D
 t<McexD
+t`Lc{8f
 table: %u members
 targetInformation
 tcgetattr
@@ -9849,6 +9927,7 @@ transaction clone for
 transaction_safe
 transmissionCoefficients
 trustRoot
+tsMceHLc{HE
 typeinfo fn for
 typeinfo for
 typeinfo name for

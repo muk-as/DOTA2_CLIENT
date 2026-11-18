@@ -115,6 +115,11 @@ function CreateNeutralSpawningButtons()
 
 		"npc_dota_neutral_mud_golem",
 
+		"npc_dota_neutral_odobenus_frostmage",
+		"npc_dota_neutral_odobenus_footman",
+
+		"npc_dota_neutral_radigull",
+
 		"npc_dota_neutral_froglet",
 		"npc_dota_neutral_froglet_mage",
 	]
@@ -132,14 +137,14 @@ function CreateNeutralSpawningButtons()
 		"npc_dota_neutral_satyr_soulstealer",
 		"npc_dota_neutral_satyr_trickster",
 
-		"npc_dota_neutral_warpine_raider",
-
 		"npc_dota_neutral_wildkin",
 		"npc_dota_neutral_enraged_wildkin",
 
 		"npc_dota_neutral_dark_troll_warlord",
 		"npc_dota_neutral_dark_troll",
 
+		"npc_dota_neutral_eimermole_foreman",
+		"npc_dota_neutral_eimermole",
 
 		"npc_dota_neutral_grown_frog",
 		"npc_dota_neutral_grown_frog_mage",
@@ -154,8 +159,8 @@ function CreateNeutralSpawningButtons()
 		"npc_dota_neutral_granite_golem",
 		"npc_dota_neutral_rock_golem",
 
-		"npc_dota_neutral_big_thunder_lizard",
-		"npc_dota_neutral_small_thunder_lizard",
+		"npc_dota_neutral_ogre_seal",
+		"npc_dota_neutral_ogre_seal_pup",
 
 		"npc_dota_neutral_ice_shaman",
 		"npc_dota_neutral_frostbitten_golem",

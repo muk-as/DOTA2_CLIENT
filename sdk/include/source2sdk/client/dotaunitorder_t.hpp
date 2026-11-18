@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 43
+        // Enumerator count: 44
         // Alignment: 4
         // Size: 0x_
         enum class dotaunitorder_t : std::uint32_t
@@ -61,6 +61,7 @@ namespace source2sdk
             DOTA_UNIT_ORDER_CAST_TOGGLE_ALT = 0x28,
             DOTA_UNIT_ORDER_CONSUME_ITEM = 0x29,
             DOTA_UNIT_ORDER_SET_ITEM_MARK_FOR_SELL = 0x2a,
+            DOTA_UNIT_ORDER_INTERACT_WITH_TARGET = 0x2b,
         };
     };
 };

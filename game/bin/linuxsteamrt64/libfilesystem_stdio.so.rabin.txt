@@ -491,6 +491,7 @@ AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 AsyncFileSystem2: io threads changed %i -> %i
+AsyncFileSystem: failed to start IO thread %d of %d\n
 AsyncFilesystem Callback
 AsyncFilesystem Read
 AsyncFilesystem Write
@@ -543,6 +544,7 @@ BF-CFB
 BF-ECB
 BF-OFB
 BFUa.X
+BHsx1
 BIGNUM
 BIO lib
 BIO routines
@@ -1015,7 +1017,6 @@ D$\bD3d$`D3l$dH
 D$\bH3U\bH
 D$\bHcE\bA9
 D$\bHǁ0
-D$\bHǃP
 D$\bI
 D$\bLcȋL
 D$\bt'H
@@ -1032,6 +1033,7 @@ D$\b~7E1
 D$\fD;t
 D$\ft0L
 D$\fu\nD
+D$\rHǃX
 D$`H9D$8
 D$`IcD
 D$`IcE
@@ -1865,7 +1867,6 @@ HammerMapLoader001
 Hash Algorithm
 HaɈ|M\v
 Hc7E1
-Hc=@6
 HcD$ H
 HcD$$H
 HcD$(L
@@ -1925,7 +1926,6 @@ I2S_ASN1_IA5STRING
 I2V_AUTHORITY_INFO_ACCESS
 I3t$@I
 I9V(u51
-I9ߋ=\f5
 I;D$PH
 I;D$PM
 I;b_b\a
@@ -2157,6 +2157,7 @@ MarkContentCorrupt
 Mask Algorithm
 MaterialUtils_001
 McD$(L
+McF\bD9
 Mcl$\bH
 MemAlloc_StrDupFunc
 MeshSystem001
@@ -2607,6 +2608,7 @@ Plat_GetCurrentDirectory
 Plat_GetEnv
 Plat_GetExeModule
 Plat_GetFileType
+Plat_GetGameDirectory
 Plat_GetModuleFilename
 Plat_GetModuleProcAddress
 Plat_GetTime
@@ -3344,10 +3346,12 @@ V_StringToFloat64
 V_StringToInt16
 V_StringToInt32
 V_StringToInt64
+V_StringToInt8
 V_StringToQAngle
 V_StringToUint16
 V_StringToUint32
 V_StringToUint64
+V_StringToUint8
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
@@ -3806,8 +3810,6 @@ ZN19IFormatOutputStream15PutRepeatedCharEci
 ZN19IFormatOutputStream16FormatEnumHelperE20CFormatStringElementiSt16initializer_listISt4pairIiPKcEE
 ZN19IFormatOutputStream16FormatMaskHelperEiSt16initializer_listISt4pairIiPKcEE
 ZN19IFormatOutputStream17OutputIndentationEv
-ZN21CCountedStringPool_CIC1Ev
-ZN21CCountedStringPool_CID1Ev
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
 ZN21CUtlScratchMemoryPool5PurgeEv
 ZN21CUtlScratchMemoryPoolC1EjjPvb
@@ -3818,8 +3820,6 @@ ZN22CThreadRWLock_FastRead23UnlockRead_LockForWriteEPKciNS_21WriteLockTransition
 ZN22CThreadRWLock_FastRead27HaveWriteLock_BlockReadsNowEb
 ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
-ZN23CUtlFilenameSymbolTable17FindOrAddFileNameEPKc
-ZN23CUtlFilenameSymbolTable6StringERKjP13CBufferString
 ZN7CThread15IsThreadRunningEv
 ZN7CThread21WaitForCreateCompleteEP12CThreadEvent
 ZN7CThread4JoinEj
@@ -3915,7 +3915,6 @@ ZNK10__cxxabiv122__base_class_type_info8__offsetEv
 ZNK13CBufferString10StartsWithEPKc
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
-ZNK23CUtlFilenameSymbolTable12FindFileNameEPKc
 ZNK9KeyValues11GetDataTypeEPKc
 ZNK9KeyValues7FindKeyEPKc
 ZNK9KeyValues7GetNameEv
@@ -6650,6 +6649,7 @@ l$pLc
 l7ql`R2lWf
 l:ArR
 lHcЉEh
+lIcL$8Ic
 lZrNlZrN
 l\vvɋC\b
 laM-\\SO
@@ -7376,7 +7376,7 @@ q not prime
 q2'<Kv
 qE7\t8\e
 qF{qc\t
-qHc\rJ
+qHc\rzI
 qOy*o
 qTm_fC
 qangle
@@ -7636,6 +7636,7 @@ s\n@8:u
 s\nFailed to load file (%s)!\n
 s_%03d.vpk
 s_dev_urandom_fd >= 0
+s_dir.vpk
 safeContentsBag
 salt length check failed
 salt length recovery failed
@@ -8154,7 +8155,6 @@ t$\bu\bH
 t$\b~1H
 t$pIc
 t$xdH34
-t%Mc\aA
 t).0n
 t)HcS`H
 t*Hcs\b;s\f}4H
@@ -8177,7 +8177,6 @@ tDHcZ 1
 tHAI8xpH\f
 tH^\tzڣJA
 tIH+C\bH
-tIcL$8Ic
 tJL9t
 tJm_9
 tLY^m`6
@@ -8313,7 +8312,6 @@ tЈD$wM9
 tه'pQ
 u#A\rlG
 u%AUATUSH
-u(IcE 9
 u-AWAVAUATUH
 u-\v0
 u8AVAUATUSH
@@ -8325,12 +8323,10 @@ uB!!cB!!c
 uH31H3Q\bH\t
 uH3\nH3B\bH\t
 uHHcU
-uHIcE@9
 uI$гPGr
 uJ4CA2
 uLHcU
 uR5&m
-uXA9u |vA
 uhD;t$ A
 ui_lib.c
 ui_openssl.c

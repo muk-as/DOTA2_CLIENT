@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 121
+        // Enumerator count: 122
         // Alignment: 4
         // Size: 0x_
         enum class ENetworkDisconnectionReason : std::uint32_t
@@ -102,6 +102,7 @@ namespace source2sdk
             NETWORK_DISCONNECT_REMOTE_CERTNOTTRUSTED = 0x53,
             NETWORK_DISCONNECT_UNUSUAL = 0x54,
             NETWORK_DISCONNECT_INTERNAL_ERROR = 0x55,
+            NETWORK_DISCONNECT_STEAM_GROUPMEMBERSHIP = 0x56,
             NETWORK_DISCONNECT_REJECT_BADCHALLENGE = 0x80,
             NETWORK_DISCONNECT_REJECT_NOLOBBY = 0x81,
             NETWORK_DISCONNECT_REJECT_BACKGROUND_MAP = 0x82,

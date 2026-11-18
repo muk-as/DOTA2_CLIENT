@@ -41,7 +41,6 @@
 0: spheres, 1: cubes
 0<	vcH
 0<6w9H
-0A\A]A^A
 0D;~4
 0G??Ou
 0IcD$(L
@@ -49,7 +48,6 @@
 0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0[A\A]A
-0[A\A]A^A
 0[]A\A]A^ÐAUATI
 0enum $1
 0f (Always
@@ -70,6 +68,7 @@
 0x%08X [override
 0x%08X,%d
 0xDDDDDDDD
+0么0丨0丨0习0
 1) has known issues with nested Begin/End pairs
 1. I am selectable
 1.92.5
@@ -88,7 +87,6 @@
 11CSceneLayer
 11CSceneUtils
 11CSceneWorld
-11IRefCounted
 11ISceneLayer
 11ISceneUtils
 11ISceneWorld
@@ -97,7 +95,6 @@
 123456
 12CMsgVector2D
 12CNETMsg_Tick
-12CRefCounted1I11IRefCounted20CRefCountServiceBaseI6CRefMTEE
 12CSceneObject
 12CSceneSystem
 12CShadowAtlas
@@ -175,10 +172,13 @@
 18CEnvMapSceneObject
 18CHairRenderContext
 18CMonitorObjectDesc
+18CProceduralRTProxy
 18CRenderingPipeline
 18CSceneSkyBoxObject
+18CThreadedJobSource
 18IModelRenderHelper
 18IMultipleWorkerJob
+18IProceduralRTProxy
 18IRenderingPipeline
 19CClutterSceneObject
 19CDebugLayerRenderer
@@ -237,6 +237,7 @@
 20CPostConnectCallback
 20CRefCountServiceBaseI6CRefMTE
 20IPathTraceSceneWorld
+20IRayTraceComputeWork
 20ISceneObjectDescBaseI17CSceneLightObjectE
 20ISceneObjectDescBaseI21CSceneBarnLightObjectE
 20ISceneObjectDescBaseI21CSceneDebugTextObjectE
@@ -248,6 +249,7 @@
 20ISceneObjectDescBaseI33CAmbientOcclusionProxySceneObjectE
 20ISceneObjectDescBaseI33CDistanceFieldInstanceSceneObjectE
 20ISceneObjectDescBaseIN23CCharacterDecalRenderer26CCharacterDecalSceneObjectEE
+20VtDecompressedTile_t
 21CAggregateSceneObject
 21CResolveLayerRenderer
 21CSSTDepthCopyRenderer
@@ -286,6 +288,7 @@
 23ICharacterDecalRenderer
 23ISceneViewDebugOverlays
 24 Hour Clock
+24CBarnLightObjectDescNull
 24CFixedSizeCircularBufferI20CGPUProfHistoryFrameLi128EiE
 24CPointLightObjectDescGPU
 24CSignalSemaphoreRenderer
@@ -300,6 +303,7 @@
 25CRenderingPipelineFactoryI25CRenderingPipelineForwardE
 25CRenderingPipelineForward
 25CSceneLPVSampleGridObject
+25IAsyncProcessedDataResult
 25IRenderingPipelineFactory
 26.google.protobuf.EnumDescriptorProto.EnumReservedRange
 26CAnimatableSceneObjectDesc
@@ -319,6 +323,7 @@
 28CTextureBarrierLayerRenderer
 28CTextureDisplayLayerRenderer
 28ISceneEnvironmentMapListener
+28ITimestampFrameGraphListener
 28QuantizedFloatEncoderAlias_t
 29CBaseNonPooledSceneObjectDescI18C6FaceSkyboxObjectE
 29CBaseRenderingPipelineFactory
@@ -337,6 +342,7 @@
 3. I am selectable
 30CDirectionalLightObjectDescGPU
 30CFarfieldProbeVolumeObjectDesc
+30CGPUProfilerFrameGraphListener
 30CLightProbeVolumeObjectDescGPU
 30CProjectedDecalSceneObjectDesc
 30CSVCMsgList_GameEvents_event_t
@@ -354,6 +360,7 @@
 33333
 333331
 333333
+3333333
 33333333H
 333337
 333339
@@ -399,25 +406,21 @@
 4Ict4
 4LcȋD
 4d / %4d (%3.1f
-4fH?KdH
 4fff>fff>fff>fff
 4fffffffffffffff
 4s   %8d   %8d   %9.1f%%   %9d
 5&YA1A
-5&YA1H
 5,¸Yi
 5;FJ$,XEK4
 5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
-5bB49b
 5by Trista
 5by Tristan GrimmerRegularTTX ProggyCleanTT2004
-5p-Tgpc
-5薪5薪5萬5
-5너5낸5남5
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) %s
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) Col %d %s
 7&F|If
 7IImPlot
+7웡7웹7윅7
+7즉7즉7즉7즉7
 8"3hrf
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8@%rax 8@%rdx
@@ -447,7 +450,6 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
-96m8s6
 9C0~%H
 9C0~&H
 9C0~*H
@@ -458,6 +460,7 @@ A Rather
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A"C$t
+A"Gnt	H
 A(HcQ I
 A0 Row 0
 A0 Row 1
@@ -730,6 +733,7 @@ ASSETS_BROWSER_ITEMS
 ATARSH
 ATSHcB
 ATSHcG
+ATSHcN
 ATSHcwdH
 ATUSHc
 ATUSu
@@ -740,6 +744,7 @@ AUATH
 AUATI
 AUATL
 AUATLc
+AUATS1
 AUATSD
 AUATSE
 AUATSH
@@ -778,9 +783,9 @@ AVAUATSI
 AVAUATSL
 AVAUATSLc
 AVAUATSLc'D9
-AVAUATSLc/D9
 AVAUATSQWH
 AVAUATSQWL
+AVAUATSf
 AVAUATUA
 AVAUATUH
 AVAUATUI
@@ -830,7 +835,6 @@ AWAVH
 AWAVI
 AWAVMc
 AXAYI9
-AX~QIc
 AYUVToNV12
 AYUVToNV21
 AYUVToUVRow_C
@@ -910,6 +914,7 @@ A\ÐSH
 A\ÐUS
 A\ÐUSH
 A]A^A
+A`~RIc
 Abibliophobia
 About Dear ImGui
 Absquatulate
@@ -1042,7 +1047,6 @@ Another bullet point
 Anti-aliased fill
 Anti-aliased lines
 Anti-aliased lines use texture
-Any request for a duplicate dispatch/mesh shader primitive in an outputbuffer must previously set the dispatch buffer
 AnyHit0
 AnyHit1
 AnyHit2
@@ -1102,6 +1106,7 @@ Auto/Current
 Avail %.2f
 Available
 Average block Stream Time: %4.2fms
+Avg ms
 Avocado
 Axis Constraints
 Axis Linking
@@ -1115,7 +1120,6 @@ AxisGrid
 AxisLinking
 AxisText
 AxisTick
-ẢA̯AњA
 A렀A　A　A
 B H+P
 B H9E
@@ -1129,6 +1133,7 @@ B8G8R8A8_UNORM
 B8G8R8X8_UNORM
 B:%0.3f
 B>A8D
+B@sx1
 BAKED_LIGHTING_FROM_PROBE
 BAKED_LIGHTING_LIGHTMAP
 BAKED_LIGHTING_VERTEX_STREAM
@@ -1165,7 +1170,6 @@ BGRAToYRow_C
 BGRAToYRow_SSSE3
 BGRX8888
 BGRX8888_LINEAR
-BHHcR@H
 BHHcR@L
 BHIcJ@L
 BHIcR@L
@@ -1201,7 +1205,6 @@ Bar Plot
 Bar Plots
 Bar Stacks
 BarnLight
-BarnLightObjectDesc
 Barrier
 Base resolution for dynamic shadowmap sizing.  Shadowmap size of a screen sized light
 BaseSceneObjectDesc
@@ -1277,7 +1280,6 @@ BreakOnDelete
 BreakOnDraw
 Brianna
 Broccoli
-Broken promise
 Brussels Sprouts
 BudgetGroupName - FIXME
 BufCapacity: %d, LineCount: %d
@@ -1322,8 +1324,8 @@ By using SetNextItemAllowOverlap() you can notify that an item may be overlapped
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of
 ByteToFloat
 ByteToFloatRow_C
+Bz&D>o
 B~>m9w>e
-C 9CpsbL
 C HcC
 C []A
 C tqE9
@@ -1354,6 +1356,7 @@ CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (1
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (2
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (3
 CBarnLightObjectDescGpu
+CBarnLightObjectDescNull
 CBaseSceneObjectDesc
 CBlitTextureToBackBufferLayer
 CCCCCCCCCCCC
@@ -1373,7 +1376,6 @@ CFarfieldProbeVolumeObjectDesc
 CFarfieldProbeVolumeObjectDescGpu
 CFarfieldSDFVolumeObjectDesc
 CFarfieldSDFVolumeObjectDescGpu
-CHA+@Hf
 CHECK failed: !AllocPolicy
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
@@ -1652,8 +1654,6 @@ CHECK failed: uninterpreted_options_field != nullptr
 CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK failed: value != nullptr
 CHECK failed: z.first != NULL
-CHIcK@L
-CHIcS@L
 CHZ[]ÐUS
 CH[]A
 CH[ÐSH
@@ -1919,6 +1919,7 @@ Clear All
 Clear Queries
 Clear Vel Volume
 Clear bakes
+Clear baseline
 Clear items
 Clear nodes
 Clear settings
@@ -2235,10 +2236,8 @@ D32_FLOAT
 D32_FLOAT_S8X24_UINT
 D8"tMH
 D9 rkH
-D9-i's
+D9-idw
 D90tSE
-D95wZ
-D98~;H
 D9c`u	E
 D9e(~JH
 D9e4~ H
@@ -2247,7 +2246,6 @@ D9{ u	A
 D:P]tr
 D; tTA
 D; t`A
-D;% pu
 D;+tkL
 D;4$}VD
 D;c4|	E1
@@ -2286,6 +2284,7 @@ Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
 Day:   %s
+De0<=Dn
 Dear ImGui %s (%d
 Dear ImGui 1.92.5 (19250
 Dear ImGui Debug Log
@@ -2318,7 +2317,8 @@ DecalRtEncoding_t
 Decals
 December
 Declared shortcut routes automatically set key owner when mods matches
-DecompressTextureBits
+DecompressTextureBits: %u bytes of texture data, but %d mips of %dx%d %s need %u; it comes out black
+DecompressTextureBits: virtual texture %s; it comes out black
 Decoration
 Decorations
 Default
@@ -2464,6 +2464,7 @@ Drag from window menu button (upper-left button) to undock an entire node (all w
 Drag from window title bar or their tab to dock/undock
 Drag from window title bar or their tab to dock/undock. Hold SHIFT to disable docking
 Drag from window title bar or their tab to dock/undock. Hold SHIFT to enable docking
+Drag or scroll the plot to change the range
 Drag to reorder items (simple
 Drag/Slider Flags
 Drag/drop items between plots
@@ -2502,7 +2503,6 @@ DrawLists
 DrawLists (%d
 DrawShadowMapsForLight
 Drawing aggregates without valid meshlets, please recompile the map
-Drawing instanced meshes without meshlets, please recompile the map
 Draws/Dispatches
 DualHull
 Dump a list of the objects in a sceneworld (Usage: sc_dumpworld <world_index
@@ -2528,7 +2528,6 @@ E8L$xu>D
 E9#tMA
 E9L$DuJD
 E9wltmI
-E9|$ D
 E9|$ ~AD
 E;e }7Mk
 E;eP}4Mk
@@ -2537,7 +2536,6 @@ E;t$0A
 E<G&Iw
 E@uUL9
 EARLY_FRAGMENT_TESTS
-EDA+@D
 EMG %d
 EMG Signal
 ENetworkDisconnectionReason
@@ -2587,6 +2585,7 @@ Enable logarithmic editing (more precision for small values
 Enable multithreading to use std::thread
 Enable outer-most padding (default if ImGuiTableFlags_BordersOuterV is set
 Enable resizing of windows from their edges and from the lower-left corner
+Enable scheduler to migrate barriers
 Enable scrolling page by page when clicking outside the scrollbar grab
 Enable the main-menu bar in Examples menu to see the difference
 Enable turning DragXXX widgets into text input with a simple mouse click-release (without moving
@@ -2609,6 +2608,7 @@ Engine2/RenderingPipeline/AmbientOcclusionProxies
 Engine2/RenderingPipeline/DistanceField
 Engine2/RenderingPipeline/OpaqueFade
 EngineServiceMgr001
+Ensure layout
 EnsureCapacity
 EnsureElementCapacity
 EnsureMemberCapacity
@@ -2732,11 +2732,15 @@ ExtraVertexStreamOverride_t
 ExtractModuleMetadata
 EyeBallDataConstants_t
 F ÐAWAVAUATI
+F(H9G(t
 F(H9G(u]H
 F(I9A
+F49G4t
 F8HcX
+F>8G>u
 FAILED_PRECONDITION
 FDA+GD
+FG-bB49NO
 FORCE_UINT
 FORWARD_LAYER_ONLY
 FPtxMi
@@ -2746,16 +2750,18 @@ Failed to allocate scratch rendertarget for %s from pool. The following pool ent
 Failed to allocate space for morph
 Failed to allocate vertex cache for model '%s' (%i verts
 Failed to save unsupported class
+Faint horizontal lines are the baseline averages
 Fallback
 Fallback character: '%s' (U+%04X
 FarfieldProbeVolume
 FarfieldSDFVolume
 FastHexToBuffer() wants non-negative integers, not
 Faster lines using texture data. Require backend to render with bilinear filtering (not point/nearest filtering
+Fatal error in %s, line %i
 Feature is currently in Beta. Please read comments in imgui.h
 Features
 February
-Feedback: %u shader writes -> %u unique records (%u readbacks so far
+Feedback: %u unique records, %u dropped this frame (%u readbacks so far
 Feel free to add support for more if you need it
 Field
 Field "$0" uses reserved number $1
@@ -2815,6 +2821,7 @@ First argument to Swap() (of type
 First argument to SwapFields() (of type
 First calls to Begin()/BeginChild() will return false
 First group hovered
+First use, waits for all earlier work
 FitPadding
 Fixed %d,%d
 Fixed width
@@ -2908,6 +2915,7 @@ Friday
 Frozen
 Frozen columns
 Frozen rows
+Frozen while the mouse is over the plot
 Frust+Illum
 Frustum
 Full-width
@@ -2916,13 +2924,11 @@ Fullscreen window
 Fullsort
 Functions
 Funding
-Future already retrieved
 Future versions will try to simplify and formalize some of this
 FvP12CSceneObjectE
 G H+x(H
 G$}DH
-G(H+C
-G(H+C0H+C
+G0I+G8H
 G49F8up
 G89G@}:M
 G8R8_G8B8_UNORM
@@ -2934,13 +2940,13 @@ GC now
 GCC: (SteamRT 14.2.0-19~steamrt3.1+bsrt3.1) 14.2.0
 GCC: (SteamRT 4.8.4-1ubuntu15~12.04+steamrt1.2+srt2) 4.8.4
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
-GCC: (SteamRT 9.3.0-13+steamrt1.2+srt1) 9.3.0
 GDA+ED
 GENERAL
 GEOMETRY
-GH+CHf
 GHAUATUL
+GHLck D;k0H
 GLIBCXX_TUNABLES
+GLIBC_2.12
 GLIBC_2.14
 GLIBC_2.17
 GLIBC_2.2.5
@@ -2959,6 +2965,10 @@ GPU Instance Mem  : %s allocated, %s written, %s used
 GPU Memory Size
 GPU Time: %.2f ms
 GPU Transform Mem : %s allocated, %s written, %s used
+GPU profiler is already recording
+GPU profiler is not recording
+GPU profiler recording has no frames, nothing written
+GPU profiler recording started
 GPUProfiler
 GPUSort
 GPÐAWAVI
@@ -3026,6 +3036,7 @@ GameUI_Disconnect_SoundsMessage
 GameUI_Disconnect_SteamDeny_BadAntiCheat
 GameUI_Disconnect_SteamDeny_Misc
 GameUI_Disconnect_SteamDropped
+GameUI_Disconnect_SteamGroupMembership
 GameUI_Disconnect_SteamIDBanned
 GameUI_Disconnect_SteamIDInUse
 GameUI_Disconnect_SteamInUse
@@ -3167,11 +3178,11 @@ GrowCount
 Guide Hair Visualization
 Guide Hair update
 H	CXH
-H	ȋK H
 H Clinton
 H#D$0I
 H#D$8A
 H+D$ I9
+H,*Bd
 H-scrollbar
 H010ToAB30
 H010ToABGR
@@ -3206,7 +3217,7 @@ H9z s
 H: %.3f, S: %.3f, V: %.3f
 H: %.3f, S: %.3f, V: %.3f, A: %.3f
 H:%0.3f
-H;5d[e
+H;CPt^H
 H;z H
 H;z t
 HAMMER_ENABLED_STENCIL_LAYER
@@ -3245,6 +3256,7 @@ H[]A\A]ÐAWAVAUATUSH
 H[]A\A]ÐAWAVI
 H[]ÐATUA
 H[]ÐATUSH
+H\u<A
 Haddock
 Hair Cull and Compute Segment Depth For Sort
 Hair Debug Settings
@@ -3276,8 +3288,8 @@ HasMouseHoveredViewport
 HasParentViewport
 HasRange: %s
 HasSetMousePos
-Hc	IcF
 Hc+HcC
+Hc5P"C
 Hc@ M
 Hc@LHk
 HcA`;AdfA
@@ -3288,7 +3300,6 @@ HcCp;Ct
 HcCtHk
 HcD8`H
 HcE0L
-HcG8L
 HcGP;GT
 HcGP;GTt
 HcGP;GTt_H
@@ -3342,6 +3353,7 @@ HiddenTabBar
 HiddenTabBar=%d%n
 HiddenTabBar=1
 Hide Filtered
+Hide below
 Hide tab bar###HideTabBar
 Hierarchy lines
 High:  $%.2f
@@ -3400,6 +3412,7 @@ HoveredWindow->Root: '%s
 HoveredWindow: '%s
 HoveredWindowUnderMovingWindow: '%s
 Hovering the colored canvas will override io.WantCaptureXXX fields
+How much more estimated pooled memory than submission order a run of reordered passes may use, as a percentage of the submission order peak
 Hyperlink
 I am a a tooltip for a disabled item
 I am a fancy tooltip
@@ -3415,6 +3428,7 @@ I am following you around
 I am the last one here
 I#FPA
 I#FPH
+I#O@I
 I(HcA I
 I+t$hL
 I010AlphaToARGBMatrix
@@ -3618,10 +3632,10 @@ I444ToARGBRow_SSSE3
 I444ToI420
 I444ToNV12
 I444ToNV21
+I94$uUA
 I9\$ u@H
 I;D$ s$L
-I;D$0H
-I;D$8L
+I;D$8H
 I;E skH
 I;E(t
 I;L$ sUL
@@ -3682,7 +3696,6 @@ ITM_registerTMCloneTable
 IVf9HV
 IXs8fA
 IXshfA
-Ia\tيet
 IcD$ A;D
 IcD$ A;D$$t|M
 IcD$ L
@@ -3973,6 +3986,7 @@ InfoForResourceTypeIMaterial2
 InitCpuFlags
 InitGfxObjects
 Initial Texture Barriers
+Initial layout
 Initialized: %s
 InlayText
 Inline color editor
@@ -4198,13 +4212,13 @@ JS_NORMAL
 JS_NUMBER
 JS_STRING
 January
+JobSource
 Joint Indices (%d) Out Of Range for SINT16: Skinning will not work
 Joint Indices (%d) Out Of Range for UINT10: Skinning will not work
 Joint Indices (%d) Out Of Range for UINT8: Skinning will not work
 K I9O
 K(HcS L
 K8H;K@u
-K=A:O=u&H
 KEY OWNERS
 KEYBOARD/GAMEPAD/MOUSE KEYS
 KKKKKKK
@@ -4213,7 +4227,7 @@ KPIcT$HI
 KV3 save transfer failed: %s
 Kanjis: 日本語 (nihongo
 Kasich
-KcTnPE
+KcTnPD
 Key 0x%08X Value { i: %d
 Key Count: %d
 Key in map fields cannot be enum types
@@ -4314,7 +4328,6 @@ Layer Buffer Barriers
 LayerModeView %s
 Layout
 Layout & Scrolling
-Layout -> %s
 Layout/Basic Horizontal Layout
 Layout/Basic Horizontal Layout/Dummy
 Layout/Basic Horizontal Layout/Manual wrapping
@@ -4333,16 +4346,19 @@ Layout/Text Baseline Alignment
 Layout/Text Clipping
 Layout/Widgets Width
 Lc#D;c
+Lc%)i
 Lc(D;h
 Lc)D;i
+Lc3D;s
+Lc5;!C
 LcU A
 LcV L
+Lcc D;c0
 Lcc Lck$I
 Lcc$Lck(I
 Lcc(Lck,I
 Lcc,Lck0I
 Lcc0D;c@D
-Lcs(D;s8D
 LcshD;sxD
 Left click for details
 Left) Using ImGui::PushClipRect
@@ -4377,6 +4393,7 @@ LightBinner
 LightProbeVolume
 LightProbeVolumeDebugColors
 LightProbeVolumeDebugColors_%s
+LightSim_Opacity
 LightmapUV
 LightmapUVW
 Like this one
@@ -4538,6 +4555,7 @@ MapValueRef::SetInt64Value
 MapValueRef::SetStringValue
 MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
+Marker
 Marker Size
 Marker Weight
 MarkerFill
@@ -4547,6 +4565,7 @@ MarkerStyles
 MarkerWeight
 Markers
 Markers and Text
+Markers averaging less than this are left out of the GPU profiler per-frame CSV. They are still in the summary
 MaskCpuFlags
 Master disable flag (also hide from context menu
 Material %s - cannot find raytrace shader
@@ -4556,6 +4575,7 @@ MaterialUtils_001
 Max Height (in Lines
 Max LRU Age: %4d
 Max Time
+Max ms
 Max: %.1f
 Max: %d units
 Max: (%.2f, %.2f
@@ -4565,6 +4585,8 @@ Mc'_A$Cm
 McCain
 McF(E1
 McL$HMi
+Mcc0Hc0E
+Mcc0Ic
 Mcl$ A9
 Mct$lH
 Mc|$XH
@@ -4671,6 +4693,7 @@ Midterm Exam
 Min / Max
 Min Duration (ms
 Min Time
+Min ms
 Min: %.1f
 Min: %d units
 Min: (%.2f, %.2f
@@ -4742,6 +4765,7 @@ Modal
 Modal windows are like popups but the user cannot close them by clicking outside
 ModalWindowDimBg
 Modals
+Model '%s': eye bone '%s' is not skinned by a mesh with an eye shader material, eye ignored
 ModelDocUtils001
 Modify
 Monday
@@ -4859,7 +4883,6 @@ N10__cxxabiv121__vmi_class_type_infoE
 N10__cxxabiv123__fundamental_type_infoE
 N10__cxxabiv129__pointer_to_member_type_infoE
 N12_GLOBAL__N_117io_error_categoryE
-N12_GLOBAL__N_121future_error_categoryE
 N12_GLOBAL__N_121system_error_categoryE
 N12_GLOBAL__N_122generic_error_categoryE
 N15CWindController9CRendererE
@@ -4886,7 +4909,7 @@ N19CRenderGraphBuilder9LayerPassE
 N20CPathTraceSceneWorld9CPipelineE
 N20IPathTraceSceneWorld9IPipelineE
 N22CMeshInstanceGroomData17IVirtualDestuctorE
-N22CVirtualTextureManager18CAuxBufferReadbackE
+N22CVirtualTextureManager17CFeedbackReadbackE
 N23CCharacterDecalRenderer26CCharacterDecalSceneObjectE
 N23CCharacterDecalRenderer27CCharacterDecalRendererDescE
 N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN25CAggregateSceneObjectDesc21OnBeginRenderingFrameEvEUliE_EviiPKcOT0_ii13JobPriority_tQ14is_invocable_vIS6_JiEEEUliE_EE
@@ -5017,8 +5040,6 @@ N: MMM
 NAV,FOCUS
 NB: Cursor & selection are preserved when refocusing last used item in code
 NEEDS_DIRTY_UPDATE
-NEEDS_DYNAMIC_REFLECTION
-NEEDS_DYNAMIC_REFLECTION_OR_REFRACTION
 NEEDS_FRAMEBUFFER_COPY
 NEEDS_GPU_CULLING
 NEEDS_STATIC_ENVMAP_BINDING
@@ -5127,6 +5148,7 @@ NETWORK_DISCONNECT_STEAM_BANNED
 NETWORK_DISCONNECT_STEAM_DENY_BAD_ANTI_CHEAT
 NETWORK_DISCONNECT_STEAM_DENY_MISC
 NETWORK_DISCONNECT_STEAM_DROPPED
+NETWORK_DISCONNECT_STEAM_GROUPMEMBERSHIP
 NETWORK_DISCONNECT_STEAM_INUSE
 NETWORK_DISCONNECT_STEAM_LOGGED_IN_ELSEWHERE
 NETWORK_DISCONNECT_STEAM_LOGON
@@ -5163,12 +5185,10 @@ NSt13__facet_shims12_GLOBAL__N_115moneypunct_shimIcLb0EEE
 NSt13__facet_shims12_GLOBAL__N_115moneypunct_shimIcLb1EEE
 NSt13__facet_shims12_GLOBAL__N_115moneypunct_shimIwLb0EEE
 NSt13__facet_shims12_GLOBAL__N_115moneypunct_shimIwLb1EEE
-NSt13__future_base12_Result_baseE
 NSt3_V214error_categoryE
 NSt6locale5facet6__shimE
 NSt6locale5facetE
-NSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEEE
-NSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEEE
+NSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEEE
 NSt6thread6_StateE
 NSt7__cxx1110moneypunctIcLb0EEE
 NSt7__cxx1110moneypunctIcLb1EEE
@@ -5307,7 +5327,6 @@ Need space between identifier and decimal point
 Need space between number and identifier
 Needs to be called between BeginTabBar() and EndTabBar
 NeedsDynamic
-NeedsLightProbe
 Nested tables
 NetworkClientService_001
 NetworkMessagesVersion001
@@ -5320,10 +5339,8 @@ Newline in string literal
 NextColormapColor() needs to be called between BeginPlot() and EndPlot
 Nice try, but the number of rows and columns must be greater than 0
 Nincompoop
-Nk GNhJ
 No Layers
 No Voxel LOD
-No associated state
 No background
 No bring to front
 No close
@@ -5401,6 +5418,7 @@ Not Selected
 Not a key frame
 Not a widget per-se, but ImGuiTextFilter is a helper to perform simple filtering on text strings
 Not implemented field number
+Not reordering '%s'..'%s': its pooled memory would peak at ~%d KB, %d KB in submission order (only warning once
 Not supported
 NotAllowed
 NotListed
@@ -5550,6 +5568,8 @@ Override. Old value was 1.0
 Overrides the map's fog settings (-1 populates fog_ vars with map's values
 Owned
 OwnedByApp
+O轄O鈴O酔O
+P E;eH
 P HcCP
 P IcD
 P [A\A]A
@@ -5582,6 +5602,7 @@ P410ToARGBRow_Any_AVX2
 P410ToARGBRow_Any_SSSE3
 P410ToARGBRow_C
 P410ToARGBRow_SSSE3
+P95 ms
 P@H+P8H
 PA;Ex
 PDF128
@@ -5594,6 +5615,7 @@ PDF64x
 PERMISSION_DENIED
 PFvP12CSceneObjectE
 PH;k u'H
+PHcGHL
 PIPELINE_SPECIFIC_0
 PIPELINE_SPECIFIC_1
 PIPELINE_SPECIFIC_2
@@ -5657,6 +5679,7 @@ Path "%s
 PathTracingShaderBindingTable
 Pauciloquent
 Pause Streaming Activity Graph
+Pause to zoom into a range
 Pc[A\A]A^A
 Pen Pressure: %.1f
 Penumbra size multiplier for shadow sampling, reduces fog shadow aliasing
@@ -5691,6 +5714,7 @@ Plat_FloatTime
 Plat_GetCrtEnv
 Plat_GetEnv
 Plat_GetExeModule
+Plat_GetLocalTime
 Plat_GetModuleFilename
 Plat_GetModuleProcAddress
 Plat_GetMonitorResolution
@@ -5755,6 +5779,7 @@ Points
 PolitiFact: Who Lies More
 Pollock
 Pool Mem
+Pool Mem peak %s, %s in submission order (%+.1f
 Popup
 PopupBg
 PopupBorder
@@ -5813,8 +5838,7 @@ Priority
 Problem
 Problem     : Enum value did not match field type
 Problem     : Field is not the right type for this message
-ProceduralGeometry
-ProceduralGeometry Updates
+ProceduralRTProxy Layout
 Processed
 ProggyClean.ttf
 Programmer error: %d visible items with conflicting ID
@@ -5824,7 +5848,6 @@ Progress Bars
 Project constraints
 ProjectedDecal
 ProjectedSceneObjectDesc
-Promise already satisfied
 PropWorldOrigin
 Property editor
 PropertyEditorSystem_001
@@ -6036,6 +6059,7 @@ Range: [%f,%f
 RangeSrcItem = %lld (0x%llX), RangeSelected = %d
 Ranges
 Raw HSV values
+Raw frames
 Ray trace shader material %s - has no default mode
 Ray trace shader material %s has invalid RayTypeCount %d - must be between 1 and %d
 RayGen
@@ -6056,6 +6080,9 @@ Realtime Plots
 Rebuild
 Rebuild all
 Recent frames with allocations
+Record
+Record every frame until stopped, then write _frames.csv and _summary.csv. Also sc_gpu_profiler_record_start/stop
+Recording %.0f s, %d frames
 Rect is %sclicked, %shovered, %sheld
 Rect of child window is: (%.0f,%.0f) (%.0f,%.0f
 Rects Index
@@ -6073,11 +6100,6 @@ RefScale=%g
 Refer to the "Combo" section below for an explanation of how to use the more flexible and general BeginCombo/EndCombo API
 Refer to the "List boxes" section below for an explanation of how to use the more flexible and general BeginListBox/EndListBox API
 Reflection
-Reflection Render View
-ReflectionStencil
-ReflectionTemplate
-Refraction
-Refraction Render View
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
 Release
@@ -6093,6 +6115,7 @@ Remove
 Remove 20 items
 Remove all
 Remove one
+RemoveAllInScope
 RemoveLast
 Rename
 Render %d specific objects
@@ -6132,6 +6155,7 @@ Reorderable Tabs
 Reorderable, hideable, with headers
 Repeated fields can't have default values
 Reports what the current virtual texture residency would cost with 256x256 pages instead of 128x128
+RepresentativeTexture
 Requested Blend Weight Limit of %d is too large, setting to system max of %d
 Requested size is too large to fit into size_t
 Requested split stream input layout from non-split material
@@ -6176,6 +6200,7 @@ Resource %s was created but never accessed
 ResourceCompiler/BakedLighting/DisableCullingForShadows
 ResourceCompiler/BakedLighting/LPVAtlas
 ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadows
+ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadowsForDirectionalLights
 ResourceCompiler/WorldRendererBuilder/UseStaticEnvMapForObjectsWithLightingOrigin
 ResourceCompilerSystem001
 ResourceHandleUtils001
@@ -6185,7 +6210,6 @@ Resources
 Result
 Return to input text into a widget
 Return value = %d
-ReturnJobManualEventToPool
 Reversed
 Revert
 Revert Ref
@@ -6274,6 +6298,7 @@ SL	C(H
 SPAWN_GROUP_BLOCK_UNTIL_LOADED
 SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 SPAWN_GROUP_CREATE_NEW_SCENE_WORLD
+SPAWN_GROUP_DONT_SAVE_RESTORE
 SPAWN_GROUP_DONT_SPAWN_ENTITIES
 SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP
 SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE
@@ -6313,6 +6338,7 @@ Save to disk
 Save to memory
 Save/Revert in local non-persistent storage. Default Colors definition are not affected. Use "Export" below to save them somewhere
 SaveFlags: 0x%08X
+Saved %s_*.csv
 Scale factor for requested texture size (texture streaming
 Scale factor for requested texture size (texture streaming) - used for geo that doesn't have a precomputed UV density measure
 Scale for computed barnlight shadowmap size
@@ -6547,9 +6573,12 @@ SceneSystem/DisableLateAllocatedTransformBuffer
 SceneSystem/DisableShadowFullSort
 SceneSystem/DynamicShadowResolution
 SceneSystem/FogCachedShadowAtlasHeight
+SceneSystem/FogCachedShadowAtlasHeightTools
 SceneSystem/FogCachedShadowAtlasWidth
+SceneSystem/FogCachedShadowAtlasWidthTools
 SceneSystem/FogCachedShadowTileMaxFilterRadius
 SceneSystem/FogCachedShadowTileSize
+SceneSystem/FogCachedShadowTileSizeTools
 SceneSystem/FrameBufferCopyFormat
 SceneSystem/GPU Profiler
 SceneSystem/GpuLightBinner
@@ -6562,6 +6591,7 @@ SceneSystem/HairShading
 SceneSystem/Imgui/Show Debug Log
 SceneSystem/Imgui/Show ID Stack Tool
 SceneSystem/Imgui/Show Metrics
+SceneSystem/IndirectDispatchBufferSizeMB
 SceneSystem/Instanced/Debug Visualizer
 SceneSystem/Instanced/Draw Instanced
 SceneSystem/Instanced/Show GPU Culled Meshlets
@@ -6572,6 +6602,7 @@ SceneSystem/LightBinner/Debug Silhouettes
 SceneSystem/LightBinner/Debug Tiles
 SceneSystem/LightBinner/Debug Visualize Fog Shadowed Lights
 SceneSystem/LightBinner/Debug Visualize Lights
+SceneSystem/LightBinner/Debug Visualize Precomputed Shadow Atlas Lights
 SceneSystem/LightBinner/Debug Visualize Shadowed Lights
 SceneSystem/LightBinner/Enable Baked Shadows
 SceneSystem/LightBinner/Enable Binning
@@ -6711,6 +6742,7 @@ Set 200x200
 Set 500x500
 Set 800x200
 Set as default
+Set baseline
 Set defaults in code
 Set io.ConfigDebugHighlightIdConflicts=false to disable this warning in non-programmers builds
 Set io.ConfigFlags |= ImGuiConfigFlags_DockingEnable in your code, or
@@ -6894,7 +6926,7 @@ Skip NaN
 Skip shadowmaps for *onscreen* dynamic bounce lights which will probably not be visible
 Skip shadowmaps for offscreen dynamic bounce lights that indirect diffuse isn't going to sample
 SkyBox
-SkyBrightnessExposureBias
+SkyTextureFormat
 Skybox
 Slice %d
 Slider
@@ -6924,7 +6956,7 @@ SobelXYRow_C
 SobelXYRow_SSE2
 SobelYRow_C
 SobelYRow_SSE2
-Solid Color Textures Resident: %5d (%3.1f%% of pages in use
+Solid Color Textures: %5d, one texel each
 Some %s text %d,%d
 Some Doc
 Some Selectable
@@ -7037,7 +7069,6 @@ St12codecvt_base
 St12ctype_bynameIcE
 St12ctype_bynameIwE
 St12domain_error
-St12future_error
 St12length_error
 St12out_of_range
 St12system_error
@@ -7107,14 +7138,15 @@ St20__codecvt_utf16_baseIwE
 St20bad_array_new_length
 St21__ctype_abstract_baseIcE
 St21__ctype_abstract_baseIwE
-St23_Sp_counted_ptr_inplaceI10CUtlVectorI20CMeshDrawPrimitive_ti25CUtlVectorMemory_GrowableIS1_iLm0EEESaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI13CViewDrawListSaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI14CTonemapSystemSaIvELN9__gnu_cxx12_Lock_policyE2EE
+St23_Sp_counted_ptr_inplaceI14CUtlLeanVectorI20CMeshDrawPrimitive_ti18CMemAllocAllocatorESaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI19CRenderGraphBuilderSaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI20CThreadFastSemaphoreSaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI21ImGuiViewportDrawDataSaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI23CSceneViewDebugOverlaysSaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI43CSSTTileGenerationReadTexturePixelsCallbackSaIvELN9__gnu_cxx12_Lock_policyE2EE
+St23_Sp_counted_ptr_inplaceIN22CVirtualTextureManager17CFeedbackReadbackESaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceINSt8__detail4_NFAISt12regex_traitsIcEEESaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceIP25RenderSemaphoreHandle_t__SaIvELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceIZN12CSceneSystem28Thread_RenderGpuCullingLayerESt10shared_ptrI13CViewDrawListEP11CSceneLayerE17GpuCullingState_tSaIvELN9__gnu_cxx12_Lock_policyE2EE
@@ -7174,6 +7206,7 @@ Stacked Popup
 Stacked modals
 Stairstep Plot
 Stairstep Plots
+Start recording every frame of GPU profiler timings
 Static World Overlays
 StaticOverlayLayer
 Stationary
@@ -7183,15 +7216,14 @@ SteamAudio001
 Stem Plots
 Stems 1
 Stems 2
-Stencil Reflection Render View
 Stencil bit allocation failed
 Stencil override change
-StencilReflection
 Stock 1
 Stock 2
 Stock 3
 Stock Prices
 Stop and reset simulation
+Stop recording GPU profiler timings and write <name>_frames.csv and <name>_summary.csv. Optional argument: name (default is timestamped
 Storage
 Strand Cull
 Strawberry
@@ -7221,6 +7253,7 @@ Style, Fonts
 StyleEditor
 Sub-child %d
 Sub-menu
+Submitted as pass %i, runs as pass %i, schedule batch %i
 Subplot
 Subplot [0x%08X
 Subplots
@@ -7253,7 +7286,6 @@ Synthetic oneofs must be after all other oneofs
 System file
 Syu	WY
 Sˆ>zp
-S多S奇S奴S
 T$ A+V A+V
 T$ ~LH
 T$(I+V0I+V
@@ -7262,7 +7294,6 @@ T$0IcD$(L
 T$8I;T
 T$8dH3
 T$@L9c
-T$DA+VD
 T$HA+VH
 T$HdH3
 T$XdH3
@@ -7518,7 +7549,7 @@ Thursday
 Tick Labels
 Tick Marks
 Ticks
-Tile Stream Latency, tiles per ms bucket (discarded before hookup: %u
+Tile Stream Latency, tiles per ms bucket (discarded before hookup: %u, failed reads: %u
 Tile reads: %d instead of %d ( %.2fx the count, %.2fx the bytes
 TileStreamLatency
 Tilefish
@@ -7527,7 +7558,7 @@ Time Series
 TimeSlicedShadow
 Timer took %.4f
 Timesliced shadow rendering is enabled for view %s, but no shadow atlas id is set: this will corrupt shadows
-TinyBVH Fatal Error: %s at %s:%d
+TinyBVH: %s
 TinyBVHFatalError
 Tip: Use 'Demo->Tools->Debug Log->Selection' to see selection requests as they happen
 Title bar Hovered/Active tests
@@ -7644,7 +7675,6 @@ Type appears to be in generated pool but wasn't
 Type is already registered
 TypingSelect
 TypingSelect (%d
-T콤T캄T캄T
 U L;r
 U%08x
 U(A\A]A^A
@@ -7673,6 +7703,7 @@ UNALLOCATED
 UNAUTHENTICATED
 UNAVAILABLE
 UNDEFINED
+UNDEFINED -> %s
 UNHIDE
 UNIFORM_READ_BIT
 UNIMPLEMENTED
@@ -7695,6 +7726,7 @@ UVScale
 UVScale_16
 UVTestLayout
 UVWQ8888
+UXA;VX
 UYVYToARGB
 UYVYToARGBRow_AVX2
 UYVYToARGBRow_Any_AVX2
@@ -7721,8 +7753,10 @@ UYVYToYRow_C
 UYVYToYRow_SSE2
 Unable to AddTextureToSet( %s ): %s
 Unable to AddTextureToSet( %s ): Loading Texture failed
+Unable to open '%s' for writing
 Unable to reload texture %s into textureset: %s
 Unable to reload texture %s into textureset: couldn't load from disk
+Unable to write '%s
 Uncertain Data
 Underlying float value: %f
 Unexpected blend index vertex format %d :: %s for %d blend weights
@@ -7825,7 +7859,6 @@ VERTEX_ALBEDO_8888
 VERTEX_ALBEDO_NONE
 VERTEX_ATTRIBUTE_READ_BIT
 VERTEX_INPUT
-VEj*V4w1
 VEngineCvar007
 VFileSystem017
 VIEWMODEL_LAYER
@@ -7848,20 +7881,29 @@ VScriptManager010
 VStringTokenSystem001
 VT Mips
 VT residency as 256x256 pages, over %d textures
+VT tile did not decompress for "%s
 VT tile read failed for "%s": %s
+VT: %d mips, needs at least %d to reach 128x128, recompile it ( %s
 VT: Unsupported texture format %s
 VT: Unsupported texture size %s
 VT: Unsupported texture size or flags. %s
 VT: alloc failed for tex %d, %dx%d fmt %d, aliasing the error texture (%s
+VT: bad tile layout block, %s ( %d tiles, %d offsets, compression %d ) (%s
 VT: created tex %d, %dx%d, %d mips%s, %d pages (%s
 VT: destroyed tex %d, %d of %d pages were resident%s%s (%s
+VT: evicting all pages, cancelled %d tile requests
+VT: no atlas page for %d tiles of mips %d-%d of tex %d, loading it without them (%s
 VT: no physical pages left for tex %d, sampling the error tile (%s
+VT: no tile layout block, the texture needs recompiling (%s
 VT: tex %d low mips loaded, releasing the load (%s
 VT: tex %d preload to %d, mips 2-%d, %d pages outstanding (%s
 VT: tex %d preload to %d, nothing above the pinned mips, %d pages outstanding (%s
+VT: tile %d of tex %d did not decompress
+VT: tile layout block is %d bytes, too short (%s
 VTPageAtlas%s
 VTPageAtlasATI2N%s
 VTPageAtlasDXT5%s
+VTSolidColorAtlas
 VTT for
 VUUU=TUUUw
 VWebm001
@@ -7912,6 +7954,7 @@ V_UInt64ToString_Unsafe
 V_UInt8ToString_Unsafe
 V_UnqualifiedFileName
 V_ZSTD_decompress
+V_ZSTD_isError
 V_acosd
 V_acosf
 V_asinf
@@ -7935,6 +7978,7 @@ V_fread
 V_frexpf
 V_fwrite
 V_isdigit_str
+V_isfinited
 V_isnand
 V_log2_uint
 V_log2f
@@ -7958,6 +8002,7 @@ V_strncpy
 V_strnicmp_fast
 V_tanf
 V_vsnprintf
+V_z3_decompress
 Validate
 Value
 Value = %.3f <-- (1) right-click this text
@@ -7989,6 +8034,7 @@ Vector4D
 VertCount
 VertexAlbedoFormat_t
 VertexCache
+VertexCacheEmptySignal
 VertexColorPos_t
 VertexColorUVPos_t
 VertexElementAnnotation
@@ -8031,11 +8077,14 @@ Views: %d, shadow %d (fog-only %d)  |  CPU: %02.01fms, shadow %02.01fms (fog-onl
 Viridis
 Virtual Texture Debugger
 Virtual Textures: %d
-Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). Changing it evicts every virtual texture tile
+Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). 0 picks 4, 6, 8, 12 or 16 slices for GPUs below 8GB, 8GB, 12GB, 16GB and larger. Changing it evicts every virtual texture tile
 Virtual texture page atlas: %u -> %u slices, evicting all tiles
+Virtual texture page atlas: %u slices (%u MB) for a GPU with %llu MB, vt_page_atlas_size %d
+Virtual texture page atlas: allocated %u of the %u requested slices
+Virtual texture page atlas: could not allocate %u slices, trying %u
+Virtual texture page atlas: could not allocate even %u slices
 Virtual texture page atlas: could not create %u slices, staying at %u
 VirtualTextureAuxBuffer
-VirtualTextureCompactUsageBuffer
 VirtualTextureInfo
 VirtualTextureMgrManifest
 VirtualTexturePageTable
@@ -8050,6 +8099,8 @@ Visualize
 Visualize meshlet bounds and cone axis. Mesh shader only
 VisualizeCulled
 Voltage
+VolumeFog Integrate %ux%u, %u slices
+VolumeFog Lighting %ux%ux%u, %u volumes, indirect %d, lpv %d, temporal %d
 VolumeMaxs
 VolumeMins
 VolumetricFog
@@ -8058,6 +8109,7 @@ Voxelize Density
 Voxelize Tangents
 VrForward
 Vrad3_001
+VtDecompressTiles
 W HcO4H
 W(Hc_ H
 W(Hco H
@@ -8083,7 +8135,6 @@ Warning: Font scaling will NOT be smooth, because
 Warning: If you don't have a debugger attached, this will probably crash
 Warning: Sizing Constraints won't work if the window is docked
 Warning: owning Window is inactive. This DrawList is not being rendered
-WaterRTProxy
 Watermelon
 We also demonstrate using ImGuiListClipper to virtualize the submission of many items
 We are colorizing cells to B1->C2 here
@@ -8307,6 +8358,7 @@ WorldRenderer/LightProbeVolumeColorSpace
 WorldRenderer/LightProbeVolumeUncompressedFormat
 WorldRendererMgr001
 Wrap width
+Wrote %d frames (%.1f s) of GPU profiler data to %s and %s
 X-Axis
 X-Axis %d
 X-Axis %d [0x%08X
@@ -8336,6 +8388,7 @@ X[]ËOx1
 X[]ÐAWAVAUATUSH
 X[]ÐUSH
 Xo1 WB
+Xp!B2i
 XxHc@pL
 Y-Axis
 Y-Axis %d
@@ -8344,7 +8397,6 @@ Y-Axis 1
 Y-Axis 2
 Y-Axis 3
 Y-Axis index out of bounds
-Y4szL
 YA1Ei
 YContext
 YSN[RUZP>8c7NXNZdPE4\HNKLY
@@ -8409,7 +8461,6 @@ Z17LoggingSystem_Logi17LoggingSeverity_t5ColorPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tPK17LoggingMetaData_t5ColorPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tPK17LoggingMetaData_tPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK20LoggingRareOptions_tPKcz
-Z17TinyBVHFatalErrorPKcS0_i
 Z18__test_and_acquirePl
 Z18g_nSequentialBytesIDv4_iE
 Z18g_nSequentialBytesIiE
@@ -8646,34 +8697,35 @@ ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
 ZN11CTSListBaseC2Ev
-ZN11IThreadPool17QueueJobWithFlagsIZN12CSceneSystem26Thread_RenderLayerDrawListESt10shared_ptrI13CViewDrawListEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK16DrawListVector_tEUlvE0_EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
+ZN11IThreadPool17QueueJobWithFlagsIZN15CVtTileStreamer20DecompressTilesAsyncEO10CUtlVectorI21VtTileStreamRequest_ti25CUtlVectorMemory_GrowableIS3_iLm0EEEOS2_IhiS4_IhiLm0EEEEUlvE_EE9CSmartPtrI12CThreadedJob17CRefCountAccessorEPKc13JobPriority_tjOT_E10CLambdaJob
 ZN12CAtomicMutex11AcquireLockEy
 ZN12CMemoryStack13MaybeCommitToEPh
 ZN12CMemoryStack4InitEPKcjjjj
 ZN12CMemoryStack5PurgeEb
 ZN12CMemoryStackC1Ev
 ZN12CMemoryStackD1Ev
-ZN12CSceneSystem11RenderAViewEP10CSceneViewfEUlvE
-ZN12CSceneSystem11RenderAViewEP10CSceneViewfEUlvE0
-ZN12CSceneSystem16KickoffBatchListESt10shared_ptrI13CViewDrawListEP11CSceneLayerR16DrawListVector_tRN16ISceneObjectDesc24GeneratePrimitivesArgs_tEbEUlvE
+ZN12CSceneSystem11RenderAViewEP10CSceneViewEUlvE
+ZN12CSceneSystem11RenderAViewEP10CSceneViewEUlvE0
+ZN12CSceneSystem16KickOffBatchListEP11CSceneLayerSt10shared_ptrI13CViewDrawListEO14CUtlLeanVectorI20CMeshDrawPrimitive_ti18CMemAllocAllocatorEEUlvE
 ZN12CSceneSystem17Thread_RenderViewEP10CSceneViewEUlvE
 ZN12CSceneSystem17Thread_RenderViewEP10CSceneViewEUlvE0
 ZN12CSceneSystem17Thread_RenderViewEP10CSceneViewEUlvE1
 ZN12CSceneSystem21SubmitAllDisplayListsEP19SwapChainHandle_t__EUlvE1
 ZN12CSceneSystem21SubmitAllDisplayListsEP19SwapChainHandle_t__EUlvE2
-ZN12CSceneSystem21SubmitAllDisplayListsEP19SwapChainHandle_t__EUlvE3
 ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE
 ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE0
 ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE1
-ZN12CSceneSystem26Thread_RenderLayerDrawListESt10shared_ptrI13CViewDrawListEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK16DrawListVector_tEUlvE
+ZN12CSceneSystem22Thread_RenderViewLayerESt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlRK20VisibleSceneObject_tPK8CPVSBitsE
+ZN12CSceneSystem26Thread_RenderLayerDrawListESt10shared_ptrI13CViewDrawListEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tS0_I14CUtlLeanVectorI20CMeshDrawPrimitive_ti18CMemAllocAllocatorEEEUlvE
 ZN12CSceneSystem28Thread_RenderGpuCullingLayerESt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE
+ZN12CSceneSystem29Thread_ProcessProceduralLayerEP10CSceneViewP11CSceneLayerSt10shared_ptrI13CViewDrawListEEUlRK20VisibleSceneObject_tPK8CPVSBitsE
 ZN12CSceneSystem30GenerateVertexCacheUpdateTasksER10CUtlVectorI9CSmartPtrI13CThreadFutureIP12CDisplayListE17CRefCountAccessorEi25CUtlVectorMemory_GrowableIS7_iLm0EEEbbEUlvE
 ZN12CSceneSystem30GenerateVertexCacheUpdateTasksER10CUtlVectorI9CSmartPtrI13CThreadFutureIP12CDisplayListE17CRefCountAccessorEi25CUtlVectorMemory_GrowableIS7_iLm0EEEbbEUlvE0
 ZN12CSceneSystem30GenerateVertexCacheUpdateTasksER10CUtlVectorI9CSmartPtrI13CThreadFutureIP12CDisplayListE17CRefCountAccessorEi25CUtlVectorMemory_GrowableIS7_iLm0EEEbbEUlvE1
 ZN12CSceneSystem30GenerateVertexCacheUpdateTasksER10CUtlVectorI9CSmartPtrI13CThreadFutureIP12CDisplayListE17CRefCountAccessorEi25CUtlVectorMemory_GrowableIS7_iLm0EEEbbEUlvE2
-ZN12CSceneSystem32ReleaseProceduralLayerDependentsEP11CSceneLayerEUlvE
+ZN12CSceneSystem30GenerateVertexCacheUpdateTasksER10CUtlVectorI9CSmartPtrI13CThreadFutureIP12CDisplayListE17CRefCountAccessorEi25CUtlVectorMemory_GrowableIS7_iLm0EEEbbEUlvE3
+ZN12CSceneSystem32ReleaseProceduralLayerDependentsEP11CSceneLayerSt10shared_ptrI13CViewDrawListEEUlvE
 ZN12CSplitString5SplitEPKciPS1_ib
-ZN12CThreadedJob24WaitOrImmediatelyExecuteEv
 ZN13CBufferString10ExtendPathEPKccb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10TruncateAtEib
@@ -8728,6 +8780,7 @@ ZN15CUtlSymbolTableC1Eiib
 ZN15CUtlSymbolTableC2Eiib
 ZN15CUtlSymbolTableD1Ev
 ZN15CUtlSymbolTableD2Ev
+ZN15CVtTileStreamer21SubmitPendingRequestsEvEUlP25IAsyncResourceDataRequestE
 ZN15CVtTileStreamer21SubmitPendingRequestsEvEUlP25IAsyncResourceDataRequestSt10unique_ptrI25IAsyncProcessedDataResultSt14default_deleteIS3_EEE
 ZN16CRenderBatchList21DrawCurrentPrimitivesEvEUlvE
 ZN16CRenderBatchList21DrawCurrentPrimitivesEvEUlvE0
@@ -8746,6 +8799,7 @@ ZN16VProfScopeHelperILi3ELb0EE18EnterScopeInternalEPKcRK18CUtlSourceLocation
 ZN17CThreadSyncObject4WaitEj
 ZN17CThreadSyncObject8WaitImplEj
 ZN17CThreadSyncObjectD2Ev
+ZN18CThreadedJobSource18SignalEventMonitorEPS
 ZN18CUtlMemoryPoolBase13ClearDestructEPFvPvE
 ZN18CUtlMemoryPoolBase4FreeEPv
 ZN18CUtlMemoryPoolBase5AllocEv
@@ -9227,8 +9281,6 @@ ZNKSt10moneypunctIwLb1EE16do_negative_signEv
 ZNKSt10moneypunctIwLb1EE16do_positive_signEv
 ZNKSt10moneypunctIwLb1EE16do_thousands_sepEv
 ZNKSt10moneypunctIwLb1EE8groupingEv
-ZNKSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EE3getEv
-ZNKSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEptEv
 ZNKSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EE3getEv
 ZNKSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EEptEv
 ZNKSt11__timepunctIcE15_M_am_pm_formatEPKc
@@ -9264,10 +9316,7 @@ ZNKSt11unique_lockISt5mutexE5mutexEv
 ZNKSt12_Vector_baseIPSt12Catalog_infoSaIS1_EE19_M_get_Tp_allocatorEv
 ZNKSt12__basic_fileIcE13native_handleEv
 ZNKSt12__basic_fileIcE7is_openEv
-ZNKSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EE3getEv
-ZNKSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EEcvbEv
 ZNKSt12__shared_ptrINSt6thread10_Impl_baseELN9__gnu_cxx12_Lock_policyE2EE3getEv
-ZNKSt12future_error4whatEv
 ZNKSt12regex_traitsIcE16lookup_classnameIPKcEENS0_10_RegexMaskET_S5_b
 ZNKSt12regex_traitsIcE17transform_primaryIPcEESsT_S3
 ZNKSt12regex_traitsIcE18lookup_collatenameIPKcEESsT_S4
@@ -9290,7 +9339,6 @@ ZNKSt13basic_ostreamIwSt11char_traitsIwEE6sentrycvbEv
 ZNKSt13random_device13_M_getentropyEv
 ZNKSt13runtime_error4whatEv
 ZNKSt14_CatalogIdCompclEPKSt12Catalog_infoi
-ZNKSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EE16_M_get_use_countEv
 ZNKSt14basic_ifstreamIcSt11char_traitsIcEE5rdbufEv
 ZNKSt14basic_ifstreamIcSt11char_traitsIcEE7is_openEv
 ZNKSt14basic_ifstreamIwSt11char_traitsIwEE5rdbufEv
@@ -9299,13 +9347,7 @@ ZNKSt14basic_ofstreamIcSt11char_traitsIcEE5rdbufEv
 ZNKSt14basic_ofstreamIcSt11char_traitsIcEE7is_openEv
 ZNKSt14basic_ofstreamIwSt11char_traitsIwEE5rdbufEv
 ZNKSt14basic_ofstreamIwSt11char_traitsIwEE7is_openEv
-ZNKSt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEclEPS2
 ZNKSt14default_deleteINSt6thread6_StateEEclEPS1
-ZNKSt15__exception_ptr13exception_ptr20__cxa_exception_typeEv
-ZNKSt15__exception_ptr13exception_ptr6_M_getEv
-ZNKSt15__exception_ptr13exception_ptrcvMS0_FvvEEv
-ZNKSt15__exception_ptr13exception_ptrntEv
-ZNKSt15__uniq_ptr_implINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EE6_M_ptrEv
 ZNKSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE6_M_ptrEv
 ZNKSt15basic_streambufIcSt11char_traitsIcEE4gptrEv
 ZNKSt15basic_streambufIcSt11char_traitsIcEE4pptrEv
@@ -9327,7 +9369,6 @@ ZNKSt15basic_stringbufIwSt11char_traitsIwESaIwEE12_M_high_markEv
 ZNKSt15basic_stringbufIwSt11char_traitsIwESaIwEE3strEv
 ZNKSt15error_condition5valueEv
 ZNKSt15error_condition8categoryEv
-ZNKSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE16_M_get_use_countEv
 ZNKSt16initializer_listIcE3endEv
 ZNKSt16initializer_listIcE4sizeEv
 ZNKSt16initializer_listIcE5beginEv
@@ -9365,8 +9406,6 @@ ZNKSt19__codecvt_utf8_baseIwE5do_inER11__mbstate_tPKcS4_RS4_PwS6_RS6
 ZNKSt19__codecvt_utf8_baseIwE6do_outER11__mbstate_tPKwS4_RS4_PcS6_RS6
 ZNKSt19__codecvt_utf8_baseIwE9do_lengthER11__mbstate_tPKcS4_m
 ZNKSt19__iosfail_type_info11__do_upcastEPKN10__cxxabiv117__class_type_infoEPPv
-ZNKSt19__shared_ptr_accessINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2ELb0ELb0EE6_M_getEv
-ZNKSt19__shared_ptr_accessINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2ELb0ELb0EEptEv
 ZNKSt19basic_istringstreamIcSt11char_traitsIcESaIcEE3strEv
 ZNKSt19basic_istringstreamIcSt11char_traitsIcESaIcEE5rdbufEv
 ZNKSt19basic_istringstreamIwSt11char_traitsIwESaIwEE3strEv
@@ -9492,7 +9531,6 @@ ZNKSt5ctypeIwE8do_widenEPKcS2_Pw
 ZNKSt5ctypeIwE8do_widenEc
 ZNKSt5ctypeIwE9do_narrowEPKwS2_cPc
 ZNKSt5ctypeIwE9do_narrowEwc
-ZNKSt6atomicIbE4loadESt12memory_order
 ZNKSt6chrono8durationIlSt5ratioILl1ELl1000000000EEE5countEv
 ZNKSt6chrono8durationIlSt5ratioILl1ELl1EEE5countEv
 ZNKSt6locale2id5_M_idEv
@@ -10100,7 +10138,6 @@ ZNKSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE6do_putES3_RSt8ios_
 ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmPKwSB
 ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE3putES3_RSt8ios_basewPK2tmcc
 ZNKSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE6do_putES3_RSt8ios_basewPK2tmcc
-ZNKSt8weak_ptrINSt13__future_base13_State_baseV2EE4lockEv
 ZNKSt9bad_alloc4whatEv
 ZNKSt9basic_iosIcSt11char_traitsIcEE10exceptionsEv
 ZNKSt9basic_iosIcSt11char_traitsIcEE3badEv
@@ -10577,25 +10614,16 @@ ZNSspLEPKc
 ZNSspLERKSs
 ZNSspLESt16initializer_listIcE
 ZNSspLEc
-ZNSt10_Head_baseILm0EPNSt13__future_base13_State_baseV211_Make_readyELb0EE7_M_headERKS4
-ZNSt10_Head_baseILm0EPNSt13__future_base13_State_baseV211_Make_readyELb0EE7_M_headERS4
-ZNSt10_Head_baseILm0EPNSt13__future_base13_State_baseV211_Make_readyELb0EEC1Ev
-ZNSt10_Head_baseILm0EPNSt13__future_base13_State_baseV211_Make_readyELb0EEC2Ev
 ZNSt10_Head_baseILm0EPNSt6thread6_StateELb0EE7_M_headERKS3
 ZNSt10_Head_baseILm0EPNSt6thread6_StateELb0EE7_M_headERS3
 ZNSt10_Head_baseILm0EPNSt6thread6_StateELb0EEC1Ev
 ZNSt10_Head_baseILm0EPNSt6thread6_StateELb0EEC2Ev
-ZNSt10_Head_baseILm1ESt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEELb1EE7_M_headERS5
-ZNSt10_Head_baseILm1ESt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEELb1EEC1Ev
-ZNSt10_Head_baseILm1ESt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEELb1EEC2Ev
 ZNSt10_Head_baseILm1ESt14default_deleteINSt6thread6_StateEELb1EE7_M_headERS4
 ZNSt10_Head_baseILm1ESt14default_deleteINSt6thread6_StateEELb1EEC1Ev
 ZNSt10_Head_baseILm1ESt14default_deleteINSt6thread6_StateEELb1EEC2Ev
 ZNSt10__num_base11_S_atoms_inE
 ZNSt10__num_base12_S_atoms_outE
 ZNSt10__num_base15_S_format_floatERKSt8ios_basePcc
-ZNSt10__weak_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EED1Ev
-ZNSt10__weak_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EED2Ev
 ZNSt10bad_typeidC1Ev
 ZNSt10bad_typeidC2Ev
 ZNSt10bad_typeidD0Ev
@@ -10668,51 +10696,28 @@ ZNSt10moneypunctIwLb1EEC2Em
 ZNSt10moneypunctIwLb1EED0Ev
 ZNSt10moneypunctIwLb1EED1Ev
 ZNSt10moneypunctIwLb1EED2Ev
-ZNSt10shared_ptrINSt13__future_base13_State_baseV2EEC1ERKSt8weak_ptrIS1_ESt9nothrow_t
-ZNSt10shared_ptrINSt13__future_base13_State_baseV2EEC2ERKSt8weak_ptrIS1_ESt9nothrow_t
-ZNSt10shared_ptrINSt13__future_base13_State_baseV2EED1Ev
-ZNSt10shared_ptrINSt13__future_base13_State_baseV2EED2Ev
 ZNSt10shared_ptrINSt6thread10_Impl_baseEEC1EOS2
 ZNSt10shared_ptrINSt6thread10_Impl_baseEEC2EOS2
 ZNSt10shared_ptrINSt6thread10_Impl_baseEED1Ev
 ZNSt10shared_ptrINSt6thread10_Impl_baseEED2Ev
 ZNSt10shared_ptrINSt6thread10_Impl_baseEEaSEOS2
-ZNSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EE11get_deleterEv
-ZNSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEC1IS4_vEEPS2
-ZNSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEC2IS4_vEEPS2
-ZNSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EED1Ev
-ZNSt10unique_ptrINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EED2Ev
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EE11get_deleterEv
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EE7releaseEv
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EEC1IS3_vEEPS1
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EEC2IS3_vEEPS1
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev
 ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED2Ev
-ZNSt11_Tuple_implILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEE7_M_headERKS6
-ZNSt11_Tuple_implILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEE7_M_headERS6
-ZNSt11_Tuple_implILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC1Ev
-ZNSt11_Tuple_implILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC2Ev
 ZNSt11_Tuple_implILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERKS5
 ZNSt11_Tuple_implILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERS5
 ZNSt11_Tuple_implILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEEC1Ev
 ZNSt11_Tuple_implILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEEC2Ev
-ZNSt11_Tuple_implILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEE7_M_headERKS6
-ZNSt11_Tuple_implILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEE7_M_headERS6
-ZNSt11_Tuple_implILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC1Ev
-ZNSt11_Tuple_implILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC2Ev
 ZNSt11_Tuple_implILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERKS5
 ZNSt11_Tuple_implILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERS5
 ZNSt11_Tuple_implILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEEC1Ev
 ZNSt11_Tuple_implILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEEC2Ev
-ZNSt11_Tuple_implILm1EISt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEE7_M_headERS5
-ZNSt11_Tuple_implILm1EISt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEEC1Ev
-ZNSt11_Tuple_implILm1EISt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEEC2Ev
 ZNSt11_Tuple_implILm1EISt14default_deleteINSt6thread6_StateEEEE7_M_headERS4
 ZNSt11_Tuple_implILm1EISt14default_deleteINSt6thread6_StateEEEEC1Ev
 ZNSt11_Tuple_implILm1EISt14default_deleteINSt6thread6_StateEEEEC2Ev
-ZNSt11_Tuple_implILm1EJSt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEE7_M_headERS5
-ZNSt11_Tuple_implILm1EJSt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEEC1Ev
-ZNSt11_Tuple_implILm1EJSt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEEEC2Ev
 ZNSt11_Tuple_implILm1EJSt14default_deleteINSt6thread6_StateEEEE7_M_headERS4
 ZNSt11_Tuple_implILm1EJSt14default_deleteINSt6thread6_StateEEEEC1Ev
 ZNSt11_Tuple_implILm1EJSt14default_deleteINSt6thread6_StateEEEEC2Ev
@@ -10851,10 +10856,6 @@ ZNSt12__cow_stringD1Ev
 ZNSt12__cow_stringD2Ev
 ZNSt12__cow_stringaSEOS
 ZNSt12__cow_stringaSERKS
-ZNSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EEC1ERKSt10__weak_ptrIS1_LS3_2EESt9nothrow_t
-ZNSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EEC2ERKSt10__weak_ptrIS1_LS3_2EESt9nothrow_t
-ZNSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EED1Ev
-ZNSt12__shared_ptrINSt13__future_base13_State_baseV2ELN9__gnu_cxx12_Lock_policyE2EED2Ev
 ZNSt12__shared_ptrINSt6thread10_Impl_baseELN9__gnu_cxx12_Lock_policyE2EE4swapERS4
 ZNSt12__shared_ptrINSt6thread10_Impl_baseELN9__gnu_cxx12_Lock_policyE2EE5resetEv
 ZNSt12__shared_ptrINSt6thread10_Impl_baseELN9__gnu_cxx12_Lock_policyE2EEC1EOS4
@@ -10880,8 +10881,6 @@ ZNSt12__sso_stringD1Ev
 ZNSt12__sso_stringD2Ev
 ZNSt12__sso_stringaSEOS
 ZNSt12__sso_stringaSERKS
-ZNSt12__weak_countILN9__gnu_cxx12_Lock_policyE2EED1Ev
-ZNSt12__weak_countILN9__gnu_cxx12_Lock_policyE2EED2Ev
 ZNSt12ctype_bynameIcEC1EPKcm
 ZNSt12ctype_bynameIcEC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEm
 ZNSt12ctype_bynameIcEC1ERKSsm
@@ -10909,9 +10908,6 @@ ZNSt12domain_errorC2ERKSs
 ZNSt12domain_errorD0Ev
 ZNSt12domain_errorD1Ev
 ZNSt12domain_errorD2Ev
-ZNSt12future_errorD0Ev
-ZNSt12future_errorD1Ev
-ZNSt12future_errorD2Ev
 ZNSt12length_errorC1EPKc
 ZNSt12length_errorC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 ZNSt12length_errorC1ERKSs
@@ -10997,15 +10993,6 @@ ZNSt13__facet_shims23__moneypunct_fill_cacheIwLb0EEEvSt17integral_constantIbLb0E
 ZNSt13__facet_shims23__moneypunct_fill_cacheIwLb0EEEvSt17integral_constantIbLb1EEPKNSt6locale5facetEPSt18__moneypunct_cacheIT_XT0_EE
 ZNSt13__facet_shims23__moneypunct_fill_cacheIwLb1EEEvSt17integral_constantIbLb0EEPKNSt6locale5facetEPSt18__moneypunct_cacheIT_XT0_EE
 ZNSt13__facet_shims23__moneypunct_fill_cacheIwLb1EEEvSt17integral_constantIbLb1EEPKNSt6locale5facetEPSt18__moneypunct_cacheIT_XT0_EE
-ZNSt13__future_base12_Result_baseC1Ev
-ZNSt13__future_base12_Result_baseC2Ev
-ZNSt13__future_base12_Result_baseD0Ev
-ZNSt13__future_base12_Result_baseD1Ev
-ZNSt13__future_base12_Result_baseD2Ev
-ZNSt13__future_base13_State_baseV211_Make_ready6_M_setEv
-ZNSt13__future_base13_State_baseV211_Make_ready6_S_runEPv
-ZNSt13__future_base13_State_baseV211_Make_readyD1Ev
-ZNSt13__future_base13_State_baseV211_Make_readyD2Ev
 ZNSt13__ios_failureC1EPKc
 ZNSt13__ios_failureC1EPKcRKSt10error_code
 ZNSt13__ios_failureC2EPKc
@@ -11250,9 +11237,7 @@ ZNSt13runtime_errorD2Ev
 ZNSt13runtime_erroraSEOS
 ZNSt13runtime_erroraSERKS
 ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EE7_M_swapERS2
-ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1ERKSt12__weak_countILS1_2EESt9nothrow_t
 ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC1Ev
-ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC2ERKSt12__weak_countILS1_2EESt9nothrow_t
 ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EEC2Ev
 ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EED1Ev
 ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE2EED2Ev
@@ -11385,23 +11370,6 @@ ZNSt14overflow_errorD0Ev
 ZNSt14overflow_errorD1Ev
 ZNSt14overflow_errorD2Ev
 ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv
-ZNSt15__exception_ptr13exception_ptr10_M_releaseEv
-ZNSt15__exception_ptr13exception_ptr18_M_safe_bool_dummyEv
-ZNSt15__exception_ptr13exception_ptr4swapERS0
-ZNSt15__exception_ptr13exception_ptr9_M_addrefEv
-ZNSt15__exception_ptr13exception_ptrC1EMS0_FvvE
-ZNSt15__exception_ptr13exception_ptrC1EPv
-ZNSt15__exception_ptr13exception_ptrC1ERKS0
-ZNSt15__exception_ptr13exception_ptrC1Ev
-ZNSt15__exception_ptr13exception_ptrC2EMS0_FvvE
-ZNSt15__exception_ptr13exception_ptrC2EPv
-ZNSt15__exception_ptr13exception_ptrC2ERKS0
-ZNSt15__exception_ptr13exception_ptrC2Ev
-ZNSt15__exception_ptr13exception_ptrD1Ev
-ZNSt15__exception_ptr13exception_ptrD2Ev
-ZNSt15__exception_ptr13exception_ptraSERKS0
-ZNSt15__exception_ptreqERKNS_13exception_ptrES2
-ZNSt15__exception_ptrneERKNS_13exception_ptrES2
 ZNSt15__new_allocatorIPSt12Catalog_infoE10deallocateEPS1_m
 ZNSt15__new_allocatorIPSt12Catalog_infoE8allocateEmPKv
 ZNSt15__new_allocatorIPSt12Catalog_infoED1Ev
@@ -11414,14 +11382,8 @@ ZNSt15__new_allocatorIwE10deallocateEPwm
 ZNSt15__new_allocatorIwE8allocateEmPKv
 ZNSt15__new_allocatorIwED1Ev
 ZNSt15__new_allocatorIwED2Ev
-ZNSt15__uniq_ptr_dataINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_ELb1ELb1EECI1St15__uniq_ptr_implIS2_S4_EEPS2
-ZNSt15__uniq_ptr_dataINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_ELb1ELb1EECI2St15__uniq_ptr_implIS2_S4_EEPS2
 ZNSt15__uniq_ptr_dataINSt6thread6_StateESt14default_deleteIS1_ELb1ELb1EECI1St15__uniq_ptr_implIS1_S3_EEPS1
 ZNSt15__uniq_ptr_dataINSt6thread6_StateESt14default_deleteIS1_ELb1ELb1EECI2St15__uniq_ptr_implIS1_S3_EEPS1
-ZNSt15__uniq_ptr_implINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EE10_M_deleterEv
-ZNSt15__uniq_ptr_implINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EE6_M_ptrEv
-ZNSt15__uniq_ptr_implINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEC1EPS2
-ZNSt15__uniq_ptr_implINSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEC2EPS2
 ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE10_M_deleterEv
 ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE6_M_ptrEv
 ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE7releaseEv
@@ -11641,9 +11603,8 @@ ZNSt15underflow_errorD0Ev
 ZNSt15underflow_errorD1Ev
 ZNSt15underflow_errorD2Ev
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv
-ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE15_M_weak_releaseEv
+ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE19_M_release_last_useEv
-ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE23_M_add_ref_lock_nothrowEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE24_M_release_last_use_coldEv
 ZNSt16__numpunct_cacheIcE8_M_cacheERKSt6locale
 ZNSt16__numpunct_cacheIcEC1Em
@@ -11991,9 +11952,6 @@ ZNSt25__codecvt_utf8_utf16_baseIDsED2Ev
 ZNSt25__codecvt_utf8_utf16_baseIwED0Ev
 ZNSt25__codecvt_utf8_utf16_baseIwED1Ev
 ZNSt25__codecvt_utf8_utf16_baseIwED2Ev
-ZNSt28__atomic_futex_unsigned_base19_M_futex_notify_allEPj
-ZNSt28__atomic_futex_unsigned_base19_M_futex_wait_untilEPjjbNSt6chrono8durationIlSt5ratioILl1ELl1EEEENS2_IlS3_ILl1ELl1000000000EEEE
-ZNSt28__atomic_futex_unsigned_base26_M_futex_wait_until_steadyEPjjbNSt6chrono8durationIlSt5ratioILl1ELl1EEEENS2_IlS3_ILl1ELl1000000000EEEE
 ZNSt3_V214error_categoryD0Ev
 ZNSt3_V214error_categoryD1Ev
 ZNSt3_V214error_categoryD2Ev
@@ -12037,15 +11995,10 @@ ZNSt5dequeINSt8__detail9_StateSeqISt12regex_traitsIcEEESaIS4_EE9push_backERKS4
 ZNSt5dequeIlSaIlEE16_M_push_back_auxIJRKlEEEvDpOT
 ZNSt5mutex13native_handleEv
 ZNSt5mutex6unlockEv
-ZNSt5tupleIIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC1ILb1ELb1EEEv
-ZNSt5tupleIIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC2ILb1ELb1EEEv
 ZNSt5tupleIIPNSt6thread6_StateESt14default_deleteIS1_EEEC1ILb1ELb1EEEv
 ZNSt5tupleIIPNSt6thread6_StateESt14default_deleteIS1_EEEC2ILb1ELb1EEEv
-ZNSt5tupleIJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC1ILb1ELb1EEEv
-ZNSt5tupleIJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEEC2ILb1ELb1EEEv
 ZNSt5tupleIJPNSt6thread6_StateESt14default_deleteIS1_EEEC1ILb1ELb1EEEv
 ZNSt5tupleIJPNSt6thread6_StateESt14default_deleteIS1_EEEC2ILb1ELb1EEEv
-ZNSt6atomicIbE5storeEbSt12memory_order
 ZNSt6chrono10time_pointINS_3_V212steady_clockENS_8durationIlSt5ratioILl1ELl1000000000EEEEEC1ERKS6
 ZNSt6chrono10time_pointINS_3_V212steady_clockENS_8durationIlSt5ratioILl1ELl1000000000EEEEEC2ERKS6
 ZNSt6chrono10time_pointINS_3_V212system_clockENS_8durationIlSt5ratioILl1ELl1000000000EEEEEC1ERKS6
@@ -12183,14 +12136,10 @@ ZNSt6localeC2Ev
 ZNSt6localeD1Ev
 ZNSt6localeD2Ev
 ZNSt6localeaSERKS
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEE6_M_runEv
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEED0Ev
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEED1Ev
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEED2Ev
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEE6_M_runEv
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEED0Ev
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEED1Ev
-ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEED2Ev
+ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEE6_M_runEv
+ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEED0Ev
+ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEED1Ev
+ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEED2Ev
 ZNSt6thread15_M_start_threadESt10shared_ptrINS_10_Impl_baseEE
 ZNSt6thread15_M_start_threadESt10shared_ptrINS_10_Impl_baseEEPFvvE
 ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE
@@ -12223,6 +12172,8 @@ ZNSt6vectorISt9sub_matchIPKcESaIS3_EEC1ERKS5
 ZNSt6vectorISt9sub_matchIPKcESaIS3_EEC2ERKS5
 ZNSt6vectorIcSaIcEEC1ERKS1
 ZNSt6vectorIcSaIcEEC2ERKS1
+ZNSt6vectorIfSaIfEEC1EmRKS0
+ZNSt6vectorIfSaIfEEC2EmRKS0
 ZNSt7__cxx1110moneypunctIcLb0EE24_M_initialize_moneypunctEP15__locale_structPKc
 ZNSt7__cxx1110moneypunctIcLb0EE2idE
 ZNSt7__cxx1110moneypunctIcLb0EE4intlE
@@ -13059,8 +13010,6 @@ ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEC2Em
 ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED0Ev
 ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED1Ev
 ZNSt8time_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEED2Ev
-ZNSt8weak_ptrINSt13__future_base13_State_baseV2EED1Ev
-ZNSt8weak_ptrINSt13__future_base13_State_baseV2EED2Ev
 ZNSt9__condvar10notify_allEv
 ZNSt9__condvar10notify_oneEv
 ZNSt9__condvar4waitERSt5mutex
@@ -13192,16 +13141,10 @@ ZSt11__once_call
 ZSt11lower_boundIN9__gnu_cxx17__normal_iteratorIPKPSt12Catalog_infoSt6vectorIS3_SaIS3_EEEEiSt14_CatalogIdCompET_SB_SB_RKT0_T1
 ZSt11lower_boundIN9__gnu_cxx17__normal_iteratorIPPSt12Catalog_infoSt6vectorIS3_SaIS3_EEEEiSt14_CatalogIdCompET_SA_SA_RKT0_T1
 ZSt11lower_boundIPKmmET_S2_S2_RKT0
-ZSt12__get_helperILm0EPNSt13__future_base13_State_baseV211_Make_readyEISt14default_deleteIS2_EEERKT0_RKSt11_Tuple_implIXT_EIS6_DpT1_EE
-ZSt12__get_helperILm0EPNSt13__future_base13_State_baseV211_Make_readyEISt14default_deleteIS2_EEERT0_RSt11_Tuple_implIXT_EIS6_DpT1_EE
-ZSt12__get_helperILm0EPNSt13__future_base13_State_baseV211_Make_readyEJSt14default_deleteIS2_EEERKT0_RKSt11_Tuple_implIXT_EJS6_DpT1_EE
-ZSt12__get_helperILm0EPNSt13__future_base13_State_baseV211_Make_readyEJSt14default_deleteIS2_EEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE
 ZSt12__get_helperILm0EPNSt6thread6_StateEISt14default_deleteIS1_EEERKT0_RKSt11_Tuple_implIXT_EIS5_DpT1_EE
 ZSt12__get_helperILm0EPNSt6thread6_StateEISt14default_deleteIS1_EEERT0_RSt11_Tuple_implIXT_EIS5_DpT1_EE
 ZSt12__get_helperILm0EPNSt6thread6_StateEJSt14default_deleteIS1_EEERKT0_RKSt11_Tuple_implIXT_EJS5_DpT1_EE
 ZSt12__get_helperILm0EPNSt6thread6_StateEJSt14default_deleteIS1_EEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
-ZSt12__get_helperILm1ESt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEIEERT0_RSt11_Tuple_implIXT_EIS5_DpT1_EE
-ZSt12__get_helperILm1ESt14default_deleteINSt13__future_base13_State_baseV211_Make_readyEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
 ZSt12__get_helperILm1ESt14default_deleteINSt6thread6_StateEEIEERT0_RSt11_Tuple_implIXT_EIS4_DpT1_EE
 ZSt12__get_helperILm1ESt14default_deleteINSt6thread6_StateEEJEERT0_RSt11_Tuple_implIXT_EJS4_DpT1_EE
 ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPSt12Catalog_infoSt6vectorIS3_SaIS3_EEEEET_S9
@@ -13293,9 +13236,7 @@ ZSt15__try_use_facetISt9money_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE
 ZSt15__try_use_facetISt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEEPKT_RKSt6locale
 ZSt15__try_use_facetISt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEEPKT_RKSt6locale
 ZSt15__try_use_facetISt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEEPKT_RKSt6locale
-ZSt15future_categoryv
 ZSt15get_new_handlerv
-ZSt15make_error_codeSt11future_errc
 ZSt15make_error_codeSt4errc
 ZSt15make_error_codeSt7io_errc
 ZSt15set_new_handlerPFvvE
@@ -13311,9 +13252,7 @@ ZSt17__istream_extractRSiPcl
 ZSt17__throw_bad_allocv
 ZSt17__verify_groupingPKcmRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 ZSt17__verify_groupingPKcmRKSs
-ZSt17current_exceptionv
 ZSt17iostream_categoryv
-ZSt17rethrow_exceptionNSt15__exception_ptr13exception_ptrE
 ZSt18_Rb_tree_decrementPKSt18_Rb_tree_node_base
 ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base
 ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base
@@ -13330,7 +13269,6 @@ ZSt19uncaught_exceptionsv
 ZSt20_Rb_tree_black_countPKSt18_Rb_tree_node_baseS1
 ZSt20_Rb_tree_rotate_leftPSt18_Rb_tree_node_baseRS0
 ZSt20__throw_domain_errorPKc
-ZSt20__throw_future_errori
 ZSt20__throw_length_errorPKc
 ZSt20__throw_out_of_rangePKc
 ZSt20__throw_system_errori
@@ -13358,17 +13296,11 @@ ZSt2wsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6
 ZSt2wsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6
 ZSt34__uninitialized_move_if_noexcept_aIPPSt12Catalog_infoS2_SaIS1_EET0_T_S5_S4_RT1
 ZSt3cin
-ZSt3getILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERKNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERKSA
-ZSt3getILm0EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERSA
 ZSt3getILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEERKNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERKS9
 ZSt3getILm0EIPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERS9
-ZSt3getILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSA
-ZSt3getILm0EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSA
 ZSt3getILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKS9
 ZSt3getILm0EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERS9
-ZSt3getILm1EIPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERSA
 ZSt3getILm1EIPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT_ESt5tupleIIDpT0_EEE4typeERS9
-ZSt3getILm1EJPNSt13__future_base13_State_baseV211_Make_readyESt14default_deleteIS2_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSA
 ZSt3getILm1EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERS9
 ZSt3maxImERKT_S2_S2
 ZSt3minIDiERKT_S2_S2
@@ -13394,7 +13326,6 @@ ZSt4moveIRNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEONSt16remove_refe
 ZSt4moveIRNSt8ios_base6_WordsEEONSt16remove_referenceIT_E4typeEOS4
 ZSt4moveIRP8_IO_FILEEONSt16remove_referenceIT_E4typeEOS4
 ZSt4moveIRPKcEONSt16remove_referenceIT_E4typeEOS4
-ZSt4moveIRPNSt13__future_base13_State_baseV211_Make_readyEEONSt16remove_referenceIT_E4typeEOS6
 ZSt4moveIRPNSt6thread10_Impl_baseEEONSt16remove_referenceIT_E4typeEOS5
 ZSt4moveIRPNSt6thread6_StateEEONSt16remove_referenceIT_E4typeEOS5
 ZSt4moveIRPNSt8ios_base14_Callback_listEEONSt16remove_referenceIT_E4typeEOS5
@@ -13563,6 +13494,7 @@ ZSt9has_facetISt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6
 ZSt9has_facetISt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEEbRKSt6locale
 ZSt9has_facetISt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6locale
 ZSt9terminatev
+ZSt9to_stringi
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb0EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb1EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIwLb0EEEERKT_RKSt6locale
@@ -13609,7 +13541,6 @@ ZSt9use_facetISt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEERKT_RK
 ZSt9use_facetISt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEERKT_RKSt6locale
 ZStaNRSt13_Ios_FmtflagsS
 ZStanSt12_Ios_IostateS
-ZStanSt12memory_orderSt23__memory_order_modifier
 ZStanSt13_Ios_FmtflagsS
 ZStanSt13_Ios_OpenmodeS
 ZStcoSt12_Ios_Iostate
@@ -13721,12 +13652,10 @@ ZTIN9__gnu_cxx18stdio_sync_filebufIwSt11char_traitsIwEEE
 ZTIN9__gnu_cxx20recursive_init_errorE
 ZTIN9__gnu_cxx24__concurrence_lock_errorE
 ZTIN9__gnu_cxx26__concurrence_unlock_errorE
-ZTINSt13__future_base12_Result_baseE
 ZTINSt3_V214error_categoryE
 ZTINSt6locale5facet6__shimE
 ZTINSt6locale5facetE
-ZTINSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEEE
-ZTINSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEEE
+ZTINSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEEE
 ZTINSt6thread6_StateE
 ZTINSt7__cxx1110moneypunctIcLb0EEE
 ZTINSt7__cxx1110moneypunctIcLb1EEE
@@ -13852,6 +13781,7 @@ ZTISt10moneypunctIcLb0EE
 ZTISt10moneypunctIcLb1EE
 ZTISt10moneypunctIwLb0EE
 ZTISt10moneypunctIwLb1EE
+ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt11__timepunctIcE
 ZTISt11__timepunctIwE
 ZTISt11logic_error
@@ -13861,7 +13791,6 @@ ZTISt12codecvt_base
 ZTISt12ctype_bynameIcE
 ZTISt12ctype_bynameIwE
 ZTISt12domain_error
-ZTISt12future_error
 ZTISt12length_error
 ZTISt12out_of_range
 ZTISt12system_error
@@ -13898,6 +13827,7 @@ ZTISt15time_get_bynameIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE
 ZTISt15time_put_bynameIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
 ZTISt15time_put_bynameIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE
 ZTISt15underflow_error
+ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt16__numpunct_cacheIcE
 ZTISt16__numpunct_cacheIwE
 ZTISt16invalid_argument
@@ -14003,12 +13933,10 @@ ZTSN9__gnu_cxx18stdio_sync_filebufIwSt11char_traitsIwEEE
 ZTSN9__gnu_cxx20recursive_init_errorE
 ZTSN9__gnu_cxx24__concurrence_lock_errorE
 ZTSN9__gnu_cxx26__concurrence_unlock_errorE
-ZTSNSt13__future_base12_Result_baseE
 ZTSNSt3_V214error_categoryE
 ZTSNSt6locale5facet6__shimE
 ZTSNSt6locale5facetE
-ZTSNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEEE
-ZTSNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEEE
+ZTSNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEEE
 ZTSNSt6thread6_StateE
 ZTSNSt7__cxx1110moneypunctIcLb0EEE
 ZTSNSt7__cxx1110moneypunctIcLb1EEE
@@ -14134,6 +14062,7 @@ ZTSSt10moneypunctIcLb0EE
 ZTSSt10moneypunctIcLb1EE
 ZTSSt10moneypunctIwLb0EE
 ZTSSt10moneypunctIwLb1EE
+ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTSSt11__timepunctIcE
 ZTSSt11__timepunctIwE
 ZTSSt11logic_error
@@ -14143,7 +14072,6 @@ ZTSSt12codecvt_base
 ZTSSt12ctype_bynameIcE
 ZTSSt12ctype_bynameIwE
 ZTSSt12domain_error
-ZTSSt12future_error
 ZTSSt12length_error
 ZTSSt12out_of_range
 ZTSSt12system_error
@@ -14180,6 +14108,7 @@ ZTSSt15time_get_bynameIwSt19istreambuf_iteratorIwSt11char_traitsIwEEE
 ZTSSt15time_put_bynameIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE
 ZTSSt15time_put_bynameIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE
 ZTSSt15underflow_error
+ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTSSt16__numpunct_cacheIcE
 ZTSSt16__numpunct_cacheIwE
 ZTSSt16invalid_argument
@@ -14196,6 +14125,7 @@ ZTSSt18__moneypunct_cacheIwLb0EE
 ZTSSt18__moneypunct_cacheIwLb1EE
 ZTSSt18basic_stringstreamIcSt11char_traitsIcESaIcEE
 ZTSSt18basic_stringstreamIwSt11char_traitsIwESaIwEE
+ZTSSt19_Sp_make_shared_tag
 ZTSSt19__codecvt_utf8_baseIDiE
 ZTSSt19__codecvt_utf8_baseIDsE
 ZTSSt19__codecvt_utf8_baseIwE
@@ -14290,11 +14220,9 @@ ZTVN9__gnu_cxx18stdio_sync_filebufIwSt11char_traitsIwEEE
 ZTVN9__gnu_cxx20recursive_init_errorE
 ZTVN9__gnu_cxx24__concurrence_lock_errorE
 ZTVN9__gnu_cxx26__concurrence_unlock_errorE
-ZTVNSt13__future_base12_Result_baseE
 ZTVNSt3_V214error_categoryE
 ZTVNSt6locale5facetE
-ZTVNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjPN7tinybvh3BVHEEijS5_EEEEEE
-ZTVNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvjjjjjPjPN7tinybvh3BVHEEijjjjS3_S6_EEEEEE
+ZTVNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN7tinybvh9JobSystem10InitializeEvEUlvE_EEEEEE
 ZTVNSt6thread6_StateE
 ZTVNSt7__cxx1110moneypunctIcLb0EEE
 ZTVNSt7__cxx1110moneypunctIcLb1EEE
@@ -14342,7 +14270,6 @@ ZTVSt11regex_error
 ZTVSt12ctype_bynameIcE
 ZTVSt12ctype_bynameIwE
 ZTVSt12domain_error
-ZTVSt12future_error
 ZTVSt12length_error
 ZTVSt12out_of_range
 ZTVSt12system_error
@@ -14538,6 +14465,7 @@ ZZNSt18__moneypunct_cacheIwLb1EE8_M_cacheERKSt6localeEN11_Scoped_strC1ERKSbIwSt1
 ZZNSt18__moneypunct_cacheIwLb1EE8_M_cacheERKSt6localeEN11_Scoped_strC2ERKSbIwSt11char_traitsIwESaIwEE
 ZZNSt18__moneypunct_cacheIwLb1EE8_M_cacheERKSt6localeEN11_Scoped_strD1Ev
 ZZNSt18__moneypunct_cacheIwLb1EE8_M_cacheERKSt6localeEN11_Scoped_strD2Ev
+ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag
 ZZNSt6vectorIPSt12Catalog_infoSaIS1_EE17_M_realloc_appendERKS1_EN11_Guard_eltsC1EPS1_RS2
 ZZNSt6vectorIPSt12Catalog_infoSaIS1_EE17_M_realloc_appendERKS1_EN11_Guard_eltsC2EPS1_RS2
 ZZNSt6vectorIPSt12Catalog_infoSaIS1_EE17_M_realloc_appendERKS1_EN11_Guard_eltsD1Ev
@@ -14624,14 +14552,13 @@ access to in this demo
 accessor_ == other.accessor
 active resources
 active sceneobject: %i clusters
+adapter
 adding views while previous rendering is running. Someone needed to call WaitForRenderingToComplete
 additional_includes
 addons
 aggregate
 aggregate  %s of %s fragments merged
 aggregate cullrequests
-aggregate meshlet indirect dispatch
-aggregate meshlet indirect dispatch recull
 aggregate meshlet overflow handling
 aggregate.fragmentCount
 aggregate.material_flags
@@ -14641,13 +14568,14 @@ aggregate.model_name
 aggregate.object_flags
 aggregate_value
 aggregatedesc.cpp
-aggregatedesc.cpp:2081
+aggregatedesc.cpp:2064
 aggregatertproxydesc.cpp
 aggregates
 albedo for LPV debug grid
 aliased to the error texture
 aliasing
 alignof
+all later work
 allocated
 allocated      %s transforms, %s instances, %s meshlets
 allocator
@@ -14697,16 +14625,16 @@ as %s
 asimd
 assert_fail
 asterisk
+async compute blas scratch memory
 atan2f
 atlas
+avg %.3f ms, min %.3f, max %.3f
 avg %f
 b%d (%.02f secs
 b%d (%d
 b%d: %d
 b(IcB M
 b>Viewport X</b>=%d <b>Y</b>=%d <b>Width</b>=%d <b>Height</b>=%d  <b>MinZ</b>=%.3f <b>MaxZ</b>=%.3f
-bDisableDynamicRefractionMap
-bReflectDynamicObjectsOnly
 backface
 backslash
 backspace
@@ -14717,12 +14645,10 @@ baked_shadow_light_id
 barnlightconstants
 base scene object
 base scene object cull request
+baseline%d
 baseobject.material_name
 baseobject.meshletCount
 baseobject.model_name
-basesceneobject meshlet indirect dispatch
-basesceneobject meshlet indirect dispatch debug
-basesceneobject meshlet indirect dispatch recull
 basesceneobject visibility indices
 basic_filebuf::_M_convert_to_external conversion error
 basic_filebuf::underflow codecvt::max_length() is not valid
@@ -14877,6 +14803,7 @@ combo 3 (one-liner
 combo 4 (array
 combo 5 (function
 command
+commandline
 comment
 commercial-at
 common
@@ -14950,6 +14877,7 @@ cullstats
 cur %i, targ %i %s, %.1fs
 current
 current ImPlot Colormap. If you want to style individual
+cursor
 curvature
 curvessegmentoverride
 custom_scale
@@ -14987,8 +14915,8 @@ d assets
 d columns
 d current allocations
 d frames ago
+d frames over %.1f s. %s Click a marker to plot it.%s
 d instances of same table! Some data below will refer to last instance
-d leaked drawlists
 d past errors skipped
 d some text
 d vertices, %d indices (%d triangles
@@ -15141,8 +15069,11 @@ dual_lobe_roughness_0
 dual_lobe_roughness_1
 dual_lobe_roughness_mix
 dummy
+dummy meshlet overflow handling
 dummybuffer
 dummybuffer_r32uint
+dummycullstats
+dummydebugmeshletdrawargs
 dump3d
 duplocale
 dx != __null
@@ -15160,9 +15091,12 @@ dynsym
 e grams
 e" must be followed by exponent
 e(IcE M
+e(IcU
+e(IcU M
 e.g. "1e+8" becomes "100000000
 e.g. GlyphExcludeRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0
 e0IcE(M
+e2jx	&A
 eHcKpIc
 edit me
 eeeeeeeeeeeeeeee
@@ -15199,7 +15133,6 @@ extend .$0
 extendee
 extension
 extension_range
-extract.cpp
 eye_data_list
 eye_target
 eye_target_bone_index
@@ -15233,6 +15166,7 @@ f5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
 f8IcF0M
 f;H0tm
 fD)RVC
+fD9Y t
 failed to parse contents
 fakeplayer
 fakeview
@@ -15268,8 +15202,6 @@ fixed32
 fixed64
 fixed_invtbl8
 fj".T\CMek2>x
-flWaterDepth
-flWaterStart
 flags3
 float (indented)##1b
 float (indented)##2b
@@ -15317,7 +15249,10 @@ found
 fprintf_chk
 frag %i
 fragmentbounds
+frame,time_s
 frames
+frames,%d
+frames_csv_min_ms,%.3f
 freelocale
 freeze_cols
 freeze_rows
@@ -15328,10 +15263,10 @@ fseeko64
 ftello64
 full sets
 fullscreenquad
-future
 fwrite
 fxstat
 g %s%s
+g4Lcr D;r0D
 g@L;gH
 gNc, H
 gXHcW A
@@ -15354,7 +15289,6 @@ generic
 geosphere
 get_nprocs
 getentropy
-gettimeofday
 gh spaceH
 ghL;gpH
 glibcxx.eh_pool
@@ -15502,16 +15436,18 @@ google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::internal::
 google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::internal::ExtensionSet::flat_end
 got.plt
 gpu mem
+gpu_profile_%04d%02d%02d_%02d%02d%02d
 gradient1
 gradient2
 granting current route
+graph
+graphstats
 grave-accent
 greater-than-sign
 guard variable for
 gxHcGpM
 gxx_personality_v0
 h(Ic@ I
-h/H/H
 h0Ict
 h@HiE
 hIcu`Ic
@@ -15535,10 +15471,15 @@ hairsim_reset
 hairsimvelocityvolume
 hairtangentaccumvolume
 hardware
+has a bad tile offset table ( %d tiles
+has compressed tiles but no offsets
 has no field named
+has no tile layout block, it needs recompiling
+has no tiles for mip %d
 has no value named
 has not been loaded
 has the same name as
+has tiles in unknown compression %d
 has_preferred_x: %d (%.2f
 hashed
 headבf
@@ -15547,6 +15488,7 @@ hello, world
 hexadecimal
 hidden
 hidden alias for
+hidebelow
 hierarchy
 hihat-c
 hihat-o
@@ -15593,10 +15535,12 @@ i - %i
 i < V_ARRAYSIZE( s_szMissShaderNames
 i < length
 i The quick brown fox jumps over the lazy dog
+i barrier groups
 i dynamic, %i cached, %i failed, %i lru'd in %ix%i atlas | %i requests, %i reused, %i re-renders drawn (%i held
 i filtered textures
 i loaded models, %i allocations.  using %.1f%% of atlas
 i object%s, %i draw call%s, %s tris
+i of %i passes reordered, %i schedule batches
 i requests, %i reused without re-render%s
 i resources used
 i textures
@@ -15646,9 +15590,13 @@ in ItemAdd
 in PopupF
 in SetShortcutRouting() for this KeyChord
 in WindowA
+inc_tiny_bvh.h
 incl,-excl
 incl. Discarded rects: %d, area: about %d px ~%dx%d px
 indexbuffer
+indirect
+indirect dispatch buffer
+indirect dispatch overflow indices
 infinity
 init_array
 initial
@@ -15688,9 +15636,6 @@ instance cull stats shadow
 instanced
 instanced mesh cull requests
 instanced mesh data
-instanced meshlet indirect dispatch
-instanced meshlet indirect dispatch debug
-instanced meshlet indirect dispatch recull
 instanced meshlet overflow handling
 instancedmesh.material_name
 instancedmesh.max_instances
@@ -15825,6 +15770,8 @@ is_multiplayer
 is_transition
 ishltv
 isoc99_sscanf
+issued after the last pass
+issued in front of %s
 iswctype_l
 item view
 items_count
@@ -15846,6 +15793,7 @@ jobs           %s culling (%.3f ms), %s rendering (%.3f ms), %s used to render
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
+k D;k0u
 k0X[]A\A]A^A
 k8}.H
 k?33s
@@ -15898,10 +15846,11 @@ kkkkkkkkkkkkkkk
 kkkkkkkkkkkkkkkk
 kp|	1
 l bug reH
-l$0t6H
 l$0tTH
 l$8IcD$0I
+l$Ht/H
 l$XrgH
+l8~2c0
 label
 lambda
 landmarkname
@@ -15936,6 +15885,7 @@ lb_debug_silhouette_sum
 lb_debug_tiles
 lb_debug_visualize_fog_shadowed_lights
 lb_debug_visualize_lights
+lb_debug_visualize_precomputed_shadow_atlas_lights
 lb_debug_visualize_shadowed_light_details
 lb_debug_visualize_shadowed_lights
 lb_dynamic_shadow_penumbra
@@ -15980,6 +15930,7 @@ lb_use_ellipsoid_bounds
 lb_use_illumination_silhouette
 lb_use_illumination_volume
 ld-linux-x86-64.so.2
+ldexpf
 leading_comments
 leading_detached_comments
 lease suH
@@ -16028,6 +15979,7 @@ localnamefixup
 localtime_r
 location
 lock cmpxchg8b eax
+log1pf
 long double
 long long
 longeeer
@@ -16036,9 +15988,10 @@ loongson-ext
 loongson-mmi
 lowprecisionuv
 lowprecisionuv1
+lroundf
 lu ms
-m H;-l
-m H;-t
+m H;-L
+m H;-T)X
 mL	fm
 m_BLASes
 m_Bounds
@@ -16192,7 +16145,6 @@ m_nWidth
 m_nodeLightingInfo
 m_objectFlags
 m_pData
-m_pDuplicateDispatchPrimitives != nullptr
 m_pMaterial
 m_pSemanticName
 m_poseParams
@@ -16247,6 +16199,7 @@ map_entry should not be set explicitly. Use map<KeyType, ValueType> instead
 map_name
 mapbuilder.blocklight
 marginally concave
+marker,avg_ms,min_ms,p50_ms,p95_ms,p99_ms,max_ms,frames_present,path
 mat expaH
 mat_fullbright
 mat_tonemap_bloom_scale
@@ -16391,14 +16344,11 @@ my_toggle_popup
 mycolumns
 mycolumns3
 mypicker
-m}Ipl2
+n E;n0
 n L9l
-nCompressedSize == nUncompressedSize
 nIndex < m_RenderTargets.Count
-nMEuo
 nPrevTransformBufferIndex < V_ARRAYSIZE( m_transformBufferSlotsForIndex
 nTries < 10000000
-n\;TE1
 name%Y
 name_part
 nan_expectfail
@@ -16474,6 +16424,7 @@ o(Lcw I
 o0ATUSH
 o8ATUI
 oHHcO@1
+oPATSL
 oXrMIi
 obj %d
 obj_count
@@ -16484,8 +16435,10 @@ occlusionproxyvb
 ocument
 of the Protocol Buffer runtime library, but the installed version is
 of the Protocol Buffer runtime library, which is not compatible with the installed version
+offset count does not match the tile count
 offset_angles
 offset_origin
+offsets are not a packed stream
 once_proxy
 oneof_decl
 oneof_index
@@ -16524,6 +16477,7 @@ pObj->IsDeleted
 pXrhH
 pXu	D8
 p[A\A]A
+p[A\A]A^A
 p[]A\ÐATUI
 package
 package $0
@@ -16590,6 +16544,9 @@ previous
 previouslevel
 printf
 printf_chk
+proceduralRTProxyEmissive
+proceduralRTProxyIB
+proceduralRTProxyVB
 processed %u: requested %u, already requested %u, page accessed %u
 processors (all in the P5 microarchitecture
 properties
@@ -16614,8 +16571,8 @@ pthread_once
 pthread_rwlock_rdlock
 pthread_rwlock_unlock
 pthread_rwlock_wrlock
+pthread_setname_np
 pthread_setspecific
-public/scenesystem/sceneobject.h
 public/tier0/tslist.h
 public/tier0/utldict.h
 public_dependency
@@ -16625,7 +16582,10 @@ pxs?{7
 py_generic_services
 p耀p耀p
 p耀p耀p耀p
+q0H+q8H
 q=j>e
+qQN^AF
+qXt}E9
 qangle
 qqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqq
@@ -16637,7 +16597,6 @@ qxs?y7
 qxs?{7
 r0AUATE1
 r2IcG I9
-r>b*rM
 r_allow_onesweep_gpusort
 r_animatable_mesh_shaders
 r_animatable_mesh_shaders_visualize_bounds
@@ -16737,6 +16696,7 @@ rela.plt
 relro_padding
 renderbackfaces
 renderingpipelineforward.cpp
+rendersystem,%s
 rendertarget
 rendertarget_dscratch_%d_%d_%d.vtex
 rendertarget_r11g11b10f_%d_%d
@@ -16779,6 +16739,7 @@ row_min_height
 rtx_dynamic_blas
 rtx_dynamic_blas_caching
 rtx_force_default_hitgroup
+rtx_nonopaque
 rtx_preview_dynamic_bounce
 rtx_random_samples.vtex
 rtx_texture_resolution
@@ -16829,7 +16790,6 @@ s###doc%d
 s##path
 s%s%s
 s%s%s%s%s
-s(I;w(u
 s, %s
 s, 0x%08x+%s
 s, 0x%08x+%s -- Overlaps
@@ -16877,7 +16837,9 @@ s] [%05d
 s][0x%08X,%d
 s][Data
 s_child_wrapper
+s_frames.csv
 s_hScrambledHalton != GENERIC_DATA_HANDLE_INVALID
+s_summary.csv
 savegamefilename
 savegamename
 sc_aggregate_bvh
@@ -16936,6 +16898,10 @@ sc_force_materials_batchable
 sc_force_single_display_list_per_layer
 sc_force_translation_in_projection
 sc_gpu_profiler
+sc_gpu_profiler_record
+sc_gpu_profiler_record_min_ms
+sc_gpu_profiler_record_start
+sc_gpu_profiler_record_stop
 sc_hdr_enabled_override
 sc_imgui_show_debug_log
 sc_imgui_show_id_stack
@@ -16975,6 +16941,8 @@ sc_only_render_opaque
 sc_only_render_shadowcasters
 sc_reject_all_objects
 sc_rendergraph_debug_visualizer
+sc_rendergraph_schedule
+sc_rendergraph_schedule_memory_growth_threshold_pct
 sc_screen_size_lod_scale_override
 sc_setclassflags
 sc_setclassflags %s %d
@@ -17008,6 +16976,7 @@ scenegfxresources.cpp
 sceneinfo_gpu - Load Materials
 scenelpvdebuggrid.cpp
 sceneobject cull stats
+sceneobject dummy meshlet indirect dispatch debug
 sceneobject_h
 sceneobject_methods.cpp
 sceneobjectdescs.cpp
@@ -17019,12 +16988,13 @@ scenesysDodecahedron
 scenesysPyramid
 scenesystem
 scenesystem.cpp
-scenesystem.cpp(5432): Expecting 1 renderable pass for material "%s" but found %d
-scenesystem.cpp:3094
+scenesystem.cpp(5148): Expecting 1 renderable pass for material "%s" but found %d
+scenesystem.cpp:2832
 scenesystemdebug
 scenesystemperframedata
 scenetextureset_%d
 sceneviewdebugoverlays.cpp
+sched_yield
 schema_description
 schema_friendly_name
 schema_suppress_enumerator
@@ -17039,6 +17009,8 @@ script_b94a0343
 scroll
 scrolling
 seaborn style
+seconds
+seconds,%.3f
 secure_getenv
 see Demo->Configuration for details & more
 seems to be defined in
@@ -17187,7 +17159,6 @@ split1
 split2
 sprintf
 sprintf_chk
-src/thirdparty/tinybvh/inc_tiny_bvh.h
 src_height != 0
 src_height == ((dst_height + 1) / 2
 src_width != 0
@@ -17218,7 +17189,6 @@ std::basic_string
 std::basic_string<char, std::char_traits<char>, std::allocator<char
 std::bfloat16_t
 std::exception
-std::future_error
 std::iostream
 std::istream
 std::ostream
@@ -17305,11 +17275,11 @@ t#IcV0H
 t#IcVPH
 t$ A9^h~4Hk
 t$ u	H
-t$$Mc
 t$(wF
 t$8ZYI9
 t$@H;t$ t
 t$@IcD$8I
+t$hA\H
 t$pIcT$h
 t$x@8p
 t%HcQ`H
@@ -17324,10 +17294,12 @@ t)IcU`H
 t+H;y s
 t+HcD
 t+HcSPH
+t+IcE
 t+IcT$HH
 t,HcSPH
 t-A9̺0
 t-HcSPH
+t-IcD
 t-IcE H
 t/2 Wjc	t1
 t/97u+H
@@ -17345,6 +17317,7 @@ t4[A\A]A
 t5HcCh
 t5L;"u
 t6HcS(H
+t6Lc=Dj
 t8HcCh
 t:IcU`H
 t;D;kXt5L
@@ -17355,6 +17328,7 @@ t<IcE D
 t>HcSHH
 t>vTU
 tCH98u
+tG[A\A]A
 tHIcT$(H
 tIHcSPH
 tJIcVPH
@@ -17368,12 +17342,11 @@ tOHcSPH
 tPATUH
 tPIcD
 tPL;b rJH
-tQLc%35
+tP[A\A]A
 tTIcR(H
 tVAVAUI
 tVHcqXH
 tV[A\A]A^A
-tW[A\A]A
 tYAVAUATUSL
 t\HcSPH
 t_;Hxu
@@ -17406,6 +17379,7 @@ take min of lb_dynamic_shadow_resolution and barnlight shadowmapsize as base sha
 tangent
 tangentu_signv
 target_entity
+tcMc'K
 td> CLEAR_COLOR %d </td
 td><font color="red">Clear() was suppressed</font></td
 td>CLEAR_DEPTH</td
@@ -17435,7 +17409,6 @@ td>LAYERFLAGS_PRESERVE_STENCIL_BUFFER</td
 td>LAYERFLAGS_READONLY_DEPTH_STENCIL</td
 td>LAYERFLAGS_READONLY_DEPTH_STENCIL_NORESOLVE</td
 tdata
-teKcTnPE
 template
 template parameter object for
 terminate called after throwing an instance of
@@ -17455,6 +17428,7 @@ textures/dev/brdf_multiscatter_lut.vtex
 textures/dev/ggx_integrate_brdf_lut_schlick.vtex
 textures/dev/scrambled_halton.vdata
 tfATUH
+tfKcTnPD
 tgATUI
 tgMc,$I
 th[A\A]A^A
@@ -17469,12 +17443,14 @@ throw
 tiATUL
 tick_interval
 tickcount
+tile %d ( %u bytes at %u ) is not in the %u bytes read or does not decompress
 tile cull items
 tiles  %2i%% of atlas   (%s all-lit, %s all-shadow, %s penumbra
 timegm
 timing         begin->finish %.3f ms, finish->complete %.3f ms
 tint_color
-tiny_bvh.h
+tiny_bvh_base.h
+tinybvh_%u
 tj[A\A]A^A
 tls_get_addr
 tm_clone_table
@@ -17533,7 +17509,12 @@ trying to move layer %s after unfound layer %s
 trying to move non existent layer
 ttIcGxL
 ttIc~ 1
+tv;=*5D
+tw;=*5D
+tx;=*5D
+ty;=*5D
 tyIc} 1
+tyLcc D;c0
 type does not match
 type or int32_t
 type() == TYPE_FIXED32
@@ -17548,7 +17529,9 @@ typeinfo fn for
 typeinfo for
 typeinfo name for
 typename
+tz;=*5D
 tzAWAVAUATA
+t|9=*5D
 t|Ic~ 1
 u A+w A+w
 u(I+w
@@ -17578,6 +17561,7 @@ uintptr_t)(src_height) & ((2)-1
 uintptr_t)(src_width) & ((2)-1
 unable to register all schema data: %s
 unbatchable
+uncompressed tile size is not a page
 undefined
 underscore
 undo_point: %d, redo_point: %d, undo_char_point: %d, redo_char_point: %d
@@ -17591,6 +17575,7 @@ uninitialized __any_string
 uninterpreted_option
 unique mats
 unknown
+unknown compression
 unknown enum value
 unknown. Ensure that your proto
 unnamed
@@ -17627,8 +17612,6 @@ uxIcEpHc
 uyHcBt
 uހ9#uـy
 v H9r
-vGZ;k
-vH.aC
 vV<0uJI
 val_bool
 val_byte
@@ -17759,13 +17742,13 @@ volume_fog_temporal_weight
 volume_fog_width
 volumetric fog
 volumetric_fog.vtex
+vs Baseline
 vsnprintf
 vsnprintf_chk
 vt)<xtj
 vt_analyze_256_pages
 vt_evict_all
 vt_page_atlas_size
-vt_sim_streaming_delay_ms
 vt_stream_latency_reset
 vtable for
 w(AUATI
@@ -17783,6 +17766,7 @@ w@AUATL
 wHA+t$H
 wHAUATL
 wPH+wHH
+wP^i)H
 wXrqH
 wZ	Bu
 waitpid
@@ -17883,14 +17867,15 @@ xxx"     hide lines containing "xxx
 xxx,yyy"  display lines containing "xxx" or "yyy
 xxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxx
-x|yyx
 y != __null
+y,A9}8
 y-axis
+yZ[A\A]A
 you can drag analog plots over the rising/falling digital edge
+y消y溜y淇y
 z'u%E1
 z.u,M
 z0AUATI
 z:u8Ic
 z?333?P
 zyxwvutsrqponmlkjihgfedcba`_^]\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?>=<;:9876543210
-z栃z朗z杏z

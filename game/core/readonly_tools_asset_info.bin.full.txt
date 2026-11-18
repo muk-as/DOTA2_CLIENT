@@ -145,7 +145,6 @@
 - Diagnostic.test_random_multiple
 - Diagnostic.test_set_mixgraph_input
 - Diagnostic.test_set_opvar
-- Diagnostic.test_setter_AHR_game_volume
 - Diagnostic.test_setter_AHR_mixgraph_input
 - Diagnostic.test_setter_AHR_mixlayer
 - Diagnostic.test_setter_AHR_stack_opvar
@@ -194,7 +193,6 @@
 - Diagnostic.update_test_array_index_global_stack_sequence
 - Diagnostic.update_test_array_index_stack_increment
 - Diagnostic.update_test_calc_distance
-- Diagnostic.update_test_convar
 - Diagnostic.update_test_delta
 - Diagnostic.update_test_entity_info
 - Diagnostic.update_test_falloff
@@ -410,7 +408,6 @@
 - core.null
 - core.pause_soundevent
 - core.sampler_base
-- core.set_game_volume_timed
 - core.set_playerdsp
 - core.set_playerdsp_muffled
 - core.soundscape_2d
@@ -435,6 +432,7 @@
 - focus_change
 - focus_change_fail
 - focus_change_fastscroll
+- ice 1
 - idle
 - multi_import_test
 - multi_vsnd_base_1
@@ -491,7 +489,6 @@
 - testkv3_Diagnostic.update_test_array_index_global_stack_sequence
 - testkv3_Diagnostic.update_test_array_index_stack_increment
 - testkv3_Diagnostic.update_test_calc_distance
-- testkv3_Diagnostic.update_test_convar
 - testkv3_Diagnostic.update_test_delta
 - testkv3_Diagnostic.update_test_entity_info
 - testkv3_Diagnostic.update_test_falloff
@@ -554,6 +551,7 @@ Texture Compiler Version Mip None "CompileTexture"
 Texture Compiler Version Mip Normals "CompileTexture"
 Texture Compiler Version Mip PreserveCoverage "CompileTexture"
 Texture Encode Quality "CompileTexture"
+Vector Graphic Version "CompileVectorGraphic"
 World Compiler Version "CompileWorld"
 World Environment Maps Compiler Version "CompileWorldEnvironmentMaps"
 World Lighting Compiler Version "CompileWorldLighting"
@@ -897,10 +895,10 @@ core/materials/dev/luminaire
 core/materials/dev/luminaire_vmat_g_tcolor_b5b51a54
 core/materials/dev/luminaire_vmat_g_tselfillummask_b4ea187a
 core/materials/dev/meshlet_refit_cs
-core/materials/dev/mirrortest
 core/materials/dev/morphcomposite
 core/materials/dev/msaa_resolve
 core/materials/dev/msaa_resolve_cs
+core/materials/dev/nodraw
 core/materials/dev/noillum_primary_green
 core/materials/dev/noillum_primary_green_color
 core/materials/dev/noillum_primary_green_color_tga_204e1abb
@@ -1078,12 +1076,11 @@ core/materials/dev/vrad3/lightmap_vertexlight_reduce
 core/materials/dev/vrad3/lpv_raytrace
 core/materials/dev/vrad3/lpv_test_converged
 core/materials/dev/vrad3/mark_occupied_voxels
+core/materials/dev/vrad3/materialsample_raytrace
 core/materials/dev/vrad3/vertexlight_raytrace
 core/materials/dev/vrad3/vertexlight_test_converged
 core/materials/dev/vt_cs
 core/materials/dev/vt_debug_imgui
-core/materials/dev/water_normal
-core/materials/dev/water_normal_tga_a99039e9
 core/materials/dev/whitepanel_color
 core/materials/dev/whitepanel_color_tga_a7576cc4
 core/materials/dev/wind_controller_visualize
@@ -2397,6 +2394,7 @@ core/materials/tools/climb
 core/materials/tools/climb_color
 core/materials/tools/climb_color_tga_b223a265
 core/materials/tools/climb_versus
+core/materials/tools/container_slide
 core/materials/tools/copy_texture_with_gamma
 core/materials/tools/copy_to_backbuffer
 core/materials/tools/draw_points_sizefromcode
@@ -2432,6 +2430,8 @@ core/materials/tools/handle_edged_diamond
 core/materials/tools/handle_edged_diamond_tga_a3722553
 core/materials/tools/handle_edged_diamond_translucent
 core/materials/tools/handle_generic
+core/materials/tools/handle_generic_aligned
+core/materials/tools/handle_generic_aligned_translucent
 core/materials/tools/handle_generic_translucent
 core/materials/tools/handle_ring
 core/materials/tools/handle_ring_color
@@ -2555,6 +2555,10 @@ core/materials/tools/toolslightmapres
 core/materials/tools/toolslightmapres_color
 core/materials/tools/toolslightmapres_color_tga_3915f391
 core/materials/tools/toolslightmapres_trans
+core/materials/tools/toolslightmesh
+core/materials/tools/toolslightmesh_color
+core/materials/tools/toolslightmesh_color_tga_8f2a0d7
+core/materials/tools/toolslightmesh_trans
 core/materials/tools/toolslightprobevolume
 core/materials/tools/toolslightprobevolume_color
 core/materials/tools/toolslightprobevolume_color_png_fb40b780
@@ -2638,6 +2642,11 @@ core/materials/tools_postprocess_volume
 core/materials/vfxtest/cs_compress_dxt5
 core/materials/vfxtest/cs_compress_stb_dxt5
 core/materials/vfxtest/cstest
+core/materials/vfxtest/pmbstresstest
+core/materials/vfxtest/raster_compute_material_test
+core/materials/vfxtest/raster_compute_material_test_feature
+core/materials/vfxtest/raster_compute_material_test_feature_vmat_g_tshared_44fbc6b
+core/materials/vfxtest/raster_compute_material_test_vmat_g_tshared_44fbc6b
 core/materials/vfxtest/stencilsamplingtest
 core/materials/vfxtest/vis_cstest
 core/materials/vgui/hud/800corner1
@@ -2651,6 +2660,7 @@ core/materials/vgui/hud/800corner4_tga_89cb4f45
 core/materials/vgui/white
 core/materials/vgui/white_additive
 core/materials/vgui/white_alpha_only_no_stencil
+core/materials/vgui/white_blendadd
 core/materials/vgui/white_no_stencil
 core/materials/water/dev_water_00
 core/materials/water/dev_water_00_vmat_g_troughness_ea4ece6d
@@ -2910,6 +2920,7 @@ core/panorama/localization/panorama_ukrainian
 core/panorama/localization/panorama_vietnamese
 core/panorama/panorama
 core/panorama/panorama_config
+core/panorama/preprocessor_config
 core/panorama/styles/base_world_panel
 core/panorama/styles/console
 core/panorama/styles/context_menus/context_menu_base
@@ -2998,7 +3009,9 @@ core/particles/testsystems/test_cross_product
 core/particles/testsystems/test_crossfade_rope
 core/particles/testsystems/test_endcap_freeze
 core/physics_wireframe
+core/pmbstresstest
 core/post_process
+core/raster_compute_material_test
 core/rendermicrobenchmark
 core/reset_draw_params_cs
 core/resource/countries_brazilian
@@ -3074,6 +3087,7 @@ core/rtx_vrad3_lightmap
 core/rtx_vrad3_lightmap_sample_validation
 core/rtx_vrad3_lpv
 core/rtx_vrad3_mark_occupied
+core/rtx_vrad3_materialsample
 core/rtx_vrad3_vertexlight
 core/sampletexture_bicubic
 core/screen_texture_with_depth
@@ -3111,7 +3125,6 @@ core/scripts/vscripts/utils/vscriptinit
 core/sfm_accumulation
 core/sfm_hsl_grain
 core/sfm_volumetrics_frustum
-core/simple_water
 core/skinning_cs
 core/sky
 core/solidcolor
@@ -3195,7 +3208,13 @@ core/sounds/diagnostics/two_2sec_lp
 core/sounds/diagnostics/wind_light_foliage_lp_01
 core/sounds/diagnostics/wind_med_foliage_lp_01
 core/sounds/diagnostics/wpn_shotgun_fire_head_test_01
+core/sounds/graphs/__main__
+core/sounds/graphs/base
+core/sounds/graphs/echo
+core/sounds/graphs/lpf
 core/sounds/graphs/mixgraphs
+core/sounds/graphs/test_mix8
+core/sounds/graphs/test_voice_sends
 core/sounds/ir/default
 core/sounds/ir/encoding
 core/sounds/ir/impulse_transient_filtered_pink_noise
@@ -3242,7 +3261,6 @@ core/ssao_convert_depth
 core/ssao_downsample_depth
 core/ssao_scalable_ambient_obscurance
 core/stenciltest
-core/stringtokendatabase
 core/sum_aggregate_cull_stats
 core/surfaceproperties/surfaceproperties
 core/texture_generator_facevertexcolor
@@ -3288,6 +3306,20 @@ core/tools/colors/shared_colors
 core/tools/demoinfo2/demoinfo2
 core/tools/entityreport/dota_colors
 core/tools/fonts/tools_font_manifest
+core/tools/images/common/curve_editor_add
+core/tools/images/common/curve_editor_delete
+core/tools/images/common/curve_editor_edit_position
+core/tools/images/common/curve_editor_popout
+core/tools/images/common/curve_editor_settings
+core/tools/images/common/curve_position_offset
+core/tools/images/common/curve_tangent_flat
+core/tools/images/common/curve_tangent_free
+core/tools/images/common/curve_tangent_linear
+core/tools/images/common/curve_tangent_mirror
+core/tools/images/common/curve_tangent_sine
+core/tools/images/common/curve_tangent_smooth
+core/tools/images/common/curve_tangent_spline
+core/tools/images/common/thumbnail_loading
 core/tools/keybindings/animclip_editor_key_bindings
 core/tools/keybindings/animcontrolcenter_key_bindings
 core/tools/keybindings/animikrig_editor_key_bindings
@@ -3306,6 +3338,7 @@ core/tools/keybindings/phonemeeditor_key_bindings
 core/tools/keybindings/physics_debugger_keybindings
 core/tools/keybindings/postprocess_editor_key_bindings
 core/tools/keybindings/propertyeditor_key_bindings
+core/tools/keybindings/pulse_graph_viewer_key_bindings
 core/tools/keybindings/script_doctor_key_bindings
 core/tools/keybindings/scrub_tool_key_bindings
 core/tools/keybindings/shared_tool_key_bindings
@@ -3610,10 +3643,10 @@ materials/dev/luminaire
 materials/dev/luminaire_vmat_g_tcolor_b5b51a54
 materials/dev/luminaire_vmat_g_tselfillummask_b4ea187a
 materials/dev/meshlet_refit_cs
-materials/dev/mirrortest
 materials/dev/morphcomposite
 materials/dev/msaa_resolve
 materials/dev/msaa_resolve_cs
+materials/dev/nodraw
 materials/dev/noillum_primary_green
 materials/dev/noillum_primary_green_color_tga_204e1abb
 materials/dev/nonmsaa_resolve
@@ -3764,11 +3797,11 @@ materials/dev/vrad3/lightmap_vertexlight_reduce
 materials/dev/vrad3/lpv_raytrace
 materials/dev/vrad3/lpv_test_converged
 materials/dev/vrad3/mark_occupied_voxels
+materials/dev/vrad3/materialsample_raytrace
 materials/dev/vrad3/vertexlight_raytrace
 materials/dev/vrad3/vertexlight_test_converged
 materials/dev/vt_cs
 materials/dev/vt_debug_imgui
-materials/dev/water_normal_tga_a99039e9
 materials/dev/whitepanel_color_tga_a7576cc4
 materials/dev/wind_controller_visualize
 materials/dev/wind_noise_cs
@@ -4273,6 +4306,7 @@ materials/tools/audiomodifier_color_tga_15a1e827
 materials/tools/climb
 materials/tools/climb_color_tga_b223a265
 materials/tools/climb_versus
+materials/tools/container_slide
 materials/tools/copy_texture_with_gamma
 materials/tools/copy_to_backbuffer
 materials/tools/draw_points_sizefromcode
@@ -4301,6 +4335,8 @@ materials/tools/handle_edged_diamond
 materials/tools/handle_edged_diamond_tga_a3722553
 materials/tools/handle_edged_diamond_translucent
 materials/tools/handle_generic
+materials/tools/handle_generic_aligned
+materials/tools/handle_generic_aligned_translucent
 materials/tools/handle_generic_translucent
 materials/tools/handle_ring
 materials/tools/handle_ring_color_tga_fab69840
@@ -4390,6 +4426,8 @@ materials/tools/toolsinvisibleladder
 materials/tools/toolsinvisibleladder_color_tga_dd58c82d
 materials/tools/toolslightmapres
 materials/tools/toolslightmapres_color_tga_3915f391
+materials/tools/toolslightmesh
+materials/tools/toolslightmesh_color_tga_8f2a0d7
 materials/tools/toolslightprobevolume
 materials/tools/toolslightprobevolume_color_png_fb40b780
 materials/tools/toolslightvolumeboundary
@@ -4447,6 +4485,11 @@ materials/tools_postprocess_volume
 materials/vfxtest/cs_compress_dxt5
 materials/vfxtest/cs_compress_stb_dxt5
 materials/vfxtest/cstest
+materials/vfxtest/pmbstresstest
+materials/vfxtest/raster_compute_material_test
+materials/vfxtest/raster_compute_material_test_feature
+materials/vfxtest/raster_compute_material_test_feature_vmat_g_tshared_44fbc6b
+materials/vfxtest/raster_compute_material_test_vmat_g_tshared_44fbc6b
 materials/vfxtest/stencilsamplingtest
 materials/vfxtest/vis_cstest
 materials/vgui/hud/800corner1
@@ -4460,6 +4503,7 @@ materials/vgui/hud/800corner4_tga_89cb4f45
 materials/vgui/white
 materials/vgui/white_additive
 materials/vgui/white_alpha_only_no_stencil
+materials/vgui/white_blendadd
 materials/vgui/white_no_stencil
 materials/water/dev_water_00
 materials/water/dev_water_00_vmat_g_troughness_ea4ece6d
@@ -4881,6 +4925,9 @@ sounds/diagnostics/wind_light_foliage_lp_01
 sounds/diagnostics/wind_med_foliage_lp_01
 sounds/diagnostics/wpn_shotgun_fire_head_test_01
 sounds/graphs/__main__
+sounds/graphs/base
+sounds/graphs/echo
+sounds/graphs/lpf
 sounds/graphs/mixgraphs
 sounds/graphs/test_mix8
 sounds/graphs/test_voice_sends
@@ -4931,7 +4978,6 @@ soundstacks/soundstacks_manifest_devonly
 soundstacks/soundstacks_manifest_tools
 soundstacks/soundstacks_soundscapes_core
 soundstacks/soundstacks_src1
-stringtokendatabase.txt
 surface_prop
 surfaceproperties/surfaceproperties
 textures/dev/albedo_chart
@@ -4953,6 +4999,20 @@ tools/colors/shared_colors
 tools/demoinfo2/demoinfo2
 tools/entityreport/dota_colors
 tools/fonts/tools_font_manifest
+tools/images/common/curve_editor_add
+tools/images/common/curve_editor_delete
+tools/images/common/curve_editor_edit_position
+tools/images/common/curve_editor_popout
+tools/images/common/curve_editor_settings
+tools/images/common/curve_position_offset
+tools/images/common/curve_tangent_flat
+tools/images/common/curve_tangent_free
+tools/images/common/curve_tangent_linear
+tools/images/common/curve_tangent_mirror
+tools/images/common/curve_tangent_sine
+tools/images/common/curve_tangent_smooth
+tools/images/common/curve_tangent_spline
+tools/images/common/thumbnail_loading
 tools/keybindings/animclip_editor_key_bindings
 tools/keybindings/animcontrolcenter_key_bindings
 tools/keybindings/animikrig_editor_key_bindings
@@ -4971,6 +5031,7 @@ tools/keybindings/phonemeeditor_key_bindings
 tools/keybindings/physics_debugger_keybindings
 tools/keybindings/postprocess_editor_key_bindings
 tools/keybindings/propertyeditor_key_bindings
+tools/keybindings/pulse_graph_viewer_key_bindings
 tools/keybindings/script_doctor_key_bindings
 tools/keybindings/scrub_tool_key_bindings
 tools/keybindings/shared_tool_key_bindings

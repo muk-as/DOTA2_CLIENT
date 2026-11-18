@@ -956,7 +956,6 @@ GHAUATUL
 GLIBCXX_TUNABLES
 GLIBC_2.14
 GLIBC_2.17
-GLIBC_2.18
 GLIBC_2.2.5
 GLIBC_2.25
 GLIBC_2.27
@@ -1031,6 +1030,7 @@ GameUI_Disconnect_SoundsMessage
 GameUI_Disconnect_SteamDeny_BadAntiCheat
 GameUI_Disconnect_SteamDeny_Misc
 GameUI_Disconnect_SteamDropped
+GameUI_Disconnect_SteamGroupMembership
 GameUI_Disconnect_SteamIDBanned
 GameUI_Disconnect_SteamIDInUse
 GameUI_Disconnect_SteamInUse
@@ -1139,7 +1139,6 @@ H^T+r
 HammerMapLoader001
 HasField
 Hc+HcC
-Hc5p1
 Hc@LHk
 HcE0L
 HcT$(L
@@ -1386,9 +1385,6 @@ N10__cxxabiv129__pointer_to_member_type_infoE
 N12_GLOBAL__N_117io_error_categoryE
 N12_GLOBAL__N_121system_error_categoryE
 N12_GLOBAL__N_122generic_error_categoryE
-N24CFieldPathHuffmanEncoder12InternalNodeE
-N24CFieldPathHuffmanEncoder5INodeE
-N24CFieldPathHuffmanEncoder8LeafNodeE
 N6google8protobuf10TextFormat17BaseTextGeneratorE
 N6google8protobuf10TextFormat17FieldValuePrinterE
 N6google8protobuf10TextFormat21FastFieldValuePrinterE
@@ -1614,6 +1610,7 @@ NETWORK_DISCONNECT_STEAM_BANNED
 NETWORK_DISCONNECT_STEAM_DENY_BAD_ANTI_CHEAT
 NETWORK_DISCONNECT_STEAM_DENY_MISC
 NETWORK_DISCONNECT_STEAM_DROPPED
+NETWORK_DISCONNECT_STEAM_GROUPMEMBERSHIP
 NETWORK_DISCONNECT_STEAM_INUSE
 NETWORK_DISCONNECT_STEAM_LOGGED_IN_ELSEWHERE
 NETWORK_DISCONNECT_STEAM_LOGON
@@ -1790,6 +1787,7 @@ Plat_IsDirectory
 Plat_IsInDebugSession
 Plat_IsInTestMode
 Plat_IsRunningOnCustomerMachine
+Plat_IsUnderTestMonitor
 Plat_LoadModule
 Plat_LoadModuleRaw
 Plat_LoadSDL
@@ -1882,6 +1880,7 @@ SL	C(H
 SPAWN_GROUP_BLOCK_UNTIL_LOADED
 SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 SPAWN_GROUP_CREATE_NEW_SCENE_WORLD
+SPAWN_GROUP_DONT_SAVE_RESTORE
 SPAWN_GROUP_DONT_SPAWN_ENTITIES
 SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP
 SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE
@@ -2284,6 +2283,7 @@ V_fread
 V_frexpf
 V_ftell
 V_fwrite
+V_isfinited
 V_isnand
 V_logf
 V_powd
@@ -2298,13 +2298,12 @@ V_snprintf
 V_sscanf
 V_strEndsWith
 V_stricmp_fast
-V_strncat
 V_strncmp
 V_strncpy
 V_strnicmp_fast
-V_strtok
 V_tanf
 V_vsnprintf
+V_z3_decompress
 Value
 Value must be "true" or "false" for boolean option
 Value must be identifier for boolean option
@@ -2383,6 +2382,7 @@ Z23_txnal_sso_string_c_strPKv
 Z24g_flTValues0To1InclusiveIDv4_fE
 Z24g_flTValues0To1InclusiveIfE
 Z26_txnal_logic_error_get_msgPv
+Z27LoggingSystem_GetLogCaptureP10CUtlVectorI10CUtlStringi25CUtlVectorMemory_GrowableIS0_iLm0EEEb
 Z27_txnal_cow_string_D1_commitPv
 Z28Assert_ConditionFailed_FatalRK34_AssertCompileTimeConstantStruct_t
 Z28Assert_ConditionFailed_FatalRK34_AssertCompileTimeConstantStruct_tPKcz
@@ -2536,7 +2536,6 @@ ZN10CUtlBuffer9PutStringEPKc
 ZN10CUtlBufferC1EPKviNS_13BufferFlags_tE
 ZN10CUtlBufferC1EiiNS_13BufferFlags_tE
 ZN10CUtlBufferC2EiiNS_13BufferFlags_tE
-ZN10CUtlString12GetForModifyEv
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
@@ -5964,6 +5963,8 @@ ZNSt6vectorISsSaISsEEC1ERKS1
 ZNSt6vectorISsSaISsEEC2ERKS1
 ZNSt6vectorIcSaIcEEC1ERKS1
 ZNSt6vectorIcSaIcEEC2ERKS1
+ZNSt6vectorIfSaIfEEC1EmRKS0
+ZNSt6vectorIfSaIfEEC2EmRKS0
 ZNSt7__cxx1110moneypunctIcLb0EE24_M_initialize_moneypunctEP15__locale_structPKc
 ZNSt7__cxx1110moneypunctIcLb0EE2idE
 ZNSt7__cxx1110moneypunctIcLb0EE4intlE
@@ -7273,6 +7274,7 @@ ZSt9has_facetISt9money_getIwSt19istreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6
 ZSt9has_facetISt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEEbRKSt6locale
 ZSt9has_facetISt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEEbRKSt6locale
 ZSt9terminatev
+ZSt9to_stringi
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb0EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIcLb1EEEERKT_RKSt6locale
 ZSt9use_facetINSt7__cxx1110moneypunctIwLb0EEEERKT_RKSt6locale
@@ -8451,8 +8453,6 @@ cxa_guard_release
 cxa_init_primary_exception
 cxa_pure_virtual
 cxa_rethrow
-cxa_thread_atexit
-cxa_thread_atexit_impl
 cxa_throw
 cxa_throw_bad_array_new_length
 d %d %d
@@ -8858,7 +8858,8 @@ long double
 long long
 lowprecisionuv
 lowprecisionuv1
-m H;-4
+m H;-d
+m H;-l
 m_bIsValid
 m_bNeedsSort
 malloc
@@ -9204,18 +9205,14 @@ t$@IcD$8I
 t$pIcT$h
 t+H;y s
 t+HcD
-t1L95
 t2<\th
 t2Hc>A
 t5HcCh
 t8HcCh
-tCL;5
 tMHcC8
 tPATUH
 tPIcD
 tPL;b rJH
-tSIcD
-tUL;5
 tVAVAUI
 tYAVAUATUSL
 taHct
@@ -9232,7 +9229,6 @@ texcoord
 text format contains deprecated field
 tfATUH
 tgATUI
-tgL;50
 the actual field type (for enums T should be the generated enum
 the global scope
 throw
@@ -9249,7 +9245,6 @@ trailing_comments
 transaction clone for
 transaction_safe
 truncated
-tyL;52
 type does not match
 type or int32_t
 type() == TYPE_FIXED32

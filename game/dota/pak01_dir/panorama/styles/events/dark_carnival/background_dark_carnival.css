@@ -3,6 +3,64 @@
 DOTABackgroundDarkCarnival
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #232646 ), color-stop( 0.6, #0E1423 ), to( #130C0D ) );
+	background-color: black;
+}
+
+DOTABackgroundDarkCarnival.OverworldAct11 .ActContainer.Act1
+{
+	transition-property: opacity, brightness;
+	transition-duration: 0.3s;
+	transition-delay: 0s;
+	opacity: 1;
+	brightness: 1;
+}
+
+DOTABackgroundDarkCarnival.OverworldAct11 .ActContainer.Act2
+{
+	transition-property: opacity, brightness;
+	transition-duration: 0.6s;
+	transition-delay: 0.3s;
+	opacity: 0;
+	brightness: 0;
+}
+
+DOTABackgroundDarkCarnival.OverworldAct12 .ActContainer.Act1
+{
+	transition-property: opacity, brightness;
+	transition-duration: 0.6s;
+	transition-delay: 0.3s;
+	opacity: 0;
+	brightness: 0;
+}
+
+DOTABackgroundDarkCarnival.OverworldAct12 .ActContainer.Act2
+{
+	transition-property: opacity, brightness;
+	transition-duration: 0.3s;
+	transition-delay: 0s;
+	opacity: 1;
+	brightness: 1;
+}
+
+.ActContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	brightness: 1;
+}
+
+.ActUIContainer
+{
+	width: 100%;
+	height: 100%;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+}
+
+.ActTransitionOut .ActUIContainer
+{
+	opacity: 0;
 }
 
 .BackgroundContainer
@@ -42,6 +100,13 @@ DOTABackgroundDarkCarnival
 	background-size: cover;
 }
 
+.Act2 .BackgroundContainer .BackgroundImage
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/backgrounds/background_act2_psd.vtex");
+	blur: gaussian( 1 );
+	wash-color: rgba(0, 0, 255, 0.25);
+}
+
 .BackgroundContainer .ForegroundImage
 {
 	width: 100%;
@@ -70,7 +135,7 @@ DOTABackgroundDarkCarnival
 	vertical-align: center;
 }
 
-.DarkCarnivalLogoContainer
+#DarkCarnivalActSelector
 {
 	x: -360px;
 	y: -40px;
@@ -88,98 +153,23 @@ DOTABackgroundDarkCarnival
 	animation-direction: alternate-reverse;
 }
 
-.AspectRatio16x10 .DarkCarnivalLogoContainer
+.AspectRatio16x10 #DarkCarnivalActSelector
 {
 	x: -300px;
 	pre-transform-scale2d: 0.9;
 }
 
-.AspectRatio21x9 .DarkCarnivalLogoContainer
+.AspectRatio21x9 #DarkCarnivalActSelector
 {
 	x: -370px;
 }
 
-.OnHomePage .DarkCarnivalLogoContainer
+.OnHomePage #DarkCarnivalActSelector
 {
 	opacity: 1;
 	transition-timing-function: ease-in;
 	transition-duration: 0.1s;
 	transition-delay: 0s;
-}
-
-.DarkCarnivalLogoContainer .DarkCarnivalLogo
-{
-	width: 360px;
-	z-index: 1;
-}
-
-.DarkCarnivalLogoContainer .DarkCarnivalLogo.en
-{
-	visibility: visible;
-}
-
-.Language_schinese .DarkCarnivalLogoContainer .DarkCarnivalLogo.en
-{
-	visibility: collapse;
-}
-
-.DarkCarnivalLogoContainer .DarkCarnivalLogo.cn
-{
-	visibility: collapse;
-}
-
-.Language_schinese .DarkCarnivalLogoContainer .DarkCarnivalLogo.cn
-{
-	visibility: visible;
-}
-
-.DarkCarnivalLogoContainer .SubtitleRope
-{
-	width: 12px;
-	ignore-parent-flow: true;
-	horizontal-align: center;
-	vertical-align: bottom;
-}
-
-.DarkCarnivalLogoContainer .SubtitleRope.Left
-{
-	x: -104px;
-	y: -30px;
-}
-
-.DarkCarnivalLogoContainer .SubtitleRope.Right
-{
-	x: 90px;
-	y: -40px;
-}
-
-.DarkCarnivalLogoContainer .SubtitleContainer
-{
-	width: 80%;
-	horizontal-align: center;
-	transform: rotateZ( -3deg );
-	margin-top: -56px;
-	margin-left: -16px;
-}
-
-.DarkCarnivalLogoContainer .SubtitleContainer .SubtitleBackground
-{
-	width: 80%;
-	vertical-align: center;
-	horizontal-align: center;
-}
-
-.DarkCarnivalLogoContainer .SubtitleContainer .EventSubtitle
-{
-	vertical-align: center;
-	horizontal-align: center;
-	text-align: center;
-	width: 72%;
-	height: 25px;
-	text-overflow: shrink;
-	color: gradient( linear, 0% 20%, 0% 100%, from( goldLight ), to( rgb(190, 182, 199) ) );
-	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
-	font-weight: semi-bold;
 }
 
 @keyframes 'SwayLogo'
@@ -1051,11 +1041,6 @@ DOTABackgroundDarkCarnival
 	text-overflow: shrink;
 }
 
-.Unsed
-{
-	visibility: collapse;
-}
-
 .BackgroundSceneContainer
 {
 	width: 100%;
@@ -1087,6 +1072,7 @@ DOTABackgroundDarkCarnival
 	opacity: 1;
 	transition-property: opacity, pre-transform-scale2d, brightness;
 	transition-duration: 0.5s, 0.2s;
+	visibility: collapse;
 }
 
 .BackgroundSceneContainer .DarkCarnivalDashboard.Initialize
@@ -1097,6 +1083,16 @@ DOTABackgroundDarkCarnival
 .AspectRatio16x10 .BackgroundSceneContainer .DarkCarnivalDashboard
 {
 	transform: scale3d( 0.93, 0.93, 1 ) translateY( -10px );
+}
+
+.OverworldAct11 .BackgroundSceneContainer #DarkCarnivalDashboard1
+{
+	visibility: visible;
+}
+
+.OverworldAct12 .BackgroundSceneContainer #DarkCarnivalDashboard2
+{
+	visibility: visible;
 }
 
 .BackgroundSceneContainer .DarkCarnivalDashboardFooter

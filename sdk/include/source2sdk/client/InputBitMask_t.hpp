@@ -13,15 +13,13 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 18
+        // Enumerator count: 17
         // Alignment: 8
         // Size: 0x_
         enum class InputBitMask_t : std::uint64_t
         {
             // MEnumeratorIsNotAFlag
             IN_NONE = 0x0,
-            // MEnumeratorIsNotAFlag
-            IN_ALL = 0xffffffffffffffff,
             IN_ATTACK = 0x1,
             IN_JUMP = 0x2,
             IN_DUCK = 0x4,

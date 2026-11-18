@@ -5,6 +5,23 @@
 		<include src="s2r://panorama/styles/events/dark_carnival/dark_carnival_shared.vcss" />
 		<include src="s2r://panorama/styles/events/dark_carnival/popup_dark_carnival_visual_novel.vcss" />
 	</styles>
+	<snippets>
+		<snippet name="VNDebugLine">
+			<Panel class="VNDebugLine">
+				<Panel class="PortraitContainer">
+					<Image id="Portrait" class="VNDebugLinePortrait" scaling="cover" />
+				</Panel>
+				<Panel class="VNDebugLineInfo">
+					<Panel class="VNDebugLineHeader">
+						<Label class="VNDebugLineIndex" text="{d:line_index}" />
+						<Label class="VNDebugLineActor" text="{s:line_actor}" />
+					</Panel>
+					<Label class="VNDebugLineText" text="{s:line_text}" html="true" />
+					<Label class="VNDebugLineType" text="{s:line_type}" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
 	<Panel class="PopupPanel" popupbackground="none" close_on_game_start="1">
 		<Panel class="BehindVisualNovel">
 			<Panel class="BlackBar Left" />
@@ -27,5 +44,7 @@
 		<Panel class="BottomContents">
 			<DOTASettingsCheckbox id="AutoAdvanceButton" convar="dota_dark_carnival_visual_novel_enable_auto_advance" text="#DOTA_Dark_Carnival_VisualNovel_Autoplay" onactivate="DOTAVisualNovelSetAutoAdvance()" />
 		</Panel>
+		<DOTASettingsCheckbox id="DebugLineListToggle" convar="dota_visual_novel_show_debug_line_list" text="(DEV)Show Timeline" onactivate="DOTAVisualNovelToggleDebugLineList()" />
+		<Panel id="VNDebugLineList" />
 	</Panel>
 </root>

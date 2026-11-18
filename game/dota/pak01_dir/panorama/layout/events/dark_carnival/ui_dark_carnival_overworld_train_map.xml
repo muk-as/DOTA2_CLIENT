@@ -15,7 +15,7 @@
 		</snippet>
 		<snippet name="Node">
 			<Panel class="Node" hittest="false">
-				<DOTAParticleScenePanel class="GodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
+				<Panel id="GodRaysParticleContainer" hittest="false" />
 				<Panel class="PathActiveHighlight" hittest="false" />
 				<Panel class="ModelFloorShadow" hittest="false" />
 				<Panel id="NodeContents" hittest="false">
@@ -42,20 +42,25 @@
 					<Label class="LabelSmall NoCostUnlock" text="#DOTA_DarkCarnival_Overworld_Unlock" />
 					<Panel class="TokenContainer" id="TokenContainer" />
 				</Panel>
-				<Panel class="NodeUnlockButtonContainer" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_NodeBreaker_Tooltip )" onmouseout="UIHideTextTooltip()">
-					<Label class="LabelSmall" text="#dota_settings_or" />
-					<DOTADarkCarnivalButton id="NodeUnlockButton" class="NodeUnlockButton Narrow" text="#DOTA_DarkCarnival_NodeBreaker" html="true" />
-				</Panel>
+				<Panel id="NodeUnlockButtonContainer" hittest="false" />
 				<Panel class="FirstClaimArrow" hittest="false">
 					<Image src="s2r://panorama/images/events/dark_carnival/overworld/token_claim_popup/claim_arrow_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					<Label class="FirstClaimLabel LabelSmall" text="#DOTA_DarkCarnival_ClickToStart" />
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="NodeGodRays">
+			<DOTAParticleScenePanel class="GodRays" hittest="false" particleName="particles/ui/ui_loadout_preview_simple.vpcf" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="50" />
+		</snippet>
+		<snippet name="NodeUnlockButtonOption">
+			<Panel class="NodeUnlockButtonOption" onmouseover="UIShowTextTooltip( #DOTA_DarkCarnival_NodeBreaker_Tooltip )" onmouseout="UIHideTextTooltip()">
+				<Label class="LabelSmall" text="#dota_settings_or" />
+				<DOTADarkCarnivalButton id="NodeUnlockButton" class="NodeUnlockButton Narrow" text="#DOTA_DarkCarnival_NodeBreaker" html="true" />
+			</Panel>
+		</snippet>
 		<snippet name="Path">
 			<Panel class="Path" hittest="false">
 				<Panel class="ActiveGlow" hittest="false" />
-				<DOTAScenePanel class="CompletedParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" hittest="false" />
 				<Panel class="TokensUnlockContainer" hittest="false">
 					<Panel class="TokenContainer" id="TokenContainer" hittest="false" />
 					<Label class="UnlockLabel LabelMedium" text="#DOTA_DarkCarnival_Overworld_Unlock" hittest="false" />
@@ -91,15 +96,17 @@
 				<Panel class="RoomBackground" hittest="false" hittestchildren="false">
 					<Panel class="RoomBackgroundFrame" />
 				</Panel>
-				<Panel id="RoomCharacters" />
-				<Panel class="RoomPremiumContainer" onmouseover="UIShowTextTooltip( Requires secret room pack to access&lt;br&gt;Click to purchase )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowDarkCarnivalStoreItem( 34452 )">
-					<DOTADarkCarnivalToken id="RoomConnectionToken" class="PremiumToken TokenName_Premium" hittest="false" hittestchildren="false" />
-					<Label class="LabelSmall SecretRoomLabel" text="Secret Room" />
-				</Panel>
+				<Panel id="RoomPremiumContainer" hittest="false" />
 				<Panel class="RoomCompleteMessage">
 					<Image class="RoomCompleteIcon" src="s2r://panorama/images/control_icons/24px/check_fancy.vsvg" scaling="stretch-to-fit-preserve-aspect" />
 					<Label class="LabelSmall RoomCompleteLabel" text="Room complete" />
 				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RoomPremiumInfo">
+			<Panel class="RoomPremiumInfo" onmouseover="UIShowTextTooltip( &apos;#DOTA_Dark_Carnival_Secret_Room_Tooltip&apos; )" onmouseout="UIHideTextTooltip()">
+				<DOTADarkCarnivalToken id="RoomConnectionToken" class="PremiumToken TokenName_Premium" hittest="false" hittestchildren="false" />
+				<Label class="LabelSmall SecretRoomLabel" text="#DOTA_Dark_Carnival_Secret_Room" />
 			</Panel>
 		</snippet>
 		<snippet name="RoomConnection">
@@ -107,24 +114,24 @@
 				<Panel class="RoomCoupler" hittest="false" />
 				<Image id="RoomConnectionIcon" hittest="false" />
 				<Panel id="RoomConnectionHitbox" />
-			</Panel>
-		</snippet>
-		<snippet name="RoomCharacter">
-			<Panel class="RoomCharacter" hittest="false" hittestchildren="false">
-				<Panel class="RoomCharacterContents">
-					<Panel class="RoomCharacterBackground" />
-					<Image class="CharacterIcon" id="CharacterIcon" scaling="stretch-to-fit-preserve-aspect" />
-				</Panel>
+				<Panel id="TokensContainer" hittest="false" />
+				<Label id="TokensContainerLabel" hittest="false" text="Tickets Required" />
 			</Panel>
 		</snippet>
 		<snippet name="TrainCar">
 			<Panel class="TrainCar" hittest="false">
 				<Panel id="DrawContainer" hittest="false">
+					<Panel class="OverworldContentMap" id="YouAreHereBg" hittest="false">
+						<Image src="s2r://panorama/images/events/dark_carnival/overworld/current_location_arrow_bg_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+					</Panel>
 					<Panel id="EditModeGrid" hittest="false" />
 					<Panel id="RoomsLayer" hittest="false" />
 					<Panel id="RoomConnectionsLayer" hittest="false" />
 					<Panel class="OverworldContentMap" id="MapPaths" hittest="false" />
 					<Panel class="OverworldContentMap" id="MapNodesAndCharacters" hittest="false" />
+					<Panel class="OverworldContentMap" id="YouAreHere" hittest="false">
+						<Image src="s2r://panorama/images/events/dark_carnival/overworld/current_location_arrow_fg_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+					</Panel>
 					<Panel class="OverworldContentMap" id="MapPopups" hittest="false" />
 				</Panel>
 			</Panel>
@@ -136,6 +143,9 @@
 		</snippet>
 		<snippet name="CarProgressIndicator">
 			<Panel class="CarProgressIndicator Loading" hittest="false" />
+		</snippet>
+		<snippet name="TimeGateUI">
+			<Panel class="TimeGateUI" />
 		</snippet>
 	</snippets>
 	<DOTADarkCarnivalOverworldMap class="Overworld Loading">
@@ -154,13 +164,25 @@
 			<Image class="Curtain Right" src="s2r://panorama/images/events/dark_carnival/overworld/curtain_png.vtex" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
 		</Panel>
 		<Panel class="TrainNav" id="TrainCarNavigation" hittest="false">
-			<Panel class="SideButton LeftButton ZoomedOutPaginationButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( -1, 0 )">
-				<Panel class="SideButtonBackground" />
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" texturewidth="48px" textureheight="48px" />
-			</Panel>
-			<Panel class="SideButton LeftButton ZoomedInPaginationButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( -1, 0 )">
-				<Panel class="SideButtonBackground" />
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" texturewidth="48px" textureheight="48px" />
+			<Panel class="NavButtons">
+				<Panel class="SideButton LeftButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( -1, 0 )">
+					<Panel class="SideButtonBackground" />
+					<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_left.vsvg" texturewidth="48px" textureheight="48px" />
+				</Panel>
+				<Panel class="CenterCol">
+					<Panel class="SideButton TopButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( 0, 1 )">
+						<Panel class="SideButtonBackground" />
+						<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_up.vsvg" texturewidth="48px" textureheight="48px" />
+					</Panel>
+					<Panel class="SideButton BottomButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( 0, -1 )">
+						<Panel class="SideButtonBackground" />
+						<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_down.vsvg" texturewidth="48px" textureheight="48px" />
+					</Panel>
+				</Panel>
+				<Panel class="SideButton RightButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( 1, 0 )">
+					<Panel class="SideButtonBackground" />
+					<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" texturewidth="48px" textureheight="48px" />
+				</Panel>
 			</Panel>
 			<Panel class="Center" hittest="false">
 				<Panel class="WoodBackgroundContainer Large">
@@ -244,21 +266,13 @@
 					<Label class="LabelMedium LockedText" text="#DOTA_DarkCarnival_ChapterLocked" />
 				</Panel>
 			</Panel>
-			<Panel class="SideButton RightButton ZoomedInPaginationButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( 1, 0 )">
-				<Panel class="SideButtonBackground" />
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" texturewidth="48px" textureheight="48px" />
-			</Panel>
-			<Panel class="SideButton RightButton ZoomedOutPaginationButton" onactivate="DarkCarnivalOverworldMapSwitchTrainCar( 1, 0 )">
-				<Panel class="SideButtonBackground" />
-				<Image src="s2r://panorama/images/control_icons/24px/chevron_fancy_right.vsvg" texturewidth="48px" textureheight="48px" />
-			</Panel>
 		</Panel>
 		<Panel class="LoadingVisualBlocker" />
-		<Panel class="OverworldDebug PlaytestOpen" id="OverworldDebugContainer" hittest="false">
-			<Panel id="DebugPanel_Main" class="DebugPanel Collapsed" hittest="true">
-				<Panel class="DebugHeader">
-					<Label class="DebugHeaderName" text="Debug Menu" unlocalized="true" />
-					<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_Main, Collapsed )" />
+		<Panel class="OverworldDebug" id="OverworldDebugContainer" hittest="false">
+			<Panel id="DebugPanel_Main" class="DebugPanel" hittest="true">
+				<Panel class="DebugHeader" onactivate="ToggleStyle( DebugPanel_Main, Collapsed )">
+					<Label class="DebugHeaderName" text="Debug Map" unlocalized="true" />
+					<Image src="s2r://panorama/images/control_icons/arrow_solid_down_png.vtex" scaling="stretch-to-fit-preserve-aspect" class="DebugCollapseButton" />
 				</Panel>
 				<Panel class="DebugPanelContainer">
 					<ToggleButton id="DebugPurchases" class="HideInEditMode" onactivate="DarkCarnivalOverworldMapDebugToggle( 9 )">
@@ -279,31 +293,26 @@
 				</Panel>
 			</Panel>
 			<Panel id="DebugPanel_ExtraOptions" class="DebugPanel Collapsed">
-				<Panel class="DebugHeader">
-					<Label class="DebugHeaderName" text="Extra Options" unlocalized="true" />
-					<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_ExtraOptions, Collapsed )" />
+				<Panel class="DebugHeader" onactivate="ToggleStyle( DebugPanel_ExtraOptions, Collapsed )">
+					<Label class="DebugHeaderName" text="Debug Event" unlocalized="true" />
+					<Image src="s2r://panorama/images/control_icons/arrow_solid_down_png.vtex" scaling="stretch-to-fit-preserve-aspect" class="DebugCollapseButton" />
 				</Panel>
 				<Panel class="DebugPanelContainer">
 					<TextButton text="Complete Map" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugCompleteAllPaths()" />
 					<Panel class="LeftRightFlow">
-						<TextButton class="Short" text="Reset Event" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugResetAll()" />
+						<TextButton class="Short" text="Reset Event" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugResetAll()" onmouseover="UIShowTextTooltip(&apos;Reset everything, including tutorial state&apos;)" onmouseout="UIHideTextTooltip()" />
+						<TextButton class="Short" text="Reset Map" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugResetMap()" onmouseover="UIShowTextTooltip(&apos;Reset and regenerate the nodes on this map&apos;)" onmouseout="UIHideTextTooltip()" />
 					</Panel>
 					<Panel class="LeftRightFlow">
 						<TextButton class="Short" text="Fill Inventory" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugGrantAllTokens()" />
 						<TextButton class="Short" text="Clear Inventory" unlocalized="true" onactivate="DarkCarnivalOverworldMapDebugClearInventory()" />
 					</Panel>
-					<ToggleButton id="DebugPaths" onactivate="DarkCarnivalOverworldMapDebugToggle()">
-						<Label text="Show All Quests" unlocalized="true" />
-					</ToggleButton>
-					<ToggleButton id="DisableCameraEvents" onactivate="DarkCarnivalOverworldMapDebugToggle()">
-						<Label text="Disable Camera Events" unlocalized="true" />
-					</ToggleButton>
 				</Panel>
 			</Panel>
-			<Panel id="DebugPanel_Playtest" class="PlaytestDebugPanel HideInEditMode" hittest="true">
-				<Panel class="DebugHeader">
+			<Panel id="DebugPanel_Playtest" class="PlaytestDebugPanel Collapsed HideInEditMode" hittest="true">
+				<Panel class="DebugHeader" onactivate="ToggleStyle( DebugPanel_Playtest, Collapsed ); ToggleStyle( OverworldDebugContainer, PlaytestOpen )">
 					<Label class="DebugHeaderName" text="Playtest" unlocalized="true" />
-					<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_Playtest, Collapsed ); ToggleStyle( OverworldDebugContainer, PlaytestOpen )" />
+					<Image src="s2r://panorama/images/control_icons/arrow_solid_down_png.vtex" scaling="stretch-to-fit-preserve-aspect" class="DebugCollapseButton" />
 				</Panel>
 				<Panel class="DebugPanelContainer">
 					<Panel id="DebugHeroRow" class="DebugOptionRow">

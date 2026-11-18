@@ -597,17 +597,24 @@
 	width: 160px;
 }
 
+@keyframes 'FadeOut'
+{
+	0%
+	{
+		opacity: 1;
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: translateY( -2px );
+	}
+	
+}
+
 .OverworldDebug
 {
 	visibility: collapse;
-	opacity: 0.0001;
-	transition-property:opacity;
-	transition-duration: 0.1s;
-}
-
-.OverworldDebug:hover
-{
-	opacity: 1;
 }
 
 .ShowDebugMenus .OverworldDebug
@@ -621,8 +628,9 @@
 	width: 250px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	margin-right: 24px;
-	margin-bottom: 140px;
+	margin-bottom: 100px;
+	margin-right: 20px;
+	z-index: 1000;
 }
 
 .EncounterPopupShown .OverworldDebug
@@ -633,9 +641,16 @@
 .OverworldDebug .DebugPanel
 {
 	background-color: DarkerGrey;
-	border: 1px solid black;
+	border: 1px solid #444;
 	box-shadow: 0px 4px 16px -2px rgba( 0, 0, 0, 0.6 );
 	flow-children: down;
+	transition-property: transform;
+	transition-duration: 0.5s;
+}
+
+.OverworldDebug .DebugPanel.Collapsed .DebugHeader Label
+{
+	color: #aaa;
 }
 
 .OverworldDebug .PlaytestDebugPanel
@@ -651,19 +666,29 @@
 	background-color: #112;
 	width: 250px;
 	flow-children: right;
-	padding: 2px 0px 2px 5px;
-	border-bottom: 1px solid black;
+	padding: 1px 0px 1px 5px;
 }
 
 .OverworldDebug .DebugHeader Label
 {
 	vertical-align: center;
 	width: fill-parent-flow(0.5);
-	font-size: 20px;
+	font-size: 16px;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #dde;
+	color: #eef;
+}
+
+.OverworldDebug .DebugHeader:hover
+{
+	brightness: 2.5;
+}
+
+.OverworldDebug .DebugHeader:active
+{
+	brightness: 0.5;
+	transform: translateY( 1px );
 }
 
 .OverworldDebug .DebugOptionRow
@@ -687,12 +712,14 @@
 {
 	horizontal-align: right;
 	vertical-align: top;
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 	background-color: #000040;
 	margin-top: 2px;
 	margin-right: 1px;
 	padding: 0;
+	transition-property: transform;
+	transition-duration: 0.1s;
 }
 
 .OverworldDebug .DebugCollapseButton Label
@@ -720,7 +747,7 @@
 
 .OverworldDebug.PlaytestOpen .DebugPanel
 {
-	visibility: collapse;
+	transform: translateX( 300px );
 }
 
 .EditMode .OverworldDebug .HideInEditMode
@@ -734,7 +761,7 @@
 	width: 100%;
 	border: 1px solid #999;
 	background-color: #400040;
-	margin: 5px;
+	margin: 4px;
 	padding: 3px;
 	transition-property: brightness;
 	transition-duration: 0.2s;
@@ -773,16 +800,6 @@
 	padding: 3px;
 	transition-property: brightness;
 	transition-duration: 0.2s;
-}
-
-.OverworldDebug ToggleButton:hover
-{
-	brightness: 2.0;
-}
-
-.OverworldDebug ToggleButton:active
-{
-	brightness: 1.5;
 }
 
 .OverworldDebug ToggleButton Label

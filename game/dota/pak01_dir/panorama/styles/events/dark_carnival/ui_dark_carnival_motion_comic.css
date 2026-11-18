@@ -98,6 +98,15 @@ DOTAMotionComic.Initialized.Finished
 	transition-delay: 0s;
 }
 
+.slark_epilogue .MotionComicFrameContent
+{
+	width: 80%;
+	height: 100%;
+	margin-bottom:50px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
 @keyframes 'NewSquash'
 {
 	33%
@@ -108,6 +117,232 @@ DOTAMotionComic.Initialized.Finished
 	66%
 	{
 		transform:scaleX(1.6) scaleY( 0.8 );
+	}
+	
+}
+
+.FadeInMotionComic .MotionComicFrameContent
+{
+	animation-name: MotionComicFadeIn;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in;
+}
+
+.FadeOutMotionComic .MotionComicFrameContent
+{
+	animation-name: MotionComicFadeOut;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes 'MotionComicFadeIn'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'MotionComicFadeOut'
+{
+	0%
+	{
+		opacity: 1;
+	}
+	
+	100%
+	{
+		opacity: 0;
+	}
+	
+}
+
+.bogg_summon
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/visual_novel/motion_comics/bogg_summon_stars3_png.vtex");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.bogg_summon.Frame0,.bogg_summon.Frame1
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/visual_novel/motion_comics/bogg_summon_stars_jpg.vtex");
+}
+
+.bogg_summon .MotionComicBackground
+{
+	background-image: url("s2r://panorama/images/events/dark_carnival/visual_novel/motion_comics/bogg_summon_stars2_jpg.vtex");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 1s;
+}
+
+.bogg_summon.Frame1 .MotionComicBackground,.bogg_summon.Frame2 .MotionComicBackground
+{
+	opacity: 1;
+}
+
+.BoggSummonIntro .bogg_summon
+{
+	animation-name: MotionComicFadeIn;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in;
+}
+
+.BoggSummonIntro .bogg_summon .MotionComicFrameContent
+{
+	animation-name: BoggSummonDelayedFadeIn;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+}
+
+.bogg_summon.Frame2 #MotionComicImage1.Hidden
+{
+	visibility: visible;
+}
+
+.bogg_summon.Frame2 #MotionComicImage1
+{
+	transform-origin: 50% 100%;
+	animation-name: BoggSummonGrow;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+
+.bogg_summon.Frame2 #MotionComicImage2
+{
+	transform-origin: 50% 100%;
+	animation-name: BoggSummonPortalIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+
+.bogg_summon.Frame3 #MotionComicImage1
+{
+	z-index: 1;
+	transform-origin: 50% 100%;
+	transform: translateY( 20px ) scale3d( 0.92, 0.92, 1 );
+	animation-name: BoggSummonCauldronRise;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-out;
+}
+
+.bogg_summon.Frame3 #MotionComicImage2.Hidden
+{
+	visibility: visible;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 1s;
+}
+
+.bogg_summon.Frame4 #MotionComicImage1,.bogg_summon.Frame4 #MotionComicImage2,.bogg_summon.Frame5 #MotionComicImage1,.bogg_summon.Frame5 #MotionComicImage2,.bogg_summon.Frame6 #MotionComicImage1,.bogg_summon.Frame6 #MotionComicImage2,.bogg_summon.Frame7 #MotionComicImage1,.bogg_summon.Frame7 #MotionComicImage2,.bogg_summon.Frame8 #MotionComicImage1,.bogg_summon.Frame8 #MotionComicImage2,.bogg_summon.Frame9 #MotionComicImage1,.bogg_summon.Frame9 #MotionComicImage2
+{
+	transform-origin: 50% 100%;
+	transform: translateY( 20px ) scale3d( 0.92, 0.92, 1 );
+}
+
+.bogg_summon.Frame1 #MotionComicImage1
+{
+	transform-origin: 50% 100%;
+	transform: scale3d( 0.7, 0.7, 1 );
+	animation-name: BoggSummonShrink;
+	animation-duration: 2.5s;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes 'BoggSummonShrink'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 0.7, 0.7, 1 );
+	}
+	
+}
+
+@keyframes 'BoggSummonGrow'
+{
+	0%
+	{
+		transform: scale3d( 0.7, 0.7, 1 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+}
+
+@keyframes 'BoggSummonPortalIn'
+{
+	0%
+	{
+		transform: scale3d( 0.7, 0.7, 1 );
+		opacity: 0;
+	}
+	
+	100%
+	{
+		transform: scale3d( 1, 1, 1 );
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'BoggSummonDelayedFadeIn'
+{
+	0%
+	{
+		transform: translateY(400px);
+		opacity: 0;
+	}
+	
+	40%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'BoggSummonCauldronRise'
+{
+	0%
+	{
+		transform: translateY( 420px ) scale3d( 0.92, 0.92, 1 );
+		opacity: 0;
+	}
+	
+	40%
+	{
+		opacity: 1;
+	}
+	
+	100%
+	{
+		transform: translateY( 20px ) scale3d( 0.92, 0.92, 1 );
+		opacity: 1;
 	}
 	
 }
