@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 34
+        // Enumerator count: 38
         // Alignment: 4
         // Size: 0x_
         enum class DOTAHUDVisibility_t : std::uint32_t
@@ -51,7 +51,11 @@ namespace source2sdk
             DOTA_HUD_VISIBILITY_TOP_BAR = 0x1d,
             DOTA_HUD_CUSTOMUI_BEHIND_HUD_ELEMENTS = 0x1e,
             DOTA_HUD_VISIBILITY_AGHANIMS_STATUS = 0x1f,
-            DOTA_HUD_VISIBILITY_COUNT = 0x20,
+            DOTA_HUD_VISIBILITY_PREGAME_HERO_SELECTION = 0x20,
+            DOTA_HUD_VISIBILITY_INVENTORY_NEUTRAL_CRAFT = 0x21,
+            DOTA_HUD_VISIBILITY_INVENTORY_NEUTRAL_SLOT = 0x22,
+            DOTA_HUD_VISIBILITY_INVENTORY_TPSCROLL = 0x23,
+            DOTA_HUD_VISIBILITY_COUNT = 0x24,
         };
     };
 };
