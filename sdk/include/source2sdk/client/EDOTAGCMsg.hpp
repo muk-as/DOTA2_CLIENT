@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 1020
+        // Enumerator count: 1011
         // Alignment: 4
         // Size: 0x_
         enum class EDOTAGCMsg : std::uint32_t
@@ -409,8 +409,6 @@ namespace source2sdk
             k_EMsgClientToGCHasPlayerVotedForMVPResponse = 0x1fb0,
             k_EMsgClientToGCVoteForMVP = 0x1fb1,
             k_EMsgClientToGCVoteForMVPResponse = 0x1fb2,
-            k_EMsgGCToGCGetEventParticipation = 0x1fb3,
-            k_EMsgGCToGCGetEventParticipationResponse = 0x1fb4,
             k_EMsgGCToClientAutomatedTournamentStateChange = 0x1fb5,
             k_EMsgClientToGCWeekendTourneyOpts = 0x1fb6,
             k_EMsgClientToGCWeekendTourneyOptsResponse = 0x1fb7,
@@ -574,12 +572,9 @@ namespace source2sdk
             k_EMsgGCToGCGrantAutographResponse = 0x207c,
             k_EMsgSignOutConsumableUsage = 0x207d,
             k_EMsgLobbyEventGameDetails = 0x207e,
-            k_EMsgDevGrantEventAction = 0x2081,
-            k_EMsgDevGrantEventActionResponse = 0x2082,
             k_EMsgGCToGCReconcileEventOwnership = 0x2085,
             k_EMsgConsumeEventSupportGrantItem = 0x2086,
             k_EMsgConsumeEventSupportGrantItemResponse = 0x2087,
-            k_EMsgGCToClientClaimEventActionUsingItemCompleted = 0x2088,
             k_EMsgGCToClientCavernCrawlMapUpdated = 0x2089,
             k_EMsgServerToGCRequestPlayerRecentAccomplishments = 0x208a,
             k_EMsgServerToGCRequestPlayerRecentAccomplishmentsResponse = 0x208b,
@@ -604,8 +599,6 @@ namespace source2sdk
             k_EMsgClientToGCSubmitPlayerMatchSurveyResponse = 0x20aa,
             k_EMsgSQLGCToGCGrantAllHeroProgressAccount = 0x20ab,
             k_EMsgSQLGCToGCGrantAllHeroProgressVictory = 0x20ac,
-            k_EMsgDevDeleteEventActions = 0x20ad,
-            k_EMsgDevDeleteEventActionsResponse = 0x20ae,
             k_EMsgGCToGCGetAllHeroCurrent = 0x21bb,
             k_EMsgGCToGCGetAllHeroCurrentResponse = 0x21bc,
             k_EMsgGCSubmitPlayerAvoidRequest = 0x21bd,
@@ -702,8 +695,6 @@ namespace source2sdk
             k_EMsgClientToGCApplyGauntletTicket = 0x2223,
             k_EMsgClientToGCUnderDraftRollBackBench = 0x2224,
             k_EMsgClientToGCUnderDraftRollBackBenchResponse = 0x2225,
-            k_EMsgGCToGCGetEventActionScore = 0x2226,
-            k_EMsgGCToGCGetEventActionScoreResponse = 0x2227,
             k_EMsgServerToGCGetGuildContracts = 0x2228,
             k_EMsgServerToGCGetGuildContractsResponse = 0x2229,
             k_EMsgLobbyEventGameData = 0x222a,

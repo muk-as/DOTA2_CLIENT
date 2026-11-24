@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 5
+        // Enumerator count: 6
         // Alignment: 4
         // Size: 0x_
         enum class ECreateAttackFlags : std::uint32_t
@@ -23,6 +23,7 @@ namespace source2sdk
             k_CreateAttackFlags_FakeAttack = 0x2,
             k_CreateAttackFlags_NeverMiss = 0x4,
             k_CreateAttackFlags_TriggeredAttack = 0x8,
+            k_CreateAttackFlags_NoCrit = 0x10,
         };
     };
 };
